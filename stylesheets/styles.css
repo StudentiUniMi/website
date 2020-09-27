@@ -150,6 +150,7 @@ header ul a {
 }
 
 header ul a:hover {
+  background-color:#d3d8db;
   color:#999;
 }
 
