@@ -1,7 +1,4 @@
 <div align="center">
-    <img src="logo.png">
-<br>
-<hr>
 <p>
   <sup>
     <b>Network StataleInformatica</b>
