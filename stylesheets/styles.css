@@ -273,3 +273,11 @@ footer {
     color:#444;
   }
 }
+
+#faq .linkNotAvailable {
+  color:orangered;
+}
+
+#faq .linkAvailable {
+  color: greenyellow;
+}
