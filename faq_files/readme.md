@@ -1,0 +1,37 @@
+### Riepilogo faq
+
+- [ ] Matematica del continuo
+- [ ] Programmazione I
+- [ ] Architettura degli elaboratori I
+- [ ] Linguaggi formali e automi
+- [ ] Logica matematica
+- [ ] Matematica del discreto
+- [ ] Architettura degli elaboratori II
+- [ ] Algoritmi e strutture dati
+- [ ] Basi di dati
+- [ ] Programmazione II
+- [ ] Sistemi operativi
+- [ ] Statistica e analisi dei dati
+- [ ] Ingegneria del software
+- [ ] Reti di calcolatori
+- [ ] Crittografia I
+- [ ] Editoria digitale
+- [ ] Elaborazione dei segnali
+- [ ] Elaborazione delle immagini
+- [ ] Fisica
+- [ ] Intelligenza artificiale I
+- [ ] Interazioni sociali in rete
+- [ ] Linguaggi di programmazione
+- [ ] Sistemi informativi
+- [ ] Complementi di algoritmi e strutture dati
+- [ ] Computer graphics
+- [ ] Diritto dei prodotti digitali
+- [ ] Fondamenti di social media digitali
+- [ ] Gestione dei processi aziendali
+- [ ] Linguaggi e traduttori
+- [ ] Programmazione dichiarativa
+- [ ] Ricerca operativa
+- [ ] Sicurezza e privatezza
+- [ ] Sistemi embedded
+- [X] Tecnologie e linguaggi per il web
+- [ ] Visualizzazione scientifica
