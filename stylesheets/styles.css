@@ -274,10 +274,21 @@ footer {
   }
 }
 
+/* Faq link styles */
 #faq .linkNotAvailable {
   color:orangered;
 }
 
 #faq .linkAvailable {
-  color: greenyellow;
+  color:#37bf65;
+  margin-top:-0.3em;
+  display:block;
+}
+
+#faq .linkAvailable a {
+  color:#37bf65;
+}
+
+#faq .linkAvailable a:hover {
+  color:#248f48;
 }
