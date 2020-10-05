@@ -4,11 +4,8 @@ LaTeX = xelatex
 LaTeX_OPTS = -synctex=1 -interaction=nonstopmode
 SITE_DIR = site/
 FILES = drive/drive.pdf \
-        regolamento/regolamento.pdf \
-        faq_files/reti_di_calcolatori/reti_di_calcolatori.pdf \
-        faq_files/tecnologie_e_linguaggi_web/tecnologie_e_linguaggi_web.pdf \
-		faq_files/sistemi_operativi/sistemi_operativi.pdf \
-		faq_files/programmazione_2/programmazione_2.pdf
+        regolamento/regolamento.pdf
+FILES += $(shell find faq_files -mindepth 2 -maxdepth 2 -name \*.tex -type f | awk '{ gsub(".tex$$",".pdf",$$1); print $$1 };' )
 
 %.pdf: %.tex
 	cd $(?D) && $(LaTeX) $(LaTeX_OPTS) $(?F)
