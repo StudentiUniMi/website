@@ -9,11 +9,11 @@
 - [ ] Architettura degli elaboratori II
 - [ ] Algoritmi e strutture dati
 - [ ] Basi di dati
-- [ ] Programmazione II
-- [ ] Sistemi operativi
+- [X] Programmazione II
+- [X] Sistemi operativi
 - [ ] Statistica e analisi dei dati
 - [ ] Ingegneria del software
-- [ ] Reti di calcolatori
+- [X] Reti di calcolatori
 - [ ] Crittografia I
 - [ ] Editoria digitale
 - [ ] Elaborazione dei segnali
@@ -25,7 +25,7 @@
 - [ ] Sistemi informativi
 - [ ] Complementi di algoritmi e strutture dati
 - [ ] Computer graphics
-- [ ] Diritto dei prodotti digitali
+- [X] Diritto dei prodotti digitali
 - [ ] Fondamenti di social media digitali
 - [ ] Gestione dei processi aziendali
 - [ ] Linguaggi e traduttori
