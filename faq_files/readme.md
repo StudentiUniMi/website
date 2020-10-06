@@ -1,7 +1,7 @@
 ### Riepilogo faq
 
-- [ ] Matematica del continuo
-- [ ] Programmazione I
+- [X] Matematica del continuo
+- [X] Programmazione I
 - [ ] Architettura degli elaboratori I
 - [ ] Linguaggi formali e automi
 - [ ] Logica matematica
