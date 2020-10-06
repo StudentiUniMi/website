@@ -8,10 +8,10 @@
 - [ ] Matematica del discreto
 - [ ] Architettura degli elaboratori II
 - [ ] Algoritmi e strutture dati
-- [ ] Basi di dati
+- [X] Basi di dati
 - [X] Programmazione II
 - [X] Sistemi operativi
-- [ ] Statistica e analisi dei dati
+- [X] Statistica e analisi dei dati
 - [ ] Ingegneria del software
 - [X] Reti di calcolatori
 - [ ] Crittografia I
