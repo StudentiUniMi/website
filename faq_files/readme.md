@@ -23,7 +23,7 @@
 - [ ] Interazioni sociali in rete
 - [ ] Linguaggi di programmazione
 - [ ] Sistemi informativi
-- [ ] Complementi di algoritmi e strutture dati
+- [X] Complementi di algoritmi e strutture dati
 - [ ] Computer graphics
 - [X] Diritto dei prodotti digitali
 - [ ] Fondamenti di social media digitali
