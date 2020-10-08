@@ -12,27 +12,45 @@
 \begin{document} 
 	\maketitle
 	
-	\begin{enumerate}
+	\begin{QuestionList}
 		
-		\rmfamily
-		\domanda{Dove si trovano i siti web del corso?} 
-		È possibile trovare gli avvisi, il programma e altre informazioni riguardo il corso al seguente \href{http://boldi.di.unimi.it/Corsi/Inf2020/}{link}.\\
+		% TODO: Fa schifo, aggiungere i link giusti
+		\question{Dove si trovano i siti web del corso?} {
+		    È possibile trovare gli avvisi, il programma e altre informazioni riguardo il corso al seguente \href{http://boldi.di.unimi.it/Corsi/Inf2020/}{link}.
 		
-		Sito per i cognomi da A a L:
-		\href{https://atrentinip.ariel.ctu.unimi.it/}{link}\\\\
-		Sito per i cognomi da M a Z:
-		\href{https://mcasazzapud.ariel.ctu.unimi.it/}{link}\\
+		    Sito per i cognomi da A a L:
+	        \href{https://atrentinip.ariel.ctu.unimi.it/}{link}
+	        
+	    	Sito per i cognomi da M a Z:
+		    \href{https://mcasazzapud.ariel.ctu.unimi.it/}{link}
+		}
 		
-		\domanda{Come è strutturato l'esame?}
-		L’esame è composto da una prova di programmazione individuale in laboratorio (la prova contiene un esercizio di filtro: gli studenti che non superino il filtro non saranno poi valutati) e una prova scritta. 
-		A chi supera entrambe le prove viene proposto un voto (ottenuto come media dei voti delle due prove). 
-		Gli studenti con voto proposto compreso fra 21 e 27, possono decidere se verbalizzare il voto proposto o rifiutarlo, sostenendo di nuovo l'esame in uno degli appelli successivi. Gli studenti con voto proposto inferiore a 21 devono sostenere un esame orale per verificare le loro competenze. Gli studenti con voto superiore a 27 possono verbalizzare il voto proposto oppure sostenere un esame orale (finalizzato a migliorare il voto). Le varie parti da cui l'esame è composto vanno necessariamente sostenute nello stesso appello, e in particolare chi pur avendone la possibilità decide di non presentarsi alle verbalizzazioni dovrà sostenere nuovamente l'esame.\\
+		\question{Come è strutturato l'esame?} {
+		    L’esame è composto da una prova di programmazione individuale in laboratorio (la prova contiene un esercizio di filtro: gli studenti che non superino il filtro non saranno poi valutati) e una prova scritta. 
+		    
+		    A chi supera entrambe le prove viene proposto un voto (ottenuto come media dei voti delle due prove). Il voto può essere
+		    \begin{itemize} 
+		        \item <= 20: \textbf{devono} sostenere un esame orale di "controllo" per verificare le competenze, generalmente basato sulla risoluzione in "diretta" di uno o due esercizi di programmazione
+		        
+		        \item 21 <= x <= 27: possono decidere se accettare o rifiutare il voto proposto (rifiutando, si avrà la possiblità di sostenere nuovamente l'esame al prossimo appello utile). Non è possibile sostenere l'orale per alzare il voto.
+		        
+		        \item >= 28: \textbf{possono} verbalizzare il voto proposto o scegliere di sostenere un esame orale (finalizzato a migliorare il voto)
+		    
+		    \end{itemize}
+		   
+		    Le varie parti da cui l'esame è composto vanno necessariamente sostenute nello stesso appello, e in particolare chi pur avendone la possibilità decide di non presentarsi alle verbalizzazioni dovrà sostenere nuovamente l'esame.
+		}
 		
-		\domanda{Qual è il materiale a disposizione per studiare?}
-		I docenti consigliano i seguenti libri:\\
-		- Ivo Balbaert: Programmare in go. Pearson, ISBN 8891909661.\\
-		- Alan A. Donovan, Brian W. Kernighan: The Go Programming Language, Addison-Wesley.\\
+		\question{Qual è il materiale a disposizione per studiare?} {
+		    I docenti consigliano i seguenti libri:
+		    \begin{itemize}
+		        \item Ivo Balbaert: Programmare in go. Pearson, ISBN 8891909661.\\
+		        \item Alan A. Donovan, Brian W. Kernighan: The Go Programming Language, Addison-Wesley.\\
+		    \end{itemize}
+		    
+		    Per esercitarsi, sono inoltre disponibili i vecchi temi d'esame sul \href{http://boldi.di.unimi.it/Corsi/Inf2020/}{sito del Prof. Boldi} (controlla gli anni accademici precedenti), e gli \href{https://labprog.mapio.it/}{esercizi del Prof. Santini} (con commenti e test)
+		}
 		
-	\end{enumerate}
+	\end{QuestionList}
 	
 \end{document}

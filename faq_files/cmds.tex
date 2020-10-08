@@ -1,1 +1,22 @@
-\newcommand{\domanda}[1]{\item{\ttfamily{\textsl{{\large{#1}}}}\\\\}}
+
+% Defines a new environment, which for now it's just a simple list. The first arguments are the actions to 
+% take at \begin{QuestionList}, the other one the ones to take at the \end
+% 
+% For enumerate customization, please refer to http://www.texnia.com/archive/enumitem.pdf
+
+\newenvironment{QuestionList}[1][]
+  {\begin{enumerate}[itemsep=10pt,parsep=10pt]}
+  {\end{enumerate}}
+    
+
+
+
+% Defines a new command, which represents a question/answer pair. The first argument is the questions, while the second one is the answer to that question. Please note that this command should be used inside a "QuestionList", so its rules (e.g. paragraph spacing) apply.
+
+\newcommand{\question}[2] {
+		\item{\ttfamily{\textsl{\large{#1}}}}
+		
+    	{#2}
+}
+
+
