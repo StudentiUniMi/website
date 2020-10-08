@@ -292,3 +292,11 @@ footer {
 #faq .linkAvailable a:hover {
   color:#248f48;
 }
+
+.important {
+  color: #890de0;
+}
+
+.important:hover {
+  color: #690aab;
+}
