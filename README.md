@@ -5,7 +5,7 @@ Repo contenente le faq dei vari corsi della triennale di informatica (Unimi) e t
 a [@giuseppetm](https://t.me/giuseppetm).<br/>
 Il canale telegram del network è il seguente [t.me/stataleInformatica](https://t.me/stataleinformatica)
 
-## Perchè nasce il progetto?
+## Perché nasce il progetto?
 Abbiamo voluto creare un punto centrale per collegare tutti i contenuti del nostro Network.
 I prossimi passi saranno quelli di completare le faq di ogni corso, sia obbligatorio che complementare, per poi creare un bot globale per la gestione dei gruppi.
 
