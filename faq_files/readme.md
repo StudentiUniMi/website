@@ -4,8 +4,8 @@
 - [X] Programmazione I
 - [ ] Architettura degli elaboratori I
 - [ ] Linguaggi formali e automi
-- [ ] Logica matematica
-- [ ] Matematica del discreto
+- [X] Logica matematica
+- [X] Matematica del discreto
 - [ ] Architettura degli elaboratori II
 - [ ] Algoritmi e strutture dati
 - [X] Basi di dati
