@@ -3,7 +3,7 @@
 - [X] Matematica del continuo
 - [X] Programmazione I
 - [ ] Architettura degli elaboratori I
-- [ ] Linguaggi formali e automi
+- [X] Linguaggi formali e automi
 - [X] Logica matematica
 - [X] Matematica del discreto
 - [ ] Architettura degli elaboratori II
@@ -22,6 +22,7 @@
 - [ ] Intelligenza artificiale I
 - [ ] Interazioni sociali in rete
 - [ ] Linguaggi di programmazione
+- [X] Sicurezza e privatezza
 - [ ] Sistemi informativi
 - [X] Complementi di algoritmi e strutture dati
 - [ ] Computer graphics
@@ -31,7 +32,6 @@
 - [ ] Linguaggi e traduttori
 - [ ] Programmazione dichiarativa
 - [ ] Ricerca operativa
-- [ ] Sicurezza e privatezza
 - [ ] Sistemi embedded
 - [X] Tecnologie e linguaggi per il web
 - [ ] Visualizzazione scientifica
