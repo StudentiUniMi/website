@@ -121,21 +121,25 @@ header ul {
   background: #f4f4f4;
   border-radius:5px;
   border:1px solid #e0e0e0;
-  width:270px;
+  width:260px;
 }
 
 header li {
-  width:89px;
   float:left;
   border-right:1px solid #e0e0e0;
   height:40px;
 }
 
-header li:first-child a {
-  border-radius:5px 0 0 5px;
+header .first-child {
+  width:105px;
 }
 
-header li:last-child a {
+header .middle-child {
+  width:70px;
+}
+
+header .last-child {
+  width:83px;
   border-radius:0 5px 5px 0;
 }
 
@@ -275,28 +279,21 @@ footer {
 }
 
 /* Faq link styles */
-#faq .linkNotAvailable {
-  color:orangered;
-}
 
-#faq .linkAvailable {
-  color:#37bf65;
-  margin-top:-0.3em;
-  display:block;
-}
-
-#faq .linkAvailable a {
+#faq #corsi .linkAvailable a {
   color:#37bf65;
 }
 
-#faq .linkAvailable a:hover {
+#faq #corsi .linkAvailable a:hover {
   color:#248f48;
 }
 
-.important {
-  color: #890de0;
+#faq #corsi .linkNotAvailable a {
+  color:orangered;
+  margin-top:-0.3em;
 }
 
-.important:hover {
-  color: #690aab;
+/* Icons color */
+header .fas, .fab {
+  color:#39c;
 }

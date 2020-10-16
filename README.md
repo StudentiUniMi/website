@@ -1,12 +1,12 @@
 <img src="site/logo.png" width="150" height="150" align="right" />
 
 # [Network StataleInformatica](https://github.com/NetworkStataleInformatica)
-Repo contenente le faq dei vari corsi della triennale di informatica (Unimi) e tutte le informazioni che possono essere utili per l'utilizzo del network; per chiunque volesse collaborare al progetto è pregato di scrivere
+Repo contenente tutti i collegamenti ai siti web e le faq dei corsi della triennale di informatica (Unimi), e tutte le informazioni che possono essere utili per l'utilizzo del network, tra cui la lista di tutti i gruppi telegram dei corsi; per chiunque volesse collaborare al progetto è pregato di scrivere
 a [@giuseppetm](https://t.me/giuseppetm).<br/>
 Il canale telegram del network è il seguente [t.me/stataleInformatica](https://t.me/stataleinformatica)
 
 ## Perché nasce il progetto?
-Abbiamo voluto creare un punto centrale per collegare tutti i contenuti del nostro Network.
+Abbiamo voluto creare un punto centrale per collegare tutti i contenuti del nostro network.
 I prossimi passi saranno quelli di completare le faq di ogni corso, sia obbligatorio che complementare, per poi creare un bot globale per la gestione dei gruppi.
 
 ## Collabora alla creazione delle faq
