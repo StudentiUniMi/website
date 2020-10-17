@@ -232,7 +232,7 @@ footer {
   }
 
   header ul {
-    position:absolute;
+    /*position:absolute;*/
     right:50px;
     top:52px;
   }
@@ -261,10 +261,12 @@ footer {
     padding:15px;
   }
 
+  /*
   header ul {
     width:99%;
   }
-
+  */
+  
   header li, header ul li + li + li {
     width:33%;
   }
