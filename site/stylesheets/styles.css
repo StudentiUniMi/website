@@ -280,22 +280,22 @@ footer {
   }
 }
 
-/* Faq link styles */
-
-#faq #corsi .linkAvailable a {
-  color:#37bf65;
-}
-
-#faq #corsi .linkAvailable a:hover {
-  color:#248f48;
-}
-
-#faq #corsi .linkNotAvailable a {
-  color:orangered;
-  margin-top:-0.3em;
-}
-
 /* Icons color */
 header .fas, .fab {
   color:#39c;
+}
+
+/* Faq link styles */
+
+#main .linkAvailable a {
+  color:#37bf65;
+}
+
+#main .linkAvailable a:hover {
+  color:#248f48;
+}
+
+#main .linkNotAvailable a {
+  color:orangered;
+  margin-top:-0.3em;
 }
