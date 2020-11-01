@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  background-color: #f7f5f5;
   padding:50px;
   font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color:#595959;
@@ -131,15 +131,15 @@ header li {
 }
 
 header .first-child {
-  width:105px;
+  width:85px;
 }
 
 header .middle-child {
-  width:70px;
+  width:105px;
 }
 
 header .last-child {
-  width:83px;
+  width:68px;
   border-radius:0 5px 5px 0;
 }
 
