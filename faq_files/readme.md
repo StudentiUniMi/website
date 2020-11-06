@@ -2,11 +2,11 @@
 
 - [X] Matematica del continuo
 - [X] Programmazione I
-- [ ] Architettura degli elaboratori I
+- [X] Architettura degli elaboratori I
 - [X] Linguaggi formali e automi
 - [X] Logica matematica
 - [X] Matematica del discreto
-- [ ] Architettura degli elaboratori II
+- [X] Architettura degli elaboratori II
 - [ ] Algoritmi e strutture dati
 - [X] Basi di dati
 - [X] Programmazione II
@@ -17,9 +17,9 @@
 - [ ] Crittografia I
 - [ ] Editoria digitale
 - [ ] Elaborazione dei segnali
-- [ ] Elaborazione delle immagini
+- [X] Elaborazione delle immagini
 - [ ] Fisica
-- [ ] Intelligenza artificiale I
+- [X] Intelligenza artificiale I
 - [ ] Interazioni sociali in rete
 - [ ] Linguaggi di programmazione
 - [X] Sicurezza e privatezza
