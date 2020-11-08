@@ -18,7 +18,7 @@
 - [ ] Editoria digitale
 - [ ] Elaborazione dei segnali
 - [X] Elaborazione delle immagini
-- [ ] Fisica
+- [X] Fisica
 - [X] Intelligenza artificiale I
 - [ ] Interazioni sociali in rete
 - [ ] Linguaggi di programmazione
