@@ -1,4 +1,4 @@
-<img src="site/logo.png" width="150" height="150" align="right" />
+<img src="oldwebsite/logo.png" width="150" height="150" align="right" />
 
 # [Network StataleInformatica](https://github.com/NetworkStataleInformatica)
 Repo nata con lo scopo di creare un punto centrale di collegamento per tutti i contenuti del nostro network.
