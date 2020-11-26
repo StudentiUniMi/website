@@ -11,7 +11,7 @@ const theme = getTheme();
 
 const HeaderTitle = () => {
     return (
-        <Stack horizontal disableShrink>
+        <Stack horizontal disableShrink id="header-title">
             <span>
                 <Image id="logo"
                     src='./logo.png'
@@ -22,11 +22,11 @@ const HeaderTitle = () => {
             </span>
 
             <Text>
-                <span id="header-title" className="ms-Grid-col ms-sm6 ms-md8 ms-lg2" style={{
+                <span className="ms-Grid-col ms-sm6 ms-md8 ms-lg2" style={{
                     fontSize: FontSizes.size42,
                     //fontWeight: FontWeights.semibold,
                 }}>
-                    Network Statale Informatica
+                    &nbsp;Network Statale Informatica
                 </span>
             </Text>
 

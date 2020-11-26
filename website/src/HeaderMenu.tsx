@@ -9,6 +9,7 @@ const theme = getTheme();
 export enum ItemsKeys {
     homepage = "homepage",
     groups = "groups",
+    faq = "faq",
     faqProposer = "faqProposer"
 }
 
@@ -34,7 +35,8 @@ const HeaderMenu = (props: Props) => {
                 headersOnly={true}
             >
                 <PivotItem headerText="Homepage" itemKey={ItemsKeys.homepage} />
-                <PivotItem headerText="Gruppi" itemKey={ItemsKeys.groups} />
+                <PivotItem headerText="Gruppi e siti web" itemKey={ItemsKeys.groups} />
+                <PivotItem headerText="Faq" itemKey={ItemsKeys.faq} />
                 <PivotItem headerText="Proponi faq" itemKey={ItemsKeys.faqProposer} />
             </Pivot>
         </div>

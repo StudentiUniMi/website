@@ -4,6 +4,7 @@ import { ItemsKeys } from './HeaderMenu';
 import Homepage from './Homepage'
 import Groups from './Groups'
 import FaqProposer from './FaqProposer'
+import Faq from './Faq'
 
 interface Props {
     view: ItemsKeys
@@ -22,6 +23,10 @@ const Content = (props: Props) => {
         case ItemsKeys.faqProposer:
             return <div id="content">
                 <FaqProposer />
+            </div>
+        case ItemsKeys.faq:
+            return <div id="content">
+                <Faq />
             </div>
     }
 }

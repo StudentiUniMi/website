@@ -1,6 +1,23 @@
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
+  height: 100%;
   background-color: #faf9f8;
+}
+
+#root {
+  height: 100%;
+}
+
+#header {
+  position: sticky;
+}
+
+#main-container {
+  height: 100%;
 }
 
 #header-title {
@@ -8,9 +25,11 @@ body {
   font-weight: 500;
   display: flex;
   flex-direction: row;
+  margin: 10px;
 }
 
 #content {
+  height: 100%;
   padding: 10px;
   background-color: rgb(209, 209, 209);
 }
@@ -18,10 +37,11 @@ body {
 #footer {
   padding: 10px;
   position: fixed;
-  height: 50px;
+  height: 125px;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #3f98dc;
+  background-color: #1e9ceb;
   text-align: center;
+  justify-content: center;
 }

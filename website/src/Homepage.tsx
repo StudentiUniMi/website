@@ -13,11 +13,6 @@ const Homepage = () => {
                 <br />Per chiunque volesse collaborare al progetto è pregato di scrivere a <Link href="https://t.me/giuseppetm">@giuseppetm</Link> su telegram.<br />
                 Il canale telegram del network è disponibile al seguente link <Link href="https://t.me/giuseppetm">t.me/stataleInformatica</Link>
             </Text>
-            <Text>
-                <br /><br />
-                Ultimi aggiornamenti:
-            </Text>
-            <Activity />
         </div>
     )
 };
