@@ -1,12 +1,10 @@
 import * as React from 'react';
 import './App.css';
-import { Label } from 'office-ui-fabric-react/lib/Label';
-import { Pivot, PivotItem, PivotLinkSize } from 'office-ui-fabric-react/lib/Pivot';
+import { Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
 import { initializeIcons } from '@uifabric/icons';
+import { getTheme } from '@fluentui/react';
 
-const getTabId = (itemKey: string) => {
-    return `ShapeColorPivot_${itemKey}`;
-};
+const theme = getTheme();
 
 export enum ItemsKeys {
     homepage = "homepage",
@@ -18,7 +16,7 @@ interface Props {
     contentChanged: (k: ItemsKeys) => void;
 }
 
-const Menu = (props: Props) => {
+const HeaderMenu = (props: Props) => {
     const [selectedKey, setSelectedKey] = React.useState(ItemsKeys.homepage);
 
     const handleLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
@@ -27,14 +25,13 @@ const Menu = (props: Props) => {
     };
 
     return (
-        <div>
+        <div id="header-menu" style={{ boxShadow: theme.effects.elevation4 }}>
             <Pivot
-                aria-label="Separately Rendered Content Pivot Example"
+                aria-label="Menu principale"
                 selectedKey={selectedKey}
                 // eslint-disable-next-line react/jsx-no-bind
                 onLinkClick={handleLinkClick}
                 headersOnly={true}
-                getTabId={getTabId}
             >
                 <PivotItem headerText="Homepage" itemKey={ItemsKeys.homepage} />
                 <PivotItem headerText="Gruppi" itemKey={ItemsKeys.groups} />
@@ -44,4 +41,4 @@ const Menu = (props: Props) => {
     );
 };
 
-export default Menu;
+export default HeaderMenu;

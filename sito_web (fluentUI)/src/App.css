@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  background-color: #faf9f8;
+}
+
+#header-title {
+  color: #1e9ceb;
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+}
+
+#content {
+  padding: 10px;
+  background-color: rgb(209, 209, 209);
+}
+
+#footer {
+  padding: 10px;
+  position: fixed;
+  height: 50px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #3f98dc;
+  text-align: center;
+}
