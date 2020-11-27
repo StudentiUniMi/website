@@ -1,19 +1,5 @@
 import * as React from "react";
 import "./App.css";
-import {
-    FocusZone,
-    FocusZoneDirection,
-} from "office-ui-fabric-react/lib/FocusZone";
-import { List } from "office-ui-fabric-react/lib/List";
-import { Image, ImageFit } from "office-ui-fabric-react/lib/Image";
-import { initializeIcons } from "@uifabric/icons";
-import {
-    ITheme,
-    mergeStyleSets,
-    getTheme,
-    getFocusStyle,
-} from "office-ui-fabric-react/lib/Styling";
-import { useConst } from "@uifabric/react-hooks";
 import CourseItemView from "./CourseItemView";
 import Course from "./models/Course";
 
@@ -24,7 +10,33 @@ interface Props {
 const getCourses = (cdl?: string) => {
     switch (cdl) {
         case "informatica":
-            return [{ name: "orcodio", website: "www.google.it" }];
+            return [
+                // Testing, poi vanno in un json
+                {
+                    name: "Matematica del continuo",
+                    anno: "Primo",
+                    semestre: "Primo",
+                    gruppo: "https://t.me/joinchat/ALnoP1LJj2lM8MLaaKK02w",
+                    website: "https://ccavaterramc.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                    faq: "faq_files/matematica_del_continuo/matematica_del_continuo.pdf"
+                },
+                {
+                    name: "Programmazione I",
+                    anno: "Primo",
+                    semestre: "Primo",
+                    gruppo: "link telegram Programmazione I",
+                    website: "link sito web Programmazione I",
+                    faq: "faq Programmazione I"
+                },
+                {
+                    name: "Architettura degli elaboratori I",
+                    anno: "Primo",
+                    semestre: "Primo",
+                    gruppo: "link telegram Architettura degli elaboratori I",
+                    website: "link sito web Architettura degli elaboratori I",
+                    faq: "faq Architettura degli elaboratori I"
+                }
+            ];
         case "informatica_musicale":
             return [];
         case "informatica_com_digitale":

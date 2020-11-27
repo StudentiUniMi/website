@@ -1,5 +1,9 @@
 export default interface Course
 {
     name:string,
-    website:string
+    anno:string,
+    semestre:string,
+    gruppo:string,
+    website:string,
+    faq:string,
 }

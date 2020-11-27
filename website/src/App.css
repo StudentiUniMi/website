@@ -1,47 +1,81 @@
+body,
 html {
-  height: 100%;
-}
-
-body {
   margin: 0;
+  padding: 0;
   height: 100%;
   background-color: #faf9f8;
 }
 
+body,
 #root {
-  height: 100%;
+  display: block;
+  width: 100%;
+  min-width: 630px;
 }
 
 #header {
   position: sticky;
-}
-
-#main-container {
-  height: 100%;
+  display: block;
 }
 
 #header-title {
   color: #1e9ceb;
-  font-weight: 500;
   display: flex;
   flex-direction: row;
   margin: 10px;
+  width: 100%;
+}
+
+#header-menu {
+  width: 100%;
+  display: flex;
 }
 
 #content {
+  width: 100%;
   height: 100%;
-  padding: 10px;
-  background-color: rgb(209, 209, 209);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+#home-text {
+  text-align: center;
+}
+
+#courses-text {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+#faqProposer-text {
+  text-align: center;
+}
+
+.ms-ChoiceFieldGroup-flexContainer {
+  display: flex;
+  justify-content: center;
 }
 
 #footer {
   padding: 10px;
   position: fixed;
-  height: 125px;
+  height: 160px;
+  display: flex;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #1e9ceb;
-  text-align: center;
   justify-content: center;
+  text-align: center;
+}
+
+.ms-Persona {
+  margin-bottom: 8px;
+}
+
+#home .ms-Icon {
+  /* Da vedere come cavolo impostarlo da home.tsx */
+  font-size: 40px;
 }

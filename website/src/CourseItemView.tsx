@@ -7,10 +7,13 @@ import {
     DocumentCardLocation,
     DocumentCardPreview,
     DocumentCardTitle,
+    DocumentCardType,
     IDocumentCardPreviewProps,
 } from 'office-ui-fabric-react/lib/DocumentCard';
 import { ImageFit } from 'office-ui-fabric-react/lib/Image';
 import Course from './models/Course'
+import { initializeIcons } from '@uifabric/icons';
+initializeIcons();
 
 const TestImages = {
     documentPreview: "",
@@ -25,66 +28,64 @@ interface Props {
     data: Course
 }
 
-const previewProps: IDocumentCardPreviewProps = {
-    getOverflowDocumentCountText: (overflowCount: number) => `+${overflowCount} more`,
-    previewImages: [
-        {
-            name: 'Gruppo telegram',
-            linkProps: {
-                href: 'http://bing.com',
-                target: '_blank',
-            },
-            previewImageSrc: TestImages.documentPreview,
-            iconSrc: TestImages.iconPpt,
-            imageFit: ImageFit.cover,
-            width: 318,
-            height: 196,
-        },
-        {
-            name: 'Sito web',
-            linkProps: {
-                href: 'http://bing.com',
-                target: '_blank',
-            },
-            previewImageSrc: TestImages.documentPreviewTwo,
-            iconSrc: TestImages.iconPpt,
-            imageFit: ImageFit.cover,
-            width: 318,
-            height: 196,
-        },
-        {
-            name: 'Spec Sheet for design',
-            linkProps: {
-                href: 'http://bing.com',
-                target: '_blank',
-            },
-            previewImageSrc: TestImages.documentPreviewThree,
-            iconSrc: TestImages.iconPpt,
-            imageFit: ImageFit.cover,
-            width: 318,
-            height: 196,
-        },
-    ],
-};
+
 
 const CourseItemView = (props: Props) => {
-    let data = props.data
-    return (
-        <DocumentCard
-            aria-label="Document Card with multiple items, commands and views. Marketing documents. 6 files were uploaded.
-Created by Annie Lindqvist in February 23, 2016. 432 views."
-        >
+    var data = props.data
 
-            <DocumentCardLocation
-                location="Marketing Documents"
-                locationHref="http://microsoft.com"
-                ariaLabel="Location, Marketing Documents"
-            />
-            <DocumentCardTitle title="6 files were uploaded" />
+
+    const previewProps: IDocumentCardPreviewProps = {
+        getOverflowDocumentCountText: (overflowCount: number) => `+${overflowCount} more`,
+        previewImages: [
+            {
+                name: 'Gruppo telegram',
+                linkProps: {
+                    href: '',
+                    target: '_blank',
+                },
+                previewImageSrc: TestImages.documentPreview,
+                iconSrc: TestImages.iconPpt,
+                imageFit: ImageFit.cover,
+                width: 318,
+                height: 196,
+            },
+            {
+                name: 'Sito web',
+                linkProps: {
+                    href: 'http://bing.com',
+                    target: '_blank',
+                },
+                previewImageSrc: TestImages.documentPreviewTwo,
+                iconSrc: TestImages.iconPpt,
+                imageFit: ImageFit.cover,
+                width: 318,
+                height: 196,
+            },
+            {
+                name: 'Faq',
+                linkProps: {
+                    href: 'http://bing.com',
+                    target: '_blank',
+                },
+                previewImageSrc: TestImages.documentPreviewThree,
+                iconSrc: TestImages.iconPpt,
+                imageFit: ImageFit.cover,
+                width: 318,
+                height: 196,
+            },
+        ],
+    };
+
+
+    return (
+        <DocumentCard>
+            <DocumentCardPreview {...previewProps} />
+            <DocumentCardTitle title={data.name} />
+            {/*
             <DocumentCardActivity
                 activity="Created Feb 23, 2016"
                 people={[{ name: 'Annie Lindqvist', profileImageSrc: TestImages.personaFemale }]}
-            />
+            /> */}
         </DocumentCard>
     );
 };

@@ -6,10 +6,9 @@ import {
     ChoiceGroupBase,
     IChoiceGroupOption,
     IChoiceGroupOptionStyles,
+    IChoiceGroupStyleProps,
 } from "office-ui-fabric-react/lib/ChoiceGroup";
 import { initializeIcons } from "@uifabric/icons";
-
-/* Corsi di laurea */
 import CourseListView from "./CourseListView";
 
 initializeIcons();
@@ -58,7 +57,7 @@ const options: IChoiceGroupOption[] = [
     },
 ];
 
-const Groups = () => {
+const Courses = () => {
     const [selectedKey, setSelectedKey] = React.useState<string>();
 
     const selectionChanged = (
@@ -69,15 +68,22 @@ const Groups = () => {
     };
 
     return (
-        <div id="groups">
+        <div id="courses">
+            <div id="courses-text">
+                <Text>
+                    Qui è possibile vedere i gruppi telegram, siti web, e faq (se disponibili)
+                di ogni corso del tuo corso di laurea.<br />
+                    <Text style={{ fontWeight: 500 }}>Scegli un corso di laurea</Text><br /><br />
+                </Text>
+            </div>
             <ChoiceGroup
-                label="Scegli un corso di Laurea"
                 options={options}
                 onChange={selectionChanged}
             />
+            <br />
             <CourseListView cdl={selectedKey} />
         </div>
     );
 };
 
-export default Groups;
+export default Courses;

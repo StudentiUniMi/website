@@ -1,10 +1,9 @@
 import * as React from 'react';
 import './App.css';
 import { ItemsKeys } from './HeaderMenu';
-import Homepage from './Homepage'
-import Groups from './Groups'
+import Home from './Home'
+import Courses from './Courses'
 import FaqProposer from './FaqProposer'
-import Faq from './Faq'
 
 interface Props {
     view: ItemsKeys
@@ -12,21 +11,17 @@ interface Props {
 
 const Content = (props: Props) => {
     switch (props.view) {
-        case ItemsKeys.homepage:
+        case ItemsKeys.home:
             return <div id="content">
-                <Homepage />
+                <Home />
             </div>
-        case ItemsKeys.groups:
+        case ItemsKeys.courses:
             return <div id="content">
-                <Groups />
+                <Courses />
             </div>
         case ItemsKeys.faqProposer:
             return <div id="content">
                 <FaqProposer />
-            </div>
-        case ItemsKeys.faq:
-            return <div id="content">
-                <Faq />
             </div>
     }
 }

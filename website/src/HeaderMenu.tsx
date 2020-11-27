@@ -1,15 +1,14 @@
 import * as React from 'react';
 import './App.css';
 import { Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
-import { initializeIcons } from '@uifabric/icons';
+import { FontSizes } from '@fluentui/theme';
 import { getTheme } from '@fluentui/react';
 
 const theme = getTheme();
 
 export enum ItemsKeys {
-    homepage = "homepage",
-    groups = "groups",
-    faq = "faq",
+    home = "home",
+    courses = "courses",
     faqProposer = "faqProposer"
 }
 
@@ -18,7 +17,7 @@ interface Props {
 }
 
 const HeaderMenu = (props: Props) => {
-    const [selectedKey, setSelectedKey] = React.useState(ItemsKeys.homepage);
+    const [selectedKey, setSelectedKey] = React.useState(ItemsKeys.home);
 
     const handleLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
         setSelectedKey(item!.props.itemKey! as ItemsKeys);
@@ -33,11 +32,11 @@ const HeaderMenu = (props: Props) => {
                 // eslint-disable-next-line react/jsx-no-bind
                 onLinkClick={handleLinkClick}
                 headersOnly={true}
+                style={{ fontSize: FontSizes.size24 }}
             >
-                <PivotItem headerText="Homepage" itemKey={ItemsKeys.homepage} />
-                <PivotItem headerText="Gruppi e siti web" itemKey={ItemsKeys.groups} />
-                <PivotItem headerText="Faq" itemKey={ItemsKeys.faq} />
-                <PivotItem headerText="Proponi faq" itemKey={ItemsKeys.faqProposer} />
+                <PivotItem headerText="Home" style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.home} />
+                <PivotItem headerText="Corsi e faq" style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.courses} />
+                <PivotItem headerText="Proponi faq" style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.faqProposer} />
             </Pivot>
         </div>
     );

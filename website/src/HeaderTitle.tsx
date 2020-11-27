@@ -5,7 +5,7 @@ import { Text, ITextProps } from 'office-ui-fabric-react/lib/Text';
 import { SharedColors } from '@fluentui/theme';
 import { getTheme } from '@fluentui/react';
 import { Image, IImageProps, ImageFit } from 'office-ui-fabric-react/lib/Image';
-import { DefaultPalette, Stack, IStackStyles, IStackTokens, IStackItemStyles } from 'office-ui-fabric-react';
+import { DefaultPalette, Stack, IStackStyles, IStackTokens, IStackItemStyles, FontWeights } from 'office-ui-fabric-react';
 
 const theme = getTheme();
 
@@ -24,7 +24,7 @@ const HeaderTitle = () => {
             <Text>
                 <span className="ms-Grid-col ms-sm6 ms-md8 ms-lg2" style={{
                     fontSize: FontSizes.size42,
-                    //fontWeight: FontWeights.semibold,
+                    fontWeight: 600
                 }}>
                     &nbsp;Network Statale Informatica
                 </span>
