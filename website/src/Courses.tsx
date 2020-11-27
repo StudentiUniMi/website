@@ -35,7 +35,7 @@ const options: IChoiceGroupOption[] = [
         key: "informatica",
         styles: styles,
         text: "Informatica",
-        iconProps: { iconName: "ProgressRingDots" },
+        iconProps: { iconName: "Backlog" },
     },
     {
         key: "informatica_musicale",

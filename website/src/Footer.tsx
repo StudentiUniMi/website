@@ -3,8 +3,6 @@ import './App.css';
 import { Link } from 'office-ui-fabric-react';
 import { Text, ITextProps } from 'office-ui-fabric-react/lib/Text';
 import { IPersonaSharedProps, Persona, PersonaSize, PersonaPresence } from 'office-ui-fabric-react/lib/Persona';
-import { Checkbox } from 'office-ui-fabric-react/lib/Checkbox';
-import { Label } from 'office-ui-fabric-react/lib/Label';
 import { DefaultPalette, Stack, IStackStyles, IStackTokens } from 'office-ui-fabric-react';
 
 
@@ -15,7 +13,7 @@ const Footer = () => {
         imageUrl: './profileRecolored2.png',
         imageInitials: 'GD',
         text: 'Giuseppetm',
-        secondaryText: 'Studente di informatica',
+        secondaryText: 'Studente di Informatica',
     };
 
     const ManueleLucchi: IPersonaSharedProps = {
@@ -30,18 +28,18 @@ const Footer = () => {
         <div id="footer" style={{ background: DefaultPalette.themeTertiary }}>
             <div id="footer-content">
                 <Text>
-                    Network Statale Informatica &copy;<br />
+                    <div style={{ fontWeight: 500 }} >Network Statale Informatica &copy;</div>
                     Sito web creato da:<br /><br />
                     <Persona
                         {...Giuseppetm}
                         size={PersonaSize.size40}
-                        presence={PersonaPresence.online}
+                        //presence={PersonaPresence.online}
                         hidePersonaDetails={!renderDetails}
                     />
                     <Persona
                         {...ManueleLucchi}
                         size={PersonaSize.size40}
-                        presence={PersonaPresence.online}
+                        //presence={PersonaPresence.online}
                         hidePersonaDetails={!renderDetails}
                     />
                 </Text>

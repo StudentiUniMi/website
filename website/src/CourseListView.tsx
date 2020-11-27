@@ -1,7 +1,10 @@
+import { FocusZone, List } from "@fluentui/react";
 import * as React from "react";
 import "./App.css";
+import { range } from "./Common";
 import CourseItemView from "./CourseItemView";
 import Course from "./models/Course";
+import CdlCourses from './data/CdlCourses.json'
 
 interface Props {
     cdl?: string;
@@ -10,33 +13,7 @@ interface Props {
 const getCourses = (cdl?: string) => {
     switch (cdl) {
         case "informatica":
-            return [
-                // Testing, poi vanno in un json
-                {
-                    name: "Matematica del continuo",
-                    anno: "Primo",
-                    semestre: "Primo",
-                    gruppo: "https://t.me/joinchat/ALnoP1LJj2lM8MLaaKK02w",
-                    website: "https://ccavaterramc.ariel.ctu.unimi.it/v5/home/Default.aspx",
-                    faq: "faq_files/matematica_del_continuo/matematica_del_continuo.pdf"
-                },
-                {
-                    name: "Programmazione I",
-                    anno: "Primo",
-                    semestre: "Primo",
-                    gruppo: "link telegram Programmazione I",
-                    website: "link sito web Programmazione I",
-                    faq: "faq Programmazione I"
-                },
-                {
-                    name: "Architettura degli elaboratori I",
-                    anno: "Primo",
-                    semestre: "Primo",
-                    gruppo: "link telegram Architettura degli elaboratori I",
-                    website: "link sito web Architettura degli elaboratori I",
-                    faq: "faq Architettura degli elaboratori I"
-                }
-            ];
+            return CdlCourses.informatica
         case "informatica_musicale":
             return [];
         case "informatica_com_digitale":
@@ -51,12 +28,24 @@ const getCourses = (cdl?: string) => {
 const CourseListView = (props: Props) => {
     const courses: Course[] = getCourses(props.cdl);
 
+    const getCell = (e?: Course, index?: number, isScrolling?: boolean) => {
+        return (
+            <div style={{ height: "22%", width: "22%" }}>
+                <CourseItemView data={e!} />
+            </div>
+        );
+    }
+
     return (
-        <div>
-            {courses.map((x) => (
-                <CourseItemView data={x} />
-            ))}
-        </div>
+        <FocusZone>
+            <List
+                items={courses}
+                getItemCountForPage={() => courses.length / 20}
+                getPageHeight={() => courses.length * 150 / 20}
+                renderedWindowsAhead={4}
+                onRenderCell={getCell}
+            />
+        </FocusZone>
     );
 };
 

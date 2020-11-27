@@ -7,13 +7,22 @@ html {
 }
 
 body,
-#root {
+#root,
+#main-container {
+  margin: 0;
+  padding: 0;
   display: block;
   width: 100%;
+  height: 100%;
   min-width: 630px;
+  -webkit-font-smoothing: antialiased;
 }
 
-#header {
+/*------------
+    HEADER
+------------*/
+
+header {
   position: sticky;
   display: block;
 }
@@ -31,10 +40,11 @@ body,
   display: flex;
 }
 
+/* End HEADER */
+
 #content {
-  width: 100%;
-  height: 100%;
-  padding: 20px;
+  height: 67%;
+  padding-top: 20px;
   display: flex;
   justify-content: center;
   margin: auto;
@@ -54,15 +64,12 @@ body,
   text-align: center;
 }
 
-.ms-ChoiceFieldGroup-flexContainer {
-  display: flex;
-  justify-content: center;
-}
+/*------------
+    FOOTER
+------------*/
 
 #footer {
-  padding: 10px;
   position: fixed;
-  height: 160px;
   display: flex;
   left: 0;
   bottom: 0;
@@ -71,11 +78,27 @@ body,
   text-align: center;
 }
 
+#footer-content {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* End FOOTER */
+
+/*------------
+  Da sistemare
+------------*/
+
 .ms-Persona {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 #home .ms-Icon {
   /* Da vedere come cavolo impostarlo da home.tsx */
   font-size: 40px;
+}
+
+.ms-ChoiceFieldGroup-flexContainer {
+  display: flex;
+  justify-content: center;
 }

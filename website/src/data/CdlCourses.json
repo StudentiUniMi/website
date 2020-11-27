@@ -1,0 +1,28 @@
+{
+    "informatica":[
+        {
+          "name": "Matematica del continuo",
+          "anno": "Primo",
+          "semestre": "Primo",
+          "cfu": "12",
+          "gruppo": "https://t.me/joinchat/ALnoP1LJj2lM8MLaaKK02w",
+          "website": "https://ccavaterramc.ariel.ctu.unimi.it/v5/home/Default.aspx",
+          "faq": "faq_files/matematica_del_continuo/matematica_del_continuo.pdf"
+        },
+        {
+            "name": "Matematica del continuo",
+          "anno": "Primo",
+          "semestre": "Primo",
+          "cfu": "12",
+          "gruppo": "https://t.me/joinchat/ALnoP1LJj2lM8MLaaKK02w",
+          "website": "https://ccavaterramc.ariel.ctu.unimi.it/v5/home/Default.aspx",
+          "faq": "faq_files/matematica_del_continuo/matematica_del_continuo.pdf"
+        }
+    ],
+    "informatica_musicale":[
+        
+    ],
+    "informatica_com_digitale":[
+
+    ]
+}

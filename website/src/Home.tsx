@@ -33,7 +33,7 @@ const Home = () => {
                 <Text style={{ fontSize: FontSizes.size16 }}>
                     Sito web nato con lo scopo di creare un punto centrale di collegamento per tutti i contenuti del nostro network.<br />
                 Sono disponibili i collegamenti ai siti web, gruppi telegram e faq dei corsi delle triennali di informatica, <br />
-                informatica musicale, sicurezza dei sistemi e delle reti informatiche, e informatica per la comunicazione digitale. <br />
+                informatica musicale, informatica per la comunicazione digitale, e sicurezza dei sistemi e delle reti informatiche. <br />
                 Per chiunque volesse collaborare al progetto è pregato di scrivere a <Link href="https://t.me/giuseppetm">@giuseppetm</Link> su telegram.<br />
                 </Text>
             </div>
@@ -57,7 +57,7 @@ const Home = () => {
                     </span>
                     <span style={itemStyles}>
                         <Link href="https://drive.google.com/drive/folders/0BwzuyD3iLGcbcUNxTVNOVE9FR1E">
-                            <IconButton iconProps={{ iconName: "OneDriveLogo" }} className={iconClass} />
+                            <IconButton iconProps={{ iconName: "CloudWeather" }} className={iconClass} />
                         </Link>
                     </span>
                 </Stack>

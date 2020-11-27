@@ -6,6 +6,10 @@ TODO LIST
 - Gli array dei cdl andranno in un json a parte
 - Centrare il content così la roba va al centro (da sistemare)
 - Dividere in cartelle (Views, Components)
+- FaqProposer -> serve un bottone che invia i dati a un semplice file txt o qualcosa del genere, quindi presumo serve una gestione del file
+- Sezione about per chi ha contribuito
+- Footer con social di Unimi
+- Vedi storybook
 */
 
 import React, { useState } from "react";
@@ -24,10 +28,10 @@ function App() {
 
   return (
     <div id="main-container">
-      <div id="header">
+      <header>
         <HeaderTitle />
         <HeaderMenu contentChanged={contentChanged} />
-      </div>
+      </header>
       <Content view={selectedView} />
       <Footer />
     </div>
@@ -35,3 +39,4 @@ function App() {
 }
 
 export default App; // Per usare la funzione App (il componente) bisogna esportarlo.
+;
