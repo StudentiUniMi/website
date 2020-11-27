@@ -2,27 +2,165 @@
     "informatica":[
         {
           "name": "Matematica del continuo",
-          "anno": "Primo",
-          "semestre": "Primo",
+          "anno": "1",
+          "semestre": "1",
           "cfu": "12",
           "gruppo": "https://t.me/joinchat/ALnoP1LJj2lM8MLaaKK02w",
           "website": "https://ccavaterramc.ariel.ctu.unimi.it/v5/home/Default.aspx",
-          "faq": "faq_files/matematica_del_continuo/matematica_del_continuo.pdf"
+          "faq": ""
         },
         {
-            "name": "Matematica del continuo",
-          "anno": "Primo",
-          "semestre": "Primo",
+          "name": "Programmazione 1",
+          "anno": "1",
+          "semestre": "1",
           "cfu": "12",
-          "gruppo": "https://t.me/joinchat/ALnoP1LJj2lM8MLaaKK02w",
-          "website": "https://ccavaterramc.ariel.ctu.unimi.it/v5/home/Default.aspx",
-          "faq": "faq_files/matematica_del_continuo/matematica_del_continuo.pdf"
+          "gruppo": "",
+          "website": "",
+          "faq": ""
+        },
+        {
+          "name": "Architettura degli elaboratori 1",
+          "anno": "",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "website": "",
+          "faq": ""
+        },
+        {
+          "name": "",
+          "anno": "",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "website": "",
+          "faq": ""
+        },
+        {
+          "name": "",
+          "anno": "",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "website": "",
+          "faq": ""
+        },
+        {
+          "name": "",
+          "anno": "",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "website": "",
+          "faq": ""
+        },
+        {
+          "name": "",
+          "anno": "",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "website": "",
+          "faq": ""
+        },
+        {
+          "name": "",
+          "anno": "",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "website": "",
+          "faq": ""
+        },
+        {
+          "name": "",
+          "anno": "",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "website": "",
+          "faq": ""
+        },
+        {
+          "name": "",
+          "anno": "",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "website": "",
+          "faq": ""
+        },
+        {
+          "name": "",
+          "anno": "",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "website": "",
+          "faq": ""
+        },
+        {
+          "name": "",
+          "anno": "",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "website": "",
+          "faq": ""
+        },
+        {
+          "name": "",
+          "anno": "",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "website": "",
+          "faq": ""
+        },
+        {
+          "name": "",
+          "anno": "",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "website": "",
+          "faq": ""
+        },
+        {
+          "name": "",
+          "anno": "",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "website": "",
+          "faq": ""
+        },
+        {
+          "name": "",
+          "anno": "",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "website": "",
+          "faq": ""
+        },
+        {
+          "name": "",
+          "anno": "",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "website": "",
+          "faq": ""
         }
     ],
     "informatica_musicale":[
         
     ],
     "informatica_com_digitale":[
+
+    ],
+    "sicurezza_sistemi_reti_informatiche":[
 
     ]
 }

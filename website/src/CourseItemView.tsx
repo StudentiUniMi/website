@@ -66,7 +66,7 @@ const CourseItemView = (props: Props) => {
                     {data.cfu} CFU
           </Text>
                 <Text styles={descriptionTextStyles}>
-                    {data.anno} Anno, {data.semestre} Semestre
+                    {data.anno}° Anno, {data.semestre}° Semestre
           </Text>
                 <Text variant="small" styles={helpfulTextStyles}>
                     <Icon iconName="Send" />

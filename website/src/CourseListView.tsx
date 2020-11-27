@@ -15,11 +15,11 @@ const getCourses = (cdl?: string) => {
         case "informatica":
             return CdlCourses.informatica
         case "informatica_musicale":
-            return [];
+            return CdlCourses.informatica_musicale
         case "informatica_com_digitale":
-            return [];
+            return CdlCourses.informatica_com_digitale
         case "sicurezza_sistemi_reti_informatiche":
-            return [];
+            return CdlCourses.sicurezza_sistemi_reti_informatiche
         default:
             return [];
     }
