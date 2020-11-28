@@ -1,3 +1,8 @@
+export default interface Website {
+    link?:string,
+    etichetta?:string
+}
+
 export default interface Course
 {
     name?:string,
@@ -5,6 +10,6 @@ export default interface Course
     semestre?:string,
     cfu?:string,
     gruppo?:string,
-    website?:string,
+    websites:any[],
     faq?:string,
 }

@@ -7,6 +7,7 @@ import {
     ICardSectionStyles,
     ICardSectionTokens,
 } from "@uifabric/react-cards";
+import Website from "./models/Course"
 import Course from './models/Course'
 import { initializeIcons } from '@uifabric/icons';
 import { FontWeights, Icon, IIconStyles, ITextStyles, Persona, Stack } from '@fluentui/react';
@@ -38,20 +39,9 @@ const CourseItemView = (props: Props) => {
             fontWeight: FontWeights.regular,
         },
     };
-    const iconStyles: IIconStyles = {
-        root: {
-            color: "#0078D4",
-            fontSize: 16,
-            fontWeight: FontWeights.regular,
-        },
-    };
-    const footerCardSectionStyles: ICardSectionStyles = {
-        root: {
-            borderTop: "1px solid #F3F2F1",
-        },
-    };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
-    const footerCardSectionTokens: ICardSectionTokens = { padding: '12px 0px 0px' };
+
+    let i = 0;
 
     return (
         <Card
@@ -66,7 +56,10 @@ const CourseItemView = (props: Props) => {
                     {data.cfu} CFU
           </Text>
                 <Text styles={descriptionTextStyles}>
-                    {data.anno}° Anno, {data.semestre}° Semestre
+                    {
+                        data.anno != "Complementare" ? <span>{data.anno}° Anno, </span> : <span>Complementare, </span>
+                    }
+                    {data.semestre}° Semestre
           </Text>
                 <Text variant="small" styles={helpfulTextStyles}>
                     <Icon iconName="Send" />
@@ -78,17 +71,33 @@ const CourseItemView = (props: Props) => {
                 <Text variant="small" styles={helpfulTextStyles}>
                     <Icon iconName="Link" />
                     &nbsp;
-                    <Link href={data.website}>
-                        Sito Web
-                    </Link>
+                    {data.websites.map(
+                        (e, i) => {
+                            i++;
+                            return (
+                                <span>
+                                    <Link href={e.link}>
+                                        {e.etichetta}
+                                    </Link>
+                                    {i < data.websites.length ? <span>,&nbsp;</span> : <span></span>}
+                                </span>
+                            )
+                        }
+                    )}
                 </Text>
-                <Text variant="small" styles={helpfulTextStyles}>
-                    <Icon iconName="Robot" />
+                {
+                    data.faq != "" ?
+                        <Text variant="small" styles={helpfulTextStyles}>
+                            <Icon iconName="Robot" />
                     &nbsp;
                     <Link href={data.faq}>
-                        Faq
+                                Faq
                     </Link>
-                </Text>
+                        </Text>
+                        :
+                        <div></div>
+                }
+
             </Card.Section>
             {/*
             <Card.Section

@@ -1,19 +1,15 @@
 body,
-html {
+html,
+#root {
   margin: 0;
   padding: 0;
   height: 100%;
   background-color: #faf9f8;
+  display: flex;
+  flex-direction: column;
 }
 
-body,
-#root,
-#main-container {
-  margin: 0;
-  padding: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
+#root {
   min-width: 630px;
   -webkit-font-smoothing: antialiased;
 }
@@ -30,12 +26,14 @@ header {
 #header-title {
   color: #1e9ceb;
   display: flex;
-  flex-direction: row;
-  margin: 10px;
+  flex-direction: row; /* For working footer */
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 100%;
 }
 
 #header-menu {
+  position: sticky;
   width: 100%;
   display: flex;
 }
@@ -43,15 +41,18 @@ header {
 /* End HEADER */
 
 #content {
-  height: 67%;
+  flex: 1;
   padding-top: 20px;
   display: flex;
   justify-content: center;
-  margin: auto;
 }
 
 #home-text {
   text-align: center;
+}
+
+#home-collegamenti {
+  justify-content: center;
 }
 
 #courses-text {
@@ -68,12 +69,15 @@ header {
     FOOTER
 ------------*/
 
-#footer {
-  position: fixed;
-  display: flex;
-  left: 0;
-  bottom: 0;
+footer {
+  background-color: #dddddd;
+  /*background-color: lightblue;*/
   width: 100%;
+  height: 20%;
+  position: sticky;
+  display: flex;
+  bottom: 0;
+  left: 0;
   justify-content: center;
   text-align: center;
 }
@@ -93,6 +97,11 @@ header {
   margin-bottom: 12px;
 }
 
+.ms-FocusZone {
+  /* fa parte di header menu */
+  margin-left: 8px;
+}
+
 #home .ms-Icon {
   /* Da vedere come cavolo impostarlo da home.tsx */
   font-size: 40px;
@@ -101,4 +110,9 @@ header {
 .ms-ChoiceFieldGroup-flexContainer {
   display: flex;
   justify-content: center;
+}
+
+.ms-Card {
+  max-width: 400px;
+  width: 270px;
 }

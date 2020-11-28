@@ -25,7 +25,7 @@ const Footer = () => {
 
 
     return (
-        <div id="footer" style={{ background: DefaultPalette.themeTertiary }}>
+        <footer /*style={{ background: DefaultPalette.themeTertiary }}*/>
             <div id="footer-content">
                 <Text>
                     <div style={{ fontWeight: 500 }} >Network Statale Informatica &copy;</div>
@@ -44,7 +44,7 @@ const Footer = () => {
                     />
                 </Text>
             </div>
-        </div>
+        </footer>
     )
 };
 

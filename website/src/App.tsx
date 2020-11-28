@@ -1,15 +1,15 @@
 /*
 TODO LIST
 - Icone da sistemare in homepage, deve apparire un hoverino sotto che dice dove portano
-- Da creare la struttura lista per l'insieme di corsi
 - Linguetta a lato dice gli aggiornamenti
-- Gli array dei cdl andranno in un json a parte
-- Centrare il content così la roba va al centro (da sistemare)
 - Dividere in cartelle (Views, Components)
 - FaqProposer -> serve un bottone che invia i dati a un semplice file txt o qualcosa del genere, quindi presumo serve una gestione del file
 - Sezione about per chi ha contribuito
 - Footer con social di Unimi
 - Vedi storybook
+- Fare scrollbar apposita per le card generate
+- Filtro sulla lista
+- Check globale dello stile per il responsive
 */
 
 import React, { useState } from "react";
@@ -27,7 +27,7 @@ function App() {
   };
 
   return (
-    <div id="main-container">
+    <div id="root">
       <header>
         <HeaderTitle />
         <HeaderMenu contentChanged={contentChanged} />

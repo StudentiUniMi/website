@@ -1,14 +1,22 @@
 import { FocusZone, List } from "@fluentui/react";
 import * as React from "react";
 import "./App.css";
-import { range } from "./Common";
 import CourseItemView from "./CourseItemView";
 import Course from "./models/Course";
 import CdlCourses from './data/CdlCourses.json'
+import { ITheme, getTheme, mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 
 interface Props {
     cdl?: string;
 }
+
+const classNames = mergeStyleSets({
+    listGridExample: {
+        overflow: 'hidden',
+        fontSize: 0,
+        position: 'relative',
+    },
+});
 
 const getCourses = (cdl?: string) => {
     switch (cdl) {
@@ -39,6 +47,7 @@ const CourseListView = (props: Props) => {
     return (
         <FocusZone>
             <List
+                className={classNames.listGridExample}
                 items={courses}
                 getItemCountForPage={() => courses.length / 20}
                 getPageHeight={() => courses.length * 150 / 20}
