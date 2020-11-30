@@ -49,6 +49,7 @@ header {
 
 #home-text {
   text-align: center;
+  margin-bottom: 50px;
 }
 
 #home-collegamenti {
@@ -63,6 +64,12 @@ header {
 
 #faqProposer-text {
   text-align: center;
+}
+
+#faqProposer-form,
+#faqProposer .ms-Stack {
+  text-align: center;
+  display: flex;
 }
 
 /*------------
@@ -105,6 +112,10 @@ footer {
 #home .ms-Icon {
   /* Da vedere come cavolo impostarlo da home.tsx */
   font-size: 40px;
+}
+
+#faqProposer .ms-Stack {
+  justify-content: center;
 }
 
 .ms-ChoiceFieldGroup-flexContainer {

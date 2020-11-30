@@ -39,4 +39,3 @@ function App() {
 }
 
 export default App; // Per usare la funzione App (il componente) bisogna esportarlo.
-;

@@ -13,16 +13,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
     },
 };*/
 
-const stackStyles: IStackStyles = {
-    root: {
-        background: DefaultPalette.themeTertiary,
-    },
-};
-
-const itemStyles: React.CSSProperties = {
+const iconStyles: React.CSSProperties = {
     alignItems: 'center',
     display: 'flex',
     height: 100,
+    justifyContent: 'center',
+    width: 100,
+    marginBottom: 10
+};
+
+const textStyles: React.CSSProperties = {
+    alignItems: 'center',
+    display: 'flex',
+    height: 50,
     justifyContent: 'center',
     width: 100,
 };
@@ -47,45 +50,45 @@ const Home = () => {
             <br />
             <div id="home-collegamenti">
                 <Stack horizontal horizontalAlign="space-around">
-                    <span style={itemStyles}>
+                    <span style={iconStyles}>
                         <Link href="">
                             <IconButton iconProps={{ iconName: "ComplianceAudit" }} className={iconClass} />
                         </Link>
                     </span>
-                    <span style={itemStyles}>
-                        <Link href="https://discord.gg/pPGUrr35sv">
-                            <IconButton iconProps={{ iconName: "ChatBot" }} className={iconClass} />
-                        </Link>
-                    </span>
-                    <span style={itemStyles}>
+                    <span style={iconStyles}>
                         <Link href="">
                             <IconButton iconProps={{ iconName: "Send" }} className={iconClass} />
                         </Link>
                     </span>
-                    <span style={itemStyles}>
+                    <span style={iconStyles}>
+                        <Link href="https://discord.gg/pPGUrr35sv">
+                            <IconButton iconProps={{ iconName: "ChatBot" }} className={iconClass} />
+                        </Link>
+                    </span>
+                    <span style={iconStyles}>
                         <Link href="https://drive.google.com/drive/folders/0BwzuyD3iLGcbcUNxTVNOVE9FR1E">
                             <IconButton iconProps={{ iconName: "CloudWeather" }} className={iconClass} />
                         </Link>
                     </span>
                 </Stack>
-                <Stack horizontal horizontalAlign="space-around" styles={stackStyles}>
-                    <span style={itemStyles}>
-                        <Text style={{ fontSize: FontSizes.size16 }}>
+                <Stack horizontal horizontalAlign="space-around">
+                    <span style={textStyles}>
+                        <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
                             Regolamento del Network
                         </Text>
                     </span>
-                    <span style={itemStyles}>
-                        <Text style={{ fontSize: FontSizes.size16 }}>
+                    <span style={textStyles}>
+                        <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
+                            Canale Telegram del Network
+                        </Text>
+                    </span>
+                    <span style={textStyles}>
+                        <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
                             Server Discord del Network
                         </Text>
                     </span>
-                    <span style={itemStyles}>
-                        <Text style={{ fontSize: FontSizes.size16 }}>
-                            Canale telegram del Network
-                        </Text>
-                    </span>
-                    <span style={itemStyles}>
-                        <Text style={{ fontSize: FontSizes.size16 }}>
+                    <span style={textStyles}>
+                        <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
                             Drive del Network
                         </Text>
                     </span>

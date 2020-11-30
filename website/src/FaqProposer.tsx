@@ -10,8 +10,20 @@ const iconProps = { iconName: 'Calendar' };
 const stackStyles: Partial<IStackStyles> = { root: { width: 650 } };
 const columnProps: Partial<IStackProps> = {
     tokens: { childrenGap: 15 },
-    styles: { root: { width: 300 } },
+    styles: { root: { width: 200 } },
 };
+
+/*
+    L'idea è quella di scegliere da input select il corso di laurea e il corso, per poi avere due campi abbastanza grandi in cui
+    inserire la domanda e la risposta proposti.
+*/
+
+interface proposerForm {
+    cdl: string,
+    course: string,
+    question: string,
+    answer: string
+}
 
 const FaqProposer = () => {
     return (
@@ -23,23 +35,15 @@ const FaqProposer = () => {
                     <Text style={{ fontWeight: 500 }}>Compila questo piccolo form se vuoi contribuire:</Text><br /><br />
                 </Text>
             </div>
-            <Stack horizontal tokens={stackTokens} styles={stackStyles}>
-                <Stack {...columnProps}>
-                    <TextField label="Standard" />
-                    <TextField label="Disabled" disabled defaultValue="I am disabled" />
-                    <TextField label="Read-only" readOnly defaultValue="I am read-only" />
-                    <TextField label="Required " required />
-                    <TextField ariaLabel="Required without visible label" required />
-                    <TextField label="With error message" errorMessage="Error message" />
+            <div id="faqProposer-form">
+                <Stack horizontal tokens={stackTokens} styles={stackStyles}>
+                    <Stack {...columnProps}>
+                        <TextField label="Corso " placeholder="Inserisci il corso" required />
+                        <TextField label="With an icon" iconProps={iconProps} />
+                        <TextField label="With placeholder" placeholder="Please enter text here" />
+                    </Stack>
                 </Stack>
-                <Stack {...columnProps}>
-                    <MaskedTextField label="With input mask" mask="m\ask: (999) 999 - 9999" />
-                    <TextField label="With an icon" iconProps={iconProps} />
-                    <TextField label="With placeholder" placeholder="Please enter text here" />
-                    <TextField label="Disabled with placeholder" disabled placeholder="I am disabled" />
-                    <TextField label="Password with reveal button" type="password" canRevealPassword />
-                </Stack>
-            </Stack>
+            </div>
         </div>
     )
 };

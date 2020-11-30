@@ -29,6 +29,7 @@ const Footer = () => {
             <div id="footer-content">
                 <Text>
                     <div style={{ fontWeight: 500 }} >Network Statale Informatica &copy;</div>
+                    {/*
                     Sito web creato da:<br /><br />
                     <Persona
                         {...Giuseppetm}
@@ -42,6 +43,7 @@ const Footer = () => {
                         //presence={PersonaPresence.online}
                         hidePersonaDetails={!renderDetails}
                     />
+                    */}
                 </Text>
             </div>
         </footer>
