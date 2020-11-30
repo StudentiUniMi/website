@@ -5,7 +5,7 @@ html {
 
 body {
   background-color: #faf9f8;
-  margin-bottom: 100px; /* Footer height */
+  margin-bottom: 150px; /* Footer height */
 }
 
 .footer {
@@ -14,11 +14,15 @@ body {
   width: 100%;
   background-color: #dddddd;
   /*background-color: lightblue;*/
-  height: 100px;
+  height: 150px;
 }
 
 .header-title .row {
   margin-right: 0px;
+}
+
+.header-menu {
+  width: 100%;
 }
 
 /*------------

@@ -33,7 +33,7 @@ const Home = () => {
                     <p>Sito web nato con lo scopo di creare un punto centrale per tutti i contenuti del nostro network.
                     Sono disponibili i collegamenti ai siti web, gruppi telegram e faq dei corsi delle triennali di informatica,
                     informatica musicale, informatica per la comunicazione digitale, e sicurezza dei sistemi e delle reti informatiche.
-                Per chiunque volesse collaborare al progetto è pregato di scrivere a <Link href="https://t.me/giuseppetm">@giuseppetm</Link> su telegram.</p>
+                Per chiunque volesse collaborare al progetto è pregato di scrivere a <Link href="https://t.me/giuseppetm" className="text-decoration-none">@giuseppetm</Link> su telegram.</p>
                 </Text>
             </div>
             <br />
@@ -41,7 +41,7 @@ const Home = () => {
                 <div className="row">
                     <div className="card m-auto text-center" style={cardStyle}>
                         <div className="card-body">
-                            <Link href="">
+                            <Link href="../../regolamento.pdf">
                                 <IconButton iconProps={{ iconName: "ComplianceAudit" }} className={iconClass} />
                             </Link>
                         </div>
@@ -56,7 +56,7 @@ const Home = () => {
 
                     <div className="card m-auto text-center" style={cardStyle}>
                         <div className="card-body">
-                            <Link href="">
+                            <Link href="https://t.me/stataleinformatica">
                                 <IconButton iconProps={{ iconName: "Send" }} className={iconClass} />
                             </Link>
                         </div>
@@ -86,7 +86,7 @@ const Home = () => {
 
                     <div className="card m-auto text-center" style={cardStyle}>
                         <div className="card-body">
-                            <Link href="">
+                            <Link href="https://drive.google.com/drive/folders/0BwzuyD3iLGcbcUNxTVNOVE9FR1E">
                                 <IconButton iconProps={{ iconName: "CloudWeather" }} className={iconClass} />
                             </Link>
                         </div>

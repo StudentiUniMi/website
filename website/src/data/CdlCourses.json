@@ -12,7 +12,7 @@
               "etichetta":"Sito web"
             }
           ],
-          "faq": "../../cdl_informatica/matematica_del_continuo.pdf"
+          "faq": "../../faq_cdl_informatica/matematica_del_continuo.pdf"
         },
         {
           "name": "Programmazione 1",
@@ -34,7 +34,7 @@
               "etichetta":"Ariel Ed.2"
             }
           ],
-          "faq": "../../cdl_informatica/programmazione1.pdf"
+          "faq": "../../faq_cdl_informatica/programmazione1.pdf"
         },
         {
           "name": "Architettura degli elaboratori 1",
@@ -56,7 +56,7 @@
               "etichetta":"Ariel Ed.2"
             }
           ],
-          "faq": "../../cdl_informatica/architettura_degli_elaboratori_1.pdf"
+          "faq": "../../faq_cdl_informatica/architettura_degli_elaboratori_1.pdf"
         },
         {
           "name": "Linguaggi formali e automi",
@@ -70,7 +70,7 @@
               "etichetta":"Sito web"
             }
           ],
-          "faq": "../../cdl_informatica/linguaggi_formali_e_automi.pdf"
+          "faq": "../../faq_cdl_informatica/linguaggi_formali_e_automi.pdf"
         },
         {
           "name": "Logica matematica",
@@ -88,7 +88,7 @@
               "etichetta":"Materiale"
             }
           ],
-          "faq": "../../cdl_informatica/logica_matematica.pdf"
+          "faq": "../../faq_cdl_informatica/logica_matematica.pdf"
         },
         {
           "name": "Matematica del discreto",
@@ -102,7 +102,7 @@
               "etichetta":"Sito web"
             }
           ],
-          "faq": "../../cdl_informatica/matematica_del_discreto.pdf"
+          "faq": "../../faq_cdl_informatica/matematica_del_discreto.pdf"
         },
         {
           "name": "Architettura degli elaboratori II",
@@ -116,7 +116,7 @@
               "etichetta":"Sito web"
             }
           ],
-          "faq": "../../cdl_informatica/architettura_degli_elaboratori_2.pdf"
+          "faq": "../../faq_cdl_informatica/architettura_degli_elaboratori_2.pdf"
         },
         {
           "name": "Algoritmi e strutture dati",
@@ -148,7 +148,7 @@
               "etichetta":"Sito web"
             }
           ],
-          "faq": "../../cdl_informatica/basi_di_dati.pdf"
+          "faq": "../../faq_cdl_informatica/basi_di_dati.pdf"
         },
         {
           "name": "Programmazione 2",
@@ -162,7 +162,7 @@
               "etichetta":"Sito web"
             }
           ],
-          "faq": "../../cdl_informatica/programmazione_2.pdf"
+          "faq": "../../faq_cdl_informatica/programmazione_2.pdf"
         },
         {
           "name": "Sistemi operativi",
@@ -176,7 +176,7 @@
               "etichetta":"Sito web"
             }
           ],
-          "faq": "../../cdl_informatica/sistemi_operativi.pdf"
+          "faq": "../../faq_cdl_informatica/sistemi_operativi.pdf"
         },
         {
           "name": "Statistica e analisi dei dati",
@@ -190,7 +190,7 @@
               "etichetta":"Sito web"
             }
           ],
-          "faq": "../../cdl_informatica/statistica_e_analisi_dei_dati.pdf"
+          "faq": "../../faq_cdl_informatica/statistica_e_analisi_dei_dati.pdf"
         },
         {
           "name": "Ingegneria del software",
@@ -222,7 +222,7 @@
               "etichetta":"Sito lab"
             }
           ],
-          "faq": "../../cdl_informatica/reti_di_calcolatori.pdf"
+          "faq": "../../faq_cdl_informatica/reti_di_calcolatori.pdf"
         },
         {
           "name": "Aspetti etici, legali, sociali ed economici dell’informatica",
@@ -292,7 +292,7 @@
               "etichetta":"Sito web"
             }
           ],
-          "faq": "../../cdl_informatica/elaborazione_delle_immagini.pdf"
+          "faq": "../../faq_cdl_informatica/elaborazione_delle_immagini.pdf"
         },
         {
           "name": "Fisica",
@@ -306,7 +306,7 @@
               "etichetta":"Sito web"
             }
           ],
-          "faq": "../../cdl_informatica/fisica.pdf"
+          "faq": "../../faq_cdl_informatica/fisica.pdf"
         },
         {
           "name": "Intelligenza artificiale I",
@@ -320,7 +320,7 @@
               "etichetta":"Sito web"
             }
           ],
-          "faq": "../../cdl_informatica/intelligenza_artificiale_1.pdf"
+          "faq": "../../faq_cdl_informatica/intelligenza_artificiale_1.pdf"
         },
         {
           "name": "Interazioni sociali in rete",
@@ -362,7 +362,7 @@
               "etichetta":"Sito web"
             }
           ],
-          "faq": "../../cdl_informatica/sicurezza_e_privatezza.pdf"
+          "faq": "../../faq_cdl_informatica/sicurezza_e_privatezza.pdf"
         },
         {
           "name": "Sistemi informativi",
@@ -390,7 +390,7 @@
               "etichetta":"Sito web"
             }
           ],
-          "faq": "../../cdl_informatica/complementi_di_algoritmi_e_strutture_dati.pdf"
+          "faq": "../../faq_cdl_informatica/complementi_di_algoritmi_e_strutture_dati.pdf"
         },
         {
           "name": "Computer graphics",
@@ -418,7 +418,7 @@
               "etichetta":"Sito web"
             }
           ],
-          "faq": "../../cdl_informatica/diritto_dei_prodotti_digitali.pdf"
+          "faq": "../../faq_cdl_informatica/diritto_dei_prodotti_digitali.pdf"
         },
         {
           "name": "Fondamenti di social media digitali",
@@ -502,7 +502,7 @@
               "etichetta":"Sito web"
             }
           ],
-          "faq": "../../cdl_informatica/tecnologie_e_linguaggi_web.pdf"
+          "faq": "../../faq_cdl_informatica/tecnologie_e_linguaggi_web.pdf"
         },
         {
           "name": "Visualizzazione scientifica",

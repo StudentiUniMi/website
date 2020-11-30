@@ -13,7 +13,27 @@ const theme = getTheme();
 
 const HeaderTitle = () => {
     return (
-        <div className="header-title mt-2 mb-2">
+        /*
+        <div className="navbar">
+            <div className="navbar-brand">
+                <Image id="logo"
+                    src='./logo.png'
+                    alt='Network logo'
+                    width={60}
+                    height={60}
+                    className='d-inline-block align-top'
+                />
+                <Text style={{
+                    fontSize: FontSizes.size42,
+                    fontWeight: 600,
+                    color: '#2b88d8',
+                }}>
+                    Network Statale Informatica
+                    </Text>
+            </div>
+        </div>
+        */
+        <div className="header-title m-2">
             <div className="row">
                 <div className="col-2">
                     <Image id="logo"

@@ -11,7 +11,8 @@ const theme = getTheme();
 export enum ItemsKeys {
     home = "home",
     courses = "courses",
-    faqProposer = "faqProposer"
+    faqProposer = "faqProposer",
+    additionalGroups = "additionalGroups"
 }
 
 interface Props {
@@ -27,7 +28,7 @@ const HeaderMenu = (props: Props) => {
     };
 
     return (
-        <div style={{ boxShadow: theme.effects.elevation4 }}>
+        <div style={{ boxShadow: theme.effects.elevation4 }} className="header-menu">
             <Pivot
                 aria-label="Menu principale"
                 selectedKey={selectedKey}
@@ -39,6 +40,7 @@ const HeaderMenu = (props: Props) => {
                 <PivotItem headerText="Home" style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.home} />
                 <PivotItem headerText="Corsi e faq" style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.courses} />
                 <PivotItem headerText="Proponi faq" style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.faqProposer} />
+                <PivotItem headerText="Gruppi extra" style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.additionalGroups} />
             </Pivot>
         </div>
     );

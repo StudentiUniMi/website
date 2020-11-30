@@ -1,7 +1,5 @@
 /*
 TODO LIST
-- Icone da sistemare in homepage, deve apparire un hoverino sotto che dice dove portano
-- Linguetta a lato dice gli aggiornamenti
 - Dividere in cartelle (Views, Components)
 - FaqProposer -> serve un bottone che invia i dati a un semplice file txt o qualcosa del genere, quindi presumo serve una gestione del file
 - Sezione about per chi ha contribuito
@@ -9,6 +7,7 @@ TODO LIST
 - Vedi storybook
 - Fare scrollbar apposita per le card generate
 - Filtro sulla lista
+- IL MENU DEVE DIVENTARE DIVERSO QUANDO LA WIDTH RAGGIUNGE UN CERTO VALORE; ALTRIMENTI ROMPE TUTTO specialmente se aggiungi sezioni
 */
 
 import React, { useState } from "react";

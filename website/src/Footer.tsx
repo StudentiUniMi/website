@@ -4,13 +4,13 @@ import './App.css';
 import { Link } from 'office-ui-fabric-react';
 import { Text, ITextProps } from 'office-ui-fabric-react/lib/Text';
 import { IPersonaSharedProps, Persona, PersonaSize, PersonaPresence } from 'office-ui-fabric-react/lib/Persona';
-import { DefaultPalette, Stack, IStackStyles, IStackTokens } from 'office-ui-fabric-react';
 
 import { Container } from 'react-bootstrap';
 
 const Footer = () => {
     const [renderDetails, updateRenderDetails] = React.useState(true);
 
+    /*
     const Giuseppetm: IPersonaSharedProps = {
         imageUrl: './profileRecolored2.png',
         imageInitials: 'GD',
@@ -24,14 +24,32 @@ const Footer = () => {
         text: 'Manuele Lucchi',
         secondaryText: 'Sviluppatore',
     };
+    */
 
 
     return (
         <footer className="footer" /*style={{ background: DefaultPalette.themeTertiary }}*/>
             <Container className="text-center mt-3 mb-3">
-                <Text>
-                    <div style={{ fontWeight: 500 }} >Network Statale Informatica &copy;</div>
-                    {/*
+                <p>
+                    <Text style={{ fontWeight: 500 }}>Network Statale Informatica &copy;</Text>
+                </p>
+                <div className="row justify-content-center">
+                    <Text>
+                        <Link href="https://github.com/NetworkStataleInformatica/faq">Repository del sito web <i className="fab fa-github"></i></Link>
+                    </Text>
+                </div>
+                <div className="row justify-content-center">
+                    <Text>
+                        <Link href="http://www.quickunimi.it/">Accesso rapido servizi Unimi <i className="fas fa-graduation-cap"></i></Link>
+                    </Text>
+                </div>
+                <div className="row justify-content-center">
+                    <Text>
+                        <Link href="https://orientamento.di.unimi.it/index.php/iniziative/tutor-di-processo">Faq matricole <i className="fas fa-question-circle"></i></Link>
+                    </Text>
+                </div>
+
+                {/*
                         Sito web creato da:<br /><br />
                         <Persona
                             {...Giuseppetm}
@@ -46,7 +64,6 @@ const Footer = () => {
                             hidePersonaDetails={!renderDetails}
                         />
                         */}
-                </Text>
             </Container>
         </footer>
     )

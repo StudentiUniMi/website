@@ -30,6 +30,7 @@ interface proposerForm {
 const FaqProposer = () => {
     return (
         <Container id="faqProposer" className="text-center">
+            {/*
             <Text style={{ fontSize: FontSizes.size16 }}>
                 <p>
                     Qui è possibile proporre nuove faq per un corso che ritieni debba essere aggiornato
@@ -47,6 +48,7 @@ const FaqProposer = () => {
                     <TextField label="With placeholder" placeholder="Please enter text here" />
                 </Stack>
             </Stack> */}
+            <Text style={{ fontWeight: 500 }}>Feature non disponibile in questo momento.</Text>
         </Container>
     )
 };
