@@ -1,11 +1,12 @@
 import * as React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Link, Text } from 'office-ui-fabric-react';
 import { FontSizes } from '@fluentui/theme';
-import { DefaultPalette, Stack, IStackStyles, IStackTokens } from 'office-ui-fabric-react';
 import { IconButton, IIconProps, IContextualMenuProps } from 'office-ui-fabric-react';
 import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Container } from 'react-bootstrap';
 
 /*const stackStyles: IStackStyles = {
     root: {
@@ -13,88 +14,93 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
     },
 };*/
 
-const iconStyles: React.CSSProperties = {
-    alignItems: 'center',
-    display: 'flex',
-    height: 100,
-    justifyContent: 'center',
-    width: 100,
-    marginBottom: 10
-};
-
-const textStyles: React.CSSProperties = {
-    alignItems: 'center',
-    display: 'flex',
-    height: 50,
-    justifyContent: 'center',
-    width: 100,
-};
-
 const iconClass = mergeStyles({
     fontSize: 50, // perchè non va?? dio santo
     height: 100,
     width: 100,
 });
 
+const cardStyle = {
+    width: '150px',
+    height: '200px'
+}
+
 const Home = () => {
     return (
-        <div id="home">
-            <div id="home-text">
+        <Container id="home">
+            <div className="text-center">
                 <Text style={{ fontSize: FontSizes.size16 }}>
-                    Sito web nato con lo scopo di creare un punto centrale per tutti i contenuti del nostro network.<br />
-                Sono disponibili i collegamenti ai siti web, gruppi telegram e faq dei corsi delle triennali di informatica, <br />
-                informatica musicale, informatica per la comunicazione digitale, e sicurezza dei sistemi e delle reti informatiche. <br />
-                Per chiunque volesse collaborare al progetto è pregato di scrivere a <Link href="https://t.me/giuseppetm">@giuseppetm</Link> su telegram.<br />
+                    <p>Sito web nato con lo scopo di creare un punto centrale per tutti i contenuti del nostro network.
+                    Sono disponibili i collegamenti ai siti web, gruppi telegram e faq dei corsi delle triennali di informatica,
+                    informatica musicale, informatica per la comunicazione digitale, e sicurezza dei sistemi e delle reti informatiche.
+                Per chiunque volesse collaborare al progetto è pregato di scrivere a <Link href="https://t.me/giuseppetm">@giuseppetm</Link> su telegram.</p>
                 </Text>
             </div>
             <br />
-            <div id="home-collegamenti">
-                <Stack horizontal horizontalAlign="space-around">
-                    <span style={iconStyles}>
-                        <Link href="">
-                            <IconButton iconProps={{ iconName: "ComplianceAudit" }} className={iconClass} />
-                        </Link>
-                    </span>
-                    <span style={iconStyles}>
-                        <Link href="">
-                            <IconButton iconProps={{ iconName: "Send" }} className={iconClass} />
-                        </Link>
-                    </span>
-                    <span style={iconStyles}>
-                        <Link href="https://discord.gg/pPGUrr35sv">
-                            <IconButton iconProps={{ iconName: "ChatBot" }} className={iconClass} />
-                        </Link>
-                    </span>
-                    <span style={iconStyles}>
-                        <Link href="https://drive.google.com/drive/folders/0BwzuyD3iLGcbcUNxTVNOVE9FR1E">
-                            <IconButton iconProps={{ iconName: "CloudWeather" }} className={iconClass} />
-                        </Link>
-                    </span>
-                </Stack>
-                <Stack horizontal horizontalAlign="space-around">
-                    <span style={textStyles}>
-                        <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
-                            Regolamento del Network
-                        </Text>
-                    </span>
-                    <span style={textStyles}>
-                        <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
-                            Canale Telegram del Network
-                        </Text>
-                    </span>
-                    <span style={textStyles}>
-                        <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
-                            Server Discord del Network
-                        </Text>
-                    </span>
-                    <span style={textStyles}>
-                        <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
-                            Drive del Network
-                        </Text>
-                    </span>
-                </Stack>
-            </div>
-        </div >
+            <Container id="home-collegamenti">
+                <div className="row">
+                    <div className="card m-auto text-center" style={cardStyle}>
+                        <div className="card-body">
+                            <Link href="">
+                                <IconButton iconProps={{ iconName: "ComplianceAudit" }} className={iconClass} />
+                            </Link>
+                        </div>
+                        <div className="card-body">
+                            <div className="card-text">
+                                <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
+                                    Regolamento del Network
+                            </Text>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="card m-auto text-center" style={cardStyle}>
+                        <div className="card-body">
+                            <Link href="">
+                                <IconButton iconProps={{ iconName: "Send" }} className={iconClass} />
+                            </Link>
+                        </div>
+                        <div className="card-body">
+                            <div className="card-text">
+                                <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
+                                    Canale Telegram del Network
+                            </Text>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="card m-auto text-center" style={cardStyle}>
+                        <div className="card-body">
+                            <Link href="https://discord.gg/pPGUrr35sv">
+                                <IconButton iconProps={{ iconName: "ChatBot" }} className={iconClass} />
+                            </Link>
+                        </div>
+                        <div className="card-body">
+                            <div className="card-text">
+                                <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
+                                    Server Discord del Network
+                            </Text>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="card m-auto text-center" style={cardStyle}>
+                        <div className="card-body">
+                            <Link href="">
+                                <IconButton iconProps={{ iconName: "CloudWeather" }} className={iconClass} />
+                            </Link>
+                        </div>
+                        <div className="card-body">
+                            <div className="card-text">
+                                <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
+                                    Drive del Network
+                            </Text>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Container>
+        </Container >
     )
 };
 

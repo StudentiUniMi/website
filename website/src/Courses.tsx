@@ -1,6 +1,8 @@
 import * as React from "react";
-import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 import { Text, ITextProps } from "office-ui-fabric-react/lib/Text";
+import { FontSizes } from '@fluentui/theme';
 import {
     ChoiceGroup,
     ChoiceGroupBase,
@@ -10,6 +12,7 @@ import {
 } from "office-ui-fabric-react/lib/ChoiceGroup";
 import { initializeIcons } from "@uifabric/icons";
 import CourseListView from "./CourseListView";
+import { Container } from 'react-bootstrap';
 
 initializeIcons();
 
@@ -68,12 +71,12 @@ const Courses = () => {
     };
 
     return (
-        <div id="courses">
-            <div id="courses-text">
-                <Text>
-                    Qui è possibile vedere i gruppi telegram, siti web, e faq (se disponibili)
-                di ogni corso del tuo corso di laurea.<br />
-                    <Text style={{ fontWeight: 500 }}>Scegli un corso di laurea</Text><br /><br />
+        <Container id="courses">
+            <div className="text-center">
+                <Text style={{ fontSize: FontSizes.size16 }}>
+                    <p>Qui è possibile vedere i gruppi telegram, siti web, e faq (se disponibili)
+                di ogni corso del tuo corso di laurea.</p>
+                    <p><Text style={{ fontWeight: 500 }}>Scegli un corso di laurea</Text></p>
                 </Text>
             </div>
             <ChoiceGroup
@@ -82,7 +85,7 @@ const Courses = () => {
             />
             <br />
             <CourseListView cdl={selectedKey} />
-        </div>
+        </Container>
     );
 };
 

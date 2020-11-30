@@ -1,9 +1,11 @@
 import * as React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { FontSizes } from '@fluentui/theme';
 import { Text, ITextProps } from 'office-ui-fabric-react/lib/Text';
 import { TextField, MaskedTextField } from 'office-ui-fabric-react/lib/TextField';
 import { Stack, IStackProps, IStackStyles } from 'office-ui-fabric-react/lib/Stack';
+import { Container } from 'react-bootstrap';
 
 const stackTokens = { childrenGap: 50 };
 const iconProps = { iconName: 'Calendar' };
@@ -27,24 +29,25 @@ interface proposerForm {
 
 const FaqProposer = () => {
     return (
-        <div id="faqProposer">
-            <div id="faqProposer-text">
-                <Text>
-                    Qui è possibile proporre nuove faq per un corso che ritieni debba essere aggiornato <br />
-                    o per cui non sono state ancora create delle faq.<br /><br />
-                    <Text style={{ fontWeight: 500 }}>Compila questo piccolo form se vuoi contribuire:</Text><br /><br />
-                </Text>
-            </div>
-            <div id="faqProposer-form">
-                <Stack horizontal tokens={stackTokens} styles={stackStyles}>
-                    <Stack {...columnProps}>
-                        <TextField label="Corso " placeholder="Inserisci il corso" required />
-                        <TextField label="With an icon" iconProps={iconProps} />
-                        <TextField label="With placeholder" placeholder="Please enter text here" />
-                    </Stack>
+        <Container id="faqProposer" className="text-center">
+            <Text style={{ fontSize: FontSizes.size16 }}>
+                <p>
+                    Qui è possibile proporre nuove faq per un corso che ritieni debba essere aggiornato
+                    o per cui non sono state ancora create delle faq.
+                    </p>
+                <p>
+                    <Text style={{ fontWeight: 500 }}>Compila questo piccolo form se vuoi contribuire:</Text>
+                </p>
+            </Text>
+            {/*
+            <Stack horizontal tokens={stackTokens} styles={stackStyles}>
+                <Stack {...columnProps}>
+                    <TextField label="Corso" placeholder="Inserisci il corso" required />
+                    <TextField label="With an icon" iconProps={iconProps} />
+                    <TextField label="With placeholder" placeholder="Please enter text here" />
                 </Stack>
-            </div>
-        </div>
+            </Stack> */}
+        </Container>
     )
 };
 

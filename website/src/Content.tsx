@@ -1,5 +1,6 @@
 import * as React from 'react';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./App.css";
 import { ItemsKeys } from './HeaderMenu';
 import Home from './Home'
 import Courses from './Courses'
@@ -12,17 +13,17 @@ interface Props {
 const Content = (props: Props) => {
     switch (props.view) {
         case ItemsKeys.home:
-            return <div id="content">
+            return <main role="main" className="content mt-4 mb-4">
                 <Home />
-            </div>
+            </main>
         case ItemsKeys.courses:
-            return <div id="content">
+            return <main role="main" className="content mt-4 mb-4">
                 <Courses />
-            </div>
+            </main>
         case ItemsKeys.faqProposer:
-            return <div id="content">
+            return <main role="main" className="content mt-4 mb-4">
                 <FaqProposer />
-            </div>
+            </main>
     }
 }
 

@@ -1,8 +1,10 @@
 import * as React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
 import { FontSizes } from '@fluentui/theme';
 import { getTheme } from '@fluentui/react';
+import { Container } from 'react-bootstrap';
 
 const theme = getTheme();
 
@@ -25,7 +27,7 @@ const HeaderMenu = (props: Props) => {
     };
 
     return (
-        <div id="header-menu" style={{ boxShadow: theme.effects.elevation4 }}>
+        <div style={{ boxShadow: theme.effects.elevation4 }}>
             <Pivot
                 aria-label="Menu principale"
                 selectedKey={selectedKey}

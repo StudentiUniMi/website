@@ -1,4 +1,5 @@
 import * as React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Link, Text } from 'office-ui-fabric-react';
 import {
@@ -7,7 +8,6 @@ import {
     ICardSectionStyles,
     ICardSectionTokens,
 } from "@uifabric/react-cards";
-import Website from "./models/Course"
 import Course from './models/Course'
 import { initializeIcons } from '@uifabric/icons';
 import { FontWeights, Icon, IIconStyles, ITextStyles, Persona, Stack } from '@fluentui/react';

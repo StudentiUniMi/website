@@ -9,11 +9,12 @@ TODO LIST
 - Vedi storybook
 - Fare scrollbar apposita per le card generate
 - Filtro sulla lista
-- Check globale dello stile per il responsive
 */
 
 import React, { useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
+//import './App.scss';
 import HeaderTitle from "./HeaderTitle";
 import Content from "./Content";
 import HeaderMenu, { ItemsKeys } from "./HeaderMenu"; // da qui prende il content selezionato
@@ -27,7 +28,7 @@ function App() {
   };
 
   return (
-    <div id="root">
+    <div>
       <header>
         <HeaderTitle />
         <HeaderMenu contentChanged={contentChanged} />

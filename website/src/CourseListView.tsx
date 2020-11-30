@@ -1,9 +1,10 @@
-import { FocusZone, List } from "@fluentui/react";
 import * as React from "react";
-import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 import CourseItemView from "./CourseItemView";
 import Course from "./models/Course";
 import CdlCourses from './data/CdlCourses.json'
+import { FocusZone, List } from "@fluentui/react";
 import { ITheme, getTheme, mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 
 interface Props {
