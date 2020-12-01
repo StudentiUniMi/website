@@ -5,5 +5,5 @@ jobs:
   RunDeploy:
     runs-on: ubuntu-latest
     steps:
-      working-directory: ./app
+      working-directory: ./website
       run: npm run deploy
