@@ -58,6 +58,12 @@ const options: IChoiceGroupOption[] = [
         text: "Sicurezza sistemi e reti informatiche",
         iconProps: { iconName: "Permissions" },
     },
+    {
+        key: "sicurezza_sistemi_reti_informatiche_online",
+        styles: styles,
+        text: "Sicurezza sistemi e reti informatiche Online",
+        iconProps: { iconName: "Permissions" },
+    }
 ];
 
 const Courses = () => {

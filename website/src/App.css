@@ -25,6 +25,10 @@ body {
   Da sistemare
 ------------*/
 
+.ms-ChoiceField-labelWrapper {
+  overflow: visible;
+}
+
 .ms-List-cell {
   width: 50px;
   max-width: 50px;

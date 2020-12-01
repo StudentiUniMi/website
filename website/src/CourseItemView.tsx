@@ -68,23 +68,28 @@ const CourseItemView = (props: Props) => {
                         Gruppo Telegram
                     </Link>
                 </Text>
-                <Text variant="small" styles={helpfulTextStyles}>
-                    <Icon iconName="Link" />
-                    &nbsp;
+                {
+                    data.websites.length != 0 ?
+                        <Text variant="small" styles={helpfulTextStyles}>
+                            <Icon iconName="Link" />
+                                            &nbsp;
                     {data.websites.map(
-                        (e, i) => {
-                            i++;
-                            return (
-                                <span>
-                                    <Link href={e.link}>
-                                        {e.etichetta}
-                                    </Link>
-                                    {i < data.websites.length ? <span>,&nbsp;</span> : <span></span>}
-                                </span>
-                            )
-                        }
-                    )}
-                </Text>
+                                (e, i) => {
+                                    i++;
+                                    return (
+                                        <span>
+                                            <Link href={e.link}>
+                                                {e.etichetta}
+                                            </Link>
+                                            {i < data.websites.length ? <span>,&nbsp;</span> : <span></span>}
+                                        </span>
+                                    )
+                                }
+
+                            )}
+                        </Text>
+                        : <span className="mt-0"></span>
+                }
                 {
                     data.faq != "" ?
                         <Text variant="small" styles={helpfulTextStyles}>
@@ -95,7 +100,7 @@ const CourseItemView = (props: Props) => {
                     </Link>
                         </Text>
                         :
-                        <div></div>
+                        <span className="mt-0"></span>
                 }
 
             </Card.Section>

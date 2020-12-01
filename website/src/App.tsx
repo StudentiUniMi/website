@@ -9,6 +9,7 @@ TODO LIST
 - Filtro sulla lista
 - IL MENU DEVE DIVENTARE DIVERSO QUANDO LA WIDTH RAGGIUNGE UN CERTO VALORE; ALTRIMENTI ROMPE TUTTO specialmente se aggiungi sezioni
 - Aggiungere logo al meta del file html
+- Vedi come dare un drive per ogni cdl -> basta mettere il documento con la lista dei drive per ogni cdl
 */
 
 import React, { useState } from "react";

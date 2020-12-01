@@ -29,6 +29,8 @@ const getCourses = (cdl?: string) => {
             return CdlCourses.informatica_com_digitale
         case "sicurezza_sistemi_reti_informatiche":
             return CdlCourses.sicurezza_sistemi_reti_informatiche
+        case "sicurezza_sistemi_reti_informatiche_online":
+            return CdlCourses.sicurezza_sistemi_reti_informatiche_online
         default:
             return [];
     }
