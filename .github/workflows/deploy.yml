@@ -6,5 +6,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - working-directory: ./website
-      - run: npm run deploy
+      - uses: actions/checkout@v1
+      - name: npmRunDeploy
+        working-directory: ./website
+        run: npm run deploy
