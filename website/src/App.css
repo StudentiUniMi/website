@@ -1,0 +1,65 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background-color: #faf9f8;
+  margin-bottom: 150px; /* Footer height */
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #dddddd;
+  /*background-color: lightblue;*/
+  height: 150px;
+}
+
+.header-title .row {
+  margin-right: 0px;
+}
+
+/*------------
+  Da sistemare
+------------*/
+
+.ms-List-cell {
+  width: 50px;
+  max-width: 50px;
+}
+
+.ms-Persona {
+  margin-bottom: 12px;
+}
+
+.ms-FocusZone {
+  /* fa parte di header menu */
+  margin-left: 8px;
+}
+
+#home .ms-Icon {
+  /* Da vedere come cavolo impostarlo da home.tsx */
+  font-size: 40px;
+}
+
+#faqProposer .ms-Stack {
+  justify-content: center;
+  display: flex;
+}
+
+.ms-ChoiceFieldGroup-flexContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.ms-Card {
+  max-width: 400px;
+  width: 270px;
+}
+
+.card {
+  background-color: #faf9f8;
+  border: none;
+}

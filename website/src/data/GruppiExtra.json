@@ -1,0 +1,17 @@
+[
+    {
+        "name":"Gruppo materiali",
+        "description": "Dedicato a chi cerca o offre materiale per i vari corsi didattici. Non è permessa la vendita di appunti personali.",
+        "gruppo":"https://t.me/joinchat/I5_YNksisnkkqUT2MT0gig"
+    },
+    {
+        "name":"Gruppo ripetizioni",
+        "description": "Dedicato a chi cerca o offre ripetizioni. Le discussioni vanno fatte in privato, qui ci vanno soltanto annunci.",
+        "gruppo":"https://t.me/joinchat/I5_YNkhaA-G1hqmhrYwU9g"
+    },
+    {
+        "name":"Gruppo freetalk",
+        "description": "Chat freetalk per parlare di qualsiasi cosa.",
+        "gruppo":"https://t.me/UniMiCazzeggio"
+    }
+]

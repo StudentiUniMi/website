@@ -1,0 +1,531 @@
+{
+    "informatica":[
+        {
+          "name": "Matematica del continuo",
+          "anno": "1",
+          "semestre": "1",
+          "cfu": "12",
+          "gruppo": "https://t.me/joinchat/ALnoP1LJj2lM8MLaaKK02w",
+          "websites": [
+            {
+              "link":"https://ccavaterramc.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": "../../faq_cdl_informatica/matematica_del_continuo.pdf"
+        },
+        {
+          "name": "Programmazione 1",
+          "anno": "1",
+          "semestre": "1",
+          "cfu": "12",
+          "gruppo": "https://t.me/joinchat/ALnoP0UAAauNVlk06fKilg",
+          "websites": [
+            {
+              "link":"http://boldi.di.unimi.it/Corsi/Inf2020/",
+              "etichetta":"Avvisi"
+            },
+            {
+              "link":"https://atrentinip.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Ariel Ed.1"
+            },
+            {
+              "link":"https://mcasazzapud.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Ariel Ed.2"
+            }
+          ],
+          "faq": "../../faq_cdl_informatica/programmazione1.pdf"
+        },
+        {
+          "name": "Architettura degli elaboratori 1",
+          "anno": "1",
+          "semestre": "1",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/ALnoP0bMb24aFnyID2xzqg",
+          "websites": [
+            {
+              "link":"http://ais-lab.di.unimi.it/Teaching/Architettura_I/_Arch_I.html",
+              "etichetta":"Avvisi"
+            },
+            {
+              "link":"https://aborgheseae1.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Ariel Ed.1"
+            },
+            {
+              "link":"https://nbasilicoae1.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Ariel Ed.2"
+            }
+          ],
+          "faq": "../../faq_cdl_informatica/architettura_degli_elaboratori_1.pdf"
+        },
+        {
+          "name": "Linguaggi formali e automi",
+          "anno": "1",
+          "semestre": "2",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/ALnoP0iK5gEJLXWH6GpnFw",
+          "websites": [
+            {
+              "link":"https://bpalanolfa.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": "../../faq_cdl_informatica/linguaggi_formali_e_automi.pdf"
+        },
+        {
+          "name": "Logica matematica",
+          "anno": "1",
+          "semestre": "2",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/ALnoP0cgIJQYZJI47-Rorg",
+          "websites": [
+            {
+              "link":"https://saguzzolilom.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Avvisi"
+            },
+            {
+              "link":"https://homes.di.unimi.it/aguzzoli/logicatriennale.html",
+              "etichetta":"Materiale"
+            }
+          ],
+          "faq": "../../faq_cdl_informatica/logica_matematica.pdf"
+        },
+        {
+          "name": "Matematica del discreto",
+          "anno": "1",
+          "semestre": "2",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/ALnoP0x7F6xl_pmnHRmGvw",
+          "websites": [
+            {
+              "link":"https://agarbagnatimd.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": "../../faq_cdl_informatica/matematica_del_discreto.pdf"
+        },
+        {
+          "name": "Architettura degli elaboratori II",
+          "anno": "1",
+          "semestre": "2",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/ALnoP08pDVwN2hP_tjLrRw",
+          "websites": [
+            {
+              "link":"https://aborgheseae2.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": "../../faq_cdl_informatica/architettura_degli_elaboratori_2.pdf"
+        },
+        {
+          "name": "Algoritmi e strutture dati",
+          "anno": "2",
+          "semestre": "1",
+          "cfu": "12",
+          "gruppo": "https://t.me/joinchat/ALnoP1M4CuVnWpahaSKMGQ",
+          "websites": [
+            {
+              "link":"http://pighizzini.di.unimi.it/algoritmi/",
+              "etichetta":"Sito teoria"
+            },
+            {
+              "link":"http://lonati.di.unimi.it/algopig/",
+              "etichetta":"Sito lab"
+            }
+          ],
+          "faq": ""
+        },
+        {
+          "name": "Basi di dati",
+          "anno": "2",
+          "semestre": "1",
+          "cfu": "12",
+          "gruppo": "https://t.me/joinchat/ALnoP0sjlG15KgDVOp4q4w",
+          "websites": [
+            {
+              "link":"https://aferrarabd.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": "../../faq_cdl_informatica/basi_di_dati.pdf"
+        },
+        {
+          "name": "Programmazione 2",
+          "anno": "2",
+          "semestre": "1",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/ALnoPxXeodhYwA0nNpY5DQ",
+          "websites": [
+            {
+              "link":"https://prog2.di.unimi.it/",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": "../../faq_cdl_informatica/programmazione_2.pdf"
+        },
+        {
+          "name": "Sistemi operativi",
+          "anno": "2",
+          "semestre": "2",
+          "cfu": "12",
+          "gruppo": "https://t.me/joinchat/ALnoPxPNU-53LOjIFw8JtA",
+          "websites": [
+            {
+              "link":"https://vpiuriso.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": "../../faq_cdl_informatica/sistemi_operativi.pdf"
+        },
+        {
+          "name": "Statistica e analisi dei dati",
+          "anno": "2",
+          "semestre": "2",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/ALnoP0_aH4mn-NFOoGDvBw",
+          "websites": [
+            {
+              "link":"https://malchiodi.di.unimi.it/teaching/SAD/",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": "../../faq_cdl_informatica/statistica_e_analisi_dei_dati.pdf"
+        },
+        {
+          "name": "Ingegneria del software",
+          "anno": "3",
+          "semestre": "1",
+          "cfu": "12",
+          "gruppo": "https://t.me/joinchat/ALnoPxc61OOgtPP3mWz9bQ",
+          "websites": [
+            {
+              "link":"https://ericcobeneins.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": ""
+        },
+        {
+          "name": "Reti di calcolatori",
+          "anno": "3",
+          "semestre": "1",
+          "cfu": "12",
+          "gruppo": "https://t.me/joinchat/ALnoPxWU39MVqWyUb2pTTA",
+          "websites": [
+            {
+              "link":"https://grossircc.ariel.ctu.unimi.it/v5/Home/",
+              "etichetta":"Sito teoria"
+            },
+            {
+              "link":"https://epaganircl.ariel.ctu.unimi.it/v5/frm3/ThreadList.aspx?name=contenuti",
+              "etichetta":"Sito lab"
+            }
+          ],
+          "faq": "../../faq_cdl_informatica/reti_di_calcolatori.pdf"
+        },
+        {
+          "name": "Aspetti etici, legali, sociali ed economici dell’informatica",
+          "anno": "3",
+          "semestre": "1",
+          "cfu": "3",
+          "gruppo": "https://t.me/joinchat/I5_YNhggtTZgyiqxRL6Y1Q",
+          "websites": [
+            {
+              "link":"https://labonline.ctu.unimi.it/course/view.php?id=142",
+              "etichetta": "Sito web"
+            }
+          ],
+          "faq": ""
+        },
+        {
+          "name": "Crittografia 1",
+          "anno": "Complementare",
+          "semestre": "1",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/I5_YNhzQPtbeFNG-cXzoTQ",
+          "websites": [
+            {
+              "link":"https://aviscontic1.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": ""
+        },
+        {
+          "name": "Editoria digitale",
+          "anno": "Complementare",
+          "semestre": "1",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/I5_YNhxugMKmbpkvbOnf6Q",
+          "websites": [
+            {
+              "link":"https://manisettied.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": ""
+        },
+        {
+          "name": "Elaborazione dei segnali",
+          "anno": "Complementare",
+          "semestre": "1",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/I5_YNhVTgsClJOS4SjLPWg",
+          "websites": [
+            {
+              "link":"https://homes.di.unimi.it/~pedersini/ES/index.html",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": ""
+        },
+        {
+          "name": "Elaborazione delle immagini",
+          "anno": "Complementare",
+          "semestre": "1",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/I5_YNlO1bxtsR7jkMc9UzA",
+          "websites": [
+            {
+              "link":"https://rlanzarottiei1.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": "../../faq_cdl_informatica/elaborazione_delle_immagini.pdf"
+        },
+        {
+          "name": "Fisica",
+          "anno": "Complementare",
+          "semestre": "1",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/I5_YNlDpOpCPpoLGAH0obA",
+          "websites": [
+            {
+              "link":"https://app.slack.com/client/TDFBLAMTJ/CDFBLAV6C",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": "../../faq_cdl_informatica/fisica.pdf"
+        },
+        {
+          "name": "Intelligenza artificiale I",
+          "anno": "Complementare",
+          "semestre": "1",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/BnHOHxvl1j6aAdKSf9L1MA",
+          "websites": [
+            {
+              "link":"https://nbasilicoia.ariel.ctu.unimi.it/v5/Home/default.aspx",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": "../../faq_cdl_informatica/intelligenza_artificiale_1.pdf"
+        },
+        {
+          "name": "Interazioni sociali in rete",
+          "anno": "Complementare",
+          "semestre": "1",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/I5_YNhjX2Al4ecpYTP4v4w",
+          "websites": [
+            {
+              "link":"https://isr.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": ""
+        },
+        {
+          "name": "Linguaggi di programmazione",
+          "anno": "Complementare",
+          "semestre": "1",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/ALnoPxdXLbm9HhkNTiav5w",
+          "websites": [
+            {
+              "link":"https://cazzola.di.unimi.it/lp.html",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": ""
+        },
+        {
+          "name": "Sicurezza e privatezza",
+          "anno": "Complementare",
+          "semestre": "1",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/ALnoPxO-64VXTERluGHZnA",
+          "websites": [
+            {
+              "link":"https://dbruschisp.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": "../../faq_cdl_informatica/sicurezza_e_privatezza.pdf"
+        },
+        {
+          "name": "Sistemi informativi",
+          "anno": "Complementare",
+          "semestre": "1",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/I5_YNhrkrpY2q6ZTcFAiKA",
+          "websites": [
+            {
+              "link":"https://scastanosi.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": ""
+        },
+        {
+          "name": "Complementi di algoritmi e strutture dati",
+          "anno": "Complementare",
+          "semestre": "2",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/ALnoPxMXgMIb9qAm7EBl9Q",
+          "websites": [
+            {
+              "link":"http://cesa-bianchi.di.unimi.it/Algo2/",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": "../../faq_cdl_informatica/complementi_di_algoritmi_e_strutture_dati.pdf"
+        },
+        {
+          "name": "Computer graphics",
+          "anno": "Complementare",
+          "semestre": "2",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/I5_YNkwGaVC3bzO-qUersA",
+          "websites": [
+            {
+              "link":"http://tarini.di.unimi.it/teaching/cg2020/",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": ""
+        },
+        {
+          "name": "Diritto dei prodotti digitali",
+          "anno": "Complementare",
+          "semestre": "2",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/I5_YNhux4EmtoynZPO9vig",
+          "websites": [
+            {
+              "link":"https://gpedrazzidpd.ariel.ctu.unimi.it/v5/home/default.aspx/",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": "../../faq_cdl_informatica/diritto_dei_prodotti_digitali.pdf"
+        },
+        {
+          "name": "Fondamenti di social media digitali",
+          "anno": "Complementare",
+          "semestre": "2",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/ALnoPx2rf4uBLOWB5bYXVg",
+          "websites": [
+            {
+              "link":"https://alanzifsmd.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": ""
+        },
+        {
+          "name": "Linguaggi e traduttori",
+          "anno": "Complementare",
+          "semestre": "2",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/ALnoPw_vXNEHd6FfdHo37w",
+          "websites": [
+            {
+              "link":"https://let.di.unimi.it/",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": ""
+        },
+        {
+          "name": "Programmazione dichiarativa",
+          "anno": "Complementare",
+          "semestre": "2",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/ALnoPxaHoctNRtad2BT-lw",
+          "websites": [
+            {
+              "link":"https://amomiglianopd.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": ""
+        },
+        {
+          "name": "Ricerca operativa",
+          "anno": "Complementare",
+          "semestre": "2",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/ALnoPxfPPh56XUBx8AmorA",
+          "websites": [
+            {
+              "link":"https://mtrubianro.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": ""
+        },
+        {
+          "name": "Sistemi embedded",
+          "anno": "Complementare",
+          "semestre": "2",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/ALnoPw8wxMVMet7DYU1NZQ",
+          "websites": [
+            {
+              "link":"http://sl-lab.it/dokuwiki/doku.php/pub:sistemiembedded:home",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": ""
+        },
+        {
+          "name": "Tecnologie e linguaggi per il Web",
+          "anno": "Complementare",
+          "semestre": "2",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/ALnoP0phoiLo3Ld5LTyUvw",
+          "websites": [
+            {
+              "link":"https://pceravolopwm.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": "../../faq_cdl_informatica/tecnologie_e_linguaggi_web.pdf"
+        },
+        {
+          "name": "Visualizzazione scientifica",
+          "anno": "Complementare",
+          "semestre": "2",
+          "cfu": "6",
+          "gruppo": "https://t.me/joinchat/Ft4Q5ByMEean3SRsTw1FaQ",
+          "websites": [
+            {
+              "link":"https://ecasiraghivs.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Sito web"
+            }
+          ],
+          "faq": ""
+        }
+    ],
+    "informatica_musicale":[
+        
+    ],
+    "informatica_com_digitale":[
+
+    ],
+    "sicurezza_sistemi_reti_informatiche":[
+
+    ]
+}
