@@ -5,6 +5,5 @@ jobs:
   RunDeploy:
     runs-on: ubuntu-latest
     steps:
-      - run: npm run build
-      - run: react-scripts build
-      - run: gh-pages -d build
+      working-directory: ./app
+      run: npm run deploy
