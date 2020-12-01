@@ -16,6 +16,7 @@ const classNames = mergeStyleSets({
         overflow: 'hidden',
         fontSize: 0,
         position: 'relative',
+        marginBottom: 10
     },
 });
 

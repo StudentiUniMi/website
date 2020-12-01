@@ -13,5 +13,10 @@
         "name":"Gruppo freetalk",
         "description": "Chat freetalk per parlare di qualsiasi cosa.",
         "gruppo":"https://t.me/UniMiCazzeggio"
+    },
+    {
+        "name":"UniRole",
+        "description": "Dddicato ai giochi di ruolo.",
+        "gruppo":"https://t.me/joinchat/BnUK_g-KHlIX_SrIieU8CA"
     }
 ]
