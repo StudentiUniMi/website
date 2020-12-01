@@ -1,8 +1,9 @@
-name: deploy
+name: Run deploy
 
 on: [push, pull_request]
+
 jobs:
-  RunDeploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       working-directory: ./website
