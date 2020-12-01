@@ -14,46 +14,48 @@ const theme = getTheme();
 const HeaderTitle = () => {
     return (
         /*
-        <div className="navbar">
-            <div className="navbar-brand">
+        <div className="header-title m-2">
+            <Stack horizontal horizontalAlign="space-between" >
+
+                <Text style={{
+                    fontSize: FontSizes.size42,
+                    fontWeight: 600,
+                    color: '#2b88d8'
+                }}>
+                    Network Statale Informatica
+                    </Text>
                 <Image id="logo"
                     src='./logo.png'
                     alt='Network logo'
                     width={60}
                     height={60}
-                    className='d-inline-block align-top'
                 />
+            </Stack>
+        </div>
+        */
+
+
+        <div className="header-title m-2">
+            <div className="row m-2">
+
+                <Image id="logo" className="mr-3"
+                    src='./logo.png'
+                    alt='Network logo'
+                    width={60}
+                    height={60}
+                />
+
                 <Text style={{
                     fontSize: FontSizes.size42,
                     fontWeight: 600,
-                    color: '#2b88d8',
+                    color: '#2b88d8'
                 }}>
                     Network Statale Informatica
                     </Text>
+
             </div>
         </div>
-        */
-        <div className="header-title m-2">
-            <div className="row">
-                <div className="col-2">
-                    <Image id="logo"
-                        src='./logo.png'
-                        alt='Network logo'
-                        width={60}
-                        height={60}
-                    />
-                </div>
-                <div className="col-10">
-                    <Text style={{
-                        fontSize: FontSizes.size42,
-                        fontWeight: 600,
-                        color: '#2b88d8'
-                    }}>
-                        Network Statale Informatica
-                    </Text>
-                </div>
-            </div>
-        </div>
+
     )
 };
 

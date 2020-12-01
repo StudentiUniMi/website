@@ -1,6 +1,6 @@
 {
-  "name": "sito_web",
-  "version": "0.1.0",
+  "name": "Sito_Web_Network_Statale_Informatica",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@fluentui/react": "^7.152.2",
@@ -25,14 +25,17 @@
     "react-scripts": "4.0.1",
     "sass": "^1.29.0",
     "typescript": "^4.1.2",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "homepage": "https://networkstataleinformatica.github.io/network/
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
+	"scripts": { 
+ 		"start": "react-scripts start",
+ 		"predeploy": "npm run build",
+ 		"deploy": "gh-pages -d build",
+ 		"build": "react-scripts build",
+ 		"test": "react-scripts test",
+ 		"eject": "react-scripts eject"
+	},
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -50,5 +53,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
   }
 }

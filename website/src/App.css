@@ -21,13 +21,14 @@ body {
   margin-right: 0px;
 }
 
-.header-menu {
-  width: 100%;
-}
-
 /*------------
   Da sistemare
 ------------*/
+
+.ms-List-cell {
+  width: 50px;
+  max-width: 50px;
+}
 
 .ms-Persona {
   margin-bottom: 12px;

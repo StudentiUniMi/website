@@ -10,7 +10,7 @@ import { Container } from 'react-bootstrap';
 const Footer = () => {
     const [renderDetails, updateRenderDetails] = React.useState(true);
 
-    /*
+
     const Giuseppetm: IPersonaSharedProps = {
         imageUrl: './profileRecolored2.png',
         imageInitials: 'GD',
@@ -18,6 +18,7 @@ const Footer = () => {
         secondaryText: 'Studente di Informatica',
     };
 
+    /*
     const ManueleLucchi: IPersonaSharedProps = {
         imageUrl: '',
         imageInitials: 'ML',
@@ -48,8 +49,17 @@ const Footer = () => {
                         <Link href="https://orientamento.di.unimi.it/index.php/iniziative/tutor-di-processo">Faq matricole <i className="fas fa-question-circle"></i></Link>
                     </Text>
                 </div>
-
                 {/*
+                <p> Sito web creato da:
+                    <Persona className="justify-content-center text-center"
+                        {...Giuseppetm}
+                        size={PersonaSize.size40}
+                        //presence={PersonaPresence.online}
+                        hidePersonaDetails={!renderDetails}
+                    />
+                </p>
+
+
                         Sito web creato da:<br /><br />
                         <Persona
                             {...Giuseppetm}
