@@ -8,6 +8,7 @@ TODO LIST
 - Fare scrollbar apposita per le card generate
 - Filtro sulla lista
 - IL MENU DEVE DIVENTARE DIVERSO QUANDO LA WIDTH RAGGIUNGE UN CERTO VALORE; ALTRIMENTI ROMPE TUTTO specialmente se aggiungi sezioni
+- Aggiungere logo al meta del file html
 */
 
 import React, { useState } from "react";

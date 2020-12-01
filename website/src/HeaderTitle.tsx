@@ -39,7 +39,7 @@ const HeaderTitle = () => {
             <div className="row m-2">
 
                 <Image id="logo" className="mr-3"
-                    src='./logo.png'
+                    src={process.env.PUBLIC_URL + '/logo.png'}
                     alt='Network logo'
                     width={60}
                     height={60}

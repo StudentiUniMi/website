@@ -41,7 +41,7 @@ const Home = () => {
                 <div className="row">
                     <div className="card m-auto text-center" style={cardStyle}>
                         <div className="card-body">
-                            <Link href="../../regolamento.pdf">
+                            <Link href="https://github.com/NetworkStataleInformatica/network/blob/master/regolamento.pdf">
                                 <IconButton iconProps={{ iconName: "ComplianceAudit" }} className={iconClass} />
                             </Link>
                         </div>
