@@ -1,4 +1,4 @@
-name: Deployment
+name: Build and Deploy
 
 on:
   push:
@@ -7,33 +7,22 @@ on:
     branches: [master]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [12.x]
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - name: Checkout
+        uses: actions/checkout@v2.3.1 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
         with:
-          node-version: ${{ matrix.node-version }}
+          persist-credentials: false
 
-      - name: Install dependencies
-        working-directory: ./website
-        run: npm install
+      - name: Install and Build # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: |
+          npm install
+          npm run build
 
-      - name: Build
-        working-directory: ./website
-        run: npm run build
-
-      - name: Deploy to gh-pages
-        working-directory: ./website
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-          publish_dir: ./website
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: website # The folder the action should deploy.
