@@ -1,6 +1,6 @@
 name: deploy
 
-on: [push]
+on: [push, pull_request]
 jobs:
   RunDeploy:
     runs-on: ubuntu-latest
