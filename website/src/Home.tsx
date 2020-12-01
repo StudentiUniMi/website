@@ -5,7 +5,6 @@ import { Link, Text } from 'office-ui-fabric-react';
 import { FontSizes } from '@fluentui/theme';
 import { IconButton } from 'office-ui-fabric-react';
 import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Container } from 'react-bootstrap';
 
 /*const stackStyles: IStackStyles = {

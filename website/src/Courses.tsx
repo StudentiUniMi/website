@@ -1,14 +1,12 @@
 import * as React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { Text, ITextProps } from "office-ui-fabric-react/lib/Text";
+import { Text } from "office-ui-fabric-react/lib/Text";
 import { FontSizes } from '@fluentui/theme';
 import {
     ChoiceGroup,
-    ChoiceGroupBase,
     IChoiceGroupOption,
     IChoiceGroupOptionStyles,
-    IChoiceGroupStyleProps,
 } from "office-ui-fabric-react/lib/ChoiceGroup";
 import { initializeIcons } from "@uifabric/icons";
 import CourseListView from "./CourseListView";
@@ -82,12 +80,6 @@ const Courses = () => {
                 <Text style={{ fontSize: FontSizes.size16 }}>
                     <p>Qui è possibile vedere i gruppi telegram, siti web, e faq (se disponibili)
                 di ogni corso del tuo corso di laurea. <br />Per il momento il supporto è solo per Informatica.</p>
-                    <Text style={{ fontSize: FontSizes.size16, color: 'red' }}>
-                        <p>
-                            I corsi non vengono generati in modo allineato, ma purtroppo è un bug del framework che sto utilizzando.
-                            Risolverò il prima possibile.
-                    </p>
-                    </Text>
                     <p><Text style={{ fontWeight: 500 }}>Scegli un corso di laurea</Text></p>
                 </Text>
             </div>

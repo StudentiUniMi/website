@@ -4,7 +4,6 @@ import './App.css';
 import { Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
 import { FontSizes } from '@fluentui/theme';
 import { getTheme } from '@fluentui/react';
-import { Container } from 'react-bootstrap';
 
 const theme = getTheme();
 

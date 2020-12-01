@@ -12,10 +12,9 @@ TODO LIST
 - Vedi come dare un drive per ogni cdl -> basta mettere il documento con la lista dei drive per ogni cdl
 */
 
-import React, { useState } from "react";
+import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
-//import './App.scss';
 import HeaderTitle from "./HeaderTitle";
 import Content from "./Content";
 import HeaderMenu, { ItemsKeys } from "./HeaderMenu"; // da qui prende il content selezionato

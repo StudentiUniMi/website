@@ -2,14 +2,8 @@ import * as React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { FontSizes } from '@fluentui/theme';
-import { Text, ITextProps } from 'office-ui-fabric-react/lib/Text';
-import { SharedColors } from '@fluentui/theme';
-import { getTheme } from '@fluentui/react';
-import { Image, IImageProps, ImageFit } from 'office-ui-fabric-react/lib/Image';
-import { DefaultPalette, Stack, IStackStyles, IStackTokens, IStackItemStyles, FontWeights } from 'office-ui-fabric-react';
-import { Container } from 'react-bootstrap';
-
-const theme = getTheme();
+import { Text } from 'office-ui-fabric-react/lib/Text';
+import { Image } from 'office-ui-fabric-react/lib/Image';
 
 const HeaderTitle = () => {
     return (

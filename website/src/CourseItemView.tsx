@@ -5,12 +5,10 @@ import { Link, Text } from 'office-ui-fabric-react';
 import {
     Card,
     ICardTokens,
-    ICardSectionStyles,
-    ICardSectionTokens,
 } from "@uifabric/react-cards";
 import Course from './models/Course'
 import { initializeIcons } from '@uifabric/icons';
-import { FontWeights, Icon, IIconStyles, ITextStyles, Persona, Stack } from '@fluentui/react';
+import { FontWeights, Icon, ITextStyles, Persona } from '@fluentui/react';
 initializeIcons();
 
 interface Props {
@@ -41,8 +39,6 @@ const CourseItemView = (props: Props) => {
     };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
 
-    let i = 0;
-
     return (
         <Card
             aria-label="Clickable vertical card with image bleeding at the center of the card"
@@ -57,7 +53,7 @@ const CourseItemView = (props: Props) => {
           </Text>
                 <Text styles={descriptionTextStyles}>
                     {
-                        data.anno != "Complementare" ? <span>{data.anno}° Anno, </span> : <span>Complementare, </span>
+                        data.anno !== "Complementare" ? <span>{data.anno}° Anno, </span> : <span>Complementare, </span>
                     }
                     {data.semestre}° Semestre
           </Text>
@@ -69,19 +65,18 @@ const CourseItemView = (props: Props) => {
                     </Link>
                 </Text>
                 {
-                    data.websites.length != 0 ?
+                    data.websites.length !== 0 ?
                         <Text variant="small" styles={helpfulTextStyles}>
                             <Icon iconName="Link" />
                                             &nbsp;
                     {data.websites.map(
                                 (e, i) => {
-                                    i++;
                                     return (
-                                        <span>
+                                        <span key={i}>
                                             <Link href={e.link}>
                                                 {e.etichetta}
                                             </Link>
-                                            {i < data.websites.length ? <span>,&nbsp;</span> : <span></span>}
+                                            {i + 1 < data.websites.length ? <span>,&nbsp;</span> : <span></span>}
                                         </span>
                                     )
                                 }
@@ -91,7 +86,7 @@ const CourseItemView = (props: Props) => {
                         : <span className="mt-0"></span>
                 }
                 {
-                    data.faq != "" ?
+                    data.faq !== "" ?
                         <Text variant="small" styles={helpfulTextStyles}>
                             <Icon iconName="Robot" />
                     &nbsp;

@@ -2,12 +2,14 @@ import * as React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Link } from 'office-ui-fabric-react';
-import { Text, ITextProps } from 'office-ui-fabric-react/lib/Text';
-import { IPersonaSharedProps, Persona, PersonaSize, PersonaPresence } from 'office-ui-fabric-react/lib/Persona';
+import { Text } from 'office-ui-fabric-react/lib/Text';
+//import { IPersonaSharedProps } from 'office-ui-fabric-react/lib/Persona';
 
 import { Container } from 'react-bootstrap';
 
 const Footer = () => {
+
+    /*
     const [renderDetails, updateRenderDetails] = React.useState(true);
 
 
@@ -17,6 +19,7 @@ const Footer = () => {
         text: 'Giuseppetm',
         secondaryText: 'Studente di Informatica',
     };
+    */
 
     /*
     const ManueleLucchi: IPersonaSharedProps = {

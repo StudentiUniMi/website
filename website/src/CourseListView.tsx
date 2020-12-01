@@ -4,8 +4,8 @@ import './App.css';
 import CourseItemView from "./CourseItemView";
 import Course from "./models/Course";
 import CdlCourses from './data/CdlCourses.json'
-import { FocusZone, List } from "@fluentui/react";
-import { ITheme, getTheme, mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
+import { FocusZone, IRectangle, List } from "@fluentui/react";
+import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 
 interface Props {
     cdl?: string;
@@ -18,34 +18,49 @@ const classNames = mergeStyleSets({
         position: 'relative',
         marginBottom: 10
     },
+    listGridExampleTile: {
+        textAlign: 'center',
+        outline: 'none',
+        position: 'relative',
+        float: 'left'
+    },
 });
 
-const getCourses = (cdl?: string) => {
-    switch (cdl) {
-        case "informatica":
-            return CdlCourses.informatica
-        case "informatica_musicale":
-            return CdlCourses.informatica_musicale
-        case "informatica_com_digitale":
-            return CdlCourses.informatica_com_digitale
-        case "sicurezza_sistemi_reti_informatiche":
-            return CdlCourses.sicurezza_sistemi_reti_informatiche
-        case "sicurezza_sistemi_reti_informatiche_online":
-            return CdlCourses.sicurezza_sistemi_reti_informatiche_online
-        default:
-            return [];
-    }
-};
+const ROWS_PER_PAGE = 3;
+const MAX_ROW_HEIGHT = 240;
+
+const getCourses = (cdl?: string) => (CdlCourses as any)[cdl!] ?? []
 
 const CourseListView = (props: Props) => {
+    const columnCount = React.useRef(0);
+    const rowHeight = React.useRef(0);
+
     const courses: Course[] = getCourses(props.cdl);
+
+    const getItemCountForPage = React.useCallback((itemIndex?: number, surfaceRect?: IRectangle) => {
+        if (itemIndex === 0) {
+            columnCount.current = Math.ceil(surfaceRect!.width / MAX_ROW_HEIGHT);
+            rowHeight.current = Math.floor(surfaceRect!.width / columnCount.current);
+        }
+        return columnCount.current * ROWS_PER_PAGE;
+    }, []);
+
+    const getPageHeight = React.useCallback((): number => {
+        return rowHeight.current * ROWS_PER_PAGE;
+    }, []);
 
     const getCell = (e?: Course, index?: number, isScrolling?: boolean) => {
         return (
-            <div style={{ height: "22%", width: "22%" }}>
-                <CourseItemView data={e!} />
+            <div
+                data-is-focusable
+                className={classNames.listGridExampleTile}
+                style={{
+                    height: MAX_ROW_HEIGHT + 'px',
+                    width: 100 / columnCount.current + '%'
+                }}>
+                <CourseItemView key={index} data={e!} />
             </div>
-        );
+        )
     }
 
     return (
@@ -53,8 +68,8 @@ const CourseListView = (props: Props) => {
             <List
                 className={classNames.listGridExample}
                 items={courses}
-                getItemCountForPage={() => courses.length / 20}
-                getPageHeight={() => courses.length * 150 / 20}
+                getItemCountForPage={getItemCountForPage}
+                getPageHeight={getPageHeight}
                 renderedWindowsAhead={4}
                 onRenderCell={getCell}
             />
