@@ -1,4 +1,4 @@
-name: Run deploy
+name: deploy
 
 on: [push, pull_request]
 
@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       working-directory: ./website
-      run: npm run deploy
+      - run: npm run deploy
