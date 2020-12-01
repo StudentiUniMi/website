@@ -86,7 +86,7 @@ const Home = () => {
 
                     <div className="card m-auto text-center" style={cardStyle}>
                         <div className="card-body">
-                            <Link href="https://drive.google.com/drive/folders/0BwzuyD3iLGcbcUNxTVNOVE9FR1E">
+                            <Link href="https://github.com/NetworkStataleInformatica/network/blob/master/drive.pdf">
                                 <IconButton iconProps={{ iconName: "CloudWeather" }} className={iconClass} />
                             </Link>
                         </div>
