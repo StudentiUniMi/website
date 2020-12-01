@@ -59,7 +59,7 @@ const options: IChoiceGroupOption[] = [
     {
         key: "sicurezza_sistemi_reti_informatiche_online",
         styles: styles,
-        text: "Sicurezza sistemi e reti informatiche Online",
+        text: "Sicurezza sistemi e reti informatiche online",
         iconProps: { iconName: "Permissions" },
     }
 ];
@@ -79,7 +79,7 @@ const Courses = () => {
             <div className="text-center">
                 <Text style={{ fontSize: FontSizes.size16 }}>
                     <p>Qui è possibile vedere i gruppi telegram, siti web, e faq (se disponibili)
-                di ogni corso del tuo corso di laurea. <br />Per il momento il supporto è solo per Informatica.</p>
+                di ogni corso del tuo corso di laurea.</p>
                     <p><Text style={{ fontWeight: 500 }}>Scegli un corso di laurea</Text></p>
                 </Text>
             </div>
