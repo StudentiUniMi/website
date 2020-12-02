@@ -28,5 +28,10 @@
         "name":"League of Legends",
         "description": "Dedicato a lol.",
         "gruppo":"https://t.me/joinchat/I5_YNlHqsyq1R4gWMBRD9g"
+    },
+    {
+        "name":"Advent of Code 2020",
+        "description": "Dedicato a https://adventofcode.com/",
+        "gruppo":"https://t.me/joinchat/I5_YNki53Apt85Tp-PUzIw"
     }
 ]
