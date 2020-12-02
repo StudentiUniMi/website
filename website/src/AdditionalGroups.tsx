@@ -5,7 +5,7 @@ import { Text } from 'office-ui-fabric-react';
 import { FontSizes } from '@fluentui/theme';
 import { Container } from 'react-bootstrap';
 import GruppiExtra from './data/GruppiExtra.json'
-import { FocusZone, List } from "@fluentui/react";
+import { FocusZone, List, IRectangle } from "@fluentui/react";
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 import ExtraGroupView from './ExtraGroupView'
 import ExtraGroup from './models/ExtraGroup'
@@ -15,19 +15,48 @@ const classNames = mergeStyleSets({
         overflow: 'hidden',
         fontSize: 0,
         position: 'relative',
+        marginBottom: 10
+    },
+    listGridExampleTile: {
+        textAlign: 'center',
+        outline: 'none',
+        position: 'relative',
+        float: 'left'
     },
 });
 
+const ROWS_PER_PAGE = 3;
+const MAX_ROW_HEIGHT = 240;
 
 const AdditionalGroups = () => {    // props non dovrebbe servirmi
     const groups: ExtraGroup[] = GruppiExtra;
+    const columnCount = React.useRef(0);
+    const rowHeight = React.useRef(0);
+
+    const getItemCountForPage = React.useCallback((itemIndex?: number, surfaceRect?: IRectangle) => {
+        if (itemIndex === 0) {
+            columnCount.current = Math.ceil(surfaceRect!.width / MAX_ROW_HEIGHT);
+            rowHeight.current = Math.floor(surfaceRect!.width / columnCount.current);
+        }
+        return columnCount.current * ROWS_PER_PAGE;
+    }, []);
+
+    const getPageHeight = React.useCallback((): number => {
+        return rowHeight.current * ROWS_PER_PAGE;
+    }, []);
 
     const getCell = (e?: ExtraGroup, index?: number, isScrolling?: boolean) => {
         return (
-            <div style={{ height: "22%", width: "22%" }}>
+            <div
+                data-is-focusable
+                className={classNames.listGridExampleTile}
+                style={{
+                    height: MAX_ROW_HEIGHT + 'px',
+                    width: 100 / columnCount.current + '%'
+                }}>
                 <ExtraGroupView data={e!} />
             </div>
-        );
+        )
     }
 
     return (
@@ -35,18 +64,19 @@ const AdditionalGroups = () => {    // props non dovrebbe servirmi
             <Text style={{ fontSize: FontSizes.size16 }}>
                 <p>
                     Qui è possibile trovare gruppi aggiuntivi del network.
-                </p>
+                    </p>
                 <p>
                     <Text style={{ fontWeight: 500 }}>Gruppi disponibili:</Text>
                 </p>
             </Text>
 
+
             <FocusZone>
                 <List
                     className={classNames.listGridExample}
                     items={groups}
-                    getItemCountForPage={() => groups.length / 20}
-                    getPageHeight={() => groups.length * 150 / 20}
+                    getItemCountForPage={getItemCountForPage}
+                    getPageHeight={getPageHeight}
                     renderedWindowsAhead={4}
                     onRenderCell={getCell}
                 />

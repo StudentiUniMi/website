@@ -16,7 +16,12 @@
     },
     {
         "name":"UniRole",
-        "description": "Dddicato ai giochi di ruolo.",
+        "description": "Dedicato ai giochi di ruolo.",
         "gruppo":"https://t.me/joinchat/BnUK_g-KHlIX_SrIieU8CA"
+    },
+    {
+        "name":"Overwatch",
+        "description": "Dedicato a Overwatch.",
+        "gruppo":"https://t.me/joinchat/I5_YNki_xbcdHg6chEfkiw"
     }
 ]

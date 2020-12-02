@@ -6,6 +6,7 @@ import Course from "./models/Course";
 import CdlCourses from './data/CdlCourses.json'
 import { FocusZone, IRectangle, List } from "@fluentui/react";
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
+import { Container } from 'react-bootstrap';
 
 interface Props {
     cdl?: string;
@@ -16,7 +17,8 @@ const classNames = mergeStyleSets({
         overflow: 'hidden',
         fontSize: 0,
         position: 'relative',
-        marginBottom: 10
+        marginBottom: 10,
+        margin: '1px'
     },
     listGridExampleTile: {
         textAlign: 'center',
