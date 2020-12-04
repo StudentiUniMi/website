@@ -21,6 +21,31 @@ body {
   margin-right: 0px;
 }
 
+/* Fix temporaneo FocusZone in CourseListView */
+@media only screen and (max-width: 575px) {
+  /*
+  body {
+    background-color: lightblue;
+  }
+  */
+
+  .ms-List {
+    width: 478px;
+  }
+}
+
+@media only screen and (max-width: 515px) {
+  /*
+  body {
+    background-color: orange;
+  }
+  */
+
+  .ms-List {
+    width: 232px;
+  }
+}
+
 /*------------
   Da sistemare
 ------------*/

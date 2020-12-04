@@ -10,12 +10,17 @@
         "gruppo":"https://t.me/joinchat/I5_YNkhaA-G1hqmhrYwU9g"
     },
     {
+        "name":"Annunci di lavoro",
+        "description": "Gruppo che permette di proporre lavoro (rivolto a studenti) in ambito informatico.",
+        "gruppo":"https://t.me/joinchat/I5_YNlBa9fMnTu5MfN6nnQ"
+    },
+    {
         "name":"Gruppo freetalk",
         "description": "Chat freetalk per parlare di qualsiasi cosa.",
         "gruppo":"https://t.me/UniMiCazzeggio"
     },
     {
-        "name":"UniRole",
+        "name":"Unirole",
         "description": "Dedicato ai giochi di ruolo.",
         "gruppo":"https://t.me/joinchat/BnUK_g-KHlIX_SrIieU8CA"
     },
@@ -26,7 +31,7 @@
     },
     {
         "name":"League of Legends",
-        "description": "Dedicato a lol.",
+        "description": "Dedicato a Lol",
         "gruppo":"https://t.me/joinchat/I5_YNlHqsyq1R4gWMBRD9g"
     },
     {
