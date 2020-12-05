@@ -46,6 +46,58 @@ body {
   }
 }
 
+.faq-proposer select {
+  width: 100%;
+  box-shadow: none;
+  margin: 0px;
+  padding: 0px 28px 0px 8px;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(96, 94, 92);
+  border-radius: 2px;
+  cursor: pointer;
+  display: block;
+  height: 32px;
+  line-height: 30px;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: rgb(96, 94, 92);
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI",
+    -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.faq-proposer option {
+  box-shadow: none;
+  margin: 0px;
+  padding: 0px 28px 0px 8px;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(96, 94, 92);
+  border-radius: 2px;
+  cursor: pointer;
+  display: block;
+  height: 32px;
+  line-height: 30px;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI",
+    -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  font-weight: 400;
+}
+
 /*------------
   Da sistemare
 ------------*/

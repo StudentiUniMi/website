@@ -8,7 +8,7 @@ TODO LIST
 - Filtri sulla lista di corsi
 - Quando premi sul pdf del drive dovrebbe fartelo scaricare invece di reindirizzare sulla repo github dove non vanno i link
 - Sezione about per chi ha contribuito
-- Sezione relativa a chi contattare per ogni corso di laurea (amministratori), può servire per dare un riepilogo totale
+- Sezione relativa a chi contattare per ogni corso di laurea (amministratori), può servire per dare un riepilogo totale. fai varie colonne ciascuna con gli admin ecc.
 - Footer con social di Unimi
 */
 
