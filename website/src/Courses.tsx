@@ -36,13 +36,13 @@ const options: IChoiceGroupOption[] = [
         key: "informatica",
         styles: styles,
         text: "Informatica",
-        iconProps: { iconName: "Backlog" },
+        iconProps: { iconName: "System" },
     },
     {
         key: "informatica_musicale",
         styles: styles,
         text: "Informatica musicale",
-        iconProps: { iconName: "MusicInCollectionFill" },
+        iconProps: { iconName: "MusicInCollection" },
     },
     {
         key: "informatica_com_digitale",
@@ -54,13 +54,13 @@ const options: IChoiceGroupOption[] = [
         key: "sicurezza_sistemi_reti_informatiche",
         styles: styles,
         text: "Sicurezza sistemi e reti informatiche",
-        iconProps: { iconName: "Permissions" },
+        iconProps: { iconName: "Fingerprint" },
     },
     {
         key: "sicurezza_sistemi_reti_informatiche_online",
         styles: styles,
         text: "Sicurezza sistemi e reti informatiche online",
-        iconProps: { iconName: "Permissions" },
+        iconProps: { iconName: "Fingerprint" },
     }
 ];
 
