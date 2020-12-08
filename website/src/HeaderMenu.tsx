@@ -35,7 +35,7 @@ interface Props {
 const HeaderMenu = (props: Props) => {
     const history = useHistory()
 
-    var states = history.location.pathname.substring(1).split('/')
+    var states = history.location.pathname.substring(1).split('/').filter(x => x !== '')
     console.log(states)
 
     var initialState = (states.length > 1 ? states[1] : ItemsKeys.home) as ItemsKeys
