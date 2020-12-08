@@ -8,6 +8,10 @@ import { Container } from 'react-bootstrap';
 import { Dropdown, DropdownMenuItemType, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
 import { CompoundButton } from 'office-ui-fabric-react';
 import { Label } from 'office-ui-fabric-react/lib/Label';
+import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
+import { TeachingBubble } from 'office-ui-fabric-react/lib/TeachingBubble';
+import { DirectionalHint } from 'office-ui-fabric-react/lib/Callout';
+import { useBoolean } from '@uifabric/react-hooks';
 
 const dropdownControlledExampleOptions = [
     { key: 'informatica', value: "Informatica musicale", text: 'Informatica' },
@@ -17,14 +21,6 @@ const dropdownControlledExampleOptions = [
     { key: 'sicurezza_sistemi_reti_informatiche_online', value: "SSRI Online", text: 'S.S.R.I. online' }
 ];
 
-/*
-interface proposerForm {
-    cdl: string,
-    course: string,
-    question: string,
-    answer: string
-}
-*/
 
 const FaqProposer = () => {
     const [selectedItem, setSelectedItem] = React.useState<IDropdownOption>();
@@ -32,6 +28,8 @@ const FaqProposer = () => {
     const onChange = (event?: React.FormEvent<HTMLDivElement>, item?: IDropdownOption, index?: number): void => {
         setSelectedItem(item);
     };
+
+    const [teachingBubbleVisible, { toggle: toggleTeachingBubbleVisible }] = useBoolean(false);
 
     return (
         <div className="faq-proposer">
@@ -42,13 +40,37 @@ const FaqProposer = () => {
                         o per cui non sono state ancora create delle faq. Si possono trovare le faq di un corso con relative risposte
                         (se disponibili) nelle card dei corsi di laurea nella sezione "Corsi e faq".
                     </p>
+                    <p>
+                        <DefaultButton
+                            id="targetButton"
+                            onClick={toggleTeachingBubbleVisible}
+                            text={teachingBubbleVisible ? 'Nascondi' : 'Cosa sono le faq?'}
+                        />
+                        {teachingBubbleVisible && (
+                            <TeachingBubble
+                                calloutProps={{ directionalHint: DirectionalHint.bottomCenter }}
+                                target="#targetButton"
+                                isWide={true}
+                                hasCloseButton={true}
+                                closeButtonAriaLabel="Close"
+                                onDismiss={toggleTeachingBubbleVisible}
+                                headline="Le Frequently asked questions sono appunto le domande poste più frequentemente sui gruppi dei corsi."
+                            >
+                                Grazie a questa sezione apposita del sito web
+                                e all'uso di un semplice form, sarà possibile proporre nuove domande con risposta per un corso in maniera facile e immediata.
+                                Ad esempio, se si chiede molto spesso su un gruppo qual è la modalità d'esame di quel corso, si può proporre la domanda qui con la corrispondente risposta.
+                                Per vedere un esempio vai sui corsi di informatica e seleziona una faq qualsiasi tra quelle disponibili.
+                            </TeachingBubble>
+                        )}
+                    </p>
+                    {/*
                     <p style={{ fontSize: FontSizes.size14 }}>
                         <p style={{ fontWeight: 500 }}>Cosa sono le faq?</p>
                         Le Frequently asked questions sono appunto le domande poste più frequentemente sui gruppi dei corsi: grazie a questa sezione apposita del sito web
                         e all'uso di un semplice form, sarà possibile proporre nuove domande con risposta per un corso in maniera facile e immediata.
                         Ad esempio, se si chiede molto spesso su un gruppo qual è la modalità d'esame di quel corso, si può proporre la domanda qui con la corrispondente risposta.
                         Per vedere un esempio vai sui corsi di informatica e seleziona una faq qualsiasi tra quelle disponibili.
-                    </p>
+                    </p> */}
                     <p>
                         <Text style={{ fontWeight: 500 }}>Compila questo piccolo form se vuoi contribuire:</Text>
                     </p>
@@ -89,7 +111,7 @@ const FaqProposer = () => {
                             <TextField label="Inserisci la risposta" id="554303651" name="entry.554303651" placeholder="Risposta" multiline rows={3} required />
                         </div>
                     </div>
-                    <CompoundButton primary type="submit" secondaryText="Manda la faq proposta." allowDisabledFocus >
+                    <CompoundButton primary type="submit" secondaryText="Manda la faq proposta." style={{ backgroundColor: '#797673', border: '1px solid #797673' }} allowDisabledFocus >
                         Invia
                     </CompoundButton>
                 </form>
@@ -103,7 +125,7 @@ export default FaqProposer;
 
 // Da sistemare, non vna
 $('#faq-proposer-form').submit(function (event) {
-    event.preventDefault()
-    alert('Faq mandata con successo, grazie per la collaborazione.')
-    return false
+    event.preventDefault();
+    alert('Faq mandata con successo, grazie per la collaborazione.');
+    return false;
 });
