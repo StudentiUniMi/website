@@ -35,11 +35,14 @@ interface Props {
 const HeaderMenu = (props: Props) => {
     const history = useHistory()
 
-    var initialState = history.location.pathname !== '' && history.location.pathname !== '/' ? history.location.pathname.substring(1, history.location.pathname.length - 1) as ItemsKeys : ItemsKeys.home
+    var states = history.location.pathname.substring(1).split('/')
+    console.log(states)
+
+    var initialState = (states.length > 1 ? states[1] : ItemsKeys.home) as ItemsKeys
     console.log(initialState)
 
     const [selectedKey, setSelectedKey] = React.useState(initialState);
-    history.push(`/${initialState}/`);
+    history.push(`/network/${initialState}/`);
 
 
     const handlePivotLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
