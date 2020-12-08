@@ -75,7 +75,7 @@ const Courses = () => {
         option?: IChoiceGroupOption
     ): void => {
         setSelectedKey(option?.key);
-        history.push(`/courses/${option?.key}/`);
+        history.push(`/network/courses/${option?.key}/`);
     };
 
     return (

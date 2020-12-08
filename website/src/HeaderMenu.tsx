@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
 import { FontSizes } from '@fluentui/theme';
-import { getTheme, IRenderFunction } from '@fluentui/react';
+import { getTheme } from '@fluentui/react';
 import { Dropdown, DropdownMenuItemType, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
 import { BrowserRouter as Router, useHistory } from "react-router-dom";
 
@@ -39,19 +39,19 @@ const HeaderMenu = (props: Props) => {
     console.log(initialState)
 
     const [selectedKey, setSelectedKey] = React.useState(initialState);
-    history.push(`/${initialState}/`);
+    history.push(`/network/${initialState}/`);
 
 
     const handlePivotLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
         setSelectedKey(item!.props.itemKey! as ItemsKeys);
         props.contentChanged(item!.props.itemKey! as ItemsKeys);
-        history.push(`/${item!.props.itemKey!}/`);
+        history.push(`/network/${item!.props.itemKey!}/`);
     };
 
     const onDropdownValueChange = (event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
         setSelectedKey(item!.key! as ItemsKeys);
         props.contentChanged(item!.key! as ItemsKeys);
-        history.push(`/${item!.key!}/`);
+        history.push(`/network/${item!.key!}/`);
     };
 
     const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }))
