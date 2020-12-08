@@ -21,6 +21,34 @@ body {
   margin-right: 0px;
 }
 
+.ms-Dropdown-title {
+  border-style: none;
+  background-color: #faf9f8;
+  height: 44px;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Menù responsive */
+@media only screen and (min-width: 341px) {
+  .pivot {
+    display: block;
+  }
+
+  .dropdown {
+    display: none;
+  }
+}
+@media only screen and (max-width: 340px) {
+  .pivot {
+    display: none;
+  }
+
+  .dropdown {
+    display: block;
+  }
+}
+
 /* Fix temporaneo FocusZone in CourseListView */
 @media only screen and (max-width: 575px) {
   /*

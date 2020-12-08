@@ -22,6 +22,7 @@
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
+    "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "sass": "^1.29.0",
@@ -56,6 +57,8 @@
   },
   "devDependencies": {
     "@types/jquery": "^3.5.4",
+    "@types/react-router": "^5.1.8",
+    "@types/react-router-dom": "^5.1.6",
     "gh-pages": "^3.1.0"
   }
 }

@@ -3,18 +3,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
 import { FontSizes } from '@fluentui/theme';
-import { getTheme } from '@fluentui/react';
+import { getTheme, IRenderFunction } from '@fluentui/react';
 import { Dropdown, DropdownMenuItemType, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
-
-const dropdownStyles: Partial<IDropdownStyles> = { dropdown: { width: '200px' } };
-const dropdownControlledExampleOptions = [
-    { key: 'apple', text: 'Apple' },
-    { key: 'banana', text: 'Banana' },
-    { key: 'orange', text: 'Orange' },
-    { key: 'grape', text: 'Grape' },
-];
+import { BrowserRouter as Router, useHistory } from "react-router-dom";
 
 const theme = getTheme();
+const dropdownStyles: Partial<IDropdownStyles> = {
+    //dropdownOptionText: { textAlign: 'center' },
+    dropdown: { width: '100%', border: 'none', borderStyle: 'none', height: '44px', backgroundColor: '#faf9f8' },
+    dropdownItems: { textAlign: 'center' }
+};
 
 export enum ItemsKeys {
     home = "home",
@@ -23,47 +21,66 @@ export enum ItemsKeys {
     additionalGroups = "additionalGroups"
 }
 
+const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
+    [ItemsKeys.home, "Home"],
+    [ItemsKeys.courses, "Corsi"],
+    [ItemsKeys.faqProposer, "Proponi faq"],
+    [ItemsKeys.additionalGroups, "Gruppi extra"]
+])
+
 interface Props {
     contentChanged: (k: ItemsKeys) => void;
 }
 
 const HeaderMenu = (props: Props) => {
-    // Pivot
-    const [selectedKey, setSelectedKey] = React.useState(ItemsKeys.home);
-    const handleLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
+    const history = useHistory()
+
+    var initialState = history.location.pathname !== '' && history.location.pathname !== '/' ? history.location.pathname.substring(1, history.location.pathname.length - 1) as ItemsKeys : ItemsKeys.home
+    console.log(initialState)
+
+    const [selectedKey, setSelectedKey] = React.useState(initialState);
+    history.push(`/${initialState}/`);
+
+
+    const handlePivotLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
         setSelectedKey(item!.props.itemKey! as ItemsKeys);
         props.contentChanged(item!.props.itemKey! as ItemsKeys);
+        history.push(`/${item!.props.itemKey!}/`);
     };
 
-    // Dropdown
-    const [selectedItem, setSelectedItem] = React.useState<IDropdownOption>();
-    const onChange = (event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
-        setSelectedItem(item);
+    const onDropdownValueChange = (event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
+        setSelectedKey(item!.key! as ItemsKeys);
+        props.contentChanged(item!.key! as ItemsKeys);
+        history.push(`/${item!.key!}/`);
     };
+
+    const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }))
 
     return (
         <div style={{ boxShadow: theme.effects.elevation4 }} className="header-menu">
-            <Pivot
-                aria-label="Menu principale"
-                selectedKey={selectedKey}
-                // eslint-disable-next-line react/jsx-no-bind
-                onLinkClick={handleLinkClick}
-                headersOnly={true}
-                style={{ fontSize: FontSizes.size24 }}
-            >
-                <PivotItem headerText="Home" style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.home} />
-                <PivotItem headerText="Corsi e faq" style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.courses} />
-                <PivotItem headerText="Proponi faq" style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.faqProposer} />
-                <PivotItem headerText="Gruppi extra" style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.additionalGroups} />
-            </Pivot>
-            {/*
-            <Dropdown
-                selectedKey={selectedKey}
-                onChange={onChange}
-                placeholder="Select an option"
-                options={dropdownControlledExampleOptions}
-                styles={dropdownStyles}
-            />*/}
+            <div className="pivot">
+                <Pivot
+                    aria-label="Menu principale"
+                    selectedKey={selectedKey}
+                    onLinkClick={handlePivotLinkClick}
+                    headersOnly={true}
+                    style={{ fontSize: FontSizes.size24 }}
+                >
+                    <PivotItem headerText={texts.get(ItemsKeys.home)} style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.home} />
+                    <PivotItem headerText={texts.get(ItemsKeys.courses)} style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.courses} />
+                    <PivotItem headerText={texts.get(ItemsKeys.faqProposer)} style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.faqProposer} />
+                    <PivotItem headerText={texts.get(ItemsKeys.additionalGroups)} style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.additionalGroups} />
+                </Pivot>
+            </div>
+
+            <div className="dropdown">
+                <Dropdown
+                    selectedKey={selectedKey}
+                    onChange={onDropdownValueChange}
+                    options={dropdownOptions}
+                    styles={dropdownStyles}
+                />
+            </div>
         </div>
     );
 };

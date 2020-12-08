@@ -1,9 +1,6 @@
 /*
 TODO LIST
-- Aggiungere "Gruppo disponibili" prima delle card generate
 - Sistemare le card che si sovrappongono in mobile mode. OK ma da migliorare
-- Quando vai sul sito con risorsa specificata /corsodilaurea il sito viene caricato già con la lista dei corsi per quel cdl (dentro la sezione gruppi e faq).
-- Il menù deve diventare diverso quando la width raggiunge un certo valore, altrimenti rompe tutto. Vedi se puoi usare la navbar di bootstrap o fluentui ha già qualcosa
 - Filtri sulla lista di corsi
 - Quando premi sul pdf del drive dovrebbe fartelo scaricare invece di reindirizzare sulla repo github dove non vanno i link
 - Sezione about per chi ha contribuito
@@ -18,6 +15,7 @@ import HeaderTitle from "./HeaderTitle";
 import Content from "./Content";
 import HeaderMenu, { ItemsKeys } from "./HeaderMenu"; // da qui prende il content selezionato
 import Footer from "./Footer";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   let [selectedView, setSelectedView] = React.useState(ItemsKeys.home);
@@ -27,14 +25,14 @@ function App() {
   };
 
   return (
-    <div>
+    <Router>
       <header>
         <HeaderTitle />
         <HeaderMenu contentChanged={contentChanged} />
       </header>
       <Content view={selectedView} />
       <Footer />
-    </div>
+    </Router>
   );
 }
 

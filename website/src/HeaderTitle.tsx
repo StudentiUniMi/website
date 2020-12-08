@@ -7,28 +7,6 @@ import { Image } from 'office-ui-fabric-react/lib/Image';
 
 const HeaderTitle = () => {
     return (
-        /*
-        <div className="header-title m-2">
-            <Stack horizontal horizontalAlign="space-between" >
-
-                <Text style={{
-                    fontSize: FontSizes.size42,
-                    fontWeight: 600,
-                    color: '#2b88d8'
-                }}>
-                    Network Statale Informatica
-                    </Text>
-                <Image id="logo"
-                    src='./logo.png'
-                    alt='Network logo'
-                    width={60}
-                    height={60}
-                />
-            </Stack>
-        </div>
-        */
-
-
         <div className="header-title m-2">
             <div className="row m-2">
 

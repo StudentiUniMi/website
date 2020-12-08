@@ -11,6 +11,7 @@ import {
 import { initializeIcons } from "@uifabric/icons";
 import CourseListView from "./CourseListView";
 import { Container } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 
 initializeIcons();
 
@@ -67,11 +68,14 @@ const options: IChoiceGroupOption[] = [
 const Courses = () => {
     const [selectedKey, setSelectedKey] = React.useState<string>();
 
+    const history = useHistory()
+
     const selectionChanged = (
         ev?: React.FormEvent<HTMLElement | HTMLInputElement>,
         option?: IChoiceGroupOption
     ): void => {
         setSelectedKey(option?.key);
+        history.push(`/courses/${option?.key}/`);
     };
 
     return (
@@ -88,6 +92,9 @@ const Courses = () => {
                 onChange={selectionChanged}
             />
             <br />
+            <p className='text-center' style={{ display: selectedKey ? 'block' : 'none' }}>
+                <Text style={{ fontWeight: 500 }}>Gruppi disponibili:</Text>
+            </p>
             <CourseListView cdl={selectedKey} />
         </Container>
     );
