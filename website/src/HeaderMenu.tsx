@@ -39,7 +39,7 @@ const HeaderMenu = (props: Props) => {
     console.log(initialState)
 
     const [selectedKey, setSelectedKey] = React.useState(initialState);
-    history.push(`/network/${initialState}/`);
+    history.push(`/${initialState}/`);
 
 
     const handlePivotLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
