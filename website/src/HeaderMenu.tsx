@@ -10,22 +10,24 @@ import { BrowserRouter as Router, useHistory } from "react-router-dom";
 const theme = getTheme();
 const dropdownStyles: Partial<IDropdownStyles> = {
     //dropdownOptionText: { textAlign: 'center' },
-    dropdown: { width: '100%', border: 'none', borderStyle: 'none', height: '44px', backgroundColor: '#faf9f8' },
-    dropdownItems: { textAlign: 'center' }
+    dropdown: { width: '100%', border: 'none', borderStyle: 'none', height: '44px', backgroundColor: '#faf9f8', alignItems: 'center' },
+    dropdownItems: { textAlign: 'center', alignItems: 'center' }
 };
 
 export enum ItemsKeys {
     home = "home",
     courses = "courses",
     faqProposer = "faqProposer",
-    additionalGroups = "additionalGroups"
+    additionalGroups = "additionalGroups",
+    administrators = "administrators"
 }
 
 const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
     [ItemsKeys.home, "Home"],
     [ItemsKeys.courses, "Corsi"],
-    [ItemsKeys.faqProposer, "Proponi faq"],
-    [ItemsKeys.additionalGroups, "Gruppi extra"]
+    [ItemsKeys.administrators, "Amministratori"],
+    [ItemsKeys.additionalGroups, "Gruppi extra"],
+    [ItemsKeys.faqProposer, "Proponi faq"]
 ])
 
 interface Props {
@@ -71,8 +73,9 @@ const HeaderMenu = (props: Props) => {
                 >
                     <PivotItem headerText={texts.get(ItemsKeys.home)} style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.home} />
                     <PivotItem headerText={texts.get(ItemsKeys.courses)} style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.courses} />
-                    <PivotItem headerText={texts.get(ItemsKeys.faqProposer)} style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.faqProposer} />
+                    <PivotItem headerText={texts.get(ItemsKeys.administrators)} style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.administrators} />
                     <PivotItem headerText={texts.get(ItemsKeys.additionalGroups)} style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.additionalGroups} />
+                    <PivotItem headerText={texts.get(ItemsKeys.faqProposer)} style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.faqProposer} />
                 </Pivot>
             </div>
 

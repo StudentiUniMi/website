@@ -30,7 +30,7 @@ body {
 }
 
 /* Menù responsive */
-@media only screen and (min-width: 341px) {
+@media only screen and (min-width: 455px) {
   .pivot {
     display: block;
   }
@@ -39,7 +39,7 @@ body {
     display: none;
   }
 }
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 454px) {
   .pivot {
     display: none;
   }
@@ -50,6 +50,18 @@ body {
 }
 
 /* Fix temporaneo FocusZone in CourseListView */
+@media only screen and (max-width: 766px) {
+  /*
+  body {
+    background-color: orange;
+  }
+  */
+
+  .ms-List {
+    width: 478px;
+  }
+}
+
 @media only screen and (max-width: 575px) {
   /*
   body {
@@ -157,4 +169,15 @@ body {
 .card {
   background-color: #faf9f8;
   border: none;
+}
+
+a:active,
+a:focus,
+button:active,
+button:focus {
+  outline: 0;
+  border: none;
+  -moz-outline-style: none;
+  outline: none;
+  box-shadow: none !important;
 }

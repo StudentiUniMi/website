@@ -1,5 +1,6 @@
 /*
 TODO LIST
+- Aggiungere target="_blank" a tutti i link
 - Sistemare le card che si sovrappongono in mobile mode. OK ma da migliorare
 - Filtri sulla lista di corsi
 - Quando premi sul pdf del drive dovrebbe fartelo scaricare invece di reindirizzare sulla repo github dove non vanno i link
