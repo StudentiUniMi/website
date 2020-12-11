@@ -10,7 +10,7 @@ import { BrowserRouter as Router, useHistory } from "react-router-dom";
 const theme = getTheme();
 const dropdownStyles: Partial<IDropdownStyles> = {
     //dropdownOptionText: { textAlign: 'center' },
-    dropdown: { width: '100%', border: 'none', borderStyle: 'none', height: '44px', backgroundColor: '#faf9f8', alignItems: 'center' },
+    dropdown: { width: '100%', border: 'none', borderStyle: 'none', height: '44px', backgroundColor: '#faf9f8', alignItems: 'center', fontSize: FontSizes.size16 },
     dropdownItems: { textAlign: 'center', alignItems: 'center' }
 };
 

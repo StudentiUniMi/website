@@ -5,7 +5,7 @@ html {
 
 body {
   background-color: #faf9f8;
-  margin-bottom: 200px; /* Footer height */
+  margin-bottom: 220px; /* Footer height */
 }
 
 .footer {
@@ -14,7 +14,7 @@ body {
   width: 100%;
   background-color: #dddddd;
   /*background-color: lightblue;*/
-  height: 150px;
+  height: 170px;
 }
 
 .header-title .row {
@@ -86,6 +86,10 @@ body {
   }
 }
 
+/*------------
+  Da sistemare
+------------*/
+
 .faq-proposer select {
   width: 100%;
   box-shadow: none;
@@ -138,10 +142,6 @@ body {
   font-weight: 400;
 }
 
-/*------------
-  Da sistemare
-------------*/
-
 .ms-ChoiceField-labelWrapper {
   overflow: visible;
 }
@@ -150,7 +150,7 @@ body {
   margin-bottom: 12px;
 }
 
-#home .ms-Icon {
+.home .ms-Icon {
   font-size: 40px;
 }
 
@@ -173,11 +173,15 @@ body {
 
 a:active,
 a:focus,
-button:active,
-button:focus {
+.home button:active,
+.home button:focus {
   outline: 0;
   border: none;
-  -moz-outline-style: none;
   outline: none;
   box-shadow: none !important;
+}
+
+.faq-proposer button:focus,
+.faq-proposer button:active {
+  outline: none;
 }

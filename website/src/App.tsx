@@ -1,12 +1,10 @@
 /*
 TODO LIST
 - Aggiungere target="_blank" a tutti i link
-- Sistemare le card che si sovrappongono in mobile mode. OK ma da migliorare
+- Sistemare le card che si sovrappongono ma devono rimanere centrate
 - Filtri sulla lista di corsi
 - Quando premi sul pdf del drive dovrebbe fartelo scaricare invece di reindirizzare sulla repo github dove non vanno i link
 - Sezione about per chi ha contribuito (magari anche chi ha fatto delle faq)
-- Sezione amministratori per far sapere chi contattare per ogni cdl. Una colonna per ogni cdl con gli admin
-- Sezione relativa a chi contattare per ogni corso di laurea (amministratori), può servire per dare un riepilogo totale. fai varie colonne ciascuna con gli admin ecc.
 - Footer con social di Unimi
 */
 

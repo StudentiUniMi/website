@@ -20,19 +20,18 @@ const iconClass = mergeStyles({
 });
 
 const cardStyle = {
-    width: '150px',
+    width: '140px',
     height: '200px'
 }
 
 const Home = () => {
     return (
-        <Container id="home">
+        <Container className="home">
             <div className="text-center">
                 <Text style={{ fontSize: FontSizes.size16 }}>
                     <p>
-                        Network nato con lo scopo di creare un punto centrale di comunicazione tra tutti i corsi di laurea in ambito informatico dell'università degli studi di Milano.
-                        Sono disponibili i collegamenti ai siti web, gruppi telegram e faq dei corsi delle triennali di informatica,
-                        informatica musicale, informatica per la comunicazione digitale, e sicurezza dei sistemi e delle reti informatiche (+ online).
+                        Network nato con lo scopo di creare un punto centrale di collegamento tra tutti i corsi di laurea in ambito informatico dell'università degli studi di Milano.
+                        Sono disponibili collegamenti a siti web, gruppi telegram e faq dei corsi didattici.
                         <p>Per qualsiasi dubbio o proposta è possibile scrivere al creatore del network <Link href="https://t.me/giuseppetm" className="text-decoration-none" target="_blank">@giuseppetm</Link>.</p>
                     </p>
                 </Text>
@@ -42,14 +41,14 @@ const Home = () => {
                 <div className="row">
                     <div className="card m-auto text-center" style={cardStyle}>
                         <div className="card-body">
-                            <Link href="https://github.com/NetworkStataleInformatica/network/blob/master/regolamento.pdf" target="_blank">
+                            <Link href="%PUBLIC_URL%/regolamento.pdf" target="_blank">
                                 <IconButton iconProps={{ iconName: "ComplianceAudit" }} className={iconClass} />
                             </Link>
                         </div>
                         <div className="card-body">
                             <div className="card-text">
                                 <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
-                                    Regolamento del Network
+                                    Regolamento
                             </Text>
                             </div>
                         </div>
@@ -64,7 +63,22 @@ const Home = () => {
                         <div className="card-body">
                             <div className="card-text">
                                 <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
-                                    Canale Telegram del Network
+                                    Canale Telegram
+                            </Text>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="card m-auto text-center" style={cardStyle}>
+                        <div className="card-body">
+                            <Link href="%PUBLIC_URL%/drive.pdf" target="_blank">
+                                <IconButton iconProps={{ iconName: "CloudWeather" }} className={iconClass} />
+                            </Link>
+                        </div>
+                        <div className="card-body">
+                            <div className="card-text">
+                                <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
+                                    Drive
                             </Text>
                             </div>
                         </div>
@@ -79,26 +93,12 @@ const Home = () => {
                         <div className="card-body">
                             <div className="card-text">
                                 <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
-                                    Server Discord del Network
+                                    Server Discord
                             </Text>
                             </div>
                         </div>
                     </div>
 
-                    <div className="card m-auto text-center" style={cardStyle}>
-                        <div className="card-body">
-                            <Link href="https://github.com/NetworkStataleInformatica/network/blob/master/drive.pdf" target="_blank">
-                                <IconButton iconProps={{ iconName: "CloudWeather" }} className={iconClass} />
-                            </Link>
-                        </div>
-                        <div className="card-body">
-                            <div className="card-text">
-                                <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
-                                    Drive del Network
-                            </Text>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </Container>
         </Container >

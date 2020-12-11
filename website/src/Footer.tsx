@@ -39,12 +39,17 @@ const Footer = () => {
                 </p>
                 <div className="row justify-content-center">
                     <Text>
-                        <Link href="https://github.com/NetworkStataleInformatica/faq">Repository del sito web <i className="fab fa-github"></i></Link>
+                        <Link href="https://github.com/NetworkStataleInformatica/network">Repository del network <i className="fab fa-github"></i></Link>
                     </Text>
                 </div>
                 <div className="row justify-content-center">
                     <Text>
-                        <Link href="http://www.quickunimi.it/">Accesso rapido servizi Unimi <i className="fas fa-graduation-cap"></i></Link>
+                        <Link href="http://unimia.unimi.it/">Unimia <i className="fas fa-globe-europe"></i></Link>
+                    </Text>
+                </div>
+                <div className="row justify-content-center">
+                    <Text>
+                        <Link href="http://www.quickunimi.it/">QuickUnimi <i className="fas fa-globe"></i></Link>
                     </Text>
                 </div>
                 <div className="row justify-content-center">
