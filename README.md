@@ -10,5 +10,6 @@ Sono disponibili i collegamenti ai siti web, gruppi telegram e faq dei corsi del
 - Sicurezza dei sistemi e delle reti informatiche online
   
 <br/>
-Per qualsiasi dubbio o proposta è possibile scrivere al creatore del network [@giuseppetm](https://t.me/giuseppetm).<br/>
+Per qualsiasi dubbio o proposta è possibile scrivere al creatore del network [@giuseppetm](https://t.me/giuseppetm).
+<br/>
 Il canale telegram è disponibile al seguente link [t.me/stataleInformatica](https://t.me/stataleinformatica)
