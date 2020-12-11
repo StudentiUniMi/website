@@ -41,7 +41,7 @@ const Home = () => {
                 <div className="row">
                     <div className="card m-auto text-center" style={cardStyle}>
                         <div className="card-body">
-                            <Link href="%PUBLIC_URL%/regolamento.pdf" target="_blank">
+                            <Link href="./regolamento.pdf" target="_blank">
                                 <IconButton iconProps={{ iconName: "ComplianceAudit" }} className={iconClass} />
                             </Link>
                         </div>
@@ -71,7 +71,7 @@ const Home = () => {
 
                     <div className="card m-auto text-center" style={cardStyle}>
                         <div className="card-body">
-                            <Link href="%PUBLIC_URL%/drive.pdf" target="_blank">
+                            <Link href="./drive.pdf" target="_blank">
                                 <IconButton iconProps={{ iconName: "CloudWeather" }} className={iconClass} />
                             </Link>
                         </div>
