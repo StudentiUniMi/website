@@ -62,10 +62,10 @@ const HeaderMenu = (props: Props) => {
     const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }))
 
     return (
-        <div style={{ boxShadow: theme.effects.elevation4 }} className="header-menu">
+        <div style={{  boxShadow: '0px 0.5px 0.5px #b3b5b4' }} className="header-menu">
             <div className="pivot">
                 <Pivot
-                    aria-label="Menu principale"
+                    aria-label="Main menu"
                     selectedKey={selectedKey}
                     onLinkClick={handlePivotLinkClick}
                     headersOnly={true}

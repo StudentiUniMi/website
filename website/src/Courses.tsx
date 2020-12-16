@@ -20,7 +20,7 @@ const itemSize = 120;
 const styles: IChoiceGroupOptionStyles = {
     choiceFieldWrapper: {
         width: itemSize + "px",
-        height: itemSize + "px",
+        height: itemSize + "px"
     },
     labelWrapper: {
         maxWidth: itemSize / (3 / 4) + "px",
@@ -29,7 +29,7 @@ const styles: IChoiceGroupOptionStyles = {
     field: {
         height: "100%",
         padding: "0px",
-    },
+    }
 };
 
 const options: IChoiceGroupOption[] = [

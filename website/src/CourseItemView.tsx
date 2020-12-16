@@ -41,7 +41,6 @@ const CourseItemView = (props: Props) => {
 
     return (
         <Card
-            aria-label="Clickable vertical card with image bleeding at the center of the card"
             tokens={cardTokens}
         >
             <Card.Item>
