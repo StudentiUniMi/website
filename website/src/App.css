@@ -137,6 +137,14 @@ footer .row {
   text-align: center;
 }
 
+.tutor {
+  color: #be5eeb;
+}
+
+.tutor:hover {
+  color: #7f3e9e;
+}
+
 /*------------
   Da sistemare
 ------------*/
