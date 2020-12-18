@@ -13,6 +13,7 @@ import { TeachingBubble } from 'office-ui-fabric-react/lib/TeachingBubble';
 import { DirectionalHint } from 'office-ui-fabric-react/lib/Callout';
 import { useBoolean } from '@uifabric/react-hooks';
 
+/*
 const dropdownControlledExampleOptions = [
     { key: 'informatica', value: "Informatica musicale", text: 'Informatica' },
     { key: 'informatica_musicale', value: "Informatica musicale", text: 'Informatica musicale' },
@@ -20,14 +21,17 @@ const dropdownControlledExampleOptions = [
     { key: 'sicurezza_sistemi_reti_informatiche', value: "SSRI", text: 'S.S.R.I.' },
     { key: 'sicurezza_sistemi_reti_informatiche_online', value: "SSRI Online", text: 'S.S.R.I. online' }
 ];
+*/
 
 
 const FaqProposer = () => {
-    const [selectedItem, setSelectedItem] = React.useState<IDropdownOption>();
+    // const [selectedItem, setSelectedItem] = React.useState<IDropdownOption>();
 
+    /*
     const onChange = (event?: React.FormEvent<HTMLDivElement>, item?: IDropdownOption, index?: number): void => {
         setSelectedItem(item);
     };
+    */
 
     const [teachingBubbleVisible, { toggle: toggleTeachingBubbleVisible }] = useBoolean(false);
 
@@ -123,9 +127,11 @@ const FaqProposer = () => {
 
 export default FaqProposer;
 
-// Da sistemare, non vna
+// Da sistemare, non funge
+/*
 $('#faq-proposer-form').submit(function (event) {
     event.preventDefault();
     alert('Faq mandata con successo, grazie per la collaborazione.');
     return false;
 });
+*/

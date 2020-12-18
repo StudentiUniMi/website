@@ -3,11 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
 import { FontSizes } from '@fluentui/theme';
-import { getTheme } from '@fluentui/react';
-import { Dropdown, DropdownMenuItemType, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
+import { Dropdown, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
 import { BrowserRouter as Router, useHistory } from "react-router-dom";
 
-const theme = getTheme();
 const dropdownStyles: Partial<IDropdownStyles> = {
     //dropdownOptionText: { textAlign: 'center' },
     dropdown: { width: '100%', border: 'none', borderStyle: 'none', height: '44px', backgroundColor: '#faf9f8', alignItems: 'center', fontSize: FontSizes.size16 },

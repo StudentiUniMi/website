@@ -3,9 +3,8 @@ TODO LIST
 - Aggiungere target="_blank" a tutti i link
 - Sistemare le card che si sovrappongono ma devono rimanere centrate
 - Filtri sulla lista di corsi
-- Quando premi sul pdf del drive dovrebbe fartelo scaricare invece di reindirizzare sulla repo github dove non vanno i link
+- Fare tutte le faq in markdown compresi regolamento e roba sui drive, in questo modo non si dovrà scaricare nessun pdf
 - Sezione about per chi ha contribuito (magari anche chi ha fatto delle faq)
-- Footer con social di Unimi
 */
 
 import React from "react";
