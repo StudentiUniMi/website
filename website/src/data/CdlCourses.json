@@ -532,6 +532,14 @@
 
 
 
+
+
+    
+
+
+
+
+
     "informatica_musicale":[
         {
           "name": "Matematica del continuo",
@@ -564,6 +572,10 @@
           "faq": ""
         }
     ],
+
+
+
+
 
 
 
@@ -1188,5 +1200,90 @@
           ],
           "faq": ""
         }
-    ]
+    ],
+
+
+
+
+
+
+
+
+
+    
+    "magistrale_informatica":[
+      {
+        "name": "",
+        "anno": "",
+        "semestre": "",
+        "cfu": "",
+        "gruppo": "",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "",
+        "anno": "",
+        "semestre": "",
+        "cfu": "",
+        "gruppo": "",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "",
+        "anno": "",
+        "semestre": "",
+        "cfu": "",
+        "gruppo": "",
+        "websites": [
+        ],
+        "faq": ""
+      }
+  ],
+
+
+
+
+
+
+
+
+
+  "magistrale_sicurezza_informatica":[
+    {
+      "name": "",
+      "anno": "",
+      "semestre": "",
+      "cfu": "",
+      "gruppo": "",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "",
+      "anno": "",
+      "semestre": "",
+      "cfu": "",
+      "gruppo": "",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "",
+      "anno": "",
+      "semestre": "",
+      "cfu": "",
+      "gruppo": "",
+      "websites": [
+      ],
+      "faq": ""
+    }
+]
+
+
 }

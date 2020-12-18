@@ -5,6 +5,7 @@ TODO LIST
 - Filtri sulla lista di corsi
 - Fare tutte le faq in markdown compresi regolamento e roba sui drive, in questo modo non si dovrà scaricare nessun pdf
 - Sezione about per chi ha contribuito (magari anche chi ha fatto delle faq)
+- Una sezione contenente manifesti ecc? ci starebbe
 */
 
 import React from "react";

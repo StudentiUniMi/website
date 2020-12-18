@@ -17,7 +17,23 @@ initializeIcons();
 
 const itemSize = 120;
 
-const styles: IChoiceGroupOptionStyles = {
+const stylesMagistrali: IChoiceGroupOptionStyles = {
+    choiceFieldWrapper: {
+        backgroundColor: '#f5efcb',
+        width: itemSize + "px",
+        height: itemSize + "px"
+    },
+    labelWrapper: {
+        maxWidth: itemSize / (3 / 4) + "px",
+        height: "auto",
+    },
+    field: {
+        height: "100%",
+        padding: "0px",
+    }
+};
+
+const stylesTriennali: IChoiceGroupOptionStyles = {
     choiceFieldWrapper: {
         width: itemSize + "px",
         height: itemSize + "px"
@@ -35,33 +51,45 @@ const styles: IChoiceGroupOptionStyles = {
 const options: IChoiceGroupOption[] = [
     {
         key: "informatica",
-        styles: styles,
+        styles: stylesTriennali,
         text: "Informatica",
         iconProps: { iconName: "System" },
     },
     {
         key: "informatica_musicale",
-        styles: styles,
+        styles: stylesTriennali,
         text: "Informatica musicale",
         iconProps: { iconName: "MusicInCollection" },
     },
     {
         key: "informatica_com_digitale",
-        styles: styles,
+        styles: stylesTriennali,
         text: "Informatica comunicazione digitale",
         iconProps: { iconName: "News" },
     },
     {
         key: "sicurezza_sistemi_reti_informatiche",
-        styles: styles,
+        styles: stylesTriennali,
         text: "Sicurezza sistemi e reti informatiche",
         iconProps: { iconName: "Fingerprint" },
     },
     {
         key: "sicurezza_sistemi_reti_informatiche_online",
-        styles: styles,
+        styles: stylesTriennali,
         text: "Sicurezza sistemi e reti informatiche online",
         iconProps: { iconName: "Fingerprint" },
+    },
+    {
+        key: "magistrale_informatica",
+        styles: stylesMagistrali,
+        text: "Informatica",
+        iconProps: { iconName: "System" },
+    },
+    {
+        key: "magistrale_sicurezza_informatica",
+        styles: stylesMagistrali,
+        text: "Sicurezza informatica",
+        iconProps: { iconName: "Lock" },
     }
 ];
 
@@ -82,8 +110,9 @@ const Courses = () => {
         <Container id="courses">
             <div className="text-center">
                 <Text style={{ fontSize: FontSizes.size16 }}>
-                    <p>Qui è possibile vedere i gruppi telegram, siti web, e faq (se disponibili)
-                di ogni corso didattico del tuo corso di laurea.</p>
+                    <p className="mb-0">Qui è possibile vedere i gruppi telegram, siti web, e faq (se disponibili)
+                    di ogni corso didattico del tuo corso di laurea. </p>
+                    <p>I corsi di laurea indicati in giallo riguardano lauree magistrali.</p>
                     <p><Text style={{ fontWeight: 500 }}>Scegli un corso di laurea</Text></p>
                 </Text>
             </div>
