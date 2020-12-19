@@ -1,10 +1,12 @@
 /*
 TODO LIST
+- Aggiungere gli admin delle magistrali nella sezione
 - Aggiungere target="_blank" a tutti i link
+- Sistemare il routing del sito
+- Fare tutte le faq in markdown compresi regolamento e roba sui drive, in questo modo non si dovrà scaricare nessun pdf
+- Filtri sulla lista dei corsi generati
 - Una sezione contenente manifesti ecc? ci starebbe
 - Sistemare le card che si sovrappongono ma devono rimanere centrate + il fatto della box shadow che dà problemi
-- Filtri sulla lista dei corsi generati
-- Fare tutte le faq in markdown compresi regolamento e roba sui drive, in questo modo non si dovrà scaricare nessun pdf
 - Sezione about per chi ha contribuito (magari anche chi ha fatto delle faq)
 */
 
