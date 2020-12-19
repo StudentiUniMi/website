@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Text } from "office-ui-fabric-react/lib/Text";
 import { FontSizes } from '@fluentui/theme';
+import { Link } from 'office-ui-fabric-react';
 import {
     ChoiceGroup,
     IChoiceGroupOption,
@@ -82,13 +83,13 @@ const options: IChoiceGroupOption[] = [
     {
         key: "magistrale_informatica",
         styles: stylesMagistrali,
-        text: "Informatica",
+        text: "Informatica (magistrale)",
         iconProps: { iconName: "System" },
     },
     {
         key: "magistrale_sicurezza_informatica",
         styles: stylesMagistrali,
-        text: "Sicurezza informatica",
+        text: "Sicurezza informatica (magistrale)",
         iconProps: { iconName: "Lock" },
     }
 ];
@@ -107,12 +108,13 @@ const Courses = () => {
     };
 
     return (
-        <Container id="courses">
+        <Container className="courses">
             <div className="text-center">
                 <Text style={{ fontSize: FontSizes.size16 }}>
                     <p className="mb-0">Qui è possibile vedere i gruppi telegram, siti web, e faq (se disponibili)
                     di ogni corso didattico del tuo corso di laurea. </p>
-                    <p>I corsi di laurea indicati in giallo riguardano lauree magistrali.</p>
+                    <p className="mb-0">I corsi di laurea indicati in giallo riguardano lauree magistrali, gli altri invece le triennali.</p>
+                    <p>Se noti qualcosa che non corrisponde o che andrebbe sistemato puoi contattare <Link href="https://t.me/giuseppetm" className="text-decoration-none" target="_blank"> @giuseppetm</Link>.</p>
                     <p><Text style={{ fontWeight: 500 }}>Scegli un corso di laurea</Text></p>
                 </Text>
             </div>

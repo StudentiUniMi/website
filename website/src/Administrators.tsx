@@ -4,14 +4,6 @@ import './App.css';
 import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
-import { Dropdown, DropdownMenuItemType, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
-import { CompoundButton } from 'office-ui-fabric-react';
-import { Label } from 'office-ui-fabric-react/lib/Label';
-import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
-import { TeachingBubble } from 'office-ui-fabric-react/lib/TeachingBubble';
-import { DirectionalHint } from 'office-ui-fabric-react/lib/Callout';
-import { useBoolean } from '@uifabric/react-hooks';
-
 
 const Administrators = () => {
 

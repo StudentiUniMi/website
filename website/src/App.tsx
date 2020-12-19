@@ -1,11 +1,11 @@
 /*
 TODO LIST
 - Aggiungere target="_blank" a tutti i link
-- Sistemare le card che si sovrappongono ma devono rimanere centrate
-- Filtri sulla lista di corsi
+- Una sezione contenente manifesti ecc? ci starebbe
+- Sistemare le card che si sovrappongono ma devono rimanere centrate + il fatto della box shadow che dà problemi
+- Filtri sulla lista dei corsi generati
 - Fare tutte le faq in markdown compresi regolamento e roba sui drive, in questo modo non si dovrà scaricare nessun pdf
 - Sezione about per chi ha contribuito (magari anche chi ha fatto delle faq)
-- Una sezione contenente manifesti ecc? ci starebbe
 */
 
 import React from "react";

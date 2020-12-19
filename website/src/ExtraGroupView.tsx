@@ -55,7 +55,7 @@ const ExtraGroupView = (props: Props) => {
                     {data.description}
                 </Text>
                 <Text variant="small" styles={helpfulTextStyles}>
-                    <Icon iconName="Send" />
+                    <i className="fab fa-telegram-plane" style={{color: '#6087eb'}}></i>
                     &nbsp;
                     <Link href={data.gruppo}>
                         Gruppo Telegram

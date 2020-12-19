@@ -1,18 +1,12 @@
 import * as React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { IPersonaSharedProps, Persona, PersonaPresence, PersonaSize } from 'office-ui-fabric-react/lib/Persona';
 import { Link } from 'office-ui-fabric-react';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
 import { FontSizes } from '@fluentui/theme';
 
 const Footer = () => {
-    const Giuseppetm: IPersonaSharedProps = {
-        imageUrl: process.env.PUBLIC_URL + '/profileRecolored2.png',
-        text: '@giuseppetm'
-      };
-
     return (
         <footer style={{ backgroundColor: '#cccccc' }}>
             <Container style={{ backgroundColor: '#cccccc', width:'100%' }}>
@@ -32,14 +26,6 @@ const Footer = () => {
                                 <p className="mb-1">
                                 il creatore del network tramite telegram.
                                 </p>
-                                {/*
-                                <Persona
-                                    {...Giuseppetm}
-                                    size={PersonaSize.size24}
-                                    presence={PersonaPresence.online}
-                                    imageAlt="Annie Lindqvist, status is online"
-                                />
-                                */}
                                 <Link href="https://t.me/giuseppetm" className="text-decoration-none" target="_blank"> @giuseppetm</Link>
                             </Text>
                         </p>

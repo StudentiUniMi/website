@@ -51,24 +51,42 @@ const CourseItemView = (props: Props) => {
                     {data.cfu} CFU
           </Text>
                 <Text styles={descriptionTextStyles}>
-                    {
-                        data.anno !== "Complementare" ? <span>{data.anno}° Anno, </span> : <span>Complementare, </span>
-                    }
-                    {data.semestre}° Semestre
+                {
+                    ( () => {
+                        if (data.anno === "") {
+                            return <span></span>;
+                        } else if (data.anno === "Complementare") {
+                            return <span>Complementare, </span>;
+                        } else return <span>{data.anno}° Anno, </span>;
+                    })()
+                }
+                {data.semestre}° Semestre
           </Text>
-                <Text variant="small" styles={helpfulTextStyles}>
-                    <Icon iconName="Send" />
-                    &nbsp;
-                    <Link href={data.gruppo}>
-                        Gruppo Telegram
-                    </Link>
-                </Text>
+                {
+                    ( () => {
+                        if (data.gruppo !== "") {
+                            return (
+                            <Text variant="small" styles={helpfulTextStyles}>
+                                <i className="fab fa-telegram-plane" style={{color: '#6087eb'}}></i>
+                                &nbsp;
+                                <Link href={data.gruppo}>
+                                    Gruppo Telegram
+                                </Link>
+                            </Text>
+                            )
+                        } else {
+                            return (
+                                <Text variant="small" styles={helpfulTextStyles}>Gruppo non disponibile.</Text>
+                            )
+                        }
+                    })()
+                }
                 {
                     data.websites.length !== 0 ?
                         <Text variant="small" styles={helpfulTextStyles}>
-                            <Icon iconName="Link" />
-                                            &nbsp;
-                    {data.websites.map(
+                            <i className="fas fa-link" style={{color:'#696a6b'}}></i>
+                            &nbsp;
+                            {data.websites.map(
                                 (e, i) => {
                                     return (
                                         <span key={i}>
@@ -79,7 +97,6 @@ const CourseItemView = (props: Props) => {
                                         </span>
                                     )
                                 }
-
                             )}
                         </Text>
                         : <span className="mt-0"></span>
@@ -87,10 +104,10 @@ const CourseItemView = (props: Props) => {
                 {
                     data.faq !== "" ?
                         <Text variant="small" styles={helpfulTextStyles}>
-                            <Icon iconName="Robot" />
+                            <i className="far fa-question-circle"></i>
                     &nbsp;
                     <Link href={data.faq}>
-                                Faq
+                            Faq
                     </Link>
                         </Text>
                         :

@@ -1207,37 +1207,783 @@
 
 
 
-
-
-
-    
     "magistrale_informatica":[
       {
-        "name": "",
+        "name": "Artificial Intelligence",
         "anno": "",
-        "semestre": "",
-        "cfu": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/BVhVgBQJUmLWxcilRH02yA",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Programmazione Avanzata",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CcGyMEiBJialWeVvRLz7Lw",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Sviluppo Software In Gruppi Di Lavoro Complessi",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/JklfKUkXZltxcoOZ7m6H5Q",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Architetture Multimediali",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
         "gruppo": "",
         "websites": [
         ],
         "faq": ""
       },
       {
-        "name": "",
+        "name": "Informatica Teorica",
         "anno": "",
-        "semestre": "",
-        "cfu": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/NtIxjlOS0ae2u6NyeY2GkQ",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Information Management",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/C6cCWlWAT0thFUE52xEjqA",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Reti Wireless E Mobili",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CpyyKRdKOGnao7n4VBdOow",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Sistemi Distribuiti E Pervasivi",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CPEbyA-QBQOe7uzuCmzQHQ",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Statistical Methods For Machine Learning",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/B8sWO1aM40Lczj5bUq7gAg",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Algoritmi E Complessità",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CcGyMBI8xD8ayp5n0UqeZg",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Algoritmi Paralleli E Distribuiti",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/Hfp1hxVZ_MIWJDfB3mq3tw",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Analisi E Gestione Del Rischio",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/NtIxjhiKuAC9an7II9lPcA ",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Artificial Intelligence",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/BVhVgBQJUmLWxcilRH02yA",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Audio Pattern Recognition",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/BycIchHiU6ikH_jWM_D6vg",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Game Design And Prototyping",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
         "gruppo": "",
         "websites": [
         ],
         "faq": ""
       },
       {
-        "name": "",
+        "name": "Heuristic Algorithms",
         "anno": "",
-        "semestre": "",
-        "cfu": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CcGyME1odjchWDHLR1N4hw",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Methods For Image Processing",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/HEq_JE8RtOJkhXJj0xJlpw",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Natural Interaction",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CPEbyEdjyBaDvwtsUw0uTA",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "New Generation Data Models And Dbmss",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/DcQe5hFJXEbokREVjrjXwQ",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Privacy And Data Protection",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CcGyMESOs8xinKoVgq61Ug",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Privatezza E Protezione Dei Dati",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CcGyMESOs8xinKoVgq61Ug",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Progetto Di Sistemi A Sensore",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CcGyMES907s5-asRK2tgCw",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Programmazione Midi",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
         "gruppo": "",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Programmazione Per La Musica",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/GGU50xpg-41tjEgE11me-A",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Sistemi Intelligenti Avanzati",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CcGyMEaSvFfhWdzdcg3Fsg",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Tecniche Speciali Di Programmazione",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CcGyMFLe9jEqpOMhUW319w",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "3d VIDEO Games",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/B8sWOxb7Sxhvb3TK5vwPEQ",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Algorithms For Massive Datasets",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/BVhVgBcNcx-KQzO3PP8Vkg",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Artificial Intelligence For Video Games",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CpyyKUbD0Fr1xDGy0W2yMg",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Business Information Systems",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Business Process Engineering",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Intelligent Systems For Industry, SUPPLY CHAIN AND ENVIRONMENT",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/intSystemsForIndustry",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Metodi Probabilistici Per L'Informatica",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CcGyMA3VsILmCrO-UeIJoQ",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Online Game Design",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CpyyKVSI-EcOivFZ5xUFZg",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Progettazione Di Sistemi Operativi",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Protocolli Per Reti Ad Hoc E Di Sensori",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/B64ybkeOxzXZDOck1G2SPQ",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Realta' Virtuale",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CRGlPxQFP-lLAkAazR0Fjg",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Real-TIME Graphics Programming",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/F5VMZReza0pTp0nd2bHbtw",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Sicurezza Delle Architetture Orientate Ai Servizi",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Sicurezza Informatica",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CcGyMEv6Cz1h1BouUUD0Cw",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Simulation",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Sviluppo Di Applicazioni Per Dispositivi Mobili",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/AC9fAkhy7f0Hf0b1lu_2VQ",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Teoria Dei Linguaggi",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/NtIxjkyW5ztz9KHd1vGAKg",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Verifica E Convalida Del Software",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/NtIxjlcGooFKQJ9NM5Nxdw",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Visione Artificiale",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CPEbyE-ZQy427hw2yzP7jQ",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Affective Computing",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Architectures For Big Data",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/BcfVnRPtJZPJeCkD4eLNwA",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Architetture E Programmazione Dsp",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Biomedical Signal Processing",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/BRTKxFaMi4qAjLgcp9v-Rw",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Cittadinanza Digitale E Tecnocivismo",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/cittadinanzadigitaletecnocivismo",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Decision Methods And Models",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CcGyMEO57MVHmVWwbI-D2g",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Geometria Computazionale",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/AcMlaBNUV-fGLSTomLMxEg",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Geospatial Data Management",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/DLQoKxpBXFon9KXbiCTzIA",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Logica Matematica",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/AmMNBBuzYRWYWslkQL4QAg",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Metodi Formali",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/AmMNBA_5hC0heGUacmyepg",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Operational Research Complements",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/B3HHmB0ftc_pSJSG76tiGg",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Organizzazione E Digitalizzazione Di Teche Multimediali",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/AJHk9BXWmmfawXgG4UNisQ",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Sound IN Interaction",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Bioinformatics",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CcGyMEoTknxR1GwqK2GNAQ",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Calcolo Numerico",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Didattica Dell'Informatica",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CpyyKUcDgVsi6bCj94Mhxg",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Gpu Computing",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CpyyKUmhwxyYsTX4J9377g",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Information Retrieval",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CUnktldHBG7Yi1qq7v70iw",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Logistics",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Mathematical Logic",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/AmMNBBuzYRWYWslkQL4QAg",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Modellazione E Analisi Di Sistemi",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Advanced Computer Programming",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Distributed Systems",
+        "anno": "",
+        "semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CPEbyA-QBQOe7uzuCmzQHQ",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Game AND Level Design",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CcGyMFIDiYskCI0XgW7b4Q",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Modelli Dei Dati E Dbms Di Nuova Generazione",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/DcQe5hFJXEbokREVjrjXwQ",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Programmazione Per La Musica",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/GGU50xpg-41tjEgE11me-A",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Programmazione Timbrica",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Sicurezza Informatica",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Web Algorithmics",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CcGyME-oQIZUaSpXgPQzog",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Combinatorial Optimization",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/CcGyMEz8DnWayaymiAlapQ",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Complementi Di Ricerca Operativa",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/B3HHmB0ftc_pSJSG76tiGg",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Gestione Dell'Informazione Geospaziale",
+        "anno": "",
+        "semestre": "1",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/DLQoKxpBXFon9KXbiCTzIA",
+        "websites": [
+        ],
+        "faq": ""
+      },
+      {
+        "name": "Teoria Dei Grafi",
+        "anno": "",
+        "Semestre": "2",
+        "cfu": "6",
+        "gruppo": "https://t.me/joinchat/MdZg_kfcC2rZP3mvw2FGBg",
         "websites": [
         ],
         "faq": ""

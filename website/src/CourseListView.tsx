@@ -1,7 +1,6 @@
 import * as React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { Link, Text } from 'office-ui-fabric-react';
 import CourseItemView from "./CourseItemView";
 import Course from "./models/Course";
 import CdlCourses from './data/CdlCourses.json'
