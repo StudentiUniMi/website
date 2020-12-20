@@ -14,6 +14,7 @@
 - [X] Statistica e analisi dei dati
 - [ ] Ingegneria del software
 - [X] Reti di calcolatori
+- [ ] Aspetti etici, legali, sociali ed economici dell’informatica
 - [ ] Crittografia I
 - [ ] Editoria digitale
 - [ ] Elaborazione dei segnali
