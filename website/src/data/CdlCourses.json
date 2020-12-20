@@ -130,15 +130,19 @@
           "gruppo": "https://t.me/joinchat/I5_YNlM4CuXxmcAjlPsiXQ",
           "websites": [
             {
-              "link":"http://pighizzini.di.unimi.it/algoritmi/",
-              "etichetta":"Sito teoria"
+              "link":"https://gpighizziniasd.ariel.ctu.unimi.it/",
+              "etichetta":"Ariel"
             },
             {
               "link":"http://lonati.di.unimi.it/algopig/",
               "etichetta":"Sito lab"
+            },
+            {
+              "link":"http://pighizzini.di.unimi.it/algoritmi/",
+              "etichetta":"Vecchio sito"
             }
           ],
-          "faq": ""
+          "faq": "https://github.com/NetworkStataleInformatica/network/tree/master/faq_cdl_informatica/algoritmi_e_strutture_dati.pdf"
         },
         {
           "name": "Basi di dati",
