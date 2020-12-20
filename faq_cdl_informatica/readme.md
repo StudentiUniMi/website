@@ -7,7 +7,7 @@
 - [X] Logica matematica
 - [X] Matematica del discreto
 - [X] Architettura degli elaboratori II
-- [ ] Algoritmi e strutture dati
+- [X] Algoritmi e strutture dati
 - [X] Basi di dati
 - [X] Programmazione II
 - [X] Sistemi operativi
