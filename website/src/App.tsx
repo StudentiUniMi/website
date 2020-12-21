@@ -1,6 +1,5 @@
 /*
 TODO LIST
-- Sistemare i corsi di informatita mag.
 - Aggiungere gli admin delle magistrali nella sezione
 - Aggiungere target="_blank" a tutti i link
 - Sistemare il routing del sito

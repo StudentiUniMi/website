@@ -218,6 +218,10 @@ footer .row {
   justify-content: center;
 }
 
+.ms-ChoiceField {
+  margin: 4px 4px 4px 4px;
+}
+
 .home .card {
   background-color: #faf9f8;
   border: none;

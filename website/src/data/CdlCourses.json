@@ -1700,7 +1700,7 @@
         "faq": ""
       },
       {
-        "name": "Sicurezza Delle Architetture Orientate Ai Servizi",
+        "name": "Sicurezza delle Architetture Orientate ai Servizi",
         "anno": "",
         "semestre": "2",
         "cfu": "6",
@@ -2071,30 +2071,110 @@
 
   "magistrale_sicurezza_informatica":[
     {
-      "name": "",
-      "anno": "",
-      "semestre": "",
-      "cfu": "",
+      "name": "Complementi di biometria",
+      "anno": "1",
+      "semestre": "1",
+      "cfu": "6",
+      "gruppo": "https://t.me/joinchat/D0N9lhwydDziQ4MxczDNbQ",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Logica",
+      "anno": "1",
+      "semestre": "1",
+      "cfu": "6",
       "gruppo": "",
       "websites": [
       ],
       "faq": ""
     },
     {
-      "name": "",
-      "anno": "",
-      "semestre": "",
-      "cfu": "",
+      "name": "Affidabilità dei sistemi",
+      "anno": "1",
+      "semestre": "1",
+      "cfu": "6",
       "gruppo": "",
       "websites": [
       ],
       "faq": ""
     },
     {
-      "name": "",
-      "anno": "",
-      "semestre": "",
-      "cfu": "",
+      "name": "Complementi di sicurezza e privatezza",
+      "anno": "1",
+      "semestre": "2",
+      "cfu": "6",
+      "gruppo": "",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Gestione della sicurezza nei sistemi informativi",
+      "anno": "1",
+      "semestre": "2",
+      "cfu": "6",
+      "gruppo": "",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Organizzazione aziendale",
+      "anno": "2",
+      "semestre": "1",
+      "cfu": "6",
+      "gruppo": "",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Trattamento dei dati sensibili",
+      "anno": "2",
+      "semestre": "1",
+      "cfu": "6",
+      "gruppo": "",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Sicurezza delle reti",
+      "anno": "1",
+      "semestre": "1",
+      "cfu": "6",
+      "gruppo": "https://t.me/sicurezzadellereti",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Sistemi biometrici",
+      "anno": "1",
+      "semestre": "1",
+      "cfu": "6",
+      "gruppo": "https://t.me/sistemibiometrici",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Computer forensics",
+      "anno": "1",
+      "semestre": "2",
+      "cfu": "6",
+      "gruppo": "",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Crittografia",
+      "anno": "2",
+      "semestre": "1",
+      "cfu": "6",
       "gruppo": "",
       "websites": [
       ],
