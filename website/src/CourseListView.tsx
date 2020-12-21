@@ -58,7 +58,8 @@ const CourseListView = (props: Props) => {
                 className={classNames.listGridExampleTile}
                 style={{
                     height: MAX_ROW_HEIGHT + 'px',
-                    width: 100 / columnCount.current + '%'
+                    //width: 100 / columnCount.current + '%'
+                    width: '213px'
                 }}>
                 <CourseItemView key={index} data={e!} />
             </div>

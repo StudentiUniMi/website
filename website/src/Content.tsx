@@ -5,7 +5,7 @@ import { ItemsKeys } from './HeaderMenu';
 import Home from './Home'
 import Courses from './Courses'
 import FaqProposer from './FaqProposer'
-import AdditionalGroups from './AdditionalGroups'
+import AdditionalGroups from './AdditionalGroupsView'
 import Administrators from './Administrators'
 
 interface Props {

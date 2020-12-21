@@ -84,13 +84,11 @@ main {
 }
 /* End responsive menu */
 
-/* Fix temporaneo FocusZone in CourseListView */
+
+
+
+/* Fix temporaneo FocusZone in CourseListView 
 @media only screen and (max-width: 766px) {
-  /*
-  body {
-    background-color: orange;
-  }
-  */
 
   .ms-List {
     width: 478px;
@@ -98,11 +96,6 @@ main {
 }
 
 @media only screen and (max-width: 575px) {
-  /*
-  body {
-    background-color: lightblue;
-  }
-  */
 
   .ms-List {
     width: 478px;
@@ -110,16 +103,11 @@ main {
 }
 
 @media only screen and (max-width: 515px) {
-  /*
-  body {
-    background-color: orange;
-  }
-  */
-
   .ms-List {
     width: 232px;
   }
 }
+*/
 
 footer .row {
   margin: 0;
@@ -127,6 +115,10 @@ footer .row {
 
 .header-title .row {
   margin-right: 0px;
+}
+
+.ms-List {
+  padding: 3px;
 }
 
 .ms-Dropdown-title {
@@ -138,11 +130,11 @@ footer .row {
 }
 
 .tutor {
-  color: #f0a243;
+  color:#3ab58a;
 }
 
 .tutor:hover {
-  color: #f06843;
+  color:#56d1a6;
 }
 
 /*------------

@@ -28,7 +28,7 @@ const classNames = mergeStyleSets({
 const ROWS_PER_PAGE = 3;
 const MAX_ROW_HEIGHT = 240;
 
-const AdditionalGroups = () => {    // props non dovrebbe servirmi
+const AdditionalGroupsView = () => {    // props non dovrebbe servirmi
     const groups: ExtraGroup[] = GruppiExtra;
     const columnCount = React.useRef(0);
     const rowHeight = React.useRef(0);
@@ -52,7 +52,7 @@ const AdditionalGroups = () => {    // props non dovrebbe servirmi
                 className={classNames.listGridExampleTile}
                 style={{
                     height: MAX_ROW_HEIGHT + 'px',
-                    width: 100 / columnCount.current + '%'
+                    width: '213px'
                 }}>
                 <ExtraGroupView data={e!} />
             </div>
@@ -85,4 +85,4 @@ const AdditionalGroups = () => {    // props non dovrebbe servirmi
     )
 };
 
-export default AdditionalGroups;
+export default AdditionalGroupsView;

@@ -45,13 +45,12 @@ const ExtraGroupView = (props: Props) => {
     return (
         <Card
             aria-label="Clickable vertical card with image bleeding at the center of the card"
-            tokens={cardTokens}
-        >
+            tokens={cardTokens}>
             <Card.Item>
                 <Persona text={data.name} />
             </Card.Item>
             <Card.Section>
-                <Text styles={descriptionTextStyles}>
+                <Text variant="small" styles={helpfulTextStyles}>
                     {data.description}
                 </Text>
                 <Text variant="small" styles={helpfulTextStyles}>
