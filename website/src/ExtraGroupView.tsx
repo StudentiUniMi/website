@@ -8,7 +8,7 @@ import {
 } from "@uifabric/react-cards";
 import ExtraGroup from './models/ExtraGroup'
 import { initializeIcons } from '@uifabric/icons';
-import { FontWeights, Icon, ITextStyles, Persona } from '@fluentui/react';
+import { FontWeights, ITextStyles, Persona } from '@fluentui/react';
 initializeIcons();
 
 interface Props {
@@ -27,6 +27,8 @@ const ExtraGroupView = (props: Props) => {
         },
     };
     */
+
+    /*
     const descriptionTextStyles: ITextStyles = {
         root: {
             fontSize: "12px",
@@ -34,6 +36,7 @@ const ExtraGroupView = (props: Props) => {
             fontWeight: FontWeights.semibold
         },
     };
+    */
     const helpfulTextStyles: ITextStyles = {
         root: {
             color: "#333333",

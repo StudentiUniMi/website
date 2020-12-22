@@ -8,7 +8,7 @@ import {
 } from "@uifabric/react-cards";
 import Course from './models/Course'
 import { initializeIcons } from '@uifabric/icons';
-import { FontWeights, Icon, ITextStyles, Persona } from '@fluentui/react';
+import { FontWeights, ITextStyles, Persona } from '@fluentui/react';
 initializeIcons();
 
 interface Props {

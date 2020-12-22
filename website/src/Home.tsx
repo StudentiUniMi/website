@@ -65,7 +65,7 @@ const Home = () => {
                                     Canale Telegram
                             </Text>
                             </div>
-                        </div>
+                        </div> 
                     </div>
 
                     <div className="card m-auto text-center" style={cardStyle}>

@@ -95,16 +95,21 @@ const options: IChoiceGroupOption[] = [
 ];
 
 const Courses = () => {
-    const [selectedKey, setSelectedKey] = React.useState<string>();
+    
 
-    const history = useHistory()
+    const history = useHistory();
+
+    var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
+    var initialState = states.length === 2 ? states[states.length-1] : ''
+
+    const [selectedKey, setSelectedKey] = React.useState<string>(initialState);
 
     const selectionChanged = (
         ev?: React.FormEvent<HTMLElement | HTMLInputElement>,
         option?: IChoiceGroupOption
     ): void => {
-        setSelectedKey(option?.key);
-        history.push(`/network/courses/${option?.key}/`);
+        setSelectedKey(option?.key ?? '');
+        history.push(`/courses/${option?.key}/`);
     };
 
     return (
@@ -121,6 +126,7 @@ const Courses = () => {
             <ChoiceGroup
                 options={options}
                 onChange={selectionChanged}
+                selectedKey={selectedKey}
             />
             <br />
             <p className='text-center' style={{ display: selectedKey ? 'block' : 'none' }}>

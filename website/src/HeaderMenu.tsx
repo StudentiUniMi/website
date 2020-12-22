@@ -4,7 +4,7 @@ import './App.css';
 import { Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
 import { FontSizes } from '@fluentui/theme';
 import { Dropdown, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
-import { BrowserRouter as Router, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const dropdownStyles: Partial<IDropdownStyles> = {
     //dropdownOptionText: { textAlign: 'center' },
@@ -33,28 +33,32 @@ interface Props {
 }
 
 const HeaderMenu = (props: Props) => {
-    const history = useHistory()
+    const history = useHistory();
 
-    var states = history.location.pathname.substring(1).split('/').filter(x => x !== '')
-    console.log(states)
+    var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
 
-    var initialState = (states.length > 1 ? states[1] : ItemsKeys.home) as ItemsKeys
-    console.log(initialState)
-
+    var initialState = (states.length > 0 ? states[0] : ItemsKeys.home) as ItemsKeys;
+    var extra = ''
+    if(initialState === ItemsKeys.courses && states.length > 1)
+    {
+        extra = states[1].split('/')[0] + '/'
+    }
+    
     const [selectedKey, setSelectedKey] = React.useState(initialState);
-    history.push(`/network/${initialState}/`);
+    history.push(`/${initialState}/${extra}`);
+    props.contentChanged(initialState);
 
 
     const handlePivotLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
         setSelectedKey(item!.props.itemKey! as ItemsKeys);
         props.contentChanged(item!.props.itemKey! as ItemsKeys);
-        history.push(`/network/${item!.props.itemKey!}/`);
+        history.push(`/${item!.props.itemKey!}/`);
     };
 
     const onDropdownValueChange = (event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
         setSelectedKey(item!.key! as ItemsKeys);
         props.contentChanged(item!.key! as ItemsKeys);
-        history.push(`/network/${item!.key!}/`);
+        history.push(`/${item!.key!}/`);
     };
 
     const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }))
