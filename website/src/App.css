@@ -87,27 +87,68 @@ main {
 
 
 
-/* Fix temporaneo FocusZone in CourseListView 
+/* Fix temporaneo per centrare le card */
+
 @media only screen and (max-width: 766px) {
-
   .ms-List {
-    width: 478px;
+    margin-left:5%;
+    margin-right:5%;
   }
 }
 
-@media only screen and (max-width: 575px) {
-
+@media only screen and (max-width: 538px) {
   .ms-List {
-    width: 478px;
+    margin-left:27%;
+    margin-right:25%;
+    width: 220px;
   }
 }
 
-@media only screen and (max-width: 515px) {
+@media only screen and (max-width: 480px) {
   .ms-List {
-    width: 232px;
+    margin-left:22%;
+    margin-right:25%;
   }
 }
-*/
+
+@media only screen and (max-width: 430px) {
+  .ms-List {
+    margin-left:20%;
+    margin-right:20%;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .ms-List {
+    margin-left:14%;
+    margin-right:20%;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .ms-List {
+    margin-left:14%;
+    margin-right:20%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .ms-List {
+    margin-left:8%;
+    margin-right:15%;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  .ms-List {
+    margin-left:0%;
+    margin-right:0%;
+  }
+}
+
+/* End fix temporaneo */
+
+
 
 footer .row {
   margin: 0;
@@ -119,6 +160,10 @@ footer .row {
 
 .ms-List {
   padding: 3px;
+}
+
+.ms-card {
+  max-width: 600px;
 }
 
 .ms-Dropdown-title {
