@@ -1,11 +1,12 @@
 /*
 TODO LIST
+- 
+- Box shadow sopra il footer
 - Aggiungere gli admin delle magistrali nella sezione
 - Aggiungere target="_blank" a tutti i link
 - Fare tutte le faq in markdown compresi regolamento e roba sui drive, in questo modo non si dovrà scaricare nessun pdf
 - Filtri sulla lista dei corsi generati
 - Una sezione contenente manifesti ecc? ci starebbe
-- Sistemare le card che si sovrappongono ma devono rimanere centrate
 - Sezione about per chi ha contribuito (magari anche chi ha fatto delle faq)
 */
 

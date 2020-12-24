@@ -8,7 +8,7 @@ import { FontSizes } from '@fluentui/theme';
 
 const Footer = () => {
     return (
-        <footer style={{ backgroundColor: '#cccccc' }}>
+        <footer style={{ backgroundColor: '#cccccc', boxShadow: '0px 0px 0.5px 0.5px #7a7a7a' }}>
             <Container style={{ backgroundColor: '#cccccc', width:'100%' }}>
 
                 <div className="row" style={{ backgroundColor: '#cccccc', width:'100%' }}>

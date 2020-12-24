@@ -42,7 +42,7 @@ const FaqProposer = () => {
                     <p>
                         Qui è possibile proporre nuove faq per un corso che ritieni debba essere aggiornato,
                         o per cui non sono state ancora create delle faq. Si possono trovare le faq di un corso con relative risposte
-                        (se disponibili) nelle card dei corsi di laurea nella sezione "Corsi e faq".
+                        (se disponibili) nelle card dei corsi di laurea nella sezione "Corsi".
                     </p>
                     <p>
                         <DefaultButton
@@ -115,7 +115,7 @@ const FaqProposer = () => {
                             <TextField label="Inserisci la risposta" id="554303651" name="entry.554303651" placeholder="Risposta" multiline rows={3} required />
                         </div>
                     </div>
-                    <CompoundButton primary type="submit" secondaryText="Manda la faq proposta." style={{ backgroundColor: '#797673', border: '1px solid #797673' }} allowDisabledFocus >
+                    <CompoundButton primary type="submit" secondaryText="Manda la faq proposta." allowDisabledFocus >
                         Invia
                     </CompoundButton>
                 </form>

@@ -7,6 +7,7 @@ import CdlCourses from './data/CdlCourses.json'
 import { FocusZone, IRectangle, List } from "@fluentui/react";
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 import { Container } from 'react-bootstrap';
+import './List.css'
 
 interface Props {
     cdl?: string;

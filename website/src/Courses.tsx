@@ -20,7 +20,7 @@ const itemSize = 120;
 
 const stylesMagistrali: IChoiceGroupOptionStyles = {
     choiceFieldWrapper: {
-        backgroundColor: '#f5efcb',
+        backgroundColor: '#deecf9',
         width: itemSize + "px",
         height: itemSize + "px"
     },
@@ -45,7 +45,7 @@ const stylesTriennali: IChoiceGroupOptionStyles = {
     },
     field: {
         height: "100%",
-        padding: "0px",
+        padding: "0px"
     }
 };
 
@@ -118,7 +118,7 @@ const Courses = () => {
                 <Text style={{ fontSize: FontSizes.size16 }}>
                     <p className="mb-0">Qui è possibile vedere i gruppi telegram, siti web, e faq (se disponibili)
                     di ogni corso didattico del tuo corso di laurea. </p>
-                    <p className="mb-0">I corsi di laurea indicati in giallo riguardano lauree magistrali, gli altri invece le triennali.</p>
+                    <p className="mb-0">I corsi di laurea evidenziati in azzurro riguardano lauree magistrali, gli altri invece le triennali.</p>
                     <p>Se noti qualcosa che non corrisponde o che andrebbe sistemato puoi contattare <Link href="https://t.me/giuseppetm" className="text-decoration-none" target="_blank"> @giuseppetm</Link>.</p>
                     <p><Text style={{ fontWeight: 500 }}>Scegli un corso di laurea</Text></p>
                 </Text>

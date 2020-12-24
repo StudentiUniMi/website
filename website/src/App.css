@@ -62,6 +62,7 @@ main {
     text-align: center;
   }
 }
+/* End responsive footer */
 
 /* Responsive menu */
 @media only screen and (min-width: 455px) {
@@ -84,71 +85,9 @@ main {
 }
 /* End responsive menu */
 
-
-
-
-/* Fix temporaneo per centrare le card */
-
-@media only screen and (max-width: 766px) {
-  .ms-List {
-    margin-left:5%;
-    margin-right:5%;
-  }
+.ms-ChoiceField-field {
+  box-sizing: border-box;
 }
-
-@media only screen and (max-width: 538px) {
-  .ms-List {
-    margin-left:27%;
-    margin-right:25%;
-    width: 220px;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .ms-List {
-    margin-left:22%;
-    margin-right:25%;
-  }
-}
-
-@media only screen and (max-width: 430px) {
-  .ms-List {
-    margin-left:20%;
-    margin-right:20%;
-  }
-}
-
-@media only screen and (max-width: 375px) {
-  .ms-List {
-    margin-left:14%;
-    margin-right:20%;
-  }
-}
-
-@media only screen and (max-width: 360px) {
-  .ms-List {
-    margin-left:14%;
-    margin-right:20%;
-  }
-}
-
-@media only screen and (max-width: 320px) {
-  .ms-List {
-    margin-left:8%;
-    margin-right:15%;
-  }
-}
-
-@media only screen and (max-width: 280px) {
-  .ms-List {
-    margin-left:0%;
-    margin-right:0%;
-  }
-}
-
-/* End fix temporaneo */
-
-
 
 footer .row {
   margin: 0;
@@ -175,11 +114,11 @@ footer .row {
 }
 
 .tutor {
-  color:#3ab58a;
+  color:#c239b3;
 }
 
 .tutor:hover {
-  color:#56d1a6;
+  color:#881798;
 }
 
 /*------------
@@ -240,10 +179,6 @@ footer .row {
 
 .ms-ChoiceField-labelWrapper {
   overflow: visible;
-}
-
-.ms-Persona {
-  margin-bottom: 12px;
 }
 
 .home .ms-Icon {
