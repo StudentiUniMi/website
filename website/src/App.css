@@ -1,4 +1,4 @@
-/* Old Settings
+/* Old body settings
 body {
   position:relative;
   min-height: 100%;
@@ -208,4 +208,13 @@ a:focus,
 .faq-proposer button:focus,
 .faq-proposer button:active {
   outline: none;
+}
+
+
+@font-face {
+  font-family: 'courier_prime_sansregular';
+  src: url('fonts/courier-prime-sans.regular-webfont.woff2') format('woff2'),
+       url('fonts/courier-prime-sans.regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }

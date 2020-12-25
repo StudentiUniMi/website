@@ -1,12 +1,9 @@
 /*
 TODO LIST
-- 
-- Box shadow sopra il footer
-- Aggiungere gli admin delle magistrali nella sezione
+- Filtri sulla lista dei corsi generati
 - Aggiungere target="_blank" a tutti i link
 - Fare tutte le faq in markdown compresi regolamento e roba sui drive, in questo modo non si dovrà scaricare nessun pdf
-- Filtri sulla lista dei corsi generati
-- Una sezione contenente manifesti ecc? ci starebbe
+- Una sezione contenente manifesti ecc?
 - Sezione about per chi ha contribuito (magari anche chi ha fatto delle faq)
 */
 
@@ -15,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import HeaderTitle from "./HeaderTitle";
 import Content from "./Content";
-import HeaderMenu, { ItemsKeys } from "./HeaderMenu"; // da qui prende il content selezionato
+import HeaderMenu, { ItemsKeys } from "./HeaderMenu";
 import Footer from "./Footer";
 import { HashRouter as Router } from "react-router-dom";
 
@@ -38,4 +35,4 @@ function App() {
   );
 }
 
-export default App; // Per usare la funzione App (il componente) bisogna esportarlo.
+export default App;
