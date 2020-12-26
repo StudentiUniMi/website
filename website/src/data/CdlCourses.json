@@ -819,6 +819,10 @@
           "cfu": "6",
           "gruppo": "https://t.me/joinchat/I5_YNkh2jNH8WERWYWI7ow",
           "websites": [
+            {
+              "link":"https://alanzifsmd.ariel.ctu.unimi.it/v5/home/Default.aspx",
+              "etichetta":"Sito web"
+            }
           ],
           "faq": ""
         },
@@ -2144,7 +2148,7 @@
         "anno": "",
         "semestre": "2",
         "cfu": "6",
-        "gruppo": "",
+        "gruppo": "https://t.me/joinchat/UFzWpqV8Uvwm1b1n",
         "websites": [
         ],
         "faq": ""
@@ -2231,7 +2235,7 @@
       "anno": "1",
       "semestre": "2",
       "cfu": "6",
-      "gruppo": "",
+      "gruppo": "https://t.me/joinchat/GWGg1UUNauLIuiyn",
       "websites": [
       ],
       "faq": ""
@@ -2241,7 +2245,7 @@
       "anno": "1",
       "semestre": "2",
       "cfu": "6",
-      "gruppo": "",
+      "gruppo": "https://t.me/joinchat/SwU6maCj2xL051Hr",
       "websites": [
       ],
       "faq": ""
@@ -2251,7 +2255,7 @@
       "anno": "2",
       "semestre": "1",
       "cfu": "6",
-      "gruppo": "",
+      "gruppo": "https://t.me/joinchat/UcgZgNz_pUfug2aY",
       "websites": [
       ],
       "faq": ""
@@ -2261,7 +2265,7 @@
       "anno": "2",
       "semestre": "1",
       "cfu": "6",
-      "gruppo": "",
+      "gruppo": "https://t.me/joinchat/V1ghUIgNz6Hy4uAn",
       "websites": [
       ],
       "faq": ""
