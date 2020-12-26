@@ -2211,7 +2211,7 @@
       "anno": "1",
       "semestre": "1",
       "cfu": "6",
-      "gruppo": "",
+      "gruppo": "https://t.me/joinchat/S64lLXiCpYRhNkw-",
       "websites": [
       ],
       "faq": ""
@@ -2221,7 +2221,7 @@
       "anno": "1",
       "semestre": "1",
       "cfu": "6",
-      "gruppo": "",
+      "gruppo": "https://t.me/joinchat/FFGacr1ke0yrFKVZ",
       "websites": [
       ],
       "faq": ""
@@ -2282,26 +2282,6 @@
       "semestre": "1",
       "cfu": "6",
       "gruppo": "https://t.me/sistemibiometrici",
-      "websites": [
-      ],
-      "faq": ""
-    },
-    {
-      "name": "Computer forensics",
-      "anno": "1",
-      "semestre": "2",
-      "cfu": "6",
-      "gruppo": "",
-      "websites": [
-      ],
-      "faq": ""
-    },
-    {
-      "name": "Crittografia",
-      "anno": "2",
-      "semestre": "1",
-      "cfu": "6",
-      "gruppo": "",
       "websites": [
       ],
       "faq": ""
