@@ -15,8 +15,8 @@ const dropdownStyles: Partial<IDropdownStyles> = {
 export enum ItemsKeys {
     home = "home",
     courses = "courses",
-    faqProposer = "faqProposer",
-    additionalGroups = "additionalGroups",
+    faq_proposer = "faq_proposer",
+    additional_groups = "additional_groups",
     administrators = "administrators"
 }
 
@@ -24,8 +24,8 @@ const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
     [ItemsKeys.home, "Home"],
     [ItemsKeys.courses, "Corsi"],
     [ItemsKeys.administrators, "Amministratori"],
-    [ItemsKeys.additionalGroups, "Gruppi extra"],
-    [ItemsKeys.faqProposer, "Proponi faq"]
+    [ItemsKeys.additional_groups, "Gruppi extra"],
+    [ItemsKeys.faq_proposer, "Proponi faq"]
 ])
 
 interface Props {
@@ -76,8 +76,8 @@ const HeaderMenu = (props: Props) => {
                     <PivotItem headerText={texts.get(ItemsKeys.home)} style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.home} />
                     <PivotItem headerText={texts.get(ItemsKeys.courses)} style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.courses} />
                     <PivotItem headerText={texts.get(ItemsKeys.administrators)} style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.administrators} />
-                    <PivotItem headerText={texts.get(ItemsKeys.additionalGroups)} style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.additionalGroups} />
-                    <PivotItem headerText={texts.get(ItemsKeys.faqProposer)} style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.faqProposer} />
+                    <PivotItem headerText={texts.get(ItemsKeys.additional_groups)} style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.additional_groups} />
+                    <PivotItem headerText={texts.get(ItemsKeys.faq_proposer)} style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.faq_proposer} />
                 </Pivot>
             </div>
 

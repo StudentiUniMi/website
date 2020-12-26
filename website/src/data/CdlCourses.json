@@ -1115,6 +1115,16 @@
 
     "sicurezza_sistemi_reti_informatiche_online":[
         {
+          "name": "Gruppo principale",
+          "anno": "Anno accademico",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "https://t.me/joinchat/ATvtG0NJuR4ay23Ytmbb8Q",
+          "websites": [
+          ],
+          "faq": ""
+        },
+        {
           "name": "Matematica del continuo",
           "anno": "1",
           "semestre": "1",
