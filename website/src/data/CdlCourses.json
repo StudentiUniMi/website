@@ -2201,11 +2201,41 @@
       "faq": ""
     },
     {
+      "name": "Sistemi biometrici",
+      "anno": "1",
+      "semestre": "1",
+      "cfu": "6",
+      "gruppo": "https://t.me/sistemibiometrici",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
       "name": "Complementi di biometria",
       "anno": "1",
       "semestre": "1",
       "cfu": "6",
       "gruppo": "https://t.me/joinchat/D0N9lhwydDziQ4MxczDNbQ",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Analisi e Gestione del Rischio",
+      "anno": "",
+      "semestre": "1",
+      "cfu": "6",
+      "gruppo": "https://t.me/joinchat/NtIxjhiKuAC9an7II9lPcA ",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Privatezza e Protezione dei Dati",
+      "anno": "",
+      "semestre": "1",
+      "cfu": "6",
+      "gruppo": "https://t.me/joinchat/CcGyMESOs8xinKoVgq61Ug",
       "websites": [
       ],
       "faq": ""
@@ -2276,16 +2306,6 @@
       "semestre": "1",
       "cfu": "6",
       "gruppo": "https://t.me/sicurezzadellereti",
-      "websites": [
-      ],
-      "faq": ""
-    },
-    {
-      "name": "Sistemi biometrici",
-      "anno": "1",
-      "semestre": "1",
-      "cfu": "6",
-      "gruppo": "https://t.me/sistemibiometrici",
       "websites": [
       ],
       "faq": ""
