@@ -22,8 +22,7 @@ const HeaderTitle = () => {
                 <Text style={{
                     fontSize: FontSizes.size42,
                     fontWeight: 600,
-                    color: '#2b88d8',
-                    fontFamily: 'courier_prime_sansregular'
+                    color: '#2b88d8'
                 }}>
                     Network Statale Informatica
                     </Text>

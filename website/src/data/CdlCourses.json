@@ -5,6 +5,46 @@
   
     "informatica":[
         {
+          "name": "A. A. 2017/2018",
+          "anno": "Anno accademico",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "websites": [
+          ],
+          "faq": ""
+        },
+        {
+          "name": "A. A. 2018/2019",
+          "anno": "Anno accademico",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "websites": [
+          ],
+          "faq": ""
+        },
+        {
+          "name": "A. A. 2019/2020",
+          "anno": "Anno accademico",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "websites": [
+          ],
+          "faq": ""
+        },
+        {
+          "name": "A. A. 2020/2021",
+          "anno": "Anno accademico",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "websites": [
+          ],
+          "faq": ""
+        },
+        {
           "name": "Matematica del continuo",
           "anno": "1",
           "semestre": "1",
@@ -546,6 +586,16 @@
 
     "informatica_musicale":[
         {
+          "name": "A. A. 2020/2021",
+          "anno": "Anno accademico",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "websites": [
+          ],
+          "faq": ""
+        },
+        {
           "name": "Matematica del continuo",
           "anno": "1",
           "semestre": "1",
@@ -592,6 +642,26 @@
 
 
     "informatica_com_digitale":[
+        {
+          "name": "A. A. Precedenti",
+          "anno": "Anno accademico",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "websites": [
+          ],
+          "faq": ""
+        },
+        {
+          "name": "A. A. 2020/2021",
+          "anno": "Anno accademico",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "websites": [
+          ],
+          "faq": ""
+        },
         {
           "name": "Interazione uomo macchina",
           "anno": "1",
@@ -831,6 +901,26 @@
 
 
     "sicurezza_sistemi_reti_informatiche":[
+        {
+          "name": "A. A. 2018/2019",
+          "anno": "Anno accademico",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "websites": [
+          ],
+          "faq": ""
+        },
+        {
+          "name": "A. A. 2020/2021",
+          "anno": "Anno accademico",
+          "semestre": "",
+          "cfu": "",
+          "gruppo": "",
+          "websites": [
+          ],
+          "faq": ""
+        },
         {
           "name": "Matematica del continuo",
           "anno": "1",
@@ -1219,6 +1309,16 @@
 
 
     "magistrale_informatica":[
+      {
+        "name": "Gruppo principale",
+        "anno": "Anno accademico",
+        "semestre": "",
+        "cfu": "",
+        "gruppo": "https://t.me/joinchat/T_ld7Kl-91eLSWye",
+        "websites": [
+        ],
+        "faq": ""
+      },
       {
         "name": "Advanced Computer Programming",
         "anno": "",
@@ -2069,7 +2169,23 @@
 
 
 
+
+
+
+
+
+
   "magistrale_sicurezza_informatica":[
+    {
+      "name": "Gruppo principale",
+      "anno": "Anno accademico",
+      "semestre": "",
+      "cfu": "",
+      "gruppo": "https://t.me/joinchat/SHZUxtllpNIYbde0",
+      "websites": [
+      ],
+      "faq": ""
+    },
     {
       "name": "Complementi di biometria",
       "anno": "1",

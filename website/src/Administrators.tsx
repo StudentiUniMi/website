@@ -65,8 +65,9 @@ const Administrators = () => {
                     </div>
                     <div className="col-sm-6 col-md-4 col-lg-2 mb-5">
                         <h6 style={{ fontWeight: 500 }}>Informatica e Sicurezza informatica (magistrali)</h6>
-                        <p className="mb-1"><a href="https://t.me/robertopinotti">@robertopinotti</a></p>
                         <p className="mb-1"><a href="https://t.me/giuseppetm">@giuseppetm</a></p>
+                        <p className="mb-1"><a href="https://t.me/maca14">@maca14</a></p>
+                        <p className="mb-1"><a href="https://t.me/robertopinotti">@robertopinotti</a></p>
                     </div>
                 </div>
             </Text>

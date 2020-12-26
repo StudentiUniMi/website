@@ -41,27 +41,56 @@ const CourseItemView = (props: Props) => {
 
     return (
         <Card
-            tokens={cardTokens}
+            tokens={cardTokens}                             
         >
             <Card.Item>
-                <Persona text={data.name} />
+                { data.anno !== "Anno accademico" ? <Persona text={data.name} /> : <Persona text={data.name} imageUrl= {process.env.PUBLIC_URL + '/photo_2019-12-29_19-50-06.jpg'} /> }
             </Card.Item>
             <Card.Section>
-                <Text variant="small" styles={siteTextStyles}>
-                    {data.cfu} CFU
-          </Text>
+                {   // Gruppo anno accademico descrizione in caso c'è il link disponibile (magistrali insomma) 
+                    ( () => {
+                        if (data.anno === "Anno accademico" && data.gruppo !== "") {
+                            return <Text variant="small" styles={helpfulTextStyles}>Gruppo per qualsiasi tipo di discussione inerente a questo corso di laurea.</Text>
+                        } else {
+                            return "";
+                        }
+                    })()
+                }
+                
+                
+                {
+                    ( () => {
+                        if (data.cfu !== "") {
+                            return (
+                                <Text variant="small" styles={siteTextStyles}>{data.cfu} CFU</Text>
+                            )
+                        } else {
+                            return "";
+                        }
+                    })()
+                }
+
                 <Text styles={descriptionTextStyles}>
                 {
                     ( () => {
-                        if (data.anno === "") {
-                            return <span></span>;
+                        if (data.anno === "" || data.anno === "Anno accademico") {
+                            return "";
                         } else if (data.anno === "Complementare") {
                             return <span>Complementare, </span>;
                         } else return <span>{data.anno}° Anno, </span>;
                     })()
                 }
-                {data.semestre}° Semestre
-          </Text>
+                {
+                    ( () => {
+                        if (data.semestre !== "") {
+                            return <span>{data.semestre}° Semestre</span>;
+                        } else {
+                            return "";
+                        }
+                    })()
+                }
+                </Text>
+
                 {
                     ( () => {
                         if (data.gruppo !== "") {
@@ -73,6 +102,10 @@ const CourseItemView = (props: Props) => {
                                     Gruppo Telegram
                                 </Link>
                             </Text>
+                            )
+                        } else if ( data.anno === "Anno accademico") {
+                            return (
+                                <Text variant="small" styles={helpfulTextStyles}>Contatta un amministratore se vuoi essere aggiunto al gruppo.</Text>
                             )
                         } else {
                             return (
@@ -93,25 +126,25 @@ const CourseItemView = (props: Props) => {
                                             <Link href={e.link}>
                                                 {e.etichetta}
                                             </Link>
-                                            {i + 1 < data.websites.length ? <span>,&nbsp;</span> : <span></span>}
+                                            {i + 1 < data.websites.length ? <span>,&nbsp;</span> : ""}
                                         </span>
                                     )
                                 }
                             )}
                         </Text>
-                        : <span className="mt-0"></span>
+                        : ""
                 }
                 {
                     data.faq !== "" ?
                         <Text variant="small" styles={helpfulTextStyles}>
                             <i className="far fa-question-circle"></i>
-                    &nbsp;
-                    <Link href={data.faq}>
-                            Faq
-                    </Link>
+                            &nbsp;
+                            <Link href={data.faq}>
+                                    Faq
+                            </Link>
                         </Text>
                         :
-                        <span className="mt-0"></span>
+                        ""
                 }
 
             </Card.Section>
