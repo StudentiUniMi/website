@@ -129,10 +129,12 @@ const Courses = () => {
                 selectedKey={selectedKey}
             />
             <br />
-            <p className='text-center' style={{ display: selectedKey ? 'block' : 'none' }}>
-                <Text style={{ fontWeight: 500 }}>Gruppi disponibili:</Text>
-            </p>
-            <CourseListView cdl={selectedKey} />
+            <div style={{ display: selectedKey ? 'block' : 'none' }}>
+                <p className='text-center'>
+                    <Text style={{ fontWeight: 500 }}>Gruppi disponibili:</Text>
+                </p>
+                <CourseListView cdl={selectedKey} />
+            </div>
         </Container>
     );
 };

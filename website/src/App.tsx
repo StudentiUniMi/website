@@ -1,11 +1,11 @@
 /*
 TODO LIST
-- Sistemare le descrizioni dei gruppi per ogni cdl
-- Aggiungere i drive delle magistrali alla lista
-- Costruire la gerarchia del network, fai un file .psd così lo tieni aggiornato facilmente
 - Filtri sulla lista dei corsi generati
-- Aggiungere target="_blank" a tutti i link
+- Aggiungere i drive delle magistrali alla lista
 - Fare tutte le faq in markdown compresi regolamento e roba sui drive, in questo modo non si dovrà scaricare nessun pdf
+- Costruire la gerarchia del network, fai un file .psd così lo tieni aggiornato facilmente
+- Sistemare le descrizioni dei gruppi per ogni cdl
+- Aggiungere target="_blank" a tutti i link
 - Una sezione contenente manifesti e altre informazioni globali per ogni cdl
 - Sezione about per chi ha contribuito (magari anche chi ha fatto delle faq)
 */

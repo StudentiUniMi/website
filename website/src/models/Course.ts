@@ -6,9 +6,9 @@ export default interface Website {
 export default interface Course
 {
     name?:string,
-    anno?:string,
-    semestre?:string,
-    cfu?:string,
+    anno?:number|string,
+    semestre?:number,
+    cfu?:number,
     gruppo?:string,
     websites:any[],
     faq?:string,

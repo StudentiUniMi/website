@@ -60,7 +60,7 @@ const CourseItemView = (props: Props) => {
                 
                 {
                     ( () => {
-                        if (data.cfu !== "") {
+                        if (data.cfu as any != "") {
                             return (
                                 <Text variant="small" styles={siteTextStyles}>{data.cfu} CFU</Text>
                             )
@@ -72,17 +72,25 @@ const CourseItemView = (props: Props) => {
 
                 <Text styles={descriptionTextStyles}>
                 {
-                    ( () => {
-                        if (data.anno === "" || data.anno === "Anno accademico") {
+                    (() => 
+                    {
+                        if (data.anno === "" || data.anno === "Anno accademico")
+                        {
                             return "";
-                        } else if (data.anno === "Complementare") {
+                        } 
+                        if (data.anno === "Complementare")
+                        {
                             return <span>Complementare, </span>;
-                        } else return <span>{data.anno}° Anno, </span>;
+                        }
+                        else 
+                        {
+                            return <span>{data.anno}° Anno, </span>;
+                        }
                     })()
                 }
                 {
                     ( () => {
-                        if (data.semestre !== "") {
+                        if (data.semestre as any != "") {
                             return <span>{data.semestre}° Semestre</span>;
                         } else {
                             return "";
