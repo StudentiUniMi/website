@@ -1,0 +1,31 @@
+name: React Builder
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+defaults:
+  run:
+    shell: bash
+    working-directory: ./website
+
+jobs:
+  compile:
+    name: Build && Deploy
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v2
+
+      - name: Authorizing Github action
+        with:
+          token: "${{ secrets.GITHUB_TOKEN }}"
+        uses: oleksiyrudenko/gha-git-credentials@v2-latest
+
+      - run: npm install
+      - run: npm run build
+      - run: git --work-tree build add --all
+      - run: git --work-tree build commit -m 'deploy files'
+      - run: git push origin HEAD:gh-pages --force
