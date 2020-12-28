@@ -82,8 +82,8 @@ const FaqProposer = () => {
                     target="_self"
                     id="faq-proposer-form"
                     method="POST">
-                    <div className="row mb-5">
-                        <div className="col-4">
+                    <div className="row mb-3 justify-content-center">
+                        <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             {/*
                             <Dropdown
                                 id="744329775"
@@ -94,7 +94,7 @@ const FaqProposer = () => {
                                 options={dropdownControlledExampleOptions}
                             />*/}
                             <Label htmlFor={'744329775'} required>Scegli il corso di laurea</Label>
-                            <select id="744329775" name="entry.2135536334" required>
+                            <select id="744329775" name="entry.2135536334" className="mb-3" required>
                                 <option value="" disabled selected>Corso di laurea</option>
                                 <option value="Informatica">Informatica</option>
                                 <option value="Informatica musicale">Informatica musicale</option>
@@ -102,11 +102,18 @@ const FaqProposer = () => {
                                 <option value="SSRI">SSRI</option>
                                 <option value="SSRI Online">SSRI Online</option>
                             </select>
-                            <TextField label="Inserisci il nome del corso" id="982590281" name="entry.982590281" placeholder="Nome del corso" required />
+                            <div className="mb-3">
+                                <TextField label="Inserisci il nome del corso" id="982590281" name="entry.982590281" placeholder="Nome del corso" required />
+                            </div>
                         </div>
-                        <div className="col-8">
-                            <TextField label="Inserisci la domanda" id="482429678" name="entry.482429678" placeholder="Domanda" multiline rows={3} required />
-                            <TextField label="Inserisci la risposta" id="554303651" name="entry.554303651" placeholder="Risposta" multiline rows={3} required />
+                        <div className="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                            <div className="mb-3">
+                                <TextField label="Inserisci la domanda" id="482429678" name="entry.482429678" placeholder="Domanda" multiline rows={3} required />
+                            </div>
+
+                            <div className="mb-3">
+                                <TextField label="Inserisci la risposta" id="554303651" name="entry.554303651" placeholder="Risposta" multiline rows={3} required />
+                            </div>
                         </div>
                     </div>
                     <CompoundButton primary type="submit" secondaryText="Manda la faq proposta." allowDisabledFocus >
@@ -114,7 +121,6 @@ const FaqProposer = () => {
                     </CompoundButton>
                 </form>
             </Container>
-            {/*<Text style={{ fontWeight: 500 }}>Feature non disponibile in questo momento.</Text>*/}
         </div>
     )
 };

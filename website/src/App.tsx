@@ -1,8 +1,7 @@
 /*
 TODO LIST
-- Filtri sulla lista dei corsi generati
 - Aggiungere i drive delle magistrali alla lista
-- Fare tutte le faq in markdown compresi regolamento e roba sui drive, in questo modo non si dovrà scaricare nessun pdf
+- Decidere cosa fare riguardo la struttura delle faq
 - Costruire la gerarchia del network, fai un file .psd così lo tieni aggiornato facilmente
 - Sistemare le descrizioni dei gruppi per ogni cdl
 - Aggiungere target="_blank" a tutti i link

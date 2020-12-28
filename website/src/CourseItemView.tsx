@@ -60,7 +60,7 @@ const CourseItemView = (props: Props) => {
                 
                 {
                     ( () => {
-                        if (data.cfu as any != "") {
+                        if (data.cfu as any !== "") {
                             return (
                                 <Text variant="small" styles={siteTextStyles}>{data.cfu} CFU</Text>
                             )
@@ -90,7 +90,7 @@ const CourseItemView = (props: Props) => {
                 }
                 {
                     ( () => {
-                        if (data.semestre as any != "") {
+                        if (data.semestre as any !== "") {
                             return <span>{data.semestre}° Semestre</span>;
                         } else {
                             return "";

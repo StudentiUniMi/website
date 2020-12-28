@@ -8,7 +8,7 @@ import { FocusZone, IRectangle, List } from "@fluentui/react";
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 import { Container } from 'react-bootstrap';
-import { Dropdown, DropdownMenuItemType, IDropdownStyles, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
+import { Dropdown, IDropdownStyles, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { Text } from "office-ui-fabric-react/lib/Text";
 import { FontSizes } from '@fluentui/theme';
 import './List.css'
@@ -18,9 +18,7 @@ interface Props {
 }
 
 const dropdownStyles: Partial<IDropdownStyles> = {
-    //dropdownOptionText: { textAlign: 'center' },
-    //dropdown: { width: '150px'},
-    dropdownItems: { textAlign: 'center', alignItems: 'center' }
+    //dropdown: { maxWidth: '150px'},
 };
 
 const classNames = mergeStyleSets({
@@ -44,57 +42,24 @@ const MAX_ROW_HEIGHT = 240;
 
 const getCourses = (cdl?: string) => (CdlCourses as any)[cdl!] ?? []
 
-const semesterFilterOptions: IDropdownOption[] = [
-    {
-        key:0,
-        text:'Non selezionato'
-    },
-    {
-        key: 1,
-        text:'Primo'
-    },
-    {
-        key:2,
-        text:'Secondo'
-    }
+const semesterFilterOptions: IDropdownOption[] = [ // Opzioni per la ricerca del semestre
+    { key: 0, text:'Non selezionato' },
+    { key: 1, text:'Primo' },
+    { key: 2, text:'Secondo' }
 ];
 
-const yearBachelorDegreeFilterOptions: IDropdownOption[] = [
-    {
-        key: 0,
-        text:'Non selezionato'
-    },
-    {
-        key: 1,
-        text:'Primo'
-    },
-    {
-        key: 2,
-        text:'Secondo'
-    },
-    {
-        key: 3,
-        text:'Terzo'
-    },
-    {
-        key: 4,
-        text:'Complementare'
-    }
+const yearBachelorDegreeFilterOptions: IDropdownOption[] = [ // Opzioni per la ricerca dell'anno per cdl triennali
+    { key: 0, text:'Non selezionato' },
+    { key: 1, text:'Primo' },
+    { key: 2, text:'Secondo' },
+    { key: 3, text:'Terzo' },
+    { key: 4, text:'Complementare' }
 ];
 
-const yearMasterDegreeFilterOptions: IDropdownOption[] = [
-    {
-        key: 0,
-        text:'Non selezionato'
-    },
-    {
-        key: 1,
-        text:'Primo'
-    },
-    {
-        key: 2,
-        text:'Secondo'
-    }
+const yearMasterDegreeFilterOptions: IDropdownOption[] = [ // Opzioni per la ricerca dell'anno per cdl magistrali
+    { key: 0, text:'Non selezionato'},
+    { key: 1, text:'Primo' },
+    { key: 2, text:'Secondo' }
 ];
 
 const CourseListView = (props: Props) => {
@@ -146,6 +111,7 @@ const CourseListView = (props: Props) => {
     };
 
     
+    // Gestione dei filtri
 
     let yearFilterOptions = props.cdl === "magistrale_informatica" || props.cdl === 'magistrale_sicurezza_informatica' ? yearMasterDegreeFilterOptions : yearBachelorDegreeFilterOptions
     
@@ -174,34 +140,36 @@ const CourseListView = (props: Props) => {
     }
 
     return (
-        <Container>
-            <FocusZone className="">
-                <div className="row mb-4">
-                    <div className="col-lg-4">
-                        <TextField
-                            label={'Cerca per nome'}
-                            onChange={onNameFilterChanged}                
-                        />
+        <Container className="courses-filter-options">
+            <FocusZone>
+                <Container className="mb-4">
+                    <div className="row justify-content-center">
+                        <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <TextField
+                                label={'Cerca per nome'}
+                                onChange={onNameFilterChanged}                
+                            />
+                        </div>
+                        <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <Dropdown options={yearFilterOptions}
+                                label={`Cerca per anno`}
+                                onChange={onYearFilterChanged}
+                                selectedKey={yearFilter}
+                                styles={dropdownStyles}
+                            />
+                        </div>
+                        <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <Dropdown options={semesterFilterOptions}
+                                label={`Cerca per semestre`}
+                                onChange={onSemesterFilterChanged}
+                                selectedKey={semesterFilter}
+                                styles={dropdownStyles}
+                            />
+                        </div>
                     </div>
-                    <div className="col-lg-4">
-                        <Dropdown options={yearFilterOptions}
-                            label={`Cerca per anno`}
-                            onChange={onYearFilterChanged}
-                            selectedKey={yearFilter}
-                            styles={dropdownStyles}
-                        />
-                    </div>
-                    <div className="col-lg-4">
-                    <Dropdown options={semesterFilterOptions}
-                        label={`Cerca per semestre`}
-                        onChange={onSemesterFilterChanged}
-                        selectedKey={semesterFilter}
-                        styles={dropdownStyles}
-                    />
-                    </div>
-                </div>
+                </Container>
                     {
-                        filteredCourses.length === 0 ? <Text style={{ fontSize: FontSizes.size14 }}>Nessun corso trovato.</Text> :
+                        filteredCourses.length === 0 ? <div className="text-center"><Text style={{ fontSize: FontSizes.size14 }}>Nessun corso trovato.</Text></div> :
                         <List
                         className={classNames.listGridExample}
                         items={filteredCourses}

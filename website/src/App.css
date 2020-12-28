@@ -60,30 +60,73 @@ main {
 }
 /* End responsive footer */
 
+
+
 /* Responsive menu */
 @media only screen and (min-width: 455px) {
-  .pivot {
+  .header-menu .pivot {
     display: block;
   }
 
-  .dropdown {
+  .header-menu .dropdown {
     display: none;
   }
 }
 @media only screen and (max-width: 454px) {
-  .pivot {
+  .header-menu .pivot {
     display: none;
   }
 
-  .dropdown {
+  .header-menu .dropdown {
     display: block;
   }
 }
 /* End responsive menu */
 
-.ms-ChoiceField-field {
-  box-sizing: border-box;
+
+.header-menu .ms-Dropdown-title { /* Dropdown style for menu */
+  border-style: none;
+  background-color: #faf9f8;
+  height: 44px;
+  justify-content: center;
+  text-align: center;
 }
+
+/* Grid system adjustments for filter container */
+@media only screen and (max-width: 540px) {
+  .courses-filter-options .col-xs-12 {
+    max-width: 213px;
+    text-align: center;
+  }
+  
+  .courses-filter-options .row {
+    margin-right:10%;
+    margin-left:10%;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .courses-filter-options .row {
+    margin-right:0%;
+    margin-left:0%;
+  }
+}
+
+/* Faq_proposer form adjustments */
+@media only screen and (max-width: 575px) {
+  .faq-proposer .col-xs-12 {
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  .courses-filter-options .row {
+    margin-right:10%;
+    margin-left:10%;
+  }
+}
+
+
+
 
 footer .row {
   margin: 0;
@@ -101,20 +144,16 @@ footer .row {
   max-width: 600px;
 }
 
-.dropdown .ms-Dropdown-title {
-  border-style: none;
-  background-color: #faf9f8;
-  height: 44px;
-  justify-content: center;
-  text-align: center;
-}
-
 .tutor {
   color:#c239b3;
 }
 
 .tutor:hover {
   color:#881798;
+}
+
+.ms-ChoiceField-field {
+  box-sizing: border-box;
 }
 
 /*------------
