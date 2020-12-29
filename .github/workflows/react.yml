@@ -25,9 +25,9 @@ jobs:
         uses: oleksiyrudenko/gha-git-credentials@v2-latest
 
       - run: npm install
+      - run: git rev-parse HEAD > src/data/revision.txt
+      - run: cat src/data/revision.txt
       - run: npm run build
-      - run: git rev-parse HEAD > build/revision
-      - run: cat build/revision
       - run: git --work-tree build add --all
       - run: git --work-tree build commit -m 'deploy files'
       - run: git push origin HEAD:gh-pages --force
