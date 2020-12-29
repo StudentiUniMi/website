@@ -5,43 +5,42 @@ import { Link } from 'office-ui-fabric-react';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
 import { FontSizes } from '@fluentui/theme';
+// import txt from './data/revision.txt';
 
 const Footer = () => {
     return (
         <footer style={{ backgroundColor: '#cccccc', boxShadow: '0px 0px 0.5px 0.5px #7a7a7a' }}>
             <Container style={{ backgroundColor: '#cccccc', width:'100%' }}>
 
-                <div className="row" style={{ backgroundColor: '#cccccc', width:'100%' }}>
+                <div className="row" style={{ backgroundColor: '#cccccc' }}>
 
-                    <div className="col-lg-4 col-md-4 mb-4 mb-md-0 col-sm-12">
+                    <div className="col-lg-3 col-md-6 mb-4 mb-md-0 col-sm-12">
                         <p className="mb-1">
-                            <Text style={{ fontWeight: 600 }}>Contatti</Text>
+                            <Text style={{ fontWeight: 600 }}>Network Statale Informatica &copy;</Text>
                         </p>
 
-                        <p>
+                        <p className="mb-1">
                             <Text style={{ fontSize: FontSizes.size12 }}>
-                                <p className="mb-0">
-                                Per qualsiasi dubbio o proposta è possibile contattare
-                                </p>
-                                <p className="mb-1">
-                                il creatore del network tramite telegram.
-                                </p>
-                                <Link href="https://t.me/giuseppetm" className="text-decoration-none" target="_blank"> @giuseppetm</Link>
+                                <Link href="https://github.com/NetworkStataleInformatica/network" className="text-decoration-none"><i className="fab fa-github"></i> Repository del network</Link>
                             </Text>
                         </p>
+
+                        {/*
+                        <p className="mb-1">
+                            <Text style={{ fontSize: FontSizes.size12 }}>
+                                Build: <Text style={{ fontSize: FontSizes.size10 }}>dennis</Text>
+                            </Text>
+                        </p>
+                        */}
+
                     </div>
 
-                    <div className="col-lg-4 col-md-4 mb-4 mb-md-0 col-sm-12">
+                    <div className="col-lg-3 col-md-6 mb-4 mb-md-0 col-sm-12">
                         <p className="mb-1">
                             <Text style={{ fontWeight: 600 }}>Link utili</Text>
                         </p>
 
                         <ul className="list-unstyled mb-0">
-                            <li>
-                                <Text style={{ fontSize: FontSizes.size12 }}>
-                                    <Link href="https://github.com/NetworkStataleInformatica/network" className="text-decoration-none"><i className="fab fa-github"></i> Repository del network</Link>
-                                </Text>
-                            </li>
                             <li>
                                 <Text style={{ fontSize: FontSizes.size12 }}>
                                     <Link href="http://www.quickunimi.it/" className="text-decoration-none"><i className="fas fa-globe"></i> QuickUnimi</Link>
@@ -55,7 +54,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div className="col-lg-4 col-md-4 mb-4 mb-md-0 col-sm-12">
+                    <div className="col-lg-3 col-md-6 mb-4 mb-md-0 col-sm-12">
                         <p className="mb-1">
                             <Text style={{ fontWeight: 600 }}>Altri link</Text>
                         </p>
@@ -87,6 +86,22 @@ const Footer = () => {
                                 </Text>
                             </li>
                         </ul>
+                    </div>
+
+                    <div className="col-lg-3 col-md-6 mb-4 mb-md-0 col-sm-12 contacts">
+                        <p className="mb-1">
+                            <Text style={{ fontWeight: 600 }}>Contatti</Text>
+                        </p>
+
+                        <p>
+                            <Text style={{ fontSize: FontSizes.size12 }}>
+                                <p className="mb-1 text">
+                                    Per qualsiasi dubbio o proposta è possibile contattare
+                                    il creatore del network.
+                                </p>
+                                <Link href="https://t.me/giuseppetm" className="text-decoration-none" target="_blank"> @giuseppetm</Link>
+                            </Text>
+                        </p>
                     </div>
                 </div>
 

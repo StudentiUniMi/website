@@ -8,7 +8,7 @@ import { FocusZone, IRectangle, List } from "@fluentui/react";
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 import { Container } from 'react-bootstrap';
-import { Dropdown, IDropdownStyles, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
+import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { Text } from "office-ui-fabric-react/lib/Text";
 import { FontSizes } from '@fluentui/theme';
 import './List.css'
@@ -17,9 +17,11 @@ interface Props {
     cdl?: string;
 }
 
+/*
 const dropdownStyles: Partial<IDropdownStyles> = {
-    //dropdown: { maxWidth: '150px'},
+    dropdown: { maxWidth: '150px'},
 };
+*/
 
 const classNames = mergeStyleSets({
     listGridExample: {
@@ -155,7 +157,7 @@ const CourseListView = (props: Props) => {
                                 label={`Cerca per anno`}
                                 onChange={onYearFilterChanged}
                                 selectedKey={yearFilter}
-                                styles={dropdownStyles}
+                                //styles={dropdownStyles}
                             />
                         </div>
                         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -163,7 +165,7 @@ const CourseListView = (props: Props) => {
                                 label={`Cerca per semestre`}
                                 onChange={onSemesterFilterChanged}
                                 selectedKey={semesterFilter}
-                                styles={dropdownStyles}
+                                //styles={dropdownStyles}
                             />
                         </div>
                     </div>

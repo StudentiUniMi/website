@@ -4,11 +4,7 @@ import './App.css';
 import { Text } from "office-ui-fabric-react/lib/Text";
 import { FontSizes } from '@fluentui/theme';
 import { Link } from 'office-ui-fabric-react';
-import {
-    ChoiceGroup,
-    IChoiceGroupOption,
-    IChoiceGroupOptionStyles,
-} from "office-ui-fabric-react/lib/ChoiceGroup";
+import { ChoiceGroup, IChoiceGroupOption, IChoiceGroupOptionStyles } from "office-ui-fabric-react/lib/ChoiceGroup";
 import { initializeIcons } from "@uifabric/icons";
 import CourseListView from "./CourseListView";
 import { Container } from 'react-bootstrap';

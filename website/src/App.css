@@ -24,7 +24,7 @@ body {
 
 footer {
   padding-top:20px;
-  padding-bottom:10px;
+  padding-bottom:15px;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -38,24 +38,43 @@ main {
 }
 
 /* Responsive footer */
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 992px) {
   body {
-    margin-bottom: 310px;
+    margin-bottom: 300px;
+  }
+  footer .contacts {
+    margin-top:20px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   body {
-    margin-bottom: 510px;
+    margin-bottom: 600px;
   }
   footer .row {
+    margin-left: 0%;
     text-align: center;
+  }
+
+  footer .contacts {
+    margin-top:0px;
+  }
+
+  footer .contacts .text {
+    margin-left:20%;
+    margin-right: 20%;
   }
 }
 
-@media only screen and (max-width: 272px) {
+@media only screen and (max-width: 235px) {
   body {
-    margin-bottom: 525px;
+    margin-bottom: 630px;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  footer .row {
+    margin-left: 2%;
   }
 }
 /* End responsive footer */
@@ -123,13 +142,6 @@ main {
     margin-right:10%;
     margin-left:10%;
   }
-}
-
-
-
-
-footer .row {
-  margin: 0;
 }
 
 .header-title .row {
