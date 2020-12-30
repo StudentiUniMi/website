@@ -1,14 +1,14 @@
 import * as React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import '../App.css';
 import { Text } from 'office-ui-fabric-react';
 import { FontSizes } from '@fluentui/theme';
 import { Container } from 'react-bootstrap';
-import GruppiExtra from './data/GruppiExtra.json'
 import { FocusZone, List, IRectangle } from "@fluentui/react";
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
+import GruppiExtra from '../data/GruppiExtra.json'
 import ExtraGroupView from './ExtraGroupView'
-import ExtraGroup from './models/ExtraGroup'
+import ExtraGroup from '../models/ExtraGroup'
 
 const classNames = mergeStyleSets({
     listGridExample: {

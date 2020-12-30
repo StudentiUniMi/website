@@ -1,14 +1,13 @@
 import * as React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import '../App.css';
 import { Link, Text } from 'office-ui-fabric-react';
-import {
-    Card,
-    ICardTokens,
-} from "@uifabric/react-cards";
-import Course from './models/Course'
+import { Card, ICardTokens } from "@uifabric/react-cards";
 import { initializeIcons } from '@uifabric/icons';
 import { FontWeights, ITextStyles, Persona } from '@fluentui/react';
+import Course from '../models/Course'
+
+
 initializeIcons();
 
 interface Props {
@@ -156,6 +155,8 @@ const CourseItemView = (props: Props) => {
                 }
 
             </Card.Section>
+
+
             {/*
             <Card.Section
                 horizontal
@@ -169,6 +170,8 @@ const CourseItemView = (props: Props) => {
                 </Stack.Item>
                 <Icon iconName="MoreVertical" styles={iconStyles} />
             </Card.Section>*/}
+
+            
         </Card>
     );
 };

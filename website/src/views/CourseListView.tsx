@@ -1,9 +1,7 @@
 import * as React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import CourseItemView from "./CourseItemView";
-import Course from "./models/Course";
-import CdlCourses from './data/CdlCourses.json'
+import '../App.css';
+import '../List.css'
 import { FocusZone, IRectangle, List } from "@fluentui/react";
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
@@ -11,7 +9,10 @@ import { Container } from 'react-bootstrap';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { Text } from "office-ui-fabric-react/lib/Text";
 import { FontSizes } from '@fluentui/theme';
-import './List.css'
+import CourseItemView from './CourseItemView';
+import Course from '../models/Course';
+import CdlCourses from '../data/CdlCourses.json'
+
 
 interface Props {
     cdl?: string;

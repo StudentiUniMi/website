@@ -12,11 +12,11 @@ TODO LIST
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
-import HeaderTitle from "./HeaderTitle";
-import Content from "./Content";
-import HeaderMenu, { ItemsKeys } from "./HeaderMenu";
-import Footer from "./Footer";
 import { HashRouter as Router } from "react-router-dom";
+import HeaderTitle from "./HeaderTitle";
+import HeaderMenu, { ItemsKeys } from "./HeaderMenu";
+import Content from "./Content";
+import Footer from "./Footer";
 
 function App() {
   let [selectedView, setSelectedView] = React.useState(ItemsKeys.home);

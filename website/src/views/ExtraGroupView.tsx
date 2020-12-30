@@ -1,14 +1,12 @@
 import * as React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import '../App.css';
 import { Link, Text } from 'office-ui-fabric-react';
-import {
-    Card,
-    ICardTokens,
-} from "@uifabric/react-cards";
-import ExtraGroup from './models/ExtraGroup'
 import { initializeIcons } from '@uifabric/icons';
 import { FontWeights, ITextStyles, Persona } from '@fluentui/react';
+import { Card, ICardTokens } from "@uifabric/react-cards";
+import ExtraGroup from '../models/ExtraGroup'
+
 initializeIcons();
 
 interface Props {

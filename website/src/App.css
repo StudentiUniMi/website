@@ -20,6 +20,7 @@ body {
 
 #root {
   min-height: 100%;
+  height:100%;
 }
 
 footer {
@@ -37,6 +38,8 @@ main {
   min-height: 100%;
 }
 
+
+
 /* Responsive footer */
 @media only screen and (max-width: 992px) {
   body {
@@ -52,7 +55,6 @@ main {
     margin-bottom: 600px;
   }
   footer .row {
-    margin-left: 0%;
     text-align: center;
   }
 
@@ -61,8 +63,8 @@ main {
   }
 
   footer .contacts .text {
-    margin-left:20%;
-    margin-right: 20%;
+    margin-left:25%;
+    margin-right: 25%;
   }
 }
 
@@ -74,7 +76,7 @@ main {
 
 @media only screen and (min-width: 769px) {
   footer .row {
-    margin-left: 2%;
+    margin-left: 1%;
   }
 }
 /* End responsive footer */
@@ -82,7 +84,7 @@ main {
 
 
 /* Responsive menu */
-@media only screen and (min-width: 455px) {
+@media only screen and (min-width: 465px) {
   .header-menu .pivot {
     display: block;
   }
@@ -90,8 +92,13 @@ main {
   .header-menu .dropdown {
     display: none;
   }
+
+  /* Header menu left margin on large displays */
+  .header-menu .ms-FocusZone {
+    margin-left: 10px;
+  }
 }
-@media only screen and (max-width: 454px) {
+@media only screen and (max-width: 464px) {
   .header-menu .pivot {
     display: none;
   }
@@ -103,7 +110,8 @@ main {
 /* End responsive menu */
 
 
-.header-menu .ms-Dropdown-title { /* Dropdown style for menu */
+/* Dropdown style for header-menu */
+.header-menu .ms-Dropdown-title { 
   border-style: none;
   background-color: #faf9f8;
   height: 44px;
@@ -144,6 +152,7 @@ main {
   }
 }
 
+
 .header-title .row {
   margin-right: 0px;
 }
@@ -157,11 +166,11 @@ main {
 }
 
 .tutor {
-  color:#c239b3;
+  color:#d13438;
 }
 
 .tutor:hover {
-  color:#881798;
+  color: #e86e58;
 }
 
 .ms-ChoiceField-field {
