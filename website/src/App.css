@@ -83,7 +83,7 @@ main {
 
 
 
-/* Responsive menu */
+/* Responsive menu and title */
 @media only screen and (min-width: 465px) {
   .header-menu .pivot {
     display: block;
@@ -105,6 +105,31 @@ main {
 
   .header-menu .dropdown {
     display: block;
+  }
+}
+
+
+@media only screen and (min-width: 652px) {
+  .header-title .large-display {
+    display:block;
+  }
+
+  .header-title .small-display {
+    display:none;
+  }
+}
+
+@media only screen and (max-width: 651px) {
+  .header-title .large-display {
+    display:none;
+  }
+
+  .header-title .small-display {
+    display:block;
+  }
+
+  .header-title .small-display .logo-text {
+    margin-left:-5%;
   }
 }
 /* End responsive menu */

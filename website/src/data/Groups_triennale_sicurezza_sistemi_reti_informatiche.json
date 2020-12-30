@@ -1,0 +1,206 @@
+[
+    {
+      "name": "A. A. 2018/2019",
+      "anno": "Anno accademico",
+      "semestre": "",
+      "cfu": "",
+      "gruppo": "",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "A. A. 2020/2021",
+      "anno": "Anno accademico",
+      "semestre": "",
+      "cfu": "",
+      "gruppo": "",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Matematica del continuo",
+      "anno": "1",
+      "semestre": "1°,2",
+      "cfu": "12",
+      "gruppo": "https://t.me/joinchat/JQNZokzlICetQPCuCUqvOg",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Architettura degli elaboratori",
+      "anno": "1",
+      "semestre": "1",
+      "cfu": "6",
+      "gruppo": "https://t.me/joinchat/JQNZolSwR4GAv1ksS8SXNA",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Matematica del discreto",
+      "anno": "1",
+      "semestre": "1",
+      "cfu": "6",
+      "gruppo": "https://t.me/joinchat/JQNZolEgA0BtvyB8CrS4Zw",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Programmazione",
+      "anno": "1",
+      "semestre": "1",
+      "cfu": "12",
+      "gruppo": "https://t.me/joinchat/JQNZokx5Zrq78nbKIyszeg",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Diritto penale dell'informatica",
+      "anno": "1",
+      "semestre": "2",
+      "cfu": "6",
+      "gruppo": "https://t.me/joinchat/JQNZokxw8O-NPvZMnuYvnw",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Programmazione web e mobile",
+      "anno": "1",
+      "semestre": "2",
+      "cfu": "6",
+      "gruppo": "https://t.me/joinchat/JQNZokSWJq9bN02T8fNULg",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Sicurezza nei sistemi web e mobili",
+      "anno": "1",
+      "semestre": "2",
+      "cfu": "6",
+      "gruppo": "https://t.me/joinchat/JQNZolTD_xGDgW4xqUrcSQ",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Algoritmi e strutture dati",
+      "anno": "2",
+      "semestre": "1",
+      "cfu": "12",
+      "gruppo": "https://t.me/joinchat/JQNZolUyB-mqltahlS7r7w",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Sistemi operativi",
+      "anno": "2",
+      "semestre": "1",
+      "cfu": "12",
+      "gruppo": "https://t.me/joinchat/JQNZok5UFl9iiBPaD_w4tQ",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Statistica e analisi dei dati",
+      "anno": "2",
+      "semestre": "1",
+      "cfu": "6",
+      "gruppo": "https://t.me/joinchat/JQNZok7b2tII6B_UHVeBAg",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Basi di dati",
+      "anno": "2",
+      "semestre": "2",
+      "cfu": "12",
+      "gruppo": "https://t.me/joinchat/JQNZolAtoHIJkNyqCmGTdg",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Crittografia",
+      "anno": "2",
+      "semestre": "2",
+      "cfu": "6",
+      "gruppo": "https://t.me/joinchat/JQNZolHm5t4VBxKiQyIkuQ",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Reti di calcolatori",
+      "anno": "2",
+      "semestre": "2",
+      "cfu": "12",
+      "gruppo": "https://t.me/joinchat/JQNZokiMWZHk7tbkyJhC2g",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Sicurezza dei sistemi e delle reti",
+      "anno": "3",
+      "semestre": "1",
+      "cfu": "12",
+      "gruppo": "https://t.me/joinchat/JQNZokvwaxs_V4SYCIU4LQ",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Progettazione software sicuro",
+      "anno": "3",
+      "semestre": "1",
+      "cfu": "6",
+      "gruppo": "https://t.me/joinchat/I5_YNlI88teqXRbFq10IIQ",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Aspetti etici",
+      "anno": "3",
+      "semestre": "1",
+      "cfu": "3",
+      "gruppo": "https://t.me/joinchat/I5_YNkSYLJfZ88V1bni-lg",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Sistemi biometrici",
+      "anno": "3",
+      "semestre": "1",
+      "cfu": "6",
+      "gruppo": "https://t.me/joinchat/JQNZolhsU8dWt4iHsov_lQ",
+      "websites": [
+      ],
+      "faq": ""
+    },
+    {
+      "name": "Computer forensics",
+      "anno": "3",
+      "semestre": "2",
+      "cfu": "6",
+      "gruppo": "https://t.me/joinchat/JQNZoliwXfWaJ1io4Ak0Ug",
+      "websites": [
+      ],
+      "faq": ""
+    }
+],
+
+
+
+
