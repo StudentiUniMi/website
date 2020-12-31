@@ -1,11 +1,14 @@
 /*
 TODO LIST
+- Sezione regolamento e lista drive
+- Se selezioni info mag blocchi il dropdown con disabled
 - Tema scuro
+- Hash commit nel footer
+- Premi una faq (devi creare una faqView) che premi e mostra un callout o dialog, quella che appare proprio una finestra nuova e puoi chiudere.
 - Aggiungere i drive delle magistrali alla lista
-- Decidere cosa fare riguardo la struttura delle faq
 - Costruire la gerarchia del network, fai un file .psd così lo tieni aggiornato facilmente
 - Sistemare le descrizioni dei gruppi per ogni cdl
-- Aggiungere target="_blank" a tutti i link
+- Futura ristrutturazione: card con solo icone + hover sopra che mostra tooltip
 - Una sezione contenente manifesti e altre informazioni globali per ogni cdl
 - Sezione about per chi ha contribuito (magari anche chi ha fatto delle faq)
 */

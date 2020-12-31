@@ -14,6 +14,12 @@ interface Props {
     data: Course
 }
 
+const gdriveStyle = {
+    width: '15px',
+    height: '15px',
+    marginBottom: '3px'
+}
+
 const CourseItemView = (props: Props) => {
     var data = props.data;
 
@@ -102,7 +108,7 @@ const CourseItemView = (props: Props) => {
                         if (data.gruppo !== "") {
                             return (
                             <Text variant="small" styles={helpfulTextStyles}>
-                                <i className="fab fa-telegram-plane" style={{color: '#6087eb'}}></i>
+                                <i className="fab fa-telegram" style={{color: '#6087eb'}}></i>
                                 &nbsp;
                                 <Link href={data.gruppo} target="_blank" className="text-decoration-none">
                                     Gruppo Telegram
@@ -123,7 +129,7 @@ const CourseItemView = (props: Props) => {
                 {
                     data.websites.length !== 0 ?
                         <Text variant="small" styles={helpfulTextStyles}>
-                            <i className="fas fa-link" style={{color:'#696a6b'}}></i>
+                            <i className="fas fa-home" style={{color:'#696a6b'}}></i>
                             &nbsp;
                             {data.websites.map(
                                 (e, i) => {
@@ -147,12 +153,12 @@ const CourseItemView = (props: Props) => {
                             return (
                                 <span>
                                     <span className="mr-2">
-                                        <i className="far fa-question-circle"></i>
+                                        <i className="fas fa-question-circle" style={{color: '#fcba03'}}></i>
                                         &nbsp;
                                         <Link href={data.faq} target="_blank" className="text-decoration-none">Faq</Link>
                                     </span>
                                     <span>
-                                    <i className="fab fa-google-drive" style={{color: '#188737'}}></i>
+                                    <img style={gdriveStyle} src={process.env.PUBLIC_URL + "/gdrive.png"} alt="gdrive"/>
                                         &nbsp;
                                         <Link href={data.drive} target="_blank" className="text-decoration-none">Drive</Link>
                                     </span>
@@ -161,7 +167,7 @@ const CourseItemView = (props: Props) => {
                         } else if (data.faq !== "" && data.drive === "") {
                             return (
                                 <span>
-                                    <i className="far fa-question-circle"></i>
+                                    <i className="fas fa-question-circle" style={{color: '#fcba03'}}></i>
                                     &nbsp;
                                     <Link href={data.faq} target="_blank" className="text-decoration-none">Faq</Link>
                                 </span>
@@ -169,7 +175,7 @@ const CourseItemView = (props: Props) => {
                         } else if (data.drive !== "" && data.faq === "") {
                             return (
                                 <span>
-                                    <i className="fab fa-google-drive" style={{color: '#188737'}}></i>
+                                    <img style={gdriveStyle} src={process.env.PUBLIC_URL + "/gdrive.png"} alt="gdrive" />
                                     &nbsp;
                                     <Link href={data.drive} target="_blank" className="text-decoration-none">Drive</Link>
                                 </span>
