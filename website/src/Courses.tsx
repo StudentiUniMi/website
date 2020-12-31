@@ -92,7 +92,6 @@ const options: IChoiceGroupOption[] = [
 
 const Courses = () => {
     
-
     const history = useHistory();
 
     var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');

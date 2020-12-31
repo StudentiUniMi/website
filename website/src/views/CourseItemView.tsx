@@ -14,7 +14,6 @@ interface Props {
     data: Course
 }
 
-
 const CourseItemView = (props: Props) => {
     var data = props.data;
 
@@ -105,7 +104,7 @@ const CourseItemView = (props: Props) => {
                             <Text variant="small" styles={helpfulTextStyles}>
                                 <i className="fab fa-telegram-plane" style={{color: '#6087eb'}}></i>
                                 &nbsp;
-                                <Link href={data.gruppo}>
+                                <Link href={data.gruppo} target="_blank" className="text-decoration-none">
                                     Gruppo Telegram
                                 </Link>
                             </Text>
@@ -130,7 +129,7 @@ const CourseItemView = (props: Props) => {
                                 (e, i) => {
                                     return (
                                         <span key={i}>
-                                            <Link href={e.link}>
+                                            <Link href={e.link} target="_blank" className="text-decoration-none">
                                                 {e.etichetta}
                                             </Link>
                                             {i + 1 < data.websites.length ? <span>,&nbsp;</span> : ""}
@@ -141,18 +140,44 @@ const CourseItemView = (props: Props) => {
                         </Text>
                         : ""
                 }
+                <Text variant="small" styles={helpfulTextStyles}>
                 {
-                    data.faq !== "" ?
-                        <Text variant="small" styles={helpfulTextStyles}>
-                            <i className="far fa-question-circle"></i>
-                            &nbsp;
-                            <Link href={data.faq}>
-                                    Faq
-                            </Link>
-                        </Text>
-                        :
-                        ""
+                    ( () => {
+                        if (data.faq !== "" && data.drive !== "") {
+                            return (
+                                <span>
+                                    <span className="mr-2">
+                                        <i className="far fa-question-circle"></i>
+                                        &nbsp;
+                                        <Link href={data.faq} target="_blank" className="text-decoration-none">Faq</Link>
+                                    </span>
+                                    <span>
+                                    <i className="fab fa-google-drive" style={{color: '#188737'}}></i>
+                                        &nbsp;
+                                        <Link href={data.drive} target="_blank" className="text-decoration-none">Drive</Link>
+                                    </span>
+                                </span>
+                            )
+                        } else if (data.faq !== "" && data.drive === "") {
+                            return (
+                                <span>
+                                    <i className="far fa-question-circle"></i>
+                                    &nbsp;
+                                    <Link href={data.faq} target="_blank" className="text-decoration-none">Faq</Link>
+                                </span>
+                            )
+                        } else if (data.drive !== "" && data.faq === "") {
+                            return (
+                                <span>
+                                    <i className="fab fa-google-drive" style={{color: '#188737'}}></i>
+                                    &nbsp;
+                                    <Link href={data.drive} target="_blank" className="text-decoration-none">Drive</Link>
+                                </span>
+                            )
+                        }
+                    })()
                 }
+                </Text>
 
             </Card.Section>
 

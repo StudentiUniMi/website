@@ -11,5 +11,6 @@ export default interface Course
     cfu?:number,
     gruppo?:string,
     websites:any[],
+    drive?:string,
     faq?:string,
 }
