@@ -44,11 +44,9 @@ const ExtraGroupView = (props: Props) => {
     const cardTokens: ICardTokens = { childrenMargin: 12 };
 
     return (
-        <Card
-            aria-label="Clickable vertical card with image bleeding at the center of the card"
-            tokens={cardTokens}>
+        <Card tokens={cardTokens}>
             <Card.Item>
-                <Persona text={data.name} />
+                { data.image === "" ? <Persona text={data.name} /> : <Persona text={data.name} imageUrl= {process.env.PUBLIC_URL + '/group_images/' + data.image} /> }
             </Card.Item>
             <Card.Section>
                 <Text variant="small" styles={helpfulTextStyles}>

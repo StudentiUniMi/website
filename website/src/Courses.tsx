@@ -115,7 +115,9 @@ const Courses = () => {
                     <p className="mb-0">Qui è possibile vedere i gruppi telegram, siti web, e faq (se disponibili)
                     di ogni corso didattico del tuo corso di laurea. </p>
                     <p className="mb-0">I corsi di laurea evidenziati in azzurro riguardano lauree magistrali, gli altri invece le triennali.</p>
-                    <p>Se noti qualcosa che non corrisponde o che andrebbe sistemato puoi contattare <Link href="https://t.me/giuseppetm" className="text-decoration-none" target="_blank"> @giuseppetm</Link>.</p>
+                    <p>
+                        Se noti qualcosa che non corrisponde o che andrebbe sistemato puoi contattare un <Link href="https://networkstataleinformatica.github.io/network/#/administrators/" className="text-decoration-none">amministratore</Link>.
+                    </p>
                     <p><Text style={{ fontWeight: 500 }}>Scegli un corso di laurea</Text></p>
                 </Text>
             </div>

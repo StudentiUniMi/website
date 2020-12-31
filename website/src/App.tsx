@@ -1,5 +1,6 @@
 /*
 TODO LIST
+- Tema scuro
 - Aggiungere i drive delle magistrali alla lista
 - Decidere cosa fare riguardo la struttura delle faq
 - Costruire la gerarchia del network, fai un file .psd così lo tieni aggiornato facilmente

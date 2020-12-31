@@ -5,13 +5,14 @@ import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import { Container } from 'react-bootstrap';
-// import { Dropdown, DropdownMenuItemType, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
 import { CompoundButton } from 'office-ui-fabric-react';
 import { Label } from 'office-ui-fabric-react/lib/Label';
 import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
 import { TeachingBubble } from 'office-ui-fabric-react/lib/TeachingBubble';
 import { DirectionalHint } from 'office-ui-fabric-react/lib/Callout';
-import { useBoolean } from '@uifabric/react-hooks';
+import { TooltipHost, ITooltipHostStyles } from 'office-ui-fabric-react/lib/Tooltip';
+import { useBoolean, useId } from '@uifabric/react-hooks';
+// import { Dropdown, DropdownMenuItemType, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
 
 /*
 const dropdownControlledExampleOptions = [
@@ -23,6 +24,8 @@ const dropdownControlledExampleOptions = [
 ];
 */
 
+const calloutProps = { gapSpace: 0 };
+const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
 
 const FaqProposer = () => {
     // const [selectedItem, setSelectedItem] = React.useState<IDropdownOption>();
@@ -35,6 +38,8 @@ const FaqProposer = () => {
 
     const [teachingBubbleVisible, { toggle: toggleTeachingBubbleVisible }] = useBoolean(false);
 
+    const tooltipId = useId('tooltip');
+    
     return (
         <div className="faq-proposer">
             <Container className="text-center">
@@ -116,9 +121,17 @@ const FaqProposer = () => {
                             </div>
                         </div>
                     </div>
-                    <CompoundButton primary type="submit" secondaryText="Manda la faq proposta." allowDisabledFocus >
-                        Invia
-                    </CompoundButton>
+                    <TooltipHost
+                        content="Il form è hostato su google form."
+                        id={tooltipId}
+                        calloutProps={calloutProps}
+                        styles={hostStyles}
+                        directionalHint={DirectionalHint.bottomCenter}
+                    >
+                        <CompoundButton primary type="submit" secondaryText="Manda la faq proposta." style={{backgroundColor: '#605e5c', border: 'black'}} allowDisabledFocus >
+                            Invia
+                        </CompoundButton>
+                    </TooltipHost>
                 </form>
             </Container>
         </div>

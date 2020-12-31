@@ -2,41 +2,49 @@
     {
         "name":"Gruppo materiali",
         "description": "Dedicato a chi cerca o offre materiale per i vari corsi didattici. Non è permessa la vendita di appunti personali.",
+        "image": "materiali.jpg",
         "gruppo":"https://t.me/joinchat/I5_YNksisnkkqUT2MT0gig"
     },
     {
         "name":"Gruppo ripetizioni",
         "description": "Dedicato a chi cerca o offre ripetizioni. Le discussioni vanno fatte in privato, qui ci vanno soltanto annunci.",
+        "image": "ripetizioni.jpg",
         "gruppo":"https://t.me/joinchat/I5_YNkhaA-G1hqmhrYwU9g"
     },
     {
         "name":"Annunci di lavoro",
         "description": "Gruppo che permette di proporre lavoro (rivolto a studenti) in ambito informatico.",
+        "image": "lavoro.jpg",
         "gruppo":"https://t.me/joinchat/I5_YNlBa9fMnTu5MfN6nnQ"
     },
     {
         "name":"Gruppo freetalk",
         "description": "Chat freetalk per parlare di qualsiasi cosa.",
+        "image": "free_talk.jpg",
         "gruppo":"https://t.me/UniMiCazzeggio"
     },
     {
         "name":"Unirole",
         "description": "Dedicato ai giochi di ruolo.",
+        "image": "giochi_di_ruolo.jpg",
         "gruppo":"https://t.me/joinchat/BnUK_g-KHlIX_SrIieU8CA"
     },
     {
         "name":"Overwatch",
         "description": "Dedicato a Overwatch.",
+        "image": "overwatch.jpg",
         "gruppo":"https://t.me/joinchat/I5_YNki_xbcdHg6chEfkiw"
     },
     {
         "name":"League of Legends",
         "description": "Dedicato a Lol",
+        "image": "lol.png",
         "gruppo":"https://t.me/joinchat/I5_YNlHqsyq1R4gWMBRD9g"
     },
     {
         "name":"Advent of Code",
         "description": "Dedicato a https://adventofcode.com/",
+        "image": "advent_of_code.jpg",
         "gruppo":"https://t.me/adventofcodeunimi"
     }
 ]

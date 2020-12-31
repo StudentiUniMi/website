@@ -18,12 +18,6 @@ interface Props {
     cdl?: string;
 }
 
-/*
-const dropdownStyles: Partial<IDropdownStyles> = {
-    dropdown: { maxWidth: '150px'},
-};
-*/
-
 const classNames = mergeStyleSets({
     listGridExample: {
         overflow: 'hidden',

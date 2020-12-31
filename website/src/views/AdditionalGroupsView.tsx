@@ -6,7 +6,7 @@ import { FontSizes } from '@fluentui/theme';
 import { Container } from 'react-bootstrap';
 import { FocusZone, List, IRectangle } from "@fluentui/react";
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
-import GruppiExtra from '../data/GruppiExtra.json'
+import GruppiExtra from '../data/ExtraGroups.json'
 import ExtraGroupView from './ExtraGroupView'
 import ExtraGroup from '../models/ExtraGroup'
 

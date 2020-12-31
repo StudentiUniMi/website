@@ -17,7 +17,7 @@ const Footer = () => {
                     <div className="col-lg-3 col-md-6 mb-4 mb-md-0 col-sm-12">
                         <p className="mb-1">
                             <Text style={{ fontWeight: 600 }}>
-                                <Link href="https://github.com/NetworkStataleInformatica">Network Statale Informatica &copy;</Link>
+                                <Link href="https://github.com/NetworkStataleInformatica" className="text-decoration-none">Network Statale Informatica &copy;</Link>
                             </Text>
                         </p>
 
