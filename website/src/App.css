@@ -84,7 +84,7 @@ main {
 
 
 /* Responsive menu and title */
-@media only screen and (min-width: 465px) {
+@media only screen and (min-width: 661px) {
   .header-menu .pivot {
     display: block;
   }
@@ -98,7 +98,7 @@ main {
     margin-left: 10px;
   }
 }
-@media only screen and (max-width: 464px) {
+@media only screen and (max-width: 660px) {
   .header-menu .pivot {
     display: none;
   }
@@ -164,7 +164,7 @@ main {
   }
 }
 
-/* Faq_proposer form and administrator section adjustments */
+/* Faq_proposer form and other section adjustments */
 @media only screen and (max-width: 575px) {
   .faq-proposer .col-xs-12 {
     max-width: 300px;
@@ -180,8 +180,13 @@ main {
     margin-right:15%;
     margin-left:15%;
   }
+  
+  .ms-DocumentCard {
+    margin-left:15%;
+    margin-right:15%;
+  }
 }
-
+/* End Faq_proposer form and other section adjustments */
 
 .header-title .row {
   margin-right: 0px;

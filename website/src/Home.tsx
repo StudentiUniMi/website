@@ -31,7 +31,7 @@ const Home = () => {
                 <Text style={{ fontSize: FontSizes.size16 }}>
                     <p>
                         Network nato con lo scopo di creare un punto centrale di collegamento tra tutti i corsi di laurea in ambito informatico dell'università degli studi di Milano.
-                        Sono disponibili siti web, gruppi telegram e faq dei corsi didattici.
+                        Sono disponibili siti web, gruppi telegram, faq e materiali dei corsi didattici.
                     </p>
                 </Text>
             </div>
@@ -82,7 +82,7 @@ const Home = () => {
                             <div className="card-body">
                                 <div className="card-text">
                                     <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
-                                        Drive
+                                        Materiali
                                 </Text>
                                 </div>
                             </div>

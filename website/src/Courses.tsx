@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Text } from "office-ui-fabric-react/lib/Text";
 import { FontSizes } from '@fluentui/theme';
-import { Link } from 'office-ui-fabric-react';
 import { ChoiceGroup, IChoiceGroupOption, IChoiceGroupOptionStyles } from "office-ui-fabric-react/lib/ChoiceGroup";
 import { initializeIcons } from "@uifabric/icons";
 import { Container } from 'react-bootstrap';
@@ -115,7 +114,7 @@ const Courses = () => {
                     di ogni corso didattico del tuo corso di laurea. </p>
                     <p className="mb-0">I corsi di laurea evidenziati in azzurro riguardano lauree magistrali, gli altri invece le triennali.</p>
                     <p>
-                        Se noti qualcosa che non corrisponde o che andrebbe sistemato puoi contattare un <Link href="https://networkstataleinformatica.github.io/network/#/administrators/" className="text-decoration-none">amministratore</Link>.
+                        Se noti qualcosa che non corrisponde o che andrebbe sistemato puoi contattare un amministratore.
                     </p>
                     <p><Text style={{ fontWeight: 500 }}>Scegli un corso di laurea</Text></p>
                 </Text>

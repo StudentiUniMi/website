@@ -7,6 +7,8 @@ import Courses from './Courses'
 import FaqProposer from './FaqProposer'
 import AdditionalGroups from './views/AdditionalGroupsView'
 import Administrators from './Administrators'
+import Rules from './Rules'
+import Materiali from './Materiali'
 
 interface Props {
     view: ItemsKeys
@@ -17,6 +19,14 @@ const Content = (props: Props) => {
         case ItemsKeys.home:
             return <main role="main" className="content mt-4 mb-4">
                 <Home />
+            </main>
+        case ItemsKeys.rules:
+            return <main role="main" className="content mt-4 mb-4">
+                <Rules />
+            </main>
+        case ItemsKeys.materiali:
+            return <main role="main" className="content mt-4 mb-4">
+                <Materiali />
             </main>
         case ItemsKeys.courses:
             return <main role="main" className="content mt-4 mb-4">

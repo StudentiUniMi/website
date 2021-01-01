@@ -1,11 +1,10 @@
 /*
 TODO LIST
-- Sezione regolamento e lista drive
+- Sezione corsi, fai "amministratore" che porta alla sezione relativa
 - Se selezioni info mag blocchi il dropdown con disabled
 - Tema scuro
 - Hash commit nel footer
 - Premi una faq (devi creare una faqView) che premi e mostra un callout o dialog, quella che appare proprio una finestra nuova e puoi chiudere.
-- Aggiungere i drive delle magistrali alla lista
 - Costruire la gerarchia del network, fai un file .psd così lo tieni aggiornato facilmente
 - Sistemare le descrizioni dei gruppi per ogni cdl
 - Futura ristrutturazione: card con solo icone + hover sopra che mostra tooltip
