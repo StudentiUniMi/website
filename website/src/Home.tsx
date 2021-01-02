@@ -7,14 +7,8 @@ import { IconButton } from 'office-ui-fabric-react';
 import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
 import { Container } from 'react-bootstrap';
 
-/*const stackStyles: IStackStyles = {
-    root: {
-        background: DefaultPalette.themeTertiary,
-    },
-};*/
-
 const iconClass = mergeStyles({
-    fontSize: 50, // perchè non va?? dio santo
+    fontSize: 50,
     height: 100,
     width: 100,
 });
@@ -27,7 +21,7 @@ const cardStyle = {
 const Home = () => {
     return (
         <Container className="home">
-            <div className="text-center">
+            <div className="text-center mb-3">
                 <Text style={{ fontSize: FontSizes.size16 }}>
                     <p>
                         Network nato con lo scopo di creare un punto centrale di collegamento tra tutti i corsi di laurea in ambito informatico dell'università degli studi di Milano.
@@ -35,79 +29,43 @@ const Home = () => {
                     </p>
                 </Text>
             </div>
-            <br />
-            <Container id="home-collegamenti">
-                <div className="row">
-                    <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div className="card m-auto text-center" style={cardStyle}>
-                            <div className="card-body">
-                                <Link href="https://github.com/NetworkStataleInformatica/network/blob/master/regolamento.pdf" target="_blank">
-                                    <IconButton iconProps={{ iconName: "ComplianceAudit" }} className={iconClass} />
-                                </Link>
-                            </div>
-                            <div className="card-body">
-                                <div className="card-text">
-                                    <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
-                                        Regolamento
-                                </Text>
-                                </div>
-                            </div>
+            
+            <div className="row m-3 justify-content-center">
+                <div className="col" style={{maxWidth: '250px'}}>
+                    <div className="card m-auto text-center" style={cardStyle}>
+                        <div className="card-body">
+                            <Link href="https://t.me/stataleinformatica" target="_blank">
+                                <IconButton iconProps={{ iconName: "Send" }} className={iconClass} />
+                            </Link>
                         </div>
-                    </div>
-
-                    <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div className="card m-auto text-center" style={cardStyle}>
-                            <div className="card-body">
-                                <Link href="https://t.me/stataleinformatica" target="_blank">
-                                    <IconButton iconProps={{ iconName: "Send" }} className={iconClass} />
-                                </Link>
-                            </div>
-                            <div className="card-body">
-                                <div className="card-text">
-                                    <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
-                                        Canale Telegram
+                        <div className="card-body">
+                            <div className="card-text">
+                                <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
+                                    Canale Telegram
                                 </Text>
-                                </div>
-                            </div> 
-                        </div>
+                            </div>
+                        </div> 
                     </div>
-
-                    <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div className="card m-auto text-center" style={cardStyle}>
-                            <div className="card-body">
-                                <Link href="https://github.com/NetworkStataleInformatica/network/blob/master/drive.pdf" target="_blank">
-                                    <IconButton iconProps={{ iconName: "CloudWeather" }} className={iconClass} />
-                                </Link>
-                            </div>
-                            <div className="card-body">
-                                <div className="card-text">
-                                    <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
-                                        Materiali
-                                </Text>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div className="card m-auto text-center" style={cardStyle}>
-                            <div className="card-body">
-                                <Link href="https://discord.gg/pPGUrr35sv" target="_blank">
-                                    <IconButton iconProps={{ iconName: "ChatBot" }} className={iconClass} />
-                                </Link>
-                            </div>
-                            <div className="card-body">
-                                <div className="card-text">
-                                    <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
-                                        Server Discord
-                                </Text>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-            </Container>
+
+
+                <div className="col" style={{maxWidth: '250px'}}>
+                    <div className="card m-auto text-center" style={cardStyle}>
+                        <div className="card-body">
+                            <Link href="https://discord.gg/pPGUrr35sv" target="_blank">
+                                <IconButton iconProps={{ iconName: "ChatBot" }} className={iconClass} />
+                            </Link>
+                        </div>
+                        <div className="card-body">
+                            <div className="card-text">
+                                <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
+                                    Server Discord
+                                </Text>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </Container >
     )
 };

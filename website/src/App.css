@@ -304,3 +304,11 @@ a:focus,
 .faq-proposer button:active {
   outline: none;
 }
+
+.rules button:focus,
+.rules button:active {
+  outline: none;
+  border: none;
+  outline: 0;
+  box-shadow: none !important;
+}
