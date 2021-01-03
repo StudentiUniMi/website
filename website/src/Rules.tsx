@@ -7,13 +7,14 @@ import { Container } from 'react-bootstrap';
 
 const bold = {
     fontWeight: 500,
-    color: '#c50f1f'
+    color: '#c50f1f',
+    fontSize: FontSizes.size16
 };
 
 const Rules = () => {
     return (
         <Container className="rules text-center">
-            <Text style={{ fontSize: FontSizes.size16 }}>
+            <Text style={{ fontSize: FontSizes.size14 }}>
                 <p className="mb-0">
                     Qui è possibile trovare il regolamento del network.
                 </p>
@@ -48,7 +49,7 @@ const Rules = () => {
                     <div id="accordion" className="mr-3 ml-3">
 
                             {/* Regole riguardo domande e faq */}
-                            <div className="card mb-1" style={{backgroundColor: '#faf9f8;'}}>
+                            <div className="card mb-1">
                                 <button className="btn btn-link text-decoration-none" style={{padding: 0}} data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                     <div className="card-header p-2" id="headingOne">
                                         <div className="mb-0">
@@ -79,7 +80,7 @@ const Rules = () => {
 
 
                             {/* Regole comportamentali */}
-                            <div className="card mb-1" style={{backgroundColor: '#faf9f8;'}}>
+                            <div className="card mb-1">
                                 <button className="btn btn-link text-decoration-none" style={{padding: 0}} data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                     <div className="card-header p-2" id="headingTwo">
                                         <div className="mb-0">
@@ -118,7 +119,7 @@ const Rules = () => {
 
 
                             {/* Altre regole */}
-                            <div className="card mb-1" style={{backgroundColor: '#faf9f8;'}}>
+                            <div className="card mb-1">
                                 <button className="btn btn-link text-decoration-none" style={{padding: 0}} data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                     <div className="card-header p-2" id="headingThree">
                                         <div className="mb-0">

@@ -212,6 +212,10 @@ main {
   box-sizing: border-box;
 }
 
+.rules .card, .rules .card-body {
+  background-color: #faf9f8;
+}
+
 /*------------
   Da sistemare
 ------------*/
@@ -288,6 +292,10 @@ main {
 .home .card {
   background-color: #faf9f8;
   border: none;
+}
+
+.home .ms-Button-flexContainer {
+  margin-left: 5px;
 }
 
 a:active,
