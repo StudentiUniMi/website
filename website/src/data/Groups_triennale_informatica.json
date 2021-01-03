@@ -162,7 +162,11 @@
       "websites": [
         {
           "link":"https://aborgheseae2.ariel.ctu.unimi.it/v5/home/Default.aspx",
-          "etichetta":"Sito web"
+          "etichetta":"Ariel"
+        },
+        {
+          "link":"http://ais-lab.di.unimi.it/Teaching/Architettura_II/_Arch_II.html",
+          "etichetta":"Avvisi"
         }
       ],
       "drive": "https://drive.google.com/drive/folders/19CVxqohmG5SFZlj5hKT-uP3-QExPVOcd?usp=sharing",
