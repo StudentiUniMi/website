@@ -77,7 +77,7 @@ const Materiali = () => {
                 <div className="col-lg-3 col-xl-3 col-md-3 col-sm-6 col-xs-12 mb-3">
                     <DocumentCard
                         styles={cardStyles}
-                        onClickHref="https://drive.google.com/drive/folders/1VGVcIG9OKQPwxIQ97k8HAbt2yPhTltW-"
+                        onClickHref=""
                         onClickTarget="blank"
                     >
                         <DocumentCardImage height={150} imageFit={ImageFit.cover} iconProps={iconProps} />
@@ -89,10 +89,10 @@ const Materiali = () => {
                 <div className="col-lg-3 col-xl-3 col-md-3 col-sm-6 col-xs-12 mb-3">
                     <DocumentCard
                         styles={cardStyles}
-                        onClickHref="https://drive.google.com/drive/u/0/folders/0B_qRAwdMRXD5aXFLODJjRUZ0ck0"
+                        onClickHref=""
                         onClickTarget="blank"
                     >
-                        <DocumentCardImage height={150} imageFit={ImageFit.cover} iconProps={iconProps} />
+                        <DocumentCardImage height={150} imageFit={ImageFit.cover} iconProps={iconPropsDisabled} />
                         <DocumentCardDetails>
                         <DocumentCardTitle title="Sicurezza sistemi e reti informatiche online" styles={documentCardTitleStyle} shouldTruncate />
                         </DocumentCardDetails>
