@@ -80,7 +80,7 @@ const Materiali = () => {
                         onClickHref=""
                         onClickTarget="blank"
                     >
-                        <DocumentCardImage height={150} imageFit={ImageFit.cover} iconProps={iconProps} />
+                        <DocumentCardImage height={150} imageFit={ImageFit.cover} iconProps={iconPropsDisabled} />
                         <DocumentCardDetails>
                         <DocumentCardTitle title="Sicurezza sistemi e reti informatiche" styles={documentCardTitleStyle} shouldTruncate />
                         </DocumentCardDetails>
