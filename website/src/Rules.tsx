@@ -7,14 +7,14 @@ import { Container } from 'react-bootstrap';
 
 const bold = {
     fontWeight: 500,
-    color: '#c50f1f',
-    fontSize: FontSizes.size16
+    color: '#4f6bed',
+    fontSize: FontSizes.size14
 };
 
 const Rules = () => {
     return (
         <Container className="rules text-center">
-            <Text style={{ fontSize: FontSizes.size14 }}>
+            <Text style={{ fontSize: FontSizes.size16 }}>
                 <p className="mb-0">
                     Qui è possibile trovare il regolamento del network.
                 </p>
@@ -24,7 +24,7 @@ const Rules = () => {
             </Text>
 
             <div style={{ 'marginLeft': '15%', 'marginRight': '15%'}}>
-                <Text style={{ fontSize: FontSizes.size14 }}>
+                <Text style={{ fontSize: FontSizes.size12 }}>
 
 
                     <div style={bold} className="mb-2">Perchè abbiamo introdotto un regolamento?</div>

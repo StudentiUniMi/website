@@ -180,13 +180,18 @@ main {
     margin-right:15%;
     margin-left:15%;
   }
-  
-  .ms-DocumentCard {
-    margin-left:15%;
-    margin-right:15%;
-  }
+
 }
 /* End Faq_proposer form and other section adjustments */
+
+.materials .col-lg-3 {
+  max-width:250px;
+}
+
+.header-menu .ms-Dropdown-title {
+  line-height: 40px;
+  padding:0;
+}
 
 .header-title .row {
   margin-right: 0px;

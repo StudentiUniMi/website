@@ -4,18 +4,22 @@ import "./App.css";
 import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
-import { DocumentCard, DocumentCardTitle, DocumentCardDetails, DocumentCardImage, IDocumentCardStyles, IDocumentCardTitleStyles } from 'office-ui-fabric-react/lib/DocumentCard';
+import { DocumentCard, DocumentCardTitle, DocumentCardDetails, DocumentCardImage, IDocumentCardStyles, IDocumentCardTitleStyles, IDocumentCardDetailsStyles } from 'office-ui-fabric-react/lib/DocumentCard';
 import { IIconProps } from 'office-ui-fabric-react/lib/Icon';
 import { ImageFit } from 'office-ui-fabric-react/lib/Image';
 
 const Materiali = () => {
 
     const cardStyles: IDocumentCardStyles = {
-        root: { minWidth: 120, maxWidth: 'none' },
+        root: { minWidth: 120, maxWidth: 'none' }
     };
 
     const documentCardTitleStyle : IDocumentCardTitleStyles = {
-        root: { minHeight: 110, height: 'auto', verticalAlign: 'middle!important', margin: 'auto', fontSize: '12' },
+        root: { minHeight: 110, height: 'auto', verticalAlign: 'middle!important', margin: 'auto', fontSize: '12' }
+    };
+
+    const documentCardDetailsStyle : IDocumentCardDetailsStyles = {
+        root: { backgroundColor: '#fafafa' }
     };
 
     const iconProps: IIconProps = {
@@ -45,7 +49,7 @@ const Materiali = () => {
                         onClickTarget="blank"
                     >
                         <DocumentCardImage height={150} imageFit={ImageFit.cover} iconProps={iconProps} />
-                        <DocumentCardDetails>
+                        <DocumentCardDetails styles={documentCardDetailsStyle}>
                         <DocumentCardTitle title="Informatica" styles={documentCardTitleStyle} shouldTruncate />
                         </DocumentCardDetails>
                     </DocumentCard>
@@ -57,7 +61,7 @@ const Materiali = () => {
                         onClickTarget="blank"
                     >
                         <DocumentCardImage height={150} imageFit={ImageFit.cover} iconProps={iconPropsDisabled} />
-                        <DocumentCardDetails>
+                        <DocumentCardDetails styles={documentCardDetailsStyle}>
                         <DocumentCardTitle title="Informatica musicale" styles={documentCardTitleStyle} shouldTruncate />
                         </DocumentCardDetails>
                     </DocumentCard>
@@ -69,8 +73,8 @@ const Materiali = () => {
                         onClickTarget="blank"
                     >
                         <DocumentCardImage height={150} imageFit={ImageFit.cover} iconProps={iconProps} />
-                        <DocumentCardDetails>
-                        <DocumentCardTitle title="Informatica per la com. dig." styles={documentCardTitleStyle} shouldTruncate />
+                        <DocumentCardDetails styles={documentCardDetailsStyle}>
+                        <DocumentCardTitle title="Informatica per la comunicazione digitale" styles={documentCardTitleStyle} shouldTruncate />
                         </DocumentCardDetails>
                     </DocumentCard>
                 </div>
@@ -81,7 +85,7 @@ const Materiali = () => {
                         onClickTarget="blank"
                     >
                         <DocumentCardImage height={150} imageFit={ImageFit.cover} iconProps={iconPropsDisabled} />
-                        <DocumentCardDetails>
+                        <DocumentCardDetails styles={documentCardDetailsStyle}>
                         <DocumentCardTitle title="Sicurezza sistemi e reti informatiche" styles={documentCardTitleStyle} shouldTruncate />
                         </DocumentCardDetails>
                     </DocumentCard>
@@ -93,7 +97,7 @@ const Materiali = () => {
                         onClickTarget="blank"
                     >
                         <DocumentCardImage height={150} imageFit={ImageFit.cover} iconProps={iconPropsDisabled} />
-                        <DocumentCardDetails>
+                        <DocumentCardDetails styles={documentCardDetailsStyle}>
                         <DocumentCardTitle title="Sicurezza sistemi e reti informatiche online" styles={documentCardTitleStyle} shouldTruncate />
                         </DocumentCardDetails>
                     </DocumentCard>
@@ -105,7 +109,7 @@ const Materiali = () => {
                         onClickTarget="blank"
                     >
                         <DocumentCardImage height={150} imageFit={ImageFit.cover} iconProps={iconProps} />
-                        <DocumentCardDetails>
+                        <DocumentCardDetails styles={documentCardDetailsStyle}>
                         <DocumentCardTitle title="Informatica (magistrale)" styles={documentCardTitleStyle} shouldTruncate />
                         </DocumentCardDetails>
                     </DocumentCard>
@@ -117,7 +121,7 @@ const Materiali = () => {
                         onClickTarget="blank"
                     >
                         <DocumentCardImage height={150} imageFit={ImageFit.cover} iconProps={iconPropsDisabled} />
-                        <DocumentCardDetails>
+                        <DocumentCardDetails styles={documentCardDetailsStyle}>
                         <DocumentCardTitle title="Sicurezza informatica (magistrale)" styles={documentCardTitleStyle} shouldTruncate />
                         </DocumentCardDetails>
                     </DocumentCard>
