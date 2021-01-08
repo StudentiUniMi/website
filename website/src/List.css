@@ -36,16 +36,23 @@
   
   @media only screen and (max-width: 540px) {
     .ms-List {
-      margin-left:28%;
+      margin-left:26%;
       margin-right:25%;
       width: 220px;
     }
   }
   
   
-  @media only screen and (max-width: 520px) {
+  @media only screen and (max-width: 525px) {
     .ms-List {
       margin-left:26%;
+      margin-right:25%;
+    }
+  }
+
+  @media only screen and (max-width: 510px) {
+    .ms-List {
+      margin-left:25%;
       margin-right:25%;
     }
   }
@@ -58,7 +65,7 @@
     }
   }
   
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 485px) {
     .ms-List {
       margin-left:23%;
       margin-right:25%;

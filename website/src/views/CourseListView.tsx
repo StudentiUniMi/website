@@ -175,12 +175,23 @@ const CourseListView = (props: Props) => {
                             />
                         </div>
                         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <Dropdown options={yearFilterOptions}
+                            {
+                                props.cdl === 'magistrale_informatica' ? 
+                                <Dropdown options={yearFilterOptions}
+                                label={`Cerca per anno`}
+                                onChange={onYearFilterChanged}
+                                selectedKey={yearFilter}
+                                disabled
+                                //styles={dropdownStyles}
+                                />
+                                :
+                                <Dropdown options={yearFilterOptions}
                                 label={`Cerca per anno`}
                                 onChange={onYearFilterChanged}
                                 selectedKey={yearFilter}
                                 //styles={dropdownStyles}
-                            />
+                                />
+                            }
                         </div>
                         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <Dropdown options={semesterFilterOptions}

@@ -2,10 +2,8 @@
 TODO LIST
 - textWeight 500 non visibile da mobile, scopri perchè
 - Sezione corsi, fai "amministratore" che porta alla sezione relativa
-- Se selezioni info mag blocchi il dropdown con disabled
 - Tema scuro
 - Hash commit nel footer
-- Test: card nella sezione corsi, leva il max width e imposta il margin quando raggiunge una certa width. Eviti di usare quel List.css
 - Premi una faq (devi creare una faqView) che premi e mostra un callout o dialog o MODAL, quella che appare proprio una finestra nuova e puoi chiudere.
 - Costruire la gerarchia del network, fai un file .psd così lo tieni aggiornato facilmente
 - Sistemare le descrizioni dei gruppi per ogni cdl
