@@ -1,8 +1,7 @@
 import * as React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
-import { Link, Text } from 'office-ui-fabric-react';
-import { FontSizes } from '@fluentui/theme';
+import { Link } from 'office-ui-fabric-react';
 import { useBoolean } from '@uifabric/react-hooks';
 import { Dialog, DialogType, DialogFooter } from 'office-ui-fabric-react/lib/Dialog';
 import AnswerQuestionView from './AnswerQuestionView';
