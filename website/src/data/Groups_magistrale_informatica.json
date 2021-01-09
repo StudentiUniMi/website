@@ -1,5 +1,6 @@
 [
     {
+      "cdl": "magistrale_informatica",
       "name": "Gruppo principale",
       "anno": "Anno accademico",
       "semestre": "",
@@ -8,9 +9,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Advanced Computer Programming",
       "anno": "",
       "semestre": "1",
@@ -19,9 +21,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Artificial Intelligence",
       "anno": "",
       "semestre": "1",
@@ -30,9 +33,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Natural Interaction",
       "anno": "",
       "semestre": "1",
@@ -41,9 +45,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Programmazione Avanzata",
       "anno": "",
       "semestre": "1",
@@ -52,9 +57,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1h1L41VBAavNCLd8xumTbmP9JgrgXv43e?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Sviluppo Software in Gruppi di Lavoro Complessi",
       "anno": "",
       "semestre": "1",
@@ -63,9 +69,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1LavQPSX2YoqLdisNL3uXgUaNwmRCJLxa?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Architetture Multimediali",
       "anno": "",
       "semestre": "2",
@@ -74,9 +81,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1ARCt4zBX99POYB9kC_dEkktiWwMIgn7b?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Distributed System",
       "anno": "",
       "semestre": "2",
@@ -85,9 +93,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Informatica Teorica",
       "anno": "",
       "semestre": "2",
@@ -96,9 +105,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1ABAIhcGUwC0qx_D5B3wkDPStPUz_v5re?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Information Management",
       "anno": "",
       "semestre": "2",
@@ -107,9 +117,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1xEmfSKnf5wAtz45tdERr_UvxFvJJTfLr?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Interazione Naturale",
       "anno": "",
       "semestre": "2",
@@ -118,9 +129,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1PkOyR5MLuUgqEHf4fUw_Puf2UFRP0QM9?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Reti Wireless e Mobili",
       "anno": "",
       "semestre": "2",
@@ -129,9 +141,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1qcLjdbQZJU6IK_VB_1ZQVmOD1RrWAUpw?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Sistemi Distribuiti e Pervasivi",
       "anno": "",
       "semestre": "2",
@@ -140,9 +153,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1PuzaHNbdGspsLOOSGXMIaLIkOeqAiEqo?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Statistical Methods for Machine Learning",
       "anno": "",
       "semestre": "2",
@@ -151,9 +165,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Metodi Statici per l'Apprendimento",
       "anno": "",
       "semestre": "2",
@@ -162,9 +177,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1fYT3cV7JL3GVbXx8kFHXkF8Fsr5JW180?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Algoritmi e Complessità",
       "anno": "",
       "semestre": "1",
@@ -173,9 +189,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1NFN-eKdu24UMI6oFVFF8RtheOjxlRX_-?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Algoritmi Paralleli e Distribuiti",
       "anno": "",
       "semestre": "1",
@@ -184,9 +201,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Analisi e Gestione del Rischio",
       "anno": "",
       "semestre": "1",
@@ -195,9 +213,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Audio Pattern Recognition",
       "anno": "",
       "semestre": "1",
@@ -206,9 +225,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1UOlXtJ9M7vnAZGGmUXe_YjC2cGVw3enz?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Game and Level Design",
       "anno": "",
       "semestre": "1",
@@ -217,9 +237,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1rj30Ird0K12pQ36OQ31kC7QpkSboB-dg?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Game Design and Prototyping",
       "anno": "",
       "semestre": "1",
@@ -228,9 +249,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Heuristic Algorithms",
       "anno": "",
       "semestre": "1",
@@ -239,9 +261,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Algoritmi Euristici",
       "anno": "",
       "semestre": "1",
@@ -250,9 +273,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1BSA5HggcJxJCFvwDmVV6o4NWQ-PJecEh?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Methods For Image Processing",
       "anno": "",
       "semestre": "1",
@@ -261,9 +285,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Modelli dei dati e DBMS di nuova generazione",
       "anno": "",
       "semestre": "1",
@@ -272,9 +297,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/10xn8_0_Zqg7TV3W4KnYQuj09NiYC8aVb?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Privatezza e Protezione dei Dati",
       "anno": "",
       "semestre": "1",
@@ -283,9 +309,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/15T7uVQeWar2_tCr4OhqRsXQNUI-a9w8x?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Privacy and Data Protection",
       "anno": "",
       "semestre": "1",
@@ -294,9 +321,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Progetto di Sistemi a Sensore",
       "anno": "",
       "semestre": "1",
@@ -305,9 +333,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1Bhq2y4pHwvJjj-Tytt1pD_T65HXb2Szd?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Programmazione Midi",
       "anno": "",
       "semestre": "1",
@@ -316,9 +345,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Programmazione Per La Musica",
       "anno": "",
       "semestre": "1",
@@ -327,9 +357,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Programmazione Timbrica",
       "anno": "",
       "semestre": "1",
@@ -338,9 +369,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Sicurezza Informatica",
       "anno": "",
       "semestre": "2",
@@ -349,9 +381,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1XSnlYhdjInFXa_Pw6R2joWRSBfNfxyi7?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Sistemi Intelligenti",
       "anno": "",
       "semestre": "1",
@@ -360,9 +393,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1thl0rzQnn8GOuNBMxEkDanr2hUfW0aLu?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Tecniche Speciali Di Programmazione",
       "anno": "",
       "semestre": "1",
@@ -371,9 +405,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1x7MqvTAW1b8_siKQ9feiMkPp507-QezO?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Web Algorithms",
       "anno": "",
       "semestre": "1",
@@ -382,9 +417,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Algoritmica per il Web",
       "anno": "",
       "semestre": "1",
@@ -393,9 +429,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1aBWtJvSpPT_2tso8BpV6UaOXs30v5dna?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "3D Video-games",
       "anno": "",
       "semestre": "2",
@@ -404,9 +441,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Algorithms For Massive Datasets",
       "anno": "",
       "semestre": "2",
@@ -415,9 +453,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/15isBUOM9IdZAfFyTM6fGGKKH4R_ueI4j?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Artificial Intelligence for Video-Games",
       "anno": "",
       "semestre": "2",
@@ -426,9 +465,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Intelligenza Artificiale per Videogiochi",
       "anno": "",
       "semestre": "2",
@@ -437,9 +477,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Business Process Engineering",
       "anno": "",
       "semestre": "2",
@@ -448,9 +489,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Business Information Systems",
       "anno": "",
       "semestre": "2",
@@ -459,9 +501,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Intelligent Systems For Industry, Supply Chain And Environment",
       "anno": "",
       "semestre": "2",
@@ -470,9 +513,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Metodi Probabilistici Per L'Informatica",
       "anno": "",
       "semestre": "2",
@@ -481,9 +525,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1ltP2LMssQiK5JIT4vGy5ehJGW_EuAkN_?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Online Game Design",
       "anno": "",
       "semestre": "2",
@@ -492,9 +537,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Progettazione di Sistemi Operativi",
       "anno": "",
       "semestre": "2",
@@ -503,9 +549,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Protocolli per Reti ad Hoc e Sensori",
       "anno": "",
       "semestre": "2",
@@ -514,9 +561,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Realtà Virtuale",
       "anno": "",
       "semestre": "2",
@@ -525,9 +573,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Real-time Graphics Programming",
       "anno": "",
       "semestre": "2",
@@ -536,9 +585,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Sicurezza delle Architetture Orientate ai Servizi",
       "anno": "",
       "semestre": "2",
@@ -547,9 +597,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Simulation",
       "anno": "",
       "semestre": "2",
@@ -558,9 +609,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Sviluppo Di Applicazioni Per Dispositivi Mobili",
       "anno": "",
       "semestre": "2",
@@ -569,9 +621,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1V_Nv0OMVy6WNIRxQGuBCDGpvE3LkxNHK?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Teoria Dei Linguaggi",
       "anno": "",
       "semestre": "2",
@@ -580,9 +633,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1dW5viNJwx9y-HC9KwK_1jk1ycjAN6Nlz?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Verifica E Convalida Del Software",
       "anno": "",
       "semestre": "2",
@@ -591,9 +645,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Visione Artificiale",
       "anno": "",
       "semestre": "2",
@@ -602,9 +657,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Affective Computing",
       "anno": "",
       "semestre": "1",
@@ -613,9 +669,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Modelli di Computazione Affettiva",
       "anno": "",
       "semestre": "1",
@@ -624,9 +681,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1JpoCLF9b2AWZidQ5eYOL8rnjGsk9UwQl?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Architectures For Big Data",
       "anno": "",
       "semestre": "1",
@@ -635,9 +693,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Architetture e Programmazione DSP",
       "anno": "",
       "semestre": "1",
@@ -646,9 +705,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Biomedical and Industrial Signal Processing",
       "anno": "",
       "semestre": "1",
@@ -657,9 +717,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Cittadinanza Digitale E Tecnocivismo",
       "anno": "",
       "semestre": "1",
@@ -668,9 +729,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Combinatorial Optimization",
       "anno": "",
       "semestre": "1",
@@ -679,9 +741,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Ottimizzazione Combinatoria",
       "anno": "",
       "semestre": "1",
@@ -690,9 +753,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1sZjVMWG-9q9QPoHzMWAFA9L9Y94FZ9wg?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Operational Research Complements",
       "anno": "",
       "semestre": "1",
@@ -701,9 +765,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Complementi di Ricerca Operativa",
       "anno": "",
       "semestre": "1",
@@ -712,9 +777,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1mtZr0z6bQTFr5UghBXMRej53s8WFvO_s?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Decision Methods And Models",
       "anno": "",
       "semestre": "1",
@@ -723,9 +789,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Metodi e Modelli per le Decisioni",
       "anno": "",
       "semestre": "1",
@@ -734,9 +801,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1xvP4j51Iy-SMtitY_dx6DelWJzor9HMl?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Geometria Computazionale",
       "anno": "",
       "semestre": "1",
@@ -745,9 +813,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Gestione dell'Informazione Geospaziale",
       "anno": "",
       "semestre": "1",
@@ -756,9 +825,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1z7GR2FKZ1ettNyIYPkLEtubd-9eFgQbQ?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Geospatial Data Management",
       "anno": "",
       "semestre": "1",
@@ -767,9 +837,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Logica Matematica",
       "anno": "",
       "semestre": "1",
@@ -778,9 +849,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1D8oQ5pC6Mr1Z0-dIajua-nTLNRRJ5WA8?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Mathematical Logic",
       "anno": "",
       "semestre": "1",
@@ -789,9 +861,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Metodi Formali",
       "anno": "",
       "semestre": "1",
@@ -800,9 +873,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1wiCaPEhb-Mwl10SGs1Bdr-TQ27gABOx0?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Organizzazione E Digitalizzazione Di Teche Multimediali",
       "anno": "",
       "semestre": "1",
@@ -811,9 +885,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Sound in Interaction",
       "anno": "",
       "semestre": "1",
@@ -822,9 +897,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1ACJugCw-o_RkrCyOTsXGXA0iKrUoW5Z7?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Bioinformatics",
       "anno": "",
       "semestre": "2",
@@ -833,9 +909,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Bioinformatica",
       "anno": "",
       "semestre": "2",
@@ -844,9 +921,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Calcolo Numerico",
       "anno": "",
       "semestre": "2",
@@ -855,9 +933,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1VZS_tGdNz1axfhWquyFaJb1owI_KQItQ?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Didattica Dell'Informatica",
       "anno": "",
       "semestre": "2",
@@ -866,9 +945,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1TKJSDyiLcgy4aApUTlaAKZdxeCqpKirS?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "GPU Computing",
       "anno": "",
       "semestre": "2",
@@ -877,9 +957,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Information Retrieval",
       "anno": "",
       "semestre": "2",
@@ -888,9 +969,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1pGI9Jzy1Ml2FEt32uwPXtgJojqwCtuCa?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Logistics",
       "anno": "",
       "semestre": "2",
@@ -899,9 +981,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Modellazione E Analisi Di Sistemi",
       "anno": "",
       "semestre": "2",
@@ -910,9 +993,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Teoria Dei Grafi",
       "anno": "",
       "semestre": "2",
@@ -921,9 +1005,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1ngnMk5MGu13WiP_NJ5SVz4r9KnfAt2bk?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_informatica",
       "name": "Videogame Design and Programming",
       "anno": "",
       "semestre": "1",
@@ -932,6 +1017,6 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     }
 ]

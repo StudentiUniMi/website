@@ -6,7 +6,7 @@ import { Card, ICardTokens } from "@uifabric/react-cards";
 import { initializeIcons } from '@uifabric/icons';
 import { FontWeights, ITextStyles, Persona } from '@fluentui/react';
 import Course from '../models/Course'
-
+import FaqView from './FaqView';
 
 initializeIcons();
 
@@ -149,13 +149,14 @@ const CourseItemView = (props: Props) => {
                 <Text variant="small" styles={helpfulTextStyles}>
                 {
                     ( () => {
-                        if (data.faq !== "" && data.drive !== "") {
+                        if (data.faqFile !== "" && data.drive !== "") {
                             return (
                                 <span>
                                     <span className="mr-2">
                                         <i className="fas fa-question-circle" style={{color: '#fcba03'}}></i>
                                         &nbsp;
-                                        <Link href={data.faq} target="_blank" className="text-decoration-none">Faq</Link>
+                                        <FaqView cdl="informatica" name={data.name} anno={data.anno} semestre={data.semestre} cfu={data.cfu} gruppo={data.gruppo} websites={data.websites} faqFile={data.faqFile} />
+                                        
                                     </span>
                                     <span>
                                     <img style={gdriveStyle} src={process.env.PUBLIC_URL + "/gdrive.png"} alt="gdrive"/>
@@ -164,15 +165,15 @@ const CourseItemView = (props: Props) => {
                                     </span>
                                 </span>
                             )
-                        } else if (data.faq !== "" && data.drive === "") {
+                        } else if (data.faqFile !== "" && data.drive === "") {
                             return (
                                 <span>
                                     <i className="fas fa-question-circle" style={{color: '#fcba03'}}></i>
                                     &nbsp;
-                                    <Link href={data.faq} target="_blank" className="text-decoration-none">Faq</Link>
+                                    <FaqView cdl="informatica" name={data.name} anno={data.anno} semestre={data.semestre} cfu={data.cfu} gruppo={data.gruppo} websites={data.websites} faqFile={data.faqFile} />
                                 </span>
                             )
-                        } else if (data.drive !== "" && data.faq === "") {
+                        } else if (data.drive !== "" && data.faqFile === "") {
                             return (
                                 <span>
                                     <img style={gdriveStyle} src={process.env.PUBLIC_URL + "/gdrive.png"} alt="gdrive" />

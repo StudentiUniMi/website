@@ -6,10 +6,6 @@ body {
 }
 */
 
-h1, h2, h3, h4, h5, h6, p, div { /* reset for mobile browsers */
-  font-weight: normal;
-}
-
 html {
   margin: 0;
   padding: 0;
@@ -223,6 +219,12 @@ main {
 
 .rules .card, .rules .card-body {
   background-color: #faf9f8;
+}
+
+.ms-Dialog-main {
+  max-width: none;
+  margin:30px;
+  min-width:250px;
 }
 
 /*------------

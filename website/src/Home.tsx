@@ -6,7 +6,6 @@ import { FontSizes } from '@fluentui/theme';
 import { IconButton } from 'office-ui-fabric-react';
 import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
 import { Container } from 'react-bootstrap';
-//import FaqView from './views/FaqView';
 
 const iconClass = mergeStyles({
     fontSize: 50,

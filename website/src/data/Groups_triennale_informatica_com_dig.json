@@ -1,5 +1,6 @@
 [
     {
+      "cdl": "informatica_com_dig",
       "name": "A. A. Precedenti",
       "anno": "Anno accademico",
       "semestre": "",
@@ -8,9 +9,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "A. A. 2020/2021",
       "anno": "Anno accademico",
       "semestre": "",
@@ -19,9 +21,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Interazione uomo macchina",
       "anno": "1",
       "semestre": "1",
@@ -30,9 +33,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Matematica del continuo",
       "anno": "1",
       "semestre": "1",
@@ -41,9 +45,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbdDNMeU1waG1EblU?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Programmazione",
       "anno": "1",
       "semestre": "1",
@@ -52,9 +57,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbb3I0SVpScWdBaW8?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Architettura degli elaboratori",
       "anno": "1",
       "semestre": "2",
@@ -63,9 +69,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbN1RjeUFSMlh3RTg?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Diritto dei prodotti digitali",
       "anno": "1",
       "semestre": "2",
@@ -74,9 +81,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbQTdraGVNTHpPUXM?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Marketing digitale",
       "anno": "1",
       "semestre": "2",
@@ -85,9 +93,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbNTY2UEJfeDNPZjg?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Metodi matematici per la comunicazione digitale",
       "anno": "1",
       "semestre": "2",
@@ -96,9 +105,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbaFdVa2s4d1lSbzA?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Algoritmi e strutture dati",
       "anno": "2",
       "semestre": "1",
@@ -107,9 +117,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbQTNES0d0bVppNTA?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Applicazioni web e cloud",
       "anno": "2",
       "semestre": "1",
@@ -118,9 +129,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbU0xWdndQaDV0cEU?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Programmazione 2",
       "anno": "2",
       "semestre": "1",
@@ -129,9 +141,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1pokIt2bsxWpR30yyMSVuRZFVmex2ctFu?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Reti di calcolatori",
       "anno": "2",
       "semestre": "1",
@@ -140,9 +153,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1Y9iXd6J17Bcn7vqc9ZB5mitRNd5v_kJr?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Sistemi operativi",
       "anno": "2",
       "semestre": "1",
@@ -151,9 +165,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbblJrTzJKUlNUR2M?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Basi di dati e web",
       "anno": "2",
       "semestre": "2",
@@ -162,9 +177,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbTEVGcVJJV1dieWs?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Elaborazione dei segnali",
       "anno": "2",
       "semestre": "2",
@@ -173,9 +189,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Statistica e analisi dei dati",
       "anno": "2",
       "semestre": "2",
@@ -184,9 +201,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbaU5WdC1TQUNZa3M?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Fondamenti di social media digitali",
       "anno": "Complementare",
       "semestre": "2",
@@ -199,9 +217,10 @@
         }
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Computer graphics",
       "anno": "Complementare",
       "semestre": "2",
@@ -210,9 +229,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbRFpMLWFJVFptbkE?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Principi e modelli della percezione",
       "anno": "3",
       "semestre": "1",
@@ -221,9 +241,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbb1dROW5pbWx5ZVU?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Mobile computing",
       "anno": "Complementare",
       "semestre": "1",
@@ -232,9 +253,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1nv1AReNHUNcM04dIuX-5gHaIcNrKRr5Q?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Social media mining",
       "anno": "Complementare",
       "semestre": "2",
@@ -243,9 +265,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1FnhLnO4zrxyrDMSWmOMVnvEBe1NLYSs_?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Informazione multimediale",
       "anno": "Complementare",
       "semestre": "1",
@@ -254,9 +277,10 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1lKQo-tleQkpPLsidsLJqB4N_-5TK10l8?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Progetto multimediale",
       "anno": "Complementare",
       "semestre": "2",
@@ -265,9 +289,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "informatica_com_dig",
       "name": "Sociologia dei nuovi media",
       "anno": "Complementare",
       "semestre": "1",
@@ -276,6 +301,6 @@
       "websites": [
       ],
       "drive": "https://drive.google.com/drive/folders/1rH50r9sy62f0t1qWlPJnxdkDZwwerJ7K?usp=sharing",
-      "faq": ""
+      "faqFile": ""
     }
 ]

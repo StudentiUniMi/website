@@ -1,5 +1,6 @@
 [
     {
+      "cdl": "magistrale_sicurezza_informatica",
       "name": "A.A. 2020/2021",
       "anno": "Anno accademico",
       "semestre": "",
@@ -8,9 +9,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_sicurezza_informatica",
       "name": "Gruppo principale",
       "anno": "Anno accademico",
       "semestre": "",
@@ -19,9 +21,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_sicurezza_informatica",
       "name": "Sistemi biometrici",
       "anno": "1",
       "semestre": "1",
@@ -30,9 +33,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_sicurezza_informatica",
       "name": "Complementi di biometria",
       "anno": "1",
       "semestre": "1",
@@ -41,9 +45,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_sicurezza_informatica",
       "name": "Analisi e Gestione del Rischio",
       "anno": "",
       "semestre": "1",
@@ -52,9 +57,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_sicurezza_informatica",
       "name": "Privatezza e Protezione dei Dati",
       "anno": "",
       "semestre": "1",
@@ -63,9 +69,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_sicurezza_informatica",
       "name": "Logica",
       "anno": "1",
       "semestre": "1",
@@ -74,9 +81,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_sicurezza_informatica",
       "name": "Affidabilità dei sistemi",
       "anno": "1",
       "semestre": "1",
@@ -85,9 +93,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_sicurezza_informatica",
       "name": "Complementi di sicurezza e privatezza",
       "anno": "1",
       "semestre": "2",
@@ -96,9 +105,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_sicurezza_informatica",
       "name": "Gestione della sicurezza nei sistemi informativi",
       "anno": "1",
       "semestre": "2",
@@ -107,9 +117,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_sicurezza_informatica",
       "name": "Organizzazione aziendale",
       "anno": "2",
       "semestre": "1",
@@ -118,9 +129,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_sicurezza_informatica",
       "name": "Trattamento dei dati sensibili",
       "anno": "2",
       "semestre": "1",
@@ -129,9 +141,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "magistrale_sicurezza_informatica",
       "name": "Sicurezza delle reti",
       "anno": "1",
       "semestre": "1",
@@ -140,6 +153,6 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     }
 ]

@@ -1,5 +1,6 @@
 [
     {
+      "cdl": "sicurezza_sistemi_reti_informatiche",
       "name": "Gruppo principale",
       "anno": "Anno accademico",
       "semestre": "",
@@ -8,9 +9,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "sicurezza_sistemi_reti_informatiche",
       "name": "Matematica del continuo",
       "anno": "1",
       "semestre": "1",
@@ -19,9 +21,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "sicurezza_sistemi_reti_informatiche",
       "name": "Matematica del discreto",
       "anno": "1",
       "semestre": "1",
@@ -30,9 +33,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "sicurezza_sistemi_reti_informatiche",
       "name": "Programmazione",
       "anno": "1",
       "semestre": "1",
@@ -41,9 +45,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "sicurezza_sistemi_reti_informatiche",
       "name": "Architettura degli elaboratori",
       "anno": "1",
       "semestre": "2",
@@ -52,9 +57,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "sicurezza_sistemi_reti_informatiche",
       "name": "Diritto penale dell'informatica",
       "anno": "1",
       "semestre": "2",
@@ -63,9 +69,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "sicurezza_sistemi_reti_informatiche",
       "name": "Programmazione web e mobile",
       "anno": "1",
       "semestre": "3",
@@ -74,9 +81,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "sicurezza_sistemi_reti_informatiche",
       "name": "Sicurezza dei Sistemi Web e Mobili",
       "anno": "1",
       "semestre": "3",
@@ -85,9 +93,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "sicurezza_sistemi_reti_informatiche",
       "name": "Algoritmi e Strutture Dati",
       "anno": "2",
       "semestre": "1",
@@ -96,9 +105,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "sicurezza_sistemi_reti_informatiche",
       "name": "Sistemi Operativi I e II",
       "anno": "2",
       "semestre": "1",
@@ -107,9 +117,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "sicurezza_sistemi_reti_informatiche",
       "name": "Basi di dati",
       "anno": "2",
       "semestre": "2",
@@ -118,9 +129,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "sicurezza_sistemi_reti_informatiche",
       "name": "Reti di calcolatori",
       "anno": "2",
       "semestre": "2",
@@ -129,9 +141,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "sicurezza_sistemi_reti_informatiche",
       "name": "Crittografia",
       "anno": "2",
       "semestre": "3",
@@ -140,9 +153,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "sicurezza_sistemi_reti_informatiche",
       "name": "Statistica e analisi dei dati",
       "anno": "2",
       "semestre": "3",
@@ -151,9 +165,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "sicurezza_sistemi_reti_informatiche",
       "name": "Computer Forensics",
       "anno": "3",
       "semestre": "1",
@@ -162,9 +177,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "sicurezza_sistemi_reti_informatiche",
       "name": "Sicurezza dei sistemi e delle reti",
       "anno": "3",
       "semestre": "1",
@@ -173,9 +189,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "sicurezza_sistemi_reti_informatiche",
       "name": "Progettazione di software sicuro",
       "anno": "3",
       "semestre": "2",
@@ -184,9 +201,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "sicurezza_sistemi_reti_informatiche",
       "name": "Sistemi biometrici",
       "anno": "3",
       "semestre": "2",
@@ -195,9 +213,10 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     },
     {
+      "cdl": "sicurezza_sistemi_reti_informatiche",
       "name": "Aspetti economici, etici, sociali e legali connessi allo svolgimento della professione informatica",
       "anno": "3",
       "semestre": "2",
@@ -206,6 +225,6 @@
       "websites": [
       ],
       "drive": "",
-      "faq": ""
+      "faqFile": ""
     }
 ]
