@@ -1,12 +1,9 @@
 /*
 TODO LIST
 - textWeight 500 non visibile da mobile, scopri perchè
-- Sezione corsi, fai "amministratore" che porta alla sezione relativa
 - Tema scuro
 - Hash commit nel footer
-- Premi una faq (devi creare una faqView) che premi e mostra un callout o dialog o MODAL, quella che appare proprio una finestra nuova e puoi chiudere.
 - Costruire la gerarchia del network, fai un file .psd così lo tieni aggiornato facilmente
-- Sistemare le descrizioni dei gruppi per ogni cdl
 - Futura ristrutturazione: card con solo icone + hover sopra che mostra tooltip
 - Una sezione contenente manifesti e altre informazioni globali per ogni cdl
 - Sezione about per chi ha contribuito (magari anche chi ha fatto delle faq)
