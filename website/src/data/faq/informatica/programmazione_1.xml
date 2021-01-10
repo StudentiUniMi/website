@@ -26,10 +26,9 @@
             Qual è il materiale a disposizione per studiare?
         </question>
         <answer>
-            I docenti consigliano i seguenti libri:
-            - Ivo Balbaert: Programmare in go. Pearson, ISBN 8891909661.
-            - Alan A. Donovan, Brian W. Kernighan: The Go Programming Language,
-            Addison-Wesley.
+            I docenti consigliano i seguenti libri:&#xD;&#xA;
+            - Ivo Balbaert: Programmare in go. Pearson, ISBN 8891909661.&#xD;&#xA;
+            - Alan A. Donovan, Brian W. Kernighan: The Go Programming Language, Addison-Wesley.
         </answer>
     </pair>
 </faq>

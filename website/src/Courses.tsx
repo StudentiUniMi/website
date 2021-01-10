@@ -116,7 +116,7 @@ const Courses = () => {
                     <p>
                         Se noti qualcosa che non corrisponde o che andrebbe sistemato puoi contattare un amministratore.
                     </p>
-                    <p><Text style={{ fontWeight: 500 }}>Scegli un corso di laurea</Text></p>
+                    <p><Text style={{ fontWeight: 600 }}>Scegli un corso di laurea</Text></p>
                 </Text>
             </div>
             <ChoiceGroup
@@ -127,7 +127,7 @@ const Courses = () => {
             <br />
             <div style={{ display: selectedKey ? 'block' : 'none' }}>
                 <p className='text-center'>
-                    <Text style={{ fontWeight: 500 }}>Gruppi disponibili:</Text>
+                    <Text style={{ fontWeight: 600 }}>Gruppi disponibili:</Text>
                 </p>
                 <CourseListView cdl={selectedKey} />
             </div>

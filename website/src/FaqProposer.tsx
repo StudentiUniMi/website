@@ -75,7 +75,7 @@ const FaqProposer = () => {
                     </p>
                     
                     <p>
-                        <Text style={{ fontWeight: 500 }}>Compila questo piccolo form se vuoi contribuire:</Text>
+                        <Text style={{ fontWeight: 600 }}>Compila questo piccolo form se vuoi contribuire:</Text>
                     </p>
                 </Text>
             </Container>

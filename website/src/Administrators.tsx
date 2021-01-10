@@ -19,7 +19,7 @@ const Administrators = () => {
             <Text style={{ fontSize: FontSizes.size14 }}>
                 <div className="row justify-content-center">
                     <div className="col-sm-6 col-md-4 col-lg-2 mb-5">
-                        <h6 style={{ fontWeight: 500 }}>Informatica</h6>
+                        <h6 style={{ fontWeight: 600 }}>Informatica</h6>
                         <p className="mb-1"><a href="https://t.me/giuseppetm">@giuseppetm</a></p>
                         <p className="mb-1"><a href="https://t.me/davidebusolin">@davidebusolin</a></p>
                         <p className="mb-1"><a href="https://t.me/alesiasommariva" className="tutor">@alesiasommariva</a></p>
@@ -36,21 +36,21 @@ const Administrators = () => {
                         <p className="mb-1"><a href="https://t.me/Palmastizio">@Palmastizio</a></p>
                     </div>
                     <div className="col-sm-6 col-md-4 col-lg-2 mb-5">
-                        <h6 style={{ fontWeight: 500 }}>Informatica musicale</h6>
+                        <h6 style={{ fontWeight: 600 }}>Informatica musicale</h6>
                         <p className="mb-1"><a href="https://t.me/giolake" className="tutor">@giolake</a></p>
                         <p className="mb-1"><a href="https://t.me/robertopinotti">@robertopinotti</a></p>
                         <p className="mb-1"><a href="https://t.me/elmalakomar">@elmalakomar</a></p>
                         <p className="mb-1"><a href="https://t.me/giuseppetm">@giuseppetm</a></p>
                     </div>
                     <div className="col-sm-6 col-md-4 col-lg-2 mb-5">
-                        <h6 style={{ fontWeight: 500 }}>Informatica per la comunicazione digitale</h6>
+                        <h6 style={{ fontWeight: 600 }}>Informatica per la comunicazione digitale</h6>
                         <p className="mb-1"><a href="https://t.me/robertopinotti" className="tutor">@robertopinotti</a></p>
                         <p className="mb-1"><a href="https://t.me/giolake">@giolake</a></p>
                         <p className="mb-1"><a href="https://t.me/elmalakomar">@elmalakomar</a></p>
                         <p className="mb-1"><a href="https://t.me/giuseppetm">@giuseppetm</a></p>
                     </div>
                     <div className="col-sm-6 col-md-4 col-lg-2 mb-5">
-                        <h6 style={{ fontWeight: 500 }}>Sicurezza dei sistemi e delle reti informatiche</h6>
+                        <h6 style={{ fontWeight: 600 }}>Sicurezza dei sistemi e delle reti informatiche</h6>
                         <p className="mb-1"><a href="https://t.me/elmalakomar" className="tutor">@elmalakomar</a></p>
                         <p className="mb-1"><a href="https://t.me/robertopinotti">@robertopinotti</a></p>
                         <p className="mb-1"><a href="https://t.me/giolake">@giolake</a></p>
@@ -58,13 +58,13 @@ const Administrators = () => {
                         <p className="mb-1"><a href="https://t.me/giuseppetm">@giuseppetm</a></p>
                     </div>
                     <div className="col-sm-6 col-md-4 col-lg-2 mb-5">
-                        <h6 style={{ fontWeight: 500 }}>Sicurezza dei sistemi e delle reti informatiche online</h6>
+                        <h6 style={{ fontWeight: 600 }}>Sicurezza dei sistemi e delle reti informatiche online</h6>
                         <p className="mb-1"><a href="https://t.me/salvadorbs">@salvadorbs</a></p>
                         <p className="mb-1"><a href="https://t.me/burzum00">@burzum00</a></p>
                         <p className="mb-1"><a href="https://t.me/giuseppetm">@giuseppetm</a></p>
                     </div>
                     <div className="col-sm-6 col-md-4 col-lg-2 mb-5">
-                        <h6 style={{ fontWeight: 500 }}>Informatica e Sicurezza informatica (magistrali)</h6>
+                        <h6 style={{ fontWeight: 600 }}>Informatica e Sicurezza informatica (magistrali)</h6>
                         <p className="mb-1"><a href="https://t.me/giuseppetm">@giuseppetm</a></p>
                         <p className="mb-1"><a href="https://t.me/maca14">@maca14</a></p>
                         <p className="mb-1"><a href="https://t.me/robertopinotti">@robertopinotti</a></p>

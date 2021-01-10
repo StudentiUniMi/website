@@ -142,7 +142,6 @@ const CourseListView = (props: Props) => {
     
     // Gestione dei filtri
 
-    
     let yearFilterOptions = props.cdl === "magistrale_informatica" || props.cdl === 'magistrale_sicurezza_informatica' ? yearMasterDegreeFilterOptions : yearBachelorDegreeFilterOptions;
     
     let filteredCourses = courses;
@@ -182,14 +181,12 @@ const CourseListView = (props: Props) => {
                                 onChange={onYearFilterChanged}
                                 selectedKey={yearFilter}
                                 disabled
-                                //styles={dropdownStyles}
                                 />
                                 :
                                 <Dropdown options={yearFilterOptions}
                                 label={`Cerca per anno`}
                                 onChange={onYearFilterChanged}
                                 selectedKey={yearFilter}
-                                //styles={dropdownStyles}
                                 />
                             }
                         </div>
@@ -198,7 +195,6 @@ const CourseListView = (props: Props) => {
                                 label={`Cerca per semestre`}
                                 onChange={onSemesterFilterChanged}
                                 selectedKey={semesterFilter}
-                                //styles={dropdownStyles}
                             />
                         </div>
                     </div>

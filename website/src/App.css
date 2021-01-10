@@ -206,11 +206,11 @@ main {
 }
 
 .tutor {
-  color:#d13438;
+  color:#8a8886;
 }
 
 .tutor:hover {
-  color: #e86e58;
+  color: #8764b8;
 }
 
 .ms-ChoiceField-field {
@@ -226,6 +226,31 @@ main {
   margin:30px;
   min-width:250px;
 }
+
+.ms-Dialog-main .ms-Button {
+  position:absolute;
+}
+
+@media only screen and (max-width: 478px) {
+  .ms-Dialog-main .ms-Button {
+    top: -40px;
+    right: 0px;
+  }
+}
+
+@media only screen and (min-width: 479px) {
+  .ms-Dialog-main .ms-Button {
+    top: 0px;
+    right: 0px;
+  }
+}
+
+
+/*
+.ms-Dialog-title {
+  margin-right: -2%;
+}
+*/
 
 /*------------
   Da sistemare
@@ -319,6 +344,7 @@ a:focus,
   box-shadow: none !important;
 }
 
+.ms-Dialog-main .ms-Button,
 .faq-proposer button:focus,
 .faq-proposer button:active {
   outline: none;
@@ -330,4 +356,9 @@ a:focus,
   border: none;
   outline: 0;
   box-shadow: none !important;
+}
+
+.faq-view-link:active,
+.faq-view-link:focus {
+  outline: 0;
 }

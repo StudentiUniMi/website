@@ -66,7 +66,7 @@ const AdditionalGroupsView = () => {    // props non dovrebbe servirmi
                     Qui è possibile trovare gruppi aggiuntivi del network.
                     </p>
                 <p>
-                    <Text style={{ fontWeight: 500 }}>Gruppi disponibili:</Text>
+                    <Text style={{ fontWeight: 600 }}>Gruppi disponibili:</Text>
                 </p>
             </Text>
 

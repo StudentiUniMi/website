@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import { Link } from 'office-ui-fabric-react';
 import { useBoolean } from '@uifabric/react-hooks';
-import { Dialog, DialogType, DialogFooter } from 'office-ui-fabric-react/lib/Dialog';
+import { Dialog, DialogType } from 'office-ui-fabric-react/lib/Dialog';
+import { IconButton, IIconProps } from 'office-ui-fabric-react';
 import AnswerQuestionView from './AnswerQuestionView';
 
 interface Props {
@@ -16,6 +17,17 @@ interface Props {
     websites?: any[],
     faqFile?: string
 }
+
+const cancelIcon: IIconProps = { iconName: 'Cancel' };
+
+const iconButtonStyles = {
+    root: {
+        display: 'flex',
+        marginLeft: 'auto',
+        marginTop: '4px',
+        marginRight: '2px',
+    }
+};
 
 const modelProps = {
     isBlocking: false,
@@ -37,23 +49,22 @@ const getProperties = (props: Props) => {
     return courseProperties;
 };
 
-const faqBaseUrl = "https://raw.githubusercontent.com/NetworkStataleInformatica/network/master/website/src/data/faq/"
+const faqBaseUrl = "https://raw.githubusercontent.com/NetworkStataleInformatica/network/master/website/src/data/faq/";
 
 const FaqView = (props: Props) => {
     const [hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
-    const [faqPairs, setFaqPairs]  = React.useState<any[]>([])
+    const [faqPairs, setFaqPairs]  = React.useState<any[]>([]);
 
     React.useEffect(() =>
     {
         let f = async () =>
         {
-            var faqFetch = await fetch(faqBaseUrl + props.cdl + '/' + props.faqFile)
-            console.log(faqBaseUrl, props.cdl, props.faqFile);
-            var faqXML = await faqFetch.text()
+            var faqFetch = await fetch(faqBaseUrl + props.cdl + '/' + props.faqFile);
+            var faqXML = await faqFetch.text();
             let parser = new DOMParser();
             let fetchObj = parser.parseFromString(faqXML, "text/xml");
-            let pairs = fetchObj.getElementsByTagName('faq').item(0)?.getElementsByTagName('pair')
-            var out = []
+            let pairs = fetchObj.getElementsByTagName('faq').item(0)?.getElementsByTagName('pair');
+            var out = [];
             for (let i =0; i<(pairs?.length ?? 0); i++)
             {
                 let pair = pairs?.item(i)!
@@ -77,25 +88,33 @@ const FaqView = (props: Props) => {
     const dialogContentProps = {
         type: DialogType.largeHeader,
         title: 'FAQ - ' + props.name,
-        subText: courseProperties
+        subText: courseProperties,
+        textarea: 'dennis'
     };
 
     return (
         <>
-            <Link className="text-decoration-none" onClick={toggleHideDialog}>Faq</Link>
+            <Link className="text-decoration-none faq-view-link" onClick={toggleHideDialog}>Faq</Link>
             <Dialog
                 hidden={hideDialog}
                 onDismiss={toggleHideDialog}
                 dialogContentProps={dialogContentProps}
                 modalProps={modelProps}
             >
+            <IconButton
+                styles={iconButtonStyles}
+                iconProps={cancelIcon}
+                ariaLabel="Chiudi le FAQ"
+                onClick={toggleHideDialog}
+            />
 
             {faqPairs.map(x => <AnswerQuestionView question={x.question as string} answer={x.answer as string}/> )}
 
+            {/* Magari nel footer un pulsante che permette di proporne una nuova reindirizzando al form già compilato? Oppure sostituisci proprio la pagina per proporre le faq 
                 <DialogFooter>
-                    {/* Magari nel footer un pulsante che permette di proporne una nuova reindirizzando al form già compilato? Oppure sostituisci proprio la pagina per proporre le faq */}
 
                 </DialogFooter>
+            */}
             </Dialog>
         </>
     )

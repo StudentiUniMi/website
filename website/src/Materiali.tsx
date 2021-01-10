@@ -29,7 +29,7 @@ const Materiali = () => {
 
     const iconPropsDisabled: IIconProps = {
         iconName: 'Cloud',
-        styles: { root: { color: '#d83b01', fontSize: '65px', width: '120px', height: '90px' } },
+        styles: { root: { color: '#ea4300', fontSize: '65px', width: '120px', height: '90px' } },
     };
 
     return (
@@ -39,7 +39,6 @@ const Materiali = () => {
                     Ogni corso di laurea è dotato di relativi materiali; su questa sezione del sito è possibile trovare quelli disponibili.
                 </p>
             </Text>
-            {/*<Text style={{ fontSize: FontSizes.size14 }}></Text>*/}
 
             <div className="row justify-content-center">
                 <div className="col-lg-3 col-xl-3 col-md-3 col-sm-6 col-xs-12 mb-3">
