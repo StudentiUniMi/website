@@ -14,11 +14,13 @@ interface Props {
     data: Course
 }
 
+/*
 const gdriveStyle = {
     width: '15px',
     height: '15px',
     marginBottom: '3px'
 }
+*/
 
 const CourseItemView = (props: Props) => {
     var data = props.data;
@@ -148,6 +150,7 @@ const CourseItemView = (props: Props) => {
                 }
                 <Text variant="small" styles={helpfulTextStyles}>
                 {
+                    /*
                     ( () => {
                         if (data.faqFile !== "" && data.drive !== "") {
                             return (
@@ -182,8 +185,17 @@ const CourseItemView = (props: Props) => {
                                 </span>
                             )
                         }
+                        
                     })()
+                    */
+                   data.faqFile !== "" ? 
+                   <span className="mr-2">
+                        <i className="fas fa-question-circle" style={{color: '#fcba03'}}></i>
+                        &nbsp;
+                        <FaqView cdl="informatica" name={data.name} anno={data.anno} semestre={data.semestre} cfu={data.cfu} gruppo={data.gruppo} websites={data.websites} faqFile={data.faqFile} />
+                    </span> : ""
                 }
+                
                 </Text>
 
             </Card.Section>

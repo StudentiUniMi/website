@@ -19,12 +19,12 @@ const iconPropsDisabled: IIconProps = {
 };
 
 const Drives = [
-    { cdl: 'Informatica', link: 'https://drive.google.com/drive/folders/0BwzuyD3iLGcbcUNxTVNOVE9FR1E', available: true },
+    { cdl: 'Informatica', link: '', available: true },
     { cdl: 'Informatica musicale', link: '', available: false},
-    { cdl: 'Informatica per la comunicazione digitale', link: 'https://bit.ly/cartella-drive-comdig', available: true },
+    { cdl: 'Informatica per la comunicazione digitale', link: '', available: true },
     { cdl: 'Sicurezza dei sistemi e delle reti informatiche', link: '', available: false},
     { cdl: 'Sicurezza dei sistemi e delle reti informatiche online', link: '', available: false},
-    { cdl: 'Informatica (magistrale)', link: 'https://bit.ly/materiale-magistrale', available: true },
+    { cdl: 'Informatica (magistrale)', link: '', available: true },
     { cdl: 'Sicurezza informatica (magistrale)', link: '', available: false}
 ];
 
