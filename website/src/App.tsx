@@ -1,6 +1,6 @@
 /*
 TODO LIST
-- textWeight 500 non visibile da mobile, scopri perchè
+- Homepage con news prelevate dal sito di unimia
 - Tema scuro
 - Hash commit nel footer
 - Costruire la gerarchia del network, fai un file .psd così lo tieni aggiornato facilmente

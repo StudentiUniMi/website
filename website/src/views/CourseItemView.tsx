@@ -201,7 +201,8 @@ const CourseItemView = (props: Props) => {
                     <span />
                 </Stack.Item>
                 <Icon iconName="MoreVertical" styles={iconStyles} />
-            </Card.Section>*/}
+            </Card.Section>
+            */}
 
             
         </Card>
