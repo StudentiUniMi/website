@@ -25,7 +25,7 @@ const Home = () => {
                 <Text style={{ fontSize: FontSizes.size16 }}>
                     <p>
                         Network nato con lo scopo di creare un punto centrale di collegamento tra tutti i corsi di laurea in ambito informatico dell'università degli studi di Milano.
-                        Sono disponibili siti web, gruppi telegram, faq e materiali dei corsi didattici.
+                        Sono disponibili siti web, gruppi telegram e faq dei corsi didattici.
                     </p>
                 </Text>
             </div>
