@@ -18,6 +18,10 @@ const cardStyle = {
     height: '200px'
 }
 
+const colStyle = {
+    maxWidth: '250px'
+}
+
 const Home = () => {
     return (
         <Container className="home">
@@ -31,7 +35,7 @@ const Home = () => {
             </div>
             
             <div className="row m-3 justify-content-center">
-                <div className="col" style={{maxWidth: '250px'}}>
+                <div className="col" style={colStyle}>
                     <div className="card m-auto text-center" style={cardStyle}>
                         <div className="card-body">
                             <Link href="https://t.me/stataleinformatica" target="_blank">
@@ -49,7 +53,7 @@ const Home = () => {
                 </div>
 
 
-                <div className="col" style={{maxWidth: '250px'}}>
+                <div className="col" style={colStyle}>
                     <div className="card m-auto text-center" style={cardStyle}>
                         <div className="card-body">
                             <Link href="https://discord.gg/pPGUrr35sv" target="_blank">

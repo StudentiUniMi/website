@@ -1,158 +1,344 @@
 [
-    {
-      "cdl": "magistrale_sicurezza_informatica",
-      "name": "A.A. 2020/2021",
-      "anno": "Anno accademico",
-      "semestre": "",
-      "cfu": "",
-      "gruppo": "https://t.me/sicurezzainformatica_20_21",
-      "websites": [
-      ],
-      "drive": "",
-      "faqFile": ""
-    },
-    {
-      "cdl": "magistrale_sicurezza_informatica",
-      "name": "Gruppo principale",
-      "anno": "Anno accademico",
-      "semestre": "",
-      "cfu": "",
-      "gruppo": "https://t.me/joinchat/SHZUxtllpNIYbde0",
-      "websites": [
-      ],
-      "drive": "",
-      "faqFile": ""
-    },
-    {
-      "cdl": "magistrale_sicurezza_informatica",
-      "name": "Sistemi biometrici",
-      "anno": "1",
-      "semestre": "1",
-      "cfu": "6",
-      "gruppo": "https://t.me/sistemibiometrici",
-      "websites": [
-      ],
-      "drive": "",
-      "faqFile": ""
-    },
-    {
-      "cdl": "magistrale_sicurezza_informatica",
-      "name": "Complementi di biometria",
-      "anno": "1",
-      "semestre": "1",
-      "cfu": "6",
-      "gruppo": "https://t.me/joinchat/D0N9lhwydDziQ4MxczDNbQ",
-      "websites": [
-      ],
-      "drive": "",
-      "faqFile": ""
-    },
-    {
-      "cdl": "magistrale_sicurezza_informatica",
-      "name": "Analisi e Gestione del Rischio",
-      "anno": "",
-      "semestre": "1",
-      "cfu": "6",
-      "gruppo": "https://t.me/joinchat/NtIxjhiKuAC9an7II9lPcA ",
-      "websites": [
-      ],
-      "drive": "",
-      "faqFile": ""
-    },
-    {
-      "cdl": "magistrale_sicurezza_informatica",
-      "name": "Privatezza e Protezione dei Dati",
-      "anno": "",
-      "semestre": "1",
-      "cfu": "6",
-      "gruppo": "https://t.me/joinchat/CcGyMESOs8xinKoVgq61Ug",
-      "websites": [
-      ],
-      "drive": "",
-      "faqFile": ""
-    },
-    {
-      "cdl": "magistrale_sicurezza_informatica",
-      "name": "Logica",
-      "anno": "1",
-      "semestre": "1",
-      "cfu": "6",
-      "gruppo": "https://t.me/joinchat/S64lLXiCpYRhNkw-",
-      "websites": [
-      ],
-      "drive": "",
-      "faqFile": ""
-    },
-    {
-      "cdl": "magistrale_sicurezza_informatica",
-      "name": "Affidabilità dei sistemi",
-      "anno": "1",
-      "semestre": "1",
-      "cfu": "6",
-      "gruppo": "https://t.me/joinchat/FFGacr1ke0yrFKVZ",
-      "websites": [
-      ],
-      "drive": "",
-      "faqFile": ""
-    },
-    {
-      "cdl": "magistrale_sicurezza_informatica",
-      "name": "Complementi di sicurezza e privatezza",
-      "anno": "1",
-      "semestre": "2",
-      "cfu": "6",
-      "gruppo": "https://t.me/joinchat/GWGg1UUNauLIuiyn",
-      "websites": [
-      ],
-      "drive": "",
-      "faqFile": ""
-    },
-    {
-      "cdl": "magistrale_sicurezza_informatica",
-      "name": "Gestione della sicurezza nei sistemi informativi",
-      "anno": "1",
-      "semestre": "2",
-      "cfu": "6",
-      "gruppo": "https://t.me/joinchat/SwU6maCj2xL051Hr",
-      "websites": [
-      ],
-      "drive": "",
-      "faqFile": ""
-    },
-    {
-      "cdl": "magistrale_sicurezza_informatica",
-      "name": "Organizzazione aziendale",
-      "anno": "2",
-      "semestre": "1",
-      "cfu": "6",
-      "gruppo": "https://t.me/joinchat/UcgZgNz_pUfug2aY",
-      "websites": [
-      ],
-      "drive": "",
-      "faqFile": ""
-    },
-    {
-      "cdl": "magistrale_sicurezza_informatica",
-      "name": "Trattamento dei dati sensibili",
-      "anno": "2",
-      "semestre": "1",
-      "cfu": "6",
-      "gruppo": "https://t.me/joinchat/V1ghUIgNz6Hy4uAn",
-      "websites": [
-      ],
-      "drive": "",
-      "faqFile": ""
-    },
-    {
-      "cdl": "magistrale_sicurezza_informatica",
-      "name": "Sicurezza delle reti",
-      "anno": "1",
-      "semestre": "1",
-      "cfu": "6",
-      "gruppo": "https://t.me/sicurezzadellereti",
-      "websites": [
-      ],
-      "drive": "",
-      "faqFile": ""
-    }
+  {
+    "cdl": "magistrale_sicurezza_informatica",
+    "name": "A.A. 2020/2021",
+    "anno": "Anno accademico",
+    "semestre": "",
+    "cfu": "",
+    "gruppo": "",
+    "websites": [],
+    "drive": "",
+    "faqFile": ""
+  },
+  {
+    "cdl": "magistrale_sicurezza_informatica",
+    "name": "Gruppo principale",
+    "anno": "Anno accademico",
+    "semestre": "",
+    "cfu": "",
+    "gruppo": "",
+    "websites": [],
+    "drive": "",
+    "faqFile": ""
+  },
+  {
+    "cdl": "magistrale_sicurezza_informatica",
+    "name": "Sistemi biometrici",
+    "anno": "1",
+    "semestre": "1",
+    "cfu": "6",
+    "gruppo": "https://t.me/sistemibiometrici",
+    "websites": [
+      {
+        "link": "https://homes.di.unimi.it/scotti/",
+        "etichetta": "Ariel"
+      },
+      {
+        "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/sistemi-biometrici-0",
+        "etichetta": "Sito Unimi"
+      }
+    ],
+    "drive": "",
+    "faqFile": ""
+  },
+  {
+    "cdl": "magistrale_sicurezza_informatica",
+    "name": "Complementi di biometria",
+    "anno": "1",
+    "semestre": "1",
+    "cfu": "6",
+    "gruppo": "https://t.me/joinchat/D0N9lhwydDziQ4MxczDNbQ",
+    "websites": [
+      {
+        "link": "https://fscotticb.ariel.ctu.unimi.it/v5/home/Default.aspx",
+        "etichetta": "Ariel"
+      },
+      {
+        "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/complementi-di-biometria",
+        "etichetta": "Sito Unimi"
+      }
+    ],
+    "drive": "",
+    "faqFile": ""
+  },
+  {
+    "cdl": "magistrale_sicurezza_informatica",
+    "name": "Analisi e Gestione del Rischio",
+    "anno": "1",
+    "semestre": "1",
+    "cfu": "6",
+    "gruppo": "https://t.me/joinchat/NtIxjhiKuAC9an7II9lPcA ",
+    "websites": [
+      {
+        "link": "https://avallegaagr.ariel.ctu.unimi.it/",
+        "etichetta": "Ariel"
+      },
+      {
+        "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/analisi-e-gestione-del-rischio",
+        "etichetta": "Sito Unimi"
+      }
+    ],
+    "drive": "",
+    "faqFile": ""
+  },
+  {
+    "cdl": "magistrale_sicurezza_informatica",
+    "name": "Privatezza e Protezione dei Dati",
+    "anno": "1",
+    "semestre": "1",
+    "cfu": "6",
+    "gruppo": "https://t.me/joinchat/CcGyMESOs8xinKoVgq61Ug",
+    "websites": [
+      {
+        "link": "https://psamaratippd.ariel.ctu.unimi.it/",
+        "etichetta": "Ariel"
+      },
+      {
+        "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/privatezza-e-protezione-dei-dati",
+        "etichetta": "Sito Unimi"
+      }
+    ],
+    "drive": "",
+    "faqFile": ""
+  },
+  {
+    "cdl": "magistrale_sicurezza_informatica",
+    "name": "Logica",
+    "anno": "1",
+    "semestre": "1",
+    "cfu": "6",
+    "gruppo": "https://t.me/joinchat/S64lLXiCpYRhNkw-",
+    "websites": [
+      {
+        "link": "https://vcirianil.ariel.ctu.unimi.it/",
+        "etichetta": "Ariel"
+      },
+      {
+        "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/logica-0",
+        "etichetta": "Sito Unimi"
+      }
+    ],
+    "drive": "",
+    "faqFile": ""
+  },
+  {
+    "cdl": "magistrale_sicurezza_informatica",
+    "name": "Affidabilità dei sistemi",
+    "anno": "1",
+    "semestre": "1",
+    "cfu": "6",
+    "gruppo": "https://t.me/joinchat/FFGacr1ke0yrFKVZ",
+    "websites": [
+      {
+        "link": "https://mlazzaroniasd.ariel.ctu.unimi.it/",
+        "etichetta": "Ariel"
+      },
+      {
+        "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/affidabilita-dei-sistemi-dependability",
+        "etichetta": "Sito Unimi"
+      }
+    ],
+    "drive": "",
+    "faqFile": ""
+  },
+  {
+    "cdl": "magistrale_sicurezza_informatica",
+    "name": "Complementi di sicurezza e privatezza",
+    "anno": "1",
+    "semestre": "2",
+    "cfu": "6",
+    "gruppo": "https://t.me/joinchat/GWGg1UUNauLIuiyn",
+    "websites": [
+      {
+        "link": "https://sdecapitanicsp.ariel.ctu.unimi.it/v5/home/Default.aspx",
+        "etichetta": "Ariel"
+      },
+      {
+        "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/complementi-di-sicurezza-e-privatezza",
+        "etichetta": "Sito Unimi"
+      }
+    ],
+    "drive": "",
+    "faqFile": ""
+  },
+  {
+    "cdl": "magistrale_sicurezza_informatica",
+    "name": "Gestione della sicurezza nei sistemi informativi",
+    "anno": "1",
+    "semestre": "2",
+    "cfu": "6",
+    "gruppo": "https://t.me/joinchat/SwU6maCj2xL051Hr",
+    "websites": [
+      {
+        "link": "https://dcaccavellagssi.ariel.ctu.unimi.it/v5/home/Default.aspx",
+        "etichetta": "Ariel"
+      },
+      {
+        "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/gestione-della-sicurezza-nei-sistemi-informativi",
+        "etichetta": "Sito Unimi"
+      }
+    ],
+    "drive": "",
+    "faqFile": ""
+  },
+  {
+    "cdl": "magistrale_sicurezza_informatica",
+    "name": "Organizzazione aziendale",
+    "anno": "2",
+    "semestre": "1",
+    "cfu": "6",
+    "gruppo": "https://t.me/joinchat/UcgZgNz_pUfug2aY",
+    "websites": [
+      {
+        "link": "https://fvirilioa.ariel.ctu.unimi.it/",
+        "etichetta": "Ariel"
+      },
+      {
+        "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/organizzazione-aziendale-2",
+        "etichetta": "Sito Unimi"
+      }
+    ],
+    "drive": "",
+    "faqFile": ""
+  },
+  {
+    "cdl": "magistrale_sicurezza_informatica",
+    "name": "Trattamento dei dati sensibili",
+    "anno": "2",
+    "semestre": "1",
+    "cfu": "6",
+    "gruppo": "https://t.me/joinchat/V1ghUIgNz6Hy4uAn",
+    "websites": [
+      {
+        "link": "https://sbonavitatds.ariel.ctu.unimi.it/v5/home/Default.aspx",
+        "etichetta": "Ariel"
+      },
+      {
+        "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/trattamento-dei-dati-sensibili",
+        "etichetta": "Sito Unimi"
+      }
+    ],
+    "drive": "",
+    "faqFile": ""
+  },
+  {
+    "cdl": "magistrale_sicurezza_informatica",
+    "name": "Artificial Intelligence",
+    "anno": "1",
+    "semestre": "1",
+    "cfu": "6",
+    "gruppo": "https://t.me/joinchat/BVhVgBQJUmLWxcilRH02yA",
+    "websites": [
+      {
+        "link": "https://ericcobenemas.ariel.ctu.unimi.it/v5/home/Default.aspx",
+        "etichetta": "Ariel"
+      },
+      {
+        "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/artificial-intelligence-0",
+        "etichetta": "Sito Unimi"
+      }
+    ],
+    "drive": "",
+    "faqFile": ""
+  },
+  {
+    "cdl": "magistrale_sicurezza_informatica",
+    "name": "Modellazione E Analisi Di Sistemi",
+    "anno": "1",
+    "semestre": "2",
+    "cfu": "6",
+    "gruppo": "https://t.me/joinchat/UFzWpqV8Uvwm1b1n",
+    "websites": [
+      {
+        "link": "https://vpiuriai.ariel.ctu.unimi.it/",
+        "etichetta": "Ariel"
+      },
+      {
+        "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/modellazione-e-analisi-di-sistemi",
+        "etichetta": "Sito Unimi"
+      }
+    ],
+    "drive": "",
+    "faqFile": ""
+  },
+  {
+    "cdl": "magistrale_sicurezza_informatica",
+    "name": "Sicurezza delle Architetture Orientate ai Servizi",
+    "anno": "1",
+    "semestre": "2",
+    "cfu": "6",
+    "gruppo": "",
+    "websites": [
+      {
+        "link": "https://edamianisaos.ariel.ctu.unimi.it/v5/home/Default.aspx",
+        "etichetta": "Ariel"
+      },
+      {
+        "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/sicurezza-delle-architetture-orientate-ai-servizi",
+        "etichetta": "Sito Unimi"
+      }
+    ],
+    "drive": "",
+    "faqFile": ""
+  },
+  {
+    "cdl": "magistrale_sicurezza_informatica",
+    "name": "Information management",
+    "anno": "1",
+    "semestre": "2",
+    "cfu": "6",
+    "gruppo": "",
+    "websites": [
+      {
+        "link": "https://sforestiim.ariel.ctu.unimi.it/v5/home/Default.aspx",
+        "etichetta": "Ariel"
+      },
+      {
+        "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/information-management",
+        "etichetta": "Sito Unimi"
+      }
+    ],
+    "drive": "",
+    "faqFile": ""
+  },
+  {
+    "cdl": "magistrale_sicurezza_informatica",
+    "name": "Sicurezza delle reti ii",
+    "anno": "2",
+    "semestre": "1",
+    "cfu": "6",
+    "gruppo": "",
+    "websites": [
+      {
+        "link": "https://scimatossr.ariel.ctu.unimi.it/",
+        "etichetta": "Ariel"
+      },
+      {
+        "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/sicurezza-delle-reti-ii",
+        "etichetta": "Sito Unimi"
+      }
+    ],
+    "drive": "",
+    "faqFile": ""
+  },
+  {
+    "cdl": "magistrale_sicurezza_informatica",
+    "name": "Sicurezza delle reti",
+    "anno": "1",
+    "semestre": "1",
+    "cfu": "6",
+    "gruppo": "https://t.me/sicurezzadellereti",
+    "websites": [
+      {
+        "link": "https://scimatossr.ariel.ctu.unimi.it/",
+        "etichetta": "Ariel"
+      },
+      {
+        "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/sicurezza-delle-reti",
+        "etichetta": "Sito Unimi"
+      }
+    ],
+    "drive": "",
+    "faqFile": ""
+  }
 ]

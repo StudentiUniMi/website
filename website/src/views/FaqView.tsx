@@ -111,6 +111,7 @@ const FaqView = (props: Props) => {
             {faqPairs.map(x => <AnswerQuestionView question={x.question as string} answer={x.answer as string}/> )}
 
             {/* Magari nel footer un pulsante che permette di proporne una nuova reindirizzando al form già compilato? Oppure sostituisci proprio la pagina per proporre le faq 
+                (servono delle props da passare alla FaqProposer con i vari campi e settarli)
                 <DialogFooter>
 
                 </DialogFooter>
