@@ -1,9 +1,9 @@
 /*
 TODO LIST
-- Pulsante per switchare tra ssri e ssri online
-- sezione del sito sulla lista di rappresentanti (magari usa i componenti person)
+- Pulsante per switchare tra ssri e ssri online. Usa un basic toggle con callout visualizzato tramite hover
+- Sezione del sito sulla lista di rappresentanti (magari usa i componenti person)
 - sezione riguardo faq sulla didattica a distanza (aspetta comunicazioni ufficiali)
-- sezione del sito con manifesti e informazioni globali sui cdl, e anche la guida sul come disiscriversi dalle liste mail
+- Sezione del sito con manifesti e informazioni globali sui cdl, e anche la guida sul come disiscriversi dalle liste mail
 - Homepage con news prelevate dal sito di unimia
 - Tema scuro
 - Hash commit nel footer

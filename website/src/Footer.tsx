@@ -21,12 +21,18 @@ const Footer = () => {
                             </Text>
                         </p>
 
-                        <p className="mb-1">
+                        <p className="mb-0">
                             <Text style={{ fontSize: FontSizes.size12 }}>
                                 <Link href="https://github.com/NetworkStataleInformatica/network" className="text-decoration-none"><i className="fab fa-github"></i> Repository del network</Link>
                             </Text>
                         </p>
 
+                        <p className="mb-1">
+                            <Text style={{ fontSize: FontSizes.size12 }}>
+                                <Link href="https://github.com/NetworkStataleInformatica/MultiGroupBot" className="text-decoration-none"><i className="fas fa-rocket"></i> MultiGroup bot</Link>
+                            </Text>
+                        </p>
+                        
                         {/*
                         <p className="mb-1">
                             <Text style={{ fontSize: FontSizes.size12 }}>
@@ -51,6 +57,16 @@ const Footer = () => {
                             <li>
                                 <Text style={{ fontSize: FontSizes.size12 }}>
                                     <Link href="https://orientamento.di.unimi.it/index.php/iniziative/tutor-di-processo" className="text-decoration-none"><i className="fas fa-question-circle"></i> Faq matricole</Link>
+                                </Text>
+                            </li>
+                            <li>
+                                <Text style={{ fontSize: FontSizes.size12 }}>
+                                    <Link href="https://quanto-manca.it/" className="text-decoration-none"><i className="fas fa-heart"></i> Quanto-manca.it</Link>
+                                </Text>
+                            </li>
+                            <li>
+                                <Text style={{ fontSize: FontSizes.size12 }}>
+                                    <Link href="https://codeshare.tech" className="text-decoration-none"><i className="fas fa-meteor"></i> Codeshare.tech</Link>
                                 </Text>
                             </li>
                         </ul>
