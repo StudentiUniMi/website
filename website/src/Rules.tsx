@@ -47,7 +47,7 @@ const Rules = () => {
                         Siete invitati a cercare autonomamente e magari andando nelle chat precedenti per trovare risposte inerenti.
                         In caso non si trovi nulla sarà possibile chiedere senza problemi il vostro dubbio o domanda.</p> 
                     </p>
-                    <p className="mb-3">Di seguito è possibile trovare il regolamento.</p>
+                    <p className="mb-3">Di seguito è possibile trovare il <b>regolamento</b>.</p>
 
                     
                     <div id="accordion">
@@ -149,6 +149,15 @@ const Rules = () => {
                                             Il network e i gruppi telegram sono nati come spazio politicamente neutrale e il più possibile accogliente, a disposizione degli studenti. 
                                             Non sono di proprietà o vanto di alcuna lista. Chiunque manderà messaggi di propaganda elettorale e quant'altro verrà istantaneamente 
                                             bannato da tutti i gruppi del network, a discrezione degli amministratori.
+                                        </p>
+
+                                        <p className="mb-1" style={rules}>Codice</p>
+                                        <p className="mb-3 ml-3 mr-3">
+                                            I gruppi del Network non permettono l'invio di <b>immagini</b> per condividere codice. 
+                                            Se il codice in questione supera le 5 righe deve essere condiviso attraverso l'utilizzo di apposite piattaforme 
+                                            come <a href="https://pastebin.com/">Pastebin</a> o meglio ancora <a href="https://gist.github.com/">Gist</a>.
+                                            In caso contrario (se il codice è minore o uguale di 4 righe) è permesso inviarlo tramite un semplice messaggio ma usando l'apposita formattazione
+                                            di testo per il codice che telegram mette a disposizione. E' permesso invece inviare screen (e non immagini scattate da cellulare) di eventuali log, shell, e simili.
                                         </p>
                                     </div>
                                 </div>
