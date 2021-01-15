@@ -50,7 +50,20 @@ const CourseItemView = (props: Props) => {
             tokens={cardTokens}                             
         >
             <Card.Item>
-                { data.anno !== "Anno accademico" ? <Persona text={data.name} /> : <Persona text={data.name} imageUrl= {process.env.PUBLIC_URL + '/photo_2019-12-29_19-50-06.jpg'} /> }
+                {
+                    ( () => {
+                        if (data.anno !== "Anno accademico") {
+                            return (<Persona text={data.name} />);
+                        } else {
+                            switch (data.cdl) {
+                                case 'informatica':
+                                    return (<Persona text={data.name} imageUrl= {process.env.PUBLIC_URL + '/informatica.jpg'} />);
+                                default:
+                                    return (<Persona text={data.name} imageUrl= {process.env.PUBLIC_URL + '/unimi.jpg'} />);
+                            }
+                        }
+                    })()
+                }
             </Card.Item>
             <Card.Section>
                 {   // Gruppo anno accademico descrizione in caso c'è il link disponibile (magistrali insomma) 
