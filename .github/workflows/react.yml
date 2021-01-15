@@ -28,7 +28,7 @@ jobs:
       - run: git rev-parse HEAD > src/data/revision.txt
       - run: cat src/data/revision.txt
       - run: npm run build
-      - run: echo "uniminetwork.it" > CNAME
+      - run: echo "uniminetwork.it" > build/CNAME
       - run: git --work-tree build add --all
       - run: git --work-tree build commit -m 'deploy files'
       - run: git push origin HEAD:gh-pages --force
