@@ -2,7 +2,7 @@
   "name": "website",
   "version": "1.0.0",
   "private": true,
-  "homepage": "http://networkstataleinformatica.github.io/network",
+  "homepage": "http://StudentiUnimi.github.io/website",
   "dependencies": {
     "@fluentui/react": "^7.152.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
