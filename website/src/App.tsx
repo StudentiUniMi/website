@@ -29,7 +29,7 @@ function App() {
   };
 
   return (
-    <Router basename={'/'}>
+    <Router>
       <header>
         <HeaderTitle />
         <HeaderMenu contentChanged={contentChanged} />

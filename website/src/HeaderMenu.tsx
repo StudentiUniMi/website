@@ -45,7 +45,8 @@ const HeaderMenu = (props: Props) => {
 
     var initialState = (states.length > 0 ? states[0] : ItemsKeys.home) as ItemsKeys;
     var extra = ''
-    if (initialState === ItemsKeys.courses && states.length > 1) {
+    if(initialState === ItemsKeys.courses && states.length > 1)
+    {
         extra = states[1].split('/')[0] + '/'
     }
     
