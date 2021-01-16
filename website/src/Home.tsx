@@ -38,7 +38,7 @@ const Home = () => {
                 <div className="col" style={colStyle}>
                     <div className="card m-auto text-center" style={cardStyle}>
                         <div className="card-body">
-                            <Link href="https://t.me/stataleinformatica" target="_blank">
+                            <Link href="https://t.me/studenti_unimi" target="_blank">
                                 <IconButton iconProps={{ iconName: "Send" }} className={iconClass} />
                             </Link>
                         </div>

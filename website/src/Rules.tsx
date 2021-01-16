@@ -1,7 +1,7 @@
 import * as React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
-import { FontSizes } from '@fluentui/theme';
+import { FontSizes, FontWeights } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
 
@@ -47,7 +47,7 @@ const Rules = () => {
                         Siete invitati a cercare autonomamente e magari andando nelle chat precedenti per trovare risposte inerenti.
                         In caso non si trovi nulla sarà possibile chiedere senza problemi il vostro dubbio o domanda.</p> 
                     </p>
-                    <p className="mb-3">Di seguito è possibile trovare il <b>regolamento</b>.</p>
+                    <p className="mb-3">Di seguito è possibile trovare il <Text style={{ fontWeight: 600, fontSize: FontSizes.size12}}>regolamento.</Text></p>
 
                     
                     <div id="accordion">

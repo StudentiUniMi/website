@@ -44,19 +44,19 @@ const MAX_ROW_HEIGHT = 240;
 
 const getCourses = (cdl?: string) => {
     switch (cdl) {
-        case 'informatica':
+        case 'triennale_informatica':
             return (Groups_triennale_informatica as any) ?? [];
 
-        case 'informatica_musicale':
+        case 'triennale_informatica_musicale':
             return (Groups_triennale_informatica_musicale as any) ?? [];
 
-        case 'informatica_com_digitale':
+        case 'triennale_informatica_com_digitale':
             return (Groups_triennale_informatica_com_dig as any) ?? [];
 
-        case 'sicurezza_sistemi_reti_informatiche':
+        case 'triennale_sicurezza_sistemi_reti_informatiche':
             return (Groups_triennale_sicurezza_sistemi_reti_informatiche as any) ?? [];
 
-        case 'sicurezza_sistemi_reti_informatiche_online':
+        case 'triennale_sicurezza_sistemi_reti_informatiche_online':
             return (Groups_triennale_sicurezza_sistemi_reti_informatiche_online as any) ?? [];
 
         case 'magistrale_informatica':

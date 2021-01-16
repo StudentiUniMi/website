@@ -1,6 +1,6 @@
 [
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "A. A. 2017/2018",
       "anno": "Anno accademico",
       "semestre": "",
@@ -12,7 +12,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "A. A. 2018/2019",
       "anno": "Anno accademico",
       "semestre": "",
@@ -24,7 +24,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "A. A. 2019/2020",
       "anno": "Anno accademico",
       "semestre": "",
@@ -36,7 +36,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "A. A. 2020/2021",
       "anno": "Anno accademico",
       "semestre": "",
@@ -48,7 +48,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Matematica del continuo",
       "anno": "1",
       "semestre": "1",
@@ -64,7 +64,7 @@
       "faqFile": "matematica_del_continuo.xml"
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Programmazione 1",
       "anno": "1",
       "semestre": "1",
@@ -88,7 +88,7 @@
       "faqFile": "programmazione_1.xml"
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Architettura degli elaboratori 1",
       "anno": "1",
       "semestre": "1",
@@ -112,7 +112,7 @@
       "faqFile": "architettura_degli_elaboratori_1.xml"
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Linguaggi formali e automi",
       "anno": "1",
       "semestre": "2",
@@ -128,7 +128,7 @@
       "faqFile": "linguaggi_formali_e_automi.xml"
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Logica matematica",
       "anno": "1",
       "semestre": "2",
@@ -148,7 +148,7 @@
       "faqFile": "logica_matematica.xml"
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Matematica del discreto",
       "anno": "1",
       "semestre": "2",
@@ -164,7 +164,7 @@
       "faqFile": "matematica_del_discreto.xml"
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Architettura degli elaboratori II",
       "anno": "1",
       "semestre": "2",
@@ -184,7 +184,7 @@
       "faqFile": "architettura_degli_elaboratori_2.xml"
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Algoritmi e strutture dati",
       "anno": "2",
       "semestre": "1",
@@ -208,7 +208,7 @@
       "faqFile": "algoritmi_e_strutture_dati.xml"
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Basi di dati",
       "anno": "2",
       "semestre": "1",
@@ -224,7 +224,7 @@
       "faqFile": "basi_di_dati.xml"
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Programmazione 2",
       "anno": "2",
       "semestre": "1",
@@ -240,7 +240,7 @@
       "faqFile": "programmazione_2.xml"
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Sistemi operativi",
       "anno": "2",
       "semestre": "2",
@@ -256,7 +256,7 @@
       "faqFile": "sistemi_operativi.xml"
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Statistica e analisi dei dati",
       "anno": "2",
       "semestre": "2",
@@ -272,7 +272,7 @@
       "faqFile": "statistica_e_analisi_dei_dati.xml"
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Ingegneria del software",
       "anno": "3",
       "semestre": "1",
@@ -288,7 +288,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Reti di calcolatori",
       "anno": "3",
       "semestre": "1",
@@ -308,8 +308,8 @@
       "faqFile": "reti_di_calcolatori.xml"
     },
     {
-      "cdl": "informatica",
-      "name": "Aspetti etici, legali, sociali ed economici dell’informatica",
+      "cdl": "triennale_informatica",
+      "name": "Aspetti etici, legali, sociali ed economici dell’triennale_informatica",
       "anno": "3",
       "semestre": "1",
       "cfu": "3",
@@ -324,7 +324,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Crittografia 1",
       "anno": "Complementare",
       "semestre": "1",
@@ -340,7 +340,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Editoria digitale",
       "anno": "Complementare",
       "semestre": "1",
@@ -356,7 +356,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Elaborazione dei segnali",
       "anno": "Complementare",
       "semestre": "1",
@@ -372,7 +372,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Elaborazione delle immagini",
       "anno": "Complementare",
       "semestre": "1",
@@ -388,7 +388,7 @@
       "faqFile": "elaborazione_delle_immagini.xml"
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Fisica",
       "anno": "Complementare",
       "semestre": "1",
@@ -404,7 +404,7 @@
       "faqFile": "fisica.xml"
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Intelligenza artificiale I",
       "anno": "Complementare",
       "semestre": "1",
@@ -420,7 +420,7 @@
       "faqFile": "intelligenza_artificiale_1.xml"
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Interazioni sociali in rete",
       "anno": "Complementare",
       "semestre": "1",
@@ -436,7 +436,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Linguaggi di programmazione",
       "anno": "Complementare",
       "semestre": "1",
@@ -452,7 +452,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Sicurezza e privatezza",
       "anno": "Complementare",
       "semestre": "1",
@@ -468,7 +468,7 @@
       "faqFile": "sicurezza_e_privatezza.xml"
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Sistemi informativi",
       "anno": "Complementare",
       "semestre": "1",
@@ -484,7 +484,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Complementi di algoritmi e strutture dati",
       "anno": "Complementare",
       "semestre": "2",
@@ -500,7 +500,7 @@
       "faqFile": "complementi_di_algoritmi_e_strutture_dati.xml"
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Computer graphics",
       "anno": "Complementare",
       "semestre": "2",
@@ -516,7 +516,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Diritto dei prodotti digitali",
       "anno": "Complementare",
       "semestre": "2",
@@ -532,7 +532,7 @@
       "faqFile": "diritto_dei_prodotti_digitali.xml"
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Fondamenti di social media digitali",
       "anno": "Complementare",
       "semestre": "2",
@@ -548,7 +548,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Linguaggi e traduttori",
       "anno": "Complementare",
       "semestre": "2",
@@ -564,7 +564,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Programmazione dichiarativa",
       "anno": "Complementare",
       "semestre": "2",
@@ -580,7 +580,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Ricerca operativa",
       "anno": "Complementare",
       "semestre": "2",
@@ -596,7 +596,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Sistemi embedded",
       "anno": "Complementare",
       "semestre": "2",
@@ -612,7 +612,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Tecnologie e linguaggi per il Web",
       "anno": "Complementare",
       "semestre": "2",
@@ -628,7 +628,7 @@
       "faqFile": "tecnologie_e_linguaggi_web.xml"
     },
     {
-      "cdl": "informatica",
+      "cdl": "triennale_informatica",
       "name": "Visualizzazione scientifica",
       "anno": "Complementare",
       "semestre": "2",

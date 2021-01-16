@@ -15,10 +15,10 @@ const HeaderTitle = () => {
 
                     <span className="mr-1">
                         <Image id="logo" className="mr-3"
-                            src={process.env.PUBLIC_URL + '/logo.png'}
+                            src={process.env.PUBLIC_URL + '/StudentiUnimiResized.png'}
                             alt='Network logo'
-                            width={60}
-                            height={60}
+                            width={70}
+                            height={70}
                         />
                     </span>
 
@@ -27,7 +27,7 @@ const HeaderTitle = () => {
                         fontWeight: 600,
                         color: '#2b88d8'
                     }}>
-                        Network Statale Informatica
+                        Network Studenti UniMi
                     </Text>
 
                 </div>
@@ -39,10 +39,10 @@ const HeaderTitle = () => {
 
                     <span className="mr-1">
                         <Image id="logo" className="mr-3"
-                            src={process.env.PUBLIC_URL + '/logo.png'}
+                            src={process.env.PUBLIC_URL + '/StudentiUnimiResized.png'}
                             alt='Network logo'
-                            width={60}
-                            height={60}
+                            width={70}
+                            height={70}
                         />
                     </span>
 
@@ -62,7 +62,7 @@ const HeaderTitle = () => {
                         fontWeight: 600,
                         color: '#2b88d8'
                     }}>
-                        Statale Informatica
+                        Studenti UniMi
                     </Text>
                 </div>
             </div>

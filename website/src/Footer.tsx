@@ -17,19 +17,19 @@ const Footer = () => {
                     <div className="col-lg-3 col-md-6 mb-4 mb-md-0 col-sm-12">
                         <p className="mb-1">
                             <Text style={{ fontWeight: 600 }}>
-                                <Link href="https://github.com/NetworkStataleInformatica" className="text-decoration-none">Network Statale Informatica &copy;</Link>
+                                <Link href="https://github.com/StudentiUnimi" className="text-decoration-none">Studenti UniMi &copy;</Link>
                             </Text>
                         </p>
 
                         <p className="mb-0">
                             <Text style={{ fontSize: FontSizes.size12 }}>
-                                <Link href="https://github.com/NetworkStataleInformatica/network" className="text-decoration-none"><i className="fab fa-github"></i> Repository del network</Link>
+                                <Link href="https://github.com/StudentiUnimi/website" className="text-decoration-none"><i className="fab fa-github"></i> Repository del sito</Link>
                             </Text>
                         </p>
 
                         <p className="mb-1">
                             <Text style={{ fontSize: FontSizes.size12 }}>
-                                <Link href="https://github.com/NetworkStataleInformatica/MultiGroupBot" className="text-decoration-none"><i className="fas fa-rocket"></i> MultiGroup bot</Link>
+                                <Link href="https://github.com/StudentiUnimi/MultiGroupBot" className="text-decoration-none"><i className="fas fa-rocket"></i> MultiGroup bot</Link>
                             </Text>
                         </p>
                         

@@ -1,6 +1,6 @@
 [
     {
-      "cdl": "sicurezza_sistemi_reti_informatiche",
+      "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
       "name": "A. A. 2018/2019",
       "anno": "Anno accademico",
       "semestre": "",
@@ -12,7 +12,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "sicurezza_sistemi_reti_informatiche",
+      "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
       "name": "A. A. 2020/2021",
       "anno": "Anno accademico",
       "semestre": "",
@@ -24,7 +24,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "sicurezza_sistemi_reti_informatiche",
+      "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
       "name": "Matematica del continuo",
       "anno": "1",
       "semestre": "1°,2",
@@ -36,7 +36,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "sicurezza_sistemi_reti_informatiche",
+      "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
       "name": "Architettura degli elaboratori",
       "anno": "1",
       "semestre": "1",
@@ -48,7 +48,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "sicurezza_sistemi_reti_informatiche",
+      "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
       "name": "Matematica del discreto",
       "anno": "1",
       "semestre": "1",
@@ -60,7 +60,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "sicurezza_sistemi_reti_informatiche",
+      "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
       "name": "Programmazione",
       "anno": "1",
       "semestre": "1",
@@ -72,7 +72,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "sicurezza_sistemi_reti_informatiche",
+      "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
       "name": "Diritto penale dell'informatica",
       "anno": "1",
       "semestre": "2",
@@ -84,7 +84,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "sicurezza_sistemi_reti_informatiche",
+      "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
       "name": "Programmazione web e mobile",
       "anno": "1",
       "semestre": "2",
@@ -96,7 +96,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "sicurezza_sistemi_reti_informatiche",
+      "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
       "name": "Sicurezza nei sistemi web e mobili",
       "anno": "1",
       "semestre": "2",
@@ -108,7 +108,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "sicurezza_sistemi_reti_informatiche",
+      "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
       "name": "Algoritmi e strutture dati",
       "anno": "2",
       "semestre": "1",
@@ -120,7 +120,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "sicurezza_sistemi_reti_informatiche",
+      "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
       "name": "Sistemi operativi",
       "anno": "2",
       "semestre": "1",
@@ -132,7 +132,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "sicurezza_sistemi_reti_informatiche",
+      "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
       "name": "Statistica e analisi dei dati",
       "anno": "2",
       "semestre": "1",
@@ -144,7 +144,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "sicurezza_sistemi_reti_informatiche",
+      "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
       "name": "Basi di dati",
       "anno": "2",
       "semestre": "2",
@@ -156,7 +156,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "sicurezza_sistemi_reti_informatiche",
+      "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
       "name": "Crittografia",
       "anno": "2",
       "semestre": "2",
@@ -168,7 +168,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "sicurezza_sistemi_reti_informatiche",
+      "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
       "name": "Reti di calcolatori",
       "anno": "2",
       "semestre": "2",
@@ -180,7 +180,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "sicurezza_sistemi_reti_informatiche",
+      "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
       "name": "Sicurezza dei sistemi e delle reti",
       "anno": "3",
       "semestre": "1",
@@ -192,7 +192,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "sicurezza_sistemi_reti_informatiche",
+      "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
       "name": "Progettazione software sicuro",
       "anno": "3",
       "semestre": "1",
@@ -204,7 +204,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "sicurezza_sistemi_reti_informatiche",
+      "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
       "name": "Aspetti etici",
       "anno": "3",
       "semestre": "1",
@@ -216,7 +216,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "sicurezza_sistemi_reti_informatiche",
+      "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
       "name": "Sistemi biometrici",
       "anno": "3",
       "semestre": "1",
@@ -228,7 +228,7 @@
       "faqFile": ""
     },
     {
-      "cdl": "sicurezza_sistemi_reti_informatiche",
+      "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
       "name": "Computer forensics",
       "anno": "3",
       "semestre": "2",

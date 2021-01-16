@@ -46,31 +46,31 @@ const stylesTriennali: IChoiceGroupOptionStyles = {
 
 const options: IChoiceGroupOption[] = [
     {
-        key: "informatica",
+        key: "triennale_informatica",
         styles: stylesTriennali,
         text: "Informatica",
         iconProps: { iconName: "Devices3" },
     },
     {
-        key: "informatica_musicale",
+        key: "triennale_informatica_musicale",
         styles: stylesTriennali,
         text: "Informatica musicale",
         iconProps: { iconName: "ScreenCast" },
     },
     {
-        key: "informatica_com_digitale",
+        key: "triennale_informatica_com_digitale",
         styles: stylesTriennali,
         text: "Informatica comunicazione digitale",
         iconProps: { iconName: "ContactInfo" },
     },
     {
-        key: "sicurezza_sistemi_reti_informatiche",
+        key: "triennale_sicurezza_sistemi_reti_informatiche",
         styles: stylesTriennali,
         text: "Sicurezza sistemi e reti informatiche",
         iconProps: { iconName: "LaptopSecure" },
     },
     {
-        key: "sicurezza_sistemi_reti_informatiche_online",
+        key: "triennale_sicurezza_sistemi_reti_informatiche_online",
         styles: stylesTriennali,
         text: "Sicurezza sistemi e reti informatiche online",
         iconProps: { iconName: "LaptopSecure" },

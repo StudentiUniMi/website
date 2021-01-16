@@ -15,7 +15,7 @@ TODO LIST
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
-import { HashRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import HeaderTitle from "./HeaderTitle";
 import HeaderMenu, { ItemsKeys } from "./HeaderMenu";
 import Content from "./Content";
