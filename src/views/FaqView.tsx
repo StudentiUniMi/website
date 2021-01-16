@@ -49,7 +49,7 @@ const getProperties = (props: Props) => {
     return courseProperties;
 };
 
-const faqBaseUrl = "https://raw.githubusercontent.com/NetworkStataleInformatica/network/master/website/src/data/faq/";
+const faqBaseUrl = "https://raw.githubusercontent.com/studentiunimi/website/master/src/data/faq/";
 
 const FaqView = (props: Props) => {
     const [hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
