@@ -1,6 +1,6 @@
 <img src="public/logo.png" width="150" height="150" align="right" />
 
-# [Studenti UniMi](https://github.com/StudentiUnimi)
+# [Network Studenti UniMi](https://github.com/StudentiUnimi)
 Network nato con lo scopo di creare un punto centrale di collegamento tra tutti i corsi di laurea dell'università degli studi di Milano. 
 Sono disponibili siti web, gruppi telegram e faq dei corsi didattici dei corsi di laurea triennali di:
 - [Informatica](http://bit.ly/gruppi-informatica);
