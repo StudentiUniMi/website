@@ -10,9 +10,9 @@ import { Container } from 'react-bootstrap';
 const HomeLinks = [
     { name: 'Canale Telegram', link: 'https://t.me/studenti_unimi', iconName: 'Send'},
     { name: 'Server Discord', link: 'https://discord.gg/pPGUrr35sv', iconName: 'ChatBot'},
-    { name: 'Markdown Collaborativi', link: 'https://hedgedoc.studentiunimi.it/', iconName: 'Documentation'},
+    { name: 'Markdown Collaborativo', link: 'https://hedgedoc.studentiunimi.it/', iconName: 'Documentation'},
     //{ name: 'Servizio di Screenshare', link: '', iconName: 'ScreenCast'},
-    //{ name: 'DokuWiki', link: '', iconName: 'TextDocument'}
+    { name: 'Wiki', link: '', iconName: 'TextDocument'}
 ];
 
 const iconClass = mergeStyles({
@@ -27,7 +27,7 @@ const cardStyle = {
 }
 
 const colStyle = {
-    maxWidth: '300px'
+    
 }
 
 const Home = () => {
@@ -48,7 +48,7 @@ const Home = () => {
                 {
                     HomeLinks.map(x => {
                         return (
-                        <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12" style={colStyle}>
+                        <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12" style={colStyle}>
                             <div className="card m-auto text-center" style={cardStyle}>
                                 <div className="card-body">
                                     <Link href={x.link} target="_blank">
