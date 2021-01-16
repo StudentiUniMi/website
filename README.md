@@ -1,4 +1,4 @@
-<img src="website/public/StudentiUnimi.png" width="150" height="150" align="right" />
+<img src="public/logo.png" width="150" height="150" align="right" />
 
 # [Studenti UniMi](https://github.com/StudentiUnimi)
 Network nato con lo scopo di creare un punto centrale di collegamento tra tutti i corsi di laurea dell'università degli studi di Milano. 
