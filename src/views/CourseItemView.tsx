@@ -205,7 +205,7 @@ const CourseItemView = (props: Props) => {
                    <span className="mr-2">
                         <i className="fas fa-question-circle" style={{color: '#fcba03'}}></i>
                         &nbsp;
-                        <FaqView cdl="informatica" name={data.name} anno={data.anno} semestre={data.semestre} cfu={data.cfu} gruppo={data.gruppo} websites={data.websites} faqFile={data.faqFile} />
+                        <FaqView cdl={data.cdl} name={data.name} anno={data.anno} semestre={data.semestre} cfu={data.cfu} gruppo={data.gruppo} websites={data.websites} faqFile={data.faqFile} />
                     </span> : ""
                 }
                 
