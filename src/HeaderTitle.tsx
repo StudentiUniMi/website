@@ -5,6 +5,15 @@ import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Image } from 'office-ui-fabric-react/lib/Image';
 
+const logoProperties = {
+    width: '60px',
+    height: '60px',
+    marginTop: '5px',
+    marginBottom: '5px'
+}
+
+const logoFileName = 'unimi150.png';
+
 const HeaderTitle = () => {
     return (
         <div className="header-title m-2">
@@ -15,10 +24,9 @@ const HeaderTitle = () => {
 
                     <span className="mr-1">
                         <Image id="logo" className="mr-3"
-                            src={process.env.PUBLIC_URL + '/logo_studenti_unimi_150x143.png'}
+                            src={process.env.PUBLIC_URL + '/' + logoFileName}
                             alt='Network logo'
-                            width={70}
-                            height={70}
+                            style={logoProperties}
                         />
                     </span>
 
@@ -39,10 +47,9 @@ const HeaderTitle = () => {
 
                     <span className="mr-1">
                         <Image id="logo" className="mr-2"
-                            src={process.env.PUBLIC_URL + '/logo_studenti_unimi_150x143.png'}
+                            src={process.env.PUBLIC_URL + '/' + logoFileName}
                             alt='Network logo'
-                            width={70}
-                            height={70}
+                            style={logoProperties}
                         />
                     </span>
 

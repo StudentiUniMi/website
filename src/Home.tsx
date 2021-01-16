@@ -7,6 +7,14 @@ import { IconButton } from 'office-ui-fabric-react';
 import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
 import { Container } from 'react-bootstrap';
 
+const HomeLinks = [
+    { name: 'Canale Telegram', link: 'https://t.me/studenti_unimi', iconName: 'Send'},
+    { name: 'Server Discord', link: 'https://discord.gg/pPGUrr35sv', iconName: 'ChatBot'},
+    { name: 'Markdown Collaborativi', link: 'https://hedgedoc.studentiunimi.it/', iconName: 'Documentation'},
+    //{ name: 'Servizio di Screenshare', link: '', iconName: 'ScreenCast'},
+    //{ name: 'DokuWiki', link: '', iconName: 'TextDocument'}
+];
+
 const iconClass = mergeStyles({
     fontSize: 50,
     height: 100,
@@ -19,7 +27,7 @@ const cardStyle = {
 }
 
 const colStyle = {
-    maxWidth: '250px'
+    maxWidth: '300px'
 }
 
 const Home = () => {
@@ -27,48 +35,38 @@ const Home = () => {
         <Container className="home">
             <div className="text-center mb-3">
                 <Text style={{ fontSize: FontSizes.size16 }}>
+                    <p className="mb-0">
+                        Network nato con lo scopo di creare un punto centrale di collegamento tra tutti i corsi di laurea dell'università degli studi di Milano.
+                    </p>
                     <p>
-                        <p className="mb-0">Network nato con lo scopo di creare un punto centrale di collegamento tra tutti i corsi di laurea dell'università degli studi di Milano.</p>
                         Sono disponibili siti web, gruppi telegram e faq dei corsi didattici.
                     </p>
                 </Text>
             </div>
             
             <div className="row m-3 justify-content-center">
-                <div className="col" style={colStyle}>
-                    <div className="card m-auto text-center" style={cardStyle}>
-                        <div className="card-body">
-                            <Link href="https://t.me/studenti_unimi" target="_blank">
-                                <IconButton iconProps={{ iconName: "Send" }} className={iconClass} />
-                            </Link>
-                        </div>
-                        <div className="card-body">
-                            <div className="card-text">
-                                <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
-                                    Canale Telegram
-                                </Text>
-                            </div>
-                        </div> 
-                    </div>
-                </div>
-
-
-                <div className="col" style={colStyle}>
-                    <div className="card m-auto text-center" style={cardStyle}>
-                        <div className="card-body">
-                            <Link href="https://discord.gg/pPGUrr35sv" target="_blank">
-                                <IconButton iconProps={{ iconName: "ChatBot" }} className={iconClass} />
-                            </Link>
-                        </div>
-                        <div className="card-body">
-                            <div className="card-text">
-                                <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
-                                    Server Discord
-                                </Text>
+                {
+                    HomeLinks.map(x => {
+                        return (
+                        <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12" style={colStyle}>
+                            <div className="card m-auto text-center" style={cardStyle}>
+                                <div className="card-body">
+                                    <Link href={x.link} target="_blank">
+                                        <IconButton iconProps={{iconName: x.iconName}} className={iconClass} />
+                                    </Link>
+                                </div>
+                                <div className="card-body">
+                                    <div className="card-text">
+                                        <Text style={{ fontSize: FontSizes.size16, textAlign: "center" }}>
+                                            {x.name}
+                                        </Text>
+                                    </div>
+                                </div> 
                             </div>
                         </div>
-                    </div>
-                </div>
+                        )
+                    })
+                }
             </div>
         </Container >
     )
