@@ -15,7 +15,7 @@ const HeaderTitle = () => {
 
                     <span className="mr-1">
                         <Image id="logo" className="mr-3"
-                            src={process.env.PUBLIC_URL + '/StudentiUnimiResized.png'}
+                            src={process.env.PUBLIC_URL + '/logo_studenti_unimi_150x143.png'}
                             alt='Network logo'
                             width={70}
                             height={70}
@@ -39,7 +39,7 @@ const HeaderTitle = () => {
 
                     <span className="mr-1">
                         <Image id="logo" className="mr-3"
-                            src={process.env.PUBLIC_URL + '/StudentiUnimiResized.png'}
+                            src={process.env.PUBLIC_URL + '/logo_studenti_unimi_150x143.png'}
                             alt='Network logo'
                             width={70}
                             height={70}
