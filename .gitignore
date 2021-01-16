@@ -259,3 +259,6 @@ dist
 
 # Build results
 build/
+
+# Package lock
+package-lock.json
