@@ -7,7 +7,7 @@ on:
 defaults:
   run:
     shell: bash
-    working-directory: ./website
+    working-directory: ./
 
 jobs:
   compile:
