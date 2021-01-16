@@ -28,7 +28,7 @@ const Home = () => {
             <div className="text-center mb-3">
                 <Text style={{ fontSize: FontSizes.size16 }}>
                     <p>
-                        Network nato con lo scopo di creare un punto centrale di collegamento tra tutti i corsi di laurea dell'università degli studi di Milano.
+                        <p className="mb-0">Network nato con lo scopo di creare un punto centrale di collegamento tra tutti i corsi di laurea dell'università degli studi di Milano.</p>
                         Sono disponibili siti web, gruppi telegram e faq dei corsi didattici.
                     </p>
                 </Text>
