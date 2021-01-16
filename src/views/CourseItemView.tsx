@@ -56,7 +56,7 @@ const CourseItemView = (props: Props) => {
                             return (<Persona text={data.name} />);
                         } else {
                             switch (data.cdl) {
-                                case 'informatica':
+                                case 'triennale_informatica':
                                     return (<Persona text={data.name} imageUrl= {process.env.PUBLIC_URL + '/informatica.jpg'} />);
                                 default:
                                     return (<Persona text={data.name} imageUrl= {process.env.PUBLIC_URL + '/unimi.jpg'} />);
