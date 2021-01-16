@@ -38,7 +38,7 @@ const HeaderTitle = () => {
                 <div className="row mt-2 mr-2 mb-2 text-center justify-content-center logo-text">
 
                     <span className="mr-1">
-                        <Image id="logo" className="mr-3"
+                        <Image id="logo" className="mr-2"
                             src={process.env.PUBLIC_URL + '/logo_studenti_unimi_150x143.png'}
                             alt='Network logo'
                             width={70}
