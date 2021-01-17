@@ -52,5 +52,11 @@
         "description": "Dedicato a https://adventofcode.com/",
         "image": "advent_of_code.jpg",
         "gruppo":"https://t.me/adventofcodeunimi"
+    },
+    {
+        "name":"Codin Game",
+        "description": "Gruppo creato per le varie sfide offerte da https://www.codingame.com/",
+        "image": "codin_game.jpg",
+        "gruppo":"https://t.me/codin_game"
     }
 ]

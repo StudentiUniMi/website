@@ -5,7 +5,8 @@ TODO LIST
 - Sezione riguardo faq sulla didattica a distanza (aspetta comunicazioni ufficiali)
 - Sezione del sito con manifesti e informazioni globali sui cdl, e anche la guida sul come disiscriversi dalle liste mail
 - Homepage con news prelevate dal sito di unimia
-- Tema scuro
+- Pulsante per switchare al tema scuro
+- Trova un modo per passare da italiano a inglese per eventuali studenti stranieri
 - Hash commit nel footer
 - Costruire la gerarchia del network, fai un file .psd così lo tieni aggiornato facilmente
 - Futura ristrutturazione: card con solo icone + hover sopra che mostra tooltip
