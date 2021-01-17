@@ -113,8 +113,16 @@ const Courses = () => {
                     <p className="mb-0">Qui è possibile vedere i gruppi telegram, siti web, e faq (se disponibili)
                     di ogni corso didattico del tuo corso di laurea. </p>
                     <p className="mb-0">I corsi di laurea evidenziati in azzurro riguardano lauree magistrali, gli altri invece le triennali.</p>
-                    <p>
-                        Se noti qualcosa che non corrisponde o che andrebbe sistemato puoi contattare un amministratore.
+                    <p className="mb-2">Se noti qualcosa che non corrisponde o che andrebbe sistemato puoi contattare un amministratore.</p>
+                    <p className="mb-3">
+                        <Text style={{ fontSize: FontSizes.size12 }}>
+                            <p className="mb-0">
+                                I link alla <Text style={{ fontWeight: 600, fontSize: FontSizes.size12 }}>Wiki</Text> di un corso didattico potrebbero portare a pagine non ancora compilate: 
+                            </p>
+                            <p className="mb-0">
+                                è qui che potete contribuire iscrivendovi e aiutandoci a raccogliere faq e qualsiasi altro contenuto utile per i corsi didattici.
+                            </p>
+                        </Text>
                     </p>
                     <p><Text style={{ fontWeight: 600 }}>Scegli un corso di laurea</Text></p>
                 </Text>

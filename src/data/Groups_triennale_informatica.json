@@ -9,7 +9,7 @@
       "websites": [
       ],
       "drive": "",
-      "faqFile": ""
+      "wiki": ""
     },
     {
       "cdl": "triennale_informatica",
@@ -21,7 +21,7 @@
       "websites": [
       ],
       "drive": "",
-      "faqFile": ""
+      "wiki": ""
     },
     {
       "cdl": "triennale_informatica",
@@ -33,7 +33,7 @@
       "websites": [
       ],
       "drive": "",
-      "faqFile": ""
+      "wiki": ""
     },
     {
       "cdl": "triennale_informatica",
@@ -45,7 +45,7 @@
       "websites": [
       ],
       "drive": "",
-      "faqFile": ""
+      "wiki": ""
     },
     {
       "cdl": "triennale_informatica",
@@ -61,7 +61,7 @@
         }
       ],
       "drive": "https://drive.google.com/drive/u/0/folders/1L_5rIr2MebLvmZg0CbBmSvkb6OJ22JTe",
-      "faqFile": "matematica_del_continuo.xml"
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:matematica_del_continuo"
     },
     {
       "cdl": "triennale_informatica",
@@ -85,7 +85,7 @@
         }
       ],
       "drive": "https://drive.google.com/drive/folders/1saD19VGP4xYkL_eVtdP32l1c5O5ZJPYr?usp=sharing",
-      "faqFile": "programmazione_1.xml"
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:programmazione_1"
     },
     {
       "cdl": "triennale_informatica",
@@ -109,7 +109,7 @@
         }
       ],
       "drive": "https://drive.google.com/drive/folders/1LuYA_H_PsAx_0-0Ol7fDXTITPhxpjKir?usp=sharing",
-      "faqFile": "architettura_degli_elaboratori_1.xml"
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:architettura_degli_elaboratori_1"
     },
     {
       "cdl": "triennale_informatica",
@@ -125,7 +125,7 @@
         }
       ],
       "drive": "https://drive.google.com/drive/folders/1R9tvDODEHPWvMHrM75XLV5pSPoC5XzCK?usp=sharing",
-      "faqFile": "linguaggi_formali_e_automi.xml"
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:linguaggi_formali_e_automi"
     },
     {
       "cdl": "triennale_informatica",
@@ -145,7 +145,7 @@
         }
       ],
       "drive": "https://drive.google.com/drive/folders/16J-jJG4URArwZ-8Pnc1DarLhaIfOhGxg?usp=sharing",
-      "faqFile": "logica_matematica.xml"
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:logica_matematica"
     },
     {
       "cdl": "triennale_informatica",
@@ -161,7 +161,7 @@
         }
       ],
       "drive": "https://drive.google.com/drive/folders/1FL2WVaLvT9bOqiX21EawIgqQ4fb-cuQm?usp=sharing",
-      "faqFile": "matematica_del_discreto.xml"
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:matematica_del_discreto"
     },
     {
       "cdl": "triennale_informatica",
@@ -181,7 +181,7 @@
         }
       ],
       "drive": "https://drive.google.com/drive/folders/19CVxqohmG5SFZlj5hKT-uP3-QExPVOcd?usp=sharing",
-      "faqFile": "architettura_degli_elaboratori_2.xml"
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:architettura_degli_elaboratori_2"
     },
     {
       "cdl": "triennale_informatica",
@@ -205,7 +205,7 @@
         }
       ],
       "drive": "https://drive.google.com/drive/folders/1fuwmZ5wFSKb9bLN_67An1SqUzhstl0IC?usp=sharing",
-      "faqFile": "algoritmi_e_strutture_dati.xml"
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:algoritmi_e_strutture_dati"
     },
     {
       "cdl": "triennale_informatica",
@@ -221,7 +221,7 @@
         }
       ],
       "drive": "https://drive.google.com/drive/folders/1fZ3s3zzh8Rs3sieboDOowMa8anrnV5wL?usp=sharing",
-      "faqFile": "basi_di_dati.xml"
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:basi_di_dati"
     },
     {
       "cdl": "triennale_informatica",
@@ -237,7 +237,7 @@
         }
       ],
       "drive": "https://drive.google.com/drive/folders/1R0kUdMb4UceQnk0fGJ1oHvkwpUxFtIdb?usp=sharing",
-      "faqFile": "programmazione_2.xml"
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:programmazione_2"
     },
     {
       "cdl": "triennale_informatica",
@@ -253,7 +253,7 @@
         }
       ],
       "drive": "https://drive.google.com/drive/folders/1d0PE9Ku-Yt9k_FmfwWaKqaZseu6439I7?usp=sharing",
-      "faqFile": "sistemi_operativi.xml"
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:sistemi_operativi"
     },
     {
       "cdl": "triennale_informatica",
@@ -269,7 +269,7 @@
         }
       ],
       "drive": "https://drive.google.com/drive/folders/1vVxJraj7XC4LQ6xXjY5Gzy2GMZaA5li7?usp=sharing",
-      "faqFile": "statistica_e_analisi_dei_dati.xml"
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:statistica_e_analisi_dei_dati"
     },
     {
       "cdl": "triennale_informatica",
@@ -285,7 +285,7 @@
         }
       ],
       "drive": "https://drive.google.com/drive/folders/1gb5J2z6QCjc-CXrgxS9FbWKX0ABNr8uu?usp=sharing",
-      "faqFile": ""
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:ingegneria_del_software"
     },
     {
       "cdl": "triennale_informatica",
@@ -305,7 +305,7 @@
         }
       ],
       "drive": "https://drive.google.com/drive/folders/1dmymaGDXN7Y1pu1grsZw_CENSbAc5Szc?usp=sharing",
-      "faqFile": "reti_di_calcolatori.xml"
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:reti_di_calcolatori"
     },
     {
       "cdl": "triennale_informatica",
@@ -321,7 +321,7 @@
         }
       ],
       "drive": "",
-      "faqFile": ""
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:aspetti_etici"
     },
     {
       "cdl": "triennale_informatica",
@@ -337,7 +337,7 @@
         }
       ],
       "drive": "",
-      "faqFile": ""
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:crittografia_2"
     },
     {
       "cdl": "triennale_informatica",
@@ -353,7 +353,7 @@
         }
       ],
       "drive": "",
-      "faqFile": ""
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:editoria_digitale"
     },
     {
       "cdl": "triennale_informatica",
@@ -369,7 +369,7 @@
         }
       ],
       "drive": "",
-      "faqFile": ""
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:elaborazione_dei_segnali"
     },
     {
       "cdl": "triennale_informatica",
@@ -385,7 +385,7 @@
         }
       ],
       "drive": "https://drive.google.com/drive/folders/1rwnQOQCWTdkFCW0juHcnz6DIKOGeuefQ?usp=sharing",
-      "faqFile": "elaborazione_delle_immagini.xml"
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:elaborazione_delle_immagini"
     },
     {
       "cdl": "triennale_informatica",
@@ -401,7 +401,7 @@
         }
       ],
       "drive": "https://drive.google.com/drive/folders/1uA_G2vulwuwky1H7Xp1uWv9LXyZpp_yL?usp=sharing",
-      "faqFile": "fisica.xml"
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:fisica"
     },
     {
       "cdl": "triennale_informatica",
@@ -417,7 +417,7 @@
         }
       ],
       "drive": "https://drive.google.com/drive/folders/1uBkH3YUi21NIxPen8c1XCJnrA556dOzt?usp=sharing",
-      "faqFile": "intelligenza_artificiale_1.xml"
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:intelligenza_artificiale_1"
     },
     {
       "cdl": "triennale_informatica",
@@ -433,7 +433,7 @@
         }
       ],
       "drive": "",
-      "faqFile": ""
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:interazioni_sociali_in_rete"
     },
     {
       "cdl": "triennale_informatica",
@@ -449,7 +449,7 @@
         }
       ],
       "drive": "https://drive.google.com/drive/folders/1QLy7Fo3T7x6a_qdC1dQdYh6xdR3QDp4_?usp=sharing",
-      "faqFile": ""
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:linguaggi_di_programmazione"
     },
     {
       "cdl": "triennale_informatica",
@@ -465,7 +465,7 @@
         }
       ],
       "drive": "https://drive.google.com/drive/folders/1VImnRcEk_8RcQa9FxXeSnOojmRQPdaET?usp=sharing",
-      "faqFile": "sicurezza_e_privatezza.xml"
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:sicurezza_e_privatezza"
     },
     {
       "cdl": "triennale_informatica",
@@ -481,7 +481,7 @@
         }
       ],
       "drive": "",
-      "faqFile": ""
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:sistemi_informativi"
     },
     {
       "cdl": "triennale_informatica",
@@ -497,7 +497,7 @@
         }
       ],
       "drive": "",
-      "faqFile": "complementi_di_algoritmi_e_strutture_dati.xml"
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:complementi_di_algoritmi_e_strutture_dati"
     },
     {
       "cdl": "triennale_informatica",
@@ -513,7 +513,7 @@
         }
       ],
       "drive": "",
-      "faqFile": ""
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:computer_graphics"
     },
     {
       "cdl": "triennale_informatica",
@@ -529,7 +529,7 @@
         }
       ],
       "drive": "",
-      "faqFile": "diritto_dei_prodotti_digitali.xml"
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:diritto_dei_prodotti_digitali"
     },
     {
       "cdl": "triennale_informatica",
@@ -545,7 +545,7 @@
         }
       ],
       "drive": "",
-      "faqFile": ""
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:fondamenti_di_social_media_digitali"
     },
     {
       "cdl": "triennale_informatica",
@@ -561,7 +561,7 @@
         }
       ],
       "drive": "",
-      "faqFile": ""
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:linguaggi_e_traduttori"
     },
     {
       "cdl": "triennale_informatica",
@@ -577,7 +577,7 @@
         }
       ],
       "drive": "",
-      "faqFile": ""
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:programmazione_dichiarativa"
     },
     {
       "cdl": "triennale_informatica",
@@ -593,7 +593,7 @@
         }
       ],
       "drive": "https://drive.google.com/drive/folders/1myIa7-zXQ_rFLNmjZmh9n4kQw-vPSBlR?usp=sharing",
-      "faqFile": ""
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:ricerca_operativa"
     },
     {
       "cdl": "triennale_informatica",
@@ -609,7 +609,7 @@
         }
       ],
       "drive": "",
-      "faqFile": ""
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:sistemi_embedded"
     },
     {
       "cdl": "triennale_informatica",
@@ -625,7 +625,7 @@
         }
       ],
       "drive": "https://drive.google.com/drive/folders/1TyKIjwtKUVvdTeNd5MHUQ93QxAU2kjXY?usp=sharing",
-      "faqFile": "tecnologie_e_linguaggi_web.xml"
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:tecnologie_e_linguaggi_web"
     },
     {
       "cdl": "triennale_informatica",
@@ -641,7 +641,7 @@
         }
       ],
       "drive": "https://drive.google.com/drive/folders/1jpQQZoYyKAKfOYEjYsOEcwn31O9LHztZ?usp=sharing",
-      "faqFile": ""
+      "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:visualizzazione_scientifica"
     }
 ]
 

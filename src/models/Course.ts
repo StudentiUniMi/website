@@ -13,5 +13,5 @@ export default interface Course
     gruppo?:string,
     websites:any[],
     drive?:string,
-    faqFile?:string,
+    wiki?:string,
 }

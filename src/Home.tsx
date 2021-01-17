@@ -39,7 +39,7 @@ const Home = () => {
                         Network nato con lo scopo di creare un punto centrale di collegamento tra tutti i corsi di laurea dell'università degli studi di Milano.
                     </p>
                     <p>
-                        Sono disponibili siti web, gruppi telegram e faq dei corsi didattici.
+                        Sono disponibili siti web, gruppi telegram, informazioni varie e wiki dei corsi didattici.
                     </p>
                 </Text>
             </div>

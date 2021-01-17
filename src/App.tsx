@@ -2,14 +2,13 @@
 TODO LIST
 - Pulsante per switchare tra ssri e ssri online. Usa un basic toggle con callout visualizzato tramite hover
 - Sezione del sito sulla lista di rappresentanti (magari usa i componenti person)
-- sezione riguardo faq sulla didattica a distanza (aspetta comunicazioni ufficiali)
+- Sezione riguardo faq sulla didattica a distanza (aspetta comunicazioni ufficiali)
 - Sezione del sito con manifesti e informazioni globali sui cdl, e anche la guida sul come disiscriversi dalle liste mail
 - Homepage con news prelevate dal sito di unimia
 - Tema scuro
 - Hash commit nel footer
 - Costruire la gerarchia del network, fai un file .psd così lo tieni aggiornato facilmente
 - Futura ristrutturazione: card con solo icone + hover sopra che mostra tooltip
-- Sezione about per chi ha contribuito (magari anche chi ha fatto delle faq)
 */
 
 import React from "react";

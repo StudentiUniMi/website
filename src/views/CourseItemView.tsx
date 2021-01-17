@@ -6,7 +6,6 @@ import { Card, ICardTokens } from "@uifabric/react-cards";
 import { initializeIcons } from '@uifabric/icons';
 import { FontWeights, ITextStyles, Persona } from '@fluentui/react';
 import Course from '../models/Course'
-import FaqView from './FaqView';
 
 initializeIcons();
 
@@ -123,7 +122,7 @@ const CourseItemView = (props: Props) => {
                         if (data.gruppo !== "") {
                             return (
                             <Text variant="small" styles={helpfulTextStyles}>
-                                <i className="fab fa-telegram" style={{color: '#6087eb'}}></i>
+                                <i className="fab fa-telegram" style={{color: '#1aa3ed'}}></i>
                                 &nbsp;
                                 <Link href={data.gruppo} target="_blank" className="text-decoration-none">
                                     Gruppo Telegram
@@ -201,11 +200,12 @@ const CourseItemView = (props: Props) => {
                         
                     })()
                     */
-                   data.faqFile !== "" ? 
+                   data.wiki !== "" ? 
                    <span className="mr-2">
-                        <i className="fas fa-question-circle" style={{color: '#fcba03'}}></i>
+                        <i className="fas fa-question-circle" style={{color: '#22c9bb'}}></i>
                         &nbsp;
-                        <FaqView cdl={data.cdl} name={data.name} anno={data.anno} semestre={data.semestre} cfu={data.cfu} gruppo={data.gruppo} websites={data.websites} faqFile={data.faqFile} />
+                        <a href={data.wiki} className="text-decoration-none" target="blank">Wiki</a>
+                        {/*<FaqView cdl={data.cdl} name={data.name} anno={data.anno} semestre={data.semestre} cfu={data.cfu} gruppo={data.gruppo} websites={data.websites} faqFile={data.faqFile} />*/}
                     </span> : ""
                 }
                 

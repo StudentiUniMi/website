@@ -2,7 +2,7 @@
 
 # [Network Studenti UniMi](https://github.com/StudentiUnimi)
 Network nato con lo scopo di creare un punto centrale di collegamento tra tutti i corsi di laurea dell'università degli studi di Milano. 
-Sono disponibili siti web, gruppi telegram e faq dei corsi didattici dei corsi di laurea triennali di:
+Sono disponibili siti web, gruppi telegram e wiki dei corsi didattici dei corsi di laurea triennali di:
 - [Informatica](https://studentiunimi.it/#/courses/triennale_informatica/);
 - [Informatica musicale](https://studentiunimi.it/#/courses/triennale_informatica_musicale/);
 - [Informatica per la comunicazione digitale](https://studentiunimi.it/#/courses/triennale_informatica_com_digitale/);
