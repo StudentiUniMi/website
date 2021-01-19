@@ -15,24 +15,27 @@ const Footer = () => {
                 <div className="row" style={{ backgroundColor: '#cccccc' }}>
 
                     <div className="col-lg-3 col-md-6 mb-4 mb-md-0 col-sm-12">
-                        <p className="mb-1">
+                        <p className="mb-2">
                             <Text style={{ fontWeight: 600 }}>
                                 <Link href="https://github.com/StudentiUnimi" className="text-decoration-none">Studenti UniMi &copy;</Link>
                             </Text>
                         </p>
-
-                        <p className="mb-0">
-                            <Text style={{ fontSize: FontSizes.size12 }}>
-                                <Link href="https://github.com/StudentiUnimi/website" className="text-decoration-none"><i className="fab fa-github"></i> Repository del sito</Link>
-                            </Text>
-                        </p>
-
-                        <p className="mb-1">
-                            <Text style={{ fontSize: FontSizes.size12 }}>
-                                <Link href="https://github.com/StudentiUnimi/MultiGroupBot" className="text-decoration-none"><i className="fas fa-rocket"></i> MultiGroup bot</Link>
-                            </Text>
-                        </p>
                         
+                        <div className="mb-1">
+                            <Link href="https://www.facebook.com/networkstudentiunimi" className="text-decoration-none">
+                                <i className="fab fa-facebook mr-2" style={{fontSize: 21}}></i>
+                            </Link>
+                            <Link href="https://t.me/studenti_unimi" className="text-decoration-none">
+                                <i className="fab fa-telegram-plane mr-2" style={{fontSize: 21}}></i>
+                            </Link>
+                            <Link href="https://github.com/StudentiUnimi/website" className="text-decoration-none">
+                                <i className="fab fa-github mr-2" style={{fontSize: 21}}></i>
+                            </Link>
+                            <Link href="https://github.com/StudentiUnimi/MultiGroupBot" className="text-decoration-none">
+                                <i className="fas fa-rocket mr-2" style={{fontSize: 21}}></i>
+                            </Link>
+                        </div>
+
                         {/*
                         <p className="mb-1">
                             <Text style={{ fontSize: FontSizes.size12 }}>
