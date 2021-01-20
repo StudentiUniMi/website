@@ -22,7 +22,7 @@ const Footer = () => {
                         </p>
                         
                         <div className="mb-1">
-                            <Link href="https://www.facebook.com/networkstudentiunimi" className="text-decoration-none">
+                            <Link href="https://www.facebook.com/networkstudentiunimi" className="text-decoration-none" target="blank">
                                 <i className="fab fa-facebook mr-2" style={{fontSize: 21}}></i>
                             </Link>
                             <Link href="https://t.me/studenti_unimi" className="text-decoration-none">

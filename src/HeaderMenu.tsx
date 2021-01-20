@@ -19,7 +19,7 @@ export enum ItemsKeys {
     rules = "rules",
     //materials = "materials",
     courses = "courses",
-    faq_proposer = "faq_proposer",
+    //faq_proposer = "faq_proposer",
     additional_groups = "additional_groups",
     administrators = "administrators"
 }
@@ -30,8 +30,8 @@ const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
     [ItemsKeys.courses, "Corsi"],
     //[ItemsKeys.materials, "Materiali"],
     [ItemsKeys.administrators, "Amministratori"],
-    [ItemsKeys.additional_groups, "Gruppi extra"],
-    [ItemsKeys.faq_proposer, "Proponi faq"]
+    [ItemsKeys.additional_groups, "Gruppi extra"]
+    //[ItemsKeys.faq_proposer, "Proponi faq"]
 ])
 
 interface Props {
@@ -85,7 +85,7 @@ const HeaderMenu = (props: Props) => {
                     {/*<PivotItem headerText={texts.get(ItemsKeys.materials)} style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.materials} />*/}
                     <PivotItem headerText={texts.get(ItemsKeys.administrators)} style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.administrators} />
                     <PivotItem headerText={texts.get(ItemsKeys.additional_groups)} style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.additional_groups} />
-                    <PivotItem headerText={texts.get(ItemsKeys.faq_proposer)} style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.faq_proposer} />
+                    {/*<PivotItem headerText={texts.get(ItemsKeys.faq_proposer)} style={{ fontSize: FontSizes.size24 }} itemKey={ItemsKeys.faq_proposer} />*/}
                 </Pivot>
             </div>
 
