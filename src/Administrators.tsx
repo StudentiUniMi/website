@@ -45,8 +45,7 @@ const members_sicurezza_sistemi_reti_informatiche = [
 ];
 
 const members_sicurezza_sistemi_reti_informatiche_online = [
-    { username: 'salvadorbs', tutor:false, role:'' },
-    { username: 'burzum00', tutor:false, role:'' }
+    { username: 'salvadorbs', tutor:false, role:'' }
 ];
 
 const members_magistrali = [

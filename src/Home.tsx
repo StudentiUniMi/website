@@ -26,14 +26,10 @@ const cardStyle = {
     height: '200px'
 }
 
-const colStyle = {
-    
-}
-
 const Home = () => {
     return (
         <Container className="home">
-            <div className="text-center mb-3">
+            <div className="text-center mb-4">
                 <Text style={{ fontSize: FontSizes.size16 }}>
                     <p className="mb-0">
                         Network nato con lo scopo di creare un punto centrale di collegamento tra tutti i corsi di laurea dell'università degli studi di Milano.
@@ -48,7 +44,7 @@ const Home = () => {
                 {
                     HomeLinks.map(x => {
                         return (
-                        <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6" style={colStyle}>
+                        <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div className="card m-auto text-center" style={cardStyle}>
                                 <div className="card-body">
                                     <Link href={x.link} target="_blank">

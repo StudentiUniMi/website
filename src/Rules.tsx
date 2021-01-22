@@ -5,10 +5,9 @@ import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
 
-const bold = {
+const question = {
     fontWeight: 600,
-    color: '#0078d4',
-    fontSize: FontSizes.size14
+    color: '#398ded'
 };
 
 const rules = {
@@ -30,27 +29,10 @@ const Rules = () => {
             <div style={{ 'marginLeft': '5%', 'marginRight': '5%'}}>
                 <Text style={{ fontSize: FontSizes.size12 }}>
 
-
-                    <div style={bold} className="mb-2">Perchè abbiamo introdotto un regolamento?</div>
-                    <p className="mb-2">
-                        <p className="mb-0">Vogliamo rendere chiari i motivi per cui abbiamo deciso di regolamentare i gruppi del nostro network.</p>
-                        <p className="mb-0">Abbiamo notato che la maggior parte di essi erano tempestati di domande banali, fatte più volte al giorno, la cui risposta era facilmente trovabile.
-                        Questo riduce la qualità della chat e scoraggia la partecipazione di studenti più attenti.</p> 
-                        <p className="mb-0">Per questo motivo abbiamo deciso di provare a limitare il fenomeno, da una parte ammonendo chi continua a fare interventi non produttivi, e dall'altra fornendo un modo facile e veloce per trovare le informazioni più importanti, 
-                        tramite le pagine faq di ogni insegnamento.</p>
-                    </p>
-                
-                    <div style={bold} className="mb-2">Dove trovo le faq dei corsi?</div>
-                    <p className="mb-3">
-                        <p className="mb-0">Nella sezione dei corsi è possibile trovare le faq disponibili; al momento solo Informatica ne è dotata.</p> 
-                        <p className="mb-0">Ovviamente se un gruppo di un corso didattico del network non ha faq disponibili non vuol dire che sia possibile chiedere domande banali e quant'altro.
-                        Siete invitati a cercare autonomamente e magari andando nelle chat precedenti per trovare risposte inerenti.
-                        In caso non si trovi nulla sarà possibile chiedere senza problemi il vostro dubbio o domanda.</p> 
-                    </p>
                     <p className="mb-3">Di seguito è possibile trovare il <Text style={{ fontWeight: 600, fontSize: FontSizes.size12}}>regolamento.</Text></p>
 
-                    
-                    <div id="accordion">
+                    <hr />
+                    <div id="accordion" className="mb-3">
 
                             {/* Regole riguardo domande e faq */}
                             <div className="card mb-1">
@@ -114,8 +96,9 @@ const Rules = () => {
                                         <p className="mb-1" style={rules}>Spam e offtopic</p>
                                         <p className="mb-3 ml-3 mr-3">
                                             Lo spam è vietato.
-                                            Le conversazioni offtopic sono vietate nei gruppi specifici dei corsi e anche in quelli generali degli anni accademici.
+                                            Le conversazioni offtopic sono vietate sia nei gruppi specifici dei corsi che in quelli generali degli anni accademici.
                                             Se volete parlare liberamente di argomenti più generali, esiste un gruppo apposito che trovate nella lista di gruppi sul sito web del network.
+                                            In caso di spam e offtopic sui gruppi dei singoli corsi didattici 
                                         </p>
                                     </div>
                                 </div>
@@ -164,7 +147,24 @@ const Rules = () => {
                             </div>
                         
                     </div>
+
+                    <hr />
+                    <div style={question} className="mb-2">Perchè abbiamo introdotto un regolamento?</div>
+                    <p className="mb-2">
+                        <p className="mb-0">Vogliamo rendere chiari i motivi per cui abbiamo deciso di regolamentare i gruppi del nostro network.</p>
+                        <p className="mb-0">Abbiamo notato che la maggior parte di essi erano tempestati di domande banali, fatte più volte al giorno, la cui risposta era facilmente trovabile.
+                        Questo riduce la qualità della chat e scoraggia la partecipazione di studenti più attenti.</p> 
+                        <p className="mb-0">Per questo motivo abbiamo deciso di provare a limitare il fenomeno, da una parte ammonendo chi continua a fare interventi non produttivi, e dall'altra fornendo un modo facile e veloce per trovare le informazioni più importanti, 
+                        tramite le pagine faq di ogni insegnamento.</p>
+                    </p>
                 
+                    <div style={question} className="mb-2">Dove trovo le faq dei corsi?</div>
+                    <p className="mb-3">
+                        <p className="mb-0">Nella wiki è possibile trovare le faq dei corsi didattici: al momento solo Informatica ne è dotata.</p> 
+                        <p className="mb-0">Ovviamente se un gruppo di un corso didattico del network non ha faq disponibili non vuol dire che sia possibile chiedere domande banali e quant'altro.
+                        Siete invitati a cercare autonomamente e magari andando nelle chat precedenti per trovare risposte inerenti.
+                        In caso non si trovi nulla sarà possibile chiedere senza problemi il vostro dubbio o domanda.</p> 
+                    </p>
                 
                 </Text>
             </div>
