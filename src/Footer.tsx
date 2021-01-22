@@ -22,18 +22,23 @@ const Footer = () => {
                         </p>
                         
                         <div className="mb-1">
-                            <Link href="https://www.facebook.com/networkstudentiunimi" className="text-decoration-none" target="blank">
-                                <i className="fab fa-facebook mr-2" style={{fontSize: 21}}></i>
-                            </Link>
-                            <Link href="https://t.me/studenti_unimi" className="text-decoration-none">
-                                <i className="fab fa-telegram-plane mr-2" style={{fontSize: 21}}></i>
-                            </Link>
-                            <Link href="https://github.com/StudentiUnimi/website" className="text-decoration-none">
-                                <i className="fab fa-github mr-2" style={{fontSize: 21}}></i>
-                            </Link>
-                            <Link href="https://github.com/StudentiUnimi/MultiGroupBot" className="text-decoration-none">
-                                <i className="fas fa-rocket mr-2" style={{fontSize: 21}}></i>
-                            </Link>
+                            <ul className="list-unstyled mb-0">
+                                <li>
+                                    <Text style={{ fontSize: FontSizes.size12 }}>
+                                        <Link href="https://www.facebook.com/networkstudentiunimi" className="text-decoration-none"><i className="fab fa-facebook"></i> Pagina Facebook</Link>
+                                    </Text>
+                                </li>
+                                <li>
+                                    <Text style={{ fontSize: FontSizes.size12 }}>
+                                        <Link href="https://github.com/StudentiUnimi/website" className="text-decoration-none"><i className="fab fa-github"></i> Repository del sito</Link>
+                                    </Text>
+                                </li>
+                                <li>
+                                    <Text style={{ fontSize: FontSizes.size12 }}>
+                                        <Link href="https://github.com/StudentiUnimi/MultiGroupBot" className="text-decoration-none"><i className="fas fa-rocket"></i> MultiGroup Bot</Link>
+                                    </Text>
+                                </li>
+                            </ul>
                         </div>
 
                         {/*
