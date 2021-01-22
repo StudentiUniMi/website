@@ -95,10 +95,9 @@ const Rules = () => {
 
                                         <p className="mb-1" style={rules}>Spam e offtopic</p>
                                         <p className="mb-3 ml-3 mr-3">
-                                            Lo spam è vietato.
-                                            Le conversazioni offtopic sono vietate sia nei gruppi specifici dei corsi che in quelli generali degli anni accademici.
-                                            Se volete parlare liberamente di argomenti più generali, esiste un gruppo apposito che trovate nella lista di gruppi sul sito web del network.
-                                            In caso di spam e offtopic sui gruppi dei singoli corsi didattici 
+                                            Lo spam è vietato, pena warn o mute a seconda della gravità, a discrezione degli amministratori.
+                                            Le conversazioni offtopic sono vietate sia nei gruppi specifici dei corsi che in quelli generali degli anni accademici, anche in questo caso pena warn o mute a seconda della gravità,
+                                            a discrezione degli amministratori. Se volete parlare liberamente di argomenti più generali, esiste un gruppo apposito che trovate nella lista di gruppi aggiuntivi sul sito web del network.
                                         </p>
                                     </div>
                                 </div>
