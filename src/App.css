@@ -8,6 +8,8 @@ html {
 body {
   background-color: #faf9f8;
   margin-bottom: 220px; /* Default footer height */
+  height:100%;
+  min-height: 100%;
 }
 
 #root {
@@ -76,7 +78,7 @@ main {
 
 
 /* Responsive menu and title */
-@media only screen and (min-width: 475px) {
+@media only screen and (min-width: 545px) {
   .header-menu .pivot {
     display: block;
   }
@@ -90,7 +92,7 @@ main {
     margin-left: 10px;
   }
 }
-@media only screen and (max-width: 474px) {
+@media only screen and (max-width: 544px) {
   .header-menu .pivot {
     display: none;
   }
