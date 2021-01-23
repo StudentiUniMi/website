@@ -53,9 +53,14 @@ const resources: ServiceResources[] = [
         previewPropsUsingIcon: cardProps('CheckMark', '#a0aeb2')
     },
     {
+        name: 'Servizi sifa', 
+        link: 'http://unimia.unimi.it/portal/server.pt/community/unimia/207/servizi_sifa/',
+        previewPropsUsingIcon: cardProps('ContactCardSettings', '#8378de')
+    },
+    {
         name: 'Webmail', 
         link: 'https://securemail.unimi.it/',
-        previewPropsUsingIcon: cardProps('Mail', '#5c2e91')
+        previewPropsUsingIcon: cardProps('Mail', '#881798')
     },
     {
         name: 'Ariel', 
@@ -70,50 +75,57 @@ const resources: ServiceResources[] = [
     {
         name: 'Servizio bibliotecario', 
         link: 'https://www.sba.unimi.it/',
-        previewPropsUsingIcon: cardProps('PenWorkspace', '#ffaa44')
+        previewPropsUsingIcon: cardProps('BookAnswers', '#005b70')
     },
     {
         name: 'Informastudenti', 
         link: 'https://informastudenti.unimi.it/',
-        previewPropsUsingIcon: cardProps('PenWorkspace', '#ffaa44')
+        previewPropsUsingIcon: cardProps('Help', '#d13438')
     },
     {
         name: 'Virtual Classroom', 
         link: 'https://vc.di.unimi.it/',
-        previewPropsUsingIcon: cardProps('PenWorkspace', '#ffaa44')
-    },
+        previewPropsUsingIcon: cardProps('Video', '#498205')
+    }
+    /*
     {
         name: '', 
         link: '',
         previewPropsUsingIcon: cardProps('PenWorkspace', '#ffaa44')
-    },
-    {
-        name: '', 
-        link: '',
-        previewPropsUsingIcon: cardProps('PenWorkspace', '#ffaa44')
-    },
+    }
+    */
 ];
-
 
 
 const Services = () => {
     return (
         <Container className="services text-center">
-            {
-                resources.map(x => (
-                        <DocumentCard
-                            aria-label={x.name}
-                            type={DocumentCardType.compact}
-                            onClickHref={x.link}
-                            style={cardStyle}
-                        >
-                            <DocumentCardPreview {...x.previewPropsUsingIcon} />
-                            <DocumentCardDetails>
-                                <DocumentCardTitle title={x.name} shouldTruncate />
-                            </DocumentCardDetails>
-                        </DocumentCard>
+            <div className="text-center mb-3">
+                <Text style={{ fontSize: FontSizes.size16 }}>
+                    <p className="mb-0">
+                        Qui è possibile trovare tutti i link a servizi e risorse utili legati all'ambito universitario.
+                    </p>
+                </Text>
+            </div>
+            <div className="row m-2 justify-content-center">
+                {
+                    resources.map(x => (
+                        <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-2">
+                            <DocumentCard
+                                aria-label={x.name}
+                                type={DocumentCardType.compact}
+                                onClickHref={x.link}
+                                style={cardStyle}
+                            >
+                                <DocumentCardPreview {...x.previewPropsUsingIcon} />
+                                <DocumentCardDetails>
+                                    <DocumentCardTitle title={x.name} shouldTruncate />
+                                </DocumentCardDetails>
+                            </DocumentCard>
+                        </div>
                     ))
-            }
+                }
+            </div>
         </Container>
     )
 }
