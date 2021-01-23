@@ -16,11 +16,6 @@ interface ServiceResources {
     previewPropsUsingIcon: IDocumentCardPreviewProps
 }
 
-const cardStyle = {
-    //maxWidth: '150px'
-}
-
-// modularizza anche colore della card ecc.
 let cardProps = (iconName: string, backgroundColor: string): IDocumentCardPreviewProps => {
     return {
         previewImages: [ 
@@ -115,7 +110,6 @@ const Services = () => {
                                 aria-label={x.name}
                                 type={DocumentCardType.compact}
                                 onClickHref={x.link}
-                                style={cardStyle}
                             >
                                 <DocumentCardPreview {...x.previewPropsUsingIcon} />
                                 <DocumentCardDetails>
