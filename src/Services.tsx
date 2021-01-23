@@ -110,7 +110,6 @@ const Services = () => {
                                 aria-label={x.name}
                                 type={DocumentCardType.compact}
                                 onClickHref={x.link}
-                                onClickTarget={"blank"}
                             >
                                 <DocumentCardPreview {...x.previewPropsUsingIcon} />
                                 <DocumentCardDetails>
