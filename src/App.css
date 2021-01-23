@@ -35,7 +35,7 @@ main {
 /* Responsive footer */
 @media only screen and (max-width: 992px) {
   body {
-    margin-bottom: 300px;
+    margin-bottom: 350px;
   }
   footer .contacts {
     margin-top:20px;
