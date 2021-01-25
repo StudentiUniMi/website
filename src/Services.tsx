@@ -5,7 +5,7 @@ import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
 import { getTheme } from 'office-ui-fabric-react/lib/Styling';
-import { DocumentCard, DocumentCardDetails, DocumentCardPreview, DocumentCardTitle, IDocumentCardPreviewProps, DocumentCardType, IDocumentCardTitle, IDocumentCardTitleProps, IDocumentCardTitleStyles } from 'office-ui-fabric-react/lib/DocumentCard';
+import { DocumentCard, DocumentCardDetails, DocumentCardPreview, DocumentCardTitle, IDocumentCardPreviewProps, DocumentCardType } from 'office-ui-fabric-react/lib/DocumentCard';
 
 const theme = getTheme();
 const { palette, fonts } = theme;
