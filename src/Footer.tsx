@@ -14,7 +14,7 @@ const Footer = () => {
 
                 <div className="row" style={{ backgroundColor: '#cccccc' }}>
 
-                    <div className="col-lg-3 col-md-6 mb-4 mb-md-0 col-sm-12">
+                    <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-4 mb-md-0">
                         <p className="mb-2">
                             <Text style={{ fontWeight: 600 }}>
                                 <Link href="https://github.com/StudentiUnimi" className="text-decoration-none">Studenti UniMi &copy;</Link>
@@ -51,12 +51,12 @@ const Footer = () => {
 
                     </div>
 
-                    <div className="col-lg-3 col-md-6 mb-4 mb-md-0 col-sm-12">
+                    <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-4 mb-md-0">
                         <p className="mb-1">
                             <Text style={{ fontWeight: 600 }}>Link utili</Text>
                         </p>
 
-                        <ul className="list-unstyled mb-0">
+                        <ul className="list-unstyled mb-3">
                             <li>
                                 <Text style={{ fontSize: FontSizes.size12 }}>
                                     <Link href="http://www.quickunimi.it/" className="text-decoration-none"><i className="fas fa-globe"></i> QuickUnimi</Link>
@@ -80,46 +80,12 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div className="col-lg-3 col-md-6 mb-4 mb-md-0 col-sm-12">
-                        <p className="mb-1">
-                            <Text style={{ fontWeight: 600 }}>Altri link</Text>
-                        </p>
-
-                        <ul className="list-unstyled">
-                            <li>
-                                <Text style={{ fontSize: FontSizes.size12 }}>
-                                    <Link href="http://unimia.unimi.it/" className="text-decoration-none"><i className="fas fa-globe-europe"></i> Unimia</Link>
-                                </Text>
-                            </li>
-                            <li>
-                                <Text style={{ fontSize: FontSizes.size12 }}>
-                                    <Link href="https://ariel.unimi.it/" className="text-decoration-none"><i className="fas fa-university"></i> Ariel</Link>
-                                </Text>
-                            </li>
-                            <li>
-                                <Text style={{ fontSize: FontSizes.size12 }}>
-                                    <Link href="http://www.di.unimi.it/ecm/home/organizzazione/organi-di-governo/consiglio-di-dipartimento" className="text-decoration-none"><i className="fas fa-user-tie"></i> Rappresentanti degli studenti</Link>
-                                </Text>
-                            </li>
-                            <li>
-                                <Text style={{ fontSize: FontSizes.size12 }}>
-                                    <Link href="https://vc.di.unimi.it/" className="text-decoration-none"><i className="fas fa-video"></i> Virtual Classroom</Link>
-                                </Text>
-                            </li>
-                            <li>
-                                <Text style={{ fontSize: FontSizes.size12 }}>
-                                    <Link href="http://easystaff.divsi.unimi.it/PortaleStudenti/index.php?view=easycourse&include=corso&_lang=it&empty_box=0&col_cells=0" className="text-decoration-none"><i className="fas fa-clock"></i> Orario</Link>
-                                </Text>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div className="col-lg-3 col-md-6 mb-0 mb-md-0 col-sm-12 contacts">
+                    <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-4 mb-md-0 contacts">
                         <p className="mb-1">
                             <Text style={{ fontWeight: 600 }}>Contatti</Text>
                         </p>
 
-                        <p>
+                        <p className="mb-0">
                             <Text style={{ fontSize: FontSizes.size12 }}>
                                 <p className="mb-1 text">
                                     Per qualsiasi dubbio o proposta è possibile contattare

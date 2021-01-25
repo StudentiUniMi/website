@@ -2,7 +2,6 @@
 TODO LIST
 -1 Sezione dei corsi di laurea, ci mettiamo un pulsantino per switchare tra gruppi e informazioni generali
 -2 Sempre nella sezione dei corsi devi poter selezionare il dipartimento e poi i vari corsi di laurea
-- Sezione "servizi", link a iscrizione esami, orari, prenota aule, webmail, biblioteca, verbalizzazione ed esiti degli esami 
 - Pulsante per switchare tra ssri e ssri online. Usa un basic toggle con callout visualizzato tramite hover
 - Sezione del sito sulla lista di rappresentanti (magari usa i componenti person)
 - Sezione riguardo faq sulla didattica a distanza (aspetta comunicazioni ufficiali)

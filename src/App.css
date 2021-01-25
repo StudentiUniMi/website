@@ -37,16 +37,13 @@ main {
 /* Responsive footer */
 @media only screen and (max-width: 992px) {
   body {
-    margin-bottom: 350px;
-  }
-  footer .contacts {
-    margin-top:20px;
+    margin-bottom: 240px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   body {
-    margin-bottom: 680px;
+    margin-bottom: 500px;
   }
   footer .row {
     text-align: center;
@@ -70,7 +67,7 @@ main {
 
 @media only screen and (min-width: 769px) {
   footer .row {
-    margin-left: 1%;
+    margin-left: 3%;
   }
 }
 /* End responsive footer */
@@ -273,6 +270,10 @@ main {
 /*------------
   Da sistemare
 ------------*/
+
+.services .ms-DocumentCardTitle {
+  overflow: visible;
+}
 
 .faq-proposer select {
   width: 100%;

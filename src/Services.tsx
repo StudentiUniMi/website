@@ -5,7 +5,7 @@ import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
 import { getTheme } from 'office-ui-fabric-react/lib/Styling';
-import { DocumentCard, DocumentCardDetails, DocumentCardPreview, DocumentCardTitle, IDocumentCardPreviewProps, DocumentCardType } from 'office-ui-fabric-react/lib/DocumentCard';
+import { DocumentCard, DocumentCardDetails, DocumentCardPreview, DocumentCardTitle, IDocumentCardPreviewProps, DocumentCardType, IDocumentCardTitle, IDocumentCardTitleProps, IDocumentCardTitleStyles } from 'office-ui-fabric-react/lib/DocumentCard';
 
 const theme = getTheme();
 const { palette, fonts } = theme;
@@ -81,6 +81,11 @@ const resources: ServiceResources[] = [
         name: 'Virtual Classroom', 
         link: 'https://vc.di.unimi.it/',
         previewPropsUsingIcon: cardProps('Video', '#498205')
+    },
+    {
+        name: 'Contatti rappresentanti degli studenti', 
+        link: 'http://www.di.unimi.it/ecm/home/organizzazione/organi-di-governo/consiglio-di-dipartimento',
+        previewPropsUsingIcon: cardProps('People', '#4f6bed')
     }
     /*
     {
@@ -105,7 +110,7 @@ const Services = () => {
             <div className="row m-2 justify-content-center">
                 {
                     resources.map(x => (
-                        <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-2">
+                        <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-2">
                             <DocumentCard
                                 aria-label={x.name}
                                 type={DocumentCardType.compact}
