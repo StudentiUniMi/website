@@ -9,6 +9,7 @@ import { Container } from 'react-bootstrap';
 
 const HomeLinks = [
     { name: 'Canale Telegram', link: 'https://t.me/studenti_unimi', iconName: 'Send'},
+    { name: 'Gruppo Telegram', link: 'https://t.me/joinchat/VswKeAblS2nrfXME', iconName: 'Group'},
     { name: 'Server Discord', link: 'https://discord.gg/pPGUrr35sv', iconName: 'ChatBot'},
     { name: 'Wiki', link: 'https://wiki.studentiunimi.it/', iconName: 'PageList'},
     { name: 'HedgeDoc', link: 'https://hedgedoc.studentiunimi.it/', iconName: 'ReadingMode'},
@@ -44,7 +45,7 @@ const Home = () => {
                 {
                     HomeLinks.map(x => {
                         return (
-                        <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div className="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-xs-12">
                             <div className="card m-auto text-center" style={cardStyle}>
                                 <div className="card-body">
                                     <Link href={x.link} target="_blank">
