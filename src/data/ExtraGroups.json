@@ -18,16 +18,22 @@
         "gruppo":"https://t.me/joinchat/I5_YNlBa9fMnTu5MfN6nnQ"
     },
     {
-        "name":"Recupero OFA",
-        "description": "Gruppo collegato al corso di Matematica del continuo, dedicato agli ofa e i suoi argomenti. ",
-        "image": "ofa.png",
-        "gruppo":"https://t.me/joinchat/HQwag1ASkXeQ-nX7"
+        "name":"Tirocini e tesi",
+        "description": "Gruppo per eventuali domande, chiarimenti e discussioni riguardo tirocini e tesi.",
+        "image": "tirocini.jpg",
+        "gruppo":"https://t.me/joinchat/Vx5GyUHQ-SeZlBeV"
     },
     {
         "name":"Gruppo freetalk",
         "description": "Chat freetalk per parlare di qualsiasi cosa.",
         "image": "free_talk.jpg",
         "gruppo":"https://t.me/UniMiCazzeggio"
+    },
+    {
+        "name":"Recupero OFA",
+        "description": "Gruppo collegato al corso di Matematica del continuo, dedicato agli ofa e i suoi argomenti. ",
+        "image": "ofa.png",
+        "gruppo":"https://t.me/joinchat/HQwag1ASkXeQ-nX7"
     },
     {
         "name":"Unirole",
