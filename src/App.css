@@ -145,7 +145,7 @@ main {
     text-align: center;
   }
   
-  .courses-filter-options .row {
+  .courses-filter-options .row, .department-choose .row {
     margin-right:10%;
     margin-left:10%;
   }
@@ -160,6 +160,11 @@ main {
 
 /* Section adjustments */
 @media only screen and (max-width: 575px) {
+  .department-choose .col-sm-6 {
+    max-width: 280px;
+    text-align: center;
+  }
+  
   .courses-filter-options .row {
     margin-right:10%;
     margin-left:10%;

@@ -1,99 +1,179 @@
 import * as React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { Text } from "office-ui-fabric-react/lib/Text";
+import { Link, Text } from 'office-ui-fabric-react';
 import { FontSizes } from '@fluentui/theme';
-import { ChoiceGroup, IChoiceGroupOption, IChoiceGroupOptionStyles } from "office-ui-fabric-react/lib/ChoiceGroup";
 import { initializeIcons } from "@uifabric/icons";
 import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
+import { Dropdown, IDropdownOption, IDropdownProps } from 'office-ui-fabric-react/lib/Dropdown';
+import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import CourseListView from "./views/CourseListView";
 
 initializeIcons();
 
-const itemSize = 120;
+const iconStyles = { marginRight: '8px' };
 
-const departmentsOptions : IChoiceGroupOption[] = [
-    { key: 'department_informatica', text: 'Dipartimento di Informatica' },
-    { key: 'department_medicine', text: 'Dipartimento di Medicina' }
-];
+/* To-do:
+- fixare il routing
+- sistemare i json e i courseitemview in modo tale da lavorare anche sul dipartimento
+*/
 
-
-const stylesMagistrali: IChoiceGroupOptionStyles = {
-    choiceFieldWrapper: {
-        backgroundColor: '#deecf9',
-        width: itemSize + "px",
-        height: itemSize + "px"
+const data = [
+    {
+        key: 'department_informatica',
+        text: 'Dipartimento di Informatica', 
+        icon: 'TVMonitor',
+        cdls: [
+            { key: "triennale_informatica", text: "Informatica" },
+            { key: "triennale_informatica_musicale", text: "Informatica musicale" },
+            { key: "triennale_informatica_com_digitale", text: "Informatica comunicazione digitale" },
+            { key: "triennale_sicurezza_sistemi_reti_informatiche",  text: "Sicurezza sistemi e reti informatiche" },
+            { key: "triennale_sicurezza_sistemi_reti_informatiche_online", text: "Sicurezza sistemi e reti informatiche online" },
+            { key: "magistrale_informatica", text: "Informatica (magistrale)" },
+            { key: "magistrale_sicurezza_informatica", text: "Sicurezza informatica (magistrale)" }
+        ]
     },
-    labelWrapper: {
-        maxWidth: itemSize / (3 / 4) + "px",
-        height: "auto",
+    {
+        key: 'department_fisica',
+        text: 'Dipartimento di Fisica', 
+        icon: 'ReleaseDefinition',
+        cdls: [
+            { key: "test234324", text: "medicina1" },
+            { key: "test25435435", text: "medicina1 medicina2" },
+            { key: "test3634543543", text: "medicina1 medicina1 medicina1" },
+            { key: "test4654654",  text: "medicina1 medicina1 e medicina1" },
+            { key: "test5656546", text: "medicina1233 medicina14" }
+        ]
     },
-    field: {
-        height: "100%",
-        padding: "0px",
+    {
+        key: 'department_agraria',
+        text: 'Dipartimento di Agraria', 
+        icon: 'ReleaseDefinition',
+        cdls: [
+            { key: "test3123213", text: "medicina1" },
+            { key: "test2123213332", text: "medicina1 medicina2" },
+            { key: "test33232", text: "medicina1 medicina1 medicina1" },
+            { key: "test442434",  text: "medicina1 medicina1 e medicina1" },
+            { key: "test5545454", text: "medicina1233 medicina14" }
+        ]
+    },
+    {
+        key: 'department_medicina',
+        text: 'Dipartimento di Medicina', 
+        icon: 'Medical',
+        cdls: [
+            { key: "test", text: "medicina1" },
+            { key: "test2", text: "medicina1 medicina2" },
+            { key: "test3", text: "medicina1 medicina1 medicina1" },
+            { key: "test4",  text: "medicina1 medicina1 e medicina1" },
+            { key: "test5", text: "medicina1233 medicina14" }
+        ]
+    },
+    {
+        key: 'department_farmacia',
+        text: 'Dipartimento di Farmacia', 
+        disabled: true,
+        icon: 'MobileReport',
+        cdls: [
+            { key: "test33", text: "farmacia" },
+            { key: "test244", text: "farmacia medicina2" },
+            { key: "test355", text: "farmacia medicina1 medicina1" },
+            { key: "test4222",  text: "farmacia medicina1 e medicina1" },
+            { key: "test5111", text: "farmacia medicina14" }
+        ]
     }
+]
+
+const onRenderOption = (option?: IDropdownOption): JSX.Element => {
+    return (
+        <div>
+            {option?.data && option?.data.icon && (
+                <Icon style={iconStyles} iconName={option.data.icon} aria-hidden="true" title={option.data.icon} />
+            )}
+            <span>{option?.text}</span>
+        </div>
+    );
 };
 
-const stylesTriennali: IChoiceGroupOptionStyles = {
-    choiceFieldWrapper: {
-        width: itemSize + "px",
-        height: itemSize + "px"
-    },
-    labelWrapper: {
-        maxWidth: itemSize / (3 / 4) + "px",
-        height: "auto",
-    },
-    field: {
-        height: "100%",
-        padding: "0px"
-    }
+const onRenderTitle = (options?: IDropdownOption[]): JSX.Element => {
+    const option = options![0];
+
+    return (
+        <div>
+            {option.data && option.data.icon && (
+                <Icon style={iconStyles} iconName={option.data.icon} aria-hidden="true" title={option.data.icon} />
+            )}
+            <span>{option.text}</span>
+        </div>
+    );
 };
 
-const cdlOptionsInformatica: IChoiceGroupOption[] = [
-    { key: "triennale_informatica", styles: stylesTriennali, text: "Informatica", iconProps: { iconName: "Devices3" }, },
-    { key: "triennale_informatica_musicale", styles: stylesTriennali, text: "Informatica musicale", iconProps: { iconName: "ScreenCast" }, },
-    { key: "triennale_informatica_com_digitale", styles: stylesTriennali, text: "Informatica comunicazione digitale", iconProps: { iconName: "ContactInfo" }, },
-    { key: "triennale_sicurezza_sistemi_reti_informatiche", styles: stylesTriennali, text: "Sicurezza sistemi e reti informatiche", iconProps: { iconName: "LaptopSecure" }, },
-    { key: "triennale_sicurezza_sistemi_reti_informatiche_online", styles: stylesTriennali, text: "Sicurezza sistemi e reti informatiche online", iconProps: { iconName: "LaptopSecure" }, },
-    { key: "magistrale_informatica", styles: stylesMagistrali, text: "Informatica (magistrale)", iconProps: { iconName: "ConnectVirtualMachine" },},
-    { key: "magistrale_sicurezza_informatica", styles: stylesMagistrali, text: "Sicurezza informatica (magistrale)", iconProps: { iconName: "ProtectRestrict" }, }
-];
+const onRenderPlaceholder = (props?: IDropdownProps): JSX.Element => {
+    return (
+        <div className="dropdownExample-placeholder">
+            <Icon style={iconStyles} iconName={'SurveyQuestions'} aria-hidden="true" />
+            <span>{props?.placeholder}</span>
+        </div>
+    );
+};
 
 const Courses = () => {
     
-    const history = useHistory();
-
-    var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
-    var initialState = states.length === 2 ? states[states.length-1] : ''
-
-    const [selectedDepartment, setSelectedDepartment] = React.useState<string>();
-    const [selectedCdl, setSelectedCdl] = React.useState<string>(initialState);
-
     const departmentSelectionChanged = (
         ev?: React.FormEvent<HTMLElement | HTMLInputElement>,
-        option?: IChoiceGroupOption
+        option?: IDropdownOption
     ): void => {
-        setSelectedDepartment(option?.key ?? '');
-        //history.push(`/courses/${option?.key}/`);
+        setSelectedDepartment(option?.key as string ?? '');
     };
 
     const cdlSelectionChanged = (
         ev?: React.FormEvent<HTMLElement | HTMLInputElement>,
-        option?: IChoiceGroupOption
+        option?: IDropdownOption
     ): void => {
-        setSelectedCdl(option?.key ?? '');
-        history.push(`/courses/${option?.key}/`);
+        setSelectedCdl(option?.key as string ?? '');
     };
+    
+    const history = useHistory();
+
+    var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
+    var initialDepartement = states.length >= 2 ? states[1] : ''
+    var initialCdl = states.length >= 3 ? states[2] : ''
+
+    const [selectedDepartment, setSelectedDepartment] = React.useState<string>(initialDepartement);
+    const [selectedCdl, setSelectedCdl] = React.useState<string>(initialCdl);
+
+    console.log(states)
+
+    let path = '/courses/'
+    if (selectedDepartment !== '') {
+        path += selectedDepartment + '/'
+        if (selectedCdl !== '') {
+            path += selectedCdl
+        }
+    }
+
+    history.push(path);
+
+    let departmentOptions: IDropdownOption[] = data.map(x => ({key: x.key, text: x.text, data: {icon:x.icon}, disabled: x.disabled}));
+    let cdls: any[] = []
+       
+    if(selectedDepartment!=='')
+    {
+        let department = data.filter(x => x.key === selectedDepartment)[0]
+        cdls = department.cdls
+    }
+
+    let cdlsOptions: IDropdownOption[] = cdls.map(x => ({key: x.key, text: x.text, data: {icon:x.icon}}));
+
 
     return (
-        <Container className="courses">
+        <Container className="courses text-center">
             <div className="text-center">
                 <Text style={{ fontSize: FontSizes.size16 }}>
                     <p className="mb-0">Qui è possibile vedere i gruppi telegram, siti web, e faq (se disponibili)
                     di ogni corso didattico del tuo corso di laurea. </p>
-                    <p className="mb-0">I corsi di laurea evidenziati in azzurro riguardano lauree magistrali, gli altri invece le triennali.</p>
-                    <p className="mb-2">Se noti qualcosa che non corrisponde o che andrebbe sistemato puoi contattare un amministratore.</p>
+                    <p className="mb-2">Se noti qualcosa che non corrisponde o che andrebbe sistemato puoi scriverlo sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link>.</p>
                     <p className="mb-3">
                         <Text style={{ fontSize: FontSizes.size12 }}>
                             <p className="mb-0">
@@ -104,32 +184,55 @@ const Courses = () => {
                             </p>
                         </Text>
                     </p>
-
-
-                    <p><Text style={{ fontWeight: 600 }}>Scegli un dipartimento</Text></p>
-                    <ChoiceGroup defaultSelectedKey="department_informatica" options={departmentsOptions} onChange={departmentSelectionChanged} />
-
                 </Text>
             </div>
 
+            {/*<p><Text style={{ fontWeight: 600 }}>Scegli un dipartimento</Text></p>*/}
+            
+            <div className="row department-choose justify-content-center mb-4">
+                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12 mb-1">
+                    {/* Department dropdown */}
+                    <Dropdown
+                        placeholder="Seleziona un dipartimento"
+                        label="Seleziona un dipartimento"
+                        onRenderPlaceholder={onRenderPlaceholder}
+                        onRenderTitle={onRenderTitle}
+                        onRenderOption={onRenderOption}
+                        options={departmentOptions}
+                        onChange={departmentSelectionChanged}
+                        selectedKey={selectedDepartment}
+                    />
+                </div>
 
-            <br />
-            <div style={{ display: selectedDepartment ? 'block' : 'none' }}>
-
-                <p><Text style={{ fontWeight: 600 }}>Scegli un corso di laurea</Text></p>
-
-                <ChoiceGroup
-                    options={cdlOptionsInformatica}
-                    onChange={cdlSelectionChanged}
-                    selectedKey={selectedCdl}
-                />
-                <div style={{ display: selectedCdl ? 'block' : 'none' }}>
-                    <p className='text-center'>
-                        <Text style={{ fontWeight: 600 }}>Gruppi disponibili:</Text>
-                    </p>
-                    <CourseListView cdl={selectedCdl} />
+                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12 mb-1">
+                    {/* Cdl dropdown */}
+                    {selectedDepartment === '' ? 
+                    <Dropdown
+                        label="Seleziona un corso di laurea"
+                        placeholder="Seleziona un corso di laurea"
+                        selectedKey={selectedCdl}
+                        onChange={cdlSelectionChanged}
+                        options={cdlsOptions}
+                        disabled
+                    />
+                    :                     
+                    <Dropdown
+                        label="Seleziona un corso di laurea"
+                        placeholder="Seleziona un corso di laurea"
+                        selectedKey={selectedCdl}
+                        onChange={cdlSelectionChanged}
+                        options={cdlsOptions}
+                    />}
                 </div>
             </div>
+
+            <div style={{ display: selectedCdl ? 'block' : 'none' }}>
+                <p className='text-center'>
+                    <Text style={{ fontWeight: 600 }}>Gruppi disponibili:</Text>
+                </p>
+                <CourseListView cdl={selectedCdl} />
+            </div>
+
         </Container>
     );
 };

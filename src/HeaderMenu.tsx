@@ -39,29 +39,21 @@ const HeaderMenu = (props: Props) => {
     const history = useHistory();
 
     var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
-
-    var initialState = (states.length > 0 ? states[0] : ItemsKeys.home) as ItemsKeys;
-    var extra = ''
-    if(initialState === ItemsKeys.courses && states.length > 1)
-    {
-        extra = states[1].split('/')[0] + '/'
-    }
+    let first = states.length >0 ? states[0]: ''
+    let second = states.length > 1 ? states[1] + '/' : ''
+    let third = states.length > 2 ? states[2]: ''
     
-    const [selectedKey, setSelectedKey] = React.useState(initialState);
-    history.push(`/${initialState}/${extra}`);
-    props.contentChanged(initialState);
-
+    let isCorrectPathKey = Object.keys(ItemsKeys).filter(x => x === first).length !== 0
+    const [selectedKey, setSelectedKey] = React.useState(isCorrectPathKey ? first : ItemsKeys.home);
+    history.push(`/${selectedKey}/${second}${third}`);
+    props.contentChanged(selectedKey as ItemsKeys);
 
     const handlePivotLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
         setSelectedKey(item!.props.itemKey! as ItemsKeys);
-        props.contentChanged(item!.props.itemKey! as ItemsKeys);
-        history.push(`/${item!.props.itemKey!}/`);
     };
 
     const onDropdownValueChange = (event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
         setSelectedKey(item!.key! as ItemsKeys);
-        props.contentChanged(item!.key! as ItemsKeys);
-        history.push(`/${item!.key!}/`);
     };
 
     const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }))
@@ -76,7 +68,7 @@ const HeaderMenu = (props: Props) => {
                     headersOnly={true}
                     style={{ fontSize: FontSizes.size24 }}
                 >
-                {Object.values(ItemsKeys).map(x => { return (<PivotItem headerText={texts.get(x)} style={{ fontSize: FontSizes.size24 }} itemKey={x} />);} )}
+                {Object.values(ItemsKeys).map((x,i) =><PivotItem key={i} headerText={texts.get(x)} style={{ fontSize: FontSizes.size24 }} itemKey={x}/>)}
                 </Pivot>
             </div>
 

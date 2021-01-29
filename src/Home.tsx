@@ -43,9 +43,9 @@ const Home = () => {
             
             <div className="row m-3 justify-content-center">
                 {
-                    HomeLinks.map(x => {
+                    HomeLinks.map((x, i) => {
                         return (
-                        <div className="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-xs-12">
+                            <div className="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-xs-12" key={i}>
                             <div className="card m-auto text-center" style={cardStyle}>
                                 <div className="card-body">
                                     <Link href={x.link} target="_blank">
