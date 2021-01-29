@@ -13,6 +13,12 @@ initializeIcons();
 
 const itemSize = 120;
 
+const departmentsOptions : IChoiceGroupOption[] = [
+    { key: 'department_informatica', text: 'Dipartimento di Informatica' },
+    { key: 'department_medicine', text: 'Dipartimento di Medicina' }
+];
+
+
 const stylesMagistrali: IChoiceGroupOptionStyles = {
     choiceFieldWrapper: {
         backgroundColor: '#deecf9',
@@ -44,49 +50,14 @@ const stylesTriennali: IChoiceGroupOptionStyles = {
     }
 };
 
-const options: IChoiceGroupOption[] = [
-    {
-        key: "triennale_informatica",
-        styles: stylesTriennali,
-        text: "Informatica",
-        iconProps: { iconName: "Devices3" },
-    },
-    {
-        key: "triennale_informatica_musicale",
-        styles: stylesTriennali,
-        text: "Informatica musicale",
-        iconProps: { iconName: "ScreenCast" },
-    },
-    {
-        key: "triennale_informatica_com_digitale",
-        styles: stylesTriennali,
-        text: "Informatica comunicazione digitale",
-        iconProps: { iconName: "ContactInfo" },
-    },
-    {
-        key: "triennale_sicurezza_sistemi_reti_informatiche",
-        styles: stylesTriennali,
-        text: "Sicurezza sistemi e reti informatiche",
-        iconProps: { iconName: "LaptopSecure" },
-    },
-    {
-        key: "triennale_sicurezza_sistemi_reti_informatiche_online",
-        styles: stylesTriennali,
-        text: "Sicurezza sistemi e reti informatiche online",
-        iconProps: { iconName: "LaptopSecure" },
-    },
-    {
-        key: "magistrale_informatica",
-        styles: stylesMagistrali,
-        text: "Informatica (magistrale)",
-        iconProps: { iconName: "ConnectVirtualMachine" },
-    },
-    {
-        key: "magistrale_sicurezza_informatica",
-        styles: stylesMagistrali,
-        text: "Sicurezza informatica (magistrale)",
-        iconProps: { iconName: "ProtectRestrict" },
-    }
+const cdlOptionsInformatica: IChoiceGroupOption[] = [
+    { key: "triennale_informatica", styles: stylesTriennali, text: "Informatica", iconProps: { iconName: "Devices3" }, },
+    { key: "triennale_informatica_musicale", styles: stylesTriennali, text: "Informatica musicale", iconProps: { iconName: "ScreenCast" }, },
+    { key: "triennale_informatica_com_digitale", styles: stylesTriennali, text: "Informatica comunicazione digitale", iconProps: { iconName: "ContactInfo" }, },
+    { key: "triennale_sicurezza_sistemi_reti_informatiche", styles: stylesTriennali, text: "Sicurezza sistemi e reti informatiche", iconProps: { iconName: "LaptopSecure" }, },
+    { key: "triennale_sicurezza_sistemi_reti_informatiche_online", styles: stylesTriennali, text: "Sicurezza sistemi e reti informatiche online", iconProps: { iconName: "LaptopSecure" }, },
+    { key: "magistrale_informatica", styles: stylesMagistrali, text: "Informatica (magistrale)", iconProps: { iconName: "ConnectVirtualMachine" },},
+    { key: "magistrale_sicurezza_informatica", styles: stylesMagistrali, text: "Sicurezza informatica (magistrale)", iconProps: { iconName: "ProtectRestrict" }, }
 ];
 
 const Courses = () => {
@@ -96,13 +67,22 @@ const Courses = () => {
     var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
     var initialState = states.length === 2 ? states[states.length-1] : ''
 
-    const [selectedKey, setSelectedKey] = React.useState<string>(initialState);
+    const [selectedDepartment, setSelectedDepartment] = React.useState<string>();
+    const [selectedCdl, setSelectedCdl] = React.useState<string>(initialState);
 
-    const selectionChanged = (
+    const departmentSelectionChanged = (
         ev?: React.FormEvent<HTMLElement | HTMLInputElement>,
         option?: IChoiceGroupOption
     ): void => {
-        setSelectedKey(option?.key ?? '');
+        setSelectedDepartment(option?.key ?? '');
+        //history.push(`/courses/${option?.key}/`);
+    };
+
+    const cdlSelectionChanged = (
+        ev?: React.FormEvent<HTMLElement | HTMLInputElement>,
+        option?: IChoiceGroupOption
+    ): void => {
+        setSelectedCdl(option?.key ?? '');
         history.push(`/courses/${option?.key}/`);
     };
 
@@ -124,20 +104,31 @@ const Courses = () => {
                             </p>
                         </Text>
                     </p>
-                    <p><Text style={{ fontWeight: 600 }}>Scegli un corso di laurea</Text></p>
+
+
+                    <p><Text style={{ fontWeight: 600 }}>Scegli un dipartimento</Text></p>
+                    <ChoiceGroup defaultSelectedKey="department_informatica" options={departmentsOptions} onChange={departmentSelectionChanged} />
+
                 </Text>
             </div>
-            <ChoiceGroup
-                options={options}
-                onChange={selectionChanged}
-                selectedKey={selectedKey}
-            />
+
+
             <br />
-            <div style={{ display: selectedKey ? 'block' : 'none' }}>
-                <p className='text-center'>
-                    <Text style={{ fontWeight: 600 }}>Gruppi disponibili:</Text>
-                </p>
-                <CourseListView cdl={selectedKey} />
+            <div style={{ display: selectedDepartment ? 'block' : 'none' }}>
+
+                <p><Text style={{ fontWeight: 600 }}>Scegli un corso di laurea</Text></p>
+
+                <ChoiceGroup
+                    options={cdlOptionsInformatica}
+                    onChange={cdlSelectionChanged}
+                    selectedKey={selectedCdl}
+                />
+                <div style={{ display: selectedCdl ? 'block' : 'none' }}>
+                    <p className='text-center'>
+                        <Text style={{ fontWeight: 600 }}>Gruppi disponibili:</Text>
+                    </p>
+                    <CourseListView cdl={selectedCdl} />
+                </div>
             </div>
         </Container>
     );
