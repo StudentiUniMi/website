@@ -37,7 +37,7 @@ interface Props {
 
 const HeaderMenu = (props: Props) => {
     const history = useHistory();
-
+    
     var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
     let first = states.length >0 ? states[0]: ''
     let second = states.length > 1 ? states[1] + '/' : ''

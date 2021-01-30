@@ -6,6 +6,7 @@ import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
 import { getTheme } from 'office-ui-fabric-react/lib/Styling';
 import { DocumentCard, DocumentCardDetails, DocumentCardPreview, DocumentCardTitle, IDocumentCardPreviewProps, DocumentCardType } from 'office-ui-fabric-react/lib/DocumentCard';
+import { useHistory } from 'react-router-dom';
 
 const theme = getTheme();
 const { palette, fonts } = theme;
@@ -98,6 +99,10 @@ const resources: ServiceResources[] = [
 
 
 const Services = () => {
+    const history = useHistory();
+    let path = '/services/';
+    history.push(path);
+
     return (
         <Container className="services text-center">
             <div className="text-center mb-3">

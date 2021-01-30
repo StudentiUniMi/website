@@ -4,6 +4,7 @@ import "./App.css";
 import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 
 const question = {
     fontWeight: 600,
@@ -15,6 +16,10 @@ const rules = {
 };
 
 const Rules = () => {
+    const history = useHistory();
+    let path = '/rules/';
+    history.push(path);
+
     return (
         <Container className="rules text-center">
             <Text style={{ fontSize: FontSizes.size16 }}>

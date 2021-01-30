@@ -6,6 +6,7 @@ import { FontSizes } from '@fluentui/theme';
 import { IconButton } from 'office-ui-fabric-react';
 import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
 import { Container } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 
 const HomeLinks = [
     { name: 'Canale Telegram', link: 'https://t.me/studenti_unimi', iconName: 'Send'},
@@ -28,6 +29,10 @@ const cardStyle = {
 }
 
 const Home = () => {
+    const history = useHistory();
+    let path = '/home/';
+    history.push(path);
+
     return (
         <Container className="home">
             <div className="text-center mb-4">

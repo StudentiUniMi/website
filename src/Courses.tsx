@@ -47,8 +47,21 @@ const data = [
         ]
     },
     {
+        key: 'department_matematica',
+        text: 'Dipartimento di Matematica', 
+        icon: 'TimelineMatrixView',
+        cdls: [
+            { key: "test23123214124", text: "mat" },
+            { key: "test25421421435", text: "mat mat" },
+            { key: "test3421421543543", text: "mat medicina1 medicina1" },
+            { key: "test4421412454654",  text: "mat mat e medicina1" },
+            { key: "test54214421421656546", text: "mat medicina14" }
+        ]
+    },
+    {
         key: 'department_agraria',
         text: 'Dipartimento di Agraria', 
+        disabled: true,
         icon: 'ReleaseDefinition',
         cdls: [
             { key: "test3123213", text: "medicina1" },
@@ -61,6 +74,7 @@ const data = [
     {
         key: 'department_medicina',
         text: 'Dipartimento di Medicina', 
+        disabled: true,
         icon: 'Medical',
         cdls: [
             { key: "test", text: "medicina1" },
@@ -137,8 +151,8 @@ const Courses = () => {
     const history = useHistory();
 
     var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
-    var initialDepartement = states.length >= 2 ? states[1] : ''
-    var initialCdl = states.length >= 3 ? states[2] : ''
+    var initialDepartement = states.length >= 2 ? states[1] : '';
+    var initialCdl = states.length >= 3 ? states[2] : '';
 
     const [selectedDepartment, setSelectedDepartment] = React.useState<string>(initialDepartement);
     const [selectedCdl, setSelectedCdl] = React.useState<string>(initialCdl);
