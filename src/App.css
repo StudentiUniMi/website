@@ -141,7 +141,7 @@ main {
 /* Grid system adjustments for filter container */
 @media only screen and (max-width: 540px) {
   .courses-filter-options .col-xs-12 {
-    max-width: 213px;
+    max-width: 250px;
     text-align: center;
   }
   
@@ -164,15 +164,15 @@ main {
     max-width: 280px;
     text-align: center;
   }
-  
-  .courses-filter-options .row {
-    margin-right:10%;
-    margin-left:10%;
-  }
 
   .administrators .title {
     margin-right:15%;
     margin-left:15%;
+  }
+
+  .courses-filter-options .col-xs-12 {
+    max-width: 250px;
+    text-align: center;
   }
 
 }

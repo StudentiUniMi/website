@@ -167,7 +167,7 @@ const CourseListView = (props: Props) => {
                     {
                     filteredCourses.length === 0 ? <div className="text-center"><Text style={{ fontSize: FontSizes.size14 }}>Nessun gruppo trovato.</Text></div> :
                     <FocusZone>
-                        <Container className="mb-4">
+                        <div className="mb-4">
                             <div className="row justify-content-center">
                                 <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                     <TextField
@@ -200,7 +200,7 @@ const CourseListView = (props: Props) => {
                                     />
                                 </div>
                             </div>
-                        </Container>
+                        </div>
                     <List
                         className={classNames.listGridExample}
                         items={filteredCourses}
