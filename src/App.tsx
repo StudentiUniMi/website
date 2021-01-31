@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import { HashRouter as Router } from "react-router-dom";
 import HeaderTitle from "./HeaderTitle";
-import HeaderMenu, { ItemsKeys } from "./HeaderMenu";
+import HeaderMenu from "./HeaderMenu";
 import Content from "./Content";
 import Footer from "./Footer";
 
