@@ -4,13 +4,18 @@ import './App.css';
 import { Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
 import { FontSizes } from '@fluentui/theme';
 import { Dropdown, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
+import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { useHistory } from "react-router-dom";
+
+const onRenderCaretDown = (): JSX.Element => {
+    return <Icon iconName="GripperBarHorizontal" />;
+};
 
 const dropdownStyles: Partial<IDropdownStyles> = {
     dropdown: {  border: 'none', borderStyle: 'none', height: '44px', backgroundColor: '#faf9f8', alignItems: 'center', fontSize: FontSizes.size16 },
     dropdownItems: { textAlign: 'center', alignItems: 'center' },
     caretDown: { fontSize: '15px'},
-    caretDownWrapper: { right: '25px' }
+    caretDownWrapper: { right: '25px', top: '10px' }
 };
 
 export enum ItemsKeys {
@@ -31,29 +36,50 @@ const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
     [ItemsKeys.additional_groups, "Gruppi extra"]
 ])
 
-interface Props {
-    contentChanged: (k: ItemsKeys) => void;
-}
 
-const HeaderMenu = (props: Props) => {
+const HeaderMenu = () => {
     const history = useHistory();
+
+    const getPath = React.useCallback((): Array<string|boolean> =>
+    {
+        var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
+        let first = states.length > 0 ? states[0] : ''
+        let isCorrectPathKey = Object.keys(ItemsKeys).filter(x => x === first).length !== 0
+        return [first, isCorrectPathKey]
+    }, [history.location.pathname])
+
+    let didMount = React.useRef(false)
+
+    React.useEffect(() =>
+    {
+        if(!didMount.current)
+        {
+            didMount.current = true
+            let [path, isCorrect] = getPath()
+            if(!isCorrect)
+            {
+                history.push('/home/')
+                setSelectedKey(ItemsKeys.home)
+            }
+            else
+            {
+                setSelectedKey(path as ItemsKeys)
+            }
+        }
+    }, [getPath, history])
     
-    var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
-    let first = states.length >0 ? states[0]: ''
-    let second = states.length > 1 ? states[1] + '/' : ''
-    let third = states.length > 2 ? states[2]: ''
-    
-    let isCorrectPathKey = Object.keys(ItemsKeys).filter(x => x === first).length !== 0
-    const [selectedKey, setSelectedKey] = React.useState(isCorrectPathKey ? first : ItemsKeys.home);
-    history.push(`/${selectedKey}/${second}${third}`);
-    props.contentChanged(selectedKey as ItemsKeys);
+    let [path, isCorrect] = getPath()
+
+    const [selectedKey, setSelectedKey] = React.useState(isCorrect ? path as ItemsKeys : ItemsKeys.home);
 
     const handlePivotLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
         setSelectedKey(item!.props.itemKey! as ItemsKeys);
+        history.push(`/${item!.props.itemKey!}/`)
     };
 
     const onDropdownValueChange = (event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
         setSelectedKey(item!.key! as ItemsKeys);
+        history.push(`/${item!.key! as string}/`)
     };
 
     const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }))
@@ -62,7 +88,6 @@ const HeaderMenu = (props: Props) => {
         <div style={{  boxShadow: '0px 0.5px 0.5px #b3b5b4' }} className="header-menu">
             <div className="pivot">
                 <Pivot
-                    aria-label="Main menu"
                     selectedKey={selectedKey}
                     onLinkClick={handlePivotLinkClick}
                     headersOnly={true}
@@ -78,6 +103,7 @@ const HeaderMenu = (props: Props) => {
                     onChange={onDropdownValueChange}
                     options={dropdownOptions}
                     styles={dropdownStyles}
+                    onRenderCaretDown={onRenderCaretDown}
                 />
             </div>
         </div>

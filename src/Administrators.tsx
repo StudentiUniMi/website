@@ -4,7 +4,6 @@ import './App.css';
 import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
 
 const titleStyle = {
     fontWeight: 600
@@ -56,10 +55,6 @@ const members_magistrali = [
 ];
 
 const Administrators = () => {
-    const history = useHistory();
-    let path = '/administrators/';
-    history.push(path);
-
     return (
         <Container className="administrators text-center">
 

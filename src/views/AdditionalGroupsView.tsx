@@ -34,11 +34,6 @@ const AdditionalGroupsView = () => {    // props non dovrebbe servirmi
     const groups: ExtraGroup[] = GruppiExtra;
     const columnCount = React.useRef(0);
     const rowHeight = React.useRef(0);
-
-    const history = useHistory();
-    let path = '/additional_groups/';
-    history.push(path);
-
     const getItemCountForPage = React.useCallback((itemIndex?: number, surfaceRect?: IRectangle) => {
         if (itemIndex === 0) {
             columnCount.current = Math.ceil(surfaceRect!.width / MAX_ROW_HEIGHT);
@@ -68,12 +63,10 @@ const AdditionalGroupsView = () => {    // props non dovrebbe servirmi
     return (
         <Container className="additional-groups text-center">
             <Text style={{ fontSize: FontSizes.size16 }}>
-                <p>
-                    Qui è possibile trovare gruppi aggiuntivi del network.
-                    </p>
-                <p>
+                <div className="mb-3"> Qui è possibile trovare gruppi aggiuntivi del network.</div>
+                <div className="mb-2">
                     <Text style={{ fontWeight: 600 }}>Gruppi disponibili:</Text>
-                </p>
+                </div>
             </Text>
 
 

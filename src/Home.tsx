@@ -6,7 +6,6 @@ import { FontSizes } from '@fluentui/theme';
 import { IconButton } from 'office-ui-fabric-react';
 import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
 import { Container } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
 
 const HomeLinks = [
     { name: 'Canale Telegram', link: 'https://t.me/studenti_unimi', iconName: 'Send'},
@@ -29,20 +28,16 @@ const cardStyle = {
 }
 
 const Home = () => {
-    const history = useHistory();
-    let path = '/home/';
-    history.push(path);
-
     return (
         <Container className="home">
             <div className="text-center mb-4">
                 <Text style={{ fontSize: FontSizes.size16 }}>
-                    <p className="mb-0">
+                    <div className="mb-0">
                         Network nato con lo scopo di creare un punto centrale di collegamento tra tutti i corsi di laurea dell'università degli studi di Milano.
-                    </p>
-                    <p>
+                    </div>
+                    <div>
                         Sono disponibili siti web, gruppi telegram, informazioni varie e wiki dei corsi didattici.
-                    </p>
+                    </div>
                 </Text>
             </div>
             
