@@ -64,51 +64,26 @@ const data = [
     {
         key: 'fisica', text: 'Dipartimento di Fisica', disabled: true, icon: 'ReleaseDefinition', 
         cdls: [
-            { key: "test234324", text: "medicina1" },
-            { key: "test25435435", text: "medicina1 medicina2" },
-            { key: "test3634543543", text: "medicina1 medicina1 medicina1" },
-            { key: "test4654654",  text: "medicina1 medicina1 e medicina1" },
-            { key: "test5656546", text: "medicina1233 medicina14" }
         ]
     },
     {
         key: 'matematica', text: 'Dipartimento di Matematica', disabled: true, icon: 'TimelineMatrixView',
         cdls: [
-            { key: "test23123214124", text: "mat" },
-            { key: "test25421421435", text: "mat mat" },
-            { key: "test3421421543543", text: "mat medicina1 medicina1" },
-            { key: "test4421412454654",  text: "mat mat e medicina1" },
-            { key: "test54214421421656546", text: "mat medicina14" }
         ]
     },
     {
         key: 'agraria', text: 'Dipartimento di Agraria', disabled: true, icon: 'ReleaseDefinition',
         cdls: [
-            { key: "test3123213", text: "medicina1" },
-            { key: "test2123213332", text: "medicina1 medicina2" },
-            { key: "test33232", text: "medicina1 medicina1 medicina1" },
-            { key: "test442434",  text: "medicina1 medicina1 e medicina1" },
-            { key: "test5545454", text: "medicina1233 medicina14" }
         ]
     },
     {
         key: 'medicina', text: 'Dipartimento di Medicina',  disabled: true, icon: 'Medical',
         cdls: [
-            { key: "test", text: "medicina1" },
-            { key: "test2", text: "medicina1 medicina2" },
-            { key: "test3", text: "medicina1 medicina1 medicina1" },
-            { key: "test4",  text: "medicina1 medicina1 e medicina1" },
-            { key: "test5", text: "medicina1233 medicina14" }
         ]
     },
     {
         key: 'farmacia', text: 'Dipartimento di Farmacia',  disabled: true, icon: 'MobileReport',
         cdls: [
-            { key: "test33", text: "farmacia" },
-            { key: "test244", text: "farmacia medicina2" },
-            { key: "test355", text: "farmacia medicina1 medicina1" },
-            { key: "test4222",  text: "farmacia medicina1 e medicina1" },
-            { key: "test5111", text: "farmacia medicina14" }
         ]
     }
 ]
