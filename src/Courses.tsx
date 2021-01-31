@@ -50,7 +50,7 @@ const onRenderPlaceholder = (props?: IDropdownProps): JSX.Element => {
 
 const data = [
     {
-        key: 'department_informatica', text: 'Dipartimento di Informatica', icon: 'TVMonitor',
+        key: 'informatica', text: 'Dipartimento di Informatica', icon: 'TVMonitor',
         cdls: [
             { key: "triennale_informatica", text: "Informatica" },
             { key: "triennale_informatica_musicale", text: "Informatica musicale" },
@@ -62,7 +62,7 @@ const data = [
         ]
     },
     {
-        key: 'department_fisica', text: 'Dipartimento di Fisica',  icon: 'ReleaseDefinition', 
+        key: 'fisica', text: 'Dipartimento di Fisica', disabled: true, icon: 'ReleaseDefinition', 
         cdls: [
             { key: "test234324", text: "medicina1" },
             { key: "test25435435", text: "medicina1 medicina2" },
@@ -72,7 +72,7 @@ const data = [
         ]
     },
     {
-        key: 'department_matematica', text: 'Dipartimento di Matematica', icon: 'TimelineMatrixView',
+        key: 'matematica', text: 'Dipartimento di Matematica', disabled: true, icon: 'TimelineMatrixView',
         cdls: [
             { key: "test23123214124", text: "mat" },
             { key: "test25421421435", text: "mat mat" },
@@ -82,7 +82,7 @@ const data = [
         ]
     },
     {
-        key: 'department_agraria', text: 'Dipartimento di Agraria', disabled: true, icon: 'ReleaseDefinition',
+        key: 'agraria', text: 'Dipartimento di Agraria', disabled: true, icon: 'ReleaseDefinition',
         cdls: [
             { key: "test3123213", text: "medicina1" },
             { key: "test2123213332", text: "medicina1 medicina2" },
@@ -92,7 +92,7 @@ const data = [
         ]
     },
     {
-        key: 'department_medicina', text: 'Dipartimento di Medicina',  disabled: true, icon: 'Medical',
+        key: 'medicina', text: 'Dipartimento di Medicina',  disabled: true, icon: 'Medical',
         cdls: [
             { key: "test", text: "medicina1" },
             { key: "test2", text: "medicina1 medicina2" },
@@ -102,7 +102,7 @@ const data = [
         ]
     },
     {
-        key: 'department_farmacia', text: 'Dipartimento di Farmacia',  disabled: true, icon: 'MobileReport',
+        key: 'farmacia', text: 'Dipartimento di Farmacia',  disabled: true, icon: 'MobileReport',
         cdls: [
             { key: "test33", text: "farmacia" },
             { key: "test244", text: "farmacia medicina2" },

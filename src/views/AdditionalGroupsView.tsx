@@ -10,7 +10,6 @@ import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 import GruppiExtra from '../data/ExtraGroups.json';
 import ExtraGroupView from './ExtraGroupView';
 import ExtraGroup from '../models/ExtraGroup';
-import { useHistory } from 'react-router-dom';
 
 const classNames = mergeStyleSets({
     listGridExample: {
