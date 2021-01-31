@@ -121,6 +121,7 @@ const Courses = () => {
         option?: IDropdownOption
     ): void => {
         setSelectedDepartment(option?.key as string ?? '');
+        setSelectedCdl(''); // Per resettare il corso di laurea quando cambio dipartimento, altrimenti rimane la lista dei gruppi precedente
     };
 
     const cdlSelectionChanged = (
