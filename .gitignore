@@ -263,4 +263,5 @@ build/
 # Package lock
 package-lock.json
 
+.bin
 abaco
