@@ -116,12 +116,15 @@ const data = [
 
 const Courses = () => {
     
+    const history = useHistory()
+
     const departmentSelectionChanged = (
         ev?: React.FormEvent<HTMLElement | HTMLInputElement>,
         option?: IDropdownOption
     ): void => {
         setSelectedDepartment(option?.key as string ?? '');
         setSelectedCdl(''); // Per resettare il corso di laurea quando cambio dipartimento, altrimenti rimane la lista dei gruppi precedente
+        history.push(`/courses/${option?.key as string}`)
     };
 
     const cdlSelectionChanged = (
@@ -129,26 +132,29 @@ const Courses = () => {
         option?: IDropdownOption
     ): void => {
         setSelectedCdl(option?.key as string ?? '');
+        history.push(`/courses/${selectedDepartment}/${option?.key as string}`);
     };
-    
-    const history = useHistory();
 
-    var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
-    var initialDepartement = states.length >= 2 ? states[1] : '';
-    var initialCdl = states.length >= 3 ? states[2] : '';
+    let didMount = React.useRef(false);
 
-    const [selectedDepartment, setSelectedDepartment] = React.useState<string>(initialDepartement);
-    const [selectedCdl, setSelectedCdl] = React.useState<string>(initialCdl);
-
-    /*let path = '/courses/'
-    if (selectedDepartment !== '') {
-        path += selectedDepartment + '/'
-        if (selectedCdl !== '') {
-            path += selectedCdl
+    React.useEffect(() =>
+    {
+        if(!didMount.current)
+        {
+            didMount.current = true
+            var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
+            var initialDepartment = states.length >= 2 ? states[1] : '';
+            var initialCdl = states.length >= 3 ? states[2] : '';
+            initialDepartment = data.filter(x => x.key === initialDepartment).length > 0 ? initialDepartment : ''
+            initialCdl = (initialDepartment !== '' && data.filter(x => x.key === initialDepartment)[0].cdls.filter(x => x.key === initialCdl).length >0) ? initialCdl:''
+            setSelectedCdl(initialCdl)
+            setSelectedDepartment(initialDepartment)
+            history.push(`/courses/${initialDepartment}${initialCdl !== '' ? ("/" + initialCdl) : ''}`)
         }
-    }
+    }, [history]);
 
-    history.push(path);*/
+    const [selectedDepartment, setSelectedDepartment] = React.useState<string>('');
+    const [selectedCdl, setSelectedCdl] = React.useState<string>('');
 
     let departmentOptions: IDropdownOption[] = data.map(x => ({key: x.key, text: x.text, data: {icon:x.icon}, disabled: x.disabled}));
     let cdls: any[] = []
