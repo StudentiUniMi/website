@@ -24,6 +24,12 @@
         "gruppo":"https://t.me/joinchat/Vx5GyUHQ-SeZlBeV"
     },
     {
+        "name":"Erasmus",
+        "description": "Gruppo dedicato a discussioni riguardo l'erasmus.",
+        "image": "erasmus.jpg",
+        "gruppo":"https://t.me/joinchat/ILAs4NTlJHGM2m5x"
+    },
+    {
         "name":"Gruppo freetalk",
         "description": "Chat freetalk per parlare di qualsiasi cosa.",
         "image": "free_talk.jpg",
