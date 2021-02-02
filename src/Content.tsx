@@ -7,6 +7,7 @@ import AdditionalGroups from './views/AdditionalGroupsView'
 import Administrators from './Administrators'
 import Rules from './Rules'
 import Services from './Services'
+import Representatives from './Representatives'
 import { Route, Switch } from 'react-router-dom';
 
 const Content = () => {
@@ -26,6 +27,7 @@ const Content = () => {
             <Route path='/services' render={() => wrap(<Services/>)} />
             <Route path='/additional_groups' render={() => wrap(<AdditionalGroups/>)} />
             <Route path='/administrators' render={() => wrap(<Administrators/>)} />
+            <Route path='/representatives' render={() => wrap(<Representatives/>)} />
         </Switch>
     )
 }

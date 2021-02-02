@@ -60,7 +60,7 @@ const Administrators = () => {
             <Text style={{ fontSize: FontSizes.size14 }}>
 
                 <div className="row justify-content-center">
-                    <div className="col-sm-6 col-md-4 col-lg-3 mb-5">
+                    <div className="col-sm-6 col-md-3 col-lg-3 mb-5">
                         <div style={titleStyle} className="title mb-2">Informatica</div>
                         {
                             members_informatica.map(x => {
@@ -68,7 +68,7 @@ const Administrators = () => {
                             })
                         }
                     </div>
-                    <div className="col-sm-6 col-md-4 col-lg-3 mb-5">
+                    <div className="col-sm-6 col-md-3 col-lg-3 mb-5">
                         <div style={titleStyle} className="title mb-2">Informatica musicale</div>
                         {
                             members_informatica_musicale.map(x => {
@@ -77,7 +77,7 @@ const Administrators = () => {
                             })
                         }
                     </div>
-                    <div className="col-sm-6 col-md-4 col-lg-3 mb-5">
+                    <div className="col-sm-6 col-md-3 col-lg-3 mb-5">
                         <div style={titleStyle} className="title mb-2">Informatica per la comunicazione digitale</div>
                         {
                             members_informatica_com_dig.map(x => {
@@ -86,7 +86,7 @@ const Administrators = () => {
                             })
                         }
                     </div>
-                    <div className="col-sm-6 col-md-4 col-lg-3 mb-5">
+                    <div className="col-sm-6 col-md-3 col-lg-3 mb-5">
                         <div style={titleStyle} className="title mb-2">Sicurezza dei sistemi e delle reti informatiche</div>
                         {
                             members_sicurezza_sistemi_reti_informatiche.map(x => {
@@ -95,7 +95,7 @@ const Administrators = () => {
                             })
                         }
                     </div>
-                    <div className="col-sm-6 col-md-4 col-lg-3 mb-5">
+                    <div className="col-sm-6 col-md-3 col-lg-3 mb-5">
                         <div style={titleStyle} className="title mb-2">Sicurezza dei sistemi e delle reti informatiche online</div>
                         {
                             members_sicurezza_sistemi_reti_informatiche_online.map(x => {
@@ -104,7 +104,7 @@ const Administrators = () => {
                             })
                         }
                     </div>
-                    <div className="col-sm-6 col-md-4 col-lg-3 mb-5">
+                    <div className="col-sm-6 col-md-3 col-lg-3 mb-5">
                         <div style={titleStyle} className="title mb-2">Informatica (Magistrale)</div>
                         {
                             members_magistrale_informatica.map(x => {
@@ -113,7 +113,7 @@ const Administrators = () => {
                             })
                         }
                     </div>
-                    <div className="col-sm-6 col-md-4 col-lg-3 mb-5">
+                    <div className="col-sm-6 col-md-3 col-lg-3 mb-5">
                         <div style={titleStyle} className="title mb-2">Sicurezza informatica (Magistrale)</div>
                         {
                             members_magistrale_sicurezza_informatica.map(x => {
