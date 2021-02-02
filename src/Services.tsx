@@ -109,8 +109,8 @@ const Services = () => {
             </div>
             <div className="row m-2 justify-content-center">
                 {
-                    resources.map(x => (
-                        <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-2">
+                    resources.map((x, i) => (
+                        <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-2" key={i}>
                             <DocumentCard
                                 aria-label={x.name}
                                 type={DocumentCardType.compact}

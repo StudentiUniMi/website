@@ -164,43 +164,43 @@ const CourseListView = (props: Props) => {
 
     return (
         <Container className="courses-filter-options">
-            <FocusZone>
-                <Container className="mb-4">
-                    <div className="row justify-content-center">
-                        <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <TextField
-                                label={'Cerca per nome'}
-                                onChange={onNameFilterChanged}                
-                            />
-                        </div>
-                        <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            {
-                                props.cdl === 'magistrale_informatica' ? 
-                                <Dropdown options={yearFilterOptions}
-                                label={`Cerca per anno`}
-                                onChange={onYearFilterChanged}
-                                selectedKey={yearFilter}
-                                disabled
-                                />
-                                :
-                                <Dropdown options={yearFilterOptions}
-                                label={`Cerca per anno`}
-                                onChange={onYearFilterChanged}
-                                selectedKey={yearFilter}
-                                />
-                            }
-                        </div>
-                        <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <Dropdown options={semesterFilterOptions}
-                                label={`Cerca per semestre`}
-                                onChange={onSemesterFilterChanged}
-                                selectedKey={semesterFilter}
-                            />
-                        </div>
-                    </div>
-                </Container>
                     {
-                    filteredCourses.length === 0 ? <div className="text-center"><Text style={{ fontSize: FontSizes.size14 }}>Nessun corso trovato.</Text></div> :
+                    filteredCourses.length === 0 ? <div className="text-center"><Text style={{ fontSize: FontSizes.size14 }}>Nessun gruppo trovato.</Text></div> :
+                    <FocusZone>
+                        <div className="mb-4">
+                            <div className="row justify-content-center">
+                                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <TextField
+                                        label={'Cerca per nome'}
+                                        onChange={onNameFilterChanged}                
+                                    />
+                                </div>
+                                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    {
+                                        props.cdl === 'magistrale_informatica' ? 
+                                        <Dropdown options={yearFilterOptions}
+                                        label={`Cerca per anno`}
+                                        onChange={onYearFilterChanged}
+                                        selectedKey={yearFilter}
+                                        disabled
+                                        />
+                                        :
+                                        <Dropdown options={yearFilterOptions}
+                                        label={`Cerca per anno`}
+                                        onChange={onYearFilterChanged}
+                                        selectedKey={yearFilter}
+                                        />
+                                    }
+                                </div>
+                                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <Dropdown options={semesterFilterOptions}
+                                        label={`Cerca per semestre`}
+                                        onChange={onSemesterFilterChanged}
+                                        selectedKey={semesterFilter}
+                                    />
+                                </div>
+                            </div>
+                        </div>
                     <List
                         className={classNames.listGridExample}
                         items={filteredCourses}
@@ -209,8 +209,8 @@ const CourseListView = (props: Props) => {
                         renderedWindowsAhead={4}
                         onRenderCell={getCell}
                     />
-                    }
-            </FocusZone>
+                </FocusZone>
+                }
         </Container>
     );
 };

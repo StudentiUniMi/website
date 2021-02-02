@@ -15,11 +15,11 @@ const Footer = () => {
                 <div className="row" style={{ backgroundColor: '#cccccc' }}>
 
                     <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-4 mb-md-0">
-                        <p className="mb-2">
+                        <div className="mb-2">
                             <Text style={{ fontWeight: 600 }}>
                                 <Link href="https://github.com/StudentiUnimi" className="text-decoration-none">Studenti UniMi &copy;</Link>
                             </Text>
-                        </p>
+                        </div>
                         
                         <div className="mb-1">
                             <ul className="list-unstyled mb-0">
@@ -52,9 +52,9 @@ const Footer = () => {
                     </div>
 
                     <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-4 mb-md-0">
-                        <p className="mb-1">
+                        <div className="mb-1">
                             <Text style={{ fontWeight: 600 }}>Link utili</Text>
-                        </p>
+                        </div>
 
                         <ul className="list-unstyled mb-3">
                             <li>
@@ -81,19 +81,18 @@ const Footer = () => {
                     </div>
 
                     <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-4 mb-md-0 contacts">
-                        <p className="mb-1">
+                        <div className="mb-1">
                             <Text style={{ fontWeight: 600 }}>Contatti</Text>
-                        </p>
+                        </div>
 
-                        <p className="mb-0">
+                        <div className="mb-0">
                             <Text style={{ fontSize: FontSizes.size12 }}>
                                 <p className="mb-1 text">
-                                    Per qualsiasi dubbio o proposta è possibile contattare
-                                    il creatore del network.
+                                    Per qualsiasi dubbio o proposta è possibile contattare:
                                 </p>
                                 <Link href="https://t.me/giuseppetm" className="text-decoration-none" target="_blank"> @giuseppetm</Link>
                             </Text>
-                        </p>
+                        </div>
                     </div>
                 </div>
 

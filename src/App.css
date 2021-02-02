@@ -77,7 +77,7 @@ main {
 
 
 /* Responsive menu and title */
-@media only screen and (min-width: 545px) {
+@media only screen and (min-width: 716px) {
   .header-menu .pivot {
     display: block;
   }
@@ -90,7 +90,7 @@ main {
     margin-left: 10px;
   }
 }
-@media only screen and (max-width: 544px) {
+@media only screen and (max-width: 715px) {
   .header-menu .pivot {
     display: none;
   }
@@ -141,11 +141,11 @@ main {
 /* Grid system adjustments for filter container */
 @media only screen and (max-width: 540px) {
   .courses-filter-options .col-xs-12 {
-    max-width: 213px;
+    max-width: 250px;
     text-align: center;
   }
   
-  .courses-filter-options .row {
+  .courses-filter-options .row, .department-choose .row {
     margin-right:10%;
     margin-left:10%;
   }
@@ -160,9 +160,9 @@ main {
 
 /* Section adjustments */
 @media only screen and (max-width: 575px) {
-  .courses-filter-options .row {
-    margin-right:10%;
-    margin-left:10%;
+  .department-choose .col-sm-6 {
+    max-width: 280px;
+    text-align: center;
   }
 
   .administrators .title {
@@ -170,6 +170,20 @@ main {
     margin-left:15%;
   }
 
+  .courses-filter-options .col-xs-12 {
+    max-width: 250px;
+    text-align: center;
+  }
+
+  .representatives .people-list .col-xs-12 {
+    margin-left:15%;
+    max-width: 250px;
+    text-align: center;
+  }
+
+  .representatives .people-list {
+    justify-content: center;
+  }
 }
 /* End Faq_proposer form and other section adjustments */
 
@@ -188,7 +202,7 @@ main {
 }
 
 .header-menu .ms-Dropdown-title {
-  line-height: 40px;
+  line-height: 45px;
   padding:0;
 }
 

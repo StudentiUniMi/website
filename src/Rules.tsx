@@ -17,19 +17,21 @@ const rules = {
 const Rules = () => {
     return (
         <Container className="rules text-center">
-            <Text style={{ fontSize: FontSizes.size16 }}>
-                <p className="mb-0">
-                    Qui è possibile trovare il regolamento del network.
-                </p>
-                <p>
-                    Si consiglia di leggere le regole indicate prima di utilizzare uno qualsiasi dei gruppi disponibili.
-                </p>
-            </Text>
+            <div className="mb-2">
+                <Text style={{ fontSize: FontSizes.size16 }}>
+                    <div className="mb-0">
+                        Qui è possibile trovare il regolamento del network.
+                    </div>
+                    <div>
+                        Si consiglia di leggere le regole indicate prima di utilizzare uno qualsiasi dei gruppi disponibili.
+                    </div>
+                </Text>
+            </div>
 
             <div style={{ 'marginLeft': '5%', 'marginRight': '5%'}}>
                 <Text style={{ fontSize: FontSizes.size12 }}>
 
-                    <p className="mb-3">Di seguito è possibile trovare il <Text style={{ fontWeight: 600, fontSize: FontSizes.size12}}>regolamento.</Text></p>
+                    <div className="mb-3">Di seguito è possibile trovare il <Text style={{ fontWeight: 600, fontSize: FontSizes.size12}}>regolamento.</Text></div>
 
                     <hr />
                     <div id="accordion" className="mb-3">
@@ -48,18 +50,18 @@ const Rules = () => {
                                 <div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                                     <div className="card-body">
                                         
-                                        <p className="mb-1" style={rules}>Domanda con risposta indicata sul sito del docente</p>
-                                        <p className="mb-3 ml-3 mr-3">
+                                        <div className="mb-1" style={rules}>Domanda con risposta indicata sul sito del docente</div>
+                                        <div className="mb-3 ml-3 mr-3">
                                             L'utente riceve un warn con successiva indicazione su dove trovare l'informazione richiesta.
 	                                        Dopo 3 warn l'utente viene mutato per un giorno, a discrezione degli amministratori.
-                                        </p>
+                                        </div>
 
-                                        <p className="mb-1" style={rules}>Domanda riguardo informazioni banali e già chieste precedentemente nella chat</p>
-                                        <p className="mb-3 ml-3 mr-3">
+                                        <div className="mb-1" style={rules}>Domanda riguardo informazioni banali e già chieste precedentemente nella chat</div>
+                                        <div className="mb-3 ml-3 mr-3">
                                             Nessuna penalità se non sono presenti le FAQ del gruppo del relativo corso, altrimenti vale la regola precedente, ovvero: l'utente riceve un warn con successiva indicazione della presenza delle FAQ.
                                             Dopo 3 warn l'utente viene mutato per un giorno, a discrezione degli amministratori.
                                             È ovviamente consigliato (nel caso non ci fossero ancora le FAQ di quel corso) di controllare i messaggi precedenti nella chat per scoprire se è già stata data risposta alla vostra domanda.
-                                        </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -79,26 +81,26 @@ const Rules = () => {
                                 <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                     <div className="card-body">
                                         
-                                        <p className="mb-1" style={rules}>Bestemmie e linguaggio vivace</p>
-                                        <p className="mb-3 ml-3 mr-3">
+                                        <div className="mb-1" style={rules}>Bestemmie e linguaggio vivace</div>
+                                        <div className="mb-3 ml-3 mr-3">
                                             Le bestemmie sono vietate, pena warn per quelle innocenti, e mute o ban nei casi peggiori, a discrezione degli amministratori. 
                                             Il linguaggio vivace è permesso finchè non diventa spam: in quel caso l'utente verrà warnato o mutato per un certo periodo di tempo, 
                                             sempre a discrezione degli amministratori.
-                                        </p>
+                                        </div>
                                         
-                                        <p className="mb-1" style={rules}>Insulti e offese</p>
-                                        <p className="mb-3 ml-3 mr-3">
+                                        <div className="mb-1" style={rules}>Insulti e offese</div>
+                                        <div className="mb-3 ml-3 mr-3">
                                             Sono entrambi vietati, pena warn per gli insulti / offese leggeri, mute o ban per quelli più pesanti, a discrezione degli amministratori.
 	                                        Una nota riguardo i docenti: si può benissimo criticare (nei limiti del normale) ma non si accettano assolutamente insulti verso di essi. 
                                             Nell'ultimo caso specificato l'utente verrà warnato o mutato, e nei casi peggiori bannato, a discrezione degli amministratori.
-                                        </p>
+                                        </div>
 
-                                        <p className="mb-1" style={rules}>Spam e offtopic</p>
-                                        <p className="mb-3 ml-3 mr-3">
+                                        <div className="mb-1" style={rules}>Spam e offtopic</div>
+                                        <div className="mb-3 ml-3 mr-3">
                                             Lo spam è vietato, pena warn o mute a seconda della gravità, a discrezione degli amministratori.
                                             Le conversazioni offtopic sono vietate sia nei gruppi specifici dei corsi che in quelli generali degli anni accademici, anche in questo caso pena warn o mute a seconda della gravità,
                                             a discrezione degli amministratori. Se volete parlare liberamente di argomenti più generali, esiste un gruppo apposito che trovate nella lista di gruppi aggiuntivi sul sito web del network.
-                                        </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -118,29 +120,29 @@ const Rules = () => {
                                 <div id="collapseThree" className="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                                     <div className="card-body">
                                         
-                                        <p className="mb-1" style={rules}>Nome e username</p>
-                                        <p className="mb-3 ml-3 mr-3">
+                                        <div className="mb-1" style={rules}>Nome e username</div>
+                                        <div className="mb-3 ml-3 mr-3">
                                             Gli utenti devono essere identificabili sul network, quindi è obbligatorio utilizzare un nome che sia chiaro, come
                                             il nome di persona o un breve appellativo. Per quanto riguarda l'username è caldamente consigliato (ma non obbligatorio)
                                             tenerlo visibile e non nascosto: in questo modo la gestione degli utenti risulta più facile agli amministratori
                                             del network.
-                                        </p>
+                                        </div>
                                         
-                                        <p className="mb-1" style={rules}>Politica</p>
-                                        <p className="mb-3 ml-3 mr-3">
+                                        <div className="mb-1" style={rules}>Politica</div>
+                                        <div className="mb-3 ml-3 mr-3">
                                             Il network e i gruppi telegram sono nati come spazio politicamente neutrale e il più possibile accogliente, a disposizione degli studenti. 
                                             Non sono di proprietà o vanto di alcuna lista. Chiunque manderà messaggi di propaganda elettorale e quant'altro verrà istantaneamente 
                                             bannato da tutti i gruppi del network, a discrezione degli amministratori.
-                                        </p>
+                                        </div>
 
-                                        <p className="mb-1" style={rules}>Codice</p>
-                                        <p className="mb-3 ml-3 mr-3">
+                                        <div className="mb-1" style={rules}>Codice</div>
+                                        <div className="mb-3 ml-3 mr-3">
                                             I gruppi del Network non permettono l'invio di <b>immagini</b> per condividere codice. 
                                             Se il codice in questione supera le 5 righe deve essere condiviso attraverso l'utilizzo di apposite piattaforme 
                                             come <a href="https://pastebin.com/">Pastebin</a> o meglio ancora <a href="https://gist.github.com/">Gist</a>.
                                             In caso contrario (se il codice è minore o uguale di 4 righe) è permesso inviarlo tramite un semplice messaggio ma usando l'apposita formattazione
                                             di testo per il codice che telegram mette a disposizione. E' permesso invece inviare screen (e non immagini scattate da cellulare) di eventuali log, shell, e simili.
-                                        </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -149,21 +151,21 @@ const Rules = () => {
 
                     <hr />
                     <div style={question} className="mb-2">Perchè abbiamo introdotto un regolamento?</div>
-                    <p className="mb-2">
-                        <p className="mb-0">Vogliamo rendere chiari i motivi per cui abbiamo deciso di regolamentare i gruppi del nostro network.</p>
-                        <p className="mb-0">Abbiamo notato che la maggior parte di essi erano tempestati di domande banali, fatte più volte al giorno, la cui risposta era facilmente trovabile.
-                        Questo riduce la qualità della chat e scoraggia la partecipazione di studenti più attenti.</p> 
-                        <p className="mb-0">Per questo motivo abbiamo deciso di provare a limitare il fenomeno, da una parte ammonendo chi continua a fare interventi non produttivi, e dall'altra fornendo un modo facile e veloce per trovare le informazioni più importanti, 
-                        tramite le pagine faq di ogni insegnamento.</p>
-                    </p>
+                    <div className="mb-2">
+                        <div className="mb-0">Vogliamo rendere chiari i motivi per cui abbiamo deciso di regolamentare i gruppi del nostro network.</div>
+                        <div className="mb-0">Abbiamo notato che la maggior parte di essi erano tempestati di domande banali, fatte più volte al giorno, la cui risposta era facilmente trovabile.
+                        Questo riduce la qualità della chat e scoraggia la partecipazione di studenti più attenti.</div> 
+                        <div className="mb-0">Per questo motivo abbiamo deciso di provare a limitare il fenomeno, da una parte ammonendo chi continua a fare interventi non produttivi, e dall'altra fornendo un modo facile e veloce per trovare le informazioni più importanti, 
+                        tramite le pagine faq di ogni insegnamento.</div>
+                    </div>
                 
                     <div style={question} className="mb-2">Dove trovo le faq dei corsi?</div>
-                    <p className="mb-3">
-                        <p className="mb-0">Nella wiki è possibile trovare le faq dei corsi didattici: al momento solo Informatica ne è dotata.</p> 
-                        <p className="mb-0">Ovviamente se un gruppo di un corso didattico del network non ha faq disponibili non vuol dire che sia possibile chiedere domande banali e quant'altro.
+                    <div className="mb-3">
+                        <div className="mb-0">Nella wiki è possibile trovare le faq dei corsi didattici: al momento solo Informatica ne è dotata.</div> 
+                        <div className="mb-0">Ovviamente se un gruppo di un corso didattico del network non ha faq disponibili non vuol dire che sia possibile chiedere domande banali e quant'altro.
                         Siete invitati a cercare autonomamente e magari andando nelle chat precedenti per trovare risposte inerenti.
-                        In caso non si trovi nulla sarà possibile chiedere senza problemi il vostro dubbio o domanda.</p> 
-                    </p>
+                        In caso non si trovi nulla sarà possibile chiedere senza problemi il vostro dubbio o domanda.</div> 
+                    </div>
                 
                 </Text>
             </div>

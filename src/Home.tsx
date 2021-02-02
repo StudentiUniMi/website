@@ -32,20 +32,20 @@ const Home = () => {
         <Container className="home">
             <div className="text-center mb-4">
                 <Text style={{ fontSize: FontSizes.size16 }}>
-                    <p className="mb-0">
+                    <div className="mb-0">
                         Network nato con lo scopo di creare un punto centrale di collegamento tra tutti i corsi di laurea dell'università degli studi di Milano.
-                    </p>
-                    <p>
+                    </div>
+                    <div>
                         Sono disponibili siti web, gruppi telegram, informazioni varie e wiki dei corsi didattici.
-                    </p>
+                    </div>
                 </Text>
             </div>
             
             <div className="row m-3 justify-content-center">
                 {
-                    HomeLinks.map(x => {
+                    HomeLinks.map((x, i) => {
                         return (
-                        <div className="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-xs-12">
+                            <div className="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-xs-12" key={i}>
                             <div className="card m-auto text-center" style={cardStyle}>
                                 <div className="card-body">
                                     <Link href={x.link} target="_blank">
