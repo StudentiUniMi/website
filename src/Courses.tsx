@@ -9,6 +9,9 @@ import { useHistory } from 'react-router-dom';
 import { Dropdown, IDropdownOption, IDropdownProps } from 'office-ui-fabric-react/lib/Dropdown';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import CourseListView from "./views/CourseListView";
+import data from './data/Data.json'
+import Degree from "./models/Degree";
+import Department from "./models/Department";
 
 initializeIcons();
 
@@ -47,8 +50,7 @@ const onRenderPlaceholder = (props?: IDropdownProps): JSX.Element => {
     );
 };
 
-
-const data = [
+/*const data = [
     {
         key: 'informatica', text: 'Dipartimento di Informatica', icon: 'TVMonitor',
         cdls: [
@@ -86,7 +88,7 @@ const data = [
         cdls: [
         ]
     }
-]
+]*/
 
 
 const Courses = () => {
@@ -99,7 +101,7 @@ const Courses = () => {
     ): void => {
         setSelectedDepartment(option?.key as string ?? '');
         setSelectedCdl(''); // Per resettare il corso di laurea quando cambio dipartimento, altrimenti rimane la lista dei gruppi precedente
-        history.push(`/courses/${option?.key as string}`)
+        history.push(`/courses`)
     };
 
     const cdlSelectionChanged = (
@@ -107,7 +109,7 @@ const Courses = () => {
         option?: IDropdownOption
     ): void => {
         setSelectedCdl(option?.key as string ?? '');
-        history.push(`/courses/${selectedDepartment}/${option?.key as string}`);
+        history.push(`/courses/${option?.key as string}`);
     };
 
     let didMount = React.useRef(false);
@@ -118,28 +120,27 @@ const Courses = () => {
         {
             didMount.current = true
             var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
-            var initialDepartment = states.length >= 2 ? states[1] : '';
-            var initialCdl = states.length >= 3 ? states[2] : '';
-            initialDepartment = data.filter(x => x.key === initialDepartment).length > 0 ? initialDepartment : ''
-            initialCdl = (initialDepartment !== '' && data.filter(x => x.key === initialDepartment)[0].cdls.filter(x => x.key === initialCdl).length >0) ? initialCdl:''
+            var initialCdl = states.length >= 2 ? states[1] : '';
+            var possibleDepartments = data.departments.filter(x => x.cdls.filter(y => y.id === initialCdl).length > 0)
+            let initialDepartment = possibleDepartments.length > 0 ? possibleDepartments[0].id : ''
             setSelectedCdl(initialCdl)
             setSelectedDepartment(initialDepartment)
-            history.push(`/courses/${initialDepartment}${initialCdl !== '' ? ("/" + initialCdl) : ''}`)
+            history.push(`/courses/${initialCdl}`)
         }
     }, [history]);
 
     const [selectedDepartment, setSelectedDepartment] = React.useState<string>('');
     const [selectedCdl, setSelectedCdl] = React.useState<string>('');
 
-    let departmentOptions: IDropdownOption[] = data.map(x => ({key: x.key, text: x.text, data: {icon:x.icon}, disabled: x.disabled}));
-    let cdls: any[] = []
+    let departmentOptions: IDropdownOption[] = data.departments.map(x => ({key: x.id, text: x.name ?? "", data: {icon:x.icon}, disabled: x.cdls.length === 0}));
+    let cdls: Degree[] = []
        
-    if(selectedDepartment!=='') {
-        let department = data.filter(x => x.key === selectedDepartment)[0]
+    if(selectedDepartment !=='') {
+        let department: Department | undefined = data.departments.filter(x => x.id === selectedDepartment)[0]
         cdls = department.cdls
     }
 
-    let cdlsOptions: IDropdownOption[] = cdls.map(x => ({key: x.key, text: x.text, data: {icon:x.icon}}));
+    let cdlsOptions: IDropdownOption[] = cdls.map(x => ({key: x.id, text: x.name ?? ""}));
 
 
     return (

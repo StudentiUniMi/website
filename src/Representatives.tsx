@@ -6,27 +6,17 @@ import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { Dropdown, IDropdownOption, IDropdownStyles, IDropdownProps } from 'office-ui-fabric-react/lib/Dropdown';
+import PeopleListView from './views/PeopleListView';
+import data from './data/Data.json';
+import Person from './models/Person';
 
-const departmentOptions = [
-    {
-        key: 'informatica', text: 'Dipartimento di Informatica', data: {icon: 'TVMonitor'},
-    },
-    {
-        key: 'fisica', text: 'Dipartimento di Fisica', disabled: true, data: {icon: 'ReleaseDefinition'}, 
-    },
-    {
-        key: 'matematica', text: 'Dipartimento di Matematica', disabled: true, data: {icon: 'TimelineMatrixView'},
-    },
-    {
-        key: 'agraria', text: 'Dipartimento di Agraria', disabled: true, data: {icon: 'ReleaseDefinition'},
-    },
-    {
-        key: 'medicina', text: 'Dipartimento di Medicina',  disabled: true, data: {icon: 'Medical'},
-    },
-    {
-        key: 'farmacia', text: 'Dipartimento di Farmacia',  disabled: true, data: {icon: 'MobileReport'},
-    }
-];
+const departmentOptions : IDropdownOption[] = data.departments.map(x => ({
+        key: x.id,
+        text: x.name,
+        data: {
+            icon: x.icon
+        }
+    }))
 
 const dropdownStyles: Partial<IDropdownStyles> = { dropdown: { } };
 
@@ -74,18 +64,20 @@ const Representatives = () => {
         setSelectedDepartment(option?.key as string ?? '');
     };
 
+    let representatives: Person[] = data.departments.filter(x => x.id === selectedDepartment)[0]?.representatives ?? []
+
     return (
         <Container className="representatives-tutors text-center">
 
-        <div className="mb-3">
-            <Text style={{ fontSize: FontSizes.size14 }}>
-                Il rappresentante degli studenti è un ruolo molto importante ed altamente formativo, 
-                che garantisce a tutti gli studenti universitari un supporto alle difficoltà che può incontrare durante il periodo di studio. 
-                Il suo impegno è quello di assicurare presenza e azione nei vari organi dell'Ateneo, relativemente alla didattica, all'organizzazione delle attività formative e dei servizi degli studenti.
-                Di seguito è presente la lista dei rappresentanti di ogni dipartimento.
-            </Text>
-        </div>
-        <div>
+            <div className="mb-3">
+                <Text style={{ fontSize: FontSizes.size14 }}>
+                    Il rappresentante degli studenti è un ruolo molto importante ed altamente formativo, 
+                    che garantisce a tutti gli studenti universitari un supporto alle difficoltà che può incontrare durante il periodo di studio. 
+                    Il suo impegno è quello di assicurare presenza e azione nei vari organi dell'Ateneo, relativemente alla didattica, all'organizzazione delle attività formative e dei servizi degli studenti.
+                    Di seguito è presente la lista dei rappresentanti di ogni dipartimento.
+                </Text>
+            </div>
+            <div className="mb-3">
                 <Dropdown
                     placeholder="Seleziona un dipartimento"
                     label="Seleziona un dipartimento"
@@ -97,7 +89,11 @@ const Representatives = () => {
                     onRenderTitle={onRenderTitle}
                     onRenderOption={onRenderOption}
                 />
-        </div>
+            </div>
+
+            <div>
+                <PeopleListView data={representatives}/>
+            </div>
             
 
         </Container>

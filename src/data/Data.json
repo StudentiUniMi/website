@@ -1,0 +1,131 @@
+{
+    "departments": [
+        {
+            "id": "informatica",
+            "name": "Dipartimento di Informatica",
+            "description": "",
+            "icon": "TVMonitor",
+            "representatives": [
+                {
+                    "id": "",
+                    "name": "Giuseppe",
+                    "surname": "Del Campo"
+                },
+                {
+                    "id": "",
+                    "name": "Giuseppe",
+                    "surname": "Del Campo"
+                },
+                {
+                    "id": "",
+                    "name": "Giuseppe",
+                    "surname": "Del Campo"
+                },
+                {
+                    "id": "",
+                    "name": "Giuseppe",
+                    "surname": "Del Campo"
+                },
+                {
+                    "id": "",
+                    "name": "Giuseppe",
+                    "surname": "Del Campo"
+                },
+                {
+                    "id": "",
+                    "name": "Giuseppe",
+                    "surname": "Del Campo"
+                },
+                {
+                    "id": "",
+                    "name": "Giuseppe",
+                    "surname": "Del Campo"
+                },
+                {
+                    "id": "",
+                    "name": "Giuseppe",
+                    "surname": "Del Campo"
+                },
+                {
+                    "id": "",
+                    "name": "Giuseppe",
+                    "surname": "Del Campo"
+                },
+                {
+                    "id": "",
+                    "name": "Giuseppe",
+                    "surname": "Del Campo"
+                }
+            ],
+            "cdls": [
+                {
+                    "id":"triennale_informatica",
+                    "name":"Informatica",
+                    "description":"",
+                    "courses": [
+                    ]
+                },
+                {
+                    "id":"triennale_informatica_musicale",
+                    "name":"Informatica musicale",
+                    "description":"",
+                    "courses": [
+                    ]
+                },
+                {
+                    "id":"triennale_informatica_com_digitale",
+                    "name":"Informatica comunicazione digitale",
+                    "description":"",
+                    "courses": [
+                    ]
+                },
+                {
+                    "id":"triennale_sicurezza_sistemi_reti_informatiche",
+                    "name":"Sicurezza sistemi e reti informatiche",
+                    "description":"",
+                    "courses": [
+                    ]
+                },
+                {
+                    "id":"triennale_sicurezza_sistemi_reti_informatiche_online",
+                    "name":"Sicurezza sistemi e reti informatiche online",
+                    "description":"",
+                    "courses": [
+                    ]
+                },
+                {
+                    "id":"magistrale_informatica",
+                    "name":"Informatica (magistrale)",
+                    "description":"",
+                    "courses": [
+                    ]
+                },
+                {
+                    "id":"magistrale_sicurezza_informatica",
+                    "name":"Sicurezza informatica (magistrale)",
+                    "description":"",
+                    "courses": [
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "fisica",
+            "name": "Dipartimento di Fisica",
+            "description": "",
+            "icon": "ReleaseDefinition",
+            "representatives": [
+            ],
+            "cdls": [
+                {
+                    "id":"triennale_fisica",
+                    "name":"Fisica",
+                    "description":"",
+                    "courses": [
+
+                    ]
+                }
+            ]
+        }
+    ]
+}
