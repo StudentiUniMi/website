@@ -175,6 +175,15 @@ main {
     text-align: center;
   }
 
+  .representatives .people-list .col-xs-12 {
+    margin-left:15%;
+    max-width: 250px;
+    text-align: center;
+  }
+
+  .representatives .people-list {
+    justify-content: center;
+  }
 }
 /* End Faq_proposer form and other section adjustments */
 

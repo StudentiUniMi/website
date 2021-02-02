@@ -10,15 +10,9 @@ import PeopleListView from './views/PeopleListView';
 import data from './data/Data.json';
 import Person from './models/Person';
 
-const departmentOptions : IDropdownOption[] = data.departments.map(x => ({
-        key: x.id,
-        text: x.name,
-        data: {
-            icon: x.icon
-        }
-    }))
+const departmentOptions: IDropdownOption[] = data.departments.map(x => ({key: x.id, text: x.name ?? "", data: {icon:x.icon}, disabled: x.cdls.length === 0}));
 
-const dropdownStyles: Partial<IDropdownStyles> = { dropdown: { } };
+const dropdownStyles: Partial<IDropdownStyles> = { dropdown: {  } };
 
 const iconStyles = { marginRight: '8px' };
 const onRenderOption = (option?: IDropdownOption): JSX.Element => {
@@ -67,7 +61,7 @@ const Representatives = () => {
     let representatives: Person[] = data.departments.filter(x => x.id === selectedDepartment)[0]?.representatives ?? []
 
     return (
-        <Container className="representatives-tutors text-center">
+        <Container className="representatives text-center">
 
             <div className="mb-3">
                 <Text style={{ fontSize: FontSizes.size14 }}>
@@ -77,7 +71,7 @@ const Representatives = () => {
                     Di seguito è presente la lista dei rappresentanti di ogni dipartimento.
                 </Text>
             </div>
-            <div className="mb-3">
+            <Container className="mb-4 justify-content-center" style={{maxWidth: '500px'}}>
                 <Dropdown
                     placeholder="Seleziona un dipartimento"
                     label="Seleziona un dipartimento"
@@ -89,7 +83,7 @@ const Representatives = () => {
                     onRenderTitle={onRenderTitle}
                     onRenderOption={onRenderOption}
                 />
-            </div>
+            </Container>
 
             <div>
                 <PeopleListView data={representatives}/>

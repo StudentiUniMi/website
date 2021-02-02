@@ -43,7 +43,7 @@ const members_magistrale_informatica = [
 ];
 
 const members_magistrale_sicurezza_informatica = [
-    { username: '@Spacer_ASC', role:'' }
+    { username: 'Spacer_ASC', role:'' }
 ];
 
 const Administrators = () => {
@@ -53,7 +53,7 @@ const Administrators = () => {
             <Text style={{ fontSize: FontSizes.size16 }}>
                 <p className="mb-5">
                     Ogni corso di laurea e i suoi relativi gruppi telegram hanno come riferimento degli amministratori che possono
-                    essere contattati in caso di necessità. Qui è possibile trovare la lista degli admin di ogni corso di laurea.
+                    essere contattati in caso di necessità. Qui è possibile trovare la lista degli admin di ogni corso di laurea (per ora solo dipartimento di Informatica).
                 </p>
             </Text>
 

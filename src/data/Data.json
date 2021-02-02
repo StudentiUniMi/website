@@ -8,8 +8,18 @@
             "representatives": [
                 {
                     "id": "",
-                    "name": "Giuseppe",
-                    "surname": "Del Campo"
+                    "name": "Antoniolli",
+                    "surname": "Jacopo"
+                },
+                {
+                    "id": "",
+                    "name": "Enrico",
+                    "surname": "Arrigotti"
+                },
+                {
+                    "id": "",
+                    "name": "Davide",
+                    "surname": "Busolin"
                 },
                 {
                     "id": "",
@@ -18,43 +28,53 @@
                 },
                 {
                     "id": "",
-                    "name": "Giuseppe",
-                    "surname": "Del Campo"
+                    "name": "Lorenzo",
+                    "surname": "Di Cola"
                 },
                 {
                     "id": "",
-                    "name": "Giuseppe",
-                    "surname": "Del Campo"
+                    "name": "Ettore Tancredi",
+                    "surname": "Galante"
                 },
                 {
                     "id": "",
-                    "name": "Giuseppe",
-                    "surname": "Del Campo"
+                    "name": "Irene Lara",
+                    "surname": "Galimi"
                 },
                 {
                     "id": "",
-                    "name": "Giuseppe",
-                    "surname": "Del Campo"
+                    "name": "Luca",
+                    "surname": "Giuliani"
                 },
                 {
                     "id": "",
-                    "name": "Giuseppe",
-                    "surname": "Del Campo"
+                    "name": "Renato",
+                    "surname": "Graziano"
                 },
                 {
                     "id": "",
-                    "name": "Giuseppe",
-                    "surname": "Del Campo"
+                    "name": "Giulia",
+                    "surname": "Mattavelli"
                 },
                 {
                     "id": "",
-                    "name": "Giuseppe",
-                    "surname": "Del Campo"
+                    "name": "Lorenzo",
+                    "surname": "Mazzi"
                 },
                 {
                     "id": "",
-                    "name": "Giuseppe",
-                    "surname": "Del Campo"
+                    "name": "Davide",
+                    "surname": "Rusconi"
+                },
+                {
+                    "id": "",
+                    "name": "Luca",
+                    "surname": "Trecarichi"
+                },
+                {
+                    "id": "",
+                    "name": "Pietro",
+                    "surname": "Zola"
                 }
             ],
             "cdls": [
@@ -117,14 +137,46 @@
             "representatives": [
             ],
             "cdls": [
-                {
-                    "id":"triennale_fisica",
-                    "name":"Fisica",
-                    "description":"",
-                    "courses": [
-
-                    ]
-                }
+            ]
+        },
+        {
+            "id": "matematica",
+            "name": "Dipartimento di Matematica",
+            "description": "",
+            "icon": "TimelineMatrixView",
+            "representatives": [
+            ],
+            "cdls": [
+            ]
+        },
+        {
+            "id": "agraria",
+            "name": "Dipartimento di Agraria",
+            "description": "",
+            "icon": "ReleaseDefinition",
+            "representatives": [
+            ],
+            "cdls": [
+            ]
+        },
+        {
+            "id": "medicina",
+            "name": "Dipartimento di Medicina",
+            "description": "",
+            "icon": "Medical",
+            "representatives": [
+            ],
+            "cdls": [
+            ]
+        },
+        {
+            "id": "farmacia",
+            "name": "Dipartimento di Farmacia",
+            "description": "",
+            "icon": "MobileReport",
+            "representatives": [
+            ],
+            "cdls": [
             ]
         }
     ]
