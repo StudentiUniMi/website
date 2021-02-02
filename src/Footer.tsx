@@ -88,8 +88,7 @@ const Footer = () => {
                         <div className="mb-0">
                             <Text style={{ fontSize: FontSizes.size12 }}>
                                 <p className="mb-1 text">
-                                    Per qualsiasi dubbio o proposta è possibile contattare
-                                    il creatore del network.
+                                    Per qualsiasi dubbio o proposta è possibile contattare:
                                 </p>
                                 <Link href="https://t.me/giuseppetm" className="text-decoration-none" target="_blank"> @giuseppetm</Link>
                             </Text>

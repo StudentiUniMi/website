@@ -77,7 +77,7 @@ main {
 
 
 /* Responsive menu and title */
-@media only screen and (min-width: 545px) {
+@media only screen and (min-width: 716px) {
   .header-menu .pivot {
     display: block;
   }
@@ -90,7 +90,7 @@ main {
     margin-left: 10px;
   }
 }
-@media only screen and (max-width: 544px) {
+@media only screen and (max-width: 715px) {
   .header-menu .pivot {
     display: none;
   }
@@ -175,6 +175,15 @@ main {
     text-align: center;
   }
 
+  .representatives .people-list .col-xs-12 {
+    margin-left:15%;
+    max-width: 250px;
+    text-align: center;
+  }
+
+  .representatives .people-list {
+    justify-content: center;
+  }
 }
 /* End Faq_proposer form and other section adjustments */
 

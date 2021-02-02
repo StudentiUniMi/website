@@ -24,7 +24,8 @@ export enum ItemsKeys {
     courses = "courses",
     services = "services",
     additional_groups = "additional_groups",
-    administrators = "administrators"
+    administrators = "administrators",
+    representatives = "representatives"
 }
 
 const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
@@ -32,10 +33,10 @@ const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
     [ItemsKeys.rules, "Regolamento"],
     [ItemsKeys.courses, "Corsi"],
     [ItemsKeys.services, "Servizi"],
+    [ItemsKeys.additional_groups, "Gruppi extra"],
     [ItemsKeys.administrators, "Amministratori"],
-    [ItemsKeys.additional_groups, "Gruppi extra"]
-])
-
+    [ItemsKeys.representatives, "Rappresentanti"]
+]);
 
 const HeaderMenu = () => {
     const history = useHistory();
