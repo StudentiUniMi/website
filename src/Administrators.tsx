@@ -11,7 +11,7 @@ const titleStyle = {
 
 const members_informatica = [
     { username: 'MrBrionix', role:'' },
-    { username: 'mattia_oldani', role:'' },
+    { username: 'MattiaOldani', role:'' },
     { username: 'acetimarco', role:'' },
     { username: 'georgianiandrei', role:'' },
     { username: 'IrisCanole', role:'' },
