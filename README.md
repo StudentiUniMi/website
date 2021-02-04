@@ -16,4 +16,4 @@ e dei corsi di laurea magistrali di:
 ## Altre informazioni
 🛫 [Canale telegram](https://t.me/studenti_unimi)
 <br/>
-Per qualsiasi dubbio o proposta è possibile contattare il creatore del network [@Giuseppetm](https://t.me/giuseppetm).
+Per qualsiasi dubbio o proposta è possibile contattare [@Giuseppetm](https://t.me/giuseppetm).
