@@ -185,7 +185,19 @@ main {
     justify-content: center;
   }
 }
-/* End Faq_proposer form and other section adjustments */
+
+@media only screen and (min-width: 481px) {
+  .rules .row .col-xs-12 {
+    max-width: 200px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .rules .row .col-xs-12 {
+    min-width: 250px;
+  }
+}
+/* End Section adjustments */
 
 
 
@@ -197,8 +209,9 @@ main {
   Da sistemare
 ------------*/
 
-.materials .col-lg-3 {
-  max-width:250px;
+.ms-MessageBar-icon {
+  display:none;
+  position:absolute;
 }
 
 .header-menu .ms-Dropdown-title {
