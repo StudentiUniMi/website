@@ -123,7 +123,7 @@ const resources: ServiceResources[] = [
         name: 'Virtual Classroom', 
         link: 'https://vc.di.unimi.it/',
         previewPropsUsingIcon: cardProps('Video', '#498205'),
-        description: 'Accedi alle videolezioni di virtual classroom.'
+        description: 'Accedi alle videolezioni di virtual classroom (Informatica).'
     }
     /*
     {

@@ -10,8 +10,9 @@ import { Container } from 'react-bootstrap';
 const HomeLinks = [
     { name: 'Canale Telegram', link: 'https://t.me/studenti_unimi', iconName: 'Send'},
     { name: 'Gruppo Telegram', link: 'https://t.me/joinchat/VswKeAblS2nrfXME', iconName: 'Group'},
-    { name: 'Server Discord', link: 'https://discord.gg/pPGUrr35sv', iconName: 'ChatBot'},
+    //{ name: 'Server Discord', link: 'https://discord.gg/pPGUrr35sv', iconName: 'ChatBot'},
     { name: 'Wiki', link: 'https://wiki.studentiunimi.it/', iconName: 'PageList'},
+    { name: 'Paste', link: 'http://paste.studentiunimi.it', iconName: 'CodeEdit'},
     { name: 'HedgeDoc', link: 'https://hedgedoc.studentiunimi.it/', iconName: 'ReadingMode'},
     //{ name: 'Servizio di Screenshare', link: '', iconName: 'ScreenCast'},
 ];
