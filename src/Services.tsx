@@ -75,7 +75,7 @@ const resources: ServiceResources[] = [
         name: 'Iscrizione esami', 
         link: 'http://studente.unimi.it/foIscrizioneEsami/',
         previewPropsUsingIcon: cardProps('CalendarSettings', '#69797e'),
-        description: "Iscrivi agli appelli d'esame o controlla le iscrizioni effettuate."
+        description: "Iscriviti agli appelli d'esame o controlla le iscrizioni effettuate."
     },
     {
         name: 'Verbalizzazione esami', 

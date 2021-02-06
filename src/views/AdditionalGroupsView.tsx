@@ -61,7 +61,7 @@ const AdditionalGroupsView = () => {    // props non dovrebbe servirmi
 
     return (
         <Container className="additional-groups text-center">
-            <Text style={{ fontSize: FontSizes.size16 }}>
+            <Text style={{ fontSize: FontSizes.size14 }}>
                 <div className="mb-3"> Qui è possibile trovare gruppi aggiuntivi del network.</div>
                 <div className="mb-2">
                     <Text style={{ fontWeight: 600 }}>Gruppi disponibili:</Text>

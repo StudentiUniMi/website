@@ -175,13 +175,13 @@ main {
     text-align: center;
   }
 
-  .representatives .people-list .col-xs-12 {
+  .representatives .people-list .col-xs-12, .administrators .admin-list .col-xs-12 {
     margin-left:15%;
     max-width: 250px;
     text-align: center;
   }
 
-  .representatives .people-list {
+  .representatives .people-list, .administrators .admin-list {
     justify-content: center;
   }
 }

@@ -6,6 +6,7 @@ import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { Dropdown, IDropdownOption, IDropdownStyles, IDropdownProps } from 'office-ui-fabric-react/lib/Dropdown';
+import { useHistory } from 'react-router-dom';
 import PeopleListView from './views/PeopleListView';
 import data from './data/Data.json';
 import Person from './models/Person';
@@ -49,6 +50,7 @@ const onRenderPlaceholder = (props?: IDropdownProps): JSX.Element => {
 };
 
 const Representatives = () => {
+    const history = useHistory();
     const [selectedDepartment, setSelectedDepartment] = React.useState<string>('');
 
     const departmentSelectionChanged = (
@@ -56,7 +58,22 @@ const Representatives = () => {
         option?: IDropdownOption
     ): void => {
         setSelectedDepartment(option?.key as string ?? '');
+        history.push(`/representatives/${option?.key as string}`);
     };
+
+    let didMount = React.useRef(false);
+
+    React.useEffect(() =>
+    {
+        if(!didMount.current)
+        {
+            didMount.current = true
+            var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
+            var initialDepartment= states.length >= 2 ? states[1] : '';
+            setSelectedDepartment(initialDepartment)
+            history.push(`/representatives/${initialDepartment}`)
+        }
+    }, [history]);
 
     let representatives: Person[] = data.departments.filter(x => x.id === selectedDepartment)[0]?.representatives ?? []
 
