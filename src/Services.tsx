@@ -5,7 +5,9 @@ import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
 import { getTheme } from 'office-ui-fabric-react/lib/Styling';
-import { DocumentCard, DocumentCardDetails, DocumentCardPreview, DocumentCardTitle, IDocumentCardPreviewProps, DocumentCardType } from 'office-ui-fabric-react/lib/DocumentCard';
+import { DocumentCardPreview, IDocumentCardPreviewProps } from 'office-ui-fabric-react/lib/DocumentCard';
+import { Card, ICardTokens } from '@uifabric/react-cards';
+import { FontWeights, ITextStyles } from 'office-ui-fabric-react';
 
 const theme = getTheme();
 const { palette, fonts } = theme;
@@ -13,7 +15,8 @@ const { palette, fonts } = theme;
 interface ServiceResources {
     name: string,
     link: string,
-    previewPropsUsingIcon: IDocumentCardPreviewProps
+    previewPropsUsingIcon: IDocumentCardPreviewProps,
+    description: string
 }
 
 let cardProps = (iconName: string, backgroundColor: string): IDocumentCardPreviewProps => {
@@ -24,68 +27,103 @@ let cardProps = (iconName: string, backgroundColor: string): IDocumentCardPrevie
                     iconName: iconName,
                     styles: { root: { fontSize: fonts.superLarge.fontSize, color: palette.white } },
                 },
-                width: 100,
+                width: 100, height: 100
             },
         ],
         styles: { previewIcon: { backgroundColor: backgroundColor } },
     }
 };
 
+const siteTextStyles: ITextStyles = {
+    root: {
+        color: '#025F52',
+        fontWeight: FontWeights.semibold,
+        fontSize: FontSizes.size14
+    },
+};
+const descriptionTextStyles: ITextStyles = {
+    root: {
+        color: '#333333',
+        fontWeight: FontWeights.regular,
+        fontSize: FontSizes.size12
+    },
+};
+/*
+const helpfulTextStyles: ITextStyles = {
+  root: {
+    color: '#333333',
+    fontWeight: FontWeights.regular,
+  },
+};
+*/
+
+const cardTokens: ICardTokens = { childrenMargin: 12 };
+
+function redirectToLink(link: string): void {
+    // eslint-disable-next-line no-restricted-globals
+    window.open(link, '_blank');
+};
+
 const resources: ServiceResources[] = [
     {
         name: 'Unimia', 
         link: 'http://unimia.unimi.it/portal/server.pt',
-        previewPropsUsingIcon: cardProps('Globe', '#0078d4')
+        previewPropsUsingIcon: cardProps('Globe', '#0078d4'),
+        description: "Portale d'accesso ai servizi d'ateneo."
     },
     {
         name: 'Iscrizione esami', 
         link: 'http://studente.unimi.it/foIscrizioneEsami/',
-        previewPropsUsingIcon: cardProps('CalendarSettings', '#69797e')
+        previewPropsUsingIcon: cardProps('CalendarSettings', '#69797e'),
+        description: "Iscriviti agli appelli d'esame o controlla le iscrizioni effettuate."
     },
     {
         name: 'Verbalizzazione esami', 
         link: 'http://studente.unimi.it/foVerbalizzazione/',
-        previewPropsUsingIcon: cardProps('CheckMark', '#a0aeb2')
+        previewPropsUsingIcon: cardProps('CheckMark', '#a0aeb2'),
+        description: 'Controlla gli esiti finali o parziali dei tuoi esami.'
     },
     {
         name: 'Servizi sifa', 
         link: 'http://unimia.unimi.it/portal/server.pt/community/unimia/207/servizi_sifa/',
-        previewPropsUsingIcon: cardProps('ContactCardSettings', '#8378de')
+        previewPropsUsingIcon: cardProps('ContactCardSettings', '#8378de'),
+        description: 'Accedi a tutti i servizi online SIFA.'
     },
     {
         name: 'Webmail', 
         link: 'https://securemail.unimi.it/',
-        previewPropsUsingIcon: cardProps('Mail', '#881798')
+        previewPropsUsingIcon: cardProps('Mail', '#881798'),
+        description: "Servizio di webmail d'ateneo."
     },
     {
         name: 'Ariel', 
         link: 'https://ariel.unimi.it/',
-        previewPropsUsingIcon: cardProps('PenWorkspace', '#ffaa44')
+        previewPropsUsingIcon: cardProps('PenWorkspace', '#ffaa44'),
+        description: "Siti dei corsi didattici."
     },
     {
         name: 'Portale studenti', 
         link: 'https://easystaff.divsi.unimi.it/PortaleStudenti/',
-        previewPropsUsingIcon: cardProps('ProductRelease', '#00ad56')
+        previewPropsUsingIcon: cardProps('ProductRelease', '#00ad56'),
+        description: "Orario delle lezioni, occupazione delle aule, appelli d'esame."
     },
     {
         name: 'Servizio bibliotecario', 
         link: 'https://www.sba.unimi.it/',
-        previewPropsUsingIcon: cardProps('BookAnswers', '#005b70')
+        previewPropsUsingIcon: cardProps('BookAnswers', '#005b70'),
+        description: "Tutte le informazioni su biblioteche e servizi offerti in questo momento."
     },
     {
         name: 'Informastudenti', 
         link: 'https://informastudenti.unimi.it/',
-        previewPropsUsingIcon: cardProps('Help', '#d13438')
+        previewPropsUsingIcon: cardProps('Help', '#d13438'),
+        description: "Accedi al portale InformaStudenti."
     },
     {
         name: 'Virtual Classroom', 
         link: 'https://vc.di.unimi.it/',
-        previewPropsUsingIcon: cardProps('Video', '#498205')
-    },
-    {
-        name: 'Contatti rappresentanti degli studenti', 
-        link: 'http://www.di.unimi.it/ecm/home/organizzazione/organi-di-governo/consiglio-di-dipartimento',
-        previewPropsUsingIcon: cardProps('People', '#4f6bed')
+        previewPropsUsingIcon: cardProps('Video', '#498205'),
+        description: 'Accedi alle videolezioni di virtual classroom.'
     }
     /*
     {
@@ -98,29 +136,35 @@ const resources: ServiceResources[] = [
 
 
 const Services = () => {
+
     return (
         <Container className="services text-center">
             <div className="text-center mb-3">
-                <Text style={{ fontSize: FontSizes.size16 }}>
+                <Text style={{ fontSize: FontSizes.size14 }}>
                     <p className="mb-0">
                         Qui è possibile trovare tutti i link a servizi e risorse utili legati all'ambito universitario.
                     </p>
                 </Text>
             </div>
+
             <div className="row m-2 justify-content-center">
                 {
                     resources.map((x, i) => (
-                        <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-2" key={i}>
-                            <DocumentCard
-                                aria-label={x.name}
-                                type={DocumentCardType.compact}
-                                onClickHref={x.link}
-                            >
-                                <DocumentCardPreview {...x.previewPropsUsingIcon} />
-                                <DocumentCardDetails>
-                                    <DocumentCardTitle title={x.name} shouldTruncate />
-                                </DocumentCardDetails>
-                            </DocumentCard>
+                        <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3" key={i}>
+                            <Card label={x.name} onClick={() => redirectToLink(x.link)} horizontal tokens={cardTokens}>
+                                <Card.Item fill>
+                                    <DocumentCardPreview {...x.previewPropsUsingIcon} />
+                                </Card.Item>
+                                <Card.Section>
+                                    <Text variant="small" styles={siteTextStyles}>{x.name}</Text>
+                                    <Text styles={descriptionTextStyles}>{x.description}</Text>
+                                    {/*
+                                    <Text variant="small" styles={helpfulTextStyles}>
+                                    Is this recommendation helpful?
+                                    </Text>
+                                    */}
+                                </Card.Section>
+                            </Card>
                         </div>
                     ))
                 }

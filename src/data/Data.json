@@ -82,6 +82,18 @@
                     "id":"triennale_informatica",
                     "name":"Informatica",
                     "description":"",
+                    "admins": [
+                        { "id": "", "username": "MrBrionix", "role": "" },
+                        { "id": "", "username": "MattiaOldani", "role": "" },
+                        { "id": "", "username": "acetimarco", "role": "" },
+                        { "id": "", "username": "georgianiandrei", "role": "" },
+                        { "id": "", "username": "IrisCanole", "role": "" },
+                        { "id": "", "username": "Mantotheale", "role": "" },
+                        { "id": "", "username": "Weinsz", "role": "" },
+                        { "id": "", "username": "GbitGbit", "role": "" },
+                        { "id": "", "username": "davidemarchioriz", "role": "" },
+                        { "id": "", "username": "Aconithorn", "role": "" }
+                    ],
                     "courses": [
                     ]
                 },
@@ -89,6 +101,9 @@
                     "id":"triennale_informatica_musicale",
                     "name":"Informatica musicale",
                     "description":"",
+                    "admins": [
+                        { "id": "", "username": "giolake", "role": "" }
+                    ],
                     "courses": [
                     ]
                 },
@@ -96,6 +111,9 @@
                     "id":"triennale_informatica_com_digitale",
                     "name":"Informatica comunicazione digitale",
                     "description":"",
+                    "admins": [
+                        { "id": "", "username": "robertopinotti", "role": "" }
+                    ],
                     "courses": [
                     ]
                 },
@@ -103,6 +121,9 @@
                     "id":"triennale_sicurezza_sistemi_reti_informatiche",
                     "name":"Sicurezza sistemi e reti informatiche",
                     "description":"",
+                    "admins": [
+                        { "id": "", "username": "burzum00", "role": "" }
+                    ],
                     "courses": [
                     ]
                 },
@@ -110,6 +131,9 @@
                     "id":"triennale_sicurezza_sistemi_reti_informatiche_online",
                     "name":"Sicurezza sistemi e reti informatiche online",
                     "description":"",
+                    "admins": [
+                        { "id": "", "username": "salvadorbs", "role": "" }
+                    ],
                     "courses": [
                     ]
                 },
@@ -117,6 +141,9 @@
                     "id":"magistrale_informatica",
                     "name":"Informatica (magistrale)",
                     "description":"",
+                    "admins": [
+                        { "id": "", "username": "robertopinotti", "role": "" }
+                    ],
                     "courses": [
                     ]
                 },
@@ -124,6 +151,9 @@
                     "id":"magistrale_sicurezza_informatica",
                     "name":"Sicurezza informatica (magistrale)",
                     "description":"",
+                    "admins": [
+                        { "id": "", "username": "Spacer_ASC", "role": "" }
+                    ],
                     "courses": [
                     ]
                 }

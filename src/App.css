@@ -175,20 +175,20 @@ main {
     text-align: center;
   }
 
-  .representatives .people-list .col-xs-12 {
+  .representatives .people-list .col-xs-12, .administrators .admin-list .col-xs-12 {
     margin-left:15%;
     max-width: 250px;
     text-align: center;
   }
 
-  .representatives .people-list {
+  .representatives .people-list, .administrators .admin-list {
     justify-content: center;
   }
 }
 
 @media only screen and (min-width: 481px) {
   .rules .row .col-xs-12 {
-    max-width: 200px;
+    max-width: 250px;
   }
 }
 
@@ -225,18 +225,6 @@ main {
 
 .ms-List {
   padding: 3px;
-}
-
-.ms-card {
-  max-width: 600px;
-}
-
-.tutor {
-  color:#8a8886;
-}
-
-.tutor:hover {
-  color: #8764b8;
 }
 
 .ms-ChoiceField-field {
@@ -282,13 +270,6 @@ main {
   border-radius:5px;
 }
 
-.services .ms-DocumentCardTitle {
-  overflow: visible;
-}
-
-.ms-ChoiceField-labelWrapper {
-  overflow: visible;
-}
 
 .home .ms-Icon {
   font-size: 45px;
@@ -297,10 +278,6 @@ main {
 .ms-ChoiceFieldGroup-flexContainer {
   display: flex;
   justify-content: center;
-}
-
-.ms-ChoiceField {
-  margin: 4px 4px 4px 4px;
 }
 
 .home .card {
@@ -338,4 +315,8 @@ a:focus,
 .faq-view-link:active,
 .faq-view-link:focus {
   outline: 0;
+}
+
+.services .ms-CardSection {
+  text-align: left;
 }

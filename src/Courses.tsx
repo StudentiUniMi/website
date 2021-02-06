@@ -50,50 +50,9 @@ const onRenderPlaceholder = (props?: IDropdownProps): JSX.Element => {
     );
 };
 
-/*const data = [
-    {
-        key: 'informatica', text: 'Dipartimento di Informatica', icon: 'TVMonitor',
-        cdls: [
-            { key: "triennale_informatica", text: "Informatica" },
-            { key: "triennale_informatica_musicale", text: "Informatica musicale" },
-            { key: "triennale_informatica_com_digitale", text: "Informatica comunicazione digitale" },
-            { key: "triennale_sicurezza_sistemi_reti_informatiche",  text: "Sicurezza sistemi e reti informatiche" },
-            { key: "triennale_sicurezza_sistemi_reti_informatiche_online", text: "Sicurezza sistemi e reti informatiche online" },
-            { key: "magistrale_informatica", text: "Informatica (magistrale)" },
-            { key: "magistrale_sicurezza_informatica", text: "Sicurezza informatica (magistrale)" }
-        ]
-    },
-    {
-        key: 'fisica', text: 'Dipartimento di Fisica', disabled: true, icon: 'ReleaseDefinition', 
-        cdls: [
-        ]
-    },
-    {
-        key: 'matematica', text: 'Dipartimento di Matematica', disabled: true, icon: 'TimelineMatrixView',
-        cdls: [
-        ]
-    },
-    {
-        key: 'agraria', text: 'Dipartimento di Agraria', disabled: true, icon: 'ReleaseDefinition',
-        cdls: [
-        ]
-    },
-    {
-        key: 'medicina', text: 'Dipartimento di Medicina',  disabled: true, icon: 'Medical',
-        cdls: [
-        ]
-    },
-    {
-        key: 'farmacia', text: 'Dipartimento di Farmacia',  disabled: true, icon: 'MobileReport',
-        cdls: [
-        ]
-    }
-]*/
-
-
 const Courses = () => {
     
-    const history = useHistory()
+    const history = useHistory();
 
     const departmentSelectionChanged = (
         ev?: React.FormEvent<HTMLElement | HTMLInputElement>,
@@ -146,10 +105,10 @@ const Courses = () => {
     return (
         <Container className="courses text-center">
             <div className="text-center">
-                <Text style={{ fontSize: FontSizes.size16 }}>
+                <Text style={{ fontSize: FontSizes.size14 }}>
                     <div className="mb-0">Qui è possibile vedere i gruppi telegram, siti web, e faq (se disponibili)
                     di ogni corso didattico del tuo corso di laurea. </div>
-                    <div className="mb-2">Se noti qualcosa che non corrisponde o che andrebbe sistemato puoi scriverlo sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link>.</div>
+                    <div className="mb-2">Se noti qualcosa che non corrisponde o che andrebbe sistemato puoi comunicarlo sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link>.</div>
                     <div className="mb-4">
                         <Text style={{ fontSize: FontSizes.size12 }}>
                             <div className="mb-0">
@@ -157,6 +116,9 @@ const Courses = () => {
                             </div>
                             <div className="mb-0">
                                 è qui che potete contribuire iscrivendovi e aiutandoci a raccogliere faq e qualsiasi altro contenuto utile per i corsi didattici.
+                            </div>
+                            <div className="mb-0">
+                                Vi ricordiamo che è nella wiki che sono presenti le faq di quest'ultimi.
                             </div>
                         </Text>
                     </div>

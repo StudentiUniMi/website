@@ -7,12 +7,10 @@ import { Container } from 'react-bootstrap';
 import { CompoundButton } from 'office-ui-fabric-react';
 import { Link, MessageBar, MessageBarType } from 'office-ui-fabric-react';
 
-/*
 const question = {
     fontWeight: 600,
     color: '#398ded'
 };
-*/
 
 const rules = {
     fontWeight: 600
@@ -99,9 +97,19 @@ const Rules = () => {
         <Container className="rules text-center">
             <div className="mb-4">
                 <Text style={{ fontSize: FontSizes.size14 }}>
-                    <div>
+                    <div className="mb-2">
                         Si consiglia di leggere le regole indicate prima di utilizzare uno qualsiasi dei gruppi disponibili.
                     </div>
+                    <Text style={{ fontSize: FontSizes.size12 }}>
+                        <div style={question} className="mb-2">Perchè abbiamo introdotto un regolamento?</div>
+                        <div className="mb-2">
+                            <div className="mb-0">Vogliamo rendere chiari i motivi per cui abbiamo deciso di regolamentare i gruppi del nostro network.</div>
+                            <div className="mb-0">Abbiamo notato che la maggior parte di essi erano tempestati di domande banali, fatte più volte al giorno, la cui risposta era facilmente trovabile.</div>
+                            <div className="mb-0">Questo riduce la qualità della chat e scoraggia la partecipazione di studenti più attenti.</div> 
+                            <div className="mb-0">Per questo motivo abbiamo deciso di provare a limitare il fenomeno, da una parte ammonendo chi continua a fare interventi non produttivi,</div>
+                            <div className="mb-0">e dall'altra fornendo un modo facile e veloce per trovare le informazioni più importanti tramite le faq di ogni insegnamento.</div>
+                        </div>
+                    </Text>
                     <div>Di seguito è possibile trovare il <Text style={{ fontWeight: 600}}>regolamento</Text> e le varie sezioni di cui è composto.</div>
                 </Text>
             </div>
