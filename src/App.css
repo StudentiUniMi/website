@@ -197,8 +197,14 @@ main {
     min-width: 250px;
   }
 }
-/* End Section adjustments */
 
+@media only screen and (max-width: 380px) {
+  .services .ms-Card {
+    min-width:100px;
+  }
+}
+
+/* End Section adjustments */
 
 
 
