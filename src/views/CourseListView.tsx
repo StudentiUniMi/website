@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import '../List.css'
@@ -9,6 +9,8 @@ import { Container } from 'react-bootstrap';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { Text } from "office-ui-fabric-react/lib/Text";
 import { FontSizes } from '@fluentui/theme';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import CourseItemView from './CourseItemView';
 import Course from '../models/Course';
 import Groups_triennale_informatica from '../data/Groups_triennale_informatica.json'
@@ -114,9 +116,7 @@ const CourseListView = (props: Props) => {
 
     const getCell = (e?: Course, index?: number, isScrolling?: boolean) => {
         return (
-            <div
-                data-is-focusable
-                className={classNames.listGridExampleTile}
+            <div data-is-focusable className={classNames.listGridExampleTile}
                 style={{
                     height: MAX_ROW_HEIGHT + 'px',
                     //width: 100 / columnCount.current + '%'
@@ -164,53 +164,53 @@ const CourseListView = (props: Props) => {
 
     return (
         <Container className="courses-filter-options">
-                    {
-                    filteredCourses.length === 0 ? <div className="text-center"><Text style={{ fontSize: FontSizes.size14 }}>Nessun gruppo trovato.</Text></div> :
-                    <FocusZone>
-                        <div className="mb-4">
-                            <div className="row justify-content-center">
-                                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                    <TextField
-                                        label={'Cerca per nome'}
-                                        onChange={onNameFilterChanged}                
-                                    />
-                                </div>
-                                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                    {
-                                        props.cdl === 'magistrale_informatica' ? 
-                                        <Dropdown options={yearFilterOptions}
-                                        label={`Cerca per anno`}
-                                        onChange={onYearFilterChanged}
-                                        selectedKey={yearFilter}
-                                        disabled
-                                        />
-                                        :
-                                        <Dropdown options={yearFilterOptions}
-                                        label={`Cerca per anno`}
-                                        onChange={onYearFilterChanged}
-                                        selectedKey={yearFilter}
-                                        />
-                                    }
-                                </div>
-                                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                    <Dropdown options={semesterFilterOptions}
-                                        label={`Cerca per semestre`}
-                                        onChange={onSemesterFilterChanged}
-                                        selectedKey={semesterFilter}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    <List
-                        className={classNames.listGridExample}
-                        items={filteredCourses}
-                        getItemCountForPage={getItemCountForPage}
-                        getPageHeight={getPageHeight}
-                        renderedWindowsAhead={4}
-                        onRenderCell={getCell}
-                    />
-                </FocusZone>
-                }
+            {
+            filteredCourses.length === 0 ? <div className="text-center"><Text style={{ fontSize: FontSizes.size14 }}>Nessun gruppo trovato.</Text></div> :
+            <FocusZone>
+                <div className="mb-4">
+                    <Row className="justify-content-center">
+                        <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+                            <TextField
+                                label={'Cerca per nome'}
+                                onChange={onNameFilterChanged}                
+                            />
+                        </Col>
+                        <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+                            {
+                                props.cdl === 'magistrale_informatica' ? 
+                                <Dropdown options={yearFilterOptions}
+                                label={`Cerca per anno`}
+                                onChange={onYearFilterChanged}
+                                selectedKey={yearFilter}
+                                disabled
+                                />
+                                :
+                                <Dropdown options={yearFilterOptions}
+                                label={`Cerca per anno`}
+                                onChange={onYearFilterChanged}
+                                selectedKey={yearFilter}
+                                />
+                            }
+                        </Col>
+                        <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+                            <Dropdown options={semesterFilterOptions}
+                                label={`Cerca per semestre`}
+                                onChange={onSemesterFilterChanged}
+                                selectedKey={semesterFilter}
+                            />
+                        </Col>
+                    </Row>
+                </div>
+                <List
+                    className={classNames.listGridExample}
+                    items={filteredCourses}
+                    getItemCountForPage={getItemCountForPage}
+                    getPageHeight={getPageHeight}
+                    renderedWindowsAhead={4}
+                    onRenderCell={getCell}
+                />
+            </FocusZone>
+            }
         </Container>
     );
 };

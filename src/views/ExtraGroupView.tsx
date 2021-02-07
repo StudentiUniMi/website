@@ -1,4 +1,3 @@
-import * as React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import { Link, Text } from 'office-ui-fabric-react';
@@ -12,7 +11,6 @@ initializeIcons();
 interface Props {
     data: ExtraGroup
 }
-
 
 const ExtraGroupView = (props: Props) => {
     var data = props.data;
