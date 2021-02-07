@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Link, Text } from 'office-ui-fabric-react';
@@ -8,13 +8,14 @@ import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { Dropdown, IDropdownOption, IDropdownProps } from 'office-ui-fabric-react/lib/Dropdown';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import CourseListView from "./views/CourseListView";
 import data from './data/Data.json'
 import Degree from "./models/Degree";
 import Department from "./models/Department";
 
 initializeIcons();
-
 const iconStyles = { marginRight: '8px' };
 
 const onRenderOption = (option?: IDropdownOption): JSX.Element => {
@@ -51,7 +52,6 @@ const onRenderPlaceholder = (props?: IDropdownProps): JSX.Element => {
 };
 
 const Courses = () => {
-    
     const history = useHistory();
 
     const departmentSelectionChanged = (
@@ -125,8 +125,8 @@ const Courses = () => {
                 </Text>
             </div>
             
-            <div className="row department-choose justify-content-center mb-4">
-                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12 mb-1">
+            <Row className="department-choose justify-content-center mb-4">
+                <Col xl={6} lg={6} md={6} sm={6} xs={12} className="mb-1">
                     {/* Department dropdown */}
                     <Dropdown
                         placeholder="Seleziona un dipartimento"
@@ -138,9 +138,9 @@ const Courses = () => {
                         onChange={departmentSelectionChanged}
                         selectedKey={selectedDepartment}
                     />
-                </div>
+                </Col>
 
-                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12 mb-1">
+                <Col xl={6} lg={6} md={6} sm={6} xs={12} className="mb-1">
                     {/* Cdl dropdown */}
                     {selectedDepartment === '' ? 
                     <Dropdown
@@ -159,8 +159,8 @@ const Courses = () => {
                         onChange={cdlSelectionChanged}
                         options={cdlsOptions}
                     />}
-                </div>
-            </div>
+                </Col>
+            </Row>
 
             <div style={{ display: selectedCdl ? 'block' : 'none' }}>
                 <p className='text-center'>

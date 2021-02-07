@@ -1,4 +1,3 @@
-import * as React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import { FontSizes } from '@fluentui/theme';
@@ -8,6 +7,8 @@ import { getTheme } from 'office-ui-fabric-react/lib/Styling';
 import { DocumentCardPreview, IDocumentCardPreviewProps } from 'office-ui-fabric-react/lib/DocumentCard';
 import { Card, ICardTokens } from '@uifabric/react-cards';
 import { FontWeights, ITextStyles } from 'office-ui-fabric-react';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 const theme = getTheme();
 const { palette, fonts } = theme;
@@ -35,18 +36,10 @@ let cardProps = (iconName: string, backgroundColor: string): IDocumentCardPrevie
 };
 
 const siteTextStyles: ITextStyles = {
-    root: {
-        color: '#025F52',
-        fontWeight: FontWeights.semibold,
-        fontSize: FontSizes.size14
-    },
+    root: { color: '#025F52', fontWeight: FontWeights.semibold, fontSize: FontSizes.size14 },
 };
 const descriptionTextStyles: ITextStyles = {
-    root: {
-        color: '#333333',
-        fontWeight: FontWeights.regular,
-        fontSize: FontSizes.size12
-    },
+    root: { color: '#333333', fontWeight: FontWeights.regular, fontSize: FontSizes.size12 },
 };
 /*
 const helpfulTextStyles: ITextStyles = {
@@ -141,16 +134,14 @@ const Services = () => {
         <Container className="services text-center">
             <div className="text-center mb-3">
                 <Text style={{ fontSize: FontSizes.size14 }}>
-                    <p className="mb-0">
-                        Qui è possibile trovare tutti i link a servizi e risorse utili legati all'ambito universitario.
-                    </p>
+                    Qui è possibile trovare tutti i link a servizi e risorse utili legati all'ambito universitario.
                 </Text>
             </div>
 
-            <div className="row m-2 justify-content-center">
+            <Row className="m-2 justify-content-center">
                 {
                     resources.map((x, i) => (
-                        <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3" key={i}>
+                        <Col xl={4} lg={6} md={6} sm={12} xs={12} className="mb-3" key={i}>
                             <Card label={x.name} onClick={() => redirectToLink(x.link)} horizontal tokens={cardTokens}>
                                 <Card.Item fill>
                                     <DocumentCardPreview {...x.previewPropsUsingIcon} />
@@ -165,10 +156,10 @@ const Services = () => {
                                     */}
                                 </Card.Section>
                             </Card>
-                        </div>
+                        </Col>
                     ))
                 }
-            </div>
+            </Row>
         </Container>
     )
 }

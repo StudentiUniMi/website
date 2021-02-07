@@ -139,20 +139,21 @@ main {
 
 
 /* Grid system adjustments for filter container */
-@media only screen and (max-width: 540px) {
-  .courses-filter-options .col-xs-12 {
-    max-width: 250px;
+@media only screen and (max-width: 766px) {
+  .courses-filter-options .col-sm-12 {
+    max-width: 420px;
     text-align: center;
-  }
-  
-  .courses-filter-options .row, .department-choose .row {
-    margin-right:10%;
-    margin-left:10%;
   }
 }
 
-@media only screen and (max-width: 370px) {
-  .courses-filter-options .row {
+@media only screen and (max-width: 540px) {
+  .courses-filter-options .col-sm-12 {
+    max-width: 280px;
+    text-align: center;
+  }
+  
+  /* Courses filter options è il container */
+  .courses-filter-options, .department-choose .row {
     margin-right:0%;
     margin-left:0%;
   }
@@ -183,6 +184,11 @@ main {
 
   .representatives .people-list, .administrators .admin-list {
     justify-content: center;
+  }
+
+  .col-persona {
+    max-width: 250px;
+    margin-left:10%;
   }
 }
 

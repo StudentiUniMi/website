@@ -1,20 +1,20 @@
-import * as React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Link } from 'office-ui-fabric-react';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
 import { FontSizes } from '@fluentui/theme';
-// import txt from './data/revision.txt';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 const Footer = () => {
     return (
         <footer style={{ backgroundColor: '#cccccc', boxShadow: '0px 0px 0.5px 0.5px #7a7a7a' }}>
             <Container style={{ backgroundColor: '#cccccc', width:'100%' }}>
 
-                <div className="row" style={{ backgroundColor: '#cccccc' }}>
+                <Row style={{ backgroundColor: '#cccccc' }}>
 
-                    <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-4 mb-md-0">
+                    <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-4 mb-md-0">
                         <div className="mb-2">
                             <Text style={{ fontWeight: 600 }}>
                                 <Link href="https://github.com/StudentiUnimi" className="text-decoration-none">Studenti UniMi &copy;</Link>
@@ -41,17 +41,9 @@ const Footer = () => {
                             </ul>
                         </div>
 
-                        {/*
-                        <p className="mb-1">
-                            <Text style={{ fontSize: FontSizes.size12 }}>
-                                Build: <Text style={{ fontSize: FontSizes.size10 }}>dennis</Text>
-                            </Text>
-                        </p>
-                        */}
+                    </Col>
 
-                    </div>
-
-                    <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-4 mb-md-0">
+                    <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-4 mb-md-0">
                         <div className="mb-1">
                             <Text style={{ fontWeight: 600 }}>Link utili</Text>
                         </div>
@@ -78,9 +70,9 @@ const Footer = () => {
                                 </Text>
                             </li>
                         </ul>
-                    </div>
+                    </Col>
 
-                    <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-4 mb-md-0 contacts">
+                    <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-4 mb-md-0 contacts">
                         <div className="mb-1">
                             <Text style={{ fontWeight: 600 }}>Contatti</Text>
                         </div>
@@ -93,8 +85,9 @@ const Footer = () => {
                                 <Link href="https://t.me/giuseppetm" className="text-decoration-none" target="_blank"> @giuseppetm</Link>
                             </Text>
                         </div>
-                    </div>
-                </div>
+                    </Col>
+                
+                </Row>
 
             </Container>
         </footer>

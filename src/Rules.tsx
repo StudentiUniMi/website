@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import { FontSizes } from '@fluentui/theme';
@@ -6,15 +6,12 @@ import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
 import { CompoundButton } from 'office-ui-fabric-react';
 import { Link, MessageBar, MessageBarType } from 'office-ui-fabric-react';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
-const question = {
-    fontWeight: 600,
-    color: '#398ded'
-};
-
-const rules = {
-    fontWeight: 600
-};
+const question = { fontWeight: 600, color: '#398ded' };
+const rules = { fontWeight: 600 };
+const colButtonStyle = { maxWidth: '200px', minWidth: '130px' }
 
 const QuestionFaqRulesMessage = () => (
     <MessageBar messageBarType={MessageBarType.warning}>
@@ -86,10 +83,6 @@ const OtherRulesMessage = () => (
     </MessageBar>
 );
 
-const colButtonStyle = {
-    maxWidth: '200px', minWidth: '130px'
-}
-
 const Rules = () => {
     const [choice, setChoice] = React.useState<string>('');
 
@@ -103,62 +96,40 @@ const Rules = () => {
                     <Text style={{ fontSize: FontSizes.size12 }}>
                         <div style={question} className="mb-2">Perchè abbiamo introdotto un regolamento?</div>
                         <div className="mb-2">
-                            <div className="mb-0">Vogliamo rendere chiari i motivi per cui abbiamo deciso di regolamentare i gruppi del nostro network.</div>
-                            <div className="mb-0">Abbiamo notato che la maggior parte di essi erano tempestati di domande banali, fatte più volte al giorno, la cui risposta era facilmente trovabile.</div>
-                            <div className="mb-0">Questo riduce la qualità della chat e scoraggia la partecipazione di studenti più attenti.</div> 
-                            <div className="mb-0">Per questo motivo abbiamo deciso di provare a limitare il fenomeno, da una parte ammonendo chi continua a fare interventi non produttivi,</div>
-                            <div className="mb-0">e dall'altra fornendo un modo facile e veloce per trovare le informazioni più importanti tramite le faq di ogni insegnamento.</div>
+                            Vogliamo rendere chiari i motivi per cui abbiamo deciso di regolamentare i gruppi del nostro network.
+                            Abbiamo notato che la maggior parte di essi erano tempestati di domande banali, fatte più volte al giorno, la cui risposta era facilmente trovabile.
+                            Questo riduce la qualità della chat e scoraggia la partecipazione di studenti più attenti.
+                            Per questo motivo abbiamo deciso di provare a limitare il fenomeno, da una parte ammonendo chi continua a fare interventi non produttivi,
+                            e dall'altra fornendo un modo facile e veloce per trovare le informazioni più importanti tramite le faq di ogni insegnamento.
                         </div>
                     </Text>
                     <div>Di seguito è possibile trovare il <Text style={{ fontWeight: 600}}>regolamento</Text> e le varie sezioni di cui è composto.</div>
                 </Text>
             </div>
 
-            <div className="row mb-3 justify-content-center">
-                <div className="col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12 mb-2">
+            <Row className="mb-3 justify-content-center">
+                <Col xl={4} lg={4} md={4} sm={4} xs={12} className="mb-2">
                     <CompoundButton primary secondaryText="Domande e faq" onClick={() => setChoice("question_faq_rules")} style={colButtonStyle}>
                         Sezione
                     </CompoundButton>
-                </div>
-                <div className="col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12 mb-2">
+                </Col>
+                <Col xl={4} lg={4} md={4} sm={4} xs={12} className="mb-2">
                     <CompoundButton primary secondaryText="Comportamento" onClick={() => setChoice("behavior_rules")} style={colButtonStyle}>
                         Sezione
                     </CompoundButton>
-                </div>
-                <div className="col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12 mb-2">
-                <CompoundButton primary secondaryText="Altro" onClick={() => setChoice("other_rules")} style={colButtonStyle}>
-                    Sezione
-                </CompoundButton>
-                </div>
-            </div>
+                </Col>
+                <Col xl={4} lg={4} md={4} sm={4} xs={12} className="mb-2">
+                    <CompoundButton primary secondaryText="Altro" onClick={() => setChoice("other_rules")} style={colButtonStyle}>
+                        Sezione
+                    </CompoundButton>
+                </Col>
+            </Row>
 
             <div className="mb-3">
                 {(choice === 'question_faq_rules') && <QuestionFaqRulesMessage />}
                 {(choice === 'behavior_rules') && <BehaviorRulesMessage />}
                 {(choice === 'other_rules') && <OtherRulesMessage />}
             </div>
-
-            {/*
-            <Text style={{ fontSize: FontSizes.size12 }}>
-                <div style={question} className="mb-2">Perchè abbiamo introdotto un regolamento?</div>
-                <div className="mb-2">
-                    <div className="mb-0">Vogliamo rendere chiari i motivi per cui abbiamo deciso di regolamentare i gruppi del nostro network.</div>
-                    <div className="mb-0">Abbiamo notato che la maggior parte di essi erano tempestati di domande banali, fatte più volte al giorno, la cui risposta era facilmente trovabile.
-                    Questo riduce la qualità della chat e scoraggia la partecipazione di studenti più attenti.</div> 
-                    <div className="mb-0">Per questo motivo abbiamo deciso di provare a limitare il fenomeno, da una parte ammonendo chi continua a fare interventi non produttivi, e dall'altra fornendo un modo facile e veloce per trovare le informazioni più importanti, 
-                    tramite le pagine faq di ogni insegnamento.</div>
-                </div>
-            
-                <div style={question} className="mb-2">Dove trovo le faq dei corsi?</div>
-                <div className="mb-3">
-                    <div className="mb-0">Nella wiki è possibile trovare le faq dei corsi didattici: al momento solo Informatica ne è dotata.</div> 
-                    <div className="mb-0">Ovviamente se un gruppo di un corso didattico del network non ha faq disponibili non vuol dire che sia possibile chiedere domande banali e quant'altro.
-                    Siete invitati a cercare autonomamente e magari andando nelle chat precedenti per trovare risposte inerenti.
-                    In caso non si trovi nulla sarà possibile chiedere senza problemi il vostro dubbio o domanda.</div> 
-                </div>
-                
-            </Text>
-            */}
 
         </Container>
     )

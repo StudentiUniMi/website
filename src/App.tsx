@@ -1,4 +1,3 @@
-import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import { HashRouter as Router } from "react-router-dom";
