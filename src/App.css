@@ -184,6 +184,11 @@ main {
   .representatives .people-list, .administrators .admin-list {
     justify-content: center;
   }
+
+  .col-persona {
+    max-width: 250px;
+    margin-left:10%;
+  }
 }
 
 @media only screen and (min-width: 481px) {

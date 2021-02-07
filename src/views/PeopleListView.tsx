@@ -1,8 +1,9 @@
-import * as React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import Person from '../models/Person';
 import { IPersonaSharedProps, Persona, PersonaSize } from 'office-ui-fabric-react/lib/Persona';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 interface Props {
     data: Person[]
@@ -14,13 +15,13 @@ const defaultPersona: IPersonaSharedProps = {
 
 const PeopleListView = (props: Props) => {
     return (
-        <div className="people-list row text-center">
+        <Row className="people-list text-center">
             {props.data.map(x => 
-                <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-3">
+                <Col xl={3} lg={3} md={4} sm={6} xs={12} className="mb-3 col-persona">
                     <Persona {...defaultPersona} text={`${x.name ?? ""} ${x.surname ?? ""}`} size={PersonaSize.size40} />
-                </div>
+                </Col>
             )}
-        </div>
+        </Row>
     )
 };
 
