@@ -1,4 +1,3 @@
-import * as React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import { Link, Text } from 'office-ui-fabric-react';
@@ -13,13 +12,7 @@ interface Props {
     data: Course
 }
 
-/*
-const gdriveStyle = {
-    width: '15px',
-    height: '15px',
-    marginBottom: '3px'
-}
-*/
+// const gdriveStyle = { width: '15px', height: '15px', marginBottom: '3px' }
 
 const CourseItemView = (props: Props) => {
     var data = props.data;

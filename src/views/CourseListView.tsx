@@ -131,12 +131,12 @@ const CourseListView = (props: Props) => {
         setNameFilter(text ?? "");
     };
 
-    const onYearFilterChanged = (event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
-        setYearFilter((item?.key ?? 0) as number);
-    };
-
     const onSemesterFilterChanged = (event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
         setSemesterFilter((item?.key ?? 0) as number);
+    };
+
+    const onYearFilterChanged = (event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
+        setYearFilter((item?.key ?? 0) as number);
     };
 
     

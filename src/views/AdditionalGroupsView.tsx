@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import '../List.css';
@@ -29,7 +29,7 @@ const classNames = mergeStyleSets({
 const ROWS_PER_PAGE = 3;
 const MAX_ROW_HEIGHT = 240;
 
-const AdditionalGroupsView = () => {    // props non dovrebbe servirmi
+const AdditionalGroupsView = () => {
     const groups: ExtraGroup[] = GruppiExtra;
     const columnCount = React.useRef(0);
     const rowHeight = React.useRef(0);
