@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
@@ -86,7 +86,7 @@ const HeaderMenu = () => {
     const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }))
 
     return (
-        <div style={{  boxShadow: '0px 0.5px 0.5px #b3b5b4' }} className="header-menu">
+        <div className="header-menu" style={{  boxShadow: '0px 0.5px 0.5px #b3b5b4' }}>
             <div className="pivot">
                 <Pivot
                     selectedKey={selectedKey}
@@ -94,7 +94,7 @@ const HeaderMenu = () => {
                     headersOnly={true}
                     style={{ fontSize: FontSizes.size24 }}
                 >
-                {Object.values(ItemsKeys).map((x,i) =><PivotItem key={i} headerText={texts.get(x)} style={{ fontSize: FontSizes.size24 }} itemKey={x}/>)}
+                    {Object.values(ItemsKeys).map((x,i) =><PivotItem key={i} headerText={texts.get(x)} style={{ fontSize: FontSizes.size24 }} itemKey={x}/>)}
                 </Pivot>
             </div>
 
