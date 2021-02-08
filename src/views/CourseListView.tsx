@@ -1,7 +1,5 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css';
-import '../List.css'
+import './SharedListView.css';
 import { FocusZone, IRectangle, List } from "@fluentui/react";
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
@@ -11,7 +9,7 @@ import { Text } from "office-ui-fabric-react/lib/Text";
 import { FontSizes } from '@fluentui/theme';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import CourseItemView from './CourseItemView';
+import CourseItemView from '../components/CourseItem';
 import Course from '../models/Course';
 import Groups_triennale_informatica from '../data/Groups_triennale_informatica.json'
 import Groups_triennale_informatica_musicale from '../data/Groups_triennale_informatica_musicale.json'

@@ -1,12 +1,10 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "./App.css";
 import { HashRouter as Router } from "react-router-dom";
-import HeaderTitle from "./HeaderTitle";
-import HeaderMenu from "./HeaderMenu";
-import Content from "./Content";
-import Footer from "./Footer";
+import HeaderTitle from "../components/HeaderTitle";
+import HeaderMenu from "../components/HeaderMenu";
+import Content from "../components/Content";
+import Footer from "../components/Footer";
 
-function App() {
+function MainView() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <header>
@@ -19,4 +17,4 @@ function App() {
   );
 }
 
-export default App;
+export default MainView;

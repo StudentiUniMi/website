@@ -1,16 +1,14 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
 import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { useHistory } from 'react-router-dom';
-import Admin from './models/Admin';
-import AdminListView from './views/AdminListView';
-import data from './data/Data.json'
+import Admin from '../models/Admin';
+import AdminListView from '../components/AdminsList';
+import data from '../data/Data.json'
 
-const Administrators = () => {
+const AdministratorsView = () => {
     const history = useHistory();
 
     const [selectedCdl, setSelectedCdl] = React.useState<string>('');
@@ -70,4 +68,4 @@ const Administrators = () => {
     )
 };
 
-export default Administrators;
+export default AdministratorsView;

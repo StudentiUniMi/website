@@ -1,6 +1,4 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
 import { Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
 import { FontSizes } from '@fluentui/theme';
 import { Dropdown, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
