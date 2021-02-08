@@ -1,17 +1,13 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
 import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { Dropdown, IDropdownOption, IDropdownStyles, IDropdownProps } from 'office-ui-fabric-react/lib/Dropdown';
 import { useHistory } from 'react-router-dom';
-import PeopleListView from './views/PeopleListView';
-import data from './data/Data.json';
-import Person from './models/Person';
-
-const departmentOptions: IDropdownOption[] = data.departments.map(x => ({key: x.id, text: x.name ?? "", data: {icon:x.icon}, disabled: x.cdls.length === 0}));
+import PeopleListView from '../components/RepresentativesList';
+import {getRepresentatives, getDepartments} from '../services/Requests'
+import Representative from '../models/Representative';
 
 const dropdownStyles: Partial<IDropdownStyles> = { dropdown: {  } };
 
@@ -75,7 +71,10 @@ const Representatives = () => {
         }
     }, [history]);
 
-    let representatives: Person[] = data.departments.filter(x => x.id === selectedDepartment)[0]?.representatives ?? []
+    let representatives: Representative[] = getRepresentatives(selectedDepartment)
+
+    const departmentOptions: IDropdownOption[] =getDepartments().map(x => ({key: x.id, text: x.name ?? "", data: {icon:x.icon}, disabled: x.cdls.length === 0}));
+
 
     return (
         <Container className="representatives text-center">

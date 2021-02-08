@@ -5,7 +5,8 @@ export default interface Website {
 
 export default interface Course
 {
-    cdl?:string,
+    id?:string,
+    cdl?: string,
     name?:string,
     anno?:number|string,
     semestre?:number,

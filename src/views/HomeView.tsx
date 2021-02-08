@@ -1,5 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
 import { Link, Text } from 'office-ui-fabric-react';
 import { FontSizes } from '@fluentui/theme';
 import { IconButton } from 'office-ui-fabric-react';
@@ -21,7 +19,7 @@ const HomeLinks = [
 const iconClass = mergeStyles({ fontSize: 50, height: 100, width: 100, });
 const cardStyle = { width: '140px', height: '200px' }
 
-const Home = () => {
+const HomeView = () => {
     return (
         <Container className="home">
             <div className="text-center mb-4">
@@ -61,4 +59,4 @@ const Home = () => {
     )
 };
 
-export default Home;
+export default HomeView;
