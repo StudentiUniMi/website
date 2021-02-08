@@ -6,14 +6,14 @@ import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { useHistory } from 'react-router-dom';
 import Admin from '../models/Admin';
 import AdminListView from '../components/AdminsList';
-import data from '../data/Data.json'
+import { getAllCdls } from '../services/Requests'
+import Degree from '../models/Degree'
 
 const AdministratorsView = () => {
     const history = useHistory();
 
     const [selectedCdl, setSelectedCdl] = React.useState<string>('');
-    var test: any[] = data.departments.map(x=>x.cdls);
-    var cdls: any[] = [].concat(...(test));
+    var cdls: Degree[] = getAllCdls();
     var cdlOptions: IDropdownOption[] = cdls.map(x => ({key: x.id ?? "", text: x.name ?? ""}));
 
     const cdlSelectionChanged = (

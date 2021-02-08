@@ -17,7 +17,7 @@ const AdminListView = (props: Props) => {
         <Row className="admin-list text-center">
             {props.data.map(x => 
                 <Col xl={3} lg={3} md={4} sm={6} xs={12} className="mb-3 col-persona">
-                    <Persona {...defaultPersona} onRenderPrimaryText={(t) => <Link href={`t.me/${x.username}`}>{`@${x.username ?? ""}`}</Link>} text={`@${x.username}` ?? ""} size={PersonaSize.size40} />
+                    <Persona {...defaultPersona} onRenderPrimaryText={() => <Link href={`t.me/${x.username}`}>{`@${x.username ?? ""}`}</Link>} text={`@${x.username}` ?? ""} size={PersonaSize.size40} />
                 </Col>
             )}
         </Row>

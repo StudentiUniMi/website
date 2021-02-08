@@ -9,153 +9,3089 @@
                 {
                     "id": "",
                     "name": "Jacopo",
-                    "surname": "Antoniolli"
+                    "surname": "Antoniolli",
+                    "cdl": ""
                 },
                 {
                     "id": "",
                     "name": "Enrico",
-                    "surname": "Arrigotti"
+                    "surname": "Arrigotti",
+                    "cdl": ""
                 },
                 {
                     "id": "",
                     "name": "Davide",
-                    "surname": "Busolin"
+                    "surname": "Busolin",
+                    "cdl": "Informatica"
                 },
                 {
                     "id": "",
                     "name": "Giuseppe",
-                    "surname": "Del Campo"
+                    "surname": "Del Campo",
+                    "cdl": "Informatica"
                 },
                 {
                     "id": "",
                     "name": "Lorenzo",
-                    "surname": "Di Cola"
+                    "surname": "Di Cola",
+                    "cdl": ""
                 },
                 {
                     "id": "",
                     "name": "Ettore Tancredi",
-                    "surname": "Galante"
+                    "surname": "Galante",
+                    "cdl": ""
                 },
                 {
                     "id": "",
                     "name": "Irene Lara",
-                    "surname": "Galimi"
+                    "surname": "Galimi",
+                    "cdl": ""
                 },
                 {
                     "id": "",
                     "name": "Luca",
-                    "surname": "Giuliani"
+                    "surname": "Giuliani",
+                    "cdl": ""
                 },
                 {
                     "id": "",
                     "name": "Renato",
-                    "surname": "Graziano"
+                    "surname": "Graziano",
+                    "cdl": ""
                 },
                 {
                     "id": "",
                     "name": "Giulia",
-                    "surname": "Mattavelli"
+                    "surname": "Mattavelli",
+                    "cdl": ""
                 },
                 {
                     "id": "",
                     "name": "Lorenzo",
-                    "surname": "Mazzi"
+                    "surname": "Mazzi",
+                    "cdl": ""
                 },
                 {
                     "id": "",
                     "name": "Davide",
-                    "surname": "Rusconi"
+                    "surname": "Rusconi",
+                    "cdl": ""
                 },
                 {
                     "id": "",
                     "name": "Luca",
-                    "surname": "Trecarichi"
+                    "surname": "Trecarichi",
+                    "cdl": ""
                 },
                 {
                     "id": "",
                     "name": "Pietro",
-                    "surname": "Zola"
+                    "surname": "Zola",
+                    "cdl": ""
                 }
             ],
             "cdls": [
                 {
-                    "id":"triennale_informatica",
-                    "name":"Informatica",
-                    "description":"",
+                    "id": "triennale_informatica",
+                    "name": "Informatica",
+                    "description": "",
                     "admins": [
-                        { "id": "", "username": "MrBrionix", "role": "" },
-                        { "id": "", "username": "MattiaOldani", "role": "" },
-                        { "id": "", "username": "acetimarco", "role": "" },
-                        { "id": "", "username": "georgianiandrei", "role": "" },
-                        { "id": "", "username": "IrisCanole", "role": "" },
-                        { "id": "", "username": "Mantotheale", "role": "" },
-                        { "id": "", "username": "Weinsz", "role": "" },
-                        { "id": "", "username": "GbitGbit", "role": "" },
-                        { "id": "", "username": "davidemarchioriz", "role": "" },
-                        { "id": "", "username": "Aconithorn", "role": "" }
+                        {
+                            "id": "",
+                            "username": "MrBrionix",
+                            "role": ""
+                        },
+                        {
+                            "id": "",
+                            "username": "MattiaOldani",
+                            "role": ""
+                        },
+                        {
+                            "id": "",
+                            "username": "acetimarco",
+                            "role": ""
+                        },
+                        {
+                            "id": "",
+                            "username": "georgianiandrei",
+                            "role": ""
+                        },
+                        {
+                            "id": "",
+                            "username": "IrisCanole",
+                            "role": ""
+                        },
+                        {
+                            "id": "",
+                            "username": "Mantotheale",
+                            "role": ""
+                        },
+                        {
+                            "id": "",
+                            "username": "Weinsz",
+                            "role": ""
+                        },
+                        {
+                            "id": "",
+                            "username": "GbitGbit",
+                            "role": ""
+                        },
+                        {
+                            "id": "",
+                            "username": "davidemarchioriz",
+                            "role": ""
+                        },
+                        {
+                            "id": "",
+                            "username": "Aconithorn",
+                            "role": ""
+                        }
                     ],
                     "courses": [
-                    ]
+                        {
+                            "id": "2aad53c0-75a0-4429-a0c1-c9ae4424d120",
+                            "cdl": "triennale_informatica",
+                            "name": "A. A. 2017/2018",
+                            "anno": "Anno accademico",
+                            "semestre": "",
+                            "cfu": "",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "2e433576-1da3-49e4-8f06-6d58ff01960d",
+                            "cdl": "triennale_informatica",
+                            "name": "A. A. 2018/2019",
+                            "anno": "Anno accademico",
+                            "semestre": "",
+                            "cfu": "",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "75addcb0-ac7d-4f34-b217-5b506f07d4e4",
+                            "cdl": "triennale_informatica",
+                            "name": "A. A. 2019/2020",
+                            "anno": "Anno accademico",
+                            "semestre": "",
+                            "cfu": "",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "e87c4f07-44bf-4ee7-a7c1-179e655f3347",
+                            "cdl": "triennale_informatica",
+                            "name": "Matematica del continuo",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/I5_YNlLJj2kqVam47wKXXg",
+                            "websites": [
+                                {
+                                    "link": "https://ccavaterramc.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "https://drive.google.com/drive/u/0/folders/1L_5rIr2MebLvmZg0CbBmSvkb6OJ22JTe",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:matematica_del_continuo"
+                        },
+                        {
+                            "id": "ba782f51-4b01-439a-b09d-be1815e8bdaa",
+                            "cdl": "triennale_informatica",
+                            "name": "Programmazione 1",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/I5_YNkUAAav9EAN3evrPOA",
+                            "websites": [
+                                {
+                                    "link": "http://boldi.di.unimi.it/Corsi/Inf2020/",
+                                    "etichetta": "Avvisi"
+                                },
+                                {
+                                    "link": "https://atrentinip.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Ariel Ed.1"
+                                },
+                                {
+                                    "link": "https://mcasazzapud.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Ariel Ed.2"
+                                }
+                            ],
+                            "drive": "https://drive.google.com/drive/folders/1saD19VGP4xYkL_eVtdP32l1c5O5ZJPYr?usp=sharing",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:programmazione_1"
+                        },
+                        {
+                            "id": "065777f5-1862-4a96-ad91-9c4bc2484133",
+                            "cdl": "triennale_informatica",
+                            "name": "Architettura degli elaboratori 1",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNkbMb26Vj9ktNgS-MQ",
+                            "websites": [
+                                {
+                                    "link": "http://ais-lab.di.unimi.it/Teaching/Architettura_I/_Arch_I.html",
+                                    "etichetta": "Avvisi"
+                                },
+                                {
+                                    "link": "https://aborgheseae1.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Ariel Ed.1"
+                                },
+                                {
+                                    "link": "https://nbasilicoae1.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Ariel Ed.2"
+                                }
+                            ],
+                            "drive": "https://drive.google.com/drive/folders/1LuYA_H_PsAx_0-0Ol7fDXTITPhxpjKir?usp=sharing",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:architettura_degli_elaboratori_1"
+                        },
+                        {
+                            "id": "7d589d06-818b-42ef-9fad-8010bb695c9d",
+                            "cdl": "triennale_informatica",
+                            "name": "Linguaggi formali e automi",
+                            "anno": "1",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNkiK5gFYF132K18oNA",
+                            "websites": [
+                                {
+                                    "link": "https://bpalanolfa.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "https://drive.google.com/drive/folders/1R9tvDODEHPWvMHrM75XLV5pSPoC5XzCK?usp=sharing",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:linguaggi_formali_e_automi"
+                        },
+                        {
+                            "id": "a4613ef7-5581-4886-abc1-25b6b20c5553",
+                            "cdl": "triennale_informatica",
+                            "name": "Logica matematica",
+                            "anno": "1",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNkcgIJRYxpdk2G6qmw",
+                            "websites": [
+                                {
+                                    "link": "https://saguzzolilom.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Avvisi"
+                                },
+                                {
+                                    "link": "https://homes.di.unimi.it/aguzzoli/logicatriennale.html",
+                                    "etichetta": "Materiale"
+                                }
+                            ],
+                            "drive": "https://drive.google.com/drive/folders/16J-jJG4URArwZ-8Pnc1DarLhaIfOhGxg?usp=sharing",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:logica_matematica"
+                        },
+                        {
+                            "id": "52e46030-19a4-4537-a4b7-0053e2c9a0b6",
+                            "cdl": "triennale_informatica",
+                            "name": "Matematica del discreto",
+                            "anno": "1",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNkx7F6xXvIbZvW6HAg",
+                            "websites": [
+                                {
+                                    "link": "https://agarbagnatimd.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "https://drive.google.com/drive/folders/1FL2WVaLvT9bOqiX21EawIgqQ4fb-cuQm?usp=sharing",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:matematica_del_discreto"
+                        },
+                        {
+                            "id": "6a3ba498-2ff2-49d4-ac51-954a7c6cd168",
+                            "cdl": "triennale_informatica",
+                            "name": "Architettura degli elaboratori II",
+                            "anno": "1",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNk8pDVxsjkVVelKs3A",
+                            "websites": [
+                                {
+                                    "link": "https://aborgheseae2.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Ariel"
+                                },
+                                {
+                                    "link": "http://ais-lab.di.unimi.it/Teaching/Architettura_II/_Arch_II.html",
+                                    "etichetta": "Avvisi"
+                                }
+                            ],
+                            "drive": "https://drive.google.com/drive/folders/19CVxqohmG5SFZlj5hKT-uP3-QExPVOcd?usp=sharing",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:architettura_degli_elaboratori_2"
+                        },
+                        {
+                            "id": "cb8ca9d2-c1c1-46e5-87dd-88c862168b01",
+                            "cdl": "triennale_informatica",
+                            "name": "Algoritmi e strutture dati",
+                            "anno": "2",
+                            "semestre": "1",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/I5_YNlM4CuXxmcAjlPsiXQ",
+                            "websites": [
+                                {
+                                    "link": "https://gpighizziniasd.ariel.ctu.unimi.it/",
+                                    "etichetta": "Ariel"
+                                },
+                                {
+                                    "link": "http://lonati.di.unimi.it/algopig/",
+                                    "etichetta": "Sito lab"
+                                },
+                                {
+                                    "link": "http://pighizzini.di.unimi.it/algoritmi/",
+                                    "etichetta": "Vecchio sito"
+                                }
+                            ],
+                            "drive": "https://drive.google.com/drive/folders/1fuwmZ5wFSKb9bLN_67An1SqUzhstl0IC?usp=sharing",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:algoritmi_e_strutture_dati"
+                        },
+                        {
+                            "id": "14f9e122-f754-4a37-824e-3508e81a2dbd",
+                            "cdl": "triennale_informatica",
+                            "name": "Basi di dati",
+                            "anno": "2",
+                            "semestre": "1",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/I5_YNksjlG0_17VbLDQqkQ",
+                            "websites": [
+                                {
+                                    "link": "https://aferrarabd.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "https://drive.google.com/drive/folders/1fZ3s3zzh8Rs3sieboDOowMa8anrnV5wL?usp=sharing",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:basi_di_dati"
+                        },
+                        {
+                            "id": "255aada9-ca8f-4f05-8bd5-e6be03f0ffae",
+                            "cdl": "triennale_informatica",
+                            "name": "Programmazione 2",
+                            "anno": "2",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/prog2Statale",
+                            "websites": [
+                                {
+                                    "link": "https://prog2.di.unimi.it/",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "https://drive.google.com/drive/folders/1R0kUdMb4UceQnk0fGJ1oHvkwpUxFtIdb?usp=sharing",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:programmazione_2"
+                        },
+                        {
+                            "id": "8033d7d7-4c00-4941-a999-89ef47963470",
+                            "cdl": "triennale_informatica",
+                            "name": "Sistemi operativi",
+                            "anno": "2",
+                            "semestre": "2",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/I5_YNk-dZguO743s4WesSg",
+                            "websites": [
+                                {
+                                    "link": "https://vpiuriso.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "https://drive.google.com/drive/folders/1d0PE9Ku-Yt9k_FmfwWaKqaZseu6439I7?usp=sharing",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:sistemi_operativi"
+                        },
+                        {
+                            "id": "58cf5216-3de7-4d64-8ff6-51b701941124",
+                            "cdl": "triennale_informatica",
+                            "name": "Statistica e analisi dei dati",
+                            "anno": "2",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNk_aH4nG_aX3b_bZwg",
+                            "websites": [
+                                {
+                                    "link": "https://malchiodi.di.unimi.it/teaching/SAD/",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "https://drive.google.com/drive/folders/1vVxJraj7XC4LQ6xXjY5Gzy2GMZaA5li7?usp=sharing",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:statistica_e_analisi_dei_dati"
+                        },
+                        {
+                            "id": "3594efda-3a63-42e7-9b1d-bd582b71480c",
+                            "cdl": "triennale_informatica",
+                            "name": "Ingegneria del software",
+                            "anno": "3",
+                            "semestre": "1",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/I5_YNlI88teqXRbFq10IIQ",
+                            "websites": [
+                                {
+                                    "link": "https://ericcobeneins.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "https://drive.google.com/drive/folders/1gb5J2z6QCjc-CXrgxS9FbWKX0ABNr8uu?usp=sharing",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:ingegneria_del_software"
+                        },
+                        {
+                            "id": "7fab6002-3192-47f7-9ae8-8d7cacc0571d",
+                            "cdl": "triennale_informatica",
+                            "name": "Reti di calcolatori",
+                            "anno": "3",
+                            "semestre": "1",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/I5_YNlXYS6SlbJE53ZRg_g",
+                            "websites": [
+                                {
+                                    "link": "https://grossircc.ariel.ctu.unimi.it/v5/Home/",
+                                    "etichetta": "Sito teoria"
+                                },
+                                {
+                                    "link": "https://epaganircl.ariel.ctu.unimi.it/v5/frm3/ThreadList.aspx?name=contenuti",
+                                    "etichetta": "Sito lab"
+                                }
+                            ],
+                            "drive": "https://drive.google.com/drive/folders/1dmymaGDXN7Y1pu1grsZw_CENSbAc5Szc?usp=sharing",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:reti_di_calcolatori"
+                        },
+                        {
+                            "id": "368d09f8-830a-4e37-a7f9-1abfdb2ce6cf",
+                            "cdl": "triennale_informatica",
+                            "name": "Aspetti etici, legali, sociali ed economici dell’triennale_informatica",
+                            "anno": "3",
+                            "semestre": "1",
+                            "cfu": "3",
+                            "gruppo": "https://t.me/joinchat/I5_YNkSYLJfZ88V1bni-lg",
+                            "websites": [
+                                {
+                                    "link": "https://labonline.ctu.unimi.it/course/view.php?id=142",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:aspetti_etici"
+                        },
+                        {
+                            "id": "478ea62b-e507-4194-b511-a419431417b2",
+                            "cdl": "triennale_informatica",
+                            "name": "Crittografia 1",
+                            "anno": "Complementare",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNhzQPtbeFNG-cXzoTQ",
+                            "websites": [
+                                {
+                                    "link": "https://aviscontic1.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:crittografia_2"
+                        },
+                        {
+                            "id": "a17cc081-1cd5-4a0a-b2b2-ff2346411037",
+                            "cdl": "triennale_informatica",
+                            "name": "Editoria digitale",
+                            "anno": "Complementare",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNhxugMKmbpkvbOnf6Q",
+                            "websites": [
+                                {
+                                    "link": "https://manisettied.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:editoria_digitale"
+                        },
+                        {
+                            "id": "Elaborazione dei segnali",
+                            "cdl": "triennale_informatica",
+                            "name": "Elaborazione dei segnali",
+                            "anno": "Complementare",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNhVTgsClJOS4SjLPWg",
+                            "websites": [
+                                {
+                                    "link": "https://homes.di.unimi.it/~pedersini/ES/index.html",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:elaborazione_dei_segnali"
+                        },
+                        {
+                            "id": "eaa04668-1ac2-4125-9267-f50a41338aab",
+                            "cdl": "triennale_informatica",
+                            "name": "Elaborazione delle immagini",
+                            "anno": "Complementare",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNlO1bxtsR7jkMc9UzA",
+                            "websites": [
+                                {
+                                    "link": "https://rlanzarottiei1.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "https://drive.google.com/drive/folders/1rwnQOQCWTdkFCW0juHcnz6DIKOGeuefQ?usp=sharing",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:elaborazione_delle_immagini"
+                        },
+                        {
+                            "id": "60cb2519-3dfd-4104-ae58-0ea84bb5ef14",
+                            "cdl": "triennale_informatica",
+                            "name": "Fisica",
+                            "anno": "Complementare",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/UOk6kKnWLXX1w49p",
+                            "websites": [
+                                {
+                                    "link": "https://app.slack.com/client/TDFBLAMTJ/CDFBLAV6C",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "https://drive.google.com/drive/folders/1uA_G2vulwuwky1H7Xp1uWv9LXyZpp_yL?usp=sharing",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:fisica"
+                        },
+                        {
+                            "id": "fb3e895d-2f15-46d8-b73f-05c14fecfe4a",
+                            "cdl": "triennale_informatica",
+                            "name": "Intelligenza artificiale I",
+                            "anno": "Complementare",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNlE5Zy2i72Heow6smg",
+                            "websites": [
+                                {
+                                    "link": "https://nbasilicoia.ariel.ctu.unimi.it/v5/Home/default.aspx",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "https://drive.google.com/drive/folders/1uBkH3YUi21NIxPen8c1XCJnrA556dOzt?usp=sharing",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:intelligenza_artificiale_1"
+                        },
+                        {
+                            "id": "0dda9a72-67d1-4ed7-b97b-b13ba5d6336e",
+                            "cdl": "triennale_informatica",
+                            "name": "Interazioni sociali in rete",
+                            "anno": "Complementare",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNhjX2Al4ecpYTP4v4w",
+                            "websites": [
+                                {
+                                    "link": "https://isr.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:interazioni_sociali_in_rete"
+                        },
+                        {
+                            "id": "3dcff6a4-1105-4d70-8e61-5b131ee89d52",
+                            "cdl": "triennale_informatica",
+                            "name": "Linguaggi di programmazione",
+                            "anno": "Complementare",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNlWU2ftNPMU3C_jg1A",
+                            "websites": [
+                                {
+                                    "link": "https://cazzola.di.unimi.it/lp.html",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "https://drive.google.com/drive/folders/1QLy7Fo3T7x6a_qdC1dQdYh6xdR3QDp4_?usp=sharing",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:linguaggi_di_programmazione"
+                        },
+                        {
+                            "id": "63c1b06d-46cc-4991-a08a-ba45c9f1c3ad",
+                            "cdl": "triennale_informatica",
+                            "name": "Sicurezza e privatezza",
+                            "anno": "Complementare",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNleXbHpkaYf1gGe_eA",
+                            "websites": [
+                                {
+                                    "link": "https://dbruschisp.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "https://drive.google.com/drive/folders/1VImnRcEk_8RcQa9FxXeSnOojmRQPdaET?usp=sharing",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:sicurezza_e_privatezza"
+                        },
+                        {
+                            "id": "3ce63ea6-a043-4731-bb8d-7801dc92d35f",
+                            "cdl": "triennale_informatica",
+                            "name": "Sistemi informativi",
+                            "anno": "Complementare",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNhrkrpY2q6ZTcFAiKA",
+                            "websites": [
+                                {
+                                    "link": "https://scastanosi.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:sistemi_informativi"
+                        },
+                        {
+                            "id": "d245cd20-deb6-4944-8b61-bab6ae7d4928",
+                            "cdl": "triennale_informatica",
+                            "name": "Complementi di algoritmi e strutture dati",
+                            "anno": "Complementare",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNlVNU50PLkhmCVguYQ",
+                            "websites": [
+                                {
+                                    "link": "http://cesa-bianchi.di.unimi.it/Algo2/",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:complementi_di_algoritmi_e_strutture_dati"
+                        },
+                        {
+                            "id": "803d1c96-86fc-498d-80a7-d33ef86cf320",
+                            "cdl": "triennale_informatica",
+                            "name": "Computer graphics",
+                            "anno": "Complementare",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNkwGaVC3bzO-qUersA",
+                            "websites": [
+                                {
+                                    "link": "http://tarini.di.unimi.it/teaching/cg2020/",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:computer_graphics"
+                        },
+                        {
+                            "id": "8bbbe13b-0974-4ebd-8f5f-383894fe995e",
+                            "cdl": "triennale_informatica",
+                            "name": "Diritto dei prodotti digitali",
+                            "anno": "Complementare",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNhux4EmtoynZPO9vig",
+                            "websites": [
+                                {
+                                    "link": "https://gpedrazzidpd.ariel.ctu.unimi.it/v5/home/default.aspx/",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:diritto_dei_prodotti_digitali"
+                        },
+                        {
+                            "id": "e9632cdc-f65d-41e4-a185-333d3a47d7fc",
+                            "cdl": "triennale_informatica",
+                            "name": "Fondamenti di social media digitali",
+                            "anno": "Complementare",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNkh2jNH8WERWYWI7ow",
+                            "websites": [
+                                {
+                                    "link": "https://alanzifsmd.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:fondamenti_di_social_media_digitali"
+                        },
+                        {
+                            "id": "7ef900d3-285d-4eb7-bad0-9a7710e0f67f",
+                            "cdl": "triennale_informatica",
+                            "name": "Linguaggi e traduttori",
+                            "anno": "Complementare",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNkbmX1GrQIULW0OJ8w",
+                            "websites": [
+                                {
+                                    "link": "https://let.di.unimi.it/",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:linguaggi_e_traduttori"
+                        },
+                        {
+                            "id": "193f0e6c-a76c-455c-9071-52969f7157e4",
+                            "cdl": "triennale_informatica",
+                            "name": "Programmazione dichiarativa",
+                            "anno": "Complementare",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNkx6KkBEsMESnAR1QA",
+                            "websites": [
+                                {
+                                    "link": "https://amomiglianopd.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:programmazione_dichiarativa"
+                        },
+                        {
+                            "id": "c96a5278-a3e1-4bcf-bd84-ceeb03f459cb",
+                            "cdl": "triennale_informatica",
+                            "name": "Ricerca operativa",
+                            "anno": "Complementare",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNk1IcLchpfkN4FLP8g",
+                            "websites": [
+                                {
+                                    "link": "https://mtrubianro.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "https://drive.google.com/drive/folders/1myIa7-zXQ_rFLNmjZmh9n4kQw-vPSBlR?usp=sharing",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:ricerca_operativa"
+                        },
+                        {
+                            "id": "cc3d192d-3f74-4e25-a90d-5aaffcd725ad",
+                            "cdl": "triennale_informatica",
+                            "name": "Sistemi embedded",
+                            "anno": "Complementare",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNlaCIr_QBXgXD0OPOg",
+                            "websites": [
+                                {
+                                    "link": "http://sl-lab.it/dokuwiki/doku.php/pub:sistemiembedded:home",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:sistemi_embedded"
+                        },
+                        {
+                            "id": "26d2375b-dff7-4ca8-966d-4b4c9efca19f",
+                            "cdl": "triennale_informatica",
+                            "name": "Tecnologie e linguaggi per il Web",
+                            "anno": "Complementare",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNhSdNPn382dfMb-KZA",
+                            "websites": [
+                                {
+                                    "link": "https://pceravolopwm.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "https://drive.google.com/drive/folders/1TyKIjwtKUVvdTeNd5MHUQ93QxAU2kjXY?usp=sharing",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:tecnologie_e_linguaggi_web"
+                        },
+                        {
+                            "id": "6d31aa11-ba32-4f7a-b817-4f73d13d055c",
+                            "cdl": "triennale_informatica",
+                            "name": "Visualizzazione scientifica",
+                            "anno": "Complementare",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/SNXVPDd_DllnCUCx",
+                            "websites": [
+                                {
+                                    "link": "https://ecasiraghivs.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "https://drive.google.com/drive/folders/1jpQQZoYyKAKfOYEjYsOEcwn31O9LHztZ?usp=sharing",
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:visualizzazione_scientifica"
+                        }
+                    ],
+                    "is_master":false,
+                    "has_years":true
                 },
                 {
-                    "id":"triennale_informatica_musicale",
-                    "name":"Informatica musicale",
-                    "description":"",
+                    "id": "triennale_informatica_musicale",
+                    "name": "Informatica musicale",
+                    "description": "",
                     "admins": [
-                        { "id": "", "username": "giolake", "role": "" }
+                        {
+                            "id": "",
+                            "username": "giolake",
+                            "role": ""
+                        }
                     ],
                     "courses": [
-                    ]
+                        {
+                            "id": "4bb5798b-7fb7-45ff-a90d-cf036fd7a744",
+                            "cdl": "triennale_informatica_musicale",
+                            "name": "Matematica del continuo",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/continuoMusicale",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "b8fa022e-103c-4b5e-9eab-d8eee1874b12",
+                            "cdl": "triennale_informatica_musicale",
+                            "name": "Semiotica della musica",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/semioticaMusicale",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "760ae2c2-69f9-4a3e-9b41-df9c581d0970",
+                            "cdl": "triennale_informatica_musicale",
+                            "name": "Programmazione",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/I5_YNkUAAav9EAN3evrPOA",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        }
+                    ],
+                    "is_master":false,
+                    "has_years":true
                 },
                 {
-                    "id":"triennale_informatica_com_digitale",
-                    "name":"Informatica comunicazione digitale",
-                    "description":"",
+                    "id": "triennale_informatica_com_digitale",
+                    "name": "Informatica comunicazione digitale",
+                    "description": "",
                     "admins": [
-                        { "id": "", "username": "robertopinotti", "role": "" }
+                        {
+                            "id": "",
+                            "username": "robertopinotti",
+                            "role": ""
+                        }
                     ],
                     "courses": [
-                    ]
+                        {
+                            "id": "68719059-5b9c-45ec-b5b3-296bddb69778",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "A. A. Precedenti",
+                            "anno": "Anno accademico",
+                            "semestre": "",
+                            "cfu": "",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "46d33c2b-5cf7-4754-bece-fa559964e7aa",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Interazione uomo macchina",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/AC9fAhghtJCRjyz18Yb3zQ",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "2b9ae174-54d9-4c6e-b7ef-8d459d9866eb",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Matematica del continuo",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/AC9fAkhKlQ4ekTBE09uwjQ",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbdDNMeU1waG1EblU?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "bd55790d-d9f8-4529-90ed-34e942719f42",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Programmazione",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/I5_YNkUAAav9EAN3evrPOA",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbb3I0SVpScWdBaW8?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "0a11e401-bd5c-4143-a64d-d6046dfc6f34",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Architettura degli elaboratori",
+                            "anno": "1",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNh1_jCogTMSTKYo7sA",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbN1RjeUFSMlh3RTg?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "68134278-63ee-4a22-aeca-a62a35e785b5",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Diritto dei prodotti digitali",
+                            "anno": "1",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNhux4EmtoynZPO9vig",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbQTdraGVNTHpPUXM?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "1f7ab8d9-91c8-424f-a16a-486f5e717276",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Marketing digitale",
+                            "anno": "1",
+                            "semestre": "2",
+                            "cfu": "9",
+                            "gruppo": "https://t.me/joinchat/I5_YNg6C6e2Ew7mQqXBJSA",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbNTY2UEJfeDNPZjg?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "52aa3d21-7990-44ce-9775-59e6cd6e9c23",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Metodi matematici per la comunicazione digitale",
+                            "anno": "1",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNhhjHjHtoEGmgv8LDA",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbaFdVa2s4d1lSbzA?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "3e28ab47-66f5-477e-a3ec-444aee7786f7",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Algoritmi e strutture dati",
+                            "anno": "2",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/NDZwdRc1hJi2y70lmul4QA",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbQTNES0d0bVppNTA?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "34d8bf14-080e-407d-b3cb-04230205c5f0",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Applicazioni web e cloud",
+                            "anno": "2",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/NDZwdRsF5BbFjVeKfo6ahg",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbU0xWdndQaDV0cEU?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "ae51b727-0aab-468e-9b75-f36f0baf4c7e",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Programmazione 2",
+                            "anno": "2",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/NDZwdRlR3LvsyEDuRuj3zQ",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1pokIt2bsxWpR30yyMSVuRZFVmex2ctFu?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "68d85176-7c02-4280-88fe-e98ee86978eb",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Reti di calcolatori",
+                            "anno": "2",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/NDZwdRn7DkiL13-kLKh1GQ",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1Y9iXd6J17Bcn7vqc9ZB5mitRNd5v_kJr?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "ee7c93e4-c214-4fe6-a82f-5d5694251af5",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Sistemi operativi",
+                            "anno": "2",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/sistemioperativi2021",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbblJrTzJKUlNUR2M?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "0fd4b1ef-fe43-4c28-8c42-f2b346a00f05",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Basi di dati e web",
+                            "anno": "2",
+                            "semestre": "2",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/I5_YNgx1kjG5vhSeP3SUNg",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbTEVGcVJJV1dieWs?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "7085d3fd-9c78-4959-bc08-d794efced926",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Elaborazione dei segnali",
+                            "anno": "2",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNhqh4lNVOhLAUus4cA",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "ae976110-36e2-4221-9eba-26d5008dd64f",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Statistica e analisi dei dati",
+                            "anno": "2",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNg-_LetQPT2EQAXP5g",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbaU5WdC1TQUNZa3M?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "2b297b56-cd17-4bd2-89ff-1bf6a6580f64",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Fondamenti di social media digitali",
+                            "anno": "Complementare",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNkh2jNH8WERWYWI7ow",
+                            "websites": [
+                                {
+                                    "link": "https://alanzifsmd.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Sito web"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "3e0ac48c-4468-4e13-87ef-da87b9716558",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Computer graphics",
+                            "anno": "Complementare",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNkwGaVC3bzO-qUersA",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbRFpMLWFJVFptbkE?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "305fe9f4-74fe-400b-8965-82e9d287d3b1",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Principi e modelli della percezione",
+                            "anno": "3",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNhq86j9kkfQHo8BOdg",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbb1dROW5pbWx5ZVU?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "67d3dcf3-7ab6-452c-bf10-2fab0b63f9ee",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Mobile computing",
+                            "anno": "Complementare",
+                            "semestre": "1",
+                            "cfu": "9",
+                            "gruppo": "https://t.me/joinchat/I5_YNhhYqeJR7dogkZWwzA",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1nv1AReNHUNcM04dIuX-5gHaIcNrKRr5Q?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "00bec133-0e39-4610-9f59-d10603e72502",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Social media mining",
+                            "anno": "Complementare",
+                            "semestre": "2",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/I5_YNhksmA2Ff86P5F9p6w",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1FnhLnO4zrxyrDMSWmOMVnvEBe1NLYSs_?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "dc7ffc50-be60-48f1-bf77-9b7019df533d",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Informazione multimediale",
+                            "anno": "Complementare",
+                            "semestre": "1",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/I5_YNhxvWsGDhArbu_u2Uw",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1lKQo-tleQkpPLsidsLJqB4N_-5TK10l8?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "dd6a6f2a-5c8d-4b08-9117-94e1bc4eaba2",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Progetto multimediale",
+                            "anno": "Complementare",
+                            "semestre": "2",
+                            "cfu": "9",
+                            "gruppo": "https://t.me/joinchat/I5_YNkWK6-FCPt-ZqLgSWA",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "e2cb29dc-1c7f-42ae-aaba-0ed94a376629",
+                            "cdl": "triennale_informatica_com_dig",
+                            "name": "Sociologia dei nuovi media",
+                            "anno": "Complementare",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNhtrWdLRUJ5h7IUZLQ",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1rH50r9sy62f0t1qWlPJnxdkDZwwerJ7K?usp=sharing",
+                            "wiki": ""
+                        }
+                    ],
+                    "is_master":false,
+                    "has_years":true
                 },
                 {
-                    "id":"triennale_sicurezza_sistemi_reti_informatiche",
-                    "name":"Sicurezza sistemi e reti informatiche",
-                    "description":"",
+                    "id": "triennale_sicurezza_sistemi_reti_informatiche",
+                    "name": "Sicurezza sistemi e reti informatiche",
+                    "description": "",
                     "admins": [
-                        { "id": "", "username": "burzum00", "role": "" }
+                        {
+                            "id": "",
+                            "username": "burzum00",
+                            "role": ""
+                        }
                     ],
                     "courses": [
-                    ]
+                        {
+                            "id": "0ca9488b-28d2-4af8-b55d-d5c3f85e9008",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
+                            "name": "A. A. 2018/2019",
+                            "anno": "Anno accademico",
+                            "semestre": "",
+                            "cfu": "",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "71032d98-968f-4c75-9407-ea94bc654e06",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
+                            "name": "Matematica del continuo",
+                            "anno": "1",
+                            "semestre": "1°,2",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/JQNZokzlICetQPCuCUqvOg",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "18072ad0-f386-4873-b9c7-1f870bb645ac",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
+                            "name": "Architettura degli elaboratori",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/JQNZolSwR4GAv1ksS8SXNA",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "c5fa19f7-2e29-4d34-a646-aba034ecd412",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
+                            "name": "Matematica del discreto",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/JQNZolEgA0BtvyB8CrS4Zw",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "fcbabfe6-8bce-49aa-b23d-b1ef59fdf85d",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
+                            "name": "Programmazione",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/JQNZokx5Zrq78nbKIyszeg",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "5f3f74e9-f8d9-47e5-ae96-dc9035e0b726",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
+                            "name": "Diritto penale dell'informatica",
+                            "anno": "1",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/JQNZokxw8O-NPvZMnuYvnw",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "b113a7f9-c097-4ad8-a270-9e941b6e98fd",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
+                            "name": "Programmazione web e mobile",
+                            "anno": "1",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/FJ00-S56iXwxv4pk",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "6997f933-4bc7-4135-890e-524e2a5fabb8",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
+                            "name": "Sicurezza nei sistemi web e mobili",
+                            "anno": "1",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/JQNZolTD_xGDgW4xqUrcSQ",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "1064ee63-5a29-40b0-a144-83012a71328a",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
+                            "name": "Algoritmi e strutture dati",
+                            "anno": "2",
+                            "semestre": "1",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/JQNZolUyB-mqltahlS7r7w",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "306812b4-50bc-43d8-8f08-20ef76056908",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
+                            "name": "Sistemi operativi",
+                            "anno": "2",
+                            "semestre": "1",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/JQNZok5UFl9iiBPaD_w4tQ",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "33f0875b-47c8-4f39-8c31-932b9d0f8578",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
+                            "name": "Statistica e analisi dei dati",
+                            "anno": "2",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/JQNZok7b2tII6B_UHVeBAg",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "42cb962f-eb33-44a7-adc7-0c766ae098d8",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
+                            "name": "Basi di dati",
+                            "anno": "2",
+                            "semestre": "2",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/JQNZolAtoHIJkNyqCmGTdg",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "df71ed18-a152-4f97-8eaf-6ca87804f008",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
+                            "name": "Crittografia",
+                            "anno": "2",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/JQNZolHm5t4VBxKiQyIkuQ",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "5c7da9dd-2a87-44e4-849e-cfd88aa8c0be",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
+                            "name": "Reti di calcolatori",
+                            "anno": "2",
+                            "semestre": "2",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/JQNZokiMWZHk7tbkyJhC2g",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "7989c2ff-321b-4073-b443-bc8544c913f9",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
+                            "name": "Sicurezza dei sistemi e delle reti",
+                            "anno": "3",
+                            "semestre": "1",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/JQNZokvwaxs_V4SYCIU4LQ",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "987bc0c7-77de-4af1-8181-84902330e840",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
+                            "name": "Progettazione software sicuro",
+                            "anno": "3",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/I5_YNlI88teqXRbFq10IIQ",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "3c0d8406-a44f-4f88-8834-35c747cd31c2",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
+                            "name": "Aspetti etici",
+                            "anno": "3",
+                            "semestre": "1",
+                            "cfu": "3",
+                            "gruppo": "https://t.me/joinchat/I5_YNkSYLJfZ88V1bni-lg",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "44c2195e-97bb-450d-89fe-69d2816bb382",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
+                            "name": "Sistemi biometrici",
+                            "anno": "3",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/JQNZolhsU8dWt4iHsov_lQ",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "8ff3f536-699c-4544-bb54-e386ab1dcbc7",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
+                            "name": "Computer forensics",
+                            "anno": "3",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/JQNZoliwXfWaJ1io4Ak0Ug",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        }
+                    ],
+                    "is_master":false,
+                    "has_years":true
                 },
                 {
-                    "id":"triennale_sicurezza_sistemi_reti_informatiche_online",
-                    "name":"Sicurezza sistemi e reti informatiche online",
-                    "description":"",
+                    "id": "triennale_sicurezza_sistemi_reti_informatiche_online",
+                    "name": "Sicurezza sistemi e reti informatiche online",
+                    "description": "",
                     "admins": [
-                        { "id": "", "username": "salvadorbs", "role": "" }
+                        {
+                            "id": "",
+                            "username": "salvadorbs",
+                            "role": ""
+                        }
                     ],
                     "courses": [
-                    ]
+                        {
+                            "id": "c01ad517-fab3-46ec-97b5-72de52e5b948",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche_online",
+                            "name": "Gruppo principale",
+                            "anno": "Anno accademico",
+                            "semestre": "",
+                            "cfu": "",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "95340c08-d362-4beb-b0d9-8167ad62943a",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche_online",
+                            "name": "Matematica del continuo",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/JQNZolhSdZunCtH2VcUGAA",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "54c91b1d-20a0-4477-8016-be55a05eed38",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche_online",
+                            "name": "Matematica del discreto",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/JQNZohhc11AMs0OqOmRb_w",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "ca47c973-8e16-433b-b887-c6bb2f95aa5a",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche_online",
+                            "name": "Programmazione",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/JQNZolfqXVouIVTcPz4b2Q",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "b788deab-3191-4cbc-be1d-06d439a61907",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche_online",
+                            "name": "Architettura degli elaboratori",
+                            "anno": "1",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/APBYAlEZfogKWlPKMtfNCg",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "5568ee59-0d48-4982-9ecc-7ad9f4fa8cf3",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche_online",
+                            "name": "Diritto penale dell'informatica",
+                            "anno": "1",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/JQNZohftCWj80G5P0_BSlQ",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "45576fca-a5af-43dd-934a-9204bf0c88c1",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche_online",
+                            "name": "Programmazione web e mobile",
+                            "anno": "1",
+                            "semestre": "3",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/Ah_k0BEHqx9KkfbNft07Hg",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "edd7a5d6-4bcd-43e5-8501-4883a2fdcb66",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche_online",
+                            "name": "Sicurezza dei Sistemi Web e Mobili",
+                            "anno": "1",
+                            "semestre": "3",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/APBYAhJfsNeC9z8HnM4O-A",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "082c2704-cb06-4ad4-92e8-dcbde2736ef7",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche_online",
+                            "name": "Algoritmi e Strutture Dati",
+                            "anno": "2",
+                            "semestre": "1",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/APBYAkxn3pG1O6b47u-Inw",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "1ec11c61-70cd-406e-b131-930dbe891e59",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche_online",
+                            "name": "Sistemi Operativi I e II",
+                            "anno": "2",
+                            "semestre": "1",
+                            "cfu": "6 / 6",
+                            "gruppo": "https://t.me/joinchat/APBYAkYvuRCCA_jf_wtXSQ",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "076fe4c5-d6aa-4d1f-a361-8ad19144c99e",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche_online",
+                            "name": "Basi di dati",
+                            "anno": "2",
+                            "semestre": "2",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/APBYAkzLFYI1qHN0_7C4rQ",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "adf6a10d-b235-4570-85d2-a04d9f64ea30",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche_online",
+                            "name": "Reti di calcolatori",
+                            "anno": "2",
+                            "semestre": "2",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/APBYAkWeYxuexOIaUCyiMQ",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "5db98900-fa35-433d-bdcf-e18944ba297a",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche_online",
+                            "name": "Crittografia",
+                            "anno": "2",
+                            "semestre": "3",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/ATvtG0GV-Kvd_tdh73GHHg",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "6a73576c-6cf1-499d-8a41-110aa1c3013d",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche_online",
+                            "name": "Statistica e analisi dei dati",
+                            "anno": "2",
+                            "semestre": "3",
+                            "cfu": "6",
+                            "gruppo": "http://t.me/statssri",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "81a0fd45-bc06-440b-b9de-4796d8835f42",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche_online",
+                            "name": "Computer Forensics",
+                            "anno": "3",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/APBYAkdQtr5U9Op21iiJ4Q",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "143f50d2-d4d0-4d29-a18c-355c786b8a71",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche_online",
+                            "name": "Sicurezza dei sistemi e delle reti",
+                            "anno": "3",
+                            "semestre": "1",
+                            "cfu": "12",
+                            "gruppo": "https://t.me/joinchat/APBYAhRX4CXCO8wpl4_rkw",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "fe8ba6a7-afe1-4f6f-afa4-63243ab37843",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche_online",
+                            "name": "Progettazione di software sicuro",
+                            "anno": "3",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/APBYAlkHoc-8a3UxScjfrQ",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "53437668-2234-4872-8792-542d1b99afc9",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche_online",
+                            "name": "Sistemi biometrici",
+                            "anno": "3",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/APBYAlVPDyp4COF1PPOAWg",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "10206387-c204-4ef5-9ea8-5875f83cdd89",
+                            "cdl": "triennale_sicurezza_sistemi_reti_informatiche_online",
+                            "name": "Aspetti economici, etici, sociali e legali connessi allo svolgimento della professione informatica",
+                            "anno": "3",
+                            "semestre": "2",
+                            "cfu": "3",
+                            "gruppo": "https://t.me/joinchat/APBYAkZh-kI0VXJVkqj9SQ",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        }
+                    ],
+                    "is_master":false,
+                    "has_years":true
                 },
                 {
-                    "id":"magistrale_informatica",
-                    "name":"Informatica (magistrale)",
-                    "description":"",
+                    "id": "magistrale_informatica",
+                    "name": "Informatica (magistrale)",
+                    "description": "",
                     "admins": [
-                        { "id": "", "username": "robertopinotti", "role": "" }
+                        {
+                            "id": "",
+                            "username": "robertopinotti",
+                            "role": ""
+                        }
                     ],
                     "courses": [
-                    ]
+                        {
+                            "id": "d4691c51-e39c-42ec-92f0-2febfdcd3611",
+                            "cdl": "magistrale_informatica",
+                            "name": "Gruppo principale",
+                            "anno": "Anno accademico",
+                            "semestre": "",
+                            "cfu": "",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "2d60c8fb-67d2-42a4-bef8-0af9059bb531",
+                            "cdl": "magistrale_informatica",
+                            "name": "Advanced Computer Programming",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "5aab98a4-45e1-41c1-aa85-d911a16b50b5",
+                            "cdl": "magistrale_informatica",
+                            "name": "Artificial Intelligence",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/BVhVgBQJUmLWxcilRH02yA",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "11539976-2d10-4081-bddb-9932f1e5ede0",
+                            "cdl": "magistrale_informatica",
+                            "name": "Natural Interaction",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "b9da8cbc-8ef3-461e-8a7b-55f3aded23a7",
+                            "cdl": "magistrale_informatica",
+                            "name": "Programmazione Avanzata",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CcGyMEiBJialWeVvRLz7Lw",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1h1L41VBAavNCLd8xumTbmP9JgrgXv43e?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "48706d7d-077f-4d53-872b-0ec3a272f73c",
+                            "cdl": "magistrale_informatica",
+                            "name": "Sviluppo Software in Gruppi di Lavoro Complessi",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/JklfKUkXZltxcoOZ7m6H5Q",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1LavQPSX2YoqLdisNL3uXgUaNwmRCJLxa?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "e2c53561-daa3-4476-af4a-38084e0848b4",
+                            "cdl": "magistrale_informatica",
+                            "name": "Architetture Multimediali",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1ARCt4zBX99POYB9kC_dEkktiWwMIgn7b?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "a558d313-8ae2-408e-ad94-dd369e18e711",
+                            "cdl": "magistrale_informatica",
+                            "name": "Distributed System",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "58e50201-3811-4006-a33e-f30127ebfa68",
+                            "cdl": "magistrale_informatica",
+                            "name": "Informatica Teorica",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/NtIxjlOS0ae2u6NyeY2GkQ",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1ABAIhcGUwC0qx_D5B3wkDPStPUz_v5re?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "b0141e73-ae8d-467e-b714-49b1c0b6b7c5",
+                            "cdl": "magistrale_informatica",
+                            "name": "Information Management",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/C6cCWlWAT0thFUE52xEjqA",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1xEmfSKnf5wAtz45tdERr_UvxFvJJTfLr?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "e813babe-01b1-498d-b44c-ca1c2418e162",
+                            "cdl": "magistrale_informatica",
+                            "name": "Interazione Naturale",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CPEbyEdjyBaDvwtsUw0uTA",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1PkOyR5MLuUgqEHf4fUw_Puf2UFRP0QM9?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "f4fd36fe-8c63-4cda-bd5a-c2ddb682dbc3",
+                            "cdl": "magistrale_informatica",
+                            "name": "Reti Wireless e Mobili",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CpyyKRdKOGnao7n4VBdOow",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1qcLjdbQZJU6IK_VB_1ZQVmOD1RrWAUpw?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "9f63c34c-b6b1-4e2f-8afa-923cb03c92ee",
+                            "cdl": "magistrale_informatica",
+                            "name": "Sistemi Distribuiti e Pervasivi",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CPEbyA-QBQOe7uzuCmzQHQ",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1PuzaHNbdGspsLOOSGXMIaLIkOeqAiEqo?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "e10d17eb-9bb7-4c83-9a4a-0f6770407351",
+                            "cdl": "magistrale_informatica",
+                            "name": "Statistical Methods for Machine Learning",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/B8sWO1aM40Lczj5bUq7gAg",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "c245150a-5097-4dd3-b780-c4ff1c9a5707",
+                            "cdl": "magistrale_informatica",
+                            "name": "Metodi Statici per l'Apprendimento",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CPEbyEnZKhgic5yfY1fUtQ",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1fYT3cV7JL3GVbXx8kFHXkF8Fsr5JW180?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "19085f6a-9f42-42a1-ba25-18226cc8111c",
+                            "cdl": "magistrale_informatica",
+                            "name": "Algoritmi e Complessità",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CcGyMBI8xD8ayp5n0UqeZg",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1NFN-eKdu24UMI6oFVFF8RtheOjxlRX_-?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "542c72ee-6951-463f-9417-ae1f5139885b",
+                            "cdl": "magistrale_informatica",
+                            "name": "Algoritmi Paralleli e Distribuiti",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/Hfp1hxVZ_MIWJDfB3mq3tw",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "277591ba-2358-4124-9578-68158d34f363",
+                            "cdl": "magistrale_informatica",
+                            "name": "Analisi e Gestione del Rischio",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/NtIxjhiKuAC9an7II9lPcA ",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "862f6e92-9eed-4cbe-b3d0-8cae2b1ddd37",
+                            "cdl": "magistrale_informatica",
+                            "name": "Audio Pattern Recognition",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/BycIchHiU6ikH_jWM_D6vg",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1UOlXtJ9M7vnAZGGmUXe_YjC2cGVw3enz?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "fb8c0e14-7d14-431d-95f4-81b007c8e7ac",
+                            "cdl": "magistrale_informatica",
+                            "name": "Game and Level Design",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CcGyMFIDiYskCI0XgW7b4Q",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1rj30Ird0K12pQ36OQ31kC7QpkSboB-dg?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "240afe01-036b-4a10-ac99-6ca84d30ae9a",
+                            "cdl": "magistrale_informatica",
+                            "name": "Game Design and Prototyping",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "da856fcd-8b58-4244-a83a-b4c58304bd0d",
+                            "cdl": "magistrale_informatica",
+                            "name": "Heuristic Algorithms",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "1189a41c-f69a-4862-822f-95ce796e6147",
+                            "cdl": "magistrale_informatica",
+                            "name": "Algoritmi Euristici",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CcGyME1odjchWDHLR1N4hw",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1BSA5HggcJxJCFvwDmVV6o4NWQ-PJecEh?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "18a347ce-11fe-4126-b978-7f06a4769b76",
+                            "cdl": "magistrale_informatica",
+                            "name": "Methods For Image Processing",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/HEq_JE8RtOJkhXJj0xJlpw",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "1c90b2dd-9bc1-41cc-844d-43ae75323983",
+                            "cdl": "magistrale_informatica",
+                            "name": "Modelli dei dati e DBMS di nuova generazione",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/DcQe5hFJXEbokREVjrjXwQ",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/10xn8_0_Zqg7TV3W4KnYQuj09NiYC8aVb?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "1817db6d-eb97-403f-bdc2-1062ec086af7",
+                            "cdl": "magistrale_informatica",
+                            "name": "Privatezza e Protezione dei Dati",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CcGyMESOs8xinKoVgq61Ug",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/15T7uVQeWar2_tCr4OhqRsXQNUI-a9w8x?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "919bd4a5-4b88-4287-b858-734ff8f5bbdf",
+                            "cdl": "magistrale_informatica",
+                            "name": "Privacy and Data Protection",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "d13b6981-7546-4596-a219-21609d829318",
+                            "cdl": "magistrale_informatica",
+                            "name": "Progetto di Sistemi a Sensore",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CcGyMES907s5-asRK2tgCw",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1Bhq2y4pHwvJjj-Tytt1pD_T65HXb2Szd?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "3eb6e77c-abcb-4e37-912b-52bf894eca1a",
+                            "cdl": "magistrale_informatica",
+                            "name": "Programmazione Midi",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "db78f423-e9e2-46fd-ae7d-a9045067943e",
+                            "cdl": "magistrale_informatica",
+                            "name": "Programmazione Per La Musica",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/GGU50xpg-41tjEgE11me-A",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "f5bc9dee-e7d2-4c35-8411-183ab88e1864",
+                            "cdl": "magistrale_informatica",
+                            "name": "Programmazione Timbrica",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "72121a6f-e698-4b55-9e65-ab92925944f3",
+                            "cdl": "magistrale_informatica",
+                            "name": "Sicurezza Informatica",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CcGyMEv6Cz1h1BouUUD0Cw",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1XSnlYhdjInFXa_Pw6R2joWRSBfNfxyi7?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "b0290163-632b-4962-b67d-125dd6ba4ffe",
+                            "cdl": "magistrale_informatica",
+                            "name": "Sistemi Intelligenti",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CcGyMEaSvFfhWdzdcg3Fsg",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1thl0rzQnn8GOuNBMxEkDanr2hUfW0aLu?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "2fa692ec-902a-4e15-b8b3-3892215f26d3",
+                            "cdl": "magistrale_informatica",
+                            "name": "Intelligent Systems for Industry, Supply Chain and Environment",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/UH_LJoTZUJ0P92FJ",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "87053e1f-bd4f-4cfb-8498-ee0d44218642",
+                            "cdl": "magistrale_informatica",
+                            "name": "Tecniche Speciali Di Programmazione",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CcGyMFLe9jEqpOMhUW319w",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1x7MqvTAW1b8_siKQ9feiMkPp507-QezO?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "6ea05f72-2b8a-46e2-a4ee-4391f64242b3",
+                            "cdl": "magistrale_informatica",
+                            "name": "Web Algorithms",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "2095aa41-9b80-435e-9f34-284812fbe40c",
+                            "cdl": "magistrale_informatica",
+                            "name": "Algoritmica per il Web",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CcGyME-oQIZUaSpXgPQzog",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1aBWtJvSpPT_2tso8BpV6UaOXs30v5dna?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "e271db3c-0751-488c-ac8a-c062d39c8eda",
+                            "cdl": "magistrale_informatica",
+                            "name": "3D Video-games",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/B8sWOxb7Sxhvb3TK5vwPEQ",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "b5e3a0a9-8c0a-4486-9d2c-d16487233a2e",
+                            "cdl": "magistrale_informatica",
+                            "name": "Algorithms For Massive Datasets",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/BVhVgBcNcx-KQzO3PP8Vkg",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/15isBUOM9IdZAfFyTM6fGGKKH4R_ueI4j?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "942461dd-35c8-4b33-9674-a852adc19500",
+                            "cdl": "magistrale_informatica",
+                            "name": "Artificial Intelligence for Video-Games",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CpyyKUbD0Fr1xDGy0W2yMg",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "95d7fa5a-5dc9-4337-bc3c-599596d7a7ab",
+                            "cdl": "magistrale_informatica",
+                            "name": "Intelligenza Artificiale per Videogiochi",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CpyyKUbD0Fr1xDGy0W2yMg",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "0a9ec2a5-84ed-442c-a47f-7e430d730c48",
+                            "cdl": "magistrale_informatica",
+                            "name": "Business Process Engineering",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "ffd0f3c0-ffaa-4766-80c1-a7636586f763",
+                            "cdl": "magistrale_informatica",
+                            "name": "Business Information Systems",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "f2a1ed37-f4f8-4053-ace8-b3b13f89fc51",
+                            "cdl": "magistrale_informatica",
+                            "name": "Intelligent Systems For Industry, Supply Chain And Environment",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/intSystemsForIndustry",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "21bf18bc-4d5f-4ce4-9d49-844fafcc8a17",
+                            "cdl": "magistrale_informatica",
+                            "name": "Metodi Probabilistici Per L'Informatica",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CcGyMA3VsILmCrO-UeIJoQ",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1ltP2LMssQiK5JIT4vGy5ehJGW_EuAkN_?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "e05a5327-abd6-457c-9d9b-8c3956ca057c",
+                            "cdl": "magistrale_informatica",
+                            "name": "Online Game Design",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CpyyKVSI-EcOivFZ5xUFZg",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "8bd9e4f5-c364-41cd-a1cf-6b0414f25016",
+                            "cdl": "magistrale_informatica",
+                            "name": "Progettazione di Sistemi Operativi",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "02388b8e-a3cb-4e0f-94cd-1af85bfa07e8",
+                            "cdl": "magistrale_informatica",
+                            "name": "Protocolli per Reti ad Hoc e Sensori",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/B64ybkeOxzXZDOck1G2SPQ",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "d578a28a-2b3c-48b6-b271-eaac6d5f4076",
+                            "cdl": "magistrale_informatica",
+                            "name": "Realtà Virtuale",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CRGlPxQFP-lLAkAazR0Fjg",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "da3427b7-a8f7-49ee-90f4-f91cef22d7a8",
+                            "cdl": "magistrale_informatica",
+                            "name": "Real-time Graphics Programming",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/F5VMZReza0pTp0nd2bHbtw",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "44075b89-0a55-4fcc-8205-2fdb4782b37d",
+                            "cdl": "magistrale_informatica",
+                            "name": "Sicurezza delle Architetture Orientate ai Servizi",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "09a0f067-5458-4765-9c36-3794c2f24e75",
+                            "cdl": "magistrale_informatica",
+                            "name": "Simulation",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "63b1834f-0520-4ad3-b007-4cf4aa5572ae",
+                            "cdl": "magistrale_informatica",
+                            "name": "Sviluppo Di Applicazioni Per Dispositivi Mobili",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/AC9fAkhy7f0Hf0b1lu_2VQ",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1V_Nv0OMVy6WNIRxQGuBCDGpvE3LkxNHK?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "a266bfcf-5b2b-407b-85c7-88cbf1825059",
+                            "cdl": "magistrale_informatica",
+                            "name": "Teoria Dei Linguaggi",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/NtIxjkyW5ztz9KHd1vGAKg",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1dW5viNJwx9y-HC9KwK_1jk1ycjAN6Nlz?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "a394d877-2f2d-4061-b4e2-0f96f9551cfc",
+                            "cdl": "magistrale_informatica",
+                            "name": "Verifica E Convalida Del Software",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/NtIxjlcGooFKQJ9NM5Nxdw",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "f59e98bd-5946-4c88-85f2-c0312afc853b",
+                            "cdl": "magistrale_informatica",
+                            "name": "Visione Artificiale",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CPEbyE-ZQy427hw2yzP7jQ",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "009464a2-283d-4775-bdd1-70b28cb74fa7",
+                            "cdl": "magistrale_informatica",
+                            "name": "Affective Computing",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "809622b4-6ecb-4491-87f6-6d4736e57f5a",
+                            "cdl": "magistrale_informatica",
+                            "name": "Modelli di Computazione Affettiva",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1JpoCLF9b2AWZidQ5eYOL8rnjGsk9UwQl?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "5f4862b2-841d-44a0-8942-d5ce0b4cc2c6",
+                            "cdl": "magistrale_informatica",
+                            "name": "Architectures For Big Data",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/BcfVnRPtJZPJeCkD4eLNwA",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "037c81e6-67f9-4da9-bfe9-ec6600de5091",
+                            "cdl": "magistrale_informatica",
+                            "name": "Architetture e Programmazione DSP",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/Da_ISRF_VC5hKfGhSVEo8g",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "4c162ccf-329e-4890-a13c-f4c4ebf659fc",
+                            "cdl": "magistrale_informatica",
+                            "name": "Biomedical and Industrial Signal Processing",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/BRTKxFaMi4qAjLgcp9v-Rw",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "da95b917-d75a-4352-a86b-f54b5c6a7ba2",
+                            "cdl": "magistrale_informatica",
+                            "name": "Cittadinanza Digitale E Tecnocivismo",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/cittadinanzadigitaletecnocivismo",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "535b693a-a2ac-43e4-ae0f-8f5bc9361f90",
+                            "cdl": "magistrale_informatica",
+                            "name": "Combinatorial Optimization",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "880ec75f-3a93-440b-b1bf-e020039e3939",
+                            "cdl": "magistrale_informatica",
+                            "name": "Ottimizzazione Combinatoria",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CcGyMEz8DnWayaymiAlapQ",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1sZjVMWG-9q9QPoHzMWAFA9L9Y94FZ9wg?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "66408c3d-382c-496f-91ec-7bda9809e9ce",
+                            "cdl": "magistrale_informatica",
+                            "name": "Operational Research Complements",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/B3HHmB0ftc_pSJSG76tiGg",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "846e49ef-2200-4ad4-96bb-b473f0767066",
+                            "cdl": "magistrale_informatica",
+                            "name": "Complementi di Ricerca Operativa",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1mtZr0z6bQTFr5UghBXMRej53s8WFvO_s?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "24e9cdad-845a-45ef-9192-3edc226da52f",
+                            "cdl": "magistrale_informatica",
+                            "name": "Decision Methods And Models",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "85789a6e-9068-4cfe-9cee-b2e98ebccb0e",
+                            "cdl": "magistrale_informatica",
+                            "name": "Metodi e Modelli per le Decisioni",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CcGyMEO57MVHmVWwbI-D2g",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1xvP4j51Iy-SMtitY_dx6DelWJzor9HMl?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "66447abf-5fcc-4b8e-94c8-944ba653aa12",
+                            "cdl": "magistrale_informatica",
+                            "name": "Geometria Computazionale",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/AcMlaBNUV-fGLSTomLMxEg",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "b2efae70-4043-40bb-8b7b-caebe3743e5a",
+                            "cdl": "magistrale_informatica",
+                            "name": "Gestione dell'Informazione Geospaziale",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1z7GR2FKZ1ettNyIYPkLEtubd-9eFgQbQ?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "a05c9080-599c-4a15-98d9-a1f7eea4e9b3",
+                            "cdl": "magistrale_informatica",
+                            "name": "Geospatial Data Management",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/DLQoKxpBXFon9KXbiCTzIA",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "94191207-67bc-4299-a2ec-30a01eca53f0",
+                            "cdl": "magistrale_informatica",
+                            "name": "Logica Matematica",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/AmMNBBuzYRWYWslkQL4QAg",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1D8oQ5pC6Mr1Z0-dIajua-nTLNRRJ5WA8?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "840f0342-7b68-47c6-a752-54ee2871b71c",
+                            "cdl": "magistrale_informatica",
+                            "name": "Mathematical Logic",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "19e86f6a-e9f7-4e00-afec-ab35658cf2d5",
+                            "cdl": "magistrale_informatica",
+                            "name": "Metodi Formali",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/AmMNBA_5hC0heGUacmyepg",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1wiCaPEhb-Mwl10SGs1Bdr-TQ27gABOx0?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "a74f3d17-cf56-48ea-9c6b-57cbb2f23b19",
+                            "cdl": "magistrale_informatica",
+                            "name": "Organizzazione E Digitalizzazione Di Teche Multimediali",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/AJHk9BXWmmfawXgG4UNisQ",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "1f828f97-531b-4419-ac1b-6b7fa76ad001",
+                            "cdl": "magistrale_informatica",
+                            "name": "Sound in Interaction",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1ACJugCw-o_RkrCyOTsXGXA0iKrUoW5Z7?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "a45f6d93-758f-424c-921b-7b0e93f22ccb",
+                            "cdl": "magistrale_informatica",
+                            "name": "Bioinformatics",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "8ae751d6-1da9-4bbf-b760-9899b6221d7c",
+                            "cdl": "magistrale_informatica",
+                            "name": "Bioinformatica",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CcGyMEoTknxR1GwqK2GNAQ",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "1a869037-a02a-4bb2-bfec-7b203df49ed0",
+                            "cdl": "magistrale_informatica",
+                            "name": "Calcolo Numerico",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1VZS_tGdNz1axfhWquyFaJb1owI_KQItQ?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "16e9840d-f81b-4abd-bb75-ebfd8aad0066",
+                            "cdl": "magistrale_informatica",
+                            "name": "Didattica Dell'Informatica",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CpyyKUcDgVsi6bCj94Mhxg",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1TKJSDyiLcgy4aApUTlaAKZdxeCqpKirS?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "d7293b0a-8546-48f8-b783-81dd8321ae9a",
+                            "cdl": "magistrale_informatica",
+                            "name": "GPU Computing",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CpyyKUmhwxyYsTX4J9377g",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "e14b97a8-6a54-44d8-9bbd-fdb6a3968a6e",
+                            "cdl": "magistrale_informatica",
+                            "name": "Information Retrieval",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CUnktldHBG7Yi1qq7v70iw",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1pGI9Jzy1Ml2FEt32uwPXtgJojqwCtuCa?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "971d8505-e484-4311-85d0-49d6c3c0acb6",
+                            "cdl": "magistrale_informatica",
+                            "name": "Logistics",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "b93daacc-bea8-4806-987b-02a0ca52c96c",
+                            "cdl": "magistrale_informatica",
+                            "name": "Modellazione E Analisi Di Sistemi",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/UFzWpqV8Uvwm1b1n",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "e66ce172-8bbf-4574-92d9-fa75ef38ca46",
+                            "cdl": "magistrale_informatica",
+                            "name": "Teoria Dei Grafi",
+                            "anno": "",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/MdZg_kfcC2rZP3mvw2FGBg",
+                            "websites": [],
+                            "drive": "https://drive.google.com/drive/folders/1ngnMk5MGu13WiP_NJ5SVz4r9KnfAt2bk?usp=sharing",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "22460622-b27e-405c-8aaa-51c332013eaf",
+                            "cdl": "magistrale_informatica",
+                            "name": "Videogame Design and Programming",
+                            "anno": "",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CPEbyFHsKkCqz8SE5Y8f_A",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        }
+                    ],
+                    "is_master":true,
+                    "has_years":false
                 },
                 {
-                    "id":"magistrale_sicurezza_informatica",
-                    "name":"Sicurezza informatica (magistrale)",
-                    "description":"",
+                    "id": "magistrale_sicurezza_informatica",
+                    "name": "Sicurezza informatica (magistrale)",
+                    "description": "",
                     "admins": [
-                        { "id": "", "username": "Spacer_ASC", "role": "" }
+                        {
+                            "id": "",
+                            "username": "Spacer_ASC",
+                            "role": ""
+                        }
                     ],
                     "courses": [
-                    ]
+                        {
+                            "id": "bd0c5a0c-92e2-4922-a141-d469507bc821",
+                            "cdl": "magistrale_sicurezza_informatica",
+                            "name": "A.A. 2020/2021",
+                            "anno": "Anno accademico",
+                            "semestre": "",
+                            "cfu": "",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "3ccfdcce-1509-451e-a75d-d99930eb3246",
+                            "cdl": "magistrale_sicurezza_informatica",
+                            "name": "Gruppo principale",
+                            "anno": "Anno accademico",
+                            "semestre": "",
+                            "cfu": "",
+                            "gruppo": "",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "ec7007e8-120e-4f37-bfad-87267b7c265a",
+                            "cdl": "magistrale_sicurezza_informatica",
+                            "name": "Sistemi biometrici",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/sistemibiometrici",
+                            "websites": [
+                                {
+                                    "link": "https://homes.di.unimi.it/scotti/",
+                                    "etichetta": "Ariel"
+                                },
+                                {
+                                    "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/sistemi-biometrici-0",
+                                    "etichetta": "Sito Unimi"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "d1387fc8-bac7-4fba-b24c-1e21505aa1a2",
+                            "cdl": "magistrale_sicurezza_informatica",
+                            "name": "Complementi di biometria",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/D0N9lhwydDziQ4MxczDNbQ",
+                            "websites": [
+                                {
+                                    "link": "https://fscotticb.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Ariel"
+                                },
+                                {
+                                    "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/complementi-di-biometria",
+                                    "etichetta": "Sito Unimi"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "f29bd827-0a45-4faa-9ddc-066136d45469",
+                            "cdl": "magistrale_sicurezza_informatica",
+                            "name": "Analisi e Gestione del Rischio",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/NtIxjhiKuAC9an7II9lPcA ",
+                            "websites": [
+                                {
+                                    "link": "https://avallegaagr.ariel.ctu.unimi.it/",
+                                    "etichetta": "Ariel"
+                                },
+                                {
+                                    "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/analisi-e-gestione-del-rischio",
+                                    "etichetta": "Sito Unimi"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "8c168c7d-3d40-4be6-be93-a5ab0ec44924",
+                            "cdl": "magistrale_sicurezza_informatica",
+                            "name": "Privatezza e Protezione dei Dati",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/CcGyMESOs8xinKoVgq61Ug",
+                            "websites": [
+                                {
+                                    "link": "https://psamaratippd.ariel.ctu.unimi.it/",
+                                    "etichetta": "Ariel"
+                                },
+                                {
+                                    "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/privatezza-e-protezione-dei-dati",
+                                    "etichetta": "Sito Unimi"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "35eee5c0-3b24-4e98-b42a-50f1948ed46c",
+                            "cdl": "magistrale_sicurezza_informatica",
+                            "name": "Logica",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/S64lLXiCpYRhNkw-",
+                            "websites": [
+                                {
+                                    "link": "https://vcirianil.ariel.ctu.unimi.it/",
+                                    "etichetta": "Ariel"
+                                },
+                                {
+                                    "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/logica-0",
+                                    "etichetta": "Sito Unimi"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "f885e026-45f0-4fac-8421-20b9b12fbd43",
+                            "cdl": "magistrale_sicurezza_informatica",
+                            "name": "Affidabilità dei sistemi",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/FFGacr1ke0yrFKVZ",
+                            "websites": [
+                                {
+                                    "link": "https://mlazzaroniasd.ariel.ctu.unimi.it/",
+                                    "etichetta": "Ariel"
+                                },
+                                {
+                                    "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/affidabilita-dei-sistemi-dependability",
+                                    "etichetta": "Sito Unimi"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "f11251ba-a910-43d5-b3f9-010709cf2714",
+                            "cdl": "magistrale_sicurezza_informatica",
+                            "name": "Complementi di sicurezza e privatezza",
+                            "anno": "1",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/GWGg1UUNauLIuiyn",
+                            "websites": [
+                                {
+                                    "link": "https://sdecapitanicsp.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Ariel"
+                                },
+                                {
+                                    "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/complementi-di-sicurezza-e-privatezza",
+                                    "etichetta": "Sito Unimi"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "063419ac-5f4d-44de-ac59-8d7b994cce88",
+                            "cdl": "magistrale_sicurezza_informatica",
+                            "name": "Gestione della sicurezza nei sistemi informativi",
+                            "anno": "1",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/SwU6maCj2xL051Hr",
+                            "websites": [
+                                {
+                                    "link": "https://dcaccavellagssi.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Ariel"
+                                },
+                                {
+                                    "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/gestione-della-sicurezza-nei-sistemi-informativi",
+                                    "etichetta": "Sito Unimi"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "40b796c9-ee77-46e3-8285-d8290a6ad8f0",
+                            "cdl": "magistrale_sicurezza_informatica",
+                            "name": "Organizzazione aziendale",
+                            "anno": "2",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/UcgZgNz_pUfug2aY",
+                            "websites": [
+                                {
+                                    "link": "https://fvirilioa.ariel.ctu.unimi.it/",
+                                    "etichetta": "Ariel"
+                                },
+                                {
+                                    "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/organizzazione-aziendale-2",
+                                    "etichetta": "Sito Unimi"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "669360ec-c8ae-4158-92d0-fa0ba87628c2",
+                            "cdl": "magistrale_sicurezza_informatica",
+                            "name": "Trattamento dei dati sensibili",
+                            "anno": "2",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/V1ghUIgNz6Hy4uAn",
+                            "websites": [
+                                {
+                                    "link": "https://sbonavitatds.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Ariel"
+                                },
+                                {
+                                    "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/trattamento-dei-dati-sensibili",
+                                    "etichetta": "Sito Unimi"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "bfc807ae-942a-4c8d-9805-69e411d02a5b",
+                            "cdl": "magistrale_sicurezza_informatica",
+                            "name": "Artificial Intelligence",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/BVhVgBQJUmLWxcilRH02yA",
+                            "websites": [
+                                {
+                                    "link": "https://ericcobenemas.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Ariel"
+                                },
+                                {
+                                    "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/artificial-intelligence-0",
+                                    "etichetta": "Sito Unimi"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "3322493c-b654-4c3a-bbba-0373fc152f29",
+                            "cdl": "magistrale_sicurezza_informatica",
+                            "name": "Modellazione E Analisi Di Sistemi",
+                            "anno": "1",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/joinchat/UFzWpqV8Uvwm1b1n",
+                            "websites": [
+                                {
+                                    "link": "https://vpiuriai.ariel.ctu.unimi.it/",
+                                    "etichetta": "Ariel"
+                                },
+                                {
+                                    "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/modellazione-e-analisi-di-sistemi",
+                                    "etichetta": "Sito Unimi"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "f7cdb57c-cdde-4e0c-8f3a-d45632a46b63",
+                            "cdl": "magistrale_sicurezza_informatica",
+                            "name": "Sicurezza delle Architetture Orientate ai Servizi",
+                            "anno": "1",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [
+                                {
+                                    "link": "https://edamianisaos.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Ariel"
+                                },
+                                {
+                                    "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/sicurezza-delle-architetture-orientate-ai-servizi",
+                                    "etichetta": "Sito Unimi"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "dc8a577b-9300-410e-b1b2-951ac8b0972e",
+                            "cdl": "magistrale_sicurezza_informatica",
+                            "name": "Information management",
+                            "anno": "1",
+                            "semestre": "2",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [
+                                {
+                                    "link": "https://sforestiim.ariel.ctu.unimi.it/v5/home/Default.aspx",
+                                    "etichetta": "Ariel"
+                                },
+                                {
+                                    "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/information-management",
+                                    "etichetta": "Sito Unimi"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "50869e3d-1a90-40d7-8c56-a488a50954c2",
+                            "cdl": "magistrale_sicurezza_informatica",
+                            "name": "Sicurezza delle reti ii",
+                            "anno": "2",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "",
+                            "websites": [
+                                {
+                                    "link": "https://scimatossr.ariel.ctu.unimi.it/",
+                                    "etichetta": "Ariel"
+                                },
+                                {
+                                    "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/sicurezza-delle-reti-ii",
+                                    "etichetta": "Sito Unimi"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "d2689a67-86b5-4f4d-9df3-a1ea93655bf5",
+                            "cdl": "magistrale_sicurezza_informatica",
+                            "name": "Sicurezza delle reti",
+                            "anno": "1",
+                            "semestre": "1",
+                            "cfu": "6",
+                            "gruppo": "https://t.me/sicurezzadellereti",
+                            "websites": [
+                                {
+                                    "link": "https://scimatossr.ariel.ctu.unimi.it/",
+                                    "etichetta": "Ariel"
+                                },
+                                {
+                                    "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/sicurezza-delle-reti",
+                                    "etichetta": "Sito Unimi"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": ""
+                        }
+                    ],
+                    "is_master":true,
+                    "has_years":true
                 }
             ]
         },
@@ -164,50 +3100,40 @@
             "name": "Dipartimento di Fisica",
             "description": "",
             "icon": "ReleaseDefinition",
-            "representatives": [
-            ],
-            "cdls": [
-            ]
+            "representatives": [],
+            "cdls": []
         },
         {
             "id": "matematica",
             "name": "Dipartimento di Matematica",
             "description": "",
             "icon": "TimelineMatrixView",
-            "representatives": [
-            ],
-            "cdls": [
-            ]
+            "representatives": [],
+            "cdls": []
         },
         {
             "id": "agraria",
             "name": "Dipartimento di Agraria",
             "description": "",
             "icon": "ReleaseDefinition",
-            "representatives": [
-            ],
-            "cdls": [
-            ]
+            "representatives": [],
+            "cdls": []
         },
         {
             "id": "medicina",
             "name": "Dipartimento di Medicina",
             "description": "",
             "icon": "Medical",
-            "representatives": [
-            ],
-            "cdls": [
-            ]
+            "representatives": [],
+            "cdls": []
         },
         {
             "id": "farmacia",
             "name": "Dipartimento di Farmacia",
             "description": "",
             "icon": "MobileReport",
-            "representatives": [
-            ],
-            "cdls": [
-            ]
+            "representatives": [],
+            "cdls": []
         }
     ]
 }

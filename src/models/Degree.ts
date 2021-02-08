@@ -7,5 +7,7 @@ export default interface Degree
     name?: string,
     description?: string,
     admins?: Admin[],
-    courses: Course[]
+    courses: Course[],
+    is_master: boolean,
+    has_years: boolean
 }

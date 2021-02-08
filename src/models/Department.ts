@@ -1,5 +1,5 @@
 import Degree from "./Degree";
-import Person from "./Person";
+import Representative from "./Representative";
 
 export default interface Department
 {
@@ -7,6 +7,6 @@ export default interface Department
     name?: string,
     description?: string,
     icon?: string,
-    representatives: Person[],
+    representatives: Representative[],
     cdls: Degree[]
 }

@@ -1,12 +1,12 @@
 import React from 'react';
-import './SharedListView.css';
+import '../SharedList.css';
 import { Text } from 'office-ui-fabric-react';
 import { FontSizes } from '@fluentui/theme';
 import { Container } from 'react-bootstrap';
 import { FocusZone, List, IRectangle } from "@fluentui/react";
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
-import GruppiExtra from '../data/ExtraGroups.json';
-import ExtraGroupView from './ExtraGroupView';
+import {getExtraGroups} from '../services/Requests'
+import ExtraGroupView from '../components/ExtraGroup';
 import ExtraGroup from '../models/ExtraGroup';
 
 const classNames = mergeStyleSets({
@@ -28,7 +28,7 @@ const ROWS_PER_PAGE = 3;
 const MAX_ROW_HEIGHT = 240;
 
 const AdditionalGroupsView = () => {
-    const groups: ExtraGroup[] = GruppiExtra;
+    const groups: ExtraGroup[] = getExtraGroups();
     const columnCount = React.useRef(0);
     const rowHeight = React.useRef(0);
     const getItemCountForPage = React.useCallback((itemIndex?: number, surfaceRect?: IRectangle) => {

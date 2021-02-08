@@ -6,3 +6,7 @@ export const range = (start:number, end:number, step = 1) => {
   }
   return output;
 };
+
+export const redirectToLink = (link: string): void => {
+    window.open(link, '_blank');
+};

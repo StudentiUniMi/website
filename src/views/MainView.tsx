@@ -1,8 +1,8 @@
 import { HashRouter as Router } from "react-router-dom";
 import HeaderTitle from "../components/HeaderTitle";
 import HeaderMenu from "../components/HeaderMenu";
-import Content from "../components/Content";
 import Footer from "../components/Footer";
+import ContentView from "./ContentView";
 
 function MainView() {
   return (
@@ -11,7 +11,7 @@ function MainView() {
         <HeaderTitle />
         <HeaderMenu />
       </header>
-      <Content/>
+      <ContentView/>
       <Footer />
     </Router>
   );

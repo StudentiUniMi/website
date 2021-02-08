@@ -8,8 +8,8 @@ import { Dropdown, IDropdownOption, IDropdownProps } from 'office-ui-fabric-reac
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import CourseListView from "../views/CourseListView";
-import data from '../data/Data.json'
+import CourseList from "../components/CourseList";
+import {getDepartments} from '../services/Requests'
 import Degree from "../models/Degree";
 import Department from "../models/Department";
 
@@ -49,7 +49,7 @@ const onRenderPlaceholder = (props?: IDropdownProps): JSX.Element => {
     );
 };
 
-const Courses = () => {
+const CoursesView = () => {
     const history = useHistory();
 
     const departmentSelectionChanged = (
@@ -71,6 +71,8 @@ const Courses = () => {
 
     let didMount = React.useRef(false);
 
+    let departments = getDepartments()
+
     React.useEffect(() =>
     {
         if(!didMount.current)
@@ -78,27 +80,28 @@ const Courses = () => {
             didMount.current = true
             var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
             var initialCdl = states.length >= 2 ? states[1] : '';
-            var possibleDepartments = data.departments.filter(x => x.cdls.filter(y => y.id === initialCdl).length > 0)
+            var possibleDepartments = departments.filter(x => x.cdls.filter(y => y.id === initialCdl).length > 0)
             let initialDepartment = possibleDepartments.length > 0 ? possibleDepartments[0].id : ''
             setSelectedCdl(initialCdl)
             setSelectedDepartment(initialDepartment)
             history.push(`/courses/${initialCdl}`)
         }
-    }, [history]);
+    }, [history, departments]);
 
     const [selectedDepartment, setSelectedDepartment] = React.useState<string>('');
     const [selectedCdl, setSelectedCdl] = React.useState<string>('');
 
-    let departmentOptions: IDropdownOption[] = data.departments.map(x => ({key: x.id, text: x.name ?? "", data: {icon:x.icon}, disabled: x.cdls.length === 0}));
+    let departmentOptions: IDropdownOption[] = departments.map(x => ({key: x.id, text: x.name ?? "", data: {icon:x.icon}, disabled: x.cdls.length === 0}));
     let cdls: Degree[] = []
        
     if(selectedDepartment !=='') {
-        let department: Department | undefined = data.departments.filter(x => x.id === selectedDepartment)[0]
-        cdls = department.cdls
+        let department: Department | undefined = departments.filter(x => x.id === selectedDepartment)[0]
+        cdls = department?.cdls ?? []
     }
 
     let cdlsOptions: IDropdownOption[] = cdls.map(x => ({key: x.id, text: x.name ?? ""}));
 
+    let cdl = cdls.filter(x => x.id === selectedCdl)[0]
 
     return (
         <Container className="courses text-center">
@@ -160,15 +163,16 @@ const Courses = () => {
                 </Col>
             </Row>
 
-            <div style={{ display: selectedCdl ? 'block' : 'none' }}>
-                <p className='text-center'>
-                    <Text style={{ fontWeight: 600 }}>Gruppi disponibili:</Text>
-                </p>
-                <CourseListView cdl={selectedCdl} />
+
+            <div style={{ display: selectedCdl !== '' ? 'block' : 'none' }}>
+                    <p className='text-center'>
+                        <Text style={{ fontWeight: 600 }}>Gruppi disponibili:</Text>
+                    </p>                
+            <CourseList cdl={cdl} />
             </div>
 
         </Container>
     );
 };
 
-export default Courses;
+export default CoursesView;
