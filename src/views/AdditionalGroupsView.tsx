@@ -1,7 +1,5 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css';
-import '../List.css';
+import './SharedListView.css';
 import { Text } from 'office-ui-fabric-react';
 import { FontSizes } from '@fluentui/theme';
 import { Container } from 'react-bootstrap';

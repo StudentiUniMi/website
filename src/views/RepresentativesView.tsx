@@ -1,15 +1,13 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
 import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { Dropdown, IDropdownOption, IDropdownStyles, IDropdownProps } from 'office-ui-fabric-react/lib/Dropdown';
 import { useHistory } from 'react-router-dom';
-import PeopleListView from './views/PeopleListView';
-import data from './data/Data.json';
-import Person from './models/Person';
+import PeopleListView from '../components/RepresentativesList';
+import data from '../data/Data.json';
+import Person from '../models/Person';
 
 const departmentOptions: IDropdownOption[] = data.departments.map(x => ({key: x.id, text: x.name ?? "", data: {icon:x.icon}, disabled: x.cdls.length === 0}));
 

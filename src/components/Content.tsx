@@ -1,12 +1,10 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "./App.css";
-import Home from './Home'
-import Courses from './Courses'
-import AdditionalGroups from './views/AdditionalGroupsView'
-import Administrators from './Administrators'
-import Rules from './Rules'
-import Services from './Services'
-import Representatives from './Representatives'
+import Home from '../views/HomeView';
+import Courses from './Courses';
+import AdditionalGroups from '../views/AdditionalGroupsView';
+import Administrators from '../views/AdministratorsView';
+import Rules from '../views/RulesView';
+import Services from '../views/ServicesView';
+import Representatives from '../views/RepresentativesView';
 import { Route, Switch } from 'react-router-dom';
 
 const Content = () => {

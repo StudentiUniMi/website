@@ -1,5 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css';
 import { Link, Text } from 'office-ui-fabric-react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { initializeIcons } from '@uifabric/icons';
@@ -14,7 +12,7 @@ interface Props {
 
 // const gdriveStyle = { width: '15px', height: '15px', marginBottom: '3px' }
 
-const CourseItemView = (props: Props) => {
+const CourseItem = (props: Props) => {
     var data = props.data;
 
     const siteTextStyles: ITextStyles = {
@@ -227,4 +225,4 @@ const CourseItemView = (props: Props) => {
     );
 };
 
-export default CourseItemView;
+export default CourseItem;

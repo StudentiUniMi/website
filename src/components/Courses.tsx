@@ -1,6 +1,4 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
 import { Link, Text } from 'office-ui-fabric-react';
 import { FontSizes } from '@fluentui/theme';
 import { initializeIcons } from "@uifabric/icons";
@@ -10,10 +8,10 @@ import { Dropdown, IDropdownOption, IDropdownProps } from 'office-ui-fabric-reac
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import CourseListView from "./views/CourseListView";
-import data from './data/Data.json'
-import Degree from "./models/Degree";
-import Department from "./models/Department";
+import CourseListView from "../views/CourseListView";
+import data from '../data/Data.json'
+import Degree from "../models/Degree";
+import Department from "../models/Department";
 
 initializeIcons();
 const iconStyles = { marginRight: '8px' };
