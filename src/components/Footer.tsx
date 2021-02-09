@@ -22,7 +22,7 @@ const Footer = () => {
                         <div className="mb-2">
                             <Text style={{ fontSize: FontSizes.size12 }}>
                                 <p className="mb-0 text">
-                                    Il network e il relativo sito web non sono affiliati all'Università degli studi di Milano.
+                                    Il network e il relativo sito web non sono affiliati all'Università degli Studi di Milano.
                                 </p>
                             </Text>
                         </div>
