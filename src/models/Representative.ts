@@ -1,7 +1,9 @@
 export default interface Representative
 {
     id: string,
-    surname?: string,
     name?: string,
+    surname?: string,
+    username?: string,
+    year?: string,
     cdl?: string
 }

@@ -47,7 +47,7 @@ const AdministratorsView = () => {
                 <p className="mb-3">
                     <div>Ogni corso di laurea e i suoi relativi gruppi telegram hanno come riferimento degli amministratori che possono
                     essere contattati in caso di necessità.</div> 
-                    <div>Qui è possibile trovare la lista degli admin di ogni corso di laurea (per ora solo dipartimento di Informatica).</div>
+                    <div>Qui è possibile trovare la lista degli admin di ogni corso di laurea e i loro contatti (per ora solo dipartimento di Informatica).</div>
                 </p>
             </Text>
 

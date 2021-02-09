@@ -12,31 +12,25 @@ const Footer = () => {
 
                 <Row style={{ backgroundColor: '#cccccc' }}>
 
-                    <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-4 mb-md-0">
-                        <div className="mb-2">
+                    <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-4 mb-md-0 main-col">
+                        <div className="mb-1">
                             <Text style={{ fontWeight: 600 }}>
                                 <Link href="https://github.com/StudentiUnimi" className="text-decoration-none">Studenti UniMi &copy;</Link>
                             </Text>
                         </div>
+
+                        <div className="mb-2">
+                            <Text style={{ fontSize: FontSizes.size12 }}>
+                                <p className="mb-0 text">
+                                    Il network e il relativo sito web non sono affiliati all'Università degli Studi di Milano.
+                                </p>
+                            </Text>
+                        </div>
                         
                         <div className="mb-1">
-                            <ul className="list-unstyled mb-0">
-                                <li>
-                                    <Text style={{ fontSize: FontSizes.size12 }}>
-                                        <Link href="https://www.facebook.com/networkstudentiunimi" className="text-decoration-none"><i className="fab fa-facebook"></i> Pagina Facebook</Link>
-                                    </Text>
-                                </li>
-                                <li>
-                                    <Text style={{ fontSize: FontSizes.size12 }}>
-                                        <Link href="https://github.com/StudentiUnimi/website" className="text-decoration-none"><i className="fab fa-github"></i> Repository del sito</Link>
-                                    </Text>
-                                </li>
-                                <li>
-                                    <Text style={{ fontSize: FontSizes.size12 }}>
-                                        <Link href="https://github.com/StudentiUnimi/MultiGroupBot" className="text-decoration-none"><i className="fas fa-rocket"></i> MultiGroup Bot</Link>
-                                    </Text>
-                                </li>
-                            </ul>
+                            <Link href="https://www.facebook.com/networkstudentiunimi" className="text-decoration-none mr-1"><i className="fab fa-facebook"></i></Link>
+                            <Link href="https://github.com/StudentiUnimi/website" className="text-decoration-none mr-1"><i className="fab fa-github"></i></Link>
+                            <Link href="https://github.com/StudentiUnimi/MultiGroupBot" className="text-decoration-none mr-1"><i className="fas fa-rocket"></i></Link>
                         </div>
 
                     </Col>
@@ -78,9 +72,8 @@ const Footer = () => {
                         <div className="mb-0">
                             <Text style={{ fontSize: FontSizes.size12 }}>
                                 <p className="mb-1 text">
-                                    Per qualsiasi dubbio o proposta è possibile contattare:
+                                    Per qualsiasi dubbio o proposta è possibile scrivere sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" className="text-decoration-none" target="_blank">gruppo principale</Link> del network.
                                 </p>
-                                <Link href="https://t.me/giuseppetm" className="text-decoration-none" target="_blank"> @giuseppetm</Link>
                             </Text>
                         </div>
                     </Col>
