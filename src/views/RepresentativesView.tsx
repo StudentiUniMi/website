@@ -45,7 +45,7 @@ const onRenderPlaceholder = (props?: IDropdownProps): JSX.Element => {
     );
 };
 
-const Representatives = () => {
+const RepresentativesView = () => {
     const history = useHistory();
     const [selectedDepartment, setSelectedDepartment] = React.useState<string>('');
 
@@ -84,7 +84,7 @@ const Representatives = () => {
                     Il rappresentante degli studenti è un ruolo molto importante ed altamente formativo, 
                     che garantisce a tutti gli studenti universitari un supporto alle difficoltà che può incontrare durante il periodo di studio. 
                     Il suo impegno è quello di assicurare presenza e azione nei vari organi dell'Ateneo, relativemente alla didattica, all'organizzazione delle attività formative e dei servizi degli studenti.
-                    Di seguito è presente la lista dei rappresentanti di ogni dipartimento.
+                    Di seguito è presente la lista dei rappresentanti di ogni dipartimento e i loro contatti.
                 </Text>
             </div>
             <Container className="mb-4 justify-content-center" style={{maxWidth: '500px'}}>
@@ -110,4 +110,4 @@ const Representatives = () => {
     )
 };
 
-export default Representatives;
+export default RepresentativesView;

@@ -10,85 +10,113 @@
                     "id": "",
                     "name": "Jacopo",
                     "surname": "Antoniolli",
-                    "cdl": ""
+                    "username": "ChufChufMF",
+                    "year": "",
+                    "cdl": "Sicurezza dei sistemi e delle reti informatiche"
                 },
                 {
                     "id": "",
                     "name": "Enrico",
                     "surname": "Arrigotti",
-                    "cdl": ""
+                    "username": "LonginusGravitazionale",
+                    "year": "",
+                    "cdl": "Informatica"
                 },
                 {
                     "id": "",
                     "name": "Davide",
                     "surname": "Busolin",
+                    "username": "davidebusolin",
+                    "year": "Terzo",
                     "cdl": "Informatica"
                 },
                 {
                     "id": "",
                     "name": "Giuseppe",
                     "surname": "Del Campo",
+                    "username": "giuseppetm",
+                    "year": "Terzo",
                     "cdl": "Informatica"
                 },
                 {
                     "id": "",
                     "name": "Lorenzo",
                     "surname": "Di Cola",
-                    "cdl": ""
+                    "username": "belzeboop",
+                    "year": "Secondo",
+                    "cdl": "Informatica"
                 },
                 {
                     "id": "",
                     "name": "Ettore Tancredi",
                     "surname": "Galante",
-                    "cdl": ""
+                    "username": "toreGore",
+                    "year": "",
+                    "cdl": "Informatica (Magistrale)"
                 },
                 {
                     "id": "",
                     "name": "Irene Lara",
                     "surname": "Galimi",
-                    "cdl": ""
+                    "username": "",
+                    "year": "",
+                    "cdl": "Informatica"
                 },
                 {
                     "id": "",
                     "name": "Luca",
                     "surname": "Giuliani",
-                    "cdl": ""
+                    "username": "LGiuliani",
+                    "year": "",
+                    "cdl": "Informatica (Magistrale)"
                 },
                 {
                     "id": "",
                     "name": "Renato",
                     "surname": "Graziano",
-                    "cdl": ""
+                    "username": "burzum00",
+                    "year": "",
+                    "cdl": "Sicurezza dei sistemi e delle reti informatiche"
                 },
                 {
                     "id": "",
                     "name": "Giulia",
                     "surname": "Mattavelli",
-                    "cdl": ""
+                    "username": "giuliamattavelli",
+                    "year": "",
+                    "cdl": "Informatica musicale"
                 },
                 {
                     "id": "",
                     "name": "Lorenzo",
                     "surname": "Mazzi",
-                    "cdl": ""
+                    "username": "",
+                    "year": "",
+                    "cdl": "Informatica"
                 },
                 {
                     "id": "",
                     "name": "Davide",
                     "surname": "Rusconi",
-                    "cdl": ""
+                    "username": "pisqu0",
+                    "year": "",
+                    "cdl": "Informatica"
                 },
                 {
                     "id": "",
                     "name": "Luca",
                     "surname": "Trecarichi",
-                    "cdl": ""
+                    "username": "trekkete",
+                    "year": "",
+                    "cdl": "Informatica"
                 },
                 {
                     "id": "",
                     "name": "Pietro",
                     "surname": "Zola",
-                    "cdl": ""
+                    "username": "Zuppep",
+                    "year": "",
+                    "cdl": "Informatica musicale"
                 }
             ],
             "cdls": [
@@ -100,51 +128,67 @@
                         {
                             "id": "",
                             "username": "MrBrionix",
+                            "year": "Secondo",
                             "role": ""
                         },
                         {
                             "id": "",
                             "username": "MattiaOldani",
+                            "year": "Primo",
                             "role": ""
                         },
                         {
                             "id": "",
                             "username": "acetimarco",
+                            "year": "Primo",
+                            "role": ""
+                        },
+                        {
+                            "id": "",
+                            "username": "Sartigabriele",
+                            "year": "Primo",
                             "role": ""
                         },
                         {
                             "id": "",
                             "username": "georgianiandrei",
+                            "year": "Secondo",
                             "role": ""
                         },
                         {
                             "id": "",
                             "username": "IrisCanole",
+                            "year": "Primo",
                             "role": ""
                         },
                         {
                             "id": "",
                             "username": "Mantotheale",
+                            "year": "Primo",
                             "role": ""
                         },
                         {
                             "id": "",
                             "username": "Weinsz",
+                            "year": "Primo",
                             "role": ""
                         },
                         {
                             "id": "",
                             "username": "GbitGbit",
+                            "year": "Terzo",
                             "role": ""
                         },
                         {
                             "id": "",
                             "username": "davidemarchioriz",
+                            "year": "Terzo",
                             "role": ""
                         },
                         {
                             "id": "",
                             "username": "Aconithorn",
+                            "year": "Terzo",
                             "role": ""
                         }
                     ],
@@ -828,6 +872,7 @@
                         {
                             "id": "",
                             "username": "giolake",
+                            "year": "",
                             "role": ""
                         }
                     ],
@@ -880,6 +925,7 @@
                         {
                             "id": "",
                             "username": "robertopinotti",
+                            "year": "",
                             "role": ""
                         }
                     ],
@@ -1189,6 +1235,7 @@
                         {
                             "id": "",
                             "username": "burzum00",
+                            "year": "",
                             "role": ""
                         }
                     ],
@@ -1433,6 +1480,7 @@
                         {
                             "id": "",
                             "username": "salvadorbs",
+                            "year": "",
                             "role": ""
                         }
                     ],
@@ -1677,6 +1725,7 @@
                         {
                             "id": "",
                             "username": "robertopinotti",
+                            "year": "",
                             "role": ""
                         }
                     ],
@@ -2725,6 +2774,7 @@
                         {
                             "id": "",
                             "username": "Spacer_ASC",
+                            "year": "",
                             "role": ""
                         }
                     ],

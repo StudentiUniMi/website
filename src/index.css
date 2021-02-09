@@ -43,10 +43,17 @@ main {
   }
 }
 
+@media only screen and (min-width: 769px) {
+  footer .main-col .text {
+    margin-right:5%;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   body {
-    margin-bottom: 500px;
+    margin-bottom: 530px;
   }
+
   footer .row {
     text-align: center;
   }
@@ -55,7 +62,7 @@ main {
     margin-top:0px;
   }
 
-  footer .contacts .text {
+  footer .contacts .text, footer .main-col .text {
     margin-left:25%;
     margin-right: 25%;
   }
@@ -187,7 +194,7 @@ main {
   }
 
   .col-persona {
-    max-width: 250px;
+    max-width: 230px;
     margin-left:10%;
   }
 }
