@@ -1,5 +1,4 @@
 import React from 'react';
-import '../SharedList.css';
 import { Text } from 'office-ui-fabric-react';
 import { FontSizes } from '@fluentui/theme';
 import { Container } from 'react-bootstrap';
@@ -9,26 +8,42 @@ import {getExtraGroups} from '../services/Requests'
 import ExtraGroupView from '../components/ExtraGroup';
 import ExtraGroup from '../models/ExtraGroup';
 
-const classNames = mergeStyleSets({
-    listGridExample: {
-        overflow: 'hidden',
-        fontSize: 0,
-        position: 'relative',
-        marginBottom: 10
-    },
-    listGridExampleTile: {
-        textAlign: 'center',
-        outline: 'none',
-        position: 'relative',
-        float: 'left'
-    },
-});
-
 const ROWS_PER_PAGE = 3;
 const MAX_ROW_HEIGHT = 240;
 
+interface Dimensions
+{
+    tileWidth: string,
+    cardWidth: string,
+    //cardMaxWidth: string
+};
+
 const AdditionalGroupsView = () => {
     const groups: ExtraGroup[] = getExtraGroups();
+
+    const mq = window.matchMedia( "(max-width: 540px)" );
+
+    let [dimensions, setDimensions] = React.useState<Dimensions>({ tileWidth:'none', cardWidth:'213px' })
+
+    mq.addListener((changed) => setDimensions(changed.matches ? { tileWidth:'100%', cardWidth:'100%' } : { tileWidth:'none', cardWidth:'213px' }));
+
+    var classNames = mergeStyleSets({
+        listGrid: {
+            overflow: 'hidden',
+            fontSize: 0,
+            position: 'relative',
+            marginBottom: 10,
+            margin: '1px'
+        },
+        listGridTile: {
+            textAlign: 'center',
+            outline: 'none',
+            position: 'relative',
+            float: 'left',
+            width: dimensions.tileWidth
+        },
+    });
+
     const columnCount = React.useRef(0);
     const rowHeight = React.useRef(0);
     const getItemCountForPage = React.useCallback((itemIndex?: number, surfaceRect?: IRectangle) => {
@@ -47,11 +62,8 @@ const AdditionalGroupsView = () => {
         return (
             <div
                 data-is-focusable
-                className={classNames.listGridExampleTile}
-                style={{
-                    height: MAX_ROW_HEIGHT + 'px',
-                    width: '213px'
-                }}>
+                className={classNames.listGridTile}
+                style={{height: MAX_ROW_HEIGHT + 'px', width: dimensions.cardWidth }}>
                 <ExtraGroupView data={e!} />
             </div>
         )
@@ -69,7 +81,7 @@ const AdditionalGroupsView = () => {
 
             <FocusZone>
                 <List
-                    className={classNames.listGridExample}
+                    className={classNames.listGrid}
                     items={groups}
                     getItemCountForPage={getItemCountForPage}
                     getPageHeight={getPageHeight}

@@ -1,5 +1,4 @@
 import React from "react";
-import '../SharedList.css';
 import { FocusZone, IRectangle, List } from "@fluentui/react";
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
@@ -17,21 +16,12 @@ interface Props {
     cdl?: Degree;
 }
 
-const classNames = mergeStyleSets({
-    listGridExample: {
-        overflow: 'hidden',
-        fontSize: 0,
-        position: 'relative',
-        marginBottom: 10,
-        margin: '1px'
-    },
-    listGridExampleTile: {
-        textAlign: 'center',
-        outline: 'none',
-        position: 'relative',
-        float: 'left'
-    },
-});
+interface Dimensions
+{
+    tileWidth: string,
+    cardWidth: string,
+    //cardMaxWidth: string
+}
 
 const ROWS_PER_PAGE = 3;
 const MAX_ROW_HEIGHT = 240;
@@ -59,6 +49,29 @@ const yearMasterDegreeFilterOptions: IDropdownOption[] = [ // Opzioni per la ric
 const CourseList= (props: Props) => {
     const columnCount = React.useRef(0);
     const rowHeight = React.useRef(0);
+
+    const mq = window.matchMedia( "(max-width: 540px)" );
+
+    let [dimensions, setDimensions] = React.useState<Dimensions>({ tileWidth:'none', cardWidth:'213px' })
+
+    mq.addListener((changed) => setDimensions(changed.matches ? { tileWidth:'100%', cardWidth:'100%' } : { tileWidth:'none', cardWidth:'213px' }));
+
+    var classNames = mergeStyleSets({
+        listGrid: {
+            overflow: 'hidden',
+            fontSize: 0,
+            position: 'relative',
+            marginBottom: 10,
+            margin: '1px'
+        },
+        listGridTile: {
+            textAlign: 'center',
+            outline: 'none',
+            position: 'relative',
+            float: 'left',
+            width: dimensions.tileWidth
+        },
+    });
     
     const [nameFilter, setNameFilter] = React.useState<string>("")
     const [yearFilter, setYearFilter] = React.useState<number>(0)
@@ -82,12 +95,8 @@ const CourseList= (props: Props) => {
 
     const getCell = (e?: Course, index?: number, isScrolling?: boolean) => {
         return (
-            <div data-is-focusable className={classNames.listGridExampleTile}
-                style={{
-                    height: MAX_ROW_HEIGHT + 'px',
-                    //width: 100 / columnCount.current + '%'
-                    width: '213px'
-                }}>
+            <div data-is-focusable className={classNames.listGridTile}
+                style={{height: MAX_ROW_HEIGHT + 'px', width: dimensions.cardWidth }}>
                 <CourseItem key={index} data={e!} />
             </div>
         )
@@ -117,14 +126,14 @@ const CourseList= (props: Props) => {
     }
 
     if (semesterFilter !== 0) {
-        filteredCourses = filteredCourses.filter(x => x.semestre === semesterFilter || (x.semestre as any) === semesterFilter + "") // leva l'or quando fai i semestri come number. Se non sai il semestre metti 0
+        filteredCourses = filteredCourses.filter(x => x.semestre === semesterFilter) // leva l'or quando fai i semestri come number. Se non sai il semestre metti 0
     }
 
     if (yearFilter !== 0) {
         if (yearFilter === 4) {
-            filteredCourses = filteredCourses.filter(x => x.anno === "Complementare")
+            filteredCourses = filteredCourses.filter(x => x.anno === -1)
         } else {
-            filteredCourses = filteredCourses.filter(x => x.anno === yearFilter || (x.anno as any) === yearFilter + "") // leva l'or quando fai i semestri come number. Se non sai il semestre metti 0
+            filteredCourses = filteredCourses.filter(x => x.anno === yearFilter) // leva l'or quando fai i semestri come number. Se non sai il semestre metti 0
         }
     }
     return (       
@@ -160,14 +169,17 @@ const CourseList= (props: Props) => {
                 </div>
 
                 {filteredCourses.length === 0 ? <div className="text-center"><Text style={{ fontSize: FontSizes.size14 }}>Nessun gruppo trovato.</Text></div>:
-                <List
-                    className={classNames.listGridExample}
-                    items={filteredCourses}
-                    getItemCountForPage={getItemCountForPage}
-                    getPageHeight={getPageHeight}
-                    renderedWindowsAhead={4}
-                    onRenderCell={getCell}
-                />}
+                <div className="course-list">
+                    <List
+                        className={classNames.listGrid}
+                        items={filteredCourses}
+                        getItemCountForPage={getItemCountForPage}
+                        getPageHeight={getPageHeight}
+                        renderedWindowsAhead={4}
+                        onRenderCell={getCell}
+                    />
+                </div>
+                }
             </FocusZone>
         </Container>
     );

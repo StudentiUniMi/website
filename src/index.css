@@ -339,3 +339,26 @@ a:focus,
 .services .ms-CardSection {
   text-align: left;
 }
+
+
+
+/* Fix for ms-card in coursesList and additionalGroupsView */
+@media only screen and (max-width: 540px) {
+  .course-list .ms-Card, .additional-groups .ms-Card {
+    max-width:100%;
+  }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 542px) {
+  .additional-groups .ms-List {
+    margin-left:10%;
+    margin-right:5%;
+  }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 542px) {
+  .course-list .ms-List {
+    margin-left:5%;
+    margin-right:5%;
+  }
+}
