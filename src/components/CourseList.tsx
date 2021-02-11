@@ -1,5 +1,4 @@
 import React from "react";
-import '../SharedList.css';
 import { FocusZone, IRectangle, List } from "@fluentui/react";
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
@@ -17,24 +16,8 @@ interface Props {
     cdl?: Degree;
 }
 
-const classNames = mergeStyleSets({
-    listGridExample: {
-        overflow: 'hidden',
-        fontSize: 0,
-        position: 'relative',
-        marginBottom: 10,
-        margin: '1px'
-    },
-    listGridExampleTile: {
-        textAlign: 'center',
-        outline: 'none',
-        position: 'relative',
-        float: 'left'
-    },
-});
-
 const ROWS_PER_PAGE = 3;
-const MAX_ROW_HEIGHT = 240;
+const MAX_ROW_HEIGHT = 250;
 
 const semesterFilterOptions: IDropdownOption[] = [ // Opzioni per la ricerca del semestre
     { key: 0, text:'Non selezionato' },
@@ -59,14 +42,24 @@ const yearMasterDegreeFilterOptions: IDropdownOption[] = [ // Opzioni per la ric
 const CourseList= (props: Props) => {
     const columnCount = React.useRef(0);
     const rowHeight = React.useRef(0);
+
+    var classNames = mergeStyleSets({
+        listGrid: {
+            overflow: 'hidden',
+            fontSize: 0,
+            position: 'relative',
+            marginBottom: 10,
+            margin: '1px'
+        }
+    });
     
-    const [nameFilter, setNameFilter] = React.useState<string>("")
-    const [yearFilter, setYearFilter] = React.useState<number>(0)
-    const [semesterFilter, setSemesterFilter] = React.useState<number>(0)
+    const [nameFilter, setNameFilter] = React.useState<string>("");
+    const [yearFilter, setYearFilter] = React.useState<number>(0);
+    const [semesterFilter, setSemesterFilter] = React.useState<number>(0);
 
-    let cdl = props.cdl
+    let cdl = props.cdl;
 
-    const courses: Course[] = cdl?.courses ?? []
+    const courses: Course[] = cdl?.courses ?? [];
 
     const getItemCountForPage = React.useCallback((itemIndex?: number, surfaceRect?: IRectangle) => {
         if (itemIndex === 0) {
@@ -82,16 +75,12 @@ const CourseList= (props: Props) => {
 
     const getCell = (e?: Course, index?: number, isScrolling?: boolean) => {
         return (
-            <div data-is-focusable className={classNames.listGridExampleTile}
-                style={{
-                    height: MAX_ROW_HEIGHT + 'px',
-                    //width: 100 / columnCount.current + '%'
-                    width: '213px'
-                }}>
+            <div data-is-focusable className="listGridTile"
+                style={{height: MAX_ROW_HEIGHT + 'px', width: 100 / columnCount.current + '%' }}>
                 <CourseItem key={index} data={e!} />
             </div>
         )
-    }
+    };
 
     const onNameFilterChanged = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, text?: string): void => {
         setNameFilter(text ?? "");
@@ -113,22 +102,22 @@ const CourseList= (props: Props) => {
     let filteredCourses = courses;
 
     if (nameFilter !== "") {
-        filteredCourses = filteredCourses.filter(x => x.name?.toLocaleLowerCase()?.includes(nameFilter.toLocaleLowerCase()))
+        filteredCourses = filteredCourses.filter(x => x.name?.toLocaleLowerCase()?.includes(nameFilter.toLocaleLowerCase()));
     }
 
     if (semesterFilter !== 0) {
-        filteredCourses = filteredCourses.filter(x => x.semestre === semesterFilter || (x.semestre as any) === semesterFilter + "") // leva l'or quando fai i semestri come number. Se non sai il semestre metti 0
+        filteredCourses = filteredCourses.filter(x => x.semestre === semesterFilter);
     }
 
     if (yearFilter !== 0) {
         if (yearFilter === 4) {
-            filteredCourses = filteredCourses.filter(x => x.anno === "Complementare")
+            filteredCourses = filteredCourses.filter(x => x.anno === -1);
         } else {
-            filteredCourses = filteredCourses.filter(x => x.anno === yearFilter || (x.anno as any) === yearFilter + "") // leva l'or quando fai i semestri come number. Se non sai il semestre metti 0
+            filteredCourses = filteredCourses.filter(x => x.anno === yearFilter);
         }
     }
-    return (       
 
+    return (       
         <Container className="courses-filter-options">
             <FocusZone>
                 <div className="mb-4">
@@ -160,14 +149,17 @@ const CourseList= (props: Props) => {
                 </div>
 
                 {filteredCourses.length === 0 ? <div className="text-center"><Text style={{ fontSize: FontSizes.size14 }}>Nessun gruppo trovato.</Text></div>:
-                <List
-                    className={classNames.listGridExample}
-                    items={filteredCourses}
-                    getItemCountForPage={getItemCountForPage}
-                    getPageHeight={getPageHeight}
-                    renderedWindowsAhead={4}
-                    onRenderCell={getCell}
-                />}
+                <div className="course-list">
+                    <List
+                        className={classNames.listGrid}
+                        items={filteredCourses}
+                        getItemCountForPage={getItemCountForPage}
+                        getPageHeight={getPageHeight}
+                        renderedWindowsAhead={4}
+                        onRenderCell={getCell}
+                    />
+                </div>
+                }
             </FocusZone>
         </Container>
     );

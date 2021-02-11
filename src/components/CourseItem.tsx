@@ -35,30 +35,24 @@ const CourseItem = (props: Props) => {
     };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
 
+    let personaIconUrl: string | undefined;
+    if (data.anno === -1) // Set del logo del gruppo principale
+    { 
+        personaIconUrl = data.cdl === 'triennale_informatica'?  process.env.PUBLIC_URL + '/informatica.jpg' : process.env.PUBLIC_URL + '/unimi.jpg'
+    }
+
+    function doNothing() { // Per mostrare l'hover della card
+    }
+        
     return (
-        <Card
-            tokens={cardTokens}                             
-        >
+        <Card tokens={cardTokens} onClick={() => doNothing}>
             <Card.Item>
-                {
-                    ( () => {
-                        if (data.anno !== "Anno accademico") {
-                            return (<Persona text={data.name} />);
-                        } else {
-                            switch (data.cdl) {
-                                case 'triennale_informatica':
-                                    return (<Persona text={data.name} imageUrl= {process.env.PUBLIC_URL + '/informatica.jpg'} />);
-                                default:
-                                    return (<Persona text={data.name} imageUrl= {process.env.PUBLIC_URL + '/unimi.jpg'} />);
-                            }
-                        }
-                    })()
-                }
+                <Persona imageUrl={personaIconUrl} /*onRenderPrimaryText={() => <div style={{wordWrap:'break-word'}}>{data.name}</div> }*/ text={data.name} />
             </Card.Item>
             <Card.Section>
-                {   // Gruppo anno accademico descrizione in caso c'è il link disponibile (magistrali insomma) 
+                {   // Gruppo anno accademico descrizione in caso c'è il link disponibile (per ora non ce ne sono)
                     ( () => {
-                        if (data.anno === "Anno accademico" && data.gruppo !== "") {
+                        if (data.anno === -1 && data.gruppo !== null) {
                             return <Text variant="small" styles={helpfulTextStyles}>Gruppo per qualsiasi tipo di discussione inerente a questo corso di laurea.</Text>
                         } else {
                             return "";
@@ -69,7 +63,7 @@ const CourseItem = (props: Props) => {
                 
                 {
                     ( () => {
-                        if (data.cfu as any !== "") {
+                        if (data.cfu !== null) {
                             return (
                                 <Text variant="small" styles={siteTextStyles}>{data.cfu} CFU</Text>
                             )
@@ -83,23 +77,19 @@ const CourseItem = (props: Props) => {
                 {
                     (() => 
                     {
-                        if (data.anno === "" || data.anno === "Anno accademico")
-                        {
-                            return "";
-                        } 
-                        if (data.anno === "Complementare")
-                        {
-                            return <span>Complementare, </span>;
-                        }
-                        else 
-                        {
-                            return <span>{data.anno}° Anno, </span>;
+                        switch (data.anno) {
+                            case -1:
+                                return "";
+                            case 0:
+                                return <span>Complementare, </span>;
+                            default:
+                                return <span>{data.anno}° Anno, </span>;
                         }
                     })()
                 }
                 {
                     ( () => {
-                        if (data.semestre as any !== "") {
+                        if (data.semestre !== null) {
                             return <span>{data.semestre}° Semestre</span>;
                         } else {
                             return "";
@@ -110,17 +100,17 @@ const CourseItem = (props: Props) => {
 
                 {
                     ( () => {
-                        if (data.gruppo !== "") {
+                        if (data.gruppo !== null) {
                             return (
                             <Text variant="small" styles={helpfulTextStyles}>
                                 <i className="fab fa-telegram" style={{color: '#1aa3ed'}}></i>
                                 &nbsp;
-                                <Link href={data.gruppo} target="_blank" className="text-decoration-none">
+                                <Link href={data.gruppo} target="_blank">
                                     Gruppo Telegram
                                 </Link>
                             </Text>
                             )
-                        } else if ( data.anno === "Anno accademico") {
+                        } else if ( data.anno === -1) {
                             return (
                                 <Text variant="small" styles={helpfulTextStyles}>Contatta un amministratore se vuoi essere aggiunto al gruppo.</Text>
                             )
@@ -132,7 +122,7 @@ const CourseItem = (props: Props) => {
                     })()
                 }
                 {
-                    data.websites.length !== 0 ?
+                    (data.websites ?? []).length !== 0 ?
                         <Text variant="small" styles={helpfulTextStyles}>
                             <i className="fas fa-home" style={{color:'#696a6b'}}></i>
                             &nbsp;
@@ -140,7 +130,7 @@ const CourseItem = (props: Props) => {
                                 (e, i) => {
                                     return (
                                         <span key={i}>
-                                            <Link href={e.link} target="_blank" className="text-decoration-none">
+                                            <Link href={e.link} target="_blank">
                                                 {e.etichetta}
                                             </Link>
                                             {i + 1 < data.websites.length ? <span>,&nbsp;</span> : ""}
@@ -153,74 +143,16 @@ const CourseItem = (props: Props) => {
                 }
                 <Text variant="small" styles={helpfulTextStyles}>
                 {
-                    /*
-                    ( () => {
-                        if (data.faqFile !== "" && data.drive !== "") {
-                            return (
-                                <span>
-                                    <span className="mr-2">
-                                        <i className="fas fa-question-circle" style={{color: '#fcba03'}}></i>
-                                        &nbsp;
-                                        <FaqView cdl="informatica" name={data.name} anno={data.anno} semestre={data.semestre} cfu={data.cfu} gruppo={data.gruppo} websites={data.websites} faqFile={data.faqFile} />
-                                        
-                                    </span>
-                                    <span>
-                                    <img style={gdriveStyle} src={process.env.PUBLIC_URL + "/gdrive.png"} alt="gdrive"/>
-                                        &nbsp;
-                                        <Link href={data.drive} target="_blank" className="text-decoration-none">Drive</Link>
-                                    </span>
-                                </span>
-                            )
-                        } else if (data.faqFile !== "" && data.drive === "") {
-                            return (
-                                <span>
-                                    <i className="fas fa-question-circle" style={{color: '#fcba03'}}></i>
-                                    &nbsp;
-                                    <FaqView cdl="informatica" name={data.name} anno={data.anno} semestre={data.semestre} cfu={data.cfu} gruppo={data.gruppo} websites={data.websites} faqFile={data.faqFile} />
-                                </span>
-                            )
-                        } else if (data.drive !== "" && data.faqFile === "") {
-                            return (
-                                <span>
-                                    <img style={gdriveStyle} src={process.env.PUBLIC_URL + "/gdrive.png"} alt="gdrive" />
-                                    &nbsp;
-                                    <Link href={data.drive} target="_blank" className="text-decoration-none">Drive</Link>
-                                </span>
-                            )
-                        }
-                        
-                    })()
-                    */
-                   data.wiki !== "" ? 
-                   <span className="mr-2">
-                        <i className="fas fa-question-circle" style={{color: '#22c9bb'}}></i>
-                        &nbsp;
-                        <a href={data.wiki} className="text-decoration-none" target="blank">Wiki</a>
-                        {/*<FaqView cdl={data.cdl} name={data.name} anno={data.anno} semestre={data.semestre} cfu={data.cfu} gruppo={data.gruppo} websites={data.websites} faqFile={data.faqFile} />*/}
-                    </span> : ""
+                   data.wiki !== null && data.wiki !== "" ? 
+                   <div className="mr-2">
+                        <i className="fas fa-question-circle mr-1" style={{color: '#22c9bb'}}></i>
+                        <a href={data.wiki} target="blank">Wiki</a>
+                    </div> : ""
                 }
                 
                 </Text>
 
             </Card.Section>
-
-
-            {/*
-            <Card.Section
-                horizontal
-                styles={footerCardSectionStyles}
-                tokens={footerCardSectionTokens}
-            >
-                <Icon iconName="RedEye" styles={iconStyles} />
-                <Icon iconName="SingleBookmark" styles={iconStyles} />
-                <Stack.Item grow={1}>
-                    <span />
-                </Stack.Item>
-                <Icon iconName="MoreVertical" styles={iconStyles} />
-            </Card.Section>
-            */}
-
-            
         </Card>
     );
 };

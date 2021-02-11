@@ -12,25 +12,6 @@ interface Props {
 
 const ExtraGroupView = (props: Props) => {
     var data = props.data;
-
-    /*
-    const siteTextStyles: ITextStyles = {
-        root: {
-            color: "#025F52",
-            fontWeight: FontWeights.semibold,
-        },
-    };
-    */
-
-    /*
-    const descriptionTextStyles: ITextStyles = {
-        root: {
-            fontSize: "12px",
-            color: "#333333",
-            fontWeight: FontWeights.semibold
-        },
-    };
-    */
     const helpfulTextStyles: ITextStyles = {
         root: {
             color: "#333333",
@@ -39,8 +20,11 @@ const ExtraGroupView = (props: Props) => {
     };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
 
+    function doNothing() { // Per mostrare l'hover della card
+    }
+
     return (
-        <Card tokens={cardTokens}>
+        <Card tokens={cardTokens} onClick={() => doNothing}>
             <Card.Item>
                 { data.image === "" ? <Persona text={data.name} /> : <Persona text={data.name} imageUrl= {process.env.PUBLIC_URL + '/group_images/' + data.image} /> }
             </Card.Item>
@@ -49,34 +33,10 @@ const ExtraGroupView = (props: Props) => {
                     {data.description}
                 </Text>
                 <Text variant="small" styles={helpfulTextStyles}>
-                    <i className="fab fa-telegram-plane" style={{color: '#6087eb'}}></i>
-                    &nbsp;
-                    <Link href={data.gruppo}>
-                        Gruppo Telegram
-                    </Link>
+                    <i className="fab fa-telegram-plane mr-1" style={{color: '#6087eb'}}></i>
+                    <Link href={data.gruppo} target="_blank">Gruppo Telegram</Link>
                 </Text>
-                {/*
-                <Text variant="small" styles={helpfulTextStyles}>
-                    <Icon iconName="Link" />
-                    {data.name}
-                </Text>
-                {data.name}*/}
-
             </Card.Section>
-
-            {/*
-            <Card.Section
-                horizontal
-                styles={footerCardSectionStyles}
-                tokens={footerCardSectionTokens}
-            >
-                <Icon iconName="RedEye" styles={iconStyles} />
-                <Icon iconName="SingleBookmark" styles={iconStyles} />
-                <Stack.Item grow={1}>
-                    <span />
-                </Stack.Item>
-                <Icon iconName="MoreVertical" styles={iconStyles} />
-            </Card.Section>*/}
         </Card>
     );
 };

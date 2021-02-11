@@ -220,6 +220,28 @@ main {
 /* End Section adjustments */
 
 
+/* Adjustment for mobile-view ms-card in coursesList and additionalGroupsView */
+@media only screen and (min-width: 501px) {
+  .course-list .listGridTile, .additional-groups .listGridTile {
+    text-align: center;
+    outline: none;
+    position: relative; 
+    float: left;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .course-list .ms-Card, .additional-groups .ms-Card {
+    width: 100%;
+    max-width:100%;
+  }
+
+  .course-list .listGridTile, .additional-groups .listGridTile {
+    width: 100% !important;
+    max-width: 100%;
+  }
+}
+/* End adjustment for mobile-view ms-card in coursesList and additionalGroupsView */
 
 
 
