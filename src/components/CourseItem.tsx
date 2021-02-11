@@ -40,9 +40,12 @@ const CourseItem = (props: Props) => {
     { 
         personaIconUrl = data.cdl === 'triennale_informatica'?  process.env.PUBLIC_URL + '/informatica.jpg' : process.env.PUBLIC_URL + '/unimi.jpg'
     }
+
+    function doNothing() { // Per mostrare l'hover della card
+    }
         
     return (
-        <Card tokens={cardTokens}>
+        <Card tokens={cardTokens} onClick={() => doNothing}>
             <Card.Item>
                 <Persona imageUrl={personaIconUrl} /*onRenderPrimaryText={() => <div style={{wordWrap:'break-word'}}>{data.name}</div> }*/ text={data.name} />
             </Card.Item>

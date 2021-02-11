@@ -9,23 +9,12 @@ import ExtraGroupView from '../components/ExtraGroup';
 import ExtraGroup from '../models/ExtraGroup';
 
 const ROWS_PER_PAGE = 3;
-const MAX_ROW_HEIGHT = 240;
-
-interface Dimensions
-{
-    tileWidth: string,
-    cardWidth: string,
-    //cardMaxWidth: string
-};
+const MAX_ROW_HEIGHT = 280;
 
 const AdditionalGroupsView = () => {
+    const columnCount = React.useRef(0);
+    const rowHeight = React.useRef(0);
     const groups: ExtraGroup[] = getExtraGroups();
-
-    const mq = window.matchMedia( "(max-width: 540px)" );
-
-    let [dimensions, setDimensions] = React.useState<Dimensions>({ tileWidth:'none', cardWidth:'213px' })
-
-    mq.addListener((changed) => setDimensions(changed.matches ? { tileWidth:'100%', cardWidth:'100%' } : { tileWidth:'none', cardWidth:'213px' }));
 
     var classNames = mergeStyleSets({
         listGrid: {
@@ -34,18 +23,9 @@ const AdditionalGroupsView = () => {
             position: 'relative',
             marginBottom: 10,
             margin: '1px'
-        },
-        listGridTile: {
-            textAlign: 'center',
-            outline: 'none',
-            position: 'relative',
-            float: 'left',
-            width: dimensions.tileWidth
-        },
+        }
     });
 
-    const columnCount = React.useRef(0);
-    const rowHeight = React.useRef(0);
     const getItemCountForPage = React.useCallback((itemIndex?: number, surfaceRect?: IRectangle) => {
         if (itemIndex === 0) {
             columnCount.current = Math.ceil(surfaceRect!.width / MAX_ROW_HEIGHT);
@@ -60,10 +40,8 @@ const AdditionalGroupsView = () => {
 
     const getCell = (e?: ExtraGroup, index?: number, isScrolling?: boolean) => {
         return (
-            <div
-                data-is-focusable
-                className={classNames.listGridTile}
-                style={{height: MAX_ROW_HEIGHT + 'px', width: dimensions.cardWidth }}>
+            <div data-is-focusable className="listGridTile"
+                style={{height: MAX_ROW_HEIGHT + 'px', width: 100 / columnCount.current + '%' }}>
                 <ExtraGroupView data={e!} />
             </div>
         )

@@ -16,15 +16,8 @@ interface Props {
     cdl?: Degree;
 }
 
-interface Dimensions
-{
-    tileWidth: string,
-    cardWidth: string,
-    //cardMaxWidth: string
-}
-
 const ROWS_PER_PAGE = 3;
-const MAX_ROW_HEIGHT = 240;
+const MAX_ROW_HEIGHT = 250;
 
 const semesterFilterOptions: IDropdownOption[] = [ // Opzioni per la ricerca del semestre
     { key: 0, text:'Non selezionato' },
@@ -50,12 +43,6 @@ const CourseList= (props: Props) => {
     const columnCount = React.useRef(0);
     const rowHeight = React.useRef(0);
 
-    const mq = window.matchMedia( "(max-width: 540px)" );
-
-    let [dimensions, setDimensions] = React.useState<Dimensions>({ tileWidth:'none', cardWidth:'213px' })
-
-    mq.addListener((changed) => setDimensions(changed.matches ? { tileWidth:'100%', cardWidth:'100%' } : { tileWidth:'none', cardWidth:'213px' }));
-
     var classNames = mergeStyleSets({
         listGrid: {
             overflow: 'hidden',
@@ -63,23 +50,16 @@ const CourseList= (props: Props) => {
             position: 'relative',
             marginBottom: 10,
             margin: '1px'
-        },
-        listGridTile: {
-            textAlign: 'center',
-            outline: 'none',
-            position: 'relative',
-            float: 'left',
-            width: dimensions.tileWidth
-        },
+        }
     });
     
-    const [nameFilter, setNameFilter] = React.useState<string>("")
-    const [yearFilter, setYearFilter] = React.useState<number>(0)
-    const [semesterFilter, setSemesterFilter] = React.useState<number>(0)
+    const [nameFilter, setNameFilter] = React.useState<string>("");
+    const [yearFilter, setYearFilter] = React.useState<number>(0);
+    const [semesterFilter, setSemesterFilter] = React.useState<number>(0);
 
-    let cdl = props.cdl
+    let cdl = props.cdl;
 
-    const courses: Course[] = cdl?.courses ?? []
+    const courses: Course[] = cdl?.courses ?? [];
 
     const getItemCountForPage = React.useCallback((itemIndex?: number, surfaceRect?: IRectangle) => {
         if (itemIndex === 0) {
@@ -95,12 +75,12 @@ const CourseList= (props: Props) => {
 
     const getCell = (e?: Course, index?: number, isScrolling?: boolean) => {
         return (
-            <div data-is-focusable className={classNames.listGridTile}
-                style={{height: MAX_ROW_HEIGHT + 'px', width: dimensions.cardWidth }}>
+            <div data-is-focusable className="listGridTile"
+                style={{height: MAX_ROW_HEIGHT + 'px', width: 100 / columnCount.current + '%' }}>
                 <CourseItem key={index} data={e!} />
             </div>
         )
-    }
+    };
 
     const onNameFilterChanged = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, text?: string): void => {
         setNameFilter(text ?? "");
@@ -122,22 +102,22 @@ const CourseList= (props: Props) => {
     let filteredCourses = courses;
 
     if (nameFilter !== "") {
-        filteredCourses = filteredCourses.filter(x => x.name?.toLocaleLowerCase()?.includes(nameFilter.toLocaleLowerCase()))
+        filteredCourses = filteredCourses.filter(x => x.name?.toLocaleLowerCase()?.includes(nameFilter.toLocaleLowerCase()));
     }
 
     if (semesterFilter !== 0) {
-        filteredCourses = filteredCourses.filter(x => x.semestre === semesterFilter) // leva l'or quando fai i semestri come number. Se non sai il semestre metti 0
+        filteredCourses = filteredCourses.filter(x => x.semestre === semesterFilter);
     }
 
     if (yearFilter !== 0) {
         if (yearFilter === 4) {
-            filteredCourses = filteredCourses.filter(x => x.anno === -1)
+            filteredCourses = filteredCourses.filter(x => x.anno === -1);
         } else {
-            filteredCourses = filteredCourses.filter(x => x.anno === yearFilter) // leva l'or quando fai i semestri come number. Se non sai il semestre metti 0
+            filteredCourses = filteredCourses.filter(x => x.anno === yearFilter);
         }
     }
-    return (       
 
+    return (       
         <Container className="courses-filter-options">
             <FocusZone>
                 <div className="mb-4">
