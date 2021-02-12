@@ -30,7 +30,7 @@ const yearBachelorDegreeFilterOptions: IDropdownOption[] = [ // Opzioni per la r
     { key: 1, text:'Primo' },
     { key: 2, text:'Secondo' },
     { key: 3, text:'Terzo' },
-    { key: 4, text:'Complementare' }
+    { key: -2, text:'Complementare' }
 ];
 
 const yearMasterDegreeFilterOptions: IDropdownOption[] = [ // Opzioni per la ricerca dell'anno per cdl magistrali
@@ -71,7 +71,7 @@ const CourseList= (props: Props) => {
 
     const getPageHeight = React.useCallback((): number => {
         return rowHeight.current * ROWS_PER_PAGE;
-    }, []);
+    }, []); 
 
     const getCell = (e?: Course, index?: number, isScrolling?: boolean) => {
         return (
@@ -110,11 +110,8 @@ const CourseList= (props: Props) => {
     }
 
     if (yearFilter !== 0) {
-        if (yearFilter === 4) {
-            filteredCourses = filteredCourses.filter(x => x.anno === -1);
-        } else {
-            filteredCourses = filteredCourses.filter(x => x.anno === yearFilter);
-        }
+
+        filteredCourses = filteredCourses.filter(x => x.anno === yearFilter);
     }
 
     return (       

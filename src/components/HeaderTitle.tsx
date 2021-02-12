@@ -14,7 +14,8 @@ const logoFileName = 'unimi150.png';
 const titleStyle = {
     fontSize: FontSizes.size42,
     fontWeight: 600,
-    color: '#2b88d8'
+    color: '#2b88d8',
+    fontFamily: 'Corbel'
 };
 
 const HeaderTitle = () => {
@@ -52,16 +53,12 @@ const HeaderTitle = () => {
                         />
                     </span>
 
-                    <Text style={titleStyle}>
-                        Network
-                    </Text>
+                    <Text style={titleStyle}>Network</Text>
 
                 </Row>
 
                 <Row className="m-2 text-center justify-content-center">
-                    <Text style={titleStyle}>
-                        Studenti UniMi
-                    </Text>
+                    <Text style={titleStyle}>Studenti UniMi</Text>
                 </Row>
             </div>
         

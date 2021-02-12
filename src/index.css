@@ -249,6 +249,9 @@ main {
 /*------------
   Da sistemare
 ------------*/
+.rules a {
+  padding-left: 0 !important;
+}
 
 .ms-MessageBar-icon {
   display:none;

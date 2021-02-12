@@ -49,13 +49,13 @@ const AdditionalGroupsView = () => {
 
     return (
         <Container className="additional-groups text-center">
-            <Text style={{ fontSize: FontSizes.size14 }}>
-                <div className="mb-3"> Qui è possibile trovare gruppi aggiuntivi del network.</div>
-                <div className="mb-2">
-                    <Text style={{ fontWeight: 600 }}>Gruppi disponibili:</Text>
-                </div>
-            </Text>
+            <div className="mb-2">
+                <Text style={{ fontSize: FontSizes.size14 }}>Qui è possibile trovare gruppi aggiuntivi del network.</Text>
+            </div>
 
+            <div className="mb-3">
+                <Text style={{ fontSize: FontSizes.size14, fontWeight: 600 }}>Gruppi disponibili:</Text>
+            </div>
 
             <FocusZone>
                 <List

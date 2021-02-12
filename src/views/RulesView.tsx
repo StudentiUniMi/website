@@ -3,17 +3,18 @@ import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
 import { CompoundButton } from 'office-ui-fabric-react';
-import { Link, MessageBar, MessageBarType } from 'office-ui-fabric-react';
+import { MessageBar, MessageBarType } from 'office-ui-fabric-react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 const question = { fontWeight: 600, color: '#398ded' };
 const rules = { fontWeight: 600 };
-const colButtonStyle = { maxWidth: '200px', minWidth: '130px' }
+const colButtonStyle = { maxWidth: '200px', minWidth: '130px' };
+const messageBarStyle = { fontFamily: 'Monaco, Menlo, Consolas' };
 
 const QuestionFaqRulesMessage = () => (
-    <MessageBar messageBarType={MessageBarType.warning}>
-        <div className="mb-1" style={rules}>1) Domanda con risposta indicata sul sito del docente</div>
+    <MessageBar messageBarType={MessageBarType.warning} style={messageBarStyle}>
+        <div className="mb-1 mt-2" style={rules}>1) Domanda con risposta indicata sul sito del docente</div>
         <div className="mb-3 ml-3 mr-3">
             L'utente riceve un warn con successiva indicazione su dove trovare l'informazione richiesta.
             Dopo 3 warn l'utente viene mutato per un giorno, a discrezione degli amministratori.
@@ -29,8 +30,8 @@ const QuestionFaqRulesMessage = () => (
 );
 
 const BehaviorRulesMessage = () => (
-    <MessageBar messageBarType={MessageBarType.warning}>
-        <div className="mb-1" style={rules}>1) Bestemmie e linguaggio vivace</div>
+    <MessageBar messageBarType={MessageBarType.warning} style={messageBarStyle}>
+        <div className="mb-1 mt-2" style={rules}>1) Bestemmie e linguaggio vivace</div>
         <div className="mb-3 ml-3 mr-3">
             Le bestemmie sono vietate, pena warn per quelle innocenti, e mute o ban nei casi peggiori, a discrezione degli amministratori.
             Il linguaggio vivace è permesso finchè non diventa spam: in quel caso l'utente verrà warnato o mutato per un certo periodo di tempo,
@@ -54,8 +55,8 @@ const BehaviorRulesMessage = () => (
 );
 
 const OtherRulesMessage = () => (
-    <MessageBar messageBarType={MessageBarType.warning}>
-        <div className="mb-1" style={rules}>1) Nome e username</div>
+    <MessageBar messageBarType={MessageBarType.warning} style={messageBarStyle}>
+        <div className="mb-1 mt-2" style={rules}>1) Nome e username</div>
         <div className="mb-3 ml-3 mr-3">
             Gli utenti devono essere identificabili sul network, quindi è obbligatorio utilizzare un nome che sia chiaro, come
             il nome di persona o un breve appellativo. Per quanto riguarda l'username è caldamente consigliato (ma non obbligatorio)
@@ -74,7 +75,7 @@ const OtherRulesMessage = () => (
         <div className="mb-3 ml-3 mr-3">
             I gruppi del Network non permettono l'invio di <b>immagini</b> per condividere codice. 
             Se il codice in questione supera le 5 righe deve essere condiviso attraverso l'utilizzo di apposite piattaforme 
-            come <Link href="https://pastebin.com/">Pastebin</Link> o meglio ancora <Link href="https://gist.github.com/">Gist</Link>.
+            come <a href="https://pastebin.com/">Pastebin</a> o meglio ancora <a href="https://gist.github.com/">Gist</a>.
             In caso contrario (se il codice è minore o uguale di 4 righe) è permesso inviarlo tramite un semplice messaggio ma usando l'apposita formattazione
             di testo per il codice che telegram mette a disposizione. E' permesso invece inviare screen (e non immagini scattate da cellulare) di eventuali log, shell, e simili.
         </div>
@@ -87,22 +88,27 @@ const Rules = () => {
     return (
         <Container className="rules text-center">
             <div className="mb-4">
-                <Text style={{ fontSize: FontSizes.size14 }}>
+
+                <div className="mb-2">
+                    <Text style={{ fontSize: FontSizes.size14 }}>Si consiglia di leggere le regole indicate prima di utilizzare uno qualsiasi dei gruppi disponibili.</Text>
+                </div>
+                
+                <Text style={{ fontSize: FontSizes.size12 }}>
+                    <div style={question} className="mb-2">Perchè abbiamo introdotto un regolamento?</div>
                     <div className="mb-2">
-                        Si consiglia di leggere le regole indicate prima di utilizzare uno qualsiasi dei gruppi disponibili.
+                        Vogliamo rendere chiari i motivi per cui abbiamo deciso di regolamentare i gruppi del nostro network.
+                        Abbiamo notato che la maggior parte di essi erano tempestati di domande banali, fatte più volte al giorno, la cui risposta era facilmente trovabile.
+                        Questo riduce la qualità della chat e scoraggia la partecipazione di studenti più attenti.
+                        Per questo motivo abbiamo deciso di provare a limitare il fenomeno, da una parte ammonendo chi continua a fare interventi non produttivi,
+                        e dall'altra fornendo un modo facile e veloce per trovare le informazioni più importanti tramite le faq di ogni insegnamento.
                     </div>
-                    <Text style={{ fontSize: FontSizes.size12 }}>
-                        <div style={question} className="mb-2">Perchè abbiamo introdotto un regolamento?</div>
-                        <div className="mb-2">
-                            Vogliamo rendere chiari i motivi per cui abbiamo deciso di regolamentare i gruppi del nostro network.
-                            Abbiamo notato che la maggior parte di essi erano tempestati di domande banali, fatte più volte al giorno, la cui risposta era facilmente trovabile.
-                            Questo riduce la qualità della chat e scoraggia la partecipazione di studenti più attenti.
-                            Per questo motivo abbiamo deciso di provare a limitare il fenomeno, da una parte ammonendo chi continua a fare interventi non produttivi,
-                            e dall'altra fornendo un modo facile e veloce per trovare le informazioni più importanti tramite le faq di ogni insegnamento.
-                        </div>
-                    </Text>
-                    <div>Di seguito è possibile trovare il <Text style={{ fontWeight: 600}}>regolamento</Text> e le varie sezioni di cui è composto.</div>
                 </Text>
+
+                <div>
+                    <Text style={{ fontSize: FontSizes.size14 }}>
+                        Di seguito è possibile trovare il <Text style={{ fontWeight: 600}}>regolamento</Text> e le varie sezioni di cui è composto.
+                    </Text>
+                </div>
             </div>
 
             <Row className="mb-3 justify-content-center">

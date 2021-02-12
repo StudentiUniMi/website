@@ -73,18 +73,16 @@ const CoursesView = () => {
 
     let departments = getDepartments()
 
-    React.useEffect(() =>
-    {
-        if(!didMount.current)
-        {
-            didMount.current = true
+    React.useEffect(() => {
+        if(!didMount.current) {
+            didMount.current = true;
             var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
             var initialCdl = states.length >= 2 ? states[1] : '';
-            var possibleDepartments = departments.filter(x => x.cdls.filter(y => y.id === initialCdl).length > 0)
-            let initialDepartment = possibleDepartments.length > 0 ? possibleDepartments[0].id : ''
-            setSelectedCdl(initialCdl)
-            setSelectedDepartment(initialDepartment)
-            history.push(`/courses/${initialCdl}`)
+            var possibleDepartments = departments.filter(x => x.cdls.filter(y => y.id === initialCdl).length > 0);
+            let initialDepartment = possibleDepartments.length > 0 ? possibleDepartments[0].id : '';
+            setSelectedCdl(initialCdl);
+            setSelectedDepartment(initialDepartment);
+            history.push(`/courses/${initialCdl}`);
         }
     }, [history, departments]);
 
@@ -94,35 +92,28 @@ const CoursesView = () => {
     let departmentOptions: IDropdownOption[] = departments.map(x => ({key: x.id, text: x.name ?? "", data: {icon:x.icon}, disabled: x.cdls.length === 0}));
     let cdls: Degree[] = []
        
-    if(selectedDepartment !=='') {
-        let department: Department | undefined = departments.filter(x => x.id === selectedDepartment)[0]
-        cdls = department?.cdls ?? []
+    if (selectedDepartment !=='') {
+        let department: Department | undefined = departments.filter(x => x.id === selectedDepartment)[0];
+        cdls = department?.cdls ?? [];
     }
 
     let cdlsOptions: IDropdownOption[] = cdls.map(x => ({key: x.id, text: x.name ?? ""}));
 
-    let cdl = cdls.filter(x => x.id === selectedCdl)[0]
+    let cdl = cdls.filter(x => x.id === selectedCdl)[0];
 
     return (
         <Container className="courses text-center">
-            <div className="text-center">
+            <div className="mb-1" style={{ lineHeight: "normal" }}>
                 <Text style={{ fontSize: FontSizes.size14 }}>
-                    <div className="mb-0">Qui è possibile vedere i gruppi telegram, siti web, e faq (se disponibili)
-                    di ogni corso didattico del tuo corso di laurea. </div>
-                    <div className="mb-2">Se noti qualcosa che non corrisponde o che andrebbe sistemato puoi comunicarlo sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link>.</div>
-                    <div className="mb-4">
-                        <Text style={{ fontSize: FontSizes.size12 }}>
-                            <div className="mb-0">
-                                I link alla <Text style={{ fontWeight: 600, fontSize: FontSizes.size12 }}>Wiki</Text> di un corso didattico potrebbero portare a pagine non ancora compilate: 
-                            </div>
-                            <div className="mb-0">
-                                è qui che potete contribuire iscrivendovi e aiutandoci a raccogliere faq e qualsiasi altro contenuto utile per i corsi didattici.
-                            </div>
-                            <div className="mb-0">
-                                Vi ricordiamo che è nella wiki che sono presenti le faq di quest'ultimi.
-                            </div>
-                        </Text>
-                    </div>
+                    Qui è possibile vedere i gruppi telegram, siti web, e faq (se disponibili)
+                    di ogni corso didattico del tuo corso di laurea. Se noti qualcosa che non corrisponde o che andrebbe sistemato puoi 
+                    comunicarlo sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link>.
+                </Text>
+            </div>
+            <div className="mb-4" style={{ lineHeight: "normal" }}>
+                <Text style={{ fontSize: FontSizes.size12 }}>
+                    I link alla <span style={{ fontWeight: 600 }}>Wiki</span> di un corso didattico potrebbero portare a pagine non ancora compilate:<br/>
+                    è qui che potete contribuire iscrivendovi e aiutandoci a raccogliere faq e qualsiasi altro contenuto utile per i corsi didattici.
                 </Text>
             </div>
             
@@ -165,10 +156,10 @@ const CoursesView = () => {
 
 
             <div style={{ display: selectedCdl !== '' ? 'block' : 'none' }}>
-                    <p className='text-center'>
-                        <Text style={{ fontWeight: 600 }}>Gruppi disponibili:</Text>
-                    </p>                
-            <CourseList cdl={cdl} />
+                <p className='text-center'>
+                    <Text style={{ fontWeight: 600 }}>Gruppi disponibili:</Text>
+                </p>                
+                <CourseList cdl={cdl} />
             </div>
 
         </Container>

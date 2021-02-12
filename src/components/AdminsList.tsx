@@ -8,13 +8,14 @@ interface Props {
     data: Admin[]
 }
 
-const AdminListView = (props: Props) => {
+const AdminsList = (props: Props) => {
     return (
         <Row className="admin-list text-center">
-            {props.data.map(x =>
-                <Col xl={3} lg={3} md={4} sm={6} xs={12} className="mb-3 col-persona">
-                    {
-                        (() => {if (x.year !== "") var secondaryText = `${x.year} Anno`; else { secondaryText = ""}
+            {props.data.map((x,i) =>
+                <Col key={i} xl={3} lg={3} md={4} sm={6} xs={12} className="mb-3 col-persona">
+                    {(() => {
+                        if (x.year !== "") var secondaryText = `${x.year} Anno`; 
+                        else { secondaryText = ""}
                         return <Persona onRenderPrimaryText={() => <Link href={`https://t.me/${x.username}`}>{`@${x.username ?? ""}`}</Link>} text={`@${x.username}` ?? ""} secondaryText={secondaryText} size={PersonaSize.size40} />
                     })()}
                 </Col>
@@ -23,4 +24,4 @@ const AdminListView = (props: Props) => {
     )
 };
 
-export default AdminListView;
+export default AdminsList;

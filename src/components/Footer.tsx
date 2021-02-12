@@ -19,11 +19,9 @@ const Footer = () => {
                             </Text>
                         </div>
 
-                        <div className="mb-2">
+                        <div className="mb-2 text" style={{ lineHeight: "normal" }}>
                             <Text style={{ fontSize: FontSizes.size12 }}>
-                                <p className="mb-0 text">
-                                    Il network e il relativo sito web non sono affiliati all'Università degli Studi di Milano.
-                                </p>
+                                Il network e il relativo sito web non sono affiliati all'Università degli Studi di Milano.
                             </Text>
                         </div>
                         
@@ -69,11 +67,9 @@ const Footer = () => {
                             <Text style={{ fontWeight: 600 }}>Contatti</Text>
                         </div>
 
-                        <div className="mb-0">
+                        <div className="mb-1 text" style={{ lineHeight: "normal" }}>
                             <Text style={{ fontSize: FontSizes.size12 }}>
-                                <p className="mb-1 text">
-                                    Per qualsiasi dubbio o proposta è possibile scrivere sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME"  target="_blank">gruppo principale</Link> del network.
-                                </p>
+                                Per qualsiasi dubbio o proposta è possibile scrivere sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME"  target="_blank">gruppo principale</Link> del network.
                             </Text>
                         </div>
                     </Col>
