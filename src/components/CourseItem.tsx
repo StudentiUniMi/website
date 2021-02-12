@@ -36,8 +36,7 @@ const CourseItem = (props: Props) => {
     const cardTokens: ICardTokens = { childrenMargin: 12 };
 
     let personaIconUrl: string | undefined;
-    if (data.anno === -1) // Set del logo del gruppo principale
-    { 
+    if (data.anno === -1) {  // Set del logo del gruppo principale 
         personaIconUrl = data.cdl === 'triennale_informatica'?  process.env.PUBLIC_URL + '/informatica.jpg' : process.env.PUBLIC_URL + '/unimi.jpg'
     }
 
@@ -80,6 +79,8 @@ const CourseItem = (props: Props) => {
                         switch (data.anno) {
                             case -1:
                                 return "";
+                            case null:
+                                return "";
                             case 0:
                                 return <span>Complementare, </span>;
                             default:
@@ -100,7 +101,15 @@ const CourseItem = (props: Props) => {
 
                 {
                     ( () => {
-                        if (data.gruppo !== null) {
+                        if ( data.anno === -1) {
+                            return (
+                                <Text variant="small" styles={helpfulTextStyles}>Contatta un amministratore se vuoi essere aggiunto al gruppo.</Text>
+                            )
+                        } else if ( data.gruppo === "" || data.gruppo === null) {
+                            return (
+                                <Text variant="small" styles={helpfulTextStyles}>Gruppo non disponibile.</Text>
+                            )
+                        } else {
                             return (
                             <Text variant="small" styles={helpfulTextStyles}>
                                 <i className="fab fa-telegram" style={{color: '#1aa3ed'}}></i>
@@ -109,14 +118,6 @@ const CourseItem = (props: Props) => {
                                     Gruppo Telegram
                                 </Link>
                             </Text>
-                            )
-                        } else if ( data.anno === -1) {
-                            return (
-                                <Text variant="small" styles={helpfulTextStyles}>Contatta un amministratore se vuoi essere aggiunto al gruppo.</Text>
-                            )
-                        } else {
-                            return (
-                                <Text variant="small" styles={helpfulTextStyles}>Gruppo non disponibile.</Text>
                             )
                         }
                     })()
