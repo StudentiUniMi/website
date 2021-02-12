@@ -165,10 +165,10 @@ const CoursesView = () => {
 
 
             <div style={{ display: selectedCdl !== '' ? 'block' : 'none' }}>
-                    <p className='text-center'>
-                        <Text style={{ fontWeight: 600 }}>Gruppi disponibili:</Text>
-                    </p>                
-            <CourseList cdl={cdl} />
+                <p className='text-center'>
+                    <Text style={{ fontWeight: 600 }}>Gruppi disponibili:</Text>
+                </p>                
+                <CourseList cdl={cdl} />
             </div>
 
         </Container>

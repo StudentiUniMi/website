@@ -81,7 +81,7 @@ const CourseItem = (props: Props) => {
                                 return "";
                             case null:
                                 return "";
-                            case 0:
+                            case -2:
                                 return <span>Complementare, </span>;
                             default:
                                 return <span>{data.anno}° Anno, </span>;
@@ -119,7 +119,7 @@ const CourseItem = (props: Props) => {
                                 </Link>
                             </Text>
                             )
-                        }
+                        } 
                     })()
                 }
                 {
