@@ -873,7 +873,7 @@
                     "name": "Informatica musicale",
                     "description": "",
                     "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-musicale",
-                    "server_discord": "",
+                    "server_discord": "https://discord.gg/sECUJAfr",
                     "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F3Xof2_2021.pdf",
                     "virtual_classroom": "",
                     "admins": [
@@ -930,7 +930,7 @@
                     "name": "Informatica comunicazione digitale",
                     "description": "",
                     "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-la-comunicazione-digitale",
-                    "server_discord": "",
+                    "server_discord": "https://discord.gg/sECUJAfr",
                     "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F9Xof2_2021.pdf",
                     "virtual_classroom": "",
                     "admins": [
@@ -1244,7 +1244,7 @@
                     "name": "Sicurezza sistemi e reti informatiche",
                     "description": "",
                     "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-dei-sistemi-e-delle-reti-informatiche",
-                    "server_discord": "",
+                    "server_discord": "https://discord.gg/sECUJAfr",
                     "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F68of3_2021.pdf",
                     "virtual_classroom": "",
                     "admins": [
@@ -1742,7 +1742,7 @@
                     "name": "Informatica (magistrale)",
                     "description": "",
                     "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-magistrale",
-                    "server_discord": "",
+                    "server_discord": "https://discord.gg/sECUJAfr",
                     "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F94of2_2021.pdf",
                     "virtual_classroom": "",
                     "admins": [
