@@ -7,8 +7,8 @@ import { Card, ICardTokens } from '@uifabric/react-cards';
 import { FontWeights, ITextStyles } from 'office-ui-fabric-react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { getServices } from '../services/Requests'
-import {redirectToLink} from '../services/Utils'
+import { getServices } from '../services/Requests';
+import {redirectToLink} from '../services/Utils';
 
 const theme = getTheme();
 const { palette, fonts } = theme;
@@ -31,16 +31,17 @@ let cardProps = (iconName?: string, backgroundColor?: string): IDocumentCardPrev
 const siteTextStyles: ITextStyles = {
     root: { color: '#025F52', fontWeight: FontWeights.semibold, fontSize: FontSizes.size14 },
 };
+
 const descriptionTextStyles: ITextStyles = {
     root: { color: '#333333', fontWeight: FontWeights.regular, fontSize: FontSizes.size12 },
 };
+
 const cardTokens: ICardTokens = { childrenMargin: 12 };
 
 
 
 const Services = () => {
-
-    let services = getServices()
+    let services = getServices();
 
     return (
         <Container className="services text-center">

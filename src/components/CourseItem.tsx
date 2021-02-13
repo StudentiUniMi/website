@@ -59,7 +59,6 @@ const CourseItem = (props: Props) => {
                     })()
                 }
                 
-                
                 {
                     ( () => {
                         if (data.cfu !== null) {
