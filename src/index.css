@@ -51,7 +51,7 @@ main {
 
 @media only screen and (max-width: 768px) {
   body {
-    margin-bottom: 530px;
+    margin-bottom: 550px;
   }
 
   footer .row {
@@ -68,9 +68,15 @@ main {
   }
 }
 
-@media only screen and (max-width: 235px) {
+@media only screen and (max-width: 270px) {
   body {
-    margin-bottom: 630px;
+    margin-bottom: 600px;
+  }
+}
+
+@media only screen and (max-width: 241px) {
+  body {
+    margin-bottom: 650px;
   }
 }
 

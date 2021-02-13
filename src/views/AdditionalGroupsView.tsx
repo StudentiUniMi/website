@@ -29,7 +29,7 @@ const AdditionalGroupsView = () => {
     const getItemCountForPage = React.useCallback((itemIndex?: number, surfaceRect?: IRectangle) => {
         if (itemIndex === 0) {
             columnCount.current = Math.ceil(surfaceRect!.width / MAX_ROW_HEIGHT);
-            rowHeight.current = Math.floor(surfaceRect!.width / columnCount.current);
+            rowHeight.current = /*Math.floor(surfaceRect!.width / columnCount.current)*/ MAX_ROW_HEIGHT;
         }
         return columnCount.current * ROWS_PER_PAGE;
     }, []);
@@ -63,7 +63,7 @@ const AdditionalGroupsView = () => {
                     items={groups}
                     getItemCountForPage={getItemCountForPage}
                     getPageHeight={getPageHeight}
-                    renderedWindowsAhead={4}
+                    renderedWindowsAhead={10}
                     onRenderCell={getCell}
                 />
             </FocusZone>
