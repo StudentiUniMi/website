@@ -117,6 +117,14 @@ const CoursesView = () => {
                     è qui che potete contribuire iscrivendovi e aiutandoci a raccogliere faq e qualsiasi altro contenuto utile per i corsi didattici.
                 </Text>
             </div>
+            {/*
+            <div className="mb-4" style={{ lineHeight: "normal" }}>
+                <Text style={{ fontSize: FontSizes.size12, fontFamily: 'Monaco, Menlo, Consolas', color: 'red' }}>
+                    Si avvisa che da mobile è presente un bug quando viene raggiunta la fine della visualizzazione dei corsi.<br/>
+                    In caso riscontriate questo problema siete invitati a usare i filtri appositi finchè non viene risolto il problema.
+                </Text>
+            </div>
+            */}
             
             <Row className="department-choose justify-content-center mb-4">
                 <Col xl={6} lg={6} md={6} sm={6} xs={12} className="mb-1">
