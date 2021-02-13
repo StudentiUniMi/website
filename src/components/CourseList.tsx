@@ -64,7 +64,7 @@ const CourseList= (props: Props) => {
     const getItemCountForPage = React.useCallback((itemIndex?: number, surfaceRect?: IRectangle) => {
         if (itemIndex === 0) {
             columnCount.current = Math.ceil(surfaceRect!.width / MAX_ROW_HEIGHT);
-            rowHeight.current = Math.floor(surfaceRect!.width / columnCount.current);
+            rowHeight.current = /*Math.floor(surfaceRect!.width / columnCount.current)*/ MAX_ROW_HEIGHT;
         }
         return columnCount.current * ROWS_PER_PAGE;
     }, []);
@@ -75,8 +75,7 @@ const CourseList= (props: Props) => {
 
     const getCell = (e?: Course, index?: number, isScrolling?: boolean) => {
         return (
-            <div data-is-focusable className="listGridTile"
-                style={{height: MAX_ROW_HEIGHT + 'px', width: 100 / columnCount.current + '%' }}>
+            <div data-is-focusable className="listGridTile" style={{ height: MAX_ROW_HEIGHT + 'px', width: 100 / columnCount.current + '%' }}>
                 <CourseItem key={index} data={e!} />
             </div>
         )
@@ -127,10 +126,10 @@ const CourseList= (props: Props) => {
                         <Col xl={4} lg={4} md={4} sm={12} xs={12}>
                             {
                                 <Dropdown options={yearFilterOptions}
-                                        label={`Cerca per anno`}
-                                        onChange={onYearFilterChanged}
-                                        selectedKey={yearFilter}
-                                        disabled={ !cdl?.has_years ?? false}
+                                    label={`Cerca per anno`}
+                                    onChange={onYearFilterChanged}
+                                    selectedKey={yearFilter}
+                                    disabled={ !cdl?.has_years ?? false}
                                 />
                             }
                         </Col>
@@ -151,7 +150,7 @@ const CourseList= (props: Props) => {
                         items={filteredCourses}
                         getItemCountForPage={getItemCountForPage}
                         getPageHeight={getPageHeight}
-                        renderedWindowsAhead={4}
+                        renderedWindowsAhead={10}
                         onRenderCell={getCell}
                     />
                 </div>

@@ -10,7 +10,6 @@ interface Props {
 }
 
 const DegreeInformations= (props: Props) => {
-
     const logos: IDocumentCardLogoProps[] = [
         {logoIcon: "Globe" }, // {props.cdl?.main_website}
         {logoIcon: "PageArrowRight" }, // {props.cdl?.manifest}
@@ -23,7 +22,7 @@ const DegreeInformations= (props: Props) => {
     }
 
     const cardStyles: IDocumentCardStyles = {
-        root: { display: 'inline-block', minWidth: '220px', height: '130px' },
+        root: { display: 'inline-block', minWidth: '220px', height: '130px', backgroundColor: '#f3f2f1' },
     };
 
     return (       
