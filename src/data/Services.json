@@ -61,12 +61,5 @@
         "icon": "Help",
         "color":"#d13438",
         "description": "Accedi al portale InformaStudenti."
-    },
-    {
-        "name": "Virtual Classroom", 
-        "link": "https://vc.di.unimi.it/",
-        "icon": "Video",
-        "color":"#498205",
-        "description": "Accedi alle videolezioni di virtual classroom (Informatica)."
     }
 ]
