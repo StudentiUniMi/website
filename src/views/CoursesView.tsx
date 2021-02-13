@@ -9,6 +9,7 @@ import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import CourseList from "../components/CourseList";
+import DegreeInformations from "../components/DegreeInformations";
 import {getDepartments} from '../services/Requests'
 import Degree from "../models/Degree";
 import Department from "../models/Department";
@@ -104,9 +105,9 @@ const CoursesView = () => {
     return (
         <Container className="courses text-center">
             <div className="mb-1" style={{ lineHeight: "normal" }}>
-                <Text style={{ fontSize: FontSizes.size14 }}>
-                    Qui è possibile vedere i gruppi telegram, siti web, e faq (se disponibili)
-                    di ogni corso didattico del tuo corso di laurea. Se noti qualcosa che non corrisponde o che andrebbe sistemato puoi 
+                <Text style={{ fontSize: FontSizes.size14, lineHeight: "normal" }}>
+                    Qui è possibile trovare i gruppi telegram, siti web, wiki, faq (se disponibili) e informazioni generali riguardo il tuo corso di laurea e i suoi corsi didattici.
+                    Se noti qualcosa che non corrisponde o che andrebbe sistemato puoi 
                     comunicarlo sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link>.
                 </Text>
             </div>
@@ -156,6 +157,7 @@ const CoursesView = () => {
 
 
             <div style={{ display: selectedCdl !== '' ? 'block' : 'none' }}>
+                <DegreeInformations cdl={cdl} />
                 <p className='text-center'>
                     <Text style={{ fontWeight: 600 }}>Gruppi disponibili:</Text>
                 </p>                

@@ -110,7 +110,6 @@ const CourseList= (props: Props) => {
     }
 
     if (yearFilter !== 0) {
-
         filteredCourses = filteredCourses.filter(x => x.anno === yearFilter);
     }
 

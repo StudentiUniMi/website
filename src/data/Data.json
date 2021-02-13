@@ -124,6 +124,10 @@
                     "id": "triennale_informatica",
                     "name": "Informatica",
                     "description": "",
+                    "main_website": "https://informatica.cdl.unimi.it/it",
+                    "server_discord": "https://discord.gg/sECUJAfr",
+                    "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F1Xof3_2021.pdf",
+                    "virtual_classroom": "https://vc.di.unimi.it/",
                     "admins": [
                         {
                             "id": "",
@@ -868,6 +872,10 @@
                     "id": "triennale_informatica_musicale",
                     "name": "Informatica musicale",
                     "description": "",
+                    "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-musicale",
+                    "server_discord": "",
+                    "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F3Xof2_2021.pdf",
+                    "virtual_classroom": "",
                     "admins": [
                         {
                             "id": "",
@@ -921,6 +929,10 @@
                     "id": "triennale_informatica_com_digitale",
                     "name": "Informatica comunicazione digitale",
                     "description": "",
+                    "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-la-comunicazione-digitale",
+                    "server_discord": "",
+                    "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F9Xof2_2021.pdf",
+                    "virtual_classroom": "",
                     "admins": [
                         {
                             "id": "",
@@ -1231,6 +1243,10 @@
                     "id": "triennale_sicurezza_sistemi_reti_informatiche",
                     "name": "Sicurezza sistemi e reti informatiche",
                     "description": "",
+                    "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-dei-sistemi-e-delle-reti-informatiche",
+                    "server_discord": "",
+                    "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F68of3_2021.pdf",
+                    "virtual_classroom": "",
                     "admins": [
                         {
                             "id": "",
@@ -1476,6 +1492,10 @@
                     "id": "triennale_sicurezza_sistemi_reti_informatiche_online",
                     "name": "Sicurezza sistemi e reti informatiche online",
                     "description": "",
+                    "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-dei-sistemi-e-delle-reti-informatiche-online",
+                    "server_discord": "",
+                    "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F1Aof1_2021.pdf",
+                    "virtual_classroom": "",
                     "admins": [
                         {
                             "id": "",
@@ -1721,6 +1741,10 @@
                     "id": "magistrale_informatica",
                     "name": "Informatica (magistrale)",
                     "description": "",
+                    "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-magistrale",
+                    "server_discord": "",
+                    "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F94of2_2021.pdf",
+                    "virtual_classroom": "",
                     "admins": [
                         {
                             "id": "",
@@ -2770,6 +2794,10 @@
                     "id": "magistrale_sicurezza_informatica",
                     "name": "Sicurezza informatica (magistrale)",
                     "description": "",
+                    "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-informatica",
+                    "server_discord": "",
+                    "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F2Yof2_2021.pdf",
+                    "virtual_classroom": "",
                     "admins": [
                         {
                             "id": "",

@@ -6,7 +6,7 @@ import ContentView from "./ContentView";
 import { loadTheme } from '@fluentui/react';
 
 loadTheme({
-  // defaultFontStyle: {  fontWeight: 'regular' },
+  //defaultFontStyle: {  fontWeight: 'regular' },
   fonts: {
     small: {
       fontSize: '12px',
