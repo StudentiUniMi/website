@@ -6,7 +6,6 @@ import Row from 'react-bootstrap/Row';
 import { DocumentCard, IDocumentCardTitleStyles, DocumentCardTitle, DocumentCardLogo, IDocumentCardLogoProps, IDocumentCardStyles } from 'office-ui-fabric-react/lib/DocumentCard';
 import { redirectToLink } from '../services/Utils';
 import { getTheme } from '@fluentui/react';
-
 const theme = getTheme();
 
 interface HomeLinkType {
