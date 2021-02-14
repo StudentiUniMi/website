@@ -306,6 +306,8 @@ a:active,
 a:focus,
 .home button:active,
 .home button:focus,
+.header-menu .ms-Button:active,
+.header-menu .ms-Button:focus,
 .rules button:active,
 .rules button:focus {
   outline: 0;
@@ -325,4 +327,8 @@ a:focus,
 
 .services .ms-CardSection {
   text-align: left;
+}
+
+.ms-TooltipHost {
+  display: inline;
 }
