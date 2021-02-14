@@ -16,7 +16,6 @@ const ExtraGroupView = (props: Props) => {
     var data = props.data;
     const helpfulTextStyles: ITextStyles = {
         root: {
-            color: theme.palette.neutralPrimary,
             fontWeight: FontWeights.regular,
         },
     };

@@ -27,7 +27,7 @@ const titleStyle: IDocumentCardTitleStyles = {
 };
 
 const cardStyles: IDocumentCardStyles = {
-    root: { backgroundColor: theme.palette.neutralLighterAlt, display: 'inline-block', height: '130px', maxWidth: '130px', minWidth: '130px' },
+    root: { display: 'inline-block', height: '130px', maxWidth: '130px', minWidth: '130px' },
 };
 
 const HomeView = () => {

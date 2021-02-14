@@ -22,13 +22,11 @@ const CourseItem = (props: Props) => {
     };
     const descriptionTextStyles: ITextStyles = {
         root: {
-            color: "#333333",
             fontWeight: FontWeights.semibold,
         },
     };
     const helpfulTextStyles: ITextStyles = {
         root: {
-            color: "#333333",
             fontWeight: FontWeights.regular,
         },
     };

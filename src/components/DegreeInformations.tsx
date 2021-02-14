@@ -5,7 +5,6 @@ import Degree from '../models/Degree';
 import { DocumentCard, IDocumentCardTitleStyles, DocumentCardTitle, DocumentCardLogo, IDocumentCardLogoProps, IDocumentCardStyles } from 'office-ui-fabric-react/lib/DocumentCard';
 import { redirectToLink } from '../services/Utils';
 import { getTheme } from '@fluentui/react';
-
 const theme = getTheme();
 
 interface Props { cdl?: Degree };
@@ -23,7 +22,7 @@ const DegreeInformations= (props: Props) => {
     };
 
     const cardStyles: IDocumentCardStyles = {
-        root: { backgroundColor: theme.palette.neutralLighterAlt, display: 'inline-block', minWidth: '220px', height: '130px' },
+        root: { display: 'inline-block', minWidth: '220px', height: '130px' },
     };
 
     return (       
