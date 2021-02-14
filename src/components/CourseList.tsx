@@ -12,9 +12,7 @@ import CourseItem from './CourseItem';
 import Course from '../models/Course';
 import Degree from '../models/Degree';
 
-interface Props {
-    cdl?: Degree;
-}
+interface Props { cdl?: Degree };
 
 const ROWS_PER_PAGE = 3;
 const MAX_ROW_HEIGHT = 250;
@@ -143,17 +141,21 @@ const CourseList= (props: Props) => {
                     </Row>
                 </div>
 
-                {filteredCourses.length === 0 ? <div className="text-center"><Text style={{ fontSize: FontSizes.size14 }}>Nessun gruppo trovato.</Text></div>:
-                <div className="course-list">
-                    <List
-                        className={classNames.listGrid}
-                        items={filteredCourses}
-                        getItemCountForPage={getItemCountForPage}
-                        getPageHeight={getPageHeight}
-                        renderedWindowsAhead={10}
-                        onRenderCell={getCell}
-                    />
-                </div>
+                {filteredCourses.length === 0 ? 
+                    <div className="text-center">
+                        <Text style={{ fontSize: FontSizes.size14 }}>Nessun gruppo trovato.</Text>
+                    </div>
+                    :
+                    <div className="course-list">
+                        <List
+                            className={classNames.listGrid}
+                            items={filteredCourses}
+                            getItemCountForPage={getItemCountForPage}
+                            getPageHeight={getPageHeight}
+                            renderedWindowsAhead={10}
+                            onRenderCell={getCell}
+                        />
+                    </div>
                 }
             </FocusZone>
         </Container>

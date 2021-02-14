@@ -29,16 +29,14 @@ let cardProps = (iconName?: string, backgroundColor?: string): IDocumentCardPrev
 };
 
 const siteTextStyles: ITextStyles = {
-    root: { color: '#025F52', fontWeight: FontWeights.semibold, fontSize: FontSizes.size14 },
+    root: { fontWeight: FontWeights.semibold, fontSize: FontSizes.size14, color: theme.palette.themePrimary },
 };
 
 const descriptionTextStyles: ITextStyles = {
-    root: { color: '#333333', fontWeight: FontWeights.regular, fontSize: FontSizes.size12 },
+    root: { fontWeight: FontWeights.regular, fontSize: FontSizes.size12 },
 };
 
 const cardTokens: ICardTokens = { childrenMargin: 12 };
-
-
 
 const Services = () => {
     let services = getServices();

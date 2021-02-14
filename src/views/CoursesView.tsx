@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Text } from 'office-ui-fabric-react';
-import { FontSizes } from '@fluentui/theme';
+import { FontSizes, FontWeights } from '@fluentui/theme';
 import { initializeIcons } from "@uifabric/icons";
 import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
@@ -10,7 +10,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import CourseList from "../components/CourseList";
 import DegreeInformations from "../components/DegreeInformations";
-import {getDepartments} from '../services/Requests'
+import { getDepartments } from '../services/Requests'
 import Degree from "../models/Degree";
 import Department from "../models/Department";
 
@@ -167,7 +167,7 @@ const CoursesView = () => {
             <div style={{ display: selectedCdl !== '' ? 'block' : 'none' }}>
                 <DegreeInformations cdl={cdl} />
                 <p className='text-center'>
-                    <Text style={{ fontWeight: 600 }}>Gruppi disponibili:</Text>
+                    <Text styles={{ root: { fontWeight: FontWeights.semibold } }}>Gruppi disponibili:</Text>
                 </p>                
                 <CourseList cdl={cdl} />
             </div>

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Text } from 'office-ui-fabric-react';
-import { FontSizes } from '@fluentui/theme';
+import { Link, Text } from 'office-ui-fabric-react';
+import { FontSizes, FontWeights } from '@fluentui/theme';
 import { Container } from 'react-bootstrap';
 import { FocusZone, List, IRectangle } from "@fluentui/react";
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
-import {getExtraGroups} from '../services/Requests'
+import {getExtraGroups} from '../services/Requests';
 import ExtraGroupView from '../components/ExtraGroup';
 import ExtraGroup from '../models/ExtraGroup';
 
@@ -50,11 +50,12 @@ const AdditionalGroupsView = () => {
     return (
         <Container className="additional-groups text-center">
             <div className="mb-2">
-                <Text style={{ fontSize: FontSizes.size14 }}>Qui è possibile trovare gruppi aggiuntivi del network.</Text>
+                <Text style={{ fontSize: FontSizes.size14 }}>Qui è possibile trovare gruppi aggiuntivi del network. Se vorresti che ne fossero creati ulteriori puoi comunicarlo 
+                sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link>.</Text>
             </div>
 
             <div className="mb-3">
-                <Text style={{ fontSize: FontSizes.size14, fontWeight: 600 }}>Gruppi disponibili:</Text>
+                <Text styles={{ root: { fontSize: FontSizes.size14, fontWeight: FontWeights.semibold } }}>Gruppi disponibili:</Text>
             </div>
 
             <FocusZone>

@@ -2,22 +2,21 @@ import { Link, Text } from 'office-ui-fabric-react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { initializeIcons } from '@uifabric/icons';
 import { FontWeights, ITextStyles, Persona } from '@fluentui/react';
-import Course from '../models/Course'
+import Course from '../models/Course';
+import { getTheme } from '@fluentui/react';
 
+const theme = getTheme();
 initializeIcons();
-
-interface Props {
-    data: Course
-}
+interface Props { data: Course };
 
 // const gdriveStyle = { width: '15px', height: '15px', marginBottom: '3px' }
 
 const CourseItem = (props: Props) => {
     var data = props.data;
 
-    const siteTextStyles: ITextStyles = {
+    const cfuStyle: ITextStyles = {
         root: {
-            color: "#025F52",
+            color: theme.palette.themePrimary,
             fontWeight: FontWeights.semibold,
         },
     };
@@ -63,7 +62,7 @@ const CourseItem = (props: Props) => {
                     ( () => {
                         if (data.cfu !== null) {
                             return (
-                                <Text variant="small" styles={siteTextStyles}>{data.cfu} CFU</Text>
+                                <Text variant="small" styles={cfuStyle}>{data.cfu} CFU</Text>
                             )
                         } else {
                             return "";
@@ -111,7 +110,7 @@ const CourseItem = (props: Props) => {
                         } else {
                             return (
                             <Text variant="small" styles={helpfulTextStyles}>
-                                <i className="fab fa-telegram" style={{color: '#1aa3ed'}}></i>
+                                <i className="fab fa-telegram" style={{ color: theme.palette.themePrimary }}></i>
                                 &nbsp;
                                 <Link href={data.gruppo} target="_blank">
                                     Gruppo Telegram

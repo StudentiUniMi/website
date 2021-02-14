@@ -6,7 +6,7 @@ import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { Dropdown, IDropdownOption, IDropdownStyles, IDropdownProps } from 'office-ui-fabric-react/lib/Dropdown';
 import { useHistory } from 'react-router-dom';
 import PeopleListView from '../components/RepresentativesList';
-import {getRepresentatives, getDepartments} from '../services/Requests'
+import { getRepresentatives, getDepartments } from '../services/Requests'
 import Representative from '../models/Representative';
 
 const dropdownStyles: Partial<IDropdownStyles> = { dropdown: {  } };
@@ -66,14 +66,14 @@ const RepresentativesView = () => {
             didMount.current = true
             var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
             var initialDepartment= states.length >= 2 ? states[1] : '';
-            setSelectedDepartment(initialDepartment)
-            history.push(`/representatives/${initialDepartment}`)
+            setSelectedDepartment(initialDepartment);
+            history.push(`/representatives/${initialDepartment}`);
         }
     }, [history]);
 
-    let representatives: Representative[] = getRepresentatives(selectedDepartment)
+    let representatives: Representative[] = getRepresentatives(selectedDepartment);
 
-    const departmentOptions: IDropdownOption[] =getDepartments().map(x => ({key: x.id, text: x.name ?? "", data: {icon:x.icon}, disabled: x.cdls.length === 0}));
+    const departmentOptions: IDropdownOption[] = getDepartments().map(x => ({key: x.id, text: x.name ?? "", data: {icon:x.icon}, disabled: x.cdls.length === 0}));
 
 
     return (

@@ -3,7 +3,9 @@ import { initializeIcons } from '@uifabric/icons';
 import { FontWeights, ITextStyles, Persona } from '@fluentui/react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import ExtraGroup from '../models/ExtraGroup'
+import { getTheme } from '@fluentui/react';
 
+const theme = getTheme();
 initializeIcons();
 
 interface Props {
@@ -14,7 +16,7 @@ const ExtraGroupView = (props: Props) => {
     var data = props.data;
     const helpfulTextStyles: ITextStyles = {
         root: {
-            color: "#333333",
+            color: theme.palette.neutralPrimary,
             fontWeight: FontWeights.regular,
         },
     };
@@ -33,7 +35,7 @@ const ExtraGroupView = (props: Props) => {
                     {data.description}
                 </Text>
                 <Text variant="small" styles={helpfulTextStyles}>
-                    <i className="fab fa-telegram-plane mr-1" style={{color: '#6087eb'}}></i>
+                    <i className="fab fa-telegram-plane mr-1" style={{ color: theme.palette.themePrimary }}></i>
                     <Link href={data.gruppo} target="_blank">Gruppo Telegram</Link>
                 </Text>
             </Card.Section>

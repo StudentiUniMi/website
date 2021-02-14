@@ -1,20 +1,24 @@
 import { Link } from 'office-ui-fabric-react';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
-import { FontSizes } from '@fluentui/theme';
+import { FontSizes, FontWeights } from '@fluentui/theme';
+import { ITextStyles } from '@fluentui/react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import { getTheme } from '@fluentui/react';
+
+const theme = getTheme();
+const bold: ITextStyles = { root: { fontWeight: FontWeights.semibold } };
 
 const Footer = () => {
     return (
-        <footer style={{ backgroundColor: '#cccccc', boxShadow: '0px 0px 0.5px 0.5px #7a7a7a' }}>
-            <Container style={{ backgroundColor: '#cccccc', width:'100%' }}>
+        <footer style={{ backgroundColor: theme.palette.neutralQuaternaryAlt, boxShadow: '0px 0px 0.5px 0.5px #7a7a7a' }}>
+            <Container style={{ width:'100%' }}>
 
-                <Row style={{ backgroundColor: '#cccccc' }}>
-
+                <Row>
                     <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-4 mb-md-0 main-col">
                         <div className="mb-1">
-                            <Text style={{ fontWeight: 600 }}>
+                            <Text styles={bold}>
                                 <Link href="https://github.com/StudentiUnimi" >Studenti UniMi &copy;</Link>
                             </Text>
                         </div>
@@ -35,7 +39,7 @@ const Footer = () => {
 
                     <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-4 mb-md-0">
                         <div className="mb-1">
-                            <Text style={{ fontWeight: 600 }}>Link utili</Text>
+                            <Text styles={bold}>Link utili</Text>
                         </div>
 
                         <ul className="list-unstyled mb-3">
@@ -64,12 +68,12 @@ const Footer = () => {
 
                     <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-4 mb-md-0 contacts">
                         <div className="mb-1">
-                            <Text style={{ fontWeight: 600 }}>Contatti</Text>
+                            <Text styles={bold}>Contatti</Text>
                         </div>
 
                         <div className="mb-1 text" style={{ lineHeight: "normal" }}>
                             <Text style={{ fontSize: FontSizes.size12 }}>
-                                Per qualsiasi dubbio o proposta è possibile scrivere sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME"  target="_blank">gruppo principale</Link> del network.
+                                Per qualsiasi dubbio o proposta è possibile scrivere sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link> del network.
                             </Text>
                         </div>
                     </Col>

@@ -9,12 +9,8 @@ import { Route, Switch } from 'react-router-dom';
 
 const Content = () => {
     const wrap = (element: React.ReactNode): React.ReactNode => {
-        return (
-            <main role="main" className="content mt-4 mb-4">
-                {element}
-            </main>
-        )
-    }
+        return (<main role="main" className="content mt-4 mb-4">{element}</main>)
+    };
 
     return (
         <Switch>
