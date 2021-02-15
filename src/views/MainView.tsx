@@ -6,9 +6,11 @@ import Footer from "../components/Footer";
 import ContentView from "./ContentView";
 import { ThemeProvider } from '@fluentui/react-theme-provider';
 import { darkTheme, lightTheme } from '../themes';
+import { loadTheme } from '@fluentui/react';
 
 function MainView() {
   const [theme, setTheme] = useState(false);
+  loadTheme(theme ? darkTheme : lightTheme);
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <ThemeProvider applyTo="body" theme={theme ? darkTheme : lightTheme}>

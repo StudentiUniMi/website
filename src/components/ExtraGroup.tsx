@@ -27,7 +27,7 @@ const ExtraGroupView = (props: Props) => {
     return (
         <Card tokens={cardTokens} onClick={() => doNothing}>
             <Card.Item>
-                { data.image === "" ? <Persona text={data.name} /> : <Persona text={data.name} imageUrl= {process.env.PUBLIC_URL + '/group_images/' + data.image} /> }
+                { data.image === "" ? <Persona text={data.name} /> : <Persona text={data.name} imageUrl={ process.env.PUBLIC_URL + '/extra_groups_images/' + data.image } /> }
             </Card.Item>
             <Card.Section>
                 <Text variant="small" styles={helpfulTextStyles}>

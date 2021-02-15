@@ -34,7 +34,9 @@ const CourseItem = (props: Props) => {
 
     let personaIconUrl: string | undefined;
     if (data.anno === -1) {  // Set del logo del gruppo principale 
-        personaIconUrl = data.cdl === 'triennale_informatica'?  process.env.PUBLIC_URL + '/informatica.jpg' : process.env.PUBLIC_URL + '/unimi.jpg'
+        personaIconUrl = (process.env.PUBLIC_URL + '/degree_groups_images/' + data.image);
+    } else {
+        personaIconUrl = (process.env.PUBLIC_URL + '/course_groups_images/' + data.image);
     }
 
     function doNothing() { // Per mostrare l'hover della card

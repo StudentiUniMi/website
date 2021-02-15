@@ -25,6 +25,7 @@ export const lightTheme = {
         neutralDark: '#201f1e',
         black: '#000000',
         white: '#faf9f8',
+        footer: '#595959'
     },
     defaultFontStyle: { fontWeight: FontWeights.regular },
     fonts: {
@@ -57,7 +58,7 @@ export const darkTheme = {
         neutralLighterAlt: '#302b2b',
         neutralLighter: '#383333',
         neutralLight: '#464040',
-        neutralQuaternaryAlt: '#363535',
+        neutralQuaternaryAlt: '#595959',
         neutralQuaternary: '#554e4e',
         neutralTertiaryAlt: '#726a6a',
         neutralTertiary: '#9d9c9a',
@@ -67,5 +68,21 @@ export const darkTheme = {
         neutralDark: '#363535',
         black: '#1c1c1c',
         white: '#262222',
+        footer: '#595959'
+    },
+    defaultFontStyle: { fontWeight: FontWeights.regular },
+    fonts: {
+        small: {
+            fontSize: FontSizes.size12
+        },
+        medium: {
+            fontSize: FontSizes.size14
+        },
+        large: {
+            fontSize: FontSizes.size20
+        },
+        xLarge: {
+            fontSize: FontSizes.size42
+        },
     }
 };

@@ -125,6 +125,10 @@ const HeaderMenu = (props: Props) => {
             </div>
 
             <div className="dropdown">
+                <TooltipHost content="Cambia tema" id={tooltipId} calloutProps={calloutProps} styles={hostStyles}>
+                    <IconButton iconProps={ThemeIcon} onClick={() => props.setTheme(!props.theme)} styles={ThemeIconStyle} id={iconId}/>
+                </TooltipHost>
+
                 <Dropdown
                     selectedKey={selectedKey}
                     onChange={onDropdownValueChange}
@@ -132,6 +136,8 @@ const HeaderMenu = (props: Props) => {
                     styles={dropdownStyles}
                     onRenderCaretDown={onRenderCaretDown}
                 />
+
+
             </div>
         </div>
     );

@@ -8,6 +8,7 @@ export default interface Course
     id?:string,
     cdl?: string,
     name?:string,
+    image?:string,
     anno?:number,
     semestre?:number,
     cfu?:number,
