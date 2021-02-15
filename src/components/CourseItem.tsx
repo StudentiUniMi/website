@@ -32,15 +32,15 @@ const CourseItem = (props: Props) => {
     };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
 
+    function doNothing() {}; // Per mostrare l'hover della card
+
     let personaIconUrl: string | undefined;
-    if (data.anno === -1) {  // Set del logo del gruppo principale 
+    if (data.anno === -1) {  // Set immagine per i gruppi principali dei cdl
         personaIconUrl = (process.env.PUBLIC_URL + '/degree_groups_images/' + data.image);
-    } else {
-        personaIconUrl = (process.env.PUBLIC_URL + '/course_groups_images/' + data.image);
+    } else { // Set pic per gruppi dei corsi didattici
+        personaIconUrl = (process.env.PUBLIC_URL + '/course_groups_images/' +  data.cdl + '/' + data.image);
     }
 
-    function doNothing() { // Per mostrare l'hover della card
-    }
         
     return (
         <Card tokens={cardTokens} onClick={() => doNothing}>
