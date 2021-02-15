@@ -100,7 +100,7 @@ main {
 
 
 /* Responsive menu and title */
-@media only screen and (min-width: 716px) {
+@media only screen and (min-width: 696px) {
   .header-menu .pivot {
     display: block;
   }
@@ -113,7 +113,7 @@ main {
     margin-left: 10px;
   }
 }
-@media only screen and (max-width: 715px) {
+@media only screen and (max-width: 695px) {
   .header-menu .pivot {
     display: none;
   }
@@ -311,15 +311,6 @@ button:focus,
   outline: 0;
   outline: none;
   box-shadow: none !important;
-}
-
-.ms-Dialog-main .ms-Button {
-  outline: none;
-}
-
-.faq-view-link:active,
-.faq-view-link:focus {
-  outline: 0;
 }
 
 .services .ms-CardSection {

@@ -52,36 +52,33 @@ interface Props {
 
 initializeIcons();
 
+const languageOptions: IDropdownOption[] = [
+    { key: 'ITA', text: 'Italiano', data: { icon: 'Memo' } },
+    { key: 'ENG', text: 'Inglese', data: { icon: 'Print' } },
+];
+
 const HeaderMenu = (props: Props) => {
     const history = useHistory();
-    const tooltipId = useId('tooltip');
 
-    
     const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
     
-    const getPath = React.useCallback((): Array<string|boolean> =>
-    {
+    const getPath = React.useCallback((): Array<string|boolean> => {
         var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
-        let first = states.length > 0 ? states[0] : ''
-        let isCorrectPathKey = Object.keys(ItemsKeys).filter(x => x === first).length !== 0
-        return [first, isCorrectPathKey]
-    }, [history.location.pathname])
+        let first = states.length > 0 ? states[0] : '';
+        let isCorrectPathKey = Object.keys(ItemsKeys).filter(x => x === first).length !== 0;
+        return [first, isCorrectPathKey];
+    }, [history.location.pathname]);
 
-    let didMount = React.useRef(false)
+    let didMount = React.useRef(false);
 
-    React.useEffect(() =>
-    {
-        if(!didMount.current)
-        {
+    React.useEffect(() => {
+        if(!didMount.current) {
             didMount.current = true
             let [path, isCorrect] = getPath()
-            if(!isCorrect)
-            {
+            if(!isCorrect) {
                 history.push('/home/')
                 setSelectedKey(ItemsKeys.home)
-            }
-            else
-            {
+            } else {
                 setSelectedKey(path as ItemsKeys)
             }
         }
@@ -101,11 +98,14 @@ const HeaderMenu = (props: Props) => {
         history.push(`/${item!.key! as string}/`)
     };
 
-    const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }))
-    const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
+    const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }));
 
-    const settingsIcon: IIconProps = { iconName: 'Settings' };
-    const settingsIconStyle: IIconStyles = { root: { position: 'absolute', right: '2px', top: '98px' } };
+    // Panel and components settings
+    const tooltipId = useId('tooltip');
+    const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
+    const settingsIcon: IIconProps = { iconName: 'Settings', styles: { root: { fontSize: '18px' } } };
+    const settingsIconStylePivot: IIconStyles = { root: { position: 'absolute', right: '3px', top: '94px', zIndex: 10 } };
+    const settingsIconStyleDropdown: IIconStyles = { root: { position: 'absolute', left: '3px', top: '10px', zIndex: 10 } };
     const settingsIconId = useId('icon');
     const calloutProps = { gapSpace: 0, target: `#${settingsIconId}`, };
 
@@ -123,7 +123,7 @@ const HeaderMenu = (props: Props) => {
                 </Pivot>
 
                 <TooltipHost content="Impostazioni del sito" id={tooltipId} calloutProps={calloutProps} styles={hostStyles}>
-                    <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStyle} id={settingsIconId}/>
+                    <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStylePivot} id={settingsIconId}/>
                 </TooltipHost>
 
                 <Panel
@@ -134,7 +134,6 @@ const HeaderMenu = (props: Props) => {
                     headerText="Impostazioni"
                     type={PanelType.smallFixedFar}
                 >
-
                     <Toggle
                         label="Cambia il tema"
                         onText="Dark Mode attiva"
@@ -142,10 +141,20 @@ const HeaderMenu = (props: Props) => {
                         checked={props.theme}
                         onChange={() => props.setTheme(!props.theme)}
                     />
+                    <Dropdown
+                        label="Seleziona la lingua"
+                        defaultSelectedKey="ITA"
+                        options={languageOptions}
+                        disabled={true}
+                    />
                 </Panel>
             </div>
 
             <div className="dropdown">
+
+                <TooltipHost content="Impostazioni del sito" id={tooltipId} calloutProps={calloutProps} styles={hostStyles}>
+                    <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStyleDropdown} id={settingsIconId}/>
+                </TooltipHost>
 
                 <Dropdown
                     selectedKey={selectedKey}
