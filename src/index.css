@@ -304,14 +304,11 @@ main {
 
 a:active,
 a:focus,
-.home button:active,
-.home button:focus,
-.header-menu .ms-Button:active,
-.header-menu .ms-Button:focus,
-.rules button:active,
-.rules button:focus {
+button:active,
+button:focus,
+.ms-Button:active,
+.ms-Button:focus {
   outline: 0;
-  border: none;
   outline: none;
   box-shadow: none !important;
 }

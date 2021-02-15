@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { HashRouter as Router } from "react-router-dom";
 import HeaderTitle from "../components/HeaderTitle";
 import HeaderMenu from "../components/HeaderMenu";
@@ -9,8 +9,9 @@ import { darkTheme, lightTheme } from '../themes';
 import { loadTheme } from '@fluentui/react';
 
 function MainView() {
-  const [theme, setTheme] = useState(false);
+  const [theme, setTheme] = React.useState(false);
   loadTheme(theme ? darkTheme : lightTheme);
+  
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <ThemeProvider applyTo="body" theme={theme ? darkTheme : lightTheme}>

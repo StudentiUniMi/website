@@ -8,6 +8,9 @@ import { getTheme } from '@fluentui/react';
 import { IconButton, IIconProps, initializeIcons } from 'office-ui-fabric-react';
 import { TooltipHost, ITooltipHostStyles } from 'office-ui-fabric-react/lib/Tooltip';
 import { useId } from '@uifabric/react-hooks';
+import { Panel, PanelType } from 'office-ui-fabric-react/lib/Panel';
+import { useBoolean } from '@uifabric/react-hooks';
+import { Toggle } from '@fluentui/react';
 
 const theme = getTheme();
 
@@ -49,17 +52,11 @@ interface Props {
 
 initializeIcons();
 
-const ThemeIcon: IIconProps = { iconName: 'Light' };
-const ThemeIconStyle: IIconStyles = {
-    root: { position: 'absolute', right: '2px', top: '98px' },
-}
-
 const HeaderMenu = (props: Props) => {
     const history = useHistory();
     const tooltipId = useId('tooltip');
-    const iconId = useId('icon');
 
-    const calloutProps = { gapSpace: 0, target: `#${iconId}`, };
+    
     const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
     
     const getPath = React.useCallback((): Array<string|boolean> =>
@@ -105,6 +102,12 @@ const HeaderMenu = (props: Props) => {
     };
 
     const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }))
+    const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
+
+    const settingsIcon: IIconProps = { iconName: 'Settings' };
+    const settingsIconStyle: IIconStyles = { root: { position: 'absolute', right: '2px', top: '98px' } };
+    const settingsIconId = useId('icon');
+    const calloutProps = { gapSpace: 0, target: `#${settingsIconId}`, };
 
     return (
         <div className="header-menu" style={{  boxShadow: '0px 0.5px 0.5px #b3b5b4' }}>
@@ -119,15 +122,30 @@ const HeaderMenu = (props: Props) => {
                     {Object.values(ItemsKeys).map((x,i) =><PivotItem key={i} headerText={texts.get(x)} style={{ fontSize: FontSizes.size24 }} itemKey={x}/>)}
                 </Pivot>
 
-                <TooltipHost content="Cambia tema" id={tooltipId} calloutProps={calloutProps} styles={hostStyles}>
-                    <IconButton iconProps={ThemeIcon} onClick={() => props.setTheme(!props.theme)} styles={ThemeIconStyle} id={iconId}/>
+                <TooltipHost content="Impostazioni del sito" id={tooltipId} calloutProps={calloutProps} styles={hostStyles}>
+                    <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStyle} id={settingsIconId}/>
                 </TooltipHost>
+
+                <Panel
+                    isLightDismiss
+                    isOpen={isOpen}
+                    onDismiss={dismissPanel}
+                    closeButtonAriaLabel="Close"
+                    headerText="Impostazioni"
+                    type={PanelType.smallFixedFar}
+                >
+
+                    <Toggle
+                        label="Cambia il tema"
+                        onText="Dark Mode attiva"
+                        offText="Dark Mode disattivata"
+                        checked={props.theme}
+                        onChange={() => props.setTheme(!props.theme)}
+                    />
+                </Panel>
             </div>
 
             <div className="dropdown">
-                <TooltipHost content="Cambia tema" id={tooltipId} calloutProps={calloutProps} styles={hostStyles}>
-                    <IconButton iconProps={ThemeIcon} onClick={() => props.setTheme(!props.theme)} styles={ThemeIconStyle} id={iconId}/>
-                </TooltipHost>
 
                 <Dropdown
                     selectedKey={selectedKey}

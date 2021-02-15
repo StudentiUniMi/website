@@ -21,8 +21,7 @@ const ExtraGroupView = (props: Props) => {
     };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
 
-    function doNothing() { // Per mostrare l'hover della card
-    }
+    function doNothing() {}; // Per mostrare l'hover della card
 
     return (
         <Card tokens={cardTokens} onClick={() => doNothing}>

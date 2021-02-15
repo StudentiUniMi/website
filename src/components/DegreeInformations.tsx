@@ -22,7 +22,7 @@ const DegreeInformations= (props: Props) => {
     };
 
     const cardStyles: IDocumentCardStyles = {
-        root: { display: 'inline-block', minWidth: '220px', height: '130px' },
+        root: { backgroundColor: theme.palette.neutralLighter, display: 'inline-block', minWidth: '220px', height: '130px' },
     };
 
     return (       
