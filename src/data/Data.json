@@ -443,7 +443,7 @@
                             ],
                             "drive": "https://drive.google.com/drive/folders/1R0kUdMb4UceQnk0fGJ1oHvkwpUxFtIdb?usp=sharing",
                             "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:programmazione_2",
-                            "chat_id": "prog2Statale"
+                            "chat_id": "@prog2Statale"
                         },
                         {
                             "id": "8033d7d7-4c00-4941-a999-89ef47963470",
@@ -931,7 +931,7 @@
                             "websites": [],
                             "drive": "",
                             "wiki": "",
-                            "chat_id": "continuoMusicale"
+                            "chat_id": "@continuoMusicale"
                         },
                         {
                             "id": "b8fa022e-103c-4b5e-9eab-d8eee1874b12",
@@ -944,7 +944,7 @@
                             "websites": [],
                             "drive": "",
                             "wiki": "",
-                            "chat_id": "semioticaMusicale"
+                            "chat_id": "@semioticaMusicale"
                         },
                         {
                             "id": "760ae2c2-69f9-4a3e-9b41-df9c581d0970",
@@ -1146,7 +1146,7 @@
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbblJrTzJKUlNUR2M?usp=sharing",
                             "wiki": "",
-                            "chat_id": "sistemioperativi2021"
+                            "chat_id": "@sistemioperativi2021"
                         },
                         {
                             "id": "0fd4b1ef-fe43-4c28-8c42-f2b346a00f05",
@@ -1763,7 +1763,7 @@
                             "websites": [],
                             "drive": "",
                             "wiki": "",
-                            "chat_id": "statssri"
+                            "chat_id": "@statssri"
                         },
                         {
                             "id": "81a0fd45-bc06-440b-b9de-4796d8835f42",
@@ -2408,7 +2408,7 @@
                             "websites": [],
                             "drive": "",
                             "wiki": "",
-                            "chat_id": "intSystemsForIndustry"
+                            "chat_id": "@intSystemsForIndustry"
                         },
                         {
                             "id": "21bf18bc-4d5f-4ce4-9d49-844fafcc8a17",
@@ -2637,7 +2637,7 @@
                             "websites": [],
                             "drive": "",
                             "wiki": "",
-                            "chat_id": "cittadinanzadigitaletecnocivismo"
+                            "chat_id": "@cittadinanzadigitaletecnocivismo"
                         },
                         {
                             "id": "535b693a-a2ac-43e4-ae0f-8f5bc9361f90",
@@ -3007,7 +3007,7 @@
                             ],
                             "drive": "",
                             "wiki": "",
-                            "chat_id": "sistemibiometrici"
+                            "chat_id": "@sistemibiometrici"
                         },
                         {
                             "id": "d1387fc8-bac7-4fba-b24c-1e21505aa1a2",
@@ -3334,7 +3334,7 @@
                             ],
                             "drive": "",
                             "wiki": "",
-                            "chat_id": "sicurezzadellereti"
+                            "chat_id": "@sicurezzadellereti"
                         }
                     ],
                     "is_master": true,
