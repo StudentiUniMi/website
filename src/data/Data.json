@@ -7,116 +7,130 @@
             "icon": "TVMonitor",
             "representatives": [
                 {
-                    "id": 165370985,
+                    "id": "",
                     "name": "Jacopo",
                     "surname": "Antoniolli",
                     "username": "ChufChufMF",
                     "year": "",
-                    "cdl": "Sicurezza dei sistemi e delle reti informatiche"
+                    "cdl": "Sicurezza dei sistemi e delle reti informatiche",
+                    "user_id": 165370985
                 },
                 {
-                    "id": 458889652,
+                    "id": "",
                     "name": "Enrico",
                     "surname": "Arrigotti",
                     "username": "LonginusGravitazionale",
                     "year": "",
-                    "cdl": "Informatica"
+                    "cdl": "Informatica",
+                    "user_id": 458889652
                 },
                 {
-                    "id": 108121631,
+                    "id": "",
                     "name": "Davide",
                     "surname": "Busolin",
                     "username": "davidebusolin",
                     "year": "Terzo",
-                    "cdl": "Informatica"
+                    "cdl": "Informatica",
+                    "user_id": 108121631
                 },
                 {
-                    "id": 597678134,
+                    "id": "",
                     "name": "Giuseppe",
                     "surname": "Del Campo",
                     "username": "giuseppetm",
                     "year": "Terzo",
-                    "cdl": "Informatica"
+                    "cdl": "Informatica",
+                    "user_id": 597678134
                 },
                 {
-                    "id": 419549927,
+                    "id": "",
                     "name": "Lorenzo",
                     "surname": "Di Cola",
                     "username": "belzeboop",
                     "year": "Secondo",
-                    "cdl": "Informatica"
+                    "cdl": "Informatica",
+                    "user_id": 419549927
                 },
                 {
-                    "id": 271586991,
+                    "id": "",
                     "name": "Ettore Tancredi",
                     "surname": "Galante",
                     "username": "toreGore",
                     "year": "",
-                    "cdl": "Informatica (Magistrale)"
+                    "cdl": "Informatica (Magistrale)",
+                    "user_id": 271586991
                 },
                 {
-                    "id": 913164245,
+                    "id": "",
                     "name": "Irene Lara",
                     "surname": "Galimi",
                     "username": "irenegalimi",
                     "year": "",
-                    "cdl": "Informatica"
+                    "cdl": "Informatica",
+                    "user_id": 913164245
                 },
                 {
-                    "id": 59518473,
+                    "id": "",
                     "name": "Luca",
                     "surname": "Giuliani",
                     "username": "LGiuliani",
                     "year": "",
-                    "cdl": "Informatica (Magistrale)"
+                    "cdl": "Informatica (Magistrale)",
+                    "user_id": 59518473
                 },
                 {
-                    "id": 620976546,
+                    "id": "",
                     "name": "Renato",
                     "surname": "Graziano",
                     "username": "burzum00",
                     "year": "",
-                    "cdl": "Sicurezza dei sistemi e delle reti informatiche"
+                    "cdl": "Sicurezza dei sistemi e delle reti informatiche",
+                    "user_id": 620976546
                 },
                 {
-                    "id": 169460452,
+                    "id": "",
                     "name": "Giulia",
                     "surname": "Mattavelli",
                     "username": "giuliamattavelli",
                     "year": "",
-                    "cdl": "Informatica musicale"
+                    "cdl": "Informatica musicale",
+                    "user_id": 169460452
                 },
                 {
-                    "id": 697984243,
+                    "id": "",
                     "name": "Lorenzo",
                     "surname": "Mazzi",
                     "username": "",
                     "year": "",
-                    "cdl": "Informatica"
+                    "cdl": "Informatica",
+                    "user_id": 697984243
                 },
                 {
-                    "id": 418896318,
+                    "id": "",
                     "name": "Davide",
                     "surname": "Rusconi",
                     "username": "pisqu0",
                     "year": "",
-                    "cdl": "Informatica (Magistrale)"
+                    "cdl": "Informatica (Magistrale)",
+                    "user_id": 418896318
                 },
                 {
-                    "id": 364858439,
+                    "id": "",
                     "name": "Luca",
                     "surname": "Trecarichi",
                     "username": "trekkete",
                     "year": "",
-                    "cdl": "Informatica (Magistrale)"
+                    "cdl": "Informatica (Magistrale)",
+                    "user_id": 364858439
                 },
                 {
-                    "id": 234988702,
+                    "id": "",
                     "name": "Pietro",
                     "surname": "Zola",
                     "username": "Zuppep",
                     "year": "",
-                    "cdl": "Informatica musicale"
+                    "cdl": "Informatica musicale",
+                    "user_id": 234988702
                 }
             ],
             "cdls": [
@@ -130,70 +144,81 @@
                     "virtual_classroom": "https://vc.di.unimi.it/",
                     "admins": [
                         {
-                            "id": 119507304,
+                            "id": "",
                             "username": "MrBrionix",
                             "year": "Secondo",
-                            "role": ""
+                            "role": "",
+                            "user_id": 119507304
                         },
                         {
-                            "id": 592731075,
+                            "id": "",
                             "username": "MattiaOldani",
                             "year": "Primo",
-                            "role": ""
+                            "role": "",
+                            "user_id": 592731075
                         },
                         {
-                            "id": 26170256,
+                            "id": "",
                             "username": "acetimarco",
                             "year": "Primo",
-                            "role": ""
+                            "role": "",
+                            "user_id": 26170256
                         },
                         {
-                            "id": 544826890,
+                            "id": "",
                             "username": "Sartigabriele",
                             "year": "Primo",
-                            "role": ""
+                            "role": "",
+                            "user_id": 544826890
                         },
                         {
-                            "id": 940740891,
+                            "id": "",
                             "username": "georgianiandrei",
                             "year": "Secondo",
-                            "role": ""
+                            "role": "",
+                            "user_id": 940740891
                         },
                         {
-                            "id": 730639598,
+                            "id": "",
                             "username": "IrisCanole",
                             "year": "Primo",
-                            "role": ""
+                            "role": "",
+                            "user_id": 730639598
                         },
                         {
-                            "id": 433637925,
+                            "id": "",
                             "username": "Mantotheale",
                             "year": "Primo",
-                            "role": ""
+                            "role": "",
+                            "user_id": 433637925
                         },
                         {
-                            "id": 178100484,
+                            "id": "",
                             "username": "Weinsz",
                             "year": "Primo",
-                            "role": ""
+                            "role": "",
+                            "user_id": 178100484
                         },
                         {
-                            "id": 15042194,
+                            "id": "",
                             "username": "ThomasGiudici",
                             "year": "Terzo",
-                            "role": ""
+                            "role": "",
+                            "user_id": 15042194
                         },
                         {
-                            "id": 157778910,
+                            "id": "",
                             "username": "davidemarchioriz",
                             "year": "Terzo",
-                            "role": ""
+                            "role": "",
+                            "user_id": 157778910
                         },
                         {
-                            "id": 529585690,
+                            "id": "",
                             "username": "Aconithorn",
                             "year": "Terzo",
-                            "role": ""
+                            "role": "",
+                            "user_id": 529585690
                         }
                     ],
                     "courses": [
@@ -950,10 +975,11 @@
                     "virtual_classroom": "",
                     "admins": [
                         {
-                            "id": 126856154,
+                            "id": "",
                             "username": "giolake",
                             "year": "",
-                            "role": ""
+                            "role": "",
+                            "user_id": 126856154
                         }
                     ],
                     "courses": [
@@ -1010,10 +1036,11 @@
                     "virtual_classroom": "",
                     "admins": [
                         {
-                            "id": 3104514,
+                            "id": "",
                             "username": "robertopinotti",
                             "year": "",
-                            "role": ""
+                            "role": "",
+                            "user_id": 3104514
                         }
                     ],
                     "courses": [
@@ -1348,10 +1375,11 @@
                     "virtual_classroom": "",
                     "admins": [
                         {
-                            "id": 620976546,
+                            "id": "",
                             "username": "burzum00",
                             "year": "",
-                            "role": ""
+                            "role": "",
+                            "user_id": 620976546
                         }
                     ],
                     "courses": [
@@ -1616,10 +1644,11 @@
                     "virtual_classroom": "",
                     "admins": [
                         {
-                            "id": 15751170,
+                            "id": "",
                             "username": "salvadorbs",
                             "year": "",
-                            "role": ""
+                            "role": "",
+                            "user_id": 15751170
                         }
                     ],
                     "courses": [
@@ -1884,10 +1913,11 @@
                     "virtual_classroom": "",
                     "admins": [
                         {
-                            "id": 3104514,
+                            "id": "",
                             "username": "robertopinotti",
                             "year": "",
-                            "role": ""
+                            "role": "",
+                            "user_id": 3104514
                         }
                     ],
                     "courses": [
@@ -2997,10 +3027,11 @@
                     "virtual_classroom": "",
                     "admins": [
                         {
-                            "id": 278035059,
+                            "id": "",
                             "username": "Spacer_ASC",
                             "year": "",
-                            "role": ""
+                            "role": "",
+                            "user_id": 278035059
                         }
                     ],
                     "courses": [
