@@ -12,9 +12,10 @@ const AdminsList = (props: Props) => {
             {props.data.map((x,i) =>
                 <Col key={i} xl={3} lg={3} md={4} sm={6} xs={12} className="mb-3 col-persona">
                     {(() => {
+                        var imageUrl = 'https://studentiunimi-users-propics.marcoaceti.workers.dev/?user_id=' + x.user_id;
                         if (x.year !== "") var secondaryText = `${x.year} Anno`; 
                         else { secondaryText = ""}
-                        return <Persona onRenderPrimaryText={() => <Link href={`https://t.me/${x.username}`}>{`@${x.username ?? ""}`}</Link>} text={`@${x.username}` ?? ""} secondaryText={secondaryText} size={PersonaSize.size40} />
+                        return <Persona imageUrl={imageUrl} onRenderPrimaryText={() => <Link href={`https://t.me/${x.username}`}>{`@${x.username ?? ""}`}</Link>} text={`@${x.username}` ?? ""} secondaryText={secondaryText} size={PersonaSize.size40} />
                     })()}
                 </Col>
             )}

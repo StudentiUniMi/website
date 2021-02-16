@@ -35,7 +35,7 @@ const CourseItem = (props: Props) => {
 
     let personaIconUrl: string | undefined;
     if (data.anno === -1) personaIconUrl = process.env.PUBLIC_URL + "/degree_groups_images/unimi.jpg"; 
-    else { personaIconUrl = "https://unimi-profile-pictures.marcoaceti.workers.dev/?chat_id=" + data.chat_id; }
+    else { personaIconUrl = "https://studentiunimi-groups-propics.marcoaceti.workers.dev/?chat_id=" + data.chat_id; }
     
     return (
         <Card tokens={cardTokens}>
