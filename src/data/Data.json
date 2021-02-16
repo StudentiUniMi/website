@@ -248,7 +248,8 @@
                                 }
                             ],
                             "drive": "https://drive.google.com/drive/u/0/folders/1L_5rIr2MebLvmZg0CbBmSvkb6OJ22JTe",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:matematica_del_continuo"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:matematica_del_continuo",
+                            "chat_id": -1001388941161
                         },
                         {
                             "id": "ba782f51-4b01-439a-b09d-be1815e8bdaa",
@@ -273,7 +274,8 @@
                                 }
                             ],
                             "drive": "https://drive.google.com/drive/folders/1saD19VGP4xYkL_eVtdP32l1c5O5ZJPYr?usp=sharing",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:programmazione_1"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:programmazione_1",
+                            "chat_id": -1001157628331
                         },
                         {
                             "id": "065777f5-1862-4a96-ad91-9c4bc2484133",
@@ -298,7 +300,8 @@
                                 }
                             ],
                             "drive": "https://drive.google.com/drive/folders/1LuYA_H_PsAx_0-0Ol7fDXTITPhxpjKir?usp=sharing",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:architettura_degli_elaboratori_1"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:architettura_degli_elaboratori_1",
+                            "chat_id": -1001187802990
                         },
                         {
                             "id": "7d589d06-818b-42ef-9fad-8010bb695c9d",
@@ -315,7 +318,8 @@
                                 }
                             ],
                             "drive": "https://drive.google.com/drive/folders/1R9tvDODEHPWvMHrM75XLV5pSPoC5XzCK?usp=sharing",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:linguaggi_formali_e_automi"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:linguaggi_formali_e_automi",
+                            "chat_id": -1001217062401
                         },
                         {
                             "id": "a4613ef7-5581-4886-abc1-25b6b20c5553",
@@ -336,7 +340,8 @@
                                 }
                             ],
                             "drive": "https://drive.google.com/drive/folders/16J-jJG4URArwZ-8Pnc1DarLhaIfOhGxg?usp=sharing",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:logica_matematica"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:logica_matematica",
+                            "chat_id": -1001193287828
                         },
                         {
                             "id": "52e46030-19a4-4537-a4b7-0053e2c9a0b6",
@@ -353,7 +358,8 @@
                                 }
                             ],
                             "drive": "https://drive.google.com/drive/folders/1FL2WVaLvT9bOqiX21EawIgqQ4fb-cuQm?usp=sharing",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:matematica_del_discreto"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:matematica_del_discreto",
+                            "chat_id": -1001283135404
                         },
                         {
                             "id": "6a3ba498-2ff2-49d4-ac51-954a7c6cd168",
@@ -374,7 +380,8 @@
                                 }
                             ],
                             "drive": "https://drive.google.com/drive/folders/19CVxqohmG5SFZlj5hKT-uP3-QExPVOcd?usp=sharing",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:architettura_degli_elaboratori_2"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:architettura_degli_elaboratori_2",
+                            "chat_id": -1001328090460
                         },
                         {
                             "id": "cb8ca9d2-c1c1-46e5-87dd-88c862168b01",
@@ -399,7 +406,8 @@
                                 }
                             ],
                             "drive": "https://drive.google.com/drive/folders/1fuwmZ5wFSKb9bLN_67An1SqUzhstl0IC?usp=sharing",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:algoritmi_e_strutture_dati"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:algoritmi_e_strutture_dati",
+                            "chat_id": -1001396181733
                         },
                         {
                             "id": "14f9e122-f754-4a37-824e-3508e81a2dbd",
@@ -416,7 +424,8 @@
                                 }
                             ],
                             "drive": "https://drive.google.com/drive/folders/1fZ3s3zzh8Rs3sieboDOowMa8anrnV5wL?usp=sharing",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:basi_di_dati"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:basi_di_dati",
+                            "chat_id": -1001260622957
                         },
                         {
                             "id": "255aada9-ca8f-4f05-8bd5-e6be03f0ffae",
@@ -433,7 +442,8 @@
                                 }
                             ],
                             "drive": "https://drive.google.com/drive/folders/1R0kUdMb4UceQnk0fGJ1oHvkwpUxFtIdb?usp=sharing",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:programmazione_2"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:programmazione_2",
+                            "chat_id": "prog2Statale"
                         },
                         {
                             "id": "8033d7d7-4c00-4941-a999-89ef47963470",
@@ -450,7 +460,8 @@
                                 }
                             ],
                             "drive": "https://drive.google.com/drive/folders/1d0PE9Ku-Yt9k_FmfwWaKqaZseu6439I7?usp=sharing",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:sistemi_operativi"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:sistemi_operativi",
+                            "chat_id": -1001335715339
                         },
                         {
                             "id": "58cf5216-3de7-4d64-8ff6-51b701941124",
@@ -467,7 +478,8 @@
                                 }
                             ],
                             "drive": "https://drive.google.com/drive/folders/1vVxJraj7XC4LQ6xXjY5Gzy2GMZaA5li7?usp=sharing",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:statistica_e_analisi_dei_dati"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:statistica_e_analisi_dei_dati",
+                            "chat_id": -1001339694985
                         },
                         {
                             "id": "3594efda-3a63-42e7-9b1d-bd582b71480c",
@@ -484,7 +496,8 @@
                                 }
                             ],
                             "drive": "https://drive.google.com/drive/folders/1gb5J2z6QCjc-CXrgxS9FbWKX0ABNr8uu?usp=sharing",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:ingegneria_del_software"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:ingegneria_del_software",
+                            "chat_id": -1001379726039
                         },
                         {
                             "id": "7fab6002-3192-47f7-9ae8-8d7cacc0571d",
@@ -505,12 +518,13 @@
                                 }
                             ],
                             "drive": "https://drive.google.com/drive/folders/1dmymaGDXN7Y1pu1grsZw_CENSbAc5Szc?usp=sharing",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:reti_di_calcolatori"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:reti_di_calcolatori",
+                            "chat_id": -1001440238500
                         },
                         {
                             "id": "368d09f8-830a-4e37-a7f9-1abfdb2ce6cf",
                             "cdl": "triennale_informatica",
-                            "name": "Aspetti etici, legali, sociali ed economici dell’triennale_informatica",
+                            "name": "Aspetti etici, legali, sociali ed economici dell\u2019triennale_informatica",
                             "anno": 3,
                             "semestre": 1,
                             "cfu": "3",
@@ -522,7 +536,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:aspetti_etici"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:aspetti_etici",
+                            "chat_id": -1001150823575
                         },
                         {
                             "id": "478ea62b-e507-4194-b511-a419431417b2",
@@ -539,7 +554,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:crittografia_2"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:crittografia_2",
+                            "chat_id": -100483409622
                         },
                         {
                             "id": "a17cc081-1cd5-4a0a-b2b2-ff2346411037",
@@ -556,7 +572,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:editoria_digitale"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:editoria_digitale",
+                            "chat_id": -100477003970
                         },
                         {
                             "id": "Elaborazione dei segnali",
@@ -573,7 +590,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:elaborazione_dei_segnali"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:elaborazione_dei_segnali",
+                            "chat_id": -100357794496
                         },
                         {
                             "id": "eaa04668-1ac2-4125-9267-f50a41338aab",
@@ -590,7 +608,8 @@
                                 }
                             ],
                             "drive": "https://drive.google.com/drive/folders/1rwnQOQCWTdkFCW0juHcnz6DIKOGeuefQ?usp=sharing",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:elaborazione_delle_immagini"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:elaborazione_delle_immagini",
+                            "chat_id": -1001404399387
                         },
                         {
                             "id": "60cb2519-3dfd-4104-ae58-0ea84bb5ef14",
@@ -607,7 +626,8 @@
                                 }
                             ],
                             "drive": "https://drive.google.com/drive/folders/1uA_G2vulwuwky1H7Xp1uWv9LXyZpp_yL?usp=sharing",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:fisica"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:fisica",
+                            "chat_id": -1001357462160
                         },
                         {
                             "id": "fb3e895d-2f15-46d8-b73f-05c14fecfe4a",
@@ -624,7 +644,8 @@
                                 }
                             ],
                             "drive": "https://drive.google.com/drive/folders/1uBkH3YUi21NIxPen8c1XCJnrA556dOzt?usp=sharing",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:intelligenza_artificiale_1"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:intelligenza_artificiale_1",
+                            "chat_id": -1001362716461
                         },
                         {
                             "id": "0dda9a72-67d1-4ed7-b97b-b13ba5d6336e",
@@ -641,7 +662,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:interazioni_sociali_in_rete"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:interazioni_sociali_in_rete",
+                            "chat_id": -100416798729
                         },
                         {
                             "id": "3dcff6a4-1105-4d70-8e61-5b131ee89d52",
@@ -658,7 +680,8 @@
                                 }
                             ],
                             "drive": "https://drive.google.com/drive/folders/1QLy7Fo3T7x6a_qdC1dQdYh6xdR3QDp4_?usp=sharing",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:linguaggi_di_programmazione"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:linguaggi_di_programmazione",
+                            "chat_id": -1001435818491
                         },
                         {
                             "id": "63c1b06d-46cc-4991-a08a-ba45c9f1c3ad",
@@ -675,7 +698,8 @@
                                 }
                             ],
                             "drive": "https://drive.google.com/drive/folders/1VImnRcEk_8RcQa9FxXeSnOojmRQPdaET?usp=sharing",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:sicurezza_e_privatezza"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:sicurezza_e_privatezza",
+                            "chat_id": -1001469541498
                         },
                         {
                             "id": "3ce63ea6-a043-4731-bb8d-7801dc92d35f",
@@ -692,7 +716,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:sistemi_informativi"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:sistemi_informativi",
+                            "chat_id": -100451194518
                         },
                         {
                             "id": "d245cd20-deb6-4944-8b61-bab6ae7d4928",
@@ -709,7 +734,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:complementi_di_algoritmi_e_strutture_dati"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:complementi_di_algoritmi_e_strutture_dati",
+                            "chat_id": -1001431131037
                         },
                         {
                             "id": "803d1c96-86fc-498d-80a7-d33ef86cf320",
@@ -726,7 +752,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:computer_graphics"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:computer_graphics",
+                            "chat_id": -1001275488592
                         },
                         {
                             "id": "8bbbe13b-0974-4ebd-8f5f-383894fe995e",
@@ -743,7 +770,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:diritto_dei_prodotti_digitali"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:diritto_dei_prodotti_digitali",
+                            "chat_id": -100464642121
                         },
                         {
                             "id": "e9632cdc-f65d-41e4-a185-333d3a47d7fc",
@@ -760,7 +788,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:fondamenti_di_social_media_digitali"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:fondamenti_di_social_media_digitali",
+                            "chat_id": -1001215728849
                         },
                         {
                             "id": "7ef900d3-285d-4eb7-bad0-9a7710e0f67f",
@@ -777,7 +806,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:linguaggi_e_traduttori"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:linguaggi_e_traduttori",
+                            "chat_id": -1001189502801
                         },
                         {
                             "id": "193f0e6c-a76c-455c-9071-52969f7157e4",
@@ -794,7 +824,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:programmazione_dichiarativa"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:programmazione_dichiarativa",
+                            "chat_id": -1001283074624
                         },
                         {
                             "id": "c96a5278-a3e1-4bcf-bd84-ceeb03f459cb",
@@ -811,7 +842,8 @@
                                 }
                             ],
                             "drive": "https://drive.google.com/drive/folders/1myIa7-zXQ_rFLNmjZmh9n4kQw-vPSBlR?usp=sharing",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:ricerca_operativa"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:ricerca_operativa",
+                            "chat_id": -1001296593079
                         },
                         {
                             "id": "cc3d192d-3f74-4e25-a90d-5aaffcd725ad",
@@ -828,7 +860,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:sistemi_embedded"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:sistemi_embedded",
+                            "chat_id": -1001451369151
                         },
                         {
                             "id": "26d2375b-dff7-4ca8-966d-4b4c9efca19f",
@@ -845,7 +878,8 @@
                                 }
                             ],
                             "drive": "https://drive.google.com/drive/folders/1TyKIjwtKUVvdTeNd5MHUQ93QxAU2kjXY?usp=sharing",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:tecnologie_e_linguaggi_web"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:tecnologie_e_linguaggi_web",
+                            "chat_id": -100345847033
                         },
                         {
                             "id": "6d31aa11-ba32-4f7a-b817-4f73d13d055c",
@@ -862,11 +896,12 @@
                                 }
                             ],
                             "drive": "https://drive.google.com/drive/folders/1jpQQZoYyKAKfOYEjYsOEcwn31O9LHztZ?usp=sharing",
-                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:visualizzazione_scientifica"
+                            "wiki": "https://wiki.studentiunimi.it/doku.php?id=informatica_triennale:visualizzazione_scientifica",
+                            "chat_id": -1001221973308
                         }
                     ],
-                    "is_master":false,
-                    "has_years":true
+                    "is_master": false,
+                    "has_years": true
                 },
                 {
                     "id": "triennale_informatica_musicale",
@@ -895,7 +930,8 @@
                             "gruppo": "https://t.me/continuoMusicale",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": "continuoMusicale"
                         },
                         {
                             "id": "b8fa022e-103c-4b5e-9eab-d8eee1874b12",
@@ -907,7 +943,8 @@
                             "gruppo": "https://t.me/semioticaMusicale",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": "semioticaMusicale"
                         },
                         {
                             "id": "760ae2c2-69f9-4a3e-9b41-df9c581d0970",
@@ -919,11 +956,12 @@
                             "gruppo": "https://t.me/joinchat/I5_YNkUAAav9EAN3evrPOA",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001157628331
                         }
                     ],
-                    "is_master":false,
-                    "has_years":true
+                    "is_master": false,
+                    "has_years": true
                 },
                 {
                     "id": "triennale_informatica_com_digitale",
@@ -964,7 +1002,8 @@
                             "gruppo": "https://t.me/joinchat/AC9fAhghtJCRjyz18Yb3zQ",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100404862096
                         },
                         {
                             "id": "2b9ae174-54d9-4c6e-b7ef-8d459d9866eb",
@@ -976,7 +1015,8 @@
                             "gruppo": "https://t.me/joinchat/AC9fAkhKlQ4ekTBE09uwjQ",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbdDNMeU1waG1EblU?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001212847374
                         },
                         {
                             "id": "bd55790d-d9f8-4529-90ed-34e942719f42",
@@ -988,7 +1028,8 @@
                             "gruppo": "https://t.me/joinchat/I5_YNkUAAav9EAN3evrPOA",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbb3I0SVpScWdBaW8?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001157628331
                         },
                         {
                             "id": "0a11e401-bd5c-4143-a64d-d6046dfc6f34",
@@ -1000,7 +1041,8 @@
                             "gruppo": "https://t.me/joinchat/I5_YNh1_jCogTMSTKYo7sA",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbN1RjeUFSMlh3RTg?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100494898218
                         },
                         {
                             "id": "68134278-63ee-4a22-aeca-a62a35e785b5",
@@ -1012,7 +1054,8 @@
                             "gruppo": "https://t.me/joinchat/I5_YNhux4EmtoynZPO9vig",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbQTdraGVNTHpPUXM?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100464642121
                         },
                         {
                             "id": "1f7ab8d9-91c8-424f-a16a-486f5e717276",
@@ -1024,7 +1067,8 @@
                             "gruppo": "https://t.me/joinchat/I5_YNg6C6e2Ew7mQqXBJSA",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbNTY2UEJfeDNPZjg?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100243460589
                         },
                         {
                             "id": "52aa3d21-7990-44ce-9775-59e6cd6e9c23",
@@ -1036,7 +1080,8 @@
                             "gruppo": "https://t.me/joinchat/I5_YNhhjHjHtoEGmgv8LDA",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbaFdVa2s4d1lSbzA?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100409148977
                         },
                         {
                             "id": "3e28ab47-66f5-477e-a3ec-444aee7786f7",
@@ -1048,7 +1093,8 @@
                             "gruppo": "https://t.me/joinchat/NDZwdRc1hJi2y70lmul4QA",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbQTNES0d0bVppNTA?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100389383320
                         },
                         {
                             "id": "34d8bf14-080e-407d-b3cb-04230205c5f0",
@@ -1060,7 +1106,8 @@
                             "gruppo": "https://t.me/joinchat/NDZwdRsF5BbFjVeKfo6ahg",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbU0xWdndQaDV0cEU?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100453370902
                         },
                         {
                             "id": "ae51b727-0aab-468e-9b75-f36f0baf4c7e",
@@ -1072,7 +1119,8 @@
                             "gruppo": "https://t.me/joinchat/NDZwdRlR3LvsyEDuRuj3zQ",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1pokIt2bsxWpR30yyMSVuRZFVmex2ctFu?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100424795323
                         },
                         {
                             "id": "68d85176-7c02-4280-88fe-e98ee86978eb",
@@ -1084,7 +1132,8 @@
                             "gruppo": "https://t.me/joinchat/NDZwdRn7DkiL13-kLKh1GQ",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1Y9iXd6J17Bcn7vqc9ZB5mitRNd5v_kJr?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100435883592
                         },
                         {
                             "id": "ee7c93e4-c214-4fe6-a82f-5d5694251af5",
@@ -1096,7 +1145,8 @@
                             "gruppo": "https://t.me/sistemioperativi2021",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbblJrTzJKUlNUR2M?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": "sistemioperativi2021"
                         },
                         {
                             "id": "0fd4b1ef-fe43-4c28-8c42-f2b346a00f05",
@@ -1108,7 +1158,8 @@
                             "gruppo": "https://t.me/joinchat/I5_YNgx1kjG5vhSeP3SUNg",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbTEVGcVJJV1dieWs?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100209031729
                         },
                         {
                             "id": "7085d3fd-9c78-4959-bc08-d794efced926",
@@ -1120,7 +1171,8 @@
                             "gruppo": "https://t.me/joinchat/I5_YNhqh4lNVOhLAUus4cA",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100446816851
                         },
                         {
                             "id": "ae976110-36e2-4221-9eba-26d5008dd64f",
@@ -1132,7 +1184,8 @@
                             "gruppo": "https://t.me/joinchat/I5_YNg-_LetQPT2EQAXP5g",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbaU5WdC1TQUNZa3M?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100264187371
                         },
                         {
                             "id": "2b297b56-cd17-4bd2-89ff-1bf6a6580f64",
@@ -1149,7 +1202,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001215728849
                         },
                         {
                             "id": "3e0ac48c-4468-4e13-87ef-da87b9716558",
@@ -1161,7 +1215,8 @@
                             "gruppo": "https://t.me/joinchat/I5_YNkwGaVC3bzO-qUersA",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbRFpMLWFJVFptbkE?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001275488592
                         },
                         {
                             "id": "305fe9f4-74fe-400b-8965-82e9d287d3b1",
@@ -1173,7 +1228,8 @@
                             "gruppo": "https://t.me/joinchat/I5_YNhq86j9kkfQHo8BOdg",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/0B55A_MOIgCRbb1dROW5pbWx5ZVU?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100448588351
                         },
                         {
                             "id": "67d3dcf3-7ab6-452c-bf10-2fab0b63f9ee",
@@ -1185,7 +1241,8 @@
                             "gruppo": "https://t.me/joinchat/I5_YNhhYqeJR7dogkZWwzA",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1nv1AReNHUNcM04dIuX-5gHaIcNrKRr5Q?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100408463842
                         },
                         {
                             "id": "00bec133-0e39-4610-9f59-d10603e72502",
@@ -1197,7 +1254,8 @@
                             "gruppo": "https://t.me/joinchat/I5_YNhksmA2Ff86P5F9p6w",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1FnhLnO4zrxyrDMSWmOMVnvEBe1NLYSs_?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100422352909
                         },
                         {
                             "id": "dc7ffc50-be60-48f1-bf77-9b7019df533d",
@@ -1209,7 +1267,8 @@
                             "gruppo": "https://t.me/joinchat/I5_YNhxvWsGDhArbu_u2Uw",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1lKQo-tleQkpPLsidsLJqB4N_-5TK10l8?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100477059777
                         },
                         {
                             "id": "dd6a6f2a-5c8d-4b08-9117-94e1bc4eaba2",
@@ -1221,7 +1280,8 @@
                             "gruppo": "https://t.me/joinchat/I5_YNkWK6-FCPt-ZqLgSWA",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001166732257
                         },
                         {
                             "id": "e2cb29dc-1c7f-42ae-aaba-0ed94a376629",
@@ -1233,11 +1293,12 @@
                             "gruppo": "https://t.me/joinchat/I5_YNhtrWdLRUJ5h7IUZLQ",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1rH50r9sy62f0t1qWlPJnxdkDZwwerJ7K?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100460020178
                         }
                     ],
-                    "is_master":false,
-                    "has_years":true
+                    "is_master": false,
+                    "has_years": true
                 },
                 {
                     "id": "triennale_sicurezza_sistemi_reti_informatiche",
@@ -1273,12 +1334,13 @@
                             "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
                             "name": "Matematica del continuo",
                             "anno": 1,
-                            "semestre": "1° e 2",
+                            "semestre": "1\u00b0 e 2",
                             "cfu": 12,
                             "gruppo": "https://t.me/joinchat/JQNZokzlICetQPCuCUqvOg",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001290084391
                         },
                         {
                             "id": "18072ad0-f386-4873-b9c7-1f870bb645ac",
@@ -1290,7 +1352,8 @@
                             "gruppo": "https://t.me/joinchat/JQNZolSwR4GAv1ksS8SXNA",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001420838785
                         },
                         {
                             "id": "c5fa19f7-2e29-4d34-a646-aba034ecd412",
@@ -1302,7 +1365,8 @@
                             "gruppo": "https://t.me/joinchat/JQNZolEgA0BtvyB8CrS4Zw",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001361052480
                         },
                         {
                             "id": "fcbabfe6-8bce-49aa-b23d-b1ef59fdf85d",
@@ -1314,7 +1378,8 @@
                             "gruppo": "https://t.me/joinchat/JQNZokx5Zrq78nbKIyszeg",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001283024570
                         },
                         {
                             "id": "5f3f74e9-f8d9-47e5-ae96-dc9035e0b726",
@@ -1326,7 +1391,8 @@
                             "gruppo": "https://t.me/joinchat/JQNZokxw8O-NPvZMnuYvnw",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001282470127
                         },
                         {
                             "id": "b113a7f9-c097-4ad8-a270-9e941b6e98fd",
@@ -1338,7 +1404,8 @@
                             "gruppo": "https://t.me/joinchat/FJ00-S56iXwxv4pk",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100345847033
                         },
                         {
                             "id": "6997f933-4bc7-4135-890e-524e2a5fabb8",
@@ -1350,7 +1417,8 @@
                             "gruppo": "https://t.me/joinchat/JQNZolTD_xGDgW4xqUrcSQ",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001422130961
                         },
                         {
                             "id": "1064ee63-5a29-40b0-a144-83012a71328a",
@@ -1362,7 +1430,8 @@
                             "gruppo": "https://t.me/joinchat/JQNZolUyB-mqltahlS7r7w",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001429342185
                         },
                         {
                             "id": "306812b4-50bc-43d8-8f08-20ef76056908",
@@ -1374,7 +1443,8 @@
                             "gruppo": "https://t.me/joinchat/JQNZok5UFl9iiBPaD_w4tQ",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001314133599
                         },
                         {
                             "id": "33f0875b-47c8-4f39-8c31-932b9d0f8578",
@@ -1386,7 +1456,8 @@
                             "gruppo": "https://t.me/joinchat/JQNZok7b2tII6B_UHVeBAg",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001323031250
                         },
                         {
                             "id": "42cb962f-eb33-44a7-adc7-0c766ae098d8",
@@ -1398,7 +1469,8 @@
                             "gruppo": "https://t.me/joinchat/JQNZolAtoHIJkNyqCmGTdg",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001345167474
                         },
                         {
                             "id": "df71ed18-a152-4f97-8eaf-6ca87804f008",
@@ -1410,7 +1482,8 @@
                             "gruppo": "https://t.me/joinchat/JQNZolHm5t4VBxKiQyIkuQ",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001374086878
                         },
                         {
                             "id": "5c7da9dd-2a87-44e4-849e-cfd88aa8c0be",
@@ -1422,7 +1495,8 @@
                             "gruppo": "https://t.me/joinchat/JQNZokiMWZHk7tbkyJhC2g",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001217157521
                         },
                         {
                             "id": "7989c2ff-321b-4073-b443-bc8544c913f9",
@@ -1434,7 +1508,8 @@
                             "gruppo": "https://t.me/joinchat/JQNZokvwaxs_V4SYCIU4LQ",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001274047259
                         },
                         {
                             "id": "987bc0c7-77de-4af1-8181-84902330e840",
@@ -1446,7 +1521,8 @@
                             "gruppo": "https://t.me/joinchat/I5_YNlI88teqXRbFq10IIQ",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001379726039
                         },
                         {
                             "id": "3c0d8406-a44f-4f88-8834-35c747cd31c2",
@@ -1458,7 +1534,8 @@
                             "gruppo": "https://t.me/joinchat/I5_YNkSYLJfZ88V1bni-lg",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001150823575
                         },
                         {
                             "id": "44c2195e-97bb-450d-89fe-69d2816bb382",
@@ -1470,7 +1547,8 @@
                             "gruppo": "https://t.me/joinchat/JQNZolhsU8dWt4iHsov_lQ",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001483494343
                         },
                         {
                             "id": "8ff3f536-699c-4544-bb54-e386ab1dcbc7",
@@ -1482,11 +1560,12 @@
                             "gruppo": "https://t.me/joinchat/JQNZoliwXfWaJ1io4Ak0Ug",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001487953397
                         }
                     ],
-                    "is_master":false,
-                    "has_years":true
+                    "is_master": false,
+                    "has_years": true
                 },
                 {
                     "id": "triennale_sicurezza_sistemi_reti_informatiche_online",
@@ -1527,7 +1606,8 @@
                             "gruppo": "https://t.me/joinchat/JQNZolhSdZunCtH2VcUGAA",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001481799067
                         },
                         {
                             "id": "54c91b1d-20a0-4477-8016-be55a05eed38",
@@ -1539,7 +1619,8 @@
                             "gruppo": "https://t.me/joinchat/JQNZohhc11AMs0OqOmRb_w",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100408737616
                         },
                         {
                             "id": "ca47c973-8e16-433b-b887-c6bb2f95aa5a",
@@ -1551,7 +1632,8 @@
                             "gruppo": "https://t.me/joinchat/JQNZolfqXVouIVTcPz4b2Q",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001474977114
                         },
                         {
                             "id": "b788deab-3191-4cbc-be1d-06d439a61907",
@@ -1563,7 +1645,8 @@
                             "gruppo": "https://t.me/joinchat/APBYAlEZfogKWlPKMtfNCg",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001360625288
                         },
                         {
                             "id": "5568ee59-0d48-4982-9ecc-7ad9f4fa8cf3",
@@ -1575,7 +1658,8 @@
                             "gruppo": "https://t.me/joinchat/JQNZohftCWj80G5P0_BSlQ",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100401410408
                         },
                         {
                             "id": "45576fca-a5af-43dd-934a-9204bf0c88c1",
@@ -1587,7 +1671,8 @@
                             "gruppo": "https://t.me/joinchat/Ah_k0BEHqx9KkfbNft07Hg",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100285715231
                         },
                         {
                             "id": "edd7a5d6-4bcd-43e5-8501-4883a2fdcb66",
@@ -1599,7 +1684,8 @@
                             "gruppo": "https://t.me/joinchat/APBYAhJfsNeC9z8HnM4O-A",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100308261079
                         },
                         {
                             "id": "082c2704-cb06-4ad4-92e8-dcbde2736ef7",
@@ -1611,7 +1697,8 @@
                             "gruppo": "https://t.me/joinchat/APBYAkxn3pG1O6b47u-Inw",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001281875601
                         },
                         {
                             "id": "1ec11c61-70cd-406e-b131-930dbe891e59",
@@ -1623,7 +1710,8 @@
                             "gruppo": "https://t.me/joinchat/APBYAkYvuRCCA_jf_wtXSQ",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001177532688
                         },
                         {
                             "id": "076fe4c5-d6aa-4d1f-a361-8ad19144c99e",
@@ -1635,7 +1723,8 @@
                             "gruppo": "https://t.me/joinchat/APBYAkzLFYI1qHN0_7C4rQ",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001288377730
                         },
                         {
                             "id": "adf6a10d-b235-4570-85d2-a04d9f64ea30",
@@ -1647,7 +1736,8 @@
                             "gruppo": "https://t.me/joinchat/APBYAkWeYxuexOIaUCyiMQ",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001168007963
                         },
                         {
                             "id": "5db98900-fa35-433d-bdcf-e18944ba297a",
@@ -1659,7 +1749,8 @@
                             "gruppo": "https://t.me/joinchat/ATvtG0GV-Kvd_tdh73GHHg",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001100347563
                         },
                         {
                             "id": "6a73576c-6cf1-499d-8a41-110aa1c3013d",
@@ -1671,7 +1762,8 @@
                             "gruppo": "http://t.me/statssri",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": "statssri"
                         },
                         {
                             "id": "81a0fd45-bc06-440b-b9de-4796d8835f42",
@@ -1683,7 +1775,8 @@
                             "gruppo": "https://t.me/joinchat/APBYAkdQtr5U9Op21iiJ4Q",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001196471998
                         },
                         {
                             "id": "143f50d2-d4d0-4d29-a18c-355c786b8a71",
@@ -1695,7 +1788,8 @@
                             "gruppo": "https://t.me/joinchat/APBYAhRX4CXCO8wpl4_rkw",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100341303333
                         },
                         {
                             "id": "fe8ba6a7-afe1-4f6f-afa4-63243ab37843",
@@ -1707,7 +1801,8 @@
                             "gruppo": "https://t.me/joinchat/APBYAlkHoc-8a3UxScjfrQ",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001493672399
                         },
                         {
                             "id": "53437668-2234-4872-8792-542d1b99afc9",
@@ -1719,7 +1814,8 @@
                             "gruppo": "https://t.me/joinchat/APBYAlVPDyp4COF1PPOAWg",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001431244586
                         },
                         {
                             "id": "10206387-c204-4ef5-9ea8-5875f83cdd89",
@@ -1731,11 +1827,12 @@
                             "gruppo": "https://t.me/joinchat/APBYAkZh-kI0VXJVkqj9SQ",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001180826178
                         }
                     ],
-                    "is_master":false,
-                    "has_years":true
+                    "is_master": false,
+                    "has_years": true
                 },
                 {
                     "id": "magistrale_informatica",
@@ -1788,7 +1885,8 @@
                             "gruppo": "https://t.me/joinchat/BVhVgBQJUmLWxcilRH02yA",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100336155234
                         },
                         {
                             "id": "11539976-2d10-4081-bddb-9932f1e5ede0",
@@ -1812,7 +1910,8 @@
                             "gruppo": "https://t.me/joinchat/CcGyMEiBJialWeVvRLz7Lw",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1h1L41VBAavNCLd8xumTbmP9JgrgXv43e?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001216423462
                         },
                         {
                             "id": "48706d7d-077f-4d53-872b-0ec3a272f73c",
@@ -1824,7 +1923,8 @@
                             "gruppo": "https://t.me/joinchat/JklfKUkXZltxcoOZ7m6H5Q",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1LavQPSX2YoqLdisNL3uXgUaNwmRCJLxa?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001226270299
                         },
                         {
                             "id": "e2c53561-daa3-4476-af4a-38084e0848b4",
@@ -1860,7 +1960,8 @@
                             "gruppo": "https://t.me/joinchat/NtIxjlOS0ae2u6NyeY2GkQ",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1ABAIhcGUwC0qx_D5B3wkDPStPUz_v5re?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001402130855
                         },
                         {
                             "id": "b0141e73-ae8d-467e-b714-49b1c0b6b7c5",
@@ -1872,7 +1973,8 @@
                             "gruppo": "https://t.me/joinchat/C6cCWlWAT0thFUE52xEjqA",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1xEmfSKnf5wAtz45tdERr_UvxFvJJTfLr?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001434472267
                         },
                         {
                             "id": "e813babe-01b1-498d-b44c-ca1c2418e162",
@@ -1884,7 +1986,8 @@
                             "gruppo": "https://t.me/joinchat/CPEbyEdjyBaDvwtsUw0uTA",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1PkOyR5MLuUgqEHf4fUw_Puf2UFRP0QM9?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001197721622
                         },
                         {
                             "id": "f4fd36fe-8c63-4cda-bd5a-c2ddb682dbc3",
@@ -1896,7 +1999,8 @@
                             "gruppo": "https://t.me/joinchat/CpyyKRdKOGnao7n4VBdOow",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1qcLjdbQZJU6IK_VB_1ZQVmOD1RrWAUpw?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100390740073
                         },
                         {
                             "id": "9f63c34c-b6b1-4e2f-8afa-923cb03c92ee",
@@ -1908,7 +2012,8 @@
                             "gruppo": "https://t.me/joinchat/CPEbyA-QBQOe7uzuCmzQHQ",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1PuzaHNbdGspsLOOSGXMIaLIkOeqAiEqo?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100261096707
                         },
                         {
                             "id": "e10d17eb-9bb7-4c83-9a4a-0f6770407351",
@@ -1920,7 +2025,8 @@
                             "gruppo": "https://t.me/joinchat/B8sWO1aM40Lczj5bUq7gAg",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001452073794
                         },
                         {
                             "id": "c245150a-5097-4dd3-b780-c4ff1c9a5707",
@@ -1932,19 +2038,21 @@
                             "gruppo": "https://t.me/joinchat/CPEbyEnZKhgic5yfY1fUtQ",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1fYT3cV7JL3GVbXx8kFHXkF8Fsr5JW180?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001238968856
                         },
                         {
                             "id": "19085f6a-9f42-42a1-ba25-18226cc8111c",
                             "cdl": "magistrale_informatica",
-                            "name": "Algoritmi e Complessità",
+                            "name": "Algoritmi e Complessit\u00e0",
                             "anno": null,
                             "semestre": 1,
                             "cfu": 6,
                             "gruppo": "https://t.me/joinchat/CcGyMBI8xD8ayp5n0UqeZg",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1NFN-eKdu24UMI6oFVFF8RtheOjxlRX_-?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100305972287
                         },
                         {
                             "id": "542c72ee-6951-463f-9417-ae1f5139885b",
@@ -1956,7 +2064,8 @@
                             "gruppo": "https://t.me/joinchat/Hfp1hxVZ_MIWJDfB3mq3tw",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100358218946
                         },
                         {
                             "id": "277591ba-2358-4124-9578-68158d34f363",
@@ -1968,7 +2077,8 @@
                             "gruppo": "https://t.me/joinchat/NtIxjhiKuAC9an7II9lPcA ",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100411744256
                         },
                         {
                             "id": "862f6e92-9eed-4cbe-b3d0-8cae2b1ddd37",
@@ -1980,7 +2090,8 @@
                             "gruppo": "https://t.me/joinchat/BycIchHiU6ikH_jWM_D6vg",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1UOlXtJ9M7vnAZGGmUXe_YjC2cGVw3enz?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100300045224
                         },
                         {
                             "id": "fb8c0e14-7d14-431d-95f4-81b007c8e7ac",
@@ -1992,7 +2103,8 @@
                             "gruppo": "https://t.me/joinchat/CcGyMFIDiYskCI0XgW7b4Q",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1rj30Ird0K12pQ36OQ31kC7QpkSboB-dg?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001375963531
                         },
                         {
                             "id": "240afe01-036b-4a10-ac99-6ca84d30ae9a",
@@ -2028,7 +2140,8 @@
                             "gruppo": "https://t.me/joinchat/CcGyME1odjchWDHLR1N4hw",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1BSA5HggcJxJCFvwDmVV6o4NWQ-PJecEh?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001298691639
                         },
                         {
                             "id": "18a347ce-11fe-4126-b978-7f06a4769b76",
@@ -2040,7 +2153,8 @@
                             "gruppo": "https://t.me/joinchat/HEq_JE8RtOJkhXJj0xJlpw",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001326560482
                         },
                         {
                             "id": "1c90b2dd-9bc1-41cc-844d-43ae75323983",
@@ -2052,7 +2166,8 @@
                             "gruppo": "https://t.me/joinchat/DcQe5hFJXEbokREVjrjXwQ",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/10xn8_0_Zqg7TV3W4KnYQuj09NiYC8aVb?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100290020422
                         },
                         {
                             "id": "1817db6d-eb97-403f-bdc2-1062ec086af7",
@@ -2064,7 +2179,8 @@
                             "gruppo": "https://t.me/joinchat/CcGyMESOs8xinKoVgq61Ug",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/15T7uVQeWar2_tCr4OhqRsXQNUI-a9w8x?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001150202828
                         },
                         {
                             "id": "919bd4a5-4b88-4287-b858-734ff8f5bbdf",
@@ -2088,7 +2204,8 @@
                             "gruppo": "https://t.me/joinchat/CcGyMES907s5-asRK2tgCw",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1Bhq2y4pHwvJjj-Tytt1pD_T65HXb2Szd?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001153291195
                         },
                         {
                             "id": "3eb6e77c-abcb-4e37-912b-52bf894eca1a",
@@ -2112,7 +2229,8 @@
                             "gruppo": "https://t.me/joinchat/GGU50xpg-41tjEgE11me-A",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100442563469
                         },
                         {
                             "id": "f5bc9dee-e7d2-4c35-8411-183ab88e1864",
@@ -2136,7 +2254,8 @@
                             "gruppo": "https://t.me/joinchat/CcGyMEv6Cz1h1BouUUD0Cw",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1XSnlYhdjInFXa_Pw6R2joWRSBfNfxyi7?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001274678077
                         },
                         {
                             "id": "b0290163-632b-4962-b67d-125dd6ba4ffe",
@@ -2148,7 +2267,8 @@
                             "gruppo": "https://t.me/joinchat/CcGyMEaSvFfhWdzdcg3Fsg",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1thl0rzQnn8GOuNBMxEkDanr2hUfW0aLu?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001184021591
                         },
                         {
                             "id": "2fa692ec-902a-4e15-b8b3-3892215f26d3",
@@ -2160,7 +2280,8 @@
                             "gruppo": "https://t.me/joinchat/UH_LJoTZUJ0P92FJ",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001350552358
                         },
                         {
                             "id": "87053e1f-bd4f-4cfb-8498-ee0d44218642",
@@ -2172,7 +2293,8 @@
                             "gruppo": "https://t.me/joinchat/CcGyMFLe9jEqpOMhUW319w",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1x7MqvTAW1b8_siKQ9feiMkPp507-QezO?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001390343729
                         },
                         {
                             "id": "6ea05f72-2b8a-46e2-a4ee-4391f64242b3",
@@ -2196,7 +2318,8 @@
                             "gruppo": "https://t.me/joinchat/CcGyME-oQIZUaSpXgPQzog",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1aBWtJvSpPT_2tso8BpV6UaOXs30v5dna?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001336426630
                         },
                         {
                             "id": "e271db3c-0751-488c-ac8a-c062d39c8eda",
@@ -2208,7 +2331,8 @@
                             "gruppo": "https://t.me/joinchat/B8sWOxb7Sxhvb3TK5vwPEQ",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100385567512
                         },
                         {
                             "id": "b5e3a0a9-8c0a-4486-9d2c-d16487233a2e",
@@ -2220,7 +2344,8 @@
                             "gruppo": "https://t.me/joinchat/BVhVgBcNcx-KQzO3PP8Vkg",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/15isBUOM9IdZAfFyTM6fGGKKH4R_ueI4j?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100386757407
                         },
                         {
                             "id": "942461dd-35c8-4b33-9674-a852adc19500",
@@ -2232,7 +2357,8 @@
                             "gruppo": "https://t.me/joinchat/CpyyKUbD0Fr1xDGy0W2yMg",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001187237978
                         },
                         {
                             "id": "95d7fa5a-5dc9-4337-bc3c-599596d7a7ab",
@@ -2244,7 +2370,8 @@
                             "gruppo": "https://t.me/joinchat/CpyyKUbD0Fr1xDGy0W2yMg",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001187237978
                         },
                         {
                             "id": "0a9ec2a5-84ed-442c-a47f-7e430d730c48",
@@ -2280,7 +2407,8 @@
                             "gruppo": "https://t.me/intSystemsForIndustry",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": "intSystemsForIndustry"
                         },
                         {
                             "id": "21bf18bc-4d5f-4ce4-9d49-844fafcc8a17",
@@ -2292,7 +2420,8 @@
                             "gruppo": "https://t.me/joinchat/CcGyMA3VsILmCrO-UeIJoQ",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1ltP2LMssQiK5JIT4vGy5ehJGW_EuAkN_?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100232108162
                         },
                         {
                             "id": "e05a5327-abd6-457c-9d9b-8c3956ca057c",
@@ -2304,7 +2433,8 @@
                             "gruppo": "https://t.me/joinchat/CpyyKVSI-EcOivFZ5xUFZg",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001418262599
                         },
                         {
                             "id": "8bd9e4f5-c364-41cd-a1cf-6b0414f25016",
@@ -2328,19 +2458,21 @@
                             "gruppo": "https://t.me/joinchat/B64ybkeOxzXZDOck1G2SPQ",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001200539445
                         },
                         {
                             "id": "d578a28a-2b3c-48b6-b271-eaac6d5f4076",
                             "cdl": "magistrale_informatica",
-                            "name": "Realtà Virtuale",
+                            "name": "Realt\u00e0 Virtuale",
                             "anno": null,
                             "semestre": 2,
                             "cfu": 6,
                             "gruppo": "https://t.me/joinchat/CRGlPxQFP-lLAkAazR0Fjg",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100335888361
                         },
                         {
                             "id": "da3427b7-a8f7-49ee-90f4-f91cef22d7a8",
@@ -2352,7 +2484,8 @@
                             "gruppo": "https://t.me/joinchat/F5VMZReza0pTp0nd2bHbtw",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100397634378
                         },
                         {
                             "id": "44075b89-0a55-4fcc-8205-2fdb4782b37d",
@@ -2388,7 +2521,8 @@
                             "gruppo": "https://t.me/joinchat/AC9fAkhy7f0Hf0b1lu_2VQ",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1V_Nv0OMVy6WNIRxQGuBCDGpvE3LkxNHK?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001215491581
                         },
                         {
                             "id": "a266bfcf-5b2b-407b-85c7-88cbf1825059",
@@ -2400,7 +2534,8 @@
                             "gruppo": "https://t.me/joinchat/NtIxjkyW5ztz9KHd1vGAKg",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1dW5viNJwx9y-HC9KwK_1jk1ycjAN6Nlz?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001284958011
                         },
                         {
                             "id": "a394d877-2f2d-4061-b4e2-0f96f9551cfc",
@@ -2412,7 +2547,8 @@
                             "gruppo": "https://t.me/joinchat/NtIxjlcGooFKQJ9NM5Nxdw",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001460052609
                         },
                         {
                             "id": "f59e98bd-5946-4c88-85f2-c0312afc853b",
@@ -2424,7 +2560,8 @@
                             "gruppo": "https://t.me/joinchat/CPEbyE-ZQy427hw2yzP7jQ",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001335444270
                         },
                         {
                             "id": "009464a2-283d-4775-bdd1-70b28cb74fa7",
@@ -2460,7 +2597,8 @@
                             "gruppo": "https://t.me/joinchat/BcfVnRPtJZPJeCkD4eLNwA",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100334308755
                         },
                         {
                             "id": "037c81e6-67f9-4da9-bfe9-ec6600de5091",
@@ -2472,7 +2610,8 @@
                             "gruppo": "https://t.me/joinchat/Da_ISRF_VC5hKfGhSVEo8g",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100293557294
                         },
                         {
                             "id": "4c162ccf-329e-4890-a13c-f4c4ebf659fc",
@@ -2484,7 +2623,8 @@
                             "gruppo": "https://t.me/joinchat/BRTKxFaMi4qAjLgcp9v-Rw",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001452051338
                         },
                         {
                             "id": "da95b917-d75a-4352-a86b-f54b5c6a7ba2",
@@ -2496,7 +2636,8 @@
                             "gruppo": "https://t.me/cittadinanzadigitaletecnocivismo",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": "cittadinanzadigitaletecnocivismo"
                         },
                         {
                             "id": "535b693a-a2ac-43e4-ae0f-8f5bc9361f90",
@@ -2520,7 +2661,8 @@
                             "gruppo": "https://t.me/joinchat/CcGyMEz8DnWayaymiAlapQ",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1sZjVMWG-9q9QPoHzMWAFA9L9Y94FZ9wg?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001291587189
                         },
                         {
                             "id": "66408c3d-382c-496f-91ec-7bda9809e9ce",
@@ -2532,7 +2674,8 @@
                             "gruppo": "https://t.me/joinchat/B3HHmB0ftc_pSJSG76tiGg",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100488617423
                         },
                         {
                             "id": "846e49ef-2200-4ad4-96bb-b473f0767066",
@@ -2568,7 +2711,8 @@
                             "gruppo": "https://t.me/joinchat/CcGyMEO57MVHmVWwbI-D2g",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1xvP4j51Iy-SMtitY_dx6DelWJzor9HMl?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001136258245
                         },
                         {
                             "id": "66447abf-5fcc-4b8e-94c8-944ba653aa12",
@@ -2580,7 +2724,8 @@
                             "gruppo": "https://t.me/joinchat/AcMlaBNUV-fGLSTomLMxEg",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100324294631
                         },
                         {
                             "id": "b2efae70-4043-40bb-8b7b-caebe3743e5a",
@@ -2604,7 +2749,8 @@
                             "gruppo": "https://t.me/joinchat/DLQoKxpBXFon9KXbiCTzIA",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100440491098
                         },
                         {
                             "id": "94191207-67bc-4299-a2ec-30a01eca53f0",
@@ -2616,7 +2762,8 @@
                             "gruppo": "https://t.me/joinchat/AmMNBBuzYRWYWslkQL4QAg",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1D8oQ5pC6Mr1Z0-dIajua-nTLNRRJ5WA8?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100464740629
                         },
                         {
                             "id": "840f0342-7b68-47c6-a752-54ee2871b71c",
@@ -2640,7 +2787,8 @@
                             "gruppo": "https://t.me/joinchat/AmMNBA_5hC0heGUacmyepg",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1wiCaPEhb-Mwl10SGs1Bdr-TQ27gABOx0?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100268010541
                         },
                         {
                             "id": "a74f3d17-cf56-48ea-9c6b-57cbb2f23b19",
@@ -2652,7 +2800,8 @@
                             "gruppo": "https://t.me/joinchat/AJHk9BXWmmfawXgG4UNisQ",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100366385767
                         },
                         {
                             "id": "1f828f97-531b-4419-ac1b-6b7fa76ad001",
@@ -2688,7 +2837,8 @@
                             "gruppo": "https://t.me/joinchat/CcGyMEoTknxR1GwqK2GNAQ",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001242796668
                         },
                         {
                             "id": "1a869037-a02a-4bb2-bfec-7b203df49ed0",
@@ -2712,7 +2862,8 @@
                             "gruppo": "https://t.me/joinchat/CpyyKUcDgVsi6bCj94Mhxg",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1TKJSDyiLcgy4aApUTlaAKZdxeCqpKirS?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001191412059
                         },
                         {
                             "id": "d7293b0a-8546-48f8-b783-81dd8321ae9a",
@@ -2724,7 +2875,8 @@
                             "gruppo": "https://t.me/joinchat/CpyyKUmhwxyYsTX4J9377g",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001235338012
                         },
                         {
                             "id": "e14b97a8-6a54-44d8-9bbd-fdb6a3968a6e",
@@ -2736,7 +2888,8 @@
                             "gruppo": "https://t.me/joinchat/CUnktldHBG7Yi1qq7v70iw",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1pGI9Jzy1Ml2FEt32uwPXtgJojqwCtuCa?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001464271982
                         },
                         {
                             "id": "971d8505-e484-4311-85d0-49d6c3c0acb6",
@@ -2760,7 +2913,8 @@
                             "gruppo": "https://t.me/joinchat/UFzWpqV8Uvwm1b1n",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001348261542
                         },
                         {
                             "id": "e66ce172-8bbf-4574-92d9-fa75ef38ca46",
@@ -2772,7 +2926,8 @@
                             "gruppo": "https://t.me/joinchat/MdZg_kfcC2rZP3mvw2FGBg",
                             "websites": [],
                             "drive": "https://drive.google.com/drive/folders/1ngnMk5MGu13WiP_NJ5SVz4r9KnfAt2bk?usp=sharing",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001205603178
                         },
                         {
                             "id": "22460622-b27e-405c-8aaa-51c332013eaf",
@@ -2784,11 +2939,12 @@
                             "gruppo": "https://t.me/joinchat/CPEbyFHsKkCqz8SE5Y8f_A",
                             "websites": [],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001374431808
                         }
                     ],
-                    "is_master":true,
-                    "has_years":false
+                    "is_master": true,
+                    "has_years": false
                 },
                 {
                     "id": "magistrale_sicurezza_informatica",
@@ -2850,7 +3006,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": "sistemibiometrici"
                         },
                         {
                             "id": "d1387fc8-bac7-4fba-b24c-1e21505aa1a2",
@@ -2871,7 +3028,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100473068604
                         },
                         {
                             "id": "f29bd827-0a45-4faa-9ddc-066136d45469",
@@ -2892,7 +3050,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100411744256
                         },
                         {
                             "id": "8c168c7d-3d40-4be6-be93-a5ab0ec44924",
@@ -2913,7 +3072,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001150202828
                         },
                         {
                             "id": "35eee5c0-3b24-4e98-b42a-50f1948ed46c",
@@ -2934,12 +3094,13 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001269703981
                         },
                         {
                             "id": "f885e026-45f0-4fac-8421-20b9b12fbd43",
                             "cdl": "magistrale_sicurezza_informatica",
-                            "name": "Affidabilità dei sistemi",
+                            "name": "Affidabilit\u00e0 dei sistemi",
                             "anno": 1,
                             "semestre": 1,
                             "cfu": 6,
@@ -2955,7 +3116,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100340892274
                         },
                         {
                             "id": "f11251ba-a910-43d5-b3f9-010709cf2714",
@@ -2976,7 +3138,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100425828565
                         },
                         {
                             "id": "063419ac-5f4d-44de-ac59-8d7b994cce88",
@@ -2997,7 +3160,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001258633881
                         },
                         {
                             "id": "40b796c9-ee77-46e3-8285-d8290a6ad8f0",
@@ -3018,7 +3182,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001372068224
                         },
                         {
                             "id": "669360ec-c8ae-4158-92d0-fa0ba87628c2",
@@ -3039,7 +3204,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001465393488
                         },
                         {
                             "id": "bfc807ae-942a-4c8d-9805-69e411d02a5b",
@@ -3060,7 +3226,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -100336155234
                         },
                         {
                             "id": "3322493c-b654-4c3a-bbba-0373fc152f29",
@@ -3081,7 +3248,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001348261542
                         },
                         {
                             "id": "f7cdb57c-cdde-4e0c-8f3a-d45632a46b63",
@@ -3165,11 +3333,12 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": "sicurezzadellereti"
                         }
                     ],
-                    "is_master":true,
-                    "has_years":true
+                    "is_master": true,
+                    "has_years": true
                 }
             ]
         },
