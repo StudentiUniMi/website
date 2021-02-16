@@ -5,5 +5,6 @@ export default interface Representative
     surname?: string,
     username?: string,
     year?: string,
-    cdl?: string
+    cdl?: string,
+    user_id: number
 }

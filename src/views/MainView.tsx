@@ -9,11 +9,10 @@ import { darkTheme, lightTheme } from '../themes';
 import { CookiesProvider, useCookies } from 'react-cookie';
 
 const MainView = () => {
-
-  let [cookies, ] = useCookies()
+  let [cookies, ] = useCookies();
   let [theme, setTheme] = React.useState(cookies["theme"] === "dark");
 
-  const changeTheme = () => setTheme(!theme)
+  const changeTheme = () => setTheme(!theme);
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <CookiesProvider>

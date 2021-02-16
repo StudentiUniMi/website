@@ -40,17 +40,16 @@ const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
 
 const languageOptions: IDropdownOption[] = [
     { key: 'ITA', text: 'Italiano', data: { icon: 'Memo' } },
-    { key: 'ENG', text: 'Inglese', data: { icon: 'Print' } },
+    { key: 'ENG', text: 'Inglese', data: { icon: 'Print' } }
 ];
 
-interface Props { 
-    changeTheme: () => void
-};
+interface Props { changeTheme: () => void };
 
 initializeIcons();
 
 const HeaderMenu = (props: Props) => {
     var theme = useTheme();
+    console.log(theme);
     const history = useHistory();
     const [cookies, setCookie] = useCookies(["theme"]);
 
@@ -104,8 +103,8 @@ const HeaderMenu = (props: Props) => {
     const tooltipId = useId('tooltip');
     const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
     const settingsIcon: IIconProps = { iconName: 'Settings', styles: { root: { fontSize: '18px' } } };
-    const settingsIconStylePivot: IIconStyles = { root: { position: 'absolute', right: '3px', top: '94px', zIndex: 10 } };
-    const settingsIconStyleDropdown: IIconStyles = { root: { position: 'absolute', left: '3px', top: '10px', zIndex: 10 } };
+    const settingsIconStylePivot: IIconStyles = { root: { position: 'absolute', right: '5px', top: '94px', zIndex: 10 } };
+    const settingsIconStyleDropdown: IIconStyles = { root: { position: 'absolute', left: '5px', top: '6px', zIndex: 10 } };
     const settingsIconId = useId('icon');
     const calloutProps = { gapSpace: 0, target: `#${settingsIconId}`, };
  
