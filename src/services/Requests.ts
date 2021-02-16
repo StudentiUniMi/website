@@ -4,7 +4,7 @@ import Department from '../models/Department';
 import Service from '../models/Service';
 import Representative from '../models/Representative';
 import serviceData from '../data/Services.json';
-import Degree from '../models/Degree'
+import Degree from '../models/Degree';
 
 export const getExtraGroups = () => extraGroups;
 

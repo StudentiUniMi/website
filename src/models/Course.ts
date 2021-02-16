@@ -15,4 +15,5 @@ export default interface Course
     websites:any[],
     drive?:string,
     wiki?:string,
+    chat_id?:number
 }

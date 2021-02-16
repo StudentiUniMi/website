@@ -1,39 +1,31 @@
+import React from 'react';
 import { HashRouter as Router } from "react-router-dom";
 import HeaderTitle from "../components/HeaderTitle";
 import HeaderMenu from "../components/HeaderMenu";
 import Footer from "../components/Footer";
 import ContentView from "./ContentView";
-import { loadTheme } from '@fluentui/react';
+import { ThemeProvider } from '@fluentui/react-theme-provider'; 
+import { darkTheme, lightTheme } from '../themes';
+import { CookiesProvider, useCookies } from 'react-cookie';
 
-loadTheme({
-  //defaultFontStyle: {  fontWeight: 'regular' },
-  fonts: {
-    small: {
-      fontSize: '12px',
-    },
-    medium: {
-      fontSize: '14px',
-    },
-    large: {
-      fontSize: '20px',
-      fontWeight: 'semibold',
-    },
-    xLarge: {
-      fontSize: '22px',
-      fontWeight: 'semibold',
-    },
-  },
-});
+const MainView = () => {
 
-function MainView() {
+  let [cookies, ] = useCookies()
+  let [theme, setTheme] = React.useState(cookies["theme"] === "dark");
+
+  const changeTheme = () => setTheme(!theme)
   return (
     <Router basename={process.env.PUBLIC_URL}>
-      <header>
-        <HeaderTitle />
-        <HeaderMenu />
-      </header>
-      <ContentView/>
-      <Footer />
+      <CookiesProvider>
+        <ThemeProvider applyTo="body" theme={theme ? darkTheme : lightTheme}>
+          <header>
+            <HeaderTitle />
+            <HeaderMenu changeTheme={changeTheme}/>
+          </header>
+          <ContentView/>
+          <Footer />
+        </ThemeProvider>
+      </CookiesProvider>
     </Router>
   );
 }

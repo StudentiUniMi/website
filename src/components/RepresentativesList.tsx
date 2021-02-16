@@ -4,9 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Link } from 'office-ui-fabric-react';
 
-interface Props {
-    data: Representative[]
-}
+interface Props { data: Representative[] };
 
 const RapresentativesList = (props: Props) => {
     return (

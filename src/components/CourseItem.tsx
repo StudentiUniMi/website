@@ -2,49 +2,43 @@ import { Link, Text } from 'office-ui-fabric-react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { initializeIcons } from '@uifabric/icons';
 import { FontWeights, ITextStyles, Persona } from '@fluentui/react';
-import Course from '../models/Course'
+import Course from '../models/Course';
+import { useTheme } from '@fluentui/react-theme-provider';
 
 initializeIcons();
-
-interface Props {
-    data: Course
-}
+interface Props { data: Course };
 
 // const gdriveStyle = { width: '15px', height: '15px', marginBottom: '3px' }
 
 const CourseItem = (props: Props) => {
+    const theme = useTheme();
     var data = props.data;
 
-    const siteTextStyles: ITextStyles = {
+    const cfuStyle: ITextStyles = {
         root: {
-            color: "#025F52",
+            color: theme.palette.themePrimary,
             fontWeight: FontWeights.semibold,
         },
     };
     const descriptionTextStyles: ITextStyles = {
         root: {
-            color: "#333333",
             fontWeight: FontWeights.semibold,
         },
     };
     const helpfulTextStyles: ITextStyles = {
         root: {
-            color: "#333333",
             fontWeight: FontWeights.regular,
         },
     };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
 
-    let personaIconUrl: string | undefined;
-    if (data.anno === -1) {  // Set del logo del gruppo principale 
-        personaIconUrl = data.cdl === 'triennale_informatica'?  process.env.PUBLIC_URL + '/informatica.jpg' : process.env.PUBLIC_URL + '/unimi.jpg'
-    }
 
-    function doNothing() { // Per mostrare l'hover della card
-    }
-        
+    let personaIconUrl: string | undefined;
+    if (data.anno === -1) personaIconUrl = process.env.PUBLIC_URL + "/degree_groups_images/unimi.jpg"; 
+    else { personaIconUrl = "https://unimi-profile-pictures.marcoaceti.workers.dev/?chat_id=" + data.chat_id; }
+    
     return (
-        <Card tokens={cardTokens} onClick={() => doNothing}>
+        <Card tokens={cardTokens}>
             <Card.Item>
                 <Persona imageUrl={personaIconUrl} /*onRenderPrimaryText={() => <div style={{wordWrap:'break-word'}}>{data.name}</div> }*/ text={data.name} />
             </Card.Item>
@@ -63,7 +57,7 @@ const CourseItem = (props: Props) => {
                     ( () => {
                         if (data.cfu !== null) {
                             return (
-                                <Text variant="small" styles={siteTextStyles}>{data.cfu} CFU</Text>
+                                <Text variant="small" styles={cfuStyle}>{data.cfu} CFU</Text>
                             )
                         } else {
                             return "";
@@ -111,7 +105,7 @@ const CourseItem = (props: Props) => {
                         } else {
                             return (
                             <Text variant="small" styles={helpfulTextStyles}>
-                                <i className="fab fa-telegram" style={{color: '#1aa3ed'}}></i>
+                                <i className="fab fa-telegram" style={{ color: theme.palette.themePrimary }}></i>
                                 &nbsp;
                                 <Link href={data.gruppo} target="_blank">
                                     Gruppo Telegram

@@ -2,6 +2,8 @@ import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Image } from 'office-ui-fabric-react/lib/Image';
 import Row from 'react-bootstrap/Row';
+import { useTheme } from '@fluentui/react-theme-provider';
+import { FontWeights, ITextStyles } from 'office-ui-fabric-react';
 
 const logoProperties = {
     width: '60px',
@@ -11,14 +13,12 @@ const logoProperties = {
 }
 
 const logoFileName = 'unimi150.png';
-const titleStyle = {
-    fontSize: FontSizes.size42,
-    fontWeight: 600,
-    color: '#2b88d8',
-    fontFamily: 'Corbel'
-};
 
 const HeaderTitle = () => {
+    var theme = useTheme();
+    const titleStyle: ITextStyles = {
+        root: { fontSize: FontSizes.size42, fontWeight: FontWeights.semibold, color: theme.palette.themePrimary, fontFamily: 'Corbel' }
+    };
     return (
         <div className="header-title m-2">
 
@@ -34,9 +34,7 @@ const HeaderTitle = () => {
                         />
                     </span>
 
-                    <Text style={titleStyle}>
-                        Network Studenti UniMi
-                    </Text>
+                    <Text styles={titleStyle}>Network Studenti UniMi</Text>
 
                 </Row>
             </div>
@@ -53,12 +51,12 @@ const HeaderTitle = () => {
                         />
                     </span>
 
-                    <Text style={titleStyle}>Network</Text>
+                    <Text styles={titleStyle}>Network</Text>
 
                 </Row>
 
                 <Row className="m-2 text-center justify-content-center">
-                    <Text style={titleStyle}>Studenti UniMi</Text>
+                    <Text styles={titleStyle}>Studenti UniMi</Text>
                 </Row>
             </div>
         

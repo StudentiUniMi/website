@@ -25,8 +25,6 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color:#cccccc;
-  color: #000;
 }
 
 main {
@@ -51,7 +49,7 @@ main {
 
 @media only screen and (max-width: 768px) {
   body {
-    margin-bottom: 550px;
+    margin-bottom: 480px;
   }
 
   footer .row {
@@ -68,13 +66,25 @@ main {
   }
 }
 
+@media only screen and (max-width: 485px) {
+  body {
+    margin-bottom: 500px;
+  }
+}
+
+@media only screen and (max-width: 363px) {
+  body {
+    margin-bottom: 530px;
+  }
+}
+
 @media only screen and (max-width: 270px) {
   body {
     margin-bottom: 600px;
   }
 }
 
-@media only screen and (max-width: 241px) {
+@media only screen and (max-width: 225px) {
   body {
     margin-bottom: 650px;
   }
@@ -90,7 +100,7 @@ main {
 
 
 /* Responsive menu and title */
-@media only screen and (min-width: 716px) {
+@media only screen and (min-width: 696px) {
   .header-menu .pivot {
     display: block;
   }
@@ -103,7 +113,7 @@ main {
     margin-left: 10px;
   }
 }
-@media only screen and (max-width: 715px) {
+@media only screen and (max-width: 695px) {
   .header-menu .pivot {
     display: none;
   }
@@ -144,7 +154,6 @@ main {
 /* Dropdown style for header-menu */
 .header-menu .ms-Dropdown-title { 
   border-style: none;
-  background-color: #faf9f8;
   height: 44px;
   justify-content: center;
   text-align: center;
@@ -281,62 +290,9 @@ main {
   box-sizing: border-box;
 }
 
-.rules .card, .rules .card-body {
-  background-color: #faf9f8;
-}
-
-.ms-Dialog-main {
-  max-width: none;
-  margin:30px;
-  min-width:250px;
-}
-
-.ms-Dialog-main .ms-Button {
-  position:absolute;
-}
-
-@media only screen and (max-width: 478px) {
-  .ms-Dialog-main .ms-Button {
-    top: -40px;
-    right: 0px;
-  }
-  .ms-TeachingBubble {
-    max-width:300px;
-  }
-}
-
-@media only screen and (min-width: 479px) {
-  .ms-Dialog-main .ms-Button {
-    top: 0px;
-    right: 0px;
-  }
-  .ms-TeachingBubble {
-    max-width:400px;
-  }
-}
-
-.ms-TeachingBubble button {
-  outline: none;
-  border-radius:5px;
-}
-
-
-.home .ms-Icon {
-  font-size: 45px;
-}
-
 .ms-ChoiceFieldGroup-flexContainer {
   display: flex;
   justify-content: center;
-}
-
-.home .card {
-  background-color: #faf9f8;
-  border: none;
-}
-
-.home .ms-Button-flexContainer {
-  margin-left: 5px;
 }
 
 .rules .card:active, .rules .card:focus {
@@ -348,25 +304,19 @@ main {
 
 a:active,
 a:focus,
-.home button:active,
-.home button:focus,
-.rules button:active,
-.rules button:focus {
+button:active,
+button:focus,
+.ms-Button:active,
+.ms-Button:focus {
   outline: 0;
-  border: none;
   outline: none;
   box-shadow: none !important;
 }
 
-.ms-Dialog-main .ms-Button {
-  outline: none;
-}
-
-.faq-view-link:active,
-.faq-view-link:focus {
-  outline: 0;
-}
-
 .services .ms-CardSection {
   text-align: left;
+}
+
+.ms-TooltipHost {
+  display: inline;
 }

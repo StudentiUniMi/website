@@ -43,12 +43,12 @@ const AdministratorsView = () => {
     return (
         <Container className="administrators text-center">
 
-            <Text style={{ fontSize: FontSizes.size14 }}>
-                <div className="mb-3">
+            <div className="mb-3">
+                <Text style={{ fontSize: FontSizes.size14 }}>
                     Ogni corso di laurea e i suoi relativi gruppi telegram hanno come riferimento degli amministratori che possono
                     essere contattati in caso di necessità. Qui è possibile trovare la lista degli admin di ogni corso di laurea e i loro contatti (per ora solo dipartimento di Informatica).
-                </div>
-            </Text>
+                </Text>
+            </div>
 
             <Container className="mb-4 justify-content-center" style={{maxWidth: '500px'}}>
                 <Dropdown

@@ -1,7 +1,7 @@
 import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
-import { getTheme } from 'office-ui-fabric-react/lib/Styling';
+import { useTheme } from '@fluentui/react-theme-provider';
 import { DocumentCardPreview, IDocumentCardPreviewProps } from 'office-ui-fabric-react/lib/DocumentCard';
 import { Card, ICardTokens } from '@uifabric/react-cards';
 import { FontWeights, ITextStyles } from 'office-ui-fabric-react';
@@ -10,37 +10,33 @@ import Row from 'react-bootstrap/Row';
 import { getServices } from '../services/Requests';
 import {redirectToLink} from '../services/Utils';
 
-const theme = getTheme();
-const { palette, fonts } = theme;
-
-let cardProps = (iconName?: string, backgroundColor?: string): IDocumentCardPreviewProps => {
-    return {
-        previewImages: [ 
-            {
-                previewIconProps: {
-                    iconName: iconName,
-                    styles: { root: { fontSize: fonts.superLarge.fontSize, color: palette.white } },
-                },
-                width: 100, height: 100
-            },
-        ],
-        styles: { previewIcon: { backgroundColor: backgroundColor } },
-    }
-};
-
-const siteTextStyles: ITextStyles = {
-    root: { color: '#025F52', fontWeight: FontWeights.semibold, fontSize: FontSizes.size14 },
-};
-
-const descriptionTextStyles: ITextStyles = {
-    root: { color: '#333333', fontWeight: FontWeights.regular, fontSize: FontSizes.size12 },
-};
-
-const cardTokens: ICardTokens = { childrenMargin: 12 };
-
-
 
 const Services = () => {
+    var theme = useTheme();
+    let cardProps = (iconName?: string, backgroundColor?: string): IDocumentCardPreviewProps => {
+        return {
+            previewImages: [ 
+                {
+                    previewIconProps: {
+                        iconName: iconName,
+                        styles: { root: { fontSize: FontSizes.size32, color: theme.palette.white } },
+                    },
+                    width: 100, height: 100
+                },
+            ],
+            styles: { previewIcon: { backgroundColor: backgroundColor } },
+        }
+    };
+    
+    const siteTextStyles: ITextStyles = {
+        root: { fontWeight: FontWeights.semibold, fontSize: FontSizes.size14, color: theme.palette.themePrimary },
+    };
+    
+    const descriptionTextStyles: ITextStyles = {
+        root: { fontWeight: FontWeights.regular, fontSize: FontSizes.size12 },
+    };
+    
+    const cardTokens: ICardTokens = { childrenMargin: 12 };
     let services = getServices();
 
     return (
