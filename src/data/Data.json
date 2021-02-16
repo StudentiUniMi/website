@@ -7,7 +7,7 @@
             "icon": "TVMonitor",
             "representatives": [
                 {
-                    "id": "",
+                    "id": 165370985,
                     "name": "Jacopo",
                     "surname": "Antoniolli",
                     "username": "ChufChufMF",
@@ -15,7 +15,7 @@
                     "cdl": "Sicurezza dei sistemi e delle reti informatiche"
                 },
                 {
-                    "id": "",
+                    "id": 458889652,
                     "name": "Enrico",
                     "surname": "Arrigotti",
                     "username": "LonginusGravitazionale",
@@ -23,7 +23,7 @@
                     "cdl": "Informatica"
                 },
                 {
-                    "id": "",
+                    "id": 108121631,
                     "name": "Davide",
                     "surname": "Busolin",
                     "username": "davidebusolin",
@@ -31,7 +31,7 @@
                     "cdl": "Informatica"
                 },
                 {
-                    "id": "",
+                    "id": 597678134,
                     "name": "Giuseppe",
                     "surname": "Del Campo",
                     "username": "giuseppetm",
@@ -39,7 +39,7 @@
                     "cdl": "Informatica"
                 },
                 {
-                    "id": "",
+                    "id": 419549927,
                     "name": "Lorenzo",
                     "surname": "Di Cola",
                     "username": "belzeboop",
@@ -47,7 +47,7 @@
                     "cdl": "Informatica"
                 },
                 {
-                    "id": "",
+                    "id": 271586991,
                     "name": "Ettore Tancredi",
                     "surname": "Galante",
                     "username": "toreGore",
@@ -55,7 +55,7 @@
                     "cdl": "Informatica (Magistrale)"
                 },
                 {
-                    "id": "",
+                    "id": 913164245,
                     "name": "Irene Lara",
                     "surname": "Galimi",
                     "username": "irenegalimi",
@@ -63,7 +63,7 @@
                     "cdl": "Informatica"
                 },
                 {
-                    "id": "",
+                    "id": 59518473,
                     "name": "Luca",
                     "surname": "Giuliani",
                     "username": "LGiuliani",
@@ -71,7 +71,7 @@
                     "cdl": "Informatica (Magistrale)"
                 },
                 {
-                    "id": "",
+                    "id": 620976546,
                     "name": "Renato",
                     "surname": "Graziano",
                     "username": "burzum00",
@@ -79,7 +79,7 @@
                     "cdl": "Sicurezza dei sistemi e delle reti informatiche"
                 },
                 {
-                    "id": "",
+                    "id": 169460452,
                     "name": "Giulia",
                     "surname": "Mattavelli",
                     "username": "giuliamattavelli",
@@ -87,7 +87,7 @@
                     "cdl": "Informatica musicale"
                 },
                 {
-                    "id": "",
+                    "id": 697984243,
                     "name": "Lorenzo",
                     "surname": "Mazzi",
                     "username": "",
@@ -95,7 +95,7 @@
                     "cdl": "Informatica"
                 },
                 {
-                    "id": "",
+                    "id": 418896318,
                     "name": "Davide",
                     "surname": "Rusconi",
                     "username": "pisqu0",
@@ -103,7 +103,7 @@
                     "cdl": "Informatica (Magistrale)"
                 },
                 {
-                    "id": "",
+                    "id": 364858439,
                     "name": "Luca",
                     "surname": "Trecarichi",
                     "username": "trekkete",
@@ -111,7 +111,7 @@
                     "cdl": "Informatica (Magistrale)"
                 },
                 {
-                    "id": "",
+                    "id": 234988702,
                     "name": "Pietro",
                     "surname": "Zola",
                     "username": "Zuppep",
@@ -130,67 +130,67 @@
                     "virtual_classroom": "https://vc.di.unimi.it/",
                     "admins": [
                         {
-                            "id": "",
+                            "id": 119507304,
                             "username": "MrBrionix",
                             "year": "Secondo",
                             "role": ""
                         },
                         {
-                            "id": "",
+                            "id": 592731075,
                             "username": "MattiaOldani",
                             "year": "Primo",
                             "role": ""
                         },
                         {
-                            "id": "",
+                            "id": 26170256,
                             "username": "acetimarco",
                             "year": "Primo",
                             "role": ""
                         },
                         {
-                            "id": "",
+                            "id": 544826890,
                             "username": "Sartigabriele",
                             "year": "Primo",
                             "role": ""
                         },
                         {
-                            "id": "",
+                            "id": 940740891,
                             "username": "georgianiandrei",
                             "year": "Secondo",
                             "role": ""
                         },
                         {
-                            "id": "",
+                            "id": 730639598,
                             "username": "IrisCanole",
                             "year": "Primo",
                             "role": ""
                         },
                         {
-                            "id": "",
+                            "id": 433637925,
                             "username": "Mantotheale",
                             "year": "Primo",
                             "role": ""
                         },
                         {
-                            "id": "",
+                            "id": 178100484,
                             "username": "Weinsz",
                             "year": "Primo",
                             "role": ""
                         },
                         {
-                            "id": "",
-                            "username": "GbitGbit",
+                            "id": 15042194,
+                            "username": "ThomasGiudici",
                             "year": "Terzo",
                             "role": ""
                         },
                         {
-                            "id": "",
+                            "id": 157778910,
                             "username": "davidemarchioriz",
                             "year": "Terzo",
                             "role": ""
                         },
                         {
-                            "id": "",
+                            "id": 529585690,
                             "username": "Aconithorn",
                             "year": "Terzo",
                             "role": ""
@@ -950,7 +950,7 @@
                     "virtual_classroom": "",
                     "admins": [
                         {
-                            "id": "",
+                            "id": 126856154,
                             "username": "giolake",
                             "year": "",
                             "role": ""
@@ -1010,7 +1010,7 @@
                     "virtual_classroom": "",
                     "admins": [
                         {
-                            "id": "",
+                            "id": 3104514,
                             "username": "robertopinotti",
                             "year": "",
                             "role": ""
@@ -1348,7 +1348,7 @@
                     "virtual_classroom": "",
                     "admins": [
                         {
-                            "id": "",
+                            "id": 620976546,
                             "username": "burzum00",
                             "year": "",
                             "role": ""
@@ -1616,7 +1616,7 @@
                     "virtual_classroom": "",
                     "admins": [
                         {
-                            "id": "",
+                            "id": 15751170,
                             "username": "salvadorbs",
                             "year": "",
                             "role": ""
@@ -1884,7 +1884,7 @@
                     "virtual_classroom": "",
                     "admins": [
                         {
-                            "id": "",
+                            "id": 3104514,
                             "username": "robertopinotti",
                             "year": "",
                             "role": ""
@@ -2997,7 +2997,7 @@
                     "virtual_classroom": "",
                     "admins": [
                         {
-                            "id": "",
+                            "id": 278035059,
                             "username": "Spacer_ASC",
                             "year": "",
                             "role": ""
