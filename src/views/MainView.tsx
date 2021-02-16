@@ -4,13 +4,13 @@ import HeaderTitle from "../components/HeaderTitle";
 import HeaderMenu from "../components/HeaderMenu";
 import Footer from "../components/Footer";
 import ContentView from "./ContentView";
-import { ThemeProvider } from '@fluentui/react-theme-provider';
+import { ThemeProvider } from '@fluentui/react-theme-provider'; 
 import { darkTheme, lightTheme } from '../themes';
-import { loadTheme } from '@fluentui/react';
+// import { loadTheme } from '@fluentui/react';
 
-function MainView() {
+const MainView = () => {
   const [theme, setTheme] = React.useState(false);
-  loadTheme(theme ? darkTheme : lightTheme);
+  // loadTheme(theme ? darkTheme : lightTheme);
   
   return (
     <Router basename={process.env.PUBLIC_URL}>

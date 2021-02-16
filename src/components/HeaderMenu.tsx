@@ -45,17 +45,18 @@ const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
     [ItemsKeys.representatives, "Rappresentanti"]
 ]);
 
+
+const languageOptions: IDropdownOption[] = [
+    { key: 'ITA', text: 'Italiano', data: { icon: 'Memo' } },
+    { key: 'ENG', text: 'Inglese', data: { icon: 'Print' } },
+];
+
 interface Props { 
     setTheme: (arg: boolean) => void, 
     theme?: boolean 
 };
 
 initializeIcons();
-
-const languageOptions: IDropdownOption[] = [
-    { key: 'ITA', text: 'Italiano', data: { icon: 'Memo' } },
-    { key: 'ENG', text: 'Inglese', data: { icon: 'Print' } },
-];
 
 const HeaderMenu = (props: Props) => {
     const history = useHistory();
