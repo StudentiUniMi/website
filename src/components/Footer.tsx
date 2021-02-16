@@ -5,13 +5,12 @@ import { FontSizes, FontWeights } from '@fluentui/theme';
 import { ITextStyles } from '@fluentui/react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { getTheme } from '@fluentui/react';
-
-const theme = getTheme();
+import { useTheme } from '@fluentui/react-theme-provider';
 
 const bold: ITextStyles = { root: { fontWeight: FontWeights.semibold } };
 
 const Footer = () => {
+    var theme = useTheme();
     return (
         <footer style={{ backgroundColor: theme.palette.neutralQuaternaryAlt, boxShadow: '0px 0px 0.5px 0.5px #7a7a7a' }}>
             <Container style={{ width:'100%' }}>

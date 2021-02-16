@@ -4,12 +4,13 @@ import Row from 'react-bootstrap/Row';
 import Degree from '../models/Degree';
 import { DocumentCard, IDocumentCardTitleStyles, DocumentCardTitle, DocumentCardLogo, IDocumentCardLogoProps, IDocumentCardStyles } from 'office-ui-fabric-react/lib/DocumentCard';
 import { redirectToLink } from '../services/Utils';
-import { getTheme } from '@fluentui/react';
-const theme = getTheme();
+import { useTheme } from '@fluentui/react-theme-provider';
 
 interface Props { cdl?: Degree };
 
 const DegreeInformations= (props: Props) => {
+    const theme = useTheme();
+    
     const logos: IDocumentCardLogoProps[] = [
         {logoIcon: "Globe" }, // {props.cdl?.main_website}
         {logoIcon: "PageArrowRight" }, // {props.cdl?.manifest}

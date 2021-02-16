@@ -3,16 +3,14 @@ import { initializeIcons } from '@uifabric/icons';
 import { FontWeights, ITextStyles, Persona } from '@fluentui/react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import ExtraGroup from '../models/ExtraGroup'
-import { getTheme } from '@fluentui/react';
+import { useTheme } from '@fluentui/react-theme-provider';
 
-const theme = getTheme();
 initializeIcons();
 
-interface Props {
-    data: ExtraGroup
-}
+interface Props { data: ExtraGroup };
 
 const ExtraGroupView = (props: Props) => {
+    var theme = useTheme();
     var data = props.data;
     const helpfulTextStyles: ITextStyles = {
         root: {
@@ -21,10 +19,8 @@ const ExtraGroupView = (props: Props) => {
     };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
 
-    function doNothing() {}; // Per mostrare l'hover della card
-
     return (
-        <Card tokens={cardTokens} onClick={() => doNothing}>
+        <Card tokens={cardTokens}>
             <Card.Item>
                 { data.image === "" ? <Persona text={data.name} /> : <Persona text={data.name} imageUrl={ process.env.PUBLIC_URL + '/extra_groups_images/' + data.image } /> }
             </Card.Item>

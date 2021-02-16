@@ -6,22 +6,26 @@ import Footer from "../components/Footer";
 import ContentView from "./ContentView";
 import { ThemeProvider } from '@fluentui/react-theme-provider'; 
 import { darkTheme, lightTheme } from '../themes';
-// import { loadTheme } from '@fluentui/react';
+import { CookiesProvider, useCookies } from 'react-cookie';
 
 const MainView = () => {
-  const [theme, setTheme] = React.useState(false);
-  // loadTheme(theme ? darkTheme : lightTheme);
-  
+
+  let [cookies, ] = useCookies()
+  let [theme, setTheme] = React.useState(cookies["theme"] === "dark");
+
+  const changeTheme = () => setTheme(!theme)
   return (
     <Router basename={process.env.PUBLIC_URL}>
-      <ThemeProvider applyTo="body" theme={theme ? darkTheme : lightTheme}>
-        <header>
-          <HeaderTitle />
-          <HeaderMenu theme={theme} setTheme={setTheme} />
-        </header>
-        <ContentView/>
-        <Footer />
-      </ThemeProvider>
+      <CookiesProvider>
+        <ThemeProvider applyTo="body" theme={theme ? darkTheme : lightTheme}>
+          <header>
+            <HeaderTitle />
+            <HeaderMenu changeTheme={changeTheme}/>
+          </header>
+          <ContentView/>
+          <Footer />
+        </ThemeProvider>
+      </CookiesProvider>
     </Router>
   );
 }

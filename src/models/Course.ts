@@ -8,7 +8,6 @@ export default interface Course
     id?:string,
     cdl?: string,
     name?:string,
-    image?:string,
     anno?:number,
     semestre?:number,
     cfu?:number,
@@ -16,4 +15,5 @@ export default interface Course
     websites:any[],
     drive?:string,
     wiki?:string,
+    chat_id?:number
 }

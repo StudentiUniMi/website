@@ -4,25 +4,17 @@ import { FontSizes } from '@fluentui/theme';
 import { Dropdown, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
 import { Icon, IIconStyles } from 'office-ui-fabric-react/lib/Icon';
 import { useHistory } from "react-router-dom";
-import { getTheme } from '@fluentui/react';
 import { IconButton, IIconProps, initializeIcons } from 'office-ui-fabric-react';
 import { TooltipHost, ITooltipHostStyles } from 'office-ui-fabric-react/lib/Tooltip';
 import { useId } from '@uifabric/react-hooks';
 import { Panel, PanelType } from 'office-ui-fabric-react/lib/Panel';
 import { useBoolean } from '@uifabric/react-hooks';
 import { Toggle } from '@fluentui/react';
-
-const theme = getTheme();
+import { useCookies } from "react-cookie";
+import { useTheme } from '@fluentui/react-theme-provider';
 
 const onRenderCaretDown = (): JSX.Element => {
     return <Icon iconName="List" />;
-};
-
-const dropdownStyles: Partial<IDropdownStyles> = {
-    dropdown: {  border: 'none', borderStyle: 'none', height: '44px', backgroundColor: theme.palette.white, alignItems: 'center', fontSize: FontSizes.size16 },
-    dropdownItems: { textAlign: 'center', alignItems: 'center' },
-    caretDown: { fontSize: '15px'},
-    caretDownWrapper: { right: '25px', top: '10px' }
 };
 
 export enum ItemsKeys {
@@ -52,17 +44,24 @@ const languageOptions: IDropdownOption[] = [
 ];
 
 interface Props { 
-    setTheme: (arg: boolean) => void, 
-    theme?: boolean 
+    changeTheme: () => void
 };
 
 initializeIcons();
 
 const HeaderMenu = (props: Props) => {
+    var theme = useTheme();
     const history = useHistory();
+    const [cookies, setCookie] = useCookies(["theme"]);
 
     const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
-    
+    const dropdownStyles: Partial<IDropdownStyles> = {
+        dropdown: {  border: 'none', borderStyle: 'none', height: '44px', backgroundColor: theme.palette.white, alignItems: 'center', fontSize: FontSizes.size16 },
+        dropdownItems: { textAlign: 'center', alignItems: 'center' },
+        caretDown: { fontSize: '15px'},
+        caretDownWrapper: { right: '25px', top: '10px' }
+    };
+
     const getPath = React.useCallback((): Array<string|boolean> => {
         var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
         let first = states.length > 0 ? states[0] : '';
@@ -74,29 +73,29 @@ const HeaderMenu = (props: Props) => {
 
     React.useEffect(() => {
         if(!didMount.current) {
-            didMount.current = true
-            let [path, isCorrect] = getPath()
+            didMount.current = true;
+            let [path, isCorrect] = getPath();
             if(!isCorrect) {
-                history.push('/home/')
-                setSelectedKey(ItemsKeys.home)
+                history.push('/home/');
+                setSelectedKey(ItemsKeys.home);
             } else {
-                setSelectedKey(path as ItemsKeys)
+                setSelectedKey(path as ItemsKeys);
             }
         }
-    }, [getPath, history])
+    }, [getPath, history]);
     
-    let [path, isCorrect] = getPath()
+    let [path, isCorrect] = getPath();
 
     const [selectedKey, setSelectedKey] = React.useState(isCorrect ? path as ItemsKeys : ItemsKeys.home);
 
     const handlePivotLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
         setSelectedKey(item!.props.itemKey! as ItemsKeys);
-        history.push(`/${item!.props.itemKey!}/`)
+        history.push(`/${item!.props.itemKey!}/`);
     };
 
     const onDropdownValueChange = (event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
         setSelectedKey(item!.key! as ItemsKeys);
-        history.push(`/${item!.key! as string}/`)
+        history.push(`/${item!.key! as string}/`);
     };
 
     const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }));
@@ -109,6 +108,19 @@ const HeaderMenu = (props: Props) => {
     const settingsIconStyleDropdown: IIconStyles = { root: { position: 'absolute', left: '3px', top: '10px', zIndex: 10 } };
     const settingsIconId = useId('icon');
     const calloutProps = { gapSpace: 0, target: `#${settingsIconId}`, };
+ 
+    const themeToggled = () =>
+    {
+        if(cookies["theme"] === undefined)
+        {
+            setCookie("theme", "light");
+        }
+        else 
+        {
+            setCookie("theme", cookies["theme"] === "dark" ? "light": "dark");
+            props.changeTheme();
+        }
+    }
 
     return (
         <div className="header-menu" style={{  boxShadow: '0px 0.5px 0.5px #b3b5b4' }}>
@@ -137,10 +149,10 @@ const HeaderMenu = (props: Props) => {
                 >
                     <Toggle
                         label="Cambia il tema"
-                        onText="Dark Mode attiva"
-                        offText="Dark Mode disattivata"
-                        checked={props.theme}
-                        onChange={() => props.setTheme(!props.theme)}
+                        onText="Dark Mode"
+                        offText="Light Mode"
+                        checked={cookies["theme"] === "dark"}
+                        onChange={themeToggled}
                     />
                     <Dropdown
                         label="Seleziona la lingua"

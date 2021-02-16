@@ -3,15 +3,15 @@ import { Card, ICardTokens } from "@uifabric/react-cards";
 import { initializeIcons } from '@uifabric/icons';
 import { FontWeights, ITextStyles, Persona } from '@fluentui/react';
 import Course from '../models/Course';
-import { getTheme } from '@fluentui/react';
+import { useTheme } from '@fluentui/react-theme-provider';
 
-const theme = getTheme();
 initializeIcons();
 interface Props { data: Course };
 
 // const gdriveStyle = { width: '15px', height: '15px', marginBottom: '3px' }
 
 const CourseItem = (props: Props) => {
+    const theme = useTheme();
     var data = props.data;
 
     const cfuStyle: ITextStyles = {
@@ -32,18 +32,13 @@ const CourseItem = (props: Props) => {
     };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
 
-    function doNothing() {}; // Per mostrare l'hover della card
 
     let personaIconUrl: string | undefined;
-    if (data.anno === -1) {  // Set immagine per i gruppi principali dei cdl
-        personaIconUrl = (process.env.PUBLIC_URL + '/degree_groups_images/' + data.image);
-    } else { // Set pic per gruppi dei corsi didattici
-        personaIconUrl = (process.env.PUBLIC_URL + '/course_groups_images/' +  data.cdl + '/' + data.image);
-    }
-
-        
+    if (data.anno === -1) personaIconUrl = process.env.PUBLIC_URL + "/degree_groups_images/unimi.jpg"; 
+    else { personaIconUrl = "https://unimi-profile-pictures.marcoaceti.workers.dev/?chat_id=" + data.chat_id; }
+    
     return (
-        <Card tokens={cardTokens} onClick={() => doNothing}>
+        <Card tokens={cardTokens}>
             <Card.Item>
                 <Persona imageUrl={personaIconUrl} /*onRenderPrimaryText={() => <div style={{wordWrap:'break-word'}}>{data.name}</div> }*/ text={data.name} />
             </Card.Item>

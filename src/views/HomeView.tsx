@@ -5,8 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { DocumentCard, IDocumentCardTitleStyles, DocumentCardTitle, DocumentCardLogo, IDocumentCardLogoProps, IDocumentCardStyles } from 'office-ui-fabric-react/lib/DocumentCard';
 import { redirectToLink } from '../services/Utils';
-import { getTheme } from '@fluentui/react';
-const theme = getTheme();
+import { useTheme } from '@fluentui/react-theme-provider';
 
 interface HomeLinkType {
     "name": string,
@@ -22,21 +21,25 @@ const HomeLinks: HomeLinkType[] = [
     { name: 'HedgeDoc', link: 'https://hedgedoc.studentiunimi.it/', icon: { logoIcon: 'ReadingMode' } }
 ];
 
-const titleStyle: IDocumentCardTitleStyles = {
-    root: { height: 'auto', textAlign: 'center', fontSize: FontSizes.size18 }
-};
-
-const cardStyles: IDocumentCardStyles = {
-    root: { backgroundColor: theme.palette.neutralLighter, display: 'inline-block', height: '130px', maxWidth: '130px', minWidth: '130px' },
-};
 
 const HomeView = () => {
+    var theme = useTheme();
+
+    const titleStyle: IDocumentCardTitleStyles = {
+        root: { height: 'auto', textAlign: 'center', fontSize: FontSizes.size18 }
+    };
+    
+    const cardStyles: IDocumentCardStyles = {
+        root: { backgroundColor: theme.palette.neutralLighter, display: 'inline-block', height: '130px', maxWidth: '130px', minWidth: '130px' },
+    };
+
     return (
         <Container className="home">
 
             <div className="text-center mb-4">
                 <Text style={{ fontSize: FontSizes.size16 }}>
-                    Network nato con lo scopo di creare un punto centrale di collegamento tra tutti i corsi di laurea dell'università degli studi di Milano.
+                    Benvenuto nel sito web del Network Studenti UniMi! Questo progetto è nato con lo scopo di creare un punto centrale 
+                    di collegamento tra tutti i corsi di laurea dell'università degli studi di Milano.
                     Sono disponibili siti web, gruppi telegram, informazioni varie e wiki dei corsi didattici.
                 </Text>
             </div>
