@@ -13,7 +13,7 @@ const Rules = () => {
     const [choice, setChoice] = React.useState<string>('');
     const theme = useTheme();
     const bold: ITextStyles = { root: { fontWeight: FontWeights.semibold } };
-    const rules: ITextStyles = { root: { fontWeight: FontWeights.semibold, fontSize: FontSizes.size12, fontFamily: 'Consolas', color: theme.palette.neutralPrimaryAlt } };
+    const rules: ITextStyles = { root: { fontWeight: FontWeights.semibold, fontSize: FontSizes.size12, fontFamily: 'Consolas', color: theme.palette.black } };
     const rulesText: ITextStyles = { root: { fontSize: FontSizes.size12, fontFamily: 'Consolas' } };
     const colButtonStyle = { maxWidth: '200px', minWidth: '130px' };
 
