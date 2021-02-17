@@ -111,14 +111,10 @@ const HeaderMenu = (props: Props) => {
     const settingsIconId = useId('icon');
     const calloutProps = { gapSpace: 0, target: `#${settingsIconId}`, };
  
-    const themeToggled = () =>
-    {
-        if(cookies["theme"] === undefined)
-        {
+    const themeToggled = () => {
+        if(cookies["theme"] === undefined) {
             setCookie("theme", "light");
-        }
-        else 
-        {
+        } else {
             setCookie("theme", cookies["theme"] === "dark" ? "light": "dark");
             props.changeTheme();
         }
