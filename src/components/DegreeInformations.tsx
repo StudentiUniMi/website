@@ -37,7 +37,7 @@ const DegreeInformations= (props: Props) => {
             <Col xl={3} lg={3} sm={6} xs={12} className="mb-2">
                 <DocumentCard styles={cardStyles} onClick={() => redirectToLink(props.cdl?.manifest ?? "")}>
                     <DocumentCardLogo {...logos[1]} />
-                    <DocumentCardTitle title="Manifesto degli studi" />
+                    <DocumentCardTitle title="Manifesto degli studi" styles={titleStyle} />
                 </DocumentCard>
             </Col>
             {
@@ -45,7 +45,7 @@ const DegreeInformations= (props: Props) => {
             <Col xl={3} lg={3} sm={6} xs={12} className="mb-2">
                 <DocumentCard styles={cardStyles} onClick={() => redirectToLink(props.cdl?.server_discord ?? "")}>
                     <DocumentCardLogo {...logos[2]} />
-                    <DocumentCardTitle title="Server discord" />
+                    <DocumentCardTitle title="Server discord" styles={titleStyle} />
                 </DocumentCard>
             </Col>
             }
@@ -54,7 +54,7 @@ const DegreeInformations= (props: Props) => {
             <Col xl={3} lg={3} sm={6} xs={12} className="mb-2">
                 <DocumentCard styles={cardStyles} onClick={() => redirectToLink(props.cdl?.virtual_classroom ?? "")}>
                     <DocumentCardLogo {...logos[3]} />
-                    <DocumentCardTitle title="Virtual classroom" />
+                    <DocumentCardTitle title="Virtual classroom" styles={titleStyle} />
                 </DocumentCard>
             </Col>
             }
