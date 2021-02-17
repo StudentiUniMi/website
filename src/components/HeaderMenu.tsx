@@ -125,7 +125,7 @@ const HeaderMenu = (props: Props) => {
     }
 
     return (
-        <div className="header-menu" style={{  boxShadow: '0px 0.5px 0.5px #b3b5b4' }}>
+        <div className="header-menu" style={{  borderBottom: '1px solid', borderColor: theme.palette.neutralLight }}>
 
             <div className="pivot">
                 <Pivot
