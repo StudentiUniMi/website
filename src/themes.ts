@@ -50,7 +50,7 @@ export const darkTheme = {
         neutralSecondary: '#898886',
         neutralPrimaryAlt: '#6e6d6c',
         neutralPrimary: '#f5f2f0',
-        neutralDark: '#383837',
+        neutralDark: '#dbdbdb',
         black: '#1d1d1d',
         white: '#292828',
     }

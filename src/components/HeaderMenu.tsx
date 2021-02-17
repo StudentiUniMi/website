@@ -1,5 +1,5 @@
 import React from "react";
-import { Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
+import { IPivotStyles, Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
 import { FontSizes } from '@fluentui/theme';
 import { Dropdown, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
 import { Icon, IIconStyles } from 'office-ui-fabric-react/lib/Icon';
@@ -55,10 +55,13 @@ const HeaderMenu = (props: Props) => {
 
     const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
     const dropdownStyles: Partial<IDropdownStyles> = {
-        dropdown: {  border: 'none', borderStyle: 'none', height: '44px', backgroundColor: theme.palette.white, alignItems: 'center', fontSize: FontSizes.size16 },
+        dropdown: { color: theme.palette.neutralDark, border: 'none', borderStyle: 'none', height: '44px', backgroundColor: theme.palette.white, alignItems: 'center', fontSize: FontSizes.size16 },
         dropdownItems: { textAlign: 'center', alignItems: 'center' },
         caretDown: { fontSize: '15px'},
         caretDownWrapper: { right: '25px', top: '10px' }
+    };
+    const pivotStyles: Partial<IPivotStyles> = {
+        root: { fontSize: FontSizes.size24 }
     };
 
     const getPath = React.useCallback((): Array<string|boolean> => {
@@ -129,7 +132,7 @@ const HeaderMenu = (props: Props) => {
                     selectedKey={selectedKey}
                     onLinkClick={handlePivotLinkClick}
                     headersOnly={true}
-                    style={{ fontSize: FontSizes.size24 }}
+                    styles={pivotStyles}
                 >
                     {Object.values(ItemsKeys).map((x,i) =><PivotItem key={i} headerText={texts.get(x)} style={{ fontSize: FontSizes.size24 }} itemKey={x}/>)}
                 </Pivot>
