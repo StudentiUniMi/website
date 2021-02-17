@@ -26,7 +26,7 @@ const HomeView = () => {
     var theme = useTheme();
 
     const titleStyle: IDocumentCardTitleStyles = {
-        root: { height: 'auto', textAlign: 'center', fontSize: FontSizes.size18 }
+        root: { color: theme.palette.neutralPrimary, height: 'auto', textAlign: 'center', fontSize: FontSizes.size18 }
     };
     
     const cardStyles: IDocumentCardStyles = {

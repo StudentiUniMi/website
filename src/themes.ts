@@ -24,14 +24,14 @@ export const lightTheme = {
         neutralPrimaryAlt: '#3b3a39',
         neutralPrimary: '#323130',
         neutralDark: '#201f1e',
-        black: '#000000',
+        black: '#1d1d1d',
         white: '#faf9f8'
     }
 };
 
 export const darkTheme = {
     palette: {
-        themePrimary: '#0078d4',
+        themePrimary: '#0481e0',
         themeLighterAlt: '#eff6fc',
         themeLighter: '#deecf9',
         themeLight: '#c7e0f4',
@@ -49,9 +49,9 @@ export const darkTheme = {
         neutralTertiary: '#a4a2a1',
         neutralSecondary: '#898886',
         neutralPrimaryAlt: '#6e6d6c',
-        neutralPrimary: '#f5f2f0',
-        neutralDark: '#383837',
-        black: '#1d1d1d',
-        white: '#292828',
+        neutralPrimary: '#f5f2f0', // used for text
+        neutralDark: '#dbdbdb',
+        black: '#1d1d1d', // when you need black in both themes
+        white: '#292828', // main background
     }
 };

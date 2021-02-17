@@ -1,5 +1,5 @@
 import React from "react";
-import { Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
+import { IPivotStyles, Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
 import { FontSizes } from '@fluentui/theme';
 import { Dropdown, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
 import { Icon, IIconStyles } from 'office-ui-fabric-react/lib/Icon';
@@ -44,7 +44,6 @@ const languageOptions: IDropdownOption[] = [
 ];
 
 interface Props { changeTheme: () => void };
-
 initializeIcons();
 
 const HeaderMenu = (props: Props) => {
@@ -55,10 +54,14 @@ const HeaderMenu = (props: Props) => {
 
     const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
     const dropdownStyles: Partial<IDropdownStyles> = {
-        dropdown: {  border: 'none', borderStyle: 'none', height: '44px', backgroundColor: theme.palette.white, alignItems: 'center', fontSize: FontSizes.size16 },
-        dropdownItems: { textAlign: 'center', alignItems: 'center' },
+        dropdown: { color: theme.palette.neutralPrimary, border: 'none', borderStyle: 'none', height: '44px',  alignItems: 'center', fontSize: FontSizes.size16 },
+        dropdownItems: { color: theme.palette.neutralPrimary, backgroundColor: theme.palette.white, textAlign: 'center', alignItems: 'center' },
         caretDown: { fontSize: '15px'},
         caretDownWrapper: { right: '25px', top: '10px' }
+    };
+    const pivotStyles: Partial<IPivotStyles> = {
+        root: { color: theme.palette.neutralPrimary, fontSize: FontSizes.size24 },
+        
     };
 
     const getPath = React.useCallback((): Array<string|boolean> => {
@@ -122,14 +125,15 @@ const HeaderMenu = (props: Props) => {
     }
 
     return (
-        <div className="header-menu" style={{  boxShadow: '0px 0.5px 0.5px #b3b5b4' }}>
+        <div className="header-menu" style={{  borderBottom: '1px solid', borderColor: theme.palette.neutralLight }}>
 
             <div className="pivot">
                 <Pivot
                     selectedKey={selectedKey}
                     onLinkClick={handlePivotLinkClick}
                     headersOnly={true}
-                    style={{ fontSize: FontSizes.size24 }}
+                    styles={pivotStyles}
+                    theme={theme}
                 >
                     {Object.values(ItemsKeys).map((x,i) =><PivotItem key={i} headerText={texts.get(x)} style={{ fontSize: FontSizes.size24 }} itemKey={x}/>)}
                 </Pivot>
@@ -145,6 +149,7 @@ const HeaderMenu = (props: Props) => {
                     closeButtonAriaLabel="Close"
                     headerText="Impostazioni"
                     type={PanelType.smallFixedFar}
+                    theme={theme}
                 >
                     <Toggle
                         label="Cambia il tema"
@@ -152,12 +157,14 @@ const HeaderMenu = (props: Props) => {
                         offText="Light Mode"
                         checked={cookies["theme"] === "dark"}
                         onChange={themeToggled}
+                        theme={theme}
                     />
                     <Dropdown
                         label="Seleziona la lingua"
                         defaultSelectedKey="ITA"
                         options={languageOptions}
                         disabled={true}
+                        theme={theme}
                     />
                 </Panel>
             </div>
@@ -174,6 +181,7 @@ const HeaderMenu = (props: Props) => {
                     options={dropdownOptions}
                     styles={dropdownStyles}
                     onRenderCaretDown={onRenderCaretDown}
+                    theme={theme}
                 />
 
 

@@ -1,8 +1,6 @@
-name: React Builder
+name: Build project
 
-on:
-  push:
-    branches: [ master ]
+on: [push, pull_request]
 
 defaults:
   run:
@@ -10,23 +8,16 @@ defaults:
     working-directory: ./
 
 jobs:
-  compile:
-    name: Build && Deploy
+  build:
+    name: Build React project
     runs-on: ubuntu-20.04
     steps:
-      - name: Checkout branch
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Authorizing Github action
-        with:
-          token: "${{ secrets.GITHUB_TOKEN }}"
-        uses: oleksiyrudenko/gha-git-credentials@v2-latest
+      - name: Install dependencies
+        run: npm install
 
-      - run: npm install
-      - run: git rev-parse HEAD > src/data/revision.txt
-      - run: cat src/data/revision.txt
-      - run: npm run build
-      - run: echo "studentiunimi.it" > build/CNAME
-      - run: git --work-tree build add --all
-      - run: git --work-tree build commit -m 'deploy files'
-      - run: git push origin HEAD:gh-pages --force
+      - name: Build
+        run: npm run build
+

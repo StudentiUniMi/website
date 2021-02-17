@@ -6,6 +6,7 @@ import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { Dropdown, IDropdownOption, IDropdownProps } from 'office-ui-fabric-react/lib/Dropdown';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
+import { useTheme } from '@fluentui/react-theme-provider';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import CourseList from "../components/CourseList";
@@ -51,7 +52,12 @@ const onRenderPlaceholder = (props?: IDropdownProps): JSX.Element => {
 };
 
 const CoursesView = () => {
+    var theme = useTheme();
     const history = useHistory();
+    const dropdownStyles = { 
+        dropdown: { color: theme.palette.neutralPrimary },
+        dropdownItems: { color: theme.palette.neutralPrimary },
+    };
 
     const departmentSelectionChanged = (
         ev?: React.FormEvent<HTMLElement | HTMLInputElement>,
@@ -138,6 +144,8 @@ const CoursesView = () => {
                         options={departmentOptions}
                         onChange={departmentSelectionChanged}
                         selectedKey={selectedDepartment}
+                        styles={dropdownStyles}
+                        theme={theme}
                     />
                 </Col>
 
@@ -150,6 +158,8 @@ const CoursesView = () => {
                         selectedKey={selectedCdl}
                         onChange={cdlSelectionChanged}
                         options={cdlsOptions}
+                        styles={dropdownStyles}
+                        theme={theme}
                         disabled
                     />
                     :                     
@@ -159,6 +169,8 @@ const CoursesView = () => {
                         selectedKey={selectedCdl}
                         onChange={cdlSelectionChanged}
                         options={cdlsOptions}
+                        styles={dropdownStyles}
+                        theme={theme}
                     />}
                 </Col>
             </Row>
