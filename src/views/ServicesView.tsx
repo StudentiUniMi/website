@@ -8,7 +8,7 @@ import { FontWeights, ITextStyles } from 'office-ui-fabric-react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { getServices } from '../services/Requests';
-import {redirectToLink} from '../services/Utils';
+import { redirectToLink } from '../services/Utils';
 
 
 const Services = () => {

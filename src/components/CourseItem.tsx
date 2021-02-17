@@ -32,9 +32,8 @@ const CourseItem = (props: Props) => {
     };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
 
-
     let personaIconUrl: string | undefined;
-    if (data.anno === -1) personaIconUrl = process.env.PUBLIC_URL + "/degree_groups_images/unimi.jpg"; 
+    if (data.anno === -1) personaIconUrl = process.env.PUBLIC_URL + `/degree_groups_images/${data.cdl}150.jpg`; 
     else { personaIconUrl = "https://studentiunimi-groups-propics.marcoaceti.workers.dev/?chat_id=" + data.chat_id; }
     
     return (

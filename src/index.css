@@ -32,7 +32,17 @@ main {
   min-height: 100%;
 }
 
-
+/* Fix for bootstrap outline when click */
+a:active,
+a:focus,
+button:active,
+button:focus,
+.ms-Button:active,
+.ms-Button:focus {
+  outline: 0;
+  outline: none;
+  box-shadow: none !important;
+}
 
 /* Responsive footer */
 @media only screen and (max-width: 992px) {
@@ -95,8 +105,6 @@ main {
     margin-left: 3%;
   }
 }
-/* End responsive footer */
-
 
 
 /* Responsive menu and title */
@@ -147,7 +155,6 @@ main {
     margin-left:-5%;
   }
 }
-/* End responsive menu and title */
 
 
 
@@ -232,8 +239,6 @@ main {
   }
 }
 
-/* End Section adjustments */
-
 
 /* Adjustment for mobile-view ms-card in coursesList and additionalGroupsView */
 @media only screen and (min-width: 501px) {
@@ -256,7 +261,6 @@ main {
     max-width: 100%;
   }
 }
-/* End adjustment for mobile-view ms-card in coursesList and additionalGroupsView */
 
 
 
@@ -278,10 +282,6 @@ main {
   padding:0;
 }
 
-.header-title .row {
-  margin-right: 0px;
-}
-
 .ms-List {
   padding: 3px;
 }
@@ -298,17 +298,6 @@ main {
 .rules .card:active, .rules .card:focus {
   outline: 0;
   border: none;
-  outline: none;
-  box-shadow: none !important;
-}
-
-a:active,
-a:focus,
-button:active,
-button:focus,
-.ms-Button:active,
-.ms-Button:focus {
-  outline: 0;
   outline: none;
   box-shadow: none !important;
 }
