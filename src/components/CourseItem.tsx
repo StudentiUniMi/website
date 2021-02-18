@@ -8,41 +8,27 @@ import { useTheme } from '@fluentui/react-theme-provider';
 initializeIcons();
 interface Props { data: Course };
 
-// const gdriveStyle = { width: '15px', height: '15px', marginBottom: '3px' }
-
 const CourseItem = (props: Props) => {
     const theme = useTheme();
     var data = props.data;
 
-    const cfuStyle: ITextStyles = {
-        root: {
-            color: theme.palette.themePrimary,
-            fontWeight: FontWeights.semibold,
-        },
-    };
-    const descriptionTextStyles: ITextStyles = {
-        root: {
-            fontWeight: FontWeights.semibold,
-        },
-    };
-    const helpfulTextStyles: ITextStyles = {
-        root: {
-            fontWeight: FontWeights.regular,
-        },
-    };
+    // const gdriveStyle = { width: '15px', height: '15px', marginBottom: '3px' }
+    const cfuStyle: ITextStyles = { root: { fontWeight: FontWeights.semibold, color: theme.palette.themePrimary } };
+    const descriptionTextStyles: ITextStyles = { root: { fontWeight: FontWeights.semibold } };
+    const helpfulTextStyles: ITextStyles = { root: { fontWeight: FontWeights.regular } };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
 
-    // PrimaryText
+    // PrimaryText inizialization
     var primaryText : any;
-    var changed : boolean = false;
+    var overflow : boolean = false;
     if (data?.name!.length >= 33) {
         primaryText = data.name;
     } else {
-        changed = true;
+        overflow = true;
         primaryText = <div style={{wordWrap: 'break-word', whiteSpace: 'normal'}}>{data.name}</div>;
     }
 
-    // PersonaUrl
+    // PersonaUrl inizialization
     let personaIconUrl: string | undefined;
     if (data.anno === -1) personaIconUrl = process.env.PUBLIC_URL + `/degree_groups_images/${data.cdl}150.jpg`; 
     else { personaIconUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${data.chat_id}.png`; }
@@ -50,8 +36,8 @@ const CourseItem = (props: Props) => {
     return (
         <Card tokens={cardTokens}>
             <Card.Item>
-                {changed === true ?
-                    <Persona coinSize={48} imageUrl={personaIconUrl} onRenderPrimaryText={() => primaryText } text={data.name} />
+                {overflow === true ?
+                    <Persona imageUrl={personaIconUrl} onRenderPrimaryText={() => primaryText} text={data.name} />
                     :
                     <Persona imageUrl={personaIconUrl} text={data.name} />
                 }
