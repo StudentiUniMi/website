@@ -32,22 +32,35 @@ const CourseItem = (props: Props) => {
     };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
 
+    // PrimaryText
+    var primaryText : any;
+    var changed : boolean = false;
+    if (data?.name!.length >= 33) {
+        primaryText = data.name;
+    } else {
+        changed = true;
+        primaryText = <div style={{wordWrap: 'break-word', whiteSpace: 'normal'}}>{data.name}</div>;
+    }
+
+    // PersonaUrl
     let personaIconUrl: string | undefined;
     if (data.anno === -1) personaIconUrl = process.env.PUBLIC_URL + `/degree_groups_images/${data.cdl}150.jpg`; 
-    else { personaIconUrl = "https://studentiunimi-groups-propics.marcoaceti.workers.dev/?chat_id=" + data.chat_id; }
+    else { personaIconUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${data.chat_id}.png`; }
     
     return (
         <Card tokens={cardTokens}>
             <Card.Item>
-                <Persona imageUrl={personaIconUrl} /*onRenderPrimaryText={() => <div style={{wordWrap:'break-word'}}>{data.name}</div> }*/ text={data.name} />
+                {changed === true ?
+                    <Persona coinSize={48} imageUrl={personaIconUrl} onRenderPrimaryText={() => primaryText } text={data.name} />
+                    :
+                    <Persona imageUrl={personaIconUrl} text={data.name} />
+                }
             </Card.Item>
             <Card.Section>
                 {   // Gruppo anno accademico descrizione in caso c'è il link disponibile (per ora non ce ne sono)
                     ( () => {
                         if (data.anno === -1 && data.gruppo !== null) {
                             return <Text variant="small" styles={helpfulTextStyles}>Gruppo per qualsiasi tipo di discussione inerente a questo corso di laurea.</Text>
-                        } else {
-                            return "";
                         }
                     })()
                 }
@@ -58,8 +71,6 @@ const CourseItem = (props: Props) => {
                             return (
                                 <Text variant="small" styles={cfuStyle}>{data.cfu} CFU</Text>
                             )
-                        } else {
-                            return "";
                         }
                     })()
                 }
@@ -84,8 +95,6 @@ const CourseItem = (props: Props) => {
                     ( () => {
                         if (data.semestre !== null) {
                             return <span>{data.semestre}° Semestre</span>;
-                        } else {
-                            return "";
                         }
                     })()
                 }

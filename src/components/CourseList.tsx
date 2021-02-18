@@ -152,7 +152,7 @@ const CourseList= (props: Props) => {
                             items={filteredCourses}
                             getItemCountForPage={getItemCountForPage}
                             getPageHeight={getPageHeight}
-                            renderedWindowsAhead={10}
+                            renderedWindowsAhead={4}
                             onRenderCell={getCell}
                         />
                     </div>
