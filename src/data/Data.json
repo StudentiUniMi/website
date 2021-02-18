@@ -997,6 +997,19 @@
                             "chat_id": "@continuoMusicale"
                         },
                         {
+                            "id": "760ae2c2-69f9-4a3e-9b41-df9c581d0970",
+                            "cdl": "triennale_informatica_musicale",
+                            "name": "Programmazione",
+                            "anno": 1,
+                            "semestre": 1,
+                            "cfu": 12,
+                            "gruppo": "https://t.me/joinchat/I5_YNkUAAav9EAN3evrPOA",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": "",
+                            "chat_id": -1001157628331
+                        },
+                        {
                             "id": "b8fa022e-103c-4b5e-9eab-d8eee1874b12",
                             "cdl": "triennale_informatica_musicale",
                             "name": "Semiotica della musica",
@@ -1010,17 +1023,69 @@
                             "chat_id": "@semioticaMusicale"
                         },
                         {
-                            "id": "760ae2c2-69f9-4a3e-9b41-df9c581d0970",
+                            "id": "760ae2c2-69f9-4a3e-9b41-df9c581d09",
                             "cdl": "triennale_informatica_musicale",
-                            "name": "Programmazione",
+                            "name": "Acustica",
                             "anno": 1,
-                            "semestre": 1,
-                            "cfu": 12,
-                            "gruppo": "https://t.me/joinchat/I5_YNkUAAav9EAN3evrPOA",
+                            "semestre": 2,
+                            "cfu": 9,
+                            "gruppo": "https://t.me/joinchat/Ick3jyXrR4cMnN8p",
                             "websites": [],
                             "drive": "",
                             "wiki": "",
-                            "chat_id": -1001157628331
+                            "chat_id": null
+                        },
+                        {
+                            "id": "760ae2c2-69f9-4a3e-9b41-df9c581d",
+                            "cdl": "triennale_informatica_musicale",
+                            "name": "Architettura degli elaboratori",
+                            "anno": 1,
+                            "semestre": 2,
+                            "cfu": 6,
+                            "gruppo": "https://t.me/joinchat/I1aQqpewEyy9FXeH",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": "",
+                            "chat_id": null
+                        },
+                        {
+                            "id": "760ae2c2-69f9-4a3e-9b41-df9c581",
+                            "cdl": "triennale_informatica_musicale",
+                            "name": "Elementi di economia dei beni musicali",
+                            "anno": 1,
+                            "semestre": 2,
+                            "cfu": 6,
+                            "gruppo": "https://t.me/joinchat/GJHy38y8fMRz20Ai",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": "",
+                            "chat_id": null
+                        },
+                        {
+                            "id": "760ae2c2-69f9-4a3e-9b41-df9c5",
+                            "cdl": "triennale_informatica_musicale",
+                            "name": "Modelli della percezione musicale",
+                            "anno": 1,
+                            "semestre": 2,
+                            "cfu": 6,
+                            "gruppo": "https://t.me/joinchat/RVC9qxhIx_PQLkh3",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": "",
+                            "chat_id": null
+                        },
+                        {
+                            "id": "760ae2c2-69f9-4a3e-9b41-df9c",
+                            "cdl": "triennale_informatica_musicale",
+                            "name": "Algoritmi e strutture dati",
+                            "anno": 2,
+                            "semestre": 1,
+                            "cfu": 6,
+                            "gruppo": "https://t.me/joinchat/TrXrjwAvSgSO3Dtj",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": "",
+                            "chat_id": null
                         }
                     ],
                     "is_master": false,
