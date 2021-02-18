@@ -15,7 +15,7 @@ const Rules = () => {
     const bold: ITextStyles = { root: { fontWeight: FontWeights.semibold } };
     const rules: ITextStyles = { root: { fontWeight: FontWeights.semibold, fontSize: FontSizes.size12, fontFamily: 'Consolas', color: theme.palette.black } };
     const rulesText: ITextStyles = { root: { fontSize: FontSizes.size12, fontFamily: 'Consolas' } };
-    const colButtonStyle = { maxWidth: '200px', minWidth: '130px' };
+    const colButtonStyle = { maxWidth: '200px', minWidth: '120px' };
 
     const QuestionFaqRulesMessage = () => (
         <MessageBar messageBarType={MessageBarType.warning}>
@@ -79,6 +79,31 @@ const Rules = () => {
         </MessageBar>
     );
 
+    const MaterialsRulesMessage = () => (
+        <MessageBar messageBarType={MessageBarType.warning}>
+            <div className="mb-1 mt-2"> 
+                <Text styles={rules}>1) Invio di materiali coperti da copyright</Text>
+            </div>
+            <div className="mb-3 ml-3 mr-3">
+                <Text styles={rulesText}>
+                    I messaggi in questione e i relativi materiali vengono eliminati dal gruppo su cui vengono mandati. 
+                    L’utente che ha commesso tale atto viene warnato, e se recidivo viene eventualmente bannato da tutti i gruppi del network, 
+                    a discrezione degli amministratori.
+                </Text>
+            </div>
+
+            <div className="mb-1"> 
+                <Text styles={rules}>2) Responsabilità</Text>
+            </div>
+            <div className="mb-3 ml-3 mr-3">
+                <Text styles={rulesText}>
+                    La responsabilità legata all’invio di materiali coperti da copyright è esclusivamente dell’utente che ha inviato tale materiali. 
+                    Il network e i suoi amministratori, nonostante facciano di tutto per evitare che tale atto possa verificarsi, non si prendono nessuna responsabilità a riguardo.
+                </Text>
+            </div>
+        </MessageBar>
+    );
+
     const OtherRulesMessage = () => (
         <MessageBar messageBarType={MessageBarType.warning}>
             <div className="mb-1 mt-2"> 
@@ -94,7 +119,7 @@ const Rules = () => {
             </div>
             
             <div className="mb-1"> 
-            <Text styles={rules}>2) Politica</Text>
+                <Text styles={rules}>2) Politica</Text>
             </div>
             <div className="mb-3 ml-3 mr-3">
                 <Text styles={rulesText}>
@@ -147,17 +172,22 @@ const Rules = () => {
             </div>
 
             <Row className="mb-3 justify-content-center">
-                <Col xl={4} lg={4} md={4} sm={4} xs={12} className="mb-2">
+                <Col xl={3} lg={3} md={3} sm={4} xs={12} className="mb-2">
                     <CompoundButton primary secondaryText="Domande e faq" onClick={() => setChoice("question_faq_rules")} style={colButtonStyle}>
                         Sezione
                     </CompoundButton>
                 </Col>
-                <Col xl={4} lg={4} md={4} sm={4} xs={12} className="mb-2">
+                <Col xl={3} lg={3} md={3} sm={4} xs={12} className="mb-2">
                     <CompoundButton primary secondaryText="Comportamento" onClick={() => setChoice("behavior_rules")} style={colButtonStyle}>
                         Sezione
                     </CompoundButton>
                 </Col>
-                <Col xl={4} lg={4} md={4} sm={4} xs={12} className="mb-2">
+                <Col xl={3} lg={3} md={3} sm={4} xs={12} className="mb-2">
+                    <CompoundButton primary secondaryText="Materiali" onClick={() => setChoice("materials_rules")} style={colButtonStyle}>
+                        Sezione
+                    </CompoundButton>
+                </Col>
+                <Col xl={3} lg={3} md={3} sm={4} xs={12} className="mb-2">
                     <CompoundButton primary secondaryText="Altro" onClick={() => setChoice("other_rules")} style={colButtonStyle}>
                         Sezione
                     </CompoundButton>
@@ -167,6 +197,7 @@ const Rules = () => {
             <div className="mb-3">
                 {(choice === 'question_faq_rules') && <QuestionFaqRulesMessage />}
                 {(choice === 'behavior_rules') && <BehaviorRulesMessage />}
+                {(choice === 'materials_rules') && <MaterialsRulesMessage />}
                 {(choice === 'other_rules') && <OtherRulesMessage />}
             </div>
 

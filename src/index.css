@@ -32,7 +32,7 @@ main {
   min-height: 100%;
 }
 
-/* Fix for bootstrap outline when click */
+/* Fix bootstrap outline when click */
 a:active,
 a:focus,
 button:active,
@@ -265,9 +265,10 @@ button:focus,
 
 
 
-/*------------
-  Da sistemare
-------------*/
+/*--------------------------------------------------
+  Additional properties - Must move to components
+--------------------------------------------------*/
+
 .rules a {
   padding-left: 0 !important;
 }
@@ -282,17 +283,8 @@ button:focus,
   padding:0;
 }
 
-.ms-List {
+.ms-List { /* Padding for card-list in courses and additionalGroups sections */
   padding: 3px;
-}
-
-.ms-ChoiceField-field {
-  box-sizing: border-box;
-}
-
-.ms-ChoiceFieldGroup-flexContainer {
-  display: flex;
-  justify-content: center;
 }
 
 .rules .card:active, .rules .card:focus {

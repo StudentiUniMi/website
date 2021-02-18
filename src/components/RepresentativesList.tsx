@@ -14,7 +14,7 @@ const RapresentativesList = (props: Props) => {
                     {
                         ( () => { 
                             var primaryText : any; 
-                            var imageUrl = 'https://studentiunimi-users-propics.marcoaceti.workers.dev/?user_id=' + x.user_id;
+                            var imageUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${x.user_id}.png`;
                             if (x.username !== "") primaryText = (<Link href={`https://t.me/${x.username}`}>{`${x.name ?? ""} ${x.surname ?? ""}`}</Link>); 
                             else { primaryText = `${x.name ?? ""} ${x.surname ?? ""}`};
                             return <Persona imageUrl={imageUrl} onRenderPrimaryText={() => primaryText} text={`${x.name ?? ""} ${x.surname ?? ""}`} secondaryText={x.cdl} size={PersonaSize.size40} />
