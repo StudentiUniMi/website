@@ -14,8 +14,6 @@ import Degree from '../models/Degree';
 
 interface Props { cdl?: Degree };
 
-const ROWS_PER_PAGE = 3;
-const MAX_ROW_HEIGHT = 250;
 
 const semesterFilterOptions: IDropdownOption[] = [ // Opzioni per la ricerca del semestre
     { key: 0, text:'Non selezionato' },
@@ -24,23 +22,25 @@ const semesterFilterOptions: IDropdownOption[] = [ // Opzioni per la ricerca del
 ];
 
 const yearBachelorDegreeFilterOptions: IDropdownOption[] = [ // Opzioni per la ricerca dell'anno per cdl triennali
-    { key: 0, text:'Non selezionato' },
-    { key: 1, text:'Primo' },
-    { key: 2, text:'Secondo' },
-    { key: 3, text:'Terzo' },
-    { key: -2, text:'Complementare' }
+{ key: 0, text:'Non selezionato' },
+{ key: 1, text:'Primo' },
+{ key: 2, text:'Secondo' },
+{ key: 3, text:'Terzo' },
+{ key: -2, text:'Complementare' }
 ];
 
 const yearMasterDegreeFilterOptions: IDropdownOption[] = [ // Opzioni per la ricerca dell'anno per cdl magistrali
-    { key: 0, text:'Non selezionato'},
-    { key: 1, text:'Primo' },
-    { key: 2, text:'Secondo' }
+{ key: 0, text:'Non selezionato'},
+{ key: 1, text:'Primo' },
+{ key: 2, text:'Secondo' }
 ];
 
 const CourseList= (props: Props) => {
     const columnCount = React.useRef(0);
     const rowHeight = React.useRef(0);
-
+    const ROWS_PER_PAGE = 3;
+    const MAX_ROW_HEIGHT = 250;
+    
     var classNames = mergeStyleSets({
         listGrid: {
             overflow: 'hidden',
@@ -51,6 +51,28 @@ const CourseList= (props: Props) => {
         }
     });
     
+    const getItemCountForPage = React.useCallback((itemIndex?: number, surfaceRect?: IRectangle) => {
+        if (itemIndex === 0) {
+            /* rowHeight.current = Math.floor(surfaceRect!.width / columnCount.current) */ 
+            columnCount.current = Math.ceil(surfaceRect!.width / MAX_ROW_HEIGHT);
+            rowHeight.current = MAX_ROW_HEIGHT;
+        }
+        return columnCount.current * ROWS_PER_PAGE;
+    }, []);
+    
+    const getPageHeight = React.useCallback((): number => {
+        return rowHeight.current * ROWS_PER_PAGE;
+    }, []); 
+    
+    const getCell = (e?: Course, index?: number, isScrolling?: boolean) => {
+        return (
+            <div data-is-focusable className="listGridTile" style={{ height: rowHeight.current + 'px', width: 100 / columnCount.current + '%' }}>
+                <CourseItem key={index} data={e!} />
+            </div>
+        )
+    };
+    
+    // Filters inizialization
     const [nameFilter, setNameFilter] = React.useState<string>("");
     const [yearFilter, setYearFilter] = React.useState<number>(0);
     const [semesterFilter, setSemesterFilter] = React.useState<number>(0);
@@ -58,27 +80,6 @@ const CourseList= (props: Props) => {
     let cdl = props.cdl;
 
     const courses: Course[] = cdl?.courses ?? [];
-
-    const getItemCountForPage = React.useCallback((itemIndex?: number, surfaceRect?: IRectangle) => {
-        if (itemIndex === 0) {
-            columnCount.current = Math.ceil(surfaceRect!.width / MAX_ROW_HEIGHT);
-            rowHeight.current = /*Math.floor(surfaceRect!.width / columnCount.current)*/ MAX_ROW_HEIGHT;
-        }
-        return columnCount.current * ROWS_PER_PAGE;
-    }, []);
-
-    const getPageHeight = React.useCallback((): number => {
-        return rowHeight.current * ROWS_PER_PAGE;
-    }, []); 
-
-    const getCell = (e?: Course, index?: number, isScrolling?: boolean) => {
-        return (
-            <div data-is-focusable className="listGridTile" style={{ height: MAX_ROW_HEIGHT + 'px', width: 100 / columnCount.current + '%' }}>
-                <CourseItem key={index} data={e!} />
-            </div>
-        )
-    };
-
     const onNameFilterChanged = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, text?: string): void => {
         setNameFilter(text ?? "");
     };
@@ -92,8 +93,7 @@ const CourseList= (props: Props) => {
     };
 
     
-    // Gestione dei filtri
-
+    // Filters gestion
     let yearFilterOptions = cdl?.is_master ? yearMasterDegreeFilterOptions : yearBachelorDegreeFilterOptions;
     
     let filteredCourses = courses;
@@ -152,8 +152,9 @@ const CourseList= (props: Props) => {
                             items={filteredCourses}
                             getItemCountForPage={getItemCountForPage}
                             getPageHeight={getPageHeight}
-                            renderedWindowsAhead={4}
+                            renderedWindowsAhead={15}
                             onRenderCell={getCell}
+                            usePageCache={true}
                         />
                     </div>
                 }
