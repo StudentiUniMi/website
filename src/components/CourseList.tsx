@@ -38,7 +38,7 @@ const yearMasterDegreeFilterOptions: IDropdownOption[] = [ // Opzioni per la ric
 const CourseList= (props: Props) => {
     const columnCount = React.useRef(0);
     const rowHeight = React.useRef(0);
-    const ROWS_PER_PAGE = 3;
+    const rowsPerPage = React.useRef(0);
     const MAX_ROW_HEIGHT = 250;
     
     var classNames = mergeStyleSets({
@@ -56,12 +56,13 @@ const CourseList= (props: Props) => {
             /* rowHeight.current = Math.floor(surfaceRect!.width / columnCount.current) */ 
             columnCount.current = Math.ceil(surfaceRect!.width / MAX_ROW_HEIGHT);
             rowHeight.current = MAX_ROW_HEIGHT;
+            rowsPerPage.current = surfaceRect!.height / MAX_ROW_HEIGHT;
         }
-        return columnCount.current * ROWS_PER_PAGE;
+        return columnCount.current * rowsPerPage.current;
     }, []);
     
     const getPageHeight = React.useCallback((): number => {
-        return rowHeight.current * ROWS_PER_PAGE;
+        return rowHeight.current * rowsPerPage.current;
     }, []); 
     
     const getCell = (e?: Course, index?: number, isScrolling?: boolean) => {
