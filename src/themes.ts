@@ -51,7 +51,7 @@ export const darkTheme = {
         neutralPrimaryAlt: '#6e6d6c',
         neutralPrimary: '#f5f2f0', // used for text
         neutralDark: '#dbdbdb',
-        black: '#faf9f8', // when you need black in both themes
+        black: '#faf9f8', 
         white: '#292828', // main background
     }
 };
