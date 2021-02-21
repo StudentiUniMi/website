@@ -3,7 +3,7 @@ import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
 import { CompoundButton } from 'office-ui-fabric-react';
-import { MessageBar, MessageBarType } from 'office-ui-fabric-react';
+import { MessageBar } from 'office-ui-fabric-react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { FontWeights, ITextStyles } from 'office-ui-fabric-react';
@@ -13,12 +13,12 @@ const Rules = () => {
     const [choice, setChoice] = React.useState<string>('');
     const theme = useTheme();
     const bold: ITextStyles = { root: { fontWeight: FontWeights.semibold } };
-    const rules: ITextStyles = { root: { fontWeight: FontWeights.semibold, fontSize: FontSizes.size12, fontFamily: 'Consolas', color: theme.palette.black } };
+    const rules: ITextStyles = { root: { fontWeight: FontWeights.semibold, fontSize: FontSizes.size12, fontFamily: 'Consolas' } };
     const rulesText: ITextStyles = { root: { fontSize: FontSizes.size12, fontFamily: 'Consolas' } };
-    const colButtonStyle = { maxWidth: '200px', minWidth: '120px' };
+    const colButtonStyle = { maxWidth: '200px', minWidth: '120px', color: theme.palette.black };
 
     const QuestionFaqRulesMessage = () => (
-        <MessageBar messageBarType={MessageBarType.warning}>
+        <MessageBar>
             <div className="mb-1 mt-2">
                 <Text styles={rules}>1) Domanda con risposta indicata sul sito del docente</Text>
             </div>
@@ -43,7 +43,7 @@ const Rules = () => {
     );
 
     const BehaviorRulesMessage = () => (
-        <MessageBar messageBarType={MessageBarType.warning}>
+        <MessageBar>
             <div className="mb-1 mt-2">
                 <Text styles={rules}>1) Bestemmie e linguaggio vivace</Text>
             </div>
@@ -80,7 +80,7 @@ const Rules = () => {
     );
 
     const MaterialsRulesMessage = () => (
-        <MessageBar messageBarType={MessageBarType.warning}>
+        <MessageBar>
             <div className="mb-1 mt-2"> 
                 <Text styles={rules}>1) Invio di materiali coperti da copyright</Text>
             </div>
@@ -105,7 +105,7 @@ const Rules = () => {
     );
 
     const OtherRulesMessage = () => (
-        <MessageBar messageBarType={MessageBarType.warning}>
+        <MessageBar>
             <div className="mb-1 mt-2"> 
                 <Text styles={rules}>1) Nome e username</Text>
             </div>
@@ -144,6 +144,23 @@ const Rules = () => {
         </MessageBar>
     );
 
+    // Button properties to correct theme colors
+    const titleStyle = {
+        lineHeight: '100%',
+        color: theme.palette.black,
+        fontWeight: 600,
+        margin: '0px 0px 5px',
+        display: 'block'
+    };
+
+    const descriptionStyle = {
+        lineHeight: '100%',
+        fontWeight: 400,
+        color: theme.palette.black,
+        display: 'block',
+        fontSize: '12px'
+    };
+
     return (
         <Container className="rules text-center">
             <div className="mb-4">
@@ -171,25 +188,38 @@ const Rules = () => {
                 </div>
             </div>
 
+
             <Row className="mb-3 justify-content-center">
                 <Col xl={3} lg={3} md={3} sm={4} xs={12} className="mb-2">
-                    <CompoundButton primary secondaryText="Domande e faq" onClick={() => setChoice("question_faq_rules")} style={colButtonStyle}>
-                        Sezione
+                    <CompoundButton primary secondaryText="Domande e faq" 
+                    onClick={() => setChoice("question_faq_rules")} 
+                    onRenderText={() => <span style={titleStyle}>Sezione</span>} 
+                    onRenderDescription={() => <span style={descriptionStyle}>Domande e faq</span>}
+                    style={colButtonStyle}>
                     </CompoundButton>
                 </Col>
                 <Col xl={3} lg={3} md={3} sm={4} xs={12} className="mb-2">
-                    <CompoundButton primary secondaryText="Comportamento" onClick={() => setChoice("behavior_rules")} style={colButtonStyle}>
-                        Sezione
+                    <CompoundButton primary secondaryText="Comportamento" 
+                    onClick={() => setChoice("behavior_rules")} 
+                    onRenderText={() => <span style={titleStyle}>Sezione</span>} 
+                    onRenderDescription={() => <span style={descriptionStyle}>Comportamento</span>}
+                    style={colButtonStyle}>
                     </CompoundButton>
                 </Col>
                 <Col xl={3} lg={3} md={3} sm={4} xs={12} className="mb-2">
-                    <CompoundButton primary secondaryText="Materiali" onClick={() => setChoice("materials_rules")} style={colButtonStyle}>
-                        Sezione
+                    <CompoundButton primary secondaryText="Materiali" 
+                    onClick={() => setChoice("materials_rules")} 
+                    onRenderText={() => <span style={titleStyle}>Sezione</span>} 
+                    onRenderDescription={() => <span style={descriptionStyle}>Materiali</span>}
+                    style={colButtonStyle}>
                     </CompoundButton>
                 </Col>
                 <Col xl={3} lg={3} md={3} sm={4} xs={12} className="mb-2">
-                    <CompoundButton primary secondaryText="Altro" onClick={() => setChoice("other_rules")} style={colButtonStyle}>
-                        Sezione
+                    <CompoundButton primary secondaryText="Altro" 
+                    onClick={() => setChoice("other_rules")} 
+                    onRenderText={() => <span style={titleStyle}>Sezione</span>} 
+                    onRenderDescription={() => <span style={descriptionStyle}>Altro</span>}
+                    style={colButtonStyle}>
                     </CompoundButton>
                 </Col>
             </Row>

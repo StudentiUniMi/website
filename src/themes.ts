@@ -31,7 +31,7 @@ export const lightTheme = {
 
 export const darkTheme = {
     palette: {
-        themePrimary: '#0481e0',
+        themePrimary: '#0894ff',
         themeLighterAlt: '#eff6fc',
         themeLighter: '#deecf9',
         themeLight: '#c7e0f4',
@@ -51,7 +51,7 @@ export const darkTheme = {
         neutralPrimaryAlt: '#6e6d6c',
         neutralPrimary: '#f5f2f0', // used for text
         neutralDark: '#dbdbdb',
-        black: '#1d1d1d', // when you need black in both themes
+        black: '#faf9f8', // when you need black in both themes
         white: '#292828', // main background
     }
 };
