@@ -145,20 +145,11 @@ const Rules = () => {
     );
 
     // Button properties to correct theme colors
-    const titleStyle = {
-        lineHeight: '100%',
-        color: theme.palette.black,
-        fontWeight: 600,
-        margin: '0px 0px 5px',
-        display: 'block'
-    };
-
     const descriptionStyle = {
-        lineHeight: '100%',
-        fontWeight: 400,
         color: theme.palette.black,
-        display: 'block',
-        fontSize: '12px'
+        fontSize: '12px',
+        lineHeight: '100%',
+        display: 'block'
     };
 
     return (
@@ -188,38 +179,37 @@ const Rules = () => {
                 </div>
             </div>
 
-
             <Row className="mb-3 justify-content-center">
                 <Col xl={3} lg={3} md={3} sm={4} xs={12} className="mb-2">
-                    <CompoundButton primary secondaryText="Domande e faq" 
-                    onClick={() => setChoice("question_faq_rules")} 
-                    onRenderText={() => <span style={titleStyle}>Sezione</span>} 
+                    <CompoundButton primary secondaryText="Domande e faq" theme={theme}
+                    onClick={() => setChoice("question_faq_rules")}
                     onRenderDescription={() => <span style={descriptionStyle}>Domande e faq</span>}
                     style={colButtonStyle}>
+                        Sezione
                     </CompoundButton>
                 </Col>
                 <Col xl={3} lg={3} md={3} sm={4} xs={12} className="mb-2">
-                    <CompoundButton primary secondaryText="Comportamento" 
-                    onClick={() => setChoice("behavior_rules")} 
-                    onRenderText={() => <span style={titleStyle}>Sezione</span>} 
+                    <CompoundButton primary secondaryText="Comportamento" theme={theme}
+                    onClick={() => setChoice("behavior_rules")}
                     onRenderDescription={() => <span style={descriptionStyle}>Comportamento</span>}
                     style={colButtonStyle}>
+                        Sezione
                     </CompoundButton>
                 </Col>
                 <Col xl={3} lg={3} md={3} sm={4} xs={12} className="mb-2">
-                    <CompoundButton primary secondaryText="Materiali" 
+                    <CompoundButton primary secondaryText="Materiali" theme={theme}
                     onClick={() => setChoice("materials_rules")} 
-                    onRenderText={() => <span style={titleStyle}>Sezione</span>} 
                     onRenderDescription={() => <span style={descriptionStyle}>Materiali</span>}
                     style={colButtonStyle}>
+                        Sezione
                     </CompoundButton>
                 </Col>
                 <Col xl={3} lg={3} md={3} sm={4} xs={12} className="mb-2">
-                    <CompoundButton primary secondaryText="Altro" 
+                    <CompoundButton primary secondaryText="Altro" theme={theme}
                     onClick={() => setChoice("other_rules")} 
-                    onRenderText={() => <span style={titleStyle}>Sezione</span>} 
                     onRenderDescription={() => <span style={descriptionStyle}>Altro</span>}
                     style={colButtonStyle}>
+                        Sezione
                     </CompoundButton>
                 </Col>
             </Row>
