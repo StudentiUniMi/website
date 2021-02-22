@@ -2002,7 +2002,7 @@
                         {
                             "id": "2d60c8fb-67d2-42a4-bef8-0af9059bb531",
                             "cdl": "magistrale_informatica",
-                            "name": "Advanced Computer Programming",
+                            "name": "Advanced computer programming",
                             "anno": null,
                             "semestre": 1,
                             "cfu": 6,
@@ -3077,6 +3077,28 @@
                             "drive": "",
                             "wiki": "",
                             "chat_id": -1001374431808
+                        },
+                        {
+                            "id": "22460622-b27e-405c-8aaa-51c332013eaf",
+                            "cdl": "magistrale_informatica",
+                            "name": "Game Design",
+                            "anno": null,
+                            "semestre": 2,
+                            "cfu": 6,
+                            "gruppo": "https://t.me/joinchat/V4Zy9skMkDlM_zRF",
+                            "websites": [
+                                {
+                                    "etichetta": "Informazioni",
+                                    "link": "https://www11.ceda.polimi.it/schedaincarico/schedaincarico/controller/scheda_pubblica/SchedaPublic.do?&evn_default=evento&c_classe=737657&polij_device_category=DESKTOP&__pj0=0&__pj1=87c4fdd3fa890a96cdbe788724f2d176"
+                                },
+                                {
+                                    "etichetta": "Sito web",
+                                    "link": "https://beep.metid.polimi.it/web/2020-21-game-design-maresa-bertolo-/attivita-online-e-avvisi#p_29"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": "",
+                            "chat_id": null
                         }
                     ],
                     "is_master": true,
@@ -3147,6 +3169,34 @@
                             "drive": "",
                             "wiki": "",
                             "chat_id": "@sistemibiometrici"
+                        },
+                        {
+                            "id": "ec7007e8-120e-4f37-bfad-87267b7c265a",
+                            "cdl": "magistrale_sicurezza_informatica",
+                            "name": "Crittografia",
+                            "anno": 1,
+                            "semestre": 2,
+                            "cfu": 6,
+                            "gruppo": "https://t.me/joinchat/RERMMpt3oYYIpOCC",
+                            "websites": [
+                            ],
+                            "drive": "",
+                            "wiki": "",
+                            "chat_id": null
+                        },
+                        {
+                            "id": "ec7007e8-120e-4f37-bfad-87267b7c265a",
+                            "cdl": "magistrale_sicurezza_informatica",
+                            "name": "Computer Forensics",
+                            "anno": 1,
+                            "semestre": 2,
+                            "cfu": 6,
+                            "gruppo": "https://t.me/joinchat/UMGxXdznCwuuYy48",
+                            "websites": [
+                            ],
+                            "drive": "",
+                            "wiki": "",
+                            "chat_id": null
                         },
                         {
                             "id": "d1387fc8-bac7-4fba-b24c-1e21505aa1a2",
@@ -3239,7 +3289,7 @@
                         {
                             "id": "f885e026-45f0-4fac-8421-20b9b12fbd43",
                             "cdl": "magistrale_sicurezza_informatica",
-                            "name": "Affidabilit\u00e0 dei sistemi",
+                            "name": "Affidabilità dei sistemi",
                             "anno": 1,
                             "semestre": 1,
                             "cfu": 6,
@@ -3397,7 +3447,7 @@
                             "anno": 1,
                             "semestre": 2,
                             "cfu": 6,
-                            "gruppo": "",
+                            "gruppo": "https://t.me/joinchat/V3EPQ2jAImfShSsM",
                             "websites": [
                                 {
                                     "link": "https://edamianisaos.ariel.ctu.unimi.it/v5/home/Default.aspx",
@@ -3433,27 +3483,6 @@
                             "wiki": ""
                         },
                         {
-                            "id": "50869e3d-1a90-40d7-8c56-a488a50954c2",
-                            "cdl": "magistrale_sicurezza_informatica",
-                            "name": "Sicurezza delle reti ii",
-                            "anno": 2,
-                            "semestre": 1,
-                            "cfu": 6,
-                            "gruppo": "",
-                            "websites": [
-                                {
-                                    "link": "https://scimatossr.ariel.ctu.unimi.it/",
-                                    "etichetta": "Ariel"
-                                },
-                                {
-                                    "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/sicurezza-delle-reti-ii",
-                                    "etichetta": "Sito Unimi"
-                                }
-                            ],
-                            "drive": "",
-                            "wiki": ""
-                        },
-                        {
                             "id": "d2689a67-86b5-4f4d-9df3-a1ea93655bf5",
                             "cdl": "magistrale_sicurezza_informatica",
                             "name": "Sicurezza delle reti",
@@ -3474,6 +3503,27 @@
                             "drive": "",
                             "wiki": "",
                             "chat_id": "@sicurezzadellereti"
+                        },
+                        {
+                            "id": "50869e3d-1a90-40d7-8c56-a488a50954c2",
+                            "cdl": "magistrale_sicurezza_informatica",
+                            "name": "Sicurezza delle reti 2",
+                            "anno": 2,
+                            "semestre": 1,
+                            "cfu": 6,
+                            "gruppo": "https://t.me/sicurezzadellereti",
+                            "websites": [
+                                {
+                                    "link": "https://scimatossr.ariel.ctu.unimi.it/",
+                                    "etichetta": "Ariel"
+                                },
+                                {
+                                    "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/sicurezza-delle-reti-ii",
+                                    "etichetta": "Sito Unimi"
+                                }
+                            ],
+                            "drive": "",
+                            "wiki": ""
                         }
                     ],
                     "is_master": true,
