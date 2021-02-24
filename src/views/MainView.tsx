@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import HeaderTitle from "../components/HeaderTitle";
 import HeaderMenu from "../components/HeaderMenu";
 import Footer from "../components/Footer";
