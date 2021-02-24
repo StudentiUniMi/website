@@ -32,6 +32,29 @@ main {
   min-height: 100%;
 }
 
+
+
+/* Corbel font import (Fix Issue #59) */
+@font-face {
+  font-family: 'Corbel';
+  src: url('fonts/Corbel/Corbel.woff2') format('woff2'),
+      url('fonts/Corbel/Corbel.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CorbelBold';
+  src: url('fonts/Corbel_Bold/Corbel-Bold.woff2') format('woff2'),
+      url('fonts/Corbel_Bold/Corbel-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
 /* Fix bootstrap outline when click */
 a:active,
 a:focus,
@@ -43,6 +66,8 @@ button:focus,
   outline: none;
   box-shadow: none !important;
 }
+
+
 
 /* Responsive footer */
 @media only screen and (max-width: 992px) {
@@ -107,6 +132,8 @@ button:focus,
 }
 
 
+
+
 /* Responsive menu and title */
 @media only screen and (min-width: 696px) {
   .header-menu .pivot {
@@ -158,6 +185,8 @@ button:focus,
 
 
 
+
+
 /* Dropdown style for header-menu */
 .header-menu .ms-Dropdown-title { 
   border-style: none;
@@ -187,6 +216,8 @@ button:focus,
     margin-left:0%;
   }
 }
+
+
 
 /* Section adjustments */
 @media only screen and (max-width: 575px) {
