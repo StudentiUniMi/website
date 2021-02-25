@@ -7,14 +7,12 @@ import ContentView from "./ContentView";
 import { ThemeProvider } from '@fluentui/react-theme-provider'; 
 import { darkTheme, lightTheme } from '../themes';
 import { CookiesProvider, useCookies } from 'react-cookie';
-import { useTheme } from '@fluentui/react-theme-provider';
 
 const MainView = () => {
   let [cookies, ] = useCookies();
   let [theme, setTheme] = React.useState(cookies["theme"] === "dark");
 
   const changeTheme = () => setTheme(!theme);
-  useTheme();
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <CookiesProvider>
