@@ -17,7 +17,7 @@ const logoFileName = 'unimi150.png';
 const HeaderTitle = () => {
     var theme = useTheme();
     const titleStyle: ITextStyles = {
-        root: { fontSize: FontSizes.size42, fontWeight: FontWeights.semibold, color: theme.palette.themePrimary, fontFamily: 'Corbel' }
+        root: { fontSize: FontSizes.size42, fontWeight: FontWeights.semibold, color: theme.palette.themePrimary, fontFamily: 'CorbelBold' }
     };
     return (
         <div className="header-title m-2">

@@ -42,6 +42,12 @@
         "gruppo":"https://t.me/joinchat/HQwag1ASkXeQ-nX7"
     },
     {
+        "name":"Test di Inglese",
+        "description": "Gruppo dedicato a discussioni inerenti al test di inglese (uguale sia per triennali che magistrali).",
+        "image": "inglese.jpg",
+        "gruppo":"https://t.me/joinchat/xWKL8J4fS1hmNGZk"
+    },
+    {
         "name":"Unirole",
         "description": "Dedicato ai giochi di ruolo.",
         "image": "giochi_di_ruolo.jpg",
