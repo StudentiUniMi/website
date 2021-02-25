@@ -61,7 +61,6 @@ const HeaderMenu = (props: Props) => {
     };
     const pivotStyles: Partial<IPivotStyles> = {
         root: { color: theme.palette.neutralPrimary, fontSize: FontSizes.size24 },
-        
     };
 
     const getPath = React.useCallback((): Array<string|boolean> => {
