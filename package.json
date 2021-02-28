@@ -20,6 +20,7 @@
     "@types/react-dom": "17.0.0",
     "@uifabric/react-cards": "0.115.6",
     "bootstrap": "4.5.3",
+    "node-sass": "^4.14.1",
     "react": "17.0.1",
     "react-bootstrap": "1.4.3",
     "react-cookie": "^4.0.3",
