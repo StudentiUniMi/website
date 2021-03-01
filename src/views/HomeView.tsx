@@ -29,16 +29,20 @@ const HomeView = () => {
         exampleRoot: {
           marginTop: '20px',
         },
-        nameText: {
+        newsStyle: {
           fontWeight: 'bold',
         },
+        newsDescriptionStyle: {
+            color: theme.palette.black,
+            fontSize: FontSizes.size12
+        }
     });
 
     const activityItemExamples = [
     {
         key: 1,
         activityDescription: [
-        <Link key={1} className={classNames.nameText}>
+        <Link key={1} className={classNames.newsStyle}>
             Aggiunto il supporto iniziale ai corsi di laurea in Fisica e Matematica
         </Link>
         //<span key={2}> commented</span>,
@@ -46,8 +50,10 @@ const HomeView = () => {
         activityIcon: <Icon iconName={'News'} />,
         comments: [
         <span key={2}>
+            <Text className={classNames.newsDescriptionStyle}>
             Da oggi è possibile unirsi ai gruppi principali di questi corsi di laurea. Se si popoleranno avremo bisogno di appositi gestori (preferibilmente studenti).
             Per altre informazioni vai nella sezione "corsi".
+            </Text>
         </span>
         ],
         timeStamp: '01/03/2020',
@@ -55,7 +61,7 @@ const HomeView = () => {
     {
         key: 2,
         activityDescription: [
-            <Link key={1} className={classNames.nameText}>
+            <Link key={1} className={classNames.newsStyle}>
             Sistemati alcuni problemi segnalati nei giorni scorsi.
             </Link>
             //<span key={2}> commented</span>,
@@ -63,7 +69,9 @@ const HomeView = () => {
         activityIcon: <Icon iconName={'Group'} />,
         comments: [
             <span key={2}>
-            Link discord del dipartimento di Informatica nuovamente funzionanti; aggiunto il gruppo di "Logistics" (Magistrale Informatica).
+                <Text className={classNames.newsDescriptionStyle}>
+                    Link discord del dipartimento di Informatica nuovamente funzionanti; aggiunto il gruppo di "Logistics" (Magistrale Informatica).
+                </Text>
             </span>
         ],
         timeStamp: '01/03/2020',
