@@ -15,3 +15,20 @@ export default interface Degree
     is_master: boolean,
     has_years: boolean
 }
+
+/*
+{
+    "id": "",
+    "name": "",
+    "description": "",
+    "main_website": "",
+    "server_discord": "",
+    "manifest": "",
+    "virtual_classroom": "",
+    "admins": [
+    ],
+    "courses": [],
+    "is_master": false,
+    "has_years": true
+}
+*/

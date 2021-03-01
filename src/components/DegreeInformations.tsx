@@ -28,18 +28,24 @@ const DegreeInformations= (props: Props) => {
 
     return (       
         <Row className="degree-informations justify-content-center mb-3">
+            {
+            props.cdl?.main_website === "" ? "" :
             <Col xl={3} lg={3} sm={6} xs={12} className="mb-2">
                 <DocumentCard styles={cardStyles} onClick={() => redirectToLink(props.cdl?.main_website ?? "")}>
                     <DocumentCardLogo {...logos[0]} />
                     <DocumentCardTitle title="Sito del CdL" styles={titleStyle} />
                 </DocumentCard>
             </Col>
+            }
+            {
+            props.cdl?.manifest === "" ? "" :
             <Col xl={3} lg={3} sm={6} xs={12} className="mb-2">
                 <DocumentCard styles={cardStyles} onClick={() => redirectToLink(props.cdl?.manifest ?? "")}>
                     <DocumentCardLogo {...logos[1]} />
                     <DocumentCardTitle title="Manifesto degli studi" styles={titleStyle} />
                 </DocumentCard>
             </Col>
+            }
             {
             props.cdl?.server_discord === "" ? "" :
             <Col xl={3} lg={3} sm={6} xs={12} className="mb-2">

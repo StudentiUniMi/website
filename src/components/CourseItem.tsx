@@ -67,9 +67,20 @@ const CourseItem = (props: Props) => {
     }
 
     // Group link inizialization, or other text for main degree group
-    if ( data.anno === -1) {
+    if (data.anno === -1 && (data.gruppo === "" || data.gruppo === null)) {
         groupText = <Text variant="small" styles={helpfulTextStyles}>Contatta un amministratore se vuoi essere aggiunto al gruppo.</Text>;
-    } else if ( data.gruppo === "" || data.gruppo === null) {
+    } else if (data.anno === -1 && (data.gruppo !== "" && data.gruppo !== null)) {
+        groupText = ( 
+        <Text variant="small" styles={helpfulTextStyles}>
+            <div className="mb-2">Gruppo principale per qualsiasi tipo di discussione inerente al corso di laurea.</div>
+            <i className="fab fa-telegram" style={{ color: theme.palette.themePrimary }}></i>
+            &nbsp;
+            <Link href={data.gruppo} target="_blank">
+                Gruppo Telegram
+            </Link>
+        </Text>
+        );
+    } else if ( data.gruppo === "" || data.gruppo === null ) {
         groupText = <Text variant="small" styles={helpfulTextStyles}>Gruppo non disponibile.</Text>;
     } else {
         groupText = (

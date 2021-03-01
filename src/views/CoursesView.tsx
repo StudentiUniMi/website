@@ -114,13 +114,24 @@ const CoursesView = () => {
                 <Text style={{ fontSize: FontSizes.size14, lineHeight: "normal" }}>
                     Qui è possibile trovare i gruppi telegram, siti web, wiki, faq (se disponibili) e informazioni generali riguardo il tuo corso di laurea e i suoi corsi didattici.
                     Se noti qualcosa che non corrisponde o che andrebbe sistemato puoi 
-                    comunicarlo sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link>.
+                    comunicarlo sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link>. Sei uno studente di fisica, matematica o altre facoltà unimi
+                    che vorrebbe che venissero creati i gruppi telegram dei propri corsi didattici? Anche quello puoi chiederlo sul gruppo.
+                </Text>
+            </div>
+            <div className="mb-1" style={{ lineHeight: "normal" }}>
+                <Text style={{color: theme.palette.themePrimary}}>
+                    Al momento stiamo cercando studenti che vorrebbero contribuire allo sviluppo del network 
+                    anche in altre facoltà. <Link href="https://t.me/giuseppetm" target="_blank" style={{color: theme.palette.orangeLighter}}>Contattaci</Link> se sei interessato.
                 </Text>
             </div>
             <div className="mb-4" style={{ lineHeight: "normal" }}>
                 <Text style={{ fontSize: FontSizes.size12 }}>
-                    I link alla <span style={{ fontWeight: 600 }}>Wiki</span> di un corso didattico potrebbero portare a pagine non ancora compilate:<br/>
+                    I link alla <span style={{ fontWeight: 600 }}>Wiki</span> di un corso didattico potrebbero portare a pagine non ancora compilate:
                     è qui che potete contribuire iscrivendovi e aiutandoci a raccogliere faq e qualsiasi altro contenuto utile per i corsi didattici.
+                    Informatica musicale, per la comunicazione digitale e molti altri corsi di laurea non hanno ancora contenuti! 
+                    Puoi contribuire <Link href="https://wiki.studentiunimi.it/" target="_blank">qui</Link> creando un apposito account gratuito.
+                    Puoi dare una mano anche con apposite <Link href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request" target="_blank">pull request</Link> per aggiornare
+                    i dati dei corsi didattici (il sito si basa su una repository).
                 </Text>
             </div>
             {/*
