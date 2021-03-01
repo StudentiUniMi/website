@@ -7,6 +7,7 @@ import { DocumentCard, IDocumentCardTitleStyles, DocumentCardTitle, DocumentCard
 import { redirectToLink } from '../services/Utils';
 import { getHomeLinks } from '../services/Requests';
 import { useTheme } from '@fluentui/react-theme-provider';
+import { ActivityItem, Icon, Link, mergeStyleSets } from 'office-ui-fabric-react';
 
 let cardProps = (iconName: string): IDocumentCardLogoProps => {
     return { 
@@ -26,6 +27,51 @@ const HomeView = () => {
         root: { backgroundColor: theme.palette.neutralLighter, display: 'inline-block', height: '130px', maxWidth: '130px', minWidth: '130px' },
     };
 
+    const classNames = mergeStyleSets({
+        exampleRoot: {
+          marginTop: '20px',
+        },
+        nameText: {
+          fontWeight: 'bold',
+        },
+      });
+
+      const activityItemExamples = [
+        {
+          key: 1,
+          activityDescription: [
+            <Link key={1} className={classNames.nameText}>
+              Aggiunto il supporto iniziale ai corsi di laurea in Fisica e Matematica
+            </Link>
+            //<span key={2}> commented</span>,
+          ],
+          activityIcon: <Icon iconName={'News'} />,
+          comments: [
+            <span key={2}>
+                Da oggi è possibile unirsi ai gruppi principali di questi corsi di laurea. Se si popoleranno avremo bisogno di appositi gestori (preferibilmente studenti).
+                Per altre informazioni vai nella sezione "corsi".
+            </span>
+          ],
+          timeStamp: '01/03/2020',
+        },
+        {
+            key: 2,
+            activityDescription: [
+              <Link key={1} className={classNames.nameText}>
+                Sistemati alcuni problemi segnalati nei giorni scorsi.
+              </Link>
+              //<span key={2}> commented</span>,
+            ],
+            activityIcon: <Icon iconName={'Group'} />,
+            comments: [
+              <span key={2}>
+                Link discord del dipartimento di Informatica nuovamente funzionanti; aggiunto il gruppo di "Logistics" (Magistrale Informatica).
+              </span>
+            ],
+            timeStamp: '01/03/2020',
+          }
+      ];
+
     return (
         <Container className="home">
 
@@ -34,6 +80,7 @@ const HomeView = () => {
                     Benvenuto nel sito web del Network Studenti UniMi! Questo progetto è nato con lo scopo di creare un punto centrale 
                     di collegamento tra tutti i corsi di laurea dell'università degli studi di Milano.
                     Sono disponibili siti web, gruppi telegram, informazioni varie e wiki dei corsi didattici.
+                    Di seguito è possibile trovare i collegamenti principali e le notizie più recenti.
                 </Text>
             </div>
             
@@ -51,6 +98,12 @@ const HomeView = () => {
                     })
                 }
             </Row>
+
+            <Container className="justify-content-center" style={{maxWidth: '600px'}}>
+                {activityItemExamples.map((item: { key: string | number }) => (
+                    <ActivityItem {...item} key={item.key} className={classNames.exampleRoot} />
+                ))}
+            </Container>
         </Container >
     )
 };
