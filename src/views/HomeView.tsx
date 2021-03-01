@@ -10,9 +10,7 @@ import { useTheme } from '@fluentui/react-theme-provider';
 import { ActivityItem, Icon, Link, mergeStyleSets } from 'office-ui-fabric-react';
 
 let cardProps = (iconName: string): IDocumentCardLogoProps => {
-    return { 
-        logoIcon: iconName
-    };
+    return { logoIcon: iconName };
 };
 
 const HomeView = () => {
@@ -34,43 +32,43 @@ const HomeView = () => {
         nameText: {
           fontWeight: 'bold',
         },
-      });
+    });
 
-      const activityItemExamples = [
-        {
-          key: 1,
-          activityDescription: [
+    const activityItemExamples = [
+    {
+        key: 1,
+        activityDescription: [
+        <Link key={1} className={classNames.nameText}>
+            Aggiunto il supporto iniziale ai corsi di laurea in Fisica e Matematica
+        </Link>
+        //<span key={2}> commented</span>,
+        ],
+        activityIcon: <Icon iconName={'News'} />,
+        comments: [
+        <span key={2}>
+            Da oggi è possibile unirsi ai gruppi principali di questi corsi di laurea. Se si popoleranno avremo bisogno di appositi gestori (preferibilmente studenti).
+            Per altre informazioni vai nella sezione "corsi".
+        </span>
+        ],
+        timeStamp: '01/03/2020',
+    },
+    {
+        key: 2,
+        activityDescription: [
             <Link key={1} className={classNames.nameText}>
-              Aggiunto il supporto iniziale ai corsi di laurea in Fisica e Matematica
+            Sistemati alcuni problemi segnalati nei giorni scorsi.
             </Link>
             //<span key={2}> commented</span>,
-          ],
-          activityIcon: <Icon iconName={'News'} />,
-          comments: [
+        ],
+        activityIcon: <Icon iconName={'Group'} />,
+        comments: [
             <span key={2}>
-                Da oggi è possibile unirsi ai gruppi principali di questi corsi di laurea. Se si popoleranno avremo bisogno di appositi gestori (preferibilmente studenti).
-                Per altre informazioni vai nella sezione "corsi".
+            Link discord del dipartimento di Informatica nuovamente funzionanti; aggiunto il gruppo di "Logistics" (Magistrale Informatica).
             </span>
-          ],
-          timeStamp: '01/03/2020',
-        },
-        {
-            key: 2,
-            activityDescription: [
-              <Link key={1} className={classNames.nameText}>
-                Sistemati alcuni problemi segnalati nei giorni scorsi.
-              </Link>
-              //<span key={2}> commented</span>,
-            ],
-            activityIcon: <Icon iconName={'Group'} />,
-            comments: [
-              <span key={2}>
-                Link discord del dipartimento di Informatica nuovamente funzionanti; aggiunto il gruppo di "Logistics" (Magistrale Informatica).
-              </span>
-            ],
-            timeStamp: '01/03/2020',
-          }
-      ];
+        ],
+        timeStamp: '01/03/2020',
+        }
+    ];
 
     return (
         <Container className="home">
