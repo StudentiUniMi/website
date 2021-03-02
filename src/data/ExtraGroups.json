@@ -12,6 +12,12 @@
         "gruppo":"https://t.me/joinchat/I5_YNkhaA-G1hqmhrYwU9g"
     },
     {
+        "name":"Gruppo alloggi",
+        "description": "Dedicato a chi cerca alloggi o vuole creare un annuncio a riguardo.",
+        "image": "alloggi.jpg",
+        "gruppo":"https://t.me/joinchat/G72JWisrbTliZDE0"
+    },
+    {
         "name":"Annunci di lavoro",
         "description": "Gruppo che permette di proporre lavoro (rivolto a studenti) in ambito informatico.",
         "image": "lavoro.jpg",

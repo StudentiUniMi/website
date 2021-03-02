@@ -2015,6 +2015,18 @@
                         {
                             "id": "2d60c8fb-67d2-42a4-bef8-0af9059bb531",
                             "cdl": "magistrale_informatica",
+                            "name": "Progettazione di Sistemi Operativi",
+                            "anno": null,
+                            "semestre": 1,
+                            "cfu": 6,
+                            "gruppo": "https://t.me/joinchat/c4NixQAJwXxiNDc0",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": ""
+                        },
+                        {
+                            "id": "2d60c8fb-67d2-42a4-bef8-0af9059bb531",
+                            "cdl": "magistrale_informatica",
                             "name": "Advanced computer programming",
                             "anno": null,
                             "semestre": 1,
