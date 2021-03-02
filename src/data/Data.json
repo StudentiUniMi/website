@@ -1086,6 +1086,19 @@
                             "drive": "",
                             "wiki": "",
                             "chat_id": null
+                        },
+                        {
+                            "id": "ae976110-36e2-4221-9eba-26d5008dd64f",
+                            "cdl": "triennale_informatica_musicale",
+                            "name": "Statistica e analisi dei dati",
+                            "anno": 2,
+                            "semestre": 2,
+                            "cfu": 6,
+                            "gruppo": "https://t.me/joinchat/I5_YNg-_LetQPT2EQAXP5g",
+                            "websites": [],
+                            "drive": "",
+                            "wiki": "",
+                            "chat_id": -100264187371
                         }
                     ],
                     "is_master": false,

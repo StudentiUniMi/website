@@ -56,7 +56,7 @@ const HomeView = () => {
             </Text>
         </span>
         ],
-        timeStamp: '01/03/2020',
+        timeStamp: '01/03/2021',
     },
     {
         key: 2,
@@ -74,7 +74,7 @@ const HomeView = () => {
                 </Text>
             </span>
         ],
-        timeStamp: '01/03/2020',
+        timeStamp: '01/03/2021',
         }
     ];
 
