@@ -2125,19 +2125,6 @@
                             "chat_id": -1001402130855
                         },
                         {
-                            "id": "b0141e73-ae8d-467e-b714-49b1c0b6b7c5",
-                            "cdl": "magistrale_informatica",
-                            "name": "Information Management",
-                            "anno": null,
-                            "semestre": 2,
-                            "cfu": 6,
-                            "gruppo": "https://t.me/joinchat/C6cCWlWAT0thFUE52xEjqA",
-                            "websites": [],
-                            "drive": "https://drive.google.com/drive/folders/1xEmfSKnf5wAtz45tdERr_UvxFvJJTfLr?usp=sharing",
-                            "wiki": "",
-                            "chat_id": -1001434472267
-                        },
-                        {
                             "id": "e813babe-01b1-498d-b44c-ca1c2418e162",
                             "cdl": "magistrale_informatica",
                             "name": "Interazione Naturale",
@@ -3481,7 +3468,7 @@
                             "anno": 1,
                             "semestre": 2,
                             "cfu": 6,
-                            "gruppo": "",
+                            "gruppo": "https://t.me/joinchat/C6cCWlWAT0thFUE52xEjqA",
                             "websites": [
                                 {
                                     "link": "https://sforestiim.ariel.ctu.unimi.it/v5/home/Default.aspx",
@@ -3493,7 +3480,8 @@
                                 }
                             ],
                             "drive": "",
-                            "wiki": ""
+                            "wiki": "",
+                            "chat_id": -1001434472267
                         },
                         {
                             "id": "d2689a67-86b5-4f4d-9df3-a1ea93655bf5",
