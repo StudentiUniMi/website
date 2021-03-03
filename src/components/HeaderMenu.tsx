@@ -48,7 +48,6 @@ initializeIcons();
 
 const HeaderMenu = (props: Props) => {
     var theme = useTheme();
-    console.log(theme);
     const history = useHistory();
     const [cookies, setCookie] = useCookies(["theme"]);
 

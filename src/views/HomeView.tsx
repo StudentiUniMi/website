@@ -70,7 +70,7 @@ const HomeView = () => {
         comments: [
             <span key={2}>
                 <Text className={classNames.newsDescriptionStyle}>
-                    Link discord del dipartimento di Informatica nuovamente funzionanti; aggiunto il gruppo di "Logistics" (Magistrale Informatica).
+                    Link discord del dipartimento di Informatica nuovamente funzionanti; aggiunti diversi gruppi di Informatica (magistrale) e Sicurezza Informatica (magistrale).
                 </Text>
             </span>
         ],
@@ -82,7 +82,7 @@ const HomeView = () => {
         <Container className="home">
 
             <div className="text-center mb-4">
-                <Text style={{ fontSize: FontSizes.size16 }}>
+                <Text style={{ fontSize: FontSizes.size14 }}>
                     Benvenuto nel sito web del Network Studenti UniMi! Questo progetto è nato con lo scopo di creare un punto centrale 
                     di collegamento tra tutti i corsi di laurea dell'università degli studi di Milano.
                     Sono disponibili siti web, gruppi telegram, informazioni varie e wiki dei corsi didattici.

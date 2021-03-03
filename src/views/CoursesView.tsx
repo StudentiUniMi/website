@@ -119,9 +119,9 @@ const CoursesView = () => {
                 </Text>
             </div>
             <div className="mb-1" style={{ lineHeight: "normal" }}>
-                <Text style={{color: theme.palette.themePrimary}}>
+                <Text>
                     Al momento stiamo cercando studenti che vorrebbero contribuire allo sviluppo del network 
-                    anche in altre facoltà. <Link href="https://t.me/giuseppetm" target="_blank" style={{color: theme.palette.orangeLighter}}>Contattaci</Link> se sei interessato.
+                    anche in altre facoltà. <Link href="https://t.me/giuseppetm" target="_blank" style={{color: theme.palette.red}}>Contattaci</Link> se sei interessato.
                 </Text>
             </div>
             <div className="mb-4" style={{ lineHeight: "normal" }}>
@@ -134,14 +134,6 @@ const CoursesView = () => {
                     i dati dei corsi didattici (il sito si basa su una repository).
                 </Text>
             </div>
-            {/*
-            <div className="mb-4" style={{ lineHeight: "normal" }}>
-                <Text style={{ fontSize: FontSizes.size12, fontFamily: 'Monaco, Menlo, Consolas', color: 'red' }}>
-                    Si avvisa che da mobile è presente un bug quando viene raggiunta la fine della visualizzazione dei corsi.<br/>
-                    In caso riscontriate questo problema siete invitati a usare i filtri appositi finchè non viene risolto il problema.
-                </Text>
-            </div>
-            */}
             
             <Row className="department-choose justify-content-center mb-4">
                 <Col xl={6} lg={6} md={6} sm={6} xs={12} className="mb-1">
