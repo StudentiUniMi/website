@@ -14,7 +14,7 @@ const AdministratorsView = () => {
 
     const [selectedCdl, setSelectedCdl] = React.useState<string>('');
     var cdls: Degree[] = getAllCdls();
-    var cdlOptions: IDropdownOption[] = cdls.map(x => ({key: x.id ?? "", text: x.name ?? ""}));
+    var cdlOptions: IDropdownOption[] = cdls.map(x => ({key: x.id ?? "", text: x.name ?? "", disabled: x.admins!.length === 0}));
 
     const cdlSelectionChanged = (
         ev?: React.FormEvent<HTMLElement | HTMLInputElement>,

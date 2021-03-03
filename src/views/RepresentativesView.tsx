@@ -73,7 +73,7 @@ const RepresentativesView = () => {
 
     let representatives: Representative[] = getRepresentatives(selectedDepartment);
 
-    const departmentOptions: IDropdownOption[] = getDepartments().map(x => ({key: x.id, text: x.name ?? "", data: {icon:x.icon}, disabled: x.cdls.length === 0}));
+    const departmentOptions: IDropdownOption[] = getDepartments().map(x => ({key: x.id, text: x.name ?? "", data: {icon:x.icon}, disabled: x.cdls.length === 0 || x.representatives.length === 0}));
 
 
     return (

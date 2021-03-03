@@ -42,7 +42,7 @@ const CourseItem = (props: Props) => {
 
     // CFU inizialization
     if (data.cfu !== null) {
-        cfuText = <Text variant="small" styles={cfuStyle}>{data.cfu} CFU</Text>;
+        cfuText = <>{data.cfu} CFU</>;
     }
 
     // Year inizialization
@@ -71,33 +71,33 @@ const CourseItem = (props: Props) => {
         groupText = <Text variant="small" styles={helpfulTextStyles}>Contatta un amministratore se vuoi essere aggiunto al gruppo.</Text>;
     } else if (data.anno === -1 && (data.gruppo !== "" && data.gruppo !== null)) {
         groupText = ( 
-        <Text variant="small" styles={helpfulTextStyles}>
+        <>
             <div className="mb-2">Gruppo principale per qualsiasi tipo di discussione inerente al corso di laurea.</div>
             <i className="fab fa-telegram" style={{ color: theme.palette.themePrimary }}></i>
             &nbsp;
             <Link href={data.gruppo} target="_blank">
                 Gruppo Telegram
             </Link>
-        </Text>
+        </>
         );
     } else if ( data.gruppo === "" || data.gruppo === null ) {
-        groupText = <Text variant="small" styles={helpfulTextStyles}>Gruppo non disponibile.</Text>;
+        groupText = "Gruppo non disponibile.";
     } else {
         groupText = (
-            <Text variant="small" styles={helpfulTextStyles}>
+            <>
                 <i className="fab fa-telegram" style={{ color: theme.palette.themePrimary }}></i>
                 &nbsp;
                 <Link href={data.gruppo} target="_blank">
                     Gruppo Telegram
                 </Link>
-            </Text>
+            </>
         );
     } 
 
     // Websites inizialization
     if ( (data.websites ?? []).length !== 0) {
         websitesText = (
-            <Text variant="small" styles={helpfulTextStyles}>
+            <>
                 <i className="fas fa-home" style={{color:'#696a6b'}}></i>
                 &nbsp;
                 {data.websites.map(
@@ -112,7 +112,7 @@ const CourseItem = (props: Props) => {
                         )
                     }
                 )}
-            </Text>
+            </>
         );
     }
 
@@ -137,15 +137,22 @@ const CourseItem = (props: Props) => {
             </Card.Item>
 
             <Card.Section>
-                {cfuText}
+                <Text variant="small" styles={cfuStyle}>
+                    {cfuText}
+                </Text>
 
                 <Text styles={descriptionTextStyles}>
                     {yearText}
                     {semesterText}
                 </Text>
 
-                {groupText}
-                {websitesText}
+                <Text variant="small" styles={helpfulTextStyles}>
+                    {groupText}
+                </Text>
+
+                <Text variant="small" styles={helpfulTextStyles}>
+                    {websitesText}
+                </Text>
 
                 <Text variant="small" styles={helpfulTextStyles}>
                     {wikiText}

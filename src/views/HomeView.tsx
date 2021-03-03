@@ -70,7 +70,7 @@ const HomeView = () => {
         comments: [
             <span key={2}>
                 <Text className={classNames.newsDescriptionStyle}>
-                    Link discord del dipartimento di Informatica nuovamente funzionanti; aggiunto il gruppo di "Logistics" (Magistrale Informatica).
+                    Link discord del dipartimento di Informatica nuovamente funzionanti; aggiunti diversi gruppi di Informatica (magistrale) e Sicurezza Informatica (magistrale).
                 </Text>
             </span>
         ],
