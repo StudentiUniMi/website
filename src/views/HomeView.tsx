@@ -82,7 +82,7 @@ const HomeView = () => {
         <Container className="home">
 
             <div className="text-center mb-4">
-                <Text style={{ fontSize: FontSizes.size16 }}>
+                <Text style={{ fontSize: FontSizes.size14 }}>
                     Benvenuto nel sito web del Network Studenti UniMi! Questo progetto è nato con lo scopo di creare un punto centrale 
                     di collegamento tra tutti i corsi di laurea dell'università degli studi di Milano.
                     Sono disponibili siti web, gruppi telegram, informazioni varie e wiki dei corsi didattici.
