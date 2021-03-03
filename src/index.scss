@@ -301,9 +301,9 @@ button:focus,
 
 
 
-/*--------------------------------------------------
-  Additional properties - Must move to components
---------------------------------------------------*/
+/*---------------------
+  Additional properties
+---------------------*/
 
 .rules a {
   padding-left: 0 !important;
@@ -323,17 +323,10 @@ button:focus,
   padding: 3px;
 }
 
-.rules .card:active, .rules .card:focus {
-  outline: 0;
-  border: none;
-  outline: none;
-  box-shadow: none !important;
-}
-
 .services .ms-CardSection {
   text-align: left;
 }
 
-.ms-TooltipHost {
+.ms-TooltipHost { /* For showing tooltip correctly on settings icon */
   display: inline;
 }
