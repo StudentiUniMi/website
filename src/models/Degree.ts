@@ -6,6 +6,7 @@ export default interface Degree
     id: string,
     name?: string,
     description?: string,
+    icon?: string,
     main_website?: string,
     server_discord?: string,
     manifest?: string,

@@ -305,6 +305,12 @@ button:focus,
   Additional properties
 ---------------------*/
 
+@media only screen and (max-width: 640px) { /* Dropdown items in mobile visualization when using icons act buggy. Must create issue in fluentUi repo */
+  .ms-Dropdown-item {
+    margin-bottom: 10px !important;
+  }
+}
+
 .rules a {
   padding-left: 0 !important;
 }
