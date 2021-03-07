@@ -138,6 +138,7 @@
                     "id": "triennale_informatica",
                     "name": "Informatica",
                     "description": "",
+                    "icon": "System",
                     "main_website": "https://informatica.cdl.unimi.it/it",
                     "server_discord": "https://discord.gg/BcUuqsj",
                     "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F1Xof3_2021.pdf",
@@ -147,77 +148,77 @@
                             "id": "",
                             "username": "MrBrionix",
                             "year": "Secondo",
-                            "role": "",
+                            "role": "Moderator",
                             "user_id": 119507304
                         },
                         {
                             "id": "",
                             "username": "MattiaOldani",
                             "year": "Primo",
-                            "role": "",
+                            "role": "Moderator",
                             "user_id": 592731075
                         },
                         {
                             "id": "",
                             "username": "acetimarco",
                             "year": "Primo",
-                            "role": "",
+                            "role": "Administrator",
                             "user_id": 26170256
                         },
                         {
                             "id": "",
                             "username": "Sartigabriele",
                             "year": "Primo",
-                            "role": "",
+                            "role": "Moderator",
                             "user_id": 544826890
                         },
                         {
                             "id": "",
                             "username": "georgianiandrei",
                             "year": "Secondo",
-                            "role": "",
+                            "role": "Administrator",
                             "user_id": 940740891
                         },
                         {
                             "id": "",
                             "username": "IrisCanole",
                             "year": "Primo",
-                            "role": "",
+                            "role": "Moderator",
                             "user_id": 730639598
                         },
                         {
                             "id": "",
                             "username": "Mantotheale",
                             "year": "Primo",
-                            "role": "",
+                            "role": "Moderator",
                             "user_id": 433637925
                         },
                         {
                             "id": "",
                             "username": "Weinsz",
                             "year": "Primo",
-                            "role": "",
+                            "role": "Moderator",
                             "user_id": 178100484
                         },
                         {
                             "id": "",
                             "username": "ThomasGiudici",
                             "year": "Terzo",
-                            "role": "",
+                            "role": "Moderator",
                             "user_id": 15042194
                         },
                         {
                             "id": "",
                             "username": "davidemarchioriz",
                             "year": "Terzo",
-                            "role": "",
+                            "role": "Moderator",
                             "user_id": 157778910
                         },
                         {
                             "id": "",
                             "username": "Aconithorn",
                             "year": "Terzo",
-                            "role": "",
+                            "role": "Moderator",
                             "user_id": 529585690
                         }
                     ],
@@ -969,6 +970,7 @@
                     "id": "triennale_informatica_musicale",
                     "name": "Informatica musicale",
                     "description": "",
+                    "icon": "MusicInCollection",
                     "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-musicale",
                     "server_discord": "https://discord.gg/BcUuqsj",
                     "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F3Xof2_2021.pdf",
@@ -978,7 +980,7 @@
                             "id": "",
                             "username": "giolake",
                             "year": "",
-                            "role": "",
+                            "role": "Administrator",
                             "user_id": 126856154
                         }
                     ],
@@ -1108,6 +1110,7 @@
                     "id": "triennale_informatica_com_digitale",
                     "name": "Informatica comunicazione digitale",
                     "description": "",
+                    "icon": "Communications",
                     "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-la-comunicazione-digitale",
                     "server_discord": "https://discord.gg/BcUuqsj",
                     "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F9Xof2_2021.pdf",
@@ -1117,7 +1120,7 @@
                             "id": "",
                             "username": "robertopinotti",
                             "year": "",
-                            "role": "",
+                            "role": "Administrator",
                             "user_id": 3104514
                         }
                     ],
@@ -1447,6 +1450,7 @@
                     "id": "triennale_sicurezza_sistemi_reti_informatiche",
                     "name": "Sicurezza sistemi e reti informatiche",
                     "description": "",
+                    "icon": "LaptopSecure",
                     "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-dei-sistemi-e-delle-reti-informatiche",
                     "server_discord": "https://discord.gg/BcUuqsj",
                     "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F68of3_2021.pdf",
@@ -1456,7 +1460,7 @@
                             "id": "",
                             "username": "burzum00",
                             "year": "",
-                            "role": "",
+                            "role": "Administrator",
                             "user_id": 620976546
                         }
                     ],
@@ -1716,6 +1720,7 @@
                     "id": "triennale_sicurezza_sistemi_reti_informatiche_online",
                     "name": "Sicurezza sistemi e reti informatiche online",
                     "description": "",
+                    "icon": "LaptopSecure",
                     "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-dei-sistemi-e-delle-reti-informatiche-online",
                     "server_discord": "",
                     "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F1Aof1_2021.pdf",
@@ -1725,7 +1730,7 @@
                             "id": "",
                             "username": "salvadorbs",
                             "year": "",
-                            "role": "",
+                            "role": "Administrator",
                             "user_id": 15751170
                         }
                     ],
@@ -1985,6 +1990,7 @@
                     "id": "magistrale_informatica",
                     "name": "Informatica (magistrale)",
                     "description": "",
+                    "icon": "ConnectVirtualMachine",
                     "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-magistrale",
                     "server_discord": "https://discord.gg/BcUuqsj",
                     "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F94of2_2021.pdf",
@@ -1994,7 +2000,7 @@
                             "id": "",
                             "username": "robertopinotti",
                             "year": "",
-                            "role": "",
+                            "role": "Administrator",
                             "user_id": 3104514
                         }
                     ],
@@ -3108,6 +3114,7 @@
                     "id": "magistrale_sicurezza_informatica",
                     "name": "Sicurezza informatica (magistrale)",
                     "description": "",
+                    "icon": "Permissions",
                     "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-informatica",
                     "server_discord": "",
                     "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F2Yof2_2021.pdf",
@@ -3117,8 +3124,15 @@
                             "id": "",
                             "username": "Spacer_ASC",
                             "year": "",
-                            "role": "",
+                            "role": "Administrator",
                             "user_id": 278035059
+                        },
+                        {
+                            "id": "",
+                            "username": "B3rsa",
+                            "year": "",
+                            "role": "Administrator",
+                            "user_id": null
                         }
                     ],
                     "courses": [
@@ -3403,7 +3417,7 @@
                             "anno": 1,
                             "semestre": 1,
                             "cfu": 6,
-                            "gruppo": "https://t.me/joinchat/BVhVgBQJUmLWxcilRH02yA",
+                            "gruppo": "https://t.me/joinchat/QZqvgKdmxzw6fvfI",
                             "websites": [
                                 {
                                     "link": "https://ericcobenemas.ariel.ctu.unimi.it/v5/home/Default.aspx",
@@ -3536,7 +3550,7 @@
             "id": "fisica",
             "name": "Dipartimento di Fisica",
             "description": "",
-            "icon": "ReleaseDefinition",
+            "icon": "HomeGroup",
             "representatives": [],
             "cdls": [
                 {
@@ -3573,7 +3587,7 @@
             "id": "matematica",
             "name": "Dipartimento di Matematica",
             "description": "",
-            "icon": "TimelineMatrixView",
+            "icon": "ScatterChart",
             "representatives": [],
             "cdls": [
                 {
@@ -3610,7 +3624,7 @@
             "id": "agraria",
             "name": "Dipartimento di Agraria",
             "description": "",
-            "icon": "ReleaseDefinition",
+            "icon": "Cotton",
             "representatives": [],
             "cdls": [
                 

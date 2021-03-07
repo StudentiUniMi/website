@@ -5,6 +5,7 @@ import { initializeIcons } from "@uifabric/icons";
 import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { Dropdown, IDropdownOption, IDropdownProps } from 'office-ui-fabric-react/lib/Dropdown';
+import { DropdownMenuItemType } from "@fluentui/react";
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { useTheme } from '@fluentui/react-theme-provider';
 import Col from 'react-bootstrap/Col';
@@ -103,10 +104,37 @@ const CoursesView = () => {
         let department: Department | undefined = departments.filter(x => x.id === selectedDepartment)[0];
         cdls = department?.cdls ?? [];
     }
-
-    let cdlsOptions: IDropdownOption[] = cdls.map(x => ({key: x.id, text: x.name ?? ""}));
-
+    
     let cdl = cdls.filter(x => x.id === selectedCdl)[0];
+
+    function isTriennale(element: IDropdownOption) {
+        let name = String(element.key);
+        let campi = name.split("_");
+        return campi[0] === "triennale";
+    }
+
+    function isMagistrale(element: IDropdownOption) {
+        let name = String(element.key);
+        let campi = name.split("_");
+        return campi[0] === "magistrale";
+    }
+
+    // Cdl dropdown inizialization
+    let cdlsOptions: IDropdownOption[] = [];
+    let temp : IDropdownOption[] = cdls.map(x => ({key: x.id, text: x.name ?? "", data: {icon: x.icon }, disabled: x.courses.length === 0}));
+    let triennali : IDropdownOption[] = temp.filter(isTriennale);
+    let magistrali : IDropdownOption[] = temp.filter(isMagistrale);
+    
+    if (triennali.length !== 0) {
+        cdlsOptions.push({ key: 'Header', text: 'Triennali', itemType: DropdownMenuItemType.Header });
+        cdlsOptions.push(...triennali);
+    }
+
+    if (magistrali.length !== 0) {
+        cdlsOptions.push({ key: 'Header', text: 'Magistrali', itemType: DropdownMenuItemType.Header });
+        cdlsOptions.push(...magistrali);
+    }
+
 
     return (
         <Container className="courses text-center">
@@ -160,6 +188,8 @@ const CoursesView = () => {
                         placeholder="Seleziona un corso di laurea"
                         selectedKey={selectedCdl}
                         onChange={cdlSelectionChanged}
+                        onRenderTitle={onRenderTitle}
+                        onRenderOption={onRenderOption}
                         options={cdlsOptions}
                         styles={dropdownStyles}
                         theme={theme}
@@ -171,6 +201,8 @@ const CoursesView = () => {
                         placeholder="Seleziona un corso di laurea"
                         selectedKey={selectedCdl}
                         onChange={cdlSelectionChanged}
+                        onRenderTitle={onRenderTitle}
+                        onRenderOption={onRenderOption}
                         options={cdlsOptions}
                         styles={dropdownStyles}
                         theme={theme}
