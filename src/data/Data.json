@@ -140,7 +140,7 @@
                     "description": "",
                     "icon": "System",
                     "main_website": "https://informatica.cdl.unimi.it/it",
-                    "server_discord": "https://discord.gg/BcUuqsj",
+                    "server_discord": "",
                     "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F1Xof3_2021.pdf",
                     "virtual_classroom": "https://vc.di.unimi.it/",
                     "admins": [
@@ -972,7 +972,7 @@
                     "description": "",
                     "icon": "MusicInCollection",
                     "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-musicale",
-                    "server_discord": "https://discord.gg/BcUuqsj",
+                    "server_discord": "",
                     "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F3Xof2_2021.pdf",
                     "virtual_classroom": "",
                     "admins": [
@@ -1112,7 +1112,7 @@
                     "description": "",
                     "icon": "Communications",
                     "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-la-comunicazione-digitale",
-                    "server_discord": "https://discord.gg/BcUuqsj",
+                    "server_discord": "",
                     "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F9Xof2_2021.pdf",
                     "virtual_classroom": "",
                     "admins": [
@@ -1452,7 +1452,7 @@
                     "description": "",
                     "icon": "LaptopSecure",
                     "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-dei-sistemi-e-delle-reti-informatiche",
-                    "server_discord": "https://discord.gg/BcUuqsj",
+                    "server_discord": "",
                     "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F68of3_2021.pdf",
                     "virtual_classroom": "",
                     "admins": [
@@ -1992,7 +1992,7 @@
                     "description": "",
                     "icon": "ConnectVirtualMachine",
                     "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-magistrale",
-                    "server_discord": "https://discord.gg/BcUuqsj",
+                    "server_discord": "",
                     "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F94of2_2021.pdf",
                     "virtual_classroom": "",
                     "admins": [

@@ -152,7 +152,7 @@ const CoursesView = () => {
                     anche in altre facoltà. <Link href="https://t.me/giuseppetm" target="_blank" style={{color: theme.palette.red}}>Contattaci</Link> se sei interessato.
                 </Text>
             </div>
-            <div className="mb-4" style={{ lineHeight: "normal" }}>
+            <div className="mb-1" style={{ lineHeight: "normal" }}>
                 <Text style={{ fontSize: FontSizes.size12 }}>
                     I link alla <span style={{ fontWeight: 600 }}>Wiki</span> di un corso didattico potrebbero portare a pagine non ancora compilate:
                     è qui che potete contribuire iscrivendovi e aiutandoci a raccogliere faq e qualsiasi altro contenuto utile per i corsi didattici.
@@ -160,6 +160,11 @@ const CoursesView = () => {
                     Puoi contribuire <Link href="https://wiki.studentiunimi.it/" target="_blank">qui</Link> creando un apposito account gratuito.
                     Puoi dare una mano anche con apposite <Link href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request" target="_blank">pull request</Link> per aggiornare
                     i dati dei corsi didattici (il sito si basa su una repository).
+                </Text>
+            </div>
+            <div className="mb-4">
+                <Text style={{color: '#d83b01', fontWeight: 600 }}>
+                    I link ai gruppi di Informatica (triennale) sono attualmente non funzionanti, contattate un amministratore in caso abbiate bisogno di entrare in uno di quei gruppi.
                 </Text>
             </div>
             
