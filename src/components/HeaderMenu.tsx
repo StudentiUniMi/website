@@ -5,7 +5,7 @@ import { Dropdown, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-rea
 import { Icon, IIconStyles } from 'office-ui-fabric-react/lib/Icon';
 import { useHistory } from "react-router-dom";
 import { IconButton, IIconProps, initializeIcons } from 'office-ui-fabric-react';
-import { TooltipHost, ITooltipHostStyles } from 'office-ui-fabric-react/lib/Tooltip';
+import { TooltipHost, ITooltipHostStyles, TooltipDelay, DirectionalHint } from 'office-ui-fabric-react/lib/Tooltip';
 import { useId } from '@uifabric/react-hooks';
 import { Panel, PanelType } from 'office-ui-fabric-react/lib/Panel';
 import { useBoolean } from '@uifabric/react-hooks';
@@ -132,7 +132,7 @@ const HeaderMenu = (props: Props) => {
                     {Object.values(ItemsKeys).map((x,i) =><PivotItem key={i} headerText={texts.get(x)} style={{ fontSize: FontSizes.size24 }} itemKey={x}/>)}
                 </Pivot>
 
-                <TooltipHost content="Impostazioni del sito" id={tooltipId} calloutProps={calloutProps} styles={hostStyles}>
+                <TooltipHost content="Impostazioni del sito" id={tooltipId} calloutProps={calloutProps} styles={hostStyles} delay={TooltipDelay.zero} directionalHint={DirectionalHint.leftCenter}>
                     <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStylePivot} id={settingsIconId}/>
                 </TooltipHost>
 

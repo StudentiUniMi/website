@@ -23,18 +23,11 @@ const Footer = () => {
                             </Text>
                         </div>
 
-                        <div className="mb-2 text" style={{ lineHeight: "normal" }}>
+                        <div className="mb-1 text" style={{ lineHeight: "normal" }}>
                             <Text style={{ fontSize: FontSizes.size12 }}>
                                 Il network e il relativo sito web non sono affiliati all'Università degli Studi di Milano.
                             </Text>
                         </div>
-                        
-                        <div className="mb-1">
-                            <Link href="https://www.facebook.com/networkstudentiunimi" className="text-decoration-none mr-1"><i className="fab fa-facebook"></i></Link>
-                            <Link href="https://github.com/StudentiUnimi/website" className="text-decoration-none mr-1"><i className="fab fa-github"></i></Link>
-                            <Link href="https://github.com/StudentiUnimi/MultiGroupBot" className="text-decoration-none mr-1"><i className="fas fa-rocket"></i></Link>
-                        </div>
-
                     </Col>
 
                     <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-4 mb-md-0">

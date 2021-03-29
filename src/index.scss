@@ -49,16 +49,6 @@ main {
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Consolas';
-  src: url('fonts/Consolas/Consolas.woff2') format('woff2'),
-      url('fonts/Consolas/Consolas.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-
 
 /* Fix bootstrap outline when click */
 a:active,
@@ -335,4 +325,9 @@ button:focus,
 
 .ms-TooltipHost { /* For showing tooltip correctly on settings icon */
   display: inline;
+}
+
+
+.homeIcon:hover {
+  color: rgb(3, 98, 171) !important;
 }
