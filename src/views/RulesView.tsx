@@ -13,9 +13,9 @@ const Rules = () => {
     const [choice, setChoice] = React.useState<string>('');
     const theme = useTheme();
     const bold: ITextStyles = { root: { fontWeight: FontWeights.semibold } };
-    const rules: ITextStyles = { root: { fontWeight: FontWeights.semibold, fontSize: FontSizes.size12, fontFamily: 'Consolas' } };
-    const rulesText: ITextStyles = { root: { fontSize: FontSizes.size12, fontFamily: 'Consolas' } };
-    const colButtonStyle = { maxWidth: '200px', minWidth: '120px', color: theme.palette.black };
+    const rules: ITextStyles = { root: { fontWeight: FontWeights.semibold, fontSize: FontSizes.size12 } };
+    const rulesText: ITextStyles = { root: { fontSize: FontSizes.size12 } };
+    const colButtonStyle = { maxWidth: '200px', minWidth: '120px' };
 
     const QuestionFaqRulesMessage = () => (
         <MessageBar>
@@ -146,7 +146,6 @@ const Rules = () => {
 
     // Button properties to correct theme colors
     const descriptionStyle = {
-        color: theme.palette.black,
         fontSize: '12px',
         lineHeight: '100%',
         display: 'block'

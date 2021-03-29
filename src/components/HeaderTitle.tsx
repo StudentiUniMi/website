@@ -24,7 +24,7 @@ const HeaderTitle = () => {
 
             {/* Large devices */}
             <div className="large-display">
-                <Row className="m-2">
+                <Row className="m-2 mb-0">
 
                     <span className="mr-1">
                         <Image id="logo" className="mr-3"
@@ -41,7 +41,7 @@ const HeaderTitle = () => {
 
             {/* Medium and small devices */}
             <div className="small-display">
-                <Row className="mt-2 mr-2 mb-2 text-center justify-content-center logo-text">
+                <Row className="mt-2 mr-2 mb-0 text-center justify-content-center logo-text">
 
                     <span className="mr-1">
                         <Image id="logo" className="mr-2"
@@ -55,7 +55,7 @@ const HeaderTitle = () => {
 
                 </Row>
 
-                <Row className="m-2 text-center justify-content-center">
+                <Row className="mt-0 mr-2 ml-2 text-center justify-content-center">
                     <Text styles={titleStyle}>Studenti UniMi</Text>
                 </Row>
             </div>
