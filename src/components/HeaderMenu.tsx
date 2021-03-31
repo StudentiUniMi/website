@@ -24,7 +24,8 @@ export enum ItemsKeys {
     services = "services",
     additional_groups = "additional_groups",
     administrators = "administrators",
-    representatives = "representatives"
+    representatives = "representatives",
+    contributors = "contributors"
 }
 
 const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
@@ -34,7 +35,8 @@ const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
     [ItemsKeys.services, "Servizi"],
     [ItemsKeys.additional_groups, "Gruppi extra"],
     [ItemsKeys.administrators, "Amministratori"],
-    [ItemsKeys.representatives, "Rappresentanti"]
+    [ItemsKeys.representatives, "Rappresentanti"],
+    [ItemsKeys.contributors, "Contributori"]
 ]);
 
 
