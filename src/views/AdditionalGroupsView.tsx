@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, Text } from 'office-ui-fabric-react';
+import { Link, Text, Icon } from 'office-ui-fabric-react';
+import { useTheme } from '@fluentui/react-theme-provider';
 import { FontSizes, FontWeights } from '@fluentui/theme';
 import { Container } from 'react-bootstrap';
 import { FocusZone, List, IRectangle } from "@fluentui/react";
@@ -9,6 +10,8 @@ import ExtraGroupView from '../components/ExtraGroup';
 import ExtraGroup from '../models/ExtraGroup';
 
 const AdditionalGroupsView = () => {
+    var theme = useTheme();
+    const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const columnCount = React.useRef(0);
     const rowHeight = React.useRef(0);
     const rowsPerPage = React.useRef(0);
@@ -49,9 +52,19 @@ const AdditionalGroupsView = () => {
 
     return (
         <Container className="additional-groups text-center">
+
             <div className="mb-2">
-                <Text style={{ fontSize: FontSizes.size14 }}>Qui è possibile trovare gruppi aggiuntivi del network. Se vorresti che ne fossero creati ulteriori puoi comunicarlo 
-                sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link>.</Text>
+                <h5 style={{fontWeight: 400}}>
+                    Cerchi gruppi per discutere di un particolare argomento? Qui è possibile trovare tutti quelli che abbiamo creato.
+                </h5>
+            </div>
+
+            <Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} />
+
+            <div className="mb-4">
+                <Text style={{ fontSize: FontSizes.size18 }}>
+                    Se vorresti che venissero creati altri gruppi puoi scriverlo sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link>.
+                </Text>
             </div>
 
             <div className="mb-3">

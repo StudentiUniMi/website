@@ -27,8 +27,6 @@ const sectionCard = {
 }
 
 const calloutProps = { gapSpace: 10 };
-// The TooltipHost root uses display: inline by default.
-// If that's causing sizing issues or tooltip positioning issues, try overriding to inline-block.
 const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
 
 const HomeView = () => {
@@ -48,40 +46,40 @@ const HomeView = () => {
             />
             <h3 className="mb-3">Benvenuto nel sito web del Network Studenti UniMi!</h3>
 
-            <div className="iconSection mb-2">
-            <TooltipHost
-                content="Canale Telegram"
-                calloutProps={calloutProps}
-                styles={hostStyles}
-                delay={TooltipDelay.zero}
-            >
-                <Link onClick={() => redirectToLink("https://t.me/studenti_unimi")}><i className="fab fa-telegram-plane homeIcon pr-3" style={homeIconStyle}></i></Link>
-            </TooltipHost>
-            <TooltipHost
-                content="Pagina Facebook"
-                calloutProps={calloutProps}
-                styles={hostStyles}
-                delay={TooltipDelay.zero}
-            >
-                <Link onClick={() => redirectToLink("https://www.facebook.com/networkstudentiunimi")}><i className="fab fa-facebook homeIcon pr-3" style={homeIconStyle}></i></Link>
-            </TooltipHost>
-            <TooltipHost
-                content="Organizzazione GitHub"
-                calloutProps={calloutProps}
-                styles={hostStyles}
-                delay={TooltipDelay.zero}
-            >
-                <Link onClick={() => redirectToLink("https://github.com/StudentiUnimi/")}><i className="fab fa-github homeIcon" style={homeIconStyle}></i></Link>
-            </TooltipHost>
+            <div className="iconSection mb-3">
+                <TooltipHost
+                    content="Canale Telegram"
+                    calloutProps={calloutProps}
+                    styles={hostStyles}
+                    delay={TooltipDelay.zero}
+                >
+                    <Link onClick={() => redirectToLink("https://t.me/studenti_unimi")}><i className="fab fa-telegram-plane homeIcon pr-3" style={homeIconStyle}></i></Link>
+                </TooltipHost>
+                <TooltipHost
+                    content="Pagina Facebook"
+                    calloutProps={calloutProps}
+                    styles={hostStyles}
+                    delay={TooltipDelay.zero}
+                >
+                    <Link onClick={() => redirectToLink("https://www.facebook.com/networkstudentiunimi")}><i className="fab fa-facebook homeIcon pr-3" style={homeIconStyle}></i></Link>
+                </TooltipHost>
+                <TooltipHost
+                    content="Organizzazione GitHub"
+                    calloutProps={calloutProps}
+                    styles={hostStyles}
+                    delay={TooltipDelay.zero}
+                >
+                    <Link onClick={() => redirectToLink("https://github.com/StudentiUnimi/")}><i className="fab fa-github homeIcon" style={homeIconStyle}></i></Link>
+                </TooltipHost>
             </div>
 
-            <h4 style={{fontWeight: 400}}>La nostra missione è organizzare le informazioni dell'Università degli studi di Milano e renderle accessibili a tutti.</h4>
+            <h5 style={{fontWeight: 400}}>La nostra missione è organizzare le informazioni dell'Università degli studi di Milano e renderle accessibili a tutti.</h5>
         </div>
 
         <Icon iconName="ChevronDownMed" className="mb-3" style={iconStyle} />
 
         <div className="secondary-section mb-5">
-            <h5 className="mb-4">Ogni cosa ha il suo gruppo Telegram.</h5>
+            <h5 className="mb-4">Ogni cosa ha il suo gruppo Telegram</h5>
 
             <Row className="justify-content-center">
                 <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
@@ -128,7 +126,7 @@ const HomeView = () => {
         </div>
 
         <div className="tertiary-section mb-4">
-            <h5 className="mb-4">I nostri servizi per aiutarti nello studio.</h5>
+            <h5 className="mb-4">I nostri servizi per aiutarti nello studio</h5>
 
             <Row className="justify-content-center">
                 <Col className="mb-3" xl={3} lg={3} md={4} sm={6} xs={12}>

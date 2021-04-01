@@ -5,9 +5,10 @@ import AdministratorsView from './AdministratorsView';
 import RulesView from './RulesView';
 import ServicesView from './ServicesView';
 import RepresentativesView from './RepresentativesView';
+import ContributorsView from './ContributorsView';
 import { Route, Switch } from 'react-router-dom';
 
-const Content = () => {
+const ContentView = () => {
     const wrap = (element: React.ReactNode): React.ReactNode => {
         return (<main role="main" className="content mt-4 mb-4">{element}</main>)
     };
@@ -21,8 +22,9 @@ const Content = () => {
             <Route path='/additional_groups' render={() => wrap(<AdditionalGroupsView/>)} />
             <Route path='/administrators' render={() => wrap(<AdministratorsView/>)} />
             <Route path='/representatives' render={() => wrap(<RepresentativesView/>)} />
+            <Route path='/contributors' render={() => wrap(<ContributorsView/>)} />
         </Switch>
     )
 }
 
-export default Content;
+export default ContentView;

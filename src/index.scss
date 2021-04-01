@@ -130,7 +130,7 @@ button:focus,
 
 
 /* Responsive menu and title */
-@media only screen and (min-width: 696px) {
+@media only screen and (min-width: 801px) {
   .header-menu .pivot {
     display: block;
   }
@@ -143,7 +143,7 @@ button:focus,
     margin-left: 10px;
   }
 }
-@media only screen and (max-width: 695px) {
+@media only screen and (max-width: 800px) {
   .header-menu .pivot {
     display: none;
   }
@@ -326,7 +326,6 @@ button:focus,
 .ms-TooltipHost { /* For showing tooltip correctly on settings icon */
   display: inline;
 }
-
 
 .homeIcon:hover {
   color: rgb(3, 98, 171) !important;

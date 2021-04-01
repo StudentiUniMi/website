@@ -7,6 +7,8 @@ import Representative from '../models/Representative';
 import serviceData from '../data/Services.json';
 import homeLinksData from '../data/HomeLinks.json';
 import Degree from '../models/Degree';
+import Contributor from '../models/Contributor';
+import contributors from '../data/Contributors.json';
 
 export const getExtraGroups = () => extraGroups;
 
@@ -19,3 +21,5 @@ export const getHomeLinks = (): HomeLink[] => homeLinksData;
 export const getRepresentatives = (departmentId:string): Representative[] => (data.departments.filter(x => x.id === departmentId)[0]?.representatives ?? []);
 
 export const getAllCdls = (): Degree[] => ([] as Degree[]).concat(...(data.departments.map(x=>x.cdls as any as Degree[])));
+
+export const getContributors = (): Contributor[] => contributors;
