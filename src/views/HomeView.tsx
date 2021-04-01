@@ -27,8 +27,6 @@ const sectionCard = {
 }
 
 const calloutProps = { gapSpace: 10 };
-// The TooltipHost root uses display: inline by default.
-// If that's causing sizing issues or tooltip positioning issues, try overriding to inline-block.
 const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
 
 const HomeView = () => {
@@ -48,7 +46,7 @@ const HomeView = () => {
             />
             <h3 className="mb-3">Benvenuto nel sito web del Network Studenti UniMi!</h3>
 
-            <div className="iconSection mb-2">
+            <div className="iconSection mb-3">
                 <TooltipHost
                     content="Canale Telegram"
                     calloutProps={calloutProps}
@@ -75,7 +73,7 @@ const HomeView = () => {
                 </TooltipHost>
             </div>
 
-            <h4 style={{fontWeight: 400}}>La nostra missione è organizzare le informazioni dell'Università degli studi di Milano e renderle accessibili a tutti.</h4>
+            <h5 style={{fontWeight: 400}}>La nostra missione è organizzare le informazioni dell'Università degli studi di Milano e renderle accessibili a tutti.</h5>
         </div>
 
         <Icon iconName="ChevronDownMed" className="mb-3" style={iconStyle} />

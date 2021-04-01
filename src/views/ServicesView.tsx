@@ -5,6 +5,7 @@ import { useTheme } from '@fluentui/react-theme-provider';
 import { DocumentCardPreview, IDocumentCardPreviewProps } from 'office-ui-fabric-react/lib/DocumentCard';
 import { Card, ICardTokens } from '@uifabric/react-cards';
 import { FontWeights, ITextStyles } from 'office-ui-fabric-react';
+import { Icon, Link } from 'office-ui-fabric-react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { getServices } from '../services/Requests';
@@ -13,6 +14,7 @@ import { redirectToLink } from '../services/Utils';
 
 const Services = () => {
     var theme = useTheme();
+    const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     let cardProps = (iconName?: string, backgroundColor?: string): IDocumentCardPreviewProps => {
         return {
             previewImages: [ 
@@ -42,9 +44,18 @@ const Services = () => {
 
     return (
         <Container className="services text-center">
-            <div className="text-center mb-3">
-                <Text style={{ fontSize: FontSizes.size14 }}>
-                    Qui è possibile trovare tutti i link a servizi e risorse utili legati all'ambito universitario.
+            <div className="mb-3">
+                <h5 style={{fontWeight: 400}}>
+                    Siete stanchi di dover andare a spulciare miriadi di pagine che neanche caricano alla ricerca di strumenti e servizi universitari?
+                    Abbiamo realizzato una pagina per centralizzarli tutti.
+                </h5>
+            </div>
+
+            <Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} />
+
+            <div className="mb-4">
+                <Text style={{ fontSize: FontSizes.size18 }}>
+                    Se pensi che debba essere aggiunto qualcosa scrivi pure sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link>.
                 </Text>
             </div>
 

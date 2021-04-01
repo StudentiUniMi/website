@@ -1,11 +1,11 @@
 import React from "react";
-import { FontSizes } from '@fluentui/theme';
-import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
+import { FontSizes } from '@fluentui/theme';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { Dropdown, IDropdownOption, IDropdownStyles, IDropdownProps } from 'office-ui-fabric-react/lib/Dropdown';
 import { useHistory } from 'react-router-dom';
-import PeopleListView from '../components/RepresentativesList';
+import { useTheme } from '@fluentui/react-theme-provider';
+import RepresentativesList from '../components/RepresentativesList';
 import { getRepresentatives, getDepartments } from '../services/Requests'
 import Representative from '../models/Representative';
 
@@ -46,7 +46,9 @@ const onRenderPlaceholder = (props?: IDropdownProps): JSX.Element => {
 };
 
 const RepresentativesView = () => {
+    var theme = useTheme();
     const history = useHistory();
+    const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const [selectedDepartment, setSelectedDepartment] = React.useState<string>('');
 
     const departmentSelectionChanged = (
@@ -79,14 +81,19 @@ const RepresentativesView = () => {
     return (
         <Container className="representatives text-center">
 
-            <div className="mb-3">
-                <Text style={{ fontSize: FontSizes.size14 }}>
+            <div className="mb-2">
+                <h5 style={{fontWeight: 400}} className="mb-2">
                     Il rappresentante degli studenti è un ruolo molto importante ed altamente formativo, 
-                    che garantisce a tutti gli studenti universitari un supporto alle difficoltà che può incontrare durante il periodo di studio. 
-                    Il suo impegno è quello di assicurare presenza e azione nei vari organi dell'Ateneo, relativemente alla didattica, all'organizzazione delle attività formative e dei servizi degli studenti.
+                    che garantisce a tutti gli studenti universitari un supporto alle difficoltà che può incontrare durante il periodo di studio.
+                </h5>
+
+                <h6 style={{fontWeight: 400}}>
                     Di seguito è presente la lista dei rappresentanti di ogni dipartimento e i loro contatti.
-                </Text>
+                </h6>
             </div>
+
+            <Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} />
+
             <Container className="mb-4 justify-content-center" style={{maxWidth: '500px'}}>
                 <Dropdown
                     placeholder="Seleziona un dipartimento"
@@ -102,7 +109,7 @@ const RepresentativesView = () => {
             </Container>
 
             <div>
-                <PeopleListView data={representatives}/>
+                <RepresentativesList data={representatives}/>
             </div>
             
 

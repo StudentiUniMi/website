@@ -60,6 +60,8 @@ const CoursesView = () => {
         dropdownItems: { color: theme.palette.neutralPrimary },
     };
 
+    const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
+
     const departmentSelectionChanged = (
         ev?: React.FormEvent<HTMLElement | HTMLInputElement>,
         option?: IDropdownOption
@@ -138,32 +140,28 @@ const CoursesView = () => {
 
     return (
         <Container className="courses text-center">
+
             <div className="mb-1" style={{ lineHeight: "normal" }}>
-                <Text style={{ fontSize: FontSizes.size14, lineHeight: "normal" }}>
-                    Qui è possibile trovare i gruppi telegram, siti web, wiki, faq (se disponibili) e informazioni generali riguardo il tuo corso di laurea e i suoi corsi didattici.
-                    Se noti qualcosa che non corrisponde o che andrebbe sistemato puoi 
-                    comunicarlo sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link>. Sei uno studente di fisica, matematica o altre facoltà unimi
-                    che vorrebbe che venissero creati i gruppi telegram dei propri corsi didattici? Anche quello puoi chiederlo sul gruppo.
-                </Text>
+                <h5 style={{fontWeight: 400}}>
+                    Qui è possibile trovare i gruppi telegram, siti web, wiki, faq (se disponibili) e informazioni generali come il manifesto degli studi riguardo il tuo corso di laurea e i suoi corsi didattici.
+                </h5>
             </div>
+
+            <Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} />
+
             <div className="mb-1" style={{ lineHeight: "normal" }}>
-                <Text>
-                    Al momento stiamo cercando studenti che vorrebbero contribuire allo sviluppo del network 
-                    anche in altre facoltà. <Link href="https://t.me/giuseppetm" target="_blank" style={{color: theme.palette.red}}>Contattaci</Link> se sei interessato.
-                </Text>
-            </div>
-            <div className="mb-1" style={{ lineHeight: "normal" }}>
-                <Text style={{ fontSize: FontSizes.size12 }}>
+                <Text style={{ fontSize: FontSizes.size14 }}>
                     I link alla <span style={{ fontWeight: 600 }}>Wiki</span> di un corso didattico potrebbero portare a pagine non ancora compilate:
                     è qui che potete contribuire iscrivendovi e aiutandoci a raccogliere faq e qualsiasi altro contenuto utile per i corsi didattici.
                     Informatica musicale, per la comunicazione digitale e molti altri corsi di laurea non hanno ancora contenuti! 
                     Puoi contribuire <Link href="https://wiki.studentiunimi.it/" target="_blank">qui</Link> creando un apposito account gratuito.
-                    Puoi dare una mano anche con apposite <Link href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request" target="_blank">pull request</Link> per aggiornare
-                    i dati dei corsi didattici (il sito si basa su una repository).
                 </Text>
             </div>
+
+            
+
             <div className="mb-4">
-                <Text style={{color: '#d83b01', fontWeight: 600 }}>
+                <Text style={{color: theme.palette.red, fontWeight: 600 }}>
                     I link ai gruppi di Informatica (triennale) sono attualmente non funzionanti, contattate un amministratore in caso abbiate bisogno di entrare in uno di quei gruppi.
                 </Text>
             </div>

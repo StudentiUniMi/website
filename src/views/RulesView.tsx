@@ -1,6 +1,6 @@
 import React from "react";
 import { FontSizes } from '@fluentui/theme';
-import { Text } from 'office-ui-fabric-react/lib/Text';
+import { Text, Icon } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
 import { CompoundButton } from 'office-ui-fabric-react';
 import { MessageBar } from 'office-ui-fabric-react';
@@ -10,8 +10,9 @@ import { FontWeights, ITextStyles } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
 
 const Rules = () => {
-    const [choice, setChoice] = React.useState<string>('');
     const theme = useTheme();
+    const [choice, setChoice] = React.useState<string>('');
+    const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const bold: ITextStyles = { root: { fontWeight: FontWeights.semibold } };
     const rules: ITextStyles = { root: { fontWeight: FontWeights.semibold, fontSize: FontSizes.size12 } };
     const rulesText: ITextStyles = { root: { fontSize: FontSizes.size12 } };
@@ -153,14 +154,18 @@ const Rules = () => {
 
     return (
         <Container className="rules text-center">
-            <div className="mb-4">
-
-                <div className="mb-2">
-                    <Text style={{ fontSize: FontSizes.size14 }}>Si consiglia di leggere le regole indicate prima di utilizzare uno qualsiasi dei gruppi disponibili.</Text>
+            <div>
+                <div className="mb-3">
+                    <h5 style={{fontWeight: 400}}>
+                        Qui è possibile trovare il regolamento dei gruppi telegram del network.
+                        Si consiglia di leggere le varie sezioni di cui è composto prima di usare uno qualsiasi di essi.
+                    </h5>
                 </div>
                 
+                <Icon iconName="DoubleChevronDown" className="mb-2" style={iconStyle} />
+                
                 <div className="mb-2">
-                    <Text styles={{ root: { fontWeight: FontWeights.semibold, color: theme.palette.themePrimary } }}>Perchè abbiamo introdotto un regolamento?</Text>
+                    <Text styles={{ root: { fontWeight: FontWeights.semibold, color: theme.palette.themePrimary, fontSize: FontSizes.size14 } }}>Perchè abbiamo introdotto un regolamento?</Text>
                 </div>
 
                 <div className="mb-2">
@@ -173,8 +178,13 @@ const Rules = () => {
                     </Text>
                 </div>
 
+                <Icon iconName="DoubleChevronDown" className="mb-2" style={iconStyle} />
+
                 <div>
                     <Text style={{ fontSize: FontSizes.size14 }}>Di seguito è possibile trovare il <Text styles={bold}>regolamento</Text> e le varie sezioni di cui è composto.</Text>
+                </div>
+                <div className="mb-4">
+                    <Text style={{ fontSize: FontSizes.size14 }}>Premi un pulsante per visualizzare le regole di quella sezione.</Text>
                 </div>
             </div>
 
