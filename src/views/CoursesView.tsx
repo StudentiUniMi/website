@@ -149,20 +149,12 @@ const CoursesView = () => {
 
             <Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} />
 
-            <div className="mb-1" style={{ lineHeight: "normal" }}>
+            <div className="mb-4" style={{ lineHeight: "normal" }}>
                 <Text style={{ fontSize: FontSizes.size14 }}>
                     I link alla <span style={{ fontWeight: 600 }}>Wiki</span> di un corso didattico potrebbero portare a pagine non ancora compilate:
                     è qui che potete contribuire iscrivendovi e aiutandoci a raccogliere faq e qualsiasi altro contenuto utile per i corsi didattici.
                     Informatica musicale, per la comunicazione digitale e molti altri corsi di laurea non hanno ancora contenuti! 
                     Puoi contribuire <Link href="https://wiki.studentiunimi.it/" target="_blank">qui</Link> creando un apposito account gratuito.
-                </Text>
-            </div>
-
-            
-
-            <div className="mb-4">
-                <Text style={{color: theme.palette.red, fontWeight: 600 }}>
-                    I link ai gruppi di Informatica (triennale) sono attualmente non funzionanti, contattate un amministratore in caso abbiate bisogno di entrare in uno di quei gruppi.
                 </Text>
             </div>
             
