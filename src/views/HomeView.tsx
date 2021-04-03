@@ -24,7 +24,7 @@ const sectionCard = {
     width: '100%',
     maxWidth: 'none',
     maxHeight: 'none'
-}
+};
 
 const calloutProps = { gapSpace: 15 };
 const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
@@ -33,7 +33,7 @@ const HomeView = () => {
     var theme = useTheme();
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
-    const buttonStyle = { maxWidth: '180px'};
+    const buttonStyle = { maxWidth: '180px' };
 
     return (
         <Container className="home text-center">
@@ -89,7 +89,7 @@ const HomeView = () => {
 
         <Icon iconName="ChevronDownMed" className="mb-3" style={iconStyle} />
 
-        <div className="secondary-section mb-5">
+        <div className="secondary-section mb-4">
             <h5 className="mb-4">Ogni cosa ha il suo gruppo Telegram</h5>
 
             <Row className="justify-content-center">
