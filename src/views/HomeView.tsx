@@ -148,7 +148,7 @@ const HomeView = () => {
                                 Cerchi un posto in cui parlare liberamente con i tuoi amici? Utilizza il nostro server discord quando vuoi!
                             </Text>
                             <div className="justify-content-center">
-                                <PrimaryButton text="Server discord" disabled allowDisabledFocus style={buttonStyle} />
+                                <PrimaryButton text="Server discord" onClick={() => redirectToLink("https://discord.gg/SwPzAkv4A4")} allowDisabledFocus style={buttonStyle} />
                             </div>
                         </Card.Section>
                     </Card>
