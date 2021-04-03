@@ -57,7 +57,7 @@ const ContributorsView = () => {
 
             <Icon iconName="ChevronDownMed" className="mb-3" style={iconStyle} />
 
-            <div className="primary-section mb-4">
+            <div className="mb-4">
                 <h5 className="mb-3">Manutentori principali</h5>
 
                 <Row className="justify-content-center">
@@ -104,7 +104,7 @@ const ContributorsView = () => {
             </div>
 
 
-            <div className="primary-section mb-4">
+            <div className="mb-4">
                 <h5 className="mb-3">Contributori</h5>
 
                 <div className="contributors">

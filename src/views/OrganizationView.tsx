@@ -3,6 +3,7 @@ import { Icon, Link } from 'office-ui-fabric-react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Container } from 'react-bootstrap';
+import { Persona } from 'office-ui-fabric-react/lib/Persona';
 import { FontSizes, FontWeights } from '@fluentui/theme';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { useTheme } from '@fluentui/react-theme-provider';
@@ -20,12 +21,16 @@ const sectionCard = {
 const helpfulTextStyles: ITextStyles = { root: { fontWeight: FontWeights.regular } };
 
 const CAN = [
-    { name: "Silvio Settembrese", delega: "Gestore Discord" },
-    { name: "Mattia Oldani", delega: "" },
-    { name: "Laura Luperto", delega: "Gestrice Discord" },
-    { name: "Gabriele Sarti", delega: "" },
-    { name: "Fabrizio Brioni", delega: "" }
+    { username: "", name: "Silvio Settembrese", delega: "Gestore Discord" },
+    { username: "", name: "Mattia Oldani", delega: "" },
+    { username: "", name: "Laura Luperto", delega: "Gestrice Discord" },
+    { username: "", name: "Gabriele Sarti", delega: "" },
+    { username: "", name: "Fabrizio Brioni", delega: "" }
 ];
+
+const admins = [];
+
+const mods = [];
 
 const OrganizationView = () => {
     var theme = useTheme();
@@ -54,17 +59,20 @@ const OrganizationView = () => {
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
                             <div className="justify-content-center">
-                                {/* pic of persona */}
+                                <Persona onRenderPrimaryText={() => null} primaryText={"Marco Aceti"} />
                             </div>
-                            <h6 className="mb-0">Marco Aceti</h6>
+                            <h6 className="mb-0"><Link href={`https://t.me/acetimarco`} target="_blank">Marco Aceti</Link></h6>
                             <Text variant="medium" styles={helpfulTextStyles}>
                                 
                             </Text>
                         </Card.Section>
                     </Card>
                 </div>
+            </div>
 
-                <h5 className="mb-3">Comitato Amministrativo Network</h5>
+            <div className="mb-4">
+
+                <h5 className="mb-3">Comitato Amministrativo</h5>
 
                 <Row className="justify-content-center">
                     {
@@ -73,9 +81,9 @@ const OrganizationView = () => {
                                 <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                                     <Card.Section>
                                         <div className="justify-content-center">
-                                            {/* pic of persona */}
+                                            <Persona onRenderPrimaryText={() => null} primaryText={x.name} />
                                         </div>
-                                        <h6 className="mb-0">{x.name}</h6>
+                                        <h6 className="mb-0"><Link href={`https://t.me/${x.username}`} target="_blank">{x.name}</Link></h6>
                                         <Text variant="medium" styles={helpfulTextStyles}>
                                             {x.delega}
                                         </Text>
@@ -85,12 +93,17 @@ const OrganizationView = () => {
                         )})
                     }
                 </Row>
+            </div>
                 
 
+            <div className="mb-4">
                 <h5 className="mb-3">Amministratori</h5>
+            </div>
 
+            <div className="mb-4">
                 <h5 className="mb-3">Moderatori</h5>
             </div>
+
         </Container>
     )
 };
