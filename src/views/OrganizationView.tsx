@@ -38,13 +38,13 @@ const OrganizationView = () => {
 
     return (
         <Container className="organization text-center">
-            
+
             <div className="mb-2">
-                <h5 style={{fontWeight: 400}} className="mb-2">
+                <h5 style={{ fontWeight: 400 }} className="mb-2">
                     Siamo un'organizzazione senza fini di lucro, apolitica, ovvero apartitica, e neutrale, la quale si pone l'obiettivo di offrire servizi telematici agli studenti dell'Università degli Studi di Milano.
                 </h5>
 
-                <h6 style={{fontWeight: 400}} className="mb-2">
+                <h6 style={{ fontWeight: 400 }} className="mb-2">
                     <p className="mb-0">Puoi trovare il nostro statuto cliccando <Link href="https://github.com/StudentiUniMi/docs/blob/main/statuto.md" target="_blank">qui</Link>.</p>
                     Di seguito è possibile trovare i membri che hanno un ruolo attivo nel network e i relativi contatti.
                 </h6>
@@ -55,7 +55,7 @@ const OrganizationView = () => {
             <div className="mb-4">
                 <h5 className="mb-3">Coordinatore</h5>
 
-                <div style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '230px'}} className="mb-4">
+                <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: '230px' }} className="mb-4">
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
                             <div className="justify-content-center">
@@ -63,7 +63,7 @@ const OrganizationView = () => {
                             </div>
                             <h6 className="mb-0"><Link href={`https://t.me/acetimarco`} target="_blank">Marco Aceti</Link></h6>
                             <Text variant="medium" styles={helpfulTextStyles}>
-                                
+
                             </Text>
                         </Card.Section>
                     </Card>
@@ -76,25 +76,27 @@ const OrganizationView = () => {
 
                 <Row className="justify-content-center">
                     {
-                        CAN.map(x => { return (
-                            <Col className="mb-3" xl={3} lg={3} md={4} sm={6} xs={12}>
-                                <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                                    <Card.Section>
-                                        <div className="justify-content-center">
-                                            <Persona onRenderPrimaryText={() => null} primaryText={x.name} />
-                                        </div>
-                                        <h6 className="mb-0"><Link href={`https://t.me/${x.username}`} target="_blank">{x.name}</Link></h6>
-                                        <Text variant="medium" styles={helpfulTextStyles}>
-                                            {x.delega}
-                                        </Text>
-                                    </Card.Section>
-                                </Card>
-                            </Col>
-                        )})
+                        CAN.map(x => {
+                            return (
+                                <Col className="mb-3" xl={3} lg={3} md={4} sm={6} xs={12}>
+                                    <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
+                                        <Card.Section>
+                                            <div className="justify-content-center">
+                                                <Persona onRenderPrimaryText={() => null} primaryText={x.name} />
+                                            </div>
+                                            <h6 className="mb-0"><Link href={`https://t.me/${x.username}`} target="_blank">{x.name}</Link></h6>
+                                            <Text variant="medium" styles={helpfulTextStyles}>
+                                                {x.delega}
+                                            </Text>
+                                        </Card.Section>
+                                    </Card>
+                                </Col>
+                            )
+                        })
                     }
                 </Row>
             </div>
-                
+
 
             <div className="mb-4">
                 <h5 className="mb-3">Amministratori</h5>
