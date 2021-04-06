@@ -24,16 +24,16 @@ const sectionCard = {
     width: '100%',
     maxWidth: 'none',
     maxHeight: 'none'
-}
+};
 
-const calloutProps = { gapSpace: 10 };
+const calloutProps = { gapSpace: 15 };
 const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
 
 const HomeView = () => {
     var theme = useTheme();
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
-    const buttonStyle = { maxWidth: '180px'};
+    const buttonStyle = { maxWidth: '180px' };
 
     return (
         <Container className="home text-center">
@@ -53,16 +53,27 @@ const HomeView = () => {
                     styles={hostStyles}
                     delay={TooltipDelay.zero}
                 >
-                    <Link onClick={() => redirectToLink("https://t.me/studenti_unimi")}><i className="fab fa-telegram-plane homeIcon pr-3" style={homeIconStyle}></i></Link>
+                    <Link onClick={() => redirectToLink("https://t.me/studenti_unimi")}><i className="fab fa-telegram homeIcon" style={homeIconStyle}></i></Link>
                 </TooltipHost>
+                &nbsp;&nbsp;&nbsp;
+                <TooltipHost
+                    content="Server Discord"
+                    calloutProps={calloutProps}
+                    styles={hostStyles}
+                    delay={TooltipDelay.zero}
+                >
+                    <Link onClick={() => redirectToLink("https://discord.gg/SwPzAkv4A4")}><i className="fab fa-discord homeIcon" style={homeIconStyle}></i></Link>
+                </TooltipHost>
+                &nbsp;&nbsp;&nbsp;
                 <TooltipHost
                     content="Pagina Facebook"
                     calloutProps={calloutProps}
                     styles={hostStyles}
                     delay={TooltipDelay.zero}
                 >
-                    <Link onClick={() => redirectToLink("https://www.facebook.com/networkstudentiunimi")}><i className="fab fa-facebook homeIcon pr-3" style={homeIconStyle}></i></Link>
+                    <Link onClick={() => redirectToLink("https://www.facebook.com/networkstudentiunimi")}><i className="fab fa-facebook homeIcon" style={homeIconStyle}></i></Link>
                 </TooltipHost>
+                &nbsp;&nbsp;&nbsp;
                 <TooltipHost
                     content="Organizzazione GitHub"
                     calloutProps={calloutProps}
@@ -78,15 +89,16 @@ const HomeView = () => {
 
         <Icon iconName="ChevronDownMed" className="mb-3" style={iconStyle} />
 
-        <div className="secondary-section mb-5">
+        <div className="secondary-section mb-4">
             <h5 className="mb-4">Ogni cosa ha il suo gruppo Telegram</h5>
 
             <Row className="justify-content-center">
                 <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
+                            <div><Icon iconName="Group" style={homeIconStyle} className="homeIcon" /></div>
                             <Text variant="medium" styles={helpfulTextStyles}>
-                                Dì addio al mega gruppo WhatsApp in cui non si capisce nulla! Abbiamo creato un gruppo Telegram per ogni insegnamento.
+                                Di' addio al mega gruppo WhatsApp in cui non si capisce nulla! Abbiamo creato un gruppo Telegram per ogni insegnamento.
                             </Text>
                             <div className="justify-content-center">
                                 <PrimaryButton text="Gruppi dei corsi" className="text-decoration-none" href="https://studentiunimi.it/courses/" allowDisabledFocus style={buttonStyle} />
@@ -98,6 +110,7 @@ const HomeView = () => {
                 <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
+                            <div><Icon iconName="AddGroup" style={homeIconStyle} className="homeIcon" /></div>
                             <Text variant="medium" styles={helpfulTextStyles}>
                                 Ripetizioni, materiali, erasmus, tirocinio, alloggi.
                                 Tutte quelle cose extra che però hanno la loro importanza.
@@ -112,9 +125,10 @@ const HomeView = () => {
                 <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
+                            <div><Icon iconName="Dictionary" style={homeIconStyle} className="homeIcon" /></div>
                             <Text variant="medium" styles={helpfulTextStyles}>
                                 Crediamo che un ambiente rispettoso e inclusivo ci renda più innovativi e produttivi.
-                                Dai un'occhiata al regolamento.
+                                Dai un'occhiata al regolamento dei gruppi.
                             </Text>
                             <div className="justify-content-center">
                                 <PrimaryButton text="Regolamento" className="text-decoration-none" href="https://studentiunimi.it/rules/" allowDisabledFocus style={buttonStyle} />
@@ -132,8 +146,9 @@ const HomeView = () => {
                 <Col className="mb-3" xl={3} lg={3} md={4} sm={6} xs={12}>
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
+                            <div><Icon iconName="Globe" style={homeIconStyle} className="homeIcon" /></div>
                             <Text variant="medium" styles={helpfulTextStyles}>
-                                Accedi alla Wiki del network e aiutaci a migliorarla contribuendo!
+                                Accedi alla Wiki del Network e aiutaci a migliorarla contribuendo!
                             </Text>
                             <div className="justify-content-center">
                                 <PrimaryButton text="Wiki" onClick={() => redirectToLink("https://wiki.studentiunimi.it/")} allowDisabledFocus style={buttonStyle} />
@@ -141,21 +156,25 @@ const HomeView = () => {
                         </Card.Section>
                     </Card>
                 </Col>
+                {/*
                 <Col className="mb-3" xl={3} lg={3} md={4} sm={6} xs={12}>
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
+                            <div><i className="fab fa-discord homeIcon" style={homeIconStyle}></i></div>
                             <Text variant="medium" styles={helpfulTextStyles}>
                                 Cerchi un posto in cui parlare liberamente con i tuoi amici? Utilizza il nostro server discord quando vuoi!
                             </Text>
                             <div className="justify-content-center">
-                                <PrimaryButton text="Server discord" disabled allowDisabledFocus style={buttonStyle} />
+                                <PrimaryButton text="Server discord" onClick={() => redirectToLink("https://discord.gg/SwPzAkv4A4")} allowDisabledFocus style={buttonStyle} />
                             </div>
                         </Card.Section>
                     </Card>
                 </Col>
+                */}
                 <Col className="mb-3" xl={3} lg={3} md={4} sm={6} xs={12}>
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
+                            <div><Icon iconName="World" style={homeIconStyle} className="homeIcon" /></div>
                             <Text variant="medium" styles={helpfulTextStyles}>
                                 Utilizza la nostra comoda pagina che ti permette di raggiungere tutti i servizi UniMi.
                             </Text>
@@ -169,6 +188,7 @@ const HomeView = () => {
                 <Col className="mb-3" xl={3} lg={3} md={4} sm={6} xs={12}>
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
+                            <div><Icon iconName="CloudDownload" style={homeIconStyle} className="homeIcon" /></div>
                             <Text variant="medium" styles={helpfulTextStyles}>
                                 <div className="mb-0">Mi mandi i tuoi appunti?</div> 
                                 <div>Un attimo e sono subito da lei!</div>
@@ -183,6 +203,7 @@ const HomeView = () => {
                 <Col className="mb-3" xl={3} lg={3} md={4} sm={6} xs={12}>
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
+                            <div><Icon iconName="Code" style={homeIconStyle} className="homeIcon" /></div>
                             <Text variant="medium" styles={helpfulTextStyles}>
                                 Accedi al nostro servizio per condividere codice e qualsiasi altro materiale in maniera comoda e sicura.
                             </Text>
@@ -204,6 +225,7 @@ const HomeView = () => {
                 <Col style={fourthSectionCol} className="mb-3">
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
+                            <div><Icon iconName="ContactHeart" style={homeIconStyle} className="homeIcon" /></div>
                             <Text variant="medium" styles={helpfulTextStyles}>
                                 Ho un problema didattico.
                             </Text>
@@ -218,12 +240,13 @@ const HomeView = () => {
                 <Col style={fourthSectionCol} className="mb-3">
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
+                            <div><Icon iconName="Telemarketer" style={homeIconStyle} className="homeIcon" /></div>
                             <Text variant="medium" styles={helpfulTextStyles}>
                                 Ho un problema tecnico.
                             </Text>
                             <Icon iconName="SortDown" style={iconStyle}></Icon>
                             <div className="justify-content-center">
-                                <PrimaryButton text="Amministratori" className="text-decoration-none" href="https://studentiunimi.it/administrators/" allowDisabledFocus style={buttonStyle} />
+                                <PrimaryButton text="Amministratori" className="text-decoration-none" href="https://studentiunimi.it/organization/" allowDisabledFocus style={buttonStyle} />
                             </div>
                         </Card.Section>
                     </Card>

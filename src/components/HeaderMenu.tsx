@@ -19,22 +19,22 @@ const onRenderCaretDown = (): JSX.Element => {
 
 export enum ItemsKeys {
     home = "home",
+    organization = "organization",
     rules = "rules",
     courses = "courses",
     services = "services",
     additional_groups = "additional_groups",
-    administrators = "administrators",
     representatives = "representatives",
     contributors = "contributors"
 }
 
 const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
     [ItemsKeys.home, "Home"],
+    [ItemsKeys.organization, "Chi siamo"],
     [ItemsKeys.rules, "Regolamento"],
     [ItemsKeys.courses, "Corsi"],
     [ItemsKeys.services, "Servizi"],
     [ItemsKeys.additional_groups, "Gruppi extra"],
-    [ItemsKeys.administrators, "Amministratori"],
     [ItemsKeys.representatives, "Rappresentanti"],
     [ItemsKeys.contributors, "Contributori"]
 ]);
