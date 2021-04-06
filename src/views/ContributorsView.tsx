@@ -44,13 +44,13 @@ const ContributorsView = () => {
     var theme = useTheme();
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const profileIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
-    const contributors : Contributor[] = getContributors();
+    const contributors: Contributor[] = getContributors();
 
     return (
         <Container className="contributors text-center">
 
             <div className="mb-4">
-                <h5 style={{fontWeight: 400}}>
+                <h5 style={{ fontWeight: 400 }}>
                     Di seguito è possibile trovare tutte le persone che hanno contribuito allo sviluppo del sito web, dei servizi che offre, della wiki, e del network in generale.
                 </h5>
             </div>
@@ -62,43 +62,46 @@ const ContributorsView = () => {
 
                 <Row className="justify-content-center">
                     {
-                    developers.map(x => { return (
-                        <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
-                            <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                                <Card.Section>
-                                    <div className="justify-content-center">
-                                    <img id="logo"
-                                        src={process.env.PUBLIC_URL + "/" + x.pic}
-                                        alt={x.name}
-                                        style={developerPic}
-                                    />
-                                    </div>
-                                    <h6 className="mb-0">{x.name}</h6>
-                                    <Text variant="medium" styles={helpfulTextStyles}>
-                                        {x.description}
-                                    </Text>
-                                    <div>
-                                    <TooltipHost
-                                        content="Profilo GitHub"
-                                        calloutProps={calloutProps}
-                                        styles={hostStyles}
-                                        delay={TooltipDelay.zero}
-                                    >
-                                        <Link onClick={() => redirectToLink(x.github)}><i className="fab fa-github homeIcon mr-2" style={profileIconStyle}></i></Link>
-                                    </TooltipHost>
-                                    <TooltipHost
-                                        content="Sito Web"
-                                        calloutProps={calloutProps}
-                                        styles={hostStyles}
-                                        delay={TooltipDelay.zero}
-                                    >
-                                        <Link onClick={() => redirectToLink(x.website)}><i className="fas fa-globe homeIcon" style={profileIconStyle}></i></Link>
-                                    </TooltipHost>
-                                    </div>
-                                </Card.Section>
-                            </Card>
-                        </Col>
-                    )})
+                        developers.map(x => {
+                            return (
+                                <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
+                                    <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
+                                        <Card.Section>
+                                            <div className="justify-content-center">
+                                                <img id="logo"
+                                                    src={process.env.PUBLIC_URL + "/" + x.pic}
+                                                    alt={x.name}
+                                                    style={developerPic}
+                                                />
+                                            </div>
+                                            <h6 className="mb-0">{x.name}</h6>
+                                            <Text variant="medium" styles={helpfulTextStyles}>
+                                                {x.description}
+                                            </Text>
+                                            <div>
+                                                <TooltipHost
+                                                    content="Profilo GitHub"
+                                                    calloutProps={calloutProps}
+                                                    styles={hostStyles}
+                                                    delay={TooltipDelay.zero}
+                                                >
+                                                    <Link onClick={() => redirectToLink(x.github)}><i className="fab fa-github homeIcon" style={profileIconStyle}></i></Link>
+                                                </TooltipHost>
+                                                &nbsp;&nbsp;
+                                                <TooltipHost
+                                                    content="Sito Web"
+                                                    calloutProps={calloutProps}
+                                                    styles={hostStyles}
+                                                    delay={TooltipDelay.zero}
+                                                >
+                                                    <Link onClick={() => redirectToLink(x.website)}><i className="fas fa-globe homeIcon" style={profileIconStyle}></i></Link>
+                                                </TooltipHost>
+                                            </div>
+                                        </Card.Section>
+                                    </Card>
+                                </Col>
+                            )
+                        })
                     }
                 </Row>
             </div>
@@ -107,17 +110,19 @@ const ContributorsView = () => {
             <div className="mb-4">
                 <h5 className="mb-3">Contributori</h5>
 
-                <div className="contributors">
+                <div className="contributors mb-2">
                     <Row>
                         {
-                            contributors.map((x,i) =>
-                            <Col key={i} xl={2} lg={2} md={3} sm={6} xs={12} className="mb-3 col-persona">
-                                <Persona className="justify-content-center" text={x.username} size={PersonaSize.size40} />
-                            </Col>
+                            contributors.map((x, i) =>
+                                <Col key={i} xl={2} lg={2} md={3} sm={6} xs={12} className="mb-3 col-persona">
+                                    <Persona className="justify-content-center" text={x.username} size={PersonaSize.size40} />
+                                </Col>
                             )
                         }
                     </Row>
                 </div>
+
+                <Text>Hai contribuito allo sviluppo del network e vorresti comparire in questa lista? Scrivi in privato a <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.</Text>
             </div>
         </Container>
     )
