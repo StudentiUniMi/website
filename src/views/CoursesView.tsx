@@ -12,7 +12,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import CourseList from "../components/CourseList";
 import DegreeInformations from "../components/DegreeInformations";
-import { getDepartments } from '../services/Requests'
+import { getDepartments } from '../services/Requests';
 import Degree from "../models/Degree";
 import Department from "../models/Department";
 
@@ -81,7 +81,7 @@ const CoursesView = () => {
 
     let didMount = React.useRef(false);
 
-    let departments = getDepartments()
+    let departments = getDepartments();
 
     React.useEffect(() => {
         if(!didMount.current) {

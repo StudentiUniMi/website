@@ -8,6 +8,7 @@ import { FontSizes, FontWeights } from '@fluentui/theme';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Text, ITextStyles } from 'office-ui-fabric-react';
+import { getAdmins } from '../services/Requests';
 
 const cardTokens: ICardTokens = { childrenMargin: 12 };
 const sectionCard = {
@@ -21,117 +22,18 @@ const sectionCard = {
 const helpfulTextStyles: ITextStyles = { root: { fontWeight: FontWeights.regular } };
 
 const CAN = [
-    { username: "", name: "Silvio Settembrese", delega: "Gestore Discord" },
     { username: "", name: "Mattia Oldani", delega: "" },
-    { username: "", name: "Laura Luperto", delega: "Gestrice Discord" },
     { username: "", name: "Gabriele Sarti", delega: "" },
-    { username: "", name: "Fabrizio Brioni", delega: "" }
+    { username: "", name: "Fabrizio Brioni", delega: "" },
+    { username: "", name: "Silvio Settembrese", delega: "Gestore Discord" },
+    { username: "", name: "Laura Luperto", delega: "Gestrice Discord" }
 ];
-
-const admins = [
-    {
-        "username": "MrBrionix",
-        "year": "Secondo",
-        "user_id": 119507304,
-        "cdl": "Informatica"
-    },
-    {
-        "username": "MattiaOldani",
-        "year": "Primo",
-        "user_id": 592731075,
-        "cdl": "Informatica"
-    },
-    {
-        "username": "Sartigabriele",
-        "year": "Primo",
-        "user_id": 544826890,
-        "cdl": "Informatica"
-    },
-    {
-        "username": "IrisCanole",
-        "year": "Primo",
-        "user_id": 730639598,
-        "cdl": "Informatica"
-    },
-    {
-        "username": "Mantotheale",
-        "year": "Primo",
-        "user_id": 433637925,
-        "cdl": "Informatica"
-    },
-    {
-        "username": "Weinsz",
-        "year": "Primo",
-        "user_id": 178100484,
-        "cdl": "Informatica"
-    },
-    {
-        "username": "ThomasGiudici",
-        "year": "Terzo",
-        "user_id": 15042194,
-        "cdl": "Informatica"
-    },
-    {
-        "username": "davidemarchioriz",
-        "year": "Terzo",
-        "user_id": 157778910,
-        "cdl": "Informatica"
-    },
-    {
-        "username": "Aconithorn",
-        "year": "Terzo",
-        "user_id": 529585690,
-        "cdl": "Informatica"
-    },
-    {
-        "username": "giolake",
-        "year": "",
-        "user_id": 126856154,
-        "cdl": "Informatica musicale"
-    },
-    {
-        "username": "robertopinotti",
-        "year": "",
-        "user_id": 3104514,
-        "cdl": "Informatica per la comunicazione digitale"
-    },
-    {
-        "username": "burzum00",
-        "year": "",
-        "user_id": 620976546,
-        "cdl": "Sicurezza dei sistemi e delle reti informatiche"
-    },
-    {
-        "username": "salvadorbs",
-        "year": "",
-        "user_id": 15751170,
-        "cdl": "Sicurezza dei sistemi e delle reti informatiche online"
-    },
-    {
-        "username": "robertopinotti",
-        "year": "",
-        "user_id": 3104514,
-        "cdl": "Informatica (magistrale)"
-    },
-    {
-        "username": "Spacer_ASC",
-        "year": "",
-        "user_id": 278035059,
-        "cdl": "Sicurezza informatica (magistrale)"
-    },
-    {
-        "username": "B3rsa",
-        "year": "",
-        "user_id": null,
-        "cdl": "Sicurezza informatica (magistrale)"
-    }
-];
-
-// const mods = [];
 
 const OrganizationView = () => {
     var theme = useTheme();
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
+
+    const admins = getAdmins();
 
     return (
         <Container className="organization text-center">
@@ -162,9 +64,6 @@ const OrganizationView = () => {
                                 <Persona onRenderPrimaryText={() => null} primaryText={"Marco Aceti"} />
                             </div>
                             <h6 className="mb-0"><Link href={`https://t.me/acetimarco`} target="_blank">Marco Aceti</Link></h6>
-                            <Text variant="medium" styles={helpfulTextStyles}>
-
-                            </Text>
                         </Card.Section>
                     </Card>
                 </div>
@@ -172,7 +71,7 @@ const OrganizationView = () => {
 
             <div className="mb-4">
 
-                <h5 className="mb-3">Comitato Amministrativo</h5>
+                <h5 className="mb-4">Comitato Amministrativo</h5>
 
                 <Row className="justify-content-center">
                     {
@@ -199,7 +98,7 @@ const OrganizationView = () => {
 
 
             <div className="mb-4">
-                <h5 className="mb-3">Amministratori e moderatori</h5>
+                <h5 className="mb-4">Amministratori e moderatori</h5>
 
                 <Row className="justify-content-center">
                     {

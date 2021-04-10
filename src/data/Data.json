@@ -145,74 +145,58 @@
                     "virtual_classroom": "https://vc.di.unimi.it/",
                     "admins": [
                         {
-                            "id": "",
                             "username": "MrBrionix",
                             "year": "Secondo",
-                            "role": "Moderator",
-                            "user_id": 119507304
+                            "user_id": 119507304,
+                            "cdl": "Informatica"
                         },
                         {
-                            "id": "",
                             "username": "MattiaOldani",
                             "year": "Primo",
-                            "role": "Moderator",
-                            "user_id": 592731075
+                            "user_id": 592731075,
+                            "cdl": "Informatica"
                         },
                         {
-                            "id": "",
-                            "username": "acetimarco",
-                            "year": "Primo",
-                            "role": "Administrator",
-                            "user_id": 26170256
-                        },
-                        {
-                            "id": "",
                             "username": "Sartigabriele",
                             "year": "Primo",
-                            "role": "Moderator",
-                            "user_id": 544826890
+                            "user_id": 544826890,
+                            "cdl": "Informatica"
                         },
                         {
-                            "id": "",
                             "username": "IrisCanole",
                             "year": "Primo",
-                            "role": "Moderator",
-                            "user_id": 730639598
+                            "user_id": 730639598,
+                            "cdl": "Informatica"
                         },
                         {
-                            "id": "",
                             "username": "Mantotheale",
                             "year": "Primo",
-                            "role": "Moderator",
-                            "user_id": 433637925
+                            "user_id": 433637925,
+                            "cdl": "Informatica"
                         },
                         {
-                            "id": "",
                             "username": "Weinsz",
                             "year": "Primo",
-                            "role": "Moderator",
-                            "user_id": 178100484
+                            "user_id": 178100484,
+                            "cdl": "Informatica"
                         },
                         {
-                            "id": "",
                             "username": "ThomasGiudici",
                             "year": "Terzo",
-                            "role": "Moderator",
-                            "user_id": 15042194
+                            "user_id": 15042194,
+                            "cdl": "Informatica"
                         },
                         {
-                            "id": "",
                             "username": "davidemarchioriz",
                             "year": "Terzo",
-                            "role": "Moderator",
-                            "user_id": 157778910
+                            "user_id": 157778910,
+                            "cdl": "Informatica"
                         },
                         {
-                            "id": "",
                             "username": "Aconithorn",
                             "year": "Terzo",
-                            "role": "Moderator",
-                            "user_id": 529585690
+                            "user_id": 529585690,
+                            "cdl": "Informatica"
                         }
                     ],
                     "courses": [
@@ -970,11 +954,10 @@
                     "virtual_classroom": "",
                     "admins": [
                         {
-                            "id": "",
                             "username": "giolake",
                             "year": "",
-                            "role": "Administrator",
-                            "user_id": 126856154
+                            "user_id": 126856154,
+                            "cdl": "Informatica musicale"
                         }
                     ],
                     "courses": [
@@ -1110,11 +1093,10 @@
                     "virtual_classroom": "",
                     "admins": [
                         {
-                            "id": "",
                             "username": "robertopinotti",
                             "year": "",
-                            "role": "Administrator",
-                            "user_id": 3104514
+                            "user_id": 3104514,
+                            "cdl": "Informatica per la comunicazione digitale"
                         }
                     ],
                     "courses": [
@@ -1450,11 +1432,10 @@
                     "virtual_classroom": "",
                     "admins": [
                         {
-                            "id": "",
                             "username": "burzum00",
                             "year": "",
-                            "role": "Administrator",
-                            "user_id": 620976546
+                            "user_id": 620976546,
+                            "cdl": "Sicurezza dei sistemi e delle reti informatiche"
                         }
                     ],
                     "courses": [
@@ -1720,11 +1701,10 @@
                     "virtual_classroom": "",
                     "admins": [
                         {
-                            "id": "",
                             "username": "salvadorbs",
                             "year": "",
-                            "role": "Administrator",
-                            "user_id": 15751170
+                            "user_id": 15751170,
+                            "cdl": "Sicurezza dei sistemi e delle reti informatiche online"
                         }
                     ],
                     "courses": [
@@ -1990,11 +1970,10 @@
                     "virtual_classroom": "",
                     "admins": [
                         {
-                            "id": "",
                             "username": "robertopinotti",
                             "year": "",
-                            "role": "Administrator",
-                            "user_id": 3104514
+                            "user_id": 3104514,
+                            "cdl": "Informatica (magistrale)"
                         }
                     ],
                     "courses": [
@@ -3114,18 +3093,16 @@
                     "virtual_classroom": "",
                     "admins": [
                         {
-                            "id": "",
                             "username": "Spacer_ASC",
                             "year": "",
-                            "role": "Administrator",
-                            "user_id": 278035059
+                            "user_id": 278035059,
+                            "cdl": "Sicurezza informatica (magistrale)"
                         },
                         {
-                            "id": "",
                             "username": "B3rsa",
                             "year": "",
-                            "role": "Administrator",
-                            "user_id": null
+                            "user_id": null,
+                            "cdl": "Sicurezza informatica (magistrale)"
                         }
                     ],
                     "courses": [
@@ -3185,8 +3162,7 @@
                             "semestre": 2,
                             "cfu": 6,
                             "gruppo": "https://t.me/joinchat/RERMMpt3oYYIpOCC",
-                            "websites": [
-                            ],
+                            "websites": [],
                             "drive": "",
                             "wiki": "",
                             "chat_id": null
@@ -3199,8 +3175,7 @@
                             "semestre": 2,
                             "cfu": 6,
                             "gruppo": "https://t.me/joinchat/UMGxXdznCwuuYy48",
-                            "websites": [
-                            ],
+                            "websites": [],
                             "drive": "",
                             "wiki": "",
                             "chat_id": null
@@ -3554,8 +3529,7 @@
                     "server_discord": "",
                     "manifest": "",
                     "virtual_classroom": "",
-                    "admins": [
-                    ],
+                    "admins": [],
                     "courses": [
                         {
                             "id": "d2689a67-86b5-4f4d-9df3-a5",
@@ -3591,8 +3565,7 @@
                     "server_discord": "",
                     "manifest": "",
                     "virtual_classroom": "",
-                    "admins": [
-                    ],
+                    "admins": [],
                     "courses": [
                         {
                             "id": "d2689a67-86b544-4f4d-9df3-a5",
@@ -3619,9 +3592,7 @@
             "description": "",
             "icon": "Cotton",
             "representatives": [],
-            "cdls": [
-                
-            ]
+            "cdls": []
         },
         {
             "id": "medicina",
@@ -3629,8 +3600,7 @@
             "description": "",
             "icon": "Medical",
             "representatives": [],
-            "cdls": [
-            ]
+            "cdls": []
         },
         {
             "id": "farmacia",
@@ -3638,9 +3608,7 @@
             "description": "",
             "icon": "MobileReport",
             "representatives": [],
-            "cdls": [
-
-            ]
+            "cdls": []
         }
     ]
 }

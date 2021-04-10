@@ -6,10 +6,9 @@ import Row from 'react-bootstrap/Row';
 import { Image } from 'office-ui-fabric-react/lib/Image';
 import { redirectToLink } from '../services/Utils';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { Icon, Link } from 'office-ui-fabric-react';
+import { Icon } from 'office-ui-fabric-react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { PrimaryButton } from 'office-ui-fabric-react';
-import { TooltipHost, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib/Tooltip';
 
 const cardTokens: ICardTokens = { childrenMargin: 12 };
 const helpfulTextStyles: ITextStyles = { root: { fontWeight: FontWeights.regular } };
@@ -26,9 +25,6 @@ const sectionCard = {
     maxHeight: 'none'
 };
 
-const calloutProps = { gapSpace: 15 };
-const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
-
 const HomeView = () => {
     var theme = useTheme();
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
@@ -38,56 +34,65 @@ const HomeView = () => {
     return (
         <Container className="home text-center">
 
-        <div className="primary-section mb-4">
+        <div className="info-section mb-4">
             <Image id="logo" className="mb-2"
-                src={process.env.PUBLIC_URL + '/' + logoFileName}
+                src={process.env.PUBLIC_URL + '/logo/' + logoFileName}
                 alt='Network logo'
                 style={logoProperties}
             />
             <h3 className="mb-3">Benvenuto nel sito web del Network Studenti UniMi!</h3>
-
-            <div className="iconSection mb-3">
-                <TooltipHost
-                    content="Canale Telegram"
-                    calloutProps={calloutProps}
-                    styles={hostStyles}
-                    delay={TooltipDelay.zero}
-                >
-                    <Link onClick={() => redirectToLink("https://t.me/studenti_unimi")}><i className="fab fa-telegram homeIcon" style={homeIconStyle}></i></Link>
-                </TooltipHost>
-                &nbsp;&nbsp;&nbsp;
-                <TooltipHost
-                    content="Server Discord"
-                    calloutProps={calloutProps}
-                    styles={hostStyles}
-                    delay={TooltipDelay.zero}
-                >
-                    <Link onClick={() => redirectToLink("https://discord.gg/SwPzAkv4A4")}><i className="fab fa-discord homeIcon" style={homeIconStyle}></i></Link>
-                </TooltipHost>
-                &nbsp;&nbsp;&nbsp;
-                <TooltipHost
-                    content="Pagina Facebook"
-                    calloutProps={calloutProps}
-                    styles={hostStyles}
-                    delay={TooltipDelay.zero}
-                >
-                    <Link onClick={() => redirectToLink("https://www.facebook.com/networkstudentiunimi")}><i className="fab fa-facebook homeIcon" style={homeIconStyle}></i></Link>
-                </TooltipHost>
-                &nbsp;&nbsp;&nbsp;
-                <TooltipHost
-                    content="Organizzazione GitHub"
-                    calloutProps={calloutProps}
-                    styles={hostStyles}
-                    delay={TooltipDelay.zero}
-                >
-                    <Link onClick={() => redirectToLink("https://github.com/StudentiUnimi/")}><i className="fab fa-github homeIcon" style={homeIconStyle}></i></Link>
-                </TooltipHost>
-            </div>
-
             <h5 style={{fontWeight: 400}}>La nostra missione è organizzare le informazioni dell'Università degli studi di Milano e renderle accessibili a tutti.</h5>
         </div>
 
         <Icon iconName="ChevronDownMed" className="mb-3" style={iconStyle} />
+
+        <div className="primary-section mb-4">
+            <h5 className="mb-4">I nostri collegamenti principali</h5>
+
+            <Row className="justify-content-center">
+                <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
+                    <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
+                        <Card.Section>
+                                <div><i className="fab fa-telegram homeIcon" style={homeIconStyle}></i></div>
+                            <Text variant="medium" styles={helpfulTextStyles}>
+                                Unisciti al canale telegram per rimanere aggiornato e raggiungere tutti i link disponibili!
+                        </Text>
+                            <div className="justify-content-center">
+                                    <PrimaryButton text="Canale telegram" className="text-decoration-none" onClick={() => redirectToLink("https://t.me/studenti_unimi")} allowDisabledFocus style={buttonStyle} />
+                            </div>
+                        </Card.Section>
+                    </Card>
+                </Col>
+
+                <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
+                    <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
+                        <Card.Section>
+                                <div><i className="fab fa-discord homeIcon" style={homeIconStyle}></i></div>
+                            <Text variant="medium" styles={helpfulTextStyles}>
+                                Entra nel nostro server discord per scambiare informazioni con altri studenti e conoscere nuove persone!
+                        </Text>
+                            <div className="justify-content-center">
+                                    <PrimaryButton text="Server discord" className="text-decoration-none" onClick={() => redirectToLink("https://discord.gg/SwPzAkv4A4")} allowDisabledFocus style={buttonStyle} />
+                            </div>
+                        </Card.Section>
+                    </Card>
+                </Col>
+
+                <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
+                    <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
+                        <Card.Section>
+                                <div><i className="fab fa-github homeIcon" style={homeIconStyle}></i></div>
+                            <Text variant="medium" styles={helpfulTextStyles}>
+                                Trovi tutti i nostri progetti open source nelle repository della nostra organizzazione.
+                        </Text>
+                            <div className="justify-content-center">
+                                    <PrimaryButton text="Organizzazione" className="text-decoration-none" onClick={() => redirectToLink("https://github.com/StudentiUnimi/")} allowDisabledFocus style={buttonStyle} />
+                            </div>
+                        </Card.Section>
+                    </Card>
+                </Col>
+            </Row>
+        </div>
 
         <div className="secondary-section mb-4">
             <h5 className="mb-4">Ogni cosa ha il suo gruppo Telegram</h5>
