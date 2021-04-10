@@ -19,6 +19,8 @@ const sectionCard = {
     height: '100%',
     width: '100%',
     maxWidth: 'none',
+    marginLeft: 'auto',
+    marginRight: 'auto',
     maxHeight: 'none'
 };
 
