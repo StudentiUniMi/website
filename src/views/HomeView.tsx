@@ -36,7 +36,7 @@ const HomeView = () => {
 
         <div className="info-section mb-4">
             <Image id="logo" className="mb-2"
-                src={process.env.PUBLIC_URL + '/' + logoFileName}
+                src={process.env.PUBLIC_URL + '/logo/' + logoFileName}
                 alt='Network logo'
                 style={logoProperties}
             />

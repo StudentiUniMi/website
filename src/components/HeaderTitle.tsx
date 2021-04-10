@@ -28,7 +28,7 @@ const HeaderTitle = () => {
 
                     <span className="mr-1">
                         <Image id="logo" className="mr-3"
-                            src={process.env.PUBLIC_URL + '/' + logoFileName}
+                            src={process.env.PUBLIC_URL + '/logo/' + logoFileName}
                             alt='Network logo'
                             style={logoProperties}
                         />
@@ -45,7 +45,7 @@ const HeaderTitle = () => {
 
                     <span className="mr-1">
                         <Image id="logo" className="mr-2"
-                            src={process.env.PUBLIC_URL + '/' + logoFileName}
+                            src={process.env.PUBLIC_URL + '/logo/' + logoFileName}
                             alt='Network logo'
                             style={logoProperties}
                         />
