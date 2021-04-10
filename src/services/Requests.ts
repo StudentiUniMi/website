@@ -7,6 +7,7 @@ import serviceData from '../data/Services.json';
 import Degree from '../models/Degree';
 import Contributor from '../models/Contributor';
 import contributors from '../data/Contributors.json';
+import Admin from '../models/Admin';
 
 export const getExtraGroups = () => extraGroups;
 
@@ -16,6 +17,8 @@ export const getServices = (): Service[] => serviceData;
 
 export const getRepresentatives = (departmentId:string): Representative[] => (data.departments.filter(x => x.id === departmentId)[0]?.representatives ?? []);
 
-export const getAllCdls = (): Degree[] => ([] as Degree[]).concat(...(data.departments.map(x=>x.cdls as any as Degree[])));
+export const getAllCdls = (): Degree[] => ([] as Degree[]).concat(...(data.departments.map(x => x.cdls as any as Degree[])));
 
 export const getContributors = (): Contributor[] => contributors;
+
+export const getAdmins = (): Admin[] => ([] as Admin[]).concat(...(getAllCdls().map(x => x.admins as any as Admin[])));

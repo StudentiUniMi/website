@@ -6,7 +6,7 @@ import { Card, ICardTokens } from "@uifabric/react-cards";
 import { FontSizes, FontWeights } from '@fluentui/theme';
 import { Icon, Link, Image } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { Persona, PersonaSize } from 'office-ui-fabric-react/lib/Persona';
+import { Persona } from 'office-ui-fabric-react/lib/Persona';
 import { redirectToLink } from '../services/Utils';
 import { TooltipHost, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib/Tooltip';
 import Contributor from '../models/Contributor';
@@ -33,6 +33,7 @@ const developerPic = {
 };
 
 const calloutProps = { gapSpace: 5 };
+const calloutPropsContributor = { gapSpace: 3 };
 const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
 
 const developers = [
@@ -109,21 +110,29 @@ const ContributorsView = () => {
 
 
             <div className="mb-4">
-                <h5 className="mb-3">Contributori</h5>
+                <h5 className="mb-2">Contributori</h5>
 
-                <div className="contributors mb-2">
-                    <Row>
+                <Text>Hai contribuito allo sviluppo del network e vorresti comparire in questa lista? Scrivi in privato a <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.</Text>
+
+                <Container className="contributors mb-2 mt-3">
+                    <Row className="justify-content-center">
                         {
-                            contributors.map((x, i) =>
-                                <Col key={i} xl={2} lg={2} md={3} sm={6} xs={12} className="mb-3 col-persona">
-                                    <Persona className="justify-content-center" text={x.username} size={PersonaSize.size40} />
-                                </Col>
+                            contributors.map((x, i) => 
+                                <>
+                                    <TooltipHost
+                                        content={x.username}
+                                        calloutProps={calloutPropsContributor}
+                                        styles={hostStyles}
+                                        delay={TooltipDelay.zero}
+                                    >
+                                        <Persona onRenderPrimaryText={() => null} primaryText={x.username} />
+                                    </TooltipHost>
+                                    &nbsp;
+                                </>
                             )
                         }
                     </Row>
-                </div>
-
-                <Text>Hai contribuito allo sviluppo del network e vorresti comparire in questa lista? Scrivi in privato a <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.</Text>
+                </Container>
             </div>
         </Container>
     )
