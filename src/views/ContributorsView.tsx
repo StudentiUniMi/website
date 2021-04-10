@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import { Container } from 'react-bootstrap';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { FontSizes, FontWeights } from '@fluentui/theme';
-import { Icon, Link } from 'office-ui-fabric-react';
+import { Icon, Link, Image } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Persona, PersonaSize } from 'office-ui-fabric-react/lib/Persona';
 import { redirectToLink } from '../services/Utils';
@@ -28,16 +28,17 @@ const developerPic = {
     marginTop: '5px',
     marginBottom: '5px',
     borderRadius: '50%',
-    boxShadow: 'rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px'
+    boxShadow: 'rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px',
+    marginLeft: 'auto', marginRight: 'auto'
 };
 
 const calloutProps = { gapSpace: 5 };
 const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
 
 const developers = [
-    { name: "Giuseppe Del Campo", description: "Sviluppatore principale del sito web.", pic: "giuseppetm.jpg", github: "https://github.com/Giuseppetm", website: "https://giuseppetm.github.io/" },
-    { name: "Manuele Lucchi", description: "Sviluppatore del sito web.", pic: "manuele.jpg", github: "https://github.com/manuelelucchi", website: "https://manuelelucchi.github.io/" },
-    { name: "Marco Aceti", description: "Sviluppatore di bot, database e altri servizi.", pic: "aceti.jpg", github: "https://github.com/MarcoBuster", website: "https://marcoaceti.it/" },
+    { name: "Giuseppe Del Campo", description: "Sviluppatore principale del sito web.", pic: "giuseppedelcampo.jpg", github: "https://github.com/Giuseppetm", website: "https://giuseppetm.github.io/" },
+    { name: "Manuele Lucchi", description: "Sviluppatore del sito web.", pic: "manuelelucchi.jpg", github: "https://github.com/manuelelucchi", website: "https://manuelelucchi.github.io/" },
+    { name: "Marco Aceti", description: "Sviluppatore di bot, database e altri servizi.", pic: "marcoaceti.jpg", github: "https://github.com/MarcoBuster", website: "https://marcoaceti.it/" },
 ];
 
 const ContributorsView = () => {
@@ -68,8 +69,8 @@ const ContributorsView = () => {
                                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                                         <Card.Section>
                                             <div className="justify-content-center">
-                                                <img id="logo"
-                                                    src={process.env.PUBLIC_URL + "/" + x.pic}
+                                                <Image id="logo"
+                                                    src={process.env.PUBLIC_URL + "/contributors/" + x.pic}
                                                     alt={x.name}
                                                     style={developerPic}
                                                 />
