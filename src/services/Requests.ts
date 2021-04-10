@@ -1,13 +1,13 @@
-import extraGroups from '../data/ExtraGroups.json';
 import data from '../data/Data.json';
-import Department from '../models/Department';
-import Service from '../models/Service';
-import Representative from '../models/Representative';
-import serviceData from '../data/Services.json';
+import extraGroups from '../data/ExtraGroups.json';
 import Degree from '../models/Degree';
+import Admin from '../models/Admin';
+import Department from '../models/Department';
+import Representative from '../models/Representative';
+import Service from '../models/Service';
+import serviceData from '../data/Services.json';
 import Contributor from '../models/Contributor';
 import contributors from '../data/Contributors.json';
-import Admin from '../models/Admin';
 
 export const getExtraGroups = () => extraGroups;
 

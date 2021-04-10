@@ -6,6 +6,7 @@ import { ITextStyles } from '@fluentui/react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useTheme } from '@fluentui/react-theme-provider';
+import { redirectToLink } from '../services/Utils';
 
 const bold: ITextStyles = { root: { fontWeight: FontWeights.semibold } };
 
@@ -17,7 +18,7 @@ const Footer = () => {
 
                 <Row>
                     <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-4 mb-md-0 main-col">
-                        <div className="mb-1">
+                        <div className="mb-2">
                             <Text styles={bold}>
                                 <Link href="https://github.com/StudentiUnimi" >Studenti UniMi &copy;</Link>
                             </Text>
@@ -28,10 +29,18 @@ const Footer = () => {
                                 Il network e il relativo sito web non sono affiliati all'Università degli Studi di Milano.
                             </Text>
                         </div>
+
+                        <div className="mb-1">
+                            <Link onClick={() => redirectToLink("https://t.me/studenti_unimi")} className="text-decoration-none mr-1"><i className="fab fa-telegram"></i></Link>
+                            <Link onClick={() => redirectToLink("https://discord.gg/SwPzAkv4A4")} className="text-decoration-none mr-1"><i className="fab fa-discord"></i></Link>
+                            <Link onClick={() => redirectToLink("https://github.com/StudentiUnimi")} className="text-decoration-none mr-1"><i className="fab fa-github"></i></Link>
+                            <Link onClick={() => redirectToLink("https://www.facebook.com/networkstudentiunimi")} className="text-decoration-none mr-1"><i className="fab fa-facebook"></i></Link>
+                        </div>
                     </Col>
+                    
 
                     <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-4 mb-md-0">
-                        <div className="mb-1">
+                        <div className="mb-2">
                             <Text styles={bold}>Link utili</Text>
                         </div>
 
@@ -60,7 +69,7 @@ const Footer = () => {
                     </Col>
 
                     <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-4 mb-md-0 contacts">
-                        <div className="mb-1">
+                        <div className="mb-2">
                             <Text styles={bold}>Contatti</Text>
                         </div>
 
