@@ -71,7 +71,7 @@ const OrganizationView = () => {
 
             <div className="mb-4">
 
-                <h5 className="mb-3">Comitato Amministrativo</h5>
+                <h5 className="mb-4">Comitato Amministrativo</h5>
 
                 <Row className="justify-content-center">
                     {
@@ -98,7 +98,7 @@ const OrganizationView = () => {
 
 
             <div className="mb-4">
-                <h5 className="mb-3">Amministratori e moderatori</h5>
+                <h5 className="mb-4">Amministratori e moderatori</h5>
 
                 <Row className="justify-content-center">
                     {
