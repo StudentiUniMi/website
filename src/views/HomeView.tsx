@@ -11,19 +11,11 @@ import { Card, ICardTokens } from "@uifabric/react-cards";
 import { PrimaryButton } from 'office-ui-fabric-react';
 
 const cardTokens: ICardTokens = { childrenMargin: 12 };
-const helpfulTextStyles: ITextStyles = { root: { fontWeight: FontWeights.regular } };
-
 const logoFileName = 'unimi500.png';
 const logoProperties = { width: '150px', height: '150px', display: 'inline-block' };
+const sectionCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none' };
 const fourthSectionCol = { maxWidth: '250px' };
-
-const sectionCard = {
-    minHeight: '160px',
-    height: '100%',
-    width: '100%',
-    maxWidth: 'none',
-    maxHeight: 'none'
-};
+const bold: ITextStyles = { root: { fontWeight: FontWeights.semibold }};
 
 const HomeView = () => {
     var theme = useTheme();
@@ -40,23 +32,24 @@ const HomeView = () => {
                 alt='Network logo'
                 style={logoProperties}
             />
-            <h3 className="mb-3">Benvenuto nel sito web del Network Studenti UniMi!</h3>
-            <h5 style={{fontWeight: 400}}>La nostra missione è organizzare le informazioni dell'Università degli studi di Milano e renderle accessibili a tutti.</h5>
+
+            <div><Text variant="xLarge" className="mb-2">Benvenuto nel sito web del Network Studenti UniMi!</Text></div>
+            <div><Text variant="large">La nostra missione è organizzare le informazioni dell'Università degli studi di Milano e renderle accessibili a tutti.</Text></div>
         </div>
 
         <Icon iconName="ChevronDownMed" className="mb-3" style={iconStyle} />
 
         <div className="primary-section mb-4">
-            <h5 className="mb-4">I nostri collegamenti principali</h5>
+            <div className="mb-4"><Text variant="large" styles={bold}>I nostri collegamenti principali</Text></div>
 
             <Row className="justify-content-center">
                 <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
                                 <div><i className="fab fa-telegram homeIcon" style={homeIconStyle}></i></div>
-                            <Text variant="medium" styles={helpfulTextStyles}>
+                            <Text variant="medium">
                                 Unisciti al canale telegram per rimanere aggiornato e raggiungere tutti i link disponibili!
-                        </Text>
+                            </Text>
                             <div className="justify-content-center">
                                     <PrimaryButton text="Canale telegram" className="text-decoration-none" onClick={() => redirectToLink("https://t.me/studenti_unimi")} allowDisabledFocus style={buttonStyle} />
                             </div>
@@ -68,9 +61,9 @@ const HomeView = () => {
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
                                 <div><i className="fab fa-discord homeIcon" style={homeIconStyle}></i></div>
-                            <Text variant="medium" styles={helpfulTextStyles}>
+                            <Text variant="medium">
                                 Entra nel nostro server discord per scambiare informazioni con altri studenti e conoscere nuove persone!
-                        </Text>
+                            </Text>
                             <div className="justify-content-center">
                                     <PrimaryButton text="Server discord" className="text-decoration-none" onClick={() => redirectToLink("https://discord.gg/SwPzAkv4A4")} allowDisabledFocus style={buttonStyle} />
                             </div>
@@ -82,9 +75,9 @@ const HomeView = () => {
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
                                 <div><i className="fab fa-github homeIcon" style={homeIconStyle}></i></div>
-                            <Text variant="medium" styles={helpfulTextStyles}>
+                            <Text variant="medium">
                                 Trovi tutti i nostri progetti open source nelle repository della nostra organizzazione.
-                        </Text>
+                            </Text>
                             <div className="justify-content-center">
                                     <PrimaryButton text="Organizzazione" className="text-decoration-none" onClick={() => redirectToLink("https://github.com/StudentiUnimi/")} allowDisabledFocus style={buttonStyle} />
                             </div>
@@ -95,14 +88,14 @@ const HomeView = () => {
         </div>
 
         <div className="secondary-section mb-4">
-            <h5 className="mb-4">Ogni cosa ha il suo gruppo Telegram</h5>
+                <div className="mb-4"><Text variant="large" styles={bold}>Ogni cosa ha il suo gruppo Telegram</Text></div>
 
             <Row className="justify-content-center">
                 <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
                             <div><Icon iconName="Group" style={homeIconStyle} className="homeIcon" /></div>
-                            <Text variant="medium" styles={helpfulTextStyles}>
+                            <Text variant="medium">
                                 Di' addio al mega gruppo WhatsApp in cui non si capisce nulla! Abbiamo creato un gruppo Telegram per ogni insegnamento.
                             </Text>
                             <div className="justify-content-center">
@@ -116,7 +109,7 @@ const HomeView = () => {
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
                             <div><Icon iconName="AddGroup" style={homeIconStyle} className="homeIcon" /></div>
-                            <Text variant="medium" styles={helpfulTextStyles}>
+                            <Text variant="medium">
                                 Ripetizioni, materiali, erasmus, tirocinio, alloggi.
                                 Tutte quelle cose extra che però hanno la loro importanza.
                             </Text>
@@ -131,7 +124,7 @@ const HomeView = () => {
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
                             <div><Icon iconName="Dictionary" style={homeIconStyle} className="homeIcon" /></div>
-                            <Text variant="medium" styles={helpfulTextStyles}>
+                            <Text variant="medium">
                                 Crediamo che un ambiente rispettoso e inclusivo ci renda più innovativi e produttivi.
                                 Dai un'occhiata al regolamento dei gruppi.
                             </Text>
@@ -145,14 +138,14 @@ const HomeView = () => {
         </div>
 
         <div className="tertiary-section mb-4">
-            <h5 className="mb-4">I nostri servizi per aiutarti nello studio</h5>
+            <div className="mb-4"><Text variant="large" styles={bold}>I nostri servizi per aiutarti nello studio</Text></div>
 
             <Row className="justify-content-center">
                 <Col className="mb-3" xl={3} lg={3} md={4} sm={6} xs={12}>
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
                             <div><Icon iconName="Globe" style={homeIconStyle} className="homeIcon" /></div>
-                            <Text variant="medium" styles={helpfulTextStyles}>
+                            <Text variant="medium">
                                 Accedi alla Wiki del Network e aiutaci a migliorarla contribuendo!
                             </Text>
                             <div className="justify-content-center">
@@ -161,26 +154,12 @@ const HomeView = () => {
                         </Card.Section>
                     </Card>
                 </Col>
-                {/*
-                <Col className="mb-3" xl={3} lg={3} md={4} sm={6} xs={12}>
-                    <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                        <Card.Section>
-                            <div><i className="fab fa-discord homeIcon" style={homeIconStyle}></i></div>
-                            <Text variant="medium" styles={helpfulTextStyles}>
-                                Cerchi un posto in cui parlare liberamente con i tuoi amici? Utilizza il nostro server discord quando vuoi!
-                            </Text>
-                            <div className="justify-content-center">
-                                <PrimaryButton text="Server discord" onClick={() => redirectToLink("https://discord.gg/SwPzAkv4A4")} allowDisabledFocus style={buttonStyle} />
-                            </div>
-                        </Card.Section>
-                    </Card>
-                </Col>
-                */}
+
                 <Col className="mb-3" xl={3} lg={3} md={4} sm={6} xs={12}>
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
                             <div><Icon iconName="World" style={homeIconStyle} className="homeIcon" /></div>
-                            <Text variant="medium" styles={helpfulTextStyles}>
+                            <Text variant="medium">
                                 Utilizza la nostra comoda pagina che ti permette di raggiungere tutti i servizi UniMi.
                             </Text>
                             <div className="justify-content-center">
@@ -194,7 +173,7 @@ const HomeView = () => {
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
                             <div><Icon iconName="CloudDownload" style={homeIconStyle} className="homeIcon" /></div>
-                            <Text variant="medium" styles={helpfulTextStyles}>
+                            <Text variant="medium">
                                 <div className="mb-0">Mi mandi i tuoi appunti?</div> 
                                 <div>Un attimo e sono subito da lei!</div>
                             </Text>
@@ -209,7 +188,7 @@ const HomeView = () => {
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
                             <div><Icon iconName="Code" style={homeIconStyle} className="homeIcon" /></div>
-                            <Text variant="medium" styles={helpfulTextStyles}>
+                            <Text variant="medium">
                                 Accedi al nostro servizio per condividere codice e qualsiasi altro materiale in maniera comoda e sicura.
                             </Text>
                             <div className="justify-content-center">
@@ -224,14 +203,14 @@ const HomeView = () => {
         </div>
 
         <div className="fourth-section mb-4">
-            <h5 className="mb-4">Hai provato a spegnere e riaccendere?</h5>
+            <div className="mb-4"><Text variant="large" styles={bold}>Hai provato a spegnere e riaccendere?</Text></div>
 
             <Row className="justify-content-center">
                 <Col style={fourthSectionCol} className="mb-3">
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
                             <div><Icon iconName="ContactHeart" style={homeIconStyle} className="homeIcon" /></div>
-                            <Text variant="medium" styles={helpfulTextStyles}>
+                            <Text variant="medium">
                                 Ho un problema didattico.
                             </Text>
                             <Icon iconName="SortDown" style={iconStyle}></Icon>
@@ -246,7 +225,7 @@ const HomeView = () => {
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
                             <div><Icon iconName="Telemarketer" style={homeIconStyle} className="homeIcon" /></div>
-                            <Text variant="medium" styles={helpfulTextStyles}>
+                            <Text variant="medium">
                                 Ho un problema tecnico.
                             </Text>
                             <Icon iconName="SortDown" style={iconStyle}></Icon>
