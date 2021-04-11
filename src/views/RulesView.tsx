@@ -162,7 +162,7 @@ const Rules = () => {
                     </Text>
                 </div>
                 
-                <Icon iconName="DoubleChevronDown" className="mb-2" style={iconStyle} />
+                <Icon iconName="DoubleChevronDown8" className="mb-2" style={iconStyle} />
                 
                 <div className="mb-2">
                     <Text variant="medium" styles={{ root: { fontWeight: FontWeights.semibold, color: theme.palette.themePrimary } }}>Perchè abbiamo introdotto un regolamento?</Text>
@@ -178,7 +178,7 @@ const Rules = () => {
                     </Text>
                 </div>
 
-                <Icon iconName="DoubleChevronDown" className="mb-2" style={iconStyle} />
+                <Icon iconName="DoubleChevronDown8" className="mb-2" style={iconStyle} />
 
                 <div>
                     <Text variant="medium">Di seguito è possibile trovare il <Text styles={semibold}>regolamento</Text> e le varie sezioni di cui è composto.</Text>

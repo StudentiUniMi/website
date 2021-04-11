@@ -35,7 +35,7 @@ const HomeView = () => {
                 style={logoProperties}
             />
 
-            <div><Text variant="xLarge" className="mb-2">Benvenuto nel sito web del Network Studenti UniMi!</Text></div>
+            <div className="mb-2"><Text variant="xLarge">Benvenuto nel sito web del Network Studenti UniMi!</Text></div>
             <div><Text variant="large">La nostra missione è organizzare le informazioni dell'Università degli studi di Milano e renderle accessibili a tutti.</Text></div>
         </div>
 
