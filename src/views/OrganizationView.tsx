@@ -22,17 +22,16 @@ const sectionCard = {
 const helpfulTextStyles: ITextStyles = { root: { fontWeight: FontWeights.regular } };
 
 const CAN = [
-    { username: "", name: "Mattia Oldani", delega: "" },
-    { username: "", name: "Gabriele Sarti", delega: "" },
-    { username: "", name: "Fabrizio Brioni", delega: "" },
-    { username: "", name: "Silvio Settembrese", delega: "Gestore Discord" },
-    { username: "", name: "Laura Luperto", delega: "Gestrice Discord" }
+    { username: "MattiaOldani", name: "Mattia Oldani", delega: "" },
+    { username: "Sartigabriele", name: "Gabriele Sarti", delega: "" },
+    { username: "MrBrionix", name: "Fabrizio Brioni", delega: "" },
+    { username: "SetteMagic", name: "Silvio Settembrese", delega: "Gestore Discord" },
+    { username: "Aconithorn", name: "Laura Luperto", delega: "Gestrice Discord" }
 ];
 
 const OrganizationView = () => {
     var theme = useTheme();
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
-
     const admins = getAdmins();
 
     return (
