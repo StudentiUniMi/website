@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link, Text, Icon } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { FontSizes, FontWeights } from '@fluentui/theme';
+import { FontSizes } from '@fluentui/theme';
 import { Container } from 'react-bootstrap';
+import { semibold } from '../fonts';
 import { FocusZone, List, IRectangle } from "@fluentui/react";
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
-import {getExtraGroups} from '../services/Requests';
+import { getExtraGroups } from '../services/Requests';
 import ExtraGroupView from '../components/ExtraGroup';
 import ExtraGroup from '../models/ExtraGroup';
 
@@ -54,22 +55,24 @@ const AdditionalGroupsView = () => {
         <Container className="additional-groups text-center">
 
             <div className="mb-2">
-                <h5 style={{fontWeight: 400}}>
-                    Cerchi gruppi per discutere di un particolare argomento? Qui è possibile trovare tutti quelli che abbiamo creato.
-                </h5>
+                <Text variant="large">
+                    Cerchi un gruppo in particolare? Qui è possibile trovare tutti quelli che abbiamo creato.
+                </Text>
             </div>
 
             <Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} />
 
             <div className="mb-4">
-                <Text style={{ fontSize: FontSizes.size18 }}>
+                <Text variant="medium">
                     Se vorresti che venissero creati altri gruppi puoi scriverlo sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link>.
                 </Text>
             </div>
 
-            <div className="mb-3">
-                <Text styles={{ root: { fontSize: FontSizes.size14, fontWeight: FontWeights.semibold } }}>Gruppi disponibili:</Text>
-            </div>
+            <div className='text-center mb-4'>
+                <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
+                <Text variant="medium" styles={semibold} style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size18 }}> Gruppi disponibili </Text>
+                <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
+            </div>     
 
             <FocusZone>
                 <List

@@ -11,7 +11,6 @@ import Row from 'react-bootstrap/Row';
 import { getServices } from '../services/Requests';
 import { redirectToLink } from '../services/Utils';
 
-
 const Services = () => {
     var theme = useTheme();
     const services = getServices();
