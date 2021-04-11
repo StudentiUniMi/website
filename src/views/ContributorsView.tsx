@@ -39,8 +39,8 @@ const calloutPropsContributor = { gapSpace: 3 };
 const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
 
 const developers = [
-    { name: "Giuseppe Del Campo", description: "Sviluppatore principale del sito web.", pic: "giuseppedelcampo.jpg", github: "https://github.com/Giuseppetm", website: "https://giuseppetm.github.io/" },
-    { name: "Manuele Lucchi", description: "Sviluppatore del sito web.", pic: "manuelelucchi.jpg", github: "https://github.com/manuelelucchi", website: "https://manuelelucchi.github.io/" },
+    { name: "Giuseppe Del Campo", description: "Sviluppatore del sito web.", pic: "giuseppedelcampo.jpg", github: "https://github.com/Giuseppetm", website: "https://giuseppetm.github.io/" },
+    { name: "Manuele Lucchi", description: "Progettista del sito web.", pic: "manuelelucchi.jpg", github: "https://github.com/manuelelucchi", website: "https://manuelelucchi.github.io/" },
     { name: "Marco Aceti", description: "Sviluppatore di bot, database e altri servizi.", pic: "marcoaceti.jpg", github: "https://github.com/MarcoBuster", website: "https://marcoaceti.it/" },
 ];
 

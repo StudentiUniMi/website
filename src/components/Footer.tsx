@@ -7,9 +7,7 @@ import Row from 'react-bootstrap/Row';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { redirectToLink } from '../services/Utils';
 
-const listElement = {
-    marginBottom: '.2rem'
-}
+const listElement = { marginBottom: '.2rem' };
 
 const Footer = () => {
     var theme = useTheme();
