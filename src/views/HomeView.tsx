@@ -8,9 +8,11 @@ import { Image } from 'office-ui-fabric-react/lib/Image';
 import { redirectToLink } from '../services/Utils';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Icon } from 'office-ui-fabric-react';
+import { initializeIcons } from "@uifabric/icons";
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { PrimaryButton } from 'office-ui-fabric-react';
 
+initializeIcons();
 const cardTokens: ICardTokens = { childrenMargin: 12 };
 const logoFileName = 'unimi500.png';
 const logoProperties = { width: '150px', height: '150px', display: 'inline-block' };

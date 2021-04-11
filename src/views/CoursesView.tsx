@@ -1,9 +1,10 @@
 import React from "react";
 import { Link, Text } from 'office-ui-fabric-react';
-import { FontSizes, FontWeights } from '@fluentui/theme';
+import { FontSizes } from '@fluentui/theme';
 import { initializeIcons } from "@uifabric/icons";
 import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
+import { semibold } from '../fonts';
 import { Dropdown, IDropdownOption, IDropdownProps } from 'office-ui-fabric-react/lib/Dropdown';
 import { DropdownMenuItemType } from "@fluentui/react";
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
@@ -141,17 +142,17 @@ const CoursesView = () => {
     return (
         <Container className="courses text-center">
 
-            <div className="mb-1" style={{ lineHeight: "normal" }}>
-                <h5 style={{fontWeight: 400}}>
+            <div className="mb-1">
+                <Text variant="large">
                     Qui è possibile trovare i gruppi telegram, siti web, wiki, faq (se disponibili) e informazioni generali come il manifesto degli studi riguardo il tuo corso di laurea e i suoi corsi didattici.
-                </h5>
+                </Text>
             </div>
 
             <Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} />
 
-            <div className="mb-4" style={{ lineHeight: "normal" }}>
-                <Text style={{ fontSize: FontSizes.size14 }}>
-                    I link alla <span style={{ fontWeight: 600 }}>Wiki</span> di un corso didattico potrebbero portare a pagine non ancora compilate:
+            <div className="mb-4">
+                <Text variant="medium">
+                    I link alla <Text styles={semibold}>Wiki</Text> di un corso didattico potrebbero portare a pagine non ancora compilate:
                     è qui che potete contribuire iscrivendovi e aiutandoci a raccogliere faq e qualsiasi altro contenuto utile per i corsi didattici.
                     Informatica musicale, per la comunicazione digitale e molti altri corsi di laurea non hanno ancora contenuti! 
                     Puoi contribuire <Link href="https://wiki.studentiunimi.it/" target="_blank">qui</Link> creando un apposito account gratuito.
@@ -208,9 +209,11 @@ const CoursesView = () => {
 
             <div style={{ display: selectedCdl !== '' ? 'block' : 'none' }}>
                 <DegreeInformations cdl={cdl} />
-                <p className='text-center'>
-                    <Text styles={{ root: { fontWeight: FontWeights.semibold } }}>Gruppi disponibili:</Text>
-                </p>                
+                <div className='text-center mb-4'>
+                    <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
+                    <Text variant="medium" styles={semibold} style={{color: theme.palette.themePrimary, fontSize: FontSizes.size18}}> Gruppi disponibili </Text>
+                    <Icon iconName="DoubleChevronDown8" style={{color: theme.palette.themePrimary}} />
+                </div>                
                 <CourseList cdl={cdl} />
             </div>
 
