@@ -1,11 +1,12 @@
-import { Text, ITextStyles } from 'office-ui-fabric-react';
+import { Text } from 'office-ui-fabric-react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Container } from 'react-bootstrap';
 import { Card, ICardTokens } from "@uifabric/react-cards";
-import { FontSizes, FontWeights } from '@fluentui/theme';
+import { FontSizes } from '@fluentui/theme';
 import { Icon, Link, Image } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
+import { semibold } from '../fonts';
 import { Persona } from 'office-ui-fabric-react/lib/Persona';
 import { redirectToLink } from '../services/Utils';
 import { TooltipHost, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib/Tooltip';
@@ -13,7 +14,6 @@ import Contributor from '../models/Contributor';
 import { getContributors } from '../services/Requests'
 
 const cardTokens: ICardTokens = { childrenMargin: 12 };
-const helpfulTextStyles: ITextStyles = { root: { fontWeight: FontWeights.regular } };
 const sectionCard = {
     minHeight: '120px',
     height: '100%',
@@ -53,16 +53,16 @@ const ContributorsView = () => {
     return (
         <Container className="contributors text-center">
 
-            <div className="mb-4">
-                <h5 style={{ fontWeight: 400 }}>
+            <div className="mb-2">
+                <Text variant="large">
                     Di seguito è possibile trovare tutte le persone che hanno contribuito allo sviluppo del sito web, dei servizi che offre, della wiki, e del network in generale.
-                </h5>
+                </Text>
             </div>
 
-            <Icon iconName="ChevronDownMed" className="mb-3" style={iconStyle} />
+            <Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} />
 
             <div className="mb-4">
-                <h5 className="mb-3">Manutentori principali</h5>
+                <div className="mb-3"><Text variant="large" styles={semibold}>Manutentori principali</Text></div>
 
                 <Row className="justify-content-center">
                     {
@@ -78,8 +78,8 @@ const ContributorsView = () => {
                                                     style={developerPic}
                                                 />
                                             </div>
-                                            <h6 className="mb-0">{x.name}</h6>
-                                            <Text variant="medium" styles={helpfulTextStyles}>
+                                            <div className="mb-0"><Text variant="medium" styles={semibold}>{x.name}</Text></div>
+                                            <Text variant="medium" className="mt-2">
                                                 {x.description}
                                             </Text>
                                             <div>
@@ -112,11 +112,11 @@ const ContributorsView = () => {
 
 
             <div className="mb-4">
-                <h5 className="mb-2">Contributori</h5>
+                <div className="mb-2"><Text variant="large" styles={semibold}>Contributori</Text></div>
 
-                <Text>Hai contribuito allo sviluppo del network e vorresti comparire in questa lista? Scrivi in privato a <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.</Text>
+                <Text variant="medium">Hai contribuito allo sviluppo del network e vorresti comparire in questa lista? Scrivi in privato a <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.</Text>
 
-                <Container className="contributors mb-2 mt-3">
+                <Container className="contributors mb-2 mt-4">
                     <Row className="justify-content-center">
                         {
                             contributors.map((x, i) => 
