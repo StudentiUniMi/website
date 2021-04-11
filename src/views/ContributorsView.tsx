@@ -114,7 +114,7 @@ const ContributorsView = () => {
             <div className="mb-4">
                 <div className="mb-2"><Text variant="large" styles={semibold}>Contributori</Text></div>
 
-                <Text variant="medium">Hai contribuito allo sviluppo del network e vorresti comparire in questa lista? Scrivi in privato a <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.</Text>
+                <div><Text variant="medium">Hai contribuito allo sviluppo del network e vorresti comparire in questa lista? Scrivi in privato a <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.</Text></div>
 
                 <Container className="contributors mb-2 mt-4">
                     <Row className="justify-content-center">

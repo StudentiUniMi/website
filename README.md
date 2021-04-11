@@ -21,7 +21,7 @@ e dei corsi di laurea magistrali di:
 - 📖 [Wiki](https://wiki.studentiunimi.it/) (Nuova risorsa per la condivisione di materiale sui corsi);
 - 📝 [Gruppi extra](https://studentiunimi.it/additional_groups/) (Chat freetalk, Vendita materiali, annunci ripetizioni, annunci di lavoro, tirocini e tesi, erasmus, giochi di ruolo e tanti altri);
 - 👁‍🗨 [Servizi utili](http://unimia.studentiunimi.it/) (Unimia, Sifa, Webmail, Portale studenti, Virtual classroom, ecc.);
-- 🧙‍♂️ [Amministratori](https://studentiunimi.it/organization/) (Elenco amministratori + contatti telegram);
+- 🧙‍♂️ [Amministratori](https://studentiunimi.it/organization/) (Elenco membri del network + amministratori/moderatori e contatti telegram);
 - 👨‍💻 [Rappresentanti degli studenti](https://studentiunimi.it/representatives/) (Elenco rappresentanti + contatti telegram).
 
 Per qualsiasi dubbio o proposta è possibile scrivere sul [gruppo principale](https://t.me/joinchat/VswKeAblS2nrfXME).<br/>
