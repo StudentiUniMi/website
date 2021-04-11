@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from 'react-bootstrap';
 import { FontSizes } from '@fluentui/theme';
-import { Icon } from 'office-ui-fabric-react/lib/Icon';
+import { Text, Icon } from 'office-ui-fabric-react';
 import { Dropdown, IDropdownOption, IDropdownStyles, IDropdownProps } from 'office-ui-fabric-react/lib/Dropdown';
 import { useHistory } from 'react-router-dom';
 import { useTheme } from '@fluentui/react-theme-provider';
@@ -77,24 +77,25 @@ const RepresentativesView = () => {
 
     const departmentOptions: IDropdownOption[] = getDepartments().map(x => ({key: x.id, text: x.name ?? "", data: {icon:x.icon}, disabled: x.cdls.length === 0 || x.representatives.length === 0}));
 
-
     return (
         <Container className="representatives text-center">
 
             <div className="mb-2">
-                <h5 style={{fontWeight: 400}} className="mb-2">
-                    Il rappresentante degli studenti è un ruolo molto importante ed altamente formativo, 
-                    che garantisce a tutti gli studenti universitari un supporto alle difficoltà che può incontrare durante il periodo di studio.
-                </h5>
+                <div className="mb-2">
+                    <Text variant="large">
+                        Il rappresentante degli studenti è un ruolo molto importante ed altamente formativo, 
+                        che garantisce a tutti gli studenti universitari un supporto alle difficoltà che può incontrare durante il periodo di studio.
+                    </Text>
+                </div>
 
-                <h6 style={{fontWeight: 400}}>
+                <Text variant="medium">
                     Di seguito è presente la lista dei rappresentanti di ogni dipartimento e i loro contatti.
-                </h6>
+                </Text>
             </div>
 
             <Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} />
 
-            <Container className="mb-4 justify-content-center" style={{maxWidth: '500px'}}>
+            <div className="mb-4 justify-content-center" style={{maxWidth: '400px', marginLeft: 'auto', marginRight: 'auto'}}>
                 <Dropdown
                     placeholder="Seleziona un dipartimento"
                     label="Seleziona un dipartimento"
@@ -106,13 +107,9 @@ const RepresentativesView = () => {
                     onRenderTitle={onRenderTitle}
                     onRenderOption={onRenderOption}
                 />
-            </Container>
-
-            <div>
-                <RepresentativesList data={representatives}/>
             </div>
-            
 
+            <RepresentativesList data={representatives}/>
         </Container>
     )
 };
