@@ -6,30 +6,20 @@ export const fonts = {
     small: {
         fontSize: FontSizes.size12
     },
-    smallBold: {
-        fontSize: FontSizes.size12,
-        fontWeight: FontWeights.semibold
-    },
     medium: {
         fontSize: FontSizes.size14
-    },
-    mediumBold: {
-        fontSize: FontSizes.size14,
-        fontWeight: FontWeights.semibold
     },
     large: {
         fontSize: FontSizes.size20
     },
-    largeBold: {
-        fontSize: FontSizes.size20,
-        fontWeight: FontWeights.semibold
-    },
     xLarge: {
         fontSize: FontSizes.size24
     },
-    xLargeBold: {
-        fontSize: FontSizes.size24,
-        fontWeight: FontWeights.semibold,
+    xLargePlus: {
+        fontSize: FontSizes.size32
+    },
+    superLarge: {
+        fontSize: FontSizes.size42
     }
 };
 

@@ -1,8 +1,9 @@
-import { Text, ITextStyles } from 'office-ui-fabric-react';
-import { FontSizes, FontWeights } from '@fluentui/theme';
+import { Text } from 'office-ui-fabric-react';
+import { FontSizes } from '@fluentui/theme';
 import { Container } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import { semibold } from '../fonts';
 import { Image } from 'office-ui-fabric-react/lib/Image';
 import { redirectToLink } from '../services/Utils';
 import { useTheme } from '@fluentui/react-theme-provider';
@@ -15,7 +16,6 @@ const logoFileName = 'unimi500.png';
 const logoProperties = { width: '150px', height: '150px', display: 'inline-block' };
 const sectionCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none' };
 const fourthSectionCol = { maxWidth: '250px' };
-const bold: ITextStyles = { root: { fontWeight: FontWeights.semibold }};
 
 const HomeView = () => {
     var theme = useTheme();
@@ -40,7 +40,7 @@ const HomeView = () => {
         <Icon iconName="ChevronDownMed" className="mb-3" style={iconStyle} />
 
         <div className="primary-section mb-4">
-            <div className="mb-4"><Text variant="large" styles={bold}>I nostri collegamenti principali</Text></div>
+            <div className="mb-4"><Text variant="large" styles={semibold}>I nostri collegamenti principali</Text></div>
 
             <Row className="justify-content-center">
                 <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
@@ -51,7 +51,7 @@ const HomeView = () => {
                                 Unisciti al canale telegram per rimanere aggiornato e raggiungere tutti i link disponibili!
                             </Text>
                             <div className="justify-content-center">
-                                    <PrimaryButton text="Canale telegram" className="text-decoration-none" onClick={() => redirectToLink("https://t.me/studenti_unimi")} allowDisabledFocus style={buttonStyle} />
+                                <PrimaryButton text="Canale telegram" className="text-decoration-none" onClick={() => redirectToLink("https://t.me/studenti_unimi")} allowDisabledFocus style={buttonStyle} />
                             </div>
                         </Card.Section>
                     </Card>
@@ -65,7 +65,7 @@ const HomeView = () => {
                                 Entra nel nostro server discord per scambiare informazioni con altri studenti e conoscere nuove persone!
                             </Text>
                             <div className="justify-content-center">
-                                    <PrimaryButton text="Server discord" className="text-decoration-none" onClick={() => redirectToLink("https://discord.gg/SwPzAkv4A4")} allowDisabledFocus style={buttonStyle} />
+                                <PrimaryButton text="Server discord" className="text-decoration-none" onClick={() => redirectToLink("https://discord.gg/SwPzAkv4A4")} allowDisabledFocus style={buttonStyle} />
                             </div>
                         </Card.Section>
                     </Card>
@@ -79,7 +79,7 @@ const HomeView = () => {
                                 Trovi tutti i nostri progetti open source nelle repository della nostra organizzazione.
                             </Text>
                             <div className="justify-content-center">
-                                    <PrimaryButton text="Organizzazione" className="text-decoration-none" onClick={() => redirectToLink("https://github.com/StudentiUnimi/")} allowDisabledFocus style={buttonStyle} />
+                                <PrimaryButton text="Organizzazione" className="text-decoration-none" onClick={() => redirectToLink("https://github.com/StudentiUnimi/")} allowDisabledFocus style={buttonStyle} />
                             </div>
                         </Card.Section>
                     </Card>
@@ -88,7 +88,7 @@ const HomeView = () => {
         </div>
 
         <div className="secondary-section mb-4">
-                <div className="mb-4"><Text variant="large" styles={bold}>Ogni cosa ha il suo gruppo Telegram</Text></div>
+                <div className="mb-4"><Text variant="large" styles={semibold}>Ogni cosa ha il suo gruppo Telegram</Text></div>
 
             <Row className="justify-content-center">
                 <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
@@ -138,7 +138,7 @@ const HomeView = () => {
         </div>
 
         <div className="tertiary-section mb-4">
-            <div className="mb-4"><Text variant="large" styles={bold}>I nostri servizi per aiutarti nello studio</Text></div>
+            <div className="mb-4"><Text variant="large" styles={semibold}>I nostri servizi per aiutarti nello studio</Text></div>
 
             <Row className="justify-content-center">
                 <Col className="mb-3" xl={3} lg={3} md={4} sm={6} xs={12}>
@@ -203,7 +203,7 @@ const HomeView = () => {
         </div>
 
         <div className="fourth-section mb-4">
-            <div className="mb-4"><Text variant="large" styles={bold}>Hai provato a spegnere e riaccendere?</Text></div>
+            <div className="mb-4"><Text variant="large" styles={semibold}>Hai provato a spegnere e riaccendere?</Text></div>
 
             <Row className="justify-content-center">
                 <Col style={fourthSectionCol} className="mb-3">
