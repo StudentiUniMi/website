@@ -7,9 +7,7 @@ import Row from 'react-bootstrap/Row';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { redirectToLink } from '../services/Utils';
 
-const listElement = {
-    marginBottom: '.2rem'
-}
+const listElement = { marginBottom: '.2rem' };
 
 const Footer = () => {
     var theme = useTheme();
@@ -73,7 +71,7 @@ const Footer = () => {
                             <Text styles={semibold} variant="medium">Contatti</Text>
                         </div>
 
-                        <div className="mb-1 text" style={{ lineHeight: "normal" }}>
+                        <div className="mb-1 text">
                             <Text variant="medium">
                                 Per qualsiasi dubbio o proposta è possibile scrivere sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link> del network.
                             </Text>
