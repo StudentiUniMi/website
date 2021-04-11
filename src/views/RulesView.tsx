@@ -6,6 +6,7 @@ import { CompoundButton } from 'office-ui-fabric-react';
 import { MessageBar } from 'office-ui-fabric-react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import { semibold } from '../fonts';
 import { FontWeights, ITextStyles } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
 
@@ -13,7 +14,6 @@ const Rules = () => {
     const theme = useTheme();
     const [choice, setChoice] = React.useState<string>('');
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
-    const bold: ITextStyles = { root: { fontWeight: FontWeights.semibold } };
     const rules: ITextStyles = { root: { fontWeight: FontWeights.semibold, fontSize: FontSizes.size12 } };
     const rulesText: ITextStyles = { root: { fontSize: FontSizes.size12 } };
     const colButtonStyle = { maxWidth: '200px', minWidth: '120px' };
@@ -156,20 +156,20 @@ const Rules = () => {
         <Container className="rules text-center">
             <div>
                 <div className="mb-3">
-                    <h5 style={{fontWeight: 400}}>
+                    <Text variant="large">
                         Qui è possibile trovare il regolamento dei gruppi telegram del network.
                         Si consiglia di leggere le varie sezioni di cui è composto prima di usare uno qualsiasi di essi.
-                    </h5>
+                    </Text>
                 </div>
                 
-                <Icon iconName="DoubleChevronDown" className="mb-2" style={iconStyle} />
+                <Icon iconName="DoubleChevronDown8" className="mb-2" style={iconStyle} />
                 
                 <div className="mb-2">
-                    <Text styles={{ root: { fontWeight: FontWeights.semibold, color: theme.palette.themePrimary, fontSize: FontSizes.size14 } }}>Perchè abbiamo introdotto un regolamento?</Text>
+                    <Text variant="medium" styles={{ root: { fontWeight: FontWeights.semibold, color: theme.palette.themePrimary } }}>Perchè abbiamo introdotto un regolamento?</Text>
                 </div>
 
                 <div className="mb-2">
-                    <Text style={{ fontSize: FontSizes.size12 }}>
+                    <Text variant="small">
                         Vogliamo rendere chiari i motivi per cui abbiamo deciso di regolamentare i gruppi del nostro network.
                         Abbiamo notato che la maggior parte di essi erano tempestati di domande banali, fatte più volte al giorno, la cui risposta era facilmente trovabile.
                         Questo riduce la qualità della chat e scoraggia la partecipazione di studenti più attenti.
@@ -178,13 +178,13 @@ const Rules = () => {
                     </Text>
                 </div>
 
-                <Icon iconName="DoubleChevronDown" className="mb-2" style={iconStyle} />
+                <Icon iconName="DoubleChevronDown8" className="mb-2" style={iconStyle} />
 
                 <div>
-                    <Text style={{ fontSize: FontSizes.size14 }}>Di seguito è possibile trovare il <Text styles={bold}>regolamento</Text> e le varie sezioni di cui è composto.</Text>
+                    <Text variant="medium">Di seguito è possibile trovare il <Text styles={semibold}>regolamento</Text> e le varie sezioni di cui è composto.</Text>
                 </div>
                 <div className="mb-4">
-                    <Text style={{ fontSize: FontSizes.size14 }}>Premi un pulsante per visualizzare le regole di quella sezione.</Text>
+                    <Text variant="medium">Premi un pulsante per visualizzare le regole di quella sezione.</Text>
                 </div>
             </div>
 

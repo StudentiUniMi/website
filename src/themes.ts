@@ -1,6 +1,27 @@
-// import { FontSizes } from '@fluentui/theme';
-// import { FontWeights } from 'office-ui-fabric-react';
-// import {Theme} from '@fluentui/theme'; 
+import { FontSizes } from '@fluentui/theme';
+import { FontWeights } from 'office-ui-fabric-react';
+
+export const fonts = {
+    defaultFontStyle: { /*fontFamily: 'Monaco, Menlo, Consolas',*/ fontWeight: FontWeights.regular },
+    small: {
+        fontSize: FontSizes.size12
+    },
+    medium: {
+        fontSize: FontSizes.size14
+    },
+    large: {
+        fontSize: FontSizes.size20
+    },
+    xLarge: {
+        fontSize: FontSizes.size24
+    },
+    xLargePlus: {
+        fontSize: FontSizes.size32
+    },
+    superLarge: {
+        fontSize: FontSizes.size42
+    }
+};
 
 export const lightTheme = {
     palette: {
@@ -26,7 +47,8 @@ export const lightTheme = {
         neutralDark: '#201f1e',
         black: '#1d1d1d',
         white: '#faf9f8'
-    }
+    },
+    fonts: fonts
 };
 
 export const darkTheme = {
@@ -53,5 +75,6 @@ export const darkTheme = {
         neutralDark: '#dbdbdb',
         black: '#faf9f8', 
         white: '#292828', // main background
-    }
+    },
+    fonts: fonts
 };

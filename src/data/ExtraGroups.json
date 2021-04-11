@@ -1,42 +1,42 @@
 [
     {
-        "name":"Gruppo materiali",
+        "name":"Materiali",
         "description": "Dedicato a chi cerca o offre materiale per i vari corsi didattici. Non è permessa la vendita di appunti personali.",
         "image": "materiali.jpg",
         "gruppo":"https://t.me/joinchat/I5_YNksisnkkqUT2MT0gig"
     },
     {
-        "name":"Gruppo ripetizioni",
+        "name":"Ripetizioni",
         "description": "Dedicato a chi cerca o offre ripetizioni. Le discussioni vanno fatte in privato, qui ci vanno soltanto annunci.",
         "image": "ripetizioni.jpg",
-        "gruppo":"https://t.me/joinchat/I5_YNkhaA-G1hqmhrYwU9g"
+        "gruppo":"https://t.me/joinchat/a_aLt47Z8lAyMjBk"
     },
     {
-        "name":"Gruppo alloggi",
+        "name":"Alloggi",
         "description": "Dedicato a chi cerca alloggi o vuole creare un annuncio a riguardo.",
         "image": "alloggi.jpg",
-        "gruppo":"https://t.me/joinchat/G72JWisrbTliZDE0"
+        "gruppo":"https://t.me/joinchat/xJP5VPIBboxiNjI0"
     },
     {
         "name":"Annunci di lavoro",
         "description": "Gruppo che permette di proporre lavoro rivolto a studenti.",
         "image": "lavoro.jpg",
-        "gruppo":"https://t.me/joinchat/I5_YNlBa9fMnTu5MfN6nnQ"
+        "gruppo":"https://t.me/joinchat/If3OTD06OCMwMWU0"
     },
     {
         "name":"Tirocini e tesi",
         "description": "Gruppo per eventuali domande, chiarimenti e discussioni riguardo tirocini e tesi.",
         "image": "tirocini.jpg",
-        "gruppo":"https://t.me/joinchat/Vx5GyUHQ-SeZlBeV"
+        "gruppo":"https://t.me/joinchat/iYmrpYmRk-FkNjI8"
     },
     {
         "name":"Erasmus",
         "description": "Gruppo dedicato a discussioni riguardo l'erasmus.",
         "image": "erasmus.jpg",
-        "gruppo":"https://t.me/joinchat/ILAs4NTlJHGM2m5x"
+        "gruppo":"https://t.me/joinchat/3Xp8K8xWnQ9hMDBk"
     },
     {
-        "name":"Gruppo freetalk",
+        "name":"Freetalk",
         "description": "Chat freetalk per parlare di qualsiasi cosa.",
         "image": "free_talk.jpg",
         "gruppo":"https://t.me/UniMiCazzeggio"
@@ -45,13 +45,13 @@
         "name":"Recupero OFA",
         "description": "Gruppo collegato al corso di Matematica del continuo, dedicato agli ofa e i suoi argomenti. ",
         "image": "ofa.png",
-        "gruppo":"https://t.me/joinchat/HQwag1ASkXeQ-nX7"
+        "gruppo":"https://t.me/joinchat/-s_MHXbJvfxmYWJk"
     },
     {
         "name":"Test di Inglese",
         "description": "Gruppo dedicato a discussioni inerenti al test di inglese (uguale sia per triennali che magistrali).",
         "image": "inglese.jpg",
-        "gruppo":"https://t.me/joinchat/xWKL8J4fS1hmNGZk"
+        "gruppo":"https://t.me/joinchat/gWd38sctY6U4Mjg0"
     },
     {
         "name":"Unirole",

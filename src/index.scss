@@ -71,13 +71,13 @@ button:focus,
   }
 }
 
-@media only screen and (min-width: 769px) {
-  footer .main-col .text {
-    margin-right:5%;
+@media only screen and (min-width: 768px) {
+  footer .mid-column {
+    margin-left: 15%;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   body {
     margin-bottom: 480px;
   }
@@ -104,13 +104,13 @@ button:focus,
 
 @media only screen and (max-width: 363px) {
   body {
-    margin-bottom: 530px;
+    margin-bottom: 550px;
   }
 }
 
 @media only screen and (max-width: 270px) {
   body {
-    margin-bottom: 600px;
+    margin-bottom: 630px;
   }
 }
 
@@ -120,7 +120,7 @@ button:focus,
   }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 767px) {
   footer .row {
     margin-left: 3%;
   }
@@ -341,4 +341,8 @@ button:focus,
 
 .contributors .ms-Persona {
   width: 48px;
+}
+
+footer .fab {
+  font-size: 18px;
 }
