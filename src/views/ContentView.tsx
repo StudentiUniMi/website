@@ -12,6 +12,7 @@ const ContentView = () => {
     const wrap = (element: React.ReactNode): React.ReactNode => {
         return (<main role="main" className="content mt-4 mb-4">{element}</main>)
     };
+    console.log(wrap)
 
     return (
         <Switch>
