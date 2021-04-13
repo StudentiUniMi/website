@@ -11,6 +11,8 @@ import { Panel, PanelType } from 'office-ui-fabric-react/lib/Panel';
 import { useBoolean } from '@uifabric/react-hooks';
 import { Toggle } from '@fluentui/react';
 import { useCookies } from "react-cookie";
+import { mergeStyles } from '@fluentui/react';
+import { AnimationStyles } from '@fluentui/theme';
 import { useTheme } from '@fluentui/react-theme-provider';
 
 const onRenderCaretDown = (): JSX.Element => {
@@ -53,18 +55,20 @@ const HeaderMenu = (props: Props) => {
     const history = useHistory();
     const [cookies, setCookie] = useCookies(["theme"]);
 
+
+
     const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
     const dropdownStyles: Partial<IDropdownStyles> = {
-        dropdown: { color: theme.palette.neutralPrimary, border: 'none', borderStyle: 'none', height: '44px',  alignItems: 'center', fontSize: FontSizes.size16 },
+        dropdown: { color: theme.palette.neutralPrimary, border: 'none', borderStyle: 'none', height: '44px', alignItems: 'center', fontSize: FontSizes.size16 },
         dropdownItems: { color: theme.palette.neutralPrimary, backgroundColor: theme.palette.white, textAlign: 'center', alignItems: 'center' },
-        caretDown: { fontSize: '15px'},
+        caretDown: { fontSize: '15px' },
         caretDownWrapper: { right: '25px', top: '10px' }
     };
     const pivotStyles: Partial<IPivotStyles> = {
         root: { color: theme.palette.neutralPrimary, fontSize: FontSizes.size24 },
     };
 
-    const getPath = React.useCallback((): Array<string|boolean> => {
+    const getPath = React.useCallback((): Array<string | boolean> => {
         var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
         let first = states.length > 0 ? states[0] : '';
         let isCorrectPathKey = Object.keys(ItemsKeys).filter(x => x === first).length !== 0;
@@ -74,10 +78,10 @@ const HeaderMenu = (props: Props) => {
     let didMount = React.useRef(false);
 
     React.useEffect(() => {
-        if(!didMount.current) {
+        if (!didMount.current) {
             didMount.current = true;
             let [path, isCorrect] = getPath();
-            if(!isCorrect) {
+            if (!isCorrect) {
                 history.push('/home/');
                 setSelectedKey(ItemsKeys.home);
             } else {
@@ -85,19 +89,30 @@ const HeaderMenu = (props: Props) => {
             }
         }
     }, [getPath, history]);
-    
+
     let [path, isCorrect] = getPath();
-
+    
+    const animationFadeInClass = mergeStyles(AnimationStyles.fadeIn100);
     const [selectedKey, setSelectedKey] = React.useState(isCorrect ? path as ItemsKeys : ItemsKeys.home);
-
+    
     const handlePivotLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
-        setSelectedKey(item!.props.itemKey! as ItemsKeys);
-        history.push(`/${item!.props.itemKey!}/`);
+        if (item!.props.itemKey !== selectedKey) {
+            let main = document.getElementsByClassName("content")[0];
+            main.classList.remove(animationFadeInClass);
+            setTimeout(() => main.classList.add(animationFadeInClass), 0);
+            setSelectedKey(item!.props.itemKey! as ItemsKeys);
+            history.push(`/${item!.props.itemKey!}/`);
+        }
     };
 
     const onDropdownValueChange = (event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
-        setSelectedKey(item!.key! as ItemsKeys);
-        history.push(`/${item!.key! as string}/`);
+        if (item!.key !== selectedKey) {
+            let main = document.getElementsByClassName("content")[0];
+            main.classList.remove(animationFadeInClass);
+            setTimeout(() => main.classList.add(animationFadeInClass), 0);
+            setSelectedKey(item!.key! as ItemsKeys);
+            history.push(`/${item!.key! as string}/`);
+        }
     };
 
     const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }));
@@ -110,18 +125,18 @@ const HeaderMenu = (props: Props) => {
     const settingsIconStyleDropdown: IIconStyles = { root: { position: 'absolute', left: '5px', top: '6px', zIndex: 10 } };
     const settingsIconId = useId('icon');
     const calloutProps = { gapSpace: 0, target: `#${settingsIconId}`, };
- 
+
     const themeToggled = () => {
-        if(cookies["theme"] === undefined) {
+        if (cookies["theme"] === undefined) {
             setCookie("theme", "light");
         } else {
-            setCookie("theme", cookies["theme"] === "dark" ? "light": "dark");
+            setCookie("theme", cookies["theme"] === "dark" ? "light" : "dark");
             props.changeTheme();
         }
     }
 
     return (
-        <div className="header-menu" style={{  borderBottom: '1px solid', borderColor: theme.palette.neutralLight }}>
+        <div className="header-menu" style={{ borderBottom: '1px solid', borderColor: theme.palette.neutralLight }}>
 
             <div className="pivot">
                 <Pivot
@@ -131,11 +146,11 @@ const HeaderMenu = (props: Props) => {
                     styles={pivotStyles}
                     theme={theme}
                 >
-                    {Object.values(ItemsKeys).map((x,i) =><PivotItem key={i} headerText={texts.get(x)} style={{ fontSize: FontSizes.size24 }} itemKey={x}/>)}
+                    {Object.values(ItemsKeys).map((x, i) => <PivotItem key={i} headerText={texts.get(x)} style={{ fontSize: FontSizes.size24 }} itemKey={x} />)}
                 </Pivot>
 
                 <TooltipHost content="Impostazioni del sito" id={tooltipId} calloutProps={calloutProps} styles={hostStyles} delay={TooltipDelay.zero} directionalHint={DirectionalHint.leftCenter}>
-                    <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStylePivot} id={settingsIconId}/>
+                    <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStylePivot} id={settingsIconId} />
                 </TooltipHost>
 
                 <Panel
@@ -168,7 +183,7 @@ const HeaderMenu = (props: Props) => {
             <div className="dropdown">
 
                 <TooltipHost content="Impostazioni del sito" id={tooltipId} calloutProps={calloutProps} styles={hostStyles}>
-                    <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStyleDropdown} id={settingsIconId}/>
+                    <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStyleDropdown} id={settingsIconId} />
                 </TooltipHost>
 
                 <Dropdown
