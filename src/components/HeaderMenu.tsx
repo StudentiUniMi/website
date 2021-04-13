@@ -90,28 +90,29 @@ const HeaderMenu = (props: Props) => {
         }
     }, [getPath, history]);
 
-
-    const animationFadeInClass = mergeStyles(AnimationStyles.fadeIn100);
-    //console.log(animationFadeInClass)
-
     let [path, isCorrect] = getPath();
-
+    
+    const animationFadeInClass = mergeStyles(AnimationStyles.fadeIn100);
     const [selectedKey, setSelectedKey] = React.useState(isCorrect ? path as ItemsKeys : ItemsKeys.home);
-
     
     const handlePivotLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
-        setSelectedKey(item!.props.itemKey! as ItemsKeys);
-        history.push(`/${item!.props.itemKey!}/`);
-        let main = document.getElementsByClassName("content")[0];
-        main.classList.remove(animationFadeInClass);
-        
-        setTimeout(() => main.classList.add(animationFadeInClass), 0);
+        if (item!.props.itemKey !== selectedKey) {
+            let main = document.getElementsByClassName("content")[0];
+            main.classList.remove(animationFadeInClass);
+            setTimeout(() => main.classList.add(animationFadeInClass), 0);
+            setSelectedKey(item!.props.itemKey! as ItemsKeys);
+            history.push(`/${item!.props.itemKey!}/`);
+        }
     };
-    
 
     const onDropdownValueChange = (event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
-        setSelectedKey(item!.key! as ItemsKeys);
-        history.push(`/${item!.key! as string}/`);
+        if (item!.key !== selectedKey) {
+            let main = document.getElementsByClassName("content")[0];
+            main.classList.remove(animationFadeInClass);
+            setTimeout(() => main.classList.add(animationFadeInClass), 0);
+            setSelectedKey(item!.key! as ItemsKeys);
+            history.push(`/${item!.key! as string}/`);
+        }
     };
 
     const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }));
