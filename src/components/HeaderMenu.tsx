@@ -11,8 +11,6 @@ import { Panel, PanelType } from 'office-ui-fabric-react/lib/Panel';
 import { useBoolean } from '@uifabric/react-hooks';
 import { Toggle } from '@fluentui/react';
 import { useCookies } from "react-cookie";
-import { mergeStyles } from '@fluentui/react';
-import { AnimationStyles } from '@fluentui/theme';
 import { useTheme } from '@fluentui/react-theme-provider';
 
 const onRenderCaretDown = (): JSX.Element => {
@@ -90,14 +88,10 @@ const HeaderMenu = (props: Props) => {
 
     let [path, isCorrect] = getPath();
     
-    const animationFadeInClass = mergeStyles(AnimationStyles.fadeIn100);
     const [selectedKey, setSelectedKey] = React.useState(isCorrect ? path as ItemsKeys : ItemsKeys.home);
     
     const handlePivotLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
         if (item!.props.itemKey !== selectedKey) {
-            let main = document.getElementsByClassName("content")[0];
-            main.classList.remove(animationFadeInClass);
-            setTimeout(() => main.classList.add(animationFadeInClass), 0);
             setSelectedKey(item!.props.itemKey! as ItemsKeys);
             history.push(`/${item!.props.itemKey!}/`);
         }
@@ -105,9 +99,6 @@ const HeaderMenu = (props: Props) => {
 
     const onDropdownValueChange = (event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
         if (item!.key !== selectedKey) {
-            let main = document.getElementsByClassName("content")[0];
-            main.classList.remove(animationFadeInClass);
-            setTimeout(() => main.classList.add(animationFadeInClass), 0);
             setSelectedKey(item!.key! as ItemsKeys);
             history.push(`/${item!.key! as string}/`);
         }
