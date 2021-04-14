@@ -63,19 +63,13 @@ const CoursesView = () => {
 
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
 
-    const departmentSelectionChanged = (
-        ev?: React.FormEvent<HTMLElement | HTMLInputElement>,
-        option?: IDropdownOption
-    ): void => {
+    const departmentSelectionChanged = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IDropdownOption): void => {
         setSelectedDepartment(option?.key as string ?? '');
         setSelectedCdl(''); // Per resettare il corso di laurea quando cambio dipartimento, altrimenti rimane la lista dei gruppi precedente
         history.push(`/courses`)
     };
 
-    const cdlSelectionChanged = (
-        ev?: React.FormEvent<HTMLElement | HTMLInputElement>,
-        option?: IDropdownOption
-    ): void => {
+    const cdlSelectionChanged = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IDropdownOption): void => {
         setSelectedCdl(option?.key as string ?? '');
         history.push(`/courses/${option?.key as string}`);
     };
