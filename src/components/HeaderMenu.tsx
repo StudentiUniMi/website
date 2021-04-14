@@ -55,8 +55,6 @@ const HeaderMenu = (props: Props) => {
     const history = useHistory();
     const [cookies, setCookie] = useCookies(["theme"]);
 
-
-
     const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
     const dropdownStyles: Partial<IDropdownStyles> = {
         dropdown: { color: theme.palette.neutralPrimary, border: 'none', borderStyle: 'none', height: '44px', alignItems: 'center', fontSize: FontSizes.size16 },

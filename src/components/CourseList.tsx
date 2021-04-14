@@ -14,25 +14,27 @@ import Degree from '../models/Degree';
 
 interface Props { cdl?: Degree };
 
-
-const semesterFilterOptions: IDropdownOption[] = [ // Opzioni per la ricerca del semestre
+// Opzioni per la ricerca del semestre
+const semesterFilterOptions: IDropdownOption[] = [ 
     { key: 0, text:'Non selezionato' },
     { key: 1, text:'Primo' },
     { key: 2, text:'Secondo' }
 ];
 
-const yearBachelorDegreeFilterOptions: IDropdownOption[] = [ // Opzioni per la ricerca dell'anno per cdl triennali
-{ key: 0, text:'Non selezionato' },
-{ key: 1, text:'Primo' },
-{ key: 2, text:'Secondo' },
-{ key: 3, text:'Terzo' },
-{ key: -2, text:'Complementare' }
+// Opzioni per la ricerca dell'anno per cdl triennali
+const yearBachelorDegreeFilterOptions: IDropdownOption[] = [ 
+    { key: 0, text:'Non selezionato' },
+    { key: 1, text:'Primo' },
+    { key: 2, text:'Secondo' },
+    { key: 3, text:'Terzo' },
+    { key: -2, text:'Complementare' }
 ];
 
-const yearMasterDegreeFilterOptions: IDropdownOption[] = [ // Opzioni per la ricerca dell'anno per cdl magistrali
-{ key: 0, text:'Non selezionato'},
-{ key: 1, text:'Primo' },
-{ key: 2, text:'Secondo' }
+// Opzioni per la ricerca dell'anno per cdl magistrali
+const yearMasterDegreeFilterOptions: IDropdownOption[] = [ 
+    { key: 0, text:'Non selezionato'},
+    { key: 1, text:'Primo' },
+    { key: 2, text:'Secondo' }
 ];
 
 const CourseList= (props: Props) => {
