@@ -10,6 +10,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { getServices } from '../services/Requests';
 import { redirectToLink } from '../services/Utils';
+import { Separator } from '@fluentui/react/lib/Separator';
 
 const Services = () => {
     var theme = useTheme();
@@ -43,11 +44,17 @@ const Services = () => {
 
             <Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} />
 
-            <div className="mb-4">
+            <div className="mb-3">
                 <Text variant="medium">
                     Se pensi che debba essere aggiunto qualcosa scrivi pure sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link>.
                 </Text>
             </div>
+
+            <div className='text-center mb-3'>
+                <Separator>
+                    <Text variant="medium" styles={semibold} style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size18 }}> Servizi disponibili </Text>
+                </Separator>
+            </div>  
 
             <Row className="m-2 justify-content-center">
                 {

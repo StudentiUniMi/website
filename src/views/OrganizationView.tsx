@@ -9,6 +9,7 @@ import { FontSizes } from '@fluentui/theme';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { useTheme } from '@fluentui/react-theme-provider';
 import { getAdmins } from '../services/Requests';
+import { Separator } from '@fluentui/react/lib/Separator';
 
 const cardTokens: ICardTokens = { childrenMargin: 12 };
 const sectionCard = { minHeight: '120px', height: '100%', width: '100%', maxWidth: 'none',  maxHeight: 'none' };
@@ -50,7 +51,7 @@ const OrganizationView = () => {
             <Icon iconName="ChevronDownMed" className="mb-1" style={iconStyle} />
 
             <div className="mb-4">
-                <div className="mb-3"><Text variant="large" styles={semibold}>Coordinatore</Text></div>
+                <div className="mb-3"><Separator><Text variant="large" styles={semibold}>Coordinatore</Text></Separator></div>
 
                 <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: '230px' }} className="mb-4">
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
@@ -66,7 +67,7 @@ const OrganizationView = () => {
 
             <div className="mb-4 pt-2">
 
-                <div className="mb-3"><Text variant="large" styles={semibold}>Comitato Amministrativo</Text></div>
+                <div className="mb-3"><Separator><Text variant="large" styles={semibold}>Comitato Amministrativo</Text></Separator></div>
 
                 <Row className="justify-content-center">
                     {
@@ -93,7 +94,7 @@ const OrganizationView = () => {
 
 
             <div className="mb-4">
-                <div className="mb-3"><Text variant="large" styles={semibold}>Amministratori e moderatori</Text></div>
+                <div className="mb-3"><Separator><Text variant="large" styles={semibold}>Amministratori e moderatori</Text></Separator></div>
 
                 <Row className="justify-content-center">
                     {

@@ -12,6 +12,7 @@ import { redirectToLink } from '../services/Utils';
 import { TooltipHost, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib/Tooltip';
 import Contributor from '../models/Contributor';
 import { getContributors } from '../services/Requests'
+import { Separator } from '@fluentui/react/lib/Separator';
 
 const cardTokens: ICardTokens = { childrenMargin: 12 };
 const sectionCard = {
@@ -62,7 +63,7 @@ const ContributorsView = () => {
             <Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} />
 
             <div className="mb-4">
-                <div className="mb-3"><Text variant="large" styles={semibold}>Manutentori principali</Text></div>
+                <div className="mb-3"><Separator><Text variant="large" styles={semibold}>Manutentori principali</Text></Separator></div>
 
                 <Row className="justify-content-center">
                     {
@@ -112,7 +113,7 @@ const ContributorsView = () => {
 
 
             <div className="mb-4">
-                <div className="mb-2"><Text variant="large" styles={semibold}>Contributori</Text></div>
+                <div className="mb-2"><Separator><Text variant="large" styles={semibold}>Contributori</Text></Separator></div>
 
                 <div><Text variant="medium">Hai contribuito allo sviluppo del network e vorresti comparire in questa lista? Scrivi in privato a <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.</Text></div>
 

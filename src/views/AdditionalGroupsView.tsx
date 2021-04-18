@@ -7,6 +7,7 @@ import { semibold } from '../fonts';
 import { FocusZone, List, IRectangle } from "@fluentui/react";
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 import { getExtraGroups } from '../services/Requests';
+import { Separator } from '@fluentui/react/lib/Separator';
 import ExtraGroupView from '../components/ExtraGroup';
 import ExtraGroup from '../models/ExtraGroup';
 
@@ -69,9 +70,11 @@ const AdditionalGroupsView = () => {
             </div>
 
             <div className='text-center mb-4'>
-                <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
-                <Text variant="medium" styles={semibold} style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size18 }}> Gruppi disponibili </Text>
-                <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
+                <Separator>
+                    <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
+                    <Text variant="medium" styles={semibold} style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size18 }}> Gruppi disponibili </Text>
+                    <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
+                </Separator>
             </div>     
 
             <FocusZone>
