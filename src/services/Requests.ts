@@ -1,5 +1,6 @@
 import data from '../data/Data.json';
 import extraGroups from '../data/ExtraGroups.json';
+import Course from '../models/Course';
 import Degree from '../models/Degree';
 import Admin from '../models/Admin';
 import Department from '../models/Department';
@@ -22,3 +23,7 @@ export const getAllCdls = (): Degree[] => ([] as Degree[]).concat(...(data.depar
 export const getContributors = (): Contributor[] => contributors;
 
 export const getAdmins = (): Admin[] => ([] as Admin[]).concat(...(getAllCdls().map(x => x.admins as any as Admin[])));
+
+export const getGroupsLength = (): number => extraGroups.length + ([] as Course[]).concat(...getAllCdls().map(x => x.courses as any as Course[])).length;
+
+export const getCdlsLength = (): number => getAllCdls().length;
