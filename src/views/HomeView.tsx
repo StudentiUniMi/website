@@ -11,6 +11,8 @@ import { Icon } from 'office-ui-fabric-react';
 import { initializeIcons } from "@uifabric/icons";
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { PrimaryButton } from 'office-ui-fabric-react';
+import { getGroupsLength, getCdlsLength } from '../services/Requests';
+import { Separator } from '@fluentui/react/lib/Separator';
 
 initializeIcons();
 const cardTokens: ICardTokens = { childrenMargin: 12 };
@@ -24,6 +26,9 @@ const HomeView = () => {
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
     const buttonStyle = { maxWidth: '180px' };
+    const numberStyle = { color: theme.palette.themePrimary }
+    const groupsNumber = getGroupsLength();
+    const cdlsNumber = getCdlsLength();
 
     return (
         <Container className="home text-center">
@@ -39,10 +44,35 @@ const HomeView = () => {
             <div><Text variant="large">La nostra missione è organizzare le informazioni dell'Università degli studi di Milano e renderle accessibili a tutti.</Text></div>
         </div>
 
+        <div className="mb-3">
+            <Row className="justify-content-center">
+                <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
+                    <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
+                        <Text variant="large">
+                            Abbiamo<br/>
+                            <Text variant="xLarge" style={numberStyle}>{groupsNumber}</Text> <br/>
+                            Gruppi Telegram
+                        </Text>
+                    </Card>
+                </Col>
+                <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
+                    <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
+                        <Text variant="large">
+                            Copriamo<br/>
+                            <Text variant="xLarge" style={numberStyle}>{cdlsNumber}</Text> <br/>
+                            Corsi di Laurea
+                        </Text>
+                    </Card>
+                </Col>
+            </Row>
+        </div>
+
         <Icon iconName="ChevronDownMed" className="mb-3" style={iconStyle} />
 
         <div className="primary-section mb-4">
-            <div className="mb-4"><Text variant="large" styles={semibold}>I nostri collegamenti principali</Text></div>
+            <div className="mb-4">
+                <Separator><Text variant="large" styles={semibold}>I nostri collegamenti principali</Text></Separator>
+            </div>
 
             <Row className="justify-content-center">
                 <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
@@ -90,7 +120,7 @@ const HomeView = () => {
         </div>
 
         <div className="secondary-section mb-4">
-                <div className="mb-4"><Text variant="large" styles={semibold}>Ogni cosa ha il suo gruppo Telegram</Text></div>
+            <div className="mb-4"><Separator><Text variant="large" styles={semibold}>Ogni cosa ha il suo gruppo Telegram</Text></Separator></div>
 
             <Row className="justify-content-center">
                 <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
@@ -140,7 +170,7 @@ const HomeView = () => {
         </div>
 
         <div className="tertiary-section mb-4">
-            <div className="mb-4"><Text variant="large" styles={semibold}>I nostri servizi per aiutarti nello studio</Text></div>
+            <div className="mb-4"><Separator><Text variant="large" styles={semibold}>I nostri servizi per aiutarti nello studio</Text></Separator></div>
 
             <Row className="justify-content-center">
                 <Col className="mb-3" xl={3} lg={3} md={4} sm={6} xs={12}>
@@ -205,7 +235,7 @@ const HomeView = () => {
         </div>
 
         <div className="fourth-section mb-4">
-            <div className="mb-4"><Text variant="large" styles={semibold}>Hai provato a spegnere e riaccendere?</Text></div>
+            <div className="mb-4"><Separator><Text variant="large" styles={semibold}>Hai provato a spegnere e riaccendere?</Text></Separator></div>
 
             <Row className="justify-content-center">
                 <Col style={fourthSectionCol} className="mb-3">
@@ -239,9 +269,7 @@ const HomeView = () => {
                 </Col>
             </Row>
 
-
         </div>
-
 
         </Container >
     )

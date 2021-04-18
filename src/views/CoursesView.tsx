@@ -14,6 +14,7 @@ import Row from 'react-bootstrap/Row';
 import CourseList from "../components/CourseList";
 import DegreeInformations from "../components/DegreeInformations";
 import { getDepartments } from '../services/Requests';
+import { Separator } from '@fluentui/react/lib/Separator';
 import Degree from "../models/Degree";
 import Department from "../models/Department";
 
@@ -204,9 +205,11 @@ const CoursesView = () => {
             <div style={{ display: selectedCdl !== '' ? 'block' : 'none' }}>
                 <DegreeInformations cdl={cdl} />
                 <div className='text-center mb-4'>
-                    <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
-                    <Text variant="medium" styles={semibold} style={{color: theme.palette.themePrimary, fontSize: FontSizes.size18}}> Gruppi disponibili </Text>
-                    <Icon iconName="DoubleChevronDown8" style={{color: theme.palette.themePrimary}} />
+                    <Separator>
+                        <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
+                        <Text variant="medium" styles={semibold} style={{color: theme.palette.themePrimary, fontSize: FontSizes.size18}}> Gruppi disponibili </Text>
+                        <Icon iconName="DoubleChevronDown8" style={{color: theme.palette.themePrimary}} />
+                    </Separator>
                 </div>                
                 <CourseList cdl={cdl} />
             </div>
