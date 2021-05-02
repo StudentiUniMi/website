@@ -11,10 +11,35 @@ class LocalizationService
         {
             LocalizationService.data = new LocalizedStrings<ILocalizationStrings>({
                 it: {
-                    websiteSettings: "Impostazioni del sito"
+
+
+
+
+
+                    settingsPanel: {
+                        settings: "Impostazioni",
+                        changeTheme: "Cambia il tema",
+                        darkTheme: "Modalità scura",
+                        lightTheme: "Modalità chiara",
+                        selectLanguage: "Seleziona la lingua"
+                    }
                 },
                 en: {
-                    websiteSettings: "Website settings"
+
+
+
+
+
+
+
+                    settingsPanel: {
+                        settings: "Settings",
+                        changeTheme: "Change theme",
+                        darkTheme: "Dark Mode",
+                        lightTheme: "Light Mode",
+                        selectLanguage: "Select the language"
+
+                    }
                 }
             })
         }   

@@ -1,7 +1,13 @@
 
 interface ILocalizationStrings
 {
-    websiteSettings: string
+    settingsPanel: {
+        settings: string,
+        changeTheme: string,
+        darkTheme: string,
+        lightTheme: string,
+        selectLanguage: string
+    }
 }
 
 export default ILocalizationStrings
