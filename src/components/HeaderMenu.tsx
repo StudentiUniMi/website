@@ -133,14 +133,12 @@ const HeaderMenu = (props: Props) => {
     const settingsIconId = useId('icon');
     const calloutProps = { gapSpace: 0, target: `#${settingsIconId}`, };
 
+    if (cookies["theme"] === undefined) { setCookie("theme", "light"); }
+
     const themeToggled = () => {
-        if (cookies["theme"] === undefined) {
-            setCookie("theme", "light");
-        } else {
-            setCookie("theme", cookies["theme"] === "dark" ? "light" : "dark");
-            props.changeTheme();
-        }
-    }
+        setCookie("theme", cookies["theme"] === "dark" ? "light" : "dark");
+        props.changeTheme();
+    };
 
     return (
         <div className="header-menu" style={{ borderBottom: '1px solid', borderColor: theme.palette.neutralLight }}>
