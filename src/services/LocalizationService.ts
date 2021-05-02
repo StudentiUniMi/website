@@ -14,32 +14,52 @@ class LocalizationService
 
 
 
-
-
+                    headerMenuItems: {
+                        home: "Home",
+                        aboutUs: "Chi siamo",
+                        rules: "Regolamento",
+                        courses: "Corsi",
+                        services: "Servizi",
+                        additionalGroups: "Gruppi extra",
+                        rapresentatives: "Rappresentanti",
+                        contributors: "Contributori"
+                    },
                     settingsPanel: {
                         settings: "Impostazioni",
                         changeTheme: "Cambia il tema",
                         darkTheme: "Modalità scura",
                         lightTheme: "Modalità chiara",
                         selectLanguage: "Seleziona la lingua"
-                    }
+                    },
+                    footer: {}
                 },
+
+
+
+
                 en: {
 
 
 
 
-
-
-
+                    headerMenuItems: {
+                        home: "Home",
+                        aboutUs: "About Us",
+                        rules: "Regolamento",
+                        courses: "Courses",
+                        services: "Services",
+                        additionalGroups: "Extra groups",
+                        rapresentatives: "Rapresentatives",
+                        contributors: "Contributors"
+                    },
                     settingsPanel: {
                         settings: "Settings",
                         changeTheme: "Change theme",
                         darkTheme: "Dark Mode",
                         lightTheme: "Light Mode",
                         selectLanguage: "Select the language"
-
-                    }
+                    },
+                    footer: {}
                 }
             })
         }   

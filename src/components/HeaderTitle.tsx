@@ -5,13 +5,7 @@ import Row from 'react-bootstrap/Row';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { FontWeights, ITextStyles } from 'office-ui-fabric-react';
 
-const logoProperties = {
-    width: '60px',
-    height: '60px',
-    marginTop: '5px',
-    marginBottom: '5px'
-}
-
+const logoProperties = { width: '60px', height: '60px', marginTop: '5px',  marginBottom: '5px' };
 const logoFileName = 'unimi150.png';
 
 const HeaderTitle = () => {
@@ -19,6 +13,7 @@ const HeaderTitle = () => {
     const titleStyle: ITextStyles = {
         root: { fontSize: FontSizes.size42, fontWeight: FontWeights.semibold, color: theme.palette.themePrimary, fontFamily: 'CorbelBold' }
     };
+    
     return (
         <div className="header-title m-2">
 
