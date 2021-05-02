@@ -138,8 +138,8 @@ const HeaderMenu = (props: Props) => {
             setCookie("theme", "light");
         } else {
             setCookie("theme", cookies["theme"] === "dark" ? "light" : "dark");
+            props.changeTheme();
         }
-        props.changeTheme();
     };
 
     return (
