@@ -138,9 +138,9 @@ const HeaderMenu = (props: Props) => {
             setCookie("theme", "light");
         } else {
             setCookie("theme", cookies["theme"] === "dark" ? "light" : "dark");
-            props.changeTheme();
         }
-    }
+        props.changeTheme();
+    };
 
     return (
         <div className="header-menu" style={{ borderBottom: '1px solid', borderColor: theme.palette.neutralLight }}>
