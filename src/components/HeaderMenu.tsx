@@ -16,6 +16,7 @@ import { mergeStyles } from '@fluentui/react';
 import { AnimationStyles } from '@fluentui/theme';
 */
 import { useTheme } from '@fluentui/react-theme-provider';
+import LocalizationService from "../services/LocalizationService";
 
 const onRenderCaretDown = (): JSX.Element => {
     return <Icon iconName="List" />;
@@ -45,9 +46,10 @@ const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
 
 
 const languageOptions: IDropdownOption[] = [
-    { key: 'ITA', text: 'Italiano', data: { icon: 'Memo' } },
-    { key: 'ENG', text: 'Inglese', data: { icon: 'Print' } }
+    { key: 'it', text: 'Italiano', data: { icon: 'Memo' } },
+    { key: 'en', text: 'Inglese', data: { icon: 'Print' } }
 ];
+
 
 interface Props { changeTheme: () => void };
 initializeIcons();
@@ -55,7 +57,10 @@ initializeIcons();
 const HeaderMenu = (props: Props) => {
     var theme = useTheme();
     const history = useHistory();
-    const [cookies, setCookie] = useCookies(["theme"]);
+    const [cookies, setCookie] = useCookies(["theme", "language"]);
+    const locale = LocalizationService.strings();
+
+    if (cookies["language"] === undefined) { setCookie("language", "it"); }
 
     const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
     const dropdownStyles: Partial<IDropdownStyles> = {
@@ -154,7 +159,7 @@ const HeaderMenu = (props: Props) => {
                     {Object.values(ItemsKeys).map((x, i) => <PivotItem key={i} headerText={texts.get(x)} style={{ fontSize: FontSizes.size24 }} itemKey={x} />)}
                 </Pivot>
 
-                <TooltipHost content="Impostazioni del sito" id={tooltipId} calloutProps={calloutProps} styles={hostStyles} delay={TooltipDelay.zero} directionalHint={DirectionalHint.leftCenter}>
+                <TooltipHost content={locale.websiteSettings} id={tooltipId} calloutProps={calloutProps} styles={hostStyles} delay={TooltipDelay.zero} directionalHint={DirectionalHint.leftCenter}>
                     <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStylePivot} id={settingsIconId} />
                 </TooltipHost>
 
@@ -175,11 +180,17 @@ const HeaderMenu = (props: Props) => {
                         onChange={themeToggled}
                         theme={theme}
                     />
+
                     <Dropdown
                         label="Seleziona la lingua"
-                        defaultSelectedKey="ITA"
                         options={languageOptions}
-                        disabled={true}
+                        selectedKey={cookies["language"]}
+                        onChange={(_, option) => 
+                        {
+                            LocalizationService.localize(option!.key as string)
+                            setCookie("language", option!.key as string)
+                        }}
+                        //disabled={true}
                         theme={theme}
                     />
                 </Panel>
@@ -187,7 +198,7 @@ const HeaderMenu = (props: Props) => {
 
             <div className="dropdown">
 
-                <TooltipHost content="Impostazioni del sito" id={tooltipId} calloutProps={calloutProps} styles={hostStyles}>
+                <TooltipHost content={locale.websiteSettings} id={tooltipId} calloutProps={calloutProps} styles={hostStyles}>
                     <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStyleDropdown} id={settingsIconId} />
                 </TooltipHost>
 

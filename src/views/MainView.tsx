@@ -7,10 +7,13 @@ import ContentView from "./ContentView";
 import { ThemeProvider } from '@fluentui/react-theme-provider'; 
 import { darkTheme, lightTheme } from '../themes';
 import { CookiesProvider, useCookies } from 'react-cookie';
+import LocalizationService from '../services/LocalizationService';
 
 const MainView = () => {
   let [cookies, ] = useCookies();
   let [theme, setTheme] = React.useState(cookies["theme"] === "dark");
+
+  LocalizationService.localize(cookies['language']);
 
   const changeTheme = () => setTheme(!theme);
   return (
