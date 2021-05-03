@@ -45,7 +45,7 @@ class LocalizationService
                     headerMenuItems: {
                         home: "Home",
                         aboutUs: "About Us",
-                        rules: "Regolamento",
+                        rules: "Rules",
                         courses: "Courses",
                         services: "Services",
                         additionalGroups: "Extra groups",
