@@ -6,6 +6,7 @@ import { CompoundButton } from 'office-ui-fabric-react';
 import { MessageBar } from 'office-ui-fabric-react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import { Separator } from '@fluentui/react/lib/Separator';
 import { semibold } from '../fonts';
 import { FontWeights, ITextStyles } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
@@ -154,7 +155,7 @@ const Rules = () => {
 
     return (
         <Container className="rules text-center">
-            <div>
+            <div className="mb-2">
                 <div className="mb-3">
                     <Text variant="large">
                         Qui è possibile trovare il regolamento dei gruppi telegram del network.
@@ -183,12 +184,14 @@ const Rules = () => {
                 <div>
                     <Text variant="medium">Di seguito è possibile trovare il <Text styles={semibold}>regolamento</Text> e le varie sezioni di cui è composto.</Text>
                 </div>
-                <div className="mb-4">
+                <div>
                     <Text variant="medium">Premi un pulsante per visualizzare le regole di quella sezione.</Text>
                 </div>
             </div>
 
-            <Row className="mb-3 justify-content-center">
+            <Separator />
+
+            <Row className="mb-3 mt-3 justify-content-center">
                 <Col xl={3} lg={3} md={3} sm={4} xs={12} className="mb-2">
                     <CompoundButton primary secondaryText="Domande e faq" theme={theme}
                     onClick={() => setChoice("question_faq_rules")}
