@@ -145,7 +145,7 @@ const CoursesView = () => {
 
             <Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} />
 
-            <div className="mb-4">
+            <div className="mb-2">
                 <Text variant="medium">
                     I link alla <Text styles={semibold}>Wiki</Text> di un corso didattico potrebbero portare a pagine non ancora compilate:
                     è qui che potete contribuire iscrivendovi e aiutandoci a raccogliere faq e qualsiasi altro contenuto utile per i corsi didattici.
@@ -153,6 +153,8 @@ const CoursesView = () => {
                     Puoi contribuire <Link href="https://wiki.studentiunimi.it/" target="_blank">qui</Link> creando un apposito account gratuito.
                 </Text>
             </div>
+
+            <Separator />
             
             <Row className="department-choose justify-content-center mb-4">
                 <Col xl={6} lg={6} md={6} sm={6} xs={12} className="mb-1">
