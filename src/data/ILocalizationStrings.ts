@@ -8,7 +8,7 @@ interface ILocalizationStrings
         courses: string,
         services: string,
         additionalGroups: string,
-        rapresentatives: string,
+        representatives: string,
         contributors: string
     },
     settingsPanel: {
@@ -162,7 +162,7 @@ interface ILocalizationStrings
         text2: string,
         availableGroups: string
     },
-    rapresentatives: {
+    representatives: {
         text1: string,
         text2: string,
         departmentSelect: string

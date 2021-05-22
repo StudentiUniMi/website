@@ -6,7 +6,7 @@ import { Link } from 'office-ui-fabric-react';
 
 interface Props { data: Representative[] };
 
-const RapresentativesList = (props: Props) => {
+const RepresentativesList = (props: Props) => {
     return (
         <Row className="people-list text-center">
             {props.data.map((x,i) => 
@@ -26,4 +26,4 @@ const RapresentativesList = (props: Props) => {
     )
 };
 
-export default RapresentativesList;
+export default RepresentativesList;
