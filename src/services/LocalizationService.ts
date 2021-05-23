@@ -424,7 +424,7 @@ class LocalizationService
                             }
                         */
                         col3: {
-                            header: "Contacts"
+                            header: "Contacts",
                             text: "For any question or suggestion you can join the main network group"
                         }
                     }
