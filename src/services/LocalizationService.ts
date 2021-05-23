@@ -12,7 +12,7 @@ class LocalizationService
             LocalizationService.data = new LocalizedStrings<ILocalizationStrings>({
                 it: {
                     headerMenuItems: {
-                        home: "Home ITA",
+                        home: "Home",
                         aboutUs: "Chi siamo",
                         rules: "Regolamento",
                         courses: "Corsi",
@@ -205,9 +205,9 @@ class LocalizationService
                         aboutUs: "About Us",
                         rules: "Rules",
                         courses: "Courses",
-                        services: "All UniMi Services",
-                        additionalGroups: "Off-Topic Groups",
-                        representatives: "Presidents of Students",
+                        services: "Unimi Services",
+                        additionalGroups: "Extra Groups",
+                        representatives: "Student Presidents",
                         contributors: "Credits"
                     },
                     settingsPanel: {
@@ -234,7 +234,7 @@ class LocalizationService
                             text: "Our main links",
                             card1: {
                                 text: "Join the Telegram group to stay updated and see all the links available!",
-                                button: "loremipsum112"
+                                button: "Telegram Channel"
                             },
                             card2: {
                                 text: "Join our discord to share information and meet new friends!",
@@ -283,7 +283,7 @@ class LocalizationService
                             text: "Have you tried turning it off and on again?",
                             card1: {
                                 text: "I have a didactic problem",
-                                button: "representatives"
+                                button: "Representatives"
                             },
                             card2: {
                                 text: "I have a technical problem",
@@ -304,24 +304,57 @@ class LocalizationService
                         text1: "Here you can find the Regulation of our network. Please read it before joining any group.",
                         question: "Why do we need it?",
                         answer: "We want to make clear the reasons that took us to introducing these rules into the network. We noticed that most of the groups were flooded with trivial questions re-proposed every day. This was lowering the quality of our chats and discouraged the participation of some students. Therefore, we started repressing this phenomenon warning their proponents and offering a FAQ section for each course.",
-                        text2: "Below you can find the Regulation and its sections. Click on each banner to read the rules.",
-                        text3: "loremipsum123",
+                        text2: "Below you can find the Regulation and its sections",
+                        text3: "Click on each banner to read the rules",
                         section: "loremipsum124",
                         rules1: {
                             sectionName: "Questions and FAQs",
-                            rules: []
+                            rules: [
+                                /*
+                                comma1: "Question about something indicated on the teacher’s website",
+                                comma2: "The user receives a warn and is told where he can find the information. The consequence of 3 warns is a 24h muting. (Exceptions if you are an Erasmus student and you cannot find that information in English).",
+                                comma3: "Trivial and already addressed questions",
+                                comma4: "No punishment if the question is not into the FAQs otherwise the previous rule is applied. It is recommended to look for your question into the chat history before submitting it.",
+                                */
+                            ]
                         },
                         rules2: {
                             sectionName: "Conduct",
-                            rules: []
+                            rules: [
+                                /*
+                                comma1: "Blasphemy and trash talking",
+                                comma2: "Blasphemy is forbidden and the punishment can be a warn or a ban depending on the situation. Vulgar language is allowed unless it becomes spam. In that case the user will be warned or muted depending on the situation.",
+                                comma3: "Insults",
+                                comma4: "Insults are forbidden. You can criticize a teacher, but you cannot insult him. The punishment can be a warn, a muting or a ban depending on the situation.",
+                                comma5: "Spam and off-topic",
+                                comma6: "Spam is forbidden. Off-topic conversations are also forbidden both in the specific and in the general groups. The punishment can be a warn or a muting depending on the case. If you want to chat freely about anything there is a group with that purpose, you can find it in “Extra groups.",
+                                */
+                            ]
                         },
                         rules3: {
                             sectionName: "Materials",
-                            rules: []
+                            rules: [
+                                /*
+                                comma1: "Copyrighted materials",
+                                comma2: "Copyrighted material will be canceled from the chat. The user who sent it will be warned and, if he repeats the transgression, eventually banned.",
+                                comma3: "Accountability",
+                                comma4: "The user who sent copyrighted material will be the only responsible for that transgression. The network and its administrators, who are committed to prevent this phenomenon, will not take the responsibility for that action.",
+                                */
+                            ]
                         },
                         rules4: {
                             sectionName: "More",
-                            rules: []
+                            rules: [
+                                /*
+                                comma1: "Name and username",
+                                comma2: "Users must be identifiable; therefore, you must use your real name or a nickname containing part of it. Regarding the username we suggest keeping it public in order to facilitate the moderation of the network.",
+                                comma3: "Politics",
+                                comma4: "The network and the associated groups are a neutral environment. They do not belong to any party. Whoever will use them for propaganda will be immediately banned from the entire network at the discretion of the administrators.",
+                                comma5: "Code",
+                                comma6: "The code cannot be shared using images or screenshots. If it contains more than 5 lines it must be shared using an appropriate platform like Paste or Gist. On the contrary, if it contains less than 5 lines, you can send it using the specific layout implemented by Telegram. Screenshots of logs, shell and similar are allowed.",
+                                comma7: "Looking for a place to freely talk with your friends? Join our Discord server!",
+                                */
+                            ]
                         }
                     },
                     courses: {
@@ -329,17 +362,17 @@ class LocalizationService
                         text2: "Links to the wiki could lead to unfinished pages: that’s why you can help us collecting FAQs and any other useful material for that course. To help us create a free account here",
                         departmentSelect: "Choose a department:",
                         cdlSelect: "Select the degree programme:",
-                        cdlWebsite: "loremipsum125",
-                        manifest: "loremipsum126",
-                        vc: "loremipsum127",
+                        cdlWebsite: "Website of degree",
+                        manifest: "Manifest",
+                        vc: "Virtual Classroom",
                         availableGroups: "Available groups:",
                         nameFilter: "Search by name",
                         yearFilter: "Search by year",
-                        semesterFilter: "loremipsum128",
+                        semesterFilter: "Search by semester",
                         year: "year",
                         semester: "Search by semester",
-                        telegramGroup: "loremipsum129",
-                        website: "loremipsum130",
+                        telegramGroup: "Telegram Group",
+                        website: "Website",
                         notices: "loremipsum131"
                     },
                     services: {
@@ -364,25 +397,35 @@ class LocalizationService
                     representatives: {
                         text1: "Being a students' representative is a very important role and a formative experience. They provide a support to any student against all the difficulties during the study period.",
                         text2: "The list below reports all the representatives of each department and their contacts.",
-                        departmentSelect: "Select your department:"
+                        departmentSelect: "Select your department"
                     },
                     contributors: {
                         text1:"Below you can find the contributors who put their efforts into the development of the Network, the website and all its services.",
                         header1: "Main maintainers",
                         header2: "Contributors",
-                        dev1: "loremipsum132",
-                        dev2: "loremipsum133",
-                        dev3: "loremipsum134",
-                        githubProfile: "loremipsum135",
-                        websiteProfile: "loremipsum136",
+                        dev1: "Website developer",
+                        dev2: "Website technical designer",
+                        dev3: "Bot, database and other services developer",
+                        githubProfile: "Github Profile",
+                        websiteProfile: "Website",
                         text2: "Did you contributed to the development of the Network and you would like to appear in this list? Send a private message to @giuseppetm."
                     },
                     footer: {
                         text1: "loremipsum137",
                         text2: "loremipsum138",
+                        /*
+                            col1: {
+                                header: "Studenti UniMi ©"
+                                text: "The network and the associated webpage are not affiliated to the University of Milan (UniMi)"
+                            }
+                            col2: {
+                                header: "Useful links"
+                                text: "QuickUnimi\nFreshmen FAQs\nQuanto-manca.it\nCodeshare.tech"
+                            }
+                        */
                         col3: {
-                            header: "loremipsum139",
-                            text: "loremipsum140"
+                            header: "Contacts"
+                            text: "For any question or suggestion you can join the main network group"
                         }
                     }
                 }
