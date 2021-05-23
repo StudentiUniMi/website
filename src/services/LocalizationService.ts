@@ -30,172 +30,172 @@ class LocalizationService
                         selectLanguage: "Seleziona la lingua"
                     },
                     footer: {
-                        text1: "loremipsum",
-                        text2: "loremipsum",
+                        text1: "dolorsitamet000",
+                        text2: "dolorsitamet000",
                         col3: {
-                            header: "loremipsum",
-                            text: "loremipsum",
+                            header: "dolorsitamet000",
+                            text: "dolorsitamet000",
                         }
                     },
                     homepage: {
                         section1: {
-                            text1: "Loremipsuum",
-                            text2: "Loremipsuum",
+                            text1: "dolorsitamet000",
+                            text2: "dolorsitamet000",
                             card1: {
-                                text1: "Loremipsuum",
-                                text2: "Loremipsuum"
+                                text1: "dolorsitamet000",
+                                text2: "dolorsitamet000"
                             },
                             card2: {
-                                text1: "Loremipsuum",
-                                text2: "Loremipsuum"
+                                text1: "dolorsitamet000",
+                                text2: "dolorsitamet000"
                             }
                         },
                         section2: {
-                            text: "Loremipsuum",
+                            text: "dolorsitamet000",
                             card1: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "dolorsitamet000",
+                                button: "dolorsitamet000"
                             },
                             card2: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "dolorsitamet000",
+                                button: "dolorsitamet000"
                             },
                             card3: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "dolorsitamet000",
+                                button: "dolorsitamet000"
                             }
                         },
                         section3: {
-                            text: "Loremipsuum",
+                            text: "dolorsitamet000",
                             card1: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "dolorsitamet000",
+                                button: "dolorsitamet000"
                             },
                             card2: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "dolorsitamet000",
+                                button: "dolorsitamet000"
                             },
                             card3: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "dolorsitamet000",
+                                button: "dolorsitamet000"
                             }
                         },
                         section4: {
-                            text: "Loremipsuum",
+                            text: "dolorsitamet000",
                             card1: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "dolorsitamet000",
+                                button: "dolorsitamet000"
                             },
                             card2: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "dolorsitamet000",
+                                button: "dolorsitamet000"
                             },
                             card3: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "dolorsitamet000",
+                                button: "dolorsitamet000"
                             },
                             card4: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "dolorsitamet000",
+                                button: "dolorsitamet000"
                             }
                         },
                         section5: {
-                            text: "Loremipsuum",
+                            text: "dolorsitamet000",
                             card1: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "dolorsitamet000",
+                                button: "dolorsitamet000"
                             },
                             card2: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "dolorsitamet000",
+                                button: "dolorsitamet000"
                             }
                         }
                     },
                     aboutUs: {
-                        text1: "Loremipsuum",
-                        text2: "Loremipsuum",
-                        text3: "Loremipsuum",
-                        header1: "Loremipsuum",
-                        header2: "Loremipsuum",
-                        header3: "Loremipsuum",
-                        discordManager: "Loremipsuum"
+                        text1: "dolorsitamet000",
+                        text2: "dolorsitamet000",
+                        text3: "dolorsitamet000",
+                        header1: "dolorsitamet000",
+                        header2: "dolorsitamet000",
+                        header3: "dolorsitamet000",
+                        discordManager: "dolorsitamet000"
                     },
                     rules: {
-                        text1: "Loremipsuum",
-                        question: "Loremipsuum",
-                        answer: "Loremipsuum",
-                        text2: "Loremipsuum",
-                        text3: "Loremipsuum",
-                        section: "Loremipsuum",
+                        text1: "dolorsitamet000",
+                        question: "dolorsitamet000",
+                        answer: "dolorsitamet000",
+                        text2: "dolorsitamet000",
+                        text3: "dolorsitamet000",
+                        section: "dolorsitamet000",
                         rules1: {
-                            sectionName: "Loremipsuum",
+                            sectionName: "dolorsitamet000",
                             rules: []
                         },
                         rules2: {
-                            sectionName: "Loremipsuum",
+                            sectionName: "dolorsitamet000",
                             rules: []
                         },
                         rules3: {
-                            sectionName: "Loremipsuum",
+                            sectionName: "dolorsitamet000",
                             rules: []
                         },
                         rules4: {
-                            sectionName: "Loremipsuum",
+                            sectionName: "dolorsitamet000",
                             rules: []
                         }
                     },
                     courses: {
-                        text1: "Loremipsuum",
-                        text2: "Loremipsuum",
-                        departmentSelect: "Loremipsuum",
-                        cdlSelect: "Loremipsuum",
-                        cdlWebsite: "Loremipsuum",
-                        manifest: "Loremipsuum",
-                        vc: "Loremipsuum",
-                        availableGroups: "Loremipsuum",
-                        nameFilter: "Loremipsuum",
-                        yearFilter: "Loremipsuum",
-                        semesterFilter: "Loremipsuum",
-                        year: "Loremipsuum",
-                        semester: "Loremipsuum",
-                        telegramGroup: "Loremipsuum",
-                        website: "Loremipsuum",
-                        notices: "Loremipsuum"
+                        text1: "dolorsitamet000",
+                        text2: "dolorsitamet000",
+                        departmentSelect: "dolorsitamet000",
+                        cdlSelect: "dolorsitamet000",
+                        cdlWebsite: "dolorsitamet000",
+                        manifest: "dolorsitamet000",
+                        vc: "dolorsitamet000",
+                        availableGroups: "dolorsitamet000",
+                        nameFilter: "dolorsitamet000",
+                        yearFilter: "dolorsitamet000",
+                        semesterFilter: "dolorsitamet000",
+                        year: "dolorsitamet000",
+                        semester: "dolorsitamet000",
+                        telegramGroup: "dolorsitamet000",
+                        website: "dolorsitamet000",
+                        notices: "dolorsitamet000"
                     },
                     services: {
-                        text1: "Loremipsuum",
-                        text2: "Loremipsuum",
-                        availableServices: "Loremipsuum",
-                        card1: { header: "Loremipsuum", text: "Loremipsuum" },
-                        card2: { header: "Loremipsuum", text: "Loremipsuum" },
-                        card3: { header: "Loremipsuum", text: "Loremipsuum" },
-                        card4: { header: "Loremipsuum", text: "Loremipsuum" },
-                        card5: { header: "Loremipsuum", text: "Loremipsuum" },
-                        card6: { header: "Loremipsuum", text: "Loremipsuum" },
-                        card7: { header: "Loremipsuum", text: "Loremipsuum" },
-                        card8: { header: "Loremipsuum", text: "Loremipsuum" },
-                        card9: { header: "Loremipsuum", text: "Loremipsuum" },
+                        text1: "dolorsitamet000",
+                        text2: "dolorsitamet000",
+                        availableServices: "dolorsitamet000",
+                        card1: { header: "dolorsitamet000", text: "dolorsitamet000" },
+                        card2: { header: "dolorsitamet000", text: "dolorsitamet000" },
+                        card3: { header: "dolorsitamet000", text: "dolorsitamet000" },
+                        card4: { header: "dolorsitamet000", text: "dolorsitamet000" },
+                        card5: { header: "dolorsitamet000", text: "dolorsitamet000" },
+                        card6: { header: "dolorsitamet000", text: "dolorsitamet000" },
+                        card7: { header: "dolorsitamet000", text: "dolorsitamet000" },
+                        card8: { header: "dolorsitamet000", text: "dolorsitamet000" },
+                        card9: { header: "dolorsitamet000", text: "dolorsitamet000" },
                     },
                     extraGroups: {
-                        text1: "Loremipsuum",
-                        text2: "Loremipsuum",
-                        availableGroups: "Loremipsuum"
+                        text1: "dolorsitamet000",
+                        text2: "dolorsitamet000",
+                        availableGroups: "dolorsitamet000"
                     },
                     representatives: {
-                        text1: "Loremipsuum",
-                        text2: "Loremipsuum",
-                        departmentSelect: "Loremipsuum"
+                        text1: "dolorsitamet000",
+                        text2: "dolorsitamet000",
+                        departmentSelect: "dolorsitamet000"
                     },
                     contributors: {
-                        text1:"Loremipsuum",
-                        header1: "Loremipsuum",
-                        header2: "Loremipsuum",
-                        dev1: "Loremipsuum",
-                        dev2: "Loremipsuum",
-                        dev3: "Loremipsuum",
-                        githubProfile: "Loremipsuum",
-                        websiteProfile: "Loremipsuum",
-                        text2: "Loremipsuum"
+                        text1:"dolorsitamet000",
+                        header1: "dolorsitamet000",
+                        header2: "dolorsitamet000",
+                        dev1: "dolorsitamet000",
+                        dev2: "dolorsitamet000",
+                        dev3: "dolorsitamet000",
+                        githubProfile: "dolorsitamet000",
+                        websiteProfile: "dolorsitamet000",
+                        text2: "dolorsitamet000"
                     },
                 },
 
@@ -220,94 +220,94 @@ class LocalizationService
                     },
                     homepage: {
                         section1: {
-                            text1: "Loremipsuum",
-                            text2: "Loremipsuum",
+                            text1: "Welcome to Network Studenti UniMi!",
+                            text2: "Our goal is to organize all the information about the University of Milan (UniMi – Università degli Studi di Milano Statale) and make them easily accessible to anyone",
                             card1: {
-                                text1: "Loremipsuum",
-                                text2: "Loremipsuum"
+                                text1: "dolorsitamet000",
+                                text2: "dolorsitamet000"
                             },
                             card2: {
-                                text1: "Loremipsuum",
-                                text2: "Loremipsuum"
+                                text1: "dolorsitamet000",
+                                text2: "dolorsitamet000"
                             }
                         },
                         section2: {
-                            text: "Loremipsuum",
+                            text: "Our main links",
                             card1: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "Join the Telegram group to stay updated and see all the links available!",
+                                button: "dolorsitamet000"
                             },
                             card2: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "Join our discord to share information and meet new friends!",
+                                button: "dolorsitamet000"
                             },
                             card3: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "Visit the repository to see all our open-source projects",
+                                button: "dolorsitamet000"
                             }
                         },
                         section3: {
-                            text: "Loremipsuum",
+                            text: "Everything has its own Telegram group chat",
                             card1: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "Say goodbye to those messy WhatsApp chats! We have created a Telegram group for each course",
+                                button: "dolorsitamet000"
                             },
                             card2: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "Tutoring, course materials, Erasmus, internship, apartments and many other extra things",
+                                button: "dolorsitamet000"
                             },
                             card3: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "We think that a respectful and inclusive environment makes us more innovative and efficient. Read the rules!",
+                                button: "dolorsitamet000"
                             }
                         },
                         section4: {
-                            text: "Loremipsuum",
+                            text: "Our services to help you studying",
                             card1: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "View the network Wiki and help us improving it!",
+                                button: "dolorsitamet000"
                             },
                             card2: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "Use this page to easily reach all the official services provided by UniMi",
+                                button: "dolorsitamet000"
                             },
                             card3: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "“Hey pal, would you mind sharing those notes?”",
+                                button: "dolorsitamet000"
                             },
                             card4: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "Our service to safely and easily share your code or any other kind of material.",
+                                button: "dolorsitamet000"
                             }
                         },
                         section5: {
-                            text: "Loremipsuum",
+                            text: "Have you tried turning it off and on again?",
                             card1: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "I have a didactic problem",
+                                button: "representatives"
                             },
                             card2: {
-                                text: "Loremipsuum",
-                                button: "Loremipsuum"
+                                text: "I have a technical problem",
+                                button: "Admins"
                             }
                         }
                     },
                     aboutUs: {
-                        text1: "Loremipsuum",
-                        text2: "Loremipsuum",
-                        text3: "Loremipsuum",
-                        header1: "Loremipsuum",
-                        header2: "Loremipsuum",
-                        header3: "Loremipsuum",
-                        discordManager: "Loremipsuum"
+                        text1: "We are a non-profit organization, neutral and not affiliated to any political party. Our goal is to provide online services to the students at the University of Milan.",
+                        text2: "You can read our statute here.",
+                        text3: "Here you can find our members and their contacts.",
+                        header1: "Coordinator",
+                        header2: "Administrative committee",
+                        header3: "Administrators and moderators",
+                        discordManager: "dolorsitamet000"
                     },
                     rules: {
                         text1: "Here you can find the Regulation of our network. Please read it before joining any group.",
                         question: "Why do we need it?",
                         answer: "We want to make clear the reasons that took us to introducing these rules into the network. We noticed that most of the groups were flooded with trivial questions re-proposed every day. This was lowering the quality of our chats and discouraged the participation of some students. Therefore, we started repressing this phenomenon warning their proponents and offering a FAQ section for each course.",
                         text2: "Below you can find the Regulation and its sections. Click on each banner to read the rules.",
-                        text3: "Loremipsuum",
-                        section: "",
+                        text3: "dolorsitamet000",
+                        section: "dolorsitamet000",
                         rules1: {
                             sectionName: "Questions and FAQs",
                             rules: []
@@ -330,18 +330,18 @@ class LocalizationService
                         text2: "Links to the wiki could lead to unfinished pages: that’s why you can help us collecting FAQs and any other useful material for that course. To help us create a free account here",
                         departmentSelect: "Choose a department:",
                         cdlSelect: "Select the degree programme:",
-                        cdlWebsite: "Loremipsuum",
-                        manifest: "Loremipsuum",
-                        vc: "Loremipsuum",
+                        cdlWebsite: "dolorsitamet000",
+                        manifest: "dolorsitamet000",
+                        vc: "dolorsitamet000",
                         availableGroups: "Available groups:",
                         nameFilter: "Search by name",
                         yearFilter: "Search by year",
-                        semesterFilter: "Loremipsuum",
+                        semesterFilter: "dolorsitamet000",
                         year: "year",
                         semester: "Search by semester",
-                        telegramGroup: "Loremipsuum",
-                        website: "Loremipsuum",
-                        notices: "Loremipsuum"
+                        telegramGroup: "dolorsitamet000",
+                        website: "dolorsitamet000",
+                        notices: "dolorsitamet000"
                     },
                     services: {
                         text1: "Tired of scavenging into endless pages to find the services offered by the university? We grouped all the links here!",
@@ -350,10 +350,10 @@ class LocalizationService
                         card1: { header: "Unimia", text: "Home Page for all UniMi Services" },
                         card2: { header: "Sifa", text: "Legacy Online Services" },
                         card3: { header: "Students' Web Agenda", text: "Lessons Timetable, Exams Calendar and any kind of Reservations" },
-                        card4: { header: "Exam Registration", text: "Manage your registration to your exams" },
-                        card5: { header: "Webmail", text: "The university webmail service" },
+                        card4: { header: "Exam Registration", text: "Manage your Registration to your Exams" },
+                        card5: { header: "Webmail", text: "UniMi Web Mail" },
                         card6: { header: "Library", text: "All the information about our libraries" },
-                        card7: { header: "Marks Registeration", text: "Check, accept or reject the final or partial results of your exams" },
+                        card7: { header: "Marks Registeration", text: "Check, accept or reject the final or partial Results of your Exams" },
                         card8: { header: "Ariel", text: "Official Websites Platform for each Courses" },
                         card9: { header: "InformaStudenti", text: "Online Student Desk"},
                     },
@@ -368,22 +368,22 @@ class LocalizationService
                         departmentSelect: "Select your department:"
                     },
                     contributors: {
-                        text1:"Loremipsuum",
-                        header1: "Loremipsuum",
-                        header2: "Loremipsuum",
-                        dev1: "Loremipsuum",
-                        dev2: "Loremipsuum",
-                        dev3: "Loremipsuum",
-                        githubProfile: "Loremipsuum",
-                        websiteProfile: "Loremipsuum",
-                        text2: "Loremipsuum"
+                        text1:"Below you can find the contributors who put their efforts into the development of the Network, the website and all its services.",
+                        header1: "Main maintainers",
+                        header2: "Contributors",
+                        dev1: "dolorsitamet000",
+                        dev2: "dolorsitamet000",
+                        dev3: "dolorsitamet000",
+                        githubProfile: "dolorsitamet000",
+                        websiteProfile: "dolorsitamet000",
+                        text2: "Did you contributed to the development of the Network and you would like to appear in this list? Send a private message to @giuseppetm."
                     },
                     footer: {
-                        text1: "Loremipsuum",
-                        text2: "Loremipsuum",
+                        text1: "dolorsitamet000",
+                        text2: "dolorsitamet000",
                         col3: {
-                            header: "Loremipsuum",
-                            text: "Loremipsuum"
+                            header: "dolorsitamet000",
+                            text: "dolorsitamet000"
                         }
                     }
                 }

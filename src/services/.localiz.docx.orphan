@@ -1,0 +1,69 @@
+headerMenuItems: {
+    title: "Network Studenti UniMi"
+}
+
+footer: {
+    col1: {
+        header: "Studenti UniMi ©"
+        text: "The network and the associated webpage are not affiliated to the University of Milan (UniMi)"
+    }
+    col2: {
+        header: "Useful links"
+        text: "QuickUnimi\nFreshmen FAQs\nQuanto-manca.it\nCodeshare.tech"
+    }
+    col3: {
+        header: "Contacts"
+        text: "For any question or suggestion you can join the main network group"
+    }
+}
+
+"Question about something indicated on the teacher’s website"
+
+"The user receives a warn and is told where he can find the information. The consequence of 3 warns is a 24h muting. (Exceptions if you are an Erasmus student and you cannot find that information in English)."
+
+
+"Trivial and already addressed questions"
+
+"No punishment if the question is not into the FAQs otherwise the previous rule is applied. It is recommended to look for your question into the chat history before submitting it."
+
+
+"Blasphemy and trash talking"
+
+"Blasphemy is forbidden and the punishment can be a warn or a ban depending on the situation. Vulgar language is allowed unless it becomes spam. In that case the user will be warned or muted depending on the situation."
+
+
+"Insults"
+
+"Insults are forbidden. You can criticize a teacher, but you cannot insult him. The punishment can be a warn, a muting or a ban depending on the situation."
+
+
+"Spam and off-topic"
+
+"Spam is forbidden. Off-topic conversations are also forbidden both in the specific and in the general groups. The punishment can be a warn or a muting depending on the case. If you want to chat freely about anything there is a group with that purpose, you can find it in “Extra groups."
+
+
+"Copyrighted materials"
+
+"Copyrighted material will be canceled from the chat. The user who sent it will be warned and, if he repeats the transgression, eventually banned."
+
+
+"Accountability"
+
+"The user who sent copyrighted material will be the only responsible for that transgression. The network and its administrators, who are committed to prevent this phenomenon, will not take the responsibility for that action."
+
+
+"Name and username"
+
+"Users must be identifiable; therefore, you must use your real name or a nickname containing part of it. Regarding the username we suggest keeping it public in order to facilitate the moderation of the network."
+
+
+"Politics"
+
+"The network and the associated groups are a neutral environment. They do not belong to any party. Whoever will use them for propaganda will be immediately banned from the entire network at the discretion of the administrators."
+
+
+"Code"
+
+"The code cannot be shared using images or screenshots. If it contains more than 5 lines it must be shared using an appropriate platform like Paste or Gist. On the contrary, if it contains less than 5 lines, you can send it using the specific layout implemented by Telegram. Screenshots of logs, shell and similar are allowed."
+
+"Looking for a place to freely talk with your friends? Join our Discord server!"
