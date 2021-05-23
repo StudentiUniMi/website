@@ -238,45 +238,45 @@ class LocalizationService
                             },
                             card2: {
                                 text: "Join our discord to share information and meet new friends!",
-                                button: "loremipsum113"
+                                button: "Discord Server"
                             },
                             card3: {
                                 text: "Visit the repository to see all our open-source projects",
-                                button: "loremipsum114"
+                                button: "GitHub Org"
                             }
                         },
                         section3: {
                             text: "Everything has its own Telegram group chat",
                             card1: {
                                 text: "Say goodbye to those messy WhatsApp chats! We have created a Telegram group for each course",
-                                button: "loremipsum115"
+                                button: "Course Group"
                             },
                             card2: {
                                 text: "Tutoring, course materials, Erasmus, internship, apartments and many other extra things",
-                                button: "loremipsum116"
+                                button: "Extra Group"
                             },
                             card3: {
                                 text: "We think that a respectful and inclusive environment makes us more innovative and efficient. Read the rules!",
-                                button: "loremipsum117"
+                                button: "Rules"
                             }
                         },
                         section4: {
                             text: "Our services to help you studying",
                             card1: {
                                 text: "View the network Wiki and help us improving it!",
-                                button: "loremipsum118"
+                                button: "Wiki"
                             },
                             card2: {
                                 text: "Use this page to easily reach all the official services provided by UniMi",
-                                button: "loremipsum119"
+                                button: "Services"
                             },
                             card3: {
                                 text: "“Hey pal, would you mind sharing those notes?”",
-                                button: "loremipsum120"
+                                button: "HedgeDoc"
                             },
                             card4: {
                                 text: "Our service to safely and easily share your code or any other kind of material.",
-                                button: "loremipsum121"
+                                button: "PasteBin"
                             }
                         },
                         section5: {
