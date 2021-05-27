@@ -4,6 +4,8 @@ import { initializeIcons } from '@uifabric/icons';
 import { FontWeights, ITextStyles, Persona } from '@fluentui/react';
 import Course from '../models/Course';
 import { useTheme } from '@fluentui/react-theme-provider';
+import { useCookies } from "react-cookie";
+import LocalizationService from "../services/LocalizationService";
 
 // const gdriveStyle = { width: '15px', height: '15px', marginBottom: '3px' }
 initializeIcons();
@@ -11,6 +13,8 @@ interface Props { data: Course };
 
 const CourseItem = (props: Props) => {
     const theme = useTheme();
+    const [cookies, setCookie] = useCookies(["theme", "language"]);
+    const locale = LocalizationService.strings();
     var data = props.data;
 
     const cfuStyle: ITextStyles = { root: { fontWeight: FontWeights.semibold, color: theme.palette.themePrimary } };

@@ -5,11 +5,15 @@ import Degree from '../models/Degree';
 import { DocumentCard, IDocumentCardTitleStyles, DocumentCardTitle, DocumentCardLogo, IDocumentCardLogoProps, IDocumentCardStyles } from 'office-ui-fabric-react/lib/DocumentCard';
 import { redirectToLink } from '../services/Utils';
 import { useTheme } from '@fluentui/react-theme-provider';
+import { useCookies } from "react-cookie";
+import LocalizationService from "../services/LocalizationService";
 
 interface Props { cdl?: Degree };
 
 const DegreeInformations= (props: Props) => {
     const theme = useTheme();
+    const [cookies, setCookie] = useCookies(["theme", "language"]);
+    const locale = LocalizationService.strings();
     
     const logos: IDocumentCardLogoProps[] = [
         {logoIcon: "Globe" }, // {props.cdl?.main_website}

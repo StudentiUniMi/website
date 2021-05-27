@@ -3,10 +3,14 @@ import { Persona, PersonaSize } from 'office-ui-fabric-react/lib/Persona';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Link } from 'office-ui-fabric-react';
+import { useCookies } from "react-cookie";
+import LocalizationService from "../services/LocalizationService";
 
 interface Props { data: Representative[] };
 
 const RepresentativesList = (props: Props) => {
+    const [cookies, setCookie] = useCookies(["theme", "language"]);
+    const locale = LocalizationService.strings();
     return (
         <Row className="people-list text-center">
             {props.data.map((x,i) => 
