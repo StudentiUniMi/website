@@ -1,5 +1,19 @@
 [
     {
+        "name": "Scaricare videolezioni da Ariel",
+        "link": "https://wiki.studentiunimi.it/guida:scaricare_videolezioni_ariel",
+        "icon": "VideoSearch",
+        "color": "#f06400",
+        "description": "Guida semplice e veloce per scaricare le videolezioni da Ariel."
+    },
+    {
+        "name": "Disiscriversi dalle mailing list",
+        "link": "https://wiki.studentiunimi.it/guida:disiscrizione_mailing_list",
+        "icon": "MailReminder",
+        "color": "#0b9799",
+        "description": "Guida per disiscriversi dalle mailing list."
+    },
+    {
         "name": "Unimia", 
         "link": "http://unimia.unimi.it/portal/server.pt",
         "icon": "Globe",
@@ -23,7 +37,7 @@
     {
         "name": "Servizi sifa", 
         "link": "http://unimia.unimi.it/portal/server.pt/community/unimia/207/servizi_sifa/",
-        "icon": "ContactCardSettings",
+        "icon": "CRMServices",
         "color":"#8378de",
         "description": "Accedi a tutti i servizi online SIFA."
     },
@@ -31,34 +45,34 @@
         "name": "Webmail", 
         "link": "https://securemail.unimi.it/",
         "icon": "Mail",
-        "color":"#881798",
+        "color":"#953ac7",
         "description": "Servizio di webmail d'ateneo."
     },
     {
         "name": "Ariel", 
         "link": "https://ariel.unimi.it/",
-        "icon": "PenWorkspace",
+        "icon": "FabricFormLibrary",
         "color":"#ffaa44",
         "description": "Siti dei corsi didattici."
     },
     {
         "name": "Portale studenti", 
         "link": "https://easystaff.divsi.unimi.it/PortaleStudenti/",
-        "icon": "ProductRelease",
+        "icon": "People",
         "color":"#00ad56",
-        "description": "Orario delle lezioni, occupazione delle aule, appelli d'esame."
+        "description": "Orari delle lezioni, occupazione delle aule, appelli d'esame."
     },
     {
         "name": "Servizio bibliotecario", 
         "link": "https://www.sba.unimi.it/",
-        "icon": "BookAnswers",
-        "color":"#005b70",
+        "icon": "Library",
+        "color":"#247285",
         "description": "Tutte le informazioni sulle biblioteche."
     },
     {
         "name": "Informastudenti", 
         "link": "https://informastudenti.unimi.it/",
-        "icon": "Help",
+        "icon": "SurveyQuestions",
         "color":"#d13438",
         "description": "Accedi al portale InformaStudenti."
     }
