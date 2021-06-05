@@ -235,7 +235,7 @@ const HomeView = () => {
 
         <div className="fourth-section mb-4">
             <div className="mb-4"><Separator><Text variant="large" styles={semibold}>Hai provato a spegnere e riaccendere?</Text></Separator></div>
-
+ 
             <Row className="justify-content-center">
                 <Col xl={3} lg={3} md={4} sm={6} xs={12} className="mb-3">
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
