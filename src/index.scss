@@ -249,6 +249,14 @@ button:focus,
     max-width: 230px;
     margin-left:10%;
   }
+
+  .rules .col-12 {
+    max-width: 250px;
+  }
+
+  .home .col-12 {
+    max-width: 280px;
+  }
 }
 
 @media only screen and (min-width: 481px) {
@@ -303,13 +311,23 @@ button:focus,
   }
 }
 
+.ms-MessageBar-icon {
+  display: none;
+  position: absolute;
+}
+
 .rules a {
   padding-left: 0 !important;
 }
 
-.ms-MessageBar-icon {
-  display:none;
-  position:absolute;
+.courses-filter-options .ms-MessageBar-text {
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.courses-filter-options .ms-MessageBar-icon {
+  display: flex !important;
+  position: relative !important;
 }
 
 .header-menu .ms-Dropdown-title {

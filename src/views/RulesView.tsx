@@ -2,22 +2,22 @@ import React from "react";
 import { FontSizes } from '@fluentui/theme';
 import { Text, Icon } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
-import { CompoundButton } from 'office-ui-fabric-react';
 import { MessageBar } from 'office-ui-fabric-react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { Separator } from '@fluentui/react/lib/Separator';
 import { semibold } from '../fonts';
 import { FontWeights, ITextStyles } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
+import { Card, ICardTokens } from "@uifabric/react-cards";
 
 const Rules = () => {
     const theme = useTheme();
     const [choice, setChoice] = React.useState<string>('');
+    const cardTokens: ICardTokens = { childrenMargin: 12 };
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const rules: ITextStyles = { root: { fontWeight: FontWeights.semibold, fontSize: FontSizes.size12 } };
     const rulesText: ITextStyles = { root: { fontSize: FontSizes.size12 } };
-    const colButtonStyle = { maxWidth: '200px', minWidth: '120px' };
+    const sectionCard = { minHeight: '120px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', border: '0px' };
 
     const QuestionFaqRulesMessage = () => (
         <MessageBar>
@@ -146,16 +146,9 @@ const Rules = () => {
         </MessageBar>
     );
 
-    // Button properties to correct theme colors
-    const descriptionStyle = {
-        fontSize: '12px',
-        lineHeight: '100%',
-        display: 'block'
-    };
-
     return (
         <Container className="rules text-center">
-            <div className="mb-2">
+            <div className="mb-4">
                 <div className="mb-3">
                     <Text variant="large">
                         Qui è possibile trovare il regolamento dei gruppi telegram del network.
@@ -189,40 +182,38 @@ const Rules = () => {
                 </div>
             </div>
 
-            <Separator />
-
             <Row className="mb-3 mt-3 justify-content-center">
-                <Col xl={3} lg={3} md={3} sm={4} xs={12} className="mb-2">
-                    <CompoundButton primary secondaryText="Domande e faq" theme={theme}
-                    onClick={() => setChoice("question_faq_rules")}
-                    onRenderDescription={() => <span style={descriptionStyle}>Domande e faq</span>}
-                    style={colButtonStyle}>
-                        Sezione
-                    </CompoundButton>
+                <Col xl={3} lg={3} md={6} sm={6} xs={12} className="mb-3">
+                    <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center" theme={theme} onClick={() => setChoice("question_faq_rules")}>
+                        <Text variant="medium">
+                        <div><Icon iconName="FeedbackRequestSolid" className="mb-2" style={iconStyle} /></div>
+                        Domande e Faq
+                        </Text>
+                    </Card>
                 </Col>
-                <Col xl={3} lg={3} md={3} sm={4} xs={12} className="mb-2">
-                    <CompoundButton primary secondaryText="Comportamento" theme={theme}
-                    onClick={() => setChoice("behavior_rules")}
-                    onRenderDescription={() => <span style={descriptionStyle}>Comportamento</span>}
-                    style={colButtonStyle}>
-                        Sezione
-                    </CompoundButton>
+                <Col xl={3} lg={3} md={6} sm={6} xs={12} className="mb-3">
+                    <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center" theme={theme} onClick={() => setChoice("behavior_rules")}>
+                        <Text variant="medium">
+                        <div><Icon iconName="UserWarning" className="mb-2" style={iconStyle} /></div>
+                        Comportamento
+                        </Text>
+                    </Card>
                 </Col>
-                <Col xl={3} lg={3} md={3} sm={4} xs={12} className="mb-2">
-                    <CompoundButton primary secondaryText="Materiali" theme={theme}
-                    onClick={() => setChoice("materials_rules")} 
-                    onRenderDescription={() => <span style={descriptionStyle}>Materiali</span>}
-                    style={colButtonStyle}>
-                        Sezione
-                    </CompoundButton>
+                <Col xl={3} lg={3} md={6} sm={6} xs={12} className="mb-3">
+                    <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center" theme={theme} onClick={() => setChoice("materials_rules")}>
+                        <Text variant="medium">
+                        <div><Icon iconName="PageLock" className="mb-2" style={iconStyle} /></div>
+                        Materiali
+                        </Text>
+                    </Card>
                 </Col>
-                <Col xl={3} lg={3} md={3} sm={4} xs={12} className="mb-2">
-                    <CompoundButton primary secondaryText="Altro" theme={theme}
-                    onClick={() => setChoice("other_rules")} 
-                    onRenderDescription={() => <span style={descriptionStyle}>Altro</span>}
-                    style={colButtonStyle}>
-                        Sezione
-                    </CompoundButton>
+                <Col xl={3} lg={3} md={6} sm={6} xs={12} className="mb-3">
+                    <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center" theme={theme} onClick={() => setChoice("other_rules")}>
+                        <Text variant="medium">
+                        <div><Icon iconName="More" className="mb-2" style={iconStyle} /></div>
+                        Altro
+                        </Text>
+                    </Card>
                 </Col>
             </Row>
 

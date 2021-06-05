@@ -19,7 +19,6 @@ const cardTokens: ICardTokens = { childrenMargin: 12 };
 const logoFileName = 'unimi500.png';
 const logoProperties = { width: '150px', height: '150px', display: 'inline-block' };
 const sectionCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none' };
-const fourthSectionCol = { maxWidth: '250px' };
 
 const HomeView = () => {
     var theme = useTheme();
@@ -238,7 +237,7 @@ const HomeView = () => {
             <div className="mb-4"><Separator><Text variant="large" styles={semibold}>Hai provato a spegnere e riaccendere?</Text></Separator></div>
 
             <Row className="justify-content-center">
-                <Col style={fourthSectionCol} className="mb-3">
+                <Col xl={3} lg={3} md={4} sm={6} xs={12} className="mb-3">
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
                             <div><Icon iconName="ContactHeart" style={homeIconStyle} className="homeIcon" /></div>
@@ -253,7 +252,7 @@ const HomeView = () => {
                     </Card>
                 </Col>
 
-                <Col style={fourthSectionCol} className="mb-3">
+                <Col xl={3} lg={3} md={4} sm={6} xs={12} className="mb-3">
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
                             <div><Icon iconName="Telemarketer" style={homeIconStyle} className="homeIcon" /></div>
