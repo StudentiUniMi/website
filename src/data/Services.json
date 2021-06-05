@@ -30,8 +30,8 @@
     {
         "name": "Verbalizzazione esami", 
         "link": "http://studente.unimi.it/foVerbalizzazione/",
-        "icon": "CheckMark",
-        "color":"#a0aeb2",
+        "icon": "VerifiedBrand",
+        "color":"#4f6bed",
         "description": "Controlla gli esiti finali o parziali dei tuoi esami."
     },
     {
