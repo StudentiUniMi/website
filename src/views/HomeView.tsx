@@ -13,6 +13,12 @@ import { Card, ICardTokens } from "@uifabric/react-cards";
 import { PrimaryButton } from 'office-ui-fabric-react';
 import { getGroupsLength, getCdlsLength } from '../services/Requests';
 import { Separator } from '@fluentui/react/lib/Separator';
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper core and required modules
+import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper/core';
+
+// Install Swiper modules
+SwiperCore.use([Pagination, Navigation, Autoplay]);
 
 initializeIcons();
 const cardTokens: ICardTokens = { childrenMargin: 12 };
@@ -44,26 +50,42 @@ const HomeView = () => {
         </div>
 
         <div className="mb-3">
-            <Row className="justify-content-center">
-                <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
-                    <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                        <Text variant="large">
-                            Abbiamo<br/>
-                            <Text variant="xLarge" style={numberStyle}>{groupsNumber}</Text> <br/>
-                            Gruppi Telegram
-                        </Text>
-                    </Card>
-                </Col>
-                <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
-                    <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                        <Text variant="large">
-                            Copriamo<br/>
-                            <Text variant="xLarge" style={numberStyle}>{cdlsNumber}</Text> <br/>
-                            Corsi di Laurea
-                        </Text>
-                    </Card>
-                </Col>
-            </Row>
+                <Swiper pagination={true} navigation={true} autoplay={{ "delay": 2500, "disableOnInteraction": false }} className="mySwiper">
+                <SwiperSlide>
+                    <Row className="justify-content-center">
+                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
+                            <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
+                                <Text variant="large">
+                                    Abbiamo<br />
+                                    <Text variant="xLarge" style={numberStyle}>{groupsNumber}</Text> <br />
+                                    Gruppi Telegram
+                                </Text>
+                            </Card>
+                        </Col>
+                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
+                            <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
+                                <Text variant="large">
+                                    Copriamo<br />
+                                    <Text variant="xLarge" style={numberStyle}>{cdlsNumber}</Text> <br />
+                                    Corsi di Laurea
+                                </Text>
+                            </Card>
+                        </Col>
+                    </Row>
+                </SwiperSlide>
+                
+                <SwiperSlide>
+                    Slide 2
+                </SwiperSlide>
+                
+                <SwiperSlide>
+                    Slide 3
+                </SwiperSlide>
+                
+                <SwiperSlide>
+                    Slide 4
+                </SwiperSlide>
+            </Swiper>
         </div>
 
         <Icon iconName="ChevronDownMed" className="mb-3" style={iconStyle} />
