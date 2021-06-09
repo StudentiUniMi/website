@@ -11,6 +11,10 @@
   min-height: 100%;
 }
 
+.swiper-wrapper {
+  align-items: center;
+}
+
 .swiper-button-next:after,
 .swiper-container-rtl .swiper-button-prev:after {
   font-family: "Consolas";

@@ -54,23 +54,25 @@ const HomeView = () => {
             <Swiper pagination={true} navigation={true} /*autoplay={{ "delay": 4500, "disableOnInteraction": false }}*/ className="mySwiper">
                 <SwiperSlide>
                     <Row className="justify-content-center">
-                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
-                            <div className="mb-1">
-                                <Text variant="medium">
-                                    Sei uno studente che vuole immatricolarsi e che cerca un gruppo generale in cui chiedere informazioni?
-                                </Text>
-                            </div>
-                            <div>
-                                <Text styles={semibold}>Ne abbiamo creato uno apposito!</Text>
+                            <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+                            <div >
+                                <div className="mb-1">
+                                    <Text variant="medium">
+                                            Sei uno studente che vuole immatricolarsi e che cerca un gruppo generale in cui chiedere informazioni <Icon iconName="Help" style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size12 }} />
+                                    </Text>
+                                </div>
+                                <div>
+                                    <Text styles={semibold}>Ne abbiamo creato uno apposito!</Text>
+                                </div>
                             </div>
                         </Col>
                         <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
-                            <Card tokens={cardTokens}>
+                            <Card tokens={cardTokens} style={{minHeight: '160px'}}>
                                 <Card.Item>
-                                    <Persona onRenderPrimaryText={() => <div className="justify-content-center" style={{ wordWrap: 'break-word', whiteSpace: 'normal' }}>Pre-matricole, ammissioni e immatricolazioni</div>} text="Pre-matricole, ammissioni e immatricolazioni" imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/matricole.jpg'} />
+                                    <Persona onRenderPrimaryText={() => <div className="justify-content-center text-center" style={{ wordWrap: 'break-word', whiteSpace: 'normal' }}>Pre-matricole, ammissioni e immatricolazioni</div>} text="Pre-matricole, ammissioni e immatricolazioni" imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/matricole.jpg'} />
                                 </Card.Item>
                                 <Card.Section>
-                                    <Text variant="small" className="mt-3">
+                                    <Text variant="small" className="mt-4">
                                         <i className="fab fa-telegram-plane mr-1" style={{ color: theme.palette.themePrimary }}></i>
                                         <Link href="https://t.me/joinchat/jjzrKAOF74s5ZmI0" target="_blank">Gruppo Telegram</Link>
                                     </Text>
