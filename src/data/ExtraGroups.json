@@ -1,5 +1,11 @@
 [
     {
+        "name": "Pre-matricole, ammissioni e immatricolazioni",
+        "description": "Dedicato agli studenti che vogliono immatricolarsi in UniMi e cercano informazioni generali a riguardo.",
+        "image": "matricole.jpg",
+        "gruppo": "https://t.me/joinchat/jjzrKAOF74s5ZmI0"
+    },
+    {
         "name":"Materiali",
         "description": "Dedicato a chi cerca o offre materiale per i vari corsi didattici. Non è permessa la vendita di appunti personali.",
         "image": "materiali.jpg",

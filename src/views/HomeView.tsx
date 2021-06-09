@@ -1,5 +1,6 @@
 import { Text } from 'office-ui-fabric-react';
 import { FontSizes } from '@fluentui/theme';
+import { Persona, Link } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -50,16 +51,31 @@ const HomeView = () => {
         </div>
 
         <div className="mb-3 justify-content-center">
-            <Swiper pagination={true} navigation={true} autoplay={{ "delay": 4500, "disableOnInteraction": false }} className="mySwiper">
+            <Swiper pagination={true} navigation={true} /*autoplay={{ "delay": 4500, "disableOnInteraction": false }}*/ className="mySwiper">
                 <SwiperSlide>
                     <Row className="justify-content-center">
                         <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
-                            <Text variant="medium">Sei una matricola e cerchi un gruppo generale in cui chiedere informazioni?</Text>
+                            <div className="mb-1">
+                                <Text variant="medium">
+                                    Sei uno studente che vuole immatricolarsi e che cerca un gruppo generale in cui chiedere informazioni?
+                                </Text>
+                            </div>
+                            <div>
+                                <Text styles={semibold}>Ne abbiamo creato uno apposito!</Text>
+                            </div>
                         </Col>
                         <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
-                            <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                                card gruppo
-                        </Card>
+                            <Card tokens={cardTokens}>
+                                <Card.Item>
+                                    <Persona onRenderPrimaryText={() => <div className="justify-content-center" style={{ wordWrap: 'break-word', whiteSpace: 'normal' }}>Pre-matricole, ammissioni e immatricolazioni</div>} text="Pre-matricole, ammissioni e immatricolazioni" imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/matricole.jpg'} />
+                                </Card.Item>
+                                <Card.Section>
+                                    <Text variant="small" className="mt-3">
+                                        <i className="fab fa-telegram-plane mr-1" style={{ color: theme.palette.themePrimary }}></i>
+                                        <Link href="https://t.me/joinchat/jjzrKAOF74s5ZmI0" target="_blank">Gruppo Telegram</Link>
+                                    </Text>
+                                </Card.Section>
+                            </Card>
                         </Col>
                     </Row>
                 </SwiperSlide>
@@ -85,14 +101,6 @@ const HomeView = () => {
                             </Card>
                         </Col>
                     </Row>
-                </SwiperSlide>
-                
-                <SwiperSlide>
-                    Slide 3
-                </SwiperSlide>
-                
-                <SwiperSlide>
-                    Slide 4
                 </SwiperSlide>
             </Swiper>
         </div>
