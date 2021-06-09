@@ -11,41 +11,28 @@
 .swiper-pagination-bullets {
 }
 
-.swiper-button-prev:before,
-.swiper-button-next:before {
-    font-family: "slick";
-    font-size: 40px;
-    line-height: 1;
-    opacity: 0.75;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+.swiper-button-next:after,
+.swiper-container-rtl .swiper-button-prev:after {
+    font-family: 'Consolas';
+    content: '›';
 }
 
-.swiper-button-prev:before {
-    content: "‹";
+.swiper-button-prev:after,
+.swiper-container-rtl .swiper-button-next:after {
+    font-family: 'Consolas';
+    content: '‹';
 }
 
-[dir="rtl"] .swiper-button-prev:before {
-    content: "›";
-}
-
-[dir="rtl"] .swiper-button-next {
-    left: -10px;
-    top: 70px;
-    right: auto;
-}
-
-.swiper-button-next:before {
-    content: "›";
-}
-
-[dir="rtl"] .swiper-button-next:before {
-    content: "‹";
-}
-
-.swiper-slide img {
+.swiper-slide img { // Delete this if unnecessary
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+@media only screen and (max-width: 400px) {
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        display: none;
+    }
 }

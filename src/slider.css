@@ -9,35 +9,15 @@
   text-align: center;
 }
 
-.swiper-button-prev:before,
-.swiper-button-next:before {
-  font-family: "slick";
-  font-size: 40px;
-  line-height: 1;
-  opacity: 0.75;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.swiper-button-prev:before {
-  content: "‹";
-}
-
-[dir=rtl] .swiper-button-prev:before {
+.swiper-button-next:after,
+.swiper-container-rtl .swiper-button-prev:after {
+  font-family: "Consolas";
   content: "›";
 }
 
-[dir=rtl] .swiper-button-next {
-  left: -10px;
-  top: 70px;
-  right: auto;
-}
-
-.swiper-button-next:before {
-  content: "›";
-}
-
-[dir=rtl] .swiper-button-next:before {
+.swiper-button-prev:after,
+.swiper-container-rtl .swiper-button-next:after {
+  font-family: "Consolas";
   content: "‹";
 }
 
@@ -46,4 +26,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@media only screen and (max-width: 400px) {
+  .swiper-button-next:after,
+.swiper-button-prev:after {
+    display: none;
+  }
 }

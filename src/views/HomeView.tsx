@@ -49,8 +49,21 @@ const HomeView = () => {
             <div><Text variant="large">La nostra missione è organizzare le informazioni dell'Università degli studi di Milano e renderle accessibili a tutti.</Text></div>
         </div>
 
-        <div className="mb-3">
-                <Swiper pagination={true} navigation={true} autoplay={{ "delay": 2500, "disableOnInteraction": false }} className="mySwiper">
+        <div className="mb-3 justify-content-center">
+            <Swiper pagination={true} navigation={true} autoplay={{ "delay": 4500, "disableOnInteraction": false }} className="mySwiper">
+                <SwiperSlide>
+                    <Row className="justify-content-center">
+                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
+                            <Text variant="medium">Sei una matricola e cerchi un gruppo generale in cui chiedere informazioni?</Text>
+                        </Col>
+                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
+                            <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
+                                card gruppo
+                        </Card>
+                        </Col>
+                    </Row>
+                </SwiperSlide>
+                
                 <SwiperSlide>
                     <Row className="justify-content-center">
                         <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
@@ -58,8 +71,8 @@ const HomeView = () => {
                                 <Text variant="large">
                                     Abbiamo<br />
                                     <Text variant="xLarge" style={numberStyle}>{groupsNumber}</Text> <br />
-                                    Gruppi Telegram
-                                </Text>
+                                Gruppi Telegram
+                            </Text>
                             </Card>
                         </Col>
                         <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
@@ -67,15 +80,11 @@ const HomeView = () => {
                                 <Text variant="large">
                                     Copriamo<br />
                                     <Text variant="xLarge" style={numberStyle}>{cdlsNumber}</Text> <br />
-                                    Corsi di Laurea
-                                </Text>
+                                Corsi di Laurea
+                            </Text>
                             </Card>
                         </Col>
                     </Row>
-                </SwiperSlide>
-                
-                <SwiperSlide>
-                    Slide 2
                 </SwiperSlide>
                 
                 <SwiperSlide>
