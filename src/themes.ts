@@ -1,5 +1,6 @@
 import { FontSizes } from '@fluentui/theme';
 import { FontWeights } from 'office-ui-fabric-react';
+import { DefaultEffects } from '@fluentui/react';
 
 export const fonts = {
     defaultFontStyle: { /*fontFamily: 'Monaco, Menlo, Consolas',*/ fontWeight: FontWeights.regular },
@@ -22,6 +23,10 @@ export const fonts = {
         fontSize: FontSizes.size42
     }
 };
+
+export const effects = {
+    elevation8: DefaultEffects.elevation8
+}
 
 export const lightTheme = {
     palette: {

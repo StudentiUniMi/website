@@ -1,5 +1,6 @@
 import { Text } from 'office-ui-fabric-react';
 import { FontSizes } from '@fluentui/theme';
+import { Persona, Link } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -13,21 +14,28 @@ import { Card, ICardTokens } from "@uifabric/react-cards";
 import { PrimaryButton } from 'office-ui-fabric-react';
 import { getGroupsLength, getCdlsLength } from '../services/Requests';
 import { Separator } from '@fluentui/react/lib/Separator';
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper core and required modules
+import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper/core';
+
+// Install Swiper modules
+SwiperCore.use([Pagination, Navigation, Autoplay]);
 
 initializeIcons();
 const cardTokens: ICardTokens = { childrenMargin: 12 };
 const logoFileName = 'unimi500.png';
 const logoProperties = { width: '150px', height: '150px', display: 'inline-block' };
-const sectionCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none' };
 
 const HomeView = () => {
     var theme = useTheme();
-    const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
-    const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
-    const buttonStyle = { maxWidth: '180px' };
-    const numberStyle = { color: theme.palette.themePrimary }
     const groupsNumber = getGroupsLength();
     const cdlsNumber = getCdlsLength();
+    const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
+    const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
+    const sectionCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', boxShadow: theme.effects.elevation8 };
+    const secondSliderCol = { maxWidth: '260px' }
+    const buttonStyle = { maxWidth: '180px' };
+    const numberStyle = { color: theme.palette.themePrimary }
 
     return (
         <Container className="home text-center">
@@ -43,27 +51,73 @@ const HomeView = () => {
             <div><Text variant="large">La nostra missione è organizzare le informazioni dell'Università degli studi di Milano e renderle accessibili a tutti.</Text></div>
         </div>
 
-        <div className="mb-3">
-            <Row className="justify-content-center">
-                <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
-                    <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                        <Text variant="large">
-                            Abbiamo<br/>
-                            <Text variant="xLarge" style={numberStyle}>{groupsNumber}</Text> <br/>
-                            Gruppi Telegram
-                        </Text>
-                    </Card>
-                </Col>
-                <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
-                    <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                        <Text variant="large">
-                            Copriamo<br/>
-                            <Text variant="xLarge" style={numberStyle}>{cdlsNumber}</Text> <br/>
-                            Corsi di Laurea
-                        </Text>
-                    </Card>
-                </Col>
-            </Row>
+        <div className="mb-3 justify-content-center">
+            <Swiper pagination={true} navigation={true} autoplay={{ "delay": 4500, "disableOnInteraction": false }} className="mySwiper">
+                <SwiperSlide>
+                    <Row className="justify-content-center">
+                            <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+                            <div >
+                                <div className="mb-1">
+                                    <Text variant="medium">
+                                            Sei uno studente che vuole immatricolarsi e che cerca un gruppo generale in cui chiedere informazioni <Icon iconName="Help" style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size12 }} />
+                                    </Text>
+                                </div>
+                                <div>
+                                    <Text styles={semibold}>Ne abbiamo creato uno apposito!</Text>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
+                            <Card tokens={cardTokens} style={{minHeight: '160px'}}>
+                                <Card.Item>
+                                    <Persona onRenderPrimaryText={() => <div className="justify-content-center text-center" style={{ wordWrap: 'break-word', whiteSpace: 'normal' }}>Pre-matricole, ammissioni e immatricolazioni</div>} text="Pre-matricole, ammissioni e immatricolazioni" imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/matricole.jpg'} />
+                                </Card.Item>
+                                <Card.Section>
+                                    <Text variant="small" className="mt-4">
+                                        <i className="fab fa-telegram-plane mr-1" style={{ color: theme.palette.themePrimary }}></i>
+                                        <Link href="https://t.me/joinchat/jjzrKAOF74s5ZmI0" target="_blank">Gruppo Telegram</Link>
+                                    </Text>
+                                </Card.Section>
+                            </Card>
+                        </Col>
+                    </Row>
+                </SwiperSlide>
+                
+                <SwiperSlide>
+                    <Row className="justify-content-center">
+                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={secondSliderCol}>
+                            <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
+                                <Icon iconName="UserOptional" style={iconStyle} />
+                                <Text variant="large" className="mt-0">
+                                    Abbiamo più di<br />
+                                    <Text variant="xLarge" style={numberStyle}>2.000</Text> <br />
+                                    utenti
+                                </Text>
+                            </Card>
+                        </Col>
+                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={secondSliderCol}>
+                            <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
+                                <Icon iconName="PeopleAlert" style={iconStyle} />
+                                <Text variant="large" className="mt-0">
+                                    Abbiamo<br />
+                                <Text variant="xLarge" style={numberStyle}>{groupsNumber}</Text> <br />
+                                gruppi telegram
+                            </Text>
+                            </Card>
+                        </Col>
+                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={secondSliderCol}>
+                            <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
+                                <Icon iconName="PublishCourse" style={iconStyle} />
+                                <Text variant="large" className="mt-0">
+                                    Copriamo<br />
+                                <Text variant="xLarge" style={numberStyle}>{cdlsNumber}</Text> <br />
+                                corsi di laurea
+                            </Text>
+                            </Card>
+                        </Col>
+                    </Row>
+                </SwiperSlide>
+            </Swiper>
         </div>
 
         <Icon iconName="ChevronDownMed" className="mb-3" style={iconStyle} />

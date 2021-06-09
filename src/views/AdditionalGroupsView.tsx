@@ -102,13 +102,13 @@ const AdditionalGroupsView = () => {
                 />
             </FocusZone>
 
-            <Separator/>
-
-            <div className="mb-2 mt-2">
-                <Text variant="large">
-                    Stai cercando gruppi riguardanti giochi? Nessun problema!
-                </Text>
-            </div>
+            <Separator>
+                <div className="mb-2 mt-2">
+                    <Text variant="large">
+                        Stai cercando gruppi riguardanti giochi? Nessun problema!
+                    </Text>
+                </div>
+            </Separator>
 
             <Icon iconName="SortDown" className="mb-2" style={iconStyle} />
 

@@ -51,7 +51,7 @@ const Footer = () => {
                                             <Link href="http://www.quickunimi.it/" ><i className="fas fa-globe"></i> QuickUnimi</Link>
                                         </li>
                                         <li style={listElement}>
-                                            <Link href="https://orientamento.di.unimi.it/index.php/iniziative/tutor-di-processo" ><i className="fas fa-question-circle"></i> Faq matricole</Link>
+                                            <Link href="https://orientamento.di.unimi.it/index.php/studia-con-noi/tutor-di-processo" ><i className="fas fa-question-circle"></i> Faq matricole</Link>
                                         </li>
                                         <li style={listElement}>
                                             <Link href="https://quanto-manca.it/" ><i className="fas fa-heart"></i> Quanto-manca.it</Link>
