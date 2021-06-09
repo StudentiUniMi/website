@@ -16,6 +16,7 @@ import { mergeStyles } from '@fluentui/react';
 import { AnimationStyles } from '@fluentui/theme';
 */
 import { useTheme } from '@fluentui/react-theme-provider';
+import LocalizationService from "../services/LocalizationService";
 
 const onRenderCaretDown = (): JSX.Element => {
     return <Icon iconName="List" />;
@@ -32,22 +33,13 @@ export enum ItemsKeys {
     contributors = "contributors"
 }
 
-const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
-    [ItemsKeys.home, "Home"],
-    [ItemsKeys.organization, "Chi siamo"],
-    [ItemsKeys.rules, "Regolamento"],
-    [ItemsKeys.courses, "Corsi"],
-    [ItemsKeys.services, "Servizi"],
-    [ItemsKeys.additional_groups, "Gruppi extra"],
-    [ItemsKeys.representatives, "Rappresentanti"],
-    [ItemsKeys.contributors, "Contributori"]
-]);
 
 
 const languageOptions: IDropdownOption[] = [
-    { key: 'ITA', text: 'Italiano', data: { icon: 'Memo' } },
-    { key: 'ENG', text: 'Inglese', data: { icon: 'Print' } }
+    { key: 'it', text: 'Italiano', data: { icon: 'Memo' } },
+    { key: 'en', text: 'English', data: { icon: 'Print' } }
 ];
+
 
 interface Props { changeTheme: () => void };
 initializeIcons();
@@ -55,8 +47,22 @@ initializeIcons();
 const HeaderMenu = (props: Props) => {
     var theme = useTheme();
     const history = useHistory();
-    const [cookies, setCookie] = useCookies(["theme"]);
-
+    const [cookies, setCookie] = useCookies(["theme", "language"]);
+    const locale = LocalizationService.strings();
+    
+    const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
+        [ItemsKeys.home, locale.headerMenuItems.home],
+        [ItemsKeys.organization, locale.headerMenuItems.aboutUs],
+        [ItemsKeys.rules, locale.headerMenuItems.rules],
+        [ItemsKeys.courses, locale.headerMenuItems.courses],
+        [ItemsKeys.services, locale.headerMenuItems.services],
+        [ItemsKeys.additional_groups, locale.headerMenuItems.additionalGroups],
+        [ItemsKeys.representatives, locale.headerMenuItems.rapresentatives],
+        [ItemsKeys.contributors, locale.headerMenuItems.contributors]
+    ]);
+    
+    if (cookies["language"] === undefined) { setCookie("language", "it"); }
+    
     const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
     const dropdownStyles: Partial<IDropdownStyles> = {
         dropdown: { color: theme.palette.neutralPrimary, border: 'none', borderStyle: 'none', height: '44px', alignItems: 'center', fontSize: FontSizes.size16 },
@@ -154,7 +160,7 @@ const HeaderMenu = (props: Props) => {
                     {Object.values(ItemsKeys).map((x, i) => <PivotItem key={i} headerText={texts.get(x)} style={{ fontSize: FontSizes.size24 }} itemKey={x} />)}
                 </Pivot>
 
-                <TooltipHost content="Impostazioni del sito" id={tooltipId} calloutProps={calloutProps} styles={hostStyles} delay={TooltipDelay.zero} directionalHint={DirectionalHint.leftCenter}>
+                <TooltipHost content={locale.settingsPanel.settings} id={tooltipId} calloutProps={calloutProps} styles={hostStyles} delay={TooltipDelay.zero} directionalHint={DirectionalHint.leftCenter}>
                     <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStylePivot} id={settingsIconId} />
                 </TooltipHost>
 
@@ -163,23 +169,28 @@ const HeaderMenu = (props: Props) => {
                     isOpen={isOpen}
                     onDismiss={dismissPanel}
                     closeButtonAriaLabel="Close"
-                    headerText="Impostazioni"
+                    headerText={locale.settingsPanel.settings}
                     type={PanelType.smallFixedFar}
                     theme={theme}
                 >
                     <Toggle
-                        label="Cambia il tema"
-                        onText="Dark Mode"
-                        offText="Light Mode"
+                        label={locale.settingsPanel.changeTheme}
+                        onText={locale.settingsPanel.darkTheme}
+                        offText={locale.settingsPanel.lightTheme}
                         checked={cookies["theme"] === "dark"}
                         onChange={themeToggled}
                         theme={theme}
                     />
+
                     <Dropdown
-                        label="Seleziona la lingua"
-                        defaultSelectedKey="ITA"
+                        label={locale.settingsPanel.selectLanguage}
                         options={languageOptions}
-                        disabled={true}
+                        selectedKey={cookies["language"]}
+                        onChange={(_, option) => 
+                        {
+                            LocalizationService.localize(option!.key as string)
+                            setCookie("language", option!.key as string)
+                        }}
                         theme={theme}
                     />
                 </Panel>
@@ -187,7 +198,7 @@ const HeaderMenu = (props: Props) => {
 
             <div className="dropdown">
 
-                <TooltipHost content="Impostazioni del sito" id={tooltipId} calloutProps={calloutProps} styles={hostStyles}>
+                <TooltipHost content={locale.settingsPanel.settings} id={tooltipId} calloutProps={calloutProps} styles={hostStyles}>
                     <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStyleDropdown} id={settingsIconId} />
                 </TooltipHost>
 
