@@ -51,9 +51,15 @@
     object-fit: cover;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 767px) {
     .swiper-button-next:after,
     .swiper-button-prev:after {
         display: none;
+    }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 560px) {
+    .swiper-slide .col-sm-6 {
+        max-width: 250px !important;
     }
 }

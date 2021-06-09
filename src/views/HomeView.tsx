@@ -25,16 +25,17 @@ initializeIcons();
 const cardTokens: ICardTokens = { childrenMargin: 12 };
 const logoFileName = 'unimi500.png';
 const logoProperties = { width: '150px', height: '150px', display: 'inline-block' };
-const sectionCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none' };
 
 const HomeView = () => {
     var theme = useTheme();
-    const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
-    const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
-    const buttonStyle = { maxWidth: '180px' };
-    const numberStyle = { color: theme.palette.themePrimary }
     const groupsNumber = getGroupsLength();
     const cdlsNumber = getCdlsLength();
+    const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
+    const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
+    const sectionCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', boxShadow: theme.effects.elevation8 };
+    const secondSliderCol = { maxWidth: '260px' }
+    const buttonStyle = { maxWidth: '180px' };
+    const numberStyle = { color: theme.palette.themePrimary }
 
     return (
         <Container className="home text-center">
@@ -84,21 +85,33 @@ const HomeView = () => {
                 
                 <SwiperSlide>
                     <Row className="justify-content-center">
-                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
+                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={secondSliderCol}>
                             <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                                <Text variant="large">
+                                <Icon iconName="UserOptional" style={iconStyle} />
+                                <Text variant="large" className="mt-0">
+                                    Abbiamo più di<br />
+                                    <Text variant="xLarge" style={numberStyle}>2.000</Text> <br />
+                                    utenti
+                                </Text>
+                            </Card>
+                        </Col>
+                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={secondSliderCol}>
+                            <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
+                                <Icon iconName="PeopleAlert" style={iconStyle} />
+                                <Text variant="large" className="mt-0">
                                     Abbiamo<br />
-                                    <Text variant="xLarge" style={numberStyle}>{groupsNumber}</Text> <br />
-                                Gruppi Telegram
+                                <Text variant="xLarge" style={numberStyle}>{groupsNumber}</Text> <br />
+                                gruppi telegram
                             </Text>
                             </Card>
                         </Col>
-                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
+                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={secondSliderCol}>
                             <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                                <Text variant="large">
+                                <Icon iconName="PublishCourse" style={iconStyle} />
+                                <Text variant="large" className="mt-0">
                                     Copriamo<br />
-                                    <Text variant="xLarge" style={numberStyle}>{cdlsNumber}</Text> <br />
-                                Corsi di Laurea
+                                <Text variant="xLarge" style={numberStyle}>{cdlsNumber}</Text> <br />
+                                corsi di laurea
                             </Text>
                             </Card>
                         </Col>
