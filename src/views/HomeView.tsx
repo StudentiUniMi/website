@@ -15,12 +15,9 @@ import { PrimaryButton } from 'office-ui-fabric-react';
 import { getGroupsLength, getCdlsLength } from '../services/Requests';
 import { Separator } from '@fluentui/react/lib/Separator';
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper core and required modules
 import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper/core';
 
-// Install Swiper modules
 SwiperCore.use([Pagination, Navigation, Autoplay]);
-
 initializeIcons();
 const cardTokens: ICardTokens = { childrenMargin: 12 };
 const logoFileName = 'unimi500.png';
@@ -128,7 +125,7 @@ const HomeView = () => {
             </div>
 
             <Row className="justify-content-center">
-                <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
+                <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
                                 <div><i className="fab fa-telegram homeIcon" style={homeIconStyle}></i></div>
@@ -142,7 +139,21 @@ const HomeView = () => {
                     </Card>
                 </Col>
 
-                <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
+                <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>
+                    <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
+                        <Card.Section>
+                                <div><i className="fas fa-comment-dots homeIcon" style={homeIconStyle}></i></div>
+                            <Text variant="medium">
+                                Entra nel gruppo telegram principale per eventuali discussioni e chiarimenti riguardo il network.
+                        </Text>
+                            <div className="justify-content-center">
+                                <PrimaryButton text="Gruppo telegram" className="text-decoration-none" onClick={() => redirectToLink("https://t.me/joinchat/VswKeO2D6soL3lcj")} allowDisabledFocus style={buttonStyle} />
+                            </div>
+                        </Card.Section>
+                    </Card>
+                </Col>
+
+                <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
                                 <div><i className="fab fa-discord homeIcon" style={homeIconStyle}></i></div>
@@ -156,7 +167,7 @@ const HomeView = () => {
                     </Card>
                 </Col>
 
-                <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
+                <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
                                 <div><i className="fab fa-github homeIcon" style={homeIconStyle}></i></div>
@@ -208,7 +219,7 @@ const HomeView = () => {
                 <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
-                            <div><Icon iconName="Dictionary" style={homeIconStyle} className="homeIcon" /></div>
+                                <div><Icon iconName="JoinOnlineMeeting" style={homeIconStyle} className="homeIcon" /></div>
                             <Text variant="medium">
                                 Crediamo che un ambiente rispettoso e inclusivo ci renda più innovativi e produttivi.
                                 Dai un'occhiata al regolamento dei gruppi.
