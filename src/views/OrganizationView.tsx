@@ -25,6 +25,7 @@ const CAN = [
 const OrganizationView = () => {
     var theme = useTheme();
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
+    const iconStyle2 = { color: theme.palette.themePrimary };
     const admins = getAdmins();
 
     return (
@@ -59,7 +60,10 @@ const OrganizationView = () => {
                             <div className="justify-content-center">
                                 <Persona onRenderPrimaryText={() => null} primaryText={"Marco Aceti"} />
                             </div>
-                            <Text variant="medium" styles={semibold}><Link href={`https://t.me/acetimarco`} target="_blank">Marco Aceti</Link></Text>
+                            <Text variant="medium" styles={semibold}>
+                                <i className="fab fa-telegram homeIcon" style={iconStyle2}></i>&nbsp;
+                                <Link href={`https://t.me/acetimarco`} target="_blank">Marco Aceti</Link>
+                            </Text>
                         </Card.Section>
                     </Card>
                 </div>
@@ -79,7 +83,10 @@ const OrganizationView = () => {
                                             <div className="justify-content-center">
                                                 <Persona onRenderPrimaryText={() => null} primaryText={x.name} />
                                             </div>
-                                            <Text variant="medium" styles={semibold}><Link href={`https://t.me/${x.username}`} target="_blank">{x.name}</Link></Text>
+                                            <Text variant="medium" styles={semibold}>
+                                                <i className="fab fa-telegram homeIcon" style={iconStyle2}></i>&nbsp;
+                                                <Link href={`https://t.me/${x.username}`} target="_blank">{x.name}</Link>
+                                            </Text>
                                             <Text variant="medium" className="mt-2">
                                                 {x.delega}
                                             </Text>
@@ -106,7 +113,10 @@ const OrganizationView = () => {
                                             <div className="justify-content-center">
                                                 <Persona onRenderPrimaryText={() => null} primaryText={x.username} />
                                             </div>
-                                            <Text variant="medium" styles={semibold}><Link href={`https://t.me/${x.username}`} target="_blank">{x.username}</Link></Text>
+                                            <Text variant="medium" styles={semibold}>
+                                                <i className="fab fa-telegram homeIcon" style={iconStyle2}></i>&nbsp;
+                                                <Link href={`https://t.me/${x.username}`} target="_blank">{x.username}</Link>
+                                            </Text>
                                             <Text variant="medium" className="mt-2">
                                                 {x.cdl}
                                             </Text>

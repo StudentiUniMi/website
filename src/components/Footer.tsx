@@ -73,7 +73,7 @@ const Footer = () => {
 
                         <div className="mb-1 text">
                             <Text variant="medium">
-                                Per qualsiasi dubbio o proposta è possibile scrivere sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link> del network.
+                                Per qualsiasi dubbio o proposta è possibile scrivere sul <Link href="https://t.me/joinchat/VswKeO2D6soL3lcj" target="_blank">gruppo principale</Link> del network.
                             </Text>
                         </div>
                     </Col>
