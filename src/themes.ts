@@ -3,7 +3,7 @@ import { FontWeights } from 'office-ui-fabric-react';
 import { DefaultEffects } from '@fluentui/react';
 
 export const fonts = {
-    defaultFontStyle: { /*fontFamily: 'Monaco, Menlo, Consolas',*/ fontWeight: FontWeights.regular },
+    defaultFontStyle: { fontFamily: 'Monaco, Menlo, Consolas', fontWeight: FontWeights.regular },
     small: {
         fontSize: FontSizes.size12
     },

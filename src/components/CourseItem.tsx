@@ -2,6 +2,7 @@ import { Link, Text } from 'office-ui-fabric-react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { initializeIcons } from '@uifabric/icons';
 import { FontWeights, ITextStyles, Persona } from '@fluentui/react';
+import Chip from '@material-ui/core/Chip';
 import Course from '../models/Course';
 import { useTheme } from '@fluentui/react-theme-provider';
 
@@ -48,22 +49,24 @@ const CourseItem = (props: Props) => {
     // Year inizialization
     switch (data.anno) {
         case -1:
-            yearText = "";
+            yearText = null;
             break;
         case null:
-            yearText = "";
+            yearText = null;
             break;
         case -2:
-            yearText = <span>Complementare, </span>;
+            yearText = <span>Complementare</span>;
             break;
         default:
-            yearText = <span>{data.anno}° Anno, </span>;
+            yearText = <span>{data.anno}° Anno</span>;
             break;
     }
 
     // Semester inizialization
     if (data.semestre !== null) {
         semesterText = <span>{data.semestre}° Semestre</span>;
+    } else {
+        semesterText = null;
     }
 
     // Group link inizialization, or other text for main degree group
@@ -120,7 +123,7 @@ const CourseItem = (props: Props) => {
     if (data.wiki !== null && data.wiki !== "") { 
         wikiText = (
             <div className="mr-2">
-                <i className="fas fa-question-circle mr-1" style={{color: '#22c9bb'}}></i>
+                <i className="fas fa-question-circle mr-1" style={{ color: '#edca58'}}></i>
                 <a href={data.wiki} target="blank">Wiki</a>
             </div>
         );
@@ -142,8 +145,8 @@ const CourseItem = (props: Props) => {
                 </Text>
 
                 <Text styles={descriptionTextStyles}>
-                    {yearText}
-                    {semesterText}
+                    {yearText !== "" && yearText !== null ? <Chip label={yearText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} className="m-1" /> : <></>}
+                    {semesterText !== "" && semesterText !== null ? <Chip label={semesterText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} /> : <></>}
                 </Text>
 
                 <Text variant="small" styles={helpfulTextStyles}>
