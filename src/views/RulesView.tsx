@@ -15,14 +15,17 @@ const Rules = () => {
     const [choice, setChoice] = React.useState<string>('');
     const cardTokens: ICardTokens = { childrenMargin: 12 };
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
-    const rules: ITextStyles = { root: { fontWeight: FontWeights.semibold, fontSize: FontSizes.size12 } };
-    const rulesText: ITextStyles = { root: { fontSize: FontSizes.size12 } };
+    const rules: ITextStyles = { root: { fontWeight: FontWeights.semibold, fontSize: FontSizes.size12, color: theme.palette.themePrimary } };
+    const rulesText: ITextStyles = { root: { fontSize: FontSizes.size12, color: theme.palette.black } };
     const sectionCard = { minHeight: '120px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', border: '0px' };
+    const messageBarStyle = { background: theme.palette.neutralLighter };
 
     const QuestionFaqRulesMessage = () => (
-        <MessageBar>
-            <div className="mb-1 mt-2">
-                <Text styles={rules}>1) Domanda con risposta indicata sul sito del docente</Text>
+        <MessageBar style={messageBarStyle}>
+            <div className="mb-2 mt-2">
+                <Text styles={rules}>
+                    1) Domanda con risposta indicata sul sito del docente
+                </Text>
             </div>
             <div className="mb-3 ml-3 mr-3">
                 <Text styles={rulesText}>
@@ -31,7 +34,7 @@ const Rules = () => {
                 </Text>
             </div>
 
-            <div className="mb-1"> 
+            <div className="mb-2"> 
                 <Text styles={rules}>2) Domanda riguardo informazioni banali e già chieste precedentemente nella chat</Text>
             </div>
             <div className="mb-3 ml-3 mr-3">
@@ -45,8 +48,8 @@ const Rules = () => {
     );
 
     const BehaviorRulesMessage = () => (
-        <MessageBar>
-            <div className="mb-1 mt-2">
+        <MessageBar style={messageBarStyle}>
+            <div className="mb-2 mt-2">
                 <Text styles={rules}>1) Bestemmie e linguaggio vivace</Text>
             </div>
             <div className="mb-3 ml-3 mr-3">
@@ -57,7 +60,7 @@ const Rules = () => {
                 </Text>
             </div>
 
-            <div className="mb-1"> 
+            <div className="mb-2"> 
                 <Text styles={rules}>2) Insulti e offese</Text>
             </div>
             <div className="mb-3 ml-3 mr-3">
@@ -68,7 +71,7 @@ const Rules = () => {
                 </Text>
             </div>
 
-            <div className="mb-1"> 
+            <div className="mb-2"> 
                 <Text styles={rules}>3) Spam e offtopic</Text>
             </div>
             <div className="mb-3 ml-3 mr-3">
@@ -82,8 +85,8 @@ const Rules = () => {
     );
 
     const MaterialsRulesMessage = () => (
-        <MessageBar>
-            <div className="mb-1 mt-2"> 
+        <MessageBar style={messageBarStyle}>
+            <div className="mb-2 mt-2"> 
                 <Text styles={rules}>1) Invio di materiali coperti da copyright</Text>
             </div>
             <div className="mb-3 ml-3 mr-3">
@@ -94,7 +97,7 @@ const Rules = () => {
                 </Text>
             </div>
 
-            <div className="mb-1"> 
+            <div className="mb-2"> 
                 <Text styles={rules}>2) Responsabilità</Text>
             </div>
             <div className="mb-3 ml-3 mr-3">
@@ -107,8 +110,8 @@ const Rules = () => {
     );
 
     const OtherRulesMessage = () => (
-        <MessageBar>
-            <div className="mb-1 mt-2"> 
+        <MessageBar style={messageBarStyle}>
+            <div className="mb-2 mt-2"> 
                 <Text styles={rules}>1) Nome e username</Text>
             </div>
             <div className="mb-3 ml-3 mr-3">
@@ -120,7 +123,7 @@ const Rules = () => {
                 </Text>
             </div>
             
-            <div className="mb-1"> 
+            <div className="mb-2"> 
                 <Text styles={rules}>2) Politica</Text>
             </div>
             <div className="mb-3 ml-3 mr-3">
@@ -131,7 +134,7 @@ const Rules = () => {
                 </Text>
             </div>
 
-            <div className="mb-1"> 
+            <div className="mb-2"> 
             <Text styles={rules}>3) Codice</Text>
             </div>
             <div className="mb-3 ml-3 mr-3">
