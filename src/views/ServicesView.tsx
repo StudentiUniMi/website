@@ -60,7 +60,7 @@ const Services = () => {
                 {
                     services.map((x, i) => (
                         <Col xl={4} lg={6} md={6} sm={12} xs={12} className="mb-3" key={i}>
-                            <Card label={x.name} onClick={() => redirectToLink(x.link ?? "")} horizontal tokens={cardTokens}>
+                            <Card label={x.name} onClick={() => redirectToLink(x.link ?? "")} horizontal tokens={cardTokens} style={{border: '0px'}}>
                                 <Card.Item fill>
                                     <DocumentCardPreview {...cardProps(x.icon, x.color)}/>
                                 </Card.Item>

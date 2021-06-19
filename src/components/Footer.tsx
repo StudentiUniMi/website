@@ -19,7 +19,7 @@ const Footer = () => {
                     <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-4 mb-md-0">
                         <div className="mb-2">
                             <Text styles={semibold} variant="medium">
-                                <Link href="https://github.com/StudentiUnimi" >Studenti UniMi &copy;</Link>
+                                <Link onClick={() => redirectToLink("https://github.com/StudentiUnimi")}>Studenti UniMi &copy;</Link>
                             </Text>
                         </div>
 
@@ -48,17 +48,17 @@ const Footer = () => {
                                 <Text variant="medium">
                                     <ul className="list-unstyled mb-3">
                                         <li style={listElement}>
-                                            <Link href="http://www.quickunimi.it/" ><i className="fas fa-globe"></i> QuickUnimi</Link>
+                                            <Link onClick={() => redirectToLink("http://www.quickunimi.it/")}><i className="fas fa-globe"></i> QuickUnimi</Link>
                                         </li>
                                         <li style={listElement}>
-                                            <Link href="https://orientamento.di.unimi.it/index.php/studia-con-noi/tutor-di-processo" ><i className="fas fa-question-circle"></i> Faq matricole</Link>
+                                            <Link onClick={() => redirectToLink("https://orientamento.di.unimi.it/index.php/studia-con-noi/tutor-di-processo")}><i className="fas fa-question-circle"></i> Faq matricole</Link>
                                         </li>
                                         <li style={listElement}>
-                                            <Link href="https://quanto-manca.it/" ><i className="fas fa-heart"></i> Quanto-manca.it</Link>
+                                            <Link onClick={() => redirectToLink("https://quanto-manca.it/")}><i className="fas fa-heart"></i> Quanto-manca.it</Link>
 
                                         </li>
                                         <li style={listElement}>
-                                            <Link href="https://codeshare.tech" ><i className="fas fa-meteor"></i> Codeshare.tech</Link>
+                                            <Link onClick={() => redirectToLink("https://codeshare.tech")}><i className="fas fa-meteor"></i> Codeshare.tech</Link>
                                         </li>
                                     </ul>
                                 </Text>
@@ -73,7 +73,7 @@ const Footer = () => {
 
                         <div className="mb-1 text">
                             <Text variant="medium">
-                                Per qualsiasi dubbio o proposta è possibile scrivere sul <Link href="https://t.me/joinchat/VswKeO2D6soL3lcj" target="_blank">gruppo principale</Link> del network.
+                                Per qualsiasi dubbio o proposta è possibile scrivere sul <Link onClick={() => redirectToLink("https://t.me/joinchat/VswKeO2D6soL3lcj")}>gruppo principale</Link> del network.
                             </Text>
                         </div>
                     </Col>
