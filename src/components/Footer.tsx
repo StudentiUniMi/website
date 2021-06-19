@@ -19,7 +19,7 @@ const Footer = () => {
                     <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-4 mb-md-0">
                         <div className="mb-2">
                             <Text styles={semibold} variant="medium">
-                                <Link href="https://github.com/StudentiUnimi" >Studenti UniMi &copy;</Link>
+                                <Link onClick={() => redirectToLink("https://github.com/StudentiUnimi")}>Studenti UniMi &copy;</Link>
                             </Text>
                         </div>
 
