@@ -12,7 +12,7 @@ import { getAdmins } from '../services/Requests';
 import { Separator } from '@fluentui/react/lib/Separator';
 
 const cardTokens: ICardTokens = { childrenMargin: 12 };
-const sectionCard = { minWidth: 'none', minHeight: '130px', height: '100%', width: '100%', maxWidth: 'none',  maxHeight: 'none' };
+const sectionCard = { minHeight: '130px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none' };
 
 const CAN = [
     { username: "MattiaOldani", name: "Mattia Oldani", delega: "" },
