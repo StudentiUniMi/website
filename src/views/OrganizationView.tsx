@@ -12,14 +12,14 @@ import { getAdmins } from '../services/Requests';
 import { Separator } from '@fluentui/react/lib/Separator';
 
 const cardTokens: ICardTokens = { childrenMargin: 12 };
-const sectionCard = { minHeight: '120px', height: '100%', width: '100%', maxWidth: 'none',  maxHeight: 'none' };
+const sectionCard = { minWidth: 'none', minHeight: '130px', height: '100%', width: '100%', maxWidth: 'none',  maxHeight: 'none' };
 
 const CAN = [
     { username: "MattiaOldani", name: "Mattia Oldani", delega: "" },
     { username: "Sartigabriele", name: "Gabriele Sarti", delega: "" },
     { username: "MrBrionix", name: "Fabrizio Brioni", delega: "" },
-    { username: "SetteMagic", name: "Silvio Settembrese", delega: "Gestore Discord" },
-    { username: "Aconithorn", name: "Laura Luperto", delega: "Gestrice Discord" }
+    { username: "SetteMagic", name: "Silvio Settembrese", delega: "" },
+    { username: "Aconithorn", name: "Laura Luperto", delega: "" }
 ];
 
 const OrganizationView = () => {
@@ -77,7 +77,7 @@ const OrganizationView = () => {
                     {
                         CAN.map(x => {
                             return (
-                                <Col className="mb-3" xl={3} lg={3} md={4} sm={6} xs={12}>
+                                <Col className="mb-3" xl={2} lg={3} md={4} sm={6} xs={12}>
                                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                                         <Card.Section>
                                             <div className="justify-content-center">
@@ -107,7 +107,7 @@ const OrganizationView = () => {
                     {
                         admins.map(x => {
                             return (
-                                <Col className="mb-3" xl={3} lg={3} md={4} sm={6} xs={12}>
+                                <Col className="mb-3" xl={2} lg={3} md={4} sm={6} xs={12}>
                                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                                         <Card.Section>
                                             <div className="justify-content-center">
