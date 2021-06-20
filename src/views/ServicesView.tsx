@@ -38,7 +38,7 @@ const Services = () => {
             <div className="mb-3">
                 <Text variant="large">
                     Siete stanchi di dover andare a spulciare miriadi di pagine che neanche caricano alla ricerca di strumenti e servizi universitari?
-                    Abbiamo realizzato una pagina per centralizzarli tutti! Inoltre, qui puoi trovare anche alcune guide che abbiamo realizzato.
+                    Abbiamo realizzato una pagina per centralizzarli tutti! Inoltre, qui potete trovare anche alcune guide che abbiamo realizzato.
                 </Text>
             </div>
 
