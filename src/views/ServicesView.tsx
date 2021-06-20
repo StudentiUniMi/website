@@ -38,21 +38,27 @@ const Services = () => {
             <div className="mb-3">
                 <Text variant="large">
                     Siete stanchi di dover andare a spulciare miriadi di pagine che neanche caricano alla ricerca di strumenti e servizi universitari?
-                    Abbiamo realizzato una pagina per centralizzarli tutti!
+                    Abbiamo realizzato una pagina per centralizzarli tutti! Inoltre, qui puoi trovare anche alcune guide che abbiamo realizzato.
+                </Text>
+            </div>
+
+            <div className="mb-0">
+                <Text variant="medium">
+                    <Text styles={semibold}>Attenti:</Text> alcune pagine come Unimia oppure i Servizi SIFA potrebbero non caricare (ovviamente ricordiamo che non è colpa nostra in tal caso!).
+                </Text>
+            </div>
+
+            <div className="mb-3">
+                <Text variant="medium">
+                    Se pensi che debba essere aggiunto qualche servizio scrivi pure sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link>.
                 </Text>
             </div>
 
             <Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} />
 
-            <div className="mb-3">
-                <Text variant="medium">
-                    Se pensi che debba essere aggiunto qualcosa scrivi pure sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link>.
-                </Text>
-            </div>
-
             <div className='text-center mb-3'>
                 <Separator>
-                    <Text variant="medium" styles={semibold} style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size18 }}> Servizi disponibili </Text>
+                    <Text variant="medium" styles={semibold} style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size18 }}> Servizi e guide disponibili </Text>
                 </Separator>
             </div>  
 
