@@ -116,6 +116,31 @@ const HomeView = () => {
                         </Col>
                     </Row>
                 </SwiperSlide>
+
+                <SwiperSlide>
+                    <Row className="justify-content-center">
+                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+                            <div >
+                                <div className="mb-1">
+                                    <Text variant="medium">
+                                        Per noi offrirti la possibilità di non perdere tempo alla ricerca di servizi universitari è molto importante.
+                                        Proprio per questo abbiamo realizzato una pagina apposita per trovarli tutti subito, e farti scoprire anche alcune guide che abbiamo realizzato!
+                                </Text>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
+                            <Card tokens={cardTokens} style={{ minHeight: '160px' }}>
+                                <Icon iconName="Breakfast" style={{ fontSize: '48px', color: theme.palette.themePrimary, marginTop: '15px' }} />
+                                <Card.Section>
+                                    <Text variant="medium">
+                                        <Link href="https://unimia.studentiunimi.it" target="_blank">unimia.studentiunimi.it</Link>
+                                    </Text>
+                                </Card.Section>
+                            </Card>
+                        </Col>
+                    </Row>
+                </SwiperSlide>
                 
                 <SwiperSlide>
                     <Row className="justify-content-center">
@@ -141,7 +166,7 @@ const HomeView = () => {
                         </Col>
                         <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={secondSliderCol}>
                             <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                                <Icon iconName="PublishCourse" style={iconStyle} />
+                                    <Icon iconName="Home" style={iconStyle} />
                                 <Text variant="large" className="mt-0">
                                     Copriamo<br />
                                 <Text variant="xLarge" style={numberStyle}>{cdlsNumber}</Text> <br />
