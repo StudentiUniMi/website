@@ -13,7 +13,7 @@ const Footer = () => {
     var theme = useTheme();
     return (
         <footer style={{ backgroundColor: theme.palette.neutralQuaternaryAlt, borderTop: '1px solid', borderColor: theme.palette.neutralLight }}>
-            <Container style={{ width:'100%' }}>
+            <Container style={{ width: '100%', color: theme.palette.neutralSecondary }}>
 
                 <Row>
                     <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-4 mb-md-0">
