@@ -22,6 +22,13 @@ initializeIcons();
 const cardTokens: ICardTokens = { childrenMargin: 12 };
 const logoFileName = 'unimi500.png';
 const logoProperties = { width: '150px', height: '150px', display: 'inline-block' };
+const wikiPic = {
+    width: '130px',
+    height: '130px',
+    marginTop: '5px',
+    marginBottom: '5px',
+    marginLeft: 'auto', marginRight: 'auto'
+};
 
 const HomeView = () => {
     var theme = useTheme();
@@ -56,7 +63,7 @@ const HomeView = () => {
                             <div >
                                 <div className="mb-1">
                                     <Text variant="medium">
-                                            Sei uno studente che vuole immatricolarsi e che cerca un gruppo generale in cui chiedere informazioni <Icon iconName="Help" style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size12 }} />
+                                        Sei uno studente che vuole immatricolarsi e che cerca un gruppo generale in cui chiedere informazioni <Icon iconName="Help" style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size12 }} />
                                     </Text>
                                 </div>
                                 <div>
@@ -67,12 +74,67 @@ const HomeView = () => {
                         <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
                             <Card tokens={cardTokens} style={{minHeight: '160px'}}>
                                 <Card.Item>
-                                    <Persona onRenderPrimaryText={() => <div className="justify-content-center text-center" style={{ wordWrap: 'break-word', whiteSpace: 'normal' }}>Pre-matricole, ammissioni e immatricolazioni</div>} text="Pre-matricole, ammissioni e immatricolazioni" imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/matricole.jpg'} />
+                                    <Persona onRenderPrimaryText={() => <div className="justify-content-center text-center mt-3" style={{ wordWrap: 'break-word', whiteSpace: 'normal' }}>Pre-matricole, ammissioni e immatricolazioni</div>} text="Pre-matricole, ammissioni e immatricolazioni" imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/matricole.jpg'} />
                                 </Card.Item>
                                 <Card.Section>
-                                    <Text variant="small" className="mt-4">
+                                    <Text variant="medium" className="mt-4">
                                         <i className="fab fa-telegram-plane mr-1" style={{ color: theme.palette.themePrimary }}></i>
                                         <Link href="https://t.me/joinchat/jjzrKAOF74s5ZmI0" target="_blank">Gruppo Telegram</Link>
+                                    </Text>
+                                </Card.Section>
+                            </Card>
+                        </Col>
+                    </Row>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <Row className="justify-content-center">
+                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+                            <div >
+                                <div className="mb-1">
+                                    <Text variant="medium">
+                                        Ti ricordiamo che abbiamo a disposizione una <Text styles={semibold}>Wiki</Text> in cui è possibile collaborare ad aiutare altri studenti!
+                                        Puoi trovare tutto il materiale che ti serve, ma ricorda che è importante anche contribuire!
+                                    </Text>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
+                            <Card tokens={cardTokens} style={{ minHeight: '160px' }}>
+                                <Image id="logo"
+                                    src={process.env.PUBLIC_URL + "/other/globe.png"}
+                                    alt={"Wiki Studenti UniMi"}
+                                    style={wikiPic}
+                                />
+                                <Card.Section>
+                                    <Text variant="medium">
+                                        <i className="fas fa-globe-europe mr-1" style={{ color: theme.palette.themePrimary }}></i>
+                                        <Link href="https://wiki.studentiunimi.it/start" target="_blank">Raggiungi la Wiki!</Link>
+                                    </Text>
+                                </Card.Section>
+                            </Card>
+                        </Col>
+                    </Row>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <Row className="justify-content-center">
+                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+                            <div >
+                                <div className="mb-1">
+                                    <Text variant="medium">
+                                        Per noi offrirti la possibilità di non perdere tempo alla ricerca di servizi universitari è molto importante.
+                                        Proprio per questo abbiamo realizzato una pagina apposita per trovarli tutti subito, e farti scoprire anche alcune guide che abbiamo realizzato!
+                                </Text>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
+                            <Card tokens={cardTokens} style={{ minHeight: '160px' }}>
+                                <Icon iconName="Breakfast" style={{ fontSize: '48px', color: theme.palette.themePrimary, marginTop: '15px' }} />
+                                <Card.Section>
+                                    <Text variant="medium">
+                                        <Link href="https://unimia.studentiunimi.it" target="_blank">unimia.studentiunimi.it</Link>
                                     </Text>
                                 </Card.Section>
                             </Card>
@@ -104,7 +166,7 @@ const HomeView = () => {
                         </Col>
                         <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={secondSliderCol}>
                             <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                                <Icon iconName="PublishCourse" style={iconStyle} />
+                                    <Icon iconName="Home" style={iconStyle} />
                                 <Text variant="large" className="mt-0">
                                     Copriamo<br />
                                 <Text variant="xLarge" style={numberStyle}>{cdlsNumber}</Text> <br />
