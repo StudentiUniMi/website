@@ -367,6 +367,7 @@ footer .fab {
 
 .MuiChip-label {
   font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 11px;
 }
 
 .ms-MessageBar {
@@ -375,4 +376,8 @@ footer .fab {
 
 .organization .ms-Card {
   min-width: 100px !important;
+}
+
+.course-list .ms-Persona-primaryText {
+  font-weight: 600;
 }
