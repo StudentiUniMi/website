@@ -13,6 +13,8 @@ import { initializeIcons } from "@uifabric/icons";
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { PrimaryButton } from 'office-ui-fabric-react';
 import { Separator } from '@fluentui/react/lib/Separator';
+import { ActionButton } from '@fluentui/react/lib/Button';
+import { IIconProps } from '@fluentui/react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper/core';
 
@@ -35,6 +37,8 @@ const HomeView = () => {
     const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
     const sectionCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', boxShadow: theme.effects.elevation8 };
     const buttonStyle = { maxWidth: '180px' };
+    const telegramGroupIcon: IIconProps = { iconName: 'Send' };
+    const wikiIcon: IIconProps = { iconName: 'Globe' };
 
     return (
         <Container className="home text-center">
@@ -73,10 +77,13 @@ const HomeView = () => {
                                     <Persona onRenderPrimaryText={() => <div className="justify-content-center text-center mt-3" style={{ wordWrap: 'break-word', whiteSpace: 'normal' }}>Pre-matricole, ammissioni e immatricolazioni</div>} text="Pre-matricole, ammissioni e immatricolazioni" imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/matricole.jpg'} />
                                 </Card.Item>
                                 <Card.Section>
-                                    <Text variant="medium" className="mt-4">
-                                        <i className="fab fa-telegram-plane mr-1" style={{ color: theme.palette.themePrimary }}></i>
-                                        <Link href="https://t.me/joinchat/jjzrKAOF74s5ZmI0" target="_blank">Gruppo Telegram</Link>
-                                    </Text>
+                                    <ActionButton
+                                        onClick={() => redirectToLink("https://t.me/joinchat/jjzrKAOF74s5ZmI0")}
+                                        iconProps={telegramGroupIcon}
+                                        style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '20px', marginBottom: 0 }}
+                                        allowDisabledFocus>
+                                        Gruppo Telegram
+                                    </ActionButton>
                                 </Card.Section>
                             </Card>
                         </Col>
@@ -103,10 +110,13 @@ const HomeView = () => {
                                     style={wikiPic}
                                 />
                                 <Card.Section>
-                                    <Text variant="medium">
-                                        <i className="fas fa-globe-europe mr-1" style={{ color: theme.palette.themePrimary }}></i>
-                                        <Link href="https://wiki.studentiunimi.it/start" target="_blank">Raggiungi la Wiki!</Link>
-                                    </Text>
+                                    <ActionButton
+                                        onClick={() => redirectToLink("https://wiki.studentiunimi.it/")}
+                                        iconProps={wikiIcon}
+                                        style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 0, marginBottom: 0 }}
+                                        allowDisabledFocus>
+                                        Raggiungi la Wiki!
+                                    </ActionButton>
                                 </Card.Section>
                             </Card>
                         </Col>
