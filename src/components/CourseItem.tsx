@@ -1,10 +1,15 @@
-import { Link, Text } from 'office-ui-fabric-react';
+import { Text } from 'office-ui-fabric-react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { initializeIcons } from '@uifabric/icons';
 import { FontWeights, ITextStyles, Persona } from '@fluentui/react';
+import { semibold } from '../fonts';
 import Chip from '@material-ui/core/Chip';
 import Course from '../models/Course';
 import { useTheme } from '@fluentui/react-theme-provider';
+import { IContextualMenuProps, IIconProps } from '@fluentui/react';
+import { CommandButton } from '@fluentui/react/lib/Button';
+import { ActionButton } from '@fluentui/react/lib/Button';
+import { redirectToLink } from '../services/Utils';
 
 // const gdriveStyle = { width: '15px', height: '15px', marginBottom: '3px' }
 initializeIcons();
@@ -12,28 +17,28 @@ interface Props { data: Course };
 
 const CourseItem = (props: Props) => {
     const theme = useTheme();
-    var data = props.data;
+    let data = props.data;
 
     const cfuStyle: ITextStyles = { root: { fontWeight: FontWeights.semibold, color: theme.palette.themePrimary } };
     const descriptionTextStyles: ITextStyles = { root: { fontWeight: FontWeights.semibold } };
-    const helpfulTextStyles: ITextStyles = { root: { fontWeight: FontWeights.regular } };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
+    const websiteIcon: IIconProps = { iconName: 'Globe' };
+    const telegramGroupIcon: IIconProps = { iconName: 'Send' };
+    const wikiIcon: IIconProps = { iconName: 'SurveyQuestions' };
 
     var primaryText : any;
     var overflow : boolean = false;
     var cfuText : any;
     var yearText : any;
     var semesterText : any;
-    var groupText : any;
-    var websitesText : any;
-    var wikiText : any;
+    var mainText : any;
 
     /// PrimaryText inizialization
     if (data?.name!.length >= 33) {
-        primaryText = data.name;
+        primaryText = <Text styles={semibold}>{data.name}</Text>;
     } else {
         overflow = true;
-        primaryText = <div style={{wordWrap: 'break-word', whiteSpace: 'normal'}}>{data.name}</div>;
+        primaryText = <div style={{ wordWrap: 'break-word', whiteSpace: 'normal', marginTop: '2px' }}><Text styles={semibold}>{data.name}</Text></div>;
     }
 
     // PersonaUrl inizialization
@@ -69,65 +74,39 @@ const CourseItem = (props: Props) => {
         semesterText = null;
     }
 
-    // Group link inizialization, or other text for main degree group
+    // Main text inizialization
     if (data.anno === -1 && (data.gruppo === "" || data.gruppo === null)) {
-        groupText = <Text variant="small" styles={helpfulTextStyles}>Contatta un amministratore se vuoi essere aggiunto al gruppo.</Text>;
+        mainText = "Contatta un amministratore se vuoi essere aggiunto al gruppo."
     } else if (data.anno === -1 && (data.gruppo !== "" && data.gruppo !== null)) {
-        groupText = ( 
-        <>
-            <div className="mb-2">Gruppo principale per qualsiasi tipo di discussione inerente al corso di laurea.</div>
-            <i className="fab fa-telegram" style={{ color: theme.palette.themePrimary }}></i>
-            &nbsp;
-            <Link href={data.gruppo} target="_blank">
-                Gruppo Telegram
-            </Link>
-        </>
-        );
-    } else if ( data.gruppo === "" || data.gruppo === null ) {
-        groupText = "Gruppo non disponibile.";
-    } else {
-        groupText = (
-            <>
-                <i className="fab fa-telegram" style={{ color: theme.palette.themePrimary }}></i>
-                &nbsp;
-                <Link href={data.gruppo} target="_blank">
-                    Gruppo Telegram
-                </Link>
-            </>
-        );
-    } 
+        mainText = "Gruppo principale per qualsiasi tipo di discussione inerente al corso di laurea.";
+    }
 
     // Websites inizialization
-    if ( (data.websites ?? []).length !== 0) {
-        websitesText = (
-            <>
-                <i className="fas fa-home" style={{color:'#696a6b'}}></i>
-                &nbsp;
-                {data.websites.map(
-                    (e, i) => {
-                        return (
-                            <span key={i}>
-                                <Link href={e.link} target="_blank">
-                                    {e.etichetta}
-                                </Link>
-                                {i + 1 < data.websites.length ? <span>,&nbsp;</span> : ""}
-                            </span>
-                        )
-                    }
-                )}
-            </>
+    let websites: any[] = [];
+
+    if ((data.websites ?? []).length !== 0) {
+        websites = data.websites.map(
+            (e, i) => {
+                return {
+                    key: i,
+                    text: e.etichetta,
+                    onClick: () => redirectToLink(e.link),
+                    iconProps: { iconName: 'ChromeBackMirrored' }
+                };
+            }
         );
     }
 
-    // Wiki inizialization
-    if (data.wiki !== null && data.wiki !== "") { 
-        wikiText = (
-            <div className="mr-2">
-                <i className="fas fa-question-circle mr-1" style={{ color: '#edca58'}}></i>
-                <a href={data.wiki} target="blank">Wiki</a>
-            </div>
-        );
-    }
+    const menuProps: IContextualMenuProps = {
+        // For example: disable dismiss if shift key is held down while dismissing
+        onDismiss: ev => {
+            if (ev && 'shiftKey' in ev) {
+                ev.preventDefault();
+            }
+        },
+        items: websites,
+        directionalHintFixed: true,
+    };
     
     return (
         <Card tokens={cardTokens}>
@@ -140,6 +119,10 @@ const CourseItem = (props: Props) => {
             </Card.Item>
 
             <Card.Section>
+                <Text variant="small" style={{marginTop: '10px', marginBottom: '10px'}}>
+                    {mainText}
+                </Text>
+
                 <Text variant="small" styles={cfuStyle}>
                     {cfuText}
                 </Text>
@@ -149,17 +132,67 @@ const CourseItem = (props: Props) => {
                     {semesterText !== "" && semesterText !== null ? <Chip label={semesterText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} /> : <></>}
                 </Text>
 
-                <Text variant="small" styles={helpfulTextStyles}>
-                    {groupText}
-                </Text>
+                {
+                    (() => { 
+                        if (data.gruppo !== "" && data.gruppo !== null) {
+                            return (
+                                <ActionButton 
+                                    onClick={ () => redirectToLink(data.gruppo as any)}
+                                    iconProps={telegramGroupIcon} 
+                                    style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }} 
+                                    disabled={data.gruppo === "" || data.gruppo === null}
+                                    allowDisabledFocus>
+                                    Gruppo Telegram
+                                </ActionButton>
+                            );
+                        } else if ( (data.gruppo === "" || data.gruppo === null) && data.anno !== -1) {
+                            return (
+                                <ActionButton
+                                    iconProps={telegramGroupIcon}
+                                    style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
+                                    disabled
+                                    allowDisabledFocus>
+                                    Gruppo non disponibile
+                                </ActionButton>
+                            );
+                        }
+                    })()
+                }
 
-                <Text variant="small" styles={helpfulTextStyles}>
-                    {websitesText}
-                </Text>
+                { data.anno !== -1 ?
+                    <CommandButton
+                        text="Siti web"
+                        style={{justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 0}}
+                        iconProps={websiteIcon}
+                        menuProps={menuProps}
+                        allowDisabledFocus
+                        disabled={websites.length === 0}
+                    /> : <></>
+                }
 
-                <Text variant="small" styles={helpfulTextStyles}>
-                    {wikiText}
-                </Text>
+                {
+                    (() => { 
+                        if (data.wiki !== null && data.wiki !== "") { 
+                            return (
+                                <ActionButton
+                                    onClick={() => redirectToLink(data.wiki as any)}
+                                    iconProps={wikiIcon}
+                                    style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 0 }}
+                                    allowDisabledFocus>
+                                    Wiki
+                                </ActionButton>
+                            );
+                        } else if ( (data.wiki === null || data.wiki === "") && data.anno !== -1) return (
+                            <ActionButton
+                                disabled
+                                iconProps={wikiIcon}
+                                style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 0 }}
+                                allowDisabledFocus>
+                                Wiki
+                            </ActionButton>
+                        )
+                    })()
+                }
 
             </Card.Section>
         </Card>
