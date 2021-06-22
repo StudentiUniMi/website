@@ -12,7 +12,6 @@ import { Icon } from 'office-ui-fabric-react';
 import { initializeIcons } from "@uifabric/icons";
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { PrimaryButton } from 'office-ui-fabric-react';
-import { getGroupsLength, getCdlsLength } from '../services/Requests';
 import { Separator } from '@fluentui/react/lib/Separator';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper/core';
@@ -32,14 +31,10 @@ const wikiPic = {
 
 const HomeView = () => {
     var theme = useTheme();
-    const groupsNumber = getGroupsLength();
-    const cdlsNumber = getCdlsLength();
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
     const sectionCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', boxShadow: theme.effects.elevation8 };
-    const secondSliderCol = { maxWidth: '260px' }
     const buttonStyle = { maxWidth: '180px' };
-    const numberStyle = { color: theme.palette.themePrimary }
 
     return (
         <Container className="home text-center">
@@ -57,6 +52,7 @@ const HomeView = () => {
 
         <div className="mb-3 justify-content-center">
             <Swiper pagination={true} navigation={true} autoplay={{ "delay": 4500, "disableOnInteraction": false }} className="mySwiper">
+
                 <SwiperSlide>
                     <Row className="justify-content-center">
                             <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
@@ -93,7 +89,7 @@ const HomeView = () => {
                             <div >
                                 <div className="mb-1">
                                     <Text variant="medium">
-                                        Ti ricordiamo che abbiamo a disposizione una <Text styles={semibold}>Wiki</Text> in cui è possibile collaborare ad aiutare altri studenti!
+                                        Ti ricordiamo che abbiamo a disposizione una <Text styles={semibold}>Wiki</Text> in cui è possibile collaborare e aiutare altri studenti!
                                         Puoi trovare tutto il materiale che ti serve, ma ricorda che è importante anche contribuire!
                                     </Text>
                                 </div>
@@ -141,41 +137,7 @@ const HomeView = () => {
                         </Col>
                     </Row>
                 </SwiperSlide>
-                
-                <SwiperSlide>
-                    <Row className="justify-content-center">
-                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={secondSliderCol}>
-                            <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                                <Icon iconName="UserOptional" style={iconStyle} />
-                                <Text variant="large" className="mt-0">
-                                    Abbiamo più di<br />
-                                    <Text variant="xLarge" style={numberStyle}>2.000</Text> <br />
-                                    utenti
-                                </Text>
-                            </Card>
-                        </Col>
-                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={secondSliderCol}>
-                            <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                                <Icon iconName="PeopleAlert" style={iconStyle} />
-                                <Text variant="large" className="mt-0">
-                                    Abbiamo<br />
-                                <Text variant="xLarge" style={numberStyle}>{groupsNumber}</Text> <br />
-                                gruppi telegram
-                            </Text>
-                            </Card>
-                        </Col>
-                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={secondSliderCol}>
-                            <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                                    <Icon iconName="Home" style={iconStyle} />
-                                <Text variant="large" className="mt-0">
-                                    Copriamo<br />
-                                <Text variant="xLarge" style={numberStyle}>{cdlsNumber}</Text> <br />
-                                corsi di laurea
-                            </Text>
-                            </Card>
-                        </Col>
-                    </Row>
-                </SwiperSlide>
+            
             </Swiper>
         </div>
 
