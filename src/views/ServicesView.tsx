@@ -1,4 +1,3 @@
-import { CSSProperties } from "react";
 import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
@@ -33,12 +32,6 @@ const Services = () => {
             ],
             styles: { previewIcon: { backgroundColor: backgroundColor } },
         }
-    };
-
-    let typeChip: CSSProperties = {
-        position: 'absolute',
-        right: '20px',
-        bottom: '5px'
     };
     
     return (
