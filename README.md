@@ -33,5 +33,5 @@ e dei corsi di laurea magistrali di:
 - 🧙‍♂️ [Amministratori](https://studentiunimi.it/organization/) (Elenco membri del network + amministratori/moderatori e contatti telegram);
 - 👨‍💻 [Rappresentanti degli studenti](https://studentiunimi.it/representatives/) (Elenco rappresentanti + contatti telegram).
 
-Per qualsiasi dubbio o proposta è possibile scrivere sul [gruppo principale](https://t.me/joinchat/VswKeAblS2nrfXME).
+Per qualsiasi dubbio o proposta è possibile scrivere sul [gruppo principale](https://t.me/joinchat/VswKeAblS2nrfXME).<br/>
 <u>Il network e il relativo sito web non sono affiliati all'Università degli Studi di Milano.</u>
