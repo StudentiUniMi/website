@@ -11,6 +11,7 @@ import Row from 'react-bootstrap/Row';
 import { getServices } from '../services/Requests';
 import { redirectToLink } from '../services/Utils';
 import { Separator } from '@fluentui/react/lib/Separator';
+import Chip from '@material-ui/core/Chip';
 
 const Services = () => {
     var theme = useTheme();
@@ -72,6 +73,13 @@ const Services = () => {
                                 </Card.Item>
                                 <Card.Section>
                                     <Text variant="medium" style={{color: theme.palette.themePrimary}} styles={semibold}>{x.name}</Text>
+                                    <Chip label={x.type} variant="outlined" size="small" style={{
+                                        borderColor: x.type === 'Guida' ? theme.palette.magentaLight : theme.palette.blue,
+                                        color: x.type === 'Guida' ? theme.palette.magentaLight : theme.palette.blue,  
+                                        position: 'absolute',
+                                        right: '20px',
+                                        bottom: '5px' 
+                                    }} />
                                     <Text variant="small">{x.description}</Text>
                                 </Card.Section>
                             </Card>

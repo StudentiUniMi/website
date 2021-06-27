@@ -1,9 +1,10 @@
 [
     {
-        "name": "Scaricare videolezioni da Ariel",
+        "name": "Scaricare videolezioni",
         "link": "https://wiki.studentiunimi.it/guida:scaricare_videolezioni_ariel",
         "icon": "VideoSearch",
         "color": "#f06400",
+        "type": "Guida",
         "description": "Guida semplice e veloce per scaricare le videolezioni da Ariel."
     },
     {
@@ -11,6 +12,7 @@
         "link": "https://wiki.studentiunimi.it/guida:disiscrizione_mailing_list",
         "icon": "MailReminder",
         "color": "#0b9799",
+        "type": "Guida",
         "description": "Guida per disiscriversi dalle mailing list."
     },
     {
@@ -18,6 +20,7 @@
         "link": "http://unimia.unimi.it/portal/server.pt",
         "icon": "JoinOnlineMeeting",
         "color":"#0078d4",
+        "type": "Servizio",
         "description": "Portale d'accesso ai servizi d'ateneo."
     },
     {
@@ -25,6 +28,7 @@
         "link": "http://studente.unimi.it/foIscrizioneEsami/",
         "icon": "WaitlistConfirm",
         "color":"#004e8c",
+        "type": "Servizio",
         "description": "Iscriviti agli appelli d'esame o controlla le iscrizioni effettuate."
     },
     {
@@ -32,6 +36,7 @@
         "link": "http://studente.unimi.it/foVerbalizzazione/",
         "icon": "VerifiedBrand",
         "color":"#4f6bed",
+        "type": "Servizio",
         "description": "Controlla gli esiti finali o parziali dei tuoi esami."
     },
     {
@@ -39,6 +44,7 @@
         "link": "http://unimia.unimi.it/portal/server.pt/community/unimia/207/servizi_sifa/",
         "icon": "DatabaseSync",
         "color":"#8378de",
+        "type": "Servizio",
         "description": "Accedi a tutti i servizi online SIFA."
     },
     {
@@ -46,6 +52,7 @@
         "link": "https://studente.unimi.it/fo_pagamenti/checkLogin.jsp",
         "icon": "Bank",
         "color": "#393939",
+        "type": "Servizio",
         "description": "Sezione del SIFA riguardante i pagamenti."
     },
     {
@@ -53,6 +60,7 @@
         "link": "https://studente.unimi.it/pianiDiStudio/client/checkLogin.asp",
         "icon": "InternalInvestigation",
         "color": "#8cbd18",
+        "type": "Servizio",
         "description": "Sezione apposita per presentare il piano di studi."
     },
     {
@@ -60,6 +68,7 @@
         "link": "http://studente.unimi.it/dirittoallostudio",
         "icon": "AnalyticsReport",
         "color": "#71afe5",
+        "type": "Servizio",
         "description": "Portale per il diritto allo studio."
     },
     {
@@ -67,6 +76,7 @@
         "link": "https://securemail.unimi.it/",
         "icon": "Mail",
         "color":"#953ac7",
+        "type": "Servizio",
         "description": "Servizio di webmail d'ateneo."
     },
     {
@@ -74,6 +84,7 @@
         "link": "https://ariel.unimi.it/",
         "icon": "FabricFormLibrary",
         "color":"#ffaa44",
+        "type": "Servizio",
         "description": "Siti dei corsi didattici."
     },
     {
@@ -81,6 +92,7 @@
         "link": "https://easystaff.divsi.unimi.it/PortaleStudenti/",
         "icon": "People",
         "color":"#00ad56",
+        "type": "Servizio",
         "description": "Orari delle lezioni, occupazione delle aule, appelli d'esame."
     },
     {
@@ -88,6 +100,7 @@
         "link": "https://www.sba.unimi.it/",
         "icon": "Library",
         "color":"#247285",
+        "type": "Servizio",
         "description": "Tutte le informazioni sulle biblioteche."
     },
     {
@@ -95,6 +108,7 @@
         "link": "https://informastudenti.unimi.it/",
         "icon": "SurveyQuestions",
         "color":"#d13438",
+        "type": "Servizio",
         "description": "Accedi al portale InformaStudenti."
     }
 ]
