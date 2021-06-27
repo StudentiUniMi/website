@@ -10,9 +10,11 @@ import { Card, ICardTokens } from "@uifabric/react-cards";
 import { useTheme } from '@fluentui/react-theme-provider';
 import { getAdmins } from '../services/Requests';
 import { Separator } from '@fluentui/react/lib/Separator';
+import { getGroupsLength, getCdlsLength } from '../services/Requests';
 
 const cardTokens: ICardTokens = { childrenMargin: 12 };
 const sectionCard = { minHeight: '130px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none' };
+const mainCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none' };
 
 const CAN = [
     { username: "MattiaOldani", name: "Mattia Oldani", delega: "" },
@@ -26,16 +28,54 @@ const OrganizationView = () => {
     var theme = useTheme();
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const iconStyle2 = { color: theme.palette.themePrimary };
+    const numberStyle = { color: theme.palette.themePrimary };
     const admins = getAdmins();
+    const groupsNumber = getGroupsLength();
+    const cdlsNumber = getCdlsLength();
 
     return (
         <Container className="organization text-center">
 
             <div className="mb-2">
-                <div className="mb-2">
+                <div className="mb-3">
                     <Text variant="large">
                         Siamo un'organizzazione senza fini di lucro, apolitica, ovvero apartitica, e neutrale, la quale si pone l'obiettivo di offrire servizi telematici agli studenti dell'Università degli Studi di Milano.
                     </Text>
+                </div>
+
+                <div className="mb-3">
+                    <Row className="justify-content-center">
+                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
+                            <Card tokens={cardTokens} style={mainCard} className="justify-content-center text-center">
+                                <Icon iconName="UserOptional" style={iconStyle} />
+                                <Text variant="large" className="mt-0">
+                                    Abbiamo più di<br />
+                                    <Text variant="xLarge" style={numberStyle}>2.000</Text> <br />
+                                        utenti
+                                    </Text>
+                            </Card>
+                        </Col>
+                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
+                            <Card tokens={cardTokens} style={mainCard} className="justify-content-center text-center">
+                                <Icon iconName="PeopleAlert" style={iconStyle} />
+                                <Text variant="large" className="mt-0">
+                                    Abbiamo<br />
+                                    <Text variant="xLarge" style={numberStyle}>{groupsNumber}</Text> <br />
+                                    gruppi telegram
+                                </Text>
+                            </Card>
+                        </Col>
+                        <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
+                            <Card tokens={cardTokens} style={mainCard} className="justify-content-center text-center">
+                                <Icon iconName="PublishCourse" style={iconStyle} />
+                                <Text variant="large" className="mt-0">
+                                    Copriamo<br />
+                                    <Text variant="xLarge" style={numberStyle}>{cdlsNumber}</Text> <br />
+                                    corsi di laurea
+                                </Text>
+                            </Card>
+                        </Col>
+                    </Row>
                 </div>
 
                 <div className="mb-2">

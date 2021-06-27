@@ -5,5 +5,6 @@ export default interface Service
     link?: string
     icon?: string
     color?: string
+    type?: string
     description?: string
 }
