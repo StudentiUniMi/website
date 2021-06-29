@@ -7,10 +7,16 @@ import Row from 'react-bootstrap/Row';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { redirectToLink } from '../services/Utils';
 
+import { useCookies } from "react-cookie";
+import LocalizationService from "../services/LocalizationService";
+
 const listElement = { marginBottom: '.2rem' };
 
 const Footer = () => {
     var theme = useTheme();
+    const [cookies, setCookie] = useCookies(["theme", "language"]);
+    const locale = LocalizationService.strings();
+
     return (
         <footer style={{ backgroundColor: theme.palette.neutralQuaternaryAlt, borderTop: '1px solid', borderColor: theme.palette.neutralLight }}>
             <Container style={{ width:'100%' }}>
@@ -25,7 +31,7 @@ const Footer = () => {
 
                         <div className="mb-2 text">
                             <Text variant="medium">
-                                Il network e il relativo sito web non sono affiliati all'Università degli Studi di Milano.
+                                {locale.footer[0].text}
                             </Text>
                         </div>
 
@@ -41,7 +47,7 @@ const Footer = () => {
                     <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-4 mb-md-0">
                         <div className="mid-column">
                             <div className="mb-2">
-                                <Text styles={semibold} variant="medium">Link utili</Text>
+                                <Text styles={semibold} variant="medium">{locale.footer[1].header}</Text>
                             </div>
 
                             <div>
@@ -68,12 +74,12 @@ const Footer = () => {
 
                     <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-4 mb-md-0 contacts">
                         <div className="mb-2">
-                            <Text styles={semibold} variant="medium">Contatti</Text>
+                            <Text styles={semibold} variant="medium">{locale.footer[2].header}</Text>
                         </div>
 
                         <div className="mb-1 text">
                             <Text variant="medium">
-                                Per qualsiasi dubbio o proposta è possibile scrivere sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link> del network.
+                                <div dangerouslySetInnerHTML={{__html: locale.footer[2].text}}/>
                             </Text>
                         </div>
                     </Col>

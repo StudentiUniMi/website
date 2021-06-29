@@ -12,6 +12,8 @@ import Row from 'react-bootstrap/Row';
 import CourseItem from './CourseItem';
 import Course from '../models/Course';
 import Degree from '../models/Degree';
+import { useCookies } from "react-cookie";
+import LocalizationService from "../services/LocalizationService";
 
 interface Props { cdl?: Degree };
 
@@ -39,6 +41,8 @@ const yearMasterDegreeFilterOptions: IDropdownOption[] = [
 ];
 
 const CourseList= (props: Props) => {
+    const [cookies, setCookie] = useCookies(["theme", "language"]);
+    const locale = LocalizationService.strings();
     const columnCount = React.useRef(0);
     const rowHeight = React.useRef(0);
     const rowsPerPage = React.useRef(0);

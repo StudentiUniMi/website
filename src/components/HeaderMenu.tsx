@@ -57,7 +57,7 @@ const HeaderMenu = (props: Props) => {
         [ItemsKeys.courses, locale.headerMenuItems.courses],
         [ItemsKeys.services, locale.headerMenuItems.services],
         [ItemsKeys.additional_groups, locale.headerMenuItems.additionalGroups],
-        [ItemsKeys.representatives, locale.headerMenuItems.rapresentatives],
+        [ItemsKeys.representatives, locale.headerMenuItems.representatives],
         [ItemsKeys.contributors, locale.headerMenuItems.contributors]
     ]);
     

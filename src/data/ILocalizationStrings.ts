@@ -1,4 +1,3 @@
-
 interface ILocalizationStrings
 {
     headerMenuItems: {
@@ -8,7 +7,7 @@ interface ILocalizationStrings
         courses: string,
         services: string,
         additionalGroups: string,
-        rapresentatives: string,
+        representatives: string,
         contributors: string
     },
     settingsPanel: {
@@ -110,19 +109,19 @@ interface ILocalizationStrings
         section: string,
         rules1: {
             sectionName: string,
-            rules: []
+            rules: {[index: number]: string}
         },
         rules2: {
             sectionName: string,
-            rules: []
+            rules: {[index: number]: string}
         },
         rules3: {
             sectionName: string,
-            rules: []
+            rules: {[index: number]: string}
         },
         rules4: {
             sectionName: string,
-            rules: []
+            rules: {[index: number]: string}
         }
     },
     courses: {
@@ -162,7 +161,7 @@ interface ILocalizationStrings
         text2: string,
         availableGroups: string
     },
-    rapresentatives: {
+    representatives: {
         text1: string,
         text2: string,
         departmentSelect: string
@@ -179,11 +178,9 @@ interface ILocalizationStrings
         text2: string
     }
     footer: {
-        text1: string,
-        text2: string,
-        col3: {
+        [index: number]: {
+            text:string,
             header: string,
-            text: string
         }
     }
 }

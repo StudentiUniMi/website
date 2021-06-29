@@ -4,6 +4,8 @@ import { FontWeights, ITextStyles, Persona } from '@fluentui/react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import ExtraGroup from '../models/ExtraGroup'
 import { useTheme } from '@fluentui/react-theme-provider';
+import { useCookies } from "react-cookie";
+import LocalizationService from "../services/LocalizationService";
 
 initializeIcons();
 
@@ -11,6 +13,8 @@ interface Props { data: ExtraGroup };
 
 const ExtraGroupView = (props: Props) => {
     var theme = useTheme();
+    const [cookies, setCookie] = useCookies(["theme", "language"]);
+    const locale = LocalizationService.strings();
     var data = props.data;
     const helpfulTextStyles: ITextStyles = {
         root: {
