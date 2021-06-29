@@ -64,27 +64,26 @@ const Services = () => {
             </div>  
 
             <Row className="m-2 justify-content-center">
-                {
-                    services.map((x, i) => (
-                        <Col xl={4} lg={6} md={6} sm={12} xs={12} className="mb-3" key={i}>
-                            <Card label={x.name} onClick={() => redirectToLink(x.link ?? "")} horizontal tokens={cardTokens} style={{border: '0px'}}>
-                                <Card.Item fill>
-                                    <DocumentCardPreview {...cardProps(x.icon, x.color)}/>
-                                </Card.Item>
-                                <Card.Section>
-                                    <Text variant="medium" style={{color: theme.palette.themePrimary}} styles={semibold}>{x.name}</Text>
-                                    <Chip label={x.type} variant="outlined" size="small" style={{
-                                        borderColor: x.type === 'Guida' ? theme.palette.magentaLight : theme.palette.blue,
-                                        color: x.type === 'Guida' ? theme.palette.magentaLight : theme.palette.blue,  
-                                        position: 'absolute',
-                                        right: '20px',
-                                        bottom: '5px' 
-                                    }} />
-                                    <Text variant="small">{x.description}</Text>
-                                </Card.Section>
-                            </Card>
-                        </Col>
-                    ))
+                {services.map((x, i) =>
+                    <Col xl={4} lg={6} md={6} sm={12} xs={12} className="mb-3" key={i}>
+                        <Card label={x.name} onClick={() => redirectToLink(x.link ?? "")} horizontal tokens={cardTokens} style={{border: '0px'}}>
+                            <Card.Item fill>
+                                <DocumentCardPreview {...cardProps(x.icon, x.color)}/>
+                            </Card.Item>
+                            <Card.Section>
+                                <Text variant="medium" style={{color: theme.palette.themePrimary}} styles={semibold}>{x.name}</Text>
+                                <Chip label={x.type} variant="outlined" size="small" style={{
+                                    borderColor: x.type === 'Guida' ? theme.palette.magentaLight : theme.palette.blue,
+                                    color: x.type === 'Guida' ? theme.palette.magentaLight : theme.palette.blue,  
+                                    position: 'absolute',
+                                    right: '20px',
+                                    bottom: '5px' 
+                                }} />
+                                <Text variant="small">{x.description}</Text>
+                            </Card.Section>
+                        </Card>
+                    </Col>
+                    )
                 }
             </Row>
         </Container>

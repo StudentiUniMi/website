@@ -8,7 +8,11 @@ import Representative from '../models/Representative';
 import Service from '../models/Service';
 import serviceData from '../data/Services.json';
 import Contributor from '../models/Contributor';
-import contributors from '../data/Contributors.json';
+import Contributors from '../data/Contributors.json';
+import Faqs from '../data/Faqs.json';
+import Faq from '../models/Faq';
+import CanMembers from '../data/CanMembers.json';
+import CanMember from '../models/CanMember';
 
 export const getExtraGroups = () => extraGroups;
 
@@ -20,10 +24,14 @@ export const getRepresentatives = (departmentId:string): Representative[] => (da
 
 export const getAllCdls = (): Degree[] => ([] as Degree[]).concat(...(data.departments.map(x => x.cdls as any as Degree[])));
 
-export const getContributors = (): Contributor[] => contributors;
+export const getContributors = (): Contributor[] => Contributors;
 
 export const getAdmins = (): Admin[] => ([] as Admin[]).concat(...(getAllCdls().map(x => x.admins as any as Admin[])));
 
 export const getGroupsLength = (): number => extraGroups.length + ([] as Course[]).concat(...getAllCdls().map(x => x.courses as any as Course[])).length;
 
 export const getCdlsLength = (): number => getAllCdls().length;
+
+export const getFaqs = (): Faq[] => Faqs;
+
+export const getCanMembers = (): CanMember[] => CanMembers;
