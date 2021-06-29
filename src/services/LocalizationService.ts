@@ -204,6 +204,30 @@ class LocalizationService
                     },
                 },
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 en: {
                 
                     headerMenuItems: {
@@ -211,10 +235,10 @@ class LocalizationService
                         aboutUs: 'About Us',
                         rules: 'Rules',
                         courses: 'Courses',
-                        services: 'Unimi Services',
+                        services: 'Services',
                         additionalGroups: 'Extra Groups',
                         representatives: 'Representatives',
-                        contributors: 'Credits'
+                        contributors: 'Contributors'
                     },
                     settingsPanel: {
                         settings: 'Settings',
@@ -226,7 +250,7 @@ class LocalizationService
                     homepage: {
                         section1: {
                             text1: 'Welcome to Network Studenti UniMi!',
-                            text2: 'Our goal is to organize all the information about the University of Milan (UniMi – Università degli Studi di Milano Statale) and make them easily accessible to anyone',
+                            text2: 'Our goal is to organize all the informations about the University of Milan (UniMi – Università degli Studi di Milano Statale) and make them easily accessible to anyone.',
                             card1: {
                                 text1: 'loremipsum108',
                                 text2: 'loremipsum109'
