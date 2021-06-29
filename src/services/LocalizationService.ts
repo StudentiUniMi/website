@@ -11,6 +11,7 @@ class LocalizationService
         {
             LocalizationService.data = new LocalizedStrings<ILocalizationStrings>({
                 it: {
+                    telegramGroup: 'Gruppo Telegram',
                     headerMenuItems: {
                         home: 'Home',
                         aboutUs: 'Chi siamo',
@@ -26,48 +27,37 @@ class LocalizationService
                         changeTheme: 'Cambia il tema',
                         darkTheme: 'Modalità scura',
                         lightTheme: 'Modalità chiara',
-                        selectLanguage: 'Seleziona la lingua'
+                        selectLanguage: 'Seleziona la lingua',
+                        italian: 'Italiano',
+                        english: 'Inglese'
                     },
-                    footer: [
-                        {
-                            header: 'Studenti UniMi &copy;',
-                            text: 'Il network e il relativo sito web non sono affiliati all\'Università degli Studi di Milano'
-                        },
-                        {
-                            header: 'Link utili',
-                            text: 'loremipsum242'
-                        },
-                        {
-                            header: 'Contatti',
-                            text: 'Per qualsiasi dubbio o proposta è possibile scrivere sul <a href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</a> del network'
-                        },
-                    ],
                     homepage: {
                         section1: {
-                            text1: 'loremipsum5',
-                            text2: 'loremipsum6',
-                            card1: {
-                                text1: 'loremipsum7',
-                                text2: 'loremipsum8'
-                            },
-                            card2: {
-                                text1: 'loremipsum9',
-                                text2: 'loremipsum10'
-                            }
+                            text1: 'Benvenuto nel sito web del Network Studenti Unimi!',
+                            text2: 'La nostra missione è organizzare le informazioni riguardo l\'Università degli studi di Milano e renderle accessibili a tutti.',
+                            sliders: [
+                                { text1: 'Sei uno studente che vuole immatricolarsi e che cerca un gruppo generale in cui chiedere informazioni', text2: 'Ne abbiamo creato uno apposito!', cardText: "Pre-matricole, ammissioni e immatricolazioni" },
+                                { text: 'Ti ricordiamo che abbiamo a disposizione una <Text styles={semibold}>Wiki</Text> in cui è possibile collaborare e aiutare altri studenti! Puoi trovare tutto il materiale che ti serve, ma ricorda che è importante anche contribuire!', reachWiki: 'Raggiungi la Wiki!' },
+                                { text: 'Per noi offrirti la possibilità di non perdere tempo alla ricerca di servizi universitari è molto importante. Proprio per questo abbiamo realizzato una pagina apposita per trovarli tutti subito, e farti scoprire anche alcune guide che abbiamo realizzato!' }
+                            ]
                         },
                         section2: {
                             text: 'loremipsum11',
                             card1: {
-                                text: 'loremipsum12',
-                                button: 'loremipsum13'
+                                text: 'Unisciti al canale telegram per rimanere aggiornato e raggiungere tutti i link disponibili!',
+                                button: 'Canale Telegram'
                             },
                             card2: {
-                                text: 'loremipsum14',
-                                button: 'loremipsum15'
+                                text: 'Entra nel gruppo telegram principale per eventuali discussioni e chiarimenti riguardo il network.',
+                                button: 'Gruppo Telegram'
                             },
                             card3: {
-                                text: 'loremipsum16',
-                                button: 'loremipsum17'
+                                text: 'Entra nel nostro server discord per scambiare informazioni con altri studenti e conoscere nuove persone!',
+                                button: 'Server Discord'
+                            },
+                            card4: {
+                                text: 'Trovi tutti i nostri progetti open source nelle repository della nostra organizzazione.',
+                                button: 'Organizzazione'
                             }
                         },
                         section3: {
@@ -202,6 +192,20 @@ class LocalizationService
                         websiteProfile: 'loremipsum106',
                         text2: 'loremipsum107'
                     },
+                    footer: [
+                        {
+                            header: 'Studenti UniMi &copy;',
+                            text: 'Il network e il relativo sito web non sono affiliati all\'Università degli Studi di Milano'
+                        },
+                        {
+                            header: 'Link utili',
+                            text: 'loremipsum242'
+                        },
+                        {
+                            header: 'Contatti',
+                            text: 'Per qualsiasi dubbio o proposta è possibile scrivere sul <a href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</a> del network'
+                        },
+                    ],
                 },
 
 
@@ -229,7 +233,7 @@ class LocalizationService
 
 
                 en: {
-                
+                    telegramGroup: 'Telegram Group',
                     headerMenuItems: {
                         home: 'Home',
                         aboutUs: 'About Us',
@@ -245,44 +249,47 @@ class LocalizationService
                         changeTheme: 'Dark Mode:',
                         darkTheme: 'On',
                         lightTheme: 'Off',
-                        selectLanguage: 'Language:'
+                        selectLanguage: 'Language:',
+                        italian: 'Italian',
+                        english: 'English'
                     },
                     homepage: {
                         section1: {
                             text1: 'Welcome to Network Studenti UniMi!',
-                            text2: 'Our goal is to organize all the informations about the University of Milan (UniMi – Università degli Studi di Milano Statale) and make them easily accessible to anyone.',
-                            card1: {
-                                text1: 'loremipsum108',
-                                text2: 'loremipsum109'
-                            },
-                            card2: {
-                                text1: 'loremipsum110',
-                                text2: 'loremipsum111'
-                            }
+                            text2: 'Our goal is to organize all the informations about the University of Milan (Università degli Studi di Milano Statale, Unimi) and make them easily accessible to anyone.',
+                            sliders: [
+                                { text1: "", text2: "", cardText: "" },
+                                { text: '', reachWiki: 'Reach the Wiki!' },
+                                { text: '' }
+                            ]
                         },
                         section2: {
                             text: 'Our main links',
                             card1: {
-                                text: 'Join the Telegram group to stay updated and see all the links available!',
+                                text: 'Join our telegram channel to stay updated and see all the available links!',
                                 button: 'Telegram Channel'
                             },
                             card2: {
+                                text: 'Join the main telegram group of our networ to discuss.',
+                                button: 'Telegram Group'
+                            },
+                            card3: {
                                 text: 'Join our discord to share information and meet new friends!',
                                 button: 'Discord Server'
                             },
-                            card3: {
-                                text: 'Visit the github organization',
+                            card4: {
+                                text: 'Visit the github organization to see all our projects.',
                                 button: 'GitHub Organization'
                             }
                         },
                         section3: {
                             text: 'Everything has its own Telegram group chat',
                             card1: {
-                                text: 'Say goodbye to those messy WhatsApp chats! We have created a Telegram group for each course',
+                                text: 'Say goodbye to those messy WhatsApp chats! We have created a Telegram group for each course.',
                                 button: 'Course Group'
                             },
                             card2: {
-                                text: 'Tutoring, course materials, Erasmus, internship, apartments and many other extra things',
+                                text: 'Tutoring, course materials, Erasmus, internship, apartments and many other extra things.',
                                 button: 'Extra Group'
                             },
                             card3: {
@@ -424,7 +431,7 @@ class LocalizationService
                     footer: [
                         {
                             header: 'Studenti UniMi &copy;',
-                            text: 'The network and the associated webpage are not affiliated to the University of Milan (UniMi)' // todo : beautify02
+                            text: 'The network and the associated website are not affiliated to the University of Milan (UniMi)' // todo : beautify02
                         },
                         {
                             header: 'Useful links',
@@ -432,7 +439,7 @@ class LocalizationService
                         },
                         {
                             header: 'Contacts',
-                            text: 'For any question or suggestion you can join the <a href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">main network group</a>'
+                            text: 'For any question or suggestion you can join the <a href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">main network group</a>.'
                         },
                     ]
                 }

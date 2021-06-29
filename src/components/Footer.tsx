@@ -6,15 +6,13 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { redirectToLink } from '../services/Utils';
-
-import { useCookies } from "react-cookie";
-import LocalizationService from "../services/LocalizationService";
+import LocalizationService from "../services/LocalizationService"; 
+import parse from 'html-react-parser';
 
 const listElement = { marginBottom: '.2rem' };
 
 const Footer = () => {
     var theme = useTheme();
-    const [cookies, setCookie] = useCookies(["theme", "language"]);
     const locale = LocalizationService.strings();
 
     return (
@@ -25,7 +23,7 @@ const Footer = () => {
                     <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-4 mb-md-0">
                         <div className="mb-2">
                             <Text styles={semibold} variant="medium">
-                                <Link href="https://github.com/StudentiUnimi" >Studenti UniMi &copy;</Link>
+                                <Link href="https://github.com/StudentiUnimi">Studenti UniMi &copy;</Link>
                             </Text>
                         </div>
 
@@ -43,7 +41,6 @@ const Footer = () => {
                         </div>
                     </Col>
                     
-
                     <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-4 mb-md-0">
                         <div className="mid-column">
                             <div className="mb-2">
@@ -79,7 +76,7 @@ const Footer = () => {
 
                         <div className="mb-1 text">
                             <Text variant="medium">
-                                <div dangerouslySetInnerHTML={{__html: locale.footer[2].text}}/>
+                                {parse(locale.footer[2].text)}
                             </Text>
                         </div>
                     </Col>

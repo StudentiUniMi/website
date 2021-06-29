@@ -1,5 +1,6 @@
 interface ILocalizationStrings
 {
+    telegramGroup: string,
     headerMenuItems: {
         home: string,
         aboutUs: string,
@@ -15,20 +16,19 @@ interface ILocalizationStrings
         changeTheme: string,
         darkTheme: string,
         lightTheme: string,
-        selectLanguage: string
+        selectLanguage: string,
+        italian: string,
+        english: string
     },
     homepage: {
         section1: {
             text1: string,
             text2: string,
-            card1: {
-                text1: string,
-                text2: string
-            },
-            card2: {
-                text1: string,
-                text2: string
-            }
+            sliders: [
+                { text1: string, text2: string, cardText: string },
+                { text: string, reachWiki: string },
+                { text: string }
+            ]
         },
         section2: {
             text: string,
@@ -41,6 +41,10 @@ interface ILocalizationStrings
                 button: string
             },
             card3: {
+                text: string,
+                button: string
+            },
+            card4: {
                 text: string,
                 button: string
             }

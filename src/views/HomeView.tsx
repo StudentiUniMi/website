@@ -22,6 +22,8 @@ import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import LocalizationService from "../services/LocalizationService";
+import parse from 'html-react-parser';
 
 SwiperCore.use([Pagination, Navigation, Autoplay]);
 initializeIcons();
@@ -32,6 +34,7 @@ const wikiPic = { width: '130px', height: '130px', marginTop: '5px', marginBotto
 
 const HomeView = () => {
     var theme = useTheme();
+    const locale = LocalizationService.strings();
     const faqs = getFaqs();
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
@@ -50,8 +53,8 @@ const HomeView = () => {
                     style={logoProperties}
                 />
 
-                <div className="mb-2"><Text variant="xLarge">Benvenuto nel sito web del Network Studenti UniMi!</Text></div>
-                <div><Text variant="large">La nostra missione è organizzare le informazioni dell'Università degli studi di Milano e renderle accessibili a tutti.</Text></div>
+                <div className="mb-2"><Text variant="xLarge">{locale.homepage.section1.text1}</Text></div>
+                <div><Text variant="large">{locale.homepage.section1.text2}</Text></div>
             </div>
 
             <div className="mb-3 justify-content-center">
@@ -63,18 +66,19 @@ const HomeView = () => {
                                 <div >
                                     <div className="mb-1">
                                         <Text variant="medium">
-                                            Sei uno studente che vuole immatricolarsi e che cerca un gruppo generale in cui chiedere informazioni <Icon iconName="Help" style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size12 }} />
+                                            {locale.homepage.section1.sliders[0].text1} <Icon iconName="Help" style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size12 }} />
                                         </Text>
                                     </div>
                                     <div>
-                                        <Text styles={semibold}>Ne abbiamo creato uno apposito!</Text>
+                                        <Text styles={semibold}>{locale.homepage.section1.sliders[0].text2}</Text>
                                     </div>
                                 </div>
                             </Col>
+
                             <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
                                 <Card tokens={cardTokens} style={{ minHeight: '160px' }}>
                                     <Card.Item>
-                                        <Persona onRenderPrimaryText={() => <div className="justify-content-center text-center mt-3" style={{ wordWrap: 'break-word', whiteSpace: 'normal' }}>Pre-matricole, ammissioni e immatricolazioni</div>} text="Pre-matricole, ammissioni e immatricolazioni" imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/matricole.jpg'} />
+                                        <Persona onRenderPrimaryText={() => <div className="justify-content-center text-center mt-3" style={{ wordWrap: 'break-word', whiteSpace: 'normal' }}>{locale.homepage.section1.sliders[0].cardText}</div>} text={locale.homepage.section1.sliders[0].cardText} imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/matricole.jpg'} />
                                     </Card.Item>
                                     <Card.Section>
                                         <ActionButton
@@ -82,7 +86,7 @@ const HomeView = () => {
                                             iconProps={telegramGroupIcon}
                                             style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '20px', marginBottom: 0 }}
                                             allowDisabledFocus>
-                                            Gruppo Telegram
+                                            {locale.telegramGroup}
                                         </ActionButton>
                                     </Card.Section>
                                 </Card>
@@ -96,9 +100,8 @@ const HomeView = () => {
                                 <div >
                                     <div className="mb-1">
                                         <Text variant="medium">
-                                            Ti ricordiamo che abbiamo a disposizione una <Text styles={semibold}>Wiki</Text> in cui è possibile collaborare e aiutare altri studenti!
-                                        Puoi trovare tutto il materiale che ti serve, ma ricorda che è importante anche contribuire!
-                                    </Text>
+                                            {parse(locale.homepage.section1.sliders[1].text)}
+                                        </Text>
                                     </div>
                                 </div>
                             </Col>
@@ -115,7 +118,7 @@ const HomeView = () => {
                                             iconProps={wikiIcon}
                                             style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 0, marginBottom: 0 }}
                                             allowDisabledFocus>
-                                            Raggiungi la Wiki!
+                                            {locale.homepage.section1.sliders[1].reachWiki}
                                         </ActionButton>
                                     </Card.Section>
                                 </Card>
@@ -129,9 +132,8 @@ const HomeView = () => {
                                 <div >
                                     <div className="mb-1">
                                         <Text variant="medium">
-                                            Per noi offrirti la possibilità di non perdere tempo alla ricerca di servizi universitari è molto importante.
-                                            Proprio per questo abbiamo realizzato una pagina apposita per trovarli tutti subito, e farti scoprire anche alcune guide che abbiamo realizzato!
-                                </Text>
+                                            {locale.homepage.section1.sliders[2].text}
+                                        </Text>
                                     </div>
                                 </div>
                             </Col>
@@ -155,7 +157,7 @@ const HomeView = () => {
 
             <div className="primary-section mb-4">
                 <div className="mb-4">
-                    <Separator><Text variant="large" styles={semibold}>I nostri collegamenti principali</Text></Separator>
+                    <Separator><Text variant="large" styles={semibold}>{locale.homepage.section2.text}</Text></Separator>
                 </div>
 
                 <Row className="justify-content-center">
@@ -164,10 +166,10 @@ const HomeView = () => {
                             <Card.Section>
                                 <div><i className="fab fa-telegram homeIcon" style={homeIconStyle}></i></div>
                                 <Text variant="medium">
-                                    Unisciti al canale telegram per rimanere aggiornato e raggiungere tutti i link disponibili!
+                                    {locale.homepage.section2.card1.text}
                             </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text="Canale telegram" className="text-decoration-none" onClick={() => redirectToLink("https://t.me/studenti_unimi")} allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section2.card1.button} className="text-decoration-none" onClick={() => redirectToLink("https://t.me/studenti_unimi")} allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
@@ -178,10 +180,10 @@ const HomeView = () => {
                             <Card.Section>
                                 <div><i className="fas fa-comment-dots homeIcon" style={homeIconStyle}></i></div>
                                 <Text variant="medium">
-                                    Entra nel gruppo telegram principale per eventuali discussioni e chiarimenti riguardo il network.
-                        </Text>
+                                    {locale.homepage.section2.card2.text}
+                                </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text="Gruppo telegram" className="text-decoration-none" onClick={() => redirectToLink("https://t.me/joinchat/VswKeO2D6soL3lcj")} allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section2.card2.button} className="text-decoration-none" onClick={() => redirectToLink("https://t.me/joinchat/VswKeO2D6soL3lcj")} allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
@@ -192,10 +194,10 @@ const HomeView = () => {
                             <Card.Section>
                                 <div><i className="fab fa-discord homeIcon" style={homeIconStyle}></i></div>
                                 <Text variant="medium">
-                                    Entra nel nostro server discord per scambiare informazioni con altri studenti e conoscere nuove persone!
+                                    {locale.homepage.section2.card3.text}
                             </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text="Server discord" className="text-decoration-none" onClick={() => redirectToLink("https://discord.gg/SwPzAkv4A4")} allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section2.card3.button} className="text-decoration-none" onClick={() => redirectToLink("https://discord.gg/SwPzAkv4A4")} allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
@@ -206,10 +208,10 @@ const HomeView = () => {
                             <Card.Section>
                                 <div><i className="fab fa-github homeIcon" style={homeIconStyle}></i></div>
                                 <Text variant="medium">
-                                    Trovi tutti i nostri progetti open source nelle repository della nostra organizzazione.
+                                    {locale.homepage.section2.card4.text}
                             </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text="Organizzazione" className="text-decoration-none" onClick={() => redirectToLink("https://github.com/StudentiUnimi/")} allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section2.card4.button} className="text-decoration-none" onClick={() => redirectToLink("https://github.com/StudentiUnimi/")} allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>

@@ -11,10 +11,6 @@ import { Panel, PanelType } from 'office-ui-fabric-react/lib/Panel';
 import { useBoolean } from '@uifabric/react-hooks';
 import { Toggle } from '@fluentui/react';
 import { useCookies } from "react-cookie";
-/*
-import { mergeStyles } from '@fluentui/react';
-import { AnimationStyles } from '@fluentui/theme';
-*/
 import { useTheme } from '@fluentui/react-theme-provider';
 import LocalizationService from "../services/LocalizationService";
 
@@ -31,14 +27,7 @@ export enum ItemsKeys {
     additional_groups = "additional_groups",
     representatives = "representatives",
     contributors = "contributors"
-}
-
-
-
-const languageOptions: IDropdownOption[] = [
-    { key: 'it', text: 'Italiano', data: { icon: 'Memo' } },
-    { key: 'en', text: 'English', data: { icon: 'Print' } }
-];
+};
 
 
 interface Props { changeTheme: () => void };
@@ -49,6 +38,11 @@ const HeaderMenu = (props: Props) => {
     const history = useHistory();
     const [cookies, setCookie] = useCookies(["theme", "language"]);
     const locale = LocalizationService.strings();
+
+    const languageOptions: IDropdownOption[] = [
+        { key: 'it', text: locale.settingsPanel.italian },
+        { key: 'en', text: locale.settingsPanel.english }
+    ];
     
     const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
         [ItemsKeys.home, locale.headerMenuItems.home],
