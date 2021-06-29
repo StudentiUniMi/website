@@ -67,9 +67,9 @@ const ContributorsView = () => {
 
                 <Row className="justify-content-center">
                     {
-                        developers.map(x => {
+                        developers.map( (x,i) => {
                             return (
-                                <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
+                                <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12} key={i}>
                                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                                         <Card.Section>
                                             <div className="justify-content-center">
@@ -128,7 +128,7 @@ const ContributorsView = () => {
                                         styles={hostStyles}
                                         delay={TooltipDelay.zero}
                                     >
-                                        <Persona onRenderPrimaryText={() => null} primaryText={x.username} />
+                                        <Persona onRenderPrimaryText={() => null} text={x.username} />
                                     </TooltipHost>
                                     &nbsp;
                                 </>

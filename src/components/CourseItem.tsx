@@ -133,7 +133,7 @@ const CourseItem = (props: Props) => {
                 </Text>
 
                 {
-                    (() => { 
+                    (() => {
                         if (data.gruppo !== "" && data.gruppo !== null) {
                             return (
                                 <ActionButton 

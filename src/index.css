@@ -87,7 +87,7 @@ button:focus,
 }
 @media only screen and (max-width: 485px) {
   body {
-    margin-bottom: 500px;
+    margin-bottom: 520px;
   }
 }
 @media only screen and (max-width: 363px) {
@@ -95,14 +95,9 @@ button:focus,
     margin-bottom: 550px;
   }
 }
-@media only screen and (max-width: 270px) {
+@media only screen and (max-width: 320px) {
   body {
-    margin-bottom: 630px;
-  }
-}
-@media only screen and (max-width: 225px) {
-  body {
-    margin-bottom: 650px;
+    margin-bottom: 560px;
   }
 }
 @media only screen and (min-width: 767px) {

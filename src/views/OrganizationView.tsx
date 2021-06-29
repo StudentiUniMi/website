@@ -6,30 +6,23 @@ import { semibold } from '../fonts';
 import { Container } from 'react-bootstrap';
 import { Persona } from 'office-ui-fabric-react/lib/Persona';
 import { FontSizes } from '@fluentui/theme';
-import { Card, ICardTokens } from "@uifabric/react-cards";
+import { Card, CardSection, ICardTokens } from "@uifabric/react-cards";
 import { useTheme } from '@fluentui/react-theme-provider';
 import { getAdmins } from '../services/Requests';
 import { Separator } from '@fluentui/react/lib/Separator';
 import { getGroupsLength, getCdlsLength } from '../services/Requests';
-
-const cardTokens: ICardTokens = { childrenMargin: 12 };
-const sectionCard = { minHeight: '130px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none' };
-const mainCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none' };
-
-const CAN = [
-    { username: "MattiaOldani", name: "Mattia Oldani", delega: "" },
-    { username: "Sartigabriele", name: "Gabriele Sarti", delega: "" },
-    { username: "MrBrionix", name: "Fabrizio Brioni", delega: "" },
-    { username: "SetteMagic", name: "Silvio Settembrese", delega: "" },
-    { username: "Aconithorn", name: "Laura Luperto", delega: "" }
-];
+import { getCanMembers } from '../services/Requests';
 
 const OrganizationView = () => {
     var theme = useTheme();
+    const cardTokens: ICardTokens = { childrenMargin: 12 };
+    const sectionCard = { minHeight: '130px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none' };
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const iconStyle2 = { color: theme.palette.themePrimary };
     const numberStyle = { color: theme.palette.themePrimary };
+    const mainCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', boxShadow: theme.effects.elevation8 };
     const admins = getAdmins();
+    const canMembers = getCanMembers();
     const groupsNumber = getGroupsLength();
     const cdlsNumber = getCdlsLength();
 
@@ -47,32 +40,38 @@ const OrganizationView = () => {
                     <Row className="justify-content-center">
                         <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
                             <Card tokens={cardTokens} style={mainCard} className="justify-content-center text-center">
-                                <Icon iconName="UserOptional" style={iconStyle} />
-                                <Text variant="large" className="mt-0">
-                                    Abbiamo più di<br />
-                                    <Text variant="xLarge" style={numberStyle}>2.000</Text> <br />
+                                <CardSection>
+                                    <Icon iconName="UserOptional" style={iconStyle} />
+                                    <Text variant="large" className="mt-0">
+                                        Abbiamo più di<br />
+                                        <Text variant="xLarge" style={numberStyle}>2.000</Text> <br />
                                         utenti
                                     </Text>
+                                </CardSection>
                             </Card>
                         </Col>
                         <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
                             <Card tokens={cardTokens} style={mainCard} className="justify-content-center text-center">
-                                <Icon iconName="PeopleAlert" style={iconStyle} />
-                                <Text variant="large" className="mt-0">
-                                    Abbiamo<br />
-                                    <Text variant="xLarge" style={numberStyle}>{groupsNumber}</Text> <br />
-                                    gruppi telegram
-                                </Text>
+                                <CardSection>
+                                    <Icon iconName="PeopleAlert" style={iconStyle} />
+                                    <Text variant="large" className="mt-0">
+                                        Abbiamo<br />
+                                        <Text variant="xLarge" style={numberStyle}>{groupsNumber}</Text> <br />
+                                        gruppi telegram
+                                    </Text>
+                                </CardSection>
                             </Card>
                         </Col>
                         <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
                             <Card tokens={cardTokens} style={mainCard} className="justify-content-center text-center">
-                                <Icon iconName="PublishCourse" style={iconStyle} />
-                                <Text variant="large" className="mt-0">
-                                    Copriamo<br />
-                                    <Text variant="xLarge" style={numberStyle}>{cdlsNumber}</Text> <br />
-                                    corsi di laurea
-                                </Text>
+                                <CardSection>
+                                    <Icon iconName="PublishCourse" style={iconStyle} />
+                                    <Text variant="large" className="mt-0">
+                                        Copriamo<br />
+                                        <Text variant="xLarge" style={numberStyle}>{cdlsNumber}</Text> <br />
+                                        corsi di laurea
+                                    </Text>
+                                </CardSection>
                             </Card>
                         </Col>
                     </Row>
@@ -98,7 +97,7 @@ const OrganizationView = () => {
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
                             <div className="justify-content-center">
-                                <Persona onRenderPrimaryText={() => null} primaryText={"Marco Aceti"} />
+                                <Persona onRenderPrimaryText={() => null} text={"Marco Aceti"} />
                             </div>
                             <Text variant="medium" styles={semibold}>
                                 <i className="fab fa-telegram homeIcon" style={iconStyle2}></i>&nbsp;
@@ -115,13 +114,13 @@ const OrganizationView = () => {
 
                 <Row className="justify-content-center">
                     {
-                        CAN.map(x => {
+                        canMembers.map( (x,i) => {
                             return (
-                                <Col className="mb-3" xl={2} lg={3} md={4} sm={6} xs={12}>
+                                <Col className="mb-3" xl={2} lg={3} md={4} sm={6} xs={12} key={i}>
                                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                                         <Card.Section>
                                             <div className="justify-content-center">
-                                                <Persona onRenderPrimaryText={() => null} primaryText={x.name} />
+                                                <Persona onRenderPrimaryText={() => null} text={x.name} />
                                             </div>
                                             <Text variant="medium" styles={semibold}>
                                                 <i className="fab fa-telegram homeIcon" style={iconStyle2}></i>&nbsp;
@@ -145,13 +144,13 @@ const OrganizationView = () => {
 
                 <Row className="justify-content-center">
                     {
-                        admins.map(x => {
+                        admins.map( (x,i) => {
                             return (
-                                <Col className="mb-3" xl={2} lg={3} md={4} sm={6} xs={12}>
+                                <Col className="mb-3" xl={2} lg={3} md={4} sm={6} xs={12} key={i}>
                                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                                         <Card.Section>
                                             <div className="justify-content-center">
-                                                <Persona onRenderPrimaryText={() => null} primaryText={x.username} />
+                                                <Persona onRenderPrimaryText={() => null} text={x.username} />
                                             </div>
                                             <Text variant="medium" styles={semibold}>
                                                 <i className="fab fa-telegram homeIcon" style={iconStyle2}></i>&nbsp;

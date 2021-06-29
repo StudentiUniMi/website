@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row';
 import { semibold } from '../fonts';
 import { FontWeights, ITextStyles } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { Card, ICardTokens } from "@uifabric/react-cards";
+import { Card, CardSection, ICardTokens } from "@uifabric/react-cards";
 
 const Rules = () => {
     const theme = useTheme();
@@ -188,34 +188,42 @@ const Rules = () => {
             <Row className="mb-3 mt-3 justify-content-center">
                 <Col xl={3} lg={3} md={6} sm={6} xs={12} className="mb-3">
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center" theme={theme} onClick={() => setChoice("question_faq_rules")}>
-                        <Text variant="medium">
-                        <div><Icon iconName="FeedbackRequestSolid" className="mb-2" style={iconStyle} /></div>
-                        Domande e Faq
-                        </Text>
+                        <CardSection>
+                            <Text variant="medium">
+                            <div><Icon iconName="FeedbackRequestSolid" className="mb-2" style={iconStyle} /></div>
+                            Domande e Faq
+                            </Text>
+                        </CardSection>
                     </Card>
                 </Col>
                 <Col xl={3} lg={3} md={6} sm={6} xs={12} className="mb-3">
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center" theme={theme} onClick={() => setChoice("behavior_rules")}>
-                        <Text variant="medium">
-                        <div><Icon iconName="UserWarning" className="mb-2" style={iconStyle} /></div>
-                        Comportamento
-                        </Text>
+                        <CardSection>
+                            <Text variant="medium">
+                            <div><Icon iconName="UserWarning" className="mb-2" style={iconStyle} /></div>
+                            Comportamento
+                            </Text>
+                        </CardSection>
                     </Card>
                 </Col>
                 <Col xl={3} lg={3} md={6} sm={6} xs={12} className="mb-3">
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center" theme={theme} onClick={() => setChoice("materials_rules")}>
-                        <Text variant="medium">
-                        <div><Icon iconName="PageLock" className="mb-2" style={iconStyle} /></div>
-                        Materiali
-                        </Text>
+                        <CardSection>
+                            <Text variant="medium">
+                            <div><Icon iconName="PageLock" className="mb-2" style={iconStyle} /></div>
+                            Materiali
+                            </Text>
+                        </CardSection>
                     </Card>
                 </Col>
                 <Col xl={3} lg={3} md={6} sm={6} xs={12} className="mb-3">
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center" theme={theme} onClick={() => setChoice("other_rules")}>
-                        <Text variant="medium">
-                        <div><Icon iconName="More" className="mb-2" style={iconStyle} /></div>
-                        Altro
-                        </Text>
+                        <CardSection>
+                            <Text variant="medium">
+                            <div><Icon iconName="More" className="mb-2" style={iconStyle} /></div>
+                            Altro
+                            </Text>
+                        </CardSection>
                     </Card>
                 </Col>
             </Row>
