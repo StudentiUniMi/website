@@ -1,16 +1,15 @@
 import Representative from '../models/Representative';
-import { Persona, PersonaSize } from 'office-ui-fabric-react/lib/Persona';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import { Persona, PersonaSize } from 'office-ui-fabric-react/lib/Persona';
 import { Link } from 'office-ui-fabric-react';
-import { useCookies } from "react-cookie";
-import LocalizationService from "../services/LocalizationService";
+import { useTheme } from '@fluentui/react-theme-provider';
 
 interface Props { data: Representative[] };
 
-const RepresentativesList = (props: Props) => {
-    const [cookies, setCookie] = useCookies(["theme", "language"]);
-    const locale = LocalizationService.strings();
+const RapresentativesList = (props: Props) => {
+    var theme = useTheme();
+    const iconStyle = { color: theme.palette.themePrimary };
     return (
         <Row className="people-list text-center">
             {props.data.map((x,i) => 
@@ -19,7 +18,7 @@ const RepresentativesList = (props: Props) => {
                         ( () => { 
                             var primaryText : any; 
                             var imageUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${x.user_id}.png`;
-                            if (x.username !== "") primaryText = (<Link href={`https://t.me/${x.username}`}>{`${x.name ?? ""} ${x.surname ?? ""}`}</Link>); 
+                            if (x.username !== "") primaryText = (<><i className="fab fa-telegram homeIcon" style={iconStyle}></i>&nbsp;<Link href={`https://t.me/${x.username}`}>{`${x.name ?? ""} ${x.surname ?? ""}`}</Link></>); 
                             else { primaryText = `${x.name ?? ""} ${x.surname ?? ""}`};
                             return <Persona imageUrl={imageUrl} onRenderPrimaryText={() => primaryText} text={`${x.name ?? ""} ${x.surname ?? ""}`} secondaryText={x.cdl} size={PersonaSize.size40} />
                         })()
@@ -30,4 +29,4 @@ const RepresentativesList = (props: Props) => {
     )
 };
 
-export default RepresentativesList;
+export default RapresentativesList;

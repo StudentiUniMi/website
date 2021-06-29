@@ -1,5 +1,11 @@
 [
     {
+        "name": "Chat generale",
+        "description": "Dedicato a discussioni ed eventuali chiarimenti riguardo il nostro Network.",
+        "image": "studentiunimi.png",
+        "gruppo": "https://t.me/joinchat/VswKeO2D6soL3lcj"
+    },
+    {
         "name": "Pre-matricole, ammissioni e immatricolazioni",
         "description": "Dedicato agli studenti che vogliono immatricolarsi in UniMi e cercano informazioni generali a riguardo.",
         "image": "matricole.jpg",

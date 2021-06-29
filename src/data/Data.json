@@ -100,7 +100,7 @@
                     "id": "",
                     "name": "Lorenzo",
                     "surname": "Mazzi",
-                    "username": "",
+                    "username": "lomaMazzi",
                     "year": "",
                     "cdl": "Informatica",
                     "user_id": 697984243
@@ -1650,7 +1650,7 @@
                         {
                             "id": "3c0d8406-a44f-4f88-8834-35c747cd31c2",
                             "cdl": "triennale_sicurezza_sistemi_reti_informatiche",
-                            "name": "Aspetti etici",
+                            "name": "Aspetti etici, legali, sociali ed economici dell'informatica",
                             "anno": 3,
                             "semestre": 1,
                             "cfu": "3",
@@ -1993,18 +1993,6 @@
                         {
                             "id": "2d60c8fb-67d2-42a4-bef8-0af9059bb531",
                             "cdl": "magistrale_informatica",
-                            "name": "Progettazione di Sistemi Operativi",
-                            "anno": null,
-                            "semestre": 1,
-                            "cfu": 6,
-                            "gruppo": "https://t.me/joinchat/c4NixQAJwXxiNDc0",
-                            "websites": [],
-                            "drive": "",
-                            "wiki": ""
-                        },
-                        {
-                            "id": "2d60c8fb-67d2-42a4-bef8-0af9059bb531",
-                            "cdl": "magistrale_informatica",
                             "name": "Advanced computer programming",
                             "anno": null,
                             "semestre": 1,
@@ -2021,7 +2009,7 @@
                             "anno": null,
                             "semestre": 1,
                             "cfu": 6,
-                            "gruppo": "https://t.me/joinchat/BVhVgBQJUmLWxcilRH02yA",
+                            "gruppo": "https://t.me/joinchat/Pz_ftU3QwppmNDBk",
                             "websites": [],
                             "drive": "",
                             "wiki": "",
@@ -2200,7 +2188,7 @@
                             "anno": null,
                             "semestre": 1,
                             "cfu": 6,
-                            "gruppo": "https://t.me/joinchat/NtIxjhiKuAC9an7II9lPcA ",
+                            "gruppo": "https://t.me/joinchat/RBgTO1bgnj82NzI0",
                             "websites": [],
                             "drive": "",
                             "wiki": "",
@@ -3209,7 +3197,7 @@
                             "anno": 1,
                             "semestre": 1,
                             "cfu": 6,
-                            "gruppo": "https://t.me/joinchat/NtIxjhiKuAC9an7II9lPcA ",
+                            "gruppo": "https://t.me/joinchat/RBgTO1bgnj82NzI0",
                             "websites": [
                                 {
                                     "link": "https://avallegaagr.ariel.ctu.unimi.it/",

@@ -8,21 +8,24 @@ import Row from 'react-bootstrap/Row';
 import { semibold } from '../fonts';
 import { FontWeights, ITextStyles } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { Card, ICardTokens } from "@uifabric/react-cards";
+import { Card, CardSection, ICardTokens } from "@uifabric/react-cards";
 
 const Rules = () => {
     const theme = useTheme();
     const [choice, setChoice] = React.useState<string>('');
     const cardTokens: ICardTokens = { childrenMargin: 12 };
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
-    const rules: ITextStyles = { root: { fontWeight: FontWeights.semibold, fontSize: FontSizes.size12 } };
-    const rulesText: ITextStyles = { root: { fontSize: FontSizes.size12 } };
+    const rules: ITextStyles = { root: { fontWeight: FontWeights.semibold, fontSize: FontSizes.size12, color: theme.palette.themePrimary } };
+    const rulesText: ITextStyles = { root: { fontSize: FontSizes.size12, color: theme.palette.black } };
     const sectionCard = { minHeight: '120px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', border: '0px' };
+    const messageBarStyle = { background: theme.palette.neutralLighter };
 
     const QuestionFaqRulesMessage = () => (
-        <MessageBar>
-            <div className="mb-1 mt-2">
-                <Text styles={rules}>1) Domanda con risposta indicata sul sito del docente</Text>
+        <MessageBar style={messageBarStyle}>
+            <div className="mb-2 mt-2">
+                <Text styles={rules}>
+                    1) Domanda con risposta indicata sul sito del docente
+                </Text>
             </div>
             <div className="mb-3 ml-3 mr-3">
                 <Text styles={rulesText}>
@@ -31,7 +34,7 @@ const Rules = () => {
                 </Text>
             </div>
 
-            <div className="mb-1"> 
+            <div className="mb-2"> 
                 <Text styles={rules}>2) Domanda riguardo informazioni banali e già chieste precedentemente nella chat</Text>
             </div>
             <div className="mb-3 ml-3 mr-3">
@@ -45,8 +48,8 @@ const Rules = () => {
     );
 
     const BehaviorRulesMessage = () => (
-        <MessageBar>
-            <div className="mb-1 mt-2">
+        <MessageBar style={messageBarStyle}>
+            <div className="mb-2 mt-2">
                 <Text styles={rules}>1) Bestemmie e linguaggio vivace</Text>
             </div>
             <div className="mb-3 ml-3 mr-3">
@@ -57,7 +60,7 @@ const Rules = () => {
                 </Text>
             </div>
 
-            <div className="mb-1"> 
+            <div className="mb-2"> 
                 <Text styles={rules}>2) Insulti e offese</Text>
             </div>
             <div className="mb-3 ml-3 mr-3">
@@ -68,7 +71,7 @@ const Rules = () => {
                 </Text>
             </div>
 
-            <div className="mb-1"> 
+            <div className="mb-2"> 
                 <Text styles={rules}>3) Spam e offtopic</Text>
             </div>
             <div className="mb-3 ml-3 mr-3">
@@ -82,8 +85,8 @@ const Rules = () => {
     );
 
     const MaterialsRulesMessage = () => (
-        <MessageBar>
-            <div className="mb-1 mt-2"> 
+        <MessageBar style={messageBarStyle}>
+            <div className="mb-2 mt-2"> 
                 <Text styles={rules}>1) Invio di materiali coperti da copyright</Text>
             </div>
             <div className="mb-3 ml-3 mr-3">
@@ -94,7 +97,7 @@ const Rules = () => {
                 </Text>
             </div>
 
-            <div className="mb-1"> 
+            <div className="mb-2"> 
                 <Text styles={rules}>2) Responsabilità</Text>
             </div>
             <div className="mb-3 ml-3 mr-3">
@@ -107,8 +110,8 @@ const Rules = () => {
     );
 
     const OtherRulesMessage = () => (
-        <MessageBar>
-            <div className="mb-1 mt-2"> 
+        <MessageBar style={messageBarStyle}>
+            <div className="mb-2 mt-2"> 
                 <Text styles={rules}>1) Nome e username</Text>
             </div>
             <div className="mb-3 ml-3 mr-3">
@@ -120,7 +123,7 @@ const Rules = () => {
                 </Text>
             </div>
             
-            <div className="mb-1"> 
+            <div className="mb-2"> 
                 <Text styles={rules}>2) Politica</Text>
             </div>
             <div className="mb-3 ml-3 mr-3">
@@ -131,7 +134,7 @@ const Rules = () => {
                 </Text>
             </div>
 
-            <div className="mb-1"> 
+            <div className="mb-2"> 
             <Text styles={rules}>3) Codice</Text>
             </div>
             <div className="mb-3 ml-3 mr-3">
@@ -185,34 +188,42 @@ const Rules = () => {
             <Row className="mb-3 mt-3 justify-content-center">
                 <Col xl={3} lg={3} md={6} sm={6} xs={12} className="mb-3">
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center" theme={theme} onClick={() => setChoice("question_faq_rules")}>
-                        <Text variant="medium">
-                        <div><Icon iconName="FeedbackRequestSolid" className="mb-2" style={iconStyle} /></div>
-                        Domande e Faq
-                        </Text>
+                        <CardSection>
+                            <Text variant="medium">
+                            <div><Icon iconName="FeedbackRequestSolid" className="mb-2" style={iconStyle} /></div>
+                            Domande e Faq
+                            </Text>
+                        </CardSection>
                     </Card>
                 </Col>
                 <Col xl={3} lg={3} md={6} sm={6} xs={12} className="mb-3">
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center" theme={theme} onClick={() => setChoice("behavior_rules")}>
-                        <Text variant="medium">
-                        <div><Icon iconName="UserWarning" className="mb-2" style={iconStyle} /></div>
-                        Comportamento
-                        </Text>
+                        <CardSection>
+                            <Text variant="medium">
+                            <div><Icon iconName="UserWarning" className="mb-2" style={iconStyle} /></div>
+                            Comportamento
+                            </Text>
+                        </CardSection>
                     </Card>
                 </Col>
                 <Col xl={3} lg={3} md={6} sm={6} xs={12} className="mb-3">
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center" theme={theme} onClick={() => setChoice("materials_rules")}>
-                        <Text variant="medium">
-                        <div><Icon iconName="PageLock" className="mb-2" style={iconStyle} /></div>
-                        Materiali
-                        </Text>
+                        <CardSection>
+                            <Text variant="medium">
+                            <div><Icon iconName="PageLock" className="mb-2" style={iconStyle} /></div>
+                            Materiali
+                            </Text>
+                        </CardSection>
                     </Card>
                 </Col>
                 <Col xl={3} lg={3} md={6} sm={6} xs={12} className="mb-3">
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center" theme={theme} onClick={() => setChoice("other_rules")}>
-                        <Text variant="medium">
-                        <div><Icon iconName="More" className="mb-2" style={iconStyle} /></div>
-                        Altro
-                        </Text>
+                        <CardSection>
+                            <Text variant="medium">
+                            <div><Icon iconName="More" className="mb-2" style={iconStyle} /></div>
+                            Altro
+                            </Text>
+                        </CardSection>
                     </Card>
                 </Col>
             </Row>

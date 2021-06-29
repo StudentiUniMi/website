@@ -46,7 +46,7 @@ const CourseList= (props: Props) => {
     const columnCount = React.useRef(0);
     const rowHeight = React.useRef(0);
     const rowsPerPage = React.useRef(0);
-    const MAX_ROW_HEIGHT = 250;
+    const MAX_ROW_HEIGHT = 265;
     
     var classNames = mergeStyleSets({
         listGrid: {

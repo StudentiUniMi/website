@@ -19,7 +19,7 @@ const DegreeInformations= (props: Props) => {
         {logoIcon: "Globe" }, // {props.cdl?.main_website}
         {logoIcon: "PageArrowRight" }, // {props.cdl?.manifest}
         {logoIcon: "Robot" }, // {props.cdl?.server_discord}
-        {logoIcon: "Video"} // {props.cdl?.virtual_classroom}
+        {logoIcon: "MyMoviesTV"} // {props.cdl?.virtual_classroom}
     ];
 
     const titleStyle: IDocumentCardTitleStyles = {
