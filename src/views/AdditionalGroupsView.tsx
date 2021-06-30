@@ -71,7 +71,7 @@ const AdditionalGroupsView = () => {
 
             <div className="mb-2">
                 <Text variant="large">
-                    Cerchi un gruppo in particolare? Qui è possibile trovare tutti quelli che abbiamo creato.
+                    Cerchi un gruppo aggiuntivo in particolare? Qui è possibile trovare tutti quelli che abbiamo creato.
                 </Text>
             </div>
 

@@ -1,4 +1,4 @@
-import { Text } from 'office-ui-fabric-react';
+import { Text, Link } from 'office-ui-fabric-react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { initializeIcons } from '@uifabric/icons';
 import { FontWeights, ITextStyles, Persona } from '@fluentui/react';
@@ -10,6 +10,7 @@ import { IContextualMenuProps, IIconProps } from '@fluentui/react';
 import { CommandButton } from '@fluentui/react/lib/Button';
 import { ActionButton } from '@fluentui/react/lib/Button';
 import { redirectToLink } from '../services/Utils';
+import { Icon } from 'office-ui-fabric-react';
 
 // const gdriveStyle = { width: '15px', height: '15px', marginBottom: '3px' }
 initializeIcons();
@@ -76,7 +77,12 @@ const CourseItem = (props: Props) => {
 
     // Main text inizialization
     if (data.anno === -1 && (data.gruppo === "" || data.gruppo === null)) {
-        mainText = "Contatta un amministratore se vuoi essere aggiunto al gruppo."
+        mainText = (
+            <>
+                <Icon iconName="FollowUser" className="homeIcon" /> Contatta un <Link href="https://studentiunimi.it/organization/">amministratore</Link> se vuoi essere aggiunto al gruppo, 
+                oppure chiedilo direttamente sul <Link onClick={() => redirectToLink("https://t.me/joinchat/jjzrKAOF74s5ZmI0")}>gruppo principale</Link>.
+            </>
+        );
     } else if (data.anno === -1 && (data.gruppo !== "" && data.gruppo !== null)) {
         mainText = "Gruppo principale per qualsiasi tipo di discussione inerente al corso di laurea.";
     }
@@ -119,17 +125,19 @@ const CourseItem = (props: Props) => {
             </Card.Item>
 
             <Card.Section>
-                <Text variant="small" style={{marginTop: '10px', marginBottom: '10px'}}>
-                    {mainText}
-                </Text>
 
                 <Text variant="small" styles={cfuStyle}>
                     {cfuText}
                 </Text>
 
                 <Text styles={descriptionTextStyles}>
+                    {data.anno === -1 ? <Chip label="Gruppo principale" size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.teal }} className="m-1" /> : <></>}
                     {yearText !== "" && yearText !== null ? <Chip label={yearText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} className="m-1" /> : <></>}
                     {semesterText !== "" && semesterText !== null ? <Chip label={semesterText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} /> : <></>}
+                </Text>
+
+                <Text variant="small" style={{ marginTop: '10px', marginBottom: '10px' }}>
+                    {mainText}
                 </Text>
 
                 {
