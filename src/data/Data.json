@@ -139,10 +139,13 @@
                     "name": "Informatica",
                     "description": "",
                     "icon": "System",
-                    "main_website": "https://informatica.cdl.unimi.it/it",
-                    "server_discord": "",
-                    "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F1Xof3_2021.pdf",
-                    "virtual_classroom": "https://vc.di.unimi.it/",
+                    "redirects": [
+                        { "name": "Sito del dipartimento", "description": "Sito web del dipartimento del tuo corso di laurea.", "link": "http://www.di.unimi.it/ecm/home", "icon": "ExternalBuild" },
+                        { "name": "Orientamento", "description": "Decidi quale corso di laurea intraprendere.", "link": "https://orientamento.di.unimi.it/index.php", "icon": "CRMCustomerInsightsApp" },
+                        { "name": "Sito del corso di laurea", "description": "Sito web principale del tuo corso di laurea.", "link": "https://informatica.cdl.unimi.it/it", "icon": "GlobeFavorite" },
+                        { "name": "Manifesto degli studi", "description": "Manifesto degli studi attuale del tuo corso di laurea.", "link": "https://apps.unimi.it/files/manifesti/ita_manifesto_F1Xof3_2021.pdf", "icon": "Questionnaire" },
+                        { "name": "Virtual Classroom", "description": "Sito web contenente videolezioni registrate di alcuni anni fa.", "link": "https://vc.di.unimi.it/", "icon": "MyMoviesTV" }
+                    ],
                     "admins": [
                         {
                             "username": "MrBrionix",
@@ -948,10 +951,13 @@
                     "name": "Informatica musicale",
                     "description": "",
                     "icon": "MusicInCollection",
-                    "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-musicale",
-                    "server_discord": "",
-                    "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F3Xof2_2021.pdf",
-                    "virtual_classroom": "",
+                    "redirects": [
+                        { "name": "Sito del dipartimento", "description": "Sito web del dipartimento del tuo corso di laurea.", "link": "http://www.di.unimi.it/ecm/home", "icon": "ExternalBuild" },
+                        { "name": "Orientamento", "description": "Decidi quale corso di laurea intraprendere.", "link": "https://orientamento.di.unimi.it/index.php", "icon": "CRMCustomerInsightsApp" },
+                        { "name": "Sito del corso di laurea", "description": "Sito web principale del tuo corso di laurea.", "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-musicale", "icon": "GlobeFavorite" },
+                        { "name": "Manifesto degli studi", "description": "Manifesto degli studi attuale del tuo corso di laurea.", "link": "https://apps.unimi.it/files/manifesti/ita_manifesto_F3Xof2_2021.pdf", "icon": "Questionnaire" },
+                        { "name": "Virtual classroom", "description": "Sito web contenente videolezioni registrate di alcuni anni fa.", "link": "", "icon": "MyMoviesTV" }
+                    ],
                     "admins": [
                         {
                             "username": "giolake",
@@ -1087,10 +1093,13 @@
                     "name": "Informatica comunicazione digitale",
                     "description": "",
                     "icon": "Communications",
-                    "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-la-comunicazione-digitale",
-                    "server_discord": "",
-                    "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F9Xof2_2021.pdf",
-                    "virtual_classroom": "",
+                    "redirects": [
+                        { "name": "Sito del dipartimento", "description": "Sito web del dipartimento del tuo corso di laurea.", "link": "http://www.di.unimi.it/ecm/home", "icon": "ExternalBuild" },
+                        { "name": "Orientamento", "description": "Decidi quale corso di laurea intraprendere.", "link": "https://orientamento.di.unimi.it/index.php", "icon": "CRMCustomerInsightsApp" },
+                        { "name": "Sito del corso di laurea", "description": "Sito web principale del tuo corso di laurea.", "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-la-comunicazione-digitale", "icon": "GlobeFavorite" },
+                        { "name": "Manifesto degli studi", "description": "Manifesto degli studi attuale del tuo corso di laurea.", "link": "https://apps.unimi.it/files/manifesti/ita_manifesto_F9Xof2_2021.pdf", "icon": "Questionnaire" },
+                        { "name": "Virtual classroom", "description": "Sito web contenente videolezioni registrate di alcuni anni fa.", "link": "", "icon": "MyMoviesTV" }
+                    ],
                     "admins": [
                         {
                             "username": "robertopinotti",
@@ -1426,10 +1435,13 @@
                     "name": "Sicurezza sistemi e reti informatiche",
                     "description": "",
                     "icon": "LaptopSecure",
-                    "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-dei-sistemi-e-delle-reti-informatiche",
-                    "server_discord": "",
-                    "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F68of3_2021.pdf",
-                    "virtual_classroom": "",
+                    "redirects": [
+                        { "name": "Sito del dipartimento", "description": "Sito web del dipartimento del tuo corso di laurea.", "link": "http://www.di.unimi.it/ecm/home", "icon": "ExternalBuild" },
+                        { "name": "Orientamento", "description": "Decidi quale corso di laurea intraprendere.", "link": "https://orientamento.di.unimi.it/index.php", "icon": "CRMCustomerInsightsApp" },
+                        { "name": "Sito del corso di laurea", "description": "Sito web principale del tuo corso di laurea.", "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-dei-sistemi-e-delle-reti-informatiche", "icon": "GlobeFavorite" },
+                        { "name": "Manifesto degli studi", "description": "Manifesto degli studi attuale del tuo corso di laurea.", "link": "https://apps.unimi.it/files/manifesti/ita_manifesto_F68of3_2021.pdf", "icon": "Questionnaire" },
+                        { "name": "Virtual classroom", "description": "Sito web contenente videolezioni registrate di alcuni anni fa.", "link": "", "icon": "MyMoviesTV" }
+                    ],
                     "admins": [
                         {
                             "username": "burzum00",
@@ -1695,10 +1707,13 @@
                     "name": "Sicurezza sistemi e reti informatiche online",
                     "description": "",
                     "icon": "LaptopSecure",
-                    "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-dei-sistemi-e-delle-reti-informatiche-online",
-                    "server_discord": "",
-                    "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F1Aof1_2021.pdf",
-                    "virtual_classroom": "",
+                    "redirects": [
+                        { "name": "Sito del dipartimento", "description": "Sito web del dipartimento del tuo corso di laurea.", "link": "http://www.di.unimi.it/ecm/home", "icon": "ExternalBuild" },
+                        { "name": "Orientamento", "description": "Decidi quale corso di laurea intraprendere.", "link": "https://orientamento.di.unimi.it/index.php", "icon": "CRMCustomerInsightsApp" },
+                        { "name": "Sito del corso di laurea", "description": "Sito web principale del tuo corso di laurea.", "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-dei-sistemi-e-delle-reti-informatiche-online", "icon": "GlobeFavorite" },
+                        { "name": "Manifesto degli studi", "description": "Manifesto degli studi attuale del tuo corso di laurea.", "link": "https://apps.unimi.it/files/manifesti/ita_manifesto_F1Aof1_2021.pdf", "icon": "Questionnaire" },
+                        { "name": "Virtual classroom", "description": "Sito web contenente videolezioni registrate di alcuni anni fa.", "link": "", "icon": "MyMoviesTV" }
+                    ],
                     "admins": [
                         {
                             "username": "salvadorbs",
@@ -1964,10 +1979,13 @@
                     "name": "Informatica (magistrale)",
                     "description": "",
                     "icon": "ConnectVirtualMachine",
-                    "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-magistrale",
-                    "server_discord": "",
-                    "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F94of2_2021.pdf",
-                    "virtual_classroom": "",
+                    "redirects": [
+                        { "name": "Sito del dipartimento", "description": "Sito web del dipartimento del tuo corso di laurea.", "link": "http://www.di.unimi.it/ecm/home", "icon": "ExternalBuild" },
+                        { "name": "Orientamento", "description": "Decidi quale corso di laurea intraprendere.", "link": "https://orientamento.di.unimi.it/index.php", "icon": "CRMCustomerInsightsApp" },
+                        { "name": "Sito del corso di laurea", "description": "Sito web principale del tuo corso di laurea.", "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-magistrale", "icon": "GlobeFavorite" },
+                        { "name": "Manifesto degli studi", "description": "Manifesto degli studi attuale del tuo corso di laurea.", "link": "https://apps.unimi.it/files/manifesti/ita_manifesto_F94of2_2021.pdf", "icon": "Questionnaire" },
+                        { "name": "Virtual classroom", "description": "Sito web contenente videolezioni registrate di alcuni anni fa.", "link": "", "icon": "MyMoviesTV" }
+                    ],
                     "admins": [
                         {
                             "username": "robertopinotti",
@@ -3075,10 +3093,13 @@
                     "name": "Sicurezza informatica (magistrale)",
                     "description": "",
                     "icon": "Permissions",
-                    "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-informatica",
-                    "server_discord": "",
-                    "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F2Yof2_2021.pdf",
-                    "virtual_classroom": "",
+                    "redirects": [
+                        { "name": "Sito del dipartimento", "description": "Sito web del dipartimento del tuo corso di laurea.", "link": "http://www.di.unimi.it/ecm/home", "icon": "ExternalBuild" },
+                        { "name": "Orientamento", "description": "Decidi quale corso di laurea intraprendere.", "link": "https://orientamento.di.unimi.it/index.php", "icon": "CRMCustomerInsightsApp" },
+                        { "name": "Sito del corso di laurea", "description": "Sito web principale del tuo corso di laurea.", "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-informatica", "icon": "GlobeFavorite" },
+                        { "name": "Manifesto degli studi", "description": "Manifesto degli studi attuale del tuo corso di laurea.", "link": "https://apps.unimi.it/files/manifesti/ita_manifesto_F2Yof2_2021.pdf", "icon": "Questionnaire" },
+                        { "name": "Virtual classroom", "description": "Sito web contenente videolezioni registrate di alcuni anni fa.", "link": "", "icon": "MyMoviesTV" }
+                    ],
                     "admins": [
                         {
                             "username": "Spacer_ASC",
@@ -3513,10 +3534,12 @@
                     "id": "triennale_fisica",
                     "name": "Fisica",
                     "description": "",
-                    "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/fisica",
-                    "server_discord": "",
-                    "manifest": "https://apps.unimi.it/files/manifesti/ita_manifesto_F63of3_2022.pdf",
-                    "virtual_classroom": "",
+                    "redirects": [
+                        { "name": "Sito del dipartimento", "description": "Sito web del dipartimento del tuo corso di laurea.", "link": "http: //www.fisica.unimi.it/ecm/home", "icon": "ExternalBuild" },
+                        { "name": "Sito del corso di laurea", "description": "Sito web principale del tuo corso di laurea.", "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/fisica", "icon": "GlobeFavorite" },
+                        { "name": "Manifesto degli studi", "description": "Manifesto degli studi attuale del tuo corso di laurea.", "link": "https://apps.unimi.it/files/manifesti/ita_manifesto_F63of3_2022.pdf", "icon": "Questionnaire" },
+                        { "name": "Virtual classroom", "description": "Sito web contenente videolezioni registrate di alcuni anni fa.", "link": "", "icon": "MyMoviesTV" }
+                    ],
                     "admins": [],
                     "courses": [
                         {
@@ -3549,10 +3572,12 @@
                     "id": "triennale_matematica",
                     "name": "Matematica",
                     "description": "",
-                    "main_website": "https://www.unimi.it/it/corsi/corsi-di-laurea/matematica-triennale",
-                    "server_discord": "",
-                    "manifest": "",
-                    "virtual_classroom": "",
+                    "redirects": [
+                        { "name": "Sito del dipartimento", "description": "Sito web del dipartimento del tuo corso di laurea.", "link": "http://www.matematica.unimi.it/ecm/home", "icon": "ExternalBuild" },
+                        { "name": "Sito del corso di laurea", "description": "Sito web principale del tuo corso di laurea.", "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/matematica-triennale", "icon": "GlobeFavorite" },
+                        { "name": "Manifesto degli studi", "description": "Manifesto degli studi attuale del tuo corso di laurea.", "link": "", "icon": "Questionnaire" },
+                        { "name": "Virtual classroom", "description": "Sito web contenente videolezioni registrate di alcuni anni fa.", "link": "", "icon": "MyMoviesTV" }
+                    ],
                     "admins": [],
                     "courses": [
                         {

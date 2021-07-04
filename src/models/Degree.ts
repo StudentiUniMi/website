@@ -1,5 +1,6 @@
 import Course from "./Course";
 import Admin from "./Admin";
+import Redirect from "./Redirect";
 
 export default interface Degree
 {
@@ -7,29 +8,9 @@ export default interface Degree
     name?: string,
     description?: string,
     icon?: string,
-    main_website?: string,
-    server_discord?: string,
-    manifest?: string,
-    virtual_classroom?: string,
+    redirects?: Redirect[],
     admins?: Admin[],
     courses: Course[],
     is_master: boolean,
     has_years: boolean
 }
-
-/*
-{
-    "id": "",
-    "name": "",
-    "description": "",
-    "main_website": "",
-    "server_discord": "",
-    "manifest": "",
-    "virtual_classroom": "",
-    "admins": [
-    ],
-    "courses": [],
-    "is_master": false,
-    "has_years": true
-}
-*/

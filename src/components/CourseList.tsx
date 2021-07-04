@@ -4,9 +4,12 @@ import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 import { Container } from 'react-bootstrap';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
-import { Text } from "office-ui-fabric-react/lib/Text";
+import { Text, Icon } from "office-ui-fabric-react/";
+import { semibold } from '../fonts';
 import { FontSizes } from '@fluentui/theme';
 import { MessageBar } from 'office-ui-fabric-react';
+import { Separator } from '@fluentui/react/lib/Separator';
+import { useTheme } from '@fluentui/react-theme-provider';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import CourseItem from './CourseItem';
@@ -39,6 +42,7 @@ const yearMasterDegreeFilterOptions: IDropdownOption[] = [
 ];
 
 const CourseList= (props: Props) => {
+    var theme = useTheme();
     const columnCount = React.useRef(0);
     const rowHeight = React.useRef(0);
     const rowsPerPage = React.useRef(0);
@@ -115,7 +119,15 @@ const CourseList= (props: Props) => {
     }
 
     return (       
-        <Container className="courses-filter-options">
+        <Container className="courses-filter-options mb-4">
+            <div className='text-center mb-4'>
+                <Separator>
+                    <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
+                    <Text variant="medium" styles={semibold} style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size18 }}> Gruppi disponibili </Text>
+                    <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
+                </Separator>
+            </div> 
+
             <FocusZone>
                 <div className="mb-4">
                     <Row className="justify-content-center">
