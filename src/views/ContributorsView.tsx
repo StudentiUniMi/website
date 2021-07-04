@@ -128,7 +128,7 @@ const ContributorsView = () => {
                                         styles={hostStyles}
                                         delay={TooltipDelay.zero}
                                     >
-                                        <Persona onRenderPrimaryText={() => null} text={x.username} />
+                                        <Persona onRenderPrimaryText={() => null} text={x.username} className="mb-1" />
                                     </TooltipHost>
                                     &nbsp;
                                 </>
