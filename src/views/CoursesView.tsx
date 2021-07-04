@@ -5,7 +5,7 @@ import { initializeIcons } from "@uifabric/icons";
 import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { semibold } from '../fonts';
-import { Dropdown, IDropdownOption, IDropdownProps } from 'office-ui-fabric-react/lib/Dropdown';
+import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { DropdownMenuItemType } from "@fluentui/react";
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { useTheme } from '@fluentui/react-theme-provider';
@@ -42,15 +42,6 @@ const onRenderTitle = (options?: IDropdownOption[]): JSX.Element => {
                 <Icon style={iconStyles} iconName={option.data.icon} aria-hidden="true" title={option.data.icon} />
             )}
             <span>{option.text}</span>
-        </div>
-    );
-};
-
-const onRenderPlaceholder = (props?: IDropdownProps): JSX.Element => {
-    return (
-        <div className="dropdownExample-placeholder">
-            <Icon style={iconStyles} iconName={'SurveyQuestions'} aria-hidden="true" />
-            <span>{props?.placeholder}</span>
         </div>
     );
 };
