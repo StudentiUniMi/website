@@ -97,7 +97,7 @@ const OrganizationView = () => {
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
                             <div className="justify-content-center">
-                                <Persona onRenderPrimaryText={() => null} text={"Marco Aceti"} />
+                                <Persona onRenderPrimaryText={() => null} text={"Marco Aceti"} imageUrl={process.env.PUBLIC_URL + '/contributors/marcoaceti.jpg'} />
                             </div>
                             <Text variant="medium" styles={semibold}>
                                 <i className="fab fa-telegram homeIcon" style={iconStyle2}></i>&nbsp;
@@ -120,7 +120,10 @@ const OrganizationView = () => {
                                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                                         <Card.Section>
                                             <div className="justify-content-center">
-                                                <Persona onRenderPrimaryText={() => null} text={x.name} />
+                                                {(() => {
+                                                    var imageUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${x.user_id}.png`;
+                                                    return <Persona imageUrl={imageUrl} onRenderPrimaryText={() => <Link href={`https://t.me/${x.username}`}>{`@${x.username ?? ""}`}</Link>} text={`@${x.username}` ?? ""} />
+                                                })()}
                                             </div>
                                             <Text variant="medium" styles={semibold}>
                                                 <i className="fab fa-telegram homeIcon" style={iconStyle2}></i>&nbsp;
@@ -150,7 +153,10 @@ const OrganizationView = () => {
                                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                                         <Card.Section>
                                             <div className="justify-content-center">
-                                                <Persona onRenderPrimaryText={() => null} text={x.username} />
+                                                {(() => {
+                                                    var imageUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${x.user_id}.png`;
+                                                    return <Persona imageUrl={imageUrl} onRenderPrimaryText={() => <Link href={`https://t.me/${x.username}`}>{`@${x.username ?? ""}`}</Link>} text={`@${x.username}` ?? ""} />
+                                                })()}
                                             </div>
                                             <Text variant="medium" styles={semibold}>
                                                 <i className="fab fa-telegram homeIcon" style={iconStyle2}></i>&nbsp;
