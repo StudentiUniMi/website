@@ -7,7 +7,6 @@ import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { Text, Icon } from "office-ui-fabric-react/";
 import { semibold } from '../fonts';
 import { FontSizes } from '@fluentui/theme';
-import { MessageBar } from 'office-ui-fabric-react';
 import { Separator } from '@fluentui/react/lib/Separator';
 import { useTheme } from '@fluentui/react-theme-provider';
 import Col from 'react-bootstrap/Col';
@@ -158,10 +157,8 @@ const CourseList= (props: Props) => {
                 </div>
 
                 {filteredCourses.length === 0 ? 
-                    <div className="justify-content-center" style={{ maxWidth: '400px', marginLeft: 'auto', marginRight: 'auto' }}>
-                        <MessageBar>
-                            <Text style={{ fontSize: FontSizes.size14 }}>Nessun gruppo trovato.</Text>
-                        </MessageBar>
+                    <div className="justify-content-center">
+                        <Text style={{ fontSize: FontSizes.size14, backgroundColor: theme.palette.neutralLighter, padding: '4px' }}><Icon iconName="Info" /> Nessun gruppo trovato.</Text>
                     </div>
                     :
                     <div className="course-list">
