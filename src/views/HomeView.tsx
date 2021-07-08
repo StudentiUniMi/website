@@ -49,7 +49,7 @@ const HomeView = () => {
                     alt='Network logo'
                     style={logoProperties}
                 />
-                <div className="mb-2"><Text variant="xLarge">Benvenuto nel sito web del Network Studenti UniMi!</Text></div>
+                <div className="mb-2"><Text variant="xLarge">Benvenuto nel sito web del <Text className="homeIcon" variant="xLarge">Network Studenti UniMi</Text> !</Text></div>
                 <div><Text variant="large">La nostra missione è organizzare le informazioni dell'Università degli studi di Milano e renderle accessibili a tutti.</Text></div>
             </div>
 
@@ -170,7 +170,7 @@ const HomeView = () => {
                             <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
                                 <Card tokens={cardTokens} style={{ minHeight: '160px' }}>
                                     <Card.Section>
-                                        <Icon iconName="Breakfast" style={{ fontSize: '48px', color: theme.palette.themePrimary, marginTop: '15px' }} />
+                                        <Icon iconName="CoffeeScript" style={{ fontSize: '48px', color: theme.palette.themePrimary, marginTop: '15px' }} />
                                         <Text variant="medium">
                                             <Link href="https://unimia.studentiunimi.it">unimia.studentiunimi.it</Link>
                                         </Text>
