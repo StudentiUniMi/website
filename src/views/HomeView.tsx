@@ -49,8 +49,7 @@ const HomeView = () => {
                     alt='Network logo'
                     style={logoProperties}
                 />
-
-                <div className="mb-2"><Text variant="xLarge">Benvenuto nel sito web del Network Studenti UniMi!</Text></div>
+                <div className="mb-2"><Text variant="xLarge">Benvenuto nel sito web del <Text className="homeIcon" variant="xLarge">Network Studenti UniMi</Text> !</Text></div>
                 <div><Text variant="large">La nostra missione è organizzare le informazioni dell'Università degli studi di Milano e renderle accessibili a tutti.</Text></div>
             </div>
 
@@ -74,11 +73,44 @@ const HomeView = () => {
                             <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
                                 <Card tokens={cardTokens} style={{ minHeight: '160px' }}>
                                     <Card.Item>
-                                        <Persona onRenderPrimaryText={() => <div className="justify-content-center text-center mt-3" style={{ wordWrap: 'break-word', whiteSpace: 'normal' }}>Pre-matricole, ammissioni e immatricolazioni</div>} text="Pre-matricole, ammissioni e immatricolazioni" imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/matricole.jpg'} />
+                                        <Persona onRenderPrimaryText={() => <div className="justify-content-center text-center mt-3" style={{ wordWrap: 'break-word', whiteSpace: 'normal'}}><Text styles={semibold}>Pre-matricole, ammissioni e immatricolazioni</Text></div>} text="Pre-matricole, ammissioni e immatricolazioni" imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/matricole.jpg'} />
                                     </Card.Item>
                                     <Card.Section>
                                         <ActionButton
                                             onClick={() => redirectToLink("https://t.me/joinchat/jjzrKAOF74s5ZmI0")}
+                                            iconProps={telegramGroupIcon}
+                                            style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '20px', marginBottom: 0 }}
+                                            allowDisabledFocus>
+                                            Gruppo Telegram
+                                        </ActionButton>
+                                    </Card.Section>
+                                </Card>
+                            </Col>
+                        </Row>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                        <Row className="justify-content-center">
+                            <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+                                <div >
+                                    <div className="mb-1">
+                                        <Text variant="medium">
+                                            Stai cercando un gruppo per trovare un alloggio a Milano insieme ad altri studenti universitari oppure vuoi creare un annuncio <Icon iconName="Help" style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size12 }} />
+                                        </Text>
+                                    </div>
+                                    <div>
+                                        <Text styles={semibold}>Entra nel gruppo apposito!</Text>
+                                    </div>
+                                </div>
+                            </Col>
+                            <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
+                                <Card tokens={cardTokens} style={{ minHeight: '160px' }}>
+                                    <Card.Item>
+                                        <Persona onRenderPrimaryText={() => <div className="ml-2"><Text styles={semibold}>Alloggi</Text></div>} text="Alloggi" imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/alloggi.jpg'} />
+                                    </Card.Item>
+                                    <Card.Section>
+                                        <ActionButton
+                                            onClick={() => redirectToLink("https://t.me/joinchat/xJP5VPIBboxiNjI0")}
                                             iconProps={telegramGroupIcon}
                                             style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '20px', marginBottom: 0 }}
                                             allowDisabledFocus>
@@ -138,9 +170,9 @@ const HomeView = () => {
                             <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
                                 <Card tokens={cardTokens} style={{ minHeight: '160px' }}>
                                     <Card.Section>
-                                        <Icon iconName="Breakfast" style={{ fontSize: '48px', color: theme.palette.themePrimary, marginTop: '15px' }} />
+                                        <Icon iconName="CoffeeScript" style={{ fontSize: '48px', color: theme.palette.themePrimary, marginTop: '15px' }} />
                                         <Text variant="medium">
-                                            <Link href="https://unimia.studentiunimi.it" target="_blank">unimia.studentiunimi.it</Link>
+                                            <Link href="https://unimia.studentiunimi.it">unimia.studentiunimi.it</Link>
                                         </Text>
                                     </Card.Section>
                                 </Card>
