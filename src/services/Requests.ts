@@ -13,6 +13,8 @@ import Faqs from '../data/Faqs.json';
 import Faq from '../models/Faq';
 import CanMembers from '../data/CanMembers.json';
 import CanMember from '../models/CanMember';
+import Rules from '../data/Rules.json';
+import Rule from '../models/Rule';
 
 export const getExtraGroups = () => extraGroups;
 
@@ -35,3 +37,5 @@ export const getCdlsLength = (): number => getAllCdls().length;
 export const getFaqs = (): Faq[] => Faqs;
 
 export const getCanMembers = (): CanMember[] => CanMembers;
+
+export const getRules = (): Rule[] => Rules;
