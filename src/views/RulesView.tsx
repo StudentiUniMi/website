@@ -4,7 +4,7 @@ import { Text, Icon, Callout } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
 import { semibold } from '../fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { DefaultButton, DirectionalHint, Link, mergeStyleSets, Separator } from "@fluentui/react";
+import { DefaultButton, DirectionalHint, IIconProps, Link, mergeStyleSets, Separator } from "@fluentui/react";
 import { useBoolean, useId } from '@fluentui/react-hooks';
 import { getRules } from '../services/Requests'; 
 import Rule from '../models/Rule';
@@ -17,6 +17,7 @@ import parse from 'html-react-parser';
 const Rules = () => {
     const theme = useTheme();
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
+    const icon: IIconProps = { iconName: 'QandA' };
 
     const rulesData: Rule[] = getRules();
 
@@ -54,6 +55,7 @@ const Rules = () => {
                         onClick={toggleIsCalloutVisible}
                         text="Perchè abbiamo introdotto un regolamento?"
                         className={styles.button}
+                        iconProps={icon}
                     />
                     {isCalloutVisible && (
                         <Callout

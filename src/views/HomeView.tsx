@@ -10,13 +10,14 @@ import { redirectToLink } from '../services/Utils';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Icon } from 'office-ui-fabric-react';
 import { initializeIcons } from "@uifabric/icons";
-import { Card, ICardTokens } from "@uifabric/react-cards";
+import { Card, ICardTokens, CardSection } from "@uifabric/react-cards";
 import { PrimaryButton } from 'office-ui-fabric-react';
 import { Separator } from '@fluentui/react/lib/Separator';
 import { ActionButton } from '@fluentui/react/lib/Button';
 import { IIconProps } from '@fluentui/react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { getFaqs } from '../services/Requests'; 
+import { getGroupsLength, getCdlsLength } from '../services/Requests';
 import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper/core';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
@@ -37,8 +38,14 @@ const HomeView = () => {
     const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
     const sectionCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', boxShadow: theme.effects.elevation8 };
     const buttonStyle = { maxWidth: '180px' };
+
     const telegramGroupIcon: IIconProps = { iconName: 'Send' };
     const wikiIcon: IIconProps = { iconName: 'Globe' };
+
+    const groupsNumber = getGroupsLength();
+    const cdlsNumber = getCdlsLength();
+    const numberStyle = { color: theme.palette.themePrimary };
+    const mainCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', boxShadow: theme.effects.elevation8 };
 
     return (
         <Container className="home text-center">
@@ -425,6 +432,49 @@ const HomeView = () => {
                     })
                 }
 
+            </div>
+
+            <div className="mb-3">
+                <div className="mb-4"><Separator><Text variant="large" styles={semibold}>Altre informazioni</Text></Separator></div>
+
+                <Row className="justify-content-center">
+                    <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
+                        <Card tokens={cardTokens} style={mainCard} className="justify-content-center text-center">
+                            <CardSection>
+                                <Icon iconName="UserOptional" style={iconStyle} />
+                                <Text variant="large" className="mt-0">
+                                    Abbiamo più di<br />
+                                    <Text variant="xLarge" style={numberStyle}>2.000</Text> <br />
+                                    utenti
+                                </Text>
+                            </CardSection>
+                        </Card>
+                    </Col>
+                    <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
+                        <Card tokens={cardTokens} style={mainCard} className="justify-content-center text-center">
+                            <CardSection>
+                                <Icon iconName="PeopleAlert" style={iconStyle} />
+                                <Text variant="large" className="mt-0">
+                                    Abbiamo<br />
+                                    <Text variant="xLarge" style={numberStyle}>{groupsNumber}</Text> <br />
+                                    gruppi telegram
+                                </Text>
+                            </CardSection>
+                        </Card>
+                    </Col>
+                    <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
+                        <Card tokens={cardTokens} style={mainCard} className="justify-content-center text-center">
+                            <CardSection>
+                                <Icon iconName="CityNext" style={iconStyle} />
+                                <Text variant="large" className="mt-0">
+                                    Copriamo<br />
+                                    <Text variant="xLarge" style={numberStyle}>{cdlsNumber}</Text> <br />
+                                    corsi di laurea
+                                </Text>
+                            </CardSection>
+                        </Card>
+                    </Col>
+                </Row>
             </div>
 
         </Container >
