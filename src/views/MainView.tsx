@@ -11,18 +11,22 @@ import { CookiesProvider, useCookies } from 'react-cookie';
 const MainView = () => {
   let [cookies, ] = useCookies();
   let [theme, setTheme] = React.useState(cookies["theme"] === "dark");
-  let [, setPalette] = React.useState(cookies["paletteID"]);
+  let [palette, setPalette] = React.useState(cookies["paletteID"]);
 
   let [lightTheme, setLightTheme] = React.useState(ThemesInizialization(cookies["paletteID"])[0]);
   let [darkTheme, setDarkTheme] = React.useState(ThemesInizialization(cookies["paletteID"])[1]);
 
-  const changeTheme = () => setTheme(!theme);
+  const changeTheme = () => {
+    setTheme(!theme);
+    if (!theme) setLightTheme(ThemesInizialization(palette)[0]); 
+    else { setDarkTheme(ThemesInizialization(palette)[1]); }
+  }
 
   const changePalette = (id: string): void => {
     setPalette(id);
-    setLightTheme(ThemesInizialization(id)[0]); 
-    setDarkTheme(ThemesInizialization(id)[1]);
-  }
+    if (!theme) setLightTheme(ThemesInizialization(id)[0]);
+    else { setDarkTheme(ThemesInizialization(id)[1]); }
+  };
 
   return (
     <Router basename={process.env.PUBLIC_URL}>

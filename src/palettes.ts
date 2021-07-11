@@ -88,5 +88,20 @@ export const palettes = [
             themeDark: '#F0A500',
             themeDarker: '#FB743E'
         }
+    },
+    {
+        id: 'g',
+        label: 'summer',
+        palette: {
+            themePrimary: '#FFAB73',
+            themeLighterAlt: '#F0C929',
+            themeLighter: '#FFAEC0',
+            themeLight: '#FFF9B0',
+            themeTertiary: '#94EBCD',
+            themeSecondary: '#FF75A0',
+            themeDarkAlt: '#C9CBFF',
+            themeDark: '#40A8C4',
+            themeDarker: '#FFC93C'
+        }
     }
 ];
