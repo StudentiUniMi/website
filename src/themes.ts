@@ -26,7 +26,7 @@ export const fonts = {
 
 export const effects = {
     elevation8: DefaultEffects.elevation8
-}
+};
 
 export const lightTheme = {
     palette: {

@@ -4,7 +4,7 @@ import { FontSizes } from '@fluentui/theme';
 import { Dropdown, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
 import { Icon, IIconStyles } from 'office-ui-fabric-react/lib/Icon';
 import { useHistory } from "react-router-dom";
-import { IconButton, IIconProps, initializeIcons } from 'office-ui-fabric-react';
+import { IconButton, IIconProps, initializeIcons, Text } from 'office-ui-fabric-react';
 import { TooltipHost, ITooltipHostStyles, TooltipDelay, DirectionalHint } from 'office-ui-fabric-react/lib/Tooltip';
 import { useId } from '@uifabric/react-hooks';
 import { Panel, PanelType } from 'office-ui-fabric-react/lib/Panel';
@@ -16,10 +16,10 @@ import { mergeStyles } from '@fluentui/react';
 import { AnimationStyles } from '@fluentui/theme';
 */
 import { useTheme } from '@fluentui/react-theme-provider';
+import { SwatchColorPicker } from '@fluentui/react/lib/SwatchColorPicker';
+import { semibold } from "../fonts";
 
-const onRenderCaretDown = (): JSX.Element => {
-    return <Icon iconName="List" />;
-};
+const onRenderCaretDown = (): JSX.Element => { return <Icon iconName="List" />; };
 
 export enum ItemsKeys {
     home = "home",
@@ -140,6 +140,20 @@ const HeaderMenu = (props: Props) => {
         props.changeTheme();
     };
 
+    const colorCells = [
+        { id: 'a', label: 'default', color: '#0481e0' },
+        { id: 'b', label: 'blueLight', color: '#00bfff' },
+        { id: 'c', label: 'blueMagenta', color: '#3014D9' },
+        { id: 'd', label: 'red', color: '#D91914' },
+        { id: 'e', label: 'green', color: '#2eb82e' },
+        { id: 'f', label: 'orange', color: '#ff6600' },
+    ];
+
+    const resetColorIcon: IIconProps = { iconName: 'SyncOccurence' };
+    const calloutPropsResetColor = { gapSpace: 10 };
+    const hostStylesResetColor: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
+
+
     return (
         <div className="header-menu" style={{ borderBottom: '1px solid', borderColor: theme.palette.neutralLight }}>
 
@@ -182,6 +196,17 @@ const HeaderMenu = (props: Props) => {
                         disabled={true}
                         theme={theme}
                     />
+                    <div className="mt-3">
+                        <Text variant="medium" styles={semibold}>Seleziona il colore principale  </Text>
+                        <TooltipHost
+                            content="Reset color"
+                            calloutProps={calloutPropsResetColor}
+                            styles={hostStylesResetColor}
+                        >
+                            <IconButton iconProps={resetColorIcon} />
+                        </TooltipHost>
+                        <SwatchColorPicker columnCount={6} cellShape={'square'} colorCells={colorCells} />
+                    </div>
                 </Panel>
             </div>
 
