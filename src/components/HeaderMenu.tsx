@@ -46,7 +46,7 @@ const languageOptions: IDropdownOption[] = [
     { key: 'ENG', text: 'Inglese', data: { icon: 'Print' } }
 ];
 
-interface Props { changeTheme: () => void };
+interface Props { changeTheme: () => void, changePalette: (id: string) => void };
 initializeIcons();
 
 const HeaderMenu = (props: Props) => {
@@ -181,9 +181,9 @@ const HeaderMenu = (props: Props) => {
                             calloutProps={calloutPropsResetColor}
                             styles={hostStylesResetColor}
                         >
-                            <IconButton iconProps={resetColorIcon} onClick={() => setCookie("paletteID", 'a')} />
+                            <IconButton iconProps={resetColorIcon} onClick={() => { setCookie("paletteID", 'a'); props.changePalette('a'); }} />
                         </TooltipHost>
-                        <SwatchColorPicker selectedId={cookies["paletteID"]} columnCount={6} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => setCookie("paletteID", id)} />
+                        <SwatchColorPicker selectedId={cookies["paletteID"]} columnCount={6} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => { setCookie("paletteID", id); props.changePalette(id!); }} />
                     </div>
                 </Panel>
             </div>
