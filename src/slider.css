@@ -15,6 +15,10 @@
   align-items: center;
 }
 
+.swiper-pagination-bullet-active {
+  background: #464646;
+}
+
 .swiper-button-next:after,
 .swiper-container-rtl .swiper-button-prev:after {
   font-family: "Consolas";
@@ -39,6 +43,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #464646;
 }
 
 .swiper-slide img {
