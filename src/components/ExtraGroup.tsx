@@ -8,6 +8,7 @@ import { ActionButton } from '@fluentui/react/lib/Button';
 import { IIconProps } from '@fluentui/react';
 import { redirectToLink } from '../services/Utils';
 import Chip from '@material-ui/core/Chip';
+import { semibold } from '../fonts';
 
 initializeIcons();
 
@@ -28,7 +29,7 @@ const ExtraGroupView = (props: Props) => {
     return (
         <Card tokens={cardTokens}>
             <Card.Item>
-                { data.image === "" ? <Persona text={data.name} /> : <Persona text={data.name} imageUrl={ process.env.PUBLIC_URL + '/extra_groups_images/' + data.image } /> }
+                {data.image === "" ? <Persona text={data.name} onRenderPrimaryText={() => <Text styles={semibold}>{data.name}</Text>} /> : <Persona text={data.name} onRenderPrimaryText={() => <Text styles={semibold}>{data.name}</Text>} imageUrl={ process.env.PUBLIC_URL + '/extra_groups_images/' + data.image } /> }
             </Card.Item>
             <Card.Section>
                 <Text styles={descriptionTextStyles}>
