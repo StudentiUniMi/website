@@ -39,7 +39,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--swiper-navigation-color, var(--swiper-theme-color));
 }
 
 .swiper-slide img {

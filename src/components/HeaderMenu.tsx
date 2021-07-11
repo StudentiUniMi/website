@@ -108,7 +108,7 @@ const HeaderMenu = (props: Props) => {
 
     const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }));
 
-    // Panel and components settings
+    /* Panel and components settings */
     const tooltipId = useId('tooltip');
     const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
     const settingsIcon: IIconProps = { iconName: 'Settings', styles: { root: { fontSize: '18px' } } };
@@ -124,17 +124,9 @@ const HeaderMenu = (props: Props) => {
         props.changeTheme();
     };
 
+    /* Theme palette code */
     if (cookies["paletteID"] === undefined) { setCookie("paletteID", "a"); }
-
-    const colorCells = [
-        { id: 'a', label: 'default', color: palettes.find(x => x.label === 'default')?.palette.themePrimary },
-        { id: 'b', label: 'blueLight', color: palettes.find(x => x.label === 'blueLight')?.palette.themePrimary },
-        { id: 'c', label: 'blueMagenta', color: palettes.find(x => x.label === 'blueMagenta')?.palette.themePrimary },
-        { id: 'd', label: 'red', color: palettes.find(x => x.label === 'red')?.palette.themePrimary },
-        { id: 'e', label: 'green', color: palettes.find(x => x.label === 'green')?.palette.themePrimary },
-        { id: 'f', label: 'orange', color: palettes.find(x => x.label === 'orange')?.palette.themePrimary },
-    ];
-
+    const colorCells: any[] = palettes.map(x => ({ id: x.id, label: x.label, color: x.palette?.themePrimary }));
     const resetColorIcon: IIconProps = { iconName: 'SyncOccurence' };
     const calloutPropsResetColor = { gapSpace: 10 };
     const hostStylesResetColor: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
@@ -189,7 +181,7 @@ const HeaderMenu = (props: Props) => {
                             calloutProps={calloutPropsResetColor}
                             styles={hostStylesResetColor}
                         >
-                            <IconButton iconProps={resetColorIcon} onClick={() => cookies["paletteID"] !== 'a' ? setCookie("paletteID", 'a') : () => {}} /> {/* avoid spamming */}
+                            <IconButton iconProps={resetColorIcon} onClick={() => setCookie("paletteID", 'a')} />
                         </TooltipHost>
                         <SwatchColorPicker selectedId={cookies["paletteID"]} columnCount={6} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => setCookie("paletteID", id)} />
                     </div>

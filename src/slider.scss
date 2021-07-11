@@ -14,9 +14,6 @@
     align-items: center;
 }
 
-.swiper-pagination-bullets {
-}
-
 .swiper-button-next:after,
 .swiper-container-rtl .swiper-button-prev:after {
     font-family: 'Consolas';
@@ -41,7 +38,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--swiper-navigation-color, var(--swiper-theme-color));
 }
 
 .swiper-slide img { // Delete this if unnecessary

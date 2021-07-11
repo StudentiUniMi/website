@@ -26,10 +26,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 SwiperCore.use([Pagination, Navigation, Autoplay]);
 initializeIcons();
-const cardTokens: ICardTokens = { childrenMargin: 12 };
-const logoFileName = 'unimi500.png';
-const logoProperties = { width: '150px', height: '150px', display: 'inline-block' };
-const wikiPic = { width: '130px', height: '130px', marginTop: '5px', marginBottom: '5px', marginLeft: 'auto', marginRight: 'auto' };
 
 const HomeView = () => {
     var theme = useTheme();
@@ -38,9 +34,13 @@ const HomeView = () => {
     const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
     const sectionCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', boxShadow: theme.effects.elevation8 };
     const buttonStyle = { maxWidth: '180px' };
+    const cardTokens: ICardTokens = { childrenMargin: 12 };
+    const logoFileName = 'unimi500.png';
+    const logoProperties = { width: '150px', height: '150px', display: 'inline-block' };
+    const wikiPic = { width: '130px', height: '130px', marginTop: '5px', marginBottom: '5px', marginLeft: 'auto', marginRight: 'auto' };
 
-    const telegramGroupIcon: IIconProps = { iconName: 'Send' };
-    const wikiIcon: IIconProps = { iconName: 'Globe' };
+    const telegramGroupIcon: IIconProps = { iconName: 'Send', theme: theme };
+    const wikiIcon: IIconProps = { iconName: 'Globe', theme: theme };
 
     const groupsNumber = getGroupsLength();
     const cdlsNumber = getCdlsLength();
@@ -49,14 +49,13 @@ const HomeView = () => {
 
     return (
         <Container className="home text-center">
-
             <div className="info-section mb-4">
                 <Image id="logo" className="mb-2"
                     src={process.env.PUBLIC_URL + '/logo/' + logoFileName}
                     alt='Network logo'
                     style={logoProperties}
                 />
-                <div className="mb-2"><Text variant="xLarge">Benvenuto nel sito web del <Text className="homeIcon" variant="xLarge">Network Studenti UniMi</Text> !</Text></div>
+                <div className="mb-2"><Text variant="xLarge">Benvenuto nel sito web del <Text style={{color: theme.palette.themePrimary}} variant="xLarge">Network Studenti UniMi</Text> !</Text></div>
                 <div><Text variant="large">La nostra missione è organizzare le informazioni dell'Università degli studi di Milano e renderle accessibili a tutti.</Text></div>
             </div>
 
@@ -218,7 +217,7 @@ const HomeView = () => {
                                 <div><i className="fas fa-comment-dots homeIcon" style={homeIconStyle}></i></div>
                                 <Text variant="medium">
                                     Entra nel gruppo telegram principale per eventuali discussioni e chiarimenti riguardo il network.
-                        </Text>
+                                </Text>
                                 <div className="justify-content-center">
                                     <PrimaryButton text="Gruppo telegram" className="text-decoration-none" onClick={() => redirectToLink("https://t.me/joinchat/VswKeO2D6soL3lcj")} allowDisabledFocus style={buttonStyle} />
                                 </div>
@@ -232,7 +231,7 @@ const HomeView = () => {
                                 <div><i className="fab fa-discord homeIcon" style={homeIconStyle}></i></div>
                                 <Text variant="medium">
                                     Entra nel nostro server discord per scambiare informazioni con altri studenti e conoscere nuove persone!
-                            </Text>
+                                </Text>
                                 <div className="justify-content-center">
                                     <PrimaryButton text="Server discord" className="text-decoration-none" onClick={() => redirectToLink("https://discord.gg/SwPzAkv4A4")} allowDisabledFocus style={buttonStyle} />
                                 </div>

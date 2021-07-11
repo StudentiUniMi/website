@@ -5,12 +5,13 @@ import HeaderMenu from "../components/HeaderMenu";
 import Footer from "../components/Footer";
 import ContentView from "./ContentView";
 import { ThemeProvider } from '@fluentui/react-theme-provider'; 
-import { darkTheme, lightTheme } from '../themes';
+import { ThemesInizialization } from '../themes';
 import { CookiesProvider, useCookies } from 'react-cookie';
 
 const MainView = () => {
   let [cookies, ] = useCookies();
   let [theme, setTheme] = React.useState(cookies["theme"] === "dark");
+  let [lightTheme, darkTheme] = ThemesInizialization(cookies["paletteID"]);
 
   const changeTheme = () => setTheme(!theme);
   return (
