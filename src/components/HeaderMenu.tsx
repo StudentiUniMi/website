@@ -11,13 +11,10 @@ import { Panel, PanelType } from 'office-ui-fabric-react/lib/Panel';
 import { useBoolean } from '@uifabric/react-hooks';
 import { Toggle } from '@fluentui/react';
 import { useCookies } from "react-cookie";
-/*
-import { mergeStyles } from '@fluentui/react';
-import { AnimationStyles } from '@fluentui/theme';
-*/
 import { useTheme } from '@fluentui/react-theme-provider';
 import { SwatchColorPicker } from '@fluentui/react/lib/SwatchColorPicker';
 import { semibold } from "../fonts";
+import { palettes } from '../palettes';
 
 const onRenderCaretDown = (): JSX.Element => { return <Icon iconName="List" />; };
 
@@ -55,7 +52,7 @@ initializeIcons();
 const HeaderMenu = (props: Props) => {
     var theme = useTheme();
     const history = useHistory();
-    const [cookies, setCookie] = useCookies(["theme"]);
+    const [cookies, setCookie] = useCookies();
 
     const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
     const dropdownStyles: Partial<IDropdownStyles> = {
@@ -92,19 +89,11 @@ const HeaderMenu = (props: Props) => {
 
     let [path, isCorrect] = getPath();
     
-    /*
-    const animationFadeOutClass = mergeStyles(AnimationStyles.slideUpOut10);
-    const animationFadeInClass = mergeStyles(AnimationStyles.slideUpIn10);
-    */
+
     const [selectedKey, setSelectedKey] = React.useState(isCorrect ? path as ItemsKeys : ItemsKeys.home);
     
     const handlePivotLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
         if (item!.props.itemKey !== selectedKey) {
-            /*
-            let main = document.getElementsByClassName("content")[0];
-            main.classList.remove(animationFadeInClass);
-            setTimeout(() => main.classList.add(animationFadeInClass), 0);
-            */
             setSelectedKey(item!.props.itemKey! as ItemsKeys);
             history.push(`/${item!.props.itemKey!}/`);
         }
@@ -112,11 +101,6 @@ const HeaderMenu = (props: Props) => {
 
     const onDropdownValueChange = (event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
         if (item!.key !== selectedKey) {
-            /*
-            let main = document.getElementsByClassName("content")[0];
-            main.classList.remove(animationFadeInClass);
-            setTimeout(() => main.classList.add(animationFadeInClass), 0);
-            */
             setSelectedKey(item!.key! as ItemsKeys);
             history.push(`/${item!.key! as string}/`);
         }
@@ -140,13 +124,15 @@ const HeaderMenu = (props: Props) => {
         props.changeTheme();
     };
 
+    if (cookies["paletteID"] === undefined) { setCookie("paletteID", "a"); }
+
     const colorCells = [
-        { id: 'a', label: 'default', color: '#0481e0' },
-        { id: 'b', label: 'blueLight', color: '#00bfff' },
-        { id: 'c', label: 'blueMagenta', color: '#3014D9' },
-        { id: 'd', label: 'red', color: '#D91914' },
-        { id: 'e', label: 'green', color: '#2eb82e' },
-        { id: 'f', label: 'orange', color: '#ff6600' },
+        { id: 'a', label: 'default', color: palettes.find(x => x.label === 'default')?.palette.themePrimary },
+        { id: 'b', label: 'blueLight', color: palettes.find(x => x.label === 'blueLight')?.palette.themePrimary },
+        { id: 'c', label: 'blueMagenta', color: palettes.find(x => x.label === 'blueMagenta')?.palette.themePrimary },
+        { id: 'd', label: 'red', color: palettes.find(x => x.label === 'red')?.palette.themePrimary },
+        { id: 'e', label: 'green', color: palettes.find(x => x.label === 'green')?.palette.themePrimary },
+        { id: 'f', label: 'orange', color: palettes.find(x => x.label === 'orange')?.palette.themePrimary },
     ];
 
     const resetColorIcon: IIconProps = { iconName: 'SyncOccurence' };
@@ -203,9 +189,9 @@ const HeaderMenu = (props: Props) => {
                             calloutProps={calloutPropsResetColor}
                             styles={hostStylesResetColor}
                         >
-                            <IconButton iconProps={resetColorIcon} />
+                            <IconButton iconProps={resetColorIcon} onClick={() => cookies["paletteID"] !== 'a' ? setCookie("paletteID", 'a') : () => {}} /> {/* avoid spamming */}
                         </TooltipHost>
-                        <SwatchColorPicker columnCount={6} cellShape={'square'} colorCells={colorCells} />
+                        <SwatchColorPicker selectedId={cookies["paletteID"]} columnCount={6} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => setCookie("paletteID", id)} />
                     </div>
                 </Panel>
             </div>

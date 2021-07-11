@@ -1,6 +1,8 @@
 import { FontSizes } from '@fluentui/theme';
 import { FontWeights } from 'office-ui-fabric-react';
 import { DefaultEffects } from '@fluentui/react';
+import { useCookies } from 'react-cookie';
+import { palettes } from './palettes';
 
 export const fonts = {
     defaultFontStyle: { fontFamily: 'Monaco, Menlo, Consolas', fontWeight: FontWeights.regular },
