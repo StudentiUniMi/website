@@ -18,13 +18,10 @@ const MainView = () => {
 
   const changeTheme = () => {
     setTheme(!theme);
-  }
+  };
 
   const changePalette = (id: string) => {
     setPalette(id);
-    console.log("--PALETTE CAMBIATA--")
-    console.log("palette passata come parametro: " + id);
-    console.log("palette memorizzata nello stato palette: " + palette)
     setLightTheme(buildLightTheme(id));
     setDarkTheme(buildDarkTheme(id));
   };
