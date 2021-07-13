@@ -4,15 +4,14 @@ import { DefaultEffects } from '@fluentui/react';
 import { palettes } from './palettes';
 
 /**
- * This function returns lightTheme and darkTheme with palette based on paletteID.
+ * This function returns lightTheme with palette based on paletteID.
  * @param {string} paletteID 
- * @return lightTheme, darkTheme
+ * @return lightTheme
  */
-export const ThemesInizialization = (paletteID: string) => {
+export const buildLightTheme = (paletteID: string) => {
     const subsetPalette: any = palettes.find(x => x.id === paletteID)?.palette;
-    let lightTheme:any, darkTheme:any, x;
 
-    lightTheme = {
+    let lightTheme: any = {
         palette: {
             neutralLighterAlt: '#f3f2f1',
             neutralLighter: '#efeeed',
@@ -31,11 +30,20 @@ export const ThemesInizialization = (paletteID: string) => {
         fonts: fonts
     };
 
+    for (var x in subsetPalette) { lightTheme.palette[x] = subsetPalette[x]; };
 
-    for (x in subsetPalette) { lightTheme.palette[x] = subsetPalette[x]; };
+    return lightTheme;
+}
 
+/**
+ * This function returns darkTheme with palette based on paletteID.
+ * @param {string} paletteID
+ * @return darkTheme
+ */
+export const buildDarkTheme = (paletteID: string) => {
+    const subsetPalette: any = palettes.find(x => x.id === paletteID)?.palette;
 
-    darkTheme = {
+    let darkTheme: any = {
         palette: {
             subsetPalette,
             neutralLighterAlt: '#323232',
@@ -55,9 +63,9 @@ export const ThemesInizialization = (paletteID: string) => {
         fonts: fonts
     };
 
-    for (x in subsetPalette) { darkTheme.palette[x] = subsetPalette[x]; };
+    for (var x in subsetPalette) { darkTheme.palette[x] = subsetPalette[x]; };
 
-    return [lightTheme, darkTheme];
+    return darkTheme;
 }
 
 export const fonts = {

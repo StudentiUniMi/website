@@ -5,7 +5,7 @@ import HeaderMenu from "../components/HeaderMenu";
 import Footer from "../components/Footer";
 import ContentView from "./ContentView";
 import { ThemeProvider } from '@fluentui/react-theme-provider'; 
-import { ThemesInizialization } from '../themes';
+import { buildLightTheme, buildDarkTheme } from '../themes';
 import { CookiesProvider, useCookies } from 'react-cookie';
 
 const MainView = () => {
@@ -13,19 +13,20 @@ const MainView = () => {
   let [theme, setTheme] = React.useState(cookies["theme"] === "dark");
   let [palette, setPalette] = React.useState(cookies["paletteID"]);
 
-  let [lightTheme, setLightTheme] = React.useState(ThemesInizialization(cookies["paletteID"])[0]);
-  let [darkTheme, setDarkTheme] = React.useState(ThemesInizialization(cookies["paletteID"])[1]);
+  let [lightTheme, setLightTheme] = React.useState(buildLightTheme(palette));
+  let [darkTheme, setDarkTheme] = React.useState(buildDarkTheme(palette));
 
   const changeTheme = () => {
     setTheme(!theme);
-    if (!theme) setLightTheme(ThemesInizialization(palette)[0]); 
-    else { setDarkTheme(ThemesInizialization(palette)[1]); }
   }
 
-  const changePalette = (id: string): void => {
+  const changePalette = (id: string) => {
     setPalette(id);
-    if (!theme) setLightTheme(ThemesInizialization(id)[0]);
-    else { setDarkTheme(ThemesInizialization(id)[1]); }
+    console.log("--PALETTE CAMBIATA--")
+    console.log("palette passata come parametro: " + id);
+    console.log("palette memorizzata nello stato palette: " + palette)
+    setLightTheme(buildLightTheme(id));
+    setDarkTheme(buildDarkTheme(id));
   };
 
   return (
