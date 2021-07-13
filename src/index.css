@@ -293,14 +293,6 @@ button:focus,
   display: inline;
 }
 
-.homeIcon {
-  color: #0481e0;
-}
-
-.homeIcon:hover {
-  color: #0362ab !important;
-}
-
 .organization .ms-Persona {
   max-width: 50px;
   margin-left: auto;

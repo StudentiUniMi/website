@@ -9,7 +9,6 @@ interface Props { data: Representative[] };
 
 const RapresentativesList = (props: Props) => {
     var theme = useTheme();
-    const iconStyle: any = { color: theme.palette.themePrimary };
     return (
         <Row className="people-list text-center">
             {props.data.map((x,i) => 
@@ -18,7 +17,7 @@ const RapresentativesList = (props: Props) => {
                         ( () => { 
                             var primaryText : any; 
                             var imageUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${x.user_id}.png`;
-                            if (x.username !== "") primaryText = (<><Icon iconName="Send" className="homeIcon" styles={iconStyle} />&nbsp;<Link href={`https://t.me/${x.username}`}>{`${x.name ?? ""} ${x.surname ?? ""}`}</Link></>); 
+                            if (x.username !== "") primaryText = (<><Icon iconName="Send" style={{ color: theme.palette.themePrimary}} />&nbsp;<Link href={`https://t.me/${x.username}`}>{`${x.name ?? ""} ${x.surname ?? ""}`}</Link></>); 
                             else { primaryText = `${x.name ?? ""} ${x.surname ?? ""}`};
                             return <Persona imageUrl={imageUrl} onRenderPrimaryText={() => primaryText} text={`${x.name ?? ""} ${x.surname ?? ""}`} secondaryText={x.cdl} size={PersonaSize.size40} />
                         })()

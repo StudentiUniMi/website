@@ -14,7 +14,8 @@
     align-items: center;
 }
 
-.swiper-pagination-bullets {
+.swiper-pagination-bullet-active {
+    background: #464646;
 }
 
 .swiper-button-next:after,
@@ -41,7 +42,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--swiper-navigation-color, var(--swiper-theme-color));
+    color: #464646;
 }
 
 .swiper-slide img { // Delete this if unnecessary

@@ -1,10 +1,10 @@
 import React from "react";
 import { FontSizes } from '@fluentui/theme';
-import { Text, Icon, Callout } from 'office-ui-fabric-react';
+import { Text, Icon, Callout, Link } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
 import { semibold } from '../fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { DefaultButton, DirectionalHint, IIconProps, Link, mergeStyleSets, Separator } from "@fluentui/react";
+import { DefaultButton, DirectionalHint, IIconProps, mergeStyleSets, Separator } from "@fluentui/react";
 import { useBoolean, useId } from '@fluentui/react-hooks';
 import { getRules } from '../services/Requests'; 
 import Rule from '../models/Rule';

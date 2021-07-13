@@ -29,7 +29,7 @@ const AdminsList = (props: Props) => {
                         var imageUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${x.user_id}.png`;
                         if (x.year !== "") var secondaryText = `${x.year} Anno`; 
                         else { secondaryText = ""}
-                        return <Persona imageUrl={imageUrl} onRenderPrimaryText={() => (<><Icon iconName="Send" className="homeIcon"/>&nbsp;<Link href={`https://t.me/${x.username}`}>{`${x.username ?? ""}`}</Link></>)} text={`@${x.username}` ?? ""} secondaryText={secondaryText} size={PersonaSize.size40} />
+                        return <Persona imageUrl={imageUrl} onRenderPrimaryText={() => (<><Icon iconName="Send" style={{ color: theme.palette.themePrimary }}/>&nbsp;<Link href={`https://t.me/${x.username}`}>{`${x.username ?? ""}`}</Link></>)} text={`@${x.username}` ?? ""} secondaryText={secondaryText} size={PersonaSize.size40} />
                     })()}
                 </Col>
                 ) : <div className="text-center">
