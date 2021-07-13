@@ -48,14 +48,18 @@ const onRenderTitle = (options?: IDropdownOption[]): JSX.Element => {
 
 const CoursesView = () => {
     var theme = useTheme();
-    const history = useHistory();
+    let history = useHistory();
+    let didMount = React.useRef(false);
+    const [selectedDepartment, setSelectedDepartment] = React.useState<string>('');
+    const [selectedCdl, setSelectedCdl] = React.useState<string>('');
+
     const dropdownStyles = { dropdown: { color: theme.palette.neutralPrimary }, dropdownItems: { color: theme.palette.neutralPrimary } };
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
 
     const departmentSelectionChanged = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IDropdownOption): void => {
         setSelectedDepartment(option?.key as string ?? '');
         setSelectedCdl(''); // Per resettare il corso di laurea quando cambio dipartimento, altrimenti rimane la lista dei gruppi precedente
-        history.push(`/courses`)
+        history.push(`/courses/`)
     };
 
     const cdlSelectionChanged = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IDropdownOption): void => {
@@ -63,7 +67,6 @@ const CoursesView = () => {
         history.push(`/courses/${option?.key as string}`);
     };
 
-    let didMount = React.useRef(false);
 
     let departments = getDepartments();
 
@@ -76,12 +79,10 @@ const CoursesView = () => {
             let initialDepartment = possibleDepartments.length > 0 ? possibleDepartments[0].id : '';
             setSelectedCdl(initialCdl);
             setSelectedDepartment(initialDepartment);
-            history.push(`/courses/${initialCdl}`);
+            //history.push(`/courses/${initialCdl}`); it is manuele's fault if the router didn't work correctly. noob
         }
     }, [history, departments]);
 
-    const [selectedDepartment, setSelectedDepartment] = React.useState<string>('');
-    const [selectedCdl, setSelectedCdl] = React.useState<string>('');
 
     let departmentOptions: IDropdownOption[] = departments.map(x => ({key: x.id, text: x.name ?? "", data: {icon:x.icon}, disabled: x.cdls.length === 0}));
     let cdls: Degree[] = [];

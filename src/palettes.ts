@@ -31,7 +31,7 @@ export const palettes = [
     },
     {
         id: 'c',
-        label: 'blueMagenta',
+        label: 'purple',
         palette: {
             themePrimary: '#4747d1',
             themeLighterAlt: '#f4f9fe',
