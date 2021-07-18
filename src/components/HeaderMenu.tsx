@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { IPivotStyles, Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
 import { FontSizes } from '@fluentui/theme';
 import { Dropdown, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
@@ -9,7 +9,7 @@ import { TooltipHost, ITooltipHostStyles, TooltipDelay, DirectionalHint } from '
 import { useId } from '@uifabric/react-hooks';
 import { Panel, PanelType } from 'office-ui-fabric-react/lib/Panel';
 import { useBoolean } from '@uifabric/react-hooks';
-import { Coachmark, DefaultButton, IButtonProps, TeachingBubbleContent, Toggle } from '@fluentui/react';
+import { Coachmark, IButtonProps, TeachingBubbleContent, Toggle } from '@fluentui/react';
 import { useCookies } from "react-cookie";
 import { useTheme } from '@fluentui/react-theme-provider';
 import LocalizationService from "../services/LocalizationService";
@@ -28,8 +28,9 @@ export enum ItemsKeys {
     contributors = "contributors"
 };
 
-interface Props { changeTheme: () => void, changePalette: (id: string) => void, changeLanguage: (key: string) => void };
 initializeIcons();
+
+interface Props { changeTheme: () => void, changePalette: (id: string) => void, changeLanguage: (key: string) => void };
 
 const HeaderMenu = (props: Props) => {
     var theme = useTheme();
@@ -69,7 +70,15 @@ const HeaderMenu = (props: Props) => {
 
     if (cookies["palette"] === undefined) { setCookie("palette", "a", { path: "/" }); }
 
-    if (cookies["firstVisit"] === undefined) { setCookie("firstVisit", true, { path: "/" }); }
+    // useEffect to avoid rendering loops
+    useEffect(() => { 
+        if (cookies["firstVisit"] === undefined) { 
+            setTimeout(() => {
+                showCoachmark();
+                setCookie("firstVisit", false, { path: "/" } ); 
+            }, 1000);
+        }
+    });
 
     const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
         [ItemsKeys.home, locale.headerMenuItems.home],
@@ -158,8 +167,6 @@ const HeaderMenu = (props: Props) => {
                 >
                     {Object.values(ItemsKeys).map((x, i) => <PivotItem key={i} headerText={texts.get(x)} style={{ fontSize: FontSizes.size24 }} itemKey={x} />)}
                 </Pivot>
-
-                <DefaultButton onClick={showCoachmark} text={isCoachmarkVisible ? 'Hide coachmark' : 'Show coachmark'} />
 
                 <TooltipHost content={locale.settingsPanel.settings} id={tooltipId} calloutProps={calloutProps} styles={hostStyles} delay={TooltipDelay.zero} directionalHint={DirectionalHint.leftCenter}>
                     <div ref={target} style={{ position: 'absolute', right: '35px', top: '108px'}}></div><IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStylePivot} id={settingsIconId} />

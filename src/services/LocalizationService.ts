@@ -269,7 +269,7 @@ class LocalizationService {
                                 button: 'Wiki'
                             },
                             card2: {
-                                text: 'Use this page to easily reach all the official services provided by UniMi',
+                                text: 'Use this page to easily reach all the official services provided by UniMi.',
                                 button: 'Services'
                             },
                             card3: {

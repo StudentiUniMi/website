@@ -6,7 +6,6 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { semibold } from '../fonts';
 import { Image } from 'office-ui-fabric-react/lib/Image';
-import { redirectToLink } from '../services/Utils';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Icon } from 'office-ui-fabric-react';
 import { initializeIcons } from "@uifabric/icons";
