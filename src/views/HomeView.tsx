@@ -82,7 +82,9 @@ const HomeView = () => {
                                     </Card.Item>
                                     <Card.Section>
                                         <ActionButton
-                                            onClick={() => redirectToLink("https://t.me/joinchat/jjzrKAOF74s5ZmI0")}
+                                            href="https://t.me/joinchat/jjzrKAOF74s5ZmI0"
+                                            target="_blank"
+                                            className="text-decoration-none"
                                             iconProps={telegramGroupIcon}
                                             style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '20px', marginBottom: 0 }}
                                             allowDisabledFocus>
@@ -115,7 +117,9 @@ const HomeView = () => {
                                     </Card.Item>
                                     <Card.Section>
                                         <ActionButton
-                                            onClick={() => redirectToLink("https://t.me/joinchat/xJP5VPIBboxiNjI0")}
+                                            href="https://t.me/joinchat/xJP5VPIBboxiNjI0"
+                                            target="_blank"
+                                            className="text-decoration-none"
                                             iconProps={telegramGroupIcon}
                                             style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '20px', marginBottom: 0 }}
                                             allowDisabledFocus>
@@ -147,7 +151,9 @@ const HomeView = () => {
                                             style={wikiPic}
                                         />
                                         <ActionButton
-                                            onClick={() => redirectToLink("https://wiki.studentiunimi.it/")}
+                                            href="https://wiki.studentiunimi.it/"
+                                            target="_blank"
+                                            className="text-decoration-none"
                                             iconProps={wikiIcon}
                                             style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 0, marginBottom: 0 }}
                                             allowDisabledFocus>
