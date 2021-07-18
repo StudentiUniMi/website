@@ -4,7 +4,7 @@ import { FontSizes } from '@fluentui/theme';
 import { Dropdown, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
 import { Icon, IIconStyles } from 'office-ui-fabric-react/lib/Icon';
 import { useHistory } from "react-router-dom";
-import { IconButton, IIconProps, initializeIcons } from 'office-ui-fabric-react';
+import { IconButton, IIconProps, initializeIcons, Text } from 'office-ui-fabric-react';
 import { TooltipHost, ITooltipHostStyles, TooltipDelay, DirectionalHint } from 'office-ui-fabric-react/lib/Tooltip';
 import { useId } from '@uifabric/react-hooks';
 import { Panel, PanelType } from 'office-ui-fabric-react/lib/Panel';
@@ -13,10 +13,11 @@ import { Toggle } from '@fluentui/react';
 import { useCookies } from "react-cookie";
 import { useTheme } from '@fluentui/react-theme-provider';
 import LocalizationService from "../services/LocalizationService";
+import { SwatchColorPicker } from '@fluentui/react/lib/SwatchColorPicker';
+import { semibold } from "../fonts";
+import { palettes } from '../palettes';
 
-const onRenderCaretDown = (): JSX.Element => {
-    return <Icon iconName="List" />;
-};
+const onRenderCaretDown = (): JSX.Element => { return <Icon iconName="List" />; };
 
 export enum ItemsKeys {
     home = "home",
@@ -30,14 +31,14 @@ export enum ItemsKeys {
 };
 
 
-interface Props { changeTheme: () => void };
+interface Props { changeTheme: () => void, changePalette: (id: string) => void };
 initializeIcons();
 
 const HeaderMenu = (props: Props) => {
     var theme = useTheme();
     const history = useHistory();
-    const [cookies, setCookie] = useCookies(["theme", "language"]);
     const locale = LocalizationService.strings();
+    const [cookies, setCookie] = useCookies();
 
     const languageOptions: IDropdownOption[] = [
         { key: 'it', text: locale.settingsPanel.italian },
@@ -92,19 +93,11 @@ const HeaderMenu = (props: Props) => {
 
     let [path, isCorrect] = getPath();
     
-    /*
-    const animationFadeOutClass = mergeStyles(AnimationStyles.slideUpOut10);
-    const animationFadeInClass = mergeStyles(AnimationStyles.slideUpIn10);
-    */
+
     const [selectedKey, setSelectedKey] = React.useState(isCorrect ? path as ItemsKeys : ItemsKeys.home);
     
     const handlePivotLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
         if (item!.props.itemKey !== selectedKey) {
-            /*
-            let main = document.getElementsByClassName("content")[0];
-            main.classList.remove(animationFadeInClass);
-            setTimeout(() => main.classList.add(animationFadeInClass), 0);
-            */
             setSelectedKey(item!.props.itemKey! as ItemsKeys);
             history.push(`/${item!.props.itemKey!}/`);
         }
@@ -112,11 +105,6 @@ const HeaderMenu = (props: Props) => {
 
     const onDropdownValueChange = (event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
         if (item!.key !== selectedKey) {
-            /*
-            let main = document.getElementsByClassName("content")[0];
-            main.classList.remove(animationFadeInClass);
-            setTimeout(() => main.classList.add(animationFadeInClass), 0);
-            */
             setSelectedKey(item!.key! as ItemsKeys);
             history.push(`/${item!.key! as string}/`);
         }
@@ -124,7 +112,7 @@ const HeaderMenu = (props: Props) => {
 
     const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }));
 
-    // Panel and components settings
+    /* Panel and components settings */
     const tooltipId = useId('tooltip');
     const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
     const settingsIcon: IIconProps = { iconName: 'Settings', styles: { root: { fontSize: '18px' } } };
@@ -133,12 +121,20 @@ const HeaderMenu = (props: Props) => {
     const settingsIconId = useId('icon');
     const calloutProps = { gapSpace: 0, target: `#${settingsIconId}`, };
 
-    if (cookies["theme"] === undefined) { setCookie("theme", "light"); }
+    if (cookies["theme"] === undefined) { setCookie("theme", "light", { path: "/" }); }
 
     const themeToggled = () => {
-        setCookie("theme", cookies["theme"] === "dark" ? "light" : "dark");
+        setCookie("theme", cookies["theme"] === "dark" ? "light" : "dark", { path: "/" });
         props.changeTheme();
     };
+
+    /* Theme palette code */
+    if (cookies["paletteID"] === undefined) { setCookie("paletteID", "a", { path: "/" }); }
+    const colorCells: any[] = palettes.map(x => ({ id: x.id, label: x.label, color: x.palette?.themePrimary }));
+    const resetColorIcon: IIconProps = { iconName: 'SyncOccurence' };
+    const calloutPropsResetColor = { gapSpace: 10 };
+    const hostStylesResetColor: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
+
 
     return (
         <div className="header-menu" style={{ borderBottom: '1px solid', borderColor: theme.palette.neutralLight }}>
@@ -187,6 +183,17 @@ const HeaderMenu = (props: Props) => {
                         }}
                         theme={theme}
                     />
+                    <div className="mt-3">
+                        <Text variant="medium" styles={semibold}>Seleziona il colore principale  </Text>
+                        <TooltipHost
+                            content="Reset color"
+                            calloutProps={calloutPropsResetColor}
+                            styles={hostStylesResetColor}
+                        >
+                            <IconButton iconProps={resetColorIcon} onClick={() => { setCookie("paletteID", 'a', { path: "/" }); props.changePalette('a'); }} />
+                        </TooltipHost>
+                        <SwatchColorPicker selectedId={cookies["paletteID"]} columnCount={7} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => { setCookie("paletteID", id, { path: "/" }); props.changePalette(id!); }} />
+                    </div>
                 </Panel>
             </div>
 

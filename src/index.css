@@ -29,21 +29,6 @@ main {
   min-height: 100%;
 }
 
-/* Corbel font import (Fix Issue #59) */
-@font-face {
-  font-family: "Corbel";
-  src: url("fonts/Corbel/Corbel.woff2") format("woff2"), url("fonts/Corbel/Corbel.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "CorbelBold";
-  src: url("fonts/Corbel_Bold/Corbel-Bold.woff2") format("woff2"), url("fonts/Corbel_Bold/Corbel-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
 /* Fix bootstrap outline when click */
 a:active,
 a:focus,
@@ -199,13 +184,13 @@ button:focus,
     text-align: center;
   }
 
-  .representatives .people-list .col-xs-12, .administrators .admin-list .col-xs-12 {
+  .representatives .people-list .col-xs-12, .courses .admin-list .col-xs-12 {
     margin-left: 15%;
     max-width: 250px;
     text-align: center;
   }
 
-  .representatives .people-list, .administrators .admin-list {
+  .representatives .people-list, .courses .admin-list {
     justify-content: center;
   }
 
@@ -275,6 +260,10 @@ button:focus,
   padding-left: 0 !important;
 }
 
+.rules .ms-Button-flexContainer {
+  margin: 10px;
+}
+
 .courses-filter-options .ms-MessageBar-text {
   justify-content: center !important;
   text-align: center !important;
@@ -302,10 +291,6 @@ button:focus,
 .ms-TooltipHost {
   /* For showing tooltip correctly on settings icon */
   display: inline;
-}
-
-.homeIcon:hover {
-  color: #0362ab !important;
 }
 
 .organization .ms-Persona {

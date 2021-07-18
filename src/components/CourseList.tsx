@@ -4,16 +4,16 @@ import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 import { Container } from 'react-bootstrap';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
-import { Text } from "office-ui-fabric-react/lib/Text";
+import { Text, Icon } from "office-ui-fabric-react/";
+import { semibold } from '../fonts';
 import { FontSizes } from '@fluentui/theme';
-import { MessageBar } from 'office-ui-fabric-react';
+import { Separator } from '@fluentui/react/lib/Separator';
+import { useTheme } from '@fluentui/react-theme-provider';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import CourseItem from './CourseItem';
 import Course from '../models/Course';
 import Degree from '../models/Degree';
-import { useCookies } from "react-cookie";
-import LocalizationService from "../services/LocalizationService";
 
 interface Props { cdl?: Degree };
 
@@ -41,8 +41,7 @@ const yearMasterDegreeFilterOptions: IDropdownOption[] = [
 ];
 
 const CourseList= (props: Props) => {
-    const [cookies, setCookie] = useCookies(["theme", "language"]);
-    const locale = LocalizationService.strings();
+    var theme = useTheme();
     const columnCount = React.useRef(0);
     const rowHeight = React.useRef(0);
     const rowsPerPage = React.useRef(0);
@@ -119,7 +118,15 @@ const CourseList= (props: Props) => {
     }
 
     return (       
-        <Container className="courses-filter-options">
+        <Container className="courses-filter-options mb-4">
+            <div className='text-center mb-4'>
+                <Separator>
+                    <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
+                    <Text variant="medium" styles={semibold} style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size18 }}> Gruppi disponibili </Text>
+                    <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
+                </Separator>
+            </div> 
+
             <FocusZone>
                 <div className="mb-4">
                     <Row className="justify-content-center">
@@ -150,10 +157,8 @@ const CourseList= (props: Props) => {
                 </div>
 
                 {filteredCourses.length === 0 ? 
-                    <div className="justify-content-center" style={{ maxWidth: '400px', marginLeft: 'auto', marginRight: 'auto' }}>
-                        <MessageBar>
-                            <Text style={{ fontSize: FontSizes.size14 }}>Nessun gruppo trovato.</Text>
-                        </MessageBar>
+                    <div className="justify-content-center">
+                        <Text style={{ fontSize: FontSizes.size14, backgroundColor: theme.palette.neutralLighter, padding: '4px' }}><Icon iconName="Info" /> Nessun gruppo trovato.</Text>
                     </div>
                     :
                     <div className="course-list">

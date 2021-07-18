@@ -5,7 +5,7 @@ import { initializeIcons } from "@uifabric/icons";
 import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { semibold } from '../fonts';
-import { Dropdown, IDropdownOption, IDropdownProps } from 'office-ui-fabric-react/lib/Dropdown';
+import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { DropdownMenuItemType } from "@fluentui/react";
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { useTheme } from '@fluentui/react-theme-provider';
@@ -17,6 +17,7 @@ import { getDepartments } from '../services/Requests';
 import { Separator } from '@fluentui/react/lib/Separator';
 import Degree from "../models/Degree";
 import Department from "../models/Department";
+import AdminsList from '../components/AdminsList';
 
 initializeIcons();
 const iconStyles = { marginRight: '8px' };
@@ -45,29 +46,20 @@ const onRenderTitle = (options?: IDropdownOption[]): JSX.Element => {
     );
 };
 
-const onRenderPlaceholder = (props?: IDropdownProps): JSX.Element => {
-    return (
-        <div className="dropdownExample-placeholder">
-            <Icon style={iconStyles} iconName={'SurveyQuestions'} aria-hidden="true" />
-            <span>{props?.placeholder}</span>
-        </div>
-    );
-};
-
 const CoursesView = () => {
     var theme = useTheme();
-    const history = useHistory();
-    const dropdownStyles = { 
-        dropdown: { color: theme.palette.neutralPrimary },
-        dropdownItems: { color: theme.palette.neutralPrimary },
-    };
+    let history = useHistory();
+    let didMount = React.useRef(false);
+    const [selectedDepartment, setSelectedDepartment] = React.useState<string>('');
+    const [selectedCdl, setSelectedCdl] = React.useState<string>('');
 
+    const dropdownStyles = { dropdown: { color: theme.palette.neutralPrimary }, dropdownItems: { color: theme.palette.neutralPrimary } };
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
 
     const departmentSelectionChanged = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IDropdownOption): void => {
         setSelectedDepartment(option?.key as string ?? '');
         setSelectedCdl(''); // Per resettare il corso di laurea quando cambio dipartimento, altrimenti rimane la lista dei gruppi precedente
-        history.push(`/courses`)
+        history.push(`/courses/`)
     };
 
     const cdlSelectionChanged = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IDropdownOption): void => {
@@ -75,7 +67,6 @@ const CoursesView = () => {
         history.push(`/courses/${option?.key as string}`);
     };
 
-    let didMount = React.useRef(false);
 
     let departments = getDepartments();
 
@@ -88,22 +79,20 @@ const CoursesView = () => {
             let initialDepartment = possibleDepartments.length > 0 ? possibleDepartments[0].id : '';
             setSelectedCdl(initialCdl);
             setSelectedDepartment(initialDepartment);
-            history.push(`/courses/${initialCdl}`);
+            //history.push(`/courses/${initialCdl}`); it is manuele's fault if the router didn't work correctly. noob
         }
     }, [history, departments]);
 
-    const [selectedDepartment, setSelectedDepartment] = React.useState<string>('');
-    const [selectedCdl, setSelectedCdl] = React.useState<string>('');
 
     let departmentOptions: IDropdownOption[] = departments.map(x => ({key: x.id, text: x.name ?? "", data: {icon:x.icon}, disabled: x.cdls.length === 0}));
-    let cdls: Degree[] = []
+    let cdls: Degree[] = [];
        
     if (selectedDepartment !=='') {
         let department: Department | undefined = departments.filter(x => x.id === selectedDepartment)[0];
         cdls = department?.cdls ?? [];
     }
     
-    let cdl = cdls.filter(x => x.id === selectedCdl)[0];
+    let cdl: Degree = cdls.filter(x => x.id === selectedCdl)[0] ?? [];
 
     function isTriennale(element: IDropdownOption) {
         let name = String(element.key);
@@ -133,7 +122,6 @@ const CoursesView = () => {
         cdlsOptions.push(...magistrali);
     }
 
-
     return (
         <Container className="courses text-center">
 
@@ -162,7 +150,6 @@ const CoursesView = () => {
                     <Dropdown
                         placeholder="Seleziona un dipartimento"
                         label="Seleziona un dipartimento"
-                        onRenderPlaceholder={onRenderPlaceholder}
                         onRenderTitle={onRenderTitle}
                         onRenderOption={onRenderOption}
                         options={departmentOptions}
@@ -203,17 +190,10 @@ const CoursesView = () => {
                 </Col>
             </Row>
 
-
             <div style={{ display: selectedCdl !== '' ? 'block' : 'none' }}>
-                <DegreeInformations cdl={cdl} />
-                <div className='text-center mb-4'>
-                    <Separator>
-                        <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
-                        <Text variant="medium" styles={semibold} style={{color: theme.palette.themePrimary, fontSize: FontSizes.size18}}> Gruppi disponibili </Text>
-                        <Icon iconName="DoubleChevronDown8" style={{color: theme.palette.themePrimary}} />
-                    </Separator>
-                </div>                
+                <DegreeInformations cdl={cdl!} />
                 <CourseList cdl={cdl} />
+                <AdminsList data={cdl.admins!} />          
             </div>
 
         </Container>
