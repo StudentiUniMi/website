@@ -9,7 +9,7 @@ import { TooltipHost, ITooltipHostStyles, TooltipDelay, DirectionalHint } from '
 import { useId } from '@uifabric/react-hooks';
 import { Panel, PanelType } from 'office-ui-fabric-react/lib/Panel';
 import { useBoolean } from '@uifabric/react-hooks';
-import { Toggle } from '@fluentui/react';
+import { Coachmark, DefaultButton, IButtonProps, TeachingBubbleContent, Toggle } from '@fluentui/react';
 import { useCookies } from "react-cookie";
 import { useTheme } from '@fluentui/react-theme-provider';
 import LocalizationService from "../services/LocalizationService";
@@ -35,6 +35,19 @@ const HeaderMenu = (props: Props) => {
     var theme = useTheme();
     const history = useHistory();
     const [cookies, setCookie] = useCookies();
+    
+    const [isCoachmarkVisible, { setFalse: hideCoachmark, setTrue: showCoachmark }] = useBoolean(false);
+    const buttonProps: IButtonProps = { text: 'Capito!', onClick: hideCoachmark };
+    const target = React.useRef<HTMLDivElement>(null);
+    const [coachmarkPosition] = React.useState<DirectionalHint>(DirectionalHint.leftCenter);
+    const positioningContainerProps = React.useMemo(
+        () => ({
+            directionalHint: coachmarkPosition,
+            doNotLayer: false,
+        }),
+        [coachmarkPosition],
+    );
+
     const tooltipId = useId('tooltip');
     const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
     const settingsIcon: IIconProps = { iconName: 'Settings', styles: { root: { fontSize: '18px' } } };
@@ -44,7 +57,7 @@ const HeaderMenu = (props: Props) => {
     const calloutProps = { gapSpace: 0, target: `#${settingsIconId}`, };
     const onRenderCaretDown = (): JSX.Element => { return <Icon iconName="List" />; };
     
-    if (cookies["language"] === undefined) { setCookie("language", "it", { path: "/" }); }
+    if (cookies['language'] === undefined) { setCookie("language", "it", { path: "/" }); }
     const locale = LocalizationService.strings();
 
     const languageOptions: IDropdownOption[] = [
@@ -55,6 +68,8 @@ const HeaderMenu = (props: Props) => {
     if (cookies["theme"] === undefined) { setCookie("theme", "light", { path: "/" }); }
 
     if (cookies["palette"] === undefined) { setCookie("palette", "a", { path: "/" }); }
+
+    if (cookies["firstVisit"] === undefined) { setCookie("firstVisit", true, { path: "/" }); }
 
     const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
         [ItemsKeys.home, locale.headerMenuItems.home],
@@ -86,6 +101,8 @@ const HeaderMenu = (props: Props) => {
     }, [history.location.pathname]);
 
     let didMount = React.useRef(false);
+    let [path, isCorrect] = getPath();
+    const [selectedKey, setSelectedKey] = React.useState(isCorrect ? path as ItemsKeys : ItemsKeys.home);
 
     React.useEffect(() => {
         if (!didMount.current) {
@@ -100,9 +117,6 @@ const HeaderMenu = (props: Props) => {
         }
     }, [getPath, history]);
 
-    let [path, isCorrect] = getPath();
-    const [selectedKey, setSelectedKey] = React.useState(isCorrect ? path as ItemsKeys : ItemsKeys.home);
-    
     const handlePivotLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
         if (item!.props.itemKey !== selectedKey) {
             setSelectedKey(item!.props.itemKey! as ItemsKeys);
@@ -120,7 +134,8 @@ const HeaderMenu = (props: Props) => {
     const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }));
 
     const themeToggled = () => {
-        setCookie("theme", cookies["theme"] === "dark" ? "light" : "dark", { path: "/" });
+        if (cookies["theme"] === "dark") setCookie("theme", "light", { path: "/" });
+        else { setCookie("theme", "dark", { path: "/" }); }
         props.changeTheme();
     };
 
@@ -144,9 +159,29 @@ const HeaderMenu = (props: Props) => {
                     {Object.values(ItemsKeys).map((x, i) => <PivotItem key={i} headerText={texts.get(x)} style={{ fontSize: FontSizes.size24 }} itemKey={x} />)}
                 </Pivot>
 
+                <DefaultButton onClick={showCoachmark} text={isCoachmarkVisible ? 'Hide coachmark' : 'Show coachmark'} />
+
                 <TooltipHost content={locale.settingsPanel.settings} id={tooltipId} calloutProps={calloutProps} styles={hostStyles} delay={TooltipDelay.zero} directionalHint={DirectionalHint.leftCenter}>
-                    <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStylePivot} id={settingsIconId} />
+                    <div ref={target} style={{ position: 'absolute', right: '35px', top: '108px'}}></div><IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStylePivot} id={settingsIconId} />
                 </TooltipHost>
+
+                {isCoachmarkVisible && (
+                    <Coachmark
+                        target={target.current}
+                        positioningContainerProps={positioningContainerProps}
+                    >
+                        <TeachingBubbleContent
+                            headline="Benvenuto sul nostro sito!"
+                            hasCloseButton
+                            closeButtonAriaLabel={locale.settingsPanel.close}
+                            onDismiss={hideCoachmark}
+                            secondaryButtonProps={buttonProps}
+                        >
+                            Qui puoi trovare alcune impostazioni che ti potrebbero servire.
+                            Per il resto, esplora liberamente i servizi che offriamo! :)
+                        </TeachingBubbleContent>
+                    </Coachmark>
+                )}
 
                 <Panel
                     isLightDismiss
