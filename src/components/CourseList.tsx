@@ -14,6 +14,7 @@ import Row from 'react-bootstrap/Row';
 import CourseItem from './CourseItem';
 import Course from '../models/Course';
 import Degree from '../models/Degree';
+import LocalizationService from "../services/LocalizationService";
 
 interface Props { cdl?: Degree };
 
@@ -42,6 +43,7 @@ const yearMasterDegreeFilterOptions: IDropdownOption[] = [
 
 const CourseList= (props: Props) => {
     var theme = useTheme();
+    const locale = LocalizationService.strings();
     const columnCount = React.useRef(0);
     const rowHeight = React.useRef(0);
     const rowsPerPage = React.useRef(0);
@@ -99,30 +101,20 @@ const CourseList= (props: Props) => {
         setYearFilter((item?.key ?? 0) as number);
     };
 
-    
     // Filters gestion
     let yearFilterOptions = cdl?.is_master ? yearMasterDegreeFilterOptions : yearBachelorDegreeFilterOptions;
-    
     let filteredCourses = courses;
 
-    if (nameFilter !== "") {
-        filteredCourses = filteredCourses.filter(x => x.name?.toLocaleLowerCase()?.includes(nameFilter.toLocaleLowerCase()));
-    }
-
-    if (semesterFilter !== 0) {
-        filteredCourses = filteredCourses.filter(x => x.semestre === semesterFilter);
-    }
-
-    if (yearFilter !== 0) {
-        filteredCourses = filteredCourses.filter(x => x.anno === yearFilter);
-    }
+    if (nameFilter !== "") { filteredCourses = filteredCourses.filter(x => x.name?.toLocaleLowerCase()?.includes(nameFilter.toLocaleLowerCase())); }
+    if (semesterFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.semestre === semesterFilter); }
+    if (yearFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.anno === yearFilter); }
 
     return (       
         <Container className="courses-filter-options mb-4">
             <div className='text-center mb-4'>
                 <Separator>
                     <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
-                    <Text variant="medium" styles={semibold} style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size18 }}> Gruppi disponibili </Text>
+                    <Text variant="medium" styles={semibold} style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size18 }}> {locale.courses.availableGroups} </Text>
                     <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
                 </Separator>
             </div> 
@@ -132,14 +124,14 @@ const CourseList= (props: Props) => {
                     <Row className="justify-content-center">
                         <Col xl={4} lg={4} md={4} sm={12} xs={12}>
                             <TextField
-                                label={'Cerca per nome'}
+                                label={locale.courses.nameFilter}
                                 onChange={onNameFilterChanged}                
                             />
                         </Col>
                         <Col xl={4} lg={4} md={4} sm={12} xs={12}>
                             {
                                 <Dropdown options={yearFilterOptions}
-                                    label={`Cerca per anno`}
+                                    label={locale.courses.yearFilter}
                                     onChange={onYearFilterChanged}
                                     selectedKey={yearFilter}
                                     disabled={ !cdl?.has_years ?? false}
@@ -148,7 +140,7 @@ const CourseList= (props: Props) => {
                         </Col>
                         <Col xl={4} lg={4} md={4} sm={12} xs={12}>
                             <Dropdown options={semesterFilterOptions}
-                                label={`Cerca per semestre`}
+                                label={locale.courses.semesterFilter}
                                 onChange={onSemesterFilterChanged}
                                 selectedKey={semesterFilter}
                             />
@@ -158,7 +150,7 @@ const CourseList= (props: Props) => {
 
                 {filteredCourses.length === 0 ? 
                     <div className="justify-content-center">
-                        <Text style={{ fontSize: FontSizes.size14, backgroundColor: theme.palette.neutralLighter, padding: '4px' }}><Icon iconName="Info" /> Nessun gruppo trovato.</Text>
+                        <Text style={{ fontSize: FontSizes.size14, backgroundColor: theme.palette.neutralLighter, padding: '4px' }}><Icon iconName="Info" /> {locale.courses.groupsNotFound}</Text>
                     </div>
                     :
                     <div className="course-list">

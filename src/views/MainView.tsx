@@ -34,7 +34,7 @@ const MainView = () => {
         <ThemeProvider applyTo="body" theme={theme ? darkTheme : lightTheme}>
           <header>
             <HeaderTitle />
-            <HeaderMenu changeTheme={changeTheme} changePalette={changePalette} />
+            <HeaderMenu changeTheme={changeTheme} changePalette={changePalette} /> {/* Qui ci va un changeLanguage */}
           </header>
           <ContentView/>
           <Footer />

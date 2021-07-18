@@ -13,6 +13,8 @@ import { TooltipHost, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-
 import Contributor from '../models/Contributor';
 import { getContributors } from '../services/Requests'
 import { Separator } from '@fluentui/react/lib/Separator';
+import LocalizationService from "../services/LocalizationService";
+import JsxParser from 'react-jsx-parser';
 
 const cardTokens: ICardTokens = { childrenMargin: 12 };
 const sectionCard = {
@@ -47,6 +49,7 @@ const developers = [
 
 const ContributorsView = () => {
     var theme = useTheme();
+    const locale = LocalizationService.strings();
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const profileIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const contributors: Contributor[] = getContributors();
@@ -56,14 +59,14 @@ const ContributorsView = () => {
 
             <div className="mb-2">
                 <Text variant="large">
-                    Di seguito è possibile trovare tutte le persone che hanno contribuito allo sviluppo del sito web, dei servizi che offre, della wiki, e del network in generale.
+                    {locale.contributors.text1}
                 </Text>
             </div>
 
             <Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} />
 
             <div className="mb-4">
-                <div className="mb-3"><Separator><Text variant="large" styles={semibold}>Manutentori principali</Text></Separator></div>
+                <div className="mb-3"><Separator><Text variant="large" styles={semibold}>{locale.contributors.header1}</Text></Separator></div>
 
                 <Row className="justify-content-center">
                     {
@@ -113,9 +116,9 @@ const ContributorsView = () => {
 
 
             <div className="mb-4">
-                <div className="mb-2"><Separator><Text variant="large" styles={semibold}>Contributori</Text></Separator></div>
+                <div className="mb-2"><Separator><Text variant="large" styles={semibold}>{locale.contributors.header2}</Text></Separator></div>
 
-                <div><Text variant="medium">Hai contribuito allo sviluppo del network e vorresti comparire in questa lista? Scrivi in privato a <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.</Text></div>
+                <div><Text variant="medium"><JsxParser bindings={{ theme: theme }} components={{ Text, Link }} jsx={locale.contributors.text2}/></Text></div>
 
                 <Container className="contributors mb-2 mt-4">
                     <Row className="justify-content-center">

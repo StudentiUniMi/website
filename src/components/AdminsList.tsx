@@ -7,18 +7,20 @@ import { Link, Icon, Text } from 'office-ui-fabric-react';
 import { Separator } from '@fluentui/react/lib/Separator';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { semibold } from '../fonts';
+import LocalizationService from "../services/LocalizationService";
 
 interface Props { data?: Admin[] };
 
 const AdminsList = (props: Props) => {
     var theme = useTheme();
+    const locale = LocalizationService.strings();
 
     return (
         <>
         <div className='mb-4'>
             <Separator>
                 <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
-                <Text variant="medium" styles={semibold} style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size18 }}> Amministratori disponibili </Text>
+                <Text variant="medium" styles={semibold} style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size18 }}> {locale.courses.availableAdmins} </Text>
                 <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
             </Separator>
         </div> 
@@ -33,7 +35,7 @@ const AdminsList = (props: Props) => {
                     })()}
                 </Col>
                 ) : <div className="text-center">
-                        <Text style={{ fontSize: FontSizes.size14, backgroundColor: theme.palette.neutralLighter, padding: '4px' }}><Icon iconName="Info"/> Nessun amministratore disponibile.</Text>
+                        <Text style={{ fontSize: FontSizes.size14, backgroundColor: theme.palette.neutralLighter, padding: '4px' }}><Icon iconName="Info" /> {locale.courses.adminsNotFound}</Text>
                     </div>
             }
         </Row>

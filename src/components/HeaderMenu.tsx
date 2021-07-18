@@ -174,13 +174,10 @@ const HeaderMenu = (props: Props) => {
                         label={locale.settingsPanel.selectLanguage}
                         options={languageOptions}
                         selectedKey={cookies["language"]}
-                        onChange={(_, option) => 
-                        {
-                            LocalizationService.localize(option!.key as string)
-                            setCookie("language", option!.key as string)
-                        }}
+                        onChange={(_, option) =>  { LocalizationService.localize(option!.key as string); setCookie("language", option!.key as string) }}
                         theme={theme}
                     />
+                    
                     <div className="mt-3">
                         <Text variant="medium" styles={semibold}>{locale.settingsPanel.selectColor}  </Text>
                         <TooltipHost

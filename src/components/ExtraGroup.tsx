@@ -9,6 +9,7 @@ import { IIconProps } from '@fluentui/react';
 import { redirectToLink } from '../services/Utils';
 import Chip from '@material-ui/core/Chip';
 import { semibold } from '../fonts';
+import LocalizationService from "../services/LocalizationService";
 
 initializeIcons();
 
@@ -16,12 +17,9 @@ interface Props { data: ExtraGroup };
 
 const ExtraGroupView = (props: Props) => {
     const theme = useTheme();
+    const locale = LocalizationService.strings();
     var data = props.data;
-    const helpfulTextStyles: ITextStyles = {
-        root: {
-            fontWeight: FontWeights.regular,
-        },
-    };
+    const helpfulTextStyles: ITextStyles = { root: { fontWeight: FontWeights.regular, } };
     const descriptionTextStyles: ITextStyles = { root: { fontWeight: FontWeights.semibold } };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
     const telegramGroupIcon: IIconProps = { iconName: 'Send' };
@@ -33,7 +31,7 @@ const ExtraGroupView = (props: Props) => {
             </Card.Item>
             <Card.Section>
                 <Text styles={descriptionTextStyles}>
-                    <Chip label="Gruppo extra" size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.orangeLighter }} className="m-1" />
+                    <Chip label={locale.extraGroups.extraGroup} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.orangeLighter }} className="m-1" />
                 </Text>
                 <Text variant="small" styles={helpfulTextStyles} className="mb-2">
                     <Icon iconName="Info" className="homeIcon" /> {data.description}
@@ -49,7 +47,7 @@ const ExtraGroupView = (props: Props) => {
                                     style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
                                     disabled={data.gruppo === "" || data.gruppo === null}
                                     allowDisabledFocus>
-                                    Gruppo Telegram
+                                    {locale.telegramGroup}
                                 </ActionButton>
                             );
                         }

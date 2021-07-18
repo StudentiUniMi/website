@@ -130,8 +130,14 @@ interface ILocalizationStrings {
         semesterFilter: string,
         year: string,
         semester: string,
-        website: string,
-        mainGroup: string
+        complementary: string,
+        websites: string,
+        mainGroup: string,
+        mainGroupDescription: string,
+        groupNotAvailable: string,
+        contactAdmin: string,
+        groupsNotFound: string,
+        adminsNotFound: string
     },
     services: {
         text1: string,
@@ -142,7 +148,10 @@ interface ILocalizationStrings {
     extraGroups: {
         text1: string,
         text2: string,
-        availableGroups: string
+        text3: string,
+        mug: string,
+        availableGroups: string,
+        extraGroup: string
     },
     representatives: {
         text1: string,
@@ -153,14 +162,12 @@ interface ILocalizationStrings {
         text1:string,
         header1: string,
         header2: string,
-        dev1: string,
-        dev2: string,
         githubProfile: string,
         websiteProfile: string,
         text2: string,
     },
     footer: [
-        { header: string, text: string },
+        { text: string },
         { header: string },
         { header: string, text: string },
     ]

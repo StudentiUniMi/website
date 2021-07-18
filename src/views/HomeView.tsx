@@ -19,7 +19,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { getFaqs } from '../services/Requests'; 
 import { getGroupsLength, getCdlsLength } from '../services/Requests';
 import LocalizationService from "../services/LocalizationService";
-import JsxParser from 'react-jsx-parser'
+import JsxParser from 'react-jsx-parser';
 import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper/core';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';

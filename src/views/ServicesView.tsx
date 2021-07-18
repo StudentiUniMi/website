@@ -12,9 +12,12 @@ import { getServices } from '../services/Requests';
 import { redirectToLink } from '../services/Utils';
 import { Separator } from '@fluentui/react/lib/Separator';
 import Chip from '@material-ui/core/Chip';
+import LocalizationService from "../services/LocalizationService";
+import JsxParser from 'react-jsx-parser';
 
 const Services = () => {
     var theme = useTheme();
+    const locale = LocalizationService.strings();
     const services = getServices();
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
@@ -38,20 +41,19 @@ const Services = () => {
         <Container className="services text-center">
             <div className="mb-3">
                 <Text variant="large">
-                    Siete stanchi di dover andare a spulciare miriadi di pagine che neanche caricano alla ricerca di strumenti e servizi universitari?
-                    Abbiamo realizzato una pagina per centralizzarli tutti! Inoltre, qui potete trovare anche alcune guide che abbiamo realizzato.
+                    {locale.services.text1}
                 </Text>
             </div>
 
             <div className="mb-0">
                 <Text variant="medium">
-                    <Text styles={semibold}>Attenti:</Text> alcune pagine come Unimia oppure i Servizi SIFA potrebbero non caricare (ovviamente ricordiamo che non è colpa nostra in tal caso!).
+                    <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale.services.text2} />
                 </Text>
             </div>
 
             <div className="mb-3">
                 <Text variant="medium">
-                    Se pensi che debba essere aggiunto qualche servizio scrivi pure sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link>.
+                    <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale.services.text3} />
                 </Text>
             </div>
 
@@ -59,7 +61,7 @@ const Services = () => {
 
             <div className='text-center mb-3'>
                 <Separator>
-                    <Text variant="medium" styles={semibold} style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size18 }}> Servizi e guide disponibili </Text>
+                    <Text variant="medium" styles={semibold} style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size18 }}> {locale.services.availableServices} </Text>
                 </Separator>
             </div>  
 
