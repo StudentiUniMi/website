@@ -7,6 +7,7 @@ import ServicesView from './ServicesView';
 import RepresentativesView from './RepresentativesView';
 import ContributorsView from './ContributorsView';
 import { Route, Switch } from 'react-router-dom';
+import { withCookies } from 'react-cookie';
 
 const ContentView = () => {
     const wrap = (element: React.ReactNode): React.ReactNode => {
@@ -26,4 +27,4 @@ const ContentView = () => {
     )
 }
 
-export default ContentView;
+export default withCookies(ContentView);

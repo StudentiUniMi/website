@@ -208,10 +208,10 @@ class LocalizationService {
                     },
                     settingsPanel: {
                         settings: 'Settings',
-                        changeTheme: 'Dark Mode:',
+                        changeTheme: 'Dark Mode',
                         darkTheme: 'On',
                         lightTheme: 'Off',
-                        selectLanguage: 'Language:',
+                        selectLanguage: 'Language',
                         italian: 'Italian',
                         english: 'English',
                         selectColor: 'Select the main color',
@@ -414,7 +414,7 @@ class LocalizationService {
                         text2: 'Did you contributed to the development of the Network and you would like to appear in this list? Send a private message to <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.'
                     },
                     footer: [
-                        { text: 'The network and the associated website are not affiliated to the University of Milan (UniMi).' },
+                        { text: 'The network and the associated website are not affiliated to the University of Milan.' },
                         { header: 'Useful links' },
                         { header: 'Contacts', text: 'For any question or suggestion you can join the <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">main network group</Link>.' },
                     ]

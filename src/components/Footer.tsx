@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import { useTheme } from '@fluentui/react-theme-provider';
 import LocalizationService from "../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
+import { withCookies } from 'react-cookie';
 
 const listElement = { marginBottom: '.2rem' };
 
@@ -87,4 +88,4 @@ const Footer = () => {
     )
 };
 
-export default Footer;
+export default withCookies(Footer);

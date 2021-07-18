@@ -28,21 +28,34 @@ export enum ItemsKeys {
     contributors = "contributors"
 };
 
-interface Props { changeTheme: () => void, changePalette: (id: string) => void };
+interface Props { changeTheme: () => void, changePalette: (id: string) => void, changeLanguage: (key: string) => void };
 initializeIcons();
 
 const HeaderMenu = (props: Props) => {
     var theme = useTheme();
     const history = useHistory();
-    const locale = LocalizationService.strings();
     const [cookies, setCookie] = useCookies();
+    const tooltipId = useId('tooltip');
+    const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
+    const settingsIcon: IIconProps = { iconName: 'Settings', styles: { root: { fontSize: '18px' } } };
+    const settingsIconStylePivot: IIconStyles = { root: { position: 'absolute', right: '5px', top: '94px', zIndex: 10 } };
+    const settingsIconStyleDropdown: IIconStyles = { root: { position: 'absolute', left: '5px', top: '6px', zIndex: 10 } };
+    const settingsIconId = useId('icon');
+    const calloutProps = { gapSpace: 0, target: `#${settingsIconId}`, };
     const onRenderCaretDown = (): JSX.Element => { return <Icon iconName="List" />; };
+    
+    if (cookies["language"] === undefined) { setCookie("language", "it", { path: "/" }); }
+    const locale = LocalizationService.strings();
 
     const languageOptions: IDropdownOption[] = [
         { key: 'it', text: locale.settingsPanel.italian },
         { key: 'en', text: locale.settingsPanel.english }
     ];
-    
+
+    if (cookies["theme"] === undefined) { setCookie("theme", "light", { path: "/" }); }
+
+    if (cookies["palette"] === undefined) { setCookie("palette", "a", { path: "/" }); }
+
     const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
         [ItemsKeys.home, locale.headerMenuItems.home],
         [ItemsKeys.organization, locale.headerMenuItems.aboutUs],
@@ -53,8 +66,6 @@ const HeaderMenu = (props: Props) => {
         [ItemsKeys.representatives, locale.headerMenuItems.representatives],
         [ItemsKeys.contributors, locale.headerMenuItems.contributors]
     ]);
-    
-    if (cookies["language"] === undefined) { setCookie("language", "it"); }
     
     const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
     const dropdownStyles: Partial<IDropdownStyles> = {
@@ -90,8 +101,6 @@ const HeaderMenu = (props: Props) => {
     }, [getPath, history]);
 
     let [path, isCorrect] = getPath();
-    
-
     const [selectedKey, setSelectedKey] = React.useState(isCorrect ? path as ItemsKeys : ItemsKeys.home);
     
     const handlePivotLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
@@ -110,29 +119,16 @@ const HeaderMenu = (props: Props) => {
 
     const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }));
 
-    /* Panel and components settings */
-    const tooltipId = useId('tooltip');
-    const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
-    const settingsIcon: IIconProps = { iconName: 'Settings', styles: { root: { fontSize: '18px' } } };
-    const settingsIconStylePivot: IIconStyles = { root: { position: 'absolute', right: '5px', top: '94px', zIndex: 10 } };
-    const settingsIconStyleDropdown: IIconStyles = { root: { position: 'absolute', left: '5px', top: '6px', zIndex: 10 } };
-    const settingsIconId = useId('icon');
-    const calloutProps = { gapSpace: 0, target: `#${settingsIconId}`, };
-
-    if (cookies["theme"] === undefined) { setCookie("theme", "light", { path: "/" }); }
-
     const themeToggled = () => {
         setCookie("theme", cookies["theme"] === "dark" ? "light" : "dark", { path: "/" });
         props.changeTheme();
     };
 
     /* Theme palette code */
-    if (cookies["paletteID"] === undefined) { setCookie("paletteID", "a", { path: "/" }); }
     const colorCells: any[] = palettes.map(x => ({ id: x.id, label: x.label, color: x.palette?.themePrimary }));
     const resetColorIcon: IIconProps = { iconName: 'SyncOccurence' };
     const calloutPropsResetColor = { gapSpace: 10 };
     const hostStylesResetColor: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
-
 
     return (
         <div className="header-menu" style={{ borderBottom: '1px solid', borderColor: theme.palette.neutralLight }}>
@@ -174,10 +170,10 @@ const HeaderMenu = (props: Props) => {
                         label={locale.settingsPanel.selectLanguage}
                         options={languageOptions}
                         selectedKey={cookies["language"]}
-                        onChange={(_, option) =>  { LocalizationService.localize(option!.key as string); setCookie("language", option!.key as string) }}
+                        onChange={(_, option) => { props.changeLanguage(option!.key as string); setCookie("language", option!.key as string, { path: "/" }) }}
                         theme={theme}
                     />
-                    
+
                     <div className="mt-3">
                         <Text variant="medium" styles={semibold}>{locale.settingsPanel.selectColor}  </Text>
                         <TooltipHost
@@ -185,9 +181,9 @@ const HeaderMenu = (props: Props) => {
                             calloutProps={calloutPropsResetColor}
                             styles={hostStylesResetColor}
                         >
-                            <IconButton iconProps={resetColorIcon} onClick={() => { setCookie("paletteID", 'a', { path: "/" }); props.changePalette('a'); }} />
+                            <IconButton iconProps={resetColorIcon} onClick={() => { setCookie("palette", 'a', { path: "/" }); props.changePalette('a'); }} />
                         </TooltipHost>
-                        <SwatchColorPicker selectedId={cookies["paletteID"]} columnCount={7} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => { setCookie("paletteID", id, { path: "/" }); props.changePalette(id!); }} />
+                        <SwatchColorPicker selectedId={cookies["palette"]} columnCount={7} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => { setCookie("palette", id, { path: "/" }); props.changePalette(id!); }} />
                     </div>
                 </Panel>
             </div>

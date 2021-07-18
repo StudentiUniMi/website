@@ -88,7 +88,7 @@ const ContributorsView = () => {
                                             </Text>
                                             <div>
                                                 <TooltipHost
-                                                    content="Profilo GitHub"
+                                                    content={locale.contributors.githubProfile}
                                                     calloutProps={calloutProps}
                                                     styles={hostStyles}
                                                     delay={TooltipDelay.zero}
@@ -97,7 +97,7 @@ const ContributorsView = () => {
                                                 </TooltipHost>
                                                 &nbsp;&nbsp;
                                                 <TooltipHost
-                                                    content="Sito Web"
+                                                    content={locale.contributors.websiteProfile}
                                                     calloutProps={calloutProps}
                                                     styles={hostStyles}
                                                     delay={TooltipDelay.zero}
