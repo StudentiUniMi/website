@@ -26,8 +26,9 @@ interface ILocalizationStrings
             text2: string,
             sliders: [
                 { text1: string, text2: string, cardText: string },
-                { text: string, reachWiki: string },
-                { text: string }
+                { text1: string, text2: string, cardText: string },
+                { text1: string, reachWiki: string },
+                { text1: string }
             ]
         },
         section2: {
@@ -93,72 +94,49 @@ interface ILocalizationStrings
                 text: string,
                 button: string
             }
+        },
+        section6: { text: string },
+        section7: {
+            text: string,
+            card1: { text1: string, text2: string },
+            card2: { text1: string, text2: string },
+            card3: { text1: string, text2: string },
         }
     },
     aboutUs: {
         text1: string,
-        text2: string,
-        text3: string,
+        button: { text1: string, text2: string },
         header1: string,
         header2: string,
-        header3: string,
-        discordManager: string
+        header3: string
     },
     rules: {
         text1: string,
         question: string,
-        answer: string,
-        text2: string,
-        text3: string,
-        section: string,
-        rules1: {
-            sectionName: string,
-            rules: {[index: number]: string}
-        },
-        rules2: {
-            sectionName: string,
-            rules: {[index: number]: string}
-        },
-        rules3: {
-            sectionName: string,
-            rules: {[index: number]: string}
-        },
-        rules4: {
-            sectionName: string,
-            rules: {[index: number]: string}
-        }
+        answer: { text1: string, text2: string },
+        text2: string
     },
     courses: {
         text1: string,
         text2: string,
         departmentSelect: string,
         cdlSelect: string,
-        cdlWebsite: string,
-        manifest: string,
-        vc: string,
+        availableRedirects: string,
         availableGroups: string,
+        availableAdmins: string,
         nameFilter: string,
         yearFilter: string,
         semesterFilter: string,
         year: string,
         semester: string,
-        telegramGroup: string,
         website: string,
-        notices: string
+        mainGroup: string
     },
     services: {
         text1: string,
         text2: string,
-        availableServices: string,
-        card1: { header: string, text: string },
-        card2: { header: string, text: string },
-        card3: { header: string, text: string },
-        card4: { header: string, text: string },
-        card5: { header: string, text: string },
-        card6: { header: string, text: string },
-        card7: { header: string, text: string },
-        card8: { header: string, text: string },
-        card9: { header: string, text: string },
+        text3: string,
+        availableServices: string
     },
     extraGroups: {
         text1: string,
@@ -176,17 +154,15 @@ interface ILocalizationStrings
         header2: string,
         dev1: string,
         dev2: string,
-        dev3: string,
         githubProfile: string,
         websiteProfile: string,
-        text2: string
-    }
-    footer: {
-        [index: number]: {
-            text:string,
-            header: string,
-        }
-    }
+        text2: string,
+    },
+    footer: [
+        { header: string, text: string },
+        { header: string },
+        { header: string, text: string },
+    ]
 }
 
 export default ILocalizationStrings

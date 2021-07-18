@@ -1,14 +1,11 @@
 import LocalizedStrings, { LocalizedStringsMethods } from 'react-localization';
 import ILocalizationStrings from '../data/ILocalizationStrings';
 
-class LocalizationService
-{
-    private static data?: LocalizedStringsMethods & ILocalizationStrings
+class LocalizationService {
+    private static data?: LocalizedStringsMethods & ILocalizationStrings;
 
-    static localize = (language: string | undefined = undefined) => 
-    {
-        if(LocalizationService.data == null)
-        {
+    static localize = (language: string | undefined = undefined) => {
+        if (LocalizationService.data == null) {
             LocalizationService.data = new LocalizedStrings<ILocalizationStrings>({
                 it: {
                     telegramGroup: 'Gruppo Telegram',
@@ -33,16 +30,17 @@ class LocalizationService
                     },
                     homepage: {
                         section1: {
-                            text1: 'Benvenuto nel sito web del Network Studenti Unimi!',
+                            text1: 'Benvenuto nel sito web del <Text style={{color: theme.palette.themePrimary}} variant="xLarge">Network Studenti UniMi</Text> !',
                             text2: 'La nostra missione è organizzare le informazioni riguardo l\'Università degli studi di Milano e renderle accessibili a tutti.',
                             sliders: [
                                 { text1: 'Sei uno studente che vuole immatricolarsi e che cerca un gruppo generale in cui chiedere informazioni', text2: 'Ne abbiamo creato uno apposito!', cardText: "Pre-matricole, ammissioni e immatricolazioni" },
-                                { text: 'Ti ricordiamo che abbiamo a disposizione una <Text styles={semibold}>Wiki</Text> in cui è possibile collaborare e aiutare altri studenti! Puoi trovare tutto il materiale che ti serve, ma ricorda che è importante anche contribuire!', reachWiki: 'Raggiungi la Wiki!' },
-                                { text: 'Per noi offrirti la possibilità di non perdere tempo alla ricerca di servizi universitari è molto importante. Proprio per questo abbiamo realizzato una pagina apposita per trovarli tutti subito, e farti scoprire anche alcune guide che abbiamo realizzato!' }
+                                { text1: 'Stai cercando un gruppo per trovare un alloggio a Milano insieme ad altri studenti universitari oppure vuoi creare un annuncio', text2: 'Entra nel gruppo apposito!', cardText: 'Alloggi' },
+                                { text1: 'Ti ricordiamo che abbiamo a disposizione una <Text styles={semibold}>Wiki</Text> in cui è possibile collaborare e aiutare altri studenti! Puoi trovare tutto il materiale che ti serve, ma ricorda che è importante anche contribuire!', reachWiki: 'Raggiungi la Wiki!' },
+                                { text1: 'Per noi offrirti la possibilità di non perdere tempo alla ricerca di servizi universitari è molto importante. Proprio per questo abbiamo realizzato una pagina apposita per trovarli tutti subito, e farti scoprire anche alcune guide che abbiamo realizzato!' }
                             ]
                         },
                         section2: {
-                            text: 'loremipsum11',
+                            text: 'I nostri collegamenti principali',
                             card1: {
                                 text: 'Unisciti al canale telegram per rimanere aggiornato e raggiungere tutti i link disponibili!',
                                 button: 'Canale Telegram'
@@ -61,166 +59,121 @@ class LocalizationService
                             }
                         },
                         section3: {
-                            text: 'loremipsum18',
+                            text: 'Ogni cosa ha il suo gruppo Telegram',
                             card1: {
-                                text: 'loremipsum19',
-                                button: 'loremipsum20'
+                                text: 'Dì addio al mega gruppo WhatsApp in cui non si capisce nulla! Abbiamo creato un gruppo Telegram per ogni insegnamento.',
+                                button: 'Gruppi dei corsi'
                             },
                             card2: {
-                                text: 'loremipsum21',
-                                button: 'loremipsum22'
+                                text: 'Ripetizioni, materiali, erasmus, tirocinio, alloggi. Tutte quelle cose extra che però hanno la loro importanza.',
+                                button: 'Gruppi extra'
                             },
                             card3: {
-                                text: 'loremipsum23',
-                                button: 'loremipsum24'
+                                text: "Crediamo che un ambiente rispettoso e inclusivo ci renda più innovativi e produttivi. Dai un'occhiata al regolamento dei gruppi.",
+                                button: 'Regolamento'
                             }
                         },
                         section4: {
-                            text: 'loremipsum25',
+                            text: 'I nostri servizi per aiutarti nello studio',
                             card1: {
-                                text: 'loremipsum26',
-                                button: 'loremipsum27'
+                                text: 'Accedi alla Wiki del Network e aiutaci a migliorarla contribuendo!',
+                                button: 'Wiki'
                             },
                             card2: {
-                                text: 'loremipsum28',
-                                button: 'loremipsum29'
+                                text: 'Utilizza la nostra comoda pagina che ti permette di raggiungere tutti i servizi UniMi.',
+                                button: 'Servizi'
                             },
                             card3: {
-                                text: 'loremipsum30',
-                                button: 'loremipsum31'
+                                text: 'Mi mandi i tuoi appunti? Un attimo e sono subito da lei!',
+                                button: 'HedgeDoc'
                             },
                             card4: {
-                                text: 'loremipsum32',
-                                button: 'loremipsum33'
+                                text: 'Accedi al nostro servizio per condividere codice e qualsiasi altro materiale in maniera comoda e sicura.',
+                                button: 'Paste'
                             }
                         },
                         section5: {
-                            text: 'loremipsum34',
+                            text: 'Hai provato a spegnere e riaccendere?',
                             card1: {
-                                text: 'loremipsum35',
-                                button: 'loremipsum36'
+                                text: 'Ho un problema didattico.',
+                                button: 'Rappresentanti'
                             },
                             card2: {
-                                text: 'loremipsum37',
-                                button: 'loremipsum38'
+                                text: 'Ho un problema tecnico.',
+                                button: 'Amministratori'
                             }
+                        },
+                        section6: {
+                            text: 'Domande frequenti sul Network'
+                        },
+                        section7: {
+                            text: 'Altre informazioni',
+                            card1: { text1: 'Abbiamo più di', text2: 'utenti' },
+                            card2: { text1: 'Abbiamo', text2: 'gruppi telegram' },
+                            card3: { text1: 'Copriamo', text2: 'corsi di laurea' },
                         }
                     },
                     aboutUs: {
-                        text1: 'loremipsum39',
-                        text2: 'loremipsum40',
-                        text3: 'loremipsum41',
-                        header1: 'loremipsum42',
-                        header2: 'loremipsum43',
-                        header3: 'loremipsum44',
-                        discordManager: 'loremipsum45'
+                        text1: "Siamo un'organizzazione senza fini di lucro, apolitica, ovvero apartitica, e neutrale, la quale si pone l'obiettivo di offrire servizi telematici agli studenti dell'Università degli Studi di Milano.",
+                        button: { text1: 'Statuto', text2: "Dai un'occhiata al nostro statuto!" },
+                        header1: 'Coordinatore',
+                        header2: 'Comitato Amministrativo',
+                        header3: 'Amministratori dei gruppi telegram'
                     },
                     rules: {
-                        text1: 'loremipsum46',
-                        question: 'loremipsum47',
-                        answer: 'loremipsum48',
-                        text2: 'loremipsum49',
-                        text3: 'loremipsum50',
-                        section: 'loremipsum51',
-                        rules1: {
-                            sectionName: 'loremipsum52',
-                            rules: []
-                        },
-                        rules2: {
-                            sectionName: 'loremipsum53',
-                            rules: []
-                        },
-                        rules3: {
-                            sectionName: 'loremipsum54',
-                            rules: []
-                        },
-                        rules4: {
-                            sectionName: 'loremipsum55',
-                            rules: []
-                        }
+                        text1: 'Qui è possibile trovare il regolamento dei gruppi telegram del network. Si consiglia di leggere tutte le regole di cui è composto prima di usare uno qualsiasi di essi.',
+                        question: 'Perchè abbiamo introdotto un regolamento?',
+                        answer: { text1: 'Vogliamo rendere chiari i motivi per cui abbiamo deciso di regolamentare i gruppi del nostro network.', text2: "Abbiamo notato che la maggior parte di essi erano tempestati di domande banali, fatte più volte al giorno, la cui risposta era facilmente trovabile. Questo riduce la qualità della chat e scoraggia la partecipazione di studenti più attenti. Per questo motivo abbiamo deciso di provare a limitare il fenomeno, da una parte ammonendo chi continua a fare interventi non produttivi, e dall'altra fornendo un modo facile e veloce per trovare le informazioni più importanti tramite la <Link href='https://wiki.studentiunimi.it/' target='_blank'>Wiki</Link>."},
+                        text2: 'Regolamento dei gruppi Telegram'
                     },
                     courses: {
-                        text1: 'loremipsum56',
-                        text2: 'loremipsum57',
-                        departmentSelect: 'loremipsum58',
-                        cdlSelect: 'loremipsum59',
-                        cdlWebsite: 'loremipsum60',
-                        manifest: 'loremipsum61',
-                        vc: 'loremipsum62',
-                        availableGroups: 'loremipsum63',
-                        nameFilter: 'loremipsum64',
-                        yearFilter: 'loremipsum65',
-                        semesterFilter: 'loremipsum66',
-                        year: 'loremipsum67',
-                        semester: 'loremipsum68',
-                        telegramGroup: 'loremipsum69',
-                        website: 'loremipsum70',
-                        notices: 'loremipsum71'
+                        text1: 'Qui è possibile trovare i gruppi telegram, siti web, wiki, faq (se disponibili) e informazioni generali come il manifesto degli studi riguardo il tuo corso di laurea e i suoi corsi didattici.',
+                        text2: "I link alla <Text styles={semibold}>Wiki</Text> di un corso didattico potrebbero portare a pagine non ancora compilate: è qui che potete contribuire iscrivendovi e aiutandoci a raccogliere faq e qualsiasi altro contenuto utile per i corsi didattici. Informatica musicale, per la comunicazione digitale e molti altri corsi di laurea non hanno ancora contenuti! Puoi contribuire<Link href='https://wiki.studentiunimi.it/' target='_blank'>qui</Link> creando un apposito account gratuito.",
+                        departmentSelect: 'Seleziona un dipartimento',
+                        cdlSelect: 'Seleziona un corso di Laurea',
+                        availableRedirects: 'Collegamenti disponibili',
+                        availableGroups: 'Gruppo disponibili',
+                        availableAdmins: 'Amministratori disponibili',
+                        nameFilter: 'Cerca per nome',
+                        yearFilter: 'Cerca per anno',
+                        semesterFilter: 'Cerca per semestre',
+                        year: 'Anno',
+                        semester: 'Semestre',
+                        website: 'Siti web',
+                        mainGroup: 'Gruppo principale'
                     },
                     services: {
-                        text1: 'loremipsum72',
-                        text2: 'loremipsum73',
-                        availableServices: 'loremipsum74',
-                        card1: { header: 'loremipsum75', text: 'loremipsum76' },
-                        card2: { header: 'loremipsum77', text: 'loremipsum78' },
-                        card3: { header: 'loremipsum79', text: 'loremipsum80' },
-                        card4: { header: 'loremipsum81', text: 'loremipsum82' },
-                        card5: { header: 'loremipsum83', text: 'loremipsum84' },
-                        card6: { header: 'loremipsum85', text: 'loremipsum86' },
-                        card7: { header: 'loremipsum87', text: 'loremipsum88' },
-                        card8: { header: 'loremipsum89', text: 'loremipsum90' },
-                        card9: { header: 'loremipsum91', text: 'loremipsum92' },
+                        text1: 'Siete stanchi di dover andare a spulciare miriadi di pagine che neanche caricano alla ricerca di strumenti e servizi universitari? Abbiamo realizzato una pagina per centralizzarli tutti! Inoltre, qui potete trovare anche alcune guide che abbiamo realizzato.',
+                        text2: '<Text styles={semibold}>Attenti:</Text> alcune pagine come Unimia oppure i Servizi SIFA potrebbero non caricare (ovviamente ricordiamo che non è colpa nostra in tal caso!).',
+                        text3: "Se pensi che debba essere aggiunto qualche servizio scrivi pure sul <Link href='https://t.me/joinchat/VswKeAblS2nrfXME' target='_blank'>gruppo principale</Link>.",
+                        availableServices: 'Servizi e guide disponibili'
                     },
                     extraGroups: {
-                        text1: 'loremipsum93',
-                        text2: 'loremipsum94',
-                        availableGroups: 'loremipsum95'
+                        text1: 'Cerchi un gruppo aggiuntivo in particolare? Qui è possibile trovare tutti quelli che abbiamo creato.',
+                        text2: "Se vorresti che venissero creati altri gruppi puoi scriverlo sul <Link href='https://t.me/joinchat/VswKeAblS2nrfXME' target='_blank'>gruppo principale</Link>.",
+                        availableGroups: 'Gruppi disponibili'
                     },
                     representatives: {
-                        text1: 'loremipsum96',
-                        text2: 'loremipsum97',
-                        departmentSelect: 'loremipsum98'
+                        text1: 'Il rappresentante degli studenti è un ruolo molto importante ed altamente formativo, che garantisce a tutti gli studenti universitari un supporto alle difficoltà che può incontrare durante il periodo di studio.',
+                        text2: 'Di seguito è presente la lista dei rappresentanti di ogni dipartimento e i loro contatti.',
+                        departmentSelect: 'Seleziona un dipartimento'
                     },
                     contributors: {
-                        text1:'loremipsum99',
-                        header1: 'loremipsum100',
-                        header2: 'loremipsum101',
-                        dev1: 'loremipsum102',
-                        dev2: 'loremipsum103',
-                        dev3: 'loremipsum104',
-                        githubProfile: 'loremipsum105',
-                        websiteProfile: 'loremipsum106',
-                        text2: 'loremipsum107'
+                        text1:'Di seguito è possibile trovare tutte le persone che hanno contribuito allo sviluppo del sito web, dei servizi che offre, della wiki, e del network in generale.',
+                        header1: 'Manutentori principali',
+                        header2: 'Contributori',
+                        dev1: 'Sviluppatore del sito web.',
+                        dev2: 'Progettista del sito web.',
+                        githubProfile: 'Profilo GitHub',
+                        websiteProfile: 'Sito Web',
+                        text2: 'Hai contribuito allo sviluppo del network e vorresti comparire in questa lista? Scrivi in privato a <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.'
                     },
                     footer: [
-                        {
-                            header: 'Studenti UniMi &copy;',
-                            text: 'Il network e il relativo sito web non sono affiliati all\'Università degli Studi di Milano'
-                        },
-                        {
-                            header: 'Link utili',
-                            text: 'loremipsum242'
-                        },
-                        {
-                            header: 'Contatti',
-                            text: 'Per qualsiasi dubbio o proposta è possibile scrivere sul <a href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</a> del network'
-                        },
+                        { header: 'Studenti UniMi &copy;', text: 'Il network e il relativo sito web non sono affiliati all\'Università degli Studi di Milano' },
+                        { header: 'Link utili' },
+                        { header: 'Contatti', text: 'Per qualsiasi dubbio o proposta è possibile scrivere sul <a href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</a> del network' },
                     ],
                 },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -258,9 +211,10 @@ class LocalizationService
                             text1: 'Welcome to Network Studenti UniMi!',
                             text2: 'Our goal is to organize all the informations about the University of Milan (Università degli Studi di Milano Statale, Unimi) and make them easily accessible to anyone.',
                             sliders: [
-                                { text1: "", text2: "", cardText: "" },
-                                { text: '', reachWiki: 'Reach the Wiki!' },
-                                { text: '' }
+                                { text1: 'Sei uno studente che vuole immatricolarsi e che cerca un gruppo generale in cui chiedere informazioni', text2: 'Ne abbiamo creato uno apposito!', cardText: "Pre-matricole, ammissioni e immatricolazioni" },
+                                { text1: 'Stai cercando un gruppo per trovare un alloggio a Milano insieme ad altri studenti universitari oppure vuoi creare un annuncio', text2: 'Entra nel gruppo apposito!', cardText: 'Alloggi' },
+                                { text1: 'Ti ricordiamo che abbiamo a disposizione una <Text styles={semibold}>Wiki</Text> in cui è possibile collaborare e aiutare altri studenti! Puoi trovare tutto il materiale che ti serve, ma ricorda che è importante anche contribuire!', reachWiki: 'Raggiungi la Wiki!' },
+                                { text1: 'Per noi offrirti la possibilità di non perdere tempo alla ricerca di servizi universitari è molto importante. Proprio per questo abbiamo realizzato una pagina apposita per trovarli tutti subito, e farti scoprire anche alcune guide che abbiamo realizzato!' }
                             ]
                         },
                         section2: {
@@ -326,24 +280,31 @@ class LocalizationService
                                 text: 'I have a technical problem',
                                 button: 'Admins'
                             }
+                        },
+                        section6: {
+                            text: 'Domande frequenti sul Network'
+                        },
+                        section7: {
+                            text: 'Altre informazioni',
+                            card1: { text1: 'Abbiamo più di', text2: 'utenti' },
+                            card2: { text1: 'Abbiamo', text2: 'gruppi telegram' },
+                            card3: { text1: 'Copriamo', text2: 'corsi di laurea' },
                         }
                     },
                     aboutUs: {
                         text1: 'We are a non-profit organization, neutral and not affiliated to any political party. Our goal is to provide online services to the students at the University of Milan.',
-                        text2: 'You can read our statute here.',
-                        text3: 'Here you can find our members and their contacts.',
+                        button: { text1: 'Statute', text2: "You can read our statute here!" },
                         header1: 'Coordinator',
-                        header2: 'Administrative committee',
-                        header3: 'Administrators and moderators',
-                        discordManager: 'loremipsum122'
+                        header2: 'Administrative Committee',
+                        header3: 'Telegram groups administrators'
                     },
                     rules: {
                         text1: 'Here you can find the Regulation of our network. Please read it before joining any group.',
                         question: 'Why do we need it?',
-                        answer: 'We want to make clear the reasons that took us to introducing these rules into the network. We noticed that most of the groups were flooded with trivial questions re-proposed every day. This was lowering the quality of our chats and discouraged the participation of some students. Therefore, we started repressing this phenomenon warning their proponents and offering a FAQ section for each course.',
-                        text2: 'Below you can find the Regulation and its sections',
-                        text3: 'Click on each banner to read the rules',
-                        section: 'loremipsum124',
+                        answer: { text1: 'We want to make clear the reasons that took us to introducing these rules into the network.', text2: "We noticed that most of the groups were flooded with trivial questions re-proposed every day. This was lowering the quality of our chats and discouraged the participation of some students. Therefore, we started repressing this phenomenon warning their proponents and offering a FAQ section for each course." },
+                        text2: 'Telegram groups rules',
+                        
+                        /*
                         rules1: {
                             sectionName: 'Questions and FAQs',
                             rules: [
@@ -374,29 +335,30 @@ class LocalizationService
                                 'Code<br>The code cannot be shared using images or screenshots. If it contains more than 5 lines it must be shared using an appropriate platform like Paste or Gist. On the contrary, if it contains less than 5 lines, you can send it using the specific layout implemented by Telegram. Screenshots of logs, shell and similar are allowed.',
                             ]
                         }
+                        */
                     },
                     courses: {
                         text1: 'Below you can find Telegram groups, websites, wiki, FAQs (if available) and general information about your degree programme and its courses',
                         text2: 'Links to the wiki could lead to unfinished pages: that’s why you can help us collecting FAQs and any other useful material for that course. To help us create a free account here',
-                        departmentSelect: 'Choose a department:',
-                        cdlSelect: 'Select the degree programme:',
-                        cdlWebsite: 'Website of degree',
-                        manifest: 'Manifest',
-                        vc: 'Virtual Classroom',
-                        availableGroups: 'Available groups:',
+                        departmentSelect: 'Select the department',
+                        cdlSelect: 'Select the degree',
+                        availableRedirects: 'Available redirects',
+                        availableGroups: 'Available groups',
+                        availableAdmins: 'Available admins',
                         nameFilter: 'Search by name',
                         yearFilter: 'Search by year',
                         semesterFilter: 'Search by semester',
-                        year: 'year',
-                        semester: 'Search by semester',
-                        telegramGroup: 'Telegram Group',
-                        website: 'Website',
-                        notices: 'loremipsum131'
+                        year: 'Year',
+                        semester: 'Semester',
+                        website: 'Websites',
+                        mainGroup: 'Main group'
                     },
                     services: {
                         text1: 'Tired of scavenging into endless pages to find the services offered by the university? We grouped all the links here!',
                         text2: 'If you think that something should be added suggest it on the main group',
+                        text3: 'DA COMPILARE',
                         availableServices: 'Available services:',
+                        /*
                         card1: { header: 'Unimia', text: 'Home Page for all UniMi Services' },
                         card2: { header: 'Sifa', text: 'Legacy Online Services' },
                         card3: { header: 'Students Web Agenda', text: 'Lessons Timetable, Exams Calendar and any kind of Reservations' },
@@ -406,10 +368,11 @@ class LocalizationService
                         card7: { header: 'Marks Registeration', text: 'Check, accept or reject the final or partial Results of your Exams' },
                         card8: { header: 'Ariel', text: 'Official Websites Platform for each Courses' },
                         card9: { header: 'InformaStudenti', text: 'Online Student Desk'},
+                        */
                     },
                     extraGroups: {
                         text1: 'Looking for something different? Join our groups!',
-                        text2: 'Would you like to open a new group? Bring your  on the main group.',
+                        text2: 'Would you like to open a new group? Bring your request on the main group.',
                         availableGroups: 'Available groups'
                     },
                     representatives: {
@@ -423,37 +386,25 @@ class LocalizationService
                         header2: 'Contributors',
                         dev1: 'Website developer',
                         dev2: 'Website technical designer',
-                        dev3: 'Bot, database and other services developer',
                         githubProfile: 'Github Profile',
                         websiteProfile: 'Website',
                         text2: 'Did you contributed to the development of the Network and you would like to appear in this list? Send a private message to @giuseppetm.'
                     },
                     footer: [
-                        {
-                            header: 'Studenti UniMi &copy;',
-                            text: 'The network and the associated website are not affiliated to the University of Milan (UniMi)' // todo : beautify02
-                        },
-                        {
-                            header: 'Useful links',
-                            text: 'loremipsum342'
-                        },
-                        {
-                            header: 'Contacts',
-                            text: 'For any question or suggestion you can join the <a href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">main network group</a>.'
-                        },
+                        { header: 'Studenti UniMi &copy;', text: 'The network and the associated website are not affiliated to the University of Milan (UniMi)' },
+                        { header: 'Useful links' },
+                        { header: 'Contacts', text: 'For any question or suggestion you can join the <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">main network group</Link>.' },
                     ]
                 }
             })
         }   
 
-        if(language != null)
-        {
+        if (language != null) {
             LocalizationService.data.setLanguage(language!);
         }
     }
 
-    static strings = () =>
-    {
+    static strings = () => {
         return LocalizationService.data!
     }
 }
