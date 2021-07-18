@@ -36,19 +36,6 @@ const HeaderMenu = (props: Props) => {
     var theme = useTheme();
     const history = useHistory();
     const [cookies, setCookie] = useCookies();
-    
-    const [isCoachmarkVisible, { setFalse: hideCoachmark, setTrue: showCoachmark }] = useBoolean(false);
-    const buttonProps: IButtonProps = { text: 'Capito!', onClick: hideCoachmark };
-    const target = React.useRef<HTMLDivElement>(null);
-    const [coachmarkPosition] = React.useState<DirectionalHint>(DirectionalHint.leftCenter);
-    const positioningContainerProps = React.useMemo(
-        () => ({
-            directionalHint: coachmarkPosition,
-            doNotLayer: false,
-        }),
-        [coachmarkPosition],
-    );
-
     const tooltipId = useId('tooltip');
     const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
     const settingsIcon: IIconProps = { iconName: 'Settings', styles: { root: { fontSize: '18px' } } };
@@ -58,7 +45,7 @@ const HeaderMenu = (props: Props) => {
     const calloutProps = { gapSpace: 0, target: `#${settingsIconId}`, };
     const onRenderCaretDown = (): JSX.Element => { return <Icon iconName="List" />; };
     
-    if (cookies['language'] === undefined) { setCookie("language", "it", { path: "/" }); }
+    if (cookies['language'] === undefined) { setCookie("language", navigator.language, { path: "/" }); }
     const locale = LocalizationService.strings();
 
     const languageOptions: IDropdownOption[] = [
@@ -79,6 +66,18 @@ const HeaderMenu = (props: Props) => {
             }, 1000);
         }
     });
+
+    const [isCoachmarkVisible, { setFalse: hideCoachmark, setTrue: showCoachmark }] = useBoolean(false);
+    const buttonProps: IButtonProps = { text: locale.settingsPanel.coachMark.understood, onClick: hideCoachmark };
+    const target = React.useRef<HTMLDivElement>(null);
+    const [coachmarkPosition] = React.useState<DirectionalHint>(DirectionalHint.leftCenter);
+    const positioningContainerProps = React.useMemo(
+        () => ({
+            directionalHint: coachmarkPosition,
+            doNotLayer: false,
+        }),
+        [coachmarkPosition],
+    );
 
     const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
         [ItemsKeys.home, locale.headerMenuItems.home],
@@ -178,14 +177,13 @@ const HeaderMenu = (props: Props) => {
                         positioningContainerProps={positioningContainerProps}
                     >
                         <TeachingBubbleContent
-                            headline="Benvenuto sul nostro sito!"
+                            headline={locale.settingsPanel.coachMark.text1}
                             hasCloseButton
                             closeButtonAriaLabel={locale.settingsPanel.close}
                             onDismiss={hideCoachmark}
                             secondaryButtonProps={buttonProps}
                         >
-                            Qui puoi trovare alcune impostazioni che ti potrebbero servire.
-                            Per il resto, esplora liberamente i servizi che offriamo! :)
+                            {locale.settingsPanel.coachMark.text2}
                         </TeachingBubbleContent>
                     </Coachmark>
                 )}

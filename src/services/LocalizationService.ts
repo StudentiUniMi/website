@@ -21,14 +21,15 @@ class LocalizationService {
                     },
                     settingsPanel: {
                         settings: 'Impostazioni',
-                        changeTheme: 'Cambia il tema',
-                        darkTheme: 'Modalità scura',
-                        lightTheme: 'Modalità chiara',
+                        changeTheme: 'Modalità scura',
+                        darkTheme: 'Accesa',
+                        lightTheme: 'Spenta',
                         selectLanguage: 'Seleziona la lingua',
                         italian: 'Italiano',
                         english: 'Inglese',
                         selectColor: 'Seleziona il colore principale',
-                        close: 'Chiudi'
+                        close: 'Chiudi',
+                        coachMark: { text1: 'Benvenuto sul nostro sito!', text2: 'Qui puoi trovare alcune impostazioni che ti potrebbero servire. Per il resto, esplora liberamente i servizi che offriamo! :)', understood: 'Capito!' }
                     },
                     homepage: {
                         section1: {
@@ -215,7 +216,8 @@ class LocalizationService {
                         italian: 'Italian',
                         english: 'English',
                         selectColor: 'Select the main color',
-                        close: 'Close'
+                        close: 'Close',
+                        coachMark: { text1: 'Welcome on our website!', text2: 'Here you can find some settings that might be helpful. Enjoy our services! :)', understood: 'Got it!' }
                     },
                     homepage: {
                         section1: {

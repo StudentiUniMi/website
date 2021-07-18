@@ -19,7 +19,8 @@ interface ILocalizationStrings {
         italian: string,
         english: string,
         selectColor: string,
-        close: string
+        close: string,
+        coachMark: { text1: string, text2: string, understood: string }
     },
     homepage: {
         section1: {
