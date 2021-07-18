@@ -26,7 +26,9 @@ class LocalizationService {
                         lightTheme: 'Modalità chiara',
                         selectLanguage: 'Seleziona la lingua',
                         italian: 'Italiano',
-                        english: 'Inglese'
+                        english: 'Inglese',
+                        selectColor: 'Seleziona il colore principale',
+                        close: 'Chiudi'
                     },
                     homepage: {
                         section1: {
@@ -204,15 +206,17 @@ class LocalizationService {
                         lightTheme: 'Off',
                         selectLanguage: 'Language:',
                         italian: 'Italian',
-                        english: 'English'
+                        english: 'English',
+                        selectColor: 'Select the main color',
+                        close: 'Close'
                     },
                     homepage: {
                         section1: {
-                            text1: 'Welcome to Network Studenti UniMi!',
-                            text2: 'Our goal is to organize all the informations about the University of Milan (Università degli Studi di Milano Statale, Unimi) and make them easily accessible to anyone.',
+                            text1: 'Welcome to <Text style={{color: theme.palette.themePrimary}} variant="xLarge">Network Studenti UniMi</Text> !',
+                            text2: 'Our goal is to organize all the informations about the University of Milan (Università degli Studi di Milano, Unimi) and make them easily accessible to anyone.',
                             sliders: [
                                 { text1: 'Sei uno studente che vuole immatricolarsi e che cerca un gruppo generale in cui chiedere informazioni', text2: 'Ne abbiamo creato uno apposito!', cardText: "Pre-matricole, ammissioni e immatricolazioni" },
-                                { text1: 'Stai cercando un gruppo per trovare un alloggio a Milano insieme ad altri studenti universitari oppure vuoi creare un annuncio', text2: 'Entra nel gruppo apposito!', cardText: 'Alloggi' },
+                                { text1: 'Stai cercando un gruppo per trovare un alloggio a Milano insieme ad altri studenti universitari oppure vuoi creare un annuncio', text2: 'Entra nel gruppo apposito!', cardText: 'Apartments' },
                                 { text1: 'Ti ricordiamo che abbiamo a disposizione una <Text styles={semibold}>Wiki</Text> in cui è possibile collaborare e aiutare altri studenti! Puoi trovare tutto il materiale che ti serve, ma ricorda che è importante anche contribuire!', reachWiki: 'Raggiungi la Wiki!' },
                                 { text1: 'Per noi offrirti la possibilità di non perdere tempo alla ricerca di servizi universitari è molto importante. Proprio per questo abbiamo realizzato una pagina apposita per trovarli tutti subito, e farti scoprire anche alcune guide che abbiamo realizzato!' }
                             ]
@@ -240,11 +244,11 @@ class LocalizationService {
                             text: 'Everything has its own Telegram group chat',
                             card1: {
                                 text: 'Say goodbye to those messy WhatsApp chats! We have created a Telegram group for each course.',
-                                button: 'Course Group'
+                                button: 'Course Groups'
                             },
                             card2: {
                                 text: 'Tutoring, course materials, Erasmus, internship, apartments and many other extra things.',
-                                button: 'Extra Group'
+                                button: 'Extra Groups'
                             },
                             card3: {
                                 text: 'We think that a respectful and inclusive environment makes us more innovative and efficient. Read the rules!',
@@ -382,14 +386,14 @@ class LocalizationService {
                         departmentSelect: 'Select your department'
                     },
                     contributors: {
-                        text1:'Below you can find the contributors who put their efforts into the development of the Network, the website and all its services.',
+                        text1:'Below you can find the contributors who have worked into the development of the Network, the website and all its services.',
                         header1: 'Main maintainers',
                         header2: 'Contributors',
-                        dev1: 'Website developer',
-                        dev2: 'Website technical designer',
+                        dev1: 'Website Developer',
+                        dev2: 'Website Technical Designer',
                         githubProfile: 'Github Profile',
                         websiteProfile: 'Website',
-                        text2: 'Did you contributed to the development of the Network and you would like to appear in this list? Send a private message to @giuseppetm.'
+                        text2: 'Did you contributed to the development of the Network and you would like to appear in this list? Send a private message to <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.'
                     },
                     footer: [
                         { header: 'Studenti UniMi &copy;', text: 'The network and the associated website are not affiliated to the University of Milan (UniMi)' },

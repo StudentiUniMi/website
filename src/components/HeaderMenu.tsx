@@ -17,8 +17,6 @@ import { SwatchColorPicker } from '@fluentui/react/lib/SwatchColorPicker';
 import { semibold } from "../fonts";
 import { palettes } from '../palettes';
 
-const onRenderCaretDown = (): JSX.Element => { return <Icon iconName="List" />; };
-
 export enum ItemsKeys {
     home = "home",
     organization = "organization",
@@ -30,7 +28,6 @@ export enum ItemsKeys {
     contributors = "contributors"
 };
 
-
 interface Props { changeTheme: () => void, changePalette: (id: string) => void };
 initializeIcons();
 
@@ -39,6 +36,7 @@ const HeaderMenu = (props: Props) => {
     const history = useHistory();
     const locale = LocalizationService.strings();
     const [cookies, setCookie] = useCookies();
+    const onRenderCaretDown = (): JSX.Element => { return <Icon iconName="List" />; };
 
     const languageOptions: IDropdownOption[] = [
         { key: 'it', text: locale.settingsPanel.italian },
@@ -158,7 +156,7 @@ const HeaderMenu = (props: Props) => {
                     isLightDismiss
                     isOpen={isOpen}
                     onDismiss={dismissPanel}
-                    closeButtonAriaLabel="Close"
+                    closeButtonAriaLabel={locale.settingsPanel.close}
                     headerText={locale.settingsPanel.settings}
                     type={PanelType.smallFixedFar}
                     theme={theme}
@@ -184,7 +182,7 @@ const HeaderMenu = (props: Props) => {
                         theme={theme}
                     />
                     <div className="mt-3">
-                        <Text variant="medium" styles={semibold}>Seleziona il colore principale  </Text>
+                        <Text variant="medium" styles={semibold}>{locale.settingsPanel.selectColor}  </Text>
                         <TooltipHost
                             content="Reset color"
                             calloutProps={calloutPropsResetColor}

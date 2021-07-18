@@ -18,6 +18,8 @@ import { IIconProps } from '@fluentui/react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { getFaqs } from '../services/Requests'; 
 import { getGroupsLength, getCdlsLength } from '../services/Requests';
+import LocalizationService from "../services/LocalizationService";
+import JsxParser from 'react-jsx-parser'
 import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper/core';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
@@ -29,6 +31,7 @@ initializeIcons();
 
 const HomeView = () => {
     var theme = useTheme();
+    const locale = LocalizationService.strings();
     const faqs = getFaqs();
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
@@ -50,13 +53,9 @@ const HomeView = () => {
     return (
         <Container className="home text-center">
             <div className="info-section mb-4">
-                <Image id="logo" className="mb-2"
-                    src={process.env.PUBLIC_URL + '/logo/' + logoFileName}
-                    alt='Network logo'
-                    style={logoProperties}
-                />
-                <div className="mb-2"><Text variant="xLarge">Benvenuto nel sito web del <Text style={{color: theme.palette.themePrimary}} variant="xLarge">Network Studenti UniMi</Text> !</Text></div>
-                <div><Text variant="large">La nostra missione è organizzare le informazioni dell'Università degli studi di Milano e renderle accessibili a tutti.</Text></div>
+                <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/logo/' + logoFileName} alt='Network logo' style={logoProperties} />
+                <div className="mb-2"><Text variant="xLarge"><JsxParser bindings={{ theme: theme }} components={{ Text }} jsx={locale.homepage.section1.text1} /></Text></div>
+                <div><Text variant="large">{locale.homepage.section1.text2}</Text></div>
             </div>
 
             <div className="mb-3 justify-content-center">
@@ -68,18 +67,18 @@ const HomeView = () => {
                                 <div >
                                     <div className="mb-1">
                                         <Text variant="medium">
-                                            Sei uno studente che vuole immatricolarsi e che cerca un gruppo generale in cui chiedere informazioni <Icon iconName="Help" style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size12 }} />
+                                            {locale.homepage.section1.sliders[0].text1} <Icon iconName="Help" style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size12 }} />
                                         </Text>
                                     </div>
                                     <div>
-                                        <Text styles={semibold}>Ne abbiamo creato uno apposito!</Text>
+                                        <Text styles={semibold}>{locale.homepage.section1.sliders[0].text2}</Text>
                                     </div>
                                 </div>
                             </Col>
                             <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
                                 <Card tokens={cardTokens} style={{ minHeight: '160px' }}>
                                     <Card.Item>
-                                        <Persona onRenderPrimaryText={() => <div className="justify-content-center text-center mt-3" style={{ wordWrap: 'break-word', whiteSpace: 'normal'}}><Text styles={semibold}>Pre-matricole, ammissioni e immatricolazioni</Text></div>} text="Pre-matricole, ammissioni e immatricolazioni" imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/matricole.jpg'} />
+                                        <Persona onRenderPrimaryText={() => <div className="justify-content-center text-center mt-3" style={{ wordWrap: 'break-word', whiteSpace: 'normal' }}><Text styles={semibold}>{locale.homepage.section1.sliders[0].cardText}</Text></div>} text={locale.homepage.section1.sliders[0].cardText} imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/matricole.jpg'} />
                                     </Card.Item>
                                     <Card.Section>
                                         <ActionButton
@@ -87,7 +86,7 @@ const HomeView = () => {
                                             iconProps={telegramGroupIcon}
                                             style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '20px', marginBottom: 0 }}
                                             allowDisabledFocus>
-                                            Gruppo Telegram
+                                            {locale.telegramGroup}
                                         </ActionButton>
                                     </Card.Section>
                                 </Card>
@@ -101,18 +100,18 @@ const HomeView = () => {
                                 <div >
                                     <div className="mb-1">
                                         <Text variant="medium">
-                                            Stai cercando un gruppo per trovare un alloggio a Milano insieme ad altri studenti universitari oppure vuoi creare un annuncio <Icon iconName="Help" style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size12 }} />
+                                            {locale.homepage.section1.sliders[1].text1} <Icon iconName="Help" style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size12 }} />
                                         </Text>
                                     </div>
                                     <div>
-                                        <Text styles={semibold}>Entra nel gruppo apposito!</Text>
+                                        <Text styles={semibold}>{locale.homepage.section1.sliders[1].text2}</Text>
                                     </div>
                                 </div>
                             </Col>
                             <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
                                 <Card tokens={cardTokens} style={{ minHeight: '160px' }}>
                                     <Card.Item>
-                                        <Persona onRenderPrimaryText={() => <div className="ml-2"><Text styles={semibold}>Alloggi</Text></div>} text="Alloggi" imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/alloggi.jpg'} />
+                                        <Persona onRenderPrimaryText={() => <div className="ml-2"><Text styles={semibold}>{locale.homepage.section1.sliders[1].cardText}</Text></div>} text={locale.homepage.section1.sliders[1].cardText} imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/alloggi.jpg'} />
                                     </Card.Item>
                                     <Card.Section>
                                         <ActionButton
@@ -120,7 +119,7 @@ const HomeView = () => {
                                             iconProps={telegramGroupIcon}
                                             style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '20px', marginBottom: 0 }}
                                             allowDisabledFocus>
-                                            Gruppo Telegram
+                                            {locale.telegramGroup}
                                         </ActionButton>
                                     </Card.Section>
                                 </Card>
@@ -134,9 +133,8 @@ const HomeView = () => {
                                 <div >
                                     <div className="mb-1">
                                         <Text variant="medium">
-                                            Ti ricordiamo che abbiamo a disposizione una <Text styles={semibold}>Wiki</Text> in cui è possibile collaborare e aiutare altri studenti!
-                                        Puoi trovare tutto il materiale che ti serve, ma ricorda che è importante anche contribuire!
-                                    </Text>
+                                            <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text }} jsx={locale.homepage.section1.sliders[2].text1} />
+                                        </Text>
                                     </div>
                                 </div>
                             </Col>
@@ -153,7 +151,7 @@ const HomeView = () => {
                                             iconProps={wikiIcon}
                                             style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 0, marginBottom: 0 }}
                                             allowDisabledFocus>
-                                            Raggiungi la Wiki!
+                                            {locale.homepage.section1.sliders[2].reachWiki}
                                         </ActionButton>
                                     </Card.Section>
                                 </Card>
@@ -164,13 +162,10 @@ const HomeView = () => {
                     <SwiperSlide>
                         <Row className="justify-content-center">
                             <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                                <div >
-                                    <div className="mb-1">
-                                        <Text variant="medium">
-                                            Per noi offrirti la possibilità di non perdere tempo alla ricerca di servizi universitari è molto importante.
-                                            Proprio per questo abbiamo realizzato una pagina apposita per trovarli tutti subito, e farti scoprire anche alcune guide che abbiamo realizzato!
-                                </Text>
-                                    </div>
+                                <div className="mb-1">
+                                    <Text variant="medium">
+                                        {locale.homepage.section1.sliders[3].text1}
+                                    </Text>
                                 </div>
                             </Col>
                             <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
@@ -193,7 +188,7 @@ const HomeView = () => {
 
             <div className="primary-section mb-4">
                 <div className="mb-4">
-                    <Separator><Text variant="large" styles={semibold}>I nostri collegamenti principali</Text></Separator>
+                    <Separator><Text variant="large" styles={semibold}>{locale.homepage.section2.text}</Text></Separator>
                 </div>
 
                 <Row className="justify-content-center">
@@ -202,10 +197,10 @@ const HomeView = () => {
                             <Card.Section>
                                 <div><i className="fab fa-telegram homeIcon" style={homeIconStyle}></i></div>
                                 <Text variant="medium">
-                                    Unisciti al canale telegram per rimanere aggiornato e raggiungere tutti i link disponibili!
-                            </Text>
+                                    {locale.homepage.section2.card1.text}
+                                </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text="Canale telegram" className="text-decoration-none" onClick={() => redirectToLink("https://t.me/studenti_unimi")} allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section2.card1.button} href="https://t.me/studenti_unimi" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
@@ -216,10 +211,10 @@ const HomeView = () => {
                             <Card.Section>
                                 <div><i className="fas fa-comment-dots homeIcon" style={homeIconStyle}></i></div>
                                 <Text variant="medium">
-                                    Entra nel gruppo telegram principale per eventuali discussioni e chiarimenti riguardo il network.
+                                    {locale.homepage.section2.card2.text}
                                 </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text="Gruppo telegram" className="text-decoration-none" onClick={() => redirectToLink("https://t.me/joinchat/VswKeO2D6soL3lcj")} allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section2.card2.button} href="https://t.me/joinchat/VswKeO2D6soL3lcj" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
@@ -230,10 +225,10 @@ const HomeView = () => {
                             <Card.Section>
                                 <div><i className="fab fa-discord homeIcon" style={homeIconStyle}></i></div>
                                 <Text variant="medium">
-                                    Entra nel nostro server discord per scambiare informazioni con altri studenti e conoscere nuove persone!
+                                    {locale.homepage.section2.card3.text}
                                 </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text="Server discord" className="text-decoration-none" onClick={() => redirectToLink("https://discord.gg/SwPzAkv4A4")} allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section2.card3.button} href="https://discord.gg/SwPzAkv4A4" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
@@ -244,10 +239,10 @@ const HomeView = () => {
                             <Card.Section>
                                 <div><i className="fab fa-github homeIcon" style={homeIconStyle}></i></div>
                                 <Text variant="medium">
-                                    Trovi tutti i nostri progetti open source nelle repository della nostra organizzazione.
-                            </Text>
+                                    {locale.homepage.section2.card4.text}
+                                </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text="Organizzazione" className="text-decoration-none" onClick={() => redirectToLink("https://github.com/StudentiUnimi/")} allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section2.card4.button} href="https://github.com/StudentiUnimi" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
@@ -256,7 +251,7 @@ const HomeView = () => {
             </div>
 
             <div className="secondary-section mb-4">
-                <div className="mb-4"><Separator><Text variant="large" styles={semibold}>Ogni cosa ha il suo gruppo Telegram</Text></Separator></div>
+                <div className="mb-4"><Separator><Text variant="large" styles={semibold}>{locale.homepage.section3.text}</Text></Separator></div>
 
                 <Row className="justify-content-center">
                     <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
@@ -264,10 +259,10 @@ const HomeView = () => {
                             <Card.Section>
                                 <div><Icon iconName="Group" style={homeIconStyle} className="homeIcon" /></div>
                                 <Text variant="medium">
-                                    Di' addio al mega gruppo WhatsApp in cui non si capisce nulla! Abbiamo creato un gruppo Telegram per ogni insegnamento.
-                            </Text>
+                                    {locale.homepage.section3.card1.text}
+                                </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text="Gruppi dei corsi" className="text-decoration-none" href="https://studentiunimi.it/courses/" allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section3.card1.button} className="text-decoration-none" href="https://studentiunimi.it/courses/" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
@@ -278,11 +273,10 @@ const HomeView = () => {
                             <Card.Section>
                                 <div><Icon iconName="AddGroup" style={homeIconStyle} className="homeIcon" /></div>
                                 <Text variant="medium">
-                                    Ripetizioni, materiali, erasmus, tirocinio, alloggi.
-                                    Tutte quelle cose extra che però hanno la loro importanza.
-                            </Text>
+                                    {locale.homepage.section3.card2.text}
+                                </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text="Gruppi extra" className="text-decoration-none" href="https://studentiunimi.it/additional_groups/" allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section3.card2.button} className="text-decoration-none" href="https://studentiunimi.it/additional_groups/" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
@@ -293,11 +287,10 @@ const HomeView = () => {
                             <Card.Section>
                                 <div><Icon iconName="JoinOnlineMeeting" style={homeIconStyle} className="homeIcon" /></div>
                                 <Text variant="medium">
-                                    Crediamo che un ambiente rispettoso e inclusivo ci renda più innovativi e produttivi.
-                                    Dai un'occhiata al regolamento dei gruppi.
-                            </Text>
+                                    {locale.homepage.section3.card3.text}
+                                </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text="Regolamento" className="text-decoration-none" href="https://studentiunimi.it/rules/" allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section3.card3.button} className="text-decoration-none" href="https://studentiunimi.it/rules/" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
@@ -306,7 +299,7 @@ const HomeView = () => {
             </div>
 
             <div className="tertiary-section mb-4">
-                <div className="mb-4"><Separator><Text variant="large" styles={semibold}>I nostri servizi per aiutarti nello studio</Text></Separator></div>
+                <div className="mb-4"><Separator><Text variant="large" styles={semibold}>{locale.homepage.section4.text}</Text></Separator></div>
 
                 <Row className="justify-content-center">
                     <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>
@@ -314,10 +307,10 @@ const HomeView = () => {
                             <Card.Section>
                                 <div><Icon iconName="Globe" style={homeIconStyle} className="homeIcon" /></div>
                                 <Text variant="medium">
-                                    Accedi alla Wiki del Network e aiutaci a migliorarla contribuendo!
-                            </Text>
+                                    {locale.homepage.section4.card1.text}
+                                </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text="Wiki" onClick={() => redirectToLink("https://wiki.studentiunimi.it/")} allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section4.card1.button} href="https://wiki.studentiunimi.it/" className="text-decoration-none"  target="_blank" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
@@ -328,10 +321,10 @@ const HomeView = () => {
                             <Card.Section>
                                 <div><Icon iconName="World" style={homeIconStyle} className="homeIcon" /></div>
                                 <Text variant="medium">
-                                    Utilizza la nostra comoda pagina che ti permette di raggiungere tutti i servizi UniMi.
-                            </Text>
+                                    {locale.homepage.section4.card2.text}
+                                </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text="Servizi" className="text-decoration-none" href="https://studentiunimi.it/services/" allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section4.card2.button} className="text-decoration-none" href="https://studentiunimi.it/services/" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
@@ -342,11 +335,10 @@ const HomeView = () => {
                             <Card.Section>
                                 <div><Icon iconName="CloudDownload" style={homeIconStyle} className="homeIcon" /></div>
                                 <Text variant="medium">
-                                    <div className="mb-0">Mi mandi i tuoi appunti?</div>
-                                    <div>Un attimo e sono subito da lei!</div>
+                                    {locale.homepage.section4.card3.text}
                                 </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text="HedgeDoc" onClick={() => redirectToLink("https://hedgedoc.studentiunimi.it/")} allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section4.card3.button} href="https://hedgedoc.studentiunimi.it/" className="text-decoration-none"  target="_blank" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
@@ -357,21 +349,19 @@ const HomeView = () => {
                             <Card.Section>
                                 <div><Icon iconName="Code" style={homeIconStyle} className="homeIcon" /></div>
                                 <Text variant="medium">
-                                    Accedi al nostro servizio per condividere codice e qualsiasi altro materiale in maniera comoda e sicura.
-                            </Text>
+                                    {locale.homepage.section4.card4.text}
+                                </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text="Paste" onClick={() => redirectToLink("http://paste.studentiunimi.it/")} allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section4.card4.button} href="http://paste.studentiunimi.it/" className="text-decoration-none"  target="_blank" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
                     </Col>
                 </Row>
-
-
             </div>
 
             <div className="fourth-section mb-4">
-                <div className="mb-4"><Separator><Text variant="large" styles={semibold}>Hai provato a spegnere e riaccendere?</Text></Separator></div>
+                <div className="mb-4"><Separator><Text variant="large" styles={semibold}>{locale.homepage.section5.text}</Text></Separator></div>
 
                 <Row className="justify-content-center">
                     <Col xl={3} lg={3} md={4} sm={6} xs={12} className="mb-3">
@@ -379,11 +369,11 @@ const HomeView = () => {
                             <Card.Section>
                                 <div><Icon iconName="ContactHeart" style={homeIconStyle} className="homeIcon" /></div>
                                 <Text variant="medium">
-                                    Ho un problema didattico.
-                            </Text>
+                                    {locale.homepage.section5.card1.text}
+                                </Text>
                                 <Icon iconName="SortDown" style={iconStyle}></Icon>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text="Rappresentanti" className="text-decoration-none" href="https://studentiunimi.it/representatives/" allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section5.card1.button} className="text-decoration-none" href="https://studentiunimi.it/representatives/" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
@@ -394,11 +384,11 @@ const HomeView = () => {
                             <Card.Section>
                                 <div><Icon iconName="Telemarketer" style={homeIconStyle} className="homeIcon" /></div>
                                 <Text variant="medium">
-                                    Ho un problema tecnico.
-                            </Text>
+                                    {locale.homepage.section5.card2.text}
+                                </Text>
                                 <Icon iconName="SortDown" style={iconStyle}></Icon>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text="Amministratori" className="text-decoration-none" href="https://studentiunimi.it/organization/" allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section5.card2.button} className="text-decoration-none" href="https://studentiunimi.it/organization/" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
@@ -408,7 +398,7 @@ const HomeView = () => {
             </div>
 
             <div className="faq-section mb-4">
-                <div className="mb-4"><Separator><Text variant="large" styles={semibold}>Domande frequenti sul Network</Text></Separator></div>
+                <div className="mb-4"><Separator><Text variant="large" styles={semibold}>{locale.homepage.section6.text}</Text></Separator></div>
 
                 {
                     faqs.map( (x,i) => {
@@ -434,7 +424,7 @@ const HomeView = () => {
             </div>
 
             <div className="mb-3">
-                <div className="mb-4"><Separator><Text variant="large" styles={semibold}>Altre informazioni</Text></Separator></div>
+                <div className="mb-4"><Separator><Text variant="large" styles={semibold}>{locale.homepage.section7.text}</Text></Separator></div>
 
                 <Row className="justify-content-center">
                     <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
@@ -442,9 +432,9 @@ const HomeView = () => {
                             <CardSection>
                                 <Icon iconName="UserOptional" style={iconStyle} />
                                 <Text variant="large" className="mt-0">
-                                    Abbiamo più di<br />
+                                    {locale.homepage.section7.card1.text1}<br />
                                     <Text variant="xLarge" style={numberStyle}>2.000</Text> <br />
-                                    utenti
+                                    {locale.homepage.section7.card1.text2}
                                 </Text>
                             </CardSection>
                         </Card>
@@ -454,9 +444,9 @@ const HomeView = () => {
                             <CardSection>
                                 <Icon iconName="PeopleAlert" style={iconStyle} />
                                 <Text variant="large" className="mt-0">
-                                    Abbiamo<br />
+                                    {locale.homepage.section7.card2.text1}<br />
                                     <Text variant="xLarge" style={numberStyle}>{groupsNumber}</Text> <br />
-                                    gruppi telegram
+                                    {locale.homepage.section7.card2.text2}
                                 </Text>
                             </CardSection>
                         </Card>
@@ -466,9 +456,9 @@ const HomeView = () => {
                             <CardSection>
                                 <Icon iconName="CityNext" style={iconStyle} />
                                 <Text variant="large" className="mt-0">
-                                    Copriamo<br />
+                                    {locale.homepage.section7.card3.text1}<br />
                                     <Text variant="xLarge" style={numberStyle}>{cdlsNumber}</Text> <br />
-                                    corsi di laurea
+                                    {locale.homepage.section7.card3.text2}
                                 </Text>
                             </CardSection>
                         </Card>

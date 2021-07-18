@@ -1,5 +1,4 @@
-interface ILocalizationStrings
-{
+interface ILocalizationStrings {
     telegramGroup: string,
     headerMenuItems: {
         home: string,
@@ -18,7 +17,9 @@ interface ILocalizationStrings
         lightTheme: string,
         selectLanguage: string,
         italian: string,
-        english: string
+        english: string,
+        selectColor: string,
+        close: string
     },
     homepage: {
         section1: {
