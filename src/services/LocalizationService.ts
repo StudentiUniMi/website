@@ -108,9 +108,9 @@ class LocalizationService {
                         },
                         section7: {
                             text: 'Altre informazioni',
-                            card1: { text1: 'Abbiamo più di', text2: 'utenti' },
-                            card2: { text1: 'Abbiamo', text2: 'gruppi telegram' },
-                            card3: { text1: 'Copriamo', text2: 'corsi di laurea' },
+                            card1: { text1: 'Abbiamo più di', text2: 'utenti.' },
+                            card2: { text1: 'Abbiamo', text2: 'gruppi telegram.' },
+                            card3: { text1: 'Copriamo', text2: 'corsi di laurea.' },
                         }
                     },
                     aboutUs: {
@@ -254,7 +254,7 @@ class LocalizationService {
                         section4: {
                             text: 'Our services to help you studying',
                             card1: {
-                                text: 'View the network Wiki and help us improving it!',
+                                text: 'Visit our Wiki and help us improving it!',
                                 button: 'Wiki'
                             },
                             card2: {
@@ -273,22 +273,22 @@ class LocalizationService {
                         section5: {
                             text: 'Have you tried turning it off and on again?',
                             card1: {
-                                text: 'I have a didactic problem',
+                                text: 'I have a didactic problem.',
                                 button: 'Representatives'
                             },
                             card2: {
-                                text: 'I have a technical problem',
+                                text: 'I have a technical problem.',
                                 button: 'Admins'
                             }
                         },
                         section6: {
-                            text: 'Domande frequenti sul Network'
+                            text: 'Frequently asked questions'
                         },
                         section7: {
-                            text: 'Altre informazioni',
-                            card1: { text1: 'Abbiamo più di', text2: 'utenti' },
-                            card2: { text1: 'Abbiamo', text2: 'gruppi telegram' },
-                            card3: { text1: 'Copriamo', text2: 'corsi di laurea' },
+                            text: 'Other informations',
+                            card1: { text1: 'We have more than', text2: 'users.' },
+                            card2: { text1: 'We have', text2: 'telegram groups.' },
+                            card3: { text1: 'We cover', text2: 'degree courses.' },
                         }
                     },
                     aboutUs: {
@@ -300,8 +300,9 @@ class LocalizationService {
                     },
                     rules: {
                         text1: 'Here you can find the Regulation of our network. Please read it before joining any group.',
-                        question: 'Why do we need it?',
-                        answer: { text1: 'We want to make clear the reasons that took us to introducing these rules into the network.', text2: "We noticed that most of the groups were flooded with trivial questions re-proposed every day. This was lowering the quality of our chats and discouraged the participation of some students. Therefore, we started repressing this phenomenon warning their proponents and offering a FAQ section for each course." },
+                        question: 'Why did we create it?',
+                        answer: {
+                            text1: 'We want to make clear the reasons that took us to introducing these rules into the network.', text2: "We noticed that most of the groups were flooded with trivial questions re-proposed every day. This was lowering the quality of our chats and discouraged the participation of some students. Therefore, we started repressing this phenomenon warning their proponents and offering a dedicated <Link href='https://wiki.studentiunimi.it/start' target='_blank'>Wiki</Link> page for each course." },
                         text2: 'Telegram groups rules',
                         
                         /*
@@ -339,7 +340,7 @@ class LocalizationService {
                     },
                     courses: {
                         text1: 'Below you can find Telegram groups, websites, wiki, FAQs (if available) and general information about your degree programme and its courses',
-                        text2: 'Links to the wiki could lead to unfinished pages: that’s why you can help us collecting FAQs and any other useful material for that course. To help us create a free account here',
+                        text2: 'Links to the wiki could lead to unfinished pages: that’s why you can help us collecting FAQs and any other useful material for that course. In order to do that, you can create a free account <Link href="https://wiki.studentiunimi.it/start" target="_blank">here</Link>.',
                         departmentSelect: 'Select the department',
                         cdlSelect: 'Select the degree',
                         availableRedirects: 'Available redirects',
@@ -355,8 +356,8 @@ class LocalizationService {
                     },
                     services: {
                         text1: 'Tired of scavenging into endless pages to find the services offered by the university? We grouped all the links here!',
-                        text2: 'If you think that something should be added suggest it on the main group',
-                        text3: 'DA COMPILARE',
+                        text2: "<Text styles={semibold}>Careful:</Text> some web pages like Unimia or SIFA services might not load (we remind you that it's not our fault in this case!).",
+                        text3: 'If you think that something should be added you suggest it on the <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">main group</Link>.',
                         availableServices: 'Available services:',
                         /*
                         card1: { header: 'Unimia', text: 'Home Page for all UniMi Services' },
@@ -372,7 +373,7 @@ class LocalizationService {
                     },
                     extraGroups: {
                         text1: 'Looking for something different? Join our groups!',
-                        text2: 'Would you like to open a new group? Bring your request on the main group.',
+                        text2: 'Would you like to suggest a new group? Bring your request on the <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">main group</Link>.',
                         availableGroups: 'Available groups'
                     },
                     representatives: {
