@@ -1,114 +1,183 @@
-[
-    {
-        "name": "Scaricare videolezioni",
-        "link": "https://wiki.studentiunimi.it/guida:scaricare_videolezioni_ariel",
-        "icon": "VideoSearch",
-        "color": "#f06400",
-        "type": "Guida",
-        "description": "Guida semplice e veloce per scaricare le videolezioni da Ariel."
+[{
+    "name": {
+        "it": "Scaricare videolezioni",
+        "en": "Download Ariel videolectures"
     },
-    {
-        "name": "Disiscriversi dalle mailing list",
-        "link": "https://wiki.studentiunimi.it/guida:disiscrizione_mailing_list",
-        "icon": "MailReminder",
-        "color": "#0b9799",
-        "type": "Guida",
-        "description": "Guida per disiscriversi dalle mailing list."
-    },
-    {
-        "name": "Unimia", 
-        "link": "http://unimia.unimi.it/portal/server.pt",
-        "icon": "JoinOnlineMeeting",
-        "color":"#0078d4",
-        "type": "Servizio",
-        "description": "Portale d'accesso ai servizi d'ateneo."
-    },
-    {
-        "name": "Iscrizione esami", 
-        "link": "http://studente.unimi.it/foIscrizioneEsami/",
-        "icon": "WaitlistConfirm",
-        "color":"#004e8c",
-        "type": "Servizio",
-        "description": "Iscriviti agli appelli d'esame o controlla le iscrizioni effettuate."
-    },
-    {
-        "name": "Verbalizzazione esami", 
-        "link": "http://studente.unimi.it/foVerbalizzazione/",
-        "icon": "VerifiedBrand",
-        "color":"#4f6bed",
-        "type": "Servizio",
-        "description": "Controlla gli esiti finali o parziali dei tuoi esami."
-    },
-    {
-        "name": "Servizi SIFA", 
-        "link": "http://unimia.unimi.it/portal/server.pt/community/unimia/207/servizi_sifa/",
-        "icon": "DatabaseSync",
-        "color":"#8378de",
-        "type": "Servizio",
-        "description": "Accedi a tutti i servizi online SIFA."
-    },
-    {
-        "name": "Gestione pagamenti",
-        "link": "https://studente.unimi.it/fo_pagamenti/checkLogin.jsp",
-        "icon": "Bank",
-        "color": "#393939",
-        "type": "Servizio",
-        "description": "Sezione del SIFA riguardante i pagamenti."
-    },
-    {
-        "name": "Presentazione piano di studi",
-        "link": "https://studente.unimi.it/pianiDiStudio/client/checkLogin.asp",
-        "icon": "InternalInvestigation",
-        "color": "#8cbd18",
-        "type": "Servizio",
-        "description": "Sezione apposita per presentare il piano di studi."
-    },
-    {
-        "name": "Portale diritto allo studio",
-        "link": "http://studente.unimi.it/dirittoallostudio",
-        "icon": "AnalyticsReport",
-        "color": "#71afe5",
-        "type": "Servizio",
-        "description": "Portale per il diritto allo studio."
-    },
-    {
-        "name": "Webmail", 
-        "link": "https://securemail.unimi.it/",
-        "icon": "Mail",
-        "color":"#953ac7",
-        "type": "Servizio",
-        "description": "Servizio di webmail d'ateneo."
-    },
-    {
-        "name": "Ariel", 
-        "link": "https://ariel.unimi.it/",
-        "icon": "FabricFormLibrary",
-        "color":"#ffaa44",
-        "type": "Servizio",
-        "description": "Siti dei corsi didattici."
-    },
-    {
-        "name": "Portale studenti", 
-        "link": "https://easystaff.divsi.unimi.it/PortaleStudenti/",
-        "icon": "People",
-        "color":"#00ad56",
-        "type": "Servizio",
-        "description": "Orari delle lezioni, occupazione delle aule, appelli d'esame."
-    },
-    {
-        "name": "Servizio bibliotecario", 
-        "link": "https://www.sba.unimi.it/",
-        "icon": "Library",
-        "color":"#247285",
-        "type": "Servizio",
-        "description": "Tutte le informazioni sulle biblioteche."
-    },
-    {
-        "name": "Informastudenti", 
-        "link": "https://informastudenti.unimi.it/",
-        "icon": "SurveyQuestions",
-        "color":"#d13438",
-        "type": "Servizio",
-        "description": "Accedi al portale InformaStudenti."
+    "link": "https://wiki.studentiunimi.it/guida:scaricare_videolezioni_ariel",
+    "icon": "VideoSearch",
+    "color": "#f06400",
+    "type": "Guida",
+    "description": {
+        "it": "Guida semplice e veloce per scaricare le videolezioni da Ariel.",
+        "en": "Step-by-step tutorial"
     }
-]
+}, {
+    "name": {
+        "it": "Disiscriversi dalle mailing list",
+        "en": "Annoying mail on your inbox?"
+    },
+    "link": "https://wiki.studentiunimi.it/guida:disiscrizione_mailing_list",
+    "icon": "MailReminder",
+    "color": "#0b9799",
+    "type": "Guida",
+    "description": {
+        "it": "Guida per disiscriversi dalle mailing list.",
+        "en": "How to unsubscribe to UniMi mailing list:"
+    }
+}, {
+    "name": {
+        "it": "Unimia",
+        "en": "Unimia"
+    },
+    "link": "http://unimia.unimi.it/portal/server.pt",
+    "icon": "JoinOnlineMeeting",
+    "color": "#0078d4",
+    "type": "Servizio",
+    "description": {
+        "it": "Portale d'accesso ai servizi d'ateneo.",
+        "en": "Hub to access all the services of the university."
+    }
+}, {
+    "name": {
+        "it": "Iscrizione esami",
+        "en": "Exam submission"
+    },
+    "link": "http://studente.unimi.it/foIscrizioneEsami/",
+    "icon": "WaitlistConfirm",
+    "color": "#004e8c",
+    "type": "Servizio",
+    "description": {
+        "it": "Iscriviti agli appelli d'esame o controlla le iscrizioni effettuate.",
+        "en": "Submit to an exam or check your entries."
+    }
+}, {
+    "name": {
+        "it": "Verbalizzazione esami",
+        "en": "Marks registering"
+    },
+    "link": "http://studente.unimi.it/foVerbalizzazione/",
+    "icon": "VerifiedBrand",
+    "color": "#4f6bed",
+    "type": "Servizio",
+    "description": {
+        "it": "Controlla gli esiti finali o parziali dei tuoi esami.",
+        "en": "Check the final or partial results of your exams."
+    }
+}, {
+    "name": {
+        "it": "Servizi SIFA",
+        "en": "Sifa"
+    },
+    "link": "http://unimia.unimi.it/portal/server.pt/community/unimia/207/servizi_sifa/",
+    "icon": "DatabaseSync",
+    "color": "#8378de",
+    "type": "Servizio",
+    "description": {
+        "it": "Accedi a tutti i servizi online SIFA.",
+        "en": "Access all the SIFA online services."
+    }
+}, {
+    "name": {
+        "it": "Gestione pagamenti",
+        "en": "Payments"
+    },
+    "link": "https://studente.unimi.it/fo_pagamenti/checkLogin.jsp",
+    "icon": "Bank",
+    "color": "#393939",
+    "type": "Servizio",
+    "description": {
+        "it": "Sezione del SIFA riguardante i pagamenti.",
+        "en": "Enrolment renewal, tuition fees and other payments."
+    }
+}, {
+    "name": {
+        "it": "Presentazione piano di studi",
+        "en": "Plan of study"
+    },
+    "link": "https://studente.unimi.it/pianiDiStudio/client/checkLogin.asp",
+    "icon": "InternalInvestigation",
+    "color": "#8cbd18",
+    "type": "Servizio",
+    "description": {
+        "it": "Sezione apposita per presentare il piano di studi.",
+        "en": "Submission page of study plans."
+    }
+}, {
+    "name": {
+        "it": "Portale diritto allo studio",
+        "en": "Education Grants Helpdesk"
+    },
+    "link": "http://studente.unimi.it/dirittoallostudio",
+    "icon": "AnalyticsReport",
+    "color": "#71afe5",
+    "type": "Servizio",
+    "description": {
+        "it": "Portale per il diritto allo studio.",
+        "en": "Education Grants Helpdesk"
+    }
+}, {
+    "name": {
+        "it": "Webmail",
+        "en": "Webmail"
+    },
+    "link": "https://securemail.unimi.it/",
+    "icon": "Mail",
+    "color": "#953ac7",
+    "type": "Servizio",
+    "description": {
+        "it": "Servizio di webmail d'ateneo.",
+        "en": "The university webmail service."
+    }
+}, {
+    "name": {
+        "it": "Ariel",
+        "en": "Ariel"
+    },
+    "link": "https://ariel.unimi.it/",
+    "icon": "FabricFormLibrary",
+    "color": "#ffaa44",
+    "type": "Servizio",
+    "description": {
+        "it": "Siti dei corsi didattici.",
+        "en": "A website for each course."
+    }
+}, {
+    "name": {
+        "it": "Portale studenti",
+        "en": "Students’ hub"
+    },
+    "link": "https://easystaff.divsi.unimi.it/PortaleStudenti/",
+    "icon": "People",
+    "color": "#00ad56",
+    "type": "Servizio",
+    "description": {
+        "it": "Orari delle lezioni, occupazione delle aule, appelli d'esame.",
+        "en": "Lessons schedule, rooms and exam sessions."
+    }
+}, {
+    "name": {
+        "it": "Servizio bibliotecario",
+        "en": "Library"
+    },
+    "link": "https://www.sba.unimi.it/",
+    "icon": "Library",
+    "color": "#247285",
+    "type": "Servizio",
+    "description": {
+        "it": "Tutte le informazioni sulle biblioteche.",
+        "en": "All the information about UniMi libraries."
+    }
+}, {
+    "name": {
+        "it": "Informastudenti",
+        "en": "InformaStudenti"
+    },
+    "link": "https://informastudenti.unimi.it/",
+    "icon": "SurveyQuestions",
+    "color": "#d13438",
+    "type": "Servizio",
+    "description": {
+        "it": "Accedi al portale InformaStudenti.",
+        "en": "Access InformaStudenti."
+    }
+}]

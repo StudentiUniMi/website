@@ -1,86 +1,155 @@
-[
-    {
-        "name": "Chat generale",
-        "description": "Dedicato a discussioni ed eventuali chiarimenti riguardo il nostro Network.",
-        "image": "studentiunimi.png",
-        "gruppo": "https://t.me/joinchat/VswKeO2D6soL3lcj"
+[{
+    "name": {
+        "it": "Chat generale",
+        "en": "Main chat"
     },
-    {
-        "name": "Pre-matricole, ammissioni e immatricolazioni",
-        "description": "Dedicato agli studenti che vogliono immatricolarsi in UniMi e cercano informazioni generali a riguardo.",
-        "image": "matricole.jpg",
-        "gruppo": "https://t.me/joinchat/jjzrKAOF74s5ZmI0"
+    "description": {
+        "it": "Dedicato a discussioni ed eventuali chiarimenti riguardo il nostro Network.",
+        "en": "Feel free to ask or to submit feedback about the Network"
     },
-    {
-        "name":"Materiali",
-        "description": "Dedicato a chi cerca o offre materiale per i vari corsi didattici. Non è permessa la vendita di appunti personali.",
-        "image": "materiali.jpg",
-        "gruppo":"https://t.me/joinchat/SyKyebINUEXQ969t"
+    "image": "studentiunimi.png",
+    "gruppo": "https://t.me/joinchat/VswKeO2D6soL3lcj"
+}, {
+    "name": {
+        "it": "Pre-matricole, ammissioni e immatricolazioni",
+        "en": "Admissions and Enrollment"
     },
-    {
-        "name":"Ripetizioni",
-        "description": "Dedicato a chi cerca o offre ripetizioni. Le discussioni vanno fatte in privato, qui ci vanno soltanto annunci.",
-        "image": "ripetizioni.jpg",
-        "gruppo":"https://t.me/joinchat/a_aLt47Z8lAyMjBk"
+    "description": {
+        "it": "Dedicato agli studenti che vogliono immatricolarsi in UniMi e cercano informazioni generali a riguardo.",
+        "en": "Wanna be a UniMi freshie? Join to question any detail about Network courses"
     },
-    {
-        "name":"Alloggi",
-        "description": "Dedicato a chi cerca alloggi o vuole creare un annuncio a riguardo.",
-        "image": "alloggi.jpg",
-        "gruppo":"https://t.me/joinchat/xJP5VPIBboxiNjI0"
+    "image": "matricole.jpg",
+    "gruppo": "https://t.me/joinchat/jjzrKAOF74s5ZmI0"
+}, {
+    "name": {
+        "it": "Materiali",
+        "en": "Course Materials"
     },
-    {
-        "name":"Annunci di lavoro",
-        "description": "Gruppo che permette di proporre lavoro rivolto a studenti.",
-        "image": "lavoro.jpg",
-        "gruppo":"https://t.me/joinchat/If3OTD06OCMwMWU0"
+    "description": {
+        "it": "Dedicato a chi cerca o offre materiale per i vari corsi didattici. Non è permessa la vendita di appunti personali.",
+        "en": "Share for free your handouts"
     },
-    {
-        "name":"Tirocini e tesi",
-        "description": "Gruppo per eventuali domande, chiarimenti e discussioni riguardo tirocini e tesi.",
-        "image": "tirocini.jpg",
-        "gruppo":"https://t.me/joinchat/iYmrpYmRk-FkNjI8"
+    "image": "materiali.jpg",
+    "gruppo": "https://t.me/joinchat/SyKyebINUEXQ969t"
+}, {
+    "name": {
+        "it": "Ripetizioni",
+        "en": "Private lessons"
     },
-    {
-        "name":"Erasmus",
-        "description": "Gruppo dedicato a discussioni riguardo l'erasmus.",
-        "image": "erasmus.jpg",
-        "gruppo":"https://t.me/joinchat/3Xp8K8xWnQ9hMDBk"
+    "description": {
+        "it": "Dedicato a chi cerca o offre ripetizioni. Le discussioni vanno fatte in privato, qui ci vanno soltanto annunci.",
+        "en": "Want-ads"
     },
-    {
-        "name":"Freetalk",
-        "description": "Chat freetalk per parlare di qualsiasi cosa.",
-        "image": "free_talk.jpg",
-        "gruppo":"https://t.me/joinchat/S-D9eT7L3MlAR1c5"
+    "image": "ripetizioni.jpg",
+    "gruppo": "https://t.me/joinchat/a_aLt47Z8lAyMjBk"
+}, {
+    "name": {
+        "it": "Alloggi",
+        "en": "Accommodation"
     },
-    {
-        "name":"Recupero OFA",
-        "description": "Gruppo collegato al corso di Matematica del continuo, dedicato agli ofa e i suoi argomenti. ",
-        "image": "ofa.png",
-        "gruppo":"https://t.me/joinchat/-s_MHXbJvfxmYWJk"
+    "description": {
+        "it": "Dedicato a chi cerca alloggi o vuole creare un annuncio a riguardo.",
+        "en": "Residence, house or room for rent want-ads"
     },
-    {
-        "name":"Test di Inglese",
-        "description": "Gruppo dedicato a discussioni inerenti al test di inglese (uguale sia per triennali che magistrali).",
-        "image": "inglese.jpg",
-        "gruppo":"https://t.me/joinchat/gWd38sctY6U4Mjg0"
+    "image": "alloggi.jpg",
+    "gruppo": "https://t.me/joinchat/xJP5VPIBboxiNjI0"
+}, {
+    "name": {
+        "it": "Annunci di lavoro",
+        "en": "Job Ads"
     },
-    {
-        "name":"Unirole",
-        "description": "Dedicato ai giochi di ruolo.",
-        "image": "giochi_di_ruolo.jpg",
-        "gruppo":"https://t.me/joinchat/BnUK_g-KHlIX_SrIieU8CA"
+    "description": {
+        "it": "Gruppo che permette di proporre lavoro rivolto a studenti.",
+        "en": "Only for students"
     },
-    {
-        "name":"Advent of Code",
-        "description": "Dedicato a https://adventofcode.com/",
-        "image": "advent_of_code.jpg",
-        "gruppo":"https://t.me/adventofcodeunimi"
+    "image": "lavoro.jpg",
+    "gruppo": "https://t.me/joinchat/If3OTD06OCMwMWU0"
+}, {
+    "name": {
+        "it": "Tirocini e tesi",
+        "en": "Traineeships, internships and thesis"
     },
-    {
-        "name":"Codin Game",
-        "description": "Gruppo creato per le varie sfide offerte da https://www.codingame.com/",
-        "image": "codin_game.jpg",
-        "gruppo":"https://t.me/codin_game"
-    }
-]
+    "description": {
+        "it": "Gruppo per eventuali domande, chiarimenti e discussioni riguardo tirocini e tesi.",
+        "en": "Traineeships, internships and thesis"
+    },
+    "image": "tirocini.jpg",
+    "gruppo": "https://t.me/joinchat/iYmrpYmRk-FkNjI8"
+}, {
+    "name": {
+        "it": "Erasmus",
+        "en": "Erasmus"
+    },
+    "description": {
+        "it": "Gruppo dedicato a discussioni riguardo l'erasmus.",
+        "en": "Erasmus"
+    },
+    "image": "erasmus.jpg",
+    "gruppo": "https://t.me/joinchat/3Xp8K8xWnQ9hMDBk"
+}, {
+    "name": {
+        "it": "Freetalk",
+        "en": "Freetalk"
+    },
+    "description": {
+        "it": "Chat freetalk per parlare di qualsiasi cosa.",
+        "en": "Freetalk"
+    },
+    "image": "free_talk.jpg",
+    "gruppo": "https://t.me/joinchat/S-D9eT7L3MlAR1c5"
+}, {
+    "name": {
+        "it": "Recupero OFA",
+        "en": "Math OFA"
+    },
+    "description": {
+        "it": "Gruppo collegato al corso di Matematica del continuo, dedicato agli ofa e i suoi argomenti.",
+        "en": "Additional learning requirements group for Mathematical Analysis"
+    },
+    "image": "ofa.png",
+    "gruppo": "https://t.me/joinchat/-s_MHXbJvfxmYWJk"
+}, {
+    "name": {
+        "it": "Test di Inglese",
+        "en": "English OFA"
+    },
+    "description": {
+        "it": "Gruppo dedicato a discussioni inerenti al test di inglese (uguale sia per triennali che magistrali).",
+        "en": "Additional learning requirements group for English (B1) proficiency"
+    },
+    "image": "inglese.jpg",
+    "gruppo": "https://t.me/joinchat/gWd38sctY6U4Mjg0"
+}, {
+    "name": {
+        "it": "Unirole",
+        "en": "UniRole"
+    },
+    "description": {
+        "it": "Dedicato ai giochi di ruolo.",
+        "en": "Role-playing game chat"
+    },
+    "image": "giochi_di_ruolo.jpg",
+    "gruppo": "https://t.me/joinchat/BnUK_g-KHlIX_SrIieU8CA"
+}, {
+    "name": {
+        "it": "Advent of Code",
+        "en": "Advent of Code"
+    },
+    "description": {
+        "it": "Dedicato a https://adventofcode.com/",
+        "en": "adventofcode.com UniMi group"
+    },
+    "image": "advent_of_code.jpg",
+    "gruppo": "https://t.me/adventofcodeunimi"
+}, {
+    "name": {
+        "it": "Codin Game",
+        "en": "Codin Game"
+    },
+    "description": {
+        "it": "Gruppo creato per le varie sfide offerte da https://www.codingame.com/",
+        "en": "codingame.com UniMi group"
+    },
+    "image": "codin_game.jpg",
+    "gruppo": "https://t.me/codin_game"
+}]
