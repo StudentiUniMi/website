@@ -1,154 +1,154 @@
 [{
     "name": {
         "it": "Chat generale",
-        "en": ""
+        "en": "loremipsum532"
     },
     "description": {
         "it": "Dedicato a discussioni ed eventuali chiarimenti riguardo il nostro Network.",
-        "en": ""
+        "en": "loremipsum447"
     },
     "image": "studentiunimi.png",
     "gruppo": "https://t.me/joinchat/VswKeO2D6soL3lcj"
 }, {
     "name": {
         "it": "Pre-matricole, ammissioni e immatricolazioni",
-        "en": ""
+        "en": "loremipsum318"
     },
     "description": {
         "it": "Dedicato agli studenti che vogliono immatricolarsi in UniMi e cercano informazioni generali a riguardo.",
-        "en": ""
+        "en": "loremipsum902"
     },
     "image": "matricole.jpg",
     "gruppo": "https://t.me/joinchat/jjzrKAOF74s5ZmI0"
 }, {
     "name": {
         "it": "Materiali",
-        "en": ""
+        "en": "loremipsum138"
     },
     "description": {
         "it": "Dedicato a chi cerca o offre materiale per i vari corsi didattici. Non è permessa la vendita di appunti personali.",
-        "en": ""
+        "en": "loremipsum708"
     },
     "image": "materiali.jpg",
     "gruppo": "https://t.me/joinchat/SyKyebINUEXQ969t"
 }, {
     "name": {
         "it": "Ripetizioni",
-        "en": ""
+        "en": "loremipsum522"
     },
     "description": {
         "it": "Dedicato a chi cerca o offre ripetizioni. Le discussioni vanno fatte in privato, qui ci vanno soltanto annunci.",
-        "en": ""
+        "en": "loremipsum626"
     },
     "image": "ripetizioni.jpg",
     "gruppo": "https://t.me/joinchat/a_aLt47Z8lAyMjBk"
 }, {
     "name": {
         "it": "Alloggi",
-        "en": ""
+        "en": "loremipsum481"
     },
     "description": {
         "it": "Dedicato a chi cerca alloggi o vuole creare un annuncio a riguardo.",
-        "en": ""
+        "en": "loremipsum746"
     },
     "image": "alloggi.jpg",
     "gruppo": "https://t.me/joinchat/xJP5VPIBboxiNjI0"
 }, {
     "name": {
         "it": "Annunci di lavoro",
-        "en": ""
+        "en": "loremipsum437"
     },
     "description": {
         "it": "Gruppo che permette di proporre lavoro rivolto a studenti.",
-        "en": ""
+        "en": "loremipsum977"
     },
     "image": "lavoro.jpg",
     "gruppo": "https://t.me/joinchat/If3OTD06OCMwMWU0"
 }, {
     "name": {
         "it": "Tirocini e tesi",
-        "en": ""
+        "en": "loremipsum955"
     },
     "description": {
         "it": "Gruppo per eventuali domande, chiarimenti e discussioni riguardo tirocini e tesi.",
-        "en": ""
+        "en": "loremipsum719"
     },
     "image": "tirocini.jpg",
     "gruppo": "https://t.me/joinchat/iYmrpYmRk-FkNjI8"
 }, {
     "name": {
         "it": "Erasmus",
-        "en": ""
+        "en": "loremipsum271"
     },
     "description": {
         "it": "Gruppo dedicato a discussioni riguardo l'erasmus.",
-        "en": ""
+        "en": "loremipsum334"
     },
     "image": "erasmus.jpg",
     "gruppo": "https://t.me/joinchat/3Xp8K8xWnQ9hMDBk"
 }, {
     "name": {
         "it": "Freetalk",
-        "en": ""
+        "en": "loremipsum682"
     },
     "description": {
         "it": "Chat freetalk per parlare di qualsiasi cosa.",
-        "en": ""
+        "en": "loremipsum510"
     },
     "image": "free_talk.jpg",
     "gruppo": "https://t.me/joinchat/S-D9eT7L3MlAR1c5"
 }, {
     "name": {
         "it": "Recupero OFA",
-        "en": ""
+        "en": "loremipsum561"
     },
     "description": {
         "it": "Gruppo collegato al corso di Matematica del continuo, dedicato agli ofa e i suoi argomenti. ",
-        "en": ""
+        "en": "loremipsum548"
     },
     "image": "ofa.png",
     "gruppo": "https://t.me/joinchat/-s_MHXbJvfxmYWJk"
 }, {
     "name": {
         "it": "Test di Inglese",
-        "en": ""
+        "en": "loremipsum524"
     },
     "description": {
         "it": "Gruppo dedicato a discussioni inerenti al test di inglese (uguale sia per triennali che magistrali).",
-        "en": ""
+        "en": "loremipsum772"
     },
     "image": "inglese.jpg",
     "gruppo": "https://t.me/joinchat/gWd38sctY6U4Mjg0"
 }, {
     "name": {
         "it": "Unirole",
-        "en": ""
+        "en": "loremipsum675"
     },
     "description": {
         "it": "Dedicato ai giochi di ruolo.",
-        "en": ""
+        "en": "loremipsum584"
     },
     "image": "giochi_di_ruolo.jpg",
     "gruppo": "https://t.me/joinchat/BnUK_g-KHlIX_SrIieU8CA"
 }, {
     "name": {
         "it": "Advent of Code",
-        "en": ""
+        "en": "loremipsum415"
     },
     "description": {
         "it": "Dedicato a https://adventofcode.com/",
-        "en": ""
+        "en": "loremipsum627"
     },
     "image": "advent_of_code.jpg",
     "gruppo": "https://t.me/adventofcodeunimi"
 }, {
     "name": {
         "it": "Codin Game",
-        "en": ""
+        "en": "loremipsum676"
     },
     "description": {
         "it": "Gruppo creato per le varie sfide offerte da https://www.codingame.com/",
-        "en": ""
+        "en": "loremipsum327"
     },
     "image": "codin_game.jpg",
     "gruppo": "https://t.me/codin_game"

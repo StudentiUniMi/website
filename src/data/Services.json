@@ -1,7 +1,7 @@
 [{
     "name": {
         "it": "Scaricare videolezioni",
-        "en": ""
+        "en": "loremipsum793"
     },
     "link": "https://wiki.studentiunimi.it/guida:scaricare_videolezioni_ariel",
     "icon": "VideoSearch",
@@ -9,12 +9,12 @@
     "type": "Guida",
     "description": {
         "it": "Guida semplice e veloce per scaricare le videolezioni da Ariel.",
-        "en": ""
+        "en": "loremipsum855"
     }
 }, {
     "name": {
         "it": "Disiscriversi dalle mailing list",
-        "en": ""
+        "en": "loremipsum817"
     },
     "link": "https://wiki.studentiunimi.it/guida:disiscrizione_mailing_list",
     "icon": "MailReminder",
@@ -22,12 +22,12 @@
     "type": "Guida",
     "description": {
         "it": "Guida per disiscriversi dalle mailing list.",
-        "en": ""
+        "en": "loremipsum281"
     }
 }, {
     "name": {
         "it": "Unimia",
-        "en": ""
+        "en": "loremipsum129"
     },
     "link": "http://unimia.unimi.it/portal/server.pt",
     "icon": "JoinOnlineMeeting",
@@ -35,12 +35,12 @@
     "type": "Servizio",
     "description": {
         "it": "Portale d'accesso ai servizi d'ateneo.",
-        "en": ""
+        "en": "loremipsum275"
     }
 }, {
     "name": {
         "it": "Iscrizione esami",
-        "en": ""
+        "en": "loremipsum701"
     },
     "link": "http://studente.unimi.it/foIscrizioneEsami/",
     "icon": "WaitlistConfirm",
@@ -48,12 +48,12 @@
     "type": "Servizio",
     "description": {
         "it": "Iscriviti agli appelli d'esame o controlla le iscrizioni effettuate.",
-        "en": ""
+        "en": "loremipsum508"
     }
 }, {
     "name": {
         "it": "Verbalizzazione esami",
-        "en": ""
+        "en": "loremipsum898"
     },
     "link": "http://studente.unimi.it/foVerbalizzazione/",
     "icon": "VerifiedBrand",
@@ -61,12 +61,12 @@
     "type": "Servizio",
     "description": {
         "it": "Controlla gli esiti finali o parziali dei tuoi esami.",
-        "en": ""
+        "en": "loremipsum611"
     }
 }, {
     "name": {
         "it": "Servizi SIFA",
-        "en": ""
+        "en": "loremipsum199"
     },
     "link": "http://unimia.unimi.it/portal/server.pt/community/unimia/207/servizi_sifa/",
     "icon": "DatabaseSync",
@@ -74,12 +74,12 @@
     "type": "Servizio",
     "description": {
         "it": "Accedi a tutti i servizi online SIFA.",
-        "en": ""
+        "en": "loremipsum171"
     }
 }, {
     "name": {
         "it": "Gestione pagamenti",
-        "en": ""
+        "en": "loremipsum924"
     },
     "link": "https://studente.unimi.it/fo_pagamenti/checkLogin.jsp",
     "icon": "Bank",
@@ -87,12 +87,12 @@
     "type": "Servizio",
     "description": {
         "it": "Sezione del SIFA riguardante i pagamenti.",
-        "en": ""
+        "en": "loremipsum981"
     }
 }, {
     "name": {
         "it": "Presentazione piano di studi",
-        "en": ""
+        "en": "loremipsum376"
     },
     "link": "https://studente.unimi.it/pianiDiStudio/client/checkLogin.asp",
     "icon": "InternalInvestigation",
@@ -100,12 +100,12 @@
     "type": "Servizio",
     "description": {
         "it": "Sezione apposita per presentare il piano di studi.",
-        "en": ""
+        "en": "loremipsum830"
     }
 }, {
     "name": {
         "it": "Portale diritto allo studio",
-        "en": ""
+        "en": "loremipsum322"
     },
     "link": "http://studente.unimi.it/dirittoallostudio",
     "icon": "AnalyticsReport",
@@ -113,12 +113,12 @@
     "type": "Servizio",
     "description": {
         "it": "Portale per il diritto allo studio.",
-        "en": ""
+        "en": "loremipsum941"
     }
 }, {
     "name": {
         "it": "Webmail",
-        "en": ""
+        "en": "Webmail"
     },
     "link": "https://securemail.unimi.it/",
     "icon": "Mail",
@@ -126,12 +126,12 @@
     "type": "Servizio",
     "description": {
         "it": "Servizio di webmail d'ateneo.",
-        "en": ""
+        "en": "The university webmail service"
     }
 }, {
     "name": {
         "it": "Ariel",
-        "en": ""
+        "en": "Ariel"
     },
     "link": "https://ariel.unimi.it/",
     "icon": "FabricFormLibrary",
@@ -139,12 +139,12 @@
     "type": "Servizio",
     "description": {
         "it": "Siti dei corsi didattici.",
-        "en": ""
+        "en": "A website for each course"
     }
 }, {
     "name": {
         "it": "Portale studenti",
-        "en": ""
+        "en": "Students’ hub"
     },
     "link": "https://easystaff.divsi.unimi.it/PortaleStudenti/",
     "icon": "People",
@@ -152,12 +152,12 @@
     "type": "Servizio",
     "description": {
         "it": "Orari delle lezioni, occupazione delle aule, appelli d'esame.",
-        "en": ""
+        "en": "lessons schedule, rooms and exam sessions"
     }
 }, {
     "name": {
         "it": "Servizio bibliotecario",
-        "en": ""
+        "en": "Library"
     },
     "link": "https://www.sba.unimi.it/",
     "icon": "Library",
@@ -165,12 +165,12 @@
     "type": "Servizio",
     "description": {
         "it": "Tutte le informazioni sulle biblioteche.",
-        "en": ""
+        "en": "All the information about our libraries"
     }
 }, {
     "name": {
         "it": "Informastudenti",
-        "en": ""
+        "en": "Informastudenti"
     },
     "link": "https://informastudenti.unimi.it/",
     "icon": "SurveyQuestions",
@@ -178,6 +178,6 @@
     "type": "Servizio",
     "description": {
         "it": "Accedi al portale InformaStudenti.",
-        "en": ""
+        "en": "Access InformaStudenti"
     }
 }]

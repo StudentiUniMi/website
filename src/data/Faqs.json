@@ -1,64 +1,64 @@
 [{
     "question": {
         "it": "Unimia non funziona e non riesco a raggiungere i servizi che mi servono. Come posso fare?",
-        "en": ""
+        "en": "loremipsum106"
     },
     "answer": {
         "it": "Nessun problema, abbiamo creato una pagina apposita che permette di raggiungere tutti i servizi che possono servire senza dover passare da pagine e siti web che non caricano. In aggiunta, abbiamo anche realizzato alcune guide che pensiamo potranno servirti! Questa pagina la trovi in alto cliccando su 'Servizi'.",
-        "en": ""
+        "en": "loremipsum245"
     }
 }, {
     "question": {
         "it": "Che cos'è la Wiki?",
-        "en": ""
+        "en": "loremipsum599"
     },
     "answer": {
         "it": "La Wiki è una sezione parallela al sito web di studentiunimi: permette di collaborare per quanto riguarda la condivisione di materiale (ovviamente non coperto da copyright) e altre informazioni utili sui corsi didattici di tutti i corsi di laurea. E' una risorsa per cui teoricamente si dovrebbe collaborare: ricorda che il materiale che hai trovato è stato fornito da altri studenti che ci hanno speso tempo! Sarebbe l'ideale se anche tu contribuissi a tua volta.",
-        "en": ""
+        "en": "loremipsum144"
     }
 }, {
     "question": {
         "it": "Sto cercando un rappresentante degli studenti per dei problemi didattici. Dove posso trovarlo?",
-        "en": ""
+        "en": "loremipsum593"
     },
     "answer": {
         "it": "Abbiamo pensato che avere un posto in cui trovare i rappresentanti degli studenti e parlare con loro direttamente fosse essenziale. Proprio per questo c'è una sezione del sito che permette di visualizzare i rappresentanti degli studenti di ogni dipartimento e i loro contatti telegram.",
-        "en": ""
+        "en": "loremipsum279"
     }
 }, {
     "question": {
         "it": "Come mai sono presenti solamente i gruppi dei corsi del dipartimento di Informatica?",
-        "en": ""
+        "en": "loremipsum123"
     },
     "answer": {
         "it": "Al momento stiamo sviluppando un database e altri servizi per un supporto futuro solido ed efficiente; verso settembre 2021 dovremmo essere in grado di fornire i nostri servizi a tutti i dipartimenti Unimi.",
-        "en": ""
+        "en": "loremipsum253"
     }
 }, {
     "question": {
         "it": "Fisica non ha ancora i gruppi dei corsi didattici, è possibile crearli e aggiungerli al sito?",
-        "en": ""
+        "en": "loremipsum654"
     },
     "answer": {
         "it": "Stiamo aspettando un numero sostanziale di studenti che vorrebbero che venissero creati quei gruppi. Per questo motivo è importante pubblicizzare il Network a tutti gli studenti di fisica che conoscete.",
-        "en": ""
+        "en": "loremipsum582"
     }
 }, {
     "question": {
         "it": "Vorrei collaborare allo sviluppo del Network ma non so come fare..",
-        "en": ""
+        "en": "loremipsum435"
     },
     "answer": {
         "it": "Non è un problema, non devi essere per forza uno sviluppatore o un informatico per aiutarci: cerchiamo anche moderatori dei gruppi dei vari corsi, e quando ci amplieremo verso altri dipartimenti sarà essenziale il vostro aiuto in tal proposito.",
-        "en": ""
+        "en": "loremipsum465"
     }
 }, {
     "question": {
         "it": "Esistono dei gruppi aggiuntivi ad esempio riguardo i tirocini oppure sull'erasmus?",
-        "en": ""
+        "en": "loremipsum892"
     },
     "answer": {
         "it": "Sì, ce ne sono molti e puoi trovarli nella sezione 'Gruppi extra'. Per noi è molto importante creare i gruppi per ogni singolo topic in modo tale che qualsiasi studente possa recuperare le informazioni che gli servono e che magari sono state già esposte precedentemente nella chat, oppure chiederne di nuove.",
-        "en": ""
+        "en": "loremipsum882"
     }
 }]
