@@ -1,7 +1,7 @@
 export default interface ExtraGroup
 {
-    name?:string,
-    description?:string,
-    image?:string,
+    name?: any
+    description?: any
+    image?:string
     gruppo?:string
 }

@@ -18,6 +18,7 @@ interface Props { data: ExtraGroup };
 const ExtraGroupView = (props: Props) => {
     const theme = useTheme();
     const locale = LocalizationService.strings();
+    var language: string = LocalizationService.getLanguage();
     var data = props.data;
     const helpfulTextStyles: ITextStyles = { root: { fontWeight: FontWeights.regular, } };
     const descriptionTextStyles: ITextStyles = { root: { fontWeight: FontWeights.semibold } };
@@ -27,14 +28,14 @@ const ExtraGroupView = (props: Props) => {
     return (
         <Card tokens={cardTokens}>
             <Card.Item>
-                {data.image === "" ? <Persona text={data.name} onRenderPrimaryText={() => <Text styles={semibold}>{data.name}</Text>} /> : <Persona text={data.name} onRenderPrimaryText={() => <Text styles={semibold}>{data.name}</Text>} imageUrl={ process.env.PUBLIC_URL + '/extra_groups_images/' + data.image } /> }
+                {data.image === "" ? <Persona text={data.name![language]} onRenderPrimaryText={() => <Text styles={semibold}>{data.name}</Text>} /> : <Persona text={data.name![language]} onRenderPrimaryText={() => <Text styles={semibold}>{data.name}</Text>} imageUrl={ process.env.PUBLIC_URL + '/extra_groups_images/' + data.image } /> }
             </Card.Item>
             <Card.Section>
                 <Text styles={descriptionTextStyles}>
                     <Chip label={locale.extraGroups.extraGroup} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.orangeLighter }} className="m-1" />
                 </Text>
                 <Text variant="small" styles={helpfulTextStyles} className="mb-2">
-                    <Icon iconName="Info" className="homeIcon" /> {data.description}
+                    <Icon iconName="Info" className="homeIcon" /> {data.description![language]}
                 </Text>
 
                 {

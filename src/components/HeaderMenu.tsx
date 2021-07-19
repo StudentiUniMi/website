@@ -45,7 +45,7 @@ const HeaderMenu = (props: Props) => {
     const calloutProps = { gapSpace: 0, target: `#${settingsIconId}`, };
     const onRenderCaretDown = (): JSX.Element => { return <Icon iconName="List" />; };
     
-    if (cookies['language'] === undefined) { setCookie("language", navigator.language, { path: "/" }); }
+    if (cookies['language'] === undefined) { setCookie("language", (navigator.language !== 'en' && navigator.language !== 'it' ? 'en' : navigator.language), { path: "/" }); }
     const locale = LocalizationService.strings();
 
     const languageOptions: IDropdownOption[] = [
