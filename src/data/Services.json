@@ -1,7 +1,7 @@
 [{
     "name": {
         "it": "Scaricare videolezioni",
-        "en": "loremipsum793"
+        "en": "Download Ariel videolectures"
     },
     "link": "https://wiki.studentiunimi.it/guida:scaricare_videolezioni_ariel",
     "icon": "VideoSearch",
@@ -9,12 +9,12 @@
     "type": "Guida",
     "description": {
         "it": "Guida semplice e veloce per scaricare le videolezioni da Ariel.",
-        "en": "loremipsum855"
+        "en": "Step-by-step tutorial"
     }
 }, {
     "name": {
         "it": "Disiscriversi dalle mailing list",
-        "en": "loremipsum817"
+        "en": "Annoying mail on your inbox?"
     },
     "link": "https://wiki.studentiunimi.it/guida:disiscrizione_mailing_list",
     "icon": "MailReminder",
@@ -22,12 +22,12 @@
     "type": "Guida",
     "description": {
         "it": "Guida per disiscriversi dalle mailing list.",
-        "en": "loremipsum281"
+        "en": "How to unsubscribe to UniMi mailing list:"
     }
 }, {
     "name": {
         "it": "Unimia",
-        "en": "loremipsum129"
+        "en": "Unimia"
     },
     "link": "http://unimia.unimi.it/portal/server.pt",
     "icon": "JoinOnlineMeeting",
@@ -35,12 +35,12 @@
     "type": "Servizio",
     "description": {
         "it": "Portale d'accesso ai servizi d'ateneo.",
-        "en": "loremipsum275"
+        "en": "Hub to access all the services of the university."
     }
 }, {
     "name": {
         "it": "Iscrizione esami",
-        "en": "loremipsum701"
+        "en": "Exam submission"
     },
     "link": "http://studente.unimi.it/foIscrizioneEsami/",
     "icon": "WaitlistConfirm",
@@ -48,12 +48,12 @@
     "type": "Servizio",
     "description": {
         "it": "Iscriviti agli appelli d'esame o controlla le iscrizioni effettuate.",
-        "en": "loremipsum508"
+        "en": "Submit to an exam or check your entries."
     }
 }, {
     "name": {
         "it": "Verbalizzazione esami",
-        "en": "loremipsum898"
+        "en": "Marks registering"
     },
     "link": "http://studente.unimi.it/foVerbalizzazione/",
     "icon": "VerifiedBrand",
@@ -61,12 +61,12 @@
     "type": "Servizio",
     "description": {
         "it": "Controlla gli esiti finali o parziali dei tuoi esami.",
-        "en": "loremipsum611"
+        "en": "Check the final or partial results of your exams."
     }
 }, {
     "name": {
         "it": "Servizi SIFA",
-        "en": "loremipsum199"
+        "en": "Sifa"
     },
     "link": "http://unimia.unimi.it/portal/server.pt/community/unimia/207/servizi_sifa/",
     "icon": "DatabaseSync",
@@ -74,12 +74,12 @@
     "type": "Servizio",
     "description": {
         "it": "Accedi a tutti i servizi online SIFA.",
-        "en": "loremipsum171"
+        "en": "Access all the SIFA online services."
     }
 }, {
     "name": {
         "it": "Gestione pagamenti",
-        "en": "loremipsum924"
+        "en": "Payments"
     },
     "link": "https://studente.unimi.it/fo_pagamenti/checkLogin.jsp",
     "icon": "Bank",
@@ -87,12 +87,12 @@
     "type": "Servizio",
     "description": {
         "it": "Sezione del SIFA riguardante i pagamenti.",
-        "en": "loremipsum981"
+        "en": "Enrolment renewal, tuition fees and other payments."
     }
 }, {
     "name": {
         "it": "Presentazione piano di studi",
-        "en": "loremipsum376"
+        "en": "Plan of study"
     },
     "link": "https://studente.unimi.it/pianiDiStudio/client/checkLogin.asp",
     "icon": "InternalInvestigation",
@@ -100,12 +100,12 @@
     "type": "Servizio",
     "description": {
         "it": "Sezione apposita per presentare il piano di studi.",
-        "en": "loremipsum830"
+        "en": "Submission page of study plans."
     }
 }, {
     "name": {
         "it": "Portale diritto allo studio",
-        "en": "loremipsum322"
+        "en": "Education Grants Helpdesk"
     },
     "link": "http://studente.unimi.it/dirittoallostudio",
     "icon": "AnalyticsReport",
@@ -113,7 +113,7 @@
     "type": "Servizio",
     "description": {
         "it": "Portale per il diritto allo studio.",
-        "en": "loremipsum941"
+        "en": "Education Grants Helpdesk"
     }
 }, {
     "name": {
@@ -126,7 +126,7 @@
     "type": "Servizio",
     "description": {
         "it": "Servizio di webmail d'ateneo.",
-        "en": "The university webmail service"
+        "en": "The university webmail service."
     }
 }, {
     "name": {
@@ -139,7 +139,7 @@
     "type": "Servizio",
     "description": {
         "it": "Siti dei corsi didattici.",
-        "en": "A website for each course"
+        "en": "A website for each course."
     }
 }, {
     "name": {
@@ -152,7 +152,7 @@
     "type": "Servizio",
     "description": {
         "it": "Orari delle lezioni, occupazione delle aule, appelli d'esame.",
-        "en": "lessons schedule, rooms and exam sessions"
+        "en": "Lessons schedule, rooms and exam sessions."
     }
 }, {
     "name": {
@@ -165,12 +165,12 @@
     "type": "Servizio",
     "description": {
         "it": "Tutte le informazioni sulle biblioteche.",
-        "en": "All the information about our libraries"
+        "en": "All the information about UniMi libraries."
     }
 }, {
     "name": {
         "it": "Informastudenti",
-        "en": "Informastudenti"
+        "en": "InformaStudenti"
     },
     "link": "https://informastudenti.unimi.it/",
     "icon": "SurveyQuestions",
@@ -178,6 +178,6 @@
     "type": "Servizio",
     "description": {
         "it": "Accedi al portale InformaStudenti.",
-        "en": "Access InformaStudenti"
+        "en": "Access InformaStudenti."
     }
 }]
