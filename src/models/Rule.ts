@@ -1,4 +1,4 @@
 export default interface Rule {
-    title?: string,
-    description?: string
+    title?: any
+    description?: any
 }

@@ -31,6 +31,7 @@ initializeIcons();
 const HomeView = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
+    var language: string = LocalizationService.getLanguage();
     const faqs = getFaqs();
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
@@ -414,11 +415,11 @@ const HomeView = () => {
                                     aria-controls="panel1a-content"
                                     id="panel1a-header"
                                 >
-                                    <Text variant="medium" style={{ color: theme.palette.themePrimary }}>{x.question}</Text>
+                                    <Text variant="medium" style={{ color: theme.palette.themePrimary }}>{x.question![language]}</Text>
                                 </AccordionSummary>
                                 <AccordionDetails>
                                     <Text variant="medium">
-                                        {x.answer}
+                                        {x.answer![language]}
                                     </Text>
                                 </AccordionDetails>
                             </Accordion>

@@ -18,6 +18,7 @@ import JsxParser from 'react-jsx-parser';
 const Rules = () => {
     const theme = useTheme();
     const locale = LocalizationService.strings();
+    var language: string = LocalizationService.getLanguage();
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const icon: IIconProps = { iconName: 'QandA' };
 
@@ -90,11 +91,11 @@ const Rules = () => {
                                     aria-controls="panel1a-content"
                                     id="panel1a-header"
                                 >
-                                    <Text variant="medium" style={{ color: theme.palette.themePrimary }}>{x.title}</Text>
+                                    <Text variant="medium" style={{ color: theme.palette.themePrimary }}>{x.title![language]}</Text>
                                 </AccordionSummary>
                                 <AccordionDetails>
                                     <Text variant="medium">
-                                        <JsxParser bindings={{ theme: theme }} components={{ Text, Link }} jsx={x.description!} />
+                                        <JsxParser bindings={{ theme: theme }} components={{ Text, Link }} jsx={x.description![language]} />
                                     </Text>
                                 </AccordionDetails>
                             </Accordion>

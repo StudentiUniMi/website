@@ -432,6 +432,10 @@ class LocalizationService {
     static strings = () => {
         return LocalizationService.data!
     }
+
+    static getLanguage = () => {
+        return LocalizationService.data!.getLanguage();
+    }
 }
 
 export default LocalizationService
