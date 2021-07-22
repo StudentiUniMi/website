@@ -16,6 +16,7 @@ interface Props { cdl?: Degree };
 const DegreeInformations= (props: Props) => {
     const theme = useTheme();
     const locale = LocalizationService.strings();
+    var language: string = LocalizationService.getLanguage();
     const titleStyle: IDocumentCardTitleStyles = { root: { height: 'auto', fontWeight: FontWeights.semibold } };
     const cardStyles: IDocumentCardStyles = { root: { backgroundColor: theme.palette.neutralLighter, display: 'inline-block', minWidth: '220px', maxWidth:'265px', height: 'auto', minHeight: '160px', maxHeight: '300px' } };
 
@@ -38,10 +39,10 @@ const DegreeInformations= (props: Props) => {
                             <Col xl={3} lg={4} sm={6} xs={12} className="mb-3">
                                 <DocumentCard styles={cardStyles} onClick={() => redirectToLink(x.link!)}>
                                     <DocumentCardLogo {...icon} />
-                                    <DocumentCardTitle title={x.name!} styles={titleStyle} />
+                                    <DocumentCardTitle title={x.name![language]} styles={titleStyle} />
                                     <div className="m-2">
                                         <Text variant="medium">
-                                            {x.description}
+                                            {x.description![language]}
                                         </Text>
                                     </div>
                                 </DocumentCard>
