@@ -41,7 +41,7 @@ const Services = () => {
     };
 
     const calloutProps = (i: number) => { return {
-        gapSpace: 0,
+        gapSpace: 5,
         target: `#chip${i}`,
     }};
     
