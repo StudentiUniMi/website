@@ -1,3 +1,4 @@
+import React from 'react';
 import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
@@ -14,6 +15,7 @@ import { Separator } from '@fluentui/react/lib/Separator';
 import Chip from '@material-ui/core/Chip';
 import LocalizationService from "../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
+import { TooltipDelay, TooltipHost } from '@fluentui/react';
 
 const Services = () => {
     var theme = useTheme();
@@ -31,12 +33,17 @@ const Services = () => {
                         iconName: iconName,
                         styles: { root: { fontSize: FontSizes.size32, color: theme.palette.white } },
                     },
-                    width: 100, height: 100
+                    width: 100, height: 110
                 },
             ],
-            styles: { previewIcon: { backgroundColor: backgroundColor } },
+            styles: { previewIcon: { backgroundColor: backgroundColor }, root: { borderBottom: '0px' } },
         }
     };
+
+    const calloutProps = (i: number) => { return {
+        gapSpace: 0,
+        target: `#chip${i}`,
+    }};
     
     return (
         <Container className="services text-center">
@@ -75,14 +82,22 @@ const Services = () => {
                             </Card.Item>
                             <Card.Section>
                                 <Text variant="medium" style={{ color: theme.palette.themePrimary }} styles={semibold}>{x.name![language]}</Text>
-                                <Chip label={x.type} variant="outlined" size="small" style={{
-                                    borderColor: x.type === 'Guida' ? theme.palette.themeTertiary : theme.palette.themePrimary,
-                                    color: x.type === 'Guida' ? theme.palette.themeTertiary : theme.palette.themePrimary,  
+                                <TooltipHost
+                                    id={`tooltip${i}`}
+                                    content={x.type === 'G' ? "Guida" : "Servizio"}
+                                    calloutProps={calloutProps(i)}
+                                    delay={TooltipDelay.zero}
+                                >
+                                <Chip label={x.type} size="small" id={`chip${i}`} style={{
+                                    color: x.type === 'G' ? theme.palette.orange : theme.palette.themePrimary,  
                                     position: 'absolute',
                                     right: '20px',
-                                    bottom: '5px' 
+                                    bottom: '5px',
+                                    backgroundColor: theme.palette.neutralLighter,
+                                    fontWeight: 500
                                 }} />
-                                <Text variant="small">{x.description![language]}</Text>
+                                </TooltipHost>
+                                <Text variant="small" style={{ marginTop: 0 }}>{x.description![language]}</Text>
                             </Card.Section>
                         </Card>
                     </Col>
