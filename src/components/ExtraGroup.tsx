@@ -6,7 +6,6 @@ import ExtraGroup from '../models/ExtraGroup'
 import { useTheme } from '@fluentui/react-theme-provider';
 import { ActionButton } from '@fluentui/react/lib/Button';
 import { IIconProps } from '@fluentui/react';
-import { redirectToLink } from '../services/Utils';
 import Chip from '@material-ui/core/Chip';
 import { semibold } from '../fonts';
 import LocalizationService from "../services/LocalizationService";
@@ -25,17 +24,20 @@ const ExtraGroupView = (props: Props) => {
     const cardTokens: ICardTokens = { childrenMargin: 12 };
     const telegramGroupIcon: IIconProps = { iconName: 'Send' };
 
+    let desc = data.description![language]
+    let name = data.name![language]
+    
     return (
         <Card tokens={cardTokens}>
             <Card.Item>
-                {data.image === "" ? <Persona text={data.name![language]} onRenderPrimaryText={() => <Text styles={semibold}>{data.name}</Text>} /> : <Persona text={data.name![language]} onRenderPrimaryText={() => <Text styles={semibold}>{data.name}</Text>} imageUrl={ process.env.PUBLIC_URL + '/extra_groups_images/' + data.image } /> }
+                {data.image === "" ? <Persona text={name} onRenderPrimaryText={() => <Text styles={semibold}>{name}</Text>} /> : <Persona text={name} onRenderPrimaryText={() => <Text styles={semibold}>{name}</Text>} imageUrl={ process.env.PUBLIC_URL + '/extra_groups_images/' + data.image } /> }
             </Card.Item>
             <Card.Section>
                 <Text styles={descriptionTextStyles}>
                     <Chip label={locale.extraGroups.extraGroup} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.orangeLighter }} className="m-1" />
                 </Text>
                 <Text variant="small" styles={helpfulTextStyles} className="mb-2">
-                    <Icon iconName="Info" className="homeIcon" /> {data.description![language]}
+                    <Icon iconName="Info" className="homeIcon" /> {desc} 
                 </Text>
 
                 {
@@ -43,7 +45,9 @@ const ExtraGroupView = (props: Props) => {
                         if (data.gruppo !== "" && data.gruppo !== null) {
                             return (
                                 <ActionButton
-                                    onClick={() => redirectToLink(data.gruppo as any)}
+                                    href={data.gruppo as any}
+                                    target="_blank"
+                                    className="text-decoration-none"
                                     iconProps={telegramGroupIcon}
                                     style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
                                     disabled={data.gruppo === "" || data.gruppo === null}

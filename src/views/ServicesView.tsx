@@ -84,7 +84,7 @@ const Services = () => {
                                 <Text variant="medium" style={{ color: theme.palette.themePrimary }} styles={semibold}>{x.name![language]}</Text>
                                 <TooltipHost
                                     id={`tooltip${i}`}
-                                    content={x.type === 'G' ? "Guida" : "Servizio"}
+                                    content={language === 'it' ? (x.type === 'G' ? "Guida" : "Servizio") : (x.type === 'G' ? "Guide" : "Service")}
                                     calloutProps={calloutProps(i)}
                                     delay={TooltipDelay.zero}
                                 >
