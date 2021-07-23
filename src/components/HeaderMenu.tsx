@@ -30,7 +30,7 @@ export enum ItemsKeys {
 
 initializeIcons();
 
-interface Props { changeTheme: () => void, changePalette: (id: string) => void, changeLanguage: (key: string) => void };
+interface Props { changeTheme: () => void, changePalette: (id: string) => void };
 
 const HeaderMenu = (props: Props) => {
     var theme = useTheme();
@@ -45,19 +45,35 @@ const HeaderMenu = (props: Props) => {
     const calloutProps = { gapSpace: 0, target: `#${settingsIconId}`, };
     const onRenderCaretDown = (): JSX.Element => { return <Icon iconName="List" />; };
     
-    if (cookies['language'] === undefined) { setCookie("language", (navigator.language !== 'en' && navigator.language !== 'it' ? 'en' : navigator.language), { path: "/" }); }
+    if (cookies['language'] === undefined) 
+    { 
+        setCookie("language", (navigator.language !== 'en' && navigator.language !== 'it' ? 'en' : navigator.language), { path: "/" }); 
+    }
+
+    LocalizationService.localize(cookies['language']);
+
     const locale = LocalizationService.strings();
+
+    const changeLanguage = (key: string) => {
+        LocalizationService.localize(key);
+    };
 
     const languageOptions: IDropdownOption[] = [
         { key: 'it', text: locale.settingsPanel.italian },
         { key: 'en', text: locale.settingsPanel.english }
     ];
 
-    if (cookies["theme"] === undefined) { setCookie("theme", "light", { path: "/" }); }
+    if (cookies["theme"] === undefined) 
+    {
+        setCookie("theme", "light", { path: "/" }); 
+    }
 
-    if (cookies["palette"] === undefined) { setCookie("palette", "a", { path: "/" }); }
+    if (cookies["palette"] === undefined) 
+    { 
+        setCookie("palette", "a", { path: "/" });
+    }
 
-    // useEffect to avoid rendering loops
+    /* useEffect to avoid rendering loops */
     useEffect(() => { 
         if (cookies["firstVisit"] === undefined) { 
             setTimeout(() => {
@@ -210,7 +226,7 @@ const HeaderMenu = (props: Props) => {
                         label={locale.settingsPanel.selectLanguage}
                         options={languageOptions}
                         selectedKey={cookies["language"]}
-                        onChange={(_, option) => { props.changeLanguage(option!.key as string); setCookie("language", option!.key as string, { path: "/" }) }}
+                        onChange={(_, option) => { changeLanguage(option!.key as string); setCookie("language", option!.key as string, { path: "/" }) }}
                         theme={theme}
                     />
 
