@@ -4,7 +4,6 @@ import { FontSizes } from '@fluentui/theme';
 import { initializeIcons } from "@uifabric/icons";
 import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import { semibold } from '../fonts';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { DropdownMenuItemType } from "@fluentui/react";
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
@@ -18,6 +17,8 @@ import { Separator } from '@fluentui/react/lib/Separator';
 import Degree from "../models/Degree";
 import Department from "../models/Department";
 import AdminsList from '../components/AdminsList';
+import LocalizationService from "../services/LocalizationService";
+import JsxParser from 'react-jsx-parser';
 
 initializeIcons();
 const iconStyles = { marginRight: '8px' };
@@ -48,6 +49,7 @@ const onRenderTitle = (options?: IDropdownOption[]): JSX.Element => {
 
 const CoursesView = () => {
     var theme = useTheme();
+    const locale = LocalizationService.strings();
     let history = useHistory();
     let didMount = React.useRef(false);
     const [selectedDepartment, setSelectedDepartment] = React.useState<string>('');
@@ -126,19 +128,14 @@ const CoursesView = () => {
         <Container className="courses text-center">
 
             <div className="mb-1">
-                <Text variant="large">
-                    Qui è possibile trovare i gruppi telegram, siti web, wiki, faq (se disponibili) e informazioni generali come il manifesto degli studi riguardo il tuo corso di laurea e i suoi corsi didattici.
-                </Text>
+                <Text variant="large">{locale.courses.text1}</Text>
             </div>
 
             <Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} />
 
             <div className="mb-2">
                 <Text variant="medium">
-                    I link alla <Text styles={semibold}>Wiki</Text> di un corso didattico potrebbero portare a pagine non ancora compilate:
-                    è qui che potete contribuire iscrivendovi e aiutandoci a raccogliere faq e qualsiasi altro contenuto utile per i corsi didattici.
-                    Informatica musicale, per la comunicazione digitale e molti altri corsi di laurea non hanno ancora contenuti! 
-                    Puoi contribuire <Link href="https://wiki.studentiunimi.it/" target="_blank">qui</Link> creando un apposito account gratuito.
+                    <JsxParser bindings={{ theme: theme }} components={{ Text, Link }} jsx={locale.courses.text2} />
                 </Text>
             </div>
 
@@ -148,8 +145,8 @@ const CoursesView = () => {
                 <Col xl={6} lg={6} md={6} sm={6} xs={12} className="mb-1">
                     {/* Department dropdown */}
                     <Dropdown
-                        placeholder="Seleziona un dipartimento"
-                        label="Seleziona un dipartimento"
+                        placeholder={locale.courses.departmentSelect}
+                        label={locale.courses.departmentSelect}
                         onRenderTitle={onRenderTitle}
                         onRenderOption={onRenderOption}
                         options={departmentOptions}
@@ -162,10 +159,9 @@ const CoursesView = () => {
 
                 <Col xl={6} lg={6} md={6} sm={6} xs={12} className="mb-1">
                     {/* Cdl dropdown */}
-                    {selectedDepartment === '' ? 
                     <Dropdown
-                        label="Seleziona un corso di laurea"
-                        placeholder="Seleziona un corso di laurea"
+                        label={locale.courses.cdlSelect}
+                        placeholder={locale.courses.cdlSelect}
                         selectedKey={selectedCdl}
                         onChange={cdlSelectionChanged}
                         onRenderTitle={onRenderTitle}
@@ -173,20 +169,8 @@ const CoursesView = () => {
                         options={cdlsOptions}
                         styles={dropdownStyles}
                         theme={theme}
-                        disabled
+                        disabled={selectedDepartment === ''}
                     />
-                    :                     
-                    <Dropdown
-                        label="Seleziona un corso di laurea"
-                        placeholder="Seleziona un corso di laurea"
-                        selectedKey={selectedCdl}
-                        onChange={cdlSelectionChanged}
-                        onRenderTitle={onRenderTitle}
-                        onRenderOption={onRenderOption}
-                        options={cdlsOptions}
-                        styles={dropdownStyles}
-                        theme={theme}
-                    />}
                 </Col>
             </Row>
 

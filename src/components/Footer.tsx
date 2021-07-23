@@ -5,11 +5,15 @@ import { semibold } from '../fonts';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useTheme } from '@fluentui/react-theme-provider';
+import LocalizationService from "../services/LocalizationService";
+import JsxParser from 'react-jsx-parser';
+import { withCookies } from 'react-cookie';
 
 const listElement = { marginBottom: '.2rem' };
 
 const Footer = () => {
     var theme = useTheme();
+    const locale = LocalizationService.strings();
     return (
         <footer style={{ backgroundColor: theme.palette.neutralQuaternaryAlt, borderTop: '1px solid', borderColor: theme.palette.neutralLight }}>
             <Container style={{ width: '100%', color: theme.palette.neutralSecondary }}>
@@ -24,7 +28,7 @@ const Footer = () => {
 
                         <div className="mb-2 text">
                             <Text variant="medium">
-                                Il network e il relativo sito web non sono affiliati all'Università degli Studi di Milano.
+                                {locale.footer[0].text}
                             </Text>
                         </div>
 
@@ -40,7 +44,7 @@ const Footer = () => {
                     <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-4 mb-md-0">
                         <div className="mid-column">
                             <div className="mb-2">
-                                <Text styles={semibold} variant="medium">Link utili</Text>
+                                <Text styles={semibold} variant="medium">{locale.footer[1].header}</Text>
                             </div>
 
                             <div>
@@ -67,12 +71,12 @@ const Footer = () => {
 
                     <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-4 mb-md-0 contacts">
                         <div className="mb-2">
-                            <Text styles={semibold} variant="medium">Contatti</Text>
+                            <Text styles={semibold} variant="medium">{locale.footer[2].header}</Text>
                         </div>
 
                         <div className="mb-1 text">
                             <Text variant="medium">
-                                Per qualsiasi dubbio o proposta è possibile scrivere sul <Link href="https://t.me/joinchat/VswKeO2D6soL3lcj" target="_blank">gruppo principale</Link> del network.
+                                <JsxParser bindings={{ theme: theme }} components={{ Text, Link }} jsx={locale.footer[2].text} />
                             </Text>
                         </div>
                     </Col>
@@ -84,4 +88,4 @@ const Footer = () => {
     )
 };
 
-export default Footer;
+export default withCookies(Footer);

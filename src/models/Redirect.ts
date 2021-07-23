@@ -1,6 +1,6 @@
 export default interface Redirect {
-    name?: string,
-    description?: string,
+    name?: any,
+    description?: any,
     link?: string,
     icon?: string
 }

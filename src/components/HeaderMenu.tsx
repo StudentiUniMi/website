@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { IPivotStyles, Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
 import { FontSizes } from '@fluentui/theme';
 import { Dropdown, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
@@ -9,14 +9,13 @@ import { TooltipHost, ITooltipHostStyles, TooltipDelay, DirectionalHint } from '
 import { useId } from '@uifabric/react-hooks';
 import { Panel, PanelType } from 'office-ui-fabric-react/lib/Panel';
 import { useBoolean } from '@uifabric/react-hooks';
-import { Toggle } from '@fluentui/react';
+import { Coachmark, IButtonProps, TeachingBubbleContent, Toggle } from '@fluentui/react';
 import { useCookies } from "react-cookie";
 import { useTheme } from '@fluentui/react-theme-provider';
+import LocalizationService from "../services/LocalizationService";
 import { SwatchColorPicker } from '@fluentui/react/lib/SwatchColorPicker';
 import { semibold } from "../fonts";
 import { palettes } from '../palettes';
-
-const onRenderCaretDown = (): JSX.Element => { return <Icon iconName="List" />; };
 
 export enum ItemsKeys {
     home = "home",
@@ -27,33 +26,86 @@ export enum ItemsKeys {
     additional_groups = "additional_groups",
     representatives = "representatives",
     contributors = "contributors"
-}
+};
 
-const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
-    [ItemsKeys.home, "Home"],
-    [ItemsKeys.organization, "Chi siamo"],
-    [ItemsKeys.rules, "Regolamento"],
-    [ItemsKeys.courses, "Corsi"],
-    [ItemsKeys.services, "Servizi"],
-    [ItemsKeys.additional_groups, "Gruppi extra"],
-    [ItemsKeys.representatives, "Rappresentanti"],
-    [ItemsKeys.contributors, "Contributori"]
-]);
-
-
-const languageOptions: IDropdownOption[] = [
-    { key: 'ITA', text: 'Italiano', data: { icon: 'Memo' } },
-    { key: 'ENG', text: 'Inglese', data: { icon: 'Print' } }
-];
+initializeIcons();
 
 interface Props { changeTheme: () => void, changePalette: (id: string) => void };
-initializeIcons();
 
 const HeaderMenu = (props: Props) => {
     var theme = useTheme();
     const history = useHistory();
     const [cookies, setCookie] = useCookies();
+    const tooltipId = useId('tooltip');
+    const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
+    const settingsIcon: IIconProps = { iconName: 'Settings', styles: { root: { fontSize: '18px' } } };
+    const settingsIconStylePivot: IIconStyles = { root: { position: 'absolute', right: '5px', top: '94px', zIndex: 10 } };
+    const settingsIconStyleDropdown: IIconStyles = { root: { position: 'absolute', left: '5px', top: '6px', zIndex: 10 } };
+    const settingsIconId = useId('icon');
+    const calloutProps = { gapSpace: 0, target: `#${settingsIconId}`, };
+    const onRenderCaretDown = (): JSX.Element => { return <Icon iconName="List" />; };
+    
+    if (cookies['language'] === undefined) 
+    { 
+        setCookie("language", (navigator.language !== 'en' && navigator.language !== 'it' ? 'en' : navigator.language), { path: "/" }); 
+    }
 
+    LocalizationService.localize(cookies['language']);
+
+    const locale = LocalizationService.strings();
+
+    const changeLanguage = (key: string) => {
+        LocalizationService.localize(key);
+    };
+
+    const languageOptions: IDropdownOption[] = [
+        { key: 'it', text: locale.settingsPanel.italian },
+        { key: 'en', text: locale.settingsPanel.english }
+    ];
+
+    if (cookies["theme"] === undefined) 
+    {
+        setCookie("theme", "light", { path: "/" }); 
+    }
+
+    if (cookies["palette"] === undefined) 
+    { 
+        setCookie("palette", "a", { path: "/" });
+    }
+
+    /* useEffect to avoid rendering loops */
+    useEffect(() => { 
+        if (cookies["firstVisit"] === undefined) { 
+            setTimeout(() => {
+                showCoachmark();
+                setCookie("firstVisit", false, { path: "/" } ); 
+            }, 1000);
+        }
+    });
+
+    const [isCoachmarkVisible, { setFalse: hideCoachmark, setTrue: showCoachmark }] = useBoolean(false);
+    const buttonProps: IButtonProps = { text: locale.settingsPanel.coachMark.understood, onClick: hideCoachmark };
+    const target = React.useRef<HTMLDivElement>(null);
+    const [coachmarkPosition] = React.useState<DirectionalHint>(DirectionalHint.leftCenter);
+    const positioningContainerProps = React.useMemo(
+        () => ({
+            directionalHint: coachmarkPosition,
+            doNotLayer: false,
+        }),
+        [coachmarkPosition],
+    );
+
+    const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
+        [ItemsKeys.home, locale.headerMenuItems.home],
+        [ItemsKeys.organization, locale.headerMenuItems.aboutUs],
+        [ItemsKeys.rules, locale.headerMenuItems.rules],
+        [ItemsKeys.courses, locale.headerMenuItems.courses],
+        [ItemsKeys.services, locale.headerMenuItems.services],
+        [ItemsKeys.additional_groups, locale.headerMenuItems.additionalGroups],
+        [ItemsKeys.representatives, locale.headerMenuItems.representatives],
+        [ItemsKeys.contributors, locale.headerMenuItems.contributors]
+    ]);
+    
     const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
     const dropdownStyles: Partial<IDropdownStyles> = {
         dropdown: { color: theme.palette.neutralPrimary, border: 'none', borderStyle: 'none', height: '44px', alignItems: 'center', fontSize: FontSizes.size16 },
@@ -73,6 +125,8 @@ const HeaderMenu = (props: Props) => {
     }, [history.location.pathname]);
 
     let didMount = React.useRef(false);
+    let [path, isCorrect] = getPath();
+    const [selectedKey, setSelectedKey] = React.useState(isCorrect ? path as ItemsKeys : ItemsKeys.home);
 
     React.useEffect(() => {
         if (!didMount.current) {
@@ -87,11 +141,6 @@ const HeaderMenu = (props: Props) => {
         }
     }, [getPath, history]);
 
-    let [path, isCorrect] = getPath();
-    
-
-    const [selectedKey, setSelectedKey] = React.useState(isCorrect ? path as ItemsKeys : ItemsKeys.home);
-    
     const handlePivotLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
         if (item!.props.itemKey !== selectedKey) {
             setSelectedKey(item!.props.itemKey! as ItemsKeys);
@@ -108,29 +157,17 @@ const HeaderMenu = (props: Props) => {
 
     const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }));
 
-    /* Panel and components settings */
-    const tooltipId = useId('tooltip');
-    const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
-    const settingsIcon: IIconProps = { iconName: 'Settings', styles: { root: { fontSize: '18px' } } };
-    const settingsIconStylePivot: IIconStyles = { root: { position: 'absolute', right: '5px', top: '94px', zIndex: 10 } };
-    const settingsIconStyleDropdown: IIconStyles = { root: { position: 'absolute', left: '5px', top: '6px', zIndex: 10 } };
-    const settingsIconId = useId('icon');
-    const calloutProps = { gapSpace: 0, target: `#${settingsIconId}`, };
-
-    if (cookies["theme"] === undefined) { setCookie("theme", "light", { path: "/" }); }
-
     const themeToggled = () => {
-        setCookie("theme", cookies["theme"] === "dark" ? "light" : "dark", { path: "/" });
+        if (cookies["theme"] === "dark") setCookie("theme", "light", { path: "/" });
+        else { setCookie("theme", "dark", { path: "/" }); }
         props.changeTheme();
     };
 
     /* Theme palette code */
-    if (cookies["paletteID"] === undefined) { setCookie("paletteID", "a", { path: "/" }); }
     const colorCells: any[] = palettes.map(x => ({ id: x.id, label: x.label, color: x.palette?.themePrimary }));
     const resetColorIcon: IIconProps = { iconName: 'SyncOccurence' };
     const calloutPropsResetColor = { gapSpace: 10 };
     const hostStylesResetColor: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
-
 
     return (
         <div className="header-menu" style={{ borderBottom: '1px solid', borderColor: theme.palette.neutralLight }}>
@@ -146,51 +183,70 @@ const HeaderMenu = (props: Props) => {
                     {Object.values(ItemsKeys).map((x, i) => <PivotItem key={i} headerText={texts.get(x)} style={{ fontSize: FontSizes.size24 }} itemKey={x} />)}
                 </Pivot>
 
-                <TooltipHost content="Impostazioni del sito" id={tooltipId} calloutProps={calloutProps} styles={hostStyles} delay={TooltipDelay.zero} directionalHint={DirectionalHint.leftCenter}>
-                    <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStylePivot} id={settingsIconId} />
+                <TooltipHost content={locale.settingsPanel.settings} id={tooltipId} calloutProps={calloutProps} styles={hostStyles} delay={TooltipDelay.zero} directionalHint={DirectionalHint.leftCenter}>
+                    <div ref={target} style={{ position: 'absolute', right: '35px', top: '108px'}}></div><IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStylePivot} id={settingsIconId} />
                 </TooltipHost>
+
+                {isCoachmarkVisible && (
+                    <Coachmark
+                        target={target.current}
+                        positioningContainerProps={positioningContainerProps}
+                    >
+                        <TeachingBubbleContent
+                            headline={locale.settingsPanel.coachMark.text1}
+                            hasCloseButton
+                            closeButtonAriaLabel={locale.settingsPanel.close}
+                            onDismiss={hideCoachmark}
+                            secondaryButtonProps={buttonProps}
+                        >
+                            {locale.settingsPanel.coachMark.text2}
+                        </TeachingBubbleContent>
+                    </Coachmark>
+                )}
 
                 <Panel
                     isLightDismiss
                     isOpen={isOpen}
                     onDismiss={dismissPanel}
-                    closeButtonAriaLabel="Close"
-                    headerText="Impostazioni"
+                    closeButtonAriaLabel={locale.settingsPanel.close}
+                    headerText={locale.settingsPanel.settings}
                     type={PanelType.smallFixedFar}
                     theme={theme}
                 >
                     <Toggle
-                        label="Cambia il tema"
-                        onText="Dark Mode"
-                        offText="Light Mode"
+                        label={locale.settingsPanel.changeTheme}
+                        onText={locale.settingsPanel.darkTheme}
+                        offText={locale.settingsPanel.lightTheme}
                         checked={cookies["theme"] === "dark"}
                         onChange={themeToggled}
                         theme={theme}
                     />
+
                     <Dropdown
-                        label="Seleziona la lingua"
-                        defaultSelectedKey="ITA"
+                        label={locale.settingsPanel.selectLanguage}
                         options={languageOptions}
-                        disabled={true}
+                        selectedKey={cookies["language"]}
+                        onChange={(_, option) => { changeLanguage(option!.key as string); setCookie("language", option!.key as string, { path: "/" }) }}
                         theme={theme}
                     />
+
                     <div className="mt-3">
-                        <Text variant="medium" styles={semibold}>Seleziona il colore principale  </Text>
+                        <Text variant="medium" styles={semibold}>{locale.settingsPanel.selectColor}  </Text>
                         <TooltipHost
                             content="Reset color"
                             calloutProps={calloutPropsResetColor}
                             styles={hostStylesResetColor}
                         >
-                            <IconButton iconProps={resetColorIcon} onClick={() => { setCookie("paletteID", 'a', { path: "/" }); props.changePalette('a'); }} />
+                            <IconButton iconProps={resetColorIcon} onClick={() => { setCookie("palette", 'a', { path: "/" }); props.changePalette('a'); }} />
                         </TooltipHost>
-                        <SwatchColorPicker selectedId={cookies["paletteID"]} columnCount={7} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => { setCookie("paletteID", id, { path: "/" }); props.changePalette(id!); }} />
+                        <SwatchColorPicker selectedId={cookies["palette"]} columnCount={7} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => { setCookie("palette", id, { path: "/" }); props.changePalette(id!); }} />
                     </div>
                 </Panel>
             </div>
 
             <div className="dropdown">
 
-                <TooltipHost content="Impostazioni del sito" id={tooltipId} calloutProps={calloutProps} styles={hostStyles}>
+                <TooltipHost content={locale.settingsPanel.settings} id={tooltipId} calloutProps={calloutProps} styles={hostStyles}>
                     <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStyleDropdown} id={settingsIconId} />
                 </TooltipHost>
 

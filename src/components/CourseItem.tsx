@@ -11,13 +11,15 @@ import { CommandButton } from '@fluentui/react/lib/Button';
 import { ActionButton } from '@fluentui/react/lib/Button';
 import { redirectToLink } from '../services/Utils';
 import { Icon } from 'office-ui-fabric-react';
+import LocalizationService from "../services/LocalizationService";
+import JsxParser from 'react-jsx-parser';
 
-// const gdriveStyle = { width: '15px', height: '15px', marginBottom: '3px' }
 initializeIcons();
 interface Props { data: Course };
 
 const CourseItem = (props: Props) => {
     const theme = useTheme();
+    const locale = LocalizationService.strings();
     let data = props.data;
 
     const cfuStyle: ITextStyles = { root: { fontWeight: FontWeights.semibold, color: theme.palette.themePrimary } };
@@ -61,30 +63,25 @@ const CourseItem = (props: Props) => {
             yearText = null;
             break;
         case -2:
-            yearText = <span>Complementare</span>;
+            yearText = <span>{locale.courses.complementary}</span>;
             break;
         default:
-            yearText = <span>{data.anno}° Anno</span>;
+            yearText = <span>{data.anno}° {locale.courses.year}</span>;
             break;
     }
 
     // Semester inizialization
     if (data.semestre !== null) {
-        semesterText = <span>{data.semestre}° Semestre</span>;
+        semesterText = <span>{data.semestre}° {locale.courses.semester}</span>;
     } else {
         semesterText = null;
     }
 
     // Main text inizialization
     if (data.anno === -1 && (data.gruppo === "" || data.gruppo === null)) {
-        mainText = (
-            <>
-                <Icon iconName="FollowUser" className="homeIcon" /> Contatta un <Link href="https://studentiunimi.it/organization/">amministratore</Link> se vuoi essere aggiunto al gruppo, 
-                oppure chiedilo direttamente sul <Link onClick={() => redirectToLink("https://t.me/joinchat/jjzrKAOF74s5ZmI0")}>gruppo principale</Link>.
-            </>
-        );
+        mainText = (<><JsxParser bindings={{ theme: theme }} components={{ Text, Link, Icon }} jsx={locale.courses.contactAdmin} /></> );
     } else if (data.anno === -1 && (data.gruppo !== "" && data.gruppo !== null)) {
-        mainText = "Gruppo principale per qualsiasi tipo di discussione inerente al corso di laurea.";
+        mainText = locale.courses.mainGroupDescription;
     }
 
     // Websites inizialization
@@ -131,7 +128,7 @@ const CourseItem = (props: Props) => {
                 </Text>
 
                 <Text styles={descriptionTextStyles}>
-                    {data.anno === -1 ? <Chip label="Gruppo principale" size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.teal }} className="m-1" /> : <></>}
+                    {data.anno === -1 ? <Chip label={locale.courses.mainGroup} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.teal }} className="m-1" /> : <></>}
                     {yearText !== "" && yearText !== null ? <Chip label={yearText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} className="m-1" /> : <></>}
                     {semesterText !== "" && semesterText !== null ? <Chip label={semesterText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} /> : <></>}
                 </Text>
@@ -145,12 +142,14 @@ const CourseItem = (props: Props) => {
                         if (data.gruppo !== "" && data.gruppo !== null) {
                             return (
                                 <ActionButton 
-                                    onClick={ () => redirectToLink(data.gruppo as any)}
+                                    href={data.gruppo as any}
+                                    target="_blank"
                                     iconProps={telegramGroupIcon} 
                                     style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }} 
                                     disabled={data.gruppo === "" || data.gruppo === null}
+                                    className="text-decoration-none"
                                     allowDisabledFocus>
-                                    Gruppo Telegram
+                                    {locale.telegramGroup}
                                 </ActionButton>
                             );
                         } else if ( (data.gruppo === "" || data.gruppo === null) && data.anno !== -1) {
@@ -160,7 +159,7 @@ const CourseItem = (props: Props) => {
                                     style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
                                     disabled
                                     allowDisabledFocus>
-                                    Gruppo non disponibile
+                                    {locale.courses.groupNotAvailable}
                                 </ActionButton>
                             );
                         }
@@ -169,7 +168,7 @@ const CourseItem = (props: Props) => {
 
                 { data.anno !== -1 ?
                     <CommandButton
-                        text="Siti web"
+                        text={locale.courses.websites}
                         style={{justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 0}}
                         iconProps={websiteIcon}
                         menuProps={menuProps}
@@ -183,7 +182,9 @@ const CourseItem = (props: Props) => {
                         if (data.wiki !== null && data.wiki !== "") { 
                             return (
                                 <ActionButton
-                                    onClick={() => redirectToLink(data.wiki as any)}
+                                    href={data.wiki as any}
+                                    target="_blank"
+                                    className="text-decoration-none"
                                     iconProps={wikiIcon}
                                     style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 0 }}
                                     allowDisabledFocus>

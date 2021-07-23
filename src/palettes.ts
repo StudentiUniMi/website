@@ -53,8 +53,8 @@ export const palettes = [
             themeLighter: '#DA7F8F',
             themeLight: '#E28F83',
             themeTertiary: '#8E9775',
-            themeSecondary: '#CE1212',
-            themeDarkAlt: '#4AA96C',
+            themeSecondary: '#f0554d',
+            themeDarkAlt: '#f04d6d',
             themeDark: '#564A4A',
             themeDarker: '#A799B7'
         }

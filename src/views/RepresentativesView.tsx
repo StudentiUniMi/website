@@ -8,6 +8,7 @@ import { useTheme } from '@fluentui/react-theme-provider';
 import RepresentativesList from '../components/RepresentativesList';
 import { getRepresentatives, getDepartments } from '../services/Requests'
 import Representative from '../models/Representative';
+import LocalizationService from "../services/LocalizationService";
 
 const dropdownStyles: Partial<IDropdownStyles> = { dropdown: {  } };
 
@@ -47,6 +48,7 @@ const onRenderPlaceholder = (props?: IDropdownProps): JSX.Element => {
 
 const RepresentativesView = () => {
     var theme = useTheme();
+    const locale = LocalizationService.strings();
     const history = useHistory();
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const [selectedDepartment, setSelectedDepartment] = React.useState<string>('');
@@ -83,13 +85,12 @@ const RepresentativesView = () => {
             <div className="mb-2">
                 <div className="mb-2">
                     <Text variant="large">
-                        Il rappresentante degli studenti è un ruolo molto importante ed altamente formativo, 
-                        che garantisce a tutti gli studenti universitari un supporto alle difficoltà che può incontrare durante il periodo di studio.
+                        {locale.representatives.text1}
                     </Text>
                 </div>
 
                 <Text variant="medium">
-                    Di seguito è presente la lista dei rappresentanti di ogni dipartimento e i loro contatti.
+                    {locale.representatives.text2}
                 </Text>
             </div>
 
@@ -97,8 +98,8 @@ const RepresentativesView = () => {
 
             <div className="mb-4 justify-content-center" style={{maxWidth: '400px', marginLeft: 'auto', marginRight: 'auto'}}>
                 <Dropdown
-                    placeholder="Seleziona un dipartimento"
-                    label="Seleziona un dipartimento"
+                    placeholder={locale.representatives.departmentSelect}
+                    label={locale.representatives.departmentSelect}
                     options={departmentOptions}
                     onChange={departmentSelectionChanged}
                     selectedKey={selectedDepartment}

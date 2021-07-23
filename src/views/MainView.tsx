@@ -6,12 +6,12 @@ import Footer from "../components/Footer";
 import ContentView from "./ContentView";
 import { ThemeProvider } from '@fluentui/react-theme-provider'; 
 import { buildLightTheme, buildDarkTheme } from '../themes';
-import { CookiesProvider, useCookies } from 'react-cookie';
+import { CookiesProvider, useCookies, withCookies } from 'react-cookie';
 
 const MainView = () => {
-  let [cookies, ] = useCookies();
-  let [theme, setTheme] = React.useState(cookies["theme"] === "dark");
-  let [palette, setPalette] = React.useState(cookies["paletteID"]);
+  let [cookies,] = useCookies();
+  let [theme, setTheme] = React.useState(cookies["theme"] === 'dark');
+  let [palette, setPalette] = React.useState(cookies["palette"]);
 
   let [lightTheme, setLightTheme] = React.useState(buildLightTheme(palette));
   let [darkTheme, setDarkTheme] = React.useState(buildDarkTheme(palette));
@@ -42,4 +42,4 @@ const MainView = () => {
   );
 }
 
-export default MainView;
+export default withCookies(MainView);

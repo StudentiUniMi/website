@@ -13,9 +13,11 @@ import { Separator } from '@fluentui/react/lib/Separator';
 import { getCanMembers } from '../services/Requests';
 import { CompoundButton } from '@fluentui/react/lib/Button';
 import { IIconProps } from '@fluentui/react';
+import LocalizationService from "../services/LocalizationService";
 
 const OrganizationView = () => {
     var theme = useTheme();
+    const locale = LocalizationService.strings();
     const cardTokens: ICardTokens = { childrenMargin: 12 };
     const sectionCard = { minHeight: '130px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none' };
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
@@ -31,13 +33,13 @@ const OrganizationView = () => {
             <div className="mb-2">
                 <div className="mb-3">
                     <Text variant="large">
-                        Siamo un'organizzazione senza fini di lucro, apolitica, ovvero apartitica, e neutrale, la quale si pone l'obiettivo di offrire servizi telematici agli studenti dell'Università degli Studi di Milano.
+                        {locale.aboutUs.text1}
                     </Text>
                 </div>
 
                 <div className="mb-2">
-                    <CompoundButton primary secondaryText="Dai un'occhiata al nostro statuto!" href="https://github.com/StudentiUniMi/docs/blob/main/statuto.md" target="_blank" style={{ textDecoration: 'none' }} iconProps={icon}>
-                        Statuto
+                    <CompoundButton primary secondaryText={locale.aboutUs.button.text2} href="https://github.com/StudentiUniMi/docs/blob/main/statuto.md" target="_blank" style={{ textDecoration: 'none' }} iconProps={icon}>
+                        {locale.aboutUs.button.text1}
                     </CompoundButton>
                 </div>
             </div>
@@ -45,7 +47,7 @@ const OrganizationView = () => {
             <Icon iconName="ChevronDownMed" className="mb-1" style={iconStyle} />
 
             <div className="mb-4">
-                <div className="mb-3"><Separator><Text variant="large" styles={semibold}>Coordinatore</Text></Separator></div>
+                <div className="mb-3"><Separator><Text variant="large" styles={semibold}>{locale.aboutUs.header1}</Text></Separator></div>
 
                 <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: '230px' }} className="mb-4">
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
@@ -64,7 +66,7 @@ const OrganizationView = () => {
 
             <div className="mb-4 pt-2">
 
-                <div className="mb-3"><Separator><Text variant="large" styles={semibold}>Comitato Amministrativo</Text></Separator></div>
+                <div className="mb-3"><Separator><Text variant="large" styles={semibold}>{locale.aboutUs.header2}</Text></Separator></div>
 
                 <Row className="justify-content-center">
                     {
@@ -97,7 +99,7 @@ const OrganizationView = () => {
 
 
             <div className="mb-4">
-                <div className="mb-3"><Separator><Text variant="large" styles={semibold}>Amministratori dei gruppi telegram</Text></Separator></div>
+                <div className="mb-3"><Separator><Text variant="large" styles={semibold}>{locale.aboutUs.header3}</Text></Separator></div>
 
                 <Row className="justify-content-center">
                     {
