@@ -54,7 +54,11 @@ const HomeView = () => {
         <Container className="home text-center">
             <div className="info-section mb-4">
                 <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/logo/' + logoFileName} alt='Network logo' style={logoProperties} />
-                <div className="mb-2"><Text variant="xLarge"><JsxParser bindings={{ theme: theme }} components={{ Text }} jsx={locale.homepage.section1.text1} /></Text></div>
+                <div className="mb-2">
+                    <Text variant="xLarge">
+                        <JsxParser bindings={{ theme: theme }} components={{ Text }} jsx={locale.homepage.section1.text1} />
+                    </Text>
+                </div>
                 <div><Text variant="large">{locale.homepage.section1.text2}</Text></div>
             </div>
 
@@ -415,11 +419,13 @@ const HomeView = () => {
                                     aria-controls="panel1a-content"
                                     id="panel1a-header"
                                 >
-                                    <Text variant="medium" style={{ color: theme.palette.themePrimary }}>{x.question![language]}</Text>
+                                    <Text variant="medium" style={{ color: theme.palette.themePrimary }} styles={semibold}>
+                                        <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x.question![language]} />
+                                    </Text>
                                 </AccordionSummary>
                                 <AccordionDetails>
                                     <Text variant="medium">
-                                        {x.answer![language]}
+                                        <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x.answer![language]} />
                                     </Text>
                                 </AccordionDetails>
                             </Accordion>

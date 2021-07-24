@@ -22,8 +22,8 @@
         "en": "Blasphemy and trash talking"
     },
     "description": {
-        "it": "<b>Le bestemmie sono vietate</b>, pena warn per quelle innocenti, e mute o ban nei casi peggiori, a discrezione degli amministratori. <i>Il linguaggio vivace è permesso finchè non diventa spam:</i> in quel caso l'utente verrà warnato o mutato per un certo periodo di tempo, sempre a discrezione degli amministratori.",
-        "en": "Blasphemy is forbidden and the punishment can be a warn or a ban depending on the situation. Vulgar language is allowed unless it becomes spam. In that case the user will be warned or muted depending on the situation."
+        "it": "<Text styles={semibold}>Le bestemmie sono vietate</Text>, pena warn per quelle innocenti, e mute o ban nei casi peggiori, a discrezione degli amministratori. <i>Il linguaggio vivace è permesso finchè non diventa spam:</i> in quel caso l'utente verrà warnato o mutato per un certo periodo di tempo, sempre a discrezione degli amministratori.",
+        "en": "<Text styles={semibold}>Blasphemy is forbidden and the punishment can be a warn or a ban depending on the situation.</Text> Vulgar language is allowed unless it becomes spam. In that case the user will be warned or muted depending on the situation."
     }
 }, {
     "title": {
@@ -31,8 +31,8 @@
         "en": "Insults"
     },
     "description": {
-        "it": "<b>Sono entrambi vietati</b>, pena warn per gli insulti / offese leggeri, mute o ban per quelli più pesanti, a discrezione degli amministratori. <u>Una nota riguardo i docenti: si può benissimo criticare (nei limiti del normale) ma non si accettano assolutamente insulti verso di essi.</u> Nell'ultimo caso specificato l'utente verrà warnato o mutato, e nei casi peggiori bannato, a discrezione degli amministratori.",
-        "en": "Insults are forbidden. You can criticize a teacher, but you cannot insult him. The punishment can be a warn, a muting or a ban depending on the situation."
+        "it": "<Text styles={semibold}>Sono entrambi vietati</Text>, pena warn per gli insulti / offese leggeri, mute o ban per quelli più pesanti, a discrezione degli amministratori. <u>Una nota riguardo i docenti: si può benissimo criticare (nei limiti del normale) ma non si accettano assolutamente insulti verso di essi.</u> Nell'ultimo caso specificato l'utente verrà warnato o mutato, e nei casi peggiori bannato, a discrezione degli amministratori.",
+        "en": "<Text styles={semibold}>Insults are forbidden. You can criticize a teacher, but you cannot insult him.</Text> The punishment can be a warn, a muting or a ban depending on the situation."
     }
 }, {
     "title": {
@@ -40,8 +40,8 @@
         "en": "Spam and off-topic"
     },
     "description": {
-        "it": "<b>Lo spam è vietato</b>, pena warn o mute a seconda della gravità, a discrezione degli amministratori. <b>Le conversazioni offtopic sono vietate sia nei gruppi specifici dei corsi che in quelli generali degli anni accademici</b>, anche in questo caso pena warn o mute a seconda della gravità, a discrezione degli amministratori. Se volete parlare liberamente di argomenti più generali, esiste un <a href='https://t.me/joinchat/S-D9eT7L3MlAR1c5' target='blank'>gruppo apposito</a>.",
-        "en": "Spam is forbidden. Off-topic conversations are also forbidden both in the specific and in the general groups. The punishment can be a warn or a muting depending on the case. If you want to chat freely about anything there is a group with that purpose, you can find it in “Extra groups.” "
+        "it": "<Text styles={semibold}>Lo spam è vietato</Text>, pena warn o mute a seconda della gravità, a discrezione degli amministratori. <Text styles={semibold}>Le conversazioni offtopic sono vietate sia nei gruppi specifici dei corsi che in quelli generali degli anni accademici</Text>, anche in questo caso pena warn o mute a seconda della gravità, a discrezione degli amministratori. Se volete parlare liberamente di argomenti più generali, esiste un <Link href='https://t.me/joinchat/S-D9eT7L3MlAR1c5' target='blank'>gruppo apposito</Link>.",
+        "en": "Spam is forbidden. <Text styles={semibold}>Off-topic conversations are also forbidden both in the specific and in the general groups.</Text> The punishment can be a warn or a muting depending on the case. If you want to chat freely about anything there is a group with that purpose, you can find it in “Extra groups.” "
     }
 }, {
     "title": {
@@ -58,8 +58,8 @@
         "en": "Name and username"
     },
     "description": {
-        "it": "Gli utenti <u>devono essere identificabili sul network</u>, <b>ed è quindi obbligatorio utilizzare un nome che sia chiaro</b>, come il nome di persona o un breve appellativo. Per quanto riguarda l'username è caldamente consigliato (ma non obbligatorio) tenerlo visibile e non nascosto: in questo modo la gestione degli utenti risulta più facile agli amministratori del network.",
-        "en": "Users must be identifiable; therefore, you must use your real name or a nickname containing part of it. Regarding the username we suggest keeping it public in order to facilitate the moderation of the network."
+        "it": "Gli utenti <u>devono essere identificabili sul network</u>, <Text styles={semibold}>ed è quindi obbligatorio utilizzare un nome che sia chiaro</Text>, come il nome di persona o un breve appellativo. Per quanto riguarda l'username è caldamente consigliato (ma non obbligatorio) tenerlo visibile e non nascosto: in questo modo la gestione degli utenti risulta più facile agli amministratori del network.",
+        "en": "<u>Users must be identifiable;</u> therefore, <Text styles={semibold}>you must use your real name or a nickname containing part of it</Text>. Regarding the username we suggest keeping it public in order to facilitate the moderation of the network."
     }
 }, {
     "title": {
@@ -67,8 +67,8 @@
         "en": "Politics"
     },
     "description": {
-        "it": "Il network e i gruppi telegram sono nati come spazio <u>politicamente neutrale</u> e il più possibile accogliente, a disposizione degli studenti. <b>Non sono di proprietà o vanto di alcuna lista.</b> Chiunque manderà messaggi di propaganda elettorale e quant'altro verrà istantaneamente bannato da tutti i gruppi del network, a discrezione degli amministratori.",
-        "en": "The network and the associated groups are a neutral environment. They do not belong to any party. Whoever will use them for propaganda will be immediately banned from the entire network at the discretion of the administrators."
+        "it": "Il network e i gruppi telegram sono nati come spazio <u>politicamente neutrale</u> e il più possibile accogliente, a disposizione degli studenti. <Text styles={semibold}>Non sono di proprietà o vanto di alcuna lista.</Text> Chiunque manderà messaggi di propaganda elettorale e quant'altro verrà istantaneamente bannato da tutti i gruppi del network, a discrezione degli amministratori.",
+        "en": "The network and the associated groups are a neutral environment. <Text styles={semibold}>They do not belong to any political association.</Text> Whoever will use them for propaganda will be immediately banned from the entire network at the discretion of the administrators."
     }
 }, {
     "title": {
@@ -76,7 +76,7 @@
         "en": "Code"
     },
     "description": {
-        "it": "Nei gruppi del network <u>non è permesso l'invio di <b>immagini</b> per condividere codice</u>. Se il codice in questione supera le 5 righe deve essere condiviso attraverso l'utilizzo di apposite piattaforme come quella fornita da noi (<a href='https://paste.studentiunimi.it/' target='_blank'>Paste</a>) o meglio ancora <a href='https://gist.github.com/' target='_blank'>Gist</a>. In caso contrario (se il codice è minore o uguale di 4 righe) è permesso inviarlo tramite un semplice messaggio ma usando l'apposita formattazione di testo per il codice che telegram mette a disposizione. E' permesso invece inviare screen (e non immagini scattate da cellulare) di eventuali log, shell, e simili.",
-        "en": "The code cannot be shared using images or screenshots. If it contains more than 5 lines it must be shared using an appropriate platform like Paste or Gist. On the contrary, if it contains less than 5 lines, you can send it using the specific layout implemented by Telegram. Screenshots of logs, shell and similar are allowed."
+        "it": "Nei gruppi del network <u>non è permesso l'invio di <Text styles={semibold}>immagini</Text> per condividere codice</u>. Se il codice in questione supera le 5 righe deve essere condiviso attraverso l'utilizzo di apposite piattaforme come quella fornita da noi (<Link href='https://paste.studentiunimi.it/' target='_blank'>Paste</Link>) o meglio ancora <Link href='https://gist.github.com/' target='_blank'>Gist</Link>. In caso contrario (se il codice è minore o uguale di 4 righe) è permesso inviarlo tramite un semplice messaggio ma usando l'apposita formattazione di testo per il codice che telegram mette a disposizione. E' permesso invece inviare screen (e non immagini scattate da cellulare) di eventuali log, shell, e simili.",
+        "en": "<Text styles={semibold}>The code cannot be shared using images or screenshots.</Text> If it contains more than 5 lines it must be shared using an appropriate platform like <Link href='https://paste.studentiunimi.it/' target='_blank'>Paste</Link> or <Link href='https://gist.github.com/' target='_blank'>Gist</Link>. On the contrary, if it contains less than 5 lines, you can send it using the specific layout implemented by Telegram. Screenshots of logs, shell and similar are allowed."
     }
 }]

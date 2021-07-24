@@ -1,20 +1,20 @@
 [{
     "question": {
         "it": "UniMia non funziona e non riesco a raggiungere i servizi che mi servono. Come posso fare?",
-        "en": "How about UniMia won't work?"
+        "en": "UniMia isn't working and I absolutely need to access university services.. what can I do?"
     },
     "answer": {
-        "it": "Nessun problema, abbiamo creato una pagina apposita che permette di raggiungere tutti i servizi che possono servire senza dover passare da pagine e siti web che non caricano. In aggiunta, abbiamo anche realizzato alcune guide che pensiamo potranno servirti! Questa pagina la trovi in alto cliccando su 'Servizi'.",
-        "en": "No worries, we have created a page that allows you to reach all the services you may need without having to go through pages and websites that do not load. In addition, we have also made some guides that we think you will need! This page can be found at the top by clicking on 'Services'."
+        "it": "Nessun problema, abbiamo creato una <Link href='https://studentiunimi.it/services/'>pagina apposita</Link> che permette di raggiungere tutti i servizi che possono servire senza dover passare da pagine e siti web che non caricano. In aggiunta, abbiamo anche realizzato alcune guide che pensiamo potranno servirti!",
+        "en": "No worries, we have created a <Link href='https://studentiunimi.it/services/'>dedicated page</Link> that allows you to reach all the services you may need without having to go through pages and websites that do not load. In addition, we have also made some guides that we think you will need!"
     }
 }, {
     "question": {
         "it": "Che cos'è la Wiki?",
-        "en": "What's inside Wiki?"
+        "en": "What is the Wiki?"
     },
     "answer": {
-        "it": "La Wiki è una sezione parallela al sito web di StudentiUnimi: permette di collaborare per quanto riguarda la condivisione di materiale (ovviamente non coperto da copyright) e altre informazioni utili sui corsi didattici di tutti i corsi di laurea. E' una risorsa per cui teoricamente si dovrebbe collaborare: ricorda che il materiale che hai trovato è stato fornito da altri studenti che ci hanno speso tempo! Sarebbe l'ideale se anche tu contribuissi a tua volta.",
-        "en": "Wiki is a parallel section to StudentiUnimi website: it allows you to collaborate regarding the sharing of material (obviously not covered by copyright) and other useful information on the didactic courses of all degree courses. It is a resource for which theoretically you should collaborate: remember that the material you found was provided by other students who have spent their time on it! It would be ideal if you also contribute in your turn."
+        "it": "La <Link href='https://wiki.studentiunimi.it/start' target='blank'>Wiki</Link> è una sezione parallela al sito web di StudentiUnimi: permette di collaborare per quanto riguarda la condivisione di materiale (ovviamente non coperto da copyright) e altre informazioni utili sui corsi didattici di tutti i corsi di laurea. E' una risorsa per cui teoricamente si dovrebbe collaborare: ricorda che il materiale che hai trovato è stato fornito da altri studenti che ci hanno speso tempo! Sarebbe l'ideale se anche tu contribuissi a tua volta.",
+        "en": "The <Link href='https://wiki.studentiunimi.it/start' target='blank'>Wiki</Link> is a parallel section to StudentiUnimi website: it allows you to collaborate regarding the sharing of material (obviously not covered by copyright) and other useful information on the didactic courses of all degree courses. It is a resource for which theoretically you should collaborate: remember that the material you found was provided by other students who have spent their time on it! It would be ideal if you also contribute in your turn."
     }
 }, {
     "question": {
@@ -22,8 +22,8 @@
         "en": "I am looking for a student representative for didactic problems. Where can I find it?"
     },
     "answer": {
-        "it": "Abbiamo pensato che avere un posto in cui trovare i rappresentanti degli studenti e parlare con loro direttamente fosse essenziale. Proprio per questo c'è una sezione del sito che permette di visualizzare i rappresentanti degli studenti di ogni dipartimento e i loro contatti telegram.",
-        "en": "We felt that having a place to find student representatives and talk to them directly was essential. Precisely for this reason there is a section of the site that allows you to view the student representatives of each department and their telegram contacts."
+        "it": "Abbiamo pensato che avere un posto in cui trovare i rappresentanti degli studenti e parlare con loro direttamente fosse essenziale. Proprio per questo c'è una <Link href='https://studentiunimi.it/additional_groups/'>sezione del sito</Link> che permette di visualizzare i rappresentanti degli studenti di ogni dipartimento e i loro contatti telegram.",
+        "en": "We felt that having a place to find student representatives and talk to them directly was essential. Precisely for this reason there is a <Link href='https://studentiunimi.it/representatives/'>section of the website</Link> that allows you to view the student representatives of each department and their telegram contacts."
     }
 }, {
     "question": {
@@ -58,7 +58,7 @@
         "en": "Are there any additional groups for example regarding internships or Erasmus?"
     },
     "answer": {
-        "it": "Sì, ce ne sono molti e puoi trovarli nella sezione 'Gruppi extra'. Per noi è molto importante creare i gruppi per ogni singolo topic in modo tale che qualsiasi studente possa recuperare le informazioni che gli servono e che magari sono state già esposte precedentemente nella chat, oppure chiederne di nuove.",
-        "en": "Yes, there are a lot of them and you can find them in the 'Extra Groups' section. For us it is very important to create groups for each single topic so that any student can retrieve the information they need and which may have already been exposed previously in the chat, or ask for new ones."
+        "it": "Sì, ce ne sono molti e puoi trovarli nella sezione <Link href='https://studentiunimi.it/additional_groups/'>Gruppi extra</Link>. Per noi è molto importante creare i gruppi per ogni singolo topic in modo tale che qualsiasi studente possa recuperare le informazioni che gli servono e che magari sono state già esposte precedentemente nella chat, oppure chiederne di nuove.",
+        "en": "Yes, there are a lot of them and you can find them in the <Link href='https://studentiunimi.it/additional_groups/'>Extra Groups</Link> section. For us it is very important to create groups for each single topic so that any student can retrieve the information they need and which may have already been exposed previously in the chat, or ask for new ones."
     }
 }]
