@@ -91,11 +91,11 @@ const Rules = () => {
                                     aria-controls="panel1a-content"
                                     id="panel1a-header"
                                 >
-                                    <Text variant="medium" style={{ color: theme.palette.themePrimary }}>{x.title![language]}</Text>
+                                    <Text variant="medium" style={{ color: theme.palette.themePrimary }} styles={semibold}>{x.title![language]}</Text>
                                 </AccordionSummary>
                                 <AccordionDetails>
                                     <Text variant="medium">
-                                        <JsxParser bindings={{ theme: theme }} components={{ Text, Link }} jsx={x.description![language]} />
+                                        <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x.description![language]} />
                                     </Text>
                                 </AccordionDetails>
                             </Accordion>

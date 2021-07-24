@@ -181,7 +181,7 @@ class LocalizationService {
                     footer: [
                         { text: 'Il network e il relativo sito web non sono affiliati all\'Università degli Studi di Milano.' },
                         { header: 'Link utili' },
-                        { header: 'Contatti', text: 'Per qualsiasi dubbio o proposta è possibile scrivere sul <a href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</a> del network.' },
+                        { header: 'Contatti', text: 'Per qualsiasi dubbio o proposta è possibile scrivere sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link> del network.' },
                     ],
                 },
 
@@ -317,39 +317,6 @@ class LocalizationService {
                         answer: {
                             text1: 'We want to make clear the reasons that took us to introducing these rules into the network.', text2: "We noticed that most of the groups were flooded with trivial questions re-proposed every day. This was lowering the quality of our chats and discouraged the participation of some students. Therefore, we started repressing this phenomenon warning their proponents and offering a dedicated <Link href='https://wiki.studentiunimi.it/start' target='_blank'>Wiki</Link> page for each course." },
                         text2: 'Telegram groups rules',
-                        
-                        /*
-                        rules1: {
-                            sectionName: 'Questions and FAQs',
-                            rules: [
-                                'Question about something indicated on the teacher’s website<br>The user receives a warn and is told where he can find the information. The consequence of 3 warns is a 24h muting. (Exceptions if you are an Erasmus student and you cannot find that information in English).',
-                                'Trivial and already addressed questions<br>No punishment if the question is not into the FAQs otherwise the previous rule is applied. It is recommended to look for your question into the chat history before submitting it.',
-                            ]
-                        },
-                        rules2: {
-                            sectionName: 'Conduct',
-                            rules: [
-                                'Blasphemy and trash talking<br>Blasphemy is forbidden and the punishment can be a warn or a ban depending on the situation. Vulgar language is allowed unless it becomes spam. In that case the user will be warned or muted depending on the situation.',
-                                'Insults<br>Insults are forbidden. You can criticize a teacher, but you cannot insult him. The punishment can be a warn, a muting or a ban depending on the situation.',
-                                'Spam and off-topic<br>Spam is forbidden. Off-topic conversations are also forbidden both in the specific and in the general groups. The punishment can be a warn or a muting depending on the case. If you want to chat freely about anything there is a group with that purpose, you can find it in “Extra groups.',
-                            ]
-                        },
-                        rules3: {
-                            sectionName: 'Materials',
-                            rules: [
-                                'Copyrighted materials<br>Copyrighted material will be canceled from the chat. The user who sent it will be warned and, if he repeats the transgression, eventually banned.',
-                                'Accountability<br>The user who sent copyrighted material will be the only responsible for that transgression. The network and its administrators, who are committed to prevent this phenomenon, will not take the responsibility for that action.',
-                            ]
-                        },
-                        rules4: {
-                            sectionName: 'More',
-                            rules: [
-                                'Name and username<br>Users must be identifiable; therefore, you must use your real name or a nickname containing part of it. Regarding the username we suggest keeping it public in order to facilitate the moderation of the network.',
-                                'Politics<br>The network and the associated groups are a neutral environment. They do not belong to any party. Whoever will use them for propaganda will be immediately banned from the entire network at the discretion of the administrators.',
-                                'Code<br>The code cannot be shared using images or screenshots. If it contains more than 5 lines it must be shared using an appropriate platform like Paste or Gist. On the contrary, if it contains less than 5 lines, you can send it using the specific layout implemented by Telegram. Screenshots of logs, shell and similar are allowed.',
-                            ]
-                        }
-                        */
                     },
                     courses: {
                         text1: 'In this section you can find Telegram groups, websites, wiki, FAQs (if available) and general information about your degree programme and its courses',
@@ -377,18 +344,7 @@ class LocalizationService {
                         text1: 'Tired of surfing into endless pages to find the services offered by the university? We grouped all the links here! We added some guides we created too.',
                         text2: "<Text styles={semibold}>Careful:</Text> some web pages like Unimia or SIFA services might not load (we remind you that it's not our fault in this case!).",
                         text3: 'If you think that something should be added you suggest it on the <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">main group</Link>.',
-                        availableServices: 'Available services and guides',
-                        /*
-                        card1: { header: 'Unimia', text: 'Home Page for all UniMi Services' },
-                        card2: { header: 'Sifa', text: 'Legacy Online Services' },
-                        card3: { header: 'Students Web Agenda', text: 'Lessons Timetable, Exams Calendar and any kind of Reservations' },
-                        card4: { header: 'Exam Registration', text: 'Manage your Registration to your Exams' },
-                        card5: { header: 'Webmail', text: 'UniMi Web Mail' },
-                        card6: { header: 'Library', text: 'All the information about our libraries' },
-                        card7: { header: 'Marks Registeration', text: 'Check, accept or reject the final or partial Results of your Exams' },
-                        card8: { header: 'Ariel', text: 'Official Websites Platform for each Courses' },
-                        card9: { header: 'InformaStudenti', text: 'Online Student Desk'},
-                        */
+                        availableServices: 'Available services and guides'
                     },
                     extraGroups: {
                         text1: 'Looking for something different? Join our additional groups!',
@@ -407,10 +363,6 @@ class LocalizationService {
                         text1:'In this section you can find the contributors who have worked into the development of the Network, the website and all its services.',
                         header1: 'Main maintainers',
                         header2: 'Contributors',
-                        /*
-                        dev1: 'Website Developer',
-                        dev2: 'Website Technical Designer',
-                        */
                         githubProfile: 'Github Profile',
                         websiteProfile: 'Website',
                         text2: 'Did you contributed to the development of the Network and you would like to appear in this list? Send a private message to <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.'

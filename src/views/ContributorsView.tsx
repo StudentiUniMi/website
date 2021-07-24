@@ -41,15 +41,16 @@ const calloutProps = { gapSpace: 5 };
 const calloutPropsContributor = { gapSpace: 3 };
 const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
 
-const developers = [
-    { name: "Giuseppe Del Campo", description: "Sviluppatore del sito web.", pic: "giuseppedelcampo.jpg", github: "https://github.com/Giuseppetm", website: "https://giuseppetm.github.io/" },
-    { name: "Manuele Lucchi", description: "Progettista del sito web.", pic: "manuelelucchi.jpg", github: "https://github.com/manuelelucchi", website: "https://manuelelucchi.github.io/" },
+const developers:any = [
+    { name: "Giuseppe Del Campo", description: { it: "Sviluppatore del sito web.", en: 'Website Developer' }, pic: "giuseppedelcampo.jpg", github: "https://github.com/Giuseppetm", website: "https://giuseppetm.github.io/" },
+    { name: "Manuele Lucchi", description: { it: "Progettista del sito web.", en: 'Website Technical Designer' }, pic: "manuelelucchi.jpg", github: "https://github.com/manuelelucchi", website: "https://manuelelucchi.github.io/" },
     //{ name: "Marco Aceti", description: "Sviluppatore di bot, database e altri servizi.", pic: "marcoaceti.jpg", github: "https://github.com/MarcoBuster", website: "https://marcoaceti.it/" },
 ];
 
 const ContributorsView = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
+    var language: string = LocalizationService.getLanguage();
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const profileIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const contributors: Contributor[] = getContributors();
@@ -70,7 +71,7 @@ const ContributorsView = () => {
 
                 <Row className="justify-content-center">
                     {
-                        developers.map( (x,i) => {
+                        developers.map( (x:any,i:any) => {
                             return (
                                 <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12} key={i}>
                                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
@@ -84,7 +85,7 @@ const ContributorsView = () => {
                                             </div>
                                             <div className="mb-0"><Text variant="medium" styles={semibold}>{x.name}</Text></div>
                                             <Text variant="medium" className="mt-2">
-                                                {x.description}
+                                                {x.description[language]}
                                             </Text>
                                             <div>
                                                 <TooltipHost
