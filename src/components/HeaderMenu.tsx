@@ -187,7 +187,7 @@ const HeaderMenu = (props: Props) => {
                     <div ref={target} style={{ position: 'absolute', right: '35px', top: '108px'}}></div><IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStylePivot} id={settingsIconId} />
                 </TooltipHost>
 
-                {isCoachmarkVisible && (
+                {isCoachmarkVisible && window.screen.availWidth >= 780 && ( /* With windows.screen size I fixed the visualization of coachMark in mobile displays too */
                     <Coachmark
                         target={target.current}
                         positioningContainerProps={positioningContainerProps}

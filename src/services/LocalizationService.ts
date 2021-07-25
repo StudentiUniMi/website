@@ -130,8 +130,8 @@ class LocalizationService {
                         text2: 'Regolamento dei gruppi Telegram'
                     },
                     courses: {
-                        text1: 'Qui è possibile trovare i gruppi telegram, siti web, wiki, faq (se disponibili) e informazioni generali come il manifesto degli studi riguardo il tuo corso di laurea e i suoi corsi didattici.',
-                        text2: "I link alla <Text styles={semibold}>Wiki</Text> di un corso didattico potrebbero portare a pagine non ancora compilate: è qui che potete contribuire iscrivendovi e aiutandoci a raccogliere faq e qualsiasi altro contenuto utile per i corsi didattici. Informatica musicale, per la comunicazione digitale e molti altri corsi di laurea non hanno ancora contenuti! Puoi contribuire <Link href='https://wiki.studentiunimi.it/' target='_blank'>qui</Link> creando un apposito account gratuito.",
+                        text1: 'Qui è possibile trovare i gruppi telegram, siti web, wiki, faq (se disponibili), collegamenti e informazioni generali riguardo il tuo corso di laurea e i suoi corsi didattici.',
+                        text2: "I link alla <Text styles={semibold}><Link href='https://wiki.studentiunimi.it/start' target='_blank'>Wiki</Link></Text> di un corso didattico potrebbero portare a pagine non ancora compilate: è qui che potete contribuire iscrivendovi e aiutandoci a raccogliere faq e qualsiasi altro contenuto utile per i corsi didattici. Informatica musicale, per la comunicazione digitale e molti altri corsi di laurea non hanno ancora contenuti! Puoi contribuire creando un apposito account gratuito.",
                         departmentSelect: 'Seleziona un dipartimento',
                         cdlSelect: 'Seleziona un corso di Laurea',
                         availableRedirects: 'Collegamenti disponibili',
@@ -147,19 +147,19 @@ class LocalizationService {
                         mainGroup: 'Gruppo principale',
                         mainGroupDescription: 'Gruppo principale per qualsiasi tipo di discussione inerente al corso di laurea.',
                         groupNotAvailable: 'Gruppo non disponibile.',
-                        contactAdmin: "<Icon iconName='FollowUser'/> Contatta un <Link href='https://studentiunimi.it/organization/'>amministratore</Link> se vuoi essere aggiunto al gruppo, oppure chiedilo direttamente sul <Link href='https://t.me/joinchat/jjzrKAOF74s5ZmI0' target='_blank'>gruppo principale</Link>.",
+                        contactAdmin: "<Icon iconName='FollowUser'/> Contatta un <Link href='https://studentiunimi.it/organization/'>amministratore</Link> se vuoi essere aggiunto al gruppo, oppure chiedilo direttamente sul <Link href='https://t.me/joinchat/VswKeO2D6soL3lcj' target='_blank'>gruppo principale</Link>.",
                         groupsNotFound: 'Nessun gruppo trovato.',
                         adminsNotFound: 'Nessun amministratore disponibile.'
                     },
                     services: {
                         text1: 'Siete stanchi di dover andare a spulciare miriadi di pagine che neanche caricano alla ricerca di strumenti e servizi universitari? Abbiamo realizzato una pagina per centralizzarli tutti! Inoltre, qui potete trovare anche alcune guide che abbiamo realizzato.',
-                        text2: '<Text styles={semibold}>Attenti:</Text> alcune pagine come Unimia oppure i Servizi SIFA potrebbero non caricare (ovviamente ricordiamo che non è colpa nostra in tal caso!).',
-                        text3: "Se pensi che debba essere aggiunto qualche servizio scrivi pure sul <Link href='https://t.me/joinchat/VswKeAblS2nrfXME' target='_blank'>gruppo principale</Link>.",
+                        text2: '<Text styles={semibold}>Attenzione:</Text> alcune pagine come Unimia oppure i Servizi SIFA potrebbero non caricare (ovviamente ricordiamo che non è colpa nostra in tal caso!).',
+                        text3: "Se pensi che debba essere aggiunto qualche servizio scrivi pure sul <Link href='https://t.me/joinchat/VswKeO2D6soL3lcj' target='_blank'>gruppo principale</Link>.",
                         availableServices: 'Servizi e guide disponibili'
                     },
                     extraGroups: {
                         text1: 'Cerchi un gruppo aggiuntivo in particolare? Qui è possibile trovare tutti quelli che abbiamo creato.',
-                        text2: "Se vorresti che venissero creati altri gruppi puoi scriverlo sul <Link href='https://t.me/joinchat/VswKeAblS2nrfXME' target='_blank'>gruppo principale</Link>.",
+                        text2: "Se vorresti che venissero creati altri gruppi puoi scriverlo sul <Link href='https://t.me/joinchat/VswKeO2D6soL3lcj' target='_blank'>gruppo principale</Link>.",
                         text3: 'Stai cercando gruppi riguardanti giochi? Nessun problema!',
                         mug: "Dai un'occhiata all'associazione studentesca <Text styles={semibold} style={{color: theme.palette.themeSecondary}}>MUG</Text> (Milan University Gamers).",
                         availableGroups: 'Gruppi disponibili',
@@ -181,7 +181,7 @@ class LocalizationService {
                     footer: [
                         { text: 'Il network e il relativo sito web non sono affiliati all\'Università degli Studi di Milano.' },
                         { header: 'Link utili' },
-                        { header: 'Contatti', text: 'Per qualsiasi dubbio o proposta è possibile scrivere sul <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">gruppo principale</Link> del network.' },
+                        { header: 'Contatti', text: 'Per qualsiasi dubbio o proposta è possibile scrivere sul <Link href="https://t.me/joinchat/VswKeO2D6soL3lcj" target="_blank">gruppo principale</Link> del network.' },
                     ],
                 },
 
@@ -319,8 +319,8 @@ class LocalizationService {
                         text2: 'Telegram groups rules',
                     },
                     courses: {
-                        text1: 'In this section you can find Telegram groups, websites, wiki, FAQs (if available) and general information about your degree programme and its courses',
-                        text2: 'Links to the wiki could lead to unfinished or empty pages: that’s why you can help us collecting FAQs and any other useful material. Many degree courses have no material at this moment! You can help the grow of the network by creating a free account <Link href="https://wiki.studentiunimi.it/start" target="_blank">here</Link> and compile new informations about the courses you followed.',
+                        text1: 'In this section you can find telegram groups, websites, wiki, FAQs (if available), redirects and general informations about your degree course and its didactic courses.',
+                        text2: "Links to the <Text styles={semibold}><Link href='https://wiki.studentiunimi.it/start' target='_blank'>Wiki</Link></Text> could lead to unfinished or empty pages: that’s why you can help us collecting FAQs and any other useful material. Many degree courses have no material at this moment! You can help the grow of the network by creating a free account and compile new informations about the courses you followed.",
                         departmentSelect: 'Select the department',
                         cdlSelect: 'Select the degree',
                         availableRedirects: 'Available redirects',
@@ -336,19 +336,19 @@ class LocalizationService {
                         mainGroup: 'Main group',
                         mainGroupDescription: 'Main group for any type of discussion about this degree.',
                         groupNotAvailable: 'Group not available.',
-                        contactAdmin: "<Icon iconName='FollowUser'/> Contact an <Link href='https://studentiunimi.it/organization/'>administrator</Link> if you would like to be added to this group, or ask directly on the <Link href='https://t.me/joinchat/jjzrKAOF74s5ZmI0' target='_blank'>main group</Link>.",
+                        contactAdmin: "<Icon iconName='FollowUser'/> Contact an <Link href='https://studentiunimi.it/organization/'>administrator</Link> if you would like to be added to this group, or ask directly on the <Link href='https://t.me/joinchat/VswKeO2D6soL3lcj' target='_blank'>main network group</Link>.",
                         groupsNotFound: 'Groups not found.',
                         adminsNotFound: 'There are no admins available.'
                     },
                     services: {
                         text1: 'Tired of surfing into endless pages to find the services offered by the university? We grouped all the links here! We added some guides we created too.',
                         text2: "<Text styles={semibold}>Careful:</Text> some web pages like Unimia or SIFA services might not load (we remind you that it's not our fault in this case!).",
-                        text3: 'If you think that something should be added you suggest it on the <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">main group</Link>.',
+                        text3: 'If you think that something should be added you can suggest it on the <Link href="https://t.me/joinchat/VswKeO2D6soL3lcj" target="_blank">main network group</Link>.',
                         availableServices: 'Available services and guides'
                     },
                     extraGroups: {
                         text1: 'Looking for something different? Join our additional groups!',
-                        text2: 'Would you like to suggest a new group? Bring your request on the <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">main group</Link>.',
+                        text2: 'Would you like to suggest a new group? Bring your request on the <Link href="https://t.me/joinchat/VswKeO2D6soL3lcj" target="_blank">main network group</Link>.',
                         text3: 'Are you looking for telegram groups about games? No problem!',
                         mug: "Take a look at the university association <Text styles={semibold} style={{color: theme.palette.themeSecondary}}>MUG</Text> (Milan University Gamers).",
                         availableGroups: 'Available groups',
@@ -370,7 +370,7 @@ class LocalizationService {
                     footer: [
                         { text: 'The network and the associated website are not affiliated to the University of Milan.' },
                         { header: 'Useful links' },
-                        { header: 'Contacts', text: 'For any question or suggestion you can join the <Link href="https://t.me/joinchat/VswKeAblS2nrfXME" target="_blank">main network group</Link>.' },
+                        { header: 'Contacts', text: 'For any question or suggestion you can join the <Link href="https://t.me/joinchat/VswKeO2D6soL3lcj" target="_blank">main network group</Link>.' },
                     ]
                 }
             })

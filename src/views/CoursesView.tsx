@@ -19,6 +19,7 @@ import Department from "../models/Department";
 import AdminsList from '../components/AdminsList';
 import LocalizationService from "../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
+import { semibold } from '../fonts';
 
 initializeIcons();
 const iconStyles = { marginRight: '8px' };
@@ -135,14 +136,14 @@ const CoursesView = () => {
 
             <div className="mb-2">
                 <Text variant="medium">
-                    <JsxParser bindings={{ theme: theme }} components={{ Text, Link }} jsx={locale.courses.text2} />
+                    <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale.courses.text2} />
                 </Text>
             </div>
 
             <Separator />
             
             <Row className="department-choose justify-content-center mb-4">
-                <Col xl={6} lg={6} md={6} sm={6} xs={12} className="mb-1">
+                <Col xl={6} lg={6} md={6} sm={12} xs={12} className="mb-1">
                     {/* Department dropdown */}
                     <Dropdown
                         placeholder={locale.courses.departmentSelect}
@@ -157,7 +158,7 @@ const CoursesView = () => {
                     />
                 </Col>
 
-                <Col xl={6} lg={6} md={6} sm={6} xs={12} className="mb-1">
+                <Col xl={6} lg={6} md={6} sm={12} xs={12} className="mb-1">
                     {/* Cdl dropdown */}
                     <Dropdown
                         label={locale.courses.cdlSelect}
