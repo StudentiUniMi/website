@@ -18,7 +18,7 @@ const DegreeInformations= (props: Props) => {
     const locale = LocalizationService.strings();
     var language: string = LocalizationService.getLanguage();
     const titleStyle: IDocumentCardTitleStyles = { root: { height: 'auto', fontWeight: FontWeights.semibold } };
-    const cardStyles: IDocumentCardStyles = { root: { backgroundColor: theme.palette.neutralLighter, display: 'inline-block', minWidth: '220px', maxWidth:'265px', height: 'auto', minHeight: '160px', maxHeight: '300px' } };
+    const cardStyles: IDocumentCardStyles = { root: { backgroundColor: theme.palette.neutralLighter, display: 'inline-block', minWidth: '220px', maxWidth:'265px', height: 'auto', minHeight: '185px', maxHeight: '185px' } };
 
     return (   
         <>    
