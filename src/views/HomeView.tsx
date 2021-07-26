@@ -40,7 +40,7 @@ const HomeView = () => {
     const cardTokens: ICardTokens = { childrenMargin: 12 };
     const logoFileName = 'unimi500.png';
     const logoProperties = { width: '150px', height: '150px', display: 'inline-block' };
-    const wikiPic = { width: '130px', height: '130px', marginTop: '5px', marginBottom: '5px', marginLeft: 'auto', marginRight: 'auto' };
+    const wikiPic = { width: '100px', height: '100px',  marginBottom: '5px', marginLeft: 'auto', marginRight: 'auto' };
 
     const telegramGroupIcon: IIconProps = { iconName: 'Send', theme: theme };
     const wikiIcon: IIconProps = { iconName: 'Globe', theme: theme };
@@ -141,7 +141,77 @@ const HomeView = () => {
                                 <div >
                                     <div className="mb-1">
                                         <Text variant="medium">
-                                            <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text }} jsx={locale.homepage.section1.sliders[2].text1} />
+                                            {locale.homepage.section1.sliders[2].text1} <Icon iconName="Help" style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size12 }} />
+                                        </Text>
+                                    </div>
+                                    <div>
+                                        <Text styles={semibold}>{locale.homepage.section1.sliders[2].text2}</Text>
+                                    </div>
+                                </div>
+                            </Col>
+                            <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
+                                <Card tokens={cardTokens} style={{ minHeight: '160px' }}>
+                                    <Card.Item>
+                                        <Persona onRenderPrimaryText={() => <div className="ml-2"><Text styles={semibold}>{locale.homepage.section1.sliders[2].cardText}</Text></div>} text={locale.homepage.section1.sliders[2].cardText} imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/materiali.jpg'} />
+                                    </Card.Item>
+                                    <Card.Section>
+                                        <ActionButton
+                                            href="https://t.me/joinchat/SyKyebINUEXQ969t"
+                                            target="_blank"
+                                            className="text-decoration-none"
+                                            iconProps={telegramGroupIcon}
+                                            style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '20px', marginBottom: 0 }}
+                                            allowDisabledFocus>
+                                            {locale.telegramGroup}
+                                        </ActionButton>
+                                    </Card.Section>
+                                </Card>
+                            </Col>
+                        </Row>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                        <Row className="justify-content-center">
+                            <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+                                <div >
+                                    <div className="mb-1">
+                                        <Text variant="medium">
+                                            {locale.homepage.section1.sliders[3].text1} <Icon iconName="Help" style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size12 }} />
+                                        </Text>
+                                    </div>
+                                    <div>
+                                        <Text styles={semibold}>{locale.homepage.section1.sliders[3].text2}</Text>
+                                    </div>
+                                </div>
+                            </Col>
+                            <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
+                                <Card tokens={cardTokens} style={{ minHeight: '160px' }}>
+                                    <Card.Item>
+                                        <Persona onRenderPrimaryText={() => <div className="ml-2"><Text styles={semibold}>{locale.homepage.section1.sliders[3].cardText}</Text></div>} text={locale.homepage.section1.sliders[3].cardText} imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/ripetizioni.jpg'} />
+                                    </Card.Item>
+                                    <Card.Section>
+                                        <ActionButton
+                                            href="https://t.me/joinchat/a_aLt47Z8lAyMjBk"
+                                            target="_blank"
+                                            className="text-decoration-none"
+                                            iconProps={telegramGroupIcon}
+                                            style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '20px', marginBottom: 0 }}
+                                            allowDisabledFocus>
+                                            {locale.telegramGroup}
+                                        </ActionButton>
+                                    </Card.Section>
+                                </Card>
+                            </Col>
+                        </Row>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                        <Row className="justify-content-center">
+                            <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+                                <div >
+                                    <div className="mb-1">
+                                        <Text variant="medium">
+                                            <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text }} jsx={locale.homepage.section1.sliders[4].text1} />
                                         </Text>
                                     </div>
                                 </div>
@@ -161,7 +231,7 @@ const HomeView = () => {
                                             iconProps={wikiIcon}
                                             style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 0, marginBottom: 0 }}
                                             allowDisabledFocus>
-                                            {locale.homepage.section1.sliders[2].reachWiki}
+                                            {locale.homepage.section1.sliders[4].reachWiki}
                                         </ActionButton>
                                     </Card.Section>
                                 </Card>
@@ -174,7 +244,7 @@ const HomeView = () => {
                             <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
                                 <div className="mb-1">
                                     <Text variant="medium">
-                                        {locale.homepage.section1.sliders[3].text1}
+                                        {locale.homepage.section1.sliders[5].text1}
                                     </Text>
                                 </div>
                             </Col>

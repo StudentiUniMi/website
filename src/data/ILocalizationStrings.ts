@@ -29,6 +29,8 @@ interface ILocalizationStrings {
             sliders: [
                 { text1: string, text2: string, cardText: string },
                 { text1: string, text2: string, cardText: string },
+                { text1: string, text2: string, cardText: string },
+                { text1: string, text2: string, cardText: string },
                 { text1: string, reachWiki: string },
                 { text1: string }
             ]
