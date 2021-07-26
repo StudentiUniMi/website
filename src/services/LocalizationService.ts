@@ -38,6 +38,8 @@ class LocalizationService {
                             sliders: [
                                 { text1: 'Sei uno studente che vuole immatricolarsi e che cerca un gruppo generale in cui chiedere informazioni', text2: 'Ne abbiamo creato uno apposito!', cardText: "Pre-matricole, ammissioni e immatricolazioni" },
                                 { text1: 'Stai cercando un gruppo per trovare un alloggio a Milano insieme ad altri studenti universitari oppure vuoi creare un annuncio', text2: 'Entra nel gruppo apposito!', cardText: 'Alloggi' },
+                                { text1: 'Vorresti vendere dei libri oppure slide rilegate e stampate? Oppure magari sei una nuova matricola e cerchi il materiale del tuo corso', text2: 'Fai un annuncio apposito qui!', cardText: 'Materiali' },
+                                { text1: 'Sei in cerca di qualcuno che ti possa dare delle ripetizioni per aiutarti a preparare un esame, oppure vuoi proporti a tal riguardo', text2: 'Fai un annuncio apposito qui!', cardText: 'Ripetizioni' },
                                 { text1: 'Ti ricordiamo che abbiamo a disposizione una <Text styles={semibold}>Wiki</Text> in cui è possibile collaborare e aiutare altri studenti! Puoi trovare tutto il materiale che ti serve, ma ricorda che è importante anche contribuire!', reachWiki: 'Raggiungi la Wiki!' },
                                 { text1: 'Per noi offrirti la possibilità di non perdere tempo alla ricerca di servizi universitari è molto importante. Proprio per questo abbiamo realizzato una pagina apposita per trovarli tutti subito, e farti scoprire anche alcune guide che abbiamo realizzato!' }
                             ]
@@ -226,6 +228,8 @@ class LocalizationService {
                             sliders: [
                                 { text1: 'Are you a student who wants to matriculate and who is looking for a general group in which to ask for informations ', text2: 'We created one just for this!', cardText: "Pre-students, admissions and enrollments" },
                                 { text1: 'Are you looking for a group to find an apartment in Milan together with other university students, or you want to create an ad ', text2: 'Join the dedicated group!', cardText: 'Apartments' },
+                                { text1: 'Would you like to sell books or printed slides? Or maybe you are a new freshman and are looking for your course material', text2: 'Create an ad here!', cardText: 'Materials' },
+                                { text1: 'Are you looking for someone who can give you private lessons to help you prepare for an exam, or you want to propose in this regard', text2: 'Create an ad here!', cardText: 'Private lessons' },
                                 { text1: "We remind you that we have a <Text styles={semibold}>Wiki</Text> where you can collaborate and help other students! You can find all the material you need, but remember that it's also important to contribute!", reachWiki: 'Reach the Wiki!' },
                                 { text1: 'For us, offering you the opportunity not to waste time looking for university services is very important. Precisely for this reason we have created a special page to find them all immediately, and also let you discover some guides we have created!' }
                             ]
