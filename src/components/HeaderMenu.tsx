@@ -47,7 +47,7 @@ const HeaderMenu = (props: Props) => {
     
     if (cookies['language'] === undefined) 
     { 
-        setCookie("language", (navigator.language !== 'en' && navigator.language !== 'it' ? 'en' : navigator.language), { path: "/" }); 
+        setCookie("language", (navigator.language === 'it' || navigator.language === 'IT' ? 'it' : 'en'), { path: "/" }); 
     }
 
     LocalizationService.localize(cookies['language']);
