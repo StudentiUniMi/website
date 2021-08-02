@@ -294,7 +294,7 @@ const HomeView = () => {
                                     {locale.homepage.section2.card2.text}
                                 </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section2.card2.button} href="https://t.me/joinchat/VswKeO2D6soL3lcj" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section2.card2.button} href="https://t.me/unimichat" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
