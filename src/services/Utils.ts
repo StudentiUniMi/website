@@ -10,3 +10,9 @@ export const range = (start:number, end:number, step = 1) => {
 export const redirectToLink = (link: string): void => {
     window.open(link, '_blank');
 };
+
+export const addDays = (date: Date, days: number) : Date => {
+  var result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
+}
