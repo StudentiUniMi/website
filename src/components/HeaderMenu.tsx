@@ -12,6 +12,7 @@ import { useBoolean } from '@uifabric/react-hooks';
 import { Coachmark, IButtonProps, TeachingBubbleContent, Toggle } from '@fluentui/react';
 import { useCookies } from "react-cookie";
 import { useTheme } from '@fluentui/react-theme-provider';
+import { addDays } from '../services/Utils';
 import LocalizationService from "../services/LocalizationService";
 import { SwatchColorPicker } from '@fluentui/react/lib/SwatchColorPicker';
 import { semibold } from "../fonts";
@@ -36,6 +37,7 @@ const HeaderMenu = (props: Props) => {
     var theme = useTheme();
     const history = useHistory();
     const [cookies, setCookie] = useCookies();
+    const date: Date = addDays(new Date(), 90);
     const tooltipId = useId('tooltip');
     const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
     const settingsIcon: IIconProps = { iconName: 'Settings', styles: { root: { fontSize: '18px' } } };
@@ -47,7 +49,7 @@ const HeaderMenu = (props: Props) => {
     
     if (cookies['language'] === undefined) 
     { 
-        setCookie("language", (navigator.language === 'it' || navigator.language === 'IT' ? 'it' : 'en'), { path: "/" }); 
+        setCookie("language", (navigator.language === 'it' || navigator.language === 'IT' ? 'it' : 'en'), { path: "/", expires: date }); 
     }
 
     LocalizationService.localize(cookies['language']);
@@ -65,12 +67,12 @@ const HeaderMenu = (props: Props) => {
 
     if (cookies["theme"] === undefined) 
     {
-        setCookie("theme", "light", { path: "/" }); 
+        setCookie("theme", "light", { path: "/", expires: date }); 
     }
 
     if (cookies["palette"] === undefined) 
     { 
-        setCookie("palette", "a", { path: "/" });
+        setCookie("palette", "a", { path: "/", expires: date });
     }
 
     /* useEffect to avoid rendering loops */
@@ -78,7 +80,7 @@ const HeaderMenu = (props: Props) => {
         if (cookies["firstVisit"] === undefined) { 
             setTimeout(() => {
                 showCoachmark();
-                setCookie("firstVisit", false, { path: "/" } ); 
+                setCookie("firstVisit", false, { path: "/", expires: date } ); 
             }, 1000);
         }
     });
@@ -158,8 +160,8 @@ const HeaderMenu = (props: Props) => {
     const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }));
 
     const themeToggled = () => {
-        if (cookies["theme"] === "dark") setCookie("theme", "light", { path: "/" });
-        else { setCookie("theme", "dark", { path: "/" }); }
+        if (cookies["theme"] === "dark") setCookie("theme", "light", { path: "/", expires: date });
+        else { setCookie("theme", "dark", { path: "/", expires: date }); }
         props.changeTheme();
     };
 
@@ -226,7 +228,7 @@ const HeaderMenu = (props: Props) => {
                         label={locale.settingsPanel.selectLanguage}
                         options={languageOptions}
                         selectedKey={cookies["language"]}
-                        onChange={(_, option) => { changeLanguage(option!.key as string); setCookie("language", option!.key as string, { path: "/" }) }}
+                        onChange={(_, option) => { changeLanguage(option!.key as string); setCookie("language", option!.key as string, { path: "/", expires: date }) }}
                         theme={theme}
                     />
 
@@ -237,9 +239,9 @@ const HeaderMenu = (props: Props) => {
                             calloutProps={calloutPropsResetColor}
                             styles={hostStylesResetColor}
                         >
-                            <IconButton iconProps={resetColorIcon} onClick={() => { setCookie("palette", 'a', { path: "/" }); props.changePalette('a'); }} />
+                            <IconButton iconProps={resetColorIcon} onClick={() => { setCookie("palette", 'a', { path: "/", expires: date }); props.changePalette('a'); }} />
                         </TooltipHost>
-                        <SwatchColorPicker selectedId={cookies["palette"]} columnCount={7} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => { setCookie("palette", id, { path: "/" }); props.changePalette(id!); }} />
+                        <SwatchColorPicker selectedId={cookies["palette"]} columnCount={7} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => { setCookie("palette", id, { path: "/", expires: date }); props.changePalette(id!); }} />
                     </div>
                 </Panel>
             </div>
