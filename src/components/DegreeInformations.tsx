@@ -3,13 +3,13 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Degree from '../models/Degree';
 import { semibold } from '../fonts';
-import { FontSizes, FontWeights } from '@fluentui/theme';
+import { FontSizes } from '@fluentui/theme';
 import { Icon, Text } from 'office-ui-fabric-react';
-import { DocumentCard, IDocumentCardTitleStyles, DocumentCardTitle, DocumentCardLogo, IDocumentCardLogoProps, IDocumentCardStyles } from 'office-ui-fabric-react/lib/DocumentCard';
+import { DocumentCard, DocumentCardTitle, DocumentCardLogo, IDocumentCardLogoProps, IDocumentCardStyles } from 'office-ui-fabric-react/lib/DocumentCard';
 import { redirectToLink } from '../services/Utils';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Separator } from '@fluentui/react/lib/Separator';
-import { DocumentCardActivity, mergeStyles } from "@fluentui/react";
+import { mergeStyles } from "@fluentui/react";
 import LocalizationService from "../services/LocalizationService";
 
 interface Props { cdl?: Degree };
