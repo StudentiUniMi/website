@@ -90,7 +90,7 @@
         },
         "link": "https://studente.unimi.it/fo_pagamenti/checkLogin.jsp",
         "icon": "Bank",
-        "color": "#393939",
+        "color": "#00188f",
         "type": "S",
         "description": {
             "it": "Sezione del SIFA riguardante i pagamenti.",
@@ -169,8 +169,8 @@
     }, 
     {
         "name": {
-            "it": "S bibliotecario",
-            "en": "Library"
+            "it": "Servizio bibliotecario",
+            "en": "Library services"
         },
         "link": "https://www.sba.unimi.it/",
         "icon": "Library",
