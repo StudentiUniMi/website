@@ -142,7 +142,7 @@
                     "redirects": [
                         { "name": {"it": "Sito del dipartimento", "en": "Department website"}, "description": {"it":  "Sito web del dipartimento del tuo corso di laurea.", "en": "Website of the department of your degree program."}, "link": "http://www.di.unimi.it/ecm/home", "icon": "ExternalBuild" },
                         { "name": {"it": "Orientamento", "en": "University guidance"}, "description": {"it":  "Decidi quale corso di laurea intraprendere.", "en": "Decide which degree course to take."}, "link": "https://orientamento.di.unimi.it/index.php", "icon": "CRMCustomerInsightsApp" },
-                        { "name": {"it": "Sito del corso di laurea", "en": "Course website"}, "description": {"it": "Sito web principale del tuo corso di laurea.", "en": "Main website of your degree program."}, "link": "https://informatica.cdl.unimi.it/it", "icon": "GlobeFavorite" },
+                        { "name": {"it": "Sito del cdl", "en": "Course website"}, "description": {"it": "Sito web principale del tuo corso di laurea.", "en": "Main website of your degree program."}, "link": "https://informatica.cdl.unimi.it/it", "icon": "GlobeFavorite" },
                         { "name": {"it": "Manifesto degli studi", "en": "Programme"}, "description": {"it": "Manifesto degli studi attuale del tuo corso di laurea.", "en": "Description of the current studies of your Degree Programme."}, "link": "https://apps.unimi.it/files/manifesti/ita_manifesto_F1Xof3_2021.pdf", "icon": "Questionnaire" },
                         { "name": {"it": "Virtual Classroom", "en": "Virtual Classroom"}, "description": {"it": "Sito web contenente videolezioni registrate di alcuni anni fa.", "en": "Website containing videolessons recorded a few years ago."}, "link": "https://vc.di.unimi.it/", "icon": "MyMoviesTV" }
                     ],
@@ -948,7 +948,7 @@
                     "redirects": [
                         { "name": {"it": "Sito del dipartimento", "en": "Department website"}, "description": {"it":  "Sito web del dipartimento del tuo corso di laurea.", "en": "Website of the department of your degree program."}, "link": "http://www.di.unimi.it/ecm/home", "icon": "ExternalBuild" },
                         { "name": {"it": "Orientamento", "en": "University guidance"}, "description": {"it":  "Decidi quale corso di laurea intraprendere.", "en": "Decide which degree course to take."}, "link": "https://orientamento.di.unimi.it/index.php", "icon": "CRMCustomerInsightsApp" },
-                        { "name": {"it": "Sito del corso di laurea", "en": "Course website"}, "description": {"it": "Sito web principale del tuo corso di laurea.", "en": "Main website of your degree program."}, "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-musicale", "icon": "GlobeFavorite" },
+                        { "name": {"it": "Sito del cdl", "en": "Course website"}, "description": {"it": "Sito web principale del tuo corso di laurea.", "en": "Main website of your degree program."}, "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-musicale", "icon": "GlobeFavorite" },
                         { "name": {"it": "Manifesto degli studi", "en": "Programme"}, "description": {"it": "Manifesto degli studi attuale del tuo corso di laurea.", "en": "Description of the current studies of your Degree Programme."}, "link": "https://apps.unimi.it/files/manifesti/ita_manifesto_F3Xof2_2021.pdf", "icon": "Questionnaire" }
                     ],
                     "admins": [
@@ -1089,7 +1089,7 @@
                     "redirects": [
                         { "name": {"it": "Sito del dipartimento", "en": "Department website"}, "description": {"it":  "Sito web del dipartimento del tuo corso di laurea.", "en": "Website of the department of your degree program."}, "link": "http://www.di.unimi.it/ecm/home", "icon": "ExternalBuild" },
                         { "name": {"it": "Orientamento", "en": "University guidance"}, "description": {"it":  "Decidi quale corso di laurea intraprendere.", "en": "Decide which degree course to take."}, "link": "https://orientamento.di.unimi.it/index.php", "icon": "CRMCustomerInsightsApp" },
-                        { "name": {"it": "Sito del corso di laurea", "en": "Course website"}, "description": {"it": "Sito web principale del tuo corso di laurea.", "en": "Main website of your degree program."}, "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-la-comunicazione-digitale", "icon": "GlobeFavorite" },
+                        { "name": {"it": "Sito del cdl", "en": "Course website"}, "description": {"it": "Sito web principale del tuo corso di laurea.", "en": "Main website of your degree program."}, "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-la-comunicazione-digitale", "icon": "GlobeFavorite" },
                         { "name": {"it": "Manifesto degli studi", "en": "Programme"}, "description": {"it": "Manifesto degli studi attuale del tuo corso di laurea.", "en": "Description of the current studies of your Degree Programme."}, "link": "https://apps.unimi.it/files/manifesti/ita_manifesto_F9Xof2_2021.pdf", "icon": "Questionnaire" }
                     ],
                     "admins": [
@@ -1430,7 +1430,7 @@
                     "redirects": [
                         { "name": {"it": "Sito del dipartimento", "en": "Department website"}, "description": {"it":  "Sito web del dipartimento del tuo corso di laurea.", "en": "Website of the department of your degree program."}, "link": "http://www.di.unimi.it/ecm/home", "icon": "ExternalBuild" },
                         { "name": {"it": "Orientamento", "en": "University guidance"}, "description": {"it":  "Decidi quale corso di laurea intraprendere.", "en": "Decide which degree course to take."}, "link": "https://orientamento.di.unimi.it/index.php", "icon": "CRMCustomerInsightsApp" },
-                        { "name": {"it": "Sito del corso di laurea", "en": "Course website"}, "description": {"it": "Sito web principale del tuo corso di laurea.", "en": "Main website of your degree program."}, "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-dei-sistemi-e-delle-reti-informatiche", "icon": "GlobeFavorite" },
+                        { "name": {"it": "Sito del cdl", "en": "Course website"}, "description": {"it": "Sito web principale del tuo corso di laurea.", "en": "Main website of your degree program."}, "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-dei-sistemi-e-delle-reti-informatiche", "icon": "GlobeFavorite" },
                         { "name": {"it": "Manifesto degli studi", "en": "Programme"}, "description": {"it": "Manifesto degli studi attuale del tuo corso di laurea.", "en": "Description of the current studies of your Degree Programme."}, "link": "https://apps.unimi.it/files/manifesti/ita_manifesto_F68of3_2021.pdf", "icon": "Questionnaire" }
                     ],
                     "admins": [
@@ -1707,7 +1707,7 @@
                     "redirects": [
                         { "name": {"it": "Sito del dipartimento", "en": "Department website"}, "description": {"it":  "Sito web del dipartimento del tuo corso di laurea.", "en": "Website of the department of your degree program."}, "link": "http://www.di.unimi.it/ecm/home", "icon": "ExternalBuild" },
                         { "name": {"it": "Orientamento", "en": "University guidance"}, "description": {"it":  "Decidi quale corso di laurea intraprendere.", "en": "Decide which degree course to take."}, "link": "https://orientamento.di.unimi.it/index.php", "icon": "CRMCustomerInsightsApp" },
-                        { "name": {"it": "Sito del corso di laurea", "en": "Course website"}, "description": {"it": "Sito web principale del tuo corso di laurea.", "en": "Main website of your degree program."}, "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-dei-sistemi-e-delle-reti-informatiche-online", "icon": "GlobeFavorite" },
+                        { "name": {"it": "Sito del cdl", "en": "Course website"}, "description": {"it": "Sito web principale del tuo corso di laurea.", "en": "Main website of your degree program."}, "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-dei-sistemi-e-delle-reti-informatiche-online", "icon": "GlobeFavorite" },
                         { "name": {"it": "Manifesto degli studi", "en": "Programme"}, "description": {"it": "Manifesto degli studi attuale del tuo corso di laurea.", "en": "Description of the current studies of your Degree Programme."}, "link": "https://apps.unimi.it/files/manifesti/ita_manifesto_F1Aof1_2021.pdf", "icon": "Questionnaire" }
                     ],
                     "admins": [
@@ -1978,7 +1978,7 @@
                     "redirects": [
                         { "name": {"it": "Sito del dipartimento", "en": "Department website"}, "description": {"it":  "Sito web del dipartimento del tuo corso di laurea.", "en": "Website of the department of your degree program."}, "link": "http://www.di.unimi.it/ecm/home", "icon": "ExternalBuild" },
                         { "name": {"it": "Orientamento", "en": "University guidance"}, "description": {"it":  "Decidi quale corso di laurea intraprendere.", "en": "Decide which degree course to take."}, "link": "https://orientamento.di.unimi.it/index.php", "icon": "CRMCustomerInsightsApp" },
-                        { "name": {"it": "Sito del corso di laurea", "en": "Course website"}, "description": {"it": "Sito web principale del tuo corso di laurea.", "en": "Main website of your degree program."}, "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-magistrale", "icon": "GlobeFavorite" },
+                        { "name": {"it": "Sito del cdl", "en": "Course website"}, "description": {"it": "Sito web principale del tuo corso di laurea.", "en": "Main website of your degree program."}, "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/informatica-magistrale", "icon": "GlobeFavorite" },
                         { "name": {"it": "Manifesto degli studi", "en": "Programme"}, "description": {"it": "Manifesto degli studi attuale del tuo corso di laurea.", "en": "Description of the current studies of your Degree Programme."}, "link": "https://apps.unimi.it/files/manifesti/ita_manifesto_F94of2_2021.pdf", "icon": "Questionnaire" }
                     ],
                     "admins": [
@@ -3091,7 +3091,7 @@
                     "redirects": [
                         { "name": {"it": "Sito del dipartimento", "en": "Department website"}, "description": {"it":  "Sito web del dipartimento del tuo corso di laurea.", "en": "Website of the department of your degree program."}, "link": "http://www.di.unimi.it/ecm/home", "icon": "ExternalBuild" },
                         { "name": {"it": "Orientamento", "en": "University guidance"}, "description": {"it":  "Decidi quale corso di laurea intraprendere.", "en": "Decide which degree course to take."}, "link": "https://orientamento.di.unimi.it/index.php", "icon": "CRMCustomerInsightsApp" },
-                        { "name": {"it": "Sito del corso di laurea", "en": "Course website"}, "description": {"it": "Sito web principale del tuo corso di laurea.", "en": "Main website of your degree program."}, "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-informatica", "icon": "GlobeFavorite" },
+                        { "name": {"it": "Sito del cdl", "en": "Course website"}, "description": {"it": "Sito web principale del tuo corso di laurea.", "en": "Main website of your degree program."}, "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-informatica", "icon": "GlobeFavorite" },
                         { "name": {"it": "Manifesto degli studi", "en": "Programme"}, "description": {"it": "Manifesto degli studi attuale del tuo corso di laurea.", "en": "Description of the current studies of your Degree Programme."}, "link": "https://apps.unimi.it/files/manifesti/ita_manifesto_F2Yof2_2021.pdf", "icon": "Questionnaire" }
                     ],
                     "admins": [
@@ -3530,7 +3530,7 @@
                     "description": "",
                     "redirects": [
                         { "name": {"it": "Sito del dipartimento", "en": "Department website"}, "description": {"it":  "Sito web del dipartimento del tuo corso di laurea.", "en": "Website of the department of your degree program."}, "link": "http: //www.fisica.unimi.it/ecm/home", "icon": "ExternalBuild" },
-                        { "name": {"it": "Sito del corso di laurea", "en": "Course website"}, "description": {"it": "Sito web principale del tuo corso di laurea.", "en": "Main website of your degree program."}, "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/fisica", "icon": "GlobeFavorite" },
+                        { "name": {"it": "Sito del cdl", "en": "Course website"}, "description": {"it": "Sito web principale del tuo corso di laurea.", "en": "Main website of your degree program."}, "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/fisica", "icon": "GlobeFavorite" },
                         { "name": {"it": "Manifesto degli studi", "en": "Programme"}, "description": {"it": "Manifesto degli studi attuale del tuo corso di laurea.", "en": "Description of the current studies of your Degree Programme."}, "link": "https://apps.unimi.it/files/manifesti/ita_manifesto_F63of3_2022.pdf", "icon": "Questionnaire" }
                     ],
                     "admins": [],
@@ -3567,7 +3567,7 @@
                     "description": "",
                     "redirects": [
                         { "name": {"it": "Sito del dipartimento", "en": "Department website"}, "description": {"it":  "Sito web del dipartimento del tuo corso di laurea.", "en": "Website of the department of your degree program."}, "link": "http://www.matematica.unimi.it/ecm/home", "icon": "ExternalBuild" },
-                        { "name": {"it": "Sito del corso di laurea", "en": "Course website"}, "description": {"it": "Sito web principale del tuo corso di laurea.", "en": "Main website of your degree program."}, "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/matematica-triennale", "icon": "GlobeFavorite" },
+                        { "name": {"it": "Sito del cdl", "en": "Course website"}, "description": {"it": "Sito web principale del tuo corso di laurea.", "en": "Main website of your degree program."}, "link": "https://www.unimi.it/it/corsi/corsi-di-laurea/matematica-triennale", "icon": "GlobeFavorite" },
                         { "name": {"it": "Manifesto degli studi", "en": "Programme"}, "description": {"it": "Manifesto degli studi attuale del tuo corso di laurea.", "en": "Description of the current studies of your Degree Programme."}, "link": "", "icon": "Questionnaire" }
                     ],
                     "admins": [],
