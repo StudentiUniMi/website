@@ -3,12 +3,13 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Degree from '../models/Degree';
 import { semibold } from '../fonts';
-import { FontSizes, FontWeights } from '@fluentui/theme';
+import { FontSizes } from '@fluentui/theme';
 import { Icon, Text } from 'office-ui-fabric-react';
-import { DocumentCard, IDocumentCardTitleStyles, DocumentCardTitle, DocumentCardLogo, IDocumentCardLogoProps, IDocumentCardStyles } from 'office-ui-fabric-react/lib/DocumentCard';
+import { DocumentCard, DocumentCardTitle, DocumentCardLogo, IDocumentCardLogoProps, IDocumentCardStyles } from 'office-ui-fabric-react/lib/DocumentCard';
 import { redirectToLink } from '../services/Utils';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Separator } from '@fluentui/react/lib/Separator';
+import { mergeStyles } from "@fluentui/react";
 import LocalizationService from "../services/LocalizationService";
 
 interface Props { cdl?: Degree };
@@ -17,8 +18,11 @@ const DegreeInformations= (props: Props) => {
     const theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string = LocalizationService.getLanguage();
-    const titleStyle: IDocumentCardTitleStyles = { root: { height: 'auto', fontWeight: FontWeights.semibold } };
-    const cardStyles: IDocumentCardStyles = { root: { backgroundColor: theme.palette.neutralLighter, display: 'inline-block', minWidth: '220px', maxWidth:'265px', height: 'auto', minHeight: '185px', maxHeight: '185px' } };
+    const cardStyles: IDocumentCardStyles = { root: { backgroundColor: theme.palette.neutralLighter, display: 'inline-block', minWidth: '200px', maxWidth:'235px', height: 'auto', minHeight: '150px', maxHeight: '150px' } };
+    const conversationTileClass = mergeStyles({ height: 182 });
+    const title: any = { fontSize: '20px' };
+    const secondaryTitle: any = { fontSize: '14px' };
+    const iconProps: any = { fontSize: '24px' };
 
     return (   
         <>    
@@ -33,18 +37,26 @@ const DegreeInformations= (props: Props) => {
             <Row className="degree-informations justify-content-center mb-3">
                 {
                     props.cdl?.redirects?.map(x => {
-                        const icon: IDocumentCardLogoProps = { logoIcon: x.icon! };
+                        const icon: IDocumentCardLogoProps = { logoIcon: x.icon!, className: iconProps };
                         return (
                             x.link !== "" ?
                             <Col xl={3} lg={4} sm={6} xs={12} className="mb-3">
-                                <DocumentCard styles={cardStyles} onClick={() => redirectToLink(x.link!)}>
+                                <DocumentCard
+                                    aria-label={x.name![language]}
+                                    styles={cardStyles}
+                                    onClick={() => redirectToLink(x.link!)}
+                                >
                                     <DocumentCardLogo {...icon} />
-                                    <DocumentCardTitle title={x.name![language]} styles={titleStyle} />
-                                    <div className="m-2">
-                                        <Text variant="medium">
-                                            {x.description![language]}
-                                        </Text>
+                                    <div className={conversationTileClass}>
+                                        <DocumentCardTitle title={x.name![language]} shouldTruncate className={title} />
+                                        <DocumentCardTitle
+                                            title={x.description![language]}
+                                            shouldTruncate
+                                            showAsSecondaryTitle
+                                            className={secondaryTitle}
+                                        />
                                     </div>
+                                    {/*<DocumentCardActivity activity="Sent March 13, 2018" people={people.slice(6)} />*/}
                                 </DocumentCard>
                             </Col> : <></>
                         )

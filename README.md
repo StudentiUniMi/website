@@ -11,7 +11,7 @@ In tal caso, scrivi pure sul [gruppo principale](https://t.me/joinchat/VswKeAblS
 ## Informazioni sul [Network](https://github.com/StudentiUnimi)
 Il Network Studenti Unimi nasce con lo scopo di creare un punto centrale di collegamento tra tutti i corsi di laurea dell'Università degli Studi di Milano. 
 
-Sono disponibili siti web, gruppi telegram e wiki dei corsi didattici dei corsi di laurea triennali di:
+Sono disponibili siti web, gruppi telegram, wiki dei corsi didattici e informazioni generali dei corsi di laurea triennali di:
 - 🌐 [Informatica](https://studentiunimi.it/courses/triennale_informatica/);
 - 🌐 [Informatica musicale](https://studentiunimi.it/courses/triennale_informatica_musicale/);
 - 🌐 [Informatica per la comunicazione digitale](https://studentiunimi.it/courses/triennale_informatica_com_digitale/);
@@ -33,5 +33,5 @@ e dei corsi di laurea magistrali di:
 - 🧙‍♂️ [Amministratori](https://studentiunimi.it/organization/) (Elenco membri del network + amministratori/moderatori e contatti telegram);
 - 👨‍💻 [Rappresentanti degli studenti](https://studentiunimi.it/representatives/) (Elenco rappresentanti + contatti telegram).
 
-Per qualsiasi dubbio o proposta è possibile scrivere sul [gruppo principale](https://t.me/joinchat/VswKeAblS2nrfXME).<br/>
+Per qualsiasi dubbio o proposta è possibile scrivere sul [gruppo principale](https://t.me/unimichat).<br/>
 <u>Il network e il relativo sito web non sono affiliati all'Università degli Studi di Milano.</u>

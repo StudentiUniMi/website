@@ -25,18 +25,18 @@ const Services = () => {
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
 
-    let cardProps = (iconName?: string, backgroundColor?: string): IDocumentCardPreviewProps => {
+    let cardProps = (iconName?: string, iconColor?: string): IDocumentCardPreviewProps => {
         return {
             previewImages: [ 
                 {
                     previewIconProps: {
                         iconName: iconName,
-                        styles: { root: { fontSize: FontSizes.size32, color: theme.palette.white } },
+                        styles: { root: { fontSize: FontSizes.size32, color: iconColor } },
                     },
                     width: 100, height: 110
                 },
             ],
-            styles: { previewIcon: { backgroundColor: backgroundColor }, root: { borderBottom: '0px' } },
+            styles: { previewIcon: { backgroundColor: theme.palette.neutralLighter }, root: { borderBottom: '0px' } },
         }
     };
 
