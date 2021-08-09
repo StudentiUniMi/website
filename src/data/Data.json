@@ -2029,6 +2029,22 @@
                             "chat_id": -100336155234
                         },
                         {
+                            "id": "8127398217398129387",
+                            "cdl": "magistrale_informatica",
+                            "name": "Sicurezza delle architetture orientate ai servizi",
+                            "anno": null,
+                            "semestre": 2,
+                            "cfu": 6,
+                            "gruppo": "https://t.me/joinchat/V3EPQybLOQdAL7dW",
+                            "websites": [
+                                { "link": "https://edamianisaos.ariel.ctu.unimi.it/v5/home/Default.aspx", "etichetta": "Ariel" },
+                                { "link": "https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2021/sicurezza-delle-architetture-orientate-ai-servizi", "etichetta": "Sito Unimi" }
+                            ],
+                            "drive": "",
+                            "wiki": "",
+                            "chat_id": ""
+                        },
+                        {
                             "id": "11539976-2d10-4081-bddb-9932f1e5ede0",
                             "cdl": "magistrale_informatica",
                             "name": "Natural Interaction",
