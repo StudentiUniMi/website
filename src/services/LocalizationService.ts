@@ -148,7 +148,7 @@ class LocalizationService {
                         websites: 'Siti web',
                         mainGroup: 'Gruppo principale',
                         mainGroupDescription: 'Gruppo principale per qualsiasi tipo di discussione inerente al corso di laurea.',
-                        groupNotAvailable: 'Gruppo non disponibile.',
+                        groupNotAvailable: 'Gruppo non disponibile',
                         contactAdmin: "<Icon iconName='FollowUser'/> Contatta un <Link href='https://studentiunimi.it/organization/'>amministratore</Link> se vuoi essere aggiunto al gruppo, oppure chiedilo direttamente su <Link href='https://t.me/unimichat' target='_blank'>@unimichat</Link>.",
                         groupsNotFound: 'Nessun gruppo trovato.',
                         adminsNotFound: 'Nessun amministratore disponibile.'
