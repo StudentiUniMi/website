@@ -15,6 +15,8 @@ import { Separator } from '@fluentui/react/lib/Separator';
 import { ActionButton } from '@fluentui/react/lib/Button';
 import { IIconProps } from '@fluentui/react';
 import { Swiper, SwiperSlide } from "swiper/react";
+import { ImageFit } from '@fluentui/react/lib/Image';
+import { DocumentCard, DocumentCardActivity, DocumentCardTitle, DocumentCardDetails, DocumentCardImage, IDocumentCardStyles, IDocumentCardActivityPerson } from '@fluentui/react/lib/DocumentCard';
 import { getFaqs } from '../services/Requests'; 
 import { getGroupsLength, getCdlsLength } from '../services/Requests';
 import LocalizationService from "../services/LocalizationService";
@@ -42,6 +44,9 @@ const HomeView = () => {
     const logoProperties = { width: '150px', height: '150px', display: 'inline-block' };
     const wikiPic = { width: '100px', height: '100px',  marginBottom: '5px', marginLeft: 'auto', marginRight: 'auto' };
 
+    const cardStyles: IDocumentCardStyles = { root: { display: 'inline-block', marginBottom: 20, minWidth: 250 } };
+    const people: IDocumentCardActivityPerson[] = [{ name: 'Università degli Studi di Milano', profileImageSrc: process.env.PUBLIC_URL + "/degree_groups_images/unimi.jpg"  } ];
+
     const telegramGroupIcon: IIconProps = { iconName: 'Send', theme: theme };
     const wikiIcon: IIconProps = { iconName: 'Globe', theme: theme };
 
@@ -51,8 +56,8 @@ const HomeView = () => {
     const mainCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', boxShadow: theme.effects.elevation8 };
 
     return (
-        <Container className="home text-center">
-            <div className="info-section mb-4">
+        <Container className="home">
+            <div className="info-section mb-4 text-center">
                 <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/logo/' + logoFileName} alt='Network logo' style={logoProperties} />
                 <div className="mb-2">
                     <Text variant="xLarge">
@@ -64,7 +69,6 @@ const HomeView = () => {
 
             <div className="mb-3 justify-content-center">
                 <Swiper pagination={true} navigation={true} autoplay={{ "delay": 4500, "disableOnInteraction": false }} className="mySwiper">
-
                     <SwiperSlide>
                         <Row className="justify-content-center">
                             <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
@@ -264,7 +268,7 @@ const HomeView = () => {
                 </Swiper>
             </div>
 
-            <Icon iconName="ChevronDownMed" className="mb-3" style={iconStyle} />
+            <div className="text-center"><Icon iconName="ChevronDownMed" className="mb-3" style={iconStyle} /></div>
 
             <div className="primary-section mb-4">
                 <div className="mb-4">
@@ -475,6 +479,23 @@ const HomeView = () => {
                     </Col>
                 </Row>
 
+            </div>
+
+            <div className="mb-4">
+                <div className="mb-4"><Separator><Text variant="large" styles={semibold}>Informazioni sui vaccini</Text></Separator></div>
+
+                <DocumentCard
+                    aria-label={'Dennissone de Dennissonis'}
+                    styles={cardStyles}
+                    onClickHref="http://bing.com"
+                    className="text-align-left"
+                >
+                    <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/green_pass.jpg"} />
+                    <DocumentCardDetails>
+                        <DocumentCardTitle title="Dennissone de Dennissonis" shouldTruncate />
+                    </DocumentCardDetails>
+                    <DocumentCardActivity activity="Modified March 13, 2018" people={people} />
+                </DocumentCard>
             </div>
 
             <div className="faq-section mb-4">
