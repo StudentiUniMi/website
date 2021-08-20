@@ -8,6 +8,7 @@ import { useTheme } from '@fluentui/react-theme-provider';
 import RepresentativesList from '../components/RepresentativesList';
 import { getRepresentatives, getDepartments } from '../services/Requests'
 import Representative from '../models/Representative';
+import Department from '../models/Department';
 import LocalizationService from "../services/LocalizationService";
 
 const dropdownStyles: Partial<IDropdownStyles> = { dropdown: {  } };
@@ -75,9 +76,10 @@ const RepresentativesView = () => {
         }
     }, [history]);
 
-    let representatives: Representative[] = getRepresentatives(selectedDepartment);
+    let representatives: Representative[] = [];
+    let departments: Department[] = [];
 
-    const departmentOptions: IDropdownOption[] = getDepartments().map(x => ({key: x.id, text: x.name ?? "", data: {icon:x.icon}, disabled: x.cdls.length === 0 || x.representatives.length === 0}));
+    const departmentOptions: IDropdownOption[] = departments.map(x => ({key: x.id, text: x.name ?? "", data: {icon:x.icon}, disabled: x.cdls.length === 0 || x.representatives.length === 0}));
 
     return (
         <Container className="representatives text-center">

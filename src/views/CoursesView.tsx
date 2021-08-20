@@ -71,7 +71,8 @@ const CoursesView = () => {
     };
 
 
-    let departments = getDepartments();
+    let departments: Department[] = [];
+    console.log(getDepartments());
 
     React.useEffect(() => {
         if(!didMount.current) {
