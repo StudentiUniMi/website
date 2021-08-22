@@ -1,24 +1,17 @@
-import { IDocumentCardDetailsStyles, IDocumentCardTitleStyles, Text } from 'office-ui-fabric-react';
-import { FontSizes } from '@fluentui/theme';
-import { Persona, Link } from '@fluentui/react';
+import { Persona, Link, Text, FontSizes, IIconProps, PrimaryButton, Icon, initializeIcons, ActionButton } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { semibold } from '../fonts';
 import { Image } from 'office-ui-fabric-react/lib/Image';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { Icon } from 'office-ui-fabric-react';
-import { initializeIcons } from "@uifabric/icons";
 import { Card, ICardTokens, CardSection } from "@uifabric/react-cards";
-import { PrimaryButton } from 'office-ui-fabric-react';
 import { Separator } from '@fluentui/react/lib/Separator';
-import { ActionButton } from '@fluentui/react/lib/Button';
-import { IIconProps } from '@fluentui/react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ImageFit } from '@fluentui/react/lib/Image';
-import { DocumentCard, DocumentCardActivity, DocumentCardTitle, DocumentCardDetails, DocumentCardImage, IDocumentCardStyles, IDocumentCardActivityPerson } from '@fluentui/react/lib/DocumentCard';
-import { getFaqs } from '../services/Requests'; 
-import { getGroupsLength, getCdlsLength } from '../services/Requests';
+import { DocumentCard, DocumentCardActivity, DocumentCardTitle, DocumentCardDetails, DocumentCardImage, IDocumentCardStyles, IDocumentCardActivityPerson, IDocumentCardDetailsStyles, IDocumentCardTitleStyles } from '@fluentui/react/lib/DocumentCard';
+import { getGroupsLength, getCdlsLength, getFaqs } from '../services/Requests';
+import { redirectToLink } from '../services/Utils';
 import LocalizationService from "../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper/core';
@@ -26,7 +19,6 @@ import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { redirectToLink } from '../services/Utils';
 
 SwiperCore.use([Pagination, Navigation, Autoplay]);
 initializeIcons();
@@ -36,35 +28,40 @@ const HomeView = () => {
     const locale = LocalizationService.strings();
     var language: string = LocalizationService.getLanguage();
     const faqs = getFaqs();
-    const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
-    const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
-    const sectionCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', boxShadow: theme.effects.elevation8 };
-    const buttonStyle = { maxWidth: '180px' };
-    const cardTokens: ICardTokens = { childrenMargin: 12 };
-    const logoFileName = 'unimi500.png';
-    const logoProperties = { width: '150px', height: '150px', display: 'inline-block' };
-    const telegramLogo = { marginLeft: 'auto', marginRight: 'auto', width: '50px', height: '50px' };
+    const groupsNumber = getGroupsLength();
+    const cdlsNumber = getCdlsLength();
 
+    /* Icons */
+    const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
+    const wikiIcon: IIconProps = { iconName: 'Globe', theme: theme };
+    const telegramGroupIcon: IIconProps = { iconName: 'Send', theme: theme };
+    const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
+
+    /* Cards */
+    const infoCard = { minHeight: 130, maxWidth: 350 };
+    const sectionCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', boxShadow: theme.effects.elevation8 };
+    const cardTokens: ICardTokens = { childrenMargin: 12 };
+
+    /* Buttons */
+    const buttonStyle = { maxWidth: '180px' };
     const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
 
+    /* Vaccine section */
     const vaccineNewsCards: IDocumentCardStyles = { root: { display: 'inline-block', marginBottom: 20, minWidth: 250, maxWidth: 'none', minHeight: 380 } };
     const vaccinePrimaryText: IDocumentCardTitleStyles = { root: { height: 'auto' } };
     const vaccineSecondaryText: IDocumentCardTitleStyles = { root: { height: 'auto' }};
     const vaccineDocumentCardDetails: IDocumentCardDetailsStyles = { root: { justifyContent: 'start' } };
     const people: IDocumentCardActivityPerson[] = [{ name: locale.homepage.vaccineSection.news,  profileImageSrc: process.env.PUBLIC_URL + "/other/news.png"  } ];
 
-    const telegramGroupIcon: IIconProps = { iconName: 'Send', theme: theme };
-    const wikiIcon: IIconProps = { iconName: 'Globe', theme: theme };
-
-    const groupsNumber = getGroupsLength();
-    const cdlsNumber = getCdlsLength();
+    /* Other */
+    const logoProperties = { width: '150px', height: '150px', display: 'inline-block' };
+    const telegramLogo = { marginLeft: 'auto', marginRight: 'auto', width: '50px', height: '50px' };
     const numberStyle = { color: theme.palette.themePrimary };
-    const infoCard = { minHeight: 130, maxWidth: 350 };
 
     return (
         <Container className="home">
             <div className="info-section mb-4 text-center">
-                <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/logo/' + logoFileName} alt='Network logo' style={logoProperties} />
+                <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/logo/unimi500.png'} alt='Network logo' style={logoProperties} />
                 <div className="mb-2">
                     <Text variant="xLarge">
                         <JsxParser bindings={{ theme: theme }} components={{ Text }} jsx={locale.homepage.section1.text1} />
