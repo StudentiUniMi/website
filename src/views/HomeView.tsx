@@ -1,4 +1,4 @@
-import { Text } from 'office-ui-fabric-react';
+import { IDocumentCardDetailsStyles, IDocumentCardTitleStyles, Text } from 'office-ui-fabric-react';
 import { FontSizes } from '@fluentui/theme';
 import { Persona, Link } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
@@ -46,7 +46,10 @@ const HomeView = () => {
 
     const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
 
-    const cardStyles: IDocumentCardStyles = { root: { display: 'inline-block', marginBottom: 20, minWidth: 250 } };
+    const vaccineNewsCards: IDocumentCardStyles = { root: { display: 'inline-block', marginBottom: 20, minWidth: 250, maxWidth: 'none', minHeight: 380 } };
+    const vaccinePrimaryText: IDocumentCardTitleStyles = { root: { height: 'auto' } };
+    const vaccineSecondaryText: IDocumentCardTitleStyles = { root: { height: 'auto' }};
+    const vaccineDocumentCardDetails: IDocumentCardDetailsStyles = { root: { justifyContent: 'start' } };
     const people: IDocumentCardActivityPerson[] = [{ name: 'Università degli Studi di Milano', profileImageSrc: process.env.PUBLIC_URL + "/degree_groups_images/unimi.jpg"  } ];
 
     const telegramGroupIcon: IIconProps = { iconName: 'Send', theme: theme };
@@ -70,10 +73,10 @@ const HomeView = () => {
             </div>
 
             <div className="mb-3 justify-content-center">
-                <Swiper pagination={true} navigation={true} autoplay={{ "delay": 4500, "disableOnInteraction": false }} className="mySwiper">
+                <Swiper pagination={true} navigation={true} /*autoplay={{ "delay": 4500, "disableOnInteraction": false }}*/ className="mySwiper">
                     <SwiperSlide>
                         <Row className="justify-content-center">
-                            <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+                            <Col className="mb-3" xl={6} lg={6} md={5} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
                                 <div >
                                     <div className="mb-1">
                                         <Text variant="medium">
@@ -85,8 +88,8 @@ const HomeView = () => {
                                     </div>
                                 </div>
                             </Col>
-                            <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
-                                <Card tokens={cardTokens} style={{ minHeight: '160px' }}>
+                            <Col className="mb-3 justify-content-center" style={{ maxWidth: 350 }} xl={6} lg={6} md={5} sm={6} xs={12}>
+                                <Card tokens={cardTokens} style={{ minHeight: 160, maxWidth: 350, marginLeft: 5, marginRight: 5 }}>
                                     <Card.Item>
                                         <Persona onRenderPrimaryText={() => <div className="justify-content-center text-center mt-3" style={{ wordWrap: 'break-word', whiteSpace: 'normal' }}><Text styles={semibold}>{locale.homepage.section1.sliders[0].cardText}</Text></div>} text={locale.homepage.section1.sliders[0].cardText} imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/matricole.jpg'} />
                                     </Card.Item>
@@ -108,7 +111,7 @@ const HomeView = () => {
 
                     <SwiperSlide>
                         <Row className="justify-content-center">
-                            <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+                            <Col className="mb-3" xl={6} lg={6} md={5} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
                                 <div >
                                     <div className="mb-1">
                                         <Text variant="medium">
@@ -120,8 +123,8 @@ const HomeView = () => {
                                     </div>
                                 </div>
                             </Col>
-                            <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
-                                <Card tokens={cardTokens} style={{ minHeight: '160px' }}>
+                            <Col className="mb-3 home-card" style={{ maxWidth: 350 }} xl={6} lg={6} md={5} sm={6} xs={12}>
+                                <Card tokens={cardTokens} style={{ minHeight: 160, maxWidth: 350, marginLeft: 5, marginRight: 5  }}>
                                     <Card.Item>
                                         <Persona onRenderPrimaryText={() => <div className="ml-2"><Text styles={semibold}>{locale.homepage.section1.sliders[1].cardText}</Text></div>} text={locale.homepage.section1.sliders[1].cardText} imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/alloggi.jpg'} />
                                     </Card.Item>
@@ -143,7 +146,7 @@ const HomeView = () => {
 
                     <SwiperSlide>
                         <Row className="justify-content-center">
-                            <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+                            <Col className="mb-3" xl={6} lg={6} md={5} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
                                 <div >
                                     <div className="mb-1">
                                         <Text variant="medium">
@@ -155,8 +158,8 @@ const HomeView = () => {
                                     </div>
                                 </div>
                             </Col>
-                            <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
-                                <Card tokens={cardTokens} style={{ minHeight: '160px' }}>
+                            <Col className="mb-3 home-card" style={{ maxWidth: 350 }} xl={6} lg={6} md={5} sm={6} xs={12}>
+                                <Card tokens={cardTokens} style={{ maxWidth: 350, minHeight: 160, marginLeft: 5, marginRight: 5 }}>
                                     <Card.Item>
                                         <Persona onRenderPrimaryText={() => <div className="ml-2"><Text styles={semibold}>{locale.homepage.section1.sliders[2].cardText}</Text></div>} text={locale.homepage.section1.sliders[2].cardText} imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/materiali.jpg'} />
                                     </Card.Item>
@@ -178,7 +181,7 @@ const HomeView = () => {
 
                     <SwiperSlide>
                         <Row className="justify-content-center">
-                            <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+                            <Col className="mb-3" xl={6} lg={6} md={5} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
                                 <div >
                                     <div className="mb-1">
                                         <Text variant="medium">
@@ -190,8 +193,8 @@ const HomeView = () => {
                                     </div>
                                 </div>
                             </Col>
-                            <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
-                                <Card tokens={cardTokens} style={{ minHeight: '160px' }}>
+                            <Col className="mb-3" style={{ maxWidth: 350 }} xl={6} lg={6} md={5} sm={6} xs={12}>
+                                <Card tokens={cardTokens} style={{ minHeight: 160, maxWidth: 350, marginLeft: 5, marginRight: 5 }}>
                                     <Card.Item>
                                         <Persona onRenderPrimaryText={() => <div className="ml-2"><Text styles={semibold}>{locale.homepage.section1.sliders[3].cardText}</Text></div>} text={locale.homepage.section1.sliders[3].cardText} imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/ripetizioni.jpg'} />
                                     </Card.Item>
@@ -213,7 +216,7 @@ const HomeView = () => {
 
                     <SwiperSlide>
                         <Row className="justify-content-center">
-                            <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+                            <Col className="mb-3" xl={6} lg={6} md={5} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
                                 <div >
                                     <div className="mb-1">
                                         <Text variant="medium">
@@ -222,8 +225,8 @@ const HomeView = () => {
                                     </div>
                                 </div>
                             </Col>
-                            <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
-                                <Card tokens={cardTokens} style={{ minHeight: '160px' }}>
+                            <Col className="mb-3" style={{ maxWidth: 350 }} xl={6} lg={6} md={5} sm={6} xs={12}>
+                                <Card tokens={cardTokens} style={{ minHeight: 160, maxWidth: 350, marginLeft: 5, marginRight: 5 }}>
                                     <Card.Section>
                                         <Image id="logo"
                                             src={process.env.PUBLIC_URL + "/other/globe.png"}
@@ -247,15 +250,15 @@ const HomeView = () => {
 
                     <SwiperSlide>
                         <Row className="justify-content-center">
-                            <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+                            <Col className="mb-3" xl={6} lg={6} md={5} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
                                 <div className="mb-1">
                                     <Text variant="medium">
                                         {locale.homepage.section1.sliders[5].text1}
                                     </Text>
                                 </div>
                             </Col>
-                            <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
-                                <Card tokens={cardTokens} style={{ minHeight: '160px' }}>
+                            <Col className="mb-3" style={{ maxWidth: 350 }} xl={6} lg={6} md={5} sm={6} xs={12}>
+                                <Card tokens={cardTokens} style={{ minHeight: 160, maxWidth: 350, marginLeft: 5, marginRight: 5 }}>
                                     <Card.Section>
                                         <Icon iconName="CoffeeScript" style={{ fontSize: '48px', color: theme.palette.themePrimary, marginTop: '15px' }} />
                                         <Text variant="medium">
@@ -486,18 +489,55 @@ const HomeView = () => {
             <div className="mb-4">
                 <div className="mb-4"><Separator><Text variant="large" styles={semibold}>Informazioni sui vaccini</Text></Separator></div>
 
-                <DocumentCard
-                    aria-label={'Dennissone de Dennissonis'}
-                    styles={cardStyles}
-                    onClickHref="http://bing.com"
-                    className="text-align-left"
-                >
-                    <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/green_pass.jpg"} />
-                    <DocumentCardDetails>
-                        <DocumentCardTitle title="Dennissone de Dennissonis" shouldTruncate />
-                    </DocumentCardDetails>
-                    <DocumentCardActivity activity="Modified March 13, 2018" people={people} />
-                </DocumentCard>
+                <Row className="justify-content-center">
+
+                    <Col className="mb-3" xl={6} lg={6} md={12} sm={12} xs={12}>
+                        <DocumentCard
+                            aria-label={'Obbligo del Green Pass'}
+                            styles={vaccineNewsCards}
+                            onClickHref="https://www.mur.gov.it/it/news/lunedi-09082021/green-pass-obbligatorio-attivita-presenza-universita-e-afam"
+                            className="text-align-left"
+                        >
+                            <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/green_pass.jpg"} />
+                            <DocumentCardDetails styles={vaccineDocumentCardDetails}>
+                                <DocumentCardTitle title="Obbligo del Green Pass" styles={vaccinePrimaryText} />
+                                <DocumentCardTitle
+                                    title={
+                                        "Vi ricordiamo che da settembre in tutte le università per svolgere una qualsiasi attività in presenza (compreso l'accesso alle aule studio) sarà necessario possedere il green pass."
+                                    }
+                                    styles={vaccineSecondaryText}
+                                    showAsSecondaryTitle
+                                />
+                            </DocumentCardDetails>
+                            <DocumentCardActivity activity="Modified March 13, 2018" people={people} />
+                        </DocumentCard>
+                    </Col>
+
+                    <Col className="mb-3" xl={6} lg={6} md={12} sm={12} xs={12}>
+                        <DocumentCard
+                            aria-label={'Iniziative a supporto degli studenti'}
+                            styles={vaccineNewsCards}
+                            onClickHref=""
+                            className="text-align-left"
+                        >
+                            <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/vaccine_card_2.jpg"} />
+                            <DocumentCardDetails styles={vaccineDocumentCardDetails}>
+                                <DocumentCardTitle title="Iniziative a supporto degli studenti" styles={vaccinePrimaryText} />
+                                <DocumentCardTitle
+                                    title={
+                                        "Per venire incontro agli studenti la regione lombardia si è attivata con una serie di iniziative a supporto degli studenti, tra cui agende prioritarie per la vaccinazione"
+                                        + "Alternativamente al vaccino un altro modo per ottenere un green pass valido per 48 ore è attraverso un tampone negativo, vi ricordiamo però che questa opzione vi costerà ogni volta circa 15€"
+                                        + "L'assenza di green pass non è un motivo valido per svolgere un esame a distanza"
+                                    }
+                                    styles={vaccineSecondaryText}
+                                    showAsSecondaryTitle
+                                />
+                            </DocumentCardDetails>
+                            <DocumentCardActivity activity="Modified March 13, 2018" people={people} />
+                        </DocumentCard>
+                    </Col>
+
+                </Row>
             </div>
 
             <div className="faq-section mb-4">

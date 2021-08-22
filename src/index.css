@@ -203,9 +203,11 @@ button:focus,
     max-width: 250px;
   }
 
+  /*
   .home .col-12 {
     max-width: 280px;
   }
+  */
 }
 @media only screen and (min-width: 481px) {
   .rules .row .col-xs-12 {
