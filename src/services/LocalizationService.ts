@@ -121,7 +121,7 @@ class LocalizationService {
                             title: "Informazioni sui vaccini",
                             card1: {
                                 title: "Obbligo del Green Pass",
-                                description: "Vi ricordiamo che da settembre in tutte le università per svolgere una qualsiasi attività in presenza(compreso l'accesso alle aule studio) sarà necessario possedere il green pass. L'assenza di green pass non è un motivo valido per svolgere un esame a distanza.",
+                                description: "Vi ricordiamo che da settembre in tutte le università per svolgere una qualsiasi attività in presenza (compreso l'accesso alle aule studio) sarà necessario possedere il green pass. L'assenza di green pass non è un motivo valido per svolgere un esame a distanza.",
                                 date: "09 Agosto, 2021"
                             },
                             card2: {
