@@ -203,6 +203,10 @@ button:focus,
     max-width: 250px;
   }
 
+  .home .telegram-advantages-list {
+    margin-left: 20% !important;
+  }
+
   /*
   .home .col-12 {
     max-width: 280px;

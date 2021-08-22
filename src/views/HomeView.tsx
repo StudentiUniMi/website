@@ -42,6 +42,7 @@ const HomeView = () => {
     const cardTokens: ICardTokens = { childrenMargin: 12 };
     const logoFileName = 'unimi500.png';
     const logoProperties = { width: '150px', height: '150px', display: 'inline-block' };
+    const telegramLogo = { marginLeft: 'auto', marginRight: 'auto', width: '50px', height: '50px' };
 
     const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
 
@@ -49,7 +50,7 @@ const HomeView = () => {
     const vaccinePrimaryText: IDocumentCardTitleStyles = { root: { height: 'auto' } };
     const vaccineSecondaryText: IDocumentCardTitleStyles = { root: { height: 'auto' }};
     const vaccineDocumentCardDetails: IDocumentCardDetailsStyles = { root: { justifyContent: 'start' } };
-    const people: IDocumentCardActivityPerson[] = [{ name: 'Notizia',  profileImageSrc: process.env.PUBLIC_URL + "/other/news.png"  } ];
+    const people: IDocumentCardActivityPerson[] = [{ name: locale.homepage.vaccineSection.news,  profileImageSrc: process.env.PUBLIC_URL + "/other/news.png"  } ];
 
     const telegramGroupIcon: IIconProps = { iconName: 'Send', theme: theme };
     const wikiIcon: IIconProps = { iconName: 'Globe', theme: theme };
@@ -57,7 +58,7 @@ const HomeView = () => {
     const groupsNumber = getGroupsLength();
     const cdlsNumber = getCdlsLength();
     const numberStyle = { color: theme.palette.themePrimary };
-    const mainCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', boxShadow: theme.effects.elevation8 };
+    const infoCard = { minHeight: 130, maxWidth: 350 };
 
     return (
         <Container className="home">
@@ -488,46 +489,46 @@ const HomeView = () => {
 
                     <Col className="mb-3" xl={6} lg={6} md={12} sm={12} xs={12}>
                         <DocumentCard
-                            aria-label={'Obbligo del Green Pass'}
+                            aria-label={locale.homepage.vaccineSection.card1.title}
                             styles={vaccineNewsCards}
                             onClickHref="https://www.mur.gov.it/it/news/lunedi-09082021/green-pass-obbligatorio-attivita-presenza-universita-e-afam"
                             className="text-align-left"
                         >
                             <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/green_pass.jpg"} />
                             <DocumentCardDetails styles={vaccineDocumentCardDetails}>
-                                <DocumentCardTitle title="Obbligo del Green Pass" styles={vaccinePrimaryText} />
+                                <DocumentCardTitle title={locale.homepage.vaccineSection.card1.title} styles={vaccinePrimaryText} />
                                 <DocumentCardTitle
-                                    title={
-                                        "Vi ricordiamo che da settembre in tutte le università per svolgere una qualsiasi attività in presenza (compreso l'accesso alle aule studio) sarà necessario possedere il green pass. "
-                                        + "L'assenza di green pass non è un motivo valido per svolgere un esame a distanza."
-                                    }
+                                    title={locale.homepage.vaccineSection.card1.description}
                                     styles={vaccineSecondaryText}
                                     showAsSecondaryTitle
                                 />
                             </DocumentCardDetails>
+                            <div style={{ marginLeft: 16, marginBottom: 8 }}>
+                                <Text styles={semibold} variant="medium" style={{ color: theme.palette.themePrimary }}><Icon iconName="PageArrowRight"/> {locale.homepage.vaccineSection.click}</Text>
+                            </div>
                             <DocumentCardActivity activity="August 09, 2021" people={people} />
                         </DocumentCard>
                     </Col>
 
                     <Col className="mb-3" xl={6} lg={6} md={12} sm={12} xs={12}>
                         <DocumentCard
-                            aria-label={'Iniziative a supporto degli studenti'}
+                            aria-label={locale.homepage.vaccineSection.card2.title}
                             styles={vaccineNewsCards}
                             onClickHref=""
                             className="text-align-left"
                         >
                             <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/vaccine_card_2.jpg"} />
                             <DocumentCardDetails styles={vaccineDocumentCardDetails}>
-                                <DocumentCardTitle title="Iniziative a supporto degli studenti" styles={vaccinePrimaryText} />
+                                <DocumentCardTitle title={locale.homepage.vaccineSection.card2.title} styles={vaccinePrimaryText} />
                                 <DocumentCardTitle
-                                    title={
-                                        "Per venire incontro agli studenti la Regione Lombardia si è attivata con una serie di iniziative a supporto degli studenti, tra cui agende prioritarie per la vaccinazione. "
-                                        + "Alternativamente al vaccino un altro modo per ottenere un green pass valido per 48 ore è attraverso un tampone negativo, vi ricordiamo però che questa opzione vi costerà ogni volta circa almeno 15€."
-                                    }
+                                    title={locale.homepage.vaccineSection.card2.description}
                                     styles={vaccineSecondaryText}
                                     showAsSecondaryTitle
                                 />
                             </DocumentCardDetails>
+                            <div style={{ marginLeft: 16, marginBottom: 8 }}>
+                                <Text styles={semibold} variant="medium" style={{ color: theme.palette.themePrimary }}><Icon iconName="PageArrowRight" /> {locale.homepage.vaccineSection.click}</Text>
+                            </div>
                             <DocumentCardActivity activity="August 10, 2021" people={people} />
                         </DocumentCard>
                     </Col>
@@ -563,42 +564,71 @@ const HomeView = () => {
 
             </div>
 
+            <div className="mb-4 text-center">
+                <div className="mb-3"><Separator><Text variant="large" styles={semibold}>Perchè Telegram e non Whatsapp?</Text></Separator></div>
+
+                <div className="mb-4">
+                    <Text variant="medium">
+                        {locale.homepage.telegramSection.description}
+                    </Text>
+                </div>
+
+                <Row className="justify-content-center">
+                    <Col className="mb-3" style={{ maxWidth: 350 }} xl={6} lg={6} md={6} sm={6} xs={12}>
+                        <Card tokens={cardTokens} className="justify-content-center text-center" style={{ minHeight: 160, maxWidth: 350, marginLeft: 5, marginRight: 5 }}>
+                            <CardSection>
+                                <div className="justify-content-center">
+                                    <Image id="logo" src={process.env.PUBLIC_URL + "/other/telegram-icon-compress-min.png"} style={telegramLogo} />
+                                </div>
+                                <Text variant="medium" styles={semibold}>
+                                    <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale.homepage.telegramSection.advantages} />
+                                </Text>
+                            </CardSection>
+                        </Card>
+                    </Col>
+                    <Col className="mb-3" style={{ maxWidth: 350 }} xl={6} lg={6} md={6} sm={6} xs={12}>
+                        <div className="mt-2 telegram-advantages-list" style={{ textAlign: 'left', marginLeft: 50 }}>
+                            <Text variant="small">
+                                {locale.homepage.telegramSection.list.map(x => {
+                                    return (<><Icon iconName="ChevronRightSmall" style={{ color: theme.palette.themePrimary }} /> {x}<br/></>)
+                                })}
+                            </Text>
+                        </div>
+                    </Col>
+                </Row>
+            </div>
+
             <div className="mb-3">
                 <div className="mb-4"><Separator><Text variant="large" styles={semibold}>{locale.homepage.section7.text}</Text></Separator></div>
 
                 <Row className="justify-content-center">
-                    <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
-                        <Card tokens={cardTokens} style={mainCard} className="justify-content-center text-center">
+                    <Col className="mb-3" style={{ maxWidth: 350 }} xl={3} lg={4} md={4} sm={6} xs={12}>
+                        <Card tokens={cardTokens} style={infoCard} className="justify-content-center text-center">
                             <CardSection>
-                                <Icon iconName="UserOptional" style={iconStyle} />
+
                                 <Text variant="large" className="mt-0">
-                                    {locale.homepage.section7.card1.text1}<br />
-                                    <Text variant="xLarge" style={numberStyle}>2.000</Text> <br />
-                                    {locale.homepage.section7.card1.text2}
+                                    <Icon iconName="UserOptional" style={iconStyle} /> {locale.homepage.section7.card1.text1}<br />
+                                    <Text variant="xLarge" style={numberStyle}>2.000</Text> {locale.homepage.section7.card1.text2}
                                 </Text>
                             </CardSection>
                         </Card>
                     </Col>
-                    <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
-                        <Card tokens={cardTokens} style={mainCard} className="justify-content-center text-center">
+                    <Col className="mb-3" style={{ maxWidth: 350 }} xl={3} lg={4} md={4} sm={6} xs={12}>
+                        <Card tokens={cardTokens} style={infoCard} className="justify-content-center text-center">
                             <CardSection>
-                                <Icon iconName="PeopleAlert" style={iconStyle} />
                                 <Text variant="large" className="mt-0">
-                                    {locale.homepage.section7.card2.text1}<br />
-                                    <Text variant="xLarge" style={numberStyle}>{groupsNumber}</Text> <br />
-                                    {locale.homepage.section7.card2.text2}
+                                    <Icon iconName="PeopleAlert" style={iconStyle} /> {locale.homepage.section7.card2.text1}<br />
+                                    <Text variant="xLarge" style={numberStyle}>{groupsNumber}</Text> {locale.homepage.section7.card2.text2}
                                 </Text>
                             </CardSection>
                         </Card>
                     </Col>
-                    <Col className="mb-3" xl={3} lg={4} md={4} sm={6} xs={12}>
-                        <Card tokens={cardTokens} style={mainCard} className="justify-content-center text-center">
+                    <Col className="mb-3" style={{ maxWidth: 350 }} xl={3} lg={4} md={4} sm={6} xs={12}>
+                        <Card tokens={cardTokens} style={infoCard} className="justify-content-center text-center">
                             <CardSection>
-                                <Icon iconName="CityNext" style={iconStyle} />
                                 <Text variant="large" className="mt-0">
-                                    {locale.homepage.section7.card3.text1}<br />
-                                    <Text variant="xLarge" style={numberStyle}>{cdlsNumber}</Text> <br />
-                                    {locale.homepage.section7.card3.text2}
+                                    <Icon iconName="CityNext" style={iconStyle} /> {locale.homepage.section7.card3.text1}<br />
+                                    <Text variant="xLarge" style={numberStyle}>{cdlsNumber}</Text> {locale.homepage.section7.card3.text2}
                                 </Text>
                             </CardSection>
                         </Card>

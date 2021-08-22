@@ -105,6 +105,23 @@ interface ILocalizationStrings {
             card1: { text1: string, text2: string },
             card2: { text1: string, text2: string },
             card3: { text1: string, text2: string },
+        }, 
+        vaccineSection: {
+            card1: {
+                title: string,
+                description: string,
+            },
+            card2: {
+                title: string,
+                description: string
+            },
+            click: string,
+            news: string
+        },
+        telegramSection: {
+            description: string,
+            advantages: string,
+            list: any[]
         }
     },
     aboutUs: {
