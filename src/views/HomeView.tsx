@@ -26,6 +26,7 @@ import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { redirectToLink } from '../services/dist/Utils';
 
 SwiperCore.use([Pagination, Navigation, Autoplay]);
 initializeIcons();
@@ -483,7 +484,7 @@ const HomeView = () => {
             </div>
 
             <div className="mb-4">
-                <div className="mb-4"><Separator><Text variant="large" styles={semibold}>Informazioni sui vaccini</Text></Separator></div>
+                <div className="mb-4"><Separator><Text variant="large" styles={semibold}>{locale.homepage.vaccineSection.title}</Text></Separator></div>
 
                 <Row className="justify-content-center">
 
@@ -491,7 +492,7 @@ const HomeView = () => {
                         <DocumentCard
                             aria-label={locale.homepage.vaccineSection.card1.title}
                             styles={vaccineNewsCards}
-                            onClickHref="https://www.mur.gov.it/it/news/lunedi-09082021/green-pass-obbligatorio-attivita-presenza-universita-e-afam"
+                            onClick={() => redirectToLink("https://www.mur.gov.it/it/news/lunedi-09082021/green-pass-obbligatorio-attivita-presenza-universita-e-afam")}
                             className="text-align-left"
                         >
                             <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/green_pass.jpg"} />
@@ -514,7 +515,7 @@ const HomeView = () => {
                         <DocumentCard
                             aria-label={locale.homepage.vaccineSection.card2.title}
                             styles={vaccineNewsCards}
-                            onClickHref=""
+                            onClick={() => redirectToLink("https://www.docdroid.net/zm5C1c5/20210810-piano-vaccini-ampamp-universita-verfin-pdf")}
                             className="text-align-left"
                         >
                             <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/vaccine_card_2.jpg"} />
@@ -565,7 +566,7 @@ const HomeView = () => {
             </div>
 
             <div className="mb-4 text-center">
-                <div className="mb-3"><Separator><Text variant="large" styles={semibold}>Perchè Telegram e non Whatsapp?</Text></Separator></div>
+                <div className="mb-3"><Separator><Text variant="large" styles={semibold}>{locale.homepage.telegramSection.title}</Text></Separator></div>
 
                 <div className="mb-4">
                     <Text variant="medium">
@@ -587,7 +588,7 @@ const HomeView = () => {
                         </Card>
                     </Col>
                     <Col className="mb-3" style={{ maxWidth: 350 }} xl={6} lg={6} md={6} sm={6} xs={12}>
-                        <div className="mt-2 telegram-advantages-list" style={{ textAlign: 'left', marginLeft: 50 }}>
+                        <div className="mt-3 telegram-advantages-list" style={{ textAlign: 'left', marginLeft: 50 }}>
                             <Text variant="small">
                                 {locale.homepage.telegramSection.list.map(x => {
                                     return (<><Icon iconName="ChevronRightSmall" style={{ color: theme.palette.themePrimary }} /> {x}<br/></>)

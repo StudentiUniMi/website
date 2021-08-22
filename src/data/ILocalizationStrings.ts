@@ -107,6 +107,7 @@ interface ILocalizationStrings {
             card3: { text1: string, text2: string },
         }, 
         vaccineSection: {
+            title: string,
             card1: {
                 title: string,
                 description: string,
@@ -119,6 +120,7 @@ interface ILocalizationStrings {
             news: string
         },
         telegramSection: {
+            title: string,
             description: string,
             advantages: string,
             list: any[]

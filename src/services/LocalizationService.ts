@@ -118,6 +118,7 @@ class LocalizationService {
                             card3: { text1: 'Copriamo', text2: 'corsi di laurea.' },
                         },
                         vaccineSection: {
+                            title: "Informazioni sui vaccini",
                             card1: {
                                 title: "Obbligo del Green Pass",
                                 description: "Vi ricordiamo che da settembre in tutte le università per svolgere una qualsiasi attività in presenza(compreso l'accesso alle aule studio) sarà necessario possedere il green pass. L'assenza di green pass non è un motivo valido per svolgere un esame a distanza."
@@ -130,7 +131,8 @@ class LocalizationService {
                             news: "Notizia"
                         },
                         telegramSection: {
-                            description: "Molti studenti potrebbero chiedersi come mai abbiamo scelto Telegram come piattaforma principale per tutte le nostre attività: in quanto informatici, siamo sempre alla ricerca della soluzione migliore ad un problema, e in questo caso utilizzare Whatsapp come supporto a centinaia di gruppi(e si spera migliaia in futuro) sarebbe stato prima di tutto impraticabile da un punto di vista puramente gestionale, e seconda cosa sarebbe stato un incubo per voi studenti cercare i vari materiali e comunicare in maniera efficace.",
+                            title: "Perchè Telegram e non WhatsApp?",
+                            description: "Molti studenti potrebbero chiedersi come mai abbiamo scelto Telegram come piattaforma principale per tutte le nostre attività: in quanto informatici, siamo sempre alla ricerca della soluzione migliore ad un problema, e in questo caso utilizzare Whatsapp come supporto a centinaia di gruppi (e si spera migliaia in futuro) sarebbe stato prima di tutto impraticabile da un punto di vista puramente gestionale (WhatsApp ha un limite di 256 membri per gruppo), e seconda cosa sarebbe stato un incubo per voi studenti cercare i vari materiali e comunicare in maniera efficace.",
                             advantages: 'Vantaggi di <Link href="https://telegram.org/" target="_blank">Telegram</Link>',
                             list: [
                                 "Gruppi fino a 250mila membri",
@@ -331,6 +333,7 @@ class LocalizationService {
                             card3: { text1: 'We cover', text2: 'degree courses.' },
                         },
                         vaccineSection: {
+                            title: "Informations about vaccines",
                             card1: {
                                 title: "Green Pass Obligation",
                                 description: "We remind you that from September in all universities to carry out any activity in presence (including access to study rooms) it will be necessary to have a green pass. The absence of a green pass is not a valid reason for taking a remote exam."
@@ -343,14 +346,15 @@ class LocalizationService {
                             news: "News"
                         },
                         telegramSection: {
-                            description: "Many students may wonder why we have chosen Telegram as the main platform for all our activities: as computer science students, we are always looking for the best solution to a problem, and in this case use Whatsapp as a support to hundreds of groups (and hopefully thousands in the future) it would have been first of all impractical from a purely managerial point of view, and secondly it would have been a nightmare for you students to search the various materials and communicate effectively.",
+                            title: "Why Telegram and not WhatsApp?",
+                            description: "Many students may wonder why we have chosen Telegram as the main platform for all our activities: as computer science students, we are always looking for the best solution to a problem, and in this case use Whatsapp as a support to hundreds of groups (and hopefully thousands in the future) it would have been first of all impractical from a purely managerial point of view (WhatsApp has a limit of 256 members for group), and secondly it would have been a nightmare for you students to search the various materials and communicate effectively.",
                             advantages: '<Link href="https://telegram.org/" target="_blank">Telegram</Link> advantages',
                             list: [
-                                "Gruppi fino a 250mila membri",
-                                "Numeri di telefono non esposti",
-                                "Uso su più dispositivi contemporaneamente",
-                                "Cartelle per organizzare il contenuto",
-                                "Canali con informazioni"
+                                "Groups of up to 250 thousand members",
+                                "Telephone numbers not exposed",
+                                "Use on multiple devices at the same time",
+                                "Folders for better organization",
+                                "Channels with information" 
                             ]
                         }
                     },
