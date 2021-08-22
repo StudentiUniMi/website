@@ -483,7 +483,7 @@ const HomeView = () => {
 
             </div>
 
-            <div className="mb-4">
+            <div className="mb-3">
                 <div className="mb-4"><Separator><Text variant="large" styles={semibold}>{locale.homepage.vaccineSection.title}</Text></Separator></div>
 
                 <Row className="justify-content-center">
