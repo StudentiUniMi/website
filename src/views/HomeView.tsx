@@ -42,7 +42,6 @@ const HomeView = () => {
     const cardTokens: ICardTokens = { childrenMargin: 12 };
     const logoFileName = 'unimi500.png';
     const logoProperties = { width: '150px', height: '150px', display: 'inline-block' };
-    const wikiPic = { width: '100px', height: '100px',  marginBottom: '5px', marginLeft: 'auto', marginRight: 'auto' };
 
     const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
 
@@ -50,7 +49,7 @@ const HomeView = () => {
     const vaccinePrimaryText: IDocumentCardTitleStyles = { root: { height: 'auto' } };
     const vaccineSecondaryText: IDocumentCardTitleStyles = { root: { height: 'auto' }};
     const vaccineDocumentCardDetails: IDocumentCardDetailsStyles = { root: { justifyContent: 'start' } };
-    const people: IDocumentCardActivityPerson[] = [{ name: 'Università degli Studi di Milano', profileImageSrc: process.env.PUBLIC_URL + "/degree_groups_images/unimi.jpg"  } ];
+    const people: IDocumentCardActivityPerson[] = [{ name: 'Notizia',  profileImageSrc: process.env.PUBLIC_URL + "/other/news.png"  } ];
 
     const telegramGroupIcon: IIconProps = { iconName: 'Send', theme: theme };
     const wikiIcon: IIconProps = { iconName: 'Globe', theme: theme };
@@ -73,7 +72,7 @@ const HomeView = () => {
             </div>
 
             <div className="mb-3 justify-content-center">
-                <Swiper pagination={true} navigation={true} /*autoplay={{ "delay": 4500, "disableOnInteraction": false }}*/ className="mySwiper">
+                <Swiper pagination={true} navigation={true} autoplay={{ "delay": 5000, "disableOnInteraction": false }} className="mySwiper">
                     <SwiperSlide>
                         <Row className="justify-content-center">
                             <Col className="mb-3" xl={6} lg={6} md={5} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
@@ -228,11 +227,7 @@ const HomeView = () => {
                             <Col className="mb-3" style={{ maxWidth: 350 }} xl={6} lg={6} md={5} sm={6} xs={12}>
                                 <Card tokens={cardTokens} style={{ minHeight: 160, maxWidth: 350, marginLeft: 5, marginRight: 5 }}>
                                     <Card.Section>
-                                        <Image id="logo"
-                                            src={process.env.PUBLIC_URL + "/other/globe.png"}
-                                            alt={"Wiki Studenti UniMi"}
-                                            style={wikiPic}
-                                        />
+                                        <Icon iconName="Globe2" style={{ fontSize: '48px', color: theme.palette.themePrimary, marginTop: '5px' }} />
                                         <ActionButton
                                             href="https://wiki.studentiunimi.it/"
                                             target="_blank"
@@ -346,7 +341,7 @@ const HomeView = () => {
                     <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
                         <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                             <Card.Section>
-                                <div><Icon iconName="Group" style={homeIconStyle} className="homeIcon" /></div>
+                                <div><Icon iconName="Group" style={homeIconStyle} /></div>
                                 <Text variant="medium">
                                     {locale.homepage.section3.card1.text}
                                 </Text>
@@ -360,7 +355,7 @@ const HomeView = () => {
                     <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
                         <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                             <Card.Section>
-                                <div><Icon iconName="AddGroup" style={homeIconStyle} className="homeIcon" /></div>
+                                <div><Icon iconName="AddGroup" style={homeIconStyle} /></div>
                                 <Text variant="medium">
                                     {locale.homepage.section3.card2.text}
                                 </Text>
@@ -374,7 +369,7 @@ const HomeView = () => {
                     <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
                         <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                             <Card.Section>
-                                <div><Icon iconName="JoinOnlineMeeting" style={homeIconStyle} className="homeIcon" /></div>
+                                <div><Icon iconName="JoinOnlineMeeting" style={homeIconStyle} /></div>
                                 <Text variant="medium">
                                     {locale.homepage.section3.card3.text}
                                 </Text>
@@ -394,7 +389,7 @@ const HomeView = () => {
                     <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>
                         <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                             <Card.Section>
-                                <div><Icon iconName="Globe" style={homeIconStyle} className="homeIcon" /></div>
+                                <div><Icon iconName="Globe2" style={homeIconStyle} /></div>
                                 <Text variant="medium">
                                     {locale.homepage.section4.card1.text}
                                 </Text>
@@ -408,7 +403,7 @@ const HomeView = () => {
                     <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>
                         <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                             <Card.Section>
-                                <div><Icon iconName="World" style={homeIconStyle} className="homeIcon" /></div>
+                                <div><Icon iconName="World" style={homeIconStyle} /></div>
                                 <Text variant="medium">
                                     {locale.homepage.section4.card2.text}
                                 </Text>
@@ -422,7 +417,7 @@ const HomeView = () => {
                     <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>
                         <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                             <Card.Section>
-                                <div><Icon iconName="CloudDownload" style={homeIconStyle} className="homeIcon" /></div>
+                                <div><Icon iconName="CloudDownload" style={homeIconStyle} /></div>
                                 <Text variant="medium">
                                     {locale.homepage.section4.card3.text}
                                 </Text>
@@ -436,7 +431,7 @@ const HomeView = () => {
                     <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>
                         <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                             <Card.Section>
-                                <div><Icon iconName="Code" style={homeIconStyle} className="homeIcon" /></div>
+                                <div><Icon iconName="Code" style={homeIconStyle} /></div>
                                 <Text variant="medium">
                                     {locale.homepage.section4.card4.text}
                                 </Text>
@@ -456,7 +451,7 @@ const HomeView = () => {
                     <Col xl={3} lg={3} md={4} sm={6} xs={12} className="mb-3">
                         <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                             <Card.Section>
-                                <div><Icon iconName="ContactHeart" style={homeIconStyle} className="homeIcon" /></div>
+                                <div><Icon iconName="ContactHeart" style={homeIconStyle} /></div>
                                 <Text variant="medium">
                                     {locale.homepage.section5.card1.text}
                                 </Text>
@@ -471,7 +466,7 @@ const HomeView = () => {
                     <Col xl={3} lg={3} md={4} sm={6} xs={12} className="mb-3">
                         <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                             <Card.Section>
-                                <div><Icon iconName="Telemarketer" style={homeIconStyle} className="homeIcon" /></div>
+                                <div><Icon iconName="Telemarketer" style={homeIconStyle} /></div>
                                 <Text variant="medium">
                                     {locale.homepage.section5.card2.text}
                                 </Text>
@@ -503,13 +498,14 @@ const HomeView = () => {
                                 <DocumentCardTitle title="Obbligo del Green Pass" styles={vaccinePrimaryText} />
                                 <DocumentCardTitle
                                     title={
-                                        "Vi ricordiamo che da settembre in tutte le università per svolgere una qualsiasi attività in presenza (compreso l'accesso alle aule studio) sarà necessario possedere il green pass."
+                                        "Vi ricordiamo che da settembre in tutte le università per svolgere una qualsiasi attività in presenza (compreso l'accesso alle aule studio) sarà necessario possedere il green pass. "
+                                        + "L'assenza di green pass non è un motivo valido per svolgere un esame a distanza."
                                     }
                                     styles={vaccineSecondaryText}
                                     showAsSecondaryTitle
                                 />
                             </DocumentCardDetails>
-                            <DocumentCardActivity activity="Modified March 13, 2018" people={people} />
+                            <DocumentCardActivity activity="August 09, 2021" people={people} />
                         </DocumentCard>
                     </Col>
 
@@ -525,15 +521,14 @@ const HomeView = () => {
                                 <DocumentCardTitle title="Iniziative a supporto degli studenti" styles={vaccinePrimaryText} />
                                 <DocumentCardTitle
                                     title={
-                                        "Per venire incontro agli studenti la regione lombardia si è attivata con una serie di iniziative a supporto degli studenti, tra cui agende prioritarie per la vaccinazione"
-                                        + "Alternativamente al vaccino un altro modo per ottenere un green pass valido per 48 ore è attraverso un tampone negativo, vi ricordiamo però che questa opzione vi costerà ogni volta circa 15€"
-                                        + "L'assenza di green pass non è un motivo valido per svolgere un esame a distanza"
+                                        "Per venire incontro agli studenti la Regione Lombardia si è attivata con una serie di iniziative a supporto degli studenti, tra cui agende prioritarie per la vaccinazione. "
+                                        + "Alternativamente al vaccino un altro modo per ottenere un green pass valido per 48 ore è attraverso un tampone negativo, vi ricordiamo però che questa opzione vi costerà ogni volta circa almeno 15€."
                                     }
                                     styles={vaccineSecondaryText}
                                     showAsSecondaryTitle
                                 />
                             </DocumentCardDetails>
-                            <DocumentCardActivity activity="Modified March 13, 2018" people={people} />
+                            <DocumentCardActivity activity="August 10, 2021" people={people} />
                         </DocumentCard>
                     </Col>
 
