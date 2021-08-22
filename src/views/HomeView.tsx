@@ -507,7 +507,7 @@ const HomeView = () => {
                             <div style={{ marginLeft: 16, marginBottom: 8 }}>
                                 <Text styles={semibold} variant="medium" style={{ color: theme.palette.themePrimary }}><Icon iconName="PageArrowRight"/> {locale.homepage.vaccineSection.click}</Text>
                             </div>
-                            <DocumentCardActivity activity="August 09, 2021" people={people} />
+                            <DocumentCardActivity activity={locale.homepage.vaccineSection.card1.date} people={people} />
                         </DocumentCard>
                     </Col>
 
@@ -530,7 +530,7 @@ const HomeView = () => {
                             <div style={{ marginLeft: 16, marginBottom: 8 }}>
                                 <Text styles={semibold} variant="medium" style={{ color: theme.palette.themePrimary }}><Icon iconName="PageArrowRight" /> {locale.homepage.vaccineSection.click}</Text>
                             </div>
-                            <DocumentCardActivity activity="August 10, 2021" people={people} />
+                            <DocumentCardActivity activity={locale.homepage.vaccineSection.card2.date} people={people} />
                         </DocumentCard>
                     </Col>
 

@@ -111,10 +111,12 @@ interface ILocalizationStrings {
             card1: {
                 title: string,
                 description: string,
+                date: string
             },
             card2: {
                 title: string,
-                description: string
+                description: string,
+                date: string
             },
             click: string,
             news: string

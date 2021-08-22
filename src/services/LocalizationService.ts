@@ -121,11 +121,13 @@ class LocalizationService {
                             title: "Informazioni sui vaccini",
                             card1: {
                                 title: "Obbligo del Green Pass",
-                                description: "Vi ricordiamo che da settembre in tutte le università per svolgere una qualsiasi attività in presenza(compreso l'accesso alle aule studio) sarà necessario possedere il green pass. L'assenza di green pass non è un motivo valido per svolgere un esame a distanza."
+                                description: "Vi ricordiamo che da settembre in tutte le università per svolgere una qualsiasi attività in presenza(compreso l'accesso alle aule studio) sarà necessario possedere il green pass. L'assenza di green pass non è un motivo valido per svolgere un esame a distanza.",
+                                date: "09 Agosto, 2021"
                             },
                             card2: {
                                 title: "Iniziative a supporto degli studenti",
-                                description: "Per venire incontro agli studenti la Regione Lombardia si è attivata con una serie di iniziative a supporto degli studenti, tra cui agende prioritarie per la vaccinazione. Alternativamente al vaccino un altro modo per ottenere un green pass valido per 48 ore è attraverso un tampone negativo, vi ricordiamo però che questa opzione vi costerà ogni volta almeno 15€ circa."
+                                description: "Per venire incontro agli studenti la Regione Lombardia si è attivata con una serie di iniziative a supporto degli studenti, tra cui agende prioritarie per la vaccinazione. Alternativamente al vaccino un altro modo per ottenere un green pass valido per 48 ore è attraverso un tampone negativo, vi ricordiamo però che questa opzione vi costerà ogni volta almeno 15€ circa.",
+                                date: "10 Agosto, 2021"
                             },
                             click: "Clicca qui per maggiori informazioni",
                             news: "Notizia"
@@ -336,11 +338,13 @@ class LocalizationService {
                             title: "Informations about vaccines",
                             card1: {
                                 title: "Green Pass Obligation",
-                                description: "We remind you that from September in all universities to carry out any activity in presence (including access to study rooms) it will be necessary to have a green pass. The absence of a green pass is not a valid reason for taking a remote exam."
+                                description: "We remind you that from September in all universities to carry out any activity in presence (including access to study rooms) it will be necessary to have a green pass. The absence of a green pass is not a valid reason for taking a remote exam.",
+                                date: "August 09, 2021"
                             },
                             card2: {
                                 title: "Initiatives to support students",
-                                description: "To support the students, the Lombardy Region has taken action with a series of initiatives, including priority agendas for vaccination. As an alternative to the vaccine, another way to obtain a green pass valid for 48 hours is through a negative buffer, however, we remind you that this option will cost you at least € 15 each time."
+                                description: "To support the students, the Lombardy Region has taken action with a series of initiatives, including priority agendas for vaccination. As an alternative to the vaccine, another way to obtain a green pass valid for 48 hours is through a negative buffer, however, we remind you that this option will cost you at least € 15 each time.",
+                                date: "August 10, 2021"
                             },
                             click: "Click here to see more informations",
                             news: "News"
