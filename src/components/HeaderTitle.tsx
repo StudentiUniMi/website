@@ -26,7 +26,7 @@ const HeaderTitle = () => {
                         />
                     </span>
 
-                    <Text styles={titleStyle}>Network Studenti UniMi</Text>
+                    <Text styles={titleStyle}>Network StudentiUniMi</Text>
 
                 </Row>
             </div>
@@ -48,7 +48,7 @@ const HeaderTitle = () => {
                 </Row>
 
                 <Row className="mt-0 mr-2 ml-2 text-center justify-content-center">
-                    <Text styles={titleStyle}>Studenti UniMi</Text>
+                    <Text styles={titleStyle}>StudentiUniMi</Text>
                 </Row>
             </div>
         

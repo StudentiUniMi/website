@@ -2,12 +2,12 @@ import { Link } from 'office-ui-fabric-react';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
 import { semibold } from '../fonts';
+import { useTheme } from '@fluentui/react-theme-provider';
+import { withCookies } from 'react-cookie';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { useTheme } from '@fluentui/react-theme-provider';
 import LocalizationService from "../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
-import { withCookies } from 'react-cookie';
 
 const listElement = { marginBottom: '.2rem' };
 
@@ -22,7 +22,7 @@ const Footer = () => {
                     <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-4 mb-md-0">
                         <div className="mb-2">
                             <Text styles={semibold} variant="medium">
-                                <Link href="https://github.com/StudentiUnimi" target="_blank">Studenti UniMi &copy;</Link>
+                                <Link href="https://github.com/StudentiUnimi" target="_blank">&copy; Network StudentiUniMi</Link>
                             </Text>
                         </div>
 

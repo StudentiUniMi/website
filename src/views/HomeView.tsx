@@ -1,7 +1,4 @@
 import { Persona, Link, Text, FontSizes, IIconProps, PrimaryButton, Icon, initializeIcons, ActionButton } from '@fluentui/react';
-import { Container } from 'react-bootstrap';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 import { semibold } from '../fonts';
 import { Image } from 'office-ui-fabric-react/lib/Image';
 import { useTheme } from '@fluentui/react-theme-provider';
@@ -12,6 +9,9 @@ import { ImageFit } from '@fluentui/react/lib/Image';
 import { DocumentCard, DocumentCardActivity, DocumentCardTitle, DocumentCardDetails, DocumentCardImage, IDocumentCardStyles, IDocumentCardActivityPerson, IDocumentCardDetailsStyles, IDocumentCardTitleStyles } from '@fluentui/react/lib/DocumentCard';
 import { getGroupsLength, getCdlsLength, getFaqs } from '../services/Requests';
 import { redirectToLink } from '../services/Utils';
+import { Container } from 'react-bootstrap';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper/core';
