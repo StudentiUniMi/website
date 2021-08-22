@@ -126,7 +126,7 @@ class LocalizationService {
                                 title: "Iniziative a supporto degli studenti",
                                 description: "Per venire incontro agli studenti la Regione Lombardia si è attivata con una serie di iniziative a supporto degli studenti, tra cui agende prioritarie per la vaccinazione. Alternativamente al vaccino un altro modo per ottenere un green pass valido per 48 ore è attraverso un tampone negativo, vi ricordiamo però che questa opzione vi costerà ogni volta almeno 15€ circa."
                             },
-                            click: "Clicca per visualizzare",
+                            click: "Clicca qui per maggiori informazioni",
                             news: "Notizia"
                         },
                         telegramSection: {
@@ -339,7 +339,7 @@ class LocalizationService {
                                 title: "Initiatives to support students",
                                 description: "To support the students, the Lombardy Region has taken action with a series of initiatives, including priority agendas for vaccination. As an alternative to the vaccine, another way to obtain a green pass valid for 48 hours is through a negative buffer, however, we remind you that this option will cost you at least € 15 each time."
                             },
-                            click: "Click here to see",
+                            click: "Click here to see more informations",
                             news: "News"
                         },
                         telegramSection: {
