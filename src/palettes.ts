@@ -103,5 +103,50 @@ export const palettes = [
             themeDark: '#40A8C4',
             themeDarker: '#FFC93C'
         }
-    }
+    },
+    {
+        id: 'h',
+        label: 'sky',
+        palette: {
+            themePrimary: '#274472',
+            themeLighterAlt: '#C3E0E5',
+            themeLighter: '#5885AF',
+            themeLight: '#41729F',
+            themeTertiary: '#057DCD',
+            themeSecondary: '#68BBE3',
+            themeDarkAlt: '#003060',
+            themeDark: '#055C9D',
+            themeDarker: '#0E86D4'
+        }
+    },
+    {
+        id: 'i',
+        label: 'porpora',
+        palette: {
+            themePrimary: '#E42256',
+            themeLighterAlt: '#FEC84D',
+            themeLighter: '#00B1B0',
+            themeLight: '#C45F90',
+            themeTertiary: '#5D6C89',
+            themeSecondary: '#FF8370',
+            themeDarkAlt: '#FEB06A',
+            themeDark: '#D691A0',
+            themeDarker: '#F6A21E'
+        }
+    },
+        {
+        id: 'l',
+        label: 'choco',
+        palette: {
+            themePrimary: '#9C3940',
+            themeLighterAlt: '#ECC0B0',
+            themeLighter: '#7F4AA4',
+            themeLight: '#C598AF',
+            themeTertiary: '#C1D9B7',
+            themeSecondary: '#FBB80F',
+            themeDarkAlt: '#0461B1',
+            themeDark: '#00E091',
+            themeDarker: '#00735C'
+        }
+    },
 ];
