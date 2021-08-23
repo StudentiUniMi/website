@@ -69,6 +69,11 @@ button:focus,
     margin-left: 25%;
     margin-right: 25%;
   }
+
+  footer .text {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
 }
 @media only screen and (max-width: 485px) {
   body {
@@ -114,7 +119,7 @@ button:focus,
     display: block;
   }
 }
-@media only screen and (min-width: 592px) {
+@media only screen and (min-width: 567px) {
   .header-title .large-display {
     display: block;
   }
@@ -123,7 +128,7 @@ button:focus,
     display: none;
   }
 }
-@media only screen and (max-width: 591px) {
+@media only screen and (max-width: 566px) {
   .header-title .large-display {
     display: none;
   }
