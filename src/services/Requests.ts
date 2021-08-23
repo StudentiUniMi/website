@@ -36,6 +36,10 @@ class Result<T>
     }
 }
 
+/**
+ * Main function to retrieve data from endpoints.
+ * @param path Path of the resource
+ */
 async function getAsync<T>(path: string) : Promise<Result<T>>
 {
     const response = await fetch(path);
@@ -67,28 +71,16 @@ export async function getDegrees(departmentKey: String): Promise<Result<Degree[]
  * This function retrieves the courses of a specific degree.
  * @param degreeKey Key or parameter to query by degree
  */
-export async function getCourses(degreeKey: String): Promise<Course[]> {
-    const response = await fetch(api_endpoint + courses_endpoint + `?degree=${degreeKey}`);
-
-    if (!response.ok) {
-        throw new Error(`Error in getCourses, name: ${response.status}, message: ${response.statusText}.`);
-    }
-
-    return response.json().catch(() => ({})); 
+export async function getCourses(degreeKey: String): Promise<Result<Course[]>> {
+    return getAsync(`${api_endpoint}${courses_endpoint}?degree=${degreeKey}`);
 }
 
 /**
  * This function retrieves the representatives of a specific department.
  * @param departmentKey Key or parameter to query by department
  */
-export async function getRepresentatives(departmentKey: String): Promise<Representative[]> {
-    const response = await fetch(api_endpoint + representatives_endpoint + `?department=${departmentKey}`);
-
-    if (!response.ok) {
-        throw new Error(`Error in getRepresentatives, name: ${response.status}, message: ${response.statusText}.`);
-    }
-
-    return response.json().catch(() => ({}));
+export async function getRepresentatives(departmentKey: String): Promise<Result<Representative[]>> {
+    return getAsync(`${api_endpoint}${representatives_endpoint}?department=${departmentKey}`);
 }
 
 

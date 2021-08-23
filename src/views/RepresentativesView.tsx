@@ -49,6 +49,9 @@ const onRenderPlaceholder = (props?: IDropdownProps): JSX.Element => {
 
 const RepresentativesView = () => {
     var theme = useTheme();
+    let didMount = React.useRef(false);
+    const [departments, setDepartments] = React.useState<Department[]>([]);
+    const [representatives, setRepresentatives] = React.useState<Representative[]>([]);
     const locale = LocalizationService.strings();
     const history = useHistory();
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
@@ -62,8 +65,6 @@ const RepresentativesView = () => {
         history.push(`/representatives/${option?.key as string}`);
     };
 
-    let didMount = React.useRef(false);
-
     React.useEffect(() =>
     {
         if(!didMount.current)
@@ -76,8 +77,33 @@ const RepresentativesView = () => {
         }
     }, [history]);
 
-    let representatives: Representative[] = [];
-    let departments: Department[] = [];
+    const updateDepartments = React.useCallback(async () => {
+        let departmentsResult = await getDepartments();
+
+        if (departmentsResult.status !== 200) {
+            // Renderizza errore
+        }
+
+        setDepartments(departmentsResult.value ?? []);
+    }, [setDepartments]);
+
+    React.useEffect(() => {
+        updateDepartments();
+    }, [updateDepartments]);
+
+    const updateRepresentatives = React.useCallback(async () => {
+        let representativesResult = await getRepresentatives(selectedDepartment);
+
+        if (representativesResult.status !== 200) {
+            // Renderizza errore
+        }
+
+        setRepresentatives(representativesResult.value ?? []);
+    }, [setRepresentatives, selectedDepartment]);
+
+    React.useEffect(() => {
+        updateRepresentatives();
+    }, [updateRepresentatives]);
 
     const departmentOptions: IDropdownOption[] = departments.map(x => ({key: x.id, text: x.name ?? "", data: {icon:x.icon}, disabled: x.cdls.length === 0 || x.representatives.length === 0}));
 
