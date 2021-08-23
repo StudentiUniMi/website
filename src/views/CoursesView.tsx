@@ -53,6 +53,7 @@ const CoursesView = () => {
     const locale = LocalizationService.strings();
     let history = useHistory();
     let didMount = React.useRef(false);
+    const [departments, setDepartments] = React.useState<Department[]>([]);
     const [selectedDepartment, setSelectedDepartment] = React.useState<string>('');
     const [selectedCdl, setSelectedCdl] = React.useState<string>('');
 
@@ -70,9 +71,22 @@ const CoursesView = () => {
         history.push(`/courses/${option?.key as string}`);
     };
 
+    const updateDepartments = React.useCallback(async() =>
+    {
+        let departmentsResult = await getDepartments();
 
-    let departments: Department[] = [];
-    console.log(getDepartments());
+        if (departmentsResult.status !== 200) {
+            // Renderizza errore
+        }
+
+        setDepartments(departmentsResult.value ?? []);
+    },[setDepartments]);
+
+    React.useEffect(() => {
+        updateDepartments();
+    }, [updateDepartments]);
+
+    
 
     React.useEffect(() => {
         if(!didMount.current) {

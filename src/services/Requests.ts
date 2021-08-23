@@ -19,35 +19,48 @@ import Rule from '../models/Rule';
 const api_endpoint = 'http://api.studentiunimi.it';
 const department_endpoint = '/department';
 const degree_endpoint = '/degree';
-const courses_endpoint = 'course';
+const courses_endpoint = '/course';
 const representatives_endpoint = '/representative';
 
+class Result<T>
+{
+    public status:number;
+    public value?:T;
+    public message:string;
+
+    constructor(status: number, value?:T, message:string = "")
+    {
+        this.status = status;
+        this.value = value;
+        this.message = message;
+    }
+}
+
+async function getAsync<T>(path: string) : Promise<Result<T>>
+{
+    const response = await fetch(path);
+
+    if (!response.ok) {
+        return new Result<T>(response.status, undefined, response.statusText);
+    }
+
+    let res = await response.json() as T;
+    return new Result<T>(200,res);
+}
 
 /**
  * This function retrieves the existing departments.
  */
-export async function getDepartments(): Promise<Department[]> {
-    const response = await fetch(api_endpoint + department_endpoint);
-    
-    if (!response.ok) {
-        throw new Error(`Error in getDepartments, name: ${response.status}, message: ${response.statusText}.`);
-    }
-    
-    return response.json().catch(() => ({})); // may error if there is no body, return empty array
+export async function getDepartments(): Promise<Result<Department[]>> {
+    return getAsync<Department[]>(api_endpoint + department_endpoint);
 };
 
 /**
  * This function retrieves the degrees of a specific department.
  * @param departmentKey Key or parameter to query by department
  */
-export async function getDegrees(departmentKey: String): Promise<Degree[]> {
-    const response = await fetch(api_endpoint + degree_endpoint + `?department=${departmentKey}`);
-    
-    if (!response.ok) {
-        throw new Error(`Error in getDegrees, name: ${response.status}, message: ${response.statusText}.`);
-    }
-    
-    return response.json().catch(() => ({})); 
+export async function getDegrees(departmentKey: String): Promise<Result<Degree[]>> {
+    return getAsync(`${api_endpoint}${degree_endpoint}?department=${departmentKey}`);
 }
 
 /**
