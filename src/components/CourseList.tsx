@@ -9,12 +9,14 @@ import { semibold } from '../fonts';
 import { FontSizes } from '@fluentui/theme';
 import { Separator } from '@fluentui/react/lib/Separator';
 import { useTheme } from '@fluentui/react-theme-provider';
+import { getCourses } from '../services/Requests';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import CourseItem from './CourseItem';
 import Course from '../models/Course';
 import Degree from '../models/Degree';
 import LocalizationService from "../services/LocalizationService";
+import LoadingSpinner from './LoadingSpinner';
 
 interface Props { cdl?: Degree };
 
@@ -44,6 +46,7 @@ const yearMasterDegreeFilterOptions: IDropdownOption[] = [
 const CourseList= (props: Props) => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
+    const [courses, setCourses] = React.useState<Course[]>([]);
     const columnCount = React.useRef(0);
     const rowHeight = React.useRef(0);
     const rowsPerPage = React.useRef(0);
@@ -88,7 +91,24 @@ const CourseList= (props: Props) => {
 
     let cdl = props.cdl;
 
-    const courses: Course[] = cdl?.courses ?? [];
+    //const courses: Course[] = cdl?.courses ?? [];
+    const updateCourses = React.useCallback(async () => {
+        let coursesResult = await getCourses(props.cdl?.id!);
+
+        if (coursesResult.status !== 200) {
+            // Renderizza errore
+        }
+
+        setCourses(coursesResult.value ?? []);
+    }, [setCourses]);
+
+    React.useEffect(() => {
+        updateCourses();
+    }, [updateCourses]);
+
+
+
+
     const onNameFilterChanged = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, text?: string): void => {
         setNameFilter(text ?? "");
     };
@@ -118,6 +138,8 @@ const CourseList= (props: Props) => {
                     <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
                 </Separator>
             </div> 
+
+            <LoadingSpinner />
 
             <FocusZone>
                 <div className="mb-4">

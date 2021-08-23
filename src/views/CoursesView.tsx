@@ -12,7 +12,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import CourseList from "../components/CourseList";
 import DegreeInformations from "../components/DegreeInformations";
-import { getDepartments } from '../services/Requests';
+import { getDepartments, getDegrees } from '../services/Requests';
 import { Separator } from '@fluentui/react/lib/Separator';
 import Degree from "../models/Degree";
 import Department from "../models/Department";
@@ -20,6 +20,7 @@ import AdminsList from '../components/AdminsList';
 import LocalizationService from "../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 import { semibold } from '../fonts';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 initializeIcons();
 const iconStyles = { marginRight: '8px' };
@@ -54,9 +55,11 @@ const CoursesView = () => {
     let history = useHistory();
     let didMount = React.useRef(false);
     const [departments, setDepartments] = React.useState<Department[]>([]);
+    const [degrees, setDegrees] = React.useState<Degree[]>([]);
     const [selectedDepartment, setSelectedDepartment] = React.useState<string>('');
     const [selectedCdl, setSelectedCdl] = React.useState<string>('');
 
+    /* Styles */
     const dropdownStyles = { dropdown: { color: theme.palette.neutralPrimary }, dropdownItems: { color: theme.palette.neutralPrimary } };
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
 
@@ -86,7 +89,21 @@ const CoursesView = () => {
         updateDepartments();
     }, [updateDepartments]);
 
-    
+
+    const updateDegrees = React.useCallback(async () => {
+        let degreesResult = await getDegrees(selectedDepartment);
+
+        if (degreesResult.status !== 200) {
+            // Renderizza errore
+        }
+
+        setDegrees(degreesResult.value ?? []);
+    }, [setDegrees, selectedDepartment]);
+
+    React.useEffect(() => {
+        updateDegrees();
+    }, [updateDegrees]);
+
 
     React.useEffect(() => {
         if(!didMount.current) {
@@ -142,7 +159,7 @@ const CoursesView = () => {
 
     return (
         <Container className="courses text-center">
-
+            <LoadingSpinner />
             <div className="mb-1">
                 <Text variant="large">{locale.courses.text1}</Text>
             </div>
