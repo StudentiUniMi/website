@@ -71,7 +71,7 @@ const HomeView = () => {
             </div>
 
             <div className="mb-3 justify-content-center">
-                <Swiper pagination={true} navigation={true} autoplay={{ "delay": 5000, "disableOnInteraction": false }} className="mySwiper">
+                <Swiper pagination={true} navigation={true} autoplay={{ "delay": 5000, "disableOnInteraction": false }} loop={true} autoHeight={true} className="mySwiper">
                     <SwiperSlide>
                         <Row className="justify-content-center">
                             <Col className="mb-3" xl={6} lg={6} md={5} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
