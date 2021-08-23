@@ -184,7 +184,10 @@ class LocalizationService {
                         text1: 'Siete stanchi di dover andare a spulciare miriadi di pagine che neanche caricano alla ricerca di strumenti e servizi universitari? Abbiamo realizzato una pagina per centralizzarli tutti! Inoltre, qui potete trovare anche alcune guide che abbiamo realizzato.',
                         text2: '<Text styles={semibold}>Attenzione:</Text> alcune pagine come Unimia oppure i Servizi SIFA potrebbero non caricare (ovviamente ricordiamo che non è colpa nostra in tal caso!).',
                         text3: "Se pensi che debba essere aggiunto qualche servizio scrivi pure su <Link href='https://t.me/unimichat' target='_blank'>@unimichat</Link>.",
-                        availableServices: 'Servizi e guide disponibili'
+                        availableServices: 'Servizi e guide disponibili',
+                        guide: "Guida",
+                        service: "Servizio",
+                        legend: "Legenda"
                     },
                     extraGroups: {
                         text1: 'Cerchi un gruppo aggiuntivo in particolare? Qui è possibile trovare tutti quelli che abbiamo creato: ricordiamo che ci sono gruppi con regolamenti appositi ad esempio per la creazione di annunci per la vendita di materiali, quindi è consigliato leggere il messaggio di benvenuto in tal caso.',
@@ -402,7 +405,10 @@ class LocalizationService {
                         text1: 'Tired of surfing into endless pages to find the services offered by the university? We grouped all the links here! We added some guides we created too.',
                         text2: "<Text styles={semibold}>Careful:</Text> some web pages like Unimia or SIFA services might not load (we remind you that it's not our fault in this case!).",
                         text3: "If you think that something should be added you can suggest it on <Link href='https://t.me/unimichat' target='_blank'>@unimichat</Link>.",
-                        availableServices: 'Available services and guides'
+                        availableServices: 'Available services and guides',
+                        guide: "Guide",
+                        service: "Service",
+                        legend: "Legend"
                     },
                     extraGroups: {
                         text1: 'Looking for additional groups? Here you can find all the ones we have created: we remind you that there are groups with specific regulations for example for the creation of announcements for the sale of materials, so it is recommended to read the welcome message in this case.',

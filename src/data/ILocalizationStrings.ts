@@ -167,7 +167,10 @@ interface ILocalizationStrings {
         text1: string,
         text2: string,
         text3: string,
-        availableServices: string
+        availableServices: string,
+        guide: string,
+        service: string,
+        legend: string
     },
     extraGroups: {
         text1: string,

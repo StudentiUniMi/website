@@ -65,6 +65,17 @@ const Services = () => {
                 </Text>
             </div>
 
+            <div className="mb-3">
+                <div className="mb-1"><Text variant="medium">{locale.services.legend}<br/></Text></div>
+                <Icon iconName="SortDown" style={{ color: theme.palette.themePrimary, fontSize: 20, marginBottom: 5 }} />
+                <div>
+                    <Text variant="medium">
+                        <span className="mr-3"><Chip label={'G'} size="small" style={{ color: theme.palette.orange, backgroundColor: theme.palette.neutralLighter, fontWeight: 500 }} /> {locale.services.guide}</span>
+                        <Chip label={'S'} size="small" style={{ color: theme.palette.themePrimary, backgroundColor: theme.palette.neutralLighter, fontWeight: 500 }} /> {locale.services.service}
+                    </Text>
+                </div>
+            </div>
+
             <Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} />
 
             <div className='text-center mb-3'>
@@ -84,7 +95,7 @@ const Services = () => {
                                 <Text variant="medium" style={{ color: theme.palette.themePrimary }} styles={semibold}>{x.name![language]}</Text>
                                 <TooltipHost
                                     id={`tooltip${i}`}
-                                    content={language === 'it' ? (x.type === 'G' ? "Guida" : "Servizio") : (x.type === 'G' ? "Guide" : "Service")}
+                                    content={x.type === 'G' ? locale.services.guide : locale.services.service}
                                     calloutProps={calloutProps(i)}
                                     delay={TooltipDelay.zero}
                                 >
