@@ -94,7 +94,7 @@ const ContributorsView = () => {
                                                     styles={hostStyles}
                                                     delay={TooltipDelay.zero}
                                                 >
-                                                    <Link onClick={() => redirectToLink(x.github)}><i className="fab fa-github homeIcon" style={profileIconStyle}></i></Link>
+                                                    <Link onClick={() => redirectToLink(x.github)}><Icon iconName="ProfileSearch" style={profileIconStyle} /></Link>
                                                 </TooltipHost>
                                                 &nbsp;&nbsp;
                                                 <TooltipHost
@@ -103,7 +103,7 @@ const ContributorsView = () => {
                                                     styles={hostStyles}
                                                     delay={TooltipDelay.zero}
                                                 >
-                                                    <Link onClick={() => redirectToLink(x.website)}><i className="fas fa-globe homeIcon" style={profileIconStyle}></i></Link>
+                                                    <Link onClick={() => redirectToLink(x.website)}><Icon iconName="Website" style={profileIconStyle}/></Link>
                                                 </TooltipHost>
                                             </div>
                                         </Card.Section>
