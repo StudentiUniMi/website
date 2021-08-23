@@ -278,7 +278,7 @@ const HomeView = () => {
                     <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>
                         <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                             <Card.Section>
-                                <div><i className="fab fa-telegram homeIcon" style={homeIconStyle}></i></div>
+                                <div><Icon iconName="Send" style={homeIconStyle} /></div>
                                 <Text variant="medium">
                                     {locale.homepage.section2.card1.text}
                                 </Text>
@@ -292,7 +292,7 @@ const HomeView = () => {
                     <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>
                         <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                             <Card.Section>
-                                <div><i className="fas fa-comment-dots homeIcon" style={homeIconStyle}></i></div>
+                                <div><Icon iconName="ReminderGroup" style={homeIconStyle} /></div>
                                 <Text variant="medium">
                                     {locale.homepage.section2.card2.text}
                                 </Text>
@@ -306,7 +306,7 @@ const HomeView = () => {
                     <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>
                         <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                             <Card.Section>
-                                <div><i className="fab fa-discord homeIcon" style={homeIconStyle}></i></div>
+                                <div><Icon iconName="Game" style={homeIconStyle} /></div>
                                 <Text variant="medium">
                                     {locale.homepage.section2.card3.text}
                                 </Text>
@@ -320,7 +320,7 @@ const HomeView = () => {
                     <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>
                         <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                             <Card.Section>
-                                <div><i className="fab fa-github homeIcon" style={homeIconStyle}></i></div>
+                                <div><Icon iconName="Teamwork" style={homeIconStyle} /></div>
                                 <Text variant="medium">
                                     {locale.homepage.section2.card4.text}
                                 </Text>
