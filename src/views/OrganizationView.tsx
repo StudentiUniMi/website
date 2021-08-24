@@ -56,8 +56,7 @@ const OrganizationView = () => {
                                 <Persona onRenderPrimaryText={() => null} text={"Marco Aceti"} imageUrl={process.env.PUBLIC_URL + '/contributors/marcoaceti.jpg'} />
                             </div>
                             <Text variant="medium" styles={semibold}>
-                                <i className="fab fa-telegram homeIcon" style={iconStyle2}></i>&nbsp;
-                                <Link href={`https://t.me/acetimarco`} target="_blank">Marco Aceti</Link>
+                                <Icon iconName="Send" style={{ color: theme.palette.themePrimary}} />&nbsp;<Link href={`https://t.me/acetimarco`} target="_blank">Marco Aceti</Link>
                             </Text>
                         </Card.Section>
                     </Card>
@@ -82,7 +81,7 @@ const OrganizationView = () => {
                                                 })()}
                                             </div>
                                             <Text variant="medium" styles={semibold}>
-                                                <i className="fab fa-telegram homeIcon" style={iconStyle2}></i>&nbsp;
+                                                <Icon iconName="Send" style={{ color: theme.palette.themePrimary }} />&nbsp;
                                                 <Link href={`https://t.me/${x.username}`} target="_blank">{x.name}</Link>
                                             </Text>
                                             <Text variant="medium" className="mt-2">
@@ -115,7 +114,7 @@ const OrganizationView = () => {
                                                 })()}
                                             </div>
                                             <Text variant="medium" styles={semibold}>
-                                                <i className="fab fa-telegram homeIcon" style={iconStyle2}></i>&nbsp;
+                                                <Icon iconName="Send" style={{ color: theme.palette.themePrimary }} />&nbsp;
                                                 <Link href={`https://t.me/${x.username}`} target="_blank">{x.username}</Link>
                                             </Text>
                                             <Text variant="medium" className="mt-2">
