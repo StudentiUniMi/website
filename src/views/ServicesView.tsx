@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
@@ -15,7 +15,10 @@ import { Separator } from '@fluentui/react/lib/Separator';
 import Chip from '@material-ui/core/Chip';
 import LocalizationService from "../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
-import { TooltipDelay, TooltipHost } from '@fluentui/react';
+import { TooltipDelay, TooltipHost } from '@fluentui/react'; 
+import mapboxgl from 'mapbox-gl';
+
+
 
 const Services = () => {
     var theme = useTheme();
@@ -24,6 +27,29 @@ const Services = () => {
     const services = getServices();
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
+    
+    const mapContainer = useRef<HTMLDivElement>(null);
+    let [map, setMap] = useState(null);
+    let [lng, ] = useState(-70.9);
+    let [lat, ] = useState(42.35);
+    let [zoom, ] = useState(9);
+    const mapStyle = { height: 400 };
+    
+    React.useEffect(() => {
+        const attachMap = (setMap: React.Dispatch<React.SetStateAction<any>>, mapContainer: React.RefObject<HTMLDivElement>) => {
+            if (!mapContainer.current) { return; }
+            mapboxgl.accessToken = 'pk.eyJ1IjoiZ2l1c2VwcGV0bSIsImEiOiJja3NjYjZwZzgwZjEzMnZudTBsbDdlbndoIn0.wZCxbwaatAn_sMEj5fi35A';
+            const map = new mapboxgl.Map({
+                container: mapContainer.current, // ERROR
+                style: 'mapbox://styles/mapbox/streets-v11',
+                center: [lng, lat],
+                zoom: zoom,
+            })
+            setMap(map);
+        }
+        
+        !map && attachMap(setMap, mapContainer)
+    }, [map, lat, lng, zoom]);
 
     let cardProps = (iconName?: string, iconColor?: string): IDocumentCardPreviewProps => {
         return {
@@ -115,6 +141,18 @@ const Services = () => {
                     )
                 }
             </Row>
+
+            <div className="map">
+                <div className='text-center mb-3'>
+                    <Separator>
+                        <Text variant="medium" styles={semibold} style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size18 }}> Mappa dei dipartimenti</Text>
+                    </Separator>
+                </div>  
+
+
+                <div ref={mapContainer} style={mapStyle}/>
+
+            </div>
         </Container>
     )
 }
