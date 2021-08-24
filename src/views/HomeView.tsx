@@ -492,7 +492,7 @@ const HomeView = () => {
                             onClick={() => redirectToLink("https://www.mur.gov.it/it/news/lunedi-09082021/green-pass-obbligatorio-attivita-presenza-universita-e-afam")}
                             className="text-align-left"
                         >
-                            <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/green_pass.jpg"} />
+                            <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/vaccine_card_1.png"} />
                             <DocumentCardDetails styles={vaccineDocumentCardDetails}>
                                 <DocumentCardTitle title={locale.homepage.vaccineSection.card1.title} styles={vaccinePrimaryText} />
                                 <DocumentCardTitle

@@ -87,7 +87,7 @@ const Services = () => {
             <Row className="justify-content-center">
                 {services.map((x, i) =>
                     <Col xl={4} lg={6} md={6} sm={12} xs={12} className="mb-3" key={i}>
-                        <Card label={x.name?.it} onClick={() => redirectToLink(x.link ?? "")} horizontal tokens={cardTokens} style={{border: '0px'}}>
+                        <Card label={x.name?.it} onClick={() => redirectToLink(x.link ?? "")} horizontal tokens={cardTokens} style={{border: '0px', maxWidth: 'none'}}>
                             <Card.Item fill>
                                 <DocumentCardPreview {...cardProps(x.icon, x.color)}/>
                             </Card.Item>

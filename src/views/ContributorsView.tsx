@@ -44,7 +44,7 @@ const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block
 const developers:any = [
     { name: "Giuseppe Del Campo", description: { it: "Sviluppatore del sito web.", en: 'Website Developer' }, pic: "giuseppedelcampo.jpg", github: "https://github.com/Giuseppetm", website: "https://giuseppetm.github.io/" },
     { name: "Manuele Lucchi", description: { it: "Progettista del sito web.", en: 'Website Technical Designer' }, pic: "manuelelucchi.jpg", github: "https://github.com/manuelelucchi", website: "https://manuelelucchi.github.io/" },
-    //{ name: "Marco Aceti", description: "Sviluppatore di bot, database e altri servizi.", pic: "marcoaceti.jpg", github: "https://github.com/MarcoBuster", website: "https://marcoaceti.it/" },
+    { name: "Marco Aceti", description: { it: "Sviluppatore di bot, database e altri servizi.", en: "Bot and database developer." }, pic: "marcoaceti.jpg", github: "https://github.com/MarcoBuster", website: "https://marcoaceti.it/" },
 ];
 
 const ContributorsView = () => {
