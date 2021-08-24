@@ -21,7 +21,6 @@ const OrganizationView = () => {
     const cardTokens: ICardTokens = { childrenMargin: 12 };
     const sectionCard = { minHeight: '130px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none' };
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
-    const iconStyle2 = { color: theme.palette.themePrimary };
     const admins = getAdmins();
     const canMembers = getCanMembers();
 
