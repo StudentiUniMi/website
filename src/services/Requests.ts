@@ -16,11 +16,11 @@ import CanMember from '../models/CanMember';
 import Rules from '../data/Rules.json';
 import Rule from '../models/Rule';
 
-const api_endpoint = 'http://api.studentiunimi.it';
-const department_endpoint = '/department';
-const degree_endpoint = '/degree';
-const courses_endpoint = '/course';
-const representatives_endpoint = '/representative';
+const api_endpoint = 'https://api.studentiunimi.it/api';
+const department_endpoint = '/departments';
+const degree_endpoint = '/degrees';
+const courses_endpoint = '/courses';
+const representatives_endpoint = '/representatives';
 
 class Result<T>
 {

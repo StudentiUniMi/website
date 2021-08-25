@@ -82,6 +82,8 @@ const CoursesView = () => {
             // Renderizza errore
         }
 
+        console.log(departmentsResult);
+
         setDepartments(departmentsResult.value ?? []);
     },[setDepartments]);
 
