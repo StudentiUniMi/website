@@ -10,6 +10,7 @@ import { DocumentCard, DocumentCardActivity, DocumentCardTitle, DocumentCardDeta
 import { getGroupsLength, getCdlsLength, getFaqs } from '../services/Requests';
 import { redirectToLink } from '../services/Utils';
 import { Container } from 'react-bootstrap';
+import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
@@ -57,6 +58,14 @@ const HomeView = () => {
     const logoProperties = { width: '150px', height: '150px', display: 'inline-block' };
     const telegramLogo = { marginLeft: 'auto', marginRight: 'auto', width: '50px', height: '50px' };
     const numberStyle = { color: theme.palette.themePrimary };
+
+    /* Remove title properties from documentCardTitles */
+    React.useEffect(() => {
+        const divList = document.getElementsByClassName("ms-DocumentCardTitle");
+        for (let i:number = 0; i < divList.length; i++) {
+            divList[i].removeAttribute('title');
+        }
+    });
 
     return (
         <Container className="home">
@@ -501,9 +510,11 @@ const HomeView = () => {
                                     showAsSecondaryTitle
                                 />
                             </DocumentCardDetails>
-                            <div style={{ marginLeft: 16, marginBottom: 8 }}>
-                                <Text styles={semibold} variant="medium" style={{ color: theme.palette.themePrimary }}><Icon iconName="PageArrowRight"/> {locale.homepage.vaccineSection.click}</Text>
-                            </div>
+                            <DocumentCardDetails>
+                                <div style={{ marginLeft: 16, marginBottom: 8 }}>
+                                    <Text styles={semibold} variant="medium" style={{ color: theme.palette.themePrimary }}><Icon iconName="PageArrowRight"/> {locale.homepage.vaccineSection.click}</Text>
+                                </div>
+                            </DocumentCardDetails>
                             <DocumentCardActivity activity={locale.homepage.vaccineSection.card1.date} people={people} />
                         </DocumentCard>
                     </Col>
@@ -524,9 +535,11 @@ const HomeView = () => {
                                     showAsSecondaryTitle
                                 />
                             </DocumentCardDetails>
-                            <div style={{ marginLeft: 16, marginBottom: 8 }}>
-                                <Text styles={semibold} variant="medium" style={{ color: theme.palette.themePrimary }}><Icon iconName="PageArrowRight" /> {locale.homepage.vaccineSection.click}</Text>
-                            </div>
+                            <DocumentCardDetails>
+                                <div style={{ marginLeft: 16, marginBottom: 8 }}>
+                                    <Text styles={semibold} variant="medium" style={{ color: theme.palette.themePrimary }}><Icon iconName="PageArrowRight" /> {locale.homepage.vaccineSection.click}</Text>
+                                </div>
+                            </DocumentCardDetails>
                             <DocumentCardActivity activity={locale.homepage.vaccineSection.card2.date} people={people} />
                         </DocumentCard>
                     </Col>
