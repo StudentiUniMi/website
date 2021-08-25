@@ -1,6 +1,4 @@
 import React from "react";
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 import Degree from '../models/Degree';
 import { semibold } from '../fonts';
 import { FontSizes } from '@fluentui/theme';
