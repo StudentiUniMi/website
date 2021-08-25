@@ -18,7 +18,7 @@ import Degree from '../models/Degree';
 import LocalizationService from "../services/LocalizationService";
 import LoadingSpinner from './LoadingSpinner';
 
-interface Props { cdl?: Degree };
+interface Props { degree: Degree, courses: Course[], loading: boolean };
 
 // Opzioni per la ricerca del semestre
 const semesterFilterOptions: IDropdownOption[] = [ 
@@ -89,24 +89,8 @@ const CourseList= (props: Props) => {
     const [yearFilter, setYearFilter] = React.useState<number>(0);
     const [semesterFilter, setSemesterFilter] = React.useState<number>(0);
 
-    let cdl = props.cdl;
 
     //const courses: Course[] = cdl?.courses ?? [];
-    const updateCourses = React.useCallback(async () => {
-        let coursesResult = await getCourses(props.cdl?.id!);
-
-        if (coursesResult.status !== 200) {
-            // Renderizza errore
-        }
-
-        setCourses(coursesResult.value ?? []);
-    }, [setCourses]);
-
-    React.useEffect(() => {
-        updateCourses();
-    }, [updateCourses]);
-
-
 
 
     const onNameFilterChanged = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, text?: string): void => {
@@ -122,7 +106,7 @@ const CourseList= (props: Props) => {
     };
 
     // Filters gestion
-    let yearFilterOptions = cdl?.is_master ? yearMasterDegreeFilterOptions : yearBachelorDegreeFilterOptions;
+    let yearFilterOptions = props.degree.is_master ? yearMasterDegreeFilterOptions : yearBachelorDegreeFilterOptions; /* Must adjust this, no is_master field available in apis */
     let filteredCourses = courses;
 
     if (nameFilter !== "") { filteredCourses = filteredCourses.filter(x => x.name?.toLocaleLowerCase()?.includes(nameFilter.toLocaleLowerCase())); }
@@ -156,7 +140,7 @@ const CourseList= (props: Props) => {
                                     label={locale.courses.yearFilter}
                                     onChange={onYearFilterChanged}
                                     selectedKey={yearFilter}
-                                    disabled={ !cdl?.has_years ?? false}
+                                    disabled={ !props.degree?.has_years ?? false}
                                 />
                             }
                         </Col>
