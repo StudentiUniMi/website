@@ -313,3 +313,23 @@ footer .fab {
 .course-list .ms-Persona-primaryText {
   font-weight: 600;
 }
+
+/* ChoiceGroup in DegreeInformations adjustments */
+.degree-informations .ms-ChoiceField-field:hover::before,
+.degree-informations .ms-ChoiceField-field:focus::before {
+  opacity: 0;
+}
+
+.degree-informations .ms-ChoiceField-field:hover::after,
+.degree-informations .ms-ChoiceField-field:focus::after {
+  opacity: 0;
+}
+
+.degree-informations .ms-ChoiceField-labelWrapper {
+  overflow: visible;
+}
+
+.degree-informations .ms-ChoiceFieldGroup-flexContainer {
+  display: flex;
+  justify-content: center;
+}

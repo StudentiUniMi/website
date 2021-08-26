@@ -164,7 +164,7 @@ class LocalizationService {
                         departmentSelect: 'Seleziona un dipartimento',
                         cdlSelect: 'Seleziona un corso di Laurea',
                         availableRedirects: 'Collegamenti disponibili',
-                        availableGroups: 'Gruppo disponibili',
+                        availableGroups: 'Gruppi disponibili',
                         availableAdmins: 'Amministratori disponibili',
                         nameFilter: 'Cerca per nome',
                         yearFilter: 'Cerca per anno',
