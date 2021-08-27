@@ -8,12 +8,17 @@ import { Separator } from '@fluentui/react/lib/Separator';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { semibold } from '../fonts';
 import LocalizationService from "../services/LocalizationService";
+import { getDegreeAdmins } from '../services/Requests';
 
-interface Props { data?: Admin[] };
+import { Degree } from '../models/Models';
+
+interface Props { degree?: Degree };
 
 const AdminsList = (props: Props) => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
+
+    const admins: Admin[] = getDegreeAdmins(props.degree!.pk as unknown as string);
 
     return (
         <>
@@ -24,8 +29,8 @@ const AdminsList = (props: Props) => {
                 <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
             </Separator>
         </div> 
-        <Row className="admin-list" style={{ justifyContent: props.data?.length === 0 ? 'center' : ""}}>
-            {props.data?.length !== 0 ? props.data?.map((x,i) =>
+        <Row className="admin-list" style={{ justifyContent: admins?.length === 0 ? 'center' : ""}}>
+            {admins?.length !== 0 ? admins?.map((x,i) =>
                 <Col key={i} xl={3} lg={3} md={4} sm={6} xs={12} className="mb-3 col-persona">
                     {(() => {
                         var imageUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${x.user_id}.png`;

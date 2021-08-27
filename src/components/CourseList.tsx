@@ -9,16 +9,21 @@ import { semibold } from '../fonts';
 import { FontSizes } from '@fluentui/theme';
 import { Separator } from '@fluentui/react/lib/Separator';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { getCourses } from '../services/Requests';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import CourseItem from './CourseItem';
-import Course from '../models/Course';
-import Degree from '../models/Degree';
 import LocalizationService from "../services/LocalizationService";
 import LoadingSpinner from './LoadingSpinner';
 
-interface Props { degree: Degree, courses: Course[], loading: boolean };
+
+//import { getCourses } from '../services/Requests';
+//import Course from '../models/Course';
+//import Degree from '../models/Degree';
+
+
+import { Degree, Course } from '../models/Models';
+
+interface Props { degree: Degree, courses: Course[], loadingCourses: boolean, errorLoadingCourses: boolean };
 
 // Opzioni per la ricerca del semestre
 const semesterFilterOptions: IDropdownOption[] = [ 
@@ -106,12 +111,14 @@ const CourseList= (props: Props) => {
     };
 
     // Filters gestion
-    let yearFilterOptions = props.degree.is_master ? yearMasterDegreeFilterOptions : yearBachelorDegreeFilterOptions; /* Must adjust this, no is_master field available in apis */
+    
+    /* To-do: Must adjust this, no is_master field available in apis */
+    let yearFilterOptions = props.degree.name === "info_magistrale" ? yearMasterDegreeFilterOptions : yearBachelorDegreeFilterOptions; 
     let filteredCourses = courses;
 
     if (nameFilter !== "") { filteredCourses = filteredCourses.filter(x => x.name?.toLocaleLowerCase()?.includes(nameFilter.toLocaleLowerCase())); }
-    if (semesterFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.semestre === semesterFilter); }
-    if (yearFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.anno === yearFilter); }
+    if (semesterFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.semester === semesterFilter); }
+    if (yearFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.year === yearFilter); }
 
     return (       
         <Container className="courses-filter-options mb-4">
@@ -123,7 +130,7 @@ const CourseList= (props: Props) => {
                 </Separator>
             </div> 
 
-            <LoadingSpinner />
+            <LoadingSpinner loading={props.loadingCourses} error={props.errorLoadingCourses} />
 
             <FocusZone>
                 <div className="mb-4">
@@ -136,16 +143,18 @@ const CourseList= (props: Props) => {
                         </Col>
                         <Col xl={4} lg={4} md={4} sm={12} xs={12}>
                             {
-                                <Dropdown options={yearFilterOptions}
+                                <Dropdown 
+                                    options={yearFilterOptions}
                                     label={locale.courses.yearFilter}
                                     onChange={onYearFilterChanged}
                                     selectedKey={yearFilter}
-                                    disabled={ !props.degree?.has_years ?? false}
+                                    /*disabled={ !props.degree?.has_years ?? false} TO-DO */
                                 />
                             }
                         </Col>
                         <Col xl={4} lg={4} md={4} sm={12} xs={12}>
-                            <Dropdown options={semesterFilterOptions}
+                            <Dropdown 
+                                options={semesterFilterOptions}
                                 label={locale.courses.semesterFilter}
                                 onChange={onSemesterFilterChanged}
                                 selectedKey={semesterFilter}

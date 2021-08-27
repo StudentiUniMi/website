@@ -1,10 +1,9 @@
 import data from '../data/Data.json';
 import extraGroups from '../data/ExtraGroups.json';
-import Course from '../models/Course';
-import Degree from '../models/Degree';
+//import Course from '../models/Course';
+import OldDegree from '../models/Degree';
 import Admin from '../models/Admin';
-import Department from '../models/Department';
-import Representative from '../models/Representative';
+//import Representative from '../models/Representative';
 import Service from '../models/Service';
 import serviceData from '../data/Services.json';
 import Contributor from '../models/Contributor';
@@ -16,11 +15,12 @@ import CanMember from '../models/CanMember';
 import Rules from '../data/Rules.json';
 import Rule from '../models/Rule';
 
+/* Updated models */
+import { Department, Degree, Course, Representative } from '../models/Models';
+
 const api_endpoint = 'https://api.studentiunimi.it/api';
 const department_endpoint = '/departments';
 const degree_endpoint = '/degrees';
-const courses_endpoint = '/courses';
-const representatives_endpoint = '/representatives';
 
 class Result<T>
 {
@@ -63,38 +63,54 @@ export async function getDepartments(): Promise<Result<Department[]>> {
  * This function retrieves the degrees of a specific department.
  * @param departmentKey Key or parameter to query by department
  */
-export async function getDegrees(departmentKey: String): Promise<Result<Degree[]>> {
-    return getAsync(`${api_endpoint}${degree_endpoint}?department=${departmentKey}`);
+export async function getDegrees(departmentKey: string): Promise<Result<Degree[]>> {
+    return getAsync<Degree[]>(`${api_endpoint}${department_endpoint}/${departmentKey}`);
 }
 
 /**
  * This function retrieves the courses of a specific degree.
  * @param degreeKey Key or parameter to query by degree
  */
-export async function getCourses(degreeKey: String): Promise<Result<Course[]>> {
-    return getAsync(`${api_endpoint}${courses_endpoint}?degree=${degreeKey}`);
+export async function getCourses(degreeKey: string): Promise<Result<Course[]>> {
+    return getAsync<Course[]>(`${api_endpoint}${degree_endpoint}/${degreeKey}`);
 }
 
 /**
  * This function retrieves the representatives of a specific department.
  * @param departmentKey Key or parameter to query by department
  */
-export async function getRepresentatives(departmentKey: String): Promise<Result<Representative[]>> {
-    return getAsync(`${api_endpoint}${representatives_endpoint}?department=${departmentKey}`);
+export async function getRepresentatives(departmentKey: string): Promise<Result<Representative[]>> {
+    return getAsync<Representative[]>(`${api_endpoint}${department_endpoint}/${departmentKey}`);
 }
 
 
 
 
+
+
+
+
+/* Temporary function to retrieve degree informations. */
+export const getDegreeInformations = (degreeKey: string): any[] => {
+    const degree: any = getAllCdls().filter(x => x.id === degreeKey);
+    return degree.redirects;
+}
+
+/* Temporary function to retrieve degree admins. */
+export const getDegreeAdmins = (degreeKey: string): Admin[] => {
+    const degree: any = getAllCdls().filter(x => x.id === degreeKey);
+    return degree.admins;
+}
+
+
 //export const getDepartments = (): Department[] => data.departments as any as Department[];
+//export const getRepresentatives = (departmentId:string): Representative[] => (data.departments.filter(x => x.id === departmentId)[0]?.representatives ?? []);
 
 export const getExtraGroups = () => extraGroups;
 
 export const getServices = (): Service[] => serviceData;
 
-//export const getRepresentatives = (departmentId:string): Representative[] => (data.departments.filter(x => x.id === departmentId)[0]?.representatives ?? []);
-
-export const getAllCdls = (): Degree[] => ([] as Degree[]).concat(...(data.departments.map(x => x.cdls as any as Degree[])));
+export const getAllCdls = (): OldDegree[] => ([] as OldDegree[]).concat(...(data.departments.map(x => x.cdls as any as OldDegree[])));
 
 export const getContributors = (): Contributor[] => Contributors;
 

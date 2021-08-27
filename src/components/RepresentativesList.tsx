@@ -1,9 +1,11 @@
-import Representative from '../models/Representative';
+//import Representative from '../models/Representative';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Persona, PersonaSize } from 'office-ui-fabric-react/lib/Persona';
 import { Link, Icon } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
+
+import { Representative } from '../models/Models';
 
 interface Props { data: Representative[] };
 
@@ -16,10 +18,11 @@ const RapresentativesList = (props: Props) => {
                     {
                         ( () => { 
                             var primaryText : any; 
-                            var imageUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${x.user_id}.png`;
-                            if (x.username !== "") primaryText = (<><Icon iconName="Send" style={{ color: theme.palette.themePrimary}} />&nbsp;<Link href={`https://t.me/${x.username}`}>{`${x.name ?? ""} ${x.surname ?? ""}`}</Link></>); 
-                            else { primaryText = `${x.name ?? ""} ${x.surname ?? ""}`};
-                            return <Persona imageUrl={imageUrl} onRenderPrimaryText={() => primaryText} text={`${x.name ?? ""} ${x.surname ?? ""}`} secondaryText={x.cdl} size={PersonaSize.size40} />
+                            var imageUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${x.tguser?.id}.png`;
+                            if (x.tguser?.username !== "") primaryText = (<><Icon iconName="Send" style={{ color: theme.palette.themePrimary }} />&nbsp;<Link href={`https://t.me/${x.tguser?.username}`}>{`${x.tguser?.first_name ?? ""} ${x.tguser?.last_name ?? ""}`}</Link></>); 
+                            else { primaryText = `${x.tguser?.first_name ?? ""} ${x.tguser?.last_name ?? ""}`};
+                            return <Persona imageUrl={imageUrl} onRenderPrimaryText={() => primaryText} text={`${x.tguser?.first_name ?? ""} ${x.tguser?.last_name ?? ""}`} secondaryText={"Fixami"} size={PersonaSize.size40} /> 
+                            /* To-do: adjust cdl of rep */
                         })()
                     }
                 </Col>

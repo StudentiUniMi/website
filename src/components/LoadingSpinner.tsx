@@ -1,15 +1,29 @@
+/**
+ * This component is used to show loading while retrieving data from the api, and to show an error in case the loading didn't go fine.
+ *
+ * @author Giuseppe Del Campo
+ */
+
 import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
 import LocalizationService from "../services/LocalizationService";
 import { useTheme } from '@fluentui/react-theme-provider';
 
-const LoadingSpinner = () => {
+interface Props { loading: boolean, error: boolean };
+
+const LoadingSpinner = (props: Props) => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
 
     return (
-        <div>
-            <Spinner label="Wait, wait..." ariaLive="assertive" labelPosition="right" size={SpinnerSize.large} theme={theme} />
-        </div>
+        <>
+            {
+            props.loading ? <div>Errore! Dennis sa rutt!</div>
+            :
+            <div>
+                <Spinner label="Wait, i'm loading..." ariaLive="assertive" labelPosition="right" size={SpinnerSize.large} theme={theme} />
+            </div>
+            }
+        </>
     )
 }
 
