@@ -58,6 +58,7 @@ const CoursesView = () => {
     const updateDepartments = React.useCallback(async() => {
         let departmentsResult = await getDepartments();
 
+        /* To-do: show error of loading departments (just error showing) */
         if (departmentsResult.status !== 200) {
             // Renderizza errore
         }
@@ -79,6 +80,7 @@ const CoursesView = () => {
         if (selectedDepartment === '') return;
         let degreesResult = await getDegrees(selectedDepartment);
 
+        /* To-do: same error showing here */
         if (degreesResult.status !== 200) {
             
         }
@@ -110,7 +112,6 @@ const CoursesView = () => {
         let coursesResult = await getCourses(selectedDegree);
 
         if (coursesResult.status !== 200) {
-            // Renderizza errore e ferma il caricamento, da testare
             setLoadingCourses(false);
             setErrorLoadingCourses(true);
         }
@@ -142,9 +143,9 @@ const CoursesView = () => {
     React.useEffect(() => {
         if (!didMount.current) {
             didMount.current = true;
-            var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
-            var degreeSlug = states.length >= 2 ? states[1] : '';
-            console.log(degreeSlug)
+            //var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
+            //var degreeSlug = states.length >= 2 ? states[1] : '';
+            //console.log(degreeSlug)
             //setSelectedDegree(degreeId as unknown as string);
             //setSelectedDepartment(initialDepartment as unknown as string);
 
@@ -164,7 +165,6 @@ const CoursesView = () => {
     
     // need to adjust this probably
     let degree: Degree = degrees.filter(x => x.pk === selectedDegree as unknown as number)[0] ?? [];
-
 
 
     return (

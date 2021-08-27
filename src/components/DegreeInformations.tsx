@@ -1,5 +1,4 @@
 import React from "react";
-import Degree from '../models/Degree';
 import { semibold } from '../fonts';
 import { FontSizes } from '@fluentui/theme';
 import { Icon, Text } from 'office-ui-fabric-react';
@@ -45,7 +44,7 @@ const DegreeInformations= (props: Props) => {
         }
     };
 
-    props.cdl?.redirects?.map((x) => {
+    degreeInformations?.map((x) => {
         return options.push({ 
             key: x.name![language], 
             text: x.name![language], 

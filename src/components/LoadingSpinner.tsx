@@ -17,7 +17,17 @@ interface IExampleProps { resetChoice?: () => void; };
 const LoadingSpinner = (props: Props) => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
-    const [showError, setShowError] = React.useState(props.error);
+    const [showError, setShowError] = React.useState<boolean>(false);
+    
+    const updateError = React.useCallback(() => {
+        setShowError(props.error);
+    }, [setShowError, props.error]);
+
+    React.useEffect(() => {
+        updateError();
+    }, [updateError]);
+
+    console.log(showError, props.error)
 
     const ErrorExample = (p: IExampleProps) => (
         <MessageBar

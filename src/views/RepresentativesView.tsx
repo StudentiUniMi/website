@@ -2,28 +2,29 @@ import React from "react";
 import { Container } from 'react-bootstrap';
 import { FontSizes } from '@fluentui/theme';
 import { Text, Icon } from 'office-ui-fabric-react';
-import { Dropdown, IDropdownOption, IDropdownStyles, IDropdownProps } from 'office-ui-fabric-react/lib/Dropdown';
+import { Dropdown, IDropdownOption, IDropdownProps } from 'office-ui-fabric-react/lib/Dropdown';
 import { useHistory } from 'react-router-dom';
 import { useTheme } from '@fluentui/react-theme-provider';
-import RepresentativesList from '../components/RepresentativesList';
 import { getRepresentatives, getDepartments } from '../services/Requests'
-import LocalizationService from "../services/LocalizationService";
-
-//import Representative from '../models/Representative';
-
 import { Department, Representative } from '../models/Models';
+import LocalizationService from "../services/LocalizationService";
+import RepresentativesList from '../components/RepresentativesList';
 
 const iconStyles = { marginRight: '8px' };
 
 const RepresentativesView = () => {
     var theme = useTheme();
     let didMount = React.useRef(false);
-    const [departments, setDepartments] = React.useState<Department[]>([]);
-    const [representatives, setRepresentatives] = React.useState<Representative[]>([]);
     const locale = LocalizationService.strings();
     const history = useHistory();
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
+
+    const [departments, setDepartments] = React.useState<Department[]>([]);
+    const [representatives, setRepresentatives] = React.useState<Representative[]>([]);
     const [selectedDepartment, setSelectedDepartment] = React.useState<string>('');
+
+    const [loadingRepresentatives, setLoadingRepresentatives] = React.useState<boolean>(false);
+    const [errorLoadingRepresentatives, setErrorLoadingRepresentatives] = React.useState<boolean>(false);
 
     const departmentSelectionChanged = (
         ev?: React.FormEvent<HTMLElement | HTMLInputElement>,
@@ -33,6 +34,7 @@ const RepresentativesView = () => {
         history.push(`/representatives/${option?.key as string}`);
     };
 
+    /* To-do: test the url parameters inizialization */
     React.useEffect(() =>
     {
         if(!didMount.current)
@@ -45,6 +47,7 @@ const RepresentativesView = () => {
         }
     }, [history]);
 
+    /* Departments callBack */
     const updateDepartments = React.useCallback(async () => {
         let departmentsResult = await getDepartments();
 
@@ -57,27 +60,30 @@ const RepresentativesView = () => {
         setDepartments(departmentsResult.value ?? []);
     }, [setDepartments]);
 
-    React.useEffect(() => {
-        updateDepartments();
-    }, [updateDepartments]);
-
+    /* Representatives callBack */
     const updateRepresentatives = React.useCallback(async () => {
+        if (selectedDepartment === '') return;
+        setLoadingRepresentatives(true);
+        setErrorLoadingRepresentatives(false);
         let representativesResult = await getRepresentatives(selectedDepartment);
 
         if (representativesResult.status !== 200) {
-            // Renderizza errore
+            setLoadingRepresentatives(false);
+            setErrorLoadingRepresentatives(true);
         }
 
-        console.log("Representatives result: ",representativesResult.value ?? [])
+        console.log("Representatives result: ", representativesResult.value ?? []);
 
+        setLoadingRepresentatives(false);
         setRepresentatives(representativesResult.value ?? []);
     }, [setRepresentatives, selectedDepartment]);
 
     React.useEffect(() => {
         updateRepresentatives();
-    }, [updateRepresentatives]);
+        updateDepartments();
+    }, [updateRepresentatives, updateDepartments]);
 
-    // To-do: adjust disabled
+    // To-do: test disabled when field is available
     const departmentOptions: IDropdownOption[] = departments.map(x => ({ key: x.pk, text: x.name ?? "", data: { icon: x.icon }, disabled: x.representative_count === 0 }));
 
     return (
@@ -110,7 +116,7 @@ const RepresentativesView = () => {
                 />
             </div>
 
-            <RepresentativesList data={representatives}/>
+            <RepresentativesList data={representatives} loadingRepresentatives={loadingRepresentatives} errorLoadingRepresentatives={errorLoadingRepresentatives} />
         </Container>
     )
 };

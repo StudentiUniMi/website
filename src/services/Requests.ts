@@ -1,9 +1,7 @@
 import data from '../data/Data.json';
 import extraGroups from '../data/ExtraGroups.json';
-//import Course from '../models/Course';
 import OldDegree from '../models/Degree';
 import Admin from '../models/Admin';
-//import Representative from '../models/Representative';
 import Service from '../models/Service';
 import serviceData from '../data/Services.json';
 import Contributor from '../models/Contributor';
@@ -24,6 +22,7 @@ const degree_endpoint = '/degrees';
 const course_endpoint = '/courses';
 const representative_endpoint = '/representatives';
 
+/* Main class to build response */
 class Result<T>
 {
     public status:number;
@@ -87,11 +86,6 @@ export async function getRepresentatives(departmentKey: string): Promise<Result<
 
 
 
-
-
-
-
-
 /* Temporary function to retrieve degree informations. */
 export const getDegreeInformations = (degreeSlug: string): any[] => {
     return getAllCdls().filter(x => x.id === degreeSlug)[0]?.redirects ?? [];
@@ -101,10 +95,6 @@ export const getDegreeInformations = (degreeSlug: string): any[] => {
 export const getDegreeAdmins = (degreeSlug: string): Admin[] => {
     return getAllCdls().filter(x => x.id === degreeSlug)[0]?.admins ?? [];
 }
-
-
-//export const getDepartments = (): Department[] => data.departments as any as Department[];
-//export const getRepresentatives = (departmentId:string): Representative[] => (data.departments.filter(x => x.id === departmentId)[0]?.representatives ?? []);
 
 export const getExtraGroups = () => extraGroups;
 

@@ -14,13 +14,6 @@ import Row from 'react-bootstrap/Row';
 import CourseItem from './CourseItem';
 import LocalizationService from "../services/LocalizationService";
 import LoadingSpinner from './LoadingSpinner';
-
-
-//import { getCourses } from '../services/Requests';
-//import Course from '../models/Course';
-//import Degree from '../models/Degree';
-
-
 import { Degree, Course } from '../models/Models';
 
 interface Props { degree: Degree, courses: Course[], loadingCourses: boolean, errorLoadingCourses: boolean };
