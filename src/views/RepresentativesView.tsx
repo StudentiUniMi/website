@@ -84,6 +84,7 @@ const RepresentativesView = () => {
     }, [updateRepresentatives, updateDepartments]);
 
     // To-do: test disabled when field is available
+    // To-do: need slug to use it in url parameters initialization
     const departmentOptions: IDropdownOption[] = departments.map(x => ({ key: x.pk, text: x.name ?? "", data: { icon: x.icon }, disabled: x.representative_count === 0 }));
 
     return (
