@@ -1,5 +1,6 @@
 interface ILocalizationStrings {
     telegramGroup: string,
+    loading: string,
     headerMenuItems: {
         home: string,
         aboutUs: string,

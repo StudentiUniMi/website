@@ -76,6 +76,7 @@ const CoursesView = () => {
     };
 
     const updateDegrees = React.useCallback(async () => {
+        if (selectedDepartment === '') return;
         let degreesResult = await getDegrees(selectedDepartment);
 
         if (degreesResult.status !== 200) {
@@ -103,6 +104,7 @@ const CoursesView = () => {
 
     /* Courses callBack */
     const updateCourses = React.useCallback(async () => {
+        if (selectedDegree === '') return;
         setErrorLoadingCourses(false);
         setLoadingCourses(true);
         let coursesResult = await getCourses(selectedDegree);

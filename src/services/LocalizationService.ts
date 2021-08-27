@@ -8,6 +8,7 @@ class LocalizationService {
         if (LocalizationService.data == null || LocalizationService.data === undefined) { // maybe this check helps
             LocalizationService.data = new LocalizedStrings<ILocalizationStrings>({
                 it: {
+                    loading: "Caricamento in corso..",
                     telegramGroup: 'Gruppo Telegram',
                     headerMenuItems: {
                         home: 'Home',
@@ -198,6 +199,7 @@ class LocalizationService {
 
 
                 en: {
+                    loading: "Loading..",
                     telegramGroup: 'Telegram Group',
                     headerMenuItems: {
                         home: 'Home',

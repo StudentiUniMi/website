@@ -7,20 +7,35 @@
 import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
 import LocalizationService from "../services/LocalizationService";
 import { useTheme } from '@fluentui/react-theme-provider';
+import { MessageBarType, MessageBar } from '@fluentui/react';
+import React from 'react';
 
 interface Props { loading: boolean, error: boolean };
+
+interface IExampleProps { resetChoice?: () => void; };
 
 const LoadingSpinner = (props: Props) => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
+    const [showError, setShowError] = React.useState(props.error);
+
+    const ErrorExample = (p: IExampleProps) => (
+        <MessageBar
+            messageBarType={MessageBarType.error}
+            isMultiline={false}
+            onDismiss={p.resetChoice}
+            dismissButtonAriaLabel="Close"
+        >
+            Si è verificato un errore; contatta un amministratore.
+        </MessageBar>
+    );
 
     return (
         <>
-            {
-            props.error ? <div>Errore! Dennis sa rutt!</div> :
+            { props.error ? <div style={{ display: showError ? 'block' : 'none' }}><ErrorExample resetChoice={() => setShowError(false)} /></div> :
                 props.loading ? 
                 <div>
-                    <Spinner label="Wait, i'm loading..." ariaLive="assertive" labelPosition="right" size={SpinnerSize.large} theme={theme} />
+                    <Spinner label={locale.loading} ariaLive="assertive" labelPosition="right" size={SpinnerSize.large} theme={theme} />
                 </div> : <></>
             }
         </>
