@@ -65,6 +65,17 @@ const Services = () => {
                 </Text>
             </div>
 
+            <div className="mb-3">
+                <div className="mb-1"><Text variant="medium">{locale.services.legend}<br/></Text></div>
+                <Icon iconName="SortDown" style={{ color: theme.palette.themePrimary, fontSize: 20, marginBottom: 5 }} />
+                <div>
+                    <Text variant="medium">
+                        <span className="mr-3"><Chip label={'G'} size="small" style={{ color: theme.palette.orange, backgroundColor: theme.palette.neutralLighter, fontWeight: 500 }} /> {locale.services.guide}</span>
+                        <Chip label={'S'} size="small" style={{ color: theme.palette.themePrimary, backgroundColor: theme.palette.neutralLighter, fontWeight: 500 }} /> {locale.services.service}
+                    </Text>
+                </div>
+            </div>
+
             <Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} />
 
             <div className='text-center mb-3'>
@@ -73,10 +84,10 @@ const Services = () => {
                 </Separator>
             </div>  
 
-            <Row className="m-2 justify-content-center">
+            <Row className="justify-content-center">
                 {services.map((x, i) =>
                     <Col xl={4} lg={6} md={6} sm={12} xs={12} className="mb-3" key={i}>
-                        <Card label={x.name?.it} onClick={() => redirectToLink(x.link ?? "")} horizontal tokens={cardTokens} style={{border: '0px'}}>
+                        <Card label={x.name?.it} onClick={() => redirectToLink(x.link ?? "")} horizontal tokens={cardTokens} style={{border: '0px', maxWidth: 'none'}}>
                             <Card.Item fill>
                                 <DocumentCardPreview {...cardProps(x.icon, x.color)}/>
                             </Card.Item>
@@ -84,7 +95,7 @@ const Services = () => {
                                 <Text variant="medium" style={{ color: theme.palette.themePrimary }} styles={semibold}>{x.name![language]}</Text>
                                 <TooltipHost
                                     id={`tooltip${i}`}
-                                    content={language === 'it' ? (x.type === 'G' ? "Guida" : "Servizio") : (x.type === 'G' ? "Guide" : "Service")}
+                                    content={x.type === 'G' ? locale.services.guide : locale.services.service}
                                     calloutProps={calloutProps(i)}
                                     delay={TooltipDelay.zero}
                                 >

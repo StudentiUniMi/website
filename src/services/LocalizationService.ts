@@ -34,7 +34,7 @@ class LocalizationService {
                     },
                     homepage: {
                         section1: {
-                            text1: 'Benvenuto nel sito web del <Text style={{color: theme.palette.themePrimary}} variant="xLarge">Network Studenti UniMi</Text> !',
+                            text1: 'Benvenuto nel sito web del <Text style={{color: theme.palette.themePrimary}} variant="xLarge">Network StudentiUniMi</Text> !',
                             text2: 'La nostra missione è organizzare le informazioni riguardo l\'Università degli studi di Milano e renderle accessibili a tutti.',
                             sliders: [
                                 { text1: 'Sei uno studente che vuole immatricolarsi e che cerca un gruppo generale in cui chiedere informazioni', text2: 'Ne abbiamo creato uno apposito!', cardText: "Pre-matricole, ammissioni e immatricolazioni" },
@@ -117,6 +117,33 @@ class LocalizationService {
                             card1: { text1: 'Abbiamo più di', text2: 'utenti.' },
                             card2: { text1: 'Abbiamo', text2: 'gruppi telegram.' },
                             card3: { text1: 'Copriamo', text2: 'corsi di laurea.' },
+                        },
+                        vaccineSection: {
+                            title: "Informazioni sui vaccini",
+                            card1: {
+                                title: "Obbligo del Green Pass",
+                                description: "Vi ricordiamo che da settembre in tutte le università per svolgere una qualsiasi attività in presenza (compreso l'accesso alle aule studio) sarà necessario possedere il green pass. L'assenza di green pass non è un motivo valido per svolgere un esame a distanza.",
+                                date: "09 Agosto, 2021"
+                            },
+                            card2: {
+                                title: "Iniziative a supporto degli studenti",
+                                description: "Per venire incontro agli studenti la Regione Lombardia si è attivata con una serie di iniziative a supporto degli studenti, tra cui agende prioritarie per la vaccinazione. Alternativamente al vaccino un altro modo per ottenere un green pass valido per 48 ore è attraverso un tampone negativo, vi ricordiamo però che questa opzione vi costerà ogni volta almeno 15€ circa.",
+                                date: "10 Agosto, 2021"
+                            },
+                            click: "Clicca qui per maggiori informazioni",
+                            news: "Notizia"
+                        },
+                        telegramSection: {
+                            title: "Perchè Telegram e non WhatsApp?",
+                            description: "Molti studenti potrebbero chiedersi come mai abbiamo scelto Telegram come piattaforma principale per tutte le nostre attività: in quanto informatici, siamo sempre alla ricerca della soluzione migliore ad un problema, e in questo caso utilizzare Whatsapp come supporto a centinaia di gruppi (e si spera migliaia in futuro) sarebbe stato prima di tutto impraticabile da un punto di vista puramente gestionale (WhatsApp ha un limite di 256 membri per gruppo), e seconda cosa sarebbe stato un incubo per voi studenti cercare i vari materiali e comunicare in maniera efficace.",
+                            advantages: 'Vantaggi di <Link href="https://telegram.org/" target="_blank">Telegram</Link>',
+                            list: [
+                                "Gruppi fino a 250mila membri",
+                                "Numeri di telefono non esposti",
+                                "Uso su più dispositivi insieme",
+                                "Cartelle per organizzare il contenuto",
+                                "Canali con informazioni"
+                            ]
                         }
                     },
                     aboutUs: {
@@ -138,7 +165,7 @@ class LocalizationService {
                         departmentSelect: 'Seleziona un dipartimento',
                         cdlSelect: 'Seleziona un corso di Laurea',
                         availableRedirects: 'Collegamenti disponibili',
-                        availableGroups: 'Gruppo disponibili',
+                        availableGroups: 'Gruppi disponibili',
                         availableAdmins: 'Amministratori disponibili',
                         nameFilter: 'Cerca per nome',
                         yearFilter: 'Cerca per anno',
@@ -158,7 +185,10 @@ class LocalizationService {
                         text1: 'Siete stanchi di dover andare a spulciare miriadi di pagine che neanche caricano alla ricerca di strumenti e servizi universitari? Abbiamo realizzato una pagina per centralizzarli tutti! Inoltre, qui potete trovare anche alcune guide che abbiamo realizzato.',
                         text2: '<Text styles={semibold}>Attenzione:</Text> alcune pagine come Unimia oppure i Servizi SIFA potrebbero non caricare (ovviamente ricordiamo che non è colpa nostra in tal caso!).',
                         text3: "Se pensi che debba essere aggiunto qualche servizio scrivi pure su <Link href='https://t.me/unimichat' target='_blank'>@unimichat</Link>.",
-                        availableServices: 'Servizi e guide disponibili'
+                        availableServices: 'Servizi e guide disponibili',
+                        guide: "Guida",
+                        service: "Servizio",
+                        legend: "Legenda"
                     },
                     extraGroups: {
                         text1: 'Cerchi un gruppo aggiuntivo in particolare? Qui è possibile trovare tutti quelli che abbiamo creato: ricordiamo che ci sono gruppi con regolamenti appositi ad esempio per la creazione di annunci per la vendita di materiali, quindi è consigliato leggere il messaggio di benvenuto in tal caso.',
@@ -225,7 +255,7 @@ class LocalizationService {
                     },
                     homepage: {
                         section1: {
-                            text1: 'Welcome to <Text style={{color: theme.palette.themePrimary}} variant="xLarge">Network Studenti UniMi</Text> !',
+                            text1: 'Welcome to <Text style={{color: theme.palette.themePrimary}} variant="xLarge">Network StudentiUniMi</Text> !',
                             text2: 'Our goal is to organize all the informations about the University of Milan (Università degli Studi di Milano, Unimi) and make them easily accessible to anyone.',
                             sliders: [
                                 { text1: 'Are you a student who wants to matriculate and who is looking for a general group in which to ask for informations ', text2: 'We created one just for this!', cardText: "Pre-students, admissions and enrollments" },
@@ -252,7 +282,7 @@ class LocalizationService {
                             },
                             card4: {
                                 text: 'Visit the github organization to see all our projects.',
-                                button: 'GitHub Organization'
+                                button: 'GitHub Org.'
                             }
                         },
                         section3: {
@@ -308,6 +338,33 @@ class LocalizationService {
                             card1: { text1: 'We have more than', text2: 'users.' },
                             card2: { text1: 'We have', text2: 'telegram groups.' },
                             card3: { text1: 'We cover', text2: 'degree courses.' },
+                        },
+                        vaccineSection: {
+                            title: "Informations about vaccines",
+                            card1: {
+                                title: "Green Pass Obligation",
+                                description: "We remind you that from September in all universities to carry out any activity in presence (including access to study rooms) it will be necessary to have a green pass. The absence of a green pass is not a valid reason for taking a remote exam.",
+                                date: "August 09, 2021"
+                            },
+                            card2: {
+                                title: "Initiatives to support students",
+                                description: "To support the students, the Lombardy Region has taken action with a series of initiatives, including priority agendas for vaccination. As an alternative to the vaccine, another way to obtain a green pass valid for 48 hours is through a negative buffer, however, we remind you that this option will cost you at least € 15 each time.",
+                                date: "August 10, 2021"
+                            },
+                            click: "Click here to see more informations",
+                            news: "News"
+                        },
+                        telegramSection: {
+                            title: "Why Telegram and not WhatsApp?",
+                            description: "Many students may wonder why we have chosen Telegram as the main platform for all our activities: as computer science students, we are always looking for the best solution to a problem, and in this case use Whatsapp as a support to hundreds of groups (and hopefully thousands in the future) it would have been first of all impractical from a purely managerial point of view (WhatsApp has a limit of 256 members for group), and secondly it would have been a nightmare for you students to search the various materials and communicate effectively.",
+                            advantages: '<Link href="https://telegram.org/" target="_blank">Telegram</Link> advantages',
+                            list: [
+                                "Groups of up to 250 thousand members",
+                                "Telephone numbers not exposed",
+                                "Use on multiple devices at the same time",
+                                "Folders for better organization",
+                                "Channels with information" 
+                            ]
                         }
                     },
                     aboutUs: {
@@ -350,7 +407,10 @@ class LocalizationService {
                         text1: 'Tired of surfing into endless pages to find the services offered by the university? We grouped all the links here! We added some guides we created too.',
                         text2: "<Text styles={semibold}>Careful:</Text> some web pages like Unimia or SIFA services might not load (we remind you that it's not our fault in this case!).",
                         text3: "If you think that something should be added you can suggest it on <Link href='https://t.me/unimichat' target='_blank'>@unimichat</Link>.",
-                        availableServices: 'Available services and guides'
+                        availableServices: 'Available services and guides',
+                        guide: "Guide",
+                        service: "Service",
+                        legend: "Legend"
                     },
                     extraGroups: {
                         text1: 'Looking for additional groups? Here you can find all the ones we have created: we remind you that there are groups with specific regulations for example for the creation of announcements for the sale of materials, so it is recommended to read the welcome message in this case.',

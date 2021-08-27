@@ -69,20 +69,25 @@ button:focus,
     margin-left: 25%;
     margin-right: 25%;
   }
-}
-@media only screen and (max-width: 485px) {
-  body {
-    margin-bottom: 520px;
+
+  footer .text {
+    margin-left: 15%;
+    margin-right: 15%;
   }
 }
-@media only screen and (max-width: 363px) {
+@media only screen and (max-width: 485px) {
   body {
     margin-bottom: 550px;
   }
 }
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 363px) {
   body {
     margin-bottom: 560px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  body {
+    margin-bottom: 570px;
   }
 }
 @media only screen and (min-width: 767px) {
@@ -114,7 +119,7 @@ button:focus,
     display: block;
   }
 }
-@media only screen and (min-width: 592px) {
+@media only screen and (min-width: 567px) {
   .header-title .large-display {
     display: block;
   }
@@ -123,7 +128,7 @@ button:focus,
     display: none;
   }
 }
-@media only screen and (max-width: 591px) {
+@media only screen and (max-width: 566px) {
   .header-title .large-display {
     display: none;
   }
@@ -147,16 +152,11 @@ button:focus,
 /* Grid system adjustments for filter container */
 @media only screen and (max-width: 766px) {
   .courses-filter-options .col-sm-12 {
-    max-width: 420px;
+    max-width: 450px;
     text-align: center;
   }
 }
 @media only screen and (max-width: 540px) {
-  .courses-filter-options .col-sm-12 {
-    max-width: 280px;
-    text-align: center;
-  }
-
   /* Courses filter options è il container */
   .courses-filter-options, .department-choose .row {
     margin-right: 0%;
@@ -166,11 +166,11 @@ button:focus,
 /* Section adjustments */
 @media only screen and (max-width: 575px) {
   .organization .col-12, .contributors .col-12 {
-    max-width: 250px;
+    max-width: 350px;
   }
 
   .department-choose .col-sm-12 {
-    max-width: 350px;
+    max-width: 450px;
     text-align: center;
   }
 
@@ -180,7 +180,7 @@ button:focus,
   }
 
   .courses-filter-options .col-xs-12 {
-    max-width: 250px;
+    max-width: 350px;
     text-align: center;
   }
 
@@ -203,18 +203,8 @@ button:focus,
     max-width: 250px;
   }
 
-  .home .col-12 {
-    max-width: 280px;
-  }
-}
-@media only screen and (min-width: 481px) {
-  .rules .row .col-xs-12 {
-    max-width: 250px;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .rules .row .col-xs-12 {
-    min-width: 250px;
+  .home .telegram-advantages-list {
+    margin-left: 20% !important;
   }
 }
 @media only screen and (max-width: 380px) {
@@ -307,4 +297,24 @@ footer .fab {
 
 .ms-MessageBar-dismissSingleLine {
   display: none;
+}
+
+/* ChoiceGroup in DegreeInformations adjustments */
+.degree-informations .ms-ChoiceField-field:hover::before,
+.degree-informations .ms-ChoiceField-field:focus::before {
+  opacity: 0;
+}
+
+.degree-informations .ms-ChoiceField-field:hover::after,
+.degree-informations .ms-ChoiceField-field:focus::after {
+  opacity: 0;
+}
+
+.degree-informations .ms-ChoiceField-labelWrapper {
+  overflow: visible;
+}
+
+.degree-informations .ms-ChoiceFieldGroup-flexContainer {
+  display: flex;
+  justify-content: center;
 }

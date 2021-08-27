@@ -106,6 +106,27 @@ interface ILocalizationStrings {
             card1: { text1: string, text2: string },
             card2: { text1: string, text2: string },
             card3: { text1: string, text2: string },
+        }, 
+        vaccineSection: {
+            title: string,
+            card1: {
+                title: string,
+                description: string,
+                date: string
+            },
+            card2: {
+                title: string,
+                description: string,
+                date: string
+            },
+            click: string,
+            news: string
+        },
+        telegramSection: {
+            title: string,
+            description: string,
+            advantages: string,
+            list: any[]
         }
     },
     aboutUs: {
@@ -147,7 +168,10 @@ interface ILocalizationStrings {
         text1: string,
         text2: string,
         text3: string,
-        availableServices: string
+        availableServices: string,
+        guide: string,
+        service: string,
+        legend: string
     },
     extraGroups: {
         text1: string,

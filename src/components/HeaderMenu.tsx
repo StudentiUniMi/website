@@ -241,7 +241,7 @@ const HeaderMenu = (props: Props) => {
                         >
                             <IconButton iconProps={resetColorIcon} onClick={() => { setCookie("palette", 'a', { path: "/", expires: date }); props.changePalette('a'); }} />
                         </TooltipHost>
-                        <SwatchColorPicker selectedId={cookies["palette"]} columnCount={7} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => { setCookie("palette", id, { path: "/", expires: date }); props.changePalette(id!); }} />
+                        <SwatchColorPicker selectedId={cookies["palette"]} columnCount={9} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => { setCookie("palette", id, { path: "/", expires: date }); props.changePalette(id!); }} />
                     </div>
                 </Panel>
             </div>

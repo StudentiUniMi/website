@@ -1,14 +1,13 @@
 import React from "react";
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import Degree from '../models/Degree';
 import { semibold } from '../fonts';
 import { FontSizes } from '@fluentui/theme';
 import { Icon, Text } from 'office-ui-fabric-react';
-import { DocumentCard, DocumentCardTitle, DocumentCardLogo, IDocumentCardLogoProps, IDocumentCardStyles } from 'office-ui-fabric-react/lib/DocumentCard';
 import { redirectToLink } from '../services/Utils';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Separator } from '@fluentui/react/lib/Separator';
-import { mergeStyles } from "@fluentui/react";
+import { IChoiceGroupOptionStyles } from "@fluentui/react";
+import { ChoiceGroup, IChoiceGroupOption } from '@fluentui/react/lib/ChoiceGroup';
 import LocalizationService from "../services/LocalizationService";
 import { getDegreeInformations } from '../services/Requests';
 
@@ -21,54 +20,55 @@ const DegreeInformations= (props: Props) => {
     const theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string = LocalizationService.getLanguage();
-    const cardStyles: IDocumentCardStyles = { root: { backgroundColor: theme.palette.neutralLighter, display: 'inline-block', minWidth: '200px', maxWidth:'235px', height: 'auto', minHeight: '150px', maxHeight: '150px' } };
-    const conversationTileClass = mergeStyles({ height: 182 });
-    const title: any = { fontSize: '20px' };
-    const secondaryTitle: any = { fontSize: '14px' };
     const iconProps: any = { fontSize: '24px' };
 
     const degreeInformations: any[] = getDegreeInformations(props.degree?.slug!);
+    /* Workaround to not show selected choicegroup */
+    const [selectedChoiceGroup, setSelectedChoiceGroup] = React.useState<string>("");
+    const selectionChanged = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IChoiceGroupOption): void => { setSelectedChoiceGroup(""); }
+     
+    const options: IChoiceGroupOption[] = [];
+
+    const itemSize = 100;
+    const choiceGroupOptionsStyle: IChoiceGroupOptionStyles = {
+        choiceFieldWrapper: {
+            width: itemSize + "px",
+            height: itemSize + "px"
+        },
+        labelWrapper: {
+            maxWidth: itemSize / (3 / 4) + "px",
+            height: "auto",
+        },
+        field: {
+            height: "100%",
+            padding: "0px"
+        }
+    };
+
+    props.cdl?.redirects?.map((x) => {
+        return options.push({ 
+            key: x.name![language], 
+            text: x.name![language], 
+            styles: choiceGroupOptionsStyle, 
+            iconProps: { iconName: x.icon!, className: iconProps, color: theme.palette.themePrimary }, 
+            onClick: () => {redirectToLink(x.link!)} 
+        });
+    })
 
     return (   
-        <>    
-            <div className='text-center mb-4'>
+        <div className='text-center degree-informations mb-4'>    
+            <div className='text-center mb-3'>
                 <Separator>
                     <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
                     <Text variant="medium" styles={semibold} style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size18 }}> {locale.courses.availableRedirects} </Text>
                     <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
                 </Separator>
-            </div>  
+            </div>
 
-            <Row className="degree-informations justify-content-center mb-3">
-                {
-                    degreeInformations?.map(x => {
-                        const icon: IDocumentCardLogoProps = { logoIcon: x.icon!, className: iconProps };
-                        return (
-                            x.link !== "" ?
-                            <Col xl={3} lg={4} sm={6} xs={12} className="mb-3">
-                                <DocumentCard
-                                    aria-label={x.name![language]}
-                                    styles={cardStyles}
-                                    onClick={() => redirectToLink(x.link!)}
-                                >
-                                    <DocumentCardLogo {...icon} />
-                                    <div className={conversationTileClass}>
-                                        <DocumentCardTitle title={x.name![language]} shouldTruncate className={title} />
-                                        <DocumentCardTitle
-                                            title={x.description![language]}
-                                            shouldTruncate
-                                            showAsSecondaryTitle
-                                            className={secondaryTitle}
-                                        />
-                                    </div>
-                                    {/*<DocumentCardActivity activity="Sent March 13, 2018" people={people.slice(6)} />*/}
-                                </DocumentCard>
-                            </Col> : <></>
-                        )
-                    })
-                }
-            </Row>
-        </>
+            <div className="text-center justify-content-center" style={{marginLeft: 'auto', marginRight: 'auto'}}>
+                <ChoiceGroup options={options} onChange={selectionChanged} selectedKey={selectedChoiceGroup} />
+            </div>
+        </div>
     );
 };
 

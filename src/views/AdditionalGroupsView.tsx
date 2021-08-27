@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Icon, Link, Image } from 'office-ui-fabric-react';
+import { Text, Icon, Link, Image, IIconProps } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { FontSizes } from '@fluentui/theme';
 import { Container } from 'react-bootstrap';
@@ -27,6 +27,8 @@ const AdditionalGroupsView = () => {
     const rowsPerPage = React.useRef(0);
     const MAX_ROW_HEIGHT = 280;
     const groups: ExtraGroup[] = getExtraGroups();
+
+    const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
 
     var classNames = mergeStyleSets({
         listGrid: {
@@ -128,7 +130,7 @@ const AdditionalGroupsView = () => {
                             <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale.extraGroups.mug} />
                         </Text>
                         <div className="justify-content-center">
-                            <PrimaryButton text={locale.homepage.section2.card3.button} href="https://discord.gg/9qUGtnKYUU" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
+                            <PrimaryButton text={locale.homepage.section2.card3.button} iconProps={buttonIconProps} href="https://discord.gg/9qUGtnKYUU" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
                         </div>
                     </Card.Section>
                 </Card>
