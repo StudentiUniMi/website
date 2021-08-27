@@ -13,10 +13,7 @@ import LocalizationService from "../services/LocalizationService";
 
 import { Department, Representative } from '../models/Models';
 
-const dropdownStyles: Partial<IDropdownStyles> = { dropdown: {  } };
-
 const iconStyles = { marginRight: '8px' };
-
 
 const RepresentativesView = () => {
     var theme = useTheme();
@@ -55,6 +52,8 @@ const RepresentativesView = () => {
             // Renderizza errore
         }
 
+        console.log("Departments result: ", departmentsResult.value ?? []);
+
         setDepartments(departmentsResult.value ?? []);
     }, [setDepartments]);
 
@@ -69,6 +68,8 @@ const RepresentativesView = () => {
             // Renderizza errore
         }
 
+        console.log("Representatives result: ",representativesResult.value ?? [])
+
         setRepresentatives(representativesResult.value ?? []);
     }, [setRepresentatives, selectedDepartment]);
 
@@ -76,7 +77,8 @@ const RepresentativesView = () => {
         updateRepresentatives();
     }, [updateRepresentatives]);
 
-    const departmentOptions: IDropdownOption[] = departments.map(x => ({ key: x.pk, text: x.name ?? "", data: { icon: x.icon }, /* disabled: x.cdls.length === 0  || x.representatives.length === 0 */}));
+    // To-do: adjust disabled
+    const departmentOptions: IDropdownOption[] = departments.map(x => ({ key: x.pk, text: x.name ?? "", data: { icon: x.icon }, disabled: x.representative_count === 0 }));
 
     return (
         <Container className="representatives text-center">
@@ -102,7 +104,6 @@ const RepresentativesView = () => {
                     options={departmentOptions}
                     onChange={departmentSelectionChanged}
                     selectedKey={selectedDepartment}
-                    styles={dropdownStyles}
                     onRenderPlaceholder={onRenderPlaceholder}
                     onRenderTitle={onRenderTitle}
                     onRenderOption={onRenderOption}

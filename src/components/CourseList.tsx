@@ -51,7 +51,6 @@ const yearMasterDegreeFilterOptions: IDropdownOption[] = [
 const CourseList= (props: Props) => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
-    const [courses, setCourses] = React.useState<Course[]>([]);
     const columnCount = React.useRef(0);
     const rowHeight = React.useRef(0);
     const rowsPerPage = React.useRef(0);
@@ -113,8 +112,8 @@ const CourseList= (props: Props) => {
     // Filters gestion
     
     /* To-do: Must adjust this, no is_master field available in apis */
-    let yearFilterOptions = props.degree.name === "info_magistrale" ? yearMasterDegreeFilterOptions : yearBachelorDegreeFilterOptions; 
-    let filteredCourses = courses;
+    let yearFilterOptions = props.degree.slug === "magistrale_informatica" ? yearMasterDegreeFilterOptions : yearBachelorDegreeFilterOptions; 
+    let filteredCourses = props.courses;
 
     if (nameFilter !== "") { filteredCourses = filteredCourses.filter(x => x.name?.toLocaleLowerCase()?.includes(nameFilter.toLocaleLowerCase())); }
     if (semesterFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.semester === semesterFilter); }
@@ -129,9 +128,7 @@ const CourseList= (props: Props) => {
                     <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
                 </Separator>
             </div> 
-
-            <LoadingSpinner loading={props.loadingCourses} error={props.errorLoadingCourses} />
-
+            
             <FocusZone>
                 <div className="mb-4">
                     <Row className="justify-content-center">
@@ -163,12 +160,14 @@ const CourseList= (props: Props) => {
                     </Row>
                 </div>
 
+                <LoadingSpinner loading={props.loadingCourses} error={props.errorLoadingCourses} />
                 {filteredCourses.length === 0 ? 
                     <div className="justify-content-center">
                         <Text style={{ fontSize: FontSizes.size14, backgroundColor: theme.palette.neutralLighter, padding: '4px' }}><Icon iconName="Info" /> {locale.courses.groupsNotFound}</Text>
                     </div>
                     :
                     <div className="course-list">
+                        
                         <List
                             className={classNames.listGrid}
                             items={filteredCourses}

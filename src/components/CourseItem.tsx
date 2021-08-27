@@ -53,11 +53,13 @@ const CourseItem = (props: Props) => {
     /* To-do: adjust this data.year === -1 */
     if (data.year === -1) personaIconUrl = process.env.PUBLIC_URL + `/degree_groups_images/unimi150.jpg`;  /* To-do: this must be adjusted */
     //if (data.year === -1) personaIconUrl = process.env.PUBLIC_URL + `/degree_groups_images/${data.cdl}150.jpg`; 
-    else { personaIconUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${data.group!.id}.png`; }
+    else { personaIconUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${data.group?.id}.png`; }
 
     // CFU inizialization
     if (data.cfu !== null) {
         cfuText = <>{data.cfu} CFU</>;
+    } else {
+        cfuText = <>N/A CFU</>;
     }
 
     // Year inizialization
@@ -86,7 +88,7 @@ const CourseItem = (props: Props) => {
     // Main text inizialization
     if (data.year === -1 && (data.group!.invite_link === "" || data.group!.invite_link === null)) {
         mainText = (<><JsxParser bindings={{ theme: theme }} components={{ Text, Link, Icon }} jsx={locale.courses.contactAdmin} /></> );
-    } else if (data.year === -1 && (data.group!.invite_link !== "" && data.group!.invite_link !== null)) {
+    } else if (data.year === -1 && (data.group?.invite_link !== "" && data.group?.invite_link !== null)) {
         mainText = locale.courses.mainGroupDescription;
     }
 
@@ -146,30 +148,40 @@ const CourseItem = (props: Props) => {
 
                 {
                     (() => {
-                        if (data.group!.invite_link !== "" && data.group!.invite_link !== null) {
-                            return (
-                                <ActionButton 
-                                    href={data.group!.invite_link as any}
-                                    target="_blank"
-                                    iconProps={telegramGroupIcon} 
-                                    style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }} 
-                                    disabled={data.group!.invite_link === "" || data.group!.invite_link === null}
-                                    className="text-decoration-none"
-                                    allowDisabledFocus>
-                                    {locale.telegramGroup}
-                                </ActionButton>
-                            );
-                        } else if ((data.group!.invite_link === "" || data.group!.invite_link === null) && data.year !== -1) { /* To-do: adjust this data.year === -1 */
-                            return (
-                                <ActionButton
-                                    iconProps={telegramGroupIcon}
-                                    style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
-                                    disabled
-                                    allowDisabledFocus>
-                                    {locale.courses.groupNotAvailable}
-                                </ActionButton>
-                            );
-                        }
+                        if (data.group !== null) {
+                            if (data.group?.invite_link !== "" && data.group?.invite_link !== null) {
+                                return (
+                                    <ActionButton 
+                                        href={data.group?.invite_link as any}
+                                        target="_blank"
+                                        iconProps={telegramGroupIcon} 
+                                        style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }} 
+                                        disabled={data.group?.invite_link === "" || data.group?.invite_link === null}
+                                        className="text-decoration-none"
+                                        allowDisabledFocus>
+                                        {locale.telegramGroup}
+                                    </ActionButton>
+                                );
+                            } else if ((data.group?.invite_link === "" || data.group?.invite_link === null) /* && data.year !== -1 */) { /* To-do: adjust this data.year === -1 */
+                                return (
+                                    <ActionButton
+                                        iconProps={telegramGroupIcon}
+                                        style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
+                                        disabled
+                                        allowDisabledFocus>
+                                        {locale.courses.groupNotAvailable}
+                                    </ActionButton>
+                                );
+                            }
+                        } else return (
+                            <ActionButton
+                                iconProps={telegramGroupIcon}
+                                style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
+                                disabled
+                                allowDisabledFocus>
+                                {locale.courses.groupNotAvailable}
+                            </ActionButton>
+                        )
                     })()
                 }
 

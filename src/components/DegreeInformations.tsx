@@ -12,6 +12,7 @@ import { mergeStyles } from "@fluentui/react";
 import LocalizationService from "../services/LocalizationService";
 import { getDegreeInformations } from '../services/Requests';
 
+/* Updated models */
 import { Degree } from '../models/Models'; 
 
 interface Props { degree?: Degree };
@@ -26,7 +27,7 @@ const DegreeInformations= (props: Props) => {
     const secondaryTitle: any = { fontSize: '14px' };
     const iconProps: any = { fontSize: '24px' };
 
-    const degreeInformations: any[] = getDegreeInformations(props.degree!.pk as unknown as string);
+    const degreeInformations: any[] = getDegreeInformations(props.degree?.slug!);
 
     return (   
         <>    

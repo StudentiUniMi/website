@@ -67,7 +67,7 @@ const CoursesView = () => {
         setDepartments(departmentsResult.value ?? []);
     }, [setDepartments]);
 
-    let departmentOptions: IDropdownOption[] = departments.map(x => ({ key: x.pk, text: x.name ?? "", data: { icon: x.icon }, /* disabled: x.cdls.length === 0 */ }));
+    let departmentOptions: IDropdownOption[] = departments.map(x => ({ key: x.pk, text: x.name ?? "", data: { icon: x.icon }, disabled: x.degree_count === 0 }));
 
     /* Degrees */
     const degreeSelectionChanged = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IDropdownOption): void => {
@@ -103,6 +103,7 @@ const CoursesView = () => {
 
     /* Courses callBack */
     const updateCourses = React.useCallback(async () => {
+        setErrorLoadingCourses(false);
         setLoadingCourses(true);
         let coursesResult = await getCourses(selectedDegree);
 
@@ -116,7 +117,7 @@ const CoursesView = () => {
 
         setCourses(coursesResult.value ?? []);
         setLoadingCourses(false);
-    }, [setCourses, selectedDegree]);
+    }, [setCourses, selectedDegree, setLoadingCourses]);
 
 
     React.useEffect(() => {
@@ -129,22 +130,26 @@ const CoursesView = () => {
 
 
 
+    /* This function inizializes states based on URL parameters. */
 
-    // this must be adjusted I think
+    /* To-do: adjust this
+        Serve un modello nuovo VerboseDegree
+        serve un api apposita che dallo slug nella url restituisce il degree con associato il dipartimento in modo da inizializzare correttamente il tutto
+    */
+
     React.useEffect(() => {
-        if(!didMount.current) {
+        if (!didMount.current) {
             didMount.current = true;
             var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
-            var initialCdl = states.length >= 2 ? states[1] : '';
-            //var possibleDepartments = departments.filter(x => x.cdls.filter(y => y.id === initialCdl).length > 0);
-            //let initialDepartment = possibleDepartments.length > 0 ? possibleDepartments[0].id : '';
-            //setSelectedDegree(initialCdl);
-            //setSelectedDepartment(initialDepartment);
-            
-            
+            var degreeSlug = states.length >= 2 ? states[1] : '';
+            console.log(degreeSlug)
+            //setSelectedDegree(degreeId as unknown as string);
+            //setSelectedDepartment(initialDepartment as unknown as string);
+
             //history.push(`/courses/${initialCdl}`); it is manuele's fault if the router didn't work correctly. noob
         }
-    }, [history, departments]);
+    }, [history, departments, degrees]);
+
 
 
     

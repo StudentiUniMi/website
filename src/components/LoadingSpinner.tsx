@@ -17,11 +17,11 @@ const LoadingSpinner = (props: Props) => {
     return (
         <>
             {
-            props.loading ? <div>Errore! Dennis sa rutt!</div>
-            :
-            <div>
-                <Spinner label="Wait, i'm loading..." ariaLive="assertive" labelPosition="right" size={SpinnerSize.large} theme={theme} />
-            </div>
+            props.error ? <div>Errore! Dennis sa rutt!</div> :
+                props.loading ? 
+                <div>
+                    <Spinner label="Wait, i'm loading..." ariaLive="assertive" labelPosition="right" size={SpinnerSize.large} theme={theme} />
+                </div> : <></>
             }
         </>
     )

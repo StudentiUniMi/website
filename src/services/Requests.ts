@@ -93,15 +93,13 @@ export async function getRepresentatives(departmentKey: string): Promise<Result<
 
 
 /* Temporary function to retrieve degree informations. */
-export const getDegreeInformations = (degreeKey: string): any[] => {
-    const degree: any = getAllCdls().filter(x => x.id === degreeKey);
-    return degree.redirects;
+export const getDegreeInformations = (degreeSlug: string): any[] => {
+    return getAllCdls().filter(x => x.id === degreeSlug)[0]?.redirects ?? [];
 }
 
 /* Temporary function to retrieve degree admins. */
-export const getDegreeAdmins = (degreeKey: string): Admin[] => {
-    const degree: any = getAllCdls().filter(x => x.id === degreeKey);
-    return degree.admins;
+export const getDegreeAdmins = (degreeSlug: string): Admin[] => {
+    return getAllCdls().filter(x => x.id === degreeSlug)[0]?.admins ?? [];
 }
 
 

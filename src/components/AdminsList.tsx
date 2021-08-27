@@ -18,7 +18,7 @@ const AdminsList = (props: Props) => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
 
-    const admins: Admin[] = getDegreeAdmins(props.degree!.pk as unknown as string);
+    const admins: Admin[] = getDegreeAdmins(props.degree?.slug!);
 
     return (
         <>

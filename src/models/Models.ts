@@ -7,6 +7,8 @@ export interface Department {
     pk: number,
     name?: string,
     icon?: string,
+    degree_count?: number,
+    representative_count?: number
 }
 
 export interface Degree {
