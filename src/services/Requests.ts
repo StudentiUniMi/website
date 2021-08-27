@@ -21,6 +21,8 @@ import { Department, Degree, Course, Representative } from '../models/Models';
 const api_endpoint = 'https://api.studentiunimi.it/api';
 const department_endpoint = '/departments';
 const degree_endpoint = '/degrees';
+const course_endpoint = '/courses';
+const representative_endpoint = '/representatives';
 
 class Result<T>
 {
@@ -64,7 +66,7 @@ export async function getDepartments(): Promise<Result<Department[]>> {
  * @param departmentKey Key or parameter to query by department
  */
 export async function getDegrees(departmentKey: string): Promise<Result<Degree[]>> {
-    return getAsync<Degree[]>(`${api_endpoint}${department_endpoint}/${departmentKey}`);
+    return getAsync<Degree[]>(`${api_endpoint}${degree_endpoint}?dep_id=${departmentKey}`);
 }
 
 /**
@@ -72,7 +74,7 @@ export async function getDegrees(departmentKey: string): Promise<Result<Degree[]
  * @param degreeKey Key or parameter to query by degree
  */
 export async function getCourses(degreeKey: string): Promise<Result<Course[]>> {
-    return getAsync<Course[]>(`${api_endpoint}${degree_endpoint}/${degreeKey}`);
+    return getAsync<Course[]>(`${api_endpoint}${course_endpoint}?deg_id=${degreeKey}`);
 }
 
 /**
@@ -80,7 +82,7 @@ export async function getCourses(degreeKey: string): Promise<Result<Course[]>> {
  * @param departmentKey Key or parameter to query by department
  */
 export async function getRepresentatives(departmentKey: string): Promise<Result<Representative[]>> {
-    return getAsync<Representative[]>(`${api_endpoint}${department_endpoint}/${departmentKey}`);
+    return getAsync<Representative[]>(`${api_endpoint}${representative_endpoint}?dep_id=${departmentKey}`);
 }
 
 
