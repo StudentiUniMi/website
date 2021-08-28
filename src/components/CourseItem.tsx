@@ -63,12 +63,12 @@ const CourseItem = (props: Props) => {
     }
 
     // Year inizialization
-    switch (data.year) {
-        case -1:
+    switch (data?.year) {
+        case -1 || null:
             yearText = null;
             break;
-        case null:
-            yearText = null;
+        case undefined:
+            yearText = <span>N/A</span>;
             break;
         case -2:
             yearText = <span>{locale.courses.complementary}</span>;
@@ -79,10 +79,12 @@ const CourseItem = (props: Props) => {
     }
 
     // Semester inizialization
-    if (data.semester !== null) {
-        semesterText = <span>{data.semester}° {locale.courses.semester}</span>;
-    } else {
+    if (data.semester === -1 || data.semester === null) {
         semesterText = null;
+    } else if (data.semester === undefined) {
+        semesterText = <span>N/A</span>;
+    } else if (data.semester !== null) {
+        semesterText = <span>{data.semester}° {locale.courses.semester}</span>;
     }
 
     // Main text inizialization

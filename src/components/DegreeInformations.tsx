@@ -52,7 +52,7 @@ const DegreeInformations= (props: Props) => {
             iconProps: { iconName: x.icon!, className: iconProps, color: theme.palette.themePrimary }, 
             onClick: () => {redirectToLink(x.link!)} 
         });
-    })
+    });
 
     return (   
         <div className='text-center degree-informations mb-4'>    
