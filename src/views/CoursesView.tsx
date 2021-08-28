@@ -23,9 +23,6 @@ import { Department, Degree, Course } from "../models/Models";
 initializeIcons();
 const iconStyles = { marginRight: '8px' };
 
-/* https://developer.microsoft.com/en-us/fluentui#/controls/web/dropdown
-For dropdown options loading errors */
-
 const CoursesView = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
@@ -97,17 +94,17 @@ const CoursesView = () => {
     
     if (triennali.length !== 0) {
         degreesOptions.push({ key: 'Header', text: 'Triennali', itemType: DropdownMenuItemType.Header });
-        degreesOptions.push(...triennali.map(x => ({ key: x.pk, text: x.name ?? "", data: { slug: x.slug, icon: x.icon }, /*disabled: x.courses.length === 0*/ })));
+        degreesOptions.push(...triennali.map(x => ({ key: x.pk, text: x.name ?? "", data: { slug: x.slug, icon: x.icon } })));
     }
     
     if (magistrali.length !== 0) {
         degreesOptions.push({ key: 'Header', text: 'Magistrali', itemType: DropdownMenuItemType.Header });
-        degreesOptions.push(...magistrali.map(x => ({ key: x.pk, text: x.name ?? "", data: { slug: x.slug, icon: x.icon }, /*disabled: x.courses.length === 0*/ })));
+        degreesOptions.push(...magistrali.map(x => ({ key: x.pk, text: x.name ?? "", data: { slug: x.slug, icon: x.icon } })));
     }
 
     const degreeSelectionChanged = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IDropdownOption): void => {
         console.log(option?.key)
-        //if (option?.key as string !== '' && option?.key as string === selectedDegree) return;
+        // To-do: if (option?.key as string !== '' && option?.key as string === selectedDegree) return;
         setSelectedDegree(option?.key as string ?? '');
         updateCourses();
         history.push(`/courses/${option?.data.slug}`);
@@ -144,7 +141,7 @@ const CoursesView = () => {
         let verboseDegreeResult = await getVerboseDegree(degreeSlug);
         
         if (verboseDegreeResult.status !== 200) {
-            // To-do: show error
+            // To-do: show error (do we need to show an apposite error? I think not)
         }
         
         console.log("VerboseDegree result: ", verboseDegreeResult.value ?? {});
@@ -169,7 +166,7 @@ const CoursesView = () => {
     }, [updateDepartments, updateVerboseDegree]);
     
     
-    // Chosen degree : Degree to pass it to various components as property
+    /* Chosen degree : Degree to pass it to various components as property */
     let degree: Degree = degrees.filter(x => x.pk === selectedDegree as unknown as number)[0] ?? [];
 
 

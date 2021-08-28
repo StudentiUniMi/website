@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from 'react-bootstrap';
 import { FontSizes } from '@fluentui/theme';
 import { Text, Icon } from 'office-ui-fabric-react';
-import { Dropdown, IDropdownOption, IDropdownProps } from 'office-ui-fabric-react/lib/Dropdown';
+import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { useHistory } from 'react-router-dom';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { getRepresentatives, getDepartments } from '../services/Requests'
