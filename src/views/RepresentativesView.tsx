@@ -25,34 +25,37 @@ const RepresentativesView = () => {
 
     const [loadingRepresentatives, setLoadingRepresentatives] = React.useState<boolean>(false);
     const [errorLoadingRepresentatives, setErrorLoadingRepresentatives] = React.useState<boolean>(false);
+    const [errorLoadingDepartments, setErrorLoadingDepartments] = React.useState<boolean>(false);
 
     const departmentSelectionChanged = (
         ev?: React.FormEvent<HTMLElement | HTMLInputElement>,
         option?: IDropdownOption
     ): void => {
         setSelectedDepartment(option?.key as string ?? '');
+        updateRepresentatives();
         history.push(`/representatives/${option?.key as string}`);
     };
 
-    /* To-do: test the url parameters inizialization */
-    React.useEffect(() =>
+    /* To-do: adjust initialization via url parameters */
+    // To-do: need slug to use it in url parameters initialization
+
+    const initializeRepresentativesViaUrl = React.useCallback(() =>
     {
-        if(!didMount.current)
-        {
-            didMount.current = true
-            var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
-            var initialDepartment= states.length >= 2 ? states[1] : '';
-            setSelectedDepartment(initialDepartment);
-            history.push(`/representatives/${initialDepartment}`);
-        }
-    }, [history]);
+        didMount.current = true
+        var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
+        var departmentSlug = states.length >= 2 ? states[1] : '';
+        setSelectedDepartment(departments.filter(x => x.slug === departmentSlug)[0]?.pk as unknown as string);
+        // history.push(`/representatives/${departmentSlug}`);   do we need this?
+    }, [departments, history.location.pathname]);
 
     /* Departments callBack */
     const updateDepartments = React.useCallback(async () => {
+        setErrorLoadingDepartments(false);
         let departmentsResult = await getDepartments();
 
         if (departmentsResult.status !== 200) {
-            // Renderizza errore
+            setErrorLoadingDepartments(true);
+            return;
         }
 
         console.log("Departments result: ", departmentsResult.value ?? []);
@@ -79,11 +82,12 @@ const RepresentativesView = () => {
     }, [setRepresentatives, selectedDepartment]);
 
     React.useEffect(() => {
-        updateRepresentatives();
-        updateDepartments();
-    }, [updateRepresentatives, updateDepartments]);
+        if (!didMount.current) {
+            updateDepartments();
+            initializeRepresentativesViaUrl();
+        }
+    }, [updateDepartments, initializeRepresentativesViaUrl]);
 
-    // To-do: test disabled when field is available
     // To-do: need slug to use it in url parameters initialization
     const departmentOptions: IDropdownOption[] = departments.map(x => ({ key: x.pk, text: x.name ?? "", data: { icon: x.icon }, disabled: x.representative_count === 0 }));
 
@@ -111,9 +115,10 @@ const RepresentativesView = () => {
                     options={departmentOptions}
                     onChange={departmentSelectionChanged}
                     selectedKey={selectedDepartment}
-                    onRenderPlaceholder={onRenderPlaceholder}
                     onRenderTitle={onRenderTitle}
                     onRenderOption={onRenderOption}
+                    errorMessage={errorLoadingDepartments ? 'Errore durante il caricamento dei dipartimenti.' : undefined}
+                    disabled={errorLoadingDepartments}
                 />
             </div>
 
@@ -144,15 +149,6 @@ const onRenderTitle = (options?: IDropdownOption[]): JSX.Element => {
                 <Icon style={iconStyles} iconName={option.data.icon} aria-hidden="true" title={option.data.icon} />
             )}
             <span>{option.text}</span>
-        </div>
-    );
-};
-
-const onRenderPlaceholder = (props?: IDropdownProps): JSX.Element => {
-    return (
-        <div className="dropdownExample-placeholder">
-            <Icon style={iconStyles} iconName={'SurveyQuestions'} aria-hidden="true" />
-            <span>{props?.placeholder}</span>
         </div>
     );
 };

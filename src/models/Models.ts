@@ -7,6 +7,7 @@ export interface Department {
     pk: number,
     name?: string,
     icon?: string,
+    slug?: string,
     degree_count?: number,
     representative_count?: number
 }
@@ -17,6 +18,16 @@ export interface Degree {
     icon?: string,
     type?: string,
     slug?: string
+}
+
+/* This is a model created just to retrieve degree and department when visiting for example courses/triennale_informatica and initialize the component. */
+export interface VerboseDegree { 
+    pk: number,
+    name?: string,
+    icon?: string,
+    type?: string,
+    slug?: string,
+    department?: Department
 }
 
 export interface Course {

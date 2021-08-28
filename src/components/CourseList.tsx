@@ -155,7 +155,7 @@ const CourseList= (props: Props) => {
                 
                 <LoadingSpinner loading={props.loadingCourses} error={props.errorLoadingCourses} />
                 
-                {filteredCourses.length === 0 && !props.errorLoadingCourses ? 
+                {filteredCourses.length === 0 && !props.errorLoadingCourses && !props.errorLoadingCourses ? 
                     <div className="justify-content-center">
                         <Text style={{ fontSize: FontSizes.size14, backgroundColor: theme.palette.neutralLighter, padding: '4px' }}><Icon iconName="Info" /> {locale.courses.groupsNotFound}</Text>
                     </div>

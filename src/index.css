@@ -241,10 +241,6 @@ button:focus,
     margin-bottom: 10px !important;
   }
 }
-.rules a {
-  padding-left: 0 !important;
-}
-
 .rules .ms-Button-flexContainer {
   margin: 10px;
 }
@@ -278,10 +274,6 @@ button:focus,
   width: 48px;
 }
 
-footer .fab {
-  font-size: 18px;
-}
-
 .MuiChip-label {
   font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-size: 11px;
@@ -297,6 +289,10 @@ footer .fab {
 
 .ms-MessageBar-dismissSingleLine {
   display: none;
+}
+
+.ms-MessageBar-text {
+  display: block;
 }
 
 /* ChoiceGroup in DegreeInformations adjustments */

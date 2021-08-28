@@ -27,8 +27,6 @@ const LoadingSpinner = (props: Props) => {
         updateError();
     }, [updateError]);
 
-    console.log(showError, props.error)
-
     const ErrorExample = (p: IExampleProps) => (
         <MessageBar
             messageBarType={MessageBarType.error}
@@ -36,13 +34,14 @@ const LoadingSpinner = (props: Props) => {
             onDismiss={p.resetChoice}
             dismissButtonAriaLabel="Close"
         >
+            {/* To-do: translate this */}
             Si è verificato un errore; contatta un amministratore.
         </MessageBar>
     );
 
     return (
         <>
-            { props.error ? <div style={{ display: showError ? 'block' : 'none' }}><ErrorExample resetChoice={() => setShowError(false)} /></div> :
+            { props.error ? <div style={{ display: showError ? 'block' : 'none', marginLeft: 'auto', marginRight: 'auto', maxWidth: 400 }}><ErrorExample resetChoice={() => setShowError(false)} /></div> :
                 props.loading ? 
                 <div>
                     <Spinner label={locale.loading} ariaLive="assertive" labelPosition="right" size={SpinnerSize.large} theme={theme} />

@@ -14,13 +14,14 @@ import Rules from '../data/Rules.json';
 import Rule from '../models/Rule';
 
 /* Updated models */
-import { Department, Degree, Course, Representative } from '../models/Models';
+import { Department, Degree, VerboseDegree, Course, Representative } from '../models/Models';
 
 const api_endpoint = 'https://api.studentiunimi.it/api';
-const department_endpoint = '/departments';
-const degree_endpoint = '/degrees';
-const course_endpoint = '/courses';
-const representative_endpoint = '/representatives';
+const departments_endpoint = '/departments';
+const degrees_endpoint = '/degrees';
+const degree_endpoint = '/degree';
+const courses_endpoint = '/courses';
+const representatives_endpoint = '/representatives';
 
 /* Main class to build response */
 class Result<T>
@@ -57,7 +58,7 @@ async function getAsync<T>(path: string) : Promise<Result<T>>
  * This function retrieves the existing departments.
  */
 export async function getDepartments(): Promise<Result<Department[]>> {
-    return getAsync<Department[]>(api_endpoint + department_endpoint);
+    return getAsync<Department[]>(api_endpoint + departments_endpoint);
 };
 
 /**
@@ -65,7 +66,7 @@ export async function getDepartments(): Promise<Result<Department[]>> {
  * @param departmentKey Key or parameter to query by department
  */
 export async function getDegrees(departmentKey: string): Promise<Result<Degree[]>> {
-    return getAsync<Degree[]>(`${api_endpoint}${degree_endpoint}?dep_id=${departmentKey}`);
+    return getAsync<Degree[]>(`${api_endpoint}${degrees_endpoint}?dep_id=${departmentKey}`);
 }
 
 /**
@@ -73,7 +74,7 @@ export async function getDegrees(departmentKey: string): Promise<Result<Degree[]
  * @param degreeKey Key or parameter to query by degree
  */
 export async function getCourses(degreeKey: string): Promise<Result<Course[]>> {
-    return getAsync<Course[]>(`${api_endpoint}${course_endpoint}?deg_id=${degreeKey}`);
+    return getAsync<Course[]>(`${api_endpoint}${courses_endpoint}?deg_id=${degreeKey}`);
 }
 
 /**
@@ -81,10 +82,18 @@ export async function getCourses(degreeKey: string): Promise<Result<Course[]>> {
  * @param departmentKey Key or parameter to query by department
  */
 export async function getRepresentatives(departmentKey: string): Promise<Result<Representative[]>> {
-    return getAsync<Representative[]>(`${api_endpoint}${representative_endpoint}?dep_id=${departmentKey}`);
+    return getAsync<Representative[]>(`${api_endpoint}${representatives_endpoint}?dep_id=${departmentKey}`);
 }
 
+/**
+ * This function retrieves a degree filtering by slug.
+ * @param degreeSlug Slug of the degree
+ */
+export async function getVerboseDegree(degreeSlug: string): Promise<Result<VerboseDegree>> {
+    return getAsync<VerboseDegree>(`${api_endpoint}${degree_endpoint}?slug=${degreeSlug}`);
+}
 
+/* ----------------------------------------------------------- */
 
 /* Temporary function to retrieve degree informations. */
 export const getDegreeInformations = (degreeSlug: string): any[] => {
