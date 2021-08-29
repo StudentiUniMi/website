@@ -66,7 +66,7 @@ const DegreeInformations= (props: Props) => {
             </div>
 
             {
-                options.length === 0 ? <Message text={"Nessun collegamento disponibile."} />
+                options.length === 0 ? <Message text={locale.noRedirectsAvailable} />
                 :
                 <div className="text-center justify-content-center" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
                     <ChoiceGroup options={options} onChange={selectionChanged} selectedKey={selectedChoiceGroup} />

@@ -10,6 +10,9 @@ class LocalizationService {
                 it: {
                     loading: "Caricamento in corso..",
                     telegramGroup: 'Gruppo Telegram',
+                    errorLoadingDepartments: 'Errore durante il caricamento dei dipartimenti.',
+                    errorLoadingDegrees: 'Errore durante il caricamento dei corsi di laurea.',
+                    noRedirectsAvailable: 'Non ci sono collegamenti disponibili.',
                     headerMenuItems: {
                         home: 'Home',
                         aboutUs: 'Chi siamo',
@@ -231,6 +234,9 @@ class LocalizationService {
                 en: {
                     loading: "Loading..",
                     telegramGroup: 'Telegram Group',
+                    errorLoadingDepartments: 'Error has occured while retrieving departments.',
+                    errorLoadingDegrees: 'Error has occured while retrieving degrees.',
+                    noRedirectsAvailable: 'There are no redirects available.',
                     headerMenuItems: {
                         home: 'Home',
                         aboutUs: 'About Us',

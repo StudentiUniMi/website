@@ -9,13 +9,13 @@ import { semibold } from '../fonts';
 import { FontSizes } from '@fluentui/theme';
 import { Separator } from '@fluentui/react/lib/Separator';
 import { useTheme } from '@fluentui/react-theme-provider';
+import { Degree, CourseDegree } from '../models/Models';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import CourseItem from './CourseItem';
 import LocalizationService from "../services/LocalizationService";
 import LoadingSpinner from './LoadingSpinner';
 import Message from './Message';
-import { Degree, CourseDegree } from '../models/Models';
 
 interface Props { degree: Degree, courses: CourseDegree[], loadingCourses: boolean, errorLoadingCourses: boolean };
 
@@ -156,7 +156,7 @@ const CourseList= (props: Props) => {
                 
                 {
                     props.loadingCourses ? <LoadingSpinner loading={props.loadingCourses} error={props.errorLoadingCourses} />
-                    : filteredCourses.length === 0 && !props.errorLoadingCourses ?
+                    : filteredCourses.length === 0 ?
                     <div className="justify-content-center">
                         <Message text={locale.courses.groupsNotFound} />
                     </div> : <></>

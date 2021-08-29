@@ -117,8 +117,8 @@ const RepresentativesView = () => {
                     selectedKey={selectedDepartment}
                     onRenderTitle={onRenderTitle}
                     onRenderOption={onRenderOption}
-                    errorMessage={errorLoadingDepartments ? 'Errore durante il caricamento dei dipartimenti.' : undefined}
-                    disabled={errorLoadingDepartments}
+                    errorMessage={errorLoadingDepartments ? locale.errorLoadingDepartments : undefined}
+                    disabled={errorLoadingDepartments || departments.length === 0}
                 />
             </div>
 

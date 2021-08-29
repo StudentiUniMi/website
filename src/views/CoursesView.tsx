@@ -198,9 +198,9 @@ const CoursesView = () => {
                         onChange={departmentSelectionChanged}
                         selectedKey={selectedDepartment}
                         styles={dropdownStyles}
-                        errorMessage={errorLoadingDepartments ? 'Errore durante il caricamento dei dipartimenti.' : undefined}
+                        errorMessage={errorLoadingDepartments ? locale.errorLoadingDepartments : undefined}
                         theme={theme}
-                        disabled={errorLoadingDepartments}
+                        disabled={errorLoadingDepartments || departments.length === 0}
                     />
                 </Col>
 
@@ -217,7 +217,7 @@ const CoursesView = () => {
                         styles={dropdownStyles}
                         theme={theme}
                         disabled={selectedDepartment === '' || errorLoadingDegrees}
-                        errorMessage={errorLoadingDegrees ? 'Errore durante il caricamento dei corsi di laurea.' : undefined}
+                        errorMessage={errorLoadingDegrees ? locale.errorLoadingDegrees : undefined}
                     />
                 </Col>
             </Row>

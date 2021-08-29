@@ -1,6 +1,9 @@
 interface ILocalizationStrings {
     telegramGroup: string,
     loading: string,
+    errorLoadingDepartments: string,
+    errorLoadingDegrees: string,
+    noRedirectsAvailable: string,
     headerMenuItems: {
         home: string,
         aboutUs: string,
