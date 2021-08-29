@@ -14,6 +14,7 @@ import Row from 'react-bootstrap/Row';
 import CourseItem from './CourseItem';
 import LocalizationService from "../services/LocalizationService";
 import LoadingSpinner from './LoadingSpinner';
+import Message from './Message';
 import { Degree, CourseDegree } from '../models/Models';
 
 interface Props { degree: Degree, courses: CourseDegree[], loadingCourses: boolean, errorLoadingCourses: boolean };
@@ -157,7 +158,7 @@ const CourseList= (props: Props) => {
                 
                 {filteredCourses.length === 0 && !props.errorLoadingCourses && !props.errorLoadingCourses ? 
                     <div className="justify-content-center">
-                        <Text style={{ fontSize: FontSizes.size14, backgroundColor: theme.palette.neutralLighter, padding: '4px' }}><Icon iconName="Info" /> {locale.courses.groupsNotFound}</Text>
+                        <Message text={locale.courses.groupsNotFound} />
                     </div>
                     :
                     <div className="course-list">
