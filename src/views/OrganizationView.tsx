@@ -48,7 +48,7 @@ const OrganizationView = () => {
             <div className="mb-4">
                 <div className="mb-3"><Separator><Text variant="large" styles={semibold}>{locale.aboutUs.header1}</Text></Separator></div>
 
-                <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: '230px' }} className="mb-4">
+                <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: '300px' }} className="mb-4">
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                         <Card.Section>
                             <div className="justify-content-center">
