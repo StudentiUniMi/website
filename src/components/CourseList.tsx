@@ -14,9 +14,9 @@ import Row from 'react-bootstrap/Row';
 import CourseItem from './CourseItem';
 import LocalizationService from "../services/LocalizationService";
 import LoadingSpinner from './LoadingSpinner';
-import { Degree, Course } from '../models/Models';
+import { Degree, CourseDegree } from '../models/Models';
 
-interface Props { degree: Degree, courses: Course[], loadingCourses: boolean, errorLoadingCourses: boolean };
+interface Props { degree: Degree, courses: CourseDegree[], loadingCourses: boolean, errorLoadingCourses: boolean };
 
 // Opzioni per la ricerca del semestre
 const semesterFilterOptions: IDropdownOption[] = [ 
@@ -73,7 +73,7 @@ const CourseList= (props: Props) => {
         return rowHeight.current * rowsPerPage.current;
     }, []); 
     
-    const getCell = (e?: Course, index?: number, isScrolling?: boolean) => {
+    const getCell = (e?: CourseDegree, index?: number, isScrolling?: boolean) => {
         return (
             <div data-is-focusable className="listGridTile" style={{ height: rowHeight.current + 'px', width: 100 / columnCount.current + '%' }}>
                 <CourseItem key={index} data={e!} />
@@ -108,7 +108,7 @@ const CourseList= (props: Props) => {
     let yearFilterOptions = props.degree.slug === "magistrale_informatica" ? yearMasterDegreeFilterOptions : yearBachelorDegreeFilterOptions; 
     let filteredCourses = props.courses;
 
-    if (nameFilter !== "") { filteredCourses = filteredCourses.filter(x => x.name?.toLocaleLowerCase()?.includes(nameFilter.toLocaleLowerCase())); }
+    if (nameFilter !== "") { filteredCourses = filteredCourses.filter(x => x.course?.name?.toLocaleLowerCase()?.includes(nameFilter.toLocaleLowerCase())); }
     if (semesterFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.semester === semesterFilter); }
     if (yearFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.year === yearFilter); }
 

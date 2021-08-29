@@ -20,23 +20,8 @@ export interface Degree {
     slug?: string
 }
 
-/* This is a model created just to retrieve degree and department when visiting for example courses/triennale_informatica and initialize the component. */
-export interface VerboseDegree { 
-    pk: number,
-    name?: string,
-    icon?: string,
-    type?: string,
-    slug?: string,
-    department?: Department
-}
-
-export interface Course {
-    pk: number,
-    name?: string,
-    cfu?: number,
-    wiki_link?: string,
-    links: Website[],
-    group?: Group,
+export interface CourseDegree {
+    course?: Course,
     year?: number,
     semester?: number
 }
@@ -47,9 +32,25 @@ export interface Representative {
 }
 
 
+/* This is a model created just to retrieve degree and department when visiting for example courses/triennale_informatica and initialize the component. */
+export interface VerboseDegree {
+    pk: number,
+    name?: string,
+    icon?: string,
+    type?: string,
+    slug?: string,
+    department?: Department
+}
 
 
-
+export interface Course {
+    pk: number,
+    name?: string,
+    cfu?: number,
+    wiki_link?: string,
+    links: Website[],
+    group?: Group,
+}
 
 export interface Tguser {
     id: number,

@@ -18,7 +18,7 @@ import LocalizationService from "../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 import DegreeInformations from "../components/DegreeInformations";
 import AdminsList from '../components/AdminsList';
-import { Department, Degree, Course } from "../models/Models";
+import { Department, Degree, CourseDegree } from "../models/Models";
 
 initializeIcons();
 const iconStyles = { marginRight: '8px' };
@@ -36,7 +36,7 @@ const CoursesView = () => {
     /* States */
     const [departments, setDepartments] = React.useState<Department[]>([]);
     const [degrees, setDegrees] = React.useState<Degree[]>([]);
-    const [courses, setCourses] = React.useState<Course[]>([]);
+    const [courses, setCourses] = React.useState<CourseDegree[]>([]);
 
     const [loadingCourses, setLoadingCourses] = React.useState<boolean>(false);
     const [errorLoadingDepartments, setErrorLoadingDepartments] = React.useState<boolean>(false);

@@ -12,9 +12,10 @@ import CanMembers from '../data/CanMembers.json';
 import CanMember from '../models/CanMember';
 import Rules from '../data/Rules.json';
 import Rule from '../models/Rule';
+import OldCourse from '../models/Course';
 
 /* Updated models */
-import { Department, Degree, VerboseDegree, Course, Representative } from '../models/Models';
+import { Department, Degree, VerboseDegree, CourseDegree, Representative } from '../models/Models';
 
 const api_endpoint = 'https://api.studentiunimi.it/api';
 const departments_endpoint = '/departments';
@@ -73,8 +74,8 @@ export async function getDegrees(departmentKey: string): Promise<Result<Degree[]
  * This function retrieves the courses of a specific degree.
  * @param degreeKey Key or parameter to query by degree
  */
-export async function getCourses(degreeKey: string): Promise<Result<Course[]>> {
-    return getAsync<Course[]>(`${api_endpoint}${courses_endpoint}?deg_id=${degreeKey}`);
+export async function getCourses(degreeKey: string): Promise<Result<CourseDegree[]>> {
+    return getAsync<CourseDegree[]>(`${api_endpoint}${courses_endpoint}?deg_id=${degreeKey}`);
 }
 
 /**
@@ -115,7 +116,7 @@ export const getContributors = (): Contributor[] => Contributors;
 
 export const getAdmins = (): Admin[] => ([] as Admin[]).concat(...(getAllCdls().map(x => x.admins as any as Admin[])));
 
-export const getGroupsLength = (): number => extraGroups.length + ([] as Course[]).concat(...getAllCdls().map(x => x.courses as any as Course[])).length;
+export const getGroupsLength = (): number => extraGroups.length + ([] as OldCourse[]).concat(...getAllCdls().map(x => x.courses as any as OldCourse[])).length;
 
 export const getCdlsLength = (): number => getAllCdls().length;
 

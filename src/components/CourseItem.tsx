@@ -15,10 +15,10 @@ import LocalizationService from "../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 
 /* Updated models */
-import { Course } from '../models/Models';
+import { CourseDegree } from '../models/Models';
 
 initializeIcons();
-interface Props { data: Course };
+interface Props { data: CourseDegree };
 
 const CourseItem = (props: Props) => {
     const theme = useTheme();
@@ -40,11 +40,12 @@ const CourseItem = (props: Props) => {
     var mainText : any;
 
     /// PrimaryText inizialization
-    if (data?.name!.length >= 33) {
-        primaryText = <Text styles={semibold}>{data.name}</Text>;
+    const courseNameLength: number | undefined = data.course?.name?.length;
+    if (courseNameLength !== undefined && courseNameLength >= 33) {
+        primaryText = <Text styles={semibold}>{data.course?.name}</Text>;
     } else {
         overflow = true;
-        primaryText = <div style={{ wordWrap: 'break-word', whiteSpace: 'normal', marginTop: '2px' }}><Text styles={semibold}>{data.name}</Text></div>;
+        primaryText = <div style={{ wordWrap: 'break-word', whiteSpace: 'normal', marginTop: '2px' }}><Text styles={semibold}>{data.course?.name}</Text></div>;
     }
 
     // PersonaUrl inizialization
@@ -53,11 +54,11 @@ const CourseItem = (props: Props) => {
     /* To-do: adjust this data.year === -1 */
     if (data.year === -1) personaIconUrl = process.env.PUBLIC_URL + `/degree_groups_images/unimi150.jpg`;  /* To-do: this must be adjusted */
     //if (data.year === -1) personaIconUrl = process.env.PUBLIC_URL + `/degree_groups_images/${data.cdl}150.jpg`; 
-    else { personaIconUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${data.group?.id}.png`; }
+    else { personaIconUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${data.course?.group?.id}.png`; }
 
     // CFU inizialization
-    if (data.cfu !== null) {
-        cfuText = <>{data.cfu} CFU</>;
+    if (data.course?.cfu !== null) {
+        cfuText = <>{data.course?.cfu} CFU</>;
     } else {
         cfuText = <>N/A CFU</>;
     }
@@ -70,7 +71,7 @@ const CourseItem = (props: Props) => {
         case undefined:
             yearText = <span>N/A</span>;
             break;
-        case -2:
+        case -2: /* To-do: da definire */
             yearText = <span>{locale.courses.complementary}</span>;
             break;
         default:
@@ -88,17 +89,17 @@ const CourseItem = (props: Props) => {
     }
 
     // Main text inizialization
-    if (data.year === -1 && (data.group!.invite_link === "" || data.group!.invite_link === null)) {
+    if (data.year === -1 && (data.course?.group?.invite_link === "" || data.course?.group?.invite_link === null)) {
         mainText = (<><JsxParser bindings={{ theme: theme }} components={{ Text, Link, Icon }} jsx={locale.courses.contactAdmin} /></> );
-    } else if (data.year === -1 && (data.group?.invite_link !== "" && data.group?.invite_link !== null)) {
+    } else if (data.year === -1 && (data.course?.group?.invite_link !== "" && data.course?.group?.invite_link !== null)) {
         mainText = locale.courses.mainGroupDescription;
     }
 
     // Websites inizialization
-    let websites: any[] = [];
+    let websites: any[] | undefined = [];
 
-    if ((data.links ?? []).length !== 0) {
-        websites = data.links.map(
+    if ((data.course?.links ?? []).length !== 0) {
+        websites = data.course?.links.map(
             (e, i) => {
                 return {
                     key: i,
@@ -117,7 +118,7 @@ const CourseItem = (props: Props) => {
                 ev.preventDefault();
             }
         },
-        items: websites,
+        items: websites as any[],
         directionalHintFixed: true,
     };
     
@@ -125,9 +126,9 @@ const CourseItem = (props: Props) => {
         <Card tokens={cardTokens}>
             <Card.Item>
                 {overflow === true ?
-                    <Persona imageUrl={personaIconUrl} onRenderPrimaryText={() => primaryText} text={data.name} />
+                    <Persona imageUrl={personaIconUrl} onRenderPrimaryText={() => primaryText} text={data.course?.name} />
                     :
-                    <Persona imageUrl={personaIconUrl} text={data.name} />
+                    <Persona imageUrl={personaIconUrl} text={data.course?.name} />
                 }
             </Card.Item>
 
@@ -150,21 +151,21 @@ const CourseItem = (props: Props) => {
 
                 {
                     (() => {
-                        if (data.group !== null) {
-                            if (data.group?.invite_link !== "" && data.group?.invite_link !== null) {
+                        if (data.course?.group !== null) {
+                            if (data.course?.group?.invite_link !== "" && data.course?.group?.invite_link !== null) {
                                 return (
                                     <ActionButton 
-                                        href={data.group?.invite_link as any}
+                                        href={data.course?.group?.invite_link as any}
                                         target="_blank"
                                         iconProps={telegramGroupIcon} 
                                         style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }} 
-                                        disabled={data.group?.invite_link === "" || data.group?.invite_link === null}
+                                        disabled={data.course?.group?.invite_link === "" || data.course?.group?.invite_link === null}
                                         className="text-decoration-none"
                                         allowDisabledFocus>
                                         {locale.telegramGroup}
                                     </ActionButton>
                                 );
-                            } else if ((data.group?.invite_link === "" || data.group?.invite_link === null) /* && data.year !== -1 */) { /* To-do: adjust this data.year === -1 */
+                            } else if ((data.course?.group?.invite_link === "" || data.course?.group?.invite_link === null) /* && data.year !== -1 */) { /* To-do: adjust this data.year === -1 */
                                 return (
                                     <ActionButton
                                         iconProps={telegramGroupIcon}
@@ -194,16 +195,16 @@ const CourseItem = (props: Props) => {
                         iconProps={websiteIcon}
                         menuProps={menuProps}
                         allowDisabledFocus
-                        disabled={websites.length === 0}
+                        disabled={websites?.length === 0}
                     /> : <></>
                 }
 
                 {
                     (() => { 
-                        if (data.wiki_link !== null && data.wiki_link !== "") { 
+                        if (data.course?.wiki_link !== null && data.course?.wiki_link !== "") { 
                             return (
                                 <ActionButton
-                                    href={data.wiki_link as any}
+                                    href={data.course?.wiki_link as any}
                                     target="_blank"
                                     className="text-decoration-none"
                                     iconProps={wikiIcon}
@@ -212,7 +213,7 @@ const CourseItem = (props: Props) => {
                                     Wiki
                                 </ActionButton>
                             );
-                        } else if ((data.wiki_link === null || data.wiki_link === "") && data.year !== -1) return (
+                        } else if ((data.course?.wiki_link === null || data.course?.wiki_link === "") && data.year !== -1) return (
                             <ActionButton
                                 disabled
                                 iconProps={wikiIcon}
