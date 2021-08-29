@@ -52,7 +52,7 @@ const CourseItem = (props: Props) => {
     let personaIconUrl: string | undefined;
     
     /* To-do: this must be adjusted */
-    if (data.year === -1) personaIconUrl = process.env.PUBLIC_URL + `/degree_groups_images/unimi150.jpg`;  
+    if (data.year === -1) personaIconUrl = process.env.PUBLIC_URL + `/degree_groups_images/unimi.jpg`;  
     //if (data.year === -1) personaIconUrl = process.env.PUBLIC_URL + `/degree_groups_images/${data.cdl}150.jpg`; 
     else { personaIconUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${data.course?.group?.id}.png`; }
 
