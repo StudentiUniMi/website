@@ -154,15 +154,16 @@ const CourseList= (props: Props) => {
                     </Row>
                 </div>
                 
-                <LoadingSpinner loading={props.loadingCourses} error={props.errorLoadingCourses} />
-                
-                {filteredCourses.length === 0 && !props.errorLoadingCourses && !props.errorLoadingCourses ? 
+                {
+                    props.loadingCourses ? <LoadingSpinner loading={props.loadingCourses} error={props.errorLoadingCourses} />
+                    : filteredCourses.length === 0 && !props.errorLoadingCourses ?
                     <div className="justify-content-center">
                         <Message text={locale.courses.groupsNotFound} />
-                    </div>
-                    :
+                    </div> : <></>
+                }
+                
+                {filteredCourses.length !== 0 && !props.errorLoadingCourses && !props.loadingCourses ? 
                     <div className="course-list">
-                        
                         <List
                             className={classNames.listGrid}
                             items={filteredCourses}
@@ -172,7 +173,7 @@ const CourseList= (props: Props) => {
                             onRenderCell={getCell}
                             usePageCache={true}
                         />
-                    </div>
+                    </div> : <></>
                 }
             </FocusZone>
         </Container>
