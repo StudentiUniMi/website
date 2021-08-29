@@ -1,14 +1,15 @@
 import Admin from '../models/Admin';
-import { Persona, PersonaSize } from 'office-ui-fabric-react/lib/Persona';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import { Persona, PersonaSize } from 'office-ui-fabric-react/lib/Persona';
 import { FontSizes } from '@fluentui/theme';
 import { Link, Icon, Text } from 'office-ui-fabric-react';
 import { Separator } from '@fluentui/react/lib/Separator';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { semibold } from '../fonts';
-import LocalizationService from "../services/LocalizationService";
 import { getDegreeAdmins } from '../services/Requests';
+import Message from './Message';
+import LocalizationService from "../services/LocalizationService";
 
 import { Degree } from '../models/Models';
 
@@ -39,9 +40,7 @@ const AdminsList = (props: Props) => {
                         return <Persona imageUrl={imageUrl} onRenderPrimaryText={() => (<><Icon iconName="Send" style={{ color: theme.palette.themePrimary }}/>&nbsp;<Link href={`https://t.me/${x.username}`}>{`${x.username ?? ""}`}</Link></>)} text={`@${x.username}` ?? ""} secondaryText={secondaryText} size={PersonaSize.size40} />
                     })()}
                 </Col>
-                ) : <div className="text-center">
-                        <Text style={{ fontSize: FontSizes.size14, backgroundColor: theme.palette.neutralLighter, padding: '4px' }}><Icon iconName="Info" /> {locale.courses.adminsNotFound}</Text>
-                    </div>
+                ) : <Message text={locale.courses.adminsNotFound} />
             }
         </Row>
         </>

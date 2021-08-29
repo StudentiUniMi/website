@@ -8,6 +8,7 @@ import { Separator } from '@fluentui/react/lib/Separator';
 import { IChoiceGroupOptionStyles } from "@fluentui/react";
 import { ChoiceGroup, IChoiceGroupOption } from '@fluentui/react/lib/ChoiceGroup';
 import LocalizationService from "../services/LocalizationService";
+import Message from './Message';
 import { getDegreeInformations } from '../services/Requests';
 
 /* Updated models */
@@ -55,7 +56,7 @@ const DegreeInformations= (props: Props) => {
     });
 
     return (   
-        <div className='text-center degree-informations mb-4'>    
+        <div className='text-center degree-informations mb-4'>
             <div className='text-center mb-3'>
                 <Separator>
                     <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
@@ -64,9 +65,13 @@ const DegreeInformations= (props: Props) => {
                 </Separator>
             </div>
 
-            <div className="text-center justify-content-center" style={{marginLeft: 'auto', marginRight: 'auto'}}>
-                <ChoiceGroup options={options} onChange={selectionChanged} selectedKey={selectedChoiceGroup} />
-            </div>
+            {
+                options.length === 0 ? <Message text={"Nessun collegamento disponibile."} />
+                :
+                <div className="text-center justify-content-center" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+                    <ChoiceGroup options={options} onChange={selectionChanged} selectedKey={selectedChoiceGroup} />
+                </div>
+            }
         </div>
     );
 };
