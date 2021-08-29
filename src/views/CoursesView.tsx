@@ -78,8 +78,7 @@ const CoursesView = () => {
     };
     const dialogContentProps: IDialogContentProps = {
         type: DialogType.largeHeader,
-        showCloseButton: true,
-        closeButtonAriaLabel: "Chiudi"
+        showCloseButton: true
     };
     
     const [selectedDepartment, setSelectedDepartment] = React.useState<string>('');

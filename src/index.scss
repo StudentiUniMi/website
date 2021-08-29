@@ -370,3 +370,18 @@ footer .fab {
   display: flex;
   justify-content: center;
 }
+
+
+/* Dialog component adjustments */
+.ms-Dialog-main {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 480px) {
+.ms-Dialog-main {
+    width: auto !important;
+    margin-left:10px;
+    margin-right:10px;
+  }
+}
