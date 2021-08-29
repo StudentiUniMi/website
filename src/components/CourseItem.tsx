@@ -51,36 +51,48 @@ const CourseItem = (props: Props) => {
     // PersonaUrl inizialization
     let personaIconUrl: string | undefined;
     
-    /* To-do: adjust this data.year === -1 */
-    if (data.year === -1) personaIconUrl = process.env.PUBLIC_URL + `/degree_groups_images/unimi150.jpg`;  /* To-do: this must be adjusted */
+    /* To-do: this must be adjusted */
+    if (data.year === -1) personaIconUrl = process.env.PUBLIC_URL + `/degree_groups_images/unimi150.jpg`;  
     //if (data.year === -1) personaIconUrl = process.env.PUBLIC_URL + `/degree_groups_images/${data.cdl}150.jpg`; 
     else { personaIconUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${data.course?.group?.id}.png`; }
 
-    // CFU inizialization
-    if (data.course?.cfu !== null) {
-        cfuText = <>{data.course?.cfu} CFU</>;
-    } else {
-        cfuText = <>N/A CFU</>;
-    }
-
-    // Year inizialization
-    switch (data?.year) {
-        case -1 || null:
-            yearText = null;
+    /* CFU inizialization */
+    switch (data.course?.cfu) {
+        case 0:
+            cfuText = null;
+            break;
+        case null:
+            cfuText = null;
             break;
         case undefined:
-            yearText = <span>N/A</span>;
+            cfuText = <>N/A CFU</>;
             break;
-        case -2: /* To-do: da definire */
+        default:
+            cfuText = <>{data.course?.cfu} CFU</>;
+            break;
+    }
+
+    /* Year inizialization */
+    switch (data?.year) {
+        case 0: /* Insegnamento di un corso di laurea senza anno */
+            yearText = null;
+            break;
+        case -1: /* Gruppo principale */
+            yearText = null;
+            break;
+        case -2: /* Complementare */
             yearText = <span>{locale.courses.complementary}</span>;
+            break;
+        case undefined: /* Errore o non disponibile */
+            yearText = <span>N/A</span>;
             break;
         default:
             yearText = <span>{data.year}° {locale.courses.year}</span>;
             break;
     }
 
-    // Semester inizialization
-    if (data.semester === -1 || data.semester === null) {
+    /* Semester inizialization */
+    if (data.semester === -1 || data.semester === null || data.semester === 0) {
         semesterText = null;
     } else if (data.semester === undefined) {
         semesterText = <span>N/A</span>;

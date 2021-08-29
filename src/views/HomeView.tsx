@@ -1,25 +1,20 @@
-import { Persona, Link, Text, FontSizes, IIconProps, PrimaryButton, Icon, initializeIcons, ActionButton } from '@fluentui/react';
+import { Link, Text, FontSizes, IIconProps, PrimaryButton, Icon, initializeIcons } from '@fluentui/react';
 import { semibold } from '../fonts';
 import { Image } from 'office-ui-fabric-react/lib/Image';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Card, ICardTokens, CardSection } from "@uifabric/react-cards";
 import { Separator } from '@fluentui/react/lib/Separator';
-import { Swiper, SwiperSlide } from "swiper/react";
-import { ImageFit } from '@fluentui/react/lib/Image';
-import { DocumentCard, DocumentCardActivity, DocumentCardTitle, DocumentCardDetails, DocumentCardImage, IDocumentCardStyles, IDocumentCardActivityPerson, IDocumentCardDetailsStyles, IDocumentCardTitleStyles } from '@fluentui/react/lib/DocumentCard';
-import { getGroupsLength, getCdlsLength, getFaqs } from '../services/Requests';
-import { redirectToLink } from '../services/Utils';
+import { getGroupsLength, getCdlsLength } from '../services/Requests';
 import { Container } from 'react-bootstrap';
+import Slider from '../components/Home/Slider';
+import VaccineCards from '../components/Home/VaccineCards';
+import Faqs from '../components/Home/Faqs';
 import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper/core';
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 SwiperCore.use([Pagination, Navigation, Autoplay]);
 initializeIcons();
@@ -27,15 +22,12 @@ initializeIcons();
 const HomeView = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
-    var language: string = LocalizationService.getLanguage();
-    const faqs = getFaqs();
+    
     const groupsNumber = getGroupsLength();
     const cdlsNumber = getCdlsLength();
 
     /* Icons */
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
-    const wikiIcon: IIconProps = { iconName: 'Globe', theme: theme };
-    const telegramGroupIcon: IIconProps = { iconName: 'Send', theme: theme };
     const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
 
     /* Cards */
@@ -46,13 +38,6 @@ const HomeView = () => {
     /* Buttons */
     const buttonStyle = { maxWidth: '180px' };
     const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
-
-    /* Vaccine section */
-    const vaccineNewsCards: IDocumentCardStyles = { root: { display: 'inline-block', marginBottom: 20, minWidth: 250, maxWidth: 'none', minHeight: 380 } };
-    const vaccinePrimaryText: IDocumentCardTitleStyles = { root: { height: 'auto' } };
-    const vaccineSecondaryText: IDocumentCardTitleStyles = { root: { height: 'auto' }};
-    const vaccineDocumentCardDetails: IDocumentCardDetailsStyles = { root: { justifyContent: 'start' } };
-    const people: IDocumentCardActivityPerson[] = [{ name: locale.homepage.vaccineSection.news,  profileImageSrc: process.env.PUBLIC_URL + "/other/news.png"  } ];
 
     /* Other */
     const logoProperties = { width: '150px', height: '150px', display: 'inline-block' };
@@ -80,200 +65,7 @@ const HomeView = () => {
             </div>
 
             <div className="mb-3 justify-content-center">
-                <Swiper pagination={true} navigation={true} autoplay={{ "delay": 5000, "disableOnInteraction": false }} loop={true} autoHeight={true} className="mySwiper">
-                    <SwiperSlide>
-                        <Row className="justify-content-center">
-                            <Col className="mb-3" xl={6} lg={6} md={5} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                                <div >
-                                    <div className="mb-1">
-                                        <Text variant="medium">
-                                            {locale.homepage.section1.sliders[0].text1} <Icon iconName="Help" style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size12 }} />
-                                        </Text>
-                                    </div>
-                                    <div>
-                                        <Text styles={semibold}>{locale.homepage.section1.sliders[0].text2}</Text>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col className="mb-3 justify-content-center" style={{ maxWidth: 350 }} xl={6} lg={6} md={5} sm={6} xs={12}>
-                                <Card tokens={cardTokens} style={{ minHeight: 160, maxWidth: 350, marginLeft: 5, marginRight: 5 }}>
-                                    <Card.Item>
-                                        <Persona onRenderPrimaryText={() => <div className="justify-content-center text-center mt-3" style={{ wordWrap: 'break-word', whiteSpace: 'normal' }}><Text styles={semibold}>{locale.homepage.section1.sliders[0].cardText}</Text></div>} text={locale.homepage.section1.sliders[0].cardText} imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/matricole.jpg'} />
-                                    </Card.Item>
-                                    <Card.Section>
-                                        <ActionButton
-                                            href="https://t.me/joinchat/jjzrKAOF74s5ZmI0"
-                                            target="_blank"
-                                            className="text-decoration-none"
-                                            iconProps={telegramGroupIcon}
-                                            style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '20px', marginBottom: 0 }}
-                                            allowDisabledFocus>
-                                            {locale.telegramGroup}
-                                        </ActionButton>
-                                    </Card.Section>
-                                </Card>
-                            </Col>
-                        </Row>
-                    </SwiperSlide>
-
-                    <SwiperSlide>
-                        <Row className="justify-content-center">
-                            <Col className="mb-3" xl={6} lg={6} md={5} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                                <div >
-                                    <div className="mb-1">
-                                        <Text variant="medium">
-                                            {locale.homepage.section1.sliders[1].text1} <Icon iconName="Help" style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size12 }} />
-                                        </Text>
-                                    </div>
-                                    <div>
-                                        <Text styles={semibold}>{locale.homepage.section1.sliders[1].text2}</Text>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col className="mb-3 home-card" style={{ maxWidth: 350 }} xl={6} lg={6} md={5} sm={6} xs={12}>
-                                <Card tokens={cardTokens} style={{ minHeight: 160, maxWidth: 350, marginLeft: 5, marginRight: 5  }}>
-                                    <Card.Item>
-                                        <Persona onRenderPrimaryText={() => <div className="ml-2"><Text styles={semibold}>{locale.homepage.section1.sliders[1].cardText}</Text></div>} text={locale.homepage.section1.sliders[1].cardText} imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/alloggi.jpg'} />
-                                    </Card.Item>
-                                    <Card.Section>
-                                        <ActionButton
-                                            href="https://t.me/joinchat/xJP5VPIBboxiNjI0"
-                                            target="_blank"
-                                            className="text-decoration-none"
-                                            iconProps={telegramGroupIcon}
-                                            style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '20px', marginBottom: 0 }}
-                                            allowDisabledFocus>
-                                            {locale.telegramGroup}
-                                        </ActionButton>
-                                    </Card.Section>
-                                </Card>
-                            </Col>
-                        </Row>
-                    </SwiperSlide>
-
-                    <SwiperSlide>
-                        <Row className="justify-content-center">
-                            <Col className="mb-3" xl={6} lg={6} md={5} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                                <div >
-                                    <div className="mb-1">
-                                        <Text variant="medium">
-                                            {locale.homepage.section1.sliders[2].text1} <Icon iconName="Help" style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size12 }} />
-                                        </Text>
-                                    </div>
-                                    <div>
-                                        <Text styles={semibold}>{locale.homepage.section1.sliders[2].text2}</Text>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col className="mb-3 home-card" style={{ maxWidth: 350 }} xl={6} lg={6} md={5} sm={6} xs={12}>
-                                <Card tokens={cardTokens} style={{ maxWidth: 350, minHeight: 160, marginLeft: 5, marginRight: 5 }}>
-                                    <Card.Item>
-                                        <Persona onRenderPrimaryText={() => <div className="ml-2"><Text styles={semibold}>{locale.homepage.section1.sliders[2].cardText}</Text></div>} text={locale.homepage.section1.sliders[2].cardText} imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/materiali.jpg'} />
-                                    </Card.Item>
-                                    <Card.Section>
-                                        <ActionButton
-                                            href="https://t.me/joinchat/SyKyebINUEXQ969t"
-                                            target="_blank"
-                                            className="text-decoration-none"
-                                            iconProps={telegramGroupIcon}
-                                            style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '20px', marginBottom: 0 }}
-                                            allowDisabledFocus>
-                                            {locale.telegramGroup}
-                                        </ActionButton>
-                                    </Card.Section>
-                                </Card>
-                            </Col>
-                        </Row>
-                    </SwiperSlide>
-
-                    <SwiperSlide>
-                        <Row className="justify-content-center">
-                            <Col className="mb-3" xl={6} lg={6} md={5} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                                <div >
-                                    <div className="mb-1">
-                                        <Text variant="medium">
-                                            {locale.homepage.section1.sliders[3].text1} <Icon iconName="Help" style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size12 }} />
-                                        </Text>
-                                    </div>
-                                    <div>
-                                        <Text styles={semibold}>{locale.homepage.section1.sliders[3].text2}</Text>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col className="mb-3" style={{ maxWidth: 350 }} xl={6} lg={6} md={5} sm={6} xs={12}>
-                                <Card tokens={cardTokens} style={{ minHeight: 160, maxWidth: 350, marginLeft: 5, marginRight: 5 }}>
-                                    <Card.Item>
-                                        <Persona onRenderPrimaryText={() => <div className="ml-2"><Text styles={semibold}>{locale.homepage.section1.sliders[3].cardText}</Text></div>} text={locale.homepage.section1.sliders[3].cardText} imageUrl={process.env.PUBLIC_URL + '/extra_groups_images/ripetizioni.jpg'} />
-                                    </Card.Item>
-                                    <Card.Section>
-                                        <ActionButton
-                                            href="https://t.me/joinchat/a_aLt47Z8lAyMjBk"
-                                            target="_blank"
-                                            className="text-decoration-none"
-                                            iconProps={telegramGroupIcon}
-                                            style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '20px', marginBottom: 0 }}
-                                            allowDisabledFocus>
-                                            {locale.telegramGroup}
-                                        </ActionButton>
-                                    </Card.Section>
-                                </Card>
-                            </Col>
-                        </Row>
-                    </SwiperSlide>
-
-                    <SwiperSlide>
-                        <Row className="justify-content-center">
-                            <Col className="mb-3" xl={6} lg={6} md={5} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                                <div >
-                                    <div className="mb-1">
-                                        <Text variant="medium">
-                                            <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text }} jsx={locale.homepage.section1.sliders[4].text1} />
-                                        </Text>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col className="mb-3" style={{ maxWidth: 350 }} xl={6} lg={6} md={5} sm={6} xs={12}>
-                                <Card tokens={cardTokens} style={{ minHeight: 160, maxWidth: 350, marginLeft: 5, marginRight: 5 }}>
-                                    <Card.Section>
-                                        <Icon iconName="Globe2" style={{ fontSize: '48px', color: theme.palette.themePrimary, marginTop: '5px' }} />
-                                        <ActionButton
-                                            href="https://wiki.studentiunimi.it/"
-                                            target="_blank"
-                                            className="text-decoration-none"
-                                            iconProps={wikiIcon}
-                                            style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 0, marginBottom: 0 }}
-                                            allowDisabledFocus>
-                                            {locale.homepage.section1.sliders[4].reachWiki}
-                                        </ActionButton>
-                                    </Card.Section>
-                                </Card>
-                            </Col>
-                        </Row>
-                    </SwiperSlide>
-
-                    <SwiperSlide>
-                        <Row className="justify-content-center">
-                            <Col className="mb-3" xl={6} lg={6} md={5} sm={6} xs={12} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                                <div className="mb-1">
-                                    <Text variant="medium">
-                                        {locale.homepage.section1.sliders[5].text1}
-                                    </Text>
-                                </div>
-                            </Col>
-                            <Col className="mb-3" style={{ maxWidth: 350 }} xl={6} lg={6} md={5} sm={6} xs={12}>
-                                <Card tokens={cardTokens} style={{ minHeight: 160, maxWidth: 350, marginLeft: 5, marginRight: 5 }}>
-                                    <Card.Section>
-                                        <Icon iconName="CoffeeScript" style={{ fontSize: '48px', color: theme.palette.themePrimary, marginTop: '15px' }} />
-                                        <Text variant="medium">
-                                            <Link href="https://unimia.studentiunimi.it">unimia.studentiunimi.it</Link>
-                                        </Text>
-                                    </Card.Section>
-                                </Card>
-                            </Col>
-                        </Row>
-                    </SwiperSlide>
-
-                </Swiper>
+                <Slider />
             </div>
 
             <div className="text-center"><Icon iconName="ChevronDownMed" className="mb-3" style={iconStyle} /></div>
@@ -491,88 +283,12 @@ const HomeView = () => {
 
             <div className="mb-3">
                 <div className="mb-4"><Separator><Text variant="large" styles={semibold}>{locale.homepage.vaccineSection.title}</Text></Separator></div>
-
-                <Row className="justify-content-center">
-
-                    <Col className="mb-3" xl={6} lg={6} md={12} sm={12} xs={12}>
-                        <DocumentCard
-                            aria-label={locale.homepage.vaccineSection.card1.title}
-                            styles={vaccineNewsCards}
-                            onClick={() => redirectToLink("https://www.mur.gov.it/it/news/lunedi-09082021/green-pass-obbligatorio-attivita-presenza-universita-e-afam")}
-                            className="text-align-left"
-                        >
-                            <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/vaccine_card_1.png"} />
-                            <DocumentCardDetails styles={vaccineDocumentCardDetails}>
-                                <DocumentCardTitle title={locale.homepage.vaccineSection.card1.title} styles={vaccinePrimaryText} />
-                                <DocumentCardTitle
-                                    title={locale.homepage.vaccineSection.card1.description}
-                                    styles={vaccineSecondaryText}
-                                    showAsSecondaryTitle
-                                />
-                            </DocumentCardDetails>
-                            <DocumentCardDetails>
-                                <div style={{ marginLeft: 16, marginBottom: 8 }}>
-                                    <Text styles={semibold} variant="medium" style={{ color: theme.palette.themePrimary }}><Icon iconName="PageArrowRight"/> {locale.homepage.vaccineSection.click}</Text>
-                                </div>
-                            </DocumentCardDetails>
-                            <DocumentCardActivity activity={locale.homepage.vaccineSection.card1.date} people={people} />
-                        </DocumentCard>
-                    </Col>
-
-                    <Col className="mb-3" xl={6} lg={6} md={12} sm={12} xs={12}>
-                        <DocumentCard
-                            aria-label={locale.homepage.vaccineSection.card2.title}
-                            styles={vaccineNewsCards}
-                            onClick={() => redirectToLink("https://www.docdroid.net/zm5C1c5/20210810-piano-vaccini-ampamp-universita-verfin-pdf")}
-                            className="text-align-left"
-                        >
-                            <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/vaccine_card_2.jpg"} />
-                            <DocumentCardDetails styles={vaccineDocumentCardDetails}>
-                                <DocumentCardTitle title={locale.homepage.vaccineSection.card2.title} styles={vaccinePrimaryText} />
-                                <DocumentCardTitle
-                                    title={locale.homepage.vaccineSection.card2.description}
-                                    styles={vaccineSecondaryText}
-                                    showAsSecondaryTitle
-                                />
-                            </DocumentCardDetails>
-                            <DocumentCardDetails>
-                                <div style={{ marginLeft: 16, marginBottom: 8 }}>
-                                    <Text styles={semibold} variant="medium" style={{ color: theme.palette.themePrimary }}><Icon iconName="PageArrowRight" /> {locale.homepage.vaccineSection.click}</Text>
-                                </div>
-                            </DocumentCardDetails>
-                            <DocumentCardActivity activity={locale.homepage.vaccineSection.card2.date} people={people} />
-                        </DocumentCard>
-                    </Col>
-
-                </Row>
+                <VaccineCards />
             </div>
 
             <div className="faq-section mb-4">
                 <div className="mb-4"><Separator><Text variant="large" styles={semibold}>{locale.homepage.section6.text}</Text></Separator></div>
-
-                {
-                    faqs.map( (x,i) => {
-                        return (
-                            <Accordion style={{ backgroundColor: theme.palette.white, color: theme.palette.black, boxShadow: theme.effects.elevation8, marginRight: 10, marginLeft: 10 }} key={i}>
-                                <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon style={{color: theme.palette.black}} />}
-                                    aria-controls="panel1a-content"
-                                    id="panel1a-header"
-                                >
-                                    <Text variant="medium" style={{ color: theme.palette.themePrimary }} styles={semibold}>
-                                        <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x.question![language]} />
-                                    </Text>
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                    <Text variant="medium">
-                                        <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x.answer![language]} />
-                                    </Text>
-                                </AccordionDetails>
-                            </Accordion>
-                        )
-                    })
-                }
-
+                <Faqs />
             </div>
 
             <div className="mb-4 text-center">
