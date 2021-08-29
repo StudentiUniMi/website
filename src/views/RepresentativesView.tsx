@@ -32,15 +32,15 @@ const RepresentativesView = () => {
         option?: IDropdownOption
     ): void => {
         setSelectedDepartment(option?.key as string ?? '');
-        updateRepresentatives();
+        //updateRepresentatives();
         history.push(`/representatives/${option?.key as string}`);
     };
 
     /* To-do: adjust initialization via url parameters */
     // To-do: need slug to use it in url parameters initialization
 
-    const initializeRepresentativesViaUrl = React.useCallback(() =>
-    {
+    const initializeRepresentativesViaUrl = React.useCallback(() => {
+        if (didMount.current) return;
         didMount.current = true
         var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
         var departmentSlug = states.length >= 2 ? states[1] : '';
@@ -50,6 +50,7 @@ const RepresentativesView = () => {
 
     /* Departments callBack */
     const updateDepartments = React.useCallback(async () => {
+        if (selectedDepartment === '') return;
         setErrorLoadingDepartments(false);
         let departmentsResult = await getDepartments();
 
@@ -61,7 +62,7 @@ const RepresentativesView = () => {
         console.log("Departments result: ", departmentsResult.value ?? []);
 
         setDepartments(departmentsResult.value ?? []);
-    }, [setDepartments]);
+    }, [selectedDepartment]);
 
     /* Representatives callBack */
     const updateRepresentatives = React.useCallback(async () => {
@@ -84,9 +85,16 @@ const RepresentativesView = () => {
     React.useEffect(() => {
         if (!didMount.current) {
             updateDepartments();
-            initializeRepresentativesViaUrl();
         }
-    }, [updateDepartments, initializeRepresentativesViaUrl]);
+    }, [updateDepartments]);
+
+    React.useEffect(() => {
+        updateRepresentatives();
+    }, [selectedDepartment, updateRepresentatives]);
+
+    React.useEffect(() => {
+        initializeRepresentativesViaUrl();
+    }, [selectedDepartment, initializeRepresentativesViaUrl]);
 
     // To-do: need slug to use it in url parameters initialization
     const departmentOptions: IDropdownOption[] = departments.map(x => ({ key: x.pk, text: x.name ?? "", data: { icon: x.icon }, disabled: x.representative_count === 0 }));

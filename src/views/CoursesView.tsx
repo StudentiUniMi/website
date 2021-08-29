@@ -11,6 +11,7 @@ import { useTheme } from '@fluentui/react-theme-provider';
 import { getDepartments, getDegrees, getCourses, getVerboseDegree } from '../services/Requests';
 import { Separator } from '@fluentui/react/lib/Separator';
 import { semibold } from '../fonts';
+import { Department, Degree, CourseDegree } from "../models/Models";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import CourseList from "../components/CourseList";
@@ -18,7 +19,6 @@ import LocalizationService from "../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 import DegreeInformations from "../components/DegreeInformations";
 import AdminsList from '../components/AdminsList';
-import { Department, Degree, CourseDegree } from "../models/Models";
 
 initializeIcons();
 const iconStyles = { marginRight: '8px' };
@@ -67,14 +67,14 @@ const CoursesView = () => {
         console.log(option?.key)
         //if (option?.key as string !== '' && option?.key as string === selectedDepartment) return;
         setSelectedDepartment(option?.key as string ?? '');
-        updateDegrees();
+        //updateDegrees();
         setSelectedDegree(''); // Per resettare il corso di laurea quando cambio dipartimento, altrimenti rimane la lista dei gruppi precedente
         history.push(`/courses/`)
     };
 
     /* Degrees */
     const updateDegrees = React.useCallback(async () => {
-        //if (selectedDepartment === '') return;
+        if (selectedDepartment === '') return;
         setErrorLoadingDegrees(false);
         let degreesResult = await getDegrees(selectedDepartment);
 
@@ -106,13 +106,13 @@ const CoursesView = () => {
         console.log(option?.key)
         // To-do: if (option?.key as string !== '' && option?.key as string === selectedDegree) return;
         setSelectedDegree(option?.key as string ?? '');
-        updateCourses();
+        //updateCourses();
         history.push(`/courses/${option?.data.slug}`);
     };
 
     /* Courses callBack */
     const updateCourses = React.useCallback(async () => {
-        //if (selectedDegree === '') return;
+        if (selectedDegree === '') return;
         setErrorLoadingCourses(false);
         setLoadingCourses(true);
         let coursesResult = await getCourses(selectedDegree);
@@ -131,13 +131,18 @@ const CoursesView = () => {
 
     /* This function inizialize states of component based on URL parameters. */
     const updateVerboseDegree = React.useCallback(async () => {
+        if (didMount.current) return;
         didMount.current = true;
         var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
         var degreeSlug = states.length >= 2 ? states[1] : '';
         
         console.log("Degree slug: ", degreeSlug)
         
-        if (degreeSlug === '') return;
+        if (degreeSlug === '') {
+            setSelectedDepartment('');
+            setSelectedDegree('');
+            return;
+        }
         let verboseDegreeResult = await getVerboseDegree(degreeSlug);
         
         if (verboseDegreeResult.status !== 200) {
@@ -158,12 +163,23 @@ const CoursesView = () => {
         console.log("Selected dep: ", selectedDepartment, "; Selected degree: ", selectedDegree)
     }, [history.location.pathname, departments, updateDegrees, updateCourses, selectedDepartment, selectedDegree]);
 
-   React.useEffect(() => {
-       if (!didMount.current) {
+    React.useEffect(() => {
+        if (!didMount.current) {
             updateDepartments();
-            updateVerboseDegree();
-       }
-    }, [updateDepartments, updateVerboseDegree]);
+        }
+    }, [updateDepartments]);
+
+    React.useEffect(() => {
+        updateDegrees();
+    }, [selectedDepartment, updateDegrees]);
+
+    React.useEffect(() => {
+        updateCourses();
+    }, [selectedDegree, updateCourses]);
+
+    React.useEffect(() => {
+        updateVerboseDegree();
+    }, [selectedDepartment, updateVerboseDegree]);
     
     
     /* Chosen degree : Degree to pass it to various components as property */

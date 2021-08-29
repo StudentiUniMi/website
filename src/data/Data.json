@@ -287,14 +287,7 @@
                         { "name": {"it": "Manifesto degli studi", "en": "Programme"}, "description": {"it": "Manifesto degli studi attuale del tuo corso di laurea.", "en": "Description of the current studies of your Degree Programme."}, "link": "https://apps.unimi.it/files/manifesti/ita_manifesto_F1Aof1_2021.pdf", "icon": "Questionnaire" },
                         { "name": {"it": "Wiki del corso di laurea", "en": "Degree's wiki"}, "description": {"it": "", "en": ""}, "link": "https://wiki.studentiunimi.it/ssri_online", "icon": "ProjectCollection" }
                     ],
-                    "admins": [
-                        {
-                            "username": "salvadorbs",
-                            "year": "",
-                            "user_id": 15751170,
-                            "cdl": "Sicurezza dei sistemi e delle reti informatiche online"
-                        }
-                    ],
+                    "admins": [],
                     "is_master": false,
                     "has_years": true
                 },
