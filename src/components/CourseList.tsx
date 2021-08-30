@@ -123,7 +123,8 @@ const CourseList= (props: Props) => {
                         <Col xl={4} lg={4} md={4} sm={12} xs={12}>
                             <TextField
                                 label={locale.courses.nameFilter}
-                                onChange={onNameFilterChanged}                
+                                onChange={onNameFilterChanged}   
+                                disabled={props.courses.length === 0}             
                             />
                         </Col>
                         <Col xl={4} lg={4} md={4} sm={12} xs={12}>
@@ -133,7 +134,7 @@ const CourseList= (props: Props) => {
                                     label={locale.courses.yearFilter}
                                     onChange={onYearFilterChanged}
                                     selectedKey={yearFilter}
-                                    disabled={props.degree.slug === 'magistrale_informatica'} /* To-do: must decide if we need an apposite field to disable year selection */
+                                    disabled={props.courses.length === 0 || props.degree.slug === 'magistrale_informatica'} /* To-do: must decide if we need an apposite field to disable year selection */
                                 />
                             }
                         </Col>
@@ -143,6 +144,7 @@ const CourseList= (props: Props) => {
                                 label={locale.courses.semesterFilter}
                                 onChange={onSemesterFilterChanged}
                                 selectedKey={semesterFilter}
+                                disabled={props.courses.length === 0}
                             />
                         </Col>
                     </Row>
