@@ -4,7 +4,6 @@ import { Image } from 'office-ui-fabric-react/lib/Image';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Card, ICardTokens, CardSection } from "@uifabric/react-cards";
 import { Separator } from '@fluentui/react/lib/Separator';
-import { getGroupsLength, getCdlsLength } from '../services/Requests';
 import { Container } from 'react-bootstrap';
 import Slider from '../components/Home/Slider';
 import VaccineCards from '../components/Home/VaccineCards';

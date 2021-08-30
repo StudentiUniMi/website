@@ -87,10 +87,6 @@ const CourseList= (props: Props) => {
     const [yearFilter, setYearFilter] = React.useState<number>(0);
     const [semesterFilter, setSemesterFilter] = React.useState<number>(0);
 
-
-    //const courses: Course[] = cdl?.courses ?? [];
-
-
     const onNameFilterChanged = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, text?: string): void => {
         setNameFilter(text ?? "");
     };
@@ -105,8 +101,7 @@ const CourseList= (props: Props) => {
 
     // Filters gestion
     
-    /* To-do: Must adjust this, no is_master field available in apis */
-    let yearFilterOptions = props.degree.slug === "magistrale_informatica" ? yearMasterDegreeFilterOptions : yearBachelorDegreeFilterOptions; 
+    let yearFilterOptions = props.degree.type === 'M' || props.degree.type === 'C' ? yearMasterDegreeFilterOptions : yearBachelorDegreeFilterOptions; 
     let filteredCourses = props.courses;
 
     if (nameFilter !== "") { filteredCourses = filteredCourses.filter(x => x.course?.name?.toLocaleLowerCase()?.includes(nameFilter.toLocaleLowerCase())); }
@@ -139,7 +134,7 @@ const CourseList= (props: Props) => {
                                     label={locale.courses.yearFilter}
                                     onChange={onYearFilterChanged}
                                     selectedKey={yearFilter}
-                                    /*disabled={ !props.degree?.has_years ?? false} TO-DO */
+                                    disabled={props.degree.slug === 'magistrale_informatica'} /* To-do: must decide if we need an apposite field to disable year selection */
                                 />
                             }
                         </Col>

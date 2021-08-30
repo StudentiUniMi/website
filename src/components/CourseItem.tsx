@@ -51,10 +51,11 @@ const CourseItem = (props: Props) => {
     // PersonaUrl inizialization
     let personaIconUrl: string | undefined;
     
-    /* To-do: this must be adjusted */
+    /*
     if (data.year === -1) personaIconUrl = process.env.PUBLIC_URL + `/degree_groups_images/unimi.jpg`;  
     //if (data.year === -1) personaIconUrl = process.env.PUBLIC_URL + `/degree_groups_images/${data.cdl}150.jpg`; 
-    else { personaIconUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${data.course?.group?.id}.png`; }
+    */
+    personaIconUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${data.course?.group?.id}.png`;
 
     /* CFU inizialization */
     switch (data.course?.cfu) {
@@ -151,7 +152,6 @@ const CourseItem = (props: Props) => {
                 </Text>
 
                 <Text styles={descriptionTextStyles}>
-                    {/* To-do: adjust this data.year === -1 */}
                     {data.year === -1 ? <Chip label={locale.courses.mainGroup} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.teal }} className="m-1" /> : <></>}
                     {yearText !== "" && yearText !== null ? <Chip label={yearText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} className="m-1" /> : <></>}
                     {semesterText !== "" && semesterText !== null ? <Chip label={semesterText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} /> : <></>}
@@ -177,7 +177,7 @@ const CourseItem = (props: Props) => {
                                         {locale.telegramGroup}
                                     </ActionButton>
                                 );
-                            } else if ((data.course?.group?.invite_link === "" || data.course?.group?.invite_link === null) /* && data.year !== -1 */) { /* To-do: adjust this data.year === -1 */
+                            } else if ((data.course?.group?.invite_link === "" || data.course?.group?.invite_link === null) /* && data.year !== -1 */) { 
                                 return (
                                     <ActionButton
                                         iconProps={telegramGroupIcon}
