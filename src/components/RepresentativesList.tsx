@@ -18,7 +18,7 @@ const RapresentativesList = (props: Props) => {
     return (
         <>
             {
-                props.loadingRepresentatives ? <LoadingSpinner loading={props.loadingRepresentatives} error={props.errorLoadingRepresentatives} />
+                props.loadingRepresentatives || props.errorLoadingRepresentatives ? <LoadingSpinner loading={props.loadingRepresentatives} error={props.errorLoadingRepresentatives} />
                 : props.data.length === 0 ?
                     <div className="justify-content-center">
                         <Message text={locale.representatives.representativesNotAvailable} />

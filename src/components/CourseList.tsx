@@ -124,7 +124,7 @@ const CourseList= (props: Props) => {
                             <TextField
                                 label={locale.courses.nameFilter}
                                 onChange={onNameFilterChanged}   
-                                disabled={props.courses.length === 0}             
+                                disabled={props.courses.length === 0 || props.loadingCourses}             
                             />
                         </Col>
                         <Col xl={4} lg={4} md={4} sm={12} xs={12}>
@@ -134,7 +134,7 @@ const CourseList= (props: Props) => {
                                     label={locale.courses.yearFilter}
                                     onChange={onYearFilterChanged}
                                     selectedKey={yearFilter}
-                                    disabled={props.courses.length === 0 || props.degree.slug === 'magistrale_informatica'} /* To-do: must decide if we need an apposite field to disable year selection */
+                                    disabled={props.courses.length === 0 || props.loadingCourses || props.degree.slug === 'magistrale_informatica'} /* To-do: must decide if we need an apposite field to disable year selection */
                                 />
                             }
                         </Col>
@@ -144,14 +144,14 @@ const CourseList= (props: Props) => {
                                 label={locale.courses.semesterFilter}
                                 onChange={onSemesterFilterChanged}
                                 selectedKey={semesterFilter}
-                                disabled={props.courses.length === 0}
+                                disabled={props.courses.length === 0 || props.loadingCourses}
                             />
                         </Col>
                     </Row>
                 </div>
                 
                 {
-                    props.loadingCourses ? <LoadingSpinner loading={props.loadingCourses} error={props.errorLoadingCourses} />
+                    props.loadingCourses || props.errorLoadingCourses ? <LoadingSpinner loading={props.loadingCourses} error={props.errorLoadingCourses} />
                     : filteredCourses.length === 0 ?
                     <div className="justify-content-center">
                         <Message text={locale.courses.groupsNotFound} />
