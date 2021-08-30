@@ -27,30 +27,13 @@ const RepresentativesView = () => {
     const [errorLoadingRepresentatives, setErrorLoadingRepresentatives] = React.useState<boolean>(false);
     const [errorLoadingDepartments, setErrorLoadingDepartments] = React.useState<boolean>(false);
 
-    const departmentSelectionChanged = (
-        ev?: React.FormEvent<HTMLElement | HTMLInputElement>,
-        option?: IDropdownOption
-    ): void => {
+    const departmentSelectionChanged = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IDropdownOption): void => {
         setSelectedDepartment(option?.key as string ?? '');
-        //updateRepresentatives();
-        history.push(`/representatives/${option?.key as string}`);
+        history.push(`/representatives/${option?.data.slug as string}`);
     };
-
-    /* To-do: adjust initialization via url parameters */
-    // To-do: need slug to use it in url parameters initialization
-
-    const initializeRepresentativesViaUrl = React.useCallback(() => {
-        if (didMount.current) return;
-        didMount.current = true
-        var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
-        var departmentSlug = states.length >= 2 ? states[1] : '';
-        setSelectedDepartment(departments.filter(x => x.slug === departmentSlug)[0]?.pk as unknown as string);
-        // history.push(`/representatives/${departmentSlug}`);   do we need this?
-    }, [departments, history.location.pathname]);
 
     /* Departments callBack */
     const updateDepartments = React.useCallback(async () => {
-        if (selectedDepartment === '') return;
         setErrorLoadingDepartments(false);
         let departmentsResult = await getDepartments();
 
@@ -59,14 +42,14 @@ const RepresentativesView = () => {
             return;
         }
 
-        console.log("Departments result: ", departmentsResult.value ?? []);
+        //console.log("Departments result: ", departmentsResult.value ?? []);
 
         setDepartments(departmentsResult.value ?? []);
-    }, [selectedDepartment]);
+    }, []);
 
     /* Representatives callBack */
     const updateRepresentatives = React.useCallback(async () => {
-        if (selectedDepartment === '') return;
+        if (selectedDepartment === '' || selectedDepartment === undefined) return;
         setLoadingRepresentatives(true);
         setErrorLoadingRepresentatives(false);
         let representativesResult = await getRepresentatives(selectedDepartment);
@@ -76,11 +59,23 @@ const RepresentativesView = () => {
             setErrorLoadingRepresentatives(true);
         }
 
-        console.log("Representatives result: ", representativesResult.value ?? []);
+        //console.log("Representatives result: ", representativesResult.value ?? []);
 
         setLoadingRepresentatives(false);
         setRepresentatives(representativesResult.value ?? []);
     }, [setRepresentatives, selectedDepartment]);
+
+    /* This function initializes representatives based on url parameters */
+    const initializeRepresentativesViaUrl = React.useCallback(() => {
+        if (!didMount.current && departments.length !== 0) {
+            didMount.current = true
+            var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
+            var departmentSlug = states.length >= 2 ? states[1] : '';
+
+            //console.log("Department slug: ", departmentSlug)
+            setSelectedDepartment(departments.filter(x => x.slug === departmentSlug)[0]?.pk as unknown as string);
+        }
+    }, [departments, history.location.pathname]);
 
     React.useEffect(() => {
         if (!didMount.current) {
@@ -93,11 +88,10 @@ const RepresentativesView = () => {
     }, [selectedDepartment, updateRepresentatives]);
 
     React.useEffect(() => {
-        initializeRepresentativesViaUrl();
-    }, [selectedDepartment, initializeRepresentativesViaUrl]);
+        if (!didMount.current) initializeRepresentativesViaUrl();
+    }, [initializeRepresentativesViaUrl, departments]);
 
-    // To-do: need slug to use it in url parameters initialization
-    const departmentOptions: IDropdownOption[] = departments.map(x => ({ key: x.pk, text: x.name ?? "", data: { icon: x.icon }, disabled: x.representative_count === 0 }));
+    const departmentOptions: IDropdownOption[] = departments.map(x => ({ key: x.pk, text: x.name ?? "", data: { icon: x.icon, slug: x.slug }, disabled: x.representative_count === 0 }));
 
     return (
         <Container className="representatives text-center">
@@ -130,7 +124,9 @@ const RepresentativesView = () => {
                 />
             </div>
 
-            <RepresentativesList data={representatives} loadingRepresentatives={loadingRepresentatives} errorLoadingRepresentatives={errorLoadingRepresentatives} />
+            <div style={{ display: selectedDepartment !== '' && selectedDepartment !== undefined ? 'block' : 'none' }}>
+                <RepresentativesList data={representatives} loadingRepresentatives={loadingRepresentatives} errorLoadingRepresentatives={errorLoadingRepresentatives} />
+            </div>
         </Container>
     )
 };

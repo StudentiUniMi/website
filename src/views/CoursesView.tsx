@@ -56,7 +56,7 @@ const CoursesView = () => {
             return;
         }
 
-        console.log("Departments result: ", departmentsResult.value ?? []);
+        //console.log("Departments result: ", departmentsResult.value ?? []);
 
         setDepartments(departmentsResult.value ?? []);
     }, [setDepartments]);
@@ -64,17 +64,14 @@ const CoursesView = () => {
     let departmentOptions: IDropdownOption[] = departments.map(x => ({ key: x.pk, text: x.name ?? "", data: { icon: x.icon }, disabled: x.degree_count === 0 }));
 
     const departmentSelectionChanged = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IDropdownOption): void => {
-        console.log(option?.key)
-        //if (option?.key as string !== '' && option?.key as string === selectedDepartment) return;
         setSelectedDepartment(option?.key as string ?? '');
-        //updateDegrees();
-        setSelectedDegree(''); // Per resettare il corso di laurea quando cambio dipartimento, altrimenti rimane la lista dei gruppi precedente
+        setSelectedDegree(''); /* Reset del corso di laurea on department change, altrimenti rimane la lista dei gruppi precedente */
         history.push(`/courses/`)
     };
 
     /* Degrees */
     const updateDegrees = React.useCallback(async () => {
-        if (selectedDepartment === '') return;
+        if (selectedDepartment === '' || selectedDepartment === undefined) return;
         setErrorLoadingDegrees(false);
         let degreesResult = await getDegrees(selectedDepartment);
 
@@ -83,7 +80,7 @@ const CoursesView = () => {
             return;
         }
 
-        console.log("Degrees result: ", degreesResult.value ?? []);
+        //console.log("Degrees result: ", degreesResult.value ?? []);
 
         setDegrees(degreesResult.value ?? []);
     }, [setDegrees, selectedDepartment]);
@@ -103,16 +100,13 @@ const CoursesView = () => {
     }
 
     const degreeSelectionChanged = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IDropdownOption): void => {
-        console.log(option?.key)
-        // To-do: if (option?.key as string !== '' && option?.key as string === selectedDegree) return;
         setSelectedDegree(option?.key as string ?? '');
-        //updateCourses();
         history.push(`/courses/${option?.data.slug}`);
     };
 
     /* Courses callBack */
     const updateCourses = React.useCallback(async () => {
-        if (selectedDegree === '') return;
+        if (selectedDegree === '' || selectedDegree === undefined) return;
         setErrorLoadingCourses(false);
         setLoadingCourses(true);
         let coursesResult = await getCourses(selectedDegree);
@@ -123,50 +117,45 @@ const CoursesView = () => {
             return;
         }
 
-        console.log("Courses result: ", coursesResult.value ?? []);
+        //console.log("Courses result: ", coursesResult.value ?? []);
 
         setCourses(coursesResult.value ?? []);
         setLoadingCourses(false);
     }, [setCourses, selectedDegree, setLoadingCourses]);
 
-    /* This function inizialize states of component based on URL parameters. */
-    const updateVerboseDegree = React.useCallback(async () => {
-        if (didMount.current) return;
-        didMount.current = true;
-        var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
-        var degreeSlug = states.length >= 2 ? states[1] : '';
-        
-        console.log("Degree slug: ", degreeSlug)
-        
-        if (degreeSlug === '') {
-            setSelectedDepartment('');
-            setSelectedDegree('');
-            return;
+    
+    /* This function initializes the VerboseDegree (retrieves degree based on url initialization) */
+    const initializeDegreeByUrl = React.useCallback(async () => {
+        if (!didMount.current && departments.length !== 0) {
+            didMount.current = true;
+            var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
+            var degreeSlug = states.length >= 2 ? states[1] : '';
+            
+            //console.log("Degree slug: ", degreeSlug)
+            
+            if (degreeSlug === '') {
+                return;
+            }
+    
+            let verboseDegreeResult = await getVerboseDegree(degreeSlug);
+            
+            if (verboseDegreeResult.status !== 200) {
+                // Do we need to show an apposite error? Probably not
+                return;
+            }
+            
+            const verboseDeg = verboseDegreeResult.value ?? undefined;
+            //console.log("VerboseDegree result: ", verboseDeg);
+            if (verboseDeg === undefined || verboseDeg === null) return;
+            //console.log(departments, "DEP TROVATI: ", departments.filter(x => x.pk === verboseDeg.department?.pk)[0]?.pk as unknown as string)
+    
+            setSelectedDepartment(departments.filter(x => x.pk === verboseDeg.department?.pk)[0]?.pk as unknown as string);
+            setSelectedDegree(verboseDeg.pk as unknown as string);
         }
-        let verboseDegreeResult = await getVerboseDegree(degreeSlug);
-        
-        if (verboseDegreeResult.status !== 200) {
-            // To-do: show error (do we need to show an apposite error? I think not)
-        }
-        
-        console.log("VerboseDegree result: ", verboseDegreeResult.value ?? {});
-        
-        console.log(departments)
-        console.log("DEP TROVATI: ", departments.filter(x => x.pk === verboseDegreeResult.value?.department?.pk)[0]?.pk as unknown as string)
-
-        setSelectedDepartment(departments.filter(x => x.pk === verboseDegreeResult.value?.department?.pk)[0]?.pk as unknown as string);
-        updateDegrees();
-
-        setSelectedDegree(verboseDegreeResult.value?.pk as unknown as string);
-        updateCourses();
-
-        console.log("Selected dep: ", selectedDepartment, "; Selected degree: ", selectedDegree)
-    }, [history.location.pathname, departments, updateDegrees, updateCourses, selectedDepartment, selectedDegree]);
-
+    }, [departments, history.location.pathname]);
+    
     React.useEffect(() => {
-        if (!didMount.current) {
-            updateDepartments();
-        }
+        if (!didMount.current) updateDepartments();
     }, [updateDepartments]);
 
     React.useEffect(() => {
@@ -178,13 +167,11 @@ const CoursesView = () => {
     }, [selectedDegree, updateCourses]);
 
     React.useEffect(() => {
-        updateVerboseDegree();
-    }, [selectedDepartment, updateVerboseDegree]);
-    
+        if (!didMount.current) initializeDegreeByUrl();
+    }, [initializeDegreeByUrl, departments]);
     
     /* Chosen degree : Degree to pass it to various components as property */
     let degree: Degree = degrees.filter(x => x.pk === selectedDegree as unknown as number)[0] ?? [];
-
 
     return (
         <Container className="courses text-center">

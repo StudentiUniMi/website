@@ -4,6 +4,7 @@ interface ILocalizationStrings {
     errorLoadingDepartments: string,
     errorLoadingDegrees: string,
     noRedirectsAvailable: string,
+    errorContactAdmin: string,
     headerMenuItems: {
         home: string,
         aboutUs: string,
@@ -187,7 +188,8 @@ interface ILocalizationStrings {
     representatives: {
         text1: string,
         text2: string,
-        departmentSelect: string
+        departmentSelect: string,
+        representativesNotAvailable: string
     },
     contributors: {
         text1:string,

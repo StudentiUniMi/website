@@ -13,6 +13,7 @@ class LocalizationService {
                     errorLoadingDepartments: 'Errore durante il caricamento dei dipartimenti.',
                     errorLoadingDegrees: 'Errore durante il caricamento dei corsi di laurea.',
                     noRedirectsAvailable: 'Non ci sono collegamenti disponibili.',
+                    errorContactAdmin: 'Si è verificato un errore; contatta un amministratore.',
                     headerMenuItems: {
                         home: 'Home',
                         aboutUs: 'Chi siamo',
@@ -204,7 +205,8 @@ class LocalizationService {
                     representatives: {
                         text1: 'Il rappresentante degli studenti è un ruolo molto importante ed altamente formativo, che garantisce a tutti gli studenti universitari un supporto alle difficoltà che può incontrare durante il periodo di studio.',
                         text2: 'Di seguito è presente la lista dei rappresentanti di ogni dipartimento e i loro contatti.',
-                        departmentSelect: 'Seleziona un dipartimento'
+                        departmentSelect: 'Seleziona un dipartimento',
+                        representativesNotAvailable: 'Nessun rappresentante disponibile.'
                     },
                     contributors: {
                         text1:'Di seguito è possibile trovare tutte le persone che hanno contribuito allo sviluppo del sito web, dei servizi che offre, della wiki, e del network in generale.',
@@ -237,6 +239,7 @@ class LocalizationService {
                     errorLoadingDepartments: 'Error has occured while retrieving departments.',
                     errorLoadingDegrees: 'Error has occured while retrieving degrees.',
                     noRedirectsAvailable: 'There are no redirects available.',
+                    errorContactAdmin: 'An error has occured; contact an administrator.',
                     headerMenuItems: {
                         home: 'Home',
                         aboutUs: 'About Us',
@@ -429,7 +432,8 @@ class LocalizationService {
                     representatives: {
                         text1: 'Being a students representative is a very important role and a formative experience. They provide a support to any student against all the difficulties during the study period.',
                         text2: 'The list below reports all the representatives of each department and their contacts.',
-                        departmentSelect: 'Select your department'
+                        departmentSelect: 'Select your department',
+                        representativesNotAvailable: 'There are no representatives available.'
                     },
                     contributors: {
                         text1:'In this section you can find the contributors who have worked into the development of the Network, the website and all its services.',

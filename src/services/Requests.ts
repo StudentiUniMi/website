@@ -1,28 +1,38 @@
-import data from '../data/Data.json';
-import extraGroups from '../data/ExtraGroups.json';
+/**
+ * Main file for handling requests.
+ * @author Giuseppe Del Campo
+ */
+
+/* Models */
 import OldDegree from '../models/Degree';
+import OldCourse from '../models/Course';
 import Admin from '../models/Admin';
 import Service from '../models/Service';
-import serviceData from '../data/Services.json';
 import Contributor from '../models/Contributor';
-import Contributors from '../data/Contributors.json';
-import Faqs from '../data/Faqs.json';
 import Faq from '../models/Faq';
-import CanMembers from '../data/CanMembers.json';
 import CanMember from '../models/CanMember';
-import Rules from '../data/Rules.json';
 import Rule from '../models/Rule';
-import OldCourse from '../models/Course';
 
 /* Updated models */
 import { Department, Degree, VerboseDegree, CourseDegree, Representative } from '../models/Models';
 
+/* Data (this will be replaced by api soon) */
+import data from '../data/Data.json';
+import extraGroups from '../data/ExtraGroups.json';
+import serviceData from '../data/Services.json';
+import Contributors from '../data/Contributors.json';
+import Faqs from '../data/Faqs.json';
+import CanMembers from '../data/CanMembers.json';
+import Rules from '../data/Rules.json';
+
+/* Endpoints */
 const api_endpoint = 'https://api.studentiunimi.it/api';
 const departments_endpoint = '/departments';
 const degrees_endpoint = '/degrees';
 const degree_endpoint = '/degree';
 const courses_endpoint = '/courses';
 const representatives_endpoint = '/representatives';
+
 
 /* Main class to build response */
 class Result<T>

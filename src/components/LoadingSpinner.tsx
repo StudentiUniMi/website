@@ -34,8 +34,7 @@ const LoadingSpinner = (props: Props) => {
             onDismiss={p.resetChoice}
             dismissButtonAriaLabel="Close"
         >
-            {/* To-do: translate this */}
-            Si è verificato un errore; contatta un amministratore.
+            {locale.errorContactAdmin}
         </MessageBar>
     );
 

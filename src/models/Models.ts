@@ -17,6 +17,7 @@ export interface Degree {
     name?: string,
     icon?: string,
     type?: string,
+    group?: string,
     slug?: string
 }
 
@@ -31,17 +32,15 @@ export interface Representative {
     title?: string
 }
 
-
 /* This is a model created just to retrieve degree and department when visiting for example courses/triennale_informatica and initialize the component. */
 export interface VerboseDegree {
     pk: number,
     name?: string,
-    icon?: string,
     type?: string,
+    group?: Group,
     slug?: string,
     department?: Department
 }
-
 
 export interface Course {
     pk: number,

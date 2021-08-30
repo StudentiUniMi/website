@@ -6,16 +6,27 @@ import { Link, Icon } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Representative } from '../models/Models';
 import LoadingSpinner from '../components/LoadingSpinner';
+import Message from './Message';
+import LocalizationService from "../services/LocalizationService";
 
 interface Props { data: Representative[], loadingRepresentatives: boolean, errorLoadingRepresentatives: boolean };
 
 const RapresentativesList = (props: Props) => {
     var theme = useTheme();
+    const locale = LocalizationService.strings();
+
     return (
         <>
-            <LoadingSpinner loading={props.loadingRepresentatives} error={props.errorLoadingRepresentatives} />
+            {
+                props.loadingRepresentatives ? <LoadingSpinner loading={props.loadingRepresentatives} error={props.errorLoadingRepresentatives} />
+                : props.data.length === 0 ?
+                    <div className="justify-content-center">
+                        <Message text={locale.representatives.representativesNotAvailable} />
+                    </div> : <></>
+            }
+            
             <Row className="people-list text-center">
-                {props.data.map((x,i) => 
+                {props.data.length !== 0 && !props.errorLoadingRepresentatives && !props.loadingRepresentatives ? props.data.map((x,i) => 
                     <Col key={i} xl={3} lg={3} md={4} sm={6} xs={12} className="mb-3 col-persona">
                         {
                             ( () => { 
@@ -28,7 +39,7 @@ const RapresentativesList = (props: Props) => {
                             })()
                         }
                     </Col>
-                )}
+                ) : <></> }
             </Row>
         </>
     )
