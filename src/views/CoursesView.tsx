@@ -119,24 +119,26 @@ const CoursesView = () => {
 
         console.log("Courses result: ", coursesResult.value ?? []);
         const degreeSelected = degrees.filter(x => x.pk as unknown as string === selectedDegree)[0];
-        let mainDegreeGroup: CourseDegree = {
-            "course": {
-                pk: undefined,
-                name: "Gruppo principale",
-                cfu: 0,
-                wiki_link: "",
-                links: [],
-                group: { /* test the degree here */
-                    id: degreeSelected?.group?.id!,
-                    title: degreeSelected?.group?.title,
-                    profile_picture: degreeSelected?.group?.profile_picture,
-                    invite_link: degreeSelected?.group?.invite_link
+        if (degreeSelected.group?.invite_link !== '' && degreeSelected.group?.invite_link !== null && degreeSelected.group?.invite_link !== undefined) {
+            let mainDegreeGroup: CourseDegree = {
+                "course": {
+                    pk: undefined,
+                    name: "Gruppo principale",
+                    cfu: 0,
+                    wiki_link: "",
+                    links: [],
+                    group: { /* test the degree here */
+                        id: degreeSelected?.group?.id!,
+                        title: degreeSelected?.group?.title,
+                        profile_picture: degreeSelected?.group?.profile_picture,
+                        invite_link: degreeSelected?.group?.invite_link
+                    },
                 },
-            },
-            year: -1,
-            semester: 0
-        };
-        coursesResult.value?.unshift(mainDegreeGroup);
+                year: -1,
+                semester: 0
+            };
+            coursesResult.value?.unshift(mainDegreeGroup);
+        }
 
         setCourses(coursesResult.value ?? []);
         setLoadingCourses(false);
