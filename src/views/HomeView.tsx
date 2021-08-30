@@ -23,15 +23,15 @@ const HomeView = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     
-    const groupsNumber = getGroupsLength();
-    const cdlsNumber = getCdlsLength();
+    //const groupsNumber = getGroupsLength();
+    //const cdlsNumber = getCdlsLength();
 
     /* Icons */
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
 
     /* Cards */
-    const infoCard = { minHeight: 130, maxWidth: 350 };
+    //const infoCard = { minHeight: 130, maxWidth: 350 };
     const sectionCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', boxShadow: theme.effects.elevation8 };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
 
@@ -42,7 +42,7 @@ const HomeView = () => {
     /* Other */
     const logoProperties = { width: '150px', height: '150px', display: 'inline-block' };
     const telegramLogo = { marginLeft: 'auto', marginRight: 'auto', width: '50px', height: '50px' };
-    const numberStyle = { color: theme.palette.themePrimary };
+    //const numberStyle = { color: theme.palette.themePrimary };
 
     /* Remove title properties from documentCardTitles */
     React.useEffect(() => {
@@ -325,6 +325,7 @@ const HomeView = () => {
                 </Row>
             </div>
 
+            { /* We disable this section until we have stats endpoint
             <div className="mb-3">
                 <div className="mb-4"><Separator><Text variant="large" styles={semibold}>{locale.homepage.section7.text}</Text></Separator></div>
 
@@ -362,6 +363,7 @@ const HomeView = () => {
                     </Col>
                 </Row>
             </div>
+            */}
 
         </Container >
     )
