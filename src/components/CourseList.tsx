@@ -99,8 +99,7 @@ const CourseList= (props: Props) => {
         setYearFilter((item?.key ?? 0) as number);
     };
 
-    // Filters gestion
-    
+    /* Filters gestion */
     let yearFilterOptions = props.degree.type === 'M' || props.degree.type === 'C' ? yearMasterDegreeFilterOptions : yearBachelorDegreeFilterOptions; 
     let filteredCourses = props.courses;
 

@@ -1,21 +1,16 @@
-import { Text, Link } from 'office-ui-fabric-react';
+import { Text } from 'office-ui-fabric-react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { initializeIcons } from '@uifabric/icons';
 import { FontWeights, ITextStyles, Persona } from '@fluentui/react';
 import { semibold } from '../fonts';
-import Chip from '@material-ui/core/Chip';
-//import Course from '../models/Course';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { IContextualMenuProps, IIconProps } from '@fluentui/react';
 import { CommandButton } from '@fluentui/react/lib/Button';
 import { ActionButton } from '@fluentui/react/lib/Button';
 import { redirectToLink } from '../services/Utils';
-import { Icon } from 'office-ui-fabric-react';
-import LocalizationService from "../services/LocalizationService";
-import JsxParser from 'react-jsx-parser';
-
-/* Updated models */
 import { CourseDegree } from '../models/Models';
+import Chip from '@material-ui/core/Chip';
+import LocalizationService from "../services/LocalizationService";
 
 initializeIcons();
 interface Props { data: CourseDegree };
@@ -102,13 +97,53 @@ const CourseItem = (props: Props) => {
     }
 
     // Main text inizialization
+    /*
     if (data.year === -1 && (data.course?.group?.invite_link === "" || data.course?.group?.invite_link === null)) {
         mainText = (<><JsxParser bindings={{ theme: theme }} components={{ Text, Link, Icon }} jsx={locale.courses.contactAdmin} /></> );
-    } else if (data.year === -1 && (data.course?.group?.invite_link !== "" && data.course?.group?.invite_link !== null)) {
+    } else */
+    if (data.year === -1 /* && (data.course?.group?.invite_link !== "" && data.course?.group?.invite_link !== null) */) {
         mainText = locale.courses.mainGroupDescription;
     }
 
-    // Websites inizialization
+    /* Telegram Group initialization */
+    const telegramLink = () => {
+        if (data.course?.group !== null && data.course?.group !== undefined) {
+            if (data.course?.group?.invite_link !== "" && data.course?.group?.invite_link !== null && data.course?.group?.invite_link !== undefined) {
+                return (
+                    <ActionButton
+                        href={data.course?.group?.invite_link as any}
+                        target="_blank"
+                        iconProps={telegramGroupIcon}
+                        style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
+                        disabled={data.course?.group?.invite_link === "" || data.course?.group?.invite_link === null}
+                        className="text-decoration-none"
+                        allowDisabledFocus>
+                        {locale.telegramGroup}
+                    </ActionButton>
+                );
+            } else if ((data.course?.group?.invite_link === undefined || data.course?.group?.invite_link === "" || data.course?.group?.invite_link === null)) {
+                return (
+                    <ActionButton
+                        iconProps={telegramGroupIcon}
+                        style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
+                        disabled
+                        allowDisabledFocus>
+                        {locale.courses.groupNotAvailable}
+                    </ActionButton>
+                );
+            }
+        } else return (
+            <ActionButton
+                iconProps={telegramGroupIcon}
+                style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
+                disabled
+                allowDisabledFocus>
+                {locale.courses.groupNotAvailable}
+            </ActionButton>
+        )
+    };
+
+    /* Websites inizialization */
     let websites: any[] | undefined = [];
 
     if ((data.course?.links ?? []).length !== 0) {
@@ -123,6 +158,31 @@ const CourseItem = (props: Props) => {
             }
         );
     }
+
+    /* Wiki initialization */
+    const wikiLink = () => {
+        if (data.course?.wiki_link !== null && data.course?.wiki_link !== "") {
+            return (
+                <ActionButton
+                    href={data.course?.wiki_link as any}
+                    target="_blank"
+                    className="text-decoration-none"
+                    iconProps={wikiIcon}
+                    style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 0 }}
+                    allowDisabledFocus>
+                    Wiki
+                </ActionButton>
+            );
+        } else if ((data.course?.wiki_link === null || data.course?.wiki_link === "") && data.year !== -1) return (
+            <ActionButton
+                disabled
+                iconProps={wikiIcon}
+                style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 0 }}
+                allowDisabledFocus>
+                Wiki
+            </ActionButton>
+        )
+    };
 
     const menuProps: IContextualMenuProps = {
         // For example: disable dismiss if shift key is held down while dismissing
@@ -152,7 +212,7 @@ const CourseItem = (props: Props) => {
                 </Text>
 
                 <Text styles={descriptionTextStyles}>
-                    {data.year === -1 ? <Chip label={locale.courses.mainGroup} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.teal }} className="m-1" /> : <></>}
+                    {data.year === -1 ? <Chip label={locale.courses.mainGroup} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeTertiary }} className="m-1" /> : <></>}
                     {yearText !== "" && yearText !== null ? <Chip label={yearText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} className="m-1" /> : <></>}
                     {semesterText !== "" && semesterText !== null ? <Chip label={semesterText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} /> : <></>}
                 </Text>
@@ -161,44 +221,7 @@ const CourseItem = (props: Props) => {
                     {mainText}
                 </Text>
 
-                {
-                    (() => {
-                        if (data.course?.group !== null) {
-                            if (data.course?.group?.invite_link !== "" && data.course?.group?.invite_link !== null) {
-                                return (
-                                    <ActionButton 
-                                        href={data.course?.group?.invite_link as any}
-                                        target="_blank"
-                                        iconProps={telegramGroupIcon} 
-                                        style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }} 
-                                        disabled={data.course?.group?.invite_link === "" || data.course?.group?.invite_link === null}
-                                        className="text-decoration-none"
-                                        allowDisabledFocus>
-                                        {locale.telegramGroup}
-                                    </ActionButton>
-                                );
-                            } else if ((data.course?.group?.invite_link === "" || data.course?.group?.invite_link === null) /* && data.year !== -1 */) { 
-                                return (
-                                    <ActionButton
-                                        iconProps={telegramGroupIcon}
-                                        style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
-                                        disabled
-                                        allowDisabledFocus>
-                                        {locale.courses.groupNotAvailable}
-                                    </ActionButton>
-                                );
-                            }
-                        } else return (
-                            <ActionButton
-                                iconProps={telegramGroupIcon}
-                                style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
-                                disabled
-                                allowDisabledFocus>
-                                {locale.courses.groupNotAvailable}
-                            </ActionButton>
-                        )
-                    })()
-                }
+                { telegramLink() }
 
                 { data.year !== -1 ?
                     <CommandButton
@@ -211,31 +234,7 @@ const CourseItem = (props: Props) => {
                     /> : <></>
                 }
 
-                {
-                    (() => { 
-                        if (data.course?.wiki_link !== null && data.course?.wiki_link !== "") { 
-                            return (
-                                <ActionButton
-                                    href={data.course?.wiki_link as any}
-                                    target="_blank"
-                                    className="text-decoration-none"
-                                    iconProps={wikiIcon}
-                                    style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 0 }}
-                                    allowDisabledFocus>
-                                    Wiki
-                                </ActionButton>
-                            );
-                        } else if ((data.course?.wiki_link === null || data.course?.wiki_link === "") && data.year !== -1) return (
-                            <ActionButton
-                                disabled
-                                iconProps={wikiIcon}
-                                style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 0 }}
-                                allowDisabledFocus>
-                                Wiki
-                            </ActionButton>
-                        )
-                    })()
-                }
+                { wikiLink() }
 
             </Card.Section>
         </Card>

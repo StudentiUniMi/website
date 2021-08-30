@@ -17,7 +17,7 @@ export interface Degree {
     name?: string,
     icon?: string,
     type?: string,
-    group?: string,
+    group?: Group,
     slug?: string
 }
 
@@ -43,7 +43,7 @@ export interface VerboseDegree {
 }
 
 export interface Course {
-    pk: number,
+    pk?: number,
     name?: string,
     cfu?: number,
     wiki_link?: string,
