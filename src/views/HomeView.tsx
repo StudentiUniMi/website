@@ -27,8 +27,6 @@ const HomeView = () => {
 
     /* Icons */
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
-    const wikiIcon: IIconProps = { iconName: 'Globe', theme: theme };
-    const telegramGroupIcon: IIconProps = { iconName: 'Send', theme: theme };
     const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
 
     /* Cards */
