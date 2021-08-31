@@ -37,7 +37,7 @@ const OrganizationView = () => {
                 </div>
 
                 <div className="mb-2">
-                    <CompoundButton primary secondaryText={locale.aboutUs.button.text2} href="https://github.com/StudentiUniMi/docs/blob/main/statuto.md" target="_blank" style={{ textDecoration: 'none' }} iconProps={icon}>
+                    <CompoundButton primary theme={theme} secondaryText={locale.aboutUs.button.text2} href="https://github.com/StudentiUniMi/docs/blob/main/statuto.md" target="_blank" style={{ textDecoration: 'none' }} iconProps={icon}>
                         {locale.aboutUs.button.text1}
                     </CompoundButton>
                 </div>
@@ -46,7 +46,7 @@ const OrganizationView = () => {
             <Icon iconName="ChevronDownMed" className="mb-1" style={iconStyle} />
 
             <div className="mb-4">
-                <div className="mb-3"><Separator><Text variant="large" styles={semibold}>{locale.aboutUs.header1}</Text></Separator></div>
+                <div className="mb-3"><Separator theme={theme}><Text variant="large" styles={semibold}>{locale.aboutUs.header1}</Text></Separator></div>
 
                 <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: '300px' }} className="mb-4">
                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
@@ -64,7 +64,7 @@ const OrganizationView = () => {
 
             <div className="mb-4 pt-2">
 
-                <div className="mb-3"><Separator><Text variant="large" styles={semibold}>{locale.aboutUs.header2}</Text></Separator></div>
+                <div className="mb-3"><Separator theme={theme}><Text variant="large" styles={semibold}>{locale.aboutUs.header2}</Text></Separator></div>
 
                 <Row className="justify-content-center">
                     {
@@ -97,7 +97,7 @@ const OrganizationView = () => {
 
 
             <div className="mb-4">
-                <div className="mb-3"><Separator><Text variant="large" styles={semibold}>{locale.aboutUs.header3}</Text></Separator></div>
+                <div className="mb-3"><Separator theme={theme}><Text variant="large" styles={semibold}>{locale.aboutUs.header3}</Text></Separator></div>
 
                 <Row className="justify-content-center">
                     {

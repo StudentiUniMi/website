@@ -58,6 +58,7 @@ const Rules = () => {
                         text={locale.rules.question}
                         className={styles.button}
                         iconProps={icon}
+                        theme={theme}
                     />
                     {isCalloutVisible && (
                         <Callout
@@ -78,7 +79,7 @@ const Rules = () => {
                 <Icon iconName="ChevronDownMed" className="mb-3" style={iconStyle} />
 
                 <div className="mb-3">
-                    <Separator><Text variant="large" styles={semibold}>{locale.rules.text2}</Text></Separator>
+                    <Separator theme={theme}><Text variant="large" styles={semibold}>{locale.rules.text2}</Text></Separator>
                 </div>
 
                 <div className="mb-3">

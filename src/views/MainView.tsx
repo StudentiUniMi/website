@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from "react-router-dom";
-import HeaderTitle from "../components/HeaderTitle";
-import HeaderMenu from "../components/HeaderMenu";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ContentView from "./ContentView";
 import { ThemeProvider } from '@fluentui/react-theme-provider'; 
@@ -30,10 +29,7 @@ const MainView = () => {
     <Router basename={process.env.PUBLIC_URL}>
       <CookiesProvider>
         <ThemeProvider applyTo="body" theme={theme ? darkTheme : lightTheme}>
-          <header>
-            <HeaderTitle />
-            <HeaderMenu changeTheme={changeTheme} changePalette={changePalette} />
-          </header>
+          <Header changeTheme={changeTheme} changePalette={changePalette} />
           <ContentView/>
           <Footer />
         </ThemeProvider>

@@ -88,7 +88,7 @@ const AdditionalGroupsView = () => {
             </div>
 
             <div className='text-center mb-4'>
-                <Separator>
+                <Separator theme={theme}>
                     <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
                     <Text variant="medium" styles={semibold} style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size18 }}> {locale.extraGroups.availableGroups} </Text>
                     <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
@@ -106,7 +106,7 @@ const AdditionalGroupsView = () => {
                 />
             </FocusZone>
 
-            <Separator>
+            <Separator theme={theme}>
                 <div className="mb-2 mt-2">
                     <Text variant="large">
                         {locale.extraGroups.text3}

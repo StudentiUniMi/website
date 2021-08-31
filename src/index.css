@@ -96,7 +96,7 @@ button:focus,
   }
 }
 /* Responsive menu and title */
-@media only screen and (min-width: 837px) {
+@media only screen and (min-width: 426px) {
   .header-menu .pivot {
     display: block;
   }
@@ -110,7 +110,7 @@ button:focus,
     margin-left: 10px;
   }
 }
-@media only screen and (max-width: 836px) {
+@media only screen and (max-width: 425px) {
   .header-menu .pivot {
     display: none;
   }

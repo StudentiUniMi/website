@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { IPivotStyles, Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
+import LocalizationService from "../services/LocalizationService";
 import { FontSizes } from '@fluentui/theme';
 import { Dropdown, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
 import { Icon, IIconStyles } from 'office-ui-fabric-react/lib/Icon';
@@ -13,7 +13,7 @@ import { Coachmark, IButtonProps, TeachingBubbleContent, Toggle } from '@fluentu
 import { useCookies } from "react-cookie";
 import { useTheme } from '@fluentui/react-theme-provider';
 import { addDays } from '../services/Utils';
-import LocalizationService from "../services/LocalizationService";
+import { Pivot, PivotItem, IPivotStyles } from '@fluentui/react';
 import { SwatchColorPicker } from '@fluentui/react/lib/SwatchColorPicker';
 import { semibold } from "../fonts";
 import { palettes } from '../palettes';
@@ -42,7 +42,7 @@ const HeaderMenu = (props: Props) => {
     const tooltipId = useId('tooltip');
     const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
     const settingsIcon: IIconProps = { iconName: 'Settings', styles: { root: { fontSize: '18px' } } };
-    const settingsIconStylePivot: IIconStyles = { root: { position: 'absolute', right: '5px', top: '94px', zIndex: 10 } };
+    const settingsIconStylePivot: IIconStyles = { root: { position: 'absolute', right: '5px', top: '8px', zIndex: 10 } };
     const settingsIconStyleDropdown: IIconStyles = { root: { position: 'absolute', left: '5px', top: '6px', zIndex: 10 } };
     const settingsIconId = useId('icon');
     const calloutProps = { gapSpace: 0, target: `#${settingsIconId}`, };
@@ -174,7 +174,7 @@ const HeaderMenu = (props: Props) => {
     const hostStylesResetColor: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
 
     return (
-        <div className="header-menu" style={{ borderBottom: '1px solid', borderColor: theme.palette.neutralLight }}>
+        <div className="header-menu">
 
             <div className="pivot">
                 <Pivot
@@ -183,6 +183,7 @@ const HeaderMenu = (props: Props) => {
                     headersOnly={true}
                     styles={pivotStyles}
                     theme={theme}
+                    overflowBehavior={'menu'}
                 >
                     {Object.values(ItemsKeys).map((x, i) => <PivotItem key={i} headerText={texts.get(x)} style={{ fontSize: FontSizes.size24 }} itemKey={x} />)}
                 </Pivot>
@@ -191,7 +192,7 @@ const HeaderMenu = (props: Props) => {
                     <div ref={target} style={{ position: 'absolute', right: '35px', top: '108px'}}></div><IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStylePivot} id={settingsIconId} />
                 </TooltipHost>
 
-                {isCoachmarkVisible && window.screen.availWidth >= 780 && ( /* With windows.screen size I fixed the visualization of coachMark in mobile displays too */
+                {isCoachmarkVisible && window.screen.availWidth >= 780 && ( /* With windows.screen size I fixed the visSualization of coachMark in mobile displays too */
                     <Coachmark
                         target={target.current}
                         positioningContainerProps={positioningContainerProps}

@@ -1,10 +1,10 @@
 import { Link, Text, FontSizes, IIconProps, PrimaryButton, Icon, initializeIcons } from '@fluentui/react';
 import { semibold } from '../fonts';
 import { Image } from 'office-ui-fabric-react/lib/Image';
-import { useTheme } from '@fluentui/react-theme-provider';
 import { Card, ICardTokens, CardSection } from "@uifabric/react-cards";
 import { Separator } from '@fluentui/react/lib/Separator';
 import { Container } from 'react-bootstrap';
+import { useTheme } from '@fluentui/react-theme-provider';
 import Slider from '../components/Home/Slider';
 import Faqs from '../components/Home/Faqs';
 import React from 'react';
@@ -23,25 +23,25 @@ const HomeView = () => {
     
     //const groupsNumber = getGroupsLength();
     //const cdlsNumber = getCdlsLength();
-
+    
     /* Icons */
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
-
+    
     /* Cards */
     //const infoCard = { minHeight: 130, maxWidth: 350 };
     const sectionCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', boxShadow: theme.effects.elevation8 };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
-
+    
     /* Buttons */
     const buttonStyle = { maxWidth: '180px' };
     const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
-
+    
     /* Other */
     const logoProperties = { width: '150px', height: '150px', display: 'inline-block' };
     const telegramLogo = { marginLeft: 'auto', marginRight: 'auto', width: '50px', height: '50px' };
     //const numberStyle = { color: theme.palette.themePrimary };
-
+    
     /* Remove title properties from documentCardTitles */
     React.useEffect(() => {
         const divList = document.getElementsByClassName("ms-DocumentCardTitle");
@@ -49,7 +49,7 @@ const HomeView = () => {
             divList[i].removeAttribute('title');
         }
     });
-
+    
     return (
         <Container className="home">
             <div className="info-section mb-4 text-center">
@@ -70,7 +70,7 @@ const HomeView = () => {
 
             <div className="primary-section mb-4">
                 <div className="mb-4">
-                    <Separator><Text variant="large" styles={semibold}>{locale.homepage.section2.text}</Text></Separator>
+                    <Separator theme={theme}><Text variant="large" styles={semibold}>{locale.homepage.section2.text}</Text></Separator>
                 </div>
 
                 <Row className="justify-content-center">
@@ -133,7 +133,7 @@ const HomeView = () => {
             </div>
 
             <div className="secondary-section mb-4">
-                <div className="mb-4"><Separator><Text variant="large" styles={semibold}>{locale.homepage.section3.text}</Text></Separator></div>
+                <div className="mb-4"><Separator theme={theme}><Text variant="large" styles={semibold}>{locale.homepage.section3.text}</Text></Separator></div>
 
                 <Row className="justify-content-center">
                     <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
@@ -181,7 +181,7 @@ const HomeView = () => {
             </div>
 
             <div className="tertiary-section mb-4">
-                <div className="mb-4"><Separator><Text variant="large" styles={semibold}>{locale.homepage.section4.text}</Text></Separator></div>
+                <div className="mb-4"><Separator theme={theme}><Text variant="large" styles={semibold}>{locale.homepage.section4.text}</Text></Separator></div>
 
                 <Row className="justify-content-center">
                     <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>
@@ -243,7 +243,7 @@ const HomeView = () => {
             </div>
 
             <div className="fourth-section mb-4">
-                <div className="mb-4"><Separator><Text variant="large" styles={semibold}>{locale.homepage.section5.text}</Text></Separator></div>
+                <div className="mb-4"><Separator theme={theme}><Text variant="large" styles={semibold}>{locale.homepage.section5.text}</Text></Separator></div>
 
                 <Row className="justify-content-center">
                     <Col xl={3} lg={3} md={4} sm={6} xs={12} className="mb-3">
@@ -280,12 +280,12 @@ const HomeView = () => {
             </div>
 
             <div className="faq-section mb-4">
-                <div className="mb-4"><Separator><Text variant="large" styles={semibold}>{locale.homepage.section6.text}</Text></Separator></div>
+                <div className="mb-4"><Separator theme={theme}><Text variant="large" styles={semibold}>{locale.homepage.section6.text}</Text></Separator></div>
                 <Faqs />
             </div>
 
             <div className="mb-4 text-center">
-                <div className="mb-3"><Separator><Text variant="large" styles={semibold}>{locale.homepage.telegramSection.title}</Text></Separator></div>
+                <div className="mb-3"><Separator theme={theme}><Text variant="large" styles={semibold}>{locale.homepage.telegramSection.title}</Text></Separator></div>
 
                 <div className="mb-4">
                     <Text variant="medium">
@@ -320,7 +320,7 @@ const HomeView = () => {
 
             { /* We disable this section until we have stats endpoint
             <div className="mb-3">
-                <div className="mb-4"><Separator><Text variant="large" styles={semibold}>{locale.homepage.section7.text}</Text></Separator></div>
+                <div className="mb-4"><Separator theme={theme}><Text variant="large" styles={semibold}>{locale.homepage.section7.text}</Text></Separator></div>
 
                 <Row className="justify-content-center">
                     <Col className="mb-3" style={{ maxWidth: 350 }} xl={3} lg={4} md={4} sm={6} xs={12}>

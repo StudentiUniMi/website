@@ -26,6 +26,7 @@ const VaccineCards = () => {
                     styles={vaccineNewsCards}
                     onClick={() => redirectToLink("https://www.mur.gov.it/it/news/lunedi-09082021/green-pass-obbligatorio-attivita-presenza-universita-e-afam")}
                     className="text-align-left"
+                    theme={theme}
                 >
                     <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/vaccine_card_1.png"} />
                     <DocumentCardDetails styles={vaccineDocumentCardDetails}>
@@ -51,6 +52,7 @@ const VaccineCards = () => {
                     styles={vaccineNewsCards}
                     onClick={() => redirectToLink("https://www.docdroid.net/zm5C1c5/20210810-piano-vaccini-ampamp-universita-verfin-pdf")}
                     className="text-align-left"
+                    theme={theme}
                 >
                     <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/vaccine_card_2.jpg"} />
                     <DocumentCardDetails styles={vaccineDocumentCardDetails}>

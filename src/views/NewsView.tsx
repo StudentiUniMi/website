@@ -1,5 +1,3 @@
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 import { Text } from 'office-ui-fabric-react';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { Container } from 'react-bootstrap';
@@ -20,7 +18,7 @@ const NewsView = () => {
             </div>
 
             <div className="mb-3">
-                <div className="mb-4"><Separator><Text variant="large" style={{color: theme.palette.themePrimary}} styles={semibold}>{locale.homepage.vaccineSection.title}</Text></Separator></div>
+                <div className="mb-4"><Separator theme={theme}><Text variant="large" style={{color: theme.palette.themePrimary}} styles={semibold}>{locale.homepage.vaccineSection.title}</Text></Separator></div>
                 <VaccineCards />
             </div>
         </Container>

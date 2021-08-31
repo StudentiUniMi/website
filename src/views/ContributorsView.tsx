@@ -67,7 +67,7 @@ const ContributorsView = () => {
             <Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} />
 
             <div className="mb-4">
-                <div className="mb-3"><Separator><Text variant="large" styles={semibold}>{locale.contributors.header1}</Text></Separator></div>
+                <div className="mb-3"><Separator theme={theme}><Text variant="large" styles={semibold}>{locale.contributors.header1}</Text></Separator></div>
 
                 <Row className="justify-content-center">
                     {
@@ -117,7 +117,7 @@ const ContributorsView = () => {
 
 
             <div className="mb-4">
-                <div className="mb-2"><Separator><Text variant="large" styles={semibold}>{locale.contributors.header2}</Text></Separator></div>
+                <div className="mb-2"><Separator theme={theme}><Text variant="large" styles={semibold}>{locale.contributors.header2}</Text></Separator></div>
 
                 <div><Text variant="medium"><JsxParser bindings={{ theme: theme }} components={{ Text, Link }} jsx={locale.contributors.text2}/></Text></div>
 
