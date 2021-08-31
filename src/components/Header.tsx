@@ -19,7 +19,7 @@ const Header = (props: Props) => {
 
             {/* Large devices */}
             <div className="large-display">
-                <Row className="ml-2 mr-2 mb-0">
+                <div className="ml-2 mr-2 mb-0">
 
                     <span className="mr-1 mt-2">
                         <Link href="http://studentiunimi.it/">
@@ -35,7 +35,7 @@ const Header = (props: Props) => {
 
                     <HeaderMenu changeTheme={props.changeTheme} changePalette={props.changePalette} />
 
-                </Row>
+                </div>
             </div>
 
             {/* Medium and small devices */}
