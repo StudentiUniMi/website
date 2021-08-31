@@ -9,14 +9,15 @@ import { semibold } from '../fonts';
 import { FontSizes } from '@fluentui/theme';
 import { Separator } from '@fluentui/react/lib/Separator';
 import { useTheme } from '@fluentui/react-theme-provider';
+import { Degree, CourseDegree } from '../models/Models';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import CourseItem from './CourseItem';
-import Course from '../models/Course';
-import Degree from '../models/Degree';
 import LocalizationService from "../services/LocalizationService";
+import LoadingSpinner from './LoadingSpinner';
+import Message from './Message';
 
-interface Props { cdl?: Degree };
+interface Props { degree: Degree, courses: CourseDegree[], loadingCourses: boolean, errorLoadingCourses: boolean };
 
 // Opzioni per la ricerca del semestre
 const semesterFilterOptions: IDropdownOption[] = [ 
@@ -73,7 +74,7 @@ const CourseList= (props: Props) => {
         return rowHeight.current * rowsPerPage.current;
     }, []); 
     
-    const getCell = (e?: Course, index?: number, isScrolling?: boolean) => {
+    const getCell = (e?: CourseDegree, index?: number, isScrolling?: boolean) => {
         return (
             <div data-is-focusable className="listGridTile" style={{ height: rowHeight.current + 'px', width: 100 / columnCount.current + '%' }}>
                 <CourseItem key={index} data={e!} />
@@ -86,9 +87,6 @@ const CourseList= (props: Props) => {
     const [yearFilter, setYearFilter] = React.useState<number>(0);
     const [semesterFilter, setSemesterFilter] = React.useState<number>(0);
 
-    let cdl = props.cdl;
-
-    const courses: Course[] = cdl?.courses ?? [];
     const onNameFilterChanged = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, text?: string): void => {
         setNameFilter(text ?? "");
     };
@@ -101,13 +99,13 @@ const CourseList= (props: Props) => {
         setYearFilter((item?.key ?? 0) as number);
     };
 
-    // Filters gestion
-    let yearFilterOptions = cdl?.is_master ? yearMasterDegreeFilterOptions : yearBachelorDegreeFilterOptions;
-    let filteredCourses = courses;
+    /* Filters gestion */
+    let yearFilterOptions = props.degree.type === 'M' || props.degree.type === 'C' ? yearMasterDegreeFilterOptions : yearBachelorDegreeFilterOptions; 
+    let filteredCourses = props.courses;
 
-    if (nameFilter !== "") { filteredCourses = filteredCourses.filter(x => x.name?.toLocaleLowerCase()?.includes(nameFilter.toLocaleLowerCase())); }
-    if (semesterFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.semestre === semesterFilter); }
-    if (yearFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.anno === yearFilter); }
+    if (nameFilter !== "") { filteredCourses = filteredCourses.filter(x => x.course?.name?.toLocaleLowerCase()?.includes(nameFilter.toLocaleLowerCase())); }
+    if (semesterFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.semester === semesterFilter); }
+    if (yearFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.year === yearFilter); }
 
     return (       
         <Container className="courses-filter-options mb-4">
@@ -118,42 +116,50 @@ const CourseList= (props: Props) => {
                     <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
                 </Separator>
             </div> 
-
+            
             <FocusZone>
                 <div className="mb-4 text-center">
                     <Row className="justify-content-center">
                         <Col xl={4} lg={4} md={4} sm={12} xs={12}>
                             <TextField
                                 label={locale.courses.nameFilter}
-                                onChange={onNameFilterChanged}                
+                                onChange={onNameFilterChanged}   
+                                disabled={props.courses.length === 0 || props.loadingCourses}             
                             />
                         </Col>
                         <Col xl={4} lg={4} md={4} sm={12} xs={12}>
                             {
-                                <Dropdown options={yearFilterOptions}
+                                <Dropdown 
+                                    options={yearFilterOptions}
                                     label={locale.courses.yearFilter}
                                     onChange={onYearFilterChanged}
                                     selectedKey={yearFilter}
-                                    disabled={ !cdl?.has_years ?? false}
+                                    disabled={props.courses.length === 0 || props.loadingCourses || props.degree.slug === 'magistrale_informatica'} /* To-do: must decide if we need an apposite field to disable year selection */
                                 />
                             }
                         </Col>
                         <Col xl={4} lg={4} md={4} sm={12} xs={12}>
-                            <Dropdown options={semesterFilterOptions}
+                            <Dropdown 
+                                options={semesterFilterOptions}
                                 label={locale.courses.semesterFilter}
                                 onChange={onSemesterFilterChanged}
                                 selectedKey={semesterFilter}
+                                disabled={props.courses.length === 0 || props.loadingCourses}
                             />
                         </Col>
                     </Row>
                 </div>
-
-                {filteredCourses.length === 0 ? 
+                
+                {
+                    props.loadingCourses || props.errorLoadingCourses ? <LoadingSpinner loading={props.loadingCourses} error={props.errorLoadingCourses} />
+                    : filteredCourses.length === 0 ?
                     <div className="justify-content-center">
-                        <Text style={{ fontSize: FontSizes.size14, backgroundColor: theme.palette.neutralLighter, padding: '4px' }}><Icon iconName="Info" /> {locale.courses.groupsNotFound}</Text>
-                    </div>
-                    :
-                    <div className="course-list text-center">
+                        <Message text={locale.courses.groupsNotFound} />
+                    </div> : <></>
+                }
+                
+                {filteredCourses.length !== 0 && !props.errorLoadingCourses && !props.loadingCourses ? 
+                    <div className="course-list">
                         <List
                             className={classNames.listGrid}
                             items={filteredCourses}
@@ -163,7 +169,7 @@ const CourseList= (props: Props) => {
                             onRenderCell={getCell}
                             usePageCache={true}
                         />
-                    </div>
+                    </div> : <></>
                 }
             </FocusZone>
         </Container>

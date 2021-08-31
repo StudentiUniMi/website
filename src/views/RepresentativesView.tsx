@@ -2,82 +2,96 @@ import React from "react";
 import { Container } from 'react-bootstrap';
 import { FontSizes } from '@fluentui/theme';
 import { Text, Icon } from 'office-ui-fabric-react';
-import { Dropdown, IDropdownOption, IDropdownStyles, IDropdownProps } from 'office-ui-fabric-react/lib/Dropdown';
+import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { useHistory } from 'react-router-dom';
 import { useTheme } from '@fluentui/react-theme-provider';
-import RepresentativesList from '../components/RepresentativesList';
 import { getRepresentatives, getDepartments } from '../services/Requests'
-import Representative from '../models/Representative';
+import { Department, Representative } from '../models/Models';
 import LocalizationService from "../services/LocalizationService";
-
-const dropdownStyles: Partial<IDropdownStyles> = { dropdown: {  } };
+import RepresentativesList from '../components/RepresentativesList';
 
 const iconStyles = { marginRight: '8px' };
-const onRenderOption = (option?: IDropdownOption): JSX.Element => {
-    return (
-        <div>
-            {option?.data && option?.data.icon && (
-                <Icon style={iconStyles} iconName={option.data.icon} aria-hidden="true" title={option.data.icon} />
-            )}
-            <span>{option?.text}</span>
-        </div>
-    );
-};
-
-const onRenderTitle = (options?: IDropdownOption[]): JSX.Element => {
-    const option = options![0];
-
-    return (
-        <div>
-            {option.data && option.data.icon && (
-                <Icon style={iconStyles} iconName={option.data.icon} aria-hidden="true" title={option.data.icon} />
-            )}
-            <span>{option.text}</span>
-        </div>
-    );
-};
-
-const onRenderPlaceholder = (props?: IDropdownProps): JSX.Element => {
-    return (
-        <div className="dropdownExample-placeholder">
-            <Icon style={iconStyles} iconName={'SurveyQuestions'} aria-hidden="true" />
-            <span>{props?.placeholder}</span>
-        </div>
-    );
-};
 
 const RepresentativesView = () => {
     var theme = useTheme();
+    let didMount = React.useRef(false);
     const locale = LocalizationService.strings();
     const history = useHistory();
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
+
+    const [departments, setDepartments] = React.useState<Department[]>([]);
+    const [representatives, setRepresentatives] = React.useState<Representative[]>([]);
     const [selectedDepartment, setSelectedDepartment] = React.useState<string>('');
 
-    const departmentSelectionChanged = (
-        ev?: React.FormEvent<HTMLElement | HTMLInputElement>,
-        option?: IDropdownOption
-    ): void => {
+    const [loadingRepresentatives, setLoadingRepresentatives] = React.useState<boolean>(false);
+    const [errorLoadingRepresentatives, setErrorLoadingRepresentatives] = React.useState<boolean>(false);
+    const [errorLoadingDepartments, setErrorLoadingDepartments] = React.useState<boolean>(false);
+
+    const departmentSelectionChanged = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IDropdownOption): void => {
         setSelectedDepartment(option?.key as string ?? '');
-        history.push(`/representatives/${option?.key as string}`);
+        history.push(`/representatives/${option?.data.slug as string}`);
     };
 
-    let didMount = React.useRef(false);
+    /* Departments callBack */
+    const updateDepartments = React.useCallback(async () => {
+        setErrorLoadingDepartments(false);
+        let departmentsResult = await getDepartments();
 
-    React.useEffect(() =>
-    {
-        if(!didMount.current)
-        {
+        if (departmentsResult.status !== 200) {
+            setErrorLoadingDepartments(true);
+            return;
+        }
+
+        //console.log("Departments result: ", departmentsResult.value ?? []);
+
+        setDepartments(departmentsResult.value ?? []);
+    }, []);
+
+    /* Representatives callBack */
+    const updateRepresentatives = React.useCallback(async () => {
+        if (selectedDepartment === '' || selectedDepartment === undefined) return;
+        setLoadingRepresentatives(true);
+        setErrorLoadingRepresentatives(false);
+        let representativesResult = await getRepresentatives(selectedDepartment);
+
+        if (representativesResult.status !== 200) {
+            setLoadingRepresentatives(false);
+            setErrorLoadingRepresentatives(true);
+        }
+
+        //console.log("Representatives result: ", representativesResult.value ?? []);
+
+        setLoadingRepresentatives(false);
+        setRepresentatives(representativesResult.value ?? []);
+    }, [setRepresentatives, selectedDepartment]);
+
+    /* This function initializes representatives based on url parameters */
+    const initializeRepresentativesViaUrl = React.useCallback(() => {
+        if (!didMount.current && departments.length !== 0) {
             didMount.current = true
             var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
-            var initialDepartment= states.length >= 2 ? states[1] : '';
-            setSelectedDepartment(initialDepartment);
-            history.push(`/representatives/${initialDepartment}`);
+            var departmentSlug = states.length >= 2 ? states[1] : '';
+
+            //console.log("Department slug: ", departmentSlug)
+            setSelectedDepartment(departments.filter(x => x.slug === departmentSlug)[0]?.pk as unknown as string);
         }
-    }, [history]);
+    }, [departments, history.location.pathname]);
 
-    let representatives: Representative[] = getRepresentatives(selectedDepartment);
+    React.useEffect(() => {
+        if (!didMount.current) {
+            updateDepartments();
+        }
+    }, [updateDepartments]);
 
-    const departmentOptions: IDropdownOption[] = getDepartments().map(x => ({key: x.id, text: x.name ?? "", data: {icon:x.icon}, disabled: x.cdls.length === 0 || x.representatives.length === 0}));
+    React.useEffect(() => {
+        updateRepresentatives();
+    }, [selectedDepartment, updateRepresentatives]);
+
+    React.useEffect(() => {
+        if (!didMount.current) initializeRepresentativesViaUrl();
+    }, [initializeRepresentativesViaUrl, departments]);
+
+    const departmentOptions: IDropdownOption[] = departments.map(x => ({ key: x.pk, text: x.name ?? "", data: { icon: x.icon, slug: x.slug }, disabled: x.representative_count === 0 }));
 
     return (
         <Container className="representatives text-center">
@@ -103,16 +117,42 @@ const RepresentativesView = () => {
                     options={departmentOptions}
                     onChange={departmentSelectionChanged}
                     selectedKey={selectedDepartment}
-                    styles={dropdownStyles}
-                    onRenderPlaceholder={onRenderPlaceholder}
                     onRenderTitle={onRenderTitle}
                     onRenderOption={onRenderOption}
+                    errorMessage={errorLoadingDepartments ? locale.errorLoadingDepartments : undefined}
+                    disabled={errorLoadingDepartments || departments.length === 0}
                 />
             </div>
 
-            <RepresentativesList data={representatives}/>
+            <div style={{ display: selectedDepartment !== '' && selectedDepartment !== undefined ? 'block' : 'none' }}>
+                <RepresentativesList data={representatives} loadingRepresentatives={loadingRepresentatives} errorLoadingRepresentatives={errorLoadingRepresentatives} />
+            </div>
         </Container>
     )
 };
 
 export default RepresentativesView;
+
+const onRenderOption = (option?: IDropdownOption): JSX.Element => {
+    return (
+        <div>
+            {option?.data && option?.data.icon && (
+                <Icon style={iconStyles} iconName={option.data.icon} aria-hidden="true" title={option.data.icon} />
+            )}
+            <span>{option?.text}</span>
+        </div>
+    );
+};
+
+const onRenderTitle = (options?: IDropdownOption[]): JSX.Element => {
+    const option = options![0];
+
+    return (
+        <div>
+            {option.data && option.data.icon && (
+                <Icon style={iconStyles} iconName={option.data.icon} aria-hidden="true" title={option.data.icon} />
+            )}
+            <span>{option.text}</span>
+        </div>
+    );
+};

@@ -4,7 +4,6 @@ import { Container } from 'react-bootstrap';
 import { semibold } from '../fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { withCookies } from 'react-cookie';
-import { IIconStyles } from '@fluentui/react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
@@ -15,8 +14,7 @@ const listElement = { marginBottom: '.2rem' };
 const Footer = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
-    const iconStyle = { fontSize: 16 };
-    const test: IIconStyles = { root: { fontWeight: 500 }};
+    const iconStyle = { fontSize: 18 };
     return (
         <footer style={{ backgroundColor: theme.palette.neutralQuaternaryAlt, borderTop: '1px solid', borderColor: theme.palette.neutralLight }}>
             <Container style={{ width: '100%', color: theme.palette.neutralSecondary }}>
@@ -39,6 +37,7 @@ const Footer = () => {
                             <Link href="https://t.me/studenti_unimi" target="_blank" className="text-decoration-none mr-1"><Icon iconName="Send" style={iconStyle}/></Link>
                             <Link href="https://discord.gg/SwPzAkv4A4" target="_blank" className="text-decoration-none mr-1"><Icon iconName="Game" style={iconStyle}/></Link>
                             <Link href="https://github.com/StudentiUnimi" target="_blank" className="text-decoration-none mr-1"><Icon iconName="Website" style={iconStyle}/></Link>
+                            <Link href="https://github.com/StudentiUniMi/backend" target="_blank" className="text-decoration-none mr-1"><Icon iconName="ServerEnviroment" style={iconStyle} /></Link>
                             <Link href="https://www.facebook.com/networkstudentiunimi" target="_blank" className="text-decoration-none"><Icon iconName="Group" style={iconStyle}/></Link>
                         </div>
                     </Col>
@@ -57,7 +56,7 @@ const Footer = () => {
                                             <Link href="http://www.quickunimi.it/" target="_blank"><Icon iconName="Globe" /> QuickUnimi</Link>
                                         </li>
                                         <li style={listElement}>
-                                            <Link href="https://orientamento.di.unimi.it/index.php/studia-con-noi/tutor-di-processo" target="_blank"><Icon iconName="SunQuestionMark" styles={test} /> Faq matricole</Link>
+                                            <Link href="https://orientamento.di.unimi.it/index.php/studia-con-noi/tutor-di-processo" target="_blank"><Icon iconName="SunQuestionMark" /> FAQ matricole</Link>
                                         </li>
                                         <li style={listElement}>
                                             <Link href="https://quanto-manca.it/" target="_blank"><Icon iconName="DateTime" /> Quanto-manca.it</Link>
