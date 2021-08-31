@@ -148,7 +148,6 @@ interface ILocalizationStrings {
     },
     courses: {
         text1: string,
-        text2: string,
         departmentSelect: string,
         cdlSelect: string,
         availableRedirects: string,
@@ -166,7 +165,15 @@ interface ILocalizationStrings {
         groupNotAvailable: string,
         contactAdmin: string,
         groupsNotFound: string,
-        adminsNotFound: string
+        adminsNotFound: string,
+        wikiCard: {
+            clickToWiki: string,
+            buttonTitle: string,
+            title: string,
+            description: string,
+            type: string,
+            date: string
+        }
     },
     services: {
         text1: string,

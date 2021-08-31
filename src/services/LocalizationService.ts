@@ -165,7 +165,6 @@ class LocalizationService {
                     },
                     courses: {
                         text1: 'Qui è possibile trovare i gruppi telegram, siti web, wiki, faq (se disponibili), collegamenti e informazioni generali riguardo il tuo corso di laurea e i suoi corsi didattici.',
-                        text2: "I link alla <Text styles={semibold}><Link href='https://wiki.studentiunimi.it/start' target='_blank'>Wiki</Link></Text> di un corso didattico potrebbero portare a pagine non ancora compilate: è qui che potete contribuire iscrivendovi e aiutandoci a raccogliere faq e qualsiasi altro contenuto utile per i corsi didattici. Informatica musicale, per la comunicazione digitale e molti altri corsi di laurea non hanno ancora contenuti! Puoi contribuire creando un apposito account gratuito.",
                         departmentSelect: 'Seleziona un dipartimento',
                         cdlSelect: 'Seleziona un corso di Laurea',
                         availableRedirects: 'Collegamenti disponibili',
@@ -183,7 +182,15 @@ class LocalizationService {
                         groupNotAvailable: 'Gruppo non disponibile',
                         contactAdmin: "<Icon iconName='FollowUser'/> Contatta un <Link href='https://studentiunimi.it/organization/'>amministratore</Link> se vuoi essere aggiunto al gruppo, oppure chiedilo direttamente su <Link href='https://t.me/unimichat' target='_blank'>@unimichat</Link>.",
                         groupsNotFound: 'Nessun gruppo trovato.',
-                        adminsNotFound: 'Nessun amministratore disponibile.'
+                        adminsNotFound: 'Nessun amministratore disponibile.',
+                        wikiCard: {
+                            buttonTitle: "Dimmi di più sulla Wiki",
+                            title: "Informazioni sulla Wiki",
+                            description: "I link alla Wiki di un corso didattico potrebbero portare a pagine non ancora compilate: è qui che potete contribuire iscrivendovi e aiutandoci a raccogliere faq e qualsiasi altro contenuto utile per i corsi didattici.",
+                            clickToWiki: "Clicca qui per andare alla Wiki",
+                            type: "Avviso",
+                            date: "29 Agosto, 2021"
+                        }
                     },
                     services: {
                         text1: 'Siete stanchi di dover andare a spulciare miriadi di pagine che neanche caricano alla ricerca di strumenti e servizi universitari? Abbiamo realizzato una pagina per centralizzarli tutti! Inoltre, qui potete trovare anche alcune guide che abbiamo realizzato.',
@@ -392,7 +399,6 @@ class LocalizationService {
                     },
                     courses: {
                         text1: 'In this section you can find telegram groups, websites, wiki, FAQs (if available), redirects and general informations about your degree course and its didactic courses.',
-                        text2: "Links to the <Text styles={semibold}><Link href='https://wiki.studentiunimi.it/start' target='_blank'>Wiki</Link></Text> could lead to unfinished or empty pages: that’s why you can help us collecting FAQs and any other useful material. Many degree courses have no material at this moment! You can help the grow of the network by creating a free account and compile new informations about the courses you followed.",
                         departmentSelect: 'Select the department',
                         cdlSelect: 'Select the degree',
                         availableRedirects: 'Available redirects',
@@ -410,7 +416,15 @@ class LocalizationService {
                         groupNotAvailable: 'Group not available.',
                         contactAdmin: "<Icon iconName='FollowUser'/> Contact an <Link href='https://studentiunimi.it/organization/'>administrator</Link> if you would like to be added to this group, or ask directly on <Link href='https://t.me/unimichat' target='_blank'>@unimichat</Link>.",
                         groupsNotFound: 'Groups not found.',
-                        adminsNotFound: 'There are no admins available.'
+                        adminsNotFound: 'There are no admins available.',
+                        wikiCard: {
+                            buttonTitle: "Tell me more about the Wiki",
+                            title: "Informations about the Wiki",
+                            description: "Links to the Wiki could lead to unfinished or empty pages: you can help us collecting FAQs and any other useful material. Many degree courses have no material at this moment! You can help the grow of the network by creating a free account and compile new informations about the courses you followed.",
+                            clickToWiki: "Click here to go to the Wiki",
+                            type: "Announcement",
+                            date: "August 29, 2021"
+                        }
                     },
                     services: {
                         text1: 'Tired of surfing into endless pages to find the services offered by the university? We grouped all the links here! We added some guides we created too.',

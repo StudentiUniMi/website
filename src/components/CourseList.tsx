@@ -118,7 +118,7 @@ const CourseList= (props: Props) => {
             </div> 
             
             <FocusZone>
-                <div className="mb-4">
+                <div className="mb-4 text-center">
                     <Row className="justify-content-center">
                         <Col xl={4} lg={4} md={4} sm={12} xs={12}>
                             <TextField
