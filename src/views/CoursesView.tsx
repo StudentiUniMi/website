@@ -145,7 +145,7 @@ const CoursesView = () => {
         }
 
         console.log("Courses result: ", coursesResult.value ?? []);
-        const degreeSelected = degrees.filter(x => x.pk as unknown as string === selectedDegree)[0];
+        const degreeSelected = degrees.filter(x => x.pk as unknown as string === selectedDegree)[0] ?? undefined;
         if (degreeSelected.group?.invite_link !== '' && degreeSelected.group?.invite_link !== null && degreeSelected.group?.invite_link !== undefined) {
             let mainDegreeGroup: CourseDegree = {
                 "course": {
