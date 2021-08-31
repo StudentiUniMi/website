@@ -3,7 +3,8 @@ import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Image } from 'office-ui-fabric-react/lib/Image';
 import Row from 'react-bootstrap/Row';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { FontWeights, ITextStyles } from 'office-ui-fabric-react';
+import { FontWeights, ITextStyles, Link } from 'office-ui-fabric-react';
+import { redirectToLink } from '../services/dist/Utils';
 
 const HeaderTitle = () => {
     var theme = useTheme();
@@ -19,11 +20,13 @@ const HeaderTitle = () => {
                 <Row className="m-2 mb-0">
 
                     <span className="mr-1">
-                        <Image id="logo" className="mr-3"
-                            src={process.env.PUBLIC_URL + '/logo/' + logoFileName}
-                            alt='Network logo'
-                            style={logoProperties}
-                        />
+                        <Link href="http://studentiunimi.it/">
+                            <Image id="logo" className="mr-3"
+                                src={process.env.PUBLIC_URL + '/logo/' + logoFileName}
+                                alt='Network logo'
+                                style={logoProperties}
+                            />
+                        </Link>
                     </span>
 
                     <Text styles={titleStyle}>Network StudentiUniMi</Text>
@@ -36,11 +39,14 @@ const HeaderTitle = () => {
                 <Row className="mt-2 mr-2 mb-0 text-center justify-content-center logo-text">
 
                     <span className="mr-1">
-                        <Image id="logo" className="mr-2"
-                            src={process.env.PUBLIC_URL + '/logo/' + logoFileName}
-                            alt='Network logo'
-                            style={logoProperties}
-                        />
+                        <Link href="http://studentiunimi.it/">
+                            <Image id="logo" className="mr-2"
+                                src={process.env.PUBLIC_URL + '/logo/' + logoFileName}
+                                alt='Network logo'
+                                style={logoProperties}
+                                onClick={() => redirectToLink('http://studentiunimi.it/')}
+                            />
+                        </Link>
                     </span>
 
                     <Text styles={titleStyle}>Network</Text>
