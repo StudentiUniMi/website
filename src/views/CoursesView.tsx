@@ -1,11 +1,11 @@
 import React from "react";
-import { Link, Text } from 'office-ui-fabric-react';
+import { Text } from 'office-ui-fabric-react';
 import { FontSizes } from '@fluentui/theme';
 import { initializeIcons } from "@uifabric/icons";
 import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
-import { DropdownMenuItemType } from "@fluentui/react";
+import { DefaultButton, Dialog, DialogType, DocumentCard, DocumentCardActivity, DocumentCardDetails, DocumentCardImage, DocumentCardTitle, DropdownMenuItemType, IDialogContentProps, IDocumentCardActivityPerson, IDocumentCardDetailsStyles, IDocumentCardStyles, IDocumentCardTitleStyles, IIconProps, ImageFit, mergeStyleSets } from "@fluentui/react";
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { useTheme } from '@fluentui/react-theme-provider';
 import Col from 'react-bootstrap/Col';
@@ -18,8 +18,9 @@ import Degree from "../models/Degree";
 import Department from "../models/Department";
 import AdminsList from '../components/AdminsList';
 import LocalizationService from "../services/LocalizationService";
-import JsxParser from 'react-jsx-parser';
 import { semibold } from '../fonts';
+import { redirectToLink } from "../services/Utils";
+import { useBoolean } from "@fluentui/react-hooks";
 
 initializeIcons();
 const iconStyles = { marginRight: '8px' };
@@ -53,6 +54,33 @@ const CoursesView = () => {
     const locale = LocalizationService.strings();
     let history = useHistory();
     let didMount = React.useRef(false);
+
+    /* Wiki section */
+    const wikiCard: IDocumentCardStyles = { root: { display: 'inline-block', marginBottom: 20, minWidth: 250, maxWidth: 'none', minHeight: 'none' } };
+    const wikiCardPrimaryText: IDocumentCardTitleStyles = { root: { height: 'auto' } };
+    const wikiCardSecondaryText: IDocumentCardTitleStyles = { root: { height: 'auto' } };
+    const wikiCardDocumentCardDetails: IDocumentCardDetailsStyles = { root: { justifyContent: 'start' } };
+    const people: IDocumentCardActivityPerson[] = [{ name: locale.courses.wikiCard.type, profileImageSrc: process.env.PUBLIC_URL + "/logo/unimi64.png" }];
+
+    const [hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
+    const icon: IIconProps = { iconName: 'Documentation' };
+    const styles = mergeStyleSets({
+        button: {
+            width: 'auto',
+            height: 'auto',
+            marginLeft: 10,
+            marginRight: 10
+        },
+    });
+    const modelProps = {
+        isBlocking: false,
+        styles: { main: { maxWidth: 900 } },
+    };
+    const dialogContentProps: IDialogContentProps = {
+        type: DialogType.largeHeader,
+        showCloseButton: true
+    };
+    
     const [selectedDepartment, setSelectedDepartment] = React.useState<string>('');
     const [selectedCdl, setSelectedCdl] = React.useState<string>('');
 
@@ -126,23 +154,59 @@ const CoursesView = () => {
     }
 
     return (
-        <Container className="courses text-center">
+        <Container className="courses">
 
-            <div className="mb-1">
+            <div className="mb-1 text-center">
                 <Text variant="large">{locale.courses.text1}</Text>
             </div>
 
-            <Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} />
+            <div className="text-center"><Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} /></div>
 
             <div className="mb-2">
-                <Text variant="medium">
-                    <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale.courses.text2} />
-                </Text>
+
+                <div className="text-center">
+                    <DefaultButton
+                        onClick={toggleHideDialog}
+                        text={locale.courses.wikiCard.buttonTitle}
+                        className={styles.button}
+                        iconProps={icon}
+                    />
+                </div>
+
+                <Dialog
+                    hidden={hideDialog}
+                    onDismiss={toggleHideDialog}
+                    dialogContentProps={dialogContentProps}
+                    modalProps={modelProps}
+                    maxWidth={700}
+                >
+                    <DocumentCard
+                        styles={wikiCard}
+                        onClick={() => redirectToLink("https://wiki.studentiunimi.it/start")}
+                        className="text-align-left"
+                    >
+                        <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/wiki_card.jpg"} />
+                        <DocumentCardDetails styles={wikiCardDocumentCardDetails}>
+                            <DocumentCardTitle title={locale.courses.wikiCard.title} styles={wikiCardPrimaryText} />
+                            <DocumentCardTitle
+                                title={locale.courses.wikiCard.description}
+                                styles={wikiCardSecondaryText}
+                                showAsSecondaryTitle
+                            />
+                        </DocumentCardDetails>
+                        <DocumentCardDetails>
+                            <div style={{ marginLeft: 16, marginBottom: 8 }}>
+                                <Text styles={semibold} variant="medium" style={{ color: theme.palette.themePrimary }}><Icon iconName="PageArrowRight" /> {locale.courses.wikiCard.clickToWiki}</Text>
+                            </div>
+                        </DocumentCardDetails>
+                        <DocumentCardActivity activity={locale.courses.wikiCard.date} people={people} />
+                    </DocumentCard>
+                </Dialog>
             </div>
 
             <Separator />
             
-            <Row className="department-choose justify-content-center mb-4">
+            <Row className="department-choose justify-content-center mb-4 text-center">
                 <Col xl={6} lg={6} md={6} sm={12} xs={12} className="mb-1">
                     {/* Department dropdown */}
                     <Dropdown

@@ -120,7 +120,7 @@ const CourseList= (props: Props) => {
             </div> 
 
             <FocusZone>
-                <div className="mb-4">
+                <div className="mb-4 text-center">
                     <Row className="justify-content-center">
                         <Col xl={4} lg={4} md={4} sm={12} xs={12}>
                             <TextField
@@ -153,7 +153,7 @@ const CourseList= (props: Props) => {
                         <Text style={{ fontSize: FontSizes.size14, backgroundColor: theme.palette.neutralLighter, padding: '4px' }}><Icon iconName="Info" /> {locale.courses.groupsNotFound}</Text>
                     </div>
                     :
-                    <div className="course-list">
+                    <div className="course-list text-center">
                         <List
                             className={classNames.listGrid}
                             items={filteredCourses}
