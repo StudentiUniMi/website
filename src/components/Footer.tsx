@@ -56,7 +56,7 @@ const Footer = () => {
                                             <Link href="http://www.quickunimi.it/" target="_blank"><Icon iconName="Globe" /> QuickUnimi</Link>
                                         </li>
                                         <li style={listElement}>
-                                            <Link href="https://orientamento.di.unimi.it/index.php/studia-con-noi/tutor-di-processo" target="_blank"><Icon iconName="SunQuestionMark" /> Faq matricole</Link>
+                                            <Link href="https://orientamento.di.unimi.it/index.php/studia-con-noi/tutor-di-processo" target="_blank"><Icon iconName="SunQuestionMark" /> FAQ matricole</Link>
                                         </li>
                                         <li style={listElement}>
                                             <Link href="https://quanto-manca.it/" target="_blank"><Icon iconName="DateTime" /> Quanto-manca.it</Link>
