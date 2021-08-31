@@ -17,6 +17,7 @@ class LocalizationService {
                     headerMenuItems: {
                         home: 'Home',
                         aboutUs: 'Chi siamo',
+                        news: 'Notizie',
                         rules: 'Regolamento',
                         courses: 'Corsi',
                         services: 'Servizi',
@@ -157,6 +158,9 @@ class LocalizationService {
                         header2: 'Comitato Amministrativo',
                         header3: 'Amministratori dei gruppi telegram'
                     },
+                    news: {
+
+                    },
                     rules: {
                         text1: 'Qui è possibile trovare il regolamento dei gruppi telegram del network. Si consiglia di leggere tutte le regole di cui è composto prima di usare uno qualsiasi di essi.',
                         question: 'Perchè abbiamo introdotto un regolamento?',
@@ -250,6 +254,7 @@ class LocalizationService {
                     headerMenuItems: {
                         home: 'Home',
                         aboutUs: 'About Us',
+                        news: 'News',
                         rules: 'Rules',
                         courses: 'Courses',
                         services: 'Services',
@@ -389,6 +394,9 @@ class LocalizationService {
                         header1: 'Coordinator',
                         header2: 'Administrative Committee',
                         header3: 'Telegram groups Administrators'
+                    },
+                    news: {
+
                     },
                     rules: {
                         text1: 'Here you can find the rules of the telegram groups of our network. Please read them before joining any group.',

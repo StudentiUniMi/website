@@ -1,5 +1,6 @@
 import HomeView from './HomeView';
 import CoursesView from './CoursesView';
+import NewsView from './NewsView';
 import AdditionalGroupsView from './AdditionalGroupsView';
 import OrganizationView from './OrganizationView';
 import RulesView from './RulesView';
@@ -17,6 +18,7 @@ const ContentView = () => {
         <Switch>
             <Route path="/home" render={() => wrap(<HomeView/>)} />
             <Route path="/rules" render={() => wrap(<RulesView/>)} />
+            <Route path='/news' render={() => wrap(<NewsView/>)} />
             <Route path='/courses' render={() => wrap(<CoursesView/>)} />
             <Route path='/services' render={() => wrap(<ServicesView/>)} />
             <Route path='/additional_groups' render={() => wrap(<AdditionalGroupsView/>)} />

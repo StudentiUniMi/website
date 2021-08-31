@@ -209,7 +209,7 @@ const CoursesView = () => {
     React.useEffect(() => {
         updateDegrees();
     }, [selectedDepartment, updateDegrees]);
-
+    
     React.useEffect(() => {
         updateCourses();
     }, [selectedDegree, updateCourses]);

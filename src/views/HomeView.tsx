@@ -6,7 +6,6 @@ import { Card, ICardTokens, CardSection } from "@uifabric/react-cards";
 import { Separator } from '@fluentui/react/lib/Separator';
 import { Container } from 'react-bootstrap';
 import Slider from '../components/Home/Slider';
-import VaccineCards from '../components/Home/VaccineCards';
 import Faqs from '../components/Home/Faqs';
 import React from 'react';
 import Col from 'react-bootstrap/Col';
@@ -278,11 +277,6 @@ const HomeView = () => {
                     </Col>
                 </Row>
 
-            </div>
-
-            <div className="mb-3">
-                <div className="mb-4"><Separator><Text variant="large" styles={semibold}>{locale.homepage.vaccineSection.title}</Text></Separator></div>
-                <VaccineCards />
             </div>
 
             <div className="faq-section mb-4">

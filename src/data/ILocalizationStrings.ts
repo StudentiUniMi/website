@@ -8,6 +8,7 @@ interface ILocalizationStrings {
     headerMenuItems: {
         home: string,
         aboutUs: string,
+        news: string,
         rules: string,
         courses: string,
         services: string,
@@ -139,6 +140,9 @@ interface ILocalizationStrings {
         header1: string,
         header2: string,
         header3: string
+    },
+    news: {
+
     },
     rules: {
         text1: string,
