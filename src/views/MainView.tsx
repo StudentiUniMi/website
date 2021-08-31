@@ -6,6 +6,7 @@ import ContentView from "./ContentView";
 import { ThemeProvider } from '@fluentui/react-theme-provider'; 
 import { buildLightTheme, buildDarkTheme } from '../themes';
 import { CookiesProvider, useCookies, withCookies } from 'react-cookie';
+import { loadTheme } from '@fluentui/react';
 
 const MainView = () => {
   let [cookies,] = useCookies();
@@ -14,6 +15,8 @@ const MainView = () => {
 
   let [lightTheme, setLightTheme] = React.useState(buildLightTheme(palette));
   let [darkTheme, setDarkTheme] = React.useState(buildDarkTheme(palette));
+
+  loadTheme(theme ? darkTheme : lightTheme);
 
   const changeTheme = () => {
     setTheme(!theme);
