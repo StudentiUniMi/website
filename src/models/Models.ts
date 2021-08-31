@@ -29,7 +29,7 @@ export interface CourseDegree {
 
 export interface Representative {
     tguser: Tguser,
-    title?: string
+    degree_name?: string
 }
 
 /* This is a model created just to retrieve degree and department when visiting for example courses/triennale_informatica and initialize the component. */

@@ -34,8 +34,7 @@ const RapresentativesList = (props: Props) => {
                                 var imageUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${x.tguser?.id}.png`;
                                 if (x.tguser?.username !== "") primaryText = (<><Icon iconName="Send" style={{ color: theme.palette.themePrimary }} />&nbsp;<Link href={`https://t.me/${x.tguser?.username}`}>{`${x.tguser?.first_name ?? ""} ${x.tguser?.last_name ?? ""}`}</Link></>); 
                                 else { primaryText = `${x.tguser?.first_name ?? ""} ${x.tguser?.last_name ?? ""}`};
-                                return <Persona imageUrl={imageUrl} onRenderPrimaryText={() => primaryText} text={`${x.tguser?.first_name ?? ""} ${x.tguser?.last_name ?? ""}`} secondaryText={"Fixami"} size={PersonaSize.size40} /> 
-                                /* To-do: adjust cdl of rep */
+                                return <Persona imageUrl={imageUrl} onRenderPrimaryText={() => primaryText} text={`${x.tguser?.first_name ?? ""} ${x.tguser?.last_name ?? ""}`} secondaryText={x.degree_name} size={PersonaSize.size40} /> 
                             })()
                         }
                     </Col>
