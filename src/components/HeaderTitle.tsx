@@ -4,7 +4,6 @@ import { Image } from 'office-ui-fabric-react/lib/Image';
 import Row from 'react-bootstrap/Row';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { FontWeights, ITextStyles, Link } from 'office-ui-fabric-react';
-import { redirectToLink } from '../services/dist/Utils';
 
 const HeaderTitle = () => {
     var theme = useTheme();
@@ -44,7 +43,6 @@ const HeaderTitle = () => {
                                 src={process.env.PUBLIC_URL + '/logo/' + logoFileName}
                                 alt='Network logo'
                                 style={logoProperties}
-                                onClick={() => redirectToLink('http://studentiunimi.it/')}
                             />
                         </Link>
                     </span>
