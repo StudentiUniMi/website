@@ -2,6 +2,7 @@ import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Image } from 'office-ui-fabric-react/lib/Image';
 import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import HeaderMenu from './HeaderMenu';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { FontWeights, ITextStyles, Link } from 'office-ui-fabric-react';
@@ -15,49 +16,55 @@ const Header = (props: Props) => {
     const titleStyle: ITextStyles = { root: { fontSize: FontSizes.size20, fontWeight: FontWeights.semibold, color: theme.palette.themePrimary } };
     
     return (
-        <header className="header-title ml-2 mr-2" style={{ borderBottom: '1px solid', borderColor: theme.palette.neutralLight }}>
+        <header className="mt-2" style={{ borderBottom: '1px solid', borderColor: theme.palette.neutralLight }}>
 
             {/* Large devices */}
             <div className="large-display">
-                <div className="ml-2 mr-2 mb-0">
+                <Row className="ml-3 mr-3 mb-0">
+                    <Col style={{ maxWidth: 250, paddingLeft: 0, paddingRight: 0 }}>
+                        <div style={{width: 250}}>
+                            <Link href="http://studentiunimi.it/">
+                                <Image id="logo"
+                                    src={process.env.PUBLIC_URL + '/logo/' + logoFileName}
+                                    alt='Network logo'
+                                    style={logoProperties}
+                                    className="mr-2 mt-2 mb-1 d-inline"
+                                />
+                            </Link>
 
-                    <span className="mr-1 mt-2">
-                        <Link href="http://studentiunimi.it/">
-                            <Image id="logo" className="mr-2"
-                                src={process.env.PUBLIC_URL + '/logo/' + logoFileName}
-                                alt='Network logo'
-                                style={logoProperties}
-                            />
-                        </Link>
-                    </span>
+                            <div className="d-inline mt-2"><Link href="http://studentiunimi.it/" className="text-decoration-none"><Text styles={titleStyle}>Network StudentiUniMi</Text></Link></div>
+                        </div>
+                    </Col>
 
-                    <Text styles={titleStyle} className="mt-2">Network StudentiUniMi</Text>
+                    <Col style={{ paddingLeft: 0, paddingRight: 0, marginTop: -6, width: "55%" }}>
+                        <HeaderMenu changeTheme={props.changeTheme} changePalette={props.changePalette} />
+                    </Col>
 
-                    <HeaderMenu changeTheme={props.changeTheme} changePalette={props.changePalette} />
-
-                </div>
+                </Row>
             </div>
 
             {/* Medium and small devices */}
             <div className="small-display">
-                <Row className="mt-2 mr-2 mb-0 text-center justify-content-center logo-text">
+                <Row className="ml-2 mr-2 mb-0">
+                    <Col style={{ maxWidth: 250, paddingLeft: 0, paddingRight: 0 }}>
+                        <div style={{ width: 250 }}>
+                            <Link href="http://studentiunimi.it/">
+                                <Image id="logo"
+                                    src={process.env.PUBLIC_URL + '/logo/' + logoFileName}
+                                    alt='Network logo'
+                                    style={logoProperties}
+                                    className="mr-2 mt-2 mb-1 d-inline"
+                                />
+                            </Link>
 
-                    <span className="mr-1">
-                        <Link href="http://studentiunimi.it/">
-                            <Image id="logo" className="mr-2"
-                                src={process.env.PUBLIC_URL + '/logo/' + logoFileName}
-                                alt='Network logo'
-                                style={logoProperties}
-                            />
-                        </Link>
-                    </span>
+                            <div className="d-inline mt-2"><Text styles={titleStyle}>Network StudentiUniMi</Text></div>
+                        </div>
+                    </Col>
 
-                    <Text styles={titleStyle}>Network</Text>
+                    <Col style={{ paddingLeft: 0, paddingRight: 0, marginTop: -8, width: "55%" }}>
+                        <HeaderMenu changeTheme={props.changeTheme} changePalette={props.changePalette} />
+                    </Col>
 
-                </Row>
-
-                <Row className="mt-0 mr-2 ml-2 text-center justify-content-center">
-                    <Text styles={titleStyle}>StudentiUniMi</Text>
                 </Row>
             </div>
         

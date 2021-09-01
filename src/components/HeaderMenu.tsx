@@ -42,8 +42,8 @@ const HeaderMenu = (props: Props) => {
     const tooltipId = useId('tooltip');
     const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
     const settingsIcon: IIconProps = { iconName: 'Settings', styles: { root: { fontSize: '18px' } } };
-    const settingsIconStylePivot: IIconStyles = { root: { position: 'absolute', right: '5px', top: '8px', zIndex: 10 } };
-    const settingsIconStyleDropdown: IIconStyles = { root: { position: 'absolute', left: '5px', top: '6px', zIndex: 10 } };
+    const settingsIconStylePivot: IIconStyles = { root: { position: 'absolute', right: '-5px', top: '8px', zIndex: 10 } };
+    const settingsIconStyleDropdown: IIconStyles = { root: { position: 'absolute', right: '24px', top: '8px', zIndex: 10 } };
     const settingsIconId = useId('icon');
     const calloutProps = { gapSpace: 0, target: `#${settingsIconId}`, };
     const onRenderCaretDown = (): JSX.Element => { return <Icon iconName="List" />; };
@@ -176,7 +176,7 @@ const HeaderMenu = (props: Props) => {
     return (
         <div className="header-menu">
 
-            <div className="pivot">
+            <div className="pivot mr-4 ml-3">
                 <Pivot
                     selectedKey={selectedKey}
                     onLinkClick={handlePivotLinkClick}
@@ -251,9 +251,7 @@ const HeaderMenu = (props: Props) => {
 
             <div className="dropdown">
 
-                <TooltipHost content={locale.settingsPanel.settings} id={tooltipId} calloutProps={calloutProps} styles={hostStyles}>
-                    <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStyleDropdown} id={settingsIconId} />
-                </TooltipHost>
+                <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStyleDropdown} id={settingsIconId} />
 
                 <Dropdown
                     selectedKey={selectedKey}
