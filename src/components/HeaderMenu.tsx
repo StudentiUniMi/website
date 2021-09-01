@@ -21,9 +21,9 @@ import { palettes } from '../palettes';
 export enum ItemsKeys {
     home = "home",
     organization = "organization",
+    courses = "courses",
     news = "news",
     rules = "rules",
-    courses = "courses",
     services = "services",
     additional_groups = "additional_groups",
     representatives = "representatives",
@@ -101,9 +101,9 @@ const HeaderMenu = (props: Props) => {
     const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
         [ItemsKeys.home, locale.headerMenuItems.home],
         [ItemsKeys.organization, locale.headerMenuItems.aboutUs],
+        [ItemsKeys.courses, locale.headerMenuItems.courses],
         [ItemsKeys.news, locale.headerMenuItems.news],
         [ItemsKeys.rules, locale.headerMenuItems.rules],
-        [ItemsKeys.courses, locale.headerMenuItems.courses],
         [ItemsKeys.services, locale.headerMenuItems.services],
         [ItemsKeys.additional_groups, locale.headerMenuItems.additionalGroups],
         [ItemsKeys.representatives, locale.headerMenuItems.representatives],
