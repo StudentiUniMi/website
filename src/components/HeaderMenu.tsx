@@ -189,10 +189,10 @@ const HeaderMenu = (props: Props) => {
                 </Pivot>
 
                 <TooltipHost content={locale.settingsPanel.settings} id={tooltipId} calloutProps={calloutProps} styles={hostStyles} delay={TooltipDelay.zero} directionalHint={DirectionalHint.leftCenter}>
-                    <div ref={target} style={{ position: 'absolute', right: '35px', top: '108px'}}></div><IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStylePivot} id={settingsIconId} />
+                    <div ref={target} style={{ position: 'absolute', right: '25px', top: '22px'}}></div><IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStylePivot} id={settingsIconId} />
                 </TooltipHost>
 
-                {isCoachmarkVisible && window.screen.availWidth >= 780 && ( /* With windows.screen size I fixed the visSualization of coachMark in mobile displays too */
+                {isCoachmarkVisible && window.screen.availWidth >= 586 && ( /* With windows.screen size I fixed the visualization of coachMark in mobile displays too */
                     <Coachmark
                         target={target.current}
                         positioningContainerProps={positioningContainerProps}
@@ -251,7 +251,7 @@ const HeaderMenu = (props: Props) => {
 
             <div className="dropdown">
 
-                <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStyleDropdown} id={settingsIconId} />
+                <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStyleDropdown} />
 
                 <Dropdown
                     selectedKey={selectedKey}
