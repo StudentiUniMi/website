@@ -16,13 +16,13 @@ const VaccineCards = () => {
     const vaccinePrimaryText: IDocumentCardTitleStyles = { root: { height: 'auto' } };
     const vaccineSecondaryText: IDocumentCardTitleStyles = { root: { height: 'auto' }};
     const vaccineDocumentCardDetails: IDocumentCardDetailsStyles = { root: { justifyContent: 'start' } };
-    const people: IDocumentCardActivityPerson[] = [{ name: locale.homepage.vaccineSection.news,  profileImageSrc: process.env.PUBLIC_URL + "/other/news.png"  } ];
+    const people: IDocumentCardActivityPerson[] = [{ name: locale.news.vaccineSection.news,  profileImageSrc: process.env.PUBLIC_URL + "/other/news.png"  } ];
     return (
         <Row className="justify-content-center">
 
             <Col className="mb-3" xl={6} lg={6} md={12} sm={12} xs={12}>
                 <DocumentCard
-                    aria-label={locale.homepage.vaccineSection.card1.title}
+                    aria-label={locale.news.vaccineSection.card1.title}
                     styles={vaccineNewsCards}
                     onClick={() => redirectToLink("https://www.mur.gov.it/it/news/lunedi-09082021/green-pass-obbligatorio-attivita-presenza-universita-e-afam")}
                     className="text-align-left"
@@ -30,25 +30,25 @@ const VaccineCards = () => {
                 >
                     <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/vaccine_card_1.png"} />
                     <DocumentCardDetails styles={vaccineDocumentCardDetails}>
-                        <DocumentCardTitle title={locale.homepage.vaccineSection.card1.title} styles={vaccinePrimaryText} />
+                        <DocumentCardTitle title={locale.news.vaccineSection.card1.title} styles={vaccinePrimaryText} />
                         <DocumentCardTitle
-                            title={locale.homepage.vaccineSection.card1.description}
+                            title={locale.news.vaccineSection.card1.description}
                             styles={vaccineSecondaryText}
                             showAsSecondaryTitle
                         />
                     </DocumentCardDetails>
                     <DocumentCardDetails>
                         <div style={{ marginLeft: 16, marginBottom: 8 }}>
-                            <Text styles={semibold} variant="medium" style={{ color: theme.palette.themePrimary }}><Icon iconName="PageArrowRight" /> {locale.homepage.vaccineSection.click}</Text>
+                            <Text styles={semibold} variant="medium" style={{ color: theme.palette.themePrimary }}><Icon iconName="PageArrowRight" /> {locale.news.vaccineSection.click}</Text>
                         </div>
                     </DocumentCardDetails>
-                    <DocumentCardActivity activity={locale.homepage.vaccineSection.card1.date} people={people} />
+                    <DocumentCardActivity activity={locale.news.vaccineSection.card1.date} people={people} />
                 </DocumentCard>
             </Col>
 
             <Col className="mb-3" xl={6} lg={6} md={12} sm={12} xs={12}>
                 <DocumentCard
-                    aria-label={locale.homepage.vaccineSection.card2.title}
+                    aria-label={locale.news.vaccineSection.card2.title}
                     styles={vaccineNewsCards}
                     onClick={() => redirectToLink("https://www.docdroid.net/zm5C1c5/20210810-piano-vaccini-ampamp-universita-verfin-pdf")}
                     className="text-align-left"
@@ -56,19 +56,19 @@ const VaccineCards = () => {
                 >
                     <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/vaccine_card_2.jpg"} />
                     <DocumentCardDetails styles={vaccineDocumentCardDetails}>
-                        <DocumentCardTitle title={locale.homepage.vaccineSection.card2.title} styles={vaccinePrimaryText} />
+                        <DocumentCardTitle title={locale.news.vaccineSection.card2.title} styles={vaccinePrimaryText} />
                         <DocumentCardTitle
-                            title={locale.homepage.vaccineSection.card2.description}
+                            title={locale.news.vaccineSection.card2.description}
                             styles={vaccineSecondaryText}
                             showAsSecondaryTitle
                         />
                     </DocumentCardDetails>
                     <DocumentCardDetails>
                         <div style={{ marginLeft: 16, marginBottom: 8 }}>
-                            <Text styles={semibold} variant="medium" style={{ color: theme.palette.themePrimary }}><Icon iconName="PageArrowRight" /> {locale.homepage.vaccineSection.click}</Text>
+                            <Text styles={semibold} variant="medium" style={{ color: theme.palette.themePrimary }}><Icon iconName="PageArrowRight" /> {locale.news.vaccineSection.click}</Text>
                         </div>
                     </DocumentCardDetails>
-                    <DocumentCardActivity activity={locale.homepage.vaccineSection.card2.date} people={people} />
+                    <DocumentCardActivity activity={locale.news.vaccineSection.card2.date} people={people} />
                 </DocumentCard>
             </Col>
 

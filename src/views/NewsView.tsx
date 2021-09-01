@@ -14,11 +14,11 @@ const NewsView = () => {
     return (
         <Container className="courses">
             <div className="mb-3 text-center">
-                <Text variant="xLarge"><Icon iconName="NewsSearch"/> Notizie generali</Text>
+                <Text variant="xLarge"><Icon iconName="NewsSearch"/> {locale.news.title}</Text>
             </div>
 
             <div className="mb-3">
-                <div className="mb-4"><Separator theme={theme}><Text variant="large" style={{color: theme.palette.themePrimary}} styles={semibold}>{locale.homepage.vaccineSection.title}</Text></Separator></div>
+                <div className="mb-4"><Separator theme={theme}><Text variant="large" style={{color: theme.palette.themePrimary}} styles={semibold}>{locale.news.vaccineSection.title}</Text></Separator></div>
                 <VaccineCards />
             </div>
         </Container>

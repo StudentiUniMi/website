@@ -112,21 +112,6 @@ interface ILocalizationStrings {
             card2: { text1: string, text2: string },
             card3: { text1: string, text2: string },
         }, 
-        vaccineSection: {
-            title: string,
-            card1: {
-                title: string,
-                description: string,
-                date: string
-            },
-            card2: {
-                title: string,
-                description: string,
-                date: string
-            },
-            click: string,
-            news: string
-        },
         telegramSection: {
             title: string,
             description: string,
@@ -142,7 +127,22 @@ interface ILocalizationStrings {
         header3: string
     },
     news: {
-
+        title: string,
+        vaccineSection: {
+            title: string,
+            card1: {
+                title: string,
+                description: string,
+                date: string
+            },
+            card2: {
+                title: string,
+                description: string,
+                date: string
+            },
+            click: string,
+            news: string
+        },
     },
     rules: {
         text1: string,
