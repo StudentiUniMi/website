@@ -45,7 +45,7 @@ const Header = (props: Props) => {
 
             {/* Medium and small devices */}
             <div className="small-display">
-                <Row className="ml-2 mr-2 mb-0">
+                <Row className="ml-2 mr-1 mb-0">
                     <Col style={{ maxWidth: 250, paddingLeft: 0, paddingRight: 0 }}>
                         <div style={{ width: 250 }}>
                             <Link href="http://studentiunimi.it/">
