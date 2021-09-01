@@ -35,10 +35,11 @@ const Footer = () => {
 
                         <div className="mb-1">
                             <Link href="https://t.me/studenti_unimi" target="_blank" className="text-decoration-none mr-1"><Icon iconName="Send" style={iconStyle}/></Link>
+                            <Link href="https://t.me/unimichat" target="_blank" className="text-decoration-none mr-1"><Icon iconName="Group" style={iconStyle} /></Link>
                             <Link href="https://discord.gg/SwPzAkv4A4" target="_blank" className="text-decoration-none mr-1"><Icon iconName="Game" style={iconStyle}/></Link>
-                            <Link href="https://github.com/StudentiUnimi" target="_blank" className="text-decoration-none mr-1"><Icon iconName="Website" style={iconStyle}/></Link>
+                            <Link href="https://github.com/StudentiUnimi/website" target="_blank" className="text-decoration-none mr-1"><Icon iconName="Website" style={iconStyle}/></Link>
                             <Link href="https://github.com/StudentiUniMi/backend" target="_blank" className="text-decoration-none mr-1"><Icon iconName="ServerEnviroment" style={iconStyle} /></Link>
-                            <Link href="https://www.facebook.com/networkstudentiunimi" target="_blank" className="text-decoration-none"><Icon iconName="Group" style={iconStyle}/></Link>
+                            <Link href="https://www.facebook.com/networkstudentiunimi" target="_blank" className="text-decoration-none"><Icon iconName="PageLink" style={iconStyle}/></Link>
                         </div>
                     </Col>
                     
