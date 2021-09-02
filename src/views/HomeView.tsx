@@ -15,6 +15,7 @@ import MainSection from '../components/Home/MainSection';
 import FirstSection from '../components/Home/FirstSection';
 import SecondSection from '../components/Home/SecondSection';
 import ThirdSection from '../components/Home/ThirdSection';
+import FourthSection from '../components/Home/FourthSection';
 
 SwiperCore.use([Pagination, Navigation, Autoplay]);
 initializeIcons();
@@ -49,43 +50,7 @@ const HomeView = () => {
             <FirstSection />
             <SecondSection />
             <ThirdSection />
-
-            <div className="fourth-section mb-4">
-                <div className="mb-4"><Separator theme={theme}><Text variant="large" styles={semibold}>{locale.homepage.section5.text}</Text></Separator></div>
-
-                <Row className="justify-content-center">
-                    <Col xl={3} lg={3} md={4} sm={6} xs={12} className="mb-3">
-                        <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                            <Card.Section>
-                                <div><Icon iconName="ContactHeart" style={homeIconStyle} /></div>
-                                <Text variant="medium">
-                                    {locale.homepage.section5.card1.text}
-                                </Text>
-                                <Icon iconName="SortDown" style={iconStyle}></Icon>
-                                <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section5.card1.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/representatives/" allowDisabledFocus style={buttonStyle} />
-                                </div>
-                            </Card.Section>
-                        </Card>
-                    </Col>
-
-                    <Col xl={3} lg={3} md={4} sm={6} xs={12} className="mb-3">
-                        <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                            <Card.Section>
-                                <div><Icon iconName="Telemarketer" style={homeIconStyle} /></div>
-                                <Text variant="medium">
-                                    {locale.homepage.section5.card2.text}
-                                </Text>
-                                <Icon iconName="SortDown" style={iconStyle}></Icon>
-                                <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section5.card2.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/organization/" allowDisabledFocus style={buttonStyle} />
-                                </div>
-                            </Card.Section>
-                        </Card>
-                    </Col>
-                </Row>
-
-            </div>
+            <FourthSection />
 
             <div className="faq-section mb-4">
                 <div className="mb-4"><Separator theme={theme}><Text variant="large" styles={semibold}>{locale.homepage.section6.text}</Text></Separator></div>
