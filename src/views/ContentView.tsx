@@ -12,7 +12,7 @@ import { withCookies } from 'react-cookie';
 
 const ContentView = () => {
     const wrap = (element: React.ReactNode): React.ReactNode => {
-        return (<main role="main" className="content mt-4 mb-4">{element}</main>)
+        return (<main role="main" className="content">{element}</main>)
     };
     return (
         <Switch>

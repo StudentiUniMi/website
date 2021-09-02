@@ -3,9 +3,7 @@ import { semibold } from '../services/fonts';
 import { Image } from 'office-ui-fabric-react/lib/Image';
 import { Card, ICardTokens, CardSection } from "@uifabric/react-cards";
 import { Separator } from '@fluentui/react/lib/Separator';
-import { Container } from 'react-bootstrap';
 import { useTheme } from '@fluentui/react-theme-provider';
-import Slider from '../components/Home/Slider/Slider';
 import Faqs from '../components/Home/Faqs';
 import React from 'react';
 import Col from 'react-bootstrap/Col';
@@ -13,6 +11,10 @@ import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper/core';
+import MainSection from '../components/Home/MainSection';
+import FirstSection from '../components/Home/FirstSection';
+import SecondSection from '../components/Home/SecondSection';
+import ThirdSection from '../components/Home/ThirdSection';
 
 SwiperCore.use([Pagination, Navigation, Autoplay]);
 initializeIcons();
@@ -38,201 +40,15 @@ const HomeView = () => {
     const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
     
     /* Other */
-    const logoProperties = { width: '150px', height: '150px', display: 'inline-block' };
     const telegramLogo = { marginLeft: 'auto', marginRight: 'auto', width: '50px', height: '50px' };
     //const numberStyle = { color: theme.palette.themePrimary };
     
     return (
-        <Container className="home">
-            <div className="info-section mb-4 text-center">
-                <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/logo/unimi500.png'} alt='Network logo' style={logoProperties} />
-                <div className="mb-2">
-                    <Text variant="xLargePlus">
-                        <JsxParser bindings={{ theme: theme }} components={{ Text }} jsx={locale.homepage.section1.text1} />
-                    </Text>
-                </div>
-                <div><Text variant="large">{locale.homepage.section1.text2}</Text></div>
-            </div>
-
-            <div className="mb-3 justify-content-center">
-                <Slider />
-            </div>
-
-            <div className="text-center"><Icon iconName="ChevronDownMed" className="mb-3" style={iconStyle} /></div>
-
-            <div className="primary-section mb-4">
-                <div className="mb-4">
-                    <Separator theme={theme}><Text variant="large" styles={semibold}>{locale.homepage.section2.text}</Text></Separator>
-                </div>
-
-                <Row className="justify-content-center">
-                    <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>
-                        <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                            <Card.Section>
-                                <div><Icon iconName="Send" style={homeIconStyle} /></div>
-                                <Text variant="medium">
-                                    {locale.homepage.section2.card1.text}
-                                </Text>
-                                <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section2.card1.button} iconProps={buttonIconProps} href="https://t.me/studenti_unimi" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
-                                </div>
-                            </Card.Section>
-                        </Card>
-                    </Col>
-
-                    <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>
-                        <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                            <Card.Section>
-                                <div><Icon iconName="ReminderGroup" style={homeIconStyle} /></div>
-                                <Text variant="medium">
-                                    {locale.homepage.section2.card2.text}
-                                </Text>
-                                <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section2.card2.button} iconProps={buttonIconProps} href="https://t.me/unimichat" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
-                                </div>
-                            </Card.Section>
-                        </Card>
-                    </Col>
-
-                    <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>
-                        <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                            <Card.Section>
-                                <div><Icon iconName="Game" style={homeIconStyle} /></div>
-                                <Text variant="medium">
-                                    {locale.homepage.section2.card3.text}
-                                </Text>
-                                <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section2.card3.button} iconProps={buttonIconProps} href="https://discord.gg/SwPzAkv4A4" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
-                                </div>
-                            </Card.Section>
-                        </Card>
-                    </Col>
-
-                    <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>
-                        <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                            <Card.Section>
-                                <div><Icon iconName="Teamwork" style={homeIconStyle} /></div>
-                                <Text variant="medium">
-                                    {locale.homepage.section2.card4.text}
-                                </Text>
-                                <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section2.card4.button} iconProps={buttonIconProps} href="https://github.com/StudentiUnimi" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
-                                </div>
-                            </Card.Section>
-                        </Card>
-                    </Col>
-                </Row>
-            </div>
-
-            <div className="secondary-section mb-4">
-                <div className="mb-4"><Separator theme={theme}><Text variant="large" styles={semibold}>{locale.homepage.section3.text}</Text></Separator></div>
-
-                <Row className="justify-content-center">
-                    <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
-                        <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                            <Card.Section>
-                                <div><Icon iconName="Group" style={homeIconStyle} /></div>
-                                <Text variant="medium">
-                                    {locale.homepage.section3.card1.text}
-                                </Text>
-                                <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section3.card1.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/courses/" allowDisabledFocus style={buttonStyle} />
-                                </div>
-                            </Card.Section>
-                        </Card>
-                    </Col>
-
-                    <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
-                        <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                            <Card.Section>
-                                <div><Icon iconName="AddGroup" style={homeIconStyle} /></div>
-                                <Text variant="medium">
-                                    {locale.homepage.section3.card2.text}
-                                </Text>
-                                <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section3.card2.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/additional_groups/" allowDisabledFocus style={buttonStyle} />
-                                </div>
-                            </Card.Section>
-                        </Card>
-                    </Col>
-
-                    <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
-                        <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                            <Card.Section>
-                                <div><Icon iconName="JoinOnlineMeeting" style={homeIconStyle} /></div>
-                                <Text variant="medium">
-                                    {locale.homepage.section3.card3.text}
-                                </Text>
-                                <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section3.card3.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/rules/" allowDisabledFocus style={buttonStyle} />
-                                </div>
-                            </Card.Section>
-                        </Card>
-                    </Col>
-                </Row>
-            </div>
-
-            <div className="tertiary-section mb-4">
-                <div className="mb-4"><Separator theme={theme}><Text variant="large" styles={semibold}>{locale.homepage.section4.text}</Text></Separator></div>
-
-                <Row className="justify-content-center">
-                    <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>
-                        <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                            <Card.Section>
-                                <div><Icon iconName="Globe2" style={homeIconStyle} /></div>
-                                <Text variant="medium">
-                                    {locale.homepage.section4.card1.text}
-                                </Text>
-                                <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section4.card1.button} iconProps={buttonIconProps} href="https://wiki.studentiunimi.it/" className="text-decoration-none"  target="_blank" allowDisabledFocus style={buttonStyle} />
-                                </div>
-                            </Card.Section>
-                        </Card>
-                    </Col>
-
-                    <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>
-                        <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                            <Card.Section>
-                                <div><Icon iconName="World" style={homeIconStyle} /></div>
-                                <Text variant="medium">
-                                    {locale.homepage.section4.card2.text}
-                                </Text>
-                                <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section4.card2.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/services/" allowDisabledFocus style={buttonStyle} />
-                                </div>
-                            </Card.Section>
-                        </Card>
-                    </Col>
-
-                    <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>
-                        <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                            <Card.Section>
-                                <div><Icon iconName="CloudDownload" style={homeIconStyle} /></div>
-                                <Text variant="medium">
-                                    {locale.homepage.section4.card3.text}
-                                </Text>
-                                <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section4.card3.button} iconProps={buttonIconProps} href="https://hedgedoc.studentiunimi.it/" className="text-decoration-none"  target="_blank" allowDisabledFocus style={buttonStyle} />
-                                </div>
-                            </Card.Section>
-                        </Card>
-                    </Col>
-
-                    <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>
-                        <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
-                            <Card.Section>
-                                <div><Icon iconName="Code" style={homeIconStyle} /></div>
-                                <Text variant="medium">
-                                    {locale.homepage.section4.card4.text}
-                                </Text>
-                                <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section4.card4.button} iconProps={buttonIconProps} href="http://paste.studentiunimi.it/" className="text-decoration-none"  target="_blank" allowDisabledFocus style={buttonStyle} />
-                                </div>
-                            </Card.Section>
-                        </Card>
-                    </Col>
-                </Row>
-            </div>
+        <div className="pt-5 pb-5 home">
+            <MainSection />
+            <FirstSection />
+            <SecondSection />
+            <ThirdSection />
 
             <div className="fourth-section mb-4">
                 <div className="mb-4"><Separator theme={theme}><Text variant="large" styles={semibold}>{locale.homepage.section5.text}</Text></Separator></div>
@@ -350,7 +166,7 @@ const HomeView = () => {
             </div>
             */}
 
-        </Container >
+        </div>
     )
 };
 
