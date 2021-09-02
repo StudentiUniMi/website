@@ -55,7 +55,7 @@ const HomeView = () => {
             <div className="info-section mb-4 text-center">
                 <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/logo/unimi500.png'} alt='Network logo' style={logoProperties} />
                 <div className="mb-2">
-                    <Text variant="xLarge">
+                    <Text variant="xLargePlus">
                         <JsxParser bindings={{ theme: theme }} components={{ Text }} jsx={locale.homepage.section1.text1} />
                     </Text>
                 </div>

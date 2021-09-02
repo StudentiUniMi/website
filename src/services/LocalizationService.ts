@@ -39,7 +39,7 @@ class LocalizationService {
                     },
                     homepage: {
                         section1: {
-                            text1: 'Benvenuto nel sito web del <Text style={{color: theme.palette.themePrimary}} variant="xLarge">Network StudentiUniMi</Text>!',
+                            text1: 'Benvenuto nel sito web del <span style={{color: theme.palette.themePrimary}}>Network StudentiUniMi</span>!',
                             text2: 'La nostra missione è organizzare le informazioni riguardo l\'Università degli studi di Milano e renderle accessibili a tutti.',
                             sliders: [
                                 { text1: 'Sei uno studente che vuole immatricolarsi e che cerca un gruppo generale in cui chiedere informazioni', text2: 'Ne abbiamo creato uno apposito!', cardText: "Pre-matricole, ammissioni e immatricolazioni" },
@@ -276,7 +276,7 @@ class LocalizationService {
                     },
                     homepage: {
                         section1: {
-                            text1: 'Welcome to <Text style={{color: theme.palette.themePrimary}} variant="xLarge">Network StudentiUniMi</Text>!',
+                            text1: 'Welcome to <span style={{color: theme.palette.themePrimary}}>Network StudentiUniMi</span>!',
                             text2: 'Our goal is to organize all the informations about the University of Milan (Università degli Studi di Milano, Unimi) and make them easily accessible to anyone.',
                             sliders: [
                                 { text1: 'Are you a student who wants to matriculate and who is looking for a general group in which to ask for informations ', text2: 'We created one just for this!', cardText: "Pre-students, admissions and enrollments" },
