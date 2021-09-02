@@ -42,14 +42,6 @@ const HomeView = () => {
     const telegramLogo = { marginLeft: 'auto', marginRight: 'auto', width: '50px', height: '50px' };
     //const numberStyle = { color: theme.palette.themePrimary };
     
-    /* Remove title properties from documentCardTitles */
-    React.useEffect(() => {
-        const divList = document.getElementsByClassName("ms-DocumentCardTitle");
-        for (let i:number = 0; i < divList.length; i++) {
-            divList[i].removeAttribute('title');
-        }
-    });
-    
     return (
         <Container className="home">
             <div className="info-section mb-4 text-center">

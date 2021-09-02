@@ -1,3 +1,4 @@
+import React from 'react';
 import { Text } from 'office-ui-fabric-react';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { Container } from 'react-bootstrap';
@@ -10,6 +11,14 @@ import LocalizationService from "../services/LocalizationService";
 const NewsView = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
+
+    /* Remove title properties from documentCardTitles */
+    React.useEffect(() => {
+        const divList = document.getElementsByClassName("ms-DocumentCardTitle");
+        for (let i:number = 0; i < divList.length; i++) {
+            divList[i].removeAttribute('title');
+        }
+    });
 
     return (
         <Container className="courses">
