@@ -50,7 +50,8 @@ const HeaderMenu = (props: Props) => {
     
     if (cookies['language'] === undefined) 
     { 
-        setCookie("language", (navigator.language === 'it' || navigator.language === 'IT' ? 'it' : 'en'), { path: "/", expires: date }); 
+        const isNavLanguageITA = isNavigatorLanguageItalian();
+        setCookie("language", (isNavLanguageITA ? 'it' : 'en'), { path: "/", expires: date }); 
     }
 
     LocalizationService.localize(cookies['language']);
@@ -268,3 +269,15 @@ const HeaderMenu = (props: Props) => {
 };
 
 export default HeaderMenu;
+
+/**
+ * This function returns true if the navigator language is italian.
+ */
+const isNavigatorLanguageItalian = () => {
+    const navLanguage = navigator.language;
+    if (navLanguage === 'it') return true;
+
+    const s: string[] = navLanguage.split("-",2);
+    if (s.length >= 2 && s[0] === 'it') return true;
+    return false;
+}
