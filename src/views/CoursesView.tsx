@@ -209,7 +209,7 @@ const CoursesView = () => {
     React.useEffect(() => {
         updateDegrees();
     }, [selectedDepartment, updateDegrees]);
-
+    
     React.useEffect(() => {
         updateCourses();
     }, [selectedDegree, updateCourses]);
@@ -237,6 +237,7 @@ const CoursesView = () => {
                         text={locale.courses.wikiCard.buttonTitle}
                         className={styles.button}
                         iconProps={icon}
+                        theme={theme}
                     />
                 </div>
 
@@ -246,11 +247,13 @@ const CoursesView = () => {
                     dialogContentProps={dialogContentProps}
                     modalProps={modelProps}
                     maxWidth={700}
+                    theme={theme}
                 >
                     <DocumentCard
                         styles={wikiCard}
                         onClick={() => redirectToLink("https://wiki.studentiunimi.it/start")}
                         className="text-align-left"
+                        theme={theme}
                     >
                         <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/wiki_card.jpg"} />
                         <DocumentCardDetails styles={wikiCardDocumentCardDetails}>

@@ -8,6 +8,7 @@ interface ILocalizationStrings {
     headerMenuItems: {
         home: string,
         aboutUs: string,
+        news: string,
         rules: string,
         courses: string,
         services: string,
@@ -111,6 +112,22 @@ interface ILocalizationStrings {
             card2: { text1: string, text2: string },
             card3: { text1: string, text2: string },
         }, 
+        telegramSection: {
+            title: string,
+            description: string,
+            advantages: string,
+            list: any[]
+        }
+    },
+    aboutUs: {
+        text1: string,
+        button: { text1: string, text2: string },
+        header1: string,
+        header2: string,
+        header3: string
+    },
+    news: {
+        title: string,
         vaccineSection: {
             title: string,
             card1: {
@@ -126,19 +143,6 @@ interface ILocalizationStrings {
             click: string,
             news: string
         },
-        telegramSection: {
-            title: string,
-            description: string,
-            advantages: string,
-            list: any[]
-        }
-    },
-    aboutUs: {
-        text1: string,
-        button: { text1: string, text2: string },
-        header1: string,
-        header2: string,
-        header3: string
     },
     rules: {
         text1: string,

@@ -42,7 +42,7 @@ const Slider = () => {
                             </Card.Item>
                             <Card.Section>
                                 <ActionButton
-                                    href="https://t.me/joinchat/jjzrKAOF74s5ZmI0"
+                                    href="https://t.me/joinchat/XLY5KwP1a1Q1MzZk"
                                     target="_blank"
                                     className="text-decoration-none"
                                     iconProps={telegramGroupIcon}

@@ -3,7 +3,7 @@
 html {
   margin: 0;
   padding: 0;
-  position: relative; // Footer stays bottom
+  position: relative;
   min-height: 100%;
 }
 
@@ -108,7 +108,12 @@ button:focus,
 
 
 /* Responsive menu and title */
-@media only screen and (min-width: 780px) {
+@media only screen and (min-width: 587px) {
+  header .headerRow {
+    margin-left: 1rem!important;
+    margin-right: 1rem !important;
+    margin-bottom: 0 !important;
+  }
   .header-menu .pivot {
     display: block;
   }
@@ -116,12 +121,15 @@ button:focus,
   .header-menu .dropdown {
     display: none;
   }
-
-  .header-menu .ms-FocusZone {  /* Header menu left margin on large displays */
-    margin-left: 10px;
-  }
 }
-@media only screen and (max-width: 779px) {
+
+@media only screen and (max-width: 586px) {
+  header .headerRow {
+    margin-left: .5rem !important;
+    margin-right: .25rem !important;
+    margin-bottom: 0 !important;
+  }
+
   .header-menu .pivot {
     display: none;
   }
@@ -129,33 +137,20 @@ button:focus,
   .header-menu .dropdown {
     display: block;
   }
-}
 
-
-@media only screen and (min-width: 567px) {
-  .header-title .large-display {
-    display:block;
+  .header-menu .ms-Dropdown-title {
+    display: none;
   }
 
-  .header-title .small-display {
-    display:none;
-  }
-}
-
-@media only screen and (max-width: 566px) {
-  .header-title .large-display {
-    display:none;
+  .header-menu .ms-Dropdown-container {
+    float:right;
+    width:30px;
   }
 
-  .header-title .small-display {
-    display:block;
-  }
-
-  .header-title .small-display .logo-text {
-    margin-left:-5%;
+  .header-menu .ms-Dropdown-caretDownWrapper {
+    right: 6px;
   }
 }
-
 
 
 
@@ -362,4 +357,10 @@ button:focus,
     margin-left:10px;
     margin-right:10px;
   }
+}
+
+/* Header Adjustments */
+header .ms-Image-image {
+  display: inline;
+  margin-bottom: 9px !important;
 }

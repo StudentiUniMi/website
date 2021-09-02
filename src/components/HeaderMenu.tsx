@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { IPivotStyles, Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
+import LocalizationService from "../services/LocalizationService";
 import { FontSizes } from '@fluentui/theme';
 import { Dropdown, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
 import { Icon, IIconStyles } from 'office-ui-fabric-react/lib/Icon';
@@ -13,19 +13,20 @@ import { Coachmark, IButtonProps, TeachingBubbleContent, Toggle } from '@fluentu
 import { useCookies } from "react-cookie";
 import { useTheme } from '@fluentui/react-theme-provider';
 import { addDays } from '../services/Utils';
-import LocalizationService from "../services/LocalizationService";
+import { Pivot, PivotItem, IPivotStyles } from '@fluentui/react';
 import { SwatchColorPicker } from '@fluentui/react/lib/SwatchColorPicker';
 import { semibold } from "../fonts";
 import { palettes } from '../palettes';
 
 export enum ItemsKeys {
     home = "home",
-    organization = "organization",
-    rules = "rules",
     courses = "courses",
     services = "services",
     additional_groups = "additional_groups",
+    rules = "rules",
+    news = "news",
     representatives = "representatives",
+    organization = "organization",
     contributors = "contributors"
 };
 
@@ -41,15 +42,16 @@ const HeaderMenu = (props: Props) => {
     const tooltipId = useId('tooltip');
     const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
     const settingsIcon: IIconProps = { iconName: 'Settings', styles: { root: { fontSize: '18px' } } };
-    const settingsIconStylePivot: IIconStyles = { root: { position: 'absolute', right: '5px', top: '94px', zIndex: 10 } };
-    const settingsIconStyleDropdown: IIconStyles = { root: { position: 'absolute', left: '5px', top: '6px', zIndex: 10 } };
+    const settingsIconStylePivot: IIconStyles = { root: { position: 'absolute', right: '-5px', top: '8px', zIndex: 10 } };
+    const settingsIconStyleDropdown: IIconStyles = { root: { position: 'absolute', right: '24px', top: '8px', zIndex: 10 } };
     const settingsIconId = useId('icon');
     const calloutProps = { gapSpace: 0, target: `#${settingsIconId}`, };
     const onRenderCaretDown = (): JSX.Element => { return <Icon iconName="List" />; };
     
     if (cookies['language'] === undefined) 
     { 
-        setCookie("language", (navigator.language === 'it' || navigator.language === 'IT' ? 'it' : 'en'), { path: "/", expires: date }); 
+        const isNavLanguageITA = isNavigatorLanguageItalian();
+        setCookie("language", (isNavLanguageITA ? 'it' : 'en'), { path: "/", expires: date }); 
     }
 
     LocalizationService.localize(cookies['language']);
@@ -96,15 +98,16 @@ const HeaderMenu = (props: Props) => {
         }),
         [coachmarkPosition],
     );
-
+    
     const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
         [ItemsKeys.home, locale.headerMenuItems.home],
-        [ItemsKeys.organization, locale.headerMenuItems.aboutUs],
-        [ItemsKeys.rules, locale.headerMenuItems.rules],
         [ItemsKeys.courses, locale.headerMenuItems.courses],
-        [ItemsKeys.services, locale.headerMenuItems.services],
         [ItemsKeys.additional_groups, locale.headerMenuItems.additionalGroups],
+        [ItemsKeys.services, locale.headerMenuItems.services],
+        [ItemsKeys.rules, locale.headerMenuItems.rules],
+        [ItemsKeys.news, locale.headerMenuItems.news],
         [ItemsKeys.representatives, locale.headerMenuItems.representatives],
+        [ItemsKeys.organization, locale.headerMenuItems.aboutUs],
         [ItemsKeys.contributors, locale.headerMenuItems.contributors]
     ]);
     
@@ -172,24 +175,25 @@ const HeaderMenu = (props: Props) => {
     const hostStylesResetColor: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
 
     return (
-        <div className="header-menu" style={{ borderBottom: '1px solid', borderColor: theme.palette.neutralLight }}>
+        <div className="header-menu">
 
-            <div className="pivot">
+            <div className="pivot mr-4 ml-3">
                 <Pivot
                     selectedKey={selectedKey}
                     onLinkClick={handlePivotLinkClick}
                     headersOnly={true}
                     styles={pivotStyles}
                     theme={theme}
+                    overflowBehavior={'menu'}
                 >
-                    {Object.values(ItemsKeys).map((x, i) => <PivotItem key={i} headerText={texts.get(x)} style={{ fontSize: FontSizes.size24 }} itemKey={x} />)}
+                    {Object.values(ItemsKeys).map((x, i) => <PivotItem headerText={texts.get(x)} itemKey={x} />)}
                 </Pivot>
 
                 <TooltipHost content={locale.settingsPanel.settings} id={tooltipId} calloutProps={calloutProps} styles={hostStyles} delay={TooltipDelay.zero} directionalHint={DirectionalHint.leftCenter}>
-                    <div ref={target} style={{ position: 'absolute', right: '35px', top: '108px'}}></div><IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStylePivot} id={settingsIconId} />
+                    <div ref={target} style={{ position: 'absolute', right: '25px', top: '22px'}}></div><IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStylePivot} id={settingsIconId} />
                 </TooltipHost>
 
-                {isCoachmarkVisible && window.screen.availWidth >= 780 && ( /* With windows.screen size I fixed the visualization of coachMark in mobile displays too */
+                {isCoachmarkVisible && window.screen.availWidth >= 586 && ( /* With windows.screen size I fixed the visualization of coachMark in mobile displays too */
                     <Coachmark
                         target={target.current}
                         positioningContainerProps={positioningContainerProps}
@@ -248,9 +252,7 @@ const HeaderMenu = (props: Props) => {
 
             <div className="dropdown">
 
-                <TooltipHost content={locale.settingsPanel.settings} id={tooltipId} calloutProps={calloutProps} styles={hostStyles}>
-                    <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStyleDropdown} id={settingsIconId} />
-                </TooltipHost>
+                <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStyleDropdown} />
 
                 <Dropdown
                     selectedKey={selectedKey}
@@ -267,3 +269,15 @@ const HeaderMenu = (props: Props) => {
 };
 
 export default HeaderMenu;
+
+/**
+ * This function returns true if the navigator language is italian.
+ */
+const isNavigatorLanguageItalian = () => {
+    const navLanguage = navigator.language;
+    if (navLanguage === 'it') return true;
+
+    const s: string[] = navLanguage.split("-",2);
+    if (s.length >= 2 && s[0] === 'it') return true;
+    return false;
+}
