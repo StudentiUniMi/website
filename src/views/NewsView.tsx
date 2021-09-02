@@ -2,7 +2,7 @@ import { Text } from 'office-ui-fabric-react';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { Container } from 'react-bootstrap';
 import { Separator } from '@fluentui/react/lib/Separator';
-import { semibold } from '../fonts';
+import { semibold } from '../services/fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import VaccineCards from '../components/News/VaccineCards';
 import LocalizationService from "../services/LocalizationService";

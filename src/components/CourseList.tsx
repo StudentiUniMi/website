@@ -5,7 +5,7 @@ import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 import { Container } from 'react-bootstrap';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { Text, Icon } from "office-ui-fabric-react/";
-import { semibold } from '../fonts';
+import { semibold } from '../services/fonts';
 import { FontSizes } from '@fluentui/theme';
 import { Separator } from '@fluentui/react/lib/Separator';
 import { useTheme } from '@fluentui/react-theme-provider';

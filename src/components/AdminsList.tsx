@@ -6,7 +6,7 @@ import { FontSizes } from '@fluentui/theme';
 import { Link, Icon, Text } from 'office-ui-fabric-react';
 import { Separator } from '@fluentui/react/lib/Separator';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { semibold } from '../fonts';
+import { semibold } from '../services/fonts';
 import { getDegreeAdmins } from '../services/Requests';
 import Message from './Message';
 import LocalizationService from "../services/LocalizationService";

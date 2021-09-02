@@ -2,7 +2,7 @@ import { DocumentCard, DocumentCardActivity, DocumentCardTitle, DocumentCardDeta
 import { ImageFit } from '@fluentui/react/lib/Image';
 import { redirectToLink } from '../../services/Utils';
 import { Text, Icon } from '@fluentui/react';
-import { semibold } from '../../fonts';
+import { semibold } from '../../services/fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import LocalizationService from "../../services/LocalizationService";
 import Col from 'react-bootstrap/Col';

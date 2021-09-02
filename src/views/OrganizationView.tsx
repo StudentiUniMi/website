@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, Icon, Link } from 'office-ui-fabric-react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { semibold } from '../fonts';
+import { semibold } from '../services/fonts';
 import { Container } from 'react-bootstrap';
 import { Persona } from 'office-ui-fabric-react/lib/Persona';
 import { FontSizes } from '@fluentui/theme';

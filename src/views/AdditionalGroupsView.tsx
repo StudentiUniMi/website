@@ -9,7 +9,7 @@ import { getExtraGroups } from '../services/Requests';
 import { Separator } from '@fluentui/react/lib/Separator';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { PrimaryButton } from 'office-ui-fabric-react';
-import { semibold } from '../fonts';
+import { semibold } from '../services/fonts';
 import ExtraGroupView from '../components/ExtraGroup';
 import ExtraGroup from '../models/ExtraGroup';
 import LocalizationService from "../services/LocalizationService";

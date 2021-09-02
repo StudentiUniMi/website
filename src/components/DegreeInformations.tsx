@@ -1,5 +1,5 @@
 import React from "react";
-import { semibold } from '../fonts';
+import { semibold } from '../services/fonts';
 import { FontSizes } from '@fluentui/theme';
 import { Icon, Text } from 'office-ui-fabric-react';
 import { redirectToLink } from '../services/Utils';

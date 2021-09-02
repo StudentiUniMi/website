@@ -15,8 +15,8 @@ import { useTheme } from '@fluentui/react-theme-provider';
 import { addDays } from '../services/Utils';
 import { Pivot, PivotItem, IPivotStyles } from '@fluentui/react';
 import { SwatchColorPicker } from '@fluentui/react/lib/SwatchColorPicker';
-import { semibold } from "../fonts";
-import { palettes } from '../palettes';
+import { semibold } from "../services/fonts";
+import { palettes } from '../services/palettes';
 
 export enum ItemsKeys {
     home = "home",

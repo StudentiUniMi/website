@@ -3,7 +3,7 @@
 import { Persona, Link, Text, FontSizes, IIconProps, Icon, ActionButton } from '@fluentui/react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Card, ICardTokens } from "@uifabric/react-cards";
-import { semibold } from '../../fonts';
+import { semibold } from '../../services/fonts';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useTheme } from '@fluentui/react-theme-provider';

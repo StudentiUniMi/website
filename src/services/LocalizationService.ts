@@ -1,5 +1,5 @@
 import LocalizedStrings, { LocalizedStringsMethods } from 'react-localization';
-import ILocalizationStrings from '../data/ILocalizationStrings';
+import ILocalizationStrings from '../models/ILocalizationStrings';
 
 class LocalizationService {
     private static data?: LocalizedStringsMethods & ILocalizationStrings;

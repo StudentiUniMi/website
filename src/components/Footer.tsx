@@ -1,7 +1,7 @@
 import { Link, Icon } from 'office-ui-fabric-react';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
-import { semibold } from '../fonts';
+import { semibold } from '../services/fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { withCookies } from 'react-cookie';
 import Col from 'react-bootstrap/Col';

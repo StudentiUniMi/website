@@ -1,5 +1,5 @@
 import { Link, Text, FontSizes, IIconProps, PrimaryButton, Icon, initializeIcons } from '@fluentui/react';
-import { semibold } from '../fonts';
+import { semibold } from '../services/fonts';
 import { Image } from 'office-ui-fabric-react/lib/Image';
 import { Card, ICardTokens, CardSection } from "@uifabric/react-cards";
 import { Separator } from '@fluentui/react/lib/Separator';

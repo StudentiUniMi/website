@@ -2,7 +2,7 @@ import React from "react";
 import { FontSizes } from '@fluentui/theme';
 import { Text, Icon, Callout, Link } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
-import { semibold } from '../fonts';
+import { semibold } from '../services/fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { DefaultButton, DirectionalHint, IIconProps, mergeStyleSets, Separator } from "@fluentui/react";
 import { useBoolean, useId } from '@fluentui/react-hooks';

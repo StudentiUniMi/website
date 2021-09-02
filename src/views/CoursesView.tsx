@@ -10,7 +10,7 @@ import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { getDepartments, getDegrees, getCourses, getVerboseDegree } from '../services/Requests';
 import { Separator } from '@fluentui/react/lib/Separator';
-import { semibold } from '../fonts';
+import { semibold } from '../services/fonts';
 import { Department, Degree, CourseDegree } from "../models/Models";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';

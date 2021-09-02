@@ -4,7 +4,7 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import LocalizationService from "../../services/LocalizationService";
 import { Link, Text } from '@fluentui/react';
-import { semibold } from '../../fonts';
+import { semibold } from '../../services/fonts';
 import JsxParser from 'react-jsx-parser';
 import { getFaqs } from '../../services/Requests';
 import { useTheme } from '@fluentui/react-theme-provider';

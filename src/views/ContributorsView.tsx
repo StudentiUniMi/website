@@ -6,7 +6,7 @@ import { Card, ICardTokens } from "@uifabric/react-cards";
 import { FontSizes } from '@fluentui/theme';
 import { Icon, Link, Image } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { semibold } from '../fonts';
+import { semibold } from '../services/fonts';
 import { Persona } from 'office-ui-fabric-react/lib/Persona';
 import { redirectToLink } from '../services/Utils';
 import { TooltipHost, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib/Tooltip';
