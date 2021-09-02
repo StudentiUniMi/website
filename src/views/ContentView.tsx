@@ -6,7 +6,7 @@ import OrganizationView from './OrganizationView';
 import RulesView from './RulesView';
 import ServicesView from './ServicesView';
 import RepresentativesView from './RepresentativesView';
-import ContributorsView from './ContributorsView';
+import ContributorsView from '../components/Home/Contributors';
 import { Route, Switch } from 'react-router-dom';
 import { withCookies } from 'react-cookie';
 

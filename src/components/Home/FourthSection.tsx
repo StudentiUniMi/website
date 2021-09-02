@@ -1,4 +1,4 @@
-import { Persona, Link, Text, FontSizes, IIconProps, PrimaryButton, Icon, initializeIcons, ActionButton } from '@fluentui/react';
+import { Text, FontSizes, IIconProps, PrimaryButton, Icon } from '@fluentui/react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { semibold } from '../../services/fonts';
 import { Container } from 'react-bootstrap';

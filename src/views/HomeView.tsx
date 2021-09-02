@@ -1,4 +1,4 @@
-import { Link, Text, FontSizes, IIconProps, PrimaryButton, Icon, initializeIcons } from '@fluentui/react';
+import { Link, Text, Icon, initializeIcons } from '@fluentui/react';
 import { semibold } from '../services/fonts';
 import { Image } from 'office-ui-fabric-react/lib/Image';
 import { Card, ICardTokens, CardSection } from "@uifabric/react-cards";
@@ -16,6 +16,9 @@ import FirstSection from '../components/Home/FirstSection';
 import SecondSection from '../components/Home/SecondSection';
 import ThirdSection from '../components/Home/ThirdSection';
 import FourthSection from '../components/Home/FourthSection';
+import TelegramSection from '../components/Home/TelegramSection';
+import Mantainers from '../components/Home/Mantainers';
+import Contributors from '../components/Home/Contributors';
 
 SwiperCore.use([Pagination, Navigation, Autoplay]);
 initializeIcons();
@@ -27,18 +30,9 @@ const HomeView = () => {
     //const groupsNumber = getGroupsLength();
     //const cdlsNumber = getCdlsLength();
     
-    /* Icons */
-    const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
-    const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
-    
     /* Cards */
     //const infoCard = { minHeight: 130, maxWidth: 350 };
-    const sectionCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', boxShadow: theme.effects.elevation8 };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
-    
-    /* Buttons */
-    const buttonStyle = { maxWidth: '180px' };
-    const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
     
     /* Other */
     const telegramLogo = { marginLeft: 'auto', marginRight: 'auto', width: '50px', height: '50px' };
@@ -47,15 +41,22 @@ const HomeView = () => {
     return (
         <div className="pt-5 pb-5 home">
             <MainSection />
+
+            <TelegramSection />
+
             <FirstSection />
+
             <SecondSection />
+
             <ThirdSection />
+
             <FourthSection />
 
-            <div className="faq-section mb-4">
-                <div className="mb-4"><Separator theme={theme}><Text variant="large" styles={semibold}>{locale.homepage.section6.text}</Text></Separator></div>
-                <Faqs />
-            </div>
+            <Mantainers />
+
+            <Contributors />
+
+            <Faqs />
 
             <div className="mb-4 text-center">
                 <div className="mb-3"><Separator theme={theme}><Text variant="large" styles={semibold}>{locale.homepage.telegramSection.title}</Text></Separator></div>

@@ -6,26 +6,14 @@ import { Card, ICardTokens } from "@uifabric/react-cards";
 import { FontSizes } from '@fluentui/theme';
 import { Icon, Link, Image } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { semibold } from '../services/fonts';
+import { semibold } from '../../services/fonts';
 import { Persona } from 'office-ui-fabric-react/lib/Persona';
-import { redirectToLink } from '../services/Utils';
+import { redirectToLink } from '../../services/Utils';
 import { TooltipHost, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib/Tooltip';
-import Contributor from '../models/Contributor';
-import { getContributors } from '../services/Requests'
-import { Separator } from '@fluentui/react/lib/Separator';
-import LocalizationService from "../services/LocalizationService";
+import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 
 const cardTokens: ICardTokens = { childrenMargin: 12 };
-const sectionCard = {
-    minHeight: '120px',
-    height: '100%',
-    width: '100%',
-    maxWidth: 'none',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    maxHeight: 'none'
-};
 
 const developerPic = {
     width: '80px',
@@ -38,40 +26,39 @@ const developerPic = {
 };
 
 const calloutProps = { gapSpace: 5 };
-const calloutPropsContributor = { gapSpace: 3 };
 const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
 
-const developers:any = [
+const developers: any = [
     { name: "Giuseppe Del Campo", description: { it: "Sviluppatore del sito web", en: 'Website Developer' }, pic: "giuseppedelcampo.jpg", github: "https://github.com/Giuseppetm", website: "https://giuseppetm.netlify.app/" },
     { name: "Manuele Lucchi", description: { it: "Progettista del sito web", en: 'Website Technical Designer' }, pic: "manuelelucchi.jpg", github: "https://github.com/manuelelucchi", website: "https://manuelelucchi.github.io/" },
     { name: "Marco Aceti", description: { it: "Sviluppatore di bot, database e altri servizi", en: "Bot and database developer" }, pic: "marcoaceti.jpg", github: "https://github.com/MarcoBuster", website: "https://marcoaceti.it/" },
 ];
 
-const ContributorsView = () => {
+const Mantainers = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string = LocalizationService.getLanguage();
-    const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const profileIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
-    const contributors: Contributor[] = getContributors();
+
+    const sectionCard = {
+        minHeight: '120px',
+        height: '100%',
+        width: '100%',
+        maxWidth: 'none',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        maxHeight: 'none',
+        backgroundColor: theme.palette.white
+    };
 
     return (
-        <Container className="contributors text-center">
-
-            <div className="mb-2">
-                <Text variant="large">
-                    {locale.contributors.text1}
-                </Text>
-            </div>
-
-            <Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} />
-
-            <div className="mb-4">
-                <div className="mb-3"><Separator theme={theme}><Text variant="large" styles={semibold}>{locale.contributors.header1}</Text></Separator></div>
+        <div className="pb-4 pt-4" style={{ backgroundColor: theme.palette.neutralLighter }}>
+            <Container className="contributors text-center">
+                <div className="mb-4"><Text variant="xLarge">{locale.contributors.header1}</Text></div>
 
                 <Row className="justify-content-center">
                     {
-                        developers.map( (x:any,i:any) => {
+                        developers.map((x: any, i: any) => {
                             return (
                                 <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12} key={i}>
                                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
@@ -103,7 +90,7 @@ const ContributorsView = () => {
                                                     styles={hostStyles}
                                                     delay={TooltipDelay.zero}
                                                 >
-                                                    <Link onClick={() => redirectToLink(x.website)}><Icon iconName="Website" style={profileIconStyle}/></Link>
+                                                    <Link onClick={() => redirectToLink(x.website)}><Icon iconName="Website" style={profileIconStyle} /></Link>
                                                 </TooltipHost>
                                             </div>
                                         </Card.Section>
@@ -113,36 +100,9 @@ const ContributorsView = () => {
                         })
                     }
                 </Row>
-            </div>
-
-
-            <div className="mb-4">
-                <div className="mb-2"><Separator theme={theme}><Text variant="large" styles={semibold}>{locale.contributors.header2}</Text></Separator></div>
-
-                <div><Text variant="medium"><JsxParser bindings={{ theme: theme }} components={{ Text, Link }} jsx={locale.contributors.text2}/></Text></div>
-
-                <Container className="contributors mb-2 mt-4">
-                    <Row className="justify-content-center">
-                        {
-                            contributors.map((x, i) => 
-                                <>
-                                    <TooltipHost
-                                        content={x.username}
-                                        calloutProps={calloutPropsContributor}
-                                        styles={hostStyles}
-                                        delay={TooltipDelay.zero}
-                                    >
-                                        <Persona onRenderPrimaryText={() => null} text={x.username} className="mb-1" />
-                                    </TooltipHost>
-                                    &nbsp;
-                                </>
-                            )
-                        }
-                    </Row>
-                </Container>
-            </div>
-        </Container>
+            </Container>
+        </div>
     )
 }
 
-export default ContributorsView;
+export default Mantainers;
