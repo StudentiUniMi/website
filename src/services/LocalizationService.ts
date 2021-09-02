@@ -5,7 +5,7 @@ class LocalizationService {
     private static data?: LocalizedStringsMethods & ILocalizationStrings;
 
     static localize = (language: string | undefined = undefined) => {
-        if (LocalizationService.data == null || LocalizationService.data === undefined) { // maybe this check helps
+        if (LocalizationService.data == null || LocalizationService.data === undefined) {
             LocalizationService.data = new LocalizedStrings<ILocalizationStrings>({
                 it: {
                     loading: "Caricamento in corso..",
@@ -19,7 +19,7 @@ class LocalizationService {
                         aboutUs: 'Chi siamo',
                         news: 'Notizie',
                         rules: 'Regolamento',
-                        courses: 'Corsi',
+                        courses: 'Gruppi',
                         services: 'Servizi',
                         additionalGroups: 'Gruppi extra',
                         representatives: 'Rappresentanti',
@@ -256,7 +256,7 @@ class LocalizationService {
                         aboutUs: 'About Us',
                         news: 'News',
                         rules: 'Rules',
-                        courses: 'Courses',
+                        courses: 'Groups',
                         services: 'Services',
                         additionalGroups: 'Extra Groups',
                         representatives: 'Representatives',
