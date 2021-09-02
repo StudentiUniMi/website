@@ -5,7 +5,7 @@ import { Card, ICardTokens, CardSection } from "@uifabric/react-cards";
 import { Separator } from '@fluentui/react/lib/Separator';
 import { Container } from 'react-bootstrap';
 import { useTheme } from '@fluentui/react-theme-provider';
-import Slider from '../components/Home/Slider';
+import Slider from '../components/Home/Slider/Slider';
 import Faqs from '../components/Home/Faqs';
 import React from 'react';
 import Col from 'react-bootstrap/Col';
