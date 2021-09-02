@@ -18,11 +18,10 @@ const Header = (props: Props) => {
     return (
         <header className="mt-2" style={{ borderBottom: '1px solid', borderColor: theme.palette.neutralLight }}>
 
-            {/* Large devices */}
-            <div className="large-display">
-                <Row className="ml-3 mr-3 mb-0">
+            <div>
+                <Row className="headerRow">
                     <Col style={{ maxWidth: 250, paddingLeft: 0, paddingRight: 0 }}>
-                        <div style={{width: 250}}>
+                        <div style={{ width: 250 }}>
                             <Link href="http://studentiunimi.it/">
                                 <Image id="logo"
                                     src={process.env.PUBLIC_URL + '/logo/' + logoFileName}
@@ -37,31 +36,6 @@ const Header = (props: Props) => {
                     </Col>
 
                     <Col style={{ paddingLeft: 0, paddingRight: 0, marginTop: -6, width: "55%" }}>
-                        <HeaderMenu changeTheme={props.changeTheme} changePalette={props.changePalette} />
-                    </Col>
-
-                </Row>
-            </div>
-
-            {/* Medium and small devices */}
-            <div className="small-display">
-                <Row className="ml-2 mr-1 mb-0">
-                    <Col style={{ maxWidth: 250, paddingLeft: 0, paddingRight: 0 }}>
-                        <div style={{ width: 250 }}>
-                            <Link href="http://studentiunimi.it/">
-                                <Image id="logo"
-                                    src={process.env.PUBLIC_URL + '/logo/' + logoFileName}
-                                    alt='Network logo'
-                                    style={logoProperties}
-                                    className="mr-2 mt-2 mb-1 d-inline"
-                                />
-                            </Link>
-
-                            <div className="d-inline mt-2"><Text styles={titleStyle}>Network StudentiUniMi</Text></div>
-                        </div>
-                    </Col>
-
-                    <Col style={{ paddingLeft: 0, paddingRight: 0, marginTop: -8, width: "55%" }}>
                         <HeaderMenu changeTheme={props.changeTheme} changePalette={props.changePalette} />
                     </Col>
 

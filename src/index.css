@@ -97,12 +97,10 @@ button:focus,
 }
 /* Responsive menu and title */
 @media only screen and (min-width: 587px) {
-  header .large-display {
-    display: block;
-  }
-
-  header .small-display {
-    display: none;
+  header .headerRow {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+    margin-bottom: 0 !important;
   }
 
   .header-menu .pivot {
@@ -114,12 +112,10 @@ button:focus,
   }
 }
 @media only screen and (max-width: 586px) {
-  header .large-display {
-    display: none;
-  }
-
-  header .small-display {
-    display: block;
+  header .headerRow {
+    margin-left: 0.5rem !important;
+    margin-right: 0.25rem !important;
+    margin-bottom: 0 !important;
   }
 
   .header-menu .pivot {
