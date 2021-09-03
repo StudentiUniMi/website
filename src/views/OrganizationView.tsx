@@ -69,78 +69,84 @@ const OrganizationView = () => {
                 </Container>
             </div>
 
-            <div className="pt-5 pb-5">
+            <div className="pt-4 pb-4 mb-2">
+                <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold} style={{ color: theme.palette.themePrimary }}>{locale.aboutUs.header1}</Text></div>
                 
-                <div className="contributors mb-2">
-                    <Container>
-                        <Row className="justify-content-center">
-                            {
-                                networkMembers.map((x, i) =>
-                                    <>
-                                        {(() => {
-                                            const imageUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${x.user_id}.png`;
-                                            const tooltipProps: ITooltipProps = {
-                                                onRenderContent: () => (
-                                                    <>
-                                                        <div className="mb-1">
-                                                            <Text variant="large" styles={semibold}>{x.name}</Text><br/>
-                                                            <Text variant="medium"><Link href={`https://t.me/${x.username}`}>@{x.username}</Link></Text><br/>
-                                                        </div>
-                                                        <div>   
-                                                            <Text variant="medium">{x.delega}</Text>
-                                                        </div>
-                                                    </>
-                                                ),
-                                            };
-                                            return (
-                                                <TooltipHost
-                                                    tooltipProps={tooltipProps}
-                                                    calloutProps={calloutPropsContributor}
-                                                    styles={hostStyles}
-                                                    delay={TooltipDelay.zero}
-                                                    key={i}
-                                                >
-                                                    <Persona onRenderPrimaryText={() => null} imageUrl={imageUrl} text={x.username} className="mb-1" size={PersonaSize.size72} />
-                                                </TooltipHost>
-                                            )
-                                        })()}
-                                        &nbsp;&nbsp;
-                                    </>
-                                )
-                            }
-                            {
-                                developers.map((x:any, i:any) =>
-                                    <>
-                                        {(() => {
-                                            const imageUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${x.user_id}.png`;
-                                            const tooltipProps: ITooltipProps = {
-                                                onRenderContent: () => (
-                                                    <>
-                                                        <div className="mb-1">
-                                                            <Text variant="large" styles={semibold}>{x.name}</Text><br />
-                                                            <Text variant="medium"><Link href={`https://t.me/${x.username}`}>@{x.username}</Link></Text><br />
-                                                        </div>
-                                                        <div>
-                                                            <Text variant="medium">{x.description[language]}</Text>
-                                                        </div>
-                                                    </>
-                                                ),
-                                            };
-                                            return (
-                                            <TooltipHost
-                                                tooltipProps={tooltipProps}
-                                                calloutProps={calloutPropsContributor}
-                                                styles={hostStyles}
-                                                delay={TooltipDelay.zero}
-                                                key={i}
-                                                >
-                                                <Persona onRenderPrimaryText={() => null} imageUrl={imageUrl} text={x.username} className="mb-1" size={PersonaSize.size72} />
-                                            </TooltipHost>
-                                            )})()}
-                                        &nbsp;&nbsp;
-                                    </>
-                                )
-                            }
+                <div style={{maxWidth: 230, marginLeft: 'auto', marginRight: 'auto'}}>
+                    <Persona
+                        size={PersonaSize.size72}
+                        imageUrl={"https://studentiunimi-groups-propics.marcoaceti.workers.dev/26170256.png"}
+                        text={networkMembers[0].name}
+                        onRenderPrimaryText={() => <Text variant="medium" styles={semibold}>{networkMembers[0].name}</Text>}
+                        secondaryText={networkMembers[0].username}
+                        onRenderSecondaryText={() => <Text variant="medium"><Link href={`https://t.me/${networkMembers[0].username}`}>@{networkMembers[0].username}</Link></Text>}
+                        tertiaryText={networkMembers[0].delega}
+                        onRenderTertiaryText={() => <Text variant="small">{networkMembers[0].delega}</Text>}
+                    />
+                </div>
+            </div>
+
+            <div className="pt-4 pb-4 mb-2">
+                <Container>
+                    <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold} style={{color: theme.palette.themePrimary}}>{locale.aboutUs.header2}</Text></div>
+
+                    <Row className="justify-content-center">
+                        {
+                            (networkMembers.slice(1, networkMembers.length)).map((x, i) =>
+                                <>
+                                    <Col className="mb-3" lg={4} md={6} sm={12}>
+                                        <div style={{ maxWidth: 300, marginLeft: 'auto', marginRight: 'auto' }}>
+                                            <Persona
+                                                size={PersonaSize.size72}
+                                                imageUrl={`https://studentiunimi-groups-propics.marcoaceti.workers.dev/${x.user_id}.png`}
+                                                text={x.name}
+                                                onRenderPrimaryText={() => <Text variant="medium" styles={semibold}>{x.name}</Text>}
+                                                secondaryText={x.username}
+                                                onRenderSecondaryText={() => <Text variant="medium"><Link href={`https://t.me/${x.username}`}>@{x.username}</Link></Text>}
+                                                tertiaryText={x.delega}
+                                                onRenderTertiaryText={() => <Text variant="small">{x.delega}</Text>}
+                                            />
+                                        </div>
+                                    </Col>
+                                </>
+                            )
+                        }
+                    </Row>
+                
+                </Container>
+            </div>
+
+            <div className="pt-4 pb-4 mb-2">
+                <Container>
+                    <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold} style={{ color: theme.palette.themePrimary }}>Sviluppatori</Text></div>
+
+                    <Row className="justify-content-center">
+                        {
+                            developers.map((x:any, i:any) =>
+                                <>
+                                    <Col className="mb-3">
+                                        <div style={{ maxWidth: 300, marginLeft: 'auto', marginRight: 'auto' }}>
+                                            <Persona
+                                                size={PersonaSize.size72}
+                                                imageUrl={`https://studentiunimi-groups-propics.marcoaceti.workers.dev/${x.user_id}.png`}
+                                                text={x.name}
+                                                onRenderPrimaryText={() => <Text variant="medium" styles={semibold}>{x.name}</Text>}
+                                                secondaryText={x.username}
+                                                onRenderSecondaryText={() => <Text variant="medium"><Link href={`https://t.me/${x.username}`}>@{x.username}</Link></Text>}
+                                                tertiaryText={x.description[language]}
+                                                onRenderTertiaryText={() => <Text variant="small">{x.description[language]}</Text>}
+                                            />
+                                        </div>
+                                    </Col>
+                                </>
+                            )
+                        }
+                    </Row>
+
+                </Container>
+            </div>
+
+            {/*
                             {
                                 admins.map((x: any, i: any) =>
                                     <>
@@ -181,6 +187,7 @@ const OrganizationView = () => {
 
 
             </div>
+            */}
 
 
 
