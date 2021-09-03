@@ -80,8 +80,6 @@ const OrganizationView = () => {
                         onRenderPrimaryText={() => <Text variant="medium" styles={semibold}>{networkMembers[0].name}</Text>}
                         secondaryText={networkMembers[0].username}
                         onRenderSecondaryText={() => <Text variant="medium"><Link href={`https://t.me/${networkMembers[0].username}`}>@{networkMembers[0].username}</Link></Text>}
-                        tertiaryText={networkMembers[0].delega}
-                        onRenderTertiaryText={() => <Text variant="small">{networkMembers[0].delega}</Text>}
                     />
                 </div>
             </div>
@@ -94,8 +92,8 @@ const OrganizationView = () => {
                         {
                             (networkMembers.slice(1, networkMembers.length)).map((x, i) =>
                                 <>
-                                    <Col className="mb-3" lg={4} md={6} sm={12}>
-                                        <div style={{ maxWidth: 300, marginLeft: 'auto', marginRight: 'auto' }}>
+                                    <Col className="mb-4" lg={3} md={6} sm={6} xs={12}>
+                                        <div style={{ maxWidth: 240, marginLeft: 'auto', marginRight: 'auto' }}>
                                             <Persona
                                                 size={PersonaSize.size72}
                                                 imageUrl={`https://studentiunimi-groups-propics.marcoaceti.workers.dev/${x.user_id}.png`}
@@ -103,8 +101,6 @@ const OrganizationView = () => {
                                                 onRenderPrimaryText={() => <Text variant="medium" styles={semibold}>{x.name}</Text>}
                                                 secondaryText={x.username}
                                                 onRenderSecondaryText={() => <Text variant="medium"><Link href={`https://t.me/${x.username}`}>@{x.username}</Link></Text>}
-                                                tertiaryText={x.delega}
-                                                onRenderTertiaryText={() => <Text variant="small">{x.delega}</Text>}
                                             />
                                         </div>
                                     </Col>
@@ -124,7 +120,7 @@ const OrganizationView = () => {
                         {
                             developers.map((x:any, i:any) =>
                                 <>
-                                    <Col className="mb-3">
+                                    <Col className="mb-3" lg={4} sm={6} xs={12}>
                                         <div style={{ maxWidth: 300, marginLeft: 'auto', marginRight: 'auto' }}>
                                             <Persona
                                                 size={PersonaSize.size72}
