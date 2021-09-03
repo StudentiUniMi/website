@@ -7,14 +7,11 @@ interface ILocalizationStrings {
     errorContactAdmin: string,
     headerMenuItems: {
         home: string,
-        aboutUs: string,
-        news: string,
-        rules: string,
         courses: string,
         services: string,
-        additionalGroups: string,
-        representatives: string,
-        contributors: string
+        aboutUs: string,
+        rules: string,
+        university: string
     },
     settingsPanel: {
         settings: string,

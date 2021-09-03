@@ -23,7 +23,6 @@ export enum ItemsKeys {
     courses = "courses",
     services = "services",
     rules = "rules",
-    news = "news",
     representatives = "representatives",
     organization = "organization"
 };
@@ -102,8 +101,7 @@ const HeaderMenu = (props: Props) => {
         [ItemsKeys.courses, locale.headerMenuItems.courses],
         [ItemsKeys.services, locale.headerMenuItems.services],
         [ItemsKeys.rules, locale.headerMenuItems.rules],
-        [ItemsKeys.news, locale.headerMenuItems.news],
-        [ItemsKeys.representatives, locale.headerMenuItems.representatives],
+        [ItemsKeys.representatives, locale.headerMenuItems.university],
         [ItemsKeys.organization, locale.headerMenuItems.aboutUs]
     ]);
     

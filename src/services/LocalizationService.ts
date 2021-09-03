@@ -16,14 +16,11 @@ class LocalizationService {
                     errorContactAdmin: 'Si è verificato un errore; contatta un amministratore.',
                     headerMenuItems: {
                         home: 'Home',
-                        aboutUs: 'Chi siamo',
-                        news: 'Notizie',
-                        rules: 'Regolamento',
                         courses: 'Gruppi',
                         services: 'Servizi',
-                        additionalGroups: 'Gruppi extra',
-                        representatives: 'Rappresentanti',
-                        contributors: 'Contributori'
+                        rules: 'Regolamento',
+                        university: 'Ateneo',
+                        aboutUs: 'Chi siamo',
                     },
                     settingsPanel: {
                         settings: 'Impostazioni',
@@ -253,14 +250,11 @@ class LocalizationService {
                     errorContactAdmin: 'An error has occured; contact an administrator.',
                     headerMenuItems: {
                         home: 'Home',
-                        aboutUs: 'About Us',
-                        news: 'News',
-                        rules: 'Rules',
                         courses: 'Groups',
                         services: 'Services',
-                        additionalGroups: 'Extra Groups',
-                        representatives: 'Representatives',
-                        contributors: 'Contributors'
+                        rules: 'Rules',
+                        university: 'University',
+                        aboutUs: 'About Us',
                     },
                     settingsPanel: {
                         settings: 'Settings',

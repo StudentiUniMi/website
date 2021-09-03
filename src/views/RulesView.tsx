@@ -6,9 +6,9 @@ import { useTheme } from '@fluentui/react-theme-provider';
 import { DefaultButton, DirectionalHint, IIconProps, mergeStyleSets } from "@fluentui/react";
 import { useBoolean, useId } from '@fluentui/react-hooks';
 import { getRules } from '../services/Requests'; 
+import { Image } from 'office-ui-fabric-react/lib/Image';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { Image } from 'office-ui-fabric-react/lib/Image';
 import Rule from '../models/Rule';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
@@ -102,30 +102,30 @@ const Rules = () => {
                 </div>
             </div>
 
-                <div className="mb-3">
-                    <Container>
-                        {
-                            rulesData.map((x, i) => {
-                                return (
-                                    <Accordion style={{ backgroundColor: theme.palette.white, color: theme.palette.black, boxShadow: theme.effects.elevation8, marginRight: 10, marginLeft: 10 }} key={i}>
-                                        <AccordionSummary
-                                            expandIcon={<ExpandMoreIcon style={{ color: theme.palette.black }} />}
-                                            aria-controls="panel1a-content"
-                                            id="panel1a-header"
-                                        >
-                                            <Text variant="medium" style={{ color: theme.palette.themePrimary }} styles={semibold}>{x.title![language]}</Text>
-                                        </AccordionSummary>
-                                        <AccordionDetails>
-                                            <Text variant="medium">
-                                                <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x.description![language]} />
-                                            </Text>
-                                        </AccordionDetails>
-                                    </Accordion>
-                                )
-                            })
-                        }
-                    </Container>
-                </div>
+            <div className="mb-3">
+                <Container>
+                    {
+                        rulesData.map((x, i) => {
+                            return (
+                                <Accordion style={{ backgroundColor: theme.palette.white, color: theme.palette.black, boxShadow: theme.effects.elevation8, marginRight: 10, marginLeft: 10 }} key={i}>
+                                    <AccordionSummary
+                                        expandIcon={<ExpandMoreIcon style={{ color: theme.palette.black }} />}
+                                        aria-controls="panel1a-content"
+                                        id="panel1a-header"
+                                    >
+                                        <Text variant="medium" style={{ color: theme.palette.themePrimary }} styles={semibold}>{x.title![language]}</Text>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <Text variant="medium">
+                                            <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x.description![language]} />
+                                        </Text>
+                                    </AccordionDetails>
+                                </Accordion>
+                            )
+                        })
+                    }
+                </Container>
+            </div>
         </div>
     )
 }
