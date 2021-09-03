@@ -7,7 +7,6 @@ import { FontSizes } from '@fluentui/theme';
 import { Icon, Link, Image } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { semibold } from '../../services/fonts';
-import { Persona } from 'office-ui-fabric-react/lib/Persona';
 import { redirectToLink } from '../../services/Utils';
 import { TooltipHost, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib/Tooltip';
 import LocalizationService from "../../services/LocalizationService";

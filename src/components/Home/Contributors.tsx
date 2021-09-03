@@ -24,29 +24,29 @@ const Contributors = () => {
     const contributors: Contributor[] = getContributors();
 
     return (
-        <div className="pb-4 pt-4" /* style={{ backgroundColor: theme.palette.neutralLighter }} */>
+        <div className="pb-4 pt-4" style={{ backgroundColor: theme.palette.neutralLighter }}>
             <Container className="contributors text-center">
-                    <div className="mb-4"><Text variant="xLarge">{locale.contributors.header2}</Text></div>
+                <div className="mb-4"><Text variant="xLarge">{locale.contributors.header2}</Text></div>
 
-                    <div className="contributors">
-                        <Row className="justify-content-center">
-                            {
-                                contributors.map((x, i) => 
-                                    <>
-                                        <TooltipHost
-                                            content={x.username}
-                                            calloutProps={calloutPropsContributor}
-                                            styles={hostStyles}
-                                            delay={TooltipDelay.zero}
-                                        >
-                                            <Persona onRenderPrimaryText={() => null} text={x.username} className="mb-1" />
-                                        </TooltipHost>
-                                        &nbsp;
-                                    </>
-                                )
-                            }
-                        </Row>
-                    </div>
+                <div className="contributors mb-2">
+                    <Row className="justify-content-center">
+                        {
+                            contributors.map((x, i) => 
+                                <>
+                                    <TooltipHost
+                                        content={x.username}
+                                        calloutProps={calloutPropsContributor}
+                                        styles={hostStyles}
+                                        delay={TooltipDelay.zero}
+                                    >
+                                        <Persona onRenderPrimaryText={() => null} text={x.username} className="mb-1" />
+                                    </TooltipHost>
+                                    &nbsp;
+                                </>
+                            )
+                        }
+                    </Row>
+                </div>
             </Container>
         </div>
     )

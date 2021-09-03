@@ -6,7 +6,6 @@ import OrganizationView from './OrganizationView';
 import RulesView from './RulesView';
 import ServicesView from './ServicesView';
 import RepresentativesView from './RepresentativesView';
-import ContributorsView from '../components/Home/Contributors';
 import { Route, Switch } from 'react-router-dom';
 import { withCookies } from 'react-cookie';
 
@@ -23,7 +22,6 @@ const ContentView = () => {
             <Route path='/services' render={() => wrap(<ServicesView/>)} />
             <Route path='/additional_groups' render={() => wrap(<AdditionalGroupsView/>)} />
             <Route path='/representatives' render={() => wrap(<RepresentativesView/>)} />
-            <Route path='/contributors' render={() => wrap(<ContributorsView/>)} />
             <Route path='/organization' render={() => wrap(<OrganizationView/>)} />
         </Switch>
     )

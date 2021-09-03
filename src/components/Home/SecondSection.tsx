@@ -28,7 +28,9 @@ const SecondSection = () => {
                             <Card.Section>
                                 <div><Icon iconName="Group" style={homeIconStyle} /></div>
                                 <Text variant="medium">
-                                    {locale.homepage.section3.card1.text}
+                                    {/*{locale.homepage.section3.card1.text}*/}
+                                    Ogni corso di laurea ha almeno un gruppo Telegram; premi il pulsante sotto per trovare il tuo.
+                                    Presto sarà disponibile un gruppo per ogni insegnamento.
                                 </Text>
                                 <div className="justify-content-center">
                                     <PrimaryButton text={locale.homepage.section3.card1.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/courses/" allowDisabledFocus style={buttonStyle} />
@@ -42,7 +44,9 @@ const SecondSection = () => {
                             <Card.Section>
                                 <div><Icon iconName="AddGroup" style={homeIconStyle} /></div>
                                 <Text variant="medium">
-                                    {locale.homepage.section3.card2.text}
+                                    {/*{locale.homepage.section3.card2.text}*/}
+                                    Sei una matricola? Cerchi alloggi, materiali o qualcuno che faccia ripetizioni?
+                                    Nessun problema, entra in uno dei nostri gruppi aggiuntivi!
                                 </Text>
                                 <div className="justify-content-center">
                                     <PrimaryButton text={locale.homepage.section3.card2.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/additional_groups/" allowDisabledFocus style={buttonStyle} />
@@ -56,7 +60,8 @@ const SecondSection = () => {
                             <Card.Section>
                                 <div><Icon iconName="JoinOnlineMeeting" style={homeIconStyle} /></div>
                                 <Text variant="medium">
-                                    {locale.homepage.section3.card3.text}
+                                    {/*{locale.homepage.section3.card3.text}*/}
+                                    Crediamo che un ambiente rispettoso e inclusivo favorisca la condivisione. Dai un'occhiata al regolamento ufficiale.
                                 </Text>
                                 <div className="justify-content-center">
                                     <PrimaryButton text={locale.homepage.section3.card3.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/rules/" allowDisabledFocus style={buttonStyle} />

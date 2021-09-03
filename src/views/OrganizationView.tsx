@@ -13,6 +13,7 @@ import { Separator } from '@fluentui/react/lib/Separator';
 import { getCanMembers } from '../services/Requests';
 import { CompoundButton } from '@fluentui/react/lib/Button';
 import { IIconProps } from '@fluentui/react';
+import Mantainers from '../components/Home/Mantainers';
 import LocalizationService from "../services/LocalizationService";
 
 const OrganizationView = () => {
@@ -28,6 +29,8 @@ const OrganizationView = () => {
 
     return (
         <Container className="organization text-center">
+
+            <Mantainers />
 
             <div className="mb-2">
                 <div className="mb-3">

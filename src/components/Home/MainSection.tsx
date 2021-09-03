@@ -30,11 +30,18 @@ const MainSection = () => {
                     <Col lg={8}>
                         <div className="mb-2">
                             <Text variant="xLargePlus">
-                                Un posto dove ogni studente dell'Università degli Studi di Milano può trovare quello che cerca.
+                                {/*Un posto dove ogni studente dell'Università degli Studi di Milano può trovare quello che cerca.*/}
+                                Rimani in contatto. Di più, e meglio.
                             </Text>
                         </div>
 
-                        <div><Text variant="large">La nostra missione è fornire un gruppo Telegram organizzato per ogni insegnamento e per ogni possibile servizio utile.</Text></div>
+                        <div>
+                            <Text variant="large">
+                                {/*La nostra missione è fornire un gruppo Telegram organizzato per ogni insegnamento e per ogni possibile servizio utile.*/}
+                                Comunicare è importante, ma può essere frustrante farlo sui grupponi WhatsApp lasciati a loro stessi. Abbiamo creato gruppi Telegram 
+                                per ogni corso di laurea dell'Università degli Studi di Milano per facilitare lo scambio di informazioni.
+                            </Text>
+                        </div>
                     </Col>
                 </Row>
             </Container>

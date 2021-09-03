@@ -28,7 +28,8 @@ const ThirdSection = () => {
                             <Card.Section>
                                 <div><Icon iconName="Globe2" style={homeIconStyle} /></div>
                                 <Text variant="medium">
-                                    {locale.homepage.section4.card1.text}
+                                    {/*{locale.homepage.section4.card1.text}*/}
+                                    Abbiamo creato una Wikipedia per ogni insegnamento. Chiunque è libero di collaborare!
                                 </Text>
                                 <div className="justify-content-center">
                                     <PrimaryButton text={locale.homepage.section4.card1.button} iconProps={buttonIconProps} href="https://wiki.studentiunimi.it/" className="text-decoration-none"  target="_blank" allowDisabledFocus style={buttonStyle} />
@@ -42,10 +43,11 @@ const ThirdSection = () => {
                             <Card.Section>
                                 <div><Icon iconName="World" style={homeIconStyle} /></div>
                                 <Text variant="medium">
-                                    {locale.homepage.section4.card2.text}
+                                    {/*{locale.homepage.section4.card2.text}*/}
+                                    Stufo di non poter accedere ai servizi perchè UniMia ha problemi?
                                 </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section4.card2.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/services/" allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton /*text={locale.homepage.section4.card2.button}*/ text={"unimia.studentiunimi.it"} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/services/" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
@@ -56,7 +58,8 @@ const ThirdSection = () => {
                             <Card.Section>
                                 <div><Icon iconName="CloudDownload" style={homeIconStyle} /></div>
                                 <Text variant="medium">
-                                    {locale.homepage.section4.card3.text}
+                                    {/*{locale.homepage.section4.card3.text}*/}
+                                    HedgeDoc permette di prendere appunti in collaborazione senza doversi registrare. Provalo!
                                 </Text>
                                 <div className="justify-content-center">
                                     <PrimaryButton text={locale.homepage.section4.card3.button} iconProps={buttonIconProps} href="https://hedgedoc.studentiunimi.it/" className="text-decoration-none"  target="_blank" allowDisabledFocus style={buttonStyle} />
@@ -70,7 +73,8 @@ const ThirdSection = () => {
                             <Card.Section>
                                 <div><Icon iconName="Code" style={homeIconStyle} /></div>
                                 <Text variant="medium">
-                                    {locale.homepage.section4.card4.text}
+                                    {/*{locale.homepage.section4.card4.text}*/}
+                                    Devi condividere codice sui gruppi? Usa il nostro servizio veloce, semplice e sicuro.
                                 </Text>
                                 <div className="justify-content-center">
                                     <PrimaryButton text={locale.homepage.section4.card4.button} iconProps={buttonIconProps} href="http://paste.studentiunimi.it/" className="text-decoration-none"  target="_blank" allowDisabledFocus style={buttonStyle} />

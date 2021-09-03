@@ -26,8 +26,7 @@ export enum ItemsKeys {
     rules = "rules",
     news = "news",
     representatives = "representatives",
-    organization = "organization",
-    contributors = "contributors"
+    organization = "organization"
 };
 
 initializeIcons();
@@ -107,8 +106,7 @@ const HeaderMenu = (props: Props) => {
         [ItemsKeys.rules, locale.headerMenuItems.rules],
         [ItemsKeys.news, locale.headerMenuItems.news],
         [ItemsKeys.representatives, locale.headerMenuItems.representatives],
-        [ItemsKeys.organization, locale.headerMenuItems.aboutUs],
-        [ItemsKeys.contributors, locale.headerMenuItems.contributors]
+        [ItemsKeys.organization, locale.headerMenuItems.aboutUs]
     ]);
     
     const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };

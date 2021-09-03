@@ -16,7 +16,7 @@ const Footer = () => {
     const locale = LocalizationService.strings();
     const iconStyle = { fontSize: 18 };
     return (
-        <footer style={{ backgroundColor: theme.palette.neutralQuaternaryAlt, borderTop: '1px solid', borderColor: theme.palette.neutralLight }}>
+        <footer style={{ backgroundColor: theme.palette.neutralQuaternaryAlt, borderTop: '1px solid', borderColor: theme.palette.neutralLight }} className="pt-4 pb-4">
             <Container style={{ width: '100%', color: theme.palette.neutralSecondary }}>
 
                 <Row>
