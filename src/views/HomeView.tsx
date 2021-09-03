@@ -11,7 +11,6 @@ import SecondSection from '../components/Home/SecondSection';
 import ThirdSection from '../components/Home/ThirdSection';
 import FourthSection from '../components/Home/FourthSection';
 import TelegramSection from '../components/Home/TelegramSection';
-import Contributors from '../components/Home/Contributors';
 
 SwiperCore.use([Pagination, Navigation, Autoplay]);
 initializeIcons();
@@ -39,8 +38,6 @@ const HomeView = () => {
             <ThirdSection />
 
             <FourthSection />
-
-            <Contributors />
 
             <Faqs />
 

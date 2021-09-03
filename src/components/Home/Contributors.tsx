@@ -1,18 +1,12 @@
 import { Text } from 'office-ui-fabric-react';
-import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Container } from 'react-bootstrap';
-import { Card, ICardTokens } from "@uifabric/react-cards";
-import { FontSizes } from '@fluentui/theme';
-import { Icon, Link, Image } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { semibold } from '../../services/fonts';
 import { Persona } from 'office-ui-fabric-react/lib/Persona';
 import { TooltipHost, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib/Tooltip';
 import Contributor from '../../models/Contributor';
 import { getContributors } from '../../services/Requests'
 import LocalizationService from "../../services/LocalizationService";
-import JsxParser from 'react-jsx-parser';
 
 const calloutPropsContributor = { gapSpace: 3 };
 const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
@@ -20,7 +14,7 @@ const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block
 const Contributors = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
-    var language: string = LocalizationService.getLanguage();
+    //var language: string = LocalizationService.getLanguage();
     const contributors: Contributor[] = getContributors();
 
     return (

@@ -31,15 +31,16 @@ const MainSection = () => {
                     <Col lg={8}>
                         <div className="mb-1">
                             <Text variant="large">
-                                <>Sei iscritto a .. </>
+                                <>Sei iscritto a... </>
                                 <Text style={{color: theme.palette.themePrimary}} variant="large">
                                 <Typed
                                     strings={[
-                                        'Scienze della dennissonite?',
-                                        'Informatica dei dennissonis?',
-                                        'Medicina delle noci di cocco?'
+                                        'scienze della dennissonite?',
+                                        'informatica dei dennissonis?',
+                                        'medicina delle noci di cocco?'
                                     ]}
-                                    typeSpeed={40}
+                                    typeSpeed={50}
+                                    backSpeed={30}
                                     loop
                                 />
                                 </Text>
