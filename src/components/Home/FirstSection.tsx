@@ -49,7 +49,7 @@ const FirstSection = () => {
                                     Nessun problema, entra in uno dei nostri gruppi aggiuntivi!
                                 </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section3.card2.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/additional_groups/" allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section3.card2.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/courses/" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>

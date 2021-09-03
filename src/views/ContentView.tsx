@@ -23,6 +23,6 @@ const ContentView = () => {
             <Route path='/organization' render={() => wrap(<OrganizationView/>)} />
         </Switch>
     )
-}
+};
 
 export default withCookies(ContentView);
