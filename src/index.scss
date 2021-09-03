@@ -40,6 +40,14 @@ button:focus,
 }
 
 
+/* Align text when in mobile view */
+@media only screen and (max-width: 992px) {
+  .center-mobile {
+    text-align: center;
+  }
+}
+
+
 
 /* Responsive footer */
 @media only screen and (max-width: 992px) {
@@ -80,19 +88,19 @@ button:focus,
 
 @media only screen and (max-width: 485px) {
   body {
-    margin-bottom: 550px;
+    margin-bottom: 540px;
   }
 }
 
 @media only screen and (max-width: 363px) {
   body {
-    margin-bottom: 560px;
+    margin-bottom: 550px;
   }
 }
 
 @media only screen and (max-width: 320px) {
   body {
-    margin-bottom: 570px;
+    margin-bottom: 560px;
   }
 }
 
