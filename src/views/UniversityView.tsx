@@ -20,6 +20,7 @@ const UniversityView = () => {
     let didMount = React.useRef(false);
     const locale = LocalizationService.strings();
     const history = useHistory();
+    const whiteText = '#faf9f8';
 
     /* Remove title properties from documentCardTitles */
     React.useEffect(() => {
@@ -105,17 +106,17 @@ const UniversityView = () => {
 
     return (
         <div className="university">
-            <div className="pt-5 pb-5 mb-4" style={{ backgroundColor: theme.palette.tealLight }}>
+            <div className="pt-5 pb-5 mb-4" style={{ backgroundColor: '#004083' }}>
                 <Container>
 
                     <Row>
                         <Col lg={9} className="mb-2">
                             <div className="mb-2">
-                                <Text variant="xLargePlus" style={{ color: theme.palette.white }}>Sei alla ricerca di informazioni legate al nostro ateneo? Nessun problema!</Text>
+                                <Text variant="xLargePlus" style={{ color: whiteText }}>Sei alla ricerca di informazioni legate al nostro ateneo? Nessun problema!</Text>
                             </div>
 
                             <div className="mb-3">
-                                <Text variant="large" style={{ color: theme.palette.white }}>Qui puoi trovare tutto quello che ti serve.</Text>
+                                <Text variant="large" style={{ color: whiteText }}>Qui puoi trovare tutto quello che ti serve.</Text>
                             </div>
                         </Col>
 
@@ -141,7 +142,7 @@ const UniversityView = () => {
                 </Container>
             </div>
 
-            <div className="pt-5 pb-5 mb-4" style={{ backgroundColor: theme.palette.orangeLighter }}>
+            <div className="pt-5 pb-5 mb-4" style={{ backgroundColor: '#faa381' }}>
                 <Container>
                     <Row className="mb-3">
                         <Col lg={3} className="text-center">

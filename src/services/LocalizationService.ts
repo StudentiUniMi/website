@@ -134,7 +134,9 @@ class LocalizationService {
                         }
                     },
                     aboutUs: {
-                        text1: "Siamo un'organizzazione senza fini di lucro, apolitica, ovvero apartitica, e neutrale, la quale si pone l'obiettivo di offrire servizi telematici agli studenti dell'Università degli Studi di Milano.",
+                        text1: "Siamo un'organizzazione senza fini di lucro, apolitica, ovvero apartitica, e neutrale.",
+                        text2: "Il nostro obiettivo è quello di offrire servizi telematici agli studenti dell'Università degli Studi di Milano.",
+                        text3: "Qui è possibile vedere tutte le persone che fanno parte del Network StudentiUniMi.",
                         button: { text1: 'Statuto', text2: "Dai un'occhiata al nostro statuto!" },
                         header1: 'Coordinatore',
                         header2: 'Comitato Amministrativo',
@@ -353,7 +355,9 @@ class LocalizationService {
                         }
                     },
                     aboutUs: {
-                        text1: 'We are a non-profit organization, neutral and not affiliated to any political party. Our goal is to provide online services to the students at the University of Milan.',
+                        text1: 'We are a non-profit organization, neutral and not affiliated to any political party.',
+                        text2: "Our goal is to provide online services to the students at the University of Milan.",
+                        text3: "Here you can see all the people within the Network StudentiUniMi.",
                         button: { text1: 'Statute', text2: "You can read our statute here!" },
                         header1: 'Coordinator',
                         header2: 'Administrative Committee',

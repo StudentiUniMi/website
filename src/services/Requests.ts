@@ -10,7 +10,7 @@ import Admin from '../models/Admin';
 import Service from '../models/Service';
 import Contributor from '../models/Contributor';
 import Faq from '../models/Faq';
-import CanMember from '../models/CanMember';
+import NetworkMember from '../models/NetworkMember';
 import Rule from '../models/Rule';
 
 /* Updated models */
@@ -22,7 +22,7 @@ import extraGroups from '../data/ExtraGroups.json';
 import serviceData from '../data/Services.json';
 import Contributors from '../data/Contributors.json';
 import Faqs from '../data/Faqs.json';
-import CanMembers from '../data/CanMembers.json';
+import NetworkMembers from '../data/NetworkMembers.json';
 import Rules from '../data/Rules.json';
 
 /* Endpoints */
@@ -132,6 +132,6 @@ export const getCdlsLength = (): number => getAllCdls().length;
 
 export const getFaqs = (): Faq[] => Faqs;
 
-export const getCanMembers = (): CanMember[] => CanMembers;
+export const getNetworkMembers = (): NetworkMember[] => NetworkMembers;
 
 export const getRules = (): Rule[] => Rules;

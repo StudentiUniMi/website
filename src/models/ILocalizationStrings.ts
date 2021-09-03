@@ -118,6 +118,8 @@ interface ILocalizationStrings {
     },
     aboutUs: {
         text1: string,
+        text2: string,
+        text3: string,
         button: { text1: string, text2: string },
         header1: string,
         header2: string,

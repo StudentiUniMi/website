@@ -213,12 +213,6 @@
                         { "name": {"it": "Wiki del corso di laurea", "en": "Degree's wiki"}, "description": {"it": "", "en": ""}, "link": "https://wiki.studentiunimi.it/informatica_musicale", "icon": "ProjectCollection" }
                     ],
                     "admins": [
-                        {
-                            "username": "giolake",
-                            "year": "",
-                            "user_id": 126856154,
-                            "cdl": "Informatica musicale"
-                        }
                     ],
                     "is_master": false,
                     "has_years": true
