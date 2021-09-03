@@ -16,7 +16,7 @@ const MainSection = () => {
     const logoProperties = { width: 200, height: 200, display: 'inline-block' };
 
     return (
-        <div /* style={{backgroundColor: theme.palette.neutralLighter}}*/ className="pb-5 pt-5 mb-5">
+        <div /* style={{backgroundColor: theme.palette.neutralLighter}}*/ className="pb-5">
             <Container>
                 <Row>
                     <Col lg={4}>
