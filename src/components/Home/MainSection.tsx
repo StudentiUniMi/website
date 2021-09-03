@@ -10,6 +10,7 @@ import { useTheme } from '@fluentui/react-theme-provider';
 import Slider from './Slider/Slider';
 import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
+import Typed from 'react-typed';
 
 const MainSection = () => {
     var theme = useTheme();
@@ -28,6 +29,22 @@ const MainSection = () => {
                     </Col>
 
                     <Col lg={8}>
+                        <div className="mb-1">
+                            <Text variant="large">
+                                <>Sei iscritto a .. </>
+                                <Text style={{color: theme.palette.themePrimary}} variant="large">
+                                <Typed
+                                    strings={[
+                                        'Scienze della dennissonite?',
+                                        'Informatica dei dennissonis?',
+                                        'Medicina delle noci di cocco?'
+                                    ]}
+                                    typeSpeed={40}
+                                    loop
+                                />
+                                </Text>
+                            </Text>
+                        </div>
                         <div className="mb-2">
                             <Text variant="xLargePlus">
                                 {/*Un posto dove ogni studente dell'Università degli Studi di Milano può trovare quello che cerca.*/}
