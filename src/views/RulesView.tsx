@@ -25,7 +25,7 @@ const Rules = () => {
 
     const rulesData: Rule[] = getRules();
 
-    const imageProperties = { display: 'inline-block', width: '90%' };
+    const imageProperties = { display: 'inline-block', width: '100%' };
 
     const [isCalloutVisible, { toggle: toggleIsCalloutVisible }] = useBoolean(false);
     const buttonId = useId('callout-button');
@@ -57,11 +57,11 @@ const Rules = () => {
                         </Col>
 
                         <Col lg={8} className="mb-2">
-                            <div className="mb-1">
+                            <div className="mb-2">
                                 <Text variant="xLargePlus" style={{color: theme.palette.white}}>Il regolamento dei nostri gruppi Telegram ci rende più innovativi e produttivi.</Text>
                             </div>
 
-                            <div className="mb-2">
+                            <div className="mb-3">
                                 <Text variant="large" style={{ color: theme.palette.white }}>Si consiglia di leggere tutte le regole di cui è composto prima di usare uno qualsiasi di essi.</Text>
                             </div>
 
