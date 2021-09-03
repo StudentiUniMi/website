@@ -45,7 +45,7 @@ const Rules = () => {
     });
 
     return (
-        <div className="rules">
+        <div className="rules pb-3">
             <div className="pt-5 pb-5 mb-4" style={{ backgroundColor: theme.palette.themePrimary }}>
                 <Container>
 

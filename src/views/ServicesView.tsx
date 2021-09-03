@@ -49,7 +49,7 @@ const Services = () => {
     }};
     
     return (
-        <div className="services">
+        <div className="services pb-2">
             <div className="pt-5 pb-5 mb-4" style={{ backgroundColor: theme.palette.neutralLighter }}>
                 <Container>
 

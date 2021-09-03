@@ -140,24 +140,6 @@ class LocalizationService {
                         header2: 'Comitato Amministrativo',
                         header3: 'Amministratori dei gruppi telegram'
                     },
-                    news: {
-                        title: 'Notizie generali',
-                        vaccineSection: {
-                            title: "Informazioni sui vaccini",
-                            card1: {
-                                title: "Obbligo del Green Pass",
-                                description: "Vi ricordiamo che da settembre in tutte le università per svolgere una qualsiasi attività in presenza (compreso l'accesso alle aule studio) sarà necessario possedere il green pass. L'assenza di green pass non è un motivo valido per svolgere un esame a distanza.",
-                                date: "09 Agosto, 2021"
-                            },
-                            card2: {
-                                title: "Iniziative a supporto degli studenti",
-                                description: "Per venire incontro agli studenti la Regione Lombardia si è attivata con una serie di iniziative a supporto degli studenti, tra cui agende prioritarie per la vaccinazione. Alternativamente al vaccino un altro modo per ottenere un green pass valido per 48 ore è attraverso un tampone negativo, vi ricordiamo però che questa opzione vi costerà ogni volta almeno 15€ circa.",
-                                date: "10 Agosto, 2021"
-                            },
-                            click: "Clicca qui per maggiori informazioni",
-                            news: "Notizia"
-                        },
-                    },
                     rules: {
                         text1: 'Qui è possibile trovare il regolamento dei gruppi telegram del network. Si consiglia di leggere tutte le regole di cui è composto prima di usare uno qualsiasi di essi.',
                         question: 'Perchè abbiamo introdotto un regolamento?',
@@ -210,11 +192,14 @@ class LocalizationService {
                         availableGroups: 'Gruppi disponibili',
                         extraGroup: 'Gruppo extra'
                     },
-                    representatives: {
+                    university: {
                         text1: 'Il rappresentante degli studenti è un ruolo molto importante ed altamente formativo, che garantisce a tutti gli studenti universitari un supporto alle difficoltà che può incontrare durante il periodo di studio.',
                         text2: 'Di seguito è presente la lista dei rappresentanti di ogni dipartimento e i loro contatti.',
                         departmentSelect: 'Seleziona un dipartimento',
-                        representativesNotAvailable: 'Nessun rappresentante disponibile.'
+                        representativesNotAvailable: 'Nessun rappresentante disponibile.',
+                        news: {
+                            title: 'Notizie generali'
+                        },
                     },
                     contributors: {
                         text1:'Di seguito è possibile trovare tutte le persone che hanno contribuito allo sviluppo del sito web, dei servizi che offre, della wiki, e del network in generale.',
@@ -374,24 +359,6 @@ class LocalizationService {
                         header2: 'Administrative Committee',
                         header3: 'Telegram groups Administrators'
                     },
-                    news: {
-                        title: 'Main news',
-                        vaccineSection: {
-                            title: "Informations about vaccines",
-                            card1: {
-                                title: "Green Pass Obligation",
-                                description: "We remind you that from September in all universities to carry out any activity in presence (including access to study rooms) it will be necessary to have a green pass. The absence of a green pass is not a valid reason for taking a remote exam.",
-                                date: "August 09, 2021"
-                            },
-                            card2: {
-                                title: "Initiatives to support students",
-                                description: "To support the students, the Lombardy Region has taken action with a series of initiatives, including priority agendas for vaccination. As an alternative to the vaccine, another way to obtain a green pass valid for 48 hours is through a negative buffer, however, we remind you that this option will cost you at least € 15 each time.",
-                                date: "August 10, 2021"
-                            },
-                            click: "Click here to see more informations",
-                            news: "News"
-                        },
-                    },
                     rules: {
                         text1: 'Here you can find the rules of the telegram groups of our network. Please read them before joining any group.',
                         question: 'Why did we create them?',
@@ -445,11 +412,14 @@ class LocalizationService {
                         availableGroups: 'Available groups',
                         extraGroup: 'Extra group'
                     },
-                    representatives: {
+                    university: {
                         text1: 'Being a students representative is a very important role and a formative experience. They provide a support to any student against all the difficulties during the study period.',
                         text2: 'The list below reports all the representatives of each department and their contacts.',
                         departmentSelect: 'Select your department',
-                        representativesNotAvailable: 'There are no representatives available.'
+                        representativesNotAvailable: 'There are no representatives available.',
+                        news: {
+                            title: 'Main news',
+                        },
                     },
                     contributors: {
                         text1:'In this section you can find the contributors who have worked into the development of the Network, the website and all its services.',

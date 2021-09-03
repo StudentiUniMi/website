@@ -1,10 +1,9 @@
 import React from "react";
 import { semibold } from '../services/fonts';
-import { FontSizes } from '@fluentui/theme';
-import { Icon, Text } from 'office-ui-fabric-react';
+import { Text } from 'office-ui-fabric-react';
 import { redirectToLink } from '../services/Utils';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { Separator } from '@fluentui/react/lib/Separator';
+import { Container } from 'react-bootstrap';
 import { IChoiceGroupOptionStyles } from "@fluentui/react";
 import { ChoiceGroup, IChoiceGroupOption } from '@fluentui/react/lib/ChoiceGroup';
 import LocalizationService from "../services/LocalizationService";
@@ -56,13 +55,11 @@ const DegreeInformations= (props: Props) => {
     });
 
     return (   
-        <div className='text-center degree-informations mb-4'>
-            <div className='text-center mb-3'>
-                <Separator>
-                    <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
-                    <Text variant="medium" styles={semibold} style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size18 }}> {locale.courses.availableRedirects} </Text>
-                    <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
-                </Separator>
+        <div className='degree-informations mb-4'>
+            <div className="pb-3 pt-3 mb-4" style={{ backgroundColor: theme.palette.themeSecondary }}>
+                <Container>
+                    <div><Text variant="large" styles={semibold} style={{ color: theme.palette.white }}>{locale.courses.availableRedirects}</Text></div>
+                </Container>
             </div>
 
             {

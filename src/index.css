@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #faf9f8;
-  margin-bottom: 220px;
+  margin-bottom: 191px;
   /* Default footer height */
   height: 100%;
 }
@@ -48,7 +48,7 @@ button:focus,
 /* Responsive footer */
 @media only screen and (max-width: 992px) {
   body {
-    margin-bottom: 240px;
+    margin-bottom: 191px;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -58,7 +58,7 @@ button:focus,
 }
 @media only screen and (max-width: 767px) {
   body {
-    margin-bottom: 480px;
+    margin-bottom: 469px;
   }
 
   footer .row {
@@ -300,6 +300,7 @@ button:focus,
 
 .ms-MessageBar-text {
   display: block;
+  text-align: center;
 }
 
 /* ChoiceGroup in DegreeInformations adjustments */

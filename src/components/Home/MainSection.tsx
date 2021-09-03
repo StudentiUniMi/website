@@ -2,8 +2,6 @@ import { Text } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import { Image } from 'office-ui-fabric-react/lib/Image';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { Swiper, SwiperSlide } from "swiper/react";
-import Slider from './Slider/Slider';
 import LocalizationService from "../../services/LocalizationService";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';

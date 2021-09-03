@@ -11,8 +11,8 @@ import { Image } from 'office-ui-fabric-react/lib/Image';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
-import RepresentativesList from '../components/RepresentativesList';
-import VaccineCards from '../components/News/VaccineCards';
+import RepresentativesList from '../components/University/RepresentativesList';
+import Slider from '../components/University/Slider/Slider';
 
 const iconStyles = { marginRight: '8px' };
 
@@ -21,7 +21,6 @@ const UniversityView = () => {
     let didMount = React.useRef(false);
     const locale = LocalizationService.strings();
     const history = useHistory();
-    const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
 
     /* Remove title properties from documentCardTitles */
     React.useEffect(() => {
@@ -133,14 +132,12 @@ const UniversityView = () => {
 
             <div>
                 <Container>
-
                     <div className="mb-3 text-center">
-                        <Text variant="xLarge"><Icon iconName="NewsSearch" /> {locale.news.title}</Text>
+                        <Text variant="xLarge"><Icon iconName="NewsSearch" /> {locale.university.news.title}</Text>
                     </div>
 
                     <div className="mb-3">
-                        <div className="mb-4"><Text>{locale.news.vaccineSection.title}</Text></div>
-                        <VaccineCards />
+                        <Slider />
                     </div>
                 </Container>
             </div>
@@ -158,20 +155,20 @@ const UniversityView = () => {
                             <div className="mb-2">
                                 <div className="mb-2">
                                     <Text variant="xLargePlus" style={{ color: theme.palette.white }}>
-                                        {locale.representatives.text1}
+                                        {locale.university.text1}
                                     </Text>
                                 </div>
 
                                 <div className="mb-2">
                                     <Text variant="large" style={{ color: theme.palette.white }}>
-                                        {locale.representatives.text2}
+                                        {locale.university.text2}
                                     </Text>
                                 </div>
 
                                 <div className="mb-2 text-center" style={{ maxWidth: '400px', marginRight: 'auto'}}>
                                     <Dropdown
-                                        placeholder={locale.representatives.departmentSelect}
-                                        label={locale.representatives.departmentSelect}
+                                        placeholder={locale.university.departmentSelect}
+                                        label={locale.university.departmentSelect}
                                         options={departmentOptions}
                                         onChange={departmentSelectionChanged}
                                         selectedKey={selectedDepartment}
@@ -187,7 +184,7 @@ const UniversityView = () => {
                 </Container>
             </div>
 
-            <div style={{ display: selectedDepartment !== '' && selectedDepartment !== undefined ? 'block' : 'none' }} className="representatives">
+            <div style={{ display: selectedDepartment !== '' && selectedDepartment !== undefined ? 'block' : 'none' }}>
                 <Container>
                     <RepresentativesList data={representatives} loadingRepresentatives={loadingRepresentatives} errorLoadingRepresentatives={errorLoadingRepresentatives} />
                 </Container>

@@ -123,24 +123,6 @@ interface ILocalizationStrings {
         header2: string,
         header3: string
     },
-    news: {
-        title: string,
-        vaccineSection: {
-            title: string,
-            card1: {
-                title: string,
-                description: string,
-                date: string
-            },
-            card2: {
-                title: string,
-                description: string,
-                date: string
-            },
-            click: string,
-            news: string
-        },
-    },
     rules: {
         text1: string,
         question: string,
@@ -193,11 +175,14 @@ interface ILocalizationStrings {
         availableGroups: string,
         extraGroup: string
     },
-    representatives: {
+    university: {
         text1: string,
         text2: string,
         departmentSelect: string,
-        representativesNotAvailable: string
+        representativesNotAvailable: string,
+        news: {
+            title: string,
+        },
     },
     contributors: {
         text1:string,

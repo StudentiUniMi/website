@@ -147,7 +147,7 @@ const GroupsView = () => {
 
         console.log("Courses result: ", coursesResult.value ?? []);
         const degreeSelected = degrees.filter(x => x.pk as unknown as string === selectedDegree)[0] ?? undefined;
-        if (degreeSelected.group?.invite_link !== '' && degreeSelected.group?.invite_link !== null && degreeSelected.group?.invite_link !== undefined) {
+        if (degreeSelected !== undefined && degreeSelected.group?.invite_link !== '' && degreeSelected.group?.invite_link !== null && degreeSelected.group?.invite_link !== undefined) {
             let mainDegreeGroup: CourseDegree = {
                 "course": {
                     pk: undefined,
@@ -313,6 +313,7 @@ const GroupsView = () => {
                         />
                     </Col>
                 </Row>
+            </Container>
 
                 <div style={{ display: selectedDegree !== '' ? 'block' : 'none' }}>
                     <DegreeInformations degree={degree!} />
@@ -320,7 +321,7 @@ const GroupsView = () => {
                     <AdminsList degree={degree!} />       
                 </div>
 
-
+            <Container className="pb-4">
                 <div>
                     <div className="mb-1"><Text variant="medium" styles={semibold} style={{ textTransform: 'uppercase', color: theme.palette.themePrimary }}>Gruppi extra</Text></div>
                     <Text variant="xLarge">Gruppi aggiuntivi del Network</Text>
