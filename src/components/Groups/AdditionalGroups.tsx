@@ -2,17 +2,16 @@ import React from 'react';
 import { Text, Icon, Link, Image, IIconProps } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { FontSizes } from '@fluentui/theme';
-import { Container } from 'react-bootstrap';
 import { FocusZone, List, IRectangle } from "@fluentui/react";
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
-import { getExtraGroups } from '../services/Requests';
+import { getExtraGroups } from '../../services/Requests';
 import { Separator } from '@fluentui/react/lib/Separator';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { PrimaryButton } from 'office-ui-fabric-react';
-import { semibold } from '../services/fonts';
-import ExtraGroupView from '../components/ExtraGroup';
-import ExtraGroup from '../models/ExtraGroup';
-import LocalizationService from "../services/LocalizationService";
+import { semibold } from '../../services/fonts';
+import ExtraGroupView from '../ExtraGroup';
+import ExtraGroup from '../../models/ExtraGroup';
+import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 
 const AdditionalGroupsView = () => {
@@ -71,22 +70,9 @@ const AdditionalGroupsView = () => {
     }
 
     return (
-        <Container className="additional-groups text-center">
+        <div className="additional-groups text-center">
 
-            <div className="mb-2">
-                <Text variant="large">
-                    {locale.extraGroups.text1}
-                </Text>
-            </div>
-
-            <Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} />
-
-            <div className="mb-4">
-                <Text variant="medium">
-                    <JsxParser bindings={{ theme: theme }} components={{ Text, Link }} jsx={locale.extraGroups.text2} />
-                </Text>
-            </div>
-
+            {/*
             <div className='text-center mb-4'>
                 <Separator theme={theme}>
                     <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
@@ -94,6 +80,7 @@ const AdditionalGroupsView = () => {
                     <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
                 </Separator>
             </div>     
+            */}
 
             <FocusZone className="mb-4">
                 <List
@@ -106,6 +93,7 @@ const AdditionalGroupsView = () => {
                 />
             </FocusZone>
 
+            {/*
             <Separator theme={theme}>
                 <div className="mb-2 mt-2">
                     <Text variant="large">
@@ -135,7 +123,8 @@ const AdditionalGroupsView = () => {
                     </Card.Section>
                 </Card>
             </div>
-        </Container>
+            */}
+        </div>
     )
 };
 

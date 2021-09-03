@@ -5,17 +5,17 @@ import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 import { Container } from 'react-bootstrap';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { Text, Icon } from "office-ui-fabric-react/";
-import { semibold } from '../services/fonts';
+import { semibold } from '../../services/fonts';
 import { FontSizes } from '@fluentui/theme';
 import { Separator } from '@fluentui/react/lib/Separator';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { Degree, CourseDegree } from '../models/Models';
+import { Degree, CourseDegree } from '../../models/Models';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import CourseItem from './CourseItem';
-import LocalizationService from "../services/LocalizationService";
-import LoadingSpinner from './LoadingSpinner';
-import Message from './Message';
+import LocalizationService from "../../services/LocalizationService";
+import LoadingSpinner from '../LoadingSpinner';
+import Message from '../Message';
 
 interface Props { degree: Degree, courses: CourseDegree[], loadingCourses: boolean, errorLoadingCourses: boolean };
 

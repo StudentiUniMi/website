@@ -14,17 +14,18 @@ import { semibold } from '../services/fonts';
 import { Department, Degree, CourseDegree } from "../models/Models";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import CourseList from "../components/CourseList";
+import CourseList from "../components/Groups/CourseList";
 import LocalizationService from "../services/LocalizationService";
 import DegreeInformations from "../components/DegreeInformations";
 import AdminsList from '../components/AdminsList';
 import { redirectToLink } from "../services/Utils";
 import { useBoolean } from "@fluentui/react-hooks";
+import AdditionalGroupsView from '../components/Groups/AdditionalGroups';
 
 initializeIcons();
 const iconStyles = { marginRight: '8px' };
 
-const CoursesView = () => {
+const GroupsView = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     let history = useHistory();
@@ -222,107 +223,118 @@ const CoursesView = () => {
     let degree: Degree = degrees.filter(x => x.pk === selectedDegree as unknown as number)[0] ?? [];
 
     return (
-        <Container className="courses text-center">
-            <div className="mb-1">
-                <Text variant="large">{locale.courses.text1}</Text>
-            </div>
-
-            <div className="text-center"><Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} /></div>
-
-            <div className="mb-2">
-
-                <div className="text-center">
-                    <DefaultButton
-                        onClick={toggleHideDialog}
-                        text={locale.courses.wikiCard.buttonTitle}
-                        className={styles.button}
-                        iconProps={icon}
-                        theme={theme}
-                    />
+        <div className="pt-5 courses">
+            <Container>
+                <div>
+                    <div className="mb-1"><Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>Gruppi degli insegnamenti</Text></div>
+                    <Text variant="xLarge">Trova i gruppi degli insegnamenti del tuo corso di laurea</Text>
                 </div>
+                <Separator />
 
-                <Dialog
-                    hidden={hideDialog}
-                    onDismiss={toggleHideDialog}
-                    dialogContentProps={dialogContentProps}
-                    modalProps={modelProps}
-                    maxWidth={700}
-                    theme={theme}
-                >
-                    <DocumentCard
-                        styles={wikiCard}
-                        onClick={() => redirectToLink("https://wiki.studentiunimi.it/start")}
-                        className="text-align-left"
+                {/*
+                <div className="mb-4">
+                    <div className="text-center">
+                        <DefaultButton
+                            onClick={toggleHideDialog}
+                            text={locale.courses.wikiCard.buttonTitle}
+                            className={styles.button}
+                            iconProps={icon}
+                            theme={theme}
+                        />
+                    </div>
+                    
+
+                    <Dialog
+                        hidden={hideDialog}
+                        onDismiss={toggleHideDialog}
+                        dialogContentProps={dialogContentProps}
+                        modalProps={modelProps}
+                        maxWidth={700}
                         theme={theme}
                     >
-                        <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/wiki_card.jpg"} />
-                        <DocumentCardDetails styles={wikiCardDocumentCardDetails}>
-                            <DocumentCardTitle title={locale.courses.wikiCard.title} styles={wikiCardPrimaryText} />
-                            <DocumentCardTitle
-                                title={locale.courses.wikiCard.description}
-                                styles={wikiCardSecondaryText}
-                                showAsSecondaryTitle
-                            />
-                        </DocumentCardDetails>
-                        <DocumentCardDetails>
-                            <div style={{ marginLeft: 16, marginBottom: 8 }}>
-                                <Text styles={semibold} variant="medium" style={{ color: theme.palette.themePrimary }}><Icon iconName="PageArrowRight" /> {locale.courses.wikiCard.clickToWiki}</Text>
-                            </div>
-                        </DocumentCardDetails>
-                        <DocumentCardActivity activity={locale.courses.wikiCard.date} people={people} />
-                    </DocumentCard>
-                </Dialog>
-            </div>
+                        <DocumentCard
+                            styles={wikiCard}
+                            onClick={() => redirectToLink("https://wiki.studentiunimi.it/start")}
+                            className="text-align-left"
+                            theme={theme}
+                        >
+                            <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/wiki_card.jpg"} />
+                            <DocumentCardDetails styles={wikiCardDocumentCardDetails}>
+                                <DocumentCardTitle title={locale.courses.wikiCard.title} styles={wikiCardPrimaryText} />
+                                <DocumentCardTitle
+                                    title={locale.courses.wikiCard.description}
+                                    styles={wikiCardSecondaryText}
+                                    showAsSecondaryTitle
+                                />
+                            </DocumentCardDetails>
+                            <DocumentCardDetails>
+                                <div style={{ marginLeft: 16, marginBottom: 8 }}>
+                                    <Text styles={semibold} variant="medium" style={{ color: theme.palette.themePrimary }}><Icon iconName="PageArrowRight" /> {locale.courses.wikiCard.clickToWiki}</Text>
+                                </div>
+                            </DocumentCardDetails>
+                            <DocumentCardActivity activity={locale.courses.wikiCard.date} people={people} />
+                        </DocumentCard>
+                    </Dialog>
+                </div>
+                */}
 
-            <Separator />
-            
-            <Row className="department-choose justify-content-center mb-4 text-center">
-                <Col xl={6} lg={6} md={6} sm={12} xs={12} className="mb-1">
-                    {/* Department dropdown */}
-                    <Dropdown
-                        placeholder={locale.courses.departmentSelect}
-                        label={locale.courses.departmentSelect}
-                        onRenderTitle={onRenderTitle}
-                        onRenderOption={onRenderOption}
-                        options={departmentOptions}
-                        onChange={departmentSelectionChanged}
-                        selectedKey={selectedDepartment}
-                        styles={dropdownStyles}
-                        errorMessage={errorLoadingDepartments ? locale.errorLoadingDepartments : undefined}
-                        theme={theme}
-                        disabled={errorLoadingDepartments || departments.length === 0}
-                    />
-                </Col>
+                <Row className="department-choose justify-content-center mb-5 text-center">
+                    <Col xl={6} lg={6} md={6} sm={12} xs={12} className="mb-1">
+                        {/* Department dropdown */}
+                        <Dropdown
+                            placeholder={locale.courses.departmentSelect}
+                            label={locale.courses.departmentSelect}
+                            onRenderTitle={onRenderTitle}
+                            onRenderOption={onRenderOption}
+                            options={departmentOptions}
+                            onChange={departmentSelectionChanged}
+                            selectedKey={selectedDepartment}
+                            styles={dropdownStyles}
+                            errorMessage={errorLoadingDepartments ? locale.errorLoadingDepartments : undefined}
+                            theme={theme}
+                            disabled={errorLoadingDepartments || departments.length === 0}
+                        />
+                    </Col>
 
-                <Col xl={6} lg={6} md={6} sm={12} xs={12} className="mb-1">
-                    {/* Cdl dropdown */}
-                    <Dropdown
-                        label={locale.courses.cdlSelect}
-                        placeholder={locale.courses.cdlSelect}
-                        selectedKey={selectedDegree}
-                        onChange={degreeSelectionChanged}
-                        onRenderTitle={onRenderTitle}
-                        onRenderOption={onRenderOption}
-                        options={degreesOptions}
-                        styles={dropdownStyles}
-                        theme={theme}
-                        disabled={selectedDepartment === '' || errorLoadingDegrees}
-                        errorMessage={errorLoadingDegrees ? locale.errorLoadingDegrees : undefined}
-                    />
-                </Col>
-            </Row>
+                    <Col xl={6} lg={6} md={6} sm={12} xs={12} className="mb-1">
+                        {/* Cdl dropdown */}
+                        <Dropdown
+                            label={locale.courses.cdlSelect}
+                            placeholder={locale.courses.cdlSelect}
+                            selectedKey={selectedDegree}
+                            onChange={degreeSelectionChanged}
+                            onRenderTitle={onRenderTitle}
+                            onRenderOption={onRenderOption}
+                            options={degreesOptions}
+                            styles={dropdownStyles}
+                            theme={theme}
+                            disabled={selectedDepartment === '' || errorLoadingDegrees}
+                            errorMessage={errorLoadingDegrees ? locale.errorLoadingDegrees : undefined}
+                        />
+                    </Col>
+                </Row>
 
-            <div style={{ display: selectedDegree !== '' ? 'block' : 'none' }}>
-                <DegreeInformations degree={degree!} />
-                <CourseList degree={degree!} courses={courses} loadingCourses={loadingCourses} errorLoadingCourses={errorLoadingCourses} />
-                <AdminsList degree={degree!} />       
-            </div>
+                <div style={{ display: selectedDegree !== '' ? 'block' : 'none' }}>
+                    <DegreeInformations degree={degree!} />
+                    <CourseList degree={degree!} courses={courses} loadingCourses={loadingCourses} errorLoadingCourses={errorLoadingCourses} />
+                    <AdminsList degree={degree!} />       
+                </div>
 
-        </Container>
+
+                <div>
+                    <div className="mb-1"><Text variant="medium" styles={semibold} style={{ textTransform: 'uppercase', color: theme.palette.themePrimary }}>Gruppi extra</Text></div>
+                    <Text variant="xLarge">Gruppi aggiuntivi del Network</Text>
+                </div>
+                <Separator />
+
+                <AdditionalGroupsView />
+
+            </Container>
+        </div>
     );
 };
 
-export default CoursesView;
+export default GroupsView;
 
 
 function isTriennale(element: Degree) {

@@ -22,7 +22,6 @@ export enum ItemsKeys {
     home = "home",
     courses = "courses",
     services = "services",
-    additional_groups = "additional_groups",
     rules = "rules",
     news = "news",
     representatives = "representatives",
@@ -101,7 +100,6 @@ const HeaderMenu = (props: Props) => {
     const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
         [ItemsKeys.home, locale.headerMenuItems.home],
         [ItemsKeys.courses, locale.headerMenuItems.courses],
-        [ItemsKeys.additional_groups, locale.headerMenuItems.additionalGroups],
         [ItemsKeys.services, locale.headerMenuItems.services],
         [ItemsKeys.rules, locale.headerMenuItems.rules],
         [ItemsKeys.news, locale.headerMenuItems.news],
