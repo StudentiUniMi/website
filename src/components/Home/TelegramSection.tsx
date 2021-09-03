@@ -21,7 +21,7 @@ const TelegramSection = () => {
                         <div><Text variant="xLarge" styles={semibold} style={{color:theme.palette.white}}>Telegram è un'app di messaggistica molto più potente e sicura di WhatsApp.</Text></div>
                     </Col>
                 
-                    <Col lg={2} className="text-right">
+                    <Col lg={2} className="text-right center-mobile">
                         <DefaultButton text="Dimmi di più" /* iconProps={buttonIconProps} */ className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
                     </Col>
                 </Row>

@@ -43,7 +43,7 @@ button:focus,
 /* Align text when in mobile view */
 @media only screen and (max-width: 992px) {
   .center-mobile {
-    text-align: center;
+    text-align: center !important;
   }
 }
 
