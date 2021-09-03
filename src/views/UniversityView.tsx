@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from 'react-bootstrap';
-import { FontSizes } from '@fluentui/theme';
 import { Text, Icon } from 'office-ui-fabric-react';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { useHistory } from 'react-router-dom';
