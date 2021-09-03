@@ -95,38 +95,37 @@ const Rules = () => {
                 </Container>
             </div>
             
-            <Container className="rules text-center">
-                <div className="mb-4">
-                    <div className="mb-4 text-center">
-                        {/*<div className="mb-1"><Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>Gruppi degli insegnamenti</Text></div>*/}
-                        <Text variant="xLarge">Regolamento dei gruppi Telegram</Text>
-                    </div>
+            <div className="mb-4">
+                <div className="mb-4 text-center">
+                    {/*<div className="mb-1"><Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>Gruppi degli insegnamenti</Text></div>*/}
+                    <Text variant="xLarge">Regolamento dei gruppi Telegram</Text>
                 </div>
+            </div>
 
-                    <div className="mb-3">
-                    {
-                        rulesData.map((x, i) => {
-                            return (
-                                <Accordion style={{ backgroundColor: theme.palette.white, color: theme.palette.black, boxShadow: theme.effects.elevation8, marginRight: 10, marginLeft: 10 }} key={i}>
-                                    <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon style={{ color: theme.palette.black }} />}
-                                        aria-controls="panel1a-content"
-                                        id="panel1a-header"
-                                    >
-                                        <Text variant="medium" style={{ color: theme.palette.themePrimary }} styles={semibold}>{x.title![language]}</Text>
-                                    </AccordionSummary>
-                                    <AccordionDetails>
-                                        <Text variant="medium">
-                                            <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x.description![language]} />
-                                        </Text>
-                                    </AccordionDetails>
-                                </Accordion>
-                            )
-                        })
-                    }
-                    </div>
-
-            </Container>
+                <div className="mb-3">
+                    <Container>
+                        {
+                            rulesData.map((x, i) => {
+                                return (
+                                    <Accordion style={{ backgroundColor: theme.palette.white, color: theme.palette.black, boxShadow: theme.effects.elevation8, marginRight: 10, marginLeft: 10 }} key={i}>
+                                        <AccordionSummary
+                                            expandIcon={<ExpandMoreIcon style={{ color: theme.palette.black }} />}
+                                            aria-controls="panel1a-content"
+                                            id="panel1a-header"
+                                        >
+                                            <Text variant="medium" style={{ color: theme.palette.themePrimary }} styles={semibold}>{x.title![language]}</Text>
+                                        </AccordionSummary>
+                                        <AccordionDetails>
+                                            <Text variant="medium">
+                                                <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x.description![language]} />
+                                            </Text>
+                                        </AccordionDetails>
+                                    </Accordion>
+                                )
+                            })
+                        }
+                    </Container>
+                </div>
         </div>
     )
 }
