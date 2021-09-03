@@ -19,7 +19,7 @@ const FourthSection = () => {
     const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
 
     return (
-        <div className="pb-4 pt-4" /* style={{ backgroundColor: theme.palette.neutralLighter }} */>
+        <div className="pb-4 pt-4" style={{ backgroundColor: theme.palette.neutralLighter }}>
             <Container>
                 <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold}>{locale.homepage.section5.text}</Text></div>
 

@@ -17,7 +17,7 @@ const Faqs = () => {
     const faqs = getFaqs();
 
     return (
-        <div className="pb-4 pt-4" style={{ backgroundColor: theme.palette.neutralLighter }}>
+        <div className="pb-4 pt-4" /*style={{ backgroundColor: theme.palette.neutralLighter }}*/>
             <div className="mb-4 text-center"><Text variant="xLarge">{locale.homepage.section6.text}</Text></div>
             <Container>
                 <div className="mb-2">

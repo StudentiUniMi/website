@@ -1,15 +1,12 @@
-import { Persona, Link, Text, FontSizes, IIconProps, Icon, ActionButton } from '@fluentui/react';
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Card, ICardTokens } from "@uifabric/react-cards";
-import { semibold } from '../../services/fonts';
+import { Text } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 import { Image } from 'office-ui-fabric-react/lib/Image';
 import { useTheme } from '@fluentui/react-theme-provider';
+import { Swiper, SwiperSlide } from "swiper/react";
 import Slider from './Slider/Slider';
 import LocalizationService from "../../services/LocalizationService";
-import JsxParser from 'react-jsx-parser';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import Typed from 'react-typed';
 
 const MainSection = () => {

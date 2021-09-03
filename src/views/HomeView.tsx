@@ -1,7 +1,4 @@
 import { initializeIcons } from '@fluentui/react';
-// import { useTheme } from '@fluentui/react-theme-provider';
-// import LocalizationService from "../services/LocalizationService";
-// import JsxParser from 'react-jsx-parser';
 import Faqs from '../components/Home/Faqs';
 import React from 'react';
 import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper/core';
@@ -16,9 +13,6 @@ SwiperCore.use([Pagination, Navigation, Autoplay]);
 initializeIcons();
 
 const HomeView = () => {
-    //var theme = useTheme();
-    //const locale = LocalizationService.strings();
-    
     /*
     const groupsNumber = getGroupsLength();
     const cdlsNumber = getCdlsLength();
@@ -26,7 +20,7 @@ const HomeView = () => {
     */
     
     return (
-        <div className="pt-5 pb-5 home">
+        <div className="pt-5 home">
             <MainSection />
 
             <TelegramSection />
