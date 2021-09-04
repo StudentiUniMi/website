@@ -40,6 +40,7 @@ const MainSection = () => {
                                     ]}
                                     typeSpeed={50}
                                     backSpeed={30}
+                                    backDelay={1500}
                                     loop
                                 />
                                 </Text>
