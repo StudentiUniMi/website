@@ -1,5 +1,5 @@
 import LocalizedStrings, { LocalizedStringsMethods } from 'react-localization';
-import ILocalizationStrings from '../data/ILocalizationStrings';
+import ILocalizationStrings from '../models/ILocalizationStrings';
 
 class LocalizationService {
     private static data?: LocalizedStringsMethods & ILocalizationStrings;
@@ -16,14 +16,11 @@ class LocalizationService {
                     errorContactAdmin: 'Si è verificato un errore; contatta un amministratore.',
                     headerMenuItems: {
                         home: 'Home',
-                        aboutUs: 'Chi siamo',
-                        news: 'Notizie',
-                        rules: 'Regolamento',
                         courses: 'Gruppi',
                         services: 'Servizi',
-                        additionalGroups: 'Gruppi extra',
-                        representatives: 'Rappresentanti',
-                        contributors: 'Contributori'
+                        rules: 'Regolamento',
+                        university: 'Ateneo',
+                        aboutUs: 'Chi siamo',
                     },
                     settingsPanel: {
                         settings: 'Impostazioni',
@@ -38,19 +35,29 @@ class LocalizationService {
                         coachMark: { text1: 'Benvenuto sul nostro sito!', text2: 'Qui puoi trovare alcune impostazioni che ti potrebbero servire. Per il resto, esplora liberamente i servizi che offriamo! :)', understood: 'Capito!' }
                     },
                     homepage: {
+                        telegramText: "Telegram è un'app di messaggistica molto più potente e sicura di WhatsApp.",
+                        telegramButton: "Dimmi di più",
                         section1: {
-                            text1: 'Benvenuto nel sito web del <span style={{color: theme.palette.themePrimary}}>Network StudentiUniMi</span>!',
-                            text2: 'La nostra missione è organizzare le informazioni riguardo l\'Università degli studi di Milano e renderle accessibili a tutti.',
-                            sliders: [
-                                { text1: 'Sei uno studente che vuole immatricolarsi e che cerca un gruppo generale in cui chiedere informazioni', text2: 'Ne abbiamo creato uno apposito!', cardText: "Pre-matricole, ammissioni e immatricolazioni" },
-                                { text1: 'Stai cercando un gruppo per trovare un alloggio a Milano insieme ad altri studenti universitari oppure vuoi creare un annuncio', text2: 'Entra nel gruppo apposito!', cardText: 'Alloggi' },
-                                { text1: 'Vorresti vendere dei libri oppure slide rilegate e stampate? Oppure magari sei una nuova matricola e cerchi il materiale del tuo corso', text2: 'Fai un annuncio apposito qui!', cardText: 'Materiali' },
-                                { text1: 'Sei in cerca di qualcuno che ti possa dare delle ripetizioni per aiutarti a preparare un esame, oppure vuoi proporti a tal riguardo', text2: 'Fai un annuncio apposito qui!', cardText: 'Ripetizioni' },
-                                { text1: 'Ti ricordiamo che abbiamo a disposizione una <Text styles={semibold}>Wiki</Text> in cui è possibile collaborare e aiutare altri studenti! Puoi trovare tutto il materiale che ti serve, ma ricorda che è importante anche contribuire!', reachWiki: 'Raggiungi la Wiki!' },
-                                { text1: 'Per noi offrirti la possibilità di non perdere tempo alla ricerca di servizi universitari è molto importante. Proprio per questo abbiamo realizzato una pagina apposita per trovarli tutti subito, e farti scoprire anche alcune guide che abbiamo realizzato!' }
-                            ]
+                            typedText: 'Sei iscritto a...',
+                            text1: 'Rimani in contatto. Di più, e meglio.',
+                            text2: "Comunicare è importante, ma può essere frustrante farlo sui grupponi WhatsApp lasciati a loro stessi. Stiamo creando gruppi Telegram per ogni corso di laurea dell'Università degli Studi di Milano per facilitare lo scambio di informazioni.",
                         },
                         section2: {
+                            text: 'Ogni cosa ha il suo gruppo Telegram',
+                            card1: {
+                                text: 'Stiamo creando un gruppo Telegram per ogni corso di laurea; premi il pulsante sotto per trovare il tuo. Presto sarà disponibile anche un gruppo per ogni insegnamento.',
+                                button: 'Gruppi dei corsi'
+                            },
+                            card2: {
+                                text: 'Sei una matricola? Cerchi alloggi, materiali o qualcuno che faccia ripetizioni? Nessun problema, entra in uno dei nostri gruppi aggiuntivi!',
+                                button: 'Gruppi extra'
+                            },
+                            card3: {
+                                text: "Crediamo che un ambiente rispettoso e inclusivo favorisca la condivisione. Dai un'occhiata al regolamento ufficiale dei gruppi.",
+                                button: 'Regolamento'
+                            }
+                        },
+                        section3: {
                             text: 'I nostri collegamenti principali',
                             card1: {
                                 text: 'Unisciti al canale telegram per rimanere aggiornato e raggiungere tutti i link disponibili!',
@@ -69,37 +76,22 @@ class LocalizationService {
                                 button: 'Organizzazione'
                             }
                         },
-                        section3: {
-                            text: 'Ogni cosa ha il suo gruppo Telegram',
-                            card1: {
-                                text: 'Dì addio al mega gruppo WhatsApp in cui non si capisce nulla! Abbiamo creato un gruppo Telegram per ogni insegnamento.',
-                                button: 'Gruppi dei corsi'
-                            },
-                            card2: {
-                                text: 'Ripetizioni, materiali, erasmus, tirocinio, alloggi. Tutte quelle cose extra che però hanno la loro importanza.',
-                                button: 'Gruppi extra'
-                            },
-                            card3: {
-                                text: "Crediamo che un ambiente rispettoso e inclusivo ci renda più innovativi e produttivi. Dai un'occhiata al regolamento dei gruppi.",
-                                button: 'Regolamento'
-                            }
-                        },
                         section4: {
                             text: 'I nostri servizi per aiutarti nello studio',
                             card1: {
-                                text: 'Accedi alla Wiki del Network e aiutaci a migliorarla contribuendo!',
+                                text: ' Abbiamo creato una Wikipedia per ogni insegnamento. Chiunque è libero di collaborare!',
                                 button: 'Wiki'
                             },
                             card2: {
-                                text: 'Utilizza la nostra comoda pagina che ti permette di raggiungere tutti i servizi UniMi.',
-                                button: 'Servizi'
+                                text: 'Stufo di non poter accedere ai servizi perchè UniMia ha problemi?',
+                                button: 'unimia.studentiunimi.it'
                             },
                             card3: {
-                                text: 'Mi mandi i tuoi appunti? Un attimo e sono subito da lei!',
+                                text: 'HedgeDoc permette di prendere appunti in collaborazione senza doversi registrare. Provalo!',
                                 button: 'HedgeDoc'
                             },
                             card4: {
-                                text: 'Accedi al nostro servizio per condividere codice e qualsiasi altro materiale in maniera comoda e sicura.',
+                                text: 'Devi condividere codice sui gruppi? Usa il nostro servizio veloce, semplice e sicuro.',
                                 button: 'Paste'
                             }
                         },
@@ -136,39 +128,22 @@ class LocalizationService {
                             ]
                         }
                     },
-                    aboutUs: {
-                        text1: "Siamo un'organizzazione senza fini di lucro, apolitica, ovvero apartitica, e neutrale, la quale si pone l'obiettivo di offrire servizi telematici agli studenti dell'Università degli Studi di Milano.",
-                        button: { text1: 'Statuto', text2: "Dai un'occhiata al nostro statuto!" },
-                        header1: 'Coordinatore',
-                        header2: 'Comitato Amministrativo',
-                        header3: 'Amministratori dei gruppi telegram'
-                    },
-                    news: {
-                        title: 'Notizie generali',
-                        vaccineSection: {
-                            title: "Informazioni sui vaccini",
-                            card1: {
-                                title: "Obbligo del Green Pass",
-                                description: "Vi ricordiamo che da settembre in tutte le università per svolgere una qualsiasi attività in presenza (compreso l'accesso alle aule studio) sarà necessario possedere il green pass. L'assenza di green pass non è un motivo valido per svolgere un esame a distanza.",
-                                date: "09 Agosto, 2021"
-                            },
-                            card2: {
-                                title: "Iniziative a supporto degli studenti",
-                                description: "Per venire incontro agli studenti la Regione Lombardia si è attivata con una serie di iniziative a supporto degli studenti, tra cui agende prioritarie per la vaccinazione. Alternativamente al vaccino un altro modo per ottenere un green pass valido per 48 ore è attraverso un tampone negativo, vi ricordiamo però che questa opzione vi costerà ogni volta almeno 15€ circa.",
-                                date: "10 Agosto, 2021"
-                            },
-                            click: "Clicca qui per maggiori informazioni",
-                            news: "Notizia"
-                        },
-                    },
                     rules: {
-                        text1: 'Qui è possibile trovare il regolamento dei gruppi telegram del network. Si consiglia di leggere tutte le regole di cui è composto prima di usare uno qualsiasi di essi.',
+                        text1: "Il regolamento dei nostri gruppi Telegram ci rende più innovativi e produttivi.",
+                        text2: 'Si consiglia di leggere tutte le regole di cui è composto prima di usare uno qualsiasi di essi.',
                         question: 'Perchè abbiamo introdotto un regolamento?',
                         answer: { text1: 'Vogliamo rendere chiari i motivi per cui abbiamo deciso di regolamentare i gruppi del nostro network.', text2: "Abbiamo notato che la maggior parte di essi erano tempestati di domande banali, fatte più volte al giorno, la cui risposta era facilmente trovabile. Questo riduce la qualità della chat e scoraggia la partecipazione di studenti più attenti. Per questo motivo abbiamo deciso di provare a limitare il fenomeno, da una parte ammonendo chi continua a fare interventi non produttivi, e dall'altra fornendo un modo facile e veloce per trovare le informazioni più importanti tramite la <Link href='https://wiki.studentiunimi.it/' target='_blank'>Wiki</Link>."},
-                        text2: 'Regolamento dei gruppi Telegram'
+                        header: 'Regolamento dei gruppi Telegram'
                     },
-                    courses: {
-                        text1: 'Qui è possibile trovare i gruppi telegram, siti web, wiki, faq (se disponibili), collegamenti e informazioni generali riguardo il tuo corso di laurea e i suoi corsi didattici.',
+                    groups: {
+                        groupsSection: {
+                            text1: "Gruppi degli insegnamenti",
+                            text2: "Trova i gruppi degli insegnamenti del tuo corso di laurea"
+                        },
+                        extraGroupsSection: {
+                            text1: "Gruppi extra",
+                            text2: "Gruppi aggiuntivi del Network"
+                        },
                         departmentSelect: 'Seleziona un dipartimento',
                         cdlSelect: 'Seleziona un corso di Laurea',
                         availableRedirects: 'Collegamenti disponibili',
@@ -197,8 +172,8 @@ class LocalizationService {
                         }
                     },
                     services: {
-                        text1: 'Siete stanchi di dover andare a spulciare miriadi di pagine che neanche caricano alla ricerca di strumenti e servizi universitari? Abbiamo realizzato una pagina per centralizzarli tutti! Inoltre, qui potete trovare anche alcune guide che abbiamo realizzato.',
-                        text2: '<Text styles={semibold}>Attenzione:</Text> alcune pagine come Unimia oppure i Servizi SIFA potrebbero non caricare (ovviamente ricordiamo che non è colpa nostra in tal caso!).',
+                        text1: 'Stanchi di dover andare a spulciare miriadi di pagine che neanche caricano alla ricerca di strumenti e servizi universitari?',
+                        text2: 'Abbiamo realizzato una pagina per centralizzarli tutti e rendere disponibili anche alcune guide che abbiamo realizzato.',
                         text3: "Se pensi che debba essere aggiunto qualche servizio scrivi pure su <Link href='https://t.me/unimichat' target='_blank'>@unimichat</Link>.",
                         availableServices: 'Servizi e guide disponibili',
                         guide: "Guida",
@@ -213,11 +188,18 @@ class LocalizationService {
                         availableGroups: 'Gruppi disponibili',
                         extraGroup: 'Gruppo extra'
                     },
-                    representatives: {
+                    university: {
+                        header: {
+                            text1: "Sei alla ricerca di informazioni legate al nostro ateneo? Nessun problema!",
+                            text2: "Qui puoi trovare tutto quello che ti serve."
+                        },
                         text1: 'Il rappresentante degli studenti è un ruolo molto importante ed altamente formativo, che garantisce a tutti gli studenti universitari un supporto alle difficoltà che può incontrare durante il periodo di studio.',
                         text2: 'Di seguito è presente la lista dei rappresentanti di ogni dipartimento e i loro contatti.',
                         departmentSelect: 'Seleziona un dipartimento',
-                        representativesNotAvailable: 'Nessun rappresentante disponibile.'
+                        representativesNotAvailable: 'Nessun rappresentante disponibile.',
+                        news: {
+                            title: 'Notizie generali'
+                        },
                     },
                     contributors: {
                         text1:'Di seguito è possibile trovare tutte le persone che hanno contribuito allo sviluppo del sito web, dei servizi che offre, della wiki, e del network in generale.',
@@ -226,6 +208,15 @@ class LocalizationService {
                         githubProfile: 'Profilo GitHub',
                         websiteProfile: 'Sito Web',
                         text2: 'Hai contribuito allo sviluppo del network e vorresti comparire in questa lista? Scrivi in privato a <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.'
+                    },
+                    aboutUs: {
+                        text1: "Siamo un'organizzazione senza fini di lucro, apolitica, ovvero apartitica, e neutrale.",
+                        text2: "Il nostro obiettivo è quello di offrire servizi telematici agli studenti dell'Università degli Studi di Milano.",
+                        text3: "Qui è possibile vedere tutte le persone che fanno parte del Network StudentiUniMi.",
+                        button: { text1: 'Statuto', text2: "Dai un'occhiata al nostro statuto!" },
+                        header1: 'Coordinatore',
+                        header2: 'Comitato Amministrativo Network',
+                        header3: 'Amministratori dei gruppi telegram'
                     },
                     footer: [
                         { text: 'Il network e il relativo sito web non sono affiliati all\'Università degli Studi di Milano.' },
@@ -253,14 +244,11 @@ class LocalizationService {
                     errorContactAdmin: 'An error has occured; contact an administrator.',
                     headerMenuItems: {
                         home: 'Home',
-                        aboutUs: 'About Us',
-                        news: 'News',
-                        rules: 'Rules',
                         courses: 'Groups',
                         services: 'Services',
-                        additionalGroups: 'Extra Groups',
-                        representatives: 'Representatives',
-                        contributors: 'Contributors'
+                        rules: 'Rules',
+                        university: 'University',
+                        aboutUs: 'About Us',
                     },
                     settingsPanel: {
                         settings: 'Settings',
@@ -275,19 +263,29 @@ class LocalizationService {
                         coachMark: { text1: 'Welcome on our website!', text2: 'Here you can find some settings that might be helpful. Enjoy our services! :)', understood: 'Got it!' }
                     },
                     homepage: {
+                        telegramText: "Telegram is way more safer and efficient than WhatsApp.",
+                        telegramButton: "Tell me more",
                         section1: {
-                            text1: 'Welcome to <span style={{color: theme.palette.themePrimary}}>Network StudentiUniMi</span>!',
-                            text2: 'Our goal is to organize all the informations about the University of Milan (Università degli Studi di Milano, Unimi) and make them easily accessible to anyone.',
-                            sliders: [
-                                { text1: 'Are you a student who wants to matriculate and who is looking for a general group in which to ask for informations ', text2: 'We created one just for this!', cardText: "Pre-students, admissions and enrollments" },
-                                { text1: 'Are you looking for a group to find an apartment in Milan together with other university students, or you want to create an ad ', text2: 'Join the dedicated group!', cardText: 'Apartments' },
-                                { text1: 'Would you like to sell books or printed slides? Or maybe you are a new freshman and are looking for your course material', text2: 'Create an ad here!', cardText: 'Materials' },
-                                { text1: 'Are you looking for someone who can give you private lessons to help you prepare for an exam, or you want to propose in this regard', text2: 'Create an ad here!', cardText: 'Private lessons' },
-                                { text1: "We remind you that we have a <Text styles={semibold}>Wiki</Text> where you can collaborate and help other students! You can find all the material you need, but remember that it's also important to contribute!", reachWiki: 'Reach the Wiki!' },
-                                { text1: 'For us, offering you the opportunity not to waste time looking for university services is very important. Precisely for this reason we have created a special page to find them all immediately, and also let you discover some guides we have created!' }
-                            ]
+                            typedText: 'Are you a student of...',
+                            text1: 'Stay in touch. More, and better.',
+                            text2: 'Communicating is important, but it can be frustrating to do so on WhatsApp groups left to themselves. We are creating Telegram groups for each degree course of the University of Milan to facilitate the exchange of informations.',
                         },
                         section2: {
+                            text: 'Everything has its own Telegram group chat',
+                            card1: {
+                                text: 'We are creating a Telegram group for each degree course; press the button below to find yours. A group for each teaching course will also be available soon.',
+                                button: 'Course Groups'
+                            },
+                            card2: {
+                                text: 'Are you a new student? Are you looking for materials or someone to do tutoring? No problem, join one of our additional groups!',
+                                button: 'Extra Groups'
+                            },
+                            card3: {
+                                text: 'We think that a respectful and inclusive environment makes us more innovative and efficient. Read the rules!',
+                                button: 'Rules'
+                            }
+                        },
+                        section3: {
                             text: 'Our main links',
                             card1: {
                                 text: 'Join our telegram channel to stay updated and see all the available links!',
@@ -306,21 +304,6 @@ class LocalizationService {
                                 button: 'GitHub Org.'
                             }
                         },
-                        section3: {
-                            text: 'Everything has its own Telegram group chat',
-                            card1: {
-                                text: 'Say goodbye to those messy WhatsApp chats! We have created a Telegram group for each course.',
-                                button: 'Course Groups'
-                            },
-                            card2: {
-                                text: 'Tutoring, course materials, Erasmus, internship, apartments and many other extra things.',
-                                button: 'Extra Groups'
-                            },
-                            card3: {
-                                text: 'We think that a respectful and inclusive environment makes us more innovative and efficient. Read the rules!',
-                                button: 'Rules'
-                            }
-                        },
                         section4: {
                             text: 'Our services to help you studying',
                             card1: {
@@ -329,7 +312,7 @@ class LocalizationService {
                             },
                             card2: {
                                 text: 'Use this page to easily reach all the official services provided by UniMi.',
-                                button: 'Services'
+                                button: 'unimia.studentiunimi.it'
                             },
                             card3: {
                                 text: '“Hey pal, would you mind sharing those notes?”',
@@ -373,40 +356,22 @@ class LocalizationService {
                             ]
                         }
                     },
-                    aboutUs: {
-                        text1: 'We are a non-profit organization, neutral and not affiliated to any political party. Our goal is to provide online services to the students at the University of Milan.',
-                        button: { text1: 'Statute', text2: "You can read our statute here!" },
-                        header1: 'Coordinator',
-                        header2: 'Administrative Committee',
-                        header3: 'Telegram groups Administrators'
-                    },
-                    news: {
-                        title: 'Main news',
-                        vaccineSection: {
-                            title: "Informations about vaccines",
-                            card1: {
-                                title: "Green Pass Obligation",
-                                description: "We remind you that from September in all universities to carry out any activity in presence (including access to study rooms) it will be necessary to have a green pass. The absence of a green pass is not a valid reason for taking a remote exam.",
-                                date: "August 09, 2021"
-                            },
-                            card2: {
-                                title: "Initiatives to support students",
-                                description: "To support the students, the Lombardy Region has taken action with a series of initiatives, including priority agendas for vaccination. As an alternative to the vaccine, another way to obtain a green pass valid for 48 hours is through a negative buffer, however, we remind you that this option will cost you at least € 15 each time.",
-                                date: "August 10, 2021"
-                            },
-                            click: "Click here to see more informations",
-                            news: "News"
-                        },
-                    },
                     rules: {
-                        text1: 'Here you can find the rules of the telegram groups of our network. Please read them before joining any group.',
+                        text1: "The rules of our Telegram groups make us more productive and innovative.",
+                        text2: 'Here you can find the rules of the telegram groups of our network. Please read them before joining any group.',
                         question: 'Why did we create them?',
-                        answer: {
-                            text1: 'We want to make clear the reasons that took us to introducing these rules into the network.', text2: "We noticed that most of the groups were flooded with trivial questions re-proposed every day. This was lowering the quality of our chats and discouraged the participation of some students. Therefore, we started repressing this phenomenon warning their proponents and offering a dedicated <Link href='https://wiki.studentiunimi.it/start' target='_blank'>Wiki</Link> page for each course." },
-                        text2: 'Telegram groups rules',
+                        answer: { text1: 'We want to make clear the reasons that took us to introducing these rules into the network.', text2: "We noticed that most of the groups were flooded with trivial questions re-proposed every day. This was lowering the quality of our chats and discouraged the participation of some students. Therefore, we started repressing this phenomenon warning their proponents and offering a dedicated <Link href='https://wiki.studentiunimi.it/start' target='_blank'>Wiki</Link> page for each course." },
+                        header: "Telegram groups rules",
                     },
-                    courses: {
-                        text1: 'In this section you can find telegram groups, websites, wiki, FAQs (if available), redirects and general informations about your degree course and its didactic courses.',
+                    groups: {
+                        groupsSection: {
+                            text1: "Teaching groups",
+                            text2: "Find the teaching groups of your degree"
+                        },
+                        extraGroupsSection: {
+                            text1: "Extra Groups",
+                            text2: "Additional groups of the Network"
+                        },
                         departmentSelect: 'Select the department',
                         cdlSelect: 'Select the degree',
                         availableRedirects: 'Available redirects',
@@ -435,8 +400,8 @@ class LocalizationService {
                         }
                     },
                     services: {
-                        text1: 'Tired of surfing into endless pages to find the services offered by the university? We grouped all the links here! We added some guides we created too.',
-                        text2: "<Text styles={semibold}>Careful:</Text> some web pages like Unimia or SIFA services might not load (we remind you that it's not our fault in this case!).",
+                        text1: 'Tired of surfing into endless pages to find the services offered by the university?',
+                        text2: "We grouped all the links here! We added some guides we created too.",
                         text3: "If you think that something should be added you can suggest it on <Link href='https://t.me/unimichat' target='_blank'>@unimichat</Link>.",
                         availableServices: 'Available services and guides',
                         guide: "Guide",
@@ -451,11 +416,18 @@ class LocalizationService {
                         availableGroups: 'Available groups',
                         extraGroup: 'Extra group'
                     },
-                    representatives: {
+                    university: {
+                        header: {
+                            text1: "Are you looking for informations related to our university? No problem!",
+                            text2: "Here you can find all you need."
+                        },
                         text1: 'Being a students representative is a very important role and a formative experience. They provide a support to any student against all the difficulties during the study period.',
                         text2: 'The list below reports all the representatives of each department and their contacts.',
                         departmentSelect: 'Select your department',
-                        representativesNotAvailable: 'There are no representatives available.'
+                        representativesNotAvailable: 'There are no representatives available.',
+                        news: {
+                            title: 'Main news',
+                        },
                     },
                     contributors: {
                         text1:'In this section you can find the contributors who have worked into the development of the Network, the website and all its services.',
@@ -464,6 +436,15 @@ class LocalizationService {
                         githubProfile: 'Github Profile',
                         websiteProfile: 'Website',
                         text2: 'Did you contributed to the development of the Network and you would like to appear in this list? Send a private message to <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.'
+                    },
+                    aboutUs: {
+                        text1: 'We are a non-profit organization, neutral and not affiliated to any political party.',
+                        text2: "Our goal is to provide online services to the students at the University of Milan.",
+                        text3: "Here you can see all the people within the Network StudentiUniMi.",
+                        button: { text1: 'Statute', text2: "You can read our statute here!" },
+                        header1: 'Coordinator',
+                        header2: "Network's Administrative Committee",
+                        header3: 'Telegram groups Administrators'
                     },
                     footer: [
                         { text: 'The network and the associated website are not affiliated to the University of Milan.' },

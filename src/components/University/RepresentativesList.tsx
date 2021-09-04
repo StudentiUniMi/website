@@ -4,10 +4,10 @@ import Row from 'react-bootstrap/Row';
 import { Persona, PersonaSize } from 'office-ui-fabric-react/lib/Persona';
 import { Link, Icon } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { Representative } from '../models/Models';
-import LoadingSpinner from '../components/LoadingSpinner';
-import Message from './Message';
-import LocalizationService from "../services/LocalizationService";
+import { Representative } from '../../models/Models';
+import LoadingSpinner from '../LoadingSpinner';
+import Message from '../Message';
+import LocalizationService from "../../services/LocalizationService";
 
 interface Props { data: Representative[], loadingRepresentatives: boolean, errorLoadingRepresentatives: boolean };
 
@@ -16,12 +16,12 @@ const RapresentativesList = (props: Props) => {
     const locale = LocalizationService.strings();
 
     return (
-        <>
+        <div className="representatives pb-4 pt-2">
             {
                 props.loadingRepresentatives || props.errorLoadingRepresentatives ? <LoadingSpinner loading={props.loadingRepresentatives} error={props.errorLoadingRepresentatives} />
                 : props.data.length === 0 ?
                     <div className="justify-content-center">
-                        <Message text={locale.representatives.representativesNotAvailable} />
+                        <Message text={locale.university.representativesNotAvailable} />
                     </div> : <></>
             }
             
@@ -40,7 +40,7 @@ const RapresentativesList = (props: Props) => {
                     </Col>
                 ) : <></> }
             </Row>
-        </>
+        </div>
     )
 };
 

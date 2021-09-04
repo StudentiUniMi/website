@@ -1,32 +1,38 @@
 [
     {
+        "user_id": 26170256,
+        "username": "acetimarco",
+        "name": "Marco Aceti",
+        "delega": "Coordinatore"
+    },
+    {
         "user_id": 278035059,
         "username": "Spacer_ASC",
         "name": "Manuele Dentello",
-        "delega": ""
+        "delega": "Comitato Amministrativo Network"
     },
     { 
         "user_id": 592731075,
         "username": "MattiaOldani", 
         "name": "Mattia Oldani", 
-        "delega": ""
+        "delega": "Comitato Amministrativo Network"
     },
     { 
         "user_id": 544826890,
         "username": "Sartigabriele", 
         "name": "Gabriele Sarti", 
-        "delega": ""
+        "delega": "Comitato Amministrativo Network"
     },
     { 
         "user_id": 119507304,
         "username": "MrBrionix", 
         "name": "Fabrizio Brioni", 
-        "delega": ""
+        "delega": "Comitato Amministrativo Network"
     },
     { 
         "user_id": 244426552,
         "username": "SetteMagic", 
         "name": "Silvio Settembrese", 
-        "delega": ""
+        "delega": "Comitato Amministrativo Network"
     }
 ]

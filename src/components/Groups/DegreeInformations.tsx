@@ -1,18 +1,17 @@
 import React from "react";
-import { semibold } from '../fonts';
-import { FontSizes } from '@fluentui/theme';
-import { Icon, Text } from 'office-ui-fabric-react';
-import { redirectToLink } from '../services/Utils';
+import { semibold } from '../../services/fonts';
+import { Text } from 'office-ui-fabric-react';
+import { redirectToLink } from '../../services/Utils';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { Separator } from '@fluentui/react/lib/Separator';
-import { IChoiceGroupOptionStyles } from "@fluentui/react";
+import { Container } from 'react-bootstrap';
+import { IChoiceGroupOptionStyles, Icon } from "@fluentui/react";
 import { ChoiceGroup, IChoiceGroupOption } from '@fluentui/react/lib/ChoiceGroup';
-import LocalizationService from "../services/LocalizationService";
-import Message from './Message';
-import { getDegreeInformations } from '../services/Requests';
+import LocalizationService from "../../services/LocalizationService";
+import Message from '../Message';
+import { getDegreeInformations } from '../../services/Requests';
 
 /* Updated models */
-import { Degree } from '../models/Models'; 
+import { Degree } from '../../models/Models'; 
 
 interface Props { degree?: Degree };
 
@@ -56,13 +55,11 @@ const DegreeInformations= (props: Props) => {
     });
 
     return (   
-        <div className='text-center degree-informations mb-4'>
-            <div className='text-center mb-3'>
-                <Separator>
-                    <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
-                    <Text variant="medium" styles={semibold} style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size18 }}> {locale.courses.availableRedirects} </Text>
-                    <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
-                </Separator>
+        <div className='degree-informations mb-4'>
+            <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLight }}>
+                <Container>
+                    <div><Text variant="medium" styles={semibold}><Icon iconName="Link12" /> {locale.groups.availableRedirects}</Text></div>
+                </Container>
             </div>
 
             {

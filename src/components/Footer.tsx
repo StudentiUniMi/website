@@ -1,7 +1,7 @@
 import { Link, Icon } from 'office-ui-fabric-react';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
-import { semibold } from '../fonts';
+import { semibold } from '../services/fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { withCookies } from 'react-cookie';
 import Col from 'react-bootstrap/Col';
@@ -16,7 +16,7 @@ const Footer = () => {
     const locale = LocalizationService.strings();
     const iconStyle = { fontSize: 18 };
     return (
-        <footer style={{ backgroundColor: theme.palette.neutralQuaternaryAlt, borderTop: '1px solid', borderColor: theme.palette.neutralLight }}>
+        <footer style={{ backgroundColor: theme.palette.neutralQuaternaryAlt, borderTop: '1px solid', borderColor: theme.palette.neutralLight }} className="pt-4 pb-4">
             <Container style={{ width: '100%', color: theme.palette.neutralSecondary }}>
 
                 <Row>

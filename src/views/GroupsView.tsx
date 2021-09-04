@@ -1,36 +1,37 @@
 import React from "react";
-import { Text } from 'office-ui-fabric-react';
-import { FontSizes } from '@fluentui/theme';
+import { Text, DropdownMenuItemType } from 'office-ui-fabric-react';
 import { initializeIcons } from "@uifabric/icons";
 import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
-import { DefaultButton, Dialog, DialogType, DocumentCard, DocumentCardActivity, DocumentCardDetails, DocumentCardImage, DocumentCardTitle, DropdownMenuItemType, IDialogContentProps, IDocumentCardActivityPerson, IDocumentCardDetailsStyles, IDocumentCardStyles, IDocumentCardTitleStyles, IIconProps, ImageFit, mergeStyleSets } from "@fluentui/react";
+//import { DefaultButton, Dialog, DialogType, DocumentCard, DocumentCardActivity, DocumentCardDetails, DocumentCardImage, DocumentCardTitle, IDialogContentProps, IDocumentCardActivityPerson, IDocumentCardDetailsStyles, IDocumentCardStyles, IDocumentCardTitleStyles, IIconProps, ImageFit, mergeStyleSets } from "@fluentui/react";
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { getDepartments, getDegrees, getCourses, getVerboseDegree } from '../services/Requests';
 import { Separator } from '@fluentui/react/lib/Separator';
-import { semibold } from '../fonts';
+import { semibold } from '../services/fonts';
 import { Department, Degree, CourseDegree } from "../models/Models";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import CourseList from "../components/CourseList";
+import GroupList from "../components/Groups/GroupList";
 import LocalizationService from "../services/LocalizationService";
-import DegreeInformations from "../components/DegreeInformations";
-import AdminsList from '../components/AdminsList';
-import { redirectToLink } from "../services/Utils";
-import { useBoolean } from "@fluentui/react-hooks";
+import DegreeInformations from "../components/Groups/DegreeInformations";
+import AdminsList from '../components/Groups/AdminsList';
+//import { redirectToLink } from "../services/Utils";
+//import { useBoolean } from "@fluentui/react-hooks";
+import AdditionalGroupsView from '../components/Groups/AdditionalGroups';
 
 initializeIcons();
 const iconStyles = { marginRight: '8px' };
 
-const CoursesView = () => {
+const GroupsView = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     let history = useHistory();
     let didMount = React.useRef(false);
 
     /* Wiki section */
+    /*
     const wikiCard: IDocumentCardStyles = { root: { display: 'inline-block', marginBottom: 20, minWidth: 250, maxWidth: 'none', minHeight: 'none' } };
     const wikiCardPrimaryText: IDocumentCardTitleStyles = { root: { height: 'auto' } };
     const wikiCardSecondaryText: IDocumentCardTitleStyles = { root: { height: 'auto' } };
@@ -55,10 +56,10 @@ const CoursesView = () => {
         type: DialogType.largeHeader,
         showCloseButton: true
     };
+    */
 
     /* Styles */
     const dropdownStyles = { dropdown: { color: theme.palette.neutralPrimary }, dropdownItems: { color: theme.palette.neutralPrimary } };
-    const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
 
     /* States */
     const [departments, setDepartments] = React.useState<Department[]>([]);
@@ -146,7 +147,7 @@ const CoursesView = () => {
 
         console.log("Courses result: ", coursesResult.value ?? []);
         const degreeSelected = degrees.filter(x => x.pk as unknown as string === selectedDegree)[0] ?? undefined;
-        if (degreeSelected.group?.invite_link !== '' && degreeSelected.group?.invite_link !== null && degreeSelected.group?.invite_link !== undefined) {
+        if (degreeSelected !== undefined && degreeSelected.group?.invite_link !== '' && degreeSelected.group?.invite_link !== null && degreeSelected.group?.invite_link !== undefined) {
             let mainDegreeGroup: CourseDegree = {
                 "course": {
                     pk: undefined,
@@ -222,107 +223,120 @@ const CoursesView = () => {
     let degree: Degree = degrees.filter(x => x.pk === selectedDegree as unknown as number)[0] ?? [];
 
     return (
-        <Container className="courses text-center">
-            <div className="mb-1">
-                <Text variant="large">{locale.courses.text1}</Text>
-            </div>
-
-            <div className="text-center"><Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} /></div>
-
-            <div className="mb-2">
-
-                <div className="text-center">
-                    <DefaultButton
-                        onClick={toggleHideDialog}
-                        text={locale.courses.wikiCard.buttonTitle}
-                        className={styles.button}
-                        iconProps={icon}
-                        theme={theme}
-                    />
+        <div className="pt-5 courses">
+            <Container>
+                <div className="mb-3">
+                    <div className="mb-1"><Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>{locale.groups.groupsSection.text1}</Text></div>
+                    <Text variant="xLarge">{locale.groups.groupsSection.text2}</Text>
                 </div>
 
-                <Dialog
-                    hidden={hideDialog}
-                    onDismiss={toggleHideDialog}
-                    dialogContentProps={dialogContentProps}
-                    modalProps={modelProps}
-                    maxWidth={700}
-                    theme={theme}
-                >
-                    <DocumentCard
-                        styles={wikiCard}
-                        onClick={() => redirectToLink("https://wiki.studentiunimi.it/start")}
-                        className="text-align-left"
+                {/*
+                <div className="mb-4">
+                    <div className="text-center">
+                        <DefaultButton
+                            onClick={toggleHideDialog}
+                            text={locale.courses.wikiCard.buttonTitle}
+                            className={styles.button}
+                            iconProps={icon}
+                            theme={theme}
+                        />
+                    </div>
+                    
+
+                    <Dialog
+                        hidden={hideDialog}
+                        onDismiss={toggleHideDialog}
+                        dialogContentProps={dialogContentProps}
+                        modalProps={modelProps}
+                        maxWidth={700}
                         theme={theme}
                     >
-                        <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/wiki_card.jpg"} />
-                        <DocumentCardDetails styles={wikiCardDocumentCardDetails}>
-                            <DocumentCardTitle title={locale.courses.wikiCard.title} styles={wikiCardPrimaryText} />
-                            <DocumentCardTitle
-                                title={locale.courses.wikiCard.description}
-                                styles={wikiCardSecondaryText}
-                                showAsSecondaryTitle
-                            />
-                        </DocumentCardDetails>
-                        <DocumentCardDetails>
-                            <div style={{ marginLeft: 16, marginBottom: 8 }}>
-                                <Text styles={semibold} variant="medium" style={{ color: theme.palette.themePrimary }}><Icon iconName="PageArrowRight" /> {locale.courses.wikiCard.clickToWiki}</Text>
-                            </div>
-                        </DocumentCardDetails>
-                        <DocumentCardActivity activity={locale.courses.wikiCard.date} people={people} />
-                    </DocumentCard>
-                </Dialog>
-            </div>
+                        <DocumentCard
+                            styles={wikiCard}
+                            onClick={() => redirectToLink("https://wiki.studentiunimi.it/start")}
+                            className="text-align-left"
+                            theme={theme}
+                        >
+                            <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/wiki_card.jpg"} />
+                            <DocumentCardDetails styles={wikiCardDocumentCardDetails}>
+                                <DocumentCardTitle title={locale.courses.wikiCard.title} styles={wikiCardPrimaryText} />
+                                <DocumentCardTitle
+                                    title={locale.courses.wikiCard.description}
+                                    styles={wikiCardSecondaryText}
+                                    showAsSecondaryTitle
+                                />
+                            </DocumentCardDetails>
+                            <DocumentCardDetails>
+                                <div style={{ marginLeft: 16, marginBottom: 8 }}>
+                                    <Text styles={semibold} variant="medium" style={{ color: theme.palette.themePrimary }}><Icon iconName="PageArrowRight" /> {locale.courses.wikiCard.clickToWiki}</Text>
+                                </div>
+                            </DocumentCardDetails>
+                            <DocumentCardActivity activity={locale.courses.wikiCard.date} people={people} />
+                        </DocumentCard>
+                    </Dialog>
+                </div>
+                */}
 
-            <Separator />
-            
-            <Row className="department-choose justify-content-center mb-4 text-center">
-                <Col xl={6} lg={6} md={6} sm={12} xs={12} className="mb-1">
-                    {/* Department dropdown */}
-                    <Dropdown
-                        placeholder={locale.courses.departmentSelect}
-                        label={locale.courses.departmentSelect}
-                        onRenderTitle={onRenderTitle}
-                        onRenderOption={onRenderOption}
-                        options={departmentOptions}
-                        onChange={departmentSelectionChanged}
-                        selectedKey={selectedDepartment}
-                        styles={dropdownStyles}
-                        errorMessage={errorLoadingDepartments ? locale.errorLoadingDepartments : undefined}
-                        theme={theme}
-                        disabled={errorLoadingDepartments || departments.length === 0}
-                    />
-                </Col>
+                <Row className="department-choose justify-content-center mb-3 text-center">
+                    <Col xl={6} lg={6} md={6} sm={12} xs={12} className="mb-1">
+                        {/* Department dropdown */}
+                        <Dropdown
+                            placeholder={locale.groups.departmentSelect}
+                            label={locale.groups.departmentSelect}
+                            onRenderTitle={onRenderTitle}
+                            onRenderOption={onRenderOption}
+                            options={departmentOptions}
+                            onChange={departmentSelectionChanged}
+                            selectedKey={selectedDepartment}
+                            styles={dropdownStyles}
+                            errorMessage={errorLoadingDepartments ? locale.errorLoadingDepartments : undefined}
+                            theme={theme}
+                            disabled={errorLoadingDepartments || departments.length === 0}
+                        />
+                    </Col>
 
-                <Col xl={6} lg={6} md={6} sm={12} xs={12} className="mb-1">
-                    {/* Cdl dropdown */}
-                    <Dropdown
-                        label={locale.courses.cdlSelect}
-                        placeholder={locale.courses.cdlSelect}
-                        selectedKey={selectedDegree}
-                        onChange={degreeSelectionChanged}
-                        onRenderTitle={onRenderTitle}
-                        onRenderOption={onRenderOption}
-                        options={degreesOptions}
-                        styles={dropdownStyles}
-                        theme={theme}
-                        disabled={selectedDepartment === '' || errorLoadingDegrees}
-                        errorMessage={errorLoadingDegrees ? locale.errorLoadingDegrees : undefined}
-                    />
-                </Col>
-            </Row>
+                    <Col xl={6} lg={6} md={6} sm={12} xs={12} className="mb-1">
+                        {/* Cdl dropdown */}
+                        <Dropdown
+                            label={locale.groups.cdlSelect}
+                            placeholder={locale.groups.cdlSelect}
+                            selectedKey={selectedDegree}
+                            onChange={degreeSelectionChanged}
+                            onRenderTitle={onRenderTitle}
+                            onRenderOption={onRenderOption}
+                            options={degreesOptions}
+                            styles={dropdownStyles}
+                            theme={theme}
+                            disabled={selectedDepartment === '' || errorLoadingDegrees}
+                            errorMessage={errorLoadingDegrees ? locale.errorLoadingDegrees : undefined}
+                        />
+                    </Col>
+                </Row>
+            </Container>
 
             <div style={{ display: selectedDegree !== '' ? 'block' : 'none' }}>
                 <DegreeInformations degree={degree!} />
-                <CourseList degree={degree!} courses={courses} loadingCourses={loadingCourses} errorLoadingCourses={errorLoadingCourses} />
+                <GroupList degree={degree!} courses={courses} loadingCourses={loadingCourses} errorLoadingCourses={errorLoadingCourses} />
                 <AdminsList degree={degree!} />       
             </div>
 
-        </Container>
+            
+
+            <Container className="pb-4">
+                <Separator className="mb-3" />
+                <div className="mb-3">
+                    <div className="mb-1"><Text variant="medium" styles={semibold} style={{ textTransform: 'uppercase', color: theme.palette.themePrimary }}>{locale.groups.extraGroupsSection.text1}</Text></div>
+                    <Text variant="xLarge">{locale.groups.extraGroupsSection.text2}</Text>
+                </div>
+
+                <AdditionalGroupsView />
+
+            </Container>
+        </div>
     );
 };
 
-export default CoursesView;
+export default GroupsView;
 
 
 function isTriennale(element: Degree) {

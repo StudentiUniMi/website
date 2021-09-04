@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ContentView from "./ContentView";
 import { ThemeProvider } from '@fluentui/react-theme-provider'; 
-import { buildLightTheme, buildDarkTheme } from '../themes';
+import { buildLightTheme, buildDarkTheme } from '../services/themes';
 import { CookiesProvider, useCookies, withCookies } from 'react-cookie';
 import { loadTheme } from '@fluentui/react';
 

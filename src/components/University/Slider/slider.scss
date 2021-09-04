@@ -4,10 +4,6 @@
     padding-bottom: 30px;
 }
 
-.swiper-slide {
-    text-align: center;
-}
-
 .swiper-wrapper {
     align-items: center;
 }
@@ -50,15 +46,9 @@
     object-fit: cover;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
     .swiper-button-next:after,
     .swiper-button-prev:after {
         display: none;
-    }
-}
-
-@media only screen and (max-width: 767px) and (min-width: 560px) {
-    .swiper-slide .col-sm-6 {
-        max-width: 250px !important;
     }
 }

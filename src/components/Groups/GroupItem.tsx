@@ -2,15 +2,15 @@ import { Text } from 'office-ui-fabric-react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { initializeIcons } from '@uifabric/icons';
 import { FontWeights, ITextStyles, Persona } from '@fluentui/react';
-import { semibold } from '../fonts';
+import { semibold } from '../../services/fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { IContextualMenuProps, IIconProps } from '@fluentui/react';
 import { CommandButton } from '@fluentui/react/lib/Button';
 import { ActionButton } from '@fluentui/react/lib/Button';
-import { redirectToLink } from '../services/Utils';
-import { CourseDegree } from '../models/Models';
+import { redirectToLink } from '../../services/Utils';
+import { CourseDegree } from '../../models/Models';
 import Chip from '@material-ui/core/Chip';
-import LocalizationService from "../services/LocalizationService";
+import LocalizationService from "../../services/LocalizationService";
 
 initializeIcons();
 interface Props { data: CourseDegree };
@@ -77,13 +77,13 @@ const CourseItem = (props: Props) => {
             yearText = null;
             break;
         case -2: /* Complementare */
-            yearText = <span>{locale.courses.complementary}</span>;
+            yearText = <span>{locale.groups.complementary}</span>;
             break;
         case undefined: /* Errore o non disponibile */
             yearText = <span>N/A</span>;
             break;
         default:
-            yearText = <span>{data.year}° {locale.courses.year}</span>;
+            yearText = <span>{data.year}° {locale.groups.year}</span>;
             break;
     }
 
@@ -93,16 +93,16 @@ const CourseItem = (props: Props) => {
     } else if (data.semester === undefined) {
         semesterText = <span>N/A</span>;
     } else if (data.semester !== null) {
-        semesterText = <span>{data.semester}° {locale.courses.semester}</span>;
+        semesterText = <span>{data.semester}° {locale.groups.semester}</span>;
     }
 
     // Main text inizialization
     /*
     if (data.year === -1 && (data.course?.group?.invite_link === "" || data.course?.group?.invite_link === null)) {
-        mainText = (<><JsxParser bindings={{ theme: theme }} components={{ Text, Link, Icon }} jsx={locale.courses.contactAdmin} /></> );
+        mainText = (<><JsxParser bindings={{ theme: theme }} components={{ Text, Link, Icon }} jsx={locale.groups.contactAdmin} /></> );
     } else */
     if (data.year === -1 /* && (data.course?.group?.invite_link !== "" && data.course?.group?.invite_link !== null) */) {
-        mainText = locale.courses.mainGroupDescription;
+        mainText = locale.groups.mainGroupDescription;
     }
 
     /* Telegram Group initialization */
@@ -128,7 +128,7 @@ const CourseItem = (props: Props) => {
                         style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
                         disabled
                         allowDisabledFocus>
-                        {locale.courses.groupNotAvailable}
+                        {locale.groups.groupNotAvailable}
                     </ActionButton>
                 );
             }
@@ -138,7 +138,7 @@ const CourseItem = (props: Props) => {
                 style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
                 disabled
                 allowDisabledFocus>
-                {locale.courses.groupNotAvailable}
+                {locale.groups.groupNotAvailable}
             </ActionButton>
         )
     };
@@ -196,7 +196,7 @@ const CourseItem = (props: Props) => {
     };
     
     return (
-        <Card tokens={cardTokens}>
+        <Card tokens={cardTokens} className="text-center">
             <Card.Item>
                 {overflow === true ?
                     <Persona imageUrl={personaIconUrl} onRenderPrimaryText={() => primaryText} text={data.course?.name} />
@@ -212,7 +212,7 @@ const CourseItem = (props: Props) => {
                 </Text>
 
                 <Text styles={descriptionTextStyles}>
-                    {data.year === -1 ? <Chip label={locale.courses.mainGroup} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeTertiary }} className="m-1" /> : <></>}
+                    {data.year === -1 ? <Chip label={locale.groups.mainGroup} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeTertiary }} className="m-1" /> : <></>}
                     {yearText !== "" && yearText !== null ? <Chip label={yearText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} className="m-1" /> : <></>}
                     {semesterText !== "" && semesterText !== null ? <Chip label={semesterText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} /> : <></>}
                 </Text>
@@ -225,7 +225,7 @@ const CourseItem = (props: Props) => {
 
                 { data.year !== -1 ?
                     <CommandButton
-                        text={locale.courses.websites}
+                        text={locale.groups.websites}
                         style={{justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 0}}
                         iconProps={websiteIcon}
                         menuProps={menuProps}

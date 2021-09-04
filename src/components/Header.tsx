@@ -16,7 +16,7 @@ const Header = (props: Props) => {
     const titleStyle: ITextStyles = { root: { fontSize: FontSizes.size20, fontWeight: FontWeights.semibold, color: theme.palette.themePrimary } };
     
     return (
-        <header className="mt-2" style={{ borderBottom: '1px solid', borderColor: theme.palette.neutralLight }}>
+        <header className="mt-2" style={{ borderBottom: '1px solid', borderColor: theme.palette.neutralLight, marginBottom: -1 }}>
 
             <div>
                 <Row className="headerRow">

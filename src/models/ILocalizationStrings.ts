@@ -7,14 +7,11 @@ interface ILocalizationStrings {
     errorContactAdmin: string,
     headerMenuItems: {
         home: string,
-        aboutUs: string,
-        news: string,
-        rules: string,
         courses: string,
         services: string,
-        additionalGroups: string,
-        representatives: string,
-        contributors: string
+        aboutUs: string,
+        rules: string,
+        university: string
     },
     settingsPanel: {
         settings: string,
@@ -29,17 +26,12 @@ interface ILocalizationStrings {
         coachMark: { text1: string, text2: string, understood: string }
     },
     homepage: {
+        telegramText: string,
+        telegramButton: string,
         section1: {
+            typedText: string,
             text1: string,
             text2: string,
-            sliders: [
-                { text1: string, text2: string, cardText: string },
-                { text1: string, text2: string, cardText: string },
-                { text1: string, text2: string, cardText: string },
-                { text1: string, text2: string, cardText: string },
-                { text1: string, reachWiki: string },
-                { text1: string }
-            ]
         },
         section2: {
             text: string,
@@ -52,10 +44,6 @@ interface ILocalizationStrings {
                 button: string
             },
             card3: {
-                text: string,
-                button: string
-            },
-            card4: {
                 text: string,
                 button: string
             }
@@ -71,6 +59,10 @@ interface ILocalizationStrings {
                 button: string
             },
             card3: {
+                text: string,
+                button: string
+            },
+            card4: {
                 text: string,
                 button: string
             }
@@ -119,39 +111,15 @@ interface ILocalizationStrings {
             list: any[]
         }
     },
-    aboutUs: {
-        text1: string,
-        button: { text1: string, text2: string },
-        header1: string,
-        header2: string,
-        header3: string
-    },
-    news: {
-        title: string,
-        vaccineSection: {
-            title: string,
-            card1: {
-                title: string,
-                description: string,
-                date: string
-            },
-            card2: {
-                title: string,
-                description: string,
-                date: string
-            },
-            click: string,
-            news: string
+    groups: {
+        groupsSection: {
+            text1: string,
+            text2: string
         },
-    },
-    rules: {
-        text1: string,
-        question: string,
-        answer: { text1: string, text2: string },
-        text2: string
-    },
-    courses: {
-        text1: string,
+        extraGroupsSection: {
+            text1: string,
+            text2: string
+        },
         departmentSelect: string,
         cdlSelect: string,
         availableRedirects: string,
@@ -188,6 +156,13 @@ interface ILocalizationStrings {
         service: string,
         legend: string
     },
+    rules: {
+        text1: string,
+        text2: string,
+        question: string,
+        answer: { text1: string, text2: string },
+        header: string
+    },
     extraGroups: {
         text1: string,
         text2: string,
@@ -196,11 +171,27 @@ interface ILocalizationStrings {
         availableGroups: string,
         extraGroup: string
     },
-    representatives: {
+    university: {
+        header: {
+            text1: string,
+            text2: string
+        },
         text1: string,
         text2: string,
         departmentSelect: string,
-        representativesNotAvailable: string
+        representativesNotAvailable: string,
+        news: {
+            title: string,
+        },
+    },
+    aboutUs: {
+        text1: string,
+        text2: string,
+        text3: string,
+        button: { text1: string, text2: string },
+        header1: string,
+        header2: string,
+        header3: string
     },
     contributors: {
         text1:string,

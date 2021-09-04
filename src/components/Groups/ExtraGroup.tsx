@@ -2,13 +2,13 @@ import { Text, Icon } from 'office-ui-fabric-react';
 import { initializeIcons } from '@uifabric/icons';
 import { FontWeights, ITextStyles, Persona, Link } from '@fluentui/react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
-import ExtraGroup from '../models/ExtraGroup'
+import ExtraGroup from '../../models/ExtraGroup'
 import { useTheme } from '@fluentui/react-theme-provider';
 import { ActionButton } from '@fluentui/react/lib/Button';
 import { IIconProps } from '@fluentui/react';
 import Chip from '@material-ui/core/Chip';
-import { semibold } from '../fonts';
-import LocalizationService from "../services/LocalizationService";
+import { semibold } from '../../services/fonts';
+import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 
 initializeIcons();

@@ -213,12 +213,6 @@
                         { "name": {"it": "Wiki del corso di laurea", "en": "Degree's wiki"}, "description": {"it": "", "en": ""}, "link": "https://wiki.studentiunimi.it/informatica_musicale", "icon": "ProjectCollection" }
                     ],
                     "admins": [
-                        {
-                            "username": "giolake",
-                            "year": "",
-                            "user_id": 126856154,
-                            "cdl": "Informatica musicale"
-                        }
                     ],
                     "is_master": false,
                     "has_years": true
@@ -382,6 +376,31 @@
                         { "name": {"it": "Manifesto degli studi", "en": "Programme"}, "description": {"it": "Manifesto degli studi attuale del tuo corso di laurea.", "en": "Description of the current studies of your Degree Programme."}, "link": "", "icon": "Questionnaire" }
                     ],
                     "admins": [],
+                    "is_master": false,
+                    "has_years": true
+                }
+            ]
+        },
+        {
+            "id": "bioscienze",
+            "name": "Dipartimento di Bioscienze",
+            "description": "",
+            "icon": "",
+            "representatives": [],
+            "cdls": [
+                {
+                    "id": "bioinformatics",
+                    "name": "Bioinformatics",
+                    "description": "",
+                    "redirects": [],
+                    "admins": [
+                        {
+                            "username": "MariaClaudia7",
+                            "year": "",
+                            "user_id": null,
+                            "cdl": "Bioinformatics"
+                        }
+                    ],
                     "is_master": false,
                     "has_years": true
                 }

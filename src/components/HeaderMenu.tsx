@@ -15,19 +15,16 @@ import { useTheme } from '@fluentui/react-theme-provider';
 import { addDays } from '../services/Utils';
 import { Pivot, PivotItem, IPivotStyles } from '@fluentui/react';
 import { SwatchColorPicker } from '@fluentui/react/lib/SwatchColorPicker';
-import { semibold } from "../fonts";
-import { palettes } from '../palettes';
+import { semibold } from "../services/fonts";
+import { palettes } from '../services/palettes';
 
 export enum ItemsKeys {
     home = "home",
     courses = "courses",
     services = "services",
-    additional_groups = "additional_groups",
     rules = "rules",
-    news = "news",
     representatives = "representatives",
-    organization = "organization",
-    contributors = "contributors"
+    organization = "organization"
 };
 
 initializeIcons();
@@ -102,13 +99,10 @@ const HeaderMenu = (props: Props) => {
     const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
         [ItemsKeys.home, locale.headerMenuItems.home],
         [ItemsKeys.courses, locale.headerMenuItems.courses],
-        [ItemsKeys.additional_groups, locale.headerMenuItems.additionalGroups],
         [ItemsKeys.services, locale.headerMenuItems.services],
         [ItemsKeys.rules, locale.headerMenuItems.rules],
-        [ItemsKeys.news, locale.headerMenuItems.news],
-        [ItemsKeys.representatives, locale.headerMenuItems.representatives],
-        [ItemsKeys.organization, locale.headerMenuItems.aboutUs],
-        [ItemsKeys.contributors, locale.headerMenuItems.contributors]
+        [ItemsKeys.representatives, locale.headerMenuItems.university],
+        [ItemsKeys.organization, locale.headerMenuItems.aboutUs]
     ]);
     
     const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };

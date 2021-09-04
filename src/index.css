@@ -11,14 +11,12 @@ body {
   margin: 0;
   padding: 0;
   background-color: #faf9f8;
-  margin-bottom: 220px;
+  margin-bottom: 191px;
   /* Default footer height */
   height: 100%;
 }
 
 footer {
-  padding-top: 20px;
-  padding-bottom: 15px;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -41,10 +39,16 @@ button:focus,
   box-shadow: none !important;
 }
 
+/* Align text when in mobile view */
+@media only screen and (max-width: 992px) {
+  .center-mobile {
+    text-align: center !important;
+  }
+}
 /* Responsive footer */
 @media only screen and (max-width: 992px) {
   body {
-    margin-bottom: 240px;
+    margin-bottom: 191px;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -54,7 +58,7 @@ button:focus,
 }
 @media only screen and (max-width: 767px) {
   body {
-    margin-bottom: 480px;
+    margin-bottom: 469px;
   }
 
   footer .row {
@@ -77,17 +81,17 @@ button:focus,
 }
 @media only screen and (max-width: 485px) {
   body {
-    margin-bottom: 550px;
+    margin-bottom: 540px;
   }
 }
 @media only screen and (max-width: 363px) {
   body {
-    margin-bottom: 560px;
+    margin-bottom: 550px;
   }
 }
 @media only screen and (max-width: 320px) {
   body {
-    margin-bottom: 570px;
+    margin-bottom: 560px;
   }
 }
 @media only screen and (min-width: 767px) {
@@ -266,12 +270,13 @@ button:focus,
   display: inline;
 }
 
+/* This was used for Persona component without text
 .organization .ms-Persona {
   max-width: 50px;
   margin-left: auto;
   margin-right: auto;
 }
-
+*/
 .contributors .ms-Persona {
   width: 48px;
 }
@@ -296,6 +301,7 @@ button:focus,
 
 .ms-MessageBar-text {
   display: block;
+  text-align: center;
 }
 
 /* ChoiceGroup in DegreeInformations adjustments */
