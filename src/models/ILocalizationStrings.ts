@@ -26,17 +26,12 @@ interface ILocalizationStrings {
         coachMark: { text1: string, text2: string, understood: string }
     },
     homepage: {
+        telegramText: string,
+        telegramButton: string,
         section1: {
+            typedText: string,
             text1: string,
             text2: string,
-            sliders: [
-                { text1: string, text2: string, cardText: string },
-                { text1: string, text2: string, cardText: string },
-                { text1: string, text2: string, cardText: string },
-                { text1: string, text2: string, cardText: string },
-                { text1: string, reachWiki: string },
-                { text1: string }
-            ]
         },
         section2: {
             text: string,
@@ -49,10 +44,6 @@ interface ILocalizationStrings {
                 button: string
             },
             card3: {
-                text: string,
-                button: string
-            },
-            card4: {
                 text: string,
                 button: string
             }
@@ -68,6 +59,10 @@ interface ILocalizationStrings {
                 button: string
             },
             card3: {
+                text: string,
+                button: string
+            },
+            card4: {
                 text: string,
                 button: string
             }

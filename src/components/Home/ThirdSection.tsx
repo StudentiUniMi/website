@@ -1,4 +1,4 @@
-import { Persona, Link, Text, FontSizes, IIconProps, PrimaryButton, Icon, initializeIcons, ActionButton } from '@fluentui/react';
+import { Text, FontSizes, IIconProps, PrimaryButton, Icon } from '@fluentui/react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { semibold } from '../../services/fonts';
 import { Container } from 'react-bootstrap';
@@ -6,7 +6,6 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useTheme } from '@fluentui/react-theme-provider';
 import LocalizationService from "../../services/LocalizationService";
-import JsxParser from 'react-jsx-parser';
 
 const ThirdSection = () => {
     var theme = useTheme();
@@ -18,7 +17,7 @@ const ThirdSection = () => {
     const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
 
     return (
-        <div className="pb-4 pt-4" /*style={{ backgroundColor: theme.palette.neutralLighter }}*/>
+        <div className="pb-4 pt-4">
             <Container>
                 <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold}>{locale.homepage.section4.text}</Text></div>
 
@@ -28,8 +27,7 @@ const ThirdSection = () => {
                             <Card.Section>
                                 <div><Icon iconName="Globe2" style={homeIconStyle} /></div>
                                 <Text variant="medium">
-                                    {/*{locale.homepage.section4.card1.text}*/}
-                                    Abbiamo creato una Wikipedia per ogni insegnamento. Chiunque è libero di collaborare!
+                                    {locale.homepage.section4.card1.text}
                                 </Text>
                                 <div className="justify-content-center">
                                     <PrimaryButton text={locale.homepage.section4.card1.button} iconProps={buttonIconProps} href="https://wiki.studentiunimi.it/" className="text-decoration-none"  target="_blank" allowDisabledFocus style={buttonStyle} />
@@ -43,8 +41,7 @@ const ThirdSection = () => {
                             <Card.Section>
                                 <div><Icon iconName="World" style={homeIconStyle} /></div>
                                 <Text variant="medium">
-                                    {/*{locale.homepage.section4.card2.text}*/}
-                                    Stufo di non poter accedere ai servizi perchè UniMia ha problemi?
+                                    {locale.homepage.section4.card2.text}
                                 </Text>
                                 <div className="justify-content-center">
                                     <PrimaryButton /*text={locale.homepage.section4.card2.button}*/ text={"unimia.studentiunimi.it"} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/services/" allowDisabledFocus style={buttonStyle} />
@@ -58,8 +55,7 @@ const ThirdSection = () => {
                             <Card.Section>
                                 <div><Icon iconName="CloudDownload" style={homeIconStyle} /></div>
                                 <Text variant="medium">
-                                    {/*{locale.homepage.section4.card3.text}*/}
-                                    HedgeDoc permette di prendere appunti in collaborazione senza doversi registrare. Provalo!
+                                    {locale.homepage.section4.card3.text}
                                 </Text>
                                 <div className="justify-content-center">
                                     <PrimaryButton text={locale.homepage.section4.card3.button} iconProps={buttonIconProps} href="https://hedgedoc.studentiunimi.it/" className="text-decoration-none"  target="_blank" allowDisabledFocus style={buttonStyle} />
@@ -73,8 +69,7 @@ const ThirdSection = () => {
                             <Card.Section>
                                 <div><Icon iconName="Code" style={homeIconStyle} /></div>
                                 <Text variant="medium">
-                                    {/*{locale.homepage.section4.card4.text}*/}
-                                    Devi condividere codice sui gruppi? Usa il nostro servizio veloce, semplice e sicuro.
+                                    {locale.homepage.section4.card4.text}
                                 </Text>
                                 <div className="justify-content-center">
                                     <PrimaryButton text={locale.homepage.section4.card4.button} iconProps={buttonIconProps} href="http://paste.studentiunimi.it/" className="text-decoration-none"  target="_blank" allowDisabledFocus style={buttonStyle} />

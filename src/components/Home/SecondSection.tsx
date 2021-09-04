@@ -1,4 +1,4 @@
-import { Persona, Link, Text, FontSizes, IIconProps, PrimaryButton, Icon, initializeIcons, ActionButton } from '@fluentui/react';
+import { Text, FontSizes, IIconProps, PrimaryButton, Icon } from '@fluentui/react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { semibold } from '../../services/fonts';
 import { Container } from 'react-bootstrap';
@@ -6,7 +6,6 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useTheme } from '@fluentui/react-theme-provider';
 import LocalizationService from "../../services/LocalizationService";
-import JsxParser from 'react-jsx-parser';
 
 const SecondSection = () => {
     var theme = useTheme();
@@ -28,10 +27,10 @@ const SecondSection = () => {
                             <Card.Section>
                                 <div><Icon iconName="Send" style={homeIconStyle} /></div>
                                 <Text variant="medium">
-                                    {locale.homepage.section2.card1.text}
+                                    {locale.homepage.section3.card1.text}
                                 </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section2.card1.button} iconProps={buttonIconProps} href="https://t.me/studenti_unimi" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section3.card1.button} iconProps={buttonIconProps} href="https://t.me/studenti_unimi" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
@@ -42,10 +41,10 @@ const SecondSection = () => {
                             <Card.Section>
                                 <div><Icon iconName="ReminderGroup" style={homeIconStyle} /></div>
                                 <Text variant="medium">
-                                    {locale.homepage.section2.card2.text}
+                                    {locale.homepage.section3.card2.text}
                                 </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section2.card2.button} iconProps={buttonIconProps} href="https://t.me/unimichat" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section3.card2.button} iconProps={buttonIconProps} href="https://t.me/unimichat" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
@@ -56,10 +55,10 @@ const SecondSection = () => {
                             <Card.Section>
                                 <div><Icon iconName="Game" style={homeIconStyle} /></div>
                                 <Text variant="medium">
-                                    {locale.homepage.section2.card3.text}
+                                    {locale.homepage.section3.card3.text}
                                 </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section2.card3.button} iconProps={buttonIconProps} href="https://discord.gg/SwPzAkv4A4" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section3.card3.button} iconProps={buttonIconProps} href="https://discord.gg/SwPzAkv4A4" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
@@ -70,10 +69,10 @@ const SecondSection = () => {
                             <Card.Section>
                                 <div><Icon iconName="Teamwork" style={homeIconStyle} /></div>
                                 <Text variant="medium">
-                                    {locale.homepage.section2.card4.text}
+                                    {locale.homepage.section3.card4.text}
                                 </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section2.card4.button} iconProps={buttonIconProps} href="https://github.com/StudentiUnimi" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section3.card4.button} iconProps={buttonIconProps} href="https://github.com/StudentiUnimi" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>

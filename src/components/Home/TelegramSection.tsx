@@ -1,4 +1,4 @@
-import { Text, DefaultButton, Icon } from '@fluentui/react';
+import { Text, DefaultButton } from '@fluentui/react';
 import { semibold } from '../../services/fonts';
 import { Container } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
@@ -18,11 +18,11 @@ const TelegramSection = () => {
             <Container>
                 <Row>
                     <Col lg={10} className="mb-2 center-mobile">
-                        <div><Text variant="xLarge" styles={semibold} style={{color:theme.palette.white}}>Telegram è un'app di messaggistica molto più potente e sicura di WhatsApp.</Text></div>
+                        <div><Text variant="xLarge" styles={semibold} style={{color:theme.palette.white}}>{locale.homepage.telegramText}</Text></div>
                     </Col>
                 
                     <Col lg={2} className="text-right center-mobile">
-                        <DefaultButton text="Dimmi di più" /* iconProps={buttonIconProps} */ className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
+                        <DefaultButton text={locale.homepage.telegramButton} /* iconProps={buttonIconProps} */ className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
                     </Col>
                 </Row>
             </Container>

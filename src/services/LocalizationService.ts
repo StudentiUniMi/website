@@ -35,19 +35,29 @@ class LocalizationService {
                         coachMark: { text1: 'Benvenuto sul nostro sito!', text2: 'Qui puoi trovare alcune impostazioni che ti potrebbero servire. Per il resto, esplora liberamente i servizi che offriamo! :)', understood: 'Capito!' }
                     },
                     homepage: {
+                        telegramText: "Telegram è un'app di messaggistica molto più potente e sicura di WhatsApp.",
+                        telegramButton: "Dimmi di più",
                         section1: {
-                            text1: 'Benvenuto nel sito web del <span style={{color: theme.palette.themePrimary}}>Network StudentiUniMi</span>!',
-                            text2: 'La nostra missione è organizzare le informazioni riguardo l\'Università degli studi di Milano e renderle accessibili a tutti.',
-                            sliders: [
-                                { text1: 'Sei uno studente che vuole immatricolarsi e che cerca un gruppo generale in cui chiedere informazioni', text2: 'Ne abbiamo creato uno apposito!', cardText: "Pre-matricole, ammissioni e immatricolazioni" },
-                                { text1: 'Stai cercando un gruppo per trovare un alloggio a Milano insieme ad altri studenti universitari oppure vuoi creare un annuncio', text2: 'Entra nel gruppo apposito!', cardText: 'Alloggi' },
-                                { text1: 'Vorresti vendere dei libri oppure slide rilegate e stampate? Oppure magari sei una nuova matricola e cerchi il materiale del tuo corso', text2: 'Fai un annuncio apposito qui!', cardText: 'Materiali' },
-                                { text1: 'Sei in cerca di qualcuno che ti possa dare delle ripetizioni per aiutarti a preparare un esame, oppure vuoi proporti a tal riguardo', text2: 'Fai un annuncio apposito qui!', cardText: 'Ripetizioni' },
-                                { text1: 'Ti ricordiamo che abbiamo a disposizione una <Text styles={semibold}>Wiki</Text> in cui è possibile collaborare e aiutare altri studenti! Puoi trovare tutto il materiale che ti serve, ma ricorda che è importante anche contribuire!', reachWiki: 'Raggiungi la Wiki!' },
-                                { text1: 'Per noi offrirti la possibilità di non perdere tempo alla ricerca di servizi universitari è molto importante. Proprio per questo abbiamo realizzato una pagina apposita per trovarli tutti subito, e farti scoprire anche alcune guide che abbiamo realizzato!' }
-                            ]
+                            typedText: 'Sei iscritto a...',
+                            text1: 'Rimani in contatto. Di più, e meglio.',
+                            text2: "Comunicare è importante, ma può essere frustrante farlo sui grupponi WhatsApp lasciati a loro stessi. Abbiamo creato gruppi Telegram per ogni corso di laurea dell'Università degli Studi di Milano per facilitare lo scambio di informazioni.",
                         },
                         section2: {
+                            text: 'Ogni cosa ha il suo gruppo Telegram',
+                            card1: {
+                                text: 'Ogni corso di laurea ha almeno un gruppo Telegram; premi il pulsante sotto per trovare il tuo. Presto sarà disponibile un gruppo per ogni insegnamento.',
+                                button: 'Gruppi dei corsi'
+                            },
+                            card2: {
+                                text: 'Sei una matricola? Cerchi alloggi, materiali o qualcuno che faccia ripetizioni? Nessun problema, entra in uno dei nostri gruppi aggiuntivi!',
+                                button: 'Gruppi extra'
+                            },
+                            card3: {
+                                text: "Crediamo che un ambiente rispettoso e inclusivo favorisca la condivisione. Dai un'occhiata al regolamento ufficiale dei gruppi.",
+                                button: 'Regolamento'
+                            }
+                        },
+                        section3: {
                             text: 'I nostri collegamenti principali',
                             card1: {
                                 text: 'Unisciti al canale telegram per rimanere aggiornato e raggiungere tutti i link disponibili!',
@@ -66,37 +76,22 @@ class LocalizationService {
                                 button: 'Organizzazione'
                             }
                         },
-                        section3: {
-                            text: 'Ogni cosa ha il suo gruppo Telegram',
-                            card1: {
-                                text: 'Dì addio al mega gruppo WhatsApp in cui non si capisce nulla! Abbiamo creato un gruppo Telegram per ogni insegnamento.',
-                                button: 'Gruppi dei corsi'
-                            },
-                            card2: {
-                                text: 'Ripetizioni, materiali, erasmus, tirocinio, alloggi. Tutte quelle cose extra che però hanno la loro importanza.',
-                                button: 'Gruppi extra'
-                            },
-                            card3: {
-                                text: "Crediamo che un ambiente rispettoso e inclusivo ci renda più innovativi e produttivi. Dai un'occhiata al regolamento dei gruppi.",
-                                button: 'Regolamento'
-                            }
-                        },
                         section4: {
                             text: 'I nostri servizi per aiutarti nello studio',
                             card1: {
-                                text: 'Accedi alla Wiki del Network e aiutaci a migliorarla contribuendo!',
+                                text: ' Abbiamo creato una Wikipedia per ogni insegnamento. Chiunque è libero di collaborare!',
                                 button: 'Wiki'
                             },
                             card2: {
-                                text: 'Utilizza la nostra comoda pagina che ti permette di raggiungere tutti i servizi UniMi.',
-                                button: 'Servizi'
+                                text: 'Stufo di non poter accedere ai servizi perchè UniMia ha problemi?',
+                                button: 'unimia.studentiunimi.it'
                             },
                             card3: {
-                                text: 'Mi mandi i tuoi appunti? Un attimo e sono subito da lei!',
+                                text: 'HedgeDoc permette di prendere appunti in collaborazione senza doversi registrare. Provalo!',
                                 button: 'HedgeDoc'
                             },
                             card4: {
-                                text: 'Accedi al nostro servizio per condividere codice e qualsiasi altro materiale in maniera comoda e sicura.',
+                                text: 'Devi condividere codice sui gruppi? Usa il nostro servizio veloce, semplice e sicuro.',
                                 button: 'Paste'
                             }
                         },
@@ -257,19 +252,29 @@ class LocalizationService {
                         coachMark: { text1: 'Welcome on our website!', text2: 'Here you can find some settings that might be helpful. Enjoy our services! :)', understood: 'Got it!' }
                     },
                     homepage: {
+                        telegramText: "Telegram is way more safer and efficient than WhatsApp.",
+                        telegramButton: "Tell me more",
                         section1: {
-                            text1: 'Welcome to <span style={{color: theme.palette.themePrimary}}>Network StudentiUniMi</span>!',
-                            text2: 'Our goal is to organize all the informations about the University of Milan (Università degli Studi di Milano, Unimi) and make them easily accessible to anyone.',
-                            sliders: [
-                                { text1: 'Are you a student who wants to matriculate and who is looking for a general group in which to ask for informations ', text2: 'We created one just for this!', cardText: "Pre-students, admissions and enrollments" },
-                                { text1: 'Are you looking for a group to find an apartment in Milan together with other university students, or you want to create an ad ', text2: 'Join the dedicated group!', cardText: 'Apartments' },
-                                { text1: 'Would you like to sell books or printed slides? Or maybe you are a new freshman and are looking for your course material', text2: 'Create an ad here!', cardText: 'Materials' },
-                                { text1: 'Are you looking for someone who can give you private lessons to help you prepare for an exam, or you want to propose in this regard', text2: 'Create an ad here!', cardText: 'Private lessons' },
-                                { text1: "We remind you that we have a <Text styles={semibold}>Wiki</Text> where you can collaborate and help other students! You can find all the material you need, but remember that it's also important to contribute!", reachWiki: 'Reach the Wiki!' },
-                                { text1: 'For us, offering you the opportunity not to waste time looking for university services is very important. Precisely for this reason we have created a special page to find them all immediately, and also let you discover some guides we have created!' }
-                            ]
+                            typedText: 'Are you a student of...',
+                            text1: 'Stay in touch. More, and better.',
+                            text2: 'Communicating is important, but it can be frustrating to do so on WhatsApp groups left to themselves. We have created Telegram groups for each degree course of the University of Milan to facilitate the exchange of informations.',
                         },
                         section2: {
+                            text: 'Everything has its own Telegram group chat',
+                            card1: {
+                                text: 'Say goodbye to those messy WhatsApp chats! We have created a Telegram group for each course.',
+                                button: 'Course Groups'
+                            },
+                            card2: {
+                                text: 'Tutoring, course materials, Erasmus, internship, apartments and many other extra things.',
+                                button: 'Extra Groups'
+                            },
+                            card3: {
+                                text: 'We think that a respectful and inclusive environment makes us more innovative and efficient. Read the rules!',
+                                button: 'Rules'
+                            }
+                        },
+                        section3: {
                             text: 'Our main links',
                             card1: {
                                 text: 'Join our telegram channel to stay updated and see all the available links!',
@@ -286,21 +291,6 @@ class LocalizationService {
                             card4: {
                                 text: 'Visit the github organization to see all our projects.',
                                 button: 'GitHub Org.'
-                            }
-                        },
-                        section3: {
-                            text: 'Everything has its own Telegram group chat',
-                            card1: {
-                                text: 'Say goodbye to those messy WhatsApp chats! We have created a Telegram group for each course.',
-                                button: 'Course Groups'
-                            },
-                            card2: {
-                                text: 'Tutoring, course materials, Erasmus, internship, apartments and many other extra things.',
-                                button: 'Extra Groups'
-                            },
-                            card3: {
-                                text: 'We think that a respectful and inclusive environment makes us more innovative and efficient. Read the rules!',
-                                button: 'Rules'
                             }
                         },
                         section4: {

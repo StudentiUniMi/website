@@ -19,7 +19,7 @@ const FirstSection = () => {
     return (
         <div className="pb-4 pt-4">
             <Container>
-                <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold}>{locale.homepage.section3.text}</Text></div>
+                <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold}>{locale.homepage.section2.text}</Text></div>
 
                 <Row className="justify-content-center">
                     <Col className="mb-3" xl={4} lg={4} md={4} sm={6} xs={12}>
@@ -27,12 +27,10 @@ const FirstSection = () => {
                             <Card.Section>
                                 <div><Icon iconName="Group" style={homeIconStyle} /></div>
                                 <Text variant="medium">
-                                    {/*{locale.homepage.section3.card1.text}*/}
-                                    Ogni corso di laurea ha almeno un gruppo Telegram; premi il pulsante sotto per trovare il tuo.
-                                    Presto sarà disponibile un gruppo per ogni insegnamento.
+                                    {locale.homepage.section2.card1.text}
                                 </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section3.card1.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/courses/" allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section2.card1.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/courses/" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
@@ -43,12 +41,10 @@ const FirstSection = () => {
                             <Card.Section>
                                 <div><Icon iconName="AddGroup" style={homeIconStyle} /></div>
                                 <Text variant="medium">
-                                    {/*{locale.homepage.section3.card2.text}*/}
-                                    Sei una matricola? Cerchi alloggi, materiali o qualcuno che faccia ripetizioni?
-                                    Nessun problema, entra in uno dei nostri gruppi aggiuntivi!
+                                    {locale.homepage.section2.card2.text}
                                 </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section3.card2.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/courses/" allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section2.card2.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/courses/" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
@@ -59,11 +55,10 @@ const FirstSection = () => {
                             <Card.Section>
                                 <div><Icon iconName="JoinOnlineMeeting" style={homeIconStyle} /></div>
                                 <Text variant="medium">
-                                    {/*{locale.homepage.section3.card3.text}*/}
-                                    Crediamo che un ambiente rispettoso e inclusivo favorisca la condivisione. Dai un'occhiata al regolamento ufficiale.
+                                    {locale.homepage.section2.card3.text}
                                 </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section3.card3.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/rules/" allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section2.card3.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/rules/" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
