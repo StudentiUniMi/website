@@ -268,7 +268,7 @@ class LocalizationService {
                         section1: {
                             typedText: 'Are you a student of...',
                             text1: 'Stay in touch. More, and better.',
-                            text2: 'Communicating is important, but it can be frustrating to do so on WhatsApp groups left to themselves. We have created Telegram groups for each degree course of the University of Milan to facilitate the exchange of informations.',
+                            text2: 'Communicating is important, but it can be frustrating to do so on WhatsApp groups left to themselves. We are creating Telegram groups for each degree course of the University of Milan to facilitate the exchange of informations.',
                         },
                         section2: {
                             text: 'Everything has its own Telegram group chat',
