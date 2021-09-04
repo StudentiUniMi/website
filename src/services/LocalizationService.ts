@@ -139,7 +139,7 @@ class LocalizationService {
                         text3: "Qui è possibile vedere tutte le persone che fanno parte del Network StudentiUniMi.",
                         button: { text1: 'Statuto', text2: "Dai un'occhiata al nostro statuto!" },
                         header1: 'Coordinatore',
-                        header2: 'Comitato Amministrativo',
+                        header2: 'Comitato Amministrativo Network',
                         header3: 'Amministratori dei gruppi telegram'
                     },
                     rules: {
@@ -360,7 +360,7 @@ class LocalizationService {
                         text3: "Here you can see all the people within the Network StudentiUniMi.",
                         button: { text1: 'Statute', text2: "You can read our statute here!" },
                         header1: 'Coordinator',
-                        header2: 'Administrative Committee',
+                        header2: "Network's Administrative Committee",
                         header3: 'Telegram groups Administrators'
                     },
                     rules: {
