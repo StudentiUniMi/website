@@ -40,7 +40,7 @@ class LocalizationService {
                         section1: {
                             typedText: 'Sei iscritto a...',
                             text1: 'Rimani in contatto. Di più, e meglio.',
-                            text2: "Comunicare è importante, ma può essere frustrante farlo sui grupponi WhatsApp lasciati a loro stessi. Abbiamo creato gruppi Telegram per ogni corso di laurea dell'Università degli Studi di Milano per facilitare lo scambio di informazioni.",
+                            text2: "Comunicare è importante, ma può essere frustrante farlo sui grupponi WhatsApp lasciati a loro stessi. Stiamo creando gruppi Telegram per ogni corso di laurea dell'Università degli Studi di Milano per facilitare lo scambio di informazioni.",
                         },
                         section2: {
                             text: 'Ogni cosa ha il suo gruppo Telegram',
