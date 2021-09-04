@@ -32,7 +32,7 @@ const degrees_endpoint = '/degrees';
 const degree_endpoint = '/degree';
 const courses_endpoint = '/courses';
 const representatives_endpoint = '/representatives';
-
+const typingDegrees_endpoint = '/typing-degrees';
 
 /* Main class to build response */
 class Result<T>
@@ -102,6 +102,13 @@ export async function getRepresentatives(departmentKey: string): Promise<Result<
  */
 export async function getVerboseDegree(degreeSlug: string): Promise<Result<VerboseDegree>> {
     return getAsync<VerboseDegree>(`${api_endpoint}${degree_endpoint}?slug=${degreeSlug}`);
+}
+
+/**
+ * This function retrieves an array of string referred to Degree names (used in Homepage).
+ */
+export async function getStringDegrees(): Promise<Result<string[]>> {
+    return getAsync<string[]>(`${api_endpoint}${typingDegrees_endpoint}`)
 }
 
 /* ----------------------------------------------------------- */
