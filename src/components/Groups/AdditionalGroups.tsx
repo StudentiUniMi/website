@@ -1,33 +1,16 @@
 import React from 'react';
-import { Text, Icon, Link, Image, IIconProps } from 'office-ui-fabric-react';
-import { useTheme } from '@fluentui/react-theme-provider';
-import { FontSizes } from '@fluentui/theme';
 import { FocusZone, List, IRectangle } from "@fluentui/react";
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 import { getExtraGroups } from '../../services/Requests';
-import { Separator } from '@fluentui/react/lib/Separator';
-import { Card, ICardTokens } from "@uifabric/react-cards";
-import { PrimaryButton } from 'office-ui-fabric-react';
-import { semibold } from '../../services/fonts';
-import ExtraGroupView from '../ExtraGroup';
+import ExtraGroupView from './ExtraGroup';
 import ExtraGroup from '../../models/ExtraGroup';
-import LocalizationService from "../../services/LocalizationService";
-import JsxParser from 'react-jsx-parser';
 
 const AdditionalGroupsView = () => {
-    var theme = useTheme();
-    const locale = LocalizationService.strings();
-    const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
-    const cardTokens: ICardTokens = { childrenMargin: 12 };
-    const sectionCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none' };
-    const buttonStyle = { maxWidth: '180px' };
     const columnCount = React.useRef(0);
     const rowHeight = React.useRef(0);
     const rowsPerPage = React.useRef(0);
     const MAX_ROW_HEIGHT = 280;
     const groups: ExtraGroup[] = getExtraGroups();
-
-    const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
 
     var classNames = mergeStyleSets({
         listGrid: {
@@ -38,14 +21,6 @@ const AdditionalGroupsView = () => {
             margin: '1px'
         }
     });
-
-    const mugPic = {
-        width: '80px',
-        height: '80px',
-        marginTop: '5px',
-        marginBottom: '5px',
-        marginLeft: 'auto', marginRight: 'auto'
-    };
 
     const getItemCountForPage = React.useCallback((itemIndex?: number, surfaceRect?: IRectangle) => {
         if (itemIndex === 0) {
@@ -71,17 +46,6 @@ const AdditionalGroupsView = () => {
 
     return (
         <div className="additional-groups text-center">
-
-            {/*
-            <div className='text-center mb-4'>
-                <Separator theme={theme}>
-                    <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
-                    <Text variant="medium" styles={semibold} style={{ color: theme.palette.themePrimary, fontSize: FontSizes.size18 }}> {locale.extraGroups.availableGroups} </Text>
-                    <Icon iconName="DoubleChevronDown8" style={{ color: theme.palette.themePrimary }} />
-                </Separator>
-            </div>     
-            */}
-
             <FocusZone className="mb-4">
                 <List
                     className={classNames.listGrid}
@@ -92,38 +56,6 @@ const AdditionalGroupsView = () => {
                     onRenderCell={getCell}
                 />
             </FocusZone>
-
-            {/*
-            <Separator theme={theme}>
-                <div className="mb-2 mt-2">
-                    <Text variant="large">
-                        {locale.extraGroups.text3}
-                    </Text>
-                </div>
-            </Separator>
-
-            <Icon iconName="SortDown" className="mb-2" style={iconStyle} />
-
-            <div style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '300px'}}>
-                <Card tokens={cardTokens} className="justify-content-center text-center" style={sectionCard}>
-                    <Card.Section>
-                        <div className="justify-content-center">
-                            <Image id="logo"
-                                src={process.env.PUBLIC_URL + "/other/mug_logo.png"}
-                                alt={"Mug Logo"}
-                                style={mugPic}
-                            />
-                        </div>
-                        <Text variant="medium">
-                            <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale.extraGroups.mug} />
-                        </Text>
-                        <div className="justify-content-center">
-                            <PrimaryButton text={locale.homepage.section2.card3.button} iconProps={buttonIconProps} href="https://discord.gg/9qUGtnKYUU" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
-                        </div>
-                    </Card.Section>
-                </Card>
-            </div>
-            */}
         </div>
     )
 };

@@ -1,16 +1,16 @@
-import Admin from '../models/Admin';
+import Admin from '../../models/Admin';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Persona, PersonaSize } from 'office-ui-fabric-react/lib/Persona';
 import { Link, Icon, Text } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { semibold } from '../services/fonts';
-import { getDegreeAdmins } from '../services/Requests';
-import Message from './Message';
-import LocalizationService from "../services/LocalizationService";
+import { semibold } from '../../services/fonts';
+import { getDegreeAdmins } from '../../services/Requests';
+import Message from '../Message';
+import LocalizationService from "../../services/LocalizationService";
 
-import { Degree } from '../models/Models';
+import { Degree } from '../../models/Models';
 
 interface Props { degree?: Degree };
 
@@ -24,7 +24,7 @@ const AdminsList = (props: Props) => {
         <div className='mb-5'>
             <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLight }}>
                 <Container>
-                    <div><Text variant="medium" styles={semibold}><Icon iconName="WorkforceManagement" /> {locale.courses.availableAdmins}</Text></div>
+                    <div><Text variant="medium" styles={semibold}><Icon iconName="WorkforceManagement" /> {locale.groups.availableAdmins}</Text></div>
                 </Container>
             </div>
 
@@ -39,7 +39,7 @@ const AdminsList = (props: Props) => {
                                 return <Persona imageUrl={imageUrl} onRenderPrimaryText={() => (<><Icon iconName="Send" style={{ color: theme.palette.themePrimary }}/>&nbsp;<Link href={`https://t.me/${x.username}`}>{`${x.username ?? ""}`}</Link></>)} text={`@${x.username}` ?? ""} secondaryText={secondaryText} size={PersonaSize.size40} />
                             })()}
                         </Col>
-                        ) : <Message text={locale.courses.adminsNotFound} />
+                    ) : <Message text={locale.groups.adminsNotFound} />
                     }
                 </Row>
             </Container>

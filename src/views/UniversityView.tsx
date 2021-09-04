@@ -7,6 +7,7 @@ import { useTheme } from '@fluentui/react-theme-provider';
 import { getRepresentatives, getDepartments } from '../services/Requests'
 import { Department, Representative } from '../models/Models';
 import { Image } from 'office-ui-fabric-react/lib/Image';
+import { semibold } from "../services/fonts";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
@@ -112,11 +113,11 @@ const UniversityView = () => {
                     <Row>
                         <Col lg={9} className="mb-2">
                             <div className="mb-2">
-                                <Text variant="xLargePlus" style={{ color: whiteText }}>Sei alla ricerca di informazioni legate al nostro ateneo? Nessun problema!</Text>
+                                <Text variant="xLargePlus" style={{ color: whiteText }}>{locale.university.header.text1}</Text>
                             </div>
 
                             <div className="mb-3">
-                                <Text variant="large" style={{ color: whiteText }}>Qui puoi trovare tutto quello che ti serve.</Text>
+                                <Text variant="large" style={{ color: whiteText }}>{locale.university.header.text2}</Text>
                             </div>
                         </Col>
 
@@ -169,6 +170,7 @@ const UniversityView = () => {
                                     <Dropdown
                                         placeholder={locale.university.departmentSelect}
                                         label={locale.university.departmentSelect}
+                                        onRenderLabel={() => <Text style={{ color: theme.palette.white }} styles={semibold}>{locale.university.departmentSelect}</Text>}
                                         options={departmentOptions}
                                         onChange={departmentSelectionChanged}
                                         selectedKey={selectedDepartment}

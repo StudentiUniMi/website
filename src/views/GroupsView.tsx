@@ -13,10 +13,10 @@ import { semibold } from '../services/fonts';
 import { Department, Degree, CourseDegree } from "../models/Models";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import CourseList from "../components/Groups/CourseList";
+import GroupList from "../components/Groups/GroupList";
 import LocalizationService from "../services/LocalizationService";
-import DegreeInformations from "../components/DegreeInformations";
-import AdminsList from '../components/AdminsList';
+import DegreeInformations from "../components/Groups/DegreeInformations";
+import AdminsList from '../components/Groups/AdminsList';
 //import { redirectToLink } from "../services/Utils";
 //import { useBoolean } from "@fluentui/react-hooks";
 import AdditionalGroupsView from '../components/Groups/AdditionalGroups';
@@ -226,8 +226,8 @@ const GroupsView = () => {
         <div className="pt-5 courses">
             <Container>
                 <div>
-                    <div className="mb-1"><Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>Gruppi degli insegnamenti</Text></div>
-                    <Text variant="xLarge">Trova i gruppi degli insegnamenti del tuo corso di laurea</Text>
+                    <div className="mb-1"><Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>{locale.groups.groupsSection.text1}</Text></div>
+                    <Text variant="xLarge">{locale.groups.groupsSection.text2}</Text>
                 </div>
                 <Separator />
 
@@ -282,8 +282,8 @@ const GroupsView = () => {
                     <Col xl={6} lg={6} md={6} sm={12} xs={12} className="mb-1">
                         {/* Department dropdown */}
                         <Dropdown
-                            placeholder={locale.courses.departmentSelect}
-                            label={locale.courses.departmentSelect}
+                            placeholder={locale.groups.departmentSelect}
+                            label={locale.groups.departmentSelect}
                             onRenderTitle={onRenderTitle}
                             onRenderOption={onRenderOption}
                             options={departmentOptions}
@@ -299,8 +299,8 @@ const GroupsView = () => {
                     <Col xl={6} lg={6} md={6} sm={12} xs={12} className="mb-1">
                         {/* Cdl dropdown */}
                         <Dropdown
-                            label={locale.courses.cdlSelect}
-                            placeholder={locale.courses.cdlSelect}
+                            label={locale.groups.cdlSelect}
+                            placeholder={locale.groups.cdlSelect}
                             selectedKey={selectedDegree}
                             onChange={degreeSelectionChanged}
                             onRenderTitle={onRenderTitle}
@@ -317,14 +317,14 @@ const GroupsView = () => {
 
                 <div style={{ display: selectedDegree !== '' ? 'block' : 'none' }}>
                     <DegreeInformations degree={degree!} />
-                    <CourseList degree={degree!} courses={courses} loadingCourses={loadingCourses} errorLoadingCourses={errorLoadingCourses} />
+                    <GroupList degree={degree!} courses={courses} loadingCourses={loadingCourses} errorLoadingCourses={errorLoadingCourses} />
                     <AdminsList degree={degree!} />       
                 </div>
 
             <Container className="pb-4">
                 <div>
-                    <div className="mb-1"><Text variant="medium" styles={semibold} style={{ textTransform: 'uppercase', color: theme.palette.themePrimary }}>Gruppi extra</Text></div>
-                    <Text variant="xLarge">Gruppi aggiuntivi del Network</Text>
+                    <div className="mb-1"><Text variant="medium" styles={semibold} style={{ textTransform: 'uppercase', color: theme.palette.themePrimary }}>{locale.groups.extraGroupsSection.text1}</Text></div>
+                    <Text variant="xLarge">{locale.groups.extraGroupsSection.text2}</Text>
                 </div>
                 <Separator />
 

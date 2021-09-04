@@ -111,8 +111,15 @@ interface ILocalizationStrings {
             list: any[]
         }
     },
-    courses: {
-        text1: string,
+    groups: {
+        groupsSection: {
+            text1: string,
+            text2: string
+        },
+        extraGroupsSection: {
+            text1: string,
+            text2: string
+        },
         departmentSelect: string,
         cdlSelect: string,
         availableRedirects: string,
@@ -165,6 +172,10 @@ interface ILocalizationStrings {
         extraGroup: string
     },
     university: {
+        header: {
+            text1: string,
+            text2: string
+        },
         text1: string,
         text2: string,
         departmentSelect: string,

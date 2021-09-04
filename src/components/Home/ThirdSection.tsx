@@ -44,7 +44,7 @@ const ThirdSection = () => {
                                     {locale.homepage.section4.card2.text}
                                 </Text>
                                 <div className="justify-content-center">
-                                    <PrimaryButton /*text={locale.homepage.section4.card2.button}*/ text={"unimia.studentiunimi.it"} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/services/" allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale.homepage.section4.card2.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/services/" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>

@@ -19,7 +19,7 @@ const SecondSection = () => {
     return (
         <div className="pb-4 pt-4" style={{ backgroundColor: theme.palette.neutralLighterAlt }}>
             <Container>
-                <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold}>{locale.homepage.section2.text}</Text></div>
+                <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold}>{locale.homepage.section3.text}</Text></div>
 
                 <Row className="justify-content-center">
                     <Col className="mb-3" xl={3} lg={3} md={6} sm={6} xs={12}>

@@ -45,7 +45,7 @@ class LocalizationService {
                         section2: {
                             text: 'Ogni cosa ha il suo gruppo Telegram',
                             card1: {
-                                text: 'Ogni corso di laurea ha almeno un gruppo Telegram; premi il pulsante sotto per trovare il tuo. Presto sarà disponibile un gruppo per ogni insegnamento.',
+                                text: 'Stiamo creando un gruppo Telegram per ogni corso di laurea; premi il pulsante sotto per trovare il tuo. Presto sarà disponibile anche un gruppo per ogni insegnamento.',
                                 button: 'Gruppi dei corsi'
                             },
                             card2: {
@@ -135,8 +135,15 @@ class LocalizationService {
                         answer: { text1: 'Vogliamo rendere chiari i motivi per cui abbiamo deciso di regolamentare i gruppi del nostro network.', text2: "Abbiamo notato che la maggior parte di essi erano tempestati di domande banali, fatte più volte al giorno, la cui risposta era facilmente trovabile. Questo riduce la qualità della chat e scoraggia la partecipazione di studenti più attenti. Per questo motivo abbiamo deciso di provare a limitare il fenomeno, da una parte ammonendo chi continua a fare interventi non produttivi, e dall'altra fornendo un modo facile e veloce per trovare le informazioni più importanti tramite la <Link href='https://wiki.studentiunimi.it/' target='_blank'>Wiki</Link>."},
                         header: 'Regolamento dei gruppi Telegram'
                     },
-                    courses: {
-                        text1: 'Qui è possibile trovare i gruppi telegram, siti web, wiki, faq (se disponibili), collegamenti e informazioni generali riguardo il tuo corso di laurea e i suoi corsi didattici.',
+                    groups: {
+                        groupsSection: {
+                            text1: "Gruppi degli insegnamenti",
+                            text2: "Trova i gruppi degli insegnamenti del tuo corso di laurea"
+                        },
+                        extraGroupsSection: {
+                            text1: "Gruppi extra",
+                            text2: "Gruppi aggiuntivi del Network"
+                        },
                         departmentSelect: 'Seleziona un dipartimento',
                         cdlSelect: 'Seleziona un corso di Laurea',
                         availableRedirects: 'Collegamenti disponibili',
@@ -182,6 +189,10 @@ class LocalizationService {
                         extraGroup: 'Gruppo extra'
                     },
                     university: {
+                        header: {
+                            text1: "Sei alla ricerca di informazioni legate al nostro ateneo? Nessun problema!",
+                            text2: "Qui puoi trovare tutto quello che ti serve."
+                        },
                         text1: 'Il rappresentante degli studenti è un ruolo molto importante ed altamente formativo, che garantisce a tutti gli studenti universitari un supporto alle difficoltà che può incontrare durante il periodo di studio.',
                         text2: 'Di seguito è presente la lista dei rappresentanti di ogni dipartimento e i loro contatti.',
                         departmentSelect: 'Seleziona un dipartimento',
@@ -262,11 +273,11 @@ class LocalizationService {
                         section2: {
                             text: 'Everything has its own Telegram group chat',
                             card1: {
-                                text: 'Say goodbye to those messy WhatsApp chats! We have created a Telegram group for each course.',
+                                text: 'We are creating a Telegram group for each degree course; press the button below to find yours. A group for each teaching course will also be available soon.',
                                 button: 'Course Groups'
                             },
                             card2: {
-                                text: 'Tutoring, course materials, Erasmus, internship, apartments and many other extra things.',
+                                text: 'Are you a new student? Are you looking for materials or someone to do tutoring? No problem, join one of our additional groups!',
                                 button: 'Extra Groups'
                             },
                             card3: {
@@ -301,7 +312,7 @@ class LocalizationService {
                             },
                             card2: {
                                 text: 'Use this page to easily reach all the official services provided by UniMi.',
-                                button: 'Services'
+                                button: 'unimia.studentiunimi.it'
                             },
                             card3: {
                                 text: '“Hey pal, would you mind sharing those notes?”',
@@ -352,8 +363,15 @@ class LocalizationService {
                         answer: { text1: 'We want to make clear the reasons that took us to introducing these rules into the network.', text2: "We noticed that most of the groups were flooded with trivial questions re-proposed every day. This was lowering the quality of our chats and discouraged the participation of some students. Therefore, we started repressing this phenomenon warning their proponents and offering a dedicated <Link href='https://wiki.studentiunimi.it/start' target='_blank'>Wiki</Link> page for each course." },
                         header: "Telegram groups rules",
                     },
-                    courses: {
-                        text1: 'In this section you can find telegram groups, websites, wiki, FAQs (if available), redirects and general informations about your degree course and its didactic courses.',
+                    groups: {
+                        groupsSection: {
+                            text1: "Teaching groups",
+                            text2: "Find the teaching groups of your degree"
+                        },
+                        extraGroupsSection: {
+                            text1: "Extra Groups",
+                            text2: "Additional groups of the Network"
+                        },
                         departmentSelect: 'Select the department',
                         cdlSelect: 'Select the degree',
                         availableRedirects: 'Available redirects',
@@ -399,6 +417,10 @@ class LocalizationService {
                         extraGroup: 'Extra group'
                     },
                     university: {
+                        header: {
+                            text1: "Are you looking for informations related to our university? No problem!",
+                            text2: "Here you can find all you need."
+                        },
                         text1: 'Being a students representative is a very important role and a formative experience. They provide a support to any student against all the difficulties during the study period.',
                         text2: 'The list below reports all the representatives of each department and their contacts.',
                         departmentSelect: 'Select your department',

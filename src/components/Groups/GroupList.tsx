@@ -10,7 +10,7 @@ import { useTheme } from '@fluentui/react-theme-provider';
 import { Degree, CourseDegree } from '../../models/Models';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import CourseItem from './CourseItem';
+import GroupItem from './GroupItem';
 import LocalizationService from "../../services/LocalizationService";
 import LoadingSpinner from '../LoadingSpinner';
 import Message from '../Message';
@@ -75,7 +75,7 @@ const CourseList= (props: Props) => {
     const getCell = (e?: CourseDegree, index?: number, isScrolling?: boolean) => {
         return (
             <div data-is-focusable className="listGridTile" style={{ height: rowHeight.current + 'px', width: 100 / columnCount.current + '%' }}>
-                <CourseItem key={index} data={e!} />
+                <GroupItem key={index} data={e!} />
             </div>
         )
     };
@@ -109,7 +109,7 @@ const CourseList= (props: Props) => {
         <div className="courses-filter-options mb-4">
             <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLight }}>
                 <Container>
-                    <div><Text variant="medium" styles={semibold}><Icon iconName="Group"/> {locale.courses.availableGroups}</Text></div>
+                    <div><Text variant="medium" styles={semibold}><Icon iconName="Group"/> {locale.groups.availableGroups}</Text></div>
                 </Container>
             </div>
             
@@ -119,7 +119,7 @@ const CourseList= (props: Props) => {
                         <Row className="justify-content-center">
                             <Col xl={4} lg={4} md={4} sm={12} xs={12}>
                                 <TextField
-                                    label={locale.courses.nameFilter}
+                                    label={locale.groups.nameFilter}
                                     onChange={onNameFilterChanged}   
                                     disabled={props.courses.length === 0 || props.loadingCourses}             
                                 />
@@ -128,7 +128,7 @@ const CourseList= (props: Props) => {
                                 {
                                     <Dropdown 
                                         options={yearFilterOptions}
-                                        label={locale.courses.yearFilter}
+                                        label={locale.groups.yearFilter}
                                         onChange={onYearFilterChanged}
                                         selectedKey={yearFilter}
                                         disabled={props.courses.length === 0 || props.loadingCourses || props.degree.slug === 'magistrale_informatica'} /* To-do: must decide if we need an apposite field to disable year selection */
@@ -138,7 +138,7 @@ const CourseList= (props: Props) => {
                             <Col xl={4} lg={4} md={4} sm={12} xs={12}>
                                 <Dropdown 
                                     options={semesterFilterOptions}
-                                    label={locale.courses.semesterFilter}
+                                    label={locale.groups.semesterFilter}
                                     onChange={onSemesterFilterChanged}
                                     selectedKey={semesterFilter}
                                     disabled={props.courses.length === 0 || props.loadingCourses}
@@ -151,7 +151,7 @@ const CourseList= (props: Props) => {
                         props.loadingCourses || props.errorLoadingCourses ? <LoadingSpinner loading={props.loadingCourses} error={props.errorLoadingCourses} />
                         : filteredCourses.length === 0 ?
                         <div className="justify-content-center">
-                            <Message text={locale.courses.groupsNotFound} />
+                                    <Message text={locale.groups.groupsNotFound} />
                         </div> : <></>
                     }
                     

@@ -1,17 +1,17 @@
 import React from "react";
-import { semibold } from '../services/fonts';
+import { semibold } from '../../services/fonts';
 import { Text } from 'office-ui-fabric-react';
-import { redirectToLink } from '../services/Utils';
+import { redirectToLink } from '../../services/Utils';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Container } from 'react-bootstrap';
 import { IChoiceGroupOptionStyles, Icon } from "@fluentui/react";
 import { ChoiceGroup, IChoiceGroupOption } from '@fluentui/react/lib/ChoiceGroup';
-import LocalizationService from "../services/LocalizationService";
-import Message from './Message';
-import { getDegreeInformations } from '../services/Requests';
+import LocalizationService from "../../services/LocalizationService";
+import Message from '../Message';
+import { getDegreeInformations } from '../../services/Requests';
 
 /* Updated models */
-import { Degree } from '../models/Models'; 
+import { Degree } from '../../models/Models'; 
 
 interface Props { degree?: Degree };
 
@@ -58,7 +58,7 @@ const DegreeInformations= (props: Props) => {
         <div className='degree-informations mb-4'>
             <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLight }}>
                 <Container>
-                    <div><Text variant="medium" styles={semibold}><Icon iconName="Link12" /> {locale.courses.availableRedirects}</Text></div>
+                    <div><Text variant="medium" styles={semibold}><Icon iconName="Link12" /> {locale.groups.availableRedirects}</Text></div>
                 </Container>
             </div>
 
