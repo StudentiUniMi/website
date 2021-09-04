@@ -225,11 +225,10 @@ const GroupsView = () => {
     return (
         <div className="pt-5 courses">
             <Container>
-                <div>
+                <div className="mb-3">
                     <div className="mb-1"><Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>{locale.groups.groupsSection.text1}</Text></div>
                     <Text variant="xLarge">{locale.groups.groupsSection.text2}</Text>
                 </div>
-                <Separator />
 
                 {/*
                 <div className="mb-4">
@@ -278,7 +277,7 @@ const GroupsView = () => {
                 </div>
                 */}
 
-                <Row className="department-choose justify-content-center mb-5 text-center">
+                <Row className="department-choose justify-content-center mb-3 text-center">
                     <Col xl={6} lg={6} md={6} sm={12} xs={12} className="mb-1">
                         {/* Department dropdown */}
                         <Dropdown
@@ -315,18 +314,20 @@ const GroupsView = () => {
                 </Row>
             </Container>
 
-                <div style={{ display: selectedDegree !== '' ? 'block' : 'none' }}>
-                    <DegreeInformations degree={degree!} />
-                    <GroupList degree={degree!} courses={courses} loadingCourses={loadingCourses} errorLoadingCourses={errorLoadingCourses} />
-                    <AdminsList degree={degree!} />       
-                </div>
+            <div style={{ display: selectedDegree !== '' ? 'block' : 'none' }}>
+                <DegreeInformations degree={degree!} />
+                <GroupList degree={degree!} courses={courses} loadingCourses={loadingCourses} errorLoadingCourses={errorLoadingCourses} />
+                <AdminsList degree={degree!} />       
+            </div>
+
+            
 
             <Container className="pb-4">
-                <div>
+                <Separator className="mb-3" />
+                <div className="mb-3">
                     <div className="mb-1"><Text variant="medium" styles={semibold} style={{ textTransform: 'uppercase', color: theme.palette.themePrimary }}>{locale.groups.extraGroupsSection.text1}</Text></div>
                     <Text variant="xLarge">{locale.groups.extraGroupsSection.text2}</Text>
                 </div>
-                <Separator />
 
                 <AdditionalGroupsView />
 
