@@ -133,15 +133,6 @@ class LocalizationService {
                             ]
                         }
                     },
-                    aboutUs: {
-                        text1: "Siamo un'organizzazione senza fini di lucro, apolitica, ovvero apartitica, e neutrale.",
-                        text2: "Il nostro obiettivo è quello di offrire servizi telematici agli studenti dell'Università degli Studi di Milano.",
-                        text3: "Qui è possibile vedere tutte le persone che fanno parte del Network StudentiUniMi.",
-                        button: { text1: 'Statuto', text2: "Dai un'occhiata al nostro statuto!" },
-                        header1: 'Coordinatore',
-                        header2: 'Comitato Amministrativo Network',
-                        header3: 'Amministratori dei gruppi telegram'
-                    },
                     rules: {
                         text1: 'Qui è possibile trovare il regolamento dei gruppi telegram del network. Si consiglia di leggere tutte le regole di cui è composto prima di usare uno qualsiasi di essi.',
                         question: 'Perchè abbiamo introdotto un regolamento?',
@@ -210,6 +201,15 @@ class LocalizationService {
                         githubProfile: 'Profilo GitHub',
                         websiteProfile: 'Sito Web',
                         text2: 'Hai contribuito allo sviluppo del network e vorresti comparire in questa lista? Scrivi in privato a <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.'
+                    },
+                    aboutUs: {
+                        text1: "Siamo un'organizzazione senza fini di lucro, apolitica, ovvero apartitica, e neutrale.",
+                        text2: "Il nostro obiettivo è quello di offrire servizi telematici agli studenti dell'Università degli Studi di Milano.",
+                        text3: "Qui è possibile vedere tutte le persone che fanno parte del Network StudentiUniMi.",
+                        button: { text1: 'Statuto', text2: "Dai un'occhiata al nostro statuto!" },
+                        header1: 'Coordinatore',
+                        header2: 'Comitato Amministrativo Network',
+                        header3: 'Amministratori dei gruppi telegram'
                     },
                     footer: [
                         { text: 'Il network e il relativo sito web non sono affiliati all\'Università degli Studi di Milano.' },
@@ -354,15 +354,6 @@ class LocalizationService {
                             ]
                         }
                     },
-                    aboutUs: {
-                        text1: 'We are a non-profit organization, neutral and not affiliated to any political party.',
-                        text2: "Our goal is to provide online services to the students at the University of Milan.",
-                        text3: "Here you can see all the people within the Network StudentiUniMi.",
-                        button: { text1: 'Statute', text2: "You can read our statute here!" },
-                        header1: 'Coordinator',
-                        header2: "Network's Administrative Committee",
-                        header3: 'Telegram groups Administrators'
-                    },
                     rules: {
                         text1: 'Here you can find the rules of the telegram groups of our network. Please read them before joining any group.',
                         question: 'Why did we create them?',
@@ -432,6 +423,15 @@ class LocalizationService {
                         githubProfile: 'Github Profile',
                         websiteProfile: 'Website',
                         text2: 'Did you contributed to the development of the Network and you would like to appear in this list? Send a private message to <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.'
+                    },
+                    aboutUs: {
+                        text1: 'We are a non-profit organization, neutral and not affiliated to any political party.',
+                        text2: "Our goal is to provide online services to the students at the University of Milan.",
+                        text3: "Here you can see all the people within the Network StudentiUniMi.",
+                        button: { text1: 'Statute', text2: "You can read our statute here!" },
+                        header1: 'Coordinator',
+                        header2: "Network's Administrative Committee",
+                        header3: 'Telegram groups Administrators'
                     },
                     footer: [
                         { text: 'The network and the associated website are not affiliated to the University of Milan.' },

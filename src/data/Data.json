@@ -382,6 +382,31 @@
             ]
         },
         {
+            "id": "bioscienze",
+            "name": "Dipartimento di Bioscienze",
+            "description": "",
+            "icon": "",
+            "representatives": [],
+            "cdls": [
+                {
+                    "id": "bioinformatics",
+                    "name": "Bioinformatics",
+                    "description": "",
+                    "redirects": [],
+                    "admins": [
+                        {
+                            "username": "MariaClaudia7",
+                            "year": "",
+                            "user_id": null,
+                            "cdl": "Bioinformatics"
+                        }
+                    ],
+                    "is_master": false,
+                    "has_years": true
+                }
+            ]
+        },
+        {
             "id": "agraria",
             "name": "Dipartimento di Agraria",
             "description": "",

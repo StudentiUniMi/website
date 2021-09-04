@@ -1,5 +1,5 @@
 import React from "react";
-import { FocusZone, IRectangle, List } from "@fluentui/react";
+import { FocusZone, Icon, IRectangle, List } from "@fluentui/react";
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 import { Container } from 'react-bootstrap';
@@ -107,9 +107,9 @@ const CourseList= (props: Props) => {
 
     return (       
         <div className="courses-filter-options mb-4">
-            <div className="pb-3 pt-3 mb-4" style={{ backgroundColor: theme.palette.themeSecondary }}>
+            <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLight }}>
                 <Container>
-                    <div><Text variant="large" styles={semibold} style={{ color: theme.palette.white }}>{locale.courses.availableGroups}</Text></div>
+                    <div><Text variant="medium" styles={semibold}><Icon iconName="Group"/> {locale.courses.availableGroups}</Text></div>
                 </Container>
             </div>
             

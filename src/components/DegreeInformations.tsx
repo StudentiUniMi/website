@@ -4,7 +4,7 @@ import { Text } from 'office-ui-fabric-react';
 import { redirectToLink } from '../services/Utils';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Container } from 'react-bootstrap';
-import { IChoiceGroupOptionStyles } from "@fluentui/react";
+import { IChoiceGroupOptionStyles, Icon } from "@fluentui/react";
 import { ChoiceGroup, IChoiceGroupOption } from '@fluentui/react/lib/ChoiceGroup';
 import LocalizationService from "../services/LocalizationService";
 import Message from './Message';
@@ -56,9 +56,9 @@ const DegreeInformations= (props: Props) => {
 
     return (   
         <div className='degree-informations mb-4'>
-            <div className="pb-3 pt-3 mb-4" style={{ backgroundColor: theme.palette.themeSecondary }}>
+            <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLight }}>
                 <Container>
-                    <div><Text variant="large" styles={semibold} style={{ color: theme.palette.white }}>{locale.courses.availableRedirects}</Text></div>
+                    <div><Text variant="medium" styles={semibold}><Icon iconName="Link12" /> {locale.courses.availableRedirects}</Text></div>
                 </Container>
             </div>
 

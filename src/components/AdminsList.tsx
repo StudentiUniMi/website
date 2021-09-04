@@ -22,9 +22,9 @@ const AdminsList = (props: Props) => {
 
     return (
         <div className='mb-5'>
-            <div className="pb-3 pt-3 mb-4" style={{ backgroundColor: theme.palette.themeSecondary }}>
+            <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLight }}>
                 <Container>
-                    <div><Text variant="large" styles={semibold} style={{ color: theme.palette.white }}>{locale.courses.availableAdmins}</Text></div>
+                    <div><Text variant="medium" styles={semibold}><Icon iconName="WorkforceManagement" /> {locale.courses.availableAdmins}</Text></div>
                 </Container>
             </div>
 
