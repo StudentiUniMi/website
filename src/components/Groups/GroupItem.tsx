@@ -196,7 +196,7 @@ const CourseItem = (props: Props) => {
     };
     
     return (
-        <Card tokens={cardTokens}>
+        <Card tokens={cardTokens} className="text-center">
             <Card.Item>
                 {overflow === true ?
                     <Persona imageUrl={personaIconUrl} onRenderPrimaryText={() => primaryText} text={data.course?.name} />
