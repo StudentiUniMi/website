@@ -1,4 +1,4 @@
-import { Text, DefaultButton } from '@fluentui/react';
+import { Text, DefaultButton, IIconProps } from '@fluentui/react';
 import { semibold } from '../../services/fonts';
 import { Container } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
@@ -11,7 +11,7 @@ const TelegramSection = () => {
     const locale = LocalizationService.strings();
 
     const buttonStyle = { maxWidth: 300, height: 40, borderRadius: 3, boxShadow: theme.effects.elevation8 };
-    //const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
+    const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
 
     return (
         <div className="pb-4 pt-4" style={{ backgroundColor: theme.palette.themePrimary }}>
@@ -22,7 +22,7 @@ const TelegramSection = () => {
                     </Col>
                 
                     <Col lg={2} className="text-right center-mobile">
-                        <DefaultButton text={locale.homepage.telegramButton} /* iconProps={buttonIconProps} */ className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
+                        <DefaultButton href="https://youtu.be/kgNxRZghkkA?t=133" target="_blank" text={locale.homepage.telegramButton} iconProps={buttonIconProps} className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
                     </Col>
                 </Row>
             </Container>
