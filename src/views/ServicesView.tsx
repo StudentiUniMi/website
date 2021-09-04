@@ -5,16 +5,13 @@ import { Container } from 'react-bootstrap';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { DocumentCardPreview, IDocumentCardPreviewProps } from 'office-ui-fabric-react/lib/DocumentCard';
 import { Card, ICardTokens } from '@uifabric/react-cards';
-import { Icon, Link } from 'office-ui-fabric-react';
 import { semibold } from '../services/fonts';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { getServices } from '../services/Requests';
 import { redirectToLink } from '../services/Utils';
-import { Separator } from '@fluentui/react/lib/Separator';
 import Chip from '@material-ui/core/Chip';
 import LocalizationService from "../services/LocalizationService";
-import JsxParser from 'react-jsx-parser';
 import { Image } from 'office-ui-fabric-react/lib/Image';
 import { TooltipDelay, TooltipHost } from '@fluentui/react';
 
@@ -23,7 +20,6 @@ const Services = () => {
     const locale = LocalizationService.strings();
     var language: string = LocalizationService.getLanguage();
     const services = getServices();
-    const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
 
     const imageProperties = { display: 'inline-block', width: '70%' };
@@ -56,11 +52,11 @@ const Services = () => {
                     <Row>
                         <Col lg={8} className="mb-2">
                             <div className="mb-2">
-                                <Text variant="xLargePlus">Stanchi di dover andare a spulciare miriadi di pagine che neanche caricano alla ricerca di strumenti e servizi universitari?</Text>
+                                <Text variant="xLargePlus">{locale.services.text1}</Text>
                             </div>
 
                             <div>
-                                <Text variant="large">Abbiamo realizzato una pagina per centralizzarli tutti e rendere disponibili anche alcune guide che abbiamo realizzato.</Text>
+                                <Text variant="large">{locale.services.text2}</Text>
                             </div>
                         </Col>
 
@@ -106,7 +102,7 @@ const Services = () => {
 
                 <div className="mb-4 text-center">
                     {/*<div className="mb-1"><Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>Gruppi degli insegnamenti</Text></div>*/}
-                    <Text variant="xLarge">Servizi e guide disponibili</Text>
+                    <Text variant="xLarge">{locale.services.availableServices}</Text>
                 </div>
 
                 <Row className="justify-content-center">

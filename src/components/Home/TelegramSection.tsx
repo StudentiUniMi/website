@@ -10,7 +10,7 @@ const TelegramSection = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
 
-    const buttonStyle = { maxWidth: 300, height: 40, borderRadius: 3 };
+    const buttonStyle = { maxWidth: 300, height: 40, borderRadius: 3, boxShadow: theme.effects.elevation8 };
     //const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
 
     return (

@@ -1,11 +1,10 @@
 import React from "react";
-import { Text } from 'office-ui-fabric-react';
-import { FontSizes } from '@fluentui/theme';
+import { Text, DropdownMenuItemType } from 'office-ui-fabric-react';
 import { initializeIcons } from "@uifabric/icons";
 import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
-import { DefaultButton, Dialog, DialogType, DocumentCard, DocumentCardActivity, DocumentCardDetails, DocumentCardImage, DocumentCardTitle, DropdownMenuItemType, IDialogContentProps, IDocumentCardActivityPerson, IDocumentCardDetailsStyles, IDocumentCardStyles, IDocumentCardTitleStyles, IIconProps, ImageFit, mergeStyleSets } from "@fluentui/react";
+//import { DefaultButton, Dialog, DialogType, DocumentCard, DocumentCardActivity, DocumentCardDetails, DocumentCardImage, DocumentCardTitle, IDialogContentProps, IDocumentCardActivityPerson, IDocumentCardDetailsStyles, IDocumentCardStyles, IDocumentCardTitleStyles, IIconProps, ImageFit, mergeStyleSets } from "@fluentui/react";
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { getDepartments, getDegrees, getCourses, getVerboseDegree } from '../services/Requests';
@@ -18,8 +17,8 @@ import CourseList from "../components/Groups/CourseList";
 import LocalizationService from "../services/LocalizationService";
 import DegreeInformations from "../components/DegreeInformations";
 import AdminsList from '../components/AdminsList';
-import { redirectToLink } from "../services/Utils";
-import { useBoolean } from "@fluentui/react-hooks";
+//import { redirectToLink } from "../services/Utils";
+//import { useBoolean } from "@fluentui/react-hooks";
 import AdditionalGroupsView from '../components/Groups/AdditionalGroups';
 
 initializeIcons();
@@ -32,6 +31,7 @@ const GroupsView = () => {
     let didMount = React.useRef(false);
 
     /* Wiki section */
+    /*
     const wikiCard: IDocumentCardStyles = { root: { display: 'inline-block', marginBottom: 20, minWidth: 250, maxWidth: 'none', minHeight: 'none' } };
     const wikiCardPrimaryText: IDocumentCardTitleStyles = { root: { height: 'auto' } };
     const wikiCardSecondaryText: IDocumentCardTitleStyles = { root: { height: 'auto' } };
@@ -56,10 +56,10 @@ const GroupsView = () => {
         type: DialogType.largeHeader,
         showCloseButton: true
     };
+    */
 
     /* Styles */
     const dropdownStyles = { dropdown: { color: theme.palette.neutralPrimary }, dropdownItems: { color: theme.palette.neutralPrimary } };
-    const iconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
 
     /* States */
     const [departments, setDepartments] = React.useState<Department[]>([]);

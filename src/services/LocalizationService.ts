@@ -134,10 +134,11 @@ class LocalizationService {
                         }
                     },
                     rules: {
-                        text1: 'Qui è possibile trovare il regolamento dei gruppi telegram del network. Si consiglia di leggere tutte le regole di cui è composto prima di usare uno qualsiasi di essi.',
+                        text1: "Il regolamento dei nostri gruppi Telegram ci rende più innovativi e produttivi.",
+                        text2: 'Si consiglia di leggere tutte le regole di cui è composto prima di usare uno qualsiasi di essi.',
                         question: 'Perchè abbiamo introdotto un regolamento?',
                         answer: { text1: 'Vogliamo rendere chiari i motivi per cui abbiamo deciso di regolamentare i gruppi del nostro network.', text2: "Abbiamo notato che la maggior parte di essi erano tempestati di domande banali, fatte più volte al giorno, la cui risposta era facilmente trovabile. Questo riduce la qualità della chat e scoraggia la partecipazione di studenti più attenti. Per questo motivo abbiamo deciso di provare a limitare il fenomeno, da una parte ammonendo chi continua a fare interventi non produttivi, e dall'altra fornendo un modo facile e veloce per trovare le informazioni più importanti tramite la <Link href='https://wiki.studentiunimi.it/' target='_blank'>Wiki</Link>."},
-                        text2: 'Regolamento dei gruppi Telegram'
+                        header: 'Regolamento dei gruppi Telegram'
                     },
                     courses: {
                         text1: 'Qui è possibile trovare i gruppi telegram, siti web, wiki, faq (se disponibili), collegamenti e informazioni generali riguardo il tuo corso di laurea e i suoi corsi didattici.',
@@ -169,8 +170,8 @@ class LocalizationService {
                         }
                     },
                     services: {
-                        text1: 'Siete stanchi di dover andare a spulciare miriadi di pagine che neanche caricano alla ricerca di strumenti e servizi universitari? Abbiamo realizzato una pagina per centralizzarli tutti! Inoltre, qui potete trovare anche alcune guide che abbiamo realizzato.',
-                        text2: '<Text styles={semibold}>Attenzione:</Text> alcune pagine come Unimia oppure i Servizi SIFA potrebbero non caricare (ovviamente ricordiamo che non è colpa nostra in tal caso!).',
+                        text1: 'Stanchi di dover andare a spulciare miriadi di pagine che neanche caricano alla ricerca di strumenti e servizi universitari?',
+                        text2: 'Abbiamo realizzato una pagina per centralizzarli tutti e rendere disponibili anche alcune guide che abbiamo realizzato.',
                         text3: "Se pensi che debba essere aggiunto qualche servizio scrivi pure su <Link href='https://t.me/unimichat' target='_blank'>@unimichat</Link>.",
                         availableServices: 'Servizi e guide disponibili',
                         guide: "Guida",
@@ -355,11 +356,11 @@ class LocalizationService {
                         }
                     },
                     rules: {
-                        text1: 'Here you can find the rules of the telegram groups of our network. Please read them before joining any group.',
+                        text1: "The rules of our Telegram groups make us more productive and innovative.",
+                        text2: 'Here you can find the rules of the telegram groups of our network. Please read them before joining any group.',
                         question: 'Why did we create them?',
-                        answer: {
-                            text1: 'We want to make clear the reasons that took us to introducing these rules into the network.', text2: "We noticed that most of the groups were flooded with trivial questions re-proposed every day. This was lowering the quality of our chats and discouraged the participation of some students. Therefore, we started repressing this phenomenon warning their proponents and offering a dedicated <Link href='https://wiki.studentiunimi.it/start' target='_blank'>Wiki</Link> page for each course." },
-                        text2: 'Telegram groups rules',
+                        answer: { text1: 'We want to make clear the reasons that took us to introducing these rules into the network.', text2: "We noticed that most of the groups were flooded with trivial questions re-proposed every day. This was lowering the quality of our chats and discouraged the participation of some students. Therefore, we started repressing this phenomenon warning their proponents and offering a dedicated <Link href='https://wiki.studentiunimi.it/start' target='_blank'>Wiki</Link> page for each course." },
+                        header: "Telegram groups rules",
                     },
                     courses: {
                         text1: 'In this section you can find telegram groups, websites, wiki, FAQs (if available), redirects and general informations about your degree course and its didactic courses.',
@@ -391,8 +392,8 @@ class LocalizationService {
                         }
                     },
                     services: {
-                        text1: 'Tired of surfing into endless pages to find the services offered by the university? We grouped all the links here! We added some guides we created too.',
-                        text2: "<Text styles={semibold}>Careful:</Text> some web pages like Unimia or SIFA services might not load (we remind you that it's not our fault in this case!).",
+                        text1: 'Tired of surfing into endless pages to find the services offered by the university?',
+                        text2: "We grouped all the links here! We added some guides we created too.",
                         text3: "If you think that something should be added you can suggest it on <Link href='https://t.me/unimichat' target='_blank'>@unimichat</Link>.",
                         availableServices: 'Available services and guides',
                         guide: "Guide",

@@ -30,9 +30,13 @@ const MainSection = () => {
                                 <Text style={{color: theme.palette.themePrimary}} variant="large">
                                 <Typed
                                     strings={[
-                                        'scienze della dennissonite?',
-                                        'informatica dei dennissonis?',
-                                        'medicina delle noci di cocco?'
+                                        'informatica?',
+                                        'fisica?',
+                                        'informatica musicale?',
+                                        'matematica?',
+                                        'informatica per la comunicazione digitale?',
+                                        'bioinformatics?',
+                                        'sicurezza informatica?'
                                     ]}
                                     typeSpeed={50}
                                     backSpeed={30}

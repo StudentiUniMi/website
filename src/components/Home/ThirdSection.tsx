@@ -12,7 +12,7 @@ const ThirdSection = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
-    const sectionCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', boxShadow: theme.effects.elevation8, backgroundColor: theme.palette.white };
+    const sectionCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', boxShadow: theme.effects.elevation16, backgroundColor: theme.palette.white };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
     const buttonStyle = { maxWidth: '180px' };
     const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };

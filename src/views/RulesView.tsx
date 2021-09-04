@@ -58,11 +58,11 @@ const Rules = () => {
 
                         <Col lg={8} className="mb-2">
                             <div className="mb-2">
-                                <Text variant="xLargePlus" style={{color: theme.palette.white}}>Il regolamento dei nostri gruppi Telegram ci rende più innovativi e produttivi.</Text>
+                                <Text variant="xLargePlus" style={{color: theme.palette.white}}>{locale.rules.text1}</Text>
                             </div>
 
                             <div className="mb-3">
-                                <Text variant="large" style={{ color: theme.palette.white }}>Si consiglia di leggere tutte le regole di cui è composto prima di usare uno qualsiasi di essi.</Text>
+                                <Text variant="large" style={{ color: theme.palette.white }}>{locale.rules.text2}</Text>
                             </div>
 
                             <div>
@@ -98,7 +98,7 @@ const Rules = () => {
             <div className="mb-4">
                 <div className="mb-4 text-center">
                     {/*<div className="mb-1"><Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>Gruppi degli insegnamenti</Text></div>*/}
-                    <Text variant="xLarge">Regolamento dei gruppi Telegram</Text>
+                    <Text variant="xLarge">{locale.rules.header}</Text>
                 </div>
             </div>
 

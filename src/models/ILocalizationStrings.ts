@@ -116,21 +116,6 @@ interface ILocalizationStrings {
             list: any[]
         }
     },
-    aboutUs: {
-        text1: string,
-        text2: string,
-        text3: string,
-        button: { text1: string, text2: string },
-        header1: string,
-        header2: string,
-        header3: string
-    },
-    rules: {
-        text1: string,
-        question: string,
-        answer: { text1: string, text2: string },
-        text2: string
-    },
     courses: {
         text1: string,
         departmentSelect: string,
@@ -169,6 +154,13 @@ interface ILocalizationStrings {
         service: string,
         legend: string
     },
+    rules: {
+        text1: string,
+        text2: string,
+        question: string,
+        answer: { text1: string, text2: string },
+        header: string
+    },
     extraGroups: {
         text1: string,
         text2: string,
@@ -185,6 +177,15 @@ interface ILocalizationStrings {
         news: {
             title: string,
         },
+    },
+    aboutUs: {
+        text1: string,
+        text2: string,
+        text3: string,
+        button: { text1: string, text2: string },
+        header1: string,
+        header2: string,
+        header3: string
     },
     contributors: {
         text1:string,
