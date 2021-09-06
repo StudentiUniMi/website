@@ -34,7 +34,7 @@ const CourseItem = (props: Props) => {
     var semesterText : any;
     var mainText : any;
 
-    /// PrimaryText inizialization
+    // PrimaryText inizialization
     const courseNameLength: number | undefined = data.course?.name?.length;
     if (courseNameLength !== undefined && courseNameLength >= 33) {
         primaryText = <Text styles={semibold}>{data.course?.name}</Text>;
