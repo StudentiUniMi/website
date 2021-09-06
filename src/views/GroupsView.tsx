@@ -4,6 +4,7 @@ import { initializeIcons } from "@uifabric/icons";
 import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
+import { SearchBox, ISearchBoxStyles } from '@fluentui/react/lib/SearchBox';
 //import { DefaultButton, Dialog, DialogType, DocumentCard, DocumentCardActivity, DocumentCardDetails, DocumentCardImage, DocumentCardTitle, IDialogContentProps, IDocumentCardActivityPerson, IDocumentCardDetailsStyles, IDocumentCardStyles, IDocumentCardTitleStyles, IIconProps, ImageFit, mergeStyleSets } from "@fluentui/react";
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { useTheme } from '@fluentui/react-theme-provider';
@@ -29,6 +30,8 @@ const GroupsView = () => {
     const locale = LocalizationService.strings();
     let history = useHistory();
     let didMount = React.useRef(false);
+
+    const searchBoxStyles: Partial<ISearchBoxStyles> = { root: { maxWidth: 650, minWidth: 0 } };
 
     /* Wiki section */
     /*
@@ -73,6 +76,14 @@ const GroupsView = () => {
 
     const [selectedDepartment, setSelectedDepartment] = React.useState<string>('');
     const [selectedDegree, setSelectedDegree] = React.useState<string>('');
+
+    const [degreesForSearchBox, setDegreesForSearchBox] = React.useState<Degree[]>([]);
+
+
+    /* Degrees for the SearchBox */
+    const updateDegreesForSearchBox = React.useCallback(async () => {
+        console.log('dennis');
+    }, []);
 
     /* Departments */
     const updateDepartments = React.useCallback(async () => {
@@ -155,7 +166,7 @@ const GroupsView = () => {
                     cfu: 0,
                     wiki_link: "",
                     links: [],
-                    group: { /* test the degree here */
+                    group: { 
                         id: degreeSelected?.group?.id!,
                         title: degreeSelected?.group?.title,
                         profile_picture: degreeSelected?.group?.profile_picture,
@@ -203,9 +214,14 @@ const GroupsView = () => {
         }
     }, [departments, history.location.pathname]);
     
+    /*
     React.useEffect(() => {
         if (!didMount.current) updateDepartments();
     }, [updateDepartments]);
+    */
+    React.useEffect(() => {
+        if (!didMount.current) updateDegreesForSearchBox();
+    }, [updateDegreesForSearchBox]);
 
     React.useEffect(() => {
         updateDegrees();
@@ -277,9 +293,9 @@ const GroupsView = () => {
                 </div>
                 */}
 
+                {/*
                 <Row className="department-choose justify-content-center mb-3 text-center">
                     <Col xl={6} lg={6} md={6} sm={12} xs={12} className="mb-1">
-                        {/* Department dropdown */}
                         <Dropdown
                             placeholder={locale.groups.departmentSelect}
                             label={locale.groups.departmentSelect}
@@ -296,7 +312,6 @@ const GroupsView = () => {
                     </Col>
 
                     <Col xl={6} lg={6} md={6} sm={12} xs={12} className="mb-1">
-                        {/* Cdl dropdown */}
                         <Dropdown
                             label={locale.groups.cdlSelect}
                             placeholder={locale.groups.cdlSelect}
@@ -312,6 +327,23 @@ const GroupsView = () => {
                         />
                     </Col>
                 </Row>
+                */}
+                
+                <div className="search-box mb-3">
+                    <SearchBox
+                        styles={searchBoxStyles}
+                        underlined={true}
+                        placeholder="Cerca il tuo corso di Laurea per nome"
+                        onEscape={ev => {
+                        console.log('Custom onEscape Called');
+                        }}
+                        onClear={ev => {
+                        console.log('Custom onClear Called');
+                    }}
+                        onChange={(_, newValue) => console.log('SearchBox onChange fired: ' + newValue)}
+                        onSearch={newValue => console.log('SearchBox onSearch fired: ' + newValue)}
+                    />
+                </div>
             </Container>
 
             <div style={{ display: selectedDegree !== '' ? 'block' : 'none' }}>
