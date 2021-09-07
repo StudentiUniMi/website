@@ -195,11 +195,11 @@ const UniversityView = () => {
 
                         <Col lg={8} className="mb-2">
                             <div className="mb-2">
-                                <Text variant="xLargePlus" style={{color: theme.palette.white}}>Può essere difficile trovare tutti i collegamenti utili legati all'ateneo.</Text>
+                                <Text variant="xLargePlus" style={{color: theme.palette.white}}>{locale.university.linksAndRedirects.text1}</Text>
                             </div>
 
                             <div className="mb-3">
-                                <Text variant="large" style={{ color: theme.palette.white }}>Per questo motivo li abbiamo centralizzati tutti in questa pagina.</Text>
+                                <Text variant="large" style={{ color: theme.palette.white }}>{locale.university.linksAndRedirects.text2}</Text>
                             </div>
 
                             <div className="text-center justify-content-center university-links" style={{ marginLeft: 'auto', marginRight: 'auto' }}>

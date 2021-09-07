@@ -45,9 +45,9 @@
           "icon": "ConnectContacts"
      },
      {
-          "name": { "it": "", "en": "" },
-          "link": "",
-          "icon": ""
+          "name": { "it": "Futuri studenti", "en": "" },
+          "link": "https://www.unimi.it/it/taxonomy/term/10",
+          "icon": "TimelineDelivery"
      },
      {
           "name": { "it": "", "en": "" },

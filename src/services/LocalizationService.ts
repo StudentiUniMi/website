@@ -193,6 +193,10 @@ class LocalizationService {
                             text1: "Sei alla ricerca di informazioni legate al nostro ateneo? Nessun problema!",
                             text2: "Qui puoi trovare tutto quello che ti serve."
                         },
+                        linksAndRedirects: {
+                            text1: "Trovare tutti i collegamenti utili legati all'ateneo può richiedere tempo.", 
+                            text2: "Per questo motivo li abbiamo centralizzati in questa pagina."
+                        },
                         text1: 'Il rappresentante degli studenti è un ruolo molto importante ed altamente formativo, che garantisce a tutti gli studenti universitari un supporto alle difficoltà che può incontrare durante il periodo di studio.',
                         text2: 'Di seguito è presente la lista dei rappresentanti di ogni dipartimento e i loro contatti.',
                         departmentSelect: 'Seleziona un dipartimento',
@@ -420,6 +424,10 @@ class LocalizationService {
                         header: {
                             text1: "Are you looking for informations related to our university? No problem!",
                             text2: "Here you can find all you need."
+                        },
+                        linksAndRedirects: {
+                            text1: "Finding all the useful links related to the university can take time.", 
+                            text2: "No problem! We have put them on this page."
                         },
                         text1: 'Being a students representative is a very important role and a formative experience. They provide a support to any student against all the difficulties during the study period.',
                         text2: 'The list below reports all the representatives of each department and their contacts.',
