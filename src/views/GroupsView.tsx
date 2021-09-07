@@ -12,8 +12,6 @@ import { getDepartments, getDegrees, getCourses, getVerboseDegree } from '../ser
 import { Separator } from '@fluentui/react/lib/Separator';
 import { semibold } from '../services/fonts';
 import { Department, Degree, CourseDegree } from "../models/Models";
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 import GroupList from "../components/Groups/GroupList";
 import LocalizationService from "../services/LocalizationService";
 import DegreeInformations from "../components/Groups/DegreeInformations";

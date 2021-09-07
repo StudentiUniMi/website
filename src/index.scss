@@ -333,22 +333,22 @@ button:focus,
   text-align: center;
 }
 
-/* ChoiceGroup in DegreeInformations adjustments */
-.degree-informations .ms-ChoiceField-field:hover::before,
-.degree-informations .ms-ChoiceField-field:focus::before {
+/* ChoiceGroup adjustments to not show hover effect */
+.degree-informations .ms-ChoiceField-field:hover::before, .university-links .ms-ChoiceField-field:hover::before,
+.degree-informations .ms-ChoiceField-field:focus::before, .university-links .ms-ChoiceField-field:focus::before {
   opacity: 0;
 }
 
-.degree-informations .ms-ChoiceField-field:hover::after,
-.degree-informations .ms-ChoiceField-field:focus::after {
+.degree-informations .ms-ChoiceField-field:hover::after, .university-links .ms-ChoiceField-field:hover::after
+.degree-informations .ms-ChoiceField-field:focus::after, .university-links .ms-ChoiceField-field:focus::after {
   opacity: 0;
 }
 
-.degree-informations .ms-ChoiceField-labelWrapper {
+.degree-informations .ms-ChoiceField-labelWrapper, .university-links .ms-ChoiceField-labelWrapper {
   overflow: visible;
 }
 
-.degree-informations .ms-ChoiceFieldGroup-flexContainer {
+.degree-informations .ms-ChoiceFieldGroup-flexContainer /*.university-links .ms-ChoiceFieldGroup-flexContainer*/ {
   display: flex;
   justify-content: center;
 }

@@ -11,7 +11,7 @@ import Message from '../Message';
 import { getDegreeInformations } from '../../services/Requests';
 
 /* Updated models */
-import { Degree } from '../../models/Models'; 
+import { Degree } from '../../models/Models';
 
 interface Props { degree?: Degree };
 
