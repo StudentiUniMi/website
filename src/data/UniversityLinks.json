@@ -23,5 +23,35 @@
           "name": { "it": "Regolamento tasse e borse di studio", "en": "" },
           "link": "https://www.unimi.it/it/ateneo/normative/regolamenti/regolamento-tasse-contributi-esoneri-e-borse-di-studio",
           "icon": "FolderSearch"
+     },
+     {
+          "name": { "it": "Informazioni sui TOLC", "en": "" },
+          "link": "https://www.unimi.it/it/studiare/frequentare-un-corso-di-laurea/iscriversi/iscriversi-una-prima-laurea/test-tolc-cisia",
+          "icon": "TestPlan"
+     },
+     {
+          "name": { "it": "Immatricolarsi e iscriversi", "en": "" },
+          "link": "https://www.unimi.it/it/studiare/immatricolarsi-e-iscriversi",
+          "icon": "CityNext2"
+     },
+     {
+          "name": { "it": "Orientarsi e scegliere", "en": "" },
+          "link": "https://www.unimi.it/it/corsi/orientarsi-e-scegliere",
+          "icon": "BusinessCenterLogo"
+     },
+     {
+          "name": { "it": "Segreterie studenti", "en": "" },
+          "link": "https://www.unimi.it/it/studiare/servizi-gli-studenti/segreterie-informastudenti",
+          "icon": "ConnectContacts"
+     },
+     {
+          "name": { "it": "", "en": "" },
+          "link": "",
+          "icon": ""
+     },
+     {
+          "name": { "it": "", "en": "" },
+          "link": "",
+          "icon": ""
      }
 ]

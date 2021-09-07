@@ -348,9 +348,16 @@ button:focus,
   overflow: visible;
 }
 
-.degree-informations .ms-ChoiceFieldGroup-flexContainer /*.university-links .ms-ChoiceFieldGroup-flexContainer*/ {
+.degree-informations .ms-ChoiceFieldGroup-flexContainer {
   display: flex;
   justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .university-links .ms-ChoiceFieldGroup-flexContainer {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 

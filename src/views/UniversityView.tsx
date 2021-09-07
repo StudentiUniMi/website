@@ -54,7 +54,7 @@ const UniversityView = () => {
     const selectionChanged = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IChoiceGroupOption): void => { setSelectedChoiceGroup(""); }
 
     universityLinks.map((x) => {
-        return options.push({ 
+        if (x.icon !== "" && x.link !== "") options.push({ 
             key: x.name![language], 
             text: x.name![language], 
             styles: choiceGroupOptionsStyle, 
