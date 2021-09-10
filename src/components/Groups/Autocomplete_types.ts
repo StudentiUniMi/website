@@ -10,7 +10,6 @@ export interface IAutocompleteProps {
 }
 
 export interface IAutocompleteState {
-  searchBoxValue: string;
   isSuggestionDisabled: boolean;
   searchText: string;
 }

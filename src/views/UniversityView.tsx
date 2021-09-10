@@ -61,6 +61,7 @@ const UniversityView = () => {
             iconProps: { iconName: x.icon!, className: iconProps, color: theme.palette.themePrimary }, 
             onClick: () => {redirectToLink(x.link!)} 
         });
+        return options;
     });
 
     /* Remove title properties from documentCardTitles */

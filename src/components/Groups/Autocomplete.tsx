@@ -44,7 +44,6 @@ export class Autocomplete extends React.Component<ISearchSuggestionsProps, IAuto
   constructor(props: ISearchSuggestionsProps) {
     super(props);
     this.state = {
-      searchBoxValue: "",
       isSuggestionDisabled: false,
       searchText: '',
     };
@@ -57,7 +56,7 @@ export class Autocomplete extends React.Component<ISearchSuggestionsProps, IAuto
   handleClick = (item: ISuggestionItem) => {
     this.hideSuggestionCallOut();
     this.props.suggestionCallback(item);
-    this.setState({searchBoxValue: item.displayValue});
+    this.setState({searchText: item.displayValue});
   }
 
   render() {
@@ -79,9 +78,8 @@ export class Autocomplete extends React.Component<ISearchSuggestionsProps, IAuto
             newSearchText?.trim() !== '' ? this.showSuggestionCallOut() : this.hideSuggestionCallOut();
             this.setState({ searchText: newSearchText! });
             this.onChange(newSearchText!);
-            this.setState({ searchBoxValue: newSearchText! })
           }}
-          value={this.state.searchBoxValue}
+          value={this.state.searchText}
         />
         {this.renderSuggestions()}
       </div>
