@@ -34,6 +34,7 @@ const degree_endpoint = '/degree';
 const courses_endpoint = '/courses';
 const representatives_endpoint = '/representatives';
 const typingDegrees_endpoint = '/typing-degrees';
+const searchDegrees_endpoint = '/search-degrees';
 
 /* Main class to build response */
 class Result<T>
@@ -74,13 +75,6 @@ export async function getDepartments(): Promise<Result<Department[]>> {
 };
 
 /**
- * IN PROGRES: This function retrieves existing degrees (search-box api).
- */
-export async function getDegreesForSearchBox(): Promise<Result<Degree[]>> {
-    return getAsync<Department[]>(api_endpoint + degrees_endpoint);
-};
-
-/**
  * This function retrieves the degrees of a specific department.
  * @param departmentKey Key or parameter to query by department
  */
@@ -118,6 +112,17 @@ export async function getVerboseDegree(degreeSlug: string): Promise<Result<Verbo
 export async function getStringDegrees(): Promise<Result<string[]>> {
     return getAsync<string[]>(`${api_endpoint}${typingDegrees_endpoint}`)
 };
+
+/**
+ * This function retrieves existing degrees (search-box api).
+ */
+ export async function getDegreesForSearchBox(searchText: string): Promise<Result<Degree[]>> {
+    return getAsync<Degree[]>(`${api_endpoint}${searchDegrees_endpoint}?q=${searchText}`);
+};
+
+
+
+
 
 /* ----------------------------------------------------------- */
 

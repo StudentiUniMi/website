@@ -3,12 +3,10 @@ import { Text, DropdownMenuItemType } from 'office-ui-fabric-react';
 import { initializeIcons } from "@uifabric/icons";
 import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
-import { SearchBox, ISearchBoxStyles } from '@fluentui/react/lib/SearchBox';
-//import { DefaultButton, Dialog, DialogType, DocumentCard, DocumentCardActivity, DocumentCardDetails, DocumentCardImage, DocumentCardTitle, IDialogContentProps, IDocumentCardActivityPerson, IDocumentCardDetailsStyles, IDocumentCardStyles, IDocumentCardTitleStyles, IIconProps, ImageFit, mergeStyleSets } from "@fluentui/react";
+import { IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { getDepartments, getDegrees, getCourses, getVerboseDegree } from '../services/Requests';
+import { getDepartments, getDegrees, getCourses, getVerboseDegree, getDegreesForSearchBox } from '../services/Requests';
 import { Separator } from '@fluentui/react/lib/Separator';
 import { semibold } from '../services/fonts';
 import { Department, Degree, CourseDegree } from "../models/Models";
@@ -16,9 +14,9 @@ import GroupList from "../components/Groups/GroupList";
 import LocalizationService from "../services/LocalizationService";
 import DegreeInformations from "../components/Groups/DegreeInformations";
 import AdminsList from '../components/Groups/AdminsList';
-//import { redirectToLink } from "../services/Utils";
-//import { useBoolean } from "@fluentui/react-hooks";
 import AdditionalGroupsView from '../components/Groups/AdditionalGroups';
+import { Autocomplete } from '../components/Groups/Autocomplete';
+import { ISuggestionItem } from '../components/Groups/Autocomplete_types';
 
 initializeIcons();
 const iconStyles = { marginRight: '8px' };
@@ -29,42 +27,21 @@ const GroupsView = () => {
     let history = useHistory();
     let didMount = React.useRef(false);
 
-    const searchBoxStyles: Partial<ISearchBoxStyles> = { root: { maxWidth: 650, minWidth: 0 } };
+    let degree: Degree | null;
 
-    /* Wiki section */
-    /*
-    const wikiCard: IDocumentCardStyles = { root: { display: 'inline-block', marginBottom: 20, minWidth: 250, maxWidth: 'none', minHeight: 'none' } };
-    const wikiCardPrimaryText: IDocumentCardTitleStyles = { root: { height: 'auto' } };
-    const wikiCardSecondaryText: IDocumentCardTitleStyles = { root: { height: 'auto' } };
-    const wikiCardDocumentCardDetails: IDocumentCardDetailsStyles = { root: { justifyContent: 'start' } };
-    const people: IDocumentCardActivityPerson[] = [{ name: locale.courses.wikiCard.type, profileImageSrc: process.env.PUBLIC_URL + "/logo/unimi64.png" }];
-
-    const [hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
-    const icon: IIconProps = { iconName: 'Documentation' };
-    const styles = mergeStyleSets({
-        button: {
-            width: 'auto',
-            height: 'auto',
-            marginLeft: 10,
-            marginRight: 10
-        },
-    });
-    const modelProps = {
-        isBlocking: false,
-        styles: { main: { maxWidth: 900 } },
+    const entitySelectHandler = (item: ISuggestionItem): void => {
+        setSelectedDegree(item.key as unknown as string);
+        history.push(`/courses/${item.degree?.slug}`);
     };
-    const dialogContentProps: IDialogContentProps = {
-        type: DialogType.largeHeader,
-        showCloseButton: true
+    
+    const searchTextandler = (item: string): void => {
+        setSelectedDegree(searchData[0]?.key as unknown as string);
+        setSearchTextValue(item);
     };
-    */
-
-    /* Styles */
-    const dropdownStyles = { dropdown: { color: theme.palette.neutralPrimary }, dropdownItems: { color: theme.palette.neutralPrimary } };
-
+    
     /* States */
-    const [departments, setDepartments] = React.useState<Department[]>([]);
-    const [degrees, setDegrees] = React.useState<Degree[]>([]);
+    let [searchTextValue, setSearchTextValue] = React.useState('');
+    let [searchData, setSearchData] = React.useState<ISuggestionItem[]>([]);
     const [courses, setCourses] = React.useState<CourseDegree[]>([]);
 
     const [loadingCourses, setLoadingCourses] = React.useState<boolean>(false);
@@ -75,38 +52,32 @@ const GroupsView = () => {
     const [selectedDepartment, setSelectedDepartment] = React.useState<string>('');
     const [selectedDegree, setSelectedDegree] = React.useState<string>('');
 
-    const [degreesForSearchBox, setDegreesForSearchBox] = React.useState<Degree[]>([]);
-
 
     /* Degrees for the SearchBox */
-    const updateDegreesForSearchBox = React.useCallback(async () => {
-        console.log('dennis');
-    }, []);
+    const updateDegreesForSearchBox = React.useCallback(async (searchBoxText: string) => {
+        console.log(searchBoxText)
+        if (searchBoxText === undefined || searchBoxText === "") return;
+        let degreesResult = await getDegreesForSearchBox(searchBoxText);
 
-    /* Departments */
-    const updateDepartments = React.useCallback(async () => {
-        setErrorLoadingDepartments(false);
-        let departmentsResult = await getDepartments();
-
-        if (departmentsResult.status !== 200) {
-            setErrorLoadingDepartments(true);
+        if (degreesResult.status !== 200) {
+            console.error("error on degrees result by searchbox text");
             return;
         }
 
-        //console.log("Departments result: ", departmentsResult.value ?? []);
+        let tempSearchData : ISuggestionItem[] = [];
+        console.log("degrees result searchbox: ", degreesResult.value ?? []);
 
-        setDepartments(departmentsResult.value ?? []);
-    }, [setDepartments]);
+        
 
-    let departmentOptions: IDropdownOption[] = departments.map(x => ({ key: x.pk, text: x.name ?? "", data: { icon: x.icon }, disabled: x.degree_count === 0 }));
+        (degreesResult.value ?? []).map(x => {
+            tempSearchData.push({degree: x, key: x.pk, displayValue: x.name!, searchValue: x.name!});
+        });
 
-    const departmentSelectionChanged = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IDropdownOption): void => {
-        setSelectedDepartment(option?.key as string ?? '');
-        setSelectedDegree(''); /* Reset del corso di laurea on department change, altrimenti rimane la lista dei gruppi precedente */
-        history.push(`/courses/`)
-    };
+        setSearchData(tempSearchData ?? []);
+    }, []);
 
     /* Degrees */
+    /*
     const updateDegrees = React.useCallback(async () => {
         if (selectedDepartment === '' || selectedDepartment === undefined) return;
         setErrorLoadingDegrees(false);
@@ -140,6 +111,7 @@ const GroupsView = () => {
         setSelectedDegree(option?.key as string ?? '');
         history.push(`/courses/${option?.data.slug}`);
     };
+    */
 
     /* Courses callBack */
     const updateCourses = React.useCallback(async () => {
@@ -155,7 +127,7 @@ const GroupsView = () => {
         }
 
         console.log("Courses result: ", coursesResult.value ?? []);
-        const degreeSelected = degrees.filter(x => x.pk as unknown as string === selectedDegree)[0] ?? undefined;
+        const degreeSelected = searchData.filter(x => x.degree?.pk as unknown as string === selectedDegree)[0]?.degree ?? undefined;
         if (degreeSelected !== undefined && degreeSelected.group?.invite_link !== '' && degreeSelected.group?.invite_link !== null && degreeSelected.group?.invite_link !== undefined) {
             let mainDegreeGroup: CourseDegree = {
                 "course": {
@@ -179,12 +151,12 @@ const GroupsView = () => {
 
         setCourses(coursesResult.value ?? []);
         setLoadingCourses(false);
-    }, [selectedDegree, degrees]);
+    }, [selectedDegree]);
 
     
     /* This function initializes the VerboseDegree (retrieves degree based on url initialization) */
     const initializeDegreeByUrl = React.useCallback(async () => {
-        if (!didMount.current && departments.length !== 0) {
+        if (!didMount.current) {
             didMount.current = true;
             var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
             var degreeSlug = states.length >= 2 ? states[1] : '';
@@ -207,34 +179,23 @@ const GroupsView = () => {
             if (verboseDeg === undefined || verboseDeg === null) return;
             //console.log(departments, "DEP TROVATI: ", departments.filter(x => x.pk === verboseDeg.department?.pk)[0]?.pk as unknown as string)
     
-            setSelectedDepartment(departments.filter(x => x.pk === verboseDeg.department?.pk)[0]?.pk as unknown as string);
+            //setSelectedDepartment(departments.filter(x => x.pk === verboseDeg.department?.pk)[0]?.pk as unknown as string);
             setSelectedDegree(verboseDeg.pk as unknown as string);
+            setSearchTextValue(verboseDeg.name!);
         }
-    }, [departments, history.location.pathname]);
-    
-    /*
-    React.useEffect(() => {
-        if (!didMount.current) updateDepartments();
-    }, [updateDepartments]);
-    */
-    React.useEffect(() => {
-        if (!didMount.current) updateDegreesForSearchBox();
-    }, [updateDegreesForSearchBox]);
+    }, [history.location.pathname]);
 
-    React.useEffect(() => {
-        updateDegrees();
-    }, [selectedDepartment, updateDegrees]);
     
     React.useEffect(() => {
         updateCourses();
     }, [selectedDegree, updateCourses]);
-
+    
     React.useEffect(() => {
         if (!didMount.current) initializeDegreeByUrl();
-    }, [initializeDegreeByUrl, departments]);
+    }, [searchData, initializeDegreeByUrl]);
     
     /* Chosen degree : Degree to pass it to various components as property */
-    let degree: Degree = degrees.filter(x => x.pk === selectedDegree as unknown as number)[0] ?? [];
+    degree = searchData.filter(x => x.degree?.pk === selectedDegree as unknown as number)[0]?.degree!;
 
     return (
         <div className="pt-5 courses">
@@ -244,104 +205,17 @@ const GroupsView = () => {
                     <Text variant="xLarge">{locale.groups.groupsSection.text2}</Text>
                 </div>
 
-                {/*
-                <div className="mb-4">
-                    <div className="text-center">
-                        <DefaultButton
-                            onClick={toggleHideDialog}
-                            text={locale.courses.wikiCard.buttonTitle}
-                            className={styles.button}
-                            iconProps={icon}
-                            theme={theme}
-                        />
-                    </div>
-                    
-
-                    <Dialog
-                        hidden={hideDialog}
-                        onDismiss={toggleHideDialog}
-                        dialogContentProps={dialogContentProps}
-                        modalProps={modelProps}
-                        maxWidth={700}
-                        theme={theme}
-                    >
-                        <DocumentCard
-                            styles={wikiCard}
-                            onClick={() => redirectToLink("https://wiki.studentiunimi.it/start")}
-                            className="text-align-left"
-                            theme={theme}
-                        >
-                            <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/other/wiki_card.jpg"} />
-                            <DocumentCardDetails styles={wikiCardDocumentCardDetails}>
-                                <DocumentCardTitle title={locale.courses.wikiCard.title} styles={wikiCardPrimaryText} />
-                                <DocumentCardTitle
-                                    title={locale.courses.wikiCard.description}
-                                    styles={wikiCardSecondaryText}
-                                    showAsSecondaryTitle
-                                />
-                            </DocumentCardDetails>
-                            <DocumentCardDetails>
-                                <div style={{ marginLeft: 16, marginBottom: 8 }}>
-                                    <Text styles={semibold} variant="medium" style={{ color: theme.palette.themePrimary }}><Icon iconName="PageArrowRight" /> {locale.courses.wikiCard.clickToWiki}</Text>
-                                </div>
-                            </DocumentCardDetails>
-                            <DocumentCardActivity activity={locale.courses.wikiCard.date} people={people} />
-                        </DocumentCard>
-                    </Dialog>
-                </div>
-                */}
-
-                {/*
-                <Row className="department-choose justify-content-center mb-3 text-center">
-                    <Col xl={6} lg={6} md={6} sm={12} xs={12} className="mb-1">
-                        <Dropdown
-                            placeholder={locale.groups.departmentSelect}
-                            label={locale.groups.departmentSelect}
-                            onRenderTitle={onRenderTitle}
-                            onRenderOption={onRenderOption}
-                            options={departmentOptions}
-                            onChange={departmentSelectionChanged}
-                            selectedKey={selectedDepartment}
-                            styles={dropdownStyles}
-                            errorMessage={errorLoadingDepartments ? locale.errorLoadingDepartments : undefined}
-                            theme={theme}
-                            disabled={errorLoadingDepartments || departments.length === 0}
-                        />
-                    </Col>
-
-                    <Col xl={6} lg={6} md={6} sm={12} xs={12} className="mb-1">
-                        <Dropdown
-                            label={locale.groups.cdlSelect}
-                            placeholder={locale.groups.cdlSelect}
-                            selectedKey={selectedDegree}
-                            onChange={degreeSelectionChanged}
-                            onRenderTitle={onRenderTitle}
-                            onRenderOption={onRenderOption}
-                            options={degreesOptions}
-                            styles={dropdownStyles}
-                            theme={theme}
-                            disabled={selectedDepartment === '' || errorLoadingDegrees}
-                            errorMessage={errorLoadingDegrees ? locale.errorLoadingDegrees : undefined}
-                        />
-                    </Col>
-                </Row>
-                */}
-                
                 <div className="search-box mb-3">
-                    <SearchBox
-                        styles={searchBoxStyles}
-                        underlined={true}
-                        placeholder="Cerca il tuo corso di Laurea per nome"
-                        onEscape={ev => {
-                        console.log('Custom onEscape Called');
-                        }}
-                        onClear={ev => {
-                        console.log('Custom onClear Called');
-                    }}
-                        onChange={(_, newValue) => console.log('SearchBox onChange fired: ' + newValue)}
-                        onSearch={newValue => console.log('SearchBox onSearch fired: ' + newValue)}
+                    <Autocomplete
+                        items={searchData}
+                        searchTitle='Cerca il tuo corso di laurea per nome'
+                        suggestionCallback={entitySelectHandler}
+                        searchCallback={searchTextandler}
+                        changeCallback={updateDegreesForSearchBox}
+                        value={searchTextValue}
                     />
                 </div>
+
             </Container>
 
             <div style={{ display: selectedDegree !== '' ? 'block' : 'none' }}>
@@ -349,8 +223,6 @@ const GroupsView = () => {
                 <GroupList degree={degree!} courses={courses} loadingCourses={loadingCourses} errorLoadingCourses={errorLoadingCourses} />
                 <AdminsList degree={degree!} />       
             </div>
-
-            
 
             <Container className="pb-4">
                 <Separator className="mb-3" />
@@ -367,7 +239,6 @@ const GroupsView = () => {
 };
 
 export default GroupsView;
-
 
 function isTriennale(element: Degree) {
     return element.type === "B";
