@@ -10,7 +10,6 @@ const CalloutStyle = () => {
   return { maxWidth: '650px' };
 };
 
-{/* display: 'inline-block' */}
 const AutocompleteStyles = () => {
   return ({
     maxWidth: '650px', 
@@ -88,13 +87,16 @@ export class Autocomplete extends React.Component<ISearchSuggestionsProps, IAuto
       </div>
     );
   }
+
   private onSearch(enteredEntityValue: string) {
     this.hideSuggestionCallOut();
     this.props.searchCallback(enteredEntityValue.trim());
   }
+
   private onChange(newSearchText: string) {
     this.props.changeCallback(newSearchText);
   }
+
   private renderSuggestions = () => {
     return (
       <Callout id='SuggestionContainer'

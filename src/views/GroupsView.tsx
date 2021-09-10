@@ -27,33 +27,26 @@ const GroupsView = () => {
     let history = useHistory();
     let didMount = React.useRef(false);
 
-    let degree: Degree | null;
-
-    const entitySelectHandler = (item: ISuggestionItem): void => {
-        setSelectedDegree(item.key as unknown as string);
-        history.push(`/courses/${item.degree?.slug}`);
-    };
-    
-    const searchTextandler = (item: string): void => {
-        setSelectedDegree(searchData[0]?.key as unknown as string);
-        setSearchTextValue(item);
-    };
+    let degree: Degree | null; // Degree da passare ai vari componenti (DegreeInformations e AdminsList)
     
     /* States */
-    let [searchTextValue, setSearchTextValue] = React.useState('');
-    let [searchData, setSearchData] = React.useState<ISuggestionItem[]>([]);
-    const [courses, setCourses] = React.useState<CourseDegree[]>([]);
+    let [degreeTextSearch, setDegreeTextSearch] = React.useState(''); // Testo nel campo di ricerca
+    const [selectedDegree, setSelectedDegree] = React.useState<string>(''); // PK del Degree
+
+    let [searchData, setSearchData] = React.useState<ISuggestionItem[]>([]); // Array di ISuggestionItem (contenente anche Degree per ogni elemento)
+    const [courses, setCourses] = React.useState<CourseDegree[]>([]); // Corsi di insegnamento
 
     const [loadingCourses, setLoadingCourses] = React.useState<boolean>(false);
-    const [errorLoadingDepartments, setErrorLoadingDepartments] = React.useState<boolean>(false);
     const [errorLoadingDegrees, setErrorLoadingDegrees] = React.useState<boolean>(false);
     const [errorLoadingCourses, setErrorLoadingCourses] = React.useState<boolean>(false);
 
-    const [selectedDepartment, setSelectedDepartment] = React.useState<string>('');
-    const [selectedDegree, setSelectedDegree] = React.useState<string>('');
-
 
     /* Degrees for the SearchBox */
+    const changeTextHandler = (text: string) => {
+        setDegreeTextSearch(text);
+        updateDegreesForSearchBox(text);
+    }
+
     const updateDegreesForSearchBox = React.useCallback(async (searchBoxText: string) => {
         console.log(searchBoxText)
         if (searchBoxText === undefined || searchBoxText === "") return;
@@ -67,51 +60,12 @@ const GroupsView = () => {
         let tempSearchData : ISuggestionItem[] = [];
         console.log("degrees result searchbox: ", degreesResult.value ?? []);
 
-        
-
         (degreesResult.value ?? []).map(x => {
             tempSearchData.push({degree: x, key: x.pk, displayValue: x.name!, searchValue: x.name!});
         });
 
         setSearchData(tempSearchData ?? []);
-    }, []);
-
-    /* Degrees */
-    /*
-    const updateDegrees = React.useCallback(async () => {
-        if (selectedDepartment === '' || selectedDepartment === undefined) return;
-        setErrorLoadingDegrees(false);
-        let degreesResult = await getDegrees(selectedDepartment);
-
-        if (degreesResult.status !== 200) {
-            setErrorLoadingDegrees(true);
-            return;
-        }
-
-        console.log("Degrees result: ", degreesResult.value ?? []);
-
-        setDegrees(degreesResult.value ?? []);
-    }, [setDegrees, selectedDepartment]);
-
-    let degreesOptions: IDropdownOption[] = [];
-    let triennali: Degree[] = degrees.filter(isTriennale);
-    let magistrali: Degree[] = degrees.filter(isMagistrale);
-    
-    if (triennali.length !== 0) {
-        degreesOptions.push({ key: 'Header', text: 'Triennali', itemType: DropdownMenuItemType.Header });
-        degreesOptions.push(...triennali.map(x => ({ key: x.pk, text: x.name ?? "", data: { slug: x.slug, icon: x.icon } })));
-    }
-    
-    if (magistrali.length !== 0) {
-        degreesOptions.push({ key: 'Header', text: 'Magistrali', itemType: DropdownMenuItemType.Header });
-        degreesOptions.push(...magistrali.map(x => ({ key: x.pk, text: x.name ?? "", data: { slug: x.slug, icon: x.icon } })));
-    }
-
-    const degreeSelectionChanged = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IDropdownOption): void => {
-        setSelectedDegree(option?.key as string ?? '');
-        history.push(`/courses/${option?.data.slug}`);
-    };
-    */
+    }, [degreeTextSearch]);
 
     /* Courses callBack */
     const updateCourses = React.useCallback(async () => {
@@ -158,10 +112,11 @@ const GroupsView = () => {
     const initializeDegreeByUrl = React.useCallback(async () => {
         if (!didMount.current) {
             didMount.current = true;
+            console.log("MOUNTING MOUNTING MOUNTING")
             var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
             var degreeSlug = states.length >= 2 ? states[1] : '';
             
-            //console.log("Degree slug: ", degreeSlug)
+            console.log("Degree slug: ", degreeSlug)
             
             if (degreeSlug === '') {
                 return;
@@ -173,26 +128,37 @@ const GroupsView = () => {
                 // Do we need to show an apposite error? Probably not
                 return;
             }
+
             
             const verboseDeg = verboseDegreeResult.value ?? undefined;
-            //console.log("VerboseDegree result: ", verboseDeg);
             if (verboseDeg === undefined || verboseDeg === null) return;
-            //console.log(departments, "DEP TROVATI: ", departments.filter(x => x.pk === verboseDeg.department?.pk)[0]?.pk as unknown as string)
-    
-            //setSelectedDepartment(departments.filter(x => x.pk === verboseDeg.department?.pk)[0]?.pk as unknown as string);
+            
+            console.log("VerboseDegree result: ", verboseDeg);
+            setDegreeTextSearch(verboseDeg.name!);
             setSelectedDegree(verboseDeg.pk as unknown as string);
-            setSearchTextValue(verboseDeg.name!);
         }
     }, [history.location.pathname]);
 
+    const entitySelectHandler = (item: ISuggestionItem): void => { // Questo viene triggerato quando selezioni qualcosa dal menù
+        setSelectedDegree(item.key as unknown as string);
+        history.push(`/courses/${item.degree?.slug}`);
+    };
     
+    const searchTextHandler = (item: string): void => {
+        if (searchData.length === 0) return;
+        setSelectedDegree(searchData[0]?.key as unknown as string);
+        history.push(`/courses/${searchData[0]?.degree?.slug}`);
+    };
+
     React.useEffect(() => {
         updateCourses();
     }, [selectedDegree, updateCourses]);
     
     React.useEffect(() => {
-        if (!didMount.current) initializeDegreeByUrl();
-    }, [searchData, initializeDegreeByUrl]);
+        if (!didMount.current) {
+            initializeDegreeByUrl();
+        }       
+    }, [searchData, degreeTextSearch, initializeDegreeByUrl]);
     
     /* Chosen degree : Degree to pass it to various components as property */
     degree = searchData.filter(x => x.degree?.pk === selectedDegree as unknown as number)[0]?.degree!;
@@ -210,9 +176,9 @@ const GroupsView = () => {
                         items={searchData}
                         searchTitle='Cerca il tuo corso di laurea per nome'
                         suggestionCallback={entitySelectHandler}
-                        searchCallback={searchTextandler}
-                        changeCallback={updateDegreesForSearchBox}
-                        value={searchTextValue}
+                        searchCallback={searchTextHandler}
+                        changeCallback={changeTextHandler}
+                        value={degreeTextSearch}
                     />
                 </div>
 
