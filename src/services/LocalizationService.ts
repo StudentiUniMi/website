@@ -136,6 +136,7 @@ class LocalizationService {
                         header: 'Regolamento dei gruppi Telegram'
                     },
                     groups: {
+                        findDegreeByName: "Cerca il tuo corso di laurea per nome",
                         groupsSection: {
                             text1: "Gruppi degli insegnamenti",
                             text2: "Trova i gruppi degli insegnamenti del tuo corso di laurea"
@@ -368,6 +369,7 @@ class LocalizationService {
                         header: "Telegram groups rules",
                     },
                     groups: {
+                        findDegreeByName: "Find your degree by name",
                         groupsSection: {
                             text1: "Teaching groups",
                             text2: "Find the teaching groups of your degree"

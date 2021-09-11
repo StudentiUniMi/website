@@ -7,7 +7,7 @@ import { useTheme } from '@fluentui/react-theme-provider';
 import { getCourses, getVerboseDegreeBySlug, getVerboseDegreeByID, getDegreesForSearchBox } from '../services/Requests';
 import { Separator } from '@fluentui/react/lib/Separator';
 import { semibold } from '../services/fonts';
-import { Degree, CourseDegree } from "../models/Models";
+import { VerboseDegree, CourseDegree } from "../models/Models";
 import GroupList from "../components/Groups/GroupList";
 import LocalizationService from "../services/LocalizationService";
 import DegreeInformations from "../components/Groups/DegreeInformations";
@@ -26,7 +26,7 @@ const GroupsView = () => {
 
     /* States */
     let [degreeTextSearch, setDegreeTextSearch] = React.useState(''); // Testo nel campo di ricerca
-    let [loadedDegree, setLoadedDegree] = React.useState<Degree | null>(null); // Degree da passare ai vari componenti (DegreeInformations e AdminsList)
+    let [loadedDegree, setLoadedDegree] = React.useState<VerboseDegree | null>(null); // Degree da passare ai vari componenti (DegreeInformations e AdminsList)
     let [selectedDegree, setSelectedDegree] = React.useState<string>(''); // PK del Degree
     let [searchData, setSearchData] = React.useState<ISuggestionItem[]>([]); // Array di ISuggestionItem (contenente anche Degree per ogni elemento)
     let [courses, setCourses] = React.useState<CourseDegree[]>([]); // Corsi di insegnamento
@@ -88,7 +88,7 @@ const GroupsView = () => {
         }
         
         console.log("Courses result: ", coursesResult.value ?? []);
-        console.log("GRUPPO PRINCIPALE DA AGGIUNGERE: ", loadedDegree, loadedDegree?.group)
+        console.log("Gruppo principale da aggiungere: ", loadedDegree, loadedDegree?.group)
         if (loadedDegree !== undefined && loadedDegree?.group?.invite_link !== '' && loadedDegree?.group?.invite_link !== null && loadedDegree?.group?.invite_link !== undefined) {
             let mainDegreeGroup: CourseDegree = {
                 "course": {
@@ -146,14 +146,12 @@ const GroupsView = () => {
 
     const updateLoadedDegree = React.useCallback(async () => {
         /* L'idea è di prelevare il degree tramite chiave e chiamare questo update ogni volta in modo tale da tenerlo aggiornato. Va sistemato l'initialize che setta solamente la chiave */
-
-        // tipo? verbosedegree?
         let degreeResult = await getVerboseDegreeByID(selectedDegree);
         if (degreeResult.status !== 200) return;
 
         const degree = degreeResult.value ?? undefined;
         if (degree === undefined || degree === null) return;
-        console.log("HO CARICATO DEGREE: ", degree);
+        console.log("Degree loaded: ", degree);
 
         setLoadedDegree(degree);
     }, [selectedDegree]);
@@ -181,7 +179,7 @@ const GroupsView = () => {
                 <div className="search-box mb-4">
                     <Autocomplete
                         items={searchData}
-                        searchTitle='Cerca il tuo corso di laurea per nome'
+                        searchTitle={locale.groups.findDegreeByName}
                         suggestionCallback={(item) => entitySelectHandler(item)}
                         searchCallback={searchTextHandler}
                         changeCallback={(text) => updateDegreesForSearchBox(text)}
@@ -192,8 +190,8 @@ const GroupsView = () => {
             </Container>
 
             <div style={{ display: selectedDegree !== '' ? 'block' : 'none' }}>
-                <DegreeInformations degree={loadedDegree!} />
                 <GroupList degree={loadedDegree!} courses={courses} loadingCourses={loadingCourses} errorLoadingCourses={errorLoadingCourses} />
+                <DegreeInformations degree={loadedDegree!} />
                 <AdminsList degree={loadedDegree!} />       
             </div>
 

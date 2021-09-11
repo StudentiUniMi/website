@@ -21,7 +21,7 @@ const AdminsList = (props: Props) => {
     const admins: Admin[] = getDegreeAdmins(props.degree?.slug!);
 
     return (
-        <div className='mb-5'>
+        <div className="mb-2">
             <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLight }}>
                 <Container>
                     <div><Text variant="medium" styles={semibold}><Icon iconName="WorkforceManagement" /> {locale.groups.availableAdmins}</Text></div>

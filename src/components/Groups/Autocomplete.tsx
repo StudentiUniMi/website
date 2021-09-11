@@ -4,6 +4,8 @@ import { SearchBox, Callout, List } from 'office-ui-fabric-react/lib/';
 import { FocusZone, FocusZoneDirection } from 'office-ui-fabric-react/lib/FocusZone';
 import { mergeStyleSets } from '@uifabric/styling';
 import { DirectionalHint, ISearchBoxStyles } from '@fluentui/react';
+//import { useTheme } from '@fluentui/react-theme-provider';
+import Chip from '@material-ui/core/Chip';
 
 const searchBoxStyles: Partial<ISearchBoxStyles> = { root: { maxWidth: 650, minWidth: 0 } };
 const CalloutStyle = () => {
@@ -125,6 +127,26 @@ export class Autocomplete extends React.Component<ISearchSuggestionsProps, IAuto
       </FocusZone>
     );
   }
+
+  private renderChip = (item: any) => {
+    //var theme = useTheme();
+    let label: string;
+    switch (item.degree.type) {
+      case "B":
+        label = "triennale";
+        break;
+      case "M":
+        label = "magistrale";
+        break;
+      case "C":
+        label = "magistrale a ciclo unico";
+        break;
+      default:
+        label = "";
+    }
+
+    return <Chip label={label} size="small" style={{ color: '#f3f4f4', backgroundColor: '#1d7aeb' }} />;
+  }
   
   private onRenderCell = (item: any) => {
     if (item.key !== -1) {
@@ -136,7 +158,7 @@ export class Autocomplete extends React.Component<ISearchSuggestionsProps, IAuto
           <div id={'link' + item.key}
             style={SuggestionListStyle()}
             onClick={() => this.handleClick(item)}>
-            {item.displayValue}
+            {item.displayValue} {this.renderChip(item)}
           </div>
         </div>
       );

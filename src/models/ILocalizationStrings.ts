@@ -112,6 +112,7 @@ interface ILocalizationStrings {
         }
     },
     groups: {
+        findDegreeByName: string,
         groupsSection: {
             text1: string,
             text2: string
