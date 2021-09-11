@@ -380,3 +380,10 @@ header .ms-Image-image {
   display: inline;
   margin-bottom: 9px !important;
 }
+
+/* Fix searchBox visualization for small height displays */
+@media only screen and (max-height: 610px) {
+  #SuggestionContainer .ms-Callout-main {
+    max-height: 200px !important;
+  }
+}
