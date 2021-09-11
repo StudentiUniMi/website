@@ -286,7 +286,7 @@ button:focus,
   padding:0;
 }
 
-.ms-List { /* Padding for card-list in courses and additionalGroups sections */
+.additional-groups .ms-List, .course-list .ms-List { /* Padding for card-list in courses and additionalGroups sections */
   padding: 3px;
 }
 
