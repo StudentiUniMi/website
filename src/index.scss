@@ -387,3 +387,9 @@ header .ms-Image-image {
     max-height: 200px !important;
   }
 }
+
+@media only screen and (max-height: 300px) {
+  #SuggestionContainer .ms-Callout-main {
+    max-height: 150px !important;
+  }
+}
