@@ -3,7 +3,7 @@ import { IAutocompleteProps, IAutocompleteState, ISuggestionItem } from './Autoc
 import { SearchBox, Callout, List } from 'office-ui-fabric-react/lib/';
 import { FocusZone, FocusZoneDirection } from 'office-ui-fabric-react/lib/FocusZone';
 import { mergeStyleSets } from '@uifabric/styling';
-import { ISearchBoxStyles } from '@fluentui/react';
+import { DirectionalHint, ISearchBoxStyles } from '@fluentui/react';
 //import { useTheme } from '@fluentui/react-theme-provider';
 import Chip from '@material-ui/core/Chip';
 
@@ -109,6 +109,7 @@ export class Autocomplete extends React.Component<ISearchSuggestionsProps, IAuto
         calloutMaxHeight={300}
         style={CalloutStyle()}
         target={this._menuButtonElement.current}
+        directionalHint={DirectionalHint.bottomLeftEdge}
         isBeakVisible={false}
       >
         {this.renderSuggestionList()}
