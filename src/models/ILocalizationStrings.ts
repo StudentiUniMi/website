@@ -112,6 +112,7 @@ interface ILocalizationStrings {
         }
     },
     groups: {
+        findDegreeByName: string,
         groupsSection: {
             text1: string,
             text2: string
@@ -174,6 +175,10 @@ interface ILocalizationStrings {
     university: {
         header: {
             text1: string,
+            text2: string
+        },
+        linksAndRedirects: {
+            text1: string, 
             text2: string
         },
         text1: string,

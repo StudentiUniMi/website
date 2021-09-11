@@ -15,7 +15,7 @@ import LocalizationService from "../../services/LocalizationService";
 import LoadingSpinner from '../LoadingSpinner';
 import Message from '../Message';
 
-interface Props { degree: Degree, courses: CourseDegree[], loadingCourses: boolean, errorLoadingCourses: boolean };
+interface Props { degree?: Degree, courses: CourseDegree[], loadingCourses: boolean, errorLoadingCourses: boolean };
 
 // Opzioni per la ricerca del semestre
 const semesterFilterOptions: IDropdownOption[] = [ 
@@ -98,7 +98,7 @@ const CourseList= (props: Props) => {
     };
 
     /* Filters gestion */
-    let yearFilterOptions = props.degree.type === 'M' || props.degree.type === 'C' ? yearMasterDegreeFilterOptions : yearBachelorDegreeFilterOptions; 
+    let yearFilterOptions = props.degree?.type === 'M' || props.degree?.type === 'C' ? yearMasterDegreeFilterOptions : yearBachelorDegreeFilterOptions; 
     let filteredCourses = props.courses;
 
     if (nameFilter !== "") { filteredCourses = filteredCourses.filter(x => x.course?.name?.toLocaleLowerCase()?.includes(nameFilter.toLocaleLowerCase())); }
@@ -131,7 +131,7 @@ const CourseList= (props: Props) => {
                                         label={locale.groups.yearFilter}
                                         onChange={onYearFilterChanged}
                                         selectedKey={yearFilter}
-                                        disabled={props.courses.length === 0 || props.loadingCourses || props.degree.slug === 'magistrale_informatica'} /* To-do: must decide if we need an apposite field to disable year selection */
+                                        disabled={props.courses.length === 0 || props.loadingCourses || props.degree?.slug === 'magistrale_informatica'} /* To-do: must decide if we need an apposite field to disable year selection */
                                     />
                                 }
                             </Col>

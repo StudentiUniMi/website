@@ -19,19 +19,27 @@ const ExtraGroupView = (props: Props) => {
     const theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string = LocalizationService.getLanguage();
-    var data = props.data;
+    const data = props.data;
     const helpfulTextStyles: ITextStyles = { root: { fontWeight: FontWeights.regular, } };
     const descriptionTextStyles: ITextStyles = { root: { fontWeight: FontWeights.semibold } };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
     const telegramGroupIcon: IIconProps = { iconName: 'Send' };
+    
+    let desc = data.description![language];
+    let name = data.name![language];
 
-    let desc = data.description![language]
-    let name = data.name![language]
+    // PrimaryText inizialization
+    var primaryText : any;
+    primaryText = <div style={{ wordWrap: 'break-word', whiteSpace: 'normal', marginTop: '2px' }}><Text styles={semibold}>{name}</Text></div>;
+    
+    // Group image initialization
+    var imageUrl: string;
+    imageUrl = process.env.PUBLIC_URL + '/extra_groups_images/' + data.image;
     
     return (
         <Card tokens={cardTokens}>
             <Card.Item>
-                {data.image === "" ? <Persona text={name} onRenderPrimaryText={() => <Text styles={semibold}>{name}</Text>} /> : <Persona text={name} onRenderPrimaryText={() => <Text styles={semibold}>{name}</Text>} imageUrl={ process.env.PUBLIC_URL + '/extra_groups_images/' + data.image } /> }
+                <Persona imageUrl={imageUrl} onRenderPrimaryText={() => primaryText} text={name} />
             </Card.Item>
             <Card.Section>
                 <Text styles={descriptionTextStyles}>

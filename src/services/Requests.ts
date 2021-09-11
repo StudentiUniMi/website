@@ -24,6 +24,7 @@ import Contributors from '../data/Contributors.json';
 import Faqs from '../data/Faqs.json';
 import NetworkMembers from '../data/NetworkMembers.json';
 import Rules from '../data/Rules.json';
+import UniversityLinks from '../data/UniversityLinks.json';
 
 /* Endpoints */
 const api_endpoint = 'https://api.studentiunimi.it/api';
@@ -33,6 +34,7 @@ const degree_endpoint = '/degree';
 const courses_endpoint = '/courses';
 const representatives_endpoint = '/representatives';
 const typingDegrees_endpoint = '/typing-degrees';
+const searchDegrees_endpoint = '/search-degrees';
 
 /* Main class to build response */
 class Result<T>
@@ -47,7 +49,7 @@ class Result<T>
         this.value = value;
         this.message = message;
     }
-}
+};
 
 /**
  * Main function to retrieve data from endpoints.
@@ -63,7 +65,7 @@ async function getAsync<T>(path: string) : Promise<Result<T>>
 
     let res = await response.json() as T;
     return new Result<T>(200,res);
-}
+};
 
 /**
  * This function retrieves the existing departments.
@@ -78,7 +80,7 @@ export async function getDepartments(): Promise<Result<Department[]>> {
  */
 export async function getDegrees(departmentKey: string): Promise<Result<Degree[]>> {
     return getAsync<Degree[]>(`${api_endpoint}${degrees_endpoint}?dep_id=${departmentKey}`);
-}
+};
 
 /**
  * This function retrieves the courses of a specific degree.
@@ -86,7 +88,7 @@ export async function getDegrees(departmentKey: string): Promise<Result<Degree[]
  */
 export async function getCourses(degreeKey: string): Promise<Result<CourseDegree[]>> {
     return getAsync<CourseDegree[]>(`${api_endpoint}${courses_endpoint}?deg_id=${degreeKey}`);
-}
+};
 
 /**
  * This function retrieves the representatives of a specific department.
@@ -94,34 +96,58 @@ export async function getCourses(degreeKey: string): Promise<Result<CourseDegree
  */
 export async function getRepresentatives(departmentKey: string): Promise<Result<Representative[]>> {
     return getAsync<Representative[]>(`${api_endpoint}${representatives_endpoint}?dep_id=${departmentKey}`);
-}
+};
 
 /**
  * This function retrieves a degree filtering by slug.
  * @param degreeSlug Slug of the degree
  */
-export async function getVerboseDegree(degreeSlug: string): Promise<Result<VerboseDegree>> {
+export async function getVerboseDegreeBySlug(degreeSlug: string): Promise<Result<VerboseDegree>> {
     return getAsync<VerboseDegree>(`${api_endpoint}${degree_endpoint}?slug=${degreeSlug}`);
-}
+};
+
+/**
+ * This function retrieves a degree filtering by ID.
+ * @param degreeID ID of the degree
+ */
+ export async function getVerboseDegreeByID(degreeID: string): Promise<Result<VerboseDegree>> {
+    return getAsync<VerboseDegree>(`${api_endpoint}${degree_endpoint}?pk=${degreeID}`);
+};
 
 /**
  * This function retrieves an array of string referred to Degree names (used in Homepage).
  */
 export async function getStringDegrees(): Promise<Result<string[]>> {
     return getAsync<string[]>(`${api_endpoint}${typingDegrees_endpoint}`)
-}
+};
+
+/**
+ * This function retrieves existing degrees (search-box api).
+ */
+ export async function getDegreesForSearchBox(searchText: string): Promise<Result<Degree[]>> {
+    return getAsync<Degree[]>(`${api_endpoint}${searchDegrees_endpoint}?q=${searchText}`);
+};
+
+
+
+
 
 /* ----------------------------------------------------------- */
 
 /* Temporary function to retrieve degree informations. */
 export const getDegreeInformations = (degreeSlug: string): any[] => {
     return getAllCdls().filter(x => x.id === degreeSlug)[0]?.redirects ?? [];
-}
+};
 
 /* Temporary function to retrieve degree admins. */
 export const getDegreeAdmins = (degreeSlug: string): Admin[] => {
     return getAllCdls().filter(x => x.id === degreeSlug)[0]?.admins ?? [];
-}
+};
+
+/* Temporary function to retrieve University Links */
+export const getUniversityLinks = (): any[] => {
+    return UniversityLinks ?? [];
+};
 
 export const getExtraGroups = () => extraGroups;
 

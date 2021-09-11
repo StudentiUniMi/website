@@ -40,12 +40,12 @@ class LocalizationService {
                         section1: {
                             typedText: 'Sei iscritto a...',
                             text1: 'Rimani in contatto. Di più, e meglio.',
-                            text2: "Comunicare è importante, ma può essere frustrante farlo sui grupponi WhatsApp lasciati a loro stessi. Stiamo creando gruppi Telegram per ogni corso di laurea dell'Università degli Studi di Milano per facilitare lo scambio di informazioni.",
+                            text2: "Comunicare è importante, ma può essere frustrante farlo sui grupponi WhatsApp lasciati a loro stessi. Abbiamo creato un gruppo Telegram per ogni corso di laurea dell'Università degli Studi di Milano per facilitare lo scambio di informazioni.",
                         },
                         section2: {
                             text: 'Ogni cosa ha il suo gruppo Telegram',
                             card1: {
-                                text: 'Stiamo creando un gruppo Telegram per ogni corso di laurea; premi il pulsante sotto per trovare il tuo. Presto sarà disponibile anche un gruppo per ogni insegnamento.',
+                                text: 'Abbiamo creato un gruppo Telegram per ogni corso di laurea; premi il pulsante sotto per trovare il tuo. Presto sarà disponibile anche un gruppo per ogni insegnamento.',
                                 button: 'Gruppi dei corsi'
                             },
                             card2: {
@@ -136,6 +136,7 @@ class LocalizationService {
                         header: 'Regolamento dei gruppi Telegram'
                     },
                     groups: {
+                        findDegreeByName: "Cerca il tuo corso di laurea per nome",
                         groupsSection: {
                             text1: "Gruppi degli insegnamenti",
                             text2: "Trova i gruppi degli insegnamenti del tuo corso di laurea"
@@ -192,6 +193,10 @@ class LocalizationService {
                         header: {
                             text1: "Sei alla ricerca di informazioni legate al nostro ateneo? Nessun problema!",
                             text2: "Qui puoi trovare tutto quello che ti serve."
+                        },
+                        linksAndRedirects: {
+                            text1: "Trovare tutti i collegamenti utili legati all'ateneo può richiedere tempo.", 
+                            text2: "Per questo motivo li abbiamo centralizzati in questa pagina."
                         },
                         text1: 'Il rappresentante degli studenti è un ruolo molto importante ed altamente formativo, che garantisce a tutti gli studenti universitari un supporto alle difficoltà che può incontrare durante il periodo di studio.',
                         text2: 'Di seguito è presente la lista dei rappresentanti di ogni dipartimento e i loro contatti.',
@@ -364,6 +369,7 @@ class LocalizationService {
                         header: "Telegram groups rules",
                     },
                     groups: {
+                        findDegreeByName: "Find your degree by name",
                         groupsSection: {
                             text1: "Teaching groups",
                             text2: "Find the teaching groups of your degree"
@@ -420,6 +426,10 @@ class LocalizationService {
                         header: {
                             text1: "Are you looking for informations related to our university? No problem!",
                             text2: "Here you can find all you need."
+                        },
+                        linksAndRedirects: {
+                            text1: "Finding all the useful links related to the university can take time.", 
+                            text2: "No problem! We have put them on this page."
                         },
                         text1: 'Being a students representative is a very important role and a formative experience. They provide a support to any student against all the difficulties during the study period.',
                         text2: 'The list below reports all the representatives of each department and their contacts.',

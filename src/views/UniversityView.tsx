@@ -4,15 +4,18 @@ import { Text, Icon } from 'office-ui-fabric-react';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { useHistory } from 'react-router-dom';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { getRepresentatives, getDepartments } from '../services/Requests'
+import { getRepresentatives, getDepartments, getUniversityLinks } from '../services/Requests'
 import { Department, Representative } from '../models/Models';
 import { Image } from 'office-ui-fabric-react/lib/Image';
 import { semibold } from "../services/fonts";
+import { IChoiceGroupOptionStyles } from "@fluentui/react";
+import { ChoiceGroup, IChoiceGroupOption } from '@fluentui/react/lib/ChoiceGroup';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
 import RepresentativesList from '../components/University/RepresentativesList';
 import Slider from '../components/University/Slider/Slider';
+import { redirectToLink } from "../services/Utils";
 
 const iconStyles = { marginRight: '8px' };
 
@@ -20,8 +23,46 @@ const UniversityView = () => {
     var theme = useTheme();
     let didMount = React.useRef(false);
     const locale = LocalizationService.strings();
+    var language: string = LocalizationService.getLanguage();
     const history = useHistory();
     const whiteText = '#faf9f8';
+    const imageProperties = { display: 'inline-block', width: '80%' };
+
+    const universityLinks: any[] = getUniversityLinks();
+
+    /* ChoiceGroup for university links */
+    const iconProps: any = { fontSize: '24px' };
+    const options: IChoiceGroupOption[] = [];
+    const itemSize = 100;
+    const choiceGroupOptionsStyle: IChoiceGroupOptionStyles = {
+        choiceFieldWrapper: {
+            width: itemSize + "px",
+            height: itemSize + "px"
+        },
+        labelWrapper: {
+            maxWidth: itemSize / (3 / 4) + "px",
+            height: "auto",
+        },
+        field: {
+            height: "100%",
+            padding: "0px"
+        }
+    };
+
+    /* Workaround to not show selected choicegroup */
+    const [selectedChoiceGroup, setSelectedChoiceGroup] = React.useState<string>("");
+    const selectionChanged = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IChoiceGroupOption): void => { setSelectedChoiceGroup(""); }
+
+    universityLinks.map((x) => {
+        if (x.icon !== "" && x.link !== "") options.push({ 
+            key: x.name![language], 
+            text: x.name![language], 
+            styles: choiceGroupOptionsStyle, 
+            iconProps: { iconName: x.icon!, className: iconProps, color: theme.palette.themePrimary }, 
+            onClick: () => {redirectToLink(x.link!)} 
+        });
+        return options;
+    });
 
     /* Remove title properties from documentCardTitles */
     React.useEffect(() => {
@@ -143,15 +184,39 @@ const UniversityView = () => {
                 </Container>
             </div>
 
-            <div className="pt-5 pb-5 mb-4" style={{ backgroundColor: '#faa381' }}>
+            <div className="pt-5 pb-5" style={{ backgroundColor: theme.palette.themeTertiary }}>
                 <Container>
-                    <Row className="mb-3">
-                        <Col lg={3} className="text-center">
+
+                    <Row>
+                        <Col lg={4} className="text-center">
                             <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }}>
-                                <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/other/representatives.png'} style={{ display: 'inline-block', width: '100%' }} />
+                                <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/other/university_links.png'} style={imageProperties} />
                             </div>
                         </Col>
 
+                        <Col lg={8} className="mb-2">
+                            <div className="mb-2">
+                                <Text variant="xLargePlus" style={{color: theme.palette.white}}>{locale.university.linksAndRedirects.text1}</Text>
+                            </div>
+
+                            <div className="mb-3">
+                                <Text variant="large" style={{ color: theme.palette.white }}>{locale.university.linksAndRedirects.text2}</Text>
+                            </div>
+
+                            <div className="text-center justify-content-center university-links" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+                                <ChoiceGroup options={options} onChange={selectionChanged} selectedKey={selectedChoiceGroup} />
+                            </div>
+                        </Col>
+                    </Row>
+
+
+
+                </Container>
+            </div>
+
+            <div className="pt-5 pb-5 mb-4" style={{ backgroundColor: '#faa381' }}>
+                <Container>
+                    <Row className="mb-3">
                         <Col>
                             <div className="mb-2">
                                 <div className="mb-2">
@@ -180,6 +245,12 @@ const UniversityView = () => {
                                         disabled={errorLoadingDepartments || departments.length === 0}
                                     />
                                 </div>
+                            </div>
+                        </Col>
+
+                        <Col lg={3} className="text-center">
+                            <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }}>
+                                <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/other/representatives.png'} style={{ display: 'inline-block', width: '100%' }} />
                             </div>
                         </Col>
                     </Row>

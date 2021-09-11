@@ -6,7 +6,6 @@
 
 import { useTheme } from '@fluentui/react-theme-provider';
 import { MessageBarType, MessageBar } from '@fluentui/react';
-import React from 'react';
 
 interface Props { text: string };
 

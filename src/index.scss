@@ -286,7 +286,7 @@ button:focus,
   padding:0;
 }
 
-.ms-List { /* Padding for card-list in courses and additionalGroups sections */
+.additional-groups .ms-List, .course-list .ms-List { /* Padding for card-list in courses and additionalGroups sections */
   padding: 3px;
 }
 
@@ -333,24 +333,31 @@ button:focus,
   text-align: center;
 }
 
-/* ChoiceGroup in DegreeInformations adjustments */
-.degree-informations .ms-ChoiceField-field:hover::before,
-.degree-informations .ms-ChoiceField-field:focus::before {
+/* ChoiceGroup adjustments to not show hover effect */
+.degree-informations .ms-ChoiceField-field:hover::before, .university-links .ms-ChoiceField-field:hover::before,
+.degree-informations .ms-ChoiceField-field:focus::before, .university-links .ms-ChoiceField-field:focus::before {
   opacity: 0;
 }
 
-.degree-informations .ms-ChoiceField-field:hover::after,
-.degree-informations .ms-ChoiceField-field:focus::after {
+.degree-informations .ms-ChoiceField-field:hover::after, .university-links .ms-ChoiceField-field:hover::after
+.degree-informations .ms-ChoiceField-field:focus::after, .university-links .ms-ChoiceField-field:focus::after {
   opacity: 0;
 }
 
-.degree-informations .ms-ChoiceField-labelWrapper {
+.degree-informations .ms-ChoiceField-labelWrapper, .university-links .ms-ChoiceField-labelWrapper {
   overflow: visible;
 }
 
 .degree-informations .ms-ChoiceFieldGroup-flexContainer {
   display: flex;
   justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .university-links .ms-ChoiceFieldGroup-flexContainer {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 
@@ -372,4 +379,23 @@ button:focus,
 header .ms-Image-image {
   display: inline;
   margin-bottom: 9px !important;
+}
+
+/* Fix searchBox visualization for small height displays */
+@media only screen and (max-height: 610px) {
+  #SuggestionContainer .ms-Callout-main {
+    max-height: 200px !important;
+  }
+}
+
+@media only screen and (max-height: 500px) {
+  #SuggestionContainer .ms-Callout-main {
+    max-height: 150px !important;
+  }
+}
+
+@media only screen and (max-height: 410px) {
+  #SuggestionContainer .ms-Callout-main {
+    max-height: 100px !important;
+  }
 }
