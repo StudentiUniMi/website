@@ -388,8 +388,14 @@ header .ms-Image-image {
   }
 }
 
-@media only screen and (max-height: 300px) {
+@media only screen and (max-height: 500px) {
   #SuggestionContainer .ms-Callout-main {
     max-height: 150px !important;
+  }
+}
+
+@media only screen and (max-height: 410px) {
+  #SuggestionContainer .ms-Callout-main {
+    max-height: 100px !important;
   }
 }
