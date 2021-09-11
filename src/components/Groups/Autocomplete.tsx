@@ -145,7 +145,7 @@ export class Autocomplete extends React.Component<ISearchSuggestionsProps, IAuto
         label = "";
     }
 
-    return <Chip label={label} size="small" style={{ color: '#f3f4f4', backgroundColor: '#1d7aeb' }} />;
+    return <Chip label={label} size="small" style={{ color: '#f3f4f4', backgroundColor: '#adadad', fontWeight: 600 }} />;
   }
   
   private onRenderCell = (item: any) => {
