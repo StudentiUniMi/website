@@ -4,7 +4,7 @@ import { initializeIcons } from "@uifabric/icons";
 import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { getCourses, getVerboseDegree, getDegreesForSearchBox } from '../services/Requests';
+import { getCourses, getVerboseDegreeBySlug, getVerboseDegreeByID, getDegreesForSearchBox } from '../services/Requests';
 import { Separator } from '@fluentui/react/lib/Separator';
 import { semibold } from '../services/fonts';
 import { Degree, CourseDegree } from "../models/Models";
@@ -39,7 +39,7 @@ const GroupsView = () => {
     const entitySelectHandler = (item: ISuggestionItem): void => { // Questo viene triggerato quando selezioni qualcosa dal menù
         setDegreeTextSearch(item.displayValue);
         setSelectedDegree(item.key as unknown as string);
-        setLoadedDegree(searchData.filter(x => x.degree?.pk === selectedDegree as unknown as number)[0]?.degree!);
+        //setLoadedDegree(searchData.filter(x => x.degree?.pk === selectedDegree as unknown as number)[0]?.degree!);
         history.push(`/courses/${item.degree?.slug}`);
     };
     
@@ -47,7 +47,7 @@ const GroupsView = () => {
         if (searchData.length === 0) return;
         setDegreeTextSearch(searchData[0]?.displayValue);
         setSelectedDegree(searchData[0]?.key as unknown as string);
-        setLoadedDegree(searchData.filter(x => x.degree?.pk === selectedDegree as unknown as number)[0]?.degree!);
+        //setLoadedDegree(searchData.filter(x => x.degree?.pk === selectedDegree as unknown as number)[0]?.degree!);
         history.push(`/courses/${searchData[0]?.degree?.slug}`);
     };
 
@@ -129,7 +129,7 @@ const GroupsView = () => {
                 return;
             }
 
-            let verboseDegreeResult = await getVerboseDegree(degreeSlug);
+            let verboseDegreeResult = await getVerboseDegreeBySlug(degreeSlug);
             
             if (verboseDegreeResult.status !== 200) {
                 // Do we need to show an apposite error? Probably not
@@ -138,18 +138,25 @@ const GroupsView = () => {
 
             const verboseDeg = verboseDegreeResult.value ?? undefined;
             if (verboseDeg === undefined || verboseDeg === null) return;
-            console.log("VerboseDegree result: ", verboseDeg);
-
-            setLoadedDegree(verboseDeg);
+            //console.log("VerboseDegree result: ", verboseDeg, " I'm setting selectedDegree key .. (" + verboseDeg.pk! + ").");
             setSelectedDegree(verboseDeg.pk! as unknown as string);
-            setDegreeTextSearch(verboseDeg.name!)
+            //setDegreeTextSearch(verboseDeg.name!)
         }
     }, [history.location.pathname]);
 
     const updateLoadedDegree = React.useCallback(async () => {
         /* L'idea è di prelevare il degree tramite chiave e chiamare questo update ogni volta in modo tale da tenerlo aggiornato. Va sistemato l'initialize che setta solamente la chiave */
 
-    }, []);
+        // tipo? verbosedegree?
+        let degreeResult = await getVerboseDegreeByID(selectedDegree);
+        if (degreeResult.status !== 200) return;
+
+        const degree = degreeResult.value ?? undefined;
+        if (degree === undefined || degree === null) return;
+        console.log("HO CARICATO DEGREE: ", degree);
+
+        setLoadedDegree(degree);
+    }, [selectedDegree]);
     
     React.useEffect(() => {
         if (!didMount.current) initializeDegreeByUrl();      

@@ -102,8 +102,16 @@ export async function getRepresentatives(departmentKey: string): Promise<Result<
  * This function retrieves a degree filtering by slug.
  * @param degreeSlug Slug of the degree
  */
-export async function getVerboseDegree(degreeSlug: string): Promise<Result<VerboseDegree>> {
+export async function getVerboseDegreeBySlug(degreeSlug: string): Promise<Result<VerboseDegree>> {
     return getAsync<VerboseDegree>(`${api_endpoint}${degree_endpoint}?slug=${degreeSlug}`);
+};
+
+/**
+ * This function retrieves a degree filtering by ID.
+ * @param degreeID ID of the degree
+ */
+ export async function getVerboseDegreeByID(degreeID: string): Promise<Result<VerboseDegree>> {
+    return getAsync<VerboseDegree>(`${api_endpoint}${degree_endpoint}?pk=${degreeID}`);
 };
 
 /**
