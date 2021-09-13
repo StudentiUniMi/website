@@ -69,7 +69,7 @@ export const buildDarkTheme = (paletteID: string) => {
 }
 
 export const fonts = {
-    defaultFontStyle: { fontFamily: 'Monaco, Menlo, Consolas', fontWeight: FontWeights.regular },
+    defaultFontStyle: { fontFamily: 'Segoe UI', fontWeight: FontWeights.regular },
     small: {
         fontSize: FontSizes.size12
     },

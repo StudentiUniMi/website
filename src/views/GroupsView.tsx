@@ -145,7 +145,7 @@ const GroupsView = () => {
     }, [history.location.pathname]);
 
     const updateLoadedDegree = React.useCallback(async () => {
-        /* L'idea è di prelevare il degree tramite chiave e chiamare questo update ogni volta in modo tale da tenerlo aggiornato. Va sistemato l'initialize che setta solamente la chiave */
+        if (selectedDegree === null || selectedDegree === undefined || selectedDegree === "") return;
         let degreeResult = await getVerboseDegreeByID(selectedDegree);
         if (degreeResult.status !== 200) return;
 
