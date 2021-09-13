@@ -138,8 +138,8 @@ class LocalizationService {
                     groups: {
                         findDegreeByName: "Cerca il tuo corso di laurea per nome",
                         groupsSection: {
-                            text1: "Gruppi degli insegnamenti",
-                            text2: "Trova i gruppi degli insegnamenti del tuo corso di laurea"
+                            text1: "Gruppi dei corsi",
+                            text2: "Trova tutti i gruppi Telegram del tuo corso di laurea"
                         },
                         extraGroupsSection: {
                             text1: "Gruppi extra",
@@ -371,8 +371,8 @@ class LocalizationService {
                     groups: {
                         findDegreeByName: "Find your degree by name",
                         groupsSection: {
-                            text1: "Teaching groups",
-                            text2: "Find the teaching groups of your degree"
+                            text1: "Degree groups",
+                            text2: "Find all the Telegram groups of your degree"
                         },
                         extraGroupsSection: {
                             text1: "Extra Groups",
