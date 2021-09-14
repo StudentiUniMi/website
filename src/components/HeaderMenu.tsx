@@ -51,18 +51,17 @@ const HeaderMenu = (props: Props) => {
         props.changeTheme();
     };
 
-    if (cookies["theme"] === undefined) 
-    {
-        setCookie("theme", "light", { path: "/", expires: date }); 
+    if (cookies["theme"] === undefined) {
         const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
         if (darkThemeMq.matches) {
             setCookie("theme", "dark", { path: "/", expires: date });
-            props.changeTheme();
+        } else {
+            setCookie("theme", "light", { path: "/", expires: date }); 
         }
+        props.changeTheme();
     }
     
-    if (cookies['language'] === undefined) 
-    { 
+    if (cookies['language'] === undefined) { 
         const isNavLanguageITA = isNavigatorLanguageItalian();
         setCookie("language", (isNavLanguageITA ? 'it' : 'en'), { path: "/", expires: date }); 
     }
