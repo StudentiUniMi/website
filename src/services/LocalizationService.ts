@@ -8,6 +8,14 @@ class LocalizationService {
         if (LocalizationService.data == null || LocalizationService.data === undefined) {
             LocalizationService.data = new LocalizedStrings<ILocalizationStrings>({
                 it: {
+                    helmet: {
+                        homepage: { title: "Network StudentiUniMi - Gruppi, servizi e molto altro" },
+                        courses: { title: "Tutti i gruppi | Network StudentiUniMi" },
+                        services: { title: "Servizi e link rapidi | Network StudentiUniMi" },
+                        rules: { title: "Regolamento dei gruppi | Network StudentiUniMi" },
+                        university: { title: "Collegamenti universitari | Network StudentiUniMi" },
+                        organization: { title: "Chi siamo | Network StudentiUniMi" }
+                    },
                     loading: "Caricamento in corso..",
                     telegramGroup: 'Gruppo Telegram',
                     errorLoadingDepartments: 'Errore durante il caricamento dei dipartimenti.',
@@ -241,6 +249,14 @@ class LocalizationService {
 
 
                 en: {
+                    helmet: {
+                        homepage: { title: "Network StudentiUniMi - Groups, services and much more" },
+                        courses: { title: "Groups | Network StudentiUniMi" },
+                        services: { title: "Services | Network StudentiUniMi" },
+                        rules: { title: "Groups rules | Network StudentiUniMi" },
+                        university: { title: "University redirects | Network StudentiUniMi" },
+                        organization: { title: "Organization | Network StudentiUniMi" }
+                    },
                     loading: "Loading..",
                     telegramGroup: 'Telegram Group',
                     errorLoadingDepartments: 'Error has occured while retrieving departments.',

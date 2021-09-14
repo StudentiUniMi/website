@@ -1,4 +1,12 @@
 interface ILocalizationStrings {
+    helmet: {
+        homepage: { title: string },
+        courses: { title: string },
+        services: { title: string },
+        rules: { title: string },
+        university: { title: string },
+        organization: { title: string }
+    },
     telegramGroup: string,
     loading: string,
     errorLoadingDepartments: string,

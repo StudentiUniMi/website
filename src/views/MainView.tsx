@@ -18,7 +18,6 @@ const MainView = () => {
 
   const changeTheme = () => {
     setTheme(!theme);
-    loadTheme(theme ? darkTheme : lightTheme);
   };
   
   const changePalette = (id: string) => {
@@ -26,7 +25,7 @@ const MainView = () => {
     setLightTheme(buildLightTheme(id));
     setDarkTheme(buildDarkTheme(id));
   };
-  
+
   loadTheme(theme ? darkTheme : lightTheme);
   
   return (
