@@ -69,9 +69,9 @@ const HeaderMenu = (props: Props) => {
         setCookie("theme", "light", { path: "/", expires: date }); 
         const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
         if (darkThemeMq.matches) {
-            props.changeTheme();
             setCookie("theme", "dark", { path: "/", expires: date }); 
         }
+        props.changeTheme();
     }
 
     if (cookies["palette"] === undefined) 
