@@ -52,9 +52,12 @@ const HeaderMenu = (props: Props) => {
     };
 
     if (cookies["theme"] === undefined) {
+        /*
         setCookie("theme", "light", { path: "/", expires: date }); 
         const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
         if (darkThemeMq.matches) themeToggled();
+        */
+        setCookie("theme", "light", { path: "/", expires: date }); 
     }
     
     if (cookies['language'] === undefined) { 
