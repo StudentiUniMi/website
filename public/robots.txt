@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cdn.studentiunimi.it/studunimi-sitemap/sitemap.xml
