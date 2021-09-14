@@ -50,6 +50,16 @@ const HeaderMenu = (props: Props) => {
         else { setCookie("theme", "dark", { path: "/", expires: date }); }
         props.changeTheme();
     };
+
+    if (cookies["theme"] === undefined) 
+    {
+        setCookie("theme", "light", { path: "/", expires: date }); 
+        const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+        if (darkThemeMq.matches) {
+            setCookie("theme", "dark", { path: "/", expires: date });
+            props.changeTheme();
+        }
+    }
     
     if (cookies['language'] === undefined) 
     { 
@@ -154,15 +164,6 @@ const HeaderMenu = (props: Props) => {
             history.push(`/${item!.key! as string}/`);
         }
     };
-
-    if (cookies["theme"] === undefined) 
-    {
-        setCookie("theme", "light", { path: "/", expires: date }); 
-        const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-        if (darkThemeMq.matches) {
-            themeToggled();
-        }
-    }
 
     const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }));
 

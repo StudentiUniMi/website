@@ -16,7 +16,6 @@ const MainView = () => {
   let [lightTheme, setLightTheme] = React.useState(buildLightTheme(palette));
   let [darkTheme, setDarkTheme] = React.useState(buildDarkTheme(palette));
 
-  
   const changeTheme = () => {
     setTheme(!theme);
   };
@@ -26,7 +25,7 @@ const MainView = () => {
     setLightTheme(buildLightTheme(id));
     setDarkTheme(buildDarkTheme(id));
   };
-  
+
   loadTheme(theme ? darkTheme : lightTheme);
   
   return (
