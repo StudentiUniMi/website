@@ -1,11 +1,11 @@
 interface ILocalizationStrings {
     helmet: {
-        homepage: { title: string },
-        courses: { title: string },
-        services: { title: string },
-        rules: { title: string },
-        university: { title: string },
-        organization: { title: string }
+        homepage: { title: string, description: string },
+        courses: { title: string, description: string },
+        services: { title: string, description: string },
+        rules: { title: string, description: string },
+        university: { title: string, description: string },
+        organization: { title: string, description: string }
     },
     telegramGroup: string,
     loading: string,

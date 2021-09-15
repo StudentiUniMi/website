@@ -15,8 +15,16 @@ import AdminsList from '../components/Groups/AdminsList';
 import AdditionalGroupsView from '../components/Groups/AdditionalGroups';
 import { Autocomplete } from '../components/Groups/Autocomplete';
 import { ISuggestionItem } from '../components/Groups/Autocomplete_types';
+import { Helmet } from "react-helmet";
+import Child from "react-helmet";
 
 initializeIcons();
+
+interface reactHelmetContent {
+    title: string,
+    description: string,
+    href: string
+}
 
 const GroupsView = () => {
     var theme = useTheme();
@@ -30,6 +38,9 @@ const GroupsView = () => {
     let [selectedDegree, setSelectedDegree] = React.useState<string>(''); // PK del Degree
     let [searchData, setSearchData] = React.useState<ISuggestionItem[]>([]); // Array di ISuggestionItem (contenente anche Degree per ogni elemento)
     let [courses, setCourses] = React.useState<CourseDegree[]>([]); // Corsi di insegnamento
+    let [reactHelmetContent, setReactHelmetContent] = React.useState<reactHelmetContent>(
+        { title: locale.helmet.courses.title, description: locale.helmet.courses.description, href: 'https://studentiunimi.it/courses/'}
+    );
 
     const [loadingCourses, setLoadingCourses] = React.useState<boolean>(false);
     //const [errorLoadingDegrees, setErrorLoadingDegrees] = React.useState<boolean>(false);
@@ -169,6 +180,13 @@ const GroupsView = () => {
     }, [selectedDegree, updateLoadedDegree])
 
     return (
+        <>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>{reactHelmetContent.title}</title>
+            <meta name="description" content={reactHelmetContent.description} />
+            <link rel="canonical" href={reactHelmetContent.href} />
+        </Helmet>
         <div className="pt-5 courses">
             <Container>
                 <div className="mb-3">
@@ -206,6 +224,7 @@ const GroupsView = () => {
 
             </Container>
         </div>
+        </>
     );
 };
 
