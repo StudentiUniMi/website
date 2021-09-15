@@ -14,7 +14,8 @@ class LocalizationService {
                         services: { title: "Servizi e link rapidi | Network StudentiUniMi", description: "Stanco dei disservizi di unimia? Da questa pagina alternativa puoi accedere a tutti i link utili dell'Università degli Studi di Milano." },
                         rules: { title: "Regolamento dei gruppi | Network StudentiUniMi", description: "Il regolamento ufficiale del Network StudentiUniMi." },
                         university: { title: "Informazioni dall'Ateneo e rappresentanti | Network StudentiUniMi", description: "Rimani aggiornato con tutte le informazioni e i rappresentanti dell'Università degli Studi di Milano, offerto dal Network StudentiUniMi." },
-                        organization: { title: "Chi siamo | Network StudentiUniMi", description: "Chi siamo? Scopri l'organizzazione dietro il Network StudentiUniMi, il più grande network dell'Università degli Studi di Milano." }
+                        organization: { title: "Chi siamo | Network StudentiUniMi", description: "Chi siamo? Scopri l'organizzazione dietro il Network StudentiUniMi, il più grande network dell'Università degli Studi di Milano." },
+                        degreeLoaded: { title1: 'Gruppi di ', title2: ' | Network StudentiUniMi', description1: 'Tutti i link dei gruppi Telegram del corso di laurea di ', description2: " dell'Università degli Studi di Milano offerti dal Network StudentiUniMi." }
                     },
                     loading: "Caricamento in corso..",
                     telegramGroup: 'Gruppo Telegram',
@@ -255,7 +256,8 @@ class LocalizationService {
                         services: { title: "Services | Network StudentiUniMi", description: "Tired of unimia's inefficiencies? On this alternative page you can access all the useful links of the University of Milan." },
                         rules: { title: "Groups rules | Network StudentiUniMi", description: "The official rules of the StudentiUniMi Network." },
                         university: { title: "University redirects | Network StudentiUniMi", description: "Stay up-to-date with all the information and representatives of the University of Milan, offered by the StudentiUniMi Network." },
-                        organization: { title: "Organization | Network StudentiUniMi", description: "Who are we? Discover the organization behind the StudentiUniMi Network, the largest network of the University of Milan." }
+                        organization: { title: "Organization | Network StudentiUniMi", description: "Who are we? Discover the organization behind the StudentiUniMi Network, the largest network of the University of Milan." },
+                        degreeLoaded: { title1: 'Groups of ', title2: ' | Network StudentiUniMi', description1: 'All the links of the Telegram groups of ', description2: ' degree of the University of Milan. Offered by StudentiUniMi Network.' }
                     },
                     loading: "Loading..",
                     telegramGroup: 'Telegram Group',

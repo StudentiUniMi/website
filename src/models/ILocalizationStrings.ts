@@ -5,7 +5,8 @@ interface ILocalizationStrings {
         services: { title: string, description: string },
         rules: { title: string, description: string },
         university: { title: string, description: string },
-        organization: { title: string, description: string }
+        organization: { title: string, description: string },
+        degreeLoaded: { title1: string, title2: string, description1: string, description2: string }
     },
     telegramGroup: string,
     loading: string,

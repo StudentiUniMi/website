@@ -16,7 +16,6 @@ import AdditionalGroupsView from '../components/Groups/AdditionalGroups';
 import { Autocomplete } from '../components/Groups/Autocomplete';
 import { ISuggestionItem } from '../components/Groups/Autocomplete_types';
 import { Helmet } from "react-helmet";
-import Child from "react-helmet";
 
 initializeIcons();
 
@@ -123,7 +122,12 @@ const GroupsView = () => {
 
         setCourses(coursesResult.value ?? []);
         setLoadingCourses(false);
-    }, [selectedDegree, loadedDegree]);
+        setReactHelmetContent({
+            title: locale.helmet.degreeLoaded.title1 + loadedDegree?.name + locale.helmet.degreeLoaded.title2, 
+            description: locale.helmet.degreeLoaded.description1 + loadedDegree?.name + locale.helmet.degreeLoaded.description2, 
+            href: `https://studentiunimi.it/courses/${loadedDegree?.slug}`
+        });
+    }, [selectedDegree, loadedDegree, locale.helmet.degreeLoaded.description1, locale.helmet.degreeLoaded.description2, locale.helmet.degreeLoaded.title1, locale.helmet.degreeLoaded.title2]);
 
     
     /* This function initializes the VerboseDegree (retrieves degree based on url initialization) */
@@ -152,8 +156,14 @@ const GroupsView = () => {
             //console.log("VerboseDegree result: ", verboseDeg, " I'm setting selectedDegree key .. (" + verboseDeg.pk! + ").");
             setSelectedDegree(verboseDeg.pk! as unknown as string);
             //setDegreeTextSearch(verboseDeg.name!)
+
+            setReactHelmetContent({
+                title: locale.helmet.degreeLoaded.title1 + verboseDeg?.name + locale.helmet.degreeLoaded.title2, 
+                description: locale.helmet.degreeLoaded.description1 + verboseDeg?.name + locale.helmet.degreeLoaded.description2, 
+                href: `https://studentiunimi.it/courses/${verboseDeg?.slug}`
+            });
         }
-    }, [history.location.pathname]);
+    }, [history.location.pathname, locale.helmet.degreeLoaded.description1, locale.helmet.degreeLoaded.description2, locale.helmet.degreeLoaded.title1, locale.helmet.degreeLoaded.title2]);
 
     const updateLoadedDegree = React.useCallback(async () => {
         if (selectedDegree === null || selectedDegree === undefined || selectedDegree === "") return;
