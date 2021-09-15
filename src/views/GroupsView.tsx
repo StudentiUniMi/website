@@ -25,6 +25,19 @@ interface reactHelmetContent {
     href: string
 }
 
+/* Returns degree type (name) */
+const getDegreeTypeName = (type: string): string => {
+    switch (type) {
+        case 'B':
+            return 'triennale';
+        case 'M':
+            return 'magistrale';
+        case 'C':
+            return 'magistrale a ciclo unico';
+    }
+    return '';
+}
+
 const GroupsView = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
@@ -123,8 +136,8 @@ const GroupsView = () => {
         setCourses(coursesResult.value ?? []);
         setLoadingCourses(false);
         setReactHelmetContent({
-            title: locale.helmet.degreeLoaded.title1 + loadedDegree?.name + locale.helmet.degreeLoaded.title2, 
-            description: locale.helmet.degreeLoaded.description1 + loadedDegree?.name + locale.helmet.degreeLoaded.description2, 
+            title: locale.helmet.degreeLoaded.title1 + `${loadedDegree?.name} (${getDegreeTypeName(loadedDegree?.type!)})` + locale.helmet.degreeLoaded.title2, 
+            description: locale.helmet.degreeLoaded.description1 + `${loadedDegree?.name} (${getDegreeTypeName(loadedDegree?.type!)})` + locale.helmet.degreeLoaded.description2, 
             href: `https://studentiunimi.it/courses/${loadedDegree?.slug}`
         });
     }, [selectedDegree, loadedDegree, locale.helmet.degreeLoaded.description1, locale.helmet.degreeLoaded.description2, locale.helmet.degreeLoaded.title1, locale.helmet.degreeLoaded.title2]);
@@ -158,8 +171,8 @@ const GroupsView = () => {
             //setDegreeTextSearch(verboseDeg.name!)
 
             setReactHelmetContent({
-                title: locale.helmet.degreeLoaded.title1 + verboseDeg?.name + locale.helmet.degreeLoaded.title2, 
-                description: locale.helmet.degreeLoaded.description1 + verboseDeg?.name + locale.helmet.degreeLoaded.description2, 
+                title: locale.helmet.degreeLoaded.title1 + `${verboseDeg?.name} (${getDegreeTypeName(verboseDeg?.type!)})` + locale.helmet.degreeLoaded.title2, 
+                description: locale.helmet.degreeLoaded.description1 + `${verboseDeg?.name} (${getDegreeTypeName(verboseDeg?.type!)})` + locale.helmet.degreeLoaded.description2, 
                 href: `https://studentiunimi.it/courses/${verboseDeg?.slug}`
             });
         }
