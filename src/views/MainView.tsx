@@ -16,18 +16,18 @@ const MainView = () => {
   let [lightTheme, setLightTheme] = React.useState(buildLightTheme(palette));
   let [darkTheme, setDarkTheme] = React.useState(buildDarkTheme(palette));
 
-  loadTheme(theme ? darkTheme : lightTheme);
-
   const changeTheme = () => {
     setTheme(!theme);
   };
-
+  
   const changePalette = (id: string) => {
     setPalette(id);
     setLightTheme(buildLightTheme(id));
     setDarkTheme(buildDarkTheme(id));
   };
 
+  loadTheme(theme ? darkTheme : lightTheme);
+  
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <CookiesProvider>

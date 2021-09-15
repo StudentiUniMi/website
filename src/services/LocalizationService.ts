@@ -8,6 +8,15 @@ class LocalizationService {
         if (LocalizationService.data == null || LocalizationService.data === undefined) {
             LocalizationService.data = new LocalizedStrings<ILocalizationStrings>({
                 it: {
+                    helmet: {
+                        homepage: { title: "Network StudentiUniMi - Gruppi, servizi e molto altro", description: "Sito web ufficiale del Network StudentiUniMi: gruppi WhatsApp rimpiazziati da Telegram, servizi e molto altro. Il network più grande dell'Università degli Studi di Milano." },
+                        courses: { title: "Tutti i gruppi | Network StudentiUniMi", description: "Tutti i gruppi Telegram per tutti i corsi di laurea (triennali, magistrali, lauree a ciclo unico) dell'Università degli Studi di Milano. Entra, chiedi informazioni e conosci persone nuove grazie al Network StudentiUniMi." },
+                        services: { title: "Servizi e link rapidi | Network StudentiUniMi", description: "Stanco dei disservizi di unimia? Da questa pagina alternativa puoi accedere a tutti i link utili dell'Università degli Studi di Milano." },
+                        rules: { title: "Regolamento dei gruppi | Network StudentiUniMi", description: "Il regolamento ufficiale del Network StudentiUniMi." },
+                        university: { title: "Informazioni dall'Ateneo e rappresentanti | Network StudentiUniMi", description: "Rimani aggiornato con tutte le informazioni e i rappresentanti dell'Università degli Studi di Milano, offerto dal Network StudentiUniMi." },
+                        organization: { title: "Chi siamo | Network StudentiUniMi", description: "Chi siamo? Scopri l'organizzazione dietro il Network StudentiUniMi, il più grande network dell'Università degli Studi di Milano." },
+                        degreeLoaded: { title1: 'Gruppi di ', title2: ' | Network StudentiUniMi', description1: 'Tutti i link dei gruppi Telegram del corso di laurea di ', description2: " dell'Università degli Studi di Milano offerti dal Network StudentiUniMi." }
+                    },
                     loading: "Caricamento in corso..",
                     telegramGroup: 'Gruppo Telegram',
                     errorLoadingDepartments: 'Errore durante il caricamento dei dipartimenti.',
@@ -138,8 +147,8 @@ class LocalizationService {
                     groups: {
                         findDegreeByName: "Cerca il tuo corso di laurea per nome",
                         groupsSection: {
-                            text1: "Gruppi degli insegnamenti",
-                            text2: "Trova i gruppi degli insegnamenti del tuo corso di laurea"
+                            text1: "Gruppi dei corsi",
+                            text2: "Trova tutti i gruppi Telegram del tuo corso di laurea"
                         },
                         extraGroupsSection: {
                             text1: "Gruppi extra",
@@ -241,6 +250,15 @@ class LocalizationService {
 
 
                 en: {
+                    helmet: {
+                        homepage: { title: "Network StudentiUniMi - Groups, services and much more", description: "Official website of StudentiUniMi Network: WhatsApp groups replaced by Telegram ones, services and much more. The largest network of the University of Milan." },
+                        courses: { title: "Groups | Network StudentiUniMi", description: "All Telegram groups for all degree courses (three-year, master, single-cycle degrees) of the University of Milan. Join, ask for information and meet new people thanks to the StudentiUniMi Network." },
+                        services: { title: "Services | Network StudentiUniMi", description: "Tired of unimia's inefficiencies? On this alternative page you can access all the useful links of the University of Milan." },
+                        rules: { title: "Groups rules | Network StudentiUniMi", description: "The official rules of the StudentiUniMi Network." },
+                        university: { title: "University redirects | Network StudentiUniMi", description: "Stay up-to-date with all the information and representatives of the University of Milan, offered by the StudentiUniMi Network." },
+                        organization: { title: "Organization | Network StudentiUniMi", description: "Who are we? Discover the organization behind the StudentiUniMi Network, the largest network of the University of Milan." },
+                        degreeLoaded: { title1: 'Groups of ', title2: ' | Network StudentiUniMi', description1: 'All the links of the Telegram groups of ', description2: ' degree of the University of Milan. Offered by StudentiUniMi Network.' }
+                    },
                     loading: "Loading..",
                     telegramGroup: 'Telegram Group',
                     errorLoadingDepartments: 'Error has occured while retrieving departments.',
@@ -371,8 +389,8 @@ class LocalizationService {
                     groups: {
                         findDegreeByName: "Find your degree by name",
                         groupsSection: {
-                            text1: "Teaching groups",
-                            text2: "Find the teaching groups of your degree"
+                            text1: "Degree groups",
+                            text2: "Find all the Telegram groups of your degree"
                         },
                         extraGroupsSection: {
                             text1: "Extra Groups",

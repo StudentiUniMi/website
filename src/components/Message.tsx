@@ -11,13 +11,14 @@ interface Props { text: string };
 
 const Message = (props: Props) => {
     var theme = useTheme();
+    const messageBarStyles = { root: { backgroundColor: theme.palette.neutralLighterAlt, color: theme.palette.black } }
 
     const InfoMessage = () => (
         <MessageBar
             messageBarType={MessageBarType.info}
             isMultiline={false}
             dismissButtonAriaLabel="Close"
-            theme={theme}
+            styles={messageBarStyles}
         >
             {props.text}
         </MessageBar>

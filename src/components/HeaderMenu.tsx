@@ -44,9 +44,23 @@ const HeaderMenu = (props: Props) => {
     const settingsIconId = useId('icon');
     const calloutProps = { gapSpace: 0, target: `#${settingsIconId}`, };
     const onRenderCaretDown = (): JSX.Element => { return <Icon iconName="List" />; };
+
+    const themeToggled = () => {
+        if (cookies["theme"] === "dark") setCookie("theme", "light", { path: "/", expires: date });
+        else { setCookie("theme", "dark", { path: "/", expires: date }); }
+        props.changeTheme();
+    };
+
+    if (cookies["theme"] === undefined) {
+        /*
+        setCookie("theme", "light", { path: "/", expires: date }); 
+        const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+        if (darkThemeMq.matches) themeToggled();
+        */
+        setCookie("theme", "light", { path: "/", expires: date }); 
+    }
     
-    if (cookies['language'] === undefined) 
-    { 
+    if (cookies['language'] === undefined) { 
         const isNavLanguageITA = isNavigatorLanguageItalian();
         setCookie("language", (isNavLanguageITA ? 'it' : 'en'), { path: "/", expires: date }); 
     }
@@ -63,11 +77,6 @@ const HeaderMenu = (props: Props) => {
         { key: 'it', text: locale.settingsPanel.italian },
         { key: 'en', text: locale.settingsPanel.english }
     ];
-
-    if (cookies["theme"] === undefined) 
-    {
-        setCookie("theme", "light", { path: "/", expires: date }); 
-    }
 
     if (cookies["palette"] === undefined) 
     { 
@@ -155,12 +164,6 @@ const HeaderMenu = (props: Props) => {
     };
 
     const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }));
-
-    const themeToggled = () => {
-        if (cookies["theme"] === "dark") setCookie("theme", "light", { path: "/", expires: date });
-        else { setCookie("theme", "dark", { path: "/", expires: date }); }
-        props.changeTheme();
-    };
 
     /* Theme palette code */
     const colorCells: any[] = palettes.map(x => ({ id: x.id, label: x.label, color: x.palette?.themePrimary }));

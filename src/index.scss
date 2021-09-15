@@ -26,6 +26,10 @@ main {
   min-height: 100%;
 }
 
+span { /* Texts are contained in span, so this should fix the visualization bug on some ugly browsers like Mozilla Night Basalmici Version */
+  font-family: "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+}
+
 
 /* Fix bootstrap outline when click */
 a:active,
@@ -311,7 +315,7 @@ button:focus,
 }
 
 .MuiChip-label {
-  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-size: 11px;
 }
 
