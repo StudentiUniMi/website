@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet";
 
 const ContentView = () => {
     const locale = LocalizationService.strings();
+    var language: string = LocalizationService.getLanguage();
     
     const wrap = (element: React.ReactNode): React.ReactNode => {
         return (<main role="main" className="content">{element}</main>)
@@ -24,7 +25,7 @@ const ContentView = () => {
                         <meta charSet="utf-8" />
                         <title>{locale.helmet.homepage.title}</title>
                         <meta name="description" content={locale.helmet.homepage.description} />
-                        <link rel="canonical" href="https://studentiunimi.it/home/" />
+                        <link rel="canonical" hrefLang={language} href="https://studentiunimi.it/home/" />
                     </Helmet>
                     <HomeView/>
                 </>
@@ -41,7 +42,7 @@ const ContentView = () => {
                     <meta charSet="utf-8" />
                     <title>{locale.helmet.services.title}</title>
                     <meta name="description" content={locale.helmet.services.description} />
-                    <link rel="canonical" href="https://studentiunimi.it/services/" />
+                    <link rel="canonical" hrefLang={language} href="https://studentiunimi.it/services/" />
                 </Helmet>
                     <ServicesView/>
                 </>
@@ -52,7 +53,7 @@ const ContentView = () => {
                     <meta charSet="utf-8" />
                     <title>{locale.helmet.rules.title}</title>
                     <meta name="description" content={locale.helmet.rules.description} />
-                    <link rel="canonical" href="https://studentiunimi.it/rules/" />
+                    <link rel="canonical" hrefLang={language} href="https://studentiunimi.it/rules/" />
                 </Helmet>
                     <RulesView/>
                 </>
@@ -63,7 +64,7 @@ const ContentView = () => {
                     <meta charSet="utf-8" />
                     <title>{locale.helmet.university.title}</title>
                     <meta name="description" content={locale.helmet.university.description} />
-                    <link rel="canonical" href="https://studentiunimi.it/representatives/" />
+                    <link rel="canonical" hrefLang={language} href="https://studentiunimi.it/representatives/" />
                 </Helmet>
                     <UniversityView/>
                 </>
@@ -74,7 +75,7 @@ const ContentView = () => {
                     <meta charSet="utf-8" />
                     <title>{locale.helmet.organization.title}</title>
                     <meta name="description" content={locale.helmet.organization.description} />
-                    <link rel="canonical" href="https://studentiunimi.it/organization/" />
+                    <link rel="canonical" hrefLang={language} href="https://studentiunimi.it/organization/" />
                 </Helmet>
                     <OrganizationView/>
                 </>
