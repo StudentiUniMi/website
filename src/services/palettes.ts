@@ -37,10 +37,10 @@ export const palettes = [
             themeLighterAlt: '#f4f9fe',
             themeLighter: '#3333cc',
             themeLight: '#5c5cd6',
-            themeTertiary: '#7070db',
+            themeTertiary: '#5c5ce0',
             themeSecondary: '#8585e0',
-            themeDarkAlt: '#6c6cdb',
-            themeDark: '#6c6cdb',
+            themeDarkAlt: '#343499',
+            themeDark: '#4444c2',
             themeDarker: '#6c6cdb'
         }
     },
@@ -145,7 +145,7 @@ export const palettes = [
             themeTertiary: '#C1D9B7',
             themeSecondary: '#FBB80F',
             themeDarkAlt: '#0461B1',
-            themeDark: '#00E091',
+            themeDark: '#b05321',
             themeDarker: '#00735C'
         }
     },

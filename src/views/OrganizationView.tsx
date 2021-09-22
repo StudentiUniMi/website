@@ -33,7 +33,7 @@ const OrganizationView = () => {
     return (
         <div className="organization pb-3">
 
-            <div className="pt-5 pb-5" style={{ backgroundColor: theme.palette.blueDark }}>
+            <div className="pt-5 pb-5" style={{ backgroundColor: theme.palette.themeDarker }}>
                 <Container>
 
                     <Row>
