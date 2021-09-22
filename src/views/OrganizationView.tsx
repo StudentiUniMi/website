@@ -57,7 +57,7 @@ const OrganizationView = () => {
                             </div>
 
                             <div className="mb-2">
-                                <CompoundButton primary theme={theme} secondaryText={locale.aboutUs.button.text2} href="https://github.com/StudentiUniMi/docs/blob/main/statuto.md" target="_blank" style={{ textDecoration: 'none' }} iconProps={icon}>
+                                <CompoundButton primary theme={theme} secondaryText={locale.aboutUs.button.text2} href="https://github.com/StudentiUniMi/docs/blob/main/statuto.md" target="_blank" style={{ textDecoration: 'none', boxShadow: theme.effects.elevation8 }} iconProps={icon}>
                                     {locale.aboutUs.button.text1}
                                 </CompoundButton>
                             </div>

@@ -73,6 +73,7 @@ const Rules = () => {
                                     className={styles.button}
                                     iconProps={icon}
                                     theme={theme}
+                                    style={{ boxShadow: theme.effects.elevation8 }}
                                 />
                                 {isCalloutVisible && (
                                     <Callout

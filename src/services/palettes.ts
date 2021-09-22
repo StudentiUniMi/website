@@ -52,11 +52,11 @@ export const palettes = [
             themeLighterAlt: '#FAF3F3',
             themeLighter: '#DA7F8F',
             themeLight: '#E28F83',
-            themeTertiary: '#8E9775',
+            themeTertiary: '#d64b2f',
             themeSecondary: '#f0554d',
-            themeDarkAlt: '#f04d6d',
-            themeDark: '#564A4A',
-            themeDarker: '#A799B7'
+            themeDarkAlt: '#e04343',
+            themeDark: '#b82a2a',
+            themeDarker: '#cc4a33'
         }
     },
     {
