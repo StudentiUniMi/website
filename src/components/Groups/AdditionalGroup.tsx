@@ -15,7 +15,7 @@ initializeIcons();
 
 interface Props { data: ExtraGroup };
 
-const ExtraGroupView = (props: Props) => {
+const AdditionalGroup = (props: Props) => {
     const theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string = LocalizationService.getLanguage();
@@ -43,7 +43,7 @@ const ExtraGroupView = (props: Props) => {
             </Card.Item>
             <Card.Section>
                 <Text styles={descriptionTextStyles}>
-                    <Chip label={locale.extraGroups.extraGroup} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.orangeLighter }} className="m-1" />
+                    <Chip label={locale.extraGroups.extraGroup} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeTertiary }} className="m-1" />
                 </Text>
                 <Text variant="small" styles={helpfulTextStyles} className="mb-2">
                     <JsxParser bindings={{ theme: theme }} components={{ Text, Link, Icon }} jsx={"<Icon iconName='Info' /> " + desc} />
@@ -73,4 +73,4 @@ const ExtraGroupView = (props: Props) => {
     );
 };
 
-export default ExtraGroupView;
+export default AdditionalGroup;

@@ -2,7 +2,7 @@ import React from 'react';
 import { FocusZone, List, IRectangle } from "@fluentui/react";
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 import { getExtraGroups } from '../../services/Requests';
-import ExtraGroupView from './ExtraGroup';
+import ExtraGroupView from './AdditionalGroup';
 import ExtraGroup from '../../models/ExtraGroup';
 
 const AdditionalGroupsView = () => {

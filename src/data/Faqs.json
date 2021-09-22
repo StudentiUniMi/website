@@ -22,26 +22,17 @@
         "en": "I am looking for a student representative for didactic problems. Where can I find it?"
     },
     "answer": {
-        "it": "Abbiamo pensato che avere un posto in cui trovare i rappresentanti degli studenti e parlare con loro direttamente fosse essenziale. Proprio per questo c'è una <Link href='https://studentiunimi.it/additional_groups/'>sezione del sito</Link> che permette di visualizzare i rappresentanti degli studenti di ogni dipartimento e i loro contatti telegram.",
+        "it": "Abbiamo pensato che avere un posto in cui trovare i rappresentanti degli studenti e parlare con loro direttamente fosse essenziale. Proprio per questo c'è una <Link href='https://studentiunimi.it/representatives/'>sezione del sito</Link> che permette di visualizzare i rappresentanti degli studenti di ogni dipartimento e i loro contatti telegram.",
         "en": "We felt that having a place to find student representatives and talk to them directly was essential. Precisely for this reason there is a <Link href='https://studentiunimi.it/representatives/'>section of the website</Link> that allows you to view the student representatives of each department and their telegram contacts."
     }
 }, {
     "question": {
-        "it": "Come mai sono presenti solamente i gruppi dei corsi del dipartimento di Informatica?",
+        "it": "Come mai sono presenti solamente i gruppi dei corsi di insegnamento del dipartimento di Informatica?",
         "en": "Why are only the courses of the IT department present?"
     },
     "answer": {
-        "it": "Al momento stiamo sviluppando un database e altri servizi per un supporto futuro solido ed efficiente; verso settembre 2021 dovremmo essere in grado di fornire i nostri servizi a tutti i dipartimenti UniMi.",
-        "en": "We are currently developing a database and other services for solid and efficient future support; around September 2021 we should be able to provide our services to all UniMi departments."
-    }
-}, {
-    "question": {
-        "it": "Fisica non ha ancora i gruppi dei corsi didattici, è possibile crearli e aggiungerli al sito?",
-        "en": "Physics does not yet have the didactic course groups, is it possible to create them and add them to the site?"
-    },
-    "answer": {
-        "it": "Stiamo aspettando un numero sostanziale di studenti che vorrebbero che venissero creati quei gruppi. Per questo motivo è importante pubblicizzare il Network a tutti gli studenti di fisica che conoscete.",
-        "en": "We are expecting a substantial number of students who would like those groups to be created. For this reason it is important to advertise the Network to all physics students you know."
+        "it": "Entro fine settembre 2021 saranno disponibili tutti i gruppi degli insegnamenti di tutti i corsi di laurea dell'Università degli Studi di Milano.",
+        "en": "By the end of September 2021, all the teaching groups of all the degree courses of the University of Milan will be available. "
     }
 }, {
     "question": {
