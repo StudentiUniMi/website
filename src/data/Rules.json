@@ -1,23 +1,5 @@
 [{
     "title": {
-        "it": "Domanda con risposta indicata sul sito del docente",
-        "en": "Question about something indicated on the teacher’s website"
-    },
-    "description": {
-        "it": "L'utente riceve un warn con successiva indicazione su dove trovare l'informazione richiesta. Dopo 3 warn l'utente viene mutato per un giorno, a discrezione degli amministratori.",
-        "en": "The user receives a warn and is told where he can find the information. The consequence of 3 warns is a 24h muting. (Exceptions if you are an Erasmus student and you cannot find that information in English)"
-    }
-}, {
-    "title": {
-        "it": "Domanda riguardo informazioni banali e già chieste precedentemente nella chat",
-        "en": "Trivial and already addressed questions"
-    },
-    "description": {
-        "it": "Nessuna penalità se non sono presenti le FAQ del gruppo del relativo corso, altrimenti vale la regola precedente, ovvero: l'utente riceve un warn con successiva indicazione della presenza delle FAQ. Dopo 3 warn l 'utente viene mutato per un giorno, a discrezione degli amministratori. È ovviamente consigliato(nel caso non ci fossero ancora le FAQ di quel corso) di controllare i messaggi precedenti nella chat per scoprire se è già stata data risposta alla vostra domanda.",
-        "en": "No punishment if the question is not into the FAQs otherwise the previous rule is applied. It is recommended to look for your question into the chat history before submitting it."
-    }
-}, {
-    "title": {
         "it": "Bestemmie e linguaggio vivace",
         "en": "Blasphemy and trash talking"
     },

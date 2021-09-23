@@ -56,7 +56,7 @@ const Rules = () => {
                             </div>
                         </Col>
 
-                        <Col lg={8} className="mb-2">
+                        <Col lg={8}>
                             <div className="mb-2">
                                 <Text variant="xLargePlus" style={{color: theme.palette.white}}>{locale.rules.text1}</Text>
                             </div>
@@ -65,7 +65,7 @@ const Rules = () => {
                                 <Text variant="large" style={{ color: theme.palette.white }}>{locale.rules.text2}</Text>
                             </div>
 
-                            <div>
+                            <div className="mb-3">
                                 <DefaultButton
                                     id={buttonId}
                                     onClick={toggleIsCalloutVisible}
@@ -85,10 +85,14 @@ const Rules = () => {
                                         directionalHint={DirectionalHint.bottomCenter}
                                         setInitialFocus
                                     >
-                                        <Text block variant="medium" className="mb-1">{locale.rules.answer.text1}</Text>
+                                        <Text block variant="medium" className="mb-1" styles={semibold}>{locale.rules.answer.text1}</Text>
                                         <Text block variant="small"><JsxParser bindings={{ theme: theme }} components={{ Text, Link }} jsx={locale.rules.answer.text2} /></Text>
                                     </Callout>
                                 )}
+                            </div>
+
+                            <div>
+                                <Text variant="medium" style={{ color: theme.palette.white }}><i>{locale.rules.text3}</i></Text>
                             </div>
                         </Col>
                     </Row>
@@ -98,7 +102,6 @@ const Rules = () => {
             
             <div className="mb-4">
                 <div className="mb-4 text-center">
-                    {/*<div className="mb-1"><Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>Gruppi degli insegnamenti</Text></div>*/}
                     <Text variant="xLarge">{locale.rules.header}</Text>
                 </div>
             </div>

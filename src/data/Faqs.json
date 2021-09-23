@@ -27,7 +27,16 @@
     }
 }, {
     "question": {
-        "it": "Come mai sono presenti solamente i gruppi dei corsi di insegnamento del dipartimento di Informatica?",
+        "it": "Come mai non ci sono i gruppi per i singoli anni accademici dei corsi di laurea?",
+        "en": "Why are there no groups for the individual academic years of the degree courses? "
+    },
+    "answer": {
+        "it": "In passato utilizzavamo gruppi separati per ogni anno accademico, ma sono risultati inutili in quanto venivano abbandonati dopo qualche mese; per questo motivo abbiamo creato gruppi principali (per ogni corso di laurea) indipendenti dall'anno accademico, anche per una questione di tenere centralizzate tutte le informazioni utili.",
+        "en": "In the past we used separate groups for each academic year, but they were useless as they were abandoned after a few months; for this reason we have created main groups (for each degree course) independent from the academic year, also for a matter of keeping all useful information centralized."
+    }
+}, {
+    "question": {
+        "it": "Perché sono presenti solamente i gruppi dei corsi di insegnamento del dipartimento di Informatica?",
         "en": "Why are only the courses of the IT department present?"
     },
     "answer": {
@@ -36,8 +45,8 @@
     }
 }, {
     "question": {
-        "it": "Vorrei collaborare allo sviluppo del Network ma non so come fare..",
-        "en": "I would like to collaborate in the development of the Network but I don't know how to do it ..."
+        "it": "Vorrei collaborare al progetto del Network ma non so come fare...",
+        "en": "I would like to collaborate in the Network's project but I don't know how to do it..."
     },
     "answer": {
         "it": "Non è un problema, non devi essere per forza uno sviluppatore o un informatico per aiutarci: cerchiamo anche moderatori dei gruppi dei vari corsi, e quando ci amplieremo verso altri dipartimenti sarà essenziale il vostro aiuto in tal proposito.",

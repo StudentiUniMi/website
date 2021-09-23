@@ -170,6 +170,7 @@ interface ILocalizationStrings {
     rules: {
         text1: string,
         text2: string,
+        text3: string,
         question: string,
         answer: { text1: string, text2: string },
         header: string
