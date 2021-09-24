@@ -64,7 +64,6 @@ const GroupsView = () => {
     const entitySelectHandler = (item: ISuggestionItem): void => { // Questo viene triggerato quando selezioni qualcosa dal menù
         setDegreeTextSearch(item.displayValue);
         setSelectedDegree(item.key as unknown as string);
-        //setLoadedDegree(searchData.filter(x => x.degree?.pk === selectedDegree as unknown as number)[0]?.degree!);
         history.push(`/courses/${item.degree?.slug}`);
     };
     
@@ -72,14 +71,13 @@ const GroupsView = () => {
         if (searchData.length === 0) return;
         setDegreeTextSearch(searchData[0]?.displayValue);
         setSelectedDegree(searchData[0]?.key as unknown as string);
-        //setLoadedDegree(searchData.filter(x => x.degree?.pk === selectedDegree as unknown as number)[0]?.degree!);
         history.push(`/courses/${searchData[0]?.degree?.slug}`);
     };
 
 
     /* Degrees for the SearchBox */
     const updateDegreesForSearchBox = React.useCallback(async (searchBoxText: string) => {
-        console.log("Stai cercando: ", searchBoxText)
+        //console.log("Stai cercando: ", searchBoxText)
         setDegreeTextSearch(searchBoxText)
         if (searchBoxText === undefined || searchBoxText === "") return;
         let degreesResult = await getDegreesForSearchBox(searchBoxText);
@@ -112,8 +110,8 @@ const GroupsView = () => {
             return;
         }
         
-        console.log("Courses result: ", coursesResult.value ?? []);
-        console.log("Gruppo principale da aggiungere: ", loadedDegree, loadedDegree?.group)
+        //console.log("Courses result: ", coursesResult.value ?? []);
+        //console.log("Gruppo principale da aggiungere: ", loadedDegree, loadedDegree?.group)
         if (loadedDegree !== undefined && loadedDegree?.group?.invite_link !== '' && loadedDegree?.group?.invite_link !== null && loadedDegree?.group?.invite_link !== undefined) {
             let mainDegreeGroup: CourseDegree = {
                 "course": {
@@ -137,6 +135,7 @@ const GroupsView = () => {
 
         setCourses(coursesResult.value ?? []);
         setLoadingCourses(false);
+
         setReactHelmetContent({
             title: locale.helmet.degreeLoaded.title1 + `${loadedDegree?.name} (${getDegreeTypeName(loadedDegree?.type!)})` + locale.helmet.degreeLoaded.title2, 
             description: locale.helmet.degreeLoaded.description1 + `${loadedDegree?.name} (${getDegreeTypeName(loadedDegree?.type!)})` + locale.helmet.degreeLoaded.description2, 
@@ -150,11 +149,11 @@ const GroupsView = () => {
     const initializeDegreeByUrl = React.useCallback(async () => {
         if (!didMount.current) {
             didMount.current = true;
-            console.log("MOUNTING")
+            //console.log("MOUNTING")
             var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
             var degreeSlug = states.length >= 2 ? states[1] : '';
             
-            console.log("Degree slug: ", degreeSlug)
+            //console.log("Degree slug: ", degreeSlug)
             
             if (degreeSlug === '') {
                 return;
@@ -189,7 +188,7 @@ const GroupsView = () => {
 
         const degree = degreeResult.value ?? undefined;
         if (degree === undefined || degree === null) return;
-        console.log("Degree loaded: ", degree);
+        //console.log("Degree loaded: ", degree);
 
         setLoadedDegree(degree);
     }, [selectedDegree]);

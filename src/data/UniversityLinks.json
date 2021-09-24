@@ -25,6 +25,11 @@
           "icon": "FolderSearch"
      },
      {
+          "name": { "it": "Attestazioni ISEE", "en": "ISEE Certifications" },
+          "link": "https://www.unimi.it/it/studiare/frequentare-un-corso-di-laurea/come-e-quanto-pagare/attestazioni-isee",
+          "icon": "MailAttached"
+     },
+     {
           "name": { "it": "Informazioni sui TOLC", "en": "Informations about TOLC" },
           "link": "https://www.unimi.it/it/studiare/frequentare-un-corso-di-laurea/iscriversi/iscriversi-una-prima-laurea/test-tolc-cisia",
           "icon": "TestPlan"

@@ -16,6 +16,7 @@ import LocalizationService from "../services/LocalizationService";
 const developers: any = [
     { name: "Giuseppe Del Campo", description: { it: "Sviluppatore e designer del sito web", en: 'Website Developer and Designer' }, username: 'Giuseppetm', user_id: 597678134, github: "https://github.com/Giuseppetm", website: "https://giuseppetm.netlify.app/" },
     { name: "Manuele Lucchi", description: { it: "Progettista del sito web", en: 'Website Technical Designer' }, username: "Gesoo99", user_id: 99687972, github: "https://github.com/manuelelucchi", website: "https://manuelelucchi.github.io/" },
+    { name: "Mirko Faina", description: { it: "Sviluppatore back-end", en: "Back-end developer" }, username: "Mroik", user_id: 0, github: "https://github.com/Mroik", website: "" }
 ];
 
 const OrganizationView = () => {
@@ -33,7 +34,7 @@ const OrganizationView = () => {
     return (
         <div className="organization pb-3">
 
-            <div className="pt-5 pb-5" style={{ backgroundColor: theme.palette.blueDark }}>
+            <div className="pt-5 pb-5" style={{ backgroundColor: theme.palette.themeDarker }}>
                 <Container>
 
                     <Row>
@@ -57,7 +58,7 @@ const OrganizationView = () => {
                             </div>
 
                             <div className="mb-2">
-                                <CompoundButton primary theme={theme} secondaryText={locale.aboutUs.button.text2} href="https://github.com/StudentiUniMi/docs/blob/main/statuto.md" target="_blank" style={{ textDecoration: 'none' }} iconProps={icon}>
+                                <CompoundButton primary theme={theme} secondaryText={locale.aboutUs.button.text2} href="https://github.com/StudentiUniMi/docs/blob/main/statuto.md" target="_blank" style={{ textDecoration: 'none', boxShadow: theme.effects.elevation8 }} iconProps={icon}>
                                     {locale.aboutUs.button.text1}
                                 </CompoundButton>
                             </div>
@@ -119,7 +120,7 @@ const OrganizationView = () => {
                             developers.map((x:any, i:any) =>
                                 <>
                                     <Col className="mb-3" lg={4} sm={6} xs={12}>
-                                        <div style={{ maxWidth: 300, marginLeft: 'auto', marginRight: 'auto' }}>
+                                        <div style={{ maxWidth: 250, marginLeft: 'auto', marginRight: 'auto' }}>
                                             <Persona
                                                 size={PersonaSize.size72}
                                                 imageUrl={`https://studentiunimi-groups-propics.marcoaceti.workers.dev/${x.user_id}.png`}

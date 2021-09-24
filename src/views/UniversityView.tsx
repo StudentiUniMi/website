@@ -25,7 +25,7 @@ const UniversityView = () => {
     const locale = LocalizationService.strings();
     var language: string = LocalizationService.getLanguage();
     const history = useHistory();
-    const whiteText = '#faf9f8';
+    //const whiteText = '#faf9f8';
     const imageProperties = { display: 'inline-block', width: '80%' };
 
     const universityLinks: any[] = getUniversityLinks();
@@ -148,17 +148,17 @@ const UniversityView = () => {
 
     return (
         <div className="university">
-            <div className="pt-5 pb-5 mb-4" style={{ backgroundColor: '#004083' }}>
+            <div className="pt-5 pb-5 mb-4" style={{ backgroundColor: theme.palette.themeDark }}>
                 <Container>
 
                     <Row>
                         <Col lg={9} className="mb-2">
                             <div className="mb-2">
-                                <Text variant="xLargePlus" style={{ color: whiteText }}>{locale.university.header.text1}</Text>
+                                <Text variant="xLargePlus" style={{ color: theme.palette.white }}>{locale.university.header.text1}</Text>
                             </div>
 
                             <div className="mb-3">
-                                <Text variant="large" style={{ color: whiteText }}>{locale.university.header.text2}</Text>
+                                <Text variant="large" style={{ color: theme.palette.white }}>{locale.university.header.text2}</Text>
                             </div>
                         </Col>
 
@@ -214,7 +214,7 @@ const UniversityView = () => {
                 </Container>
             </div>
 
-            <div className="pt-5 pb-5 mb-4" style={{ backgroundColor: '#faa381' }}>
+            <div className="pt-5 pb-5 mb-4" style={{ backgroundColor: theme.palette.themeDarkAlt }}>
                 <Container>
                     <Row className="mb-3">
                         <Col>

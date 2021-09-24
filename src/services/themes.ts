@@ -91,5 +91,8 @@ export const fonts = {
 };
 
 export const effects = {
-    elevation8: DefaultEffects.elevation8
+    elevation4: DefaultEffects.elevation4,
+    elevation8: DefaultEffects.elevation8,
+    elevation16: DefaultEffects.elevation16,
+    elevation64: DefaultEffects.elevation64
 };

@@ -18,15 +18,15 @@ export const palettes = [
         id: 'b',
         label: 'blueLight',
         palette: {
-            themePrimary: '#00bfff',
+            themePrimary: '#4493cf',
             themeLighterAlt: '#f4f9fe',
             themeLighter: '#d3e9fa',
             themeLight: '#aed7f6',
-            themeTertiary: '#8de1fa',
+            themeTertiary: '#518ebd',
             themeSecondary: '#0086b3',
             themeDarkAlt: '#007399',
             themeDark: '#006080',
-            themeDarker: '#8de1fa'
+            themeDarker: '#3f7cab'
         }
     },
     {
@@ -37,10 +37,10 @@ export const palettes = [
             themeLighterAlt: '#f4f9fe',
             themeLighter: '#3333cc',
             themeLight: '#5c5cd6',
-            themeTertiary: '#7070db',
+            themeTertiary: '#5c5ce0',
             themeSecondary: '#8585e0',
-            themeDarkAlt: '#6c6cdb',
-            themeDark: '#6c6cdb',
+            themeDarkAlt: '#343499',
+            themeDark: '#4444c2',
             themeDarker: '#6c6cdb'
         }
     },
@@ -51,12 +51,12 @@ export const palettes = [
             themePrimary: '#F55C47',
             themeLighterAlt: '#FAF3F3',
             themeLighter: '#DA7F8F',
-            themeLight: '#E28F83',
-            themeTertiary: '#8E9775',
+            themeLight: '#d17062',
+            themeTertiary: '#d64b2f',
             themeSecondary: '#f0554d',
-            themeDarkAlt: '#f04d6d',
-            themeDark: '#564A4A',
-            themeDarker: '#A799B7'
+            themeDarkAlt: '#e04343',
+            themeDark: '#b82a2a',
+            themeDarker: '#cc4a33'
         }
     },
     {
@@ -71,22 +71,22 @@ export const palettes = [
             themeSecondary: '#9F5F80',
             themeDarkAlt: '#9DAD7F',
             themeDark: '#8E9775',
-            themeDarker: '#CEE6B4'
+            themeDarker: '#3fab73'
         }
     },
     {
         id: 'f',
-        label: 'orange',
+        label: 'yellow',
         palette: {
-            themePrimary: '#FFA900',
+            themePrimary: '#deb143',
             themeLighterAlt: '#FFC996',
             themeLighter: '#EEB76B',
             themeLight: '#E9896A',
-            themeTertiary: '#536162',
+            themeTertiary: '#d9a011',
             themeSecondary: '#FF8474',
-            themeDarkAlt: '#F0C929',
+            themeDarkAlt: '#d6b35a',
             themeDark: '#F0A500',
-            themeDarker: '#FB743E'
+            themeDarker: '#dba102'
         }
     },
     {
@@ -96,12 +96,12 @@ export const palettes = [
             themePrimary: '#FFAB73',
             themeLighterAlt: '#F0C929',
             themeLighter: '#FFAEC0',
-            themeLight: '#FFF9B0',
-            themeTertiary: '#94EBCD',
-            themeSecondary: '#FF75A0',
-            themeDarkAlt: '#C9CBFF',
-            themeDark: '#40A8C4',
-            themeDarker: '#FFC93C'
+            themeLight: '#dbb95c',
+            themeTertiary: '#bd8764',
+            themeSecondary: '#d1c390',
+            themeDarkAlt: '#db7b3b',
+            themeDark: '#d67b3e',
+            themeDarker: '#db8851'
         }
     },
     {
@@ -123,30 +123,30 @@ export const palettes = [
         id: 'i',
         label: 'porpora',
         palette: {
-            themePrimary: '#E42256',
+            themePrimary: '#e63061',
             themeLighterAlt: '#FEC84D',
             themeLighter: '#00B1B0',
-            themeLight: '#C45F90',
-            themeTertiary: '#5D6C89',
-            themeSecondary: '#FF8370',
-            themeDarkAlt: '#FEB06A',
-            themeDark: '#D691A0',
-            themeDarker: '#F6A21E'
+            themeLight: '#bf506e',
+            themeTertiary: '#db4670',
+            themeSecondary: '#c23a5f',
+            themeDarkAlt: '#a10b4e',
+            themeDark: '#ad2147',
+            themeDarker: '#9c3261'
         }
     },
         {
         id: 'l',
         label: 'choco',
         palette: {
-            themePrimary: '#9C3940',
-            themeLighterAlt: '#ECC0B0',
-            themeLighter: '#7F4AA4',
-            themeLight: '#C598AF',
-            themeTertiary: '#C1D9B7',
-            themeSecondary: '#FBB80F',
-            themeDarkAlt: '#0461B1',
-            themeDark: '#00E091',
-            themeDarker: '#00735C'
+            themePrimary: '#a12831',
+            themeLighterAlt: '#ad6b53',
+            themeLighter: '#a84434',
+            themeLight: '#82543e',
+            themeTertiary: '#8a2c35',
+            themeSecondary: '#c22f33',
+            themeDarkAlt: '#b3472d',
+            themeDark: '#b05321',
+            themeDarker: '#c25d44'
         }
     },
 ];

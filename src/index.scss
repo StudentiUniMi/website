@@ -176,20 +176,11 @@ button:focus,
 
 /* Grid system adjustments for filter container */
 @media only screen and (max-width: 766px) {
-  .courses-filter-options .col-sm-12 {
+  .groups-list .col-sm-12 {
     max-width: 450px;
     text-align: center;
   }
 }
-
-@media only screen and (max-width: 540px) {
-  /* Courses filter options è il container */
-  .courses-filter-options, .department-choose .row {
-    margin-right:0%;
-    margin-left:0%;
-  }
-}
-
 
 
 /* Section adjustments */
@@ -198,17 +189,12 @@ button:focus,
     max-width: 350px;
   }
 
-  .department-choose .col-sm-12 {
-    max-width: 450px;
-    text-align: center;
-  }
-
   .administrators .title {
     margin-right:15%;
     margin-left:15%;
   }
 
-  .courses-filter-options .col-xs-12 {
+  .groups-list .col-xs-12 {
     max-width: 350px;
     text-align: center;
   }
@@ -277,12 +263,24 @@ button:focus,
   }
 }
 
-.rules .ms-Button-flexContainer {
-  margin: 7px;
+.courses .filters-toggle .ms-Toggle { /* Fix useless margin for toggle component for filters enabled in groups section */
+  margin-bottom: 0px !important;
 }
 
-.courses .ms-Button-flexContainer {
-  margin: 5px;
+.courses .filters-toggle .ms-Label {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+@media only screen and (max-width: 310px) { /* A fix for better responsive behaviour in toggle component of groups filters section */
+  .courses .filters-toggle .ms-Label {
+    max-width: 90px; 
+    margin-right: 0px;
+  }
+}
+
+.rules .ms-Button-flexContainer {
+  margin: 7px;
 }
 
 .header-menu .ms-Dropdown-title {
