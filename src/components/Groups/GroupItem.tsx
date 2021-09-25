@@ -1,7 +1,7 @@
 import { Text } from 'office-ui-fabric-react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { initializeIcons } from '@uifabric/icons';
-import { FontWeights, ITextStyles, Persona } from '@fluentui/react';
+import { FontWeights, ITextStyles, Link, Persona } from '@fluentui/react';
 import { semibold } from '../../services/fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { IContextualMenuProps, IIconProps } from '@fluentui/react';
@@ -11,9 +11,20 @@ import { redirectToLink } from '../../services/Utils';
 import { CourseDegree } from '../../models/Models';
 import Chip from '@material-ui/core/Chip';
 import LocalizationService from "../../services/LocalizationService";
+import JsxParser from 'react-jsx-parser';
 
 initializeIcons();
 interface Props { data: CourseDegree };
+
+/* IT groups managed by the department */
+const ITgroupsIDs = [
+    -1001351008335,
+    -1001437343087,
+    -1001334720360,
+    -1001235845198
+    //-1001589135755, // scienze internazionali..
+    //-1001478324841 // fisica
+];
 
 const CourseItem = (props: Props) => {
     const theme = useTheme();
@@ -96,13 +107,14 @@ const CourseItem = (props: Props) => {
         semesterText = <span>{data.semester}° {locale.groups.semester}</span>;
     }
 
+    
     // Main text inizialization
-    /*
-    if (data.year === -1 && (data.course?.group?.invite_link === "" || data.course?.group?.invite_link === null)) {
-        mainText = (<><JsxParser bindings={{ theme: theme }} components={{ Text, Link, Icon }} jsx={locale.groups.contactAdmin} /></> );
-    } else */
-    if (data.year === -1 /* && (data.course?.group?.invite_link !== "" && data.course?.group?.invite_link !== null) */) {
-        mainText = locale.groups.mainGroupDescription;
+    if (data.year === -1) {
+        if (ITgroupsIDs.indexOf(data.course?.group?.id!) !== -1) {
+            mainText = <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale.groups.tutorsGroupDescription} />;
+        } else {
+            mainText = locale.groups.mainGroupDescription;
+        }
     }
 
     /* Telegram Group initialization */

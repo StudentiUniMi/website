@@ -145,6 +145,7 @@ interface ILocalizationStrings {
         websites: string,
         mainGroup: string,
         mainGroupDescription: string,
+        tutorsGroupDescription: string,
         groupNotAvailable: string,
         contactAdmin: string,
         groupsNotFound: string,
