@@ -97,6 +97,18 @@
     },
     {
         "name": {
+            "it": "FOR24 Formazione Insegnanti",
+            "en": "FOR24 Teacher Training"
+        },
+        "description": {
+            "it": "Gruppo dedicato a discussioni sul percorso formativo FOR24 ",
+            "en": "Group dedicated to discussions about training course F24"
+        },
+        "image": "f24.jpg",
+        "gruppo": "https://t.me/joinchat/s17FkitmVcA2NjU0"
+    },
+    {
+        "name": {
             "it": "Freetalk",
             "en": "Freetalk"
         },
@@ -142,29 +154,5 @@
         },
         "image": "giochi_di_ruolo.jpg",
         "gruppo": "https://t.me/joinchat/BnUK_g-KHlIX_SrIieU8CA"
-    },
-    {
-        "name": {
-            "it": "Advent of Code",
-            "en": "Advent of Code"
-        },
-        "description": {
-            "it": "Dedicato a <Link href='https://adventofcode.com/' target='_blank'>Advent of Code</Link>.",
-            "en": "Dedicated to <Link href='https://adventofcode.com/' target='_blank'>Advent of Code</Link>."
-        },
-        "image": "advent_of_code.jpg",
-        "gruppo": "https://t.me/adventofcodeunimi"
-    },
-    {
-        "name": {
-            "it": "Codin Game",
-            "en": "Codin Game"
-        },
-        "description": {
-            "it": "Gruppo creato per le varie sfide offerte da <Link href='https://www.codingame.com/' target='_blank'>Codin Game</Link>.",
-            "en": "Group created for the various challenges offered by <Link href='https://www.codingame.com/' target='_blank'>Codin Game</Link>."
-        },
-        "image": "codin_game.jpg",
-        "gruppo": "https://t.me/codin_game"
     }
 ]
