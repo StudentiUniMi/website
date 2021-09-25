@@ -97,6 +97,18 @@
     },
     {
         "name": {
+            "it": "FOR24 Formazione Insegnanti",
+            "en": "FOR24 Teacher Training"
+        },
+        "description": {
+            "it": "Gruppo dedicato a discussioni sul percorso formativo FOR24 ",
+            "en": "Group dedicated to discussions about training course F24"
+        },
+        "image": "f24.jpg",
+        "gruppo": "https://t.me/joinchat/s17FkitmVcA2NjU0"
+    },
+    {
+        "name": {
             "it": "Freetalk",
             "en": "Freetalk"
         },
