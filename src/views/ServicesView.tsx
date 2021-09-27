@@ -14,8 +14,13 @@ import Chip from '@material-ui/core/Chip';
 import LocalizationService from "../services/LocalizationService";
 import { Image } from 'office-ui-fabric-react/lib/Image';
 import { TooltipDelay, TooltipHost } from '@fluentui/react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Tooltip } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import { Icon } from 'leaflet'
+
+const test_department_positions = [
+    { x: 45.47612, y: 9.231888, name: 'Dipartimento di Informatica' }
+];
 
 const Services = () => {
     var theme = useTheme();
@@ -72,7 +77,7 @@ const Services = () => {
                 </Container>
             </div>
 
-            <Container>
+            <Container className="mb-4">
                 <div className="mb-4 text-center">
                     <Text variant="xLarge">{locale.services.availableServices}</Text>
                 </div>
@@ -114,13 +119,13 @@ const Services = () => {
                 <Container>
 
                     <Row>
-                        <Col lg={4} className="text-center">
+                        <Col lg={3} className="text-center">
                             <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }}>
                                 <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/other/markers.png'} style={{ width: '60%' }} />
                             </div>
                         </Col>
 
-                        <Col lg={8} className="mb-2">
+                        <Col lg={9} className="mb-2">
                             <div className="mb-2">
                                 <Text variant="xLargePlus" style={{color: theme.palette.white}}>Non sai dove si trova il dipartimento del tuo corso di Laurea? Nessun problema.</Text>
                             </div>
@@ -135,16 +140,16 @@ const Services = () => {
             </div>
 
             <div className="departments-map">
-                <MapContainer center={[45.464664, 9.188540]} zoom={9} scrollWheelZoom={false} style={{ height: '400px', width: '100%' }}>
-                    <TileLayer
-                        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    />
-                    <Marker position={[51.505, -0.09]}>
-                        <Popup>
-                            A pretty CSS3 popup. <br /> Easily customizable.
-                        </Popup>
-                    </Marker>
+                <MapContainer center={[45.464664, 9.188540]} zoom={12} scrollWheelZoom={false} style={{ height: '400px', width: '100%' }}>
+                    <TileLayer attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
+                    { test_department_positions.map( x => { return (      
+                        <Marker position={[x.x, x.y]} icon={ new Icon({iconUrl: process.env.PUBLIC_URL + '/other/marker.png', iconSize: [25, 41], iconAnchor: [12, 41]}) }>
+                            <Tooltip>
+                               {x.name}
+                            </Tooltip>
+                        </Marker>
+                    )})}
+
                 </MapContainer>
             </div>
         </div>
