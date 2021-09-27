@@ -30,6 +30,10 @@ span { /* Texts are contained in span, so this should fix the visualization bug 
   font-family: "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
 }
 
+.leaflet-container {
+  width: 100vh; 
+  height: 100vh;
+}
 
 /* Fix bootstrap outline when click */
 a:active,
