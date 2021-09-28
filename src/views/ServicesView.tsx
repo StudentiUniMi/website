@@ -19,7 +19,16 @@ import 'leaflet/dist/leaflet.css';
 import { Icon } from 'leaflet'
 
 const test_department_positions = [
-    { x: 45.47612, y: 9.231888, name: 'Dipartimento di Informatica' }
+    { x: 45.47612, y: 9.231888, name: 'Dipartimento di Informatica "Giovanni Degli Antoni"' },
+    { x: 45.47621, y: 9.23111, name: 'Dipartimento di Fisica' },
+    { x: 45.47628, y: 9.23325, name: 'Dipartimento di Biologia' },
+    { x: 45.47644, y: 9.23382, name: 'Dipartimento di Bioscienze' },
+    { x: 45.4751, y: 9.23321, name: 'Dipartimento di Chimica' },
+    { x: 45.47388, y: 9.22793, name: 'Dipartimento di Matematica "Federigo Enriques"' },
+    { x: 45.47387, y: 9.22949, name: 'Dipartimento di Scienze della Terra "Ardito Desio"' },
+    { x: 45.47388, y: 9.22889, name: 'Dipartimento di Fisiopatologia e dei Trapianti' },
+    { x: 45.47462, y: 9.22717, name: 'Dipartimento di Scienze Farmaceutiche "Pietro Pratesi"' },
+    { x: 45.47458, y: 9.22831, name: 'Dipartimento di Scienze Biomediche per la Salute' }
 ];
 
 const Services = () => {
@@ -121,7 +130,7 @@ const Services = () => {
                     <Row>
                         <Col lg={3} className="text-center">
                             <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }}>
-                                <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/other/markers.png'} style={{ width: '60%' }} />
+                                <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/other/red_marker2.png'} style={{ width: '90%' }} />
                             </div>
                         </Col>
 
@@ -140,7 +149,7 @@ const Services = () => {
             </div>
 
             <div className="departments-map">
-                <MapContainer center={[45.464664, 9.188540]} zoom={12} scrollWheelZoom={false} style={{ height: '400px', width: '100%' }}>
+                <MapContainer center={[45.477, 9.2265]} zoom={15} scrollWheelZoom={false} style={{ height: '400px', width: '100%' }}>
                     <TileLayer attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
                     { test_department_positions.map( x => { return (      
                         <Marker position={[x.x, x.y]} icon={ new Icon({iconUrl: process.env.PUBLIC_URL + '/other/marker.png', iconSize: [25, 41], iconAnchor: [12, 41]}) }>
