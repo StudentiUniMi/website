@@ -166,7 +166,12 @@ interface ILocalizationStrings {
         availableServices: string,
         guide: string,
         service: string,
-        legend: string
+        legend: string,
+        mapSection: {
+            text1: string,
+            text2: string,
+            text3: string,
+        }
     },
     rules: {
         text1: string,

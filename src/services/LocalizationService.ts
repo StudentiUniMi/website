@@ -191,7 +191,12 @@ class LocalizationService {
                         availableServices: 'Servizi e guide disponibili',
                         guide: "Guida",
                         service: "Servizio",
-                        legend: "Legenda"
+                        legend: "Legenda",
+                        mapSection: {
+                            text1: "Non sai dove si trova il dipartimento del tuo corso di Laurea? Nessun problema.",
+                            text2: "In questa mappa è possibile vedere tutte le posizioni dei dipartimenti dell'Università degli Studi di Milano.",
+                            text3: "Presto saranno disponibili tutte le posizioni dei dipartimenti."
+                        }
                     },
                     extraGroups: {
                         text1: 'Cerchi un gruppo aggiuntivo in particolare? Qui è possibile trovare tutti quelli che abbiamo creato: ricordiamo che ci sono gruppi con regolamenti appositi ad esempio per la creazione di annunci per la vendita di materiali, quindi è consigliato leggere il messaggio di benvenuto in tal caso.',
@@ -436,7 +441,12 @@ class LocalizationService {
                         availableServices: 'Available services and guides',
                         guide: "Guide",
                         service: "Service",
-                        legend: "Legend"
+                        legend: "Legend",
+                        mapSection: {
+                            text1: "Not sure where your degree's department is located? No problem.",
+                            text2: "In this map you can see all the positions of the University of Milan departments.",
+                            text3: "We will soon add all available departments."
+                        }
                     },
                     extraGroups: {
                         text1: 'Looking for additional groups? Here you can find all the ones we have created: we remind you that there are groups with specific regulations for example for the creation of announcements for the sale of materials, so it is recommended to read the welcome message in this case.',

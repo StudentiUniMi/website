@@ -136,11 +136,15 @@ const Services = () => {
 
                         <Col lg={9} className="mb-2">
                             <div className="mb-2">
-                                <Text variant="xLargePlus" style={{color: theme.palette.white}}>Non sai dove si trova il dipartimento del tuo corso di Laurea? Nessun problema.</Text>
+                                <Text variant="xLargePlus" style={{color: theme.palette.white}}>{locale.services.mapSection.text1}</Text>
                             </div>
 
-                            <div>
-                                <Text variant="large" style={{color: theme.palette.white}}>In questa mappa è possibile vedere tutte le posizioni dei dipartimenti UniMi. Figo vero?</Text>
+                            <div className="mb-2">
+                                <Text variant="large" style={{color: theme.palette.white}}>{locale.services.mapSection.text2}</Text>
+                            </div>
+
+                            <div className="mb-2">
+                                <Text variant="medium" style={{color: theme.palette.white}}>{locale.services.mapSection.text3}</Text>
                             </div>
                         </Col>
                     </Row>
