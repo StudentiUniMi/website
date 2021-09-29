@@ -151,7 +151,7 @@ const GroupsView = () => {
             didMount.current = true;
             //console.log("MOUNTING")
             var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
-            var degreeSlug = states.length >= 2 ? states[1].toLowerCase() : '';
+            var degreeSlug = states.length >= 2 ? states[1] : '';
             
             //console.log("Degree slug: ", degreeSlug)
             
