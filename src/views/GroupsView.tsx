@@ -235,7 +235,7 @@ const GroupsView = () => {
                     <span className="mr-1"><Text variant="xLarge">{locale.groups.groupsSection.text2}</Text></span>
                     
                     <TooltipHost
-                        content="Reset della pagina"
+                        content={locale.groups.resetSection}
                         calloutProps={calloutProps}
                         styles={hostStyles}
                     >

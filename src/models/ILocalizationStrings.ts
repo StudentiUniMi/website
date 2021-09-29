@@ -121,6 +121,7 @@ interface ILocalizationStrings {
         }
     },
     groups: {
+        resetSection: string,
         filtersToggle: string,
         findDegreeByName: string,
         groupsSection: {
