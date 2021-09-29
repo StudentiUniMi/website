@@ -213,6 +213,12 @@ const GroupsView = () => {
         updateLoadedDegree();
     }, [selectedDegree, updateLoadedDegree]);
 
+    function resetSection() {
+        setLoadedDegree(null);
+        setSelectedDegree('');
+        setDegreeTextSearch('');
+    };
+
     return (
         <>
         <Helmet>
@@ -233,7 +239,7 @@ const GroupsView = () => {
                         calloutProps={calloutProps}
                         styles={hostStyles}
                     >
-                        <IconButton iconProps={resetIcon} />
+                        <IconButton iconProps={resetIcon} onClick={resetSection} />
                     </TooltipHost>
                 </div>
 
