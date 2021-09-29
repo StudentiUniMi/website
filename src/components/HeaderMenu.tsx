@@ -53,6 +53,7 @@ const HeaderMenu = (props: Props) => {
 
     if (cookies["theme"] === undefined) {
         /*
+        // This is theme initialization based on browser; this isn't working, so I must fix this.
         setCookie("theme", "light", { path: "/", expires: date }); 
         const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
         if (darkThemeMq.matches) themeToggled();
