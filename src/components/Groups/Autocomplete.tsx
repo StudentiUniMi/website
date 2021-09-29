@@ -81,7 +81,7 @@ export class Autocomplete extends React.Component<ISearchSuggestionsProps, IAuto
             this.setState({ searchText: newSearchText! });
             this.onChange(newSearchText!);
           }}
-          value={this.state.searchText}
+          value={this.props.value}
         />
         {this.renderSuggestions()}
       </div>

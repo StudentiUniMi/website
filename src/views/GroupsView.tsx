@@ -16,6 +16,7 @@ import AdditionalGroupsView from '../components/Groups/AdditionalGroups';
 import { Autocomplete } from '../components/Groups/Autocomplete';
 import { ISuggestionItem } from '../components/Groups/Autocomplete_types';
 import { Helmet } from "react-helmet";
+import { IconButton, IIconProps, ITooltipHostStyles, TooltipHost } from "@fluentui/react";
 
 initializeIcons();
 
@@ -37,7 +38,7 @@ const getDegreeTypeName = (type: string): string => {
             return 'magistrale a ciclo unico';
     }
     return '';
-}
+};
 
 const GroupsView = () => {
     var theme = useTheme();
@@ -45,6 +46,11 @@ const GroupsView = () => {
     var language: string = LocalizationService.getLanguage();
     let history = useHistory();
     let didMount = React.useRef(false);
+    const resetIcon: IIconProps = { iconName: 'Refresh' };
+    const calloutProps = { gapSpace: 10 };
+    // The TooltipHost root uses display: inline by default.
+    // If that's causing sizing issues or tooltip positioning issues, try overriding to inline-block.
+    const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
 
     /* States */
     let [degreeTextSearch, setDegreeTextSearch] = React.useState(''); // Testo nel campo di ricerca
@@ -170,7 +176,9 @@ const GroupsView = () => {
             if (verboseDeg === undefined || verboseDeg === null) return;
             //console.log("VerboseDegree result: ", verboseDeg, " I'm setting selectedDegree key .. (" + verboseDeg.pk! + ").");
             setSelectedDegree(verboseDeg.pk! as unknown as string);
-            //setDegreeTextSearch(verboseDeg.name!)
+
+            console.log("SETTO NOME TEXT FIELD: ", verboseDeg.name!)
+            setDegreeTextSearch(verboseDeg.name!)
 
             setReactHelmetContent({
                 title: locale.helmet.degreeLoaded.title1 + `${verboseDeg?.name} (${getDegreeTypeName(verboseDeg?.type!)})` + locale.helmet.degreeLoaded.title2, 
@@ -203,7 +211,7 @@ const GroupsView = () => {
 
     React.useEffect(() => {
         updateLoadedDegree();
-    }, [selectedDegree, updateLoadedDegree])
+    }, [selectedDegree, updateLoadedDegree]);
 
     return (
         <>
@@ -217,7 +225,16 @@ const GroupsView = () => {
             <Container>
                 <div className="mb-3">
                     <div className="mb-1"><Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>{locale.groups.groupsSection.text1}</Text></div>
-                    <Text variant="xLarge">{locale.groups.groupsSection.text2}</Text>
+                    
+                    <span className="mr-1"><Text variant="xLarge">{locale.groups.groupsSection.text2}</Text></span>
+                    
+                    <TooltipHost
+                        content="Reset della pagina"
+                        calloutProps={calloutProps}
+                        styles={hostStyles}
+                    >
+                        <IconButton iconProps={resetIcon} />
+                    </TooltipHost>
                 </div>
 
                 <div className="search-box mb-4">

@@ -7,12 +7,12 @@ export interface IAutocompleteProps {
   searchCallback: (item: string) => void;
   changeCallback: (value: string) => void;
   value: string;
-}
+};
 
 export interface IAutocompleteState {
   isSuggestionDisabled: boolean;
   searchText: string;
-}
+};
 
 export interface ISuggestionItem {
   degree: Degree | null,
@@ -21,4 +21,4 @@ export interface ISuggestionItem {
   searchValue: string;
   type?: string;
   tag?: any;
-}
+};
