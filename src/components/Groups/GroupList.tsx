@@ -107,9 +107,20 @@ const CourseList= (props: Props) => {
     if (semesterFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.semester === semesterFilter); }
     if (yearFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.year === yearFilter); }
 
-    function _onChange(ev: React.MouseEvent<HTMLElement>, checked?: boolean) {
+    function toggleGroupsFilters(ev: React.MouseEvent<HTMLElement>, checked?: boolean) {
         setFiltersToggle(checked!);
+        resetGroupsFilters();
     };
+
+    function resetGroupsFilters() {
+        setNameFilter("");
+        setSemesterFilter(0);
+        setYearFilter(0);
+    };
+
+    React.useEffect( () => {
+        resetGroupsFilters();
+    }, [props.loadingCourses, props.degree]);
 
     return (       
         <div className="groups-list mb-4">
@@ -125,7 +136,7 @@ const CourseList= (props: Props) => {
                             inlineLabel
                             onText="On"
                             offText="Off"
-                            onChange={_onChange}
+                            onChange={toggleGroupsFilters}
                             checked={filtersToggle}
                         />
                     </div>
@@ -141,7 +152,8 @@ const CourseList= (props: Props) => {
                                     <TextField
                                         label={locale.groups.nameFilter}
                                         onChange={onNameFilterChanged}   
-                                        disabled={props.courses.length === 0 || props.loadingCourses}             
+                                        disabled={props.courses.length === 0 || props.loadingCourses}      
+                                        value={nameFilter}      
                                     />
                                 </Col>
                                 <Col xl={4} lg={4} md={4} sm={12} xs={12}>
