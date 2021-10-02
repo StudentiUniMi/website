@@ -32,9 +32,9 @@ const MainView = () => {
     <Router basename={process.env.PUBLIC_URL}>
       <CookiesProvider>
         <ThemeProvider applyTo="body" theme={theme ? darkTheme : lightTheme}>
-          <Header changeTheme={changeTheme} changePalette={changePalette} />
+          <Header/>
           <ContentView/>
-          <Footer />
+          <Footer changeTheme={changeTheme} changePalette={changePalette}/>
         </ThemeProvider>
       </CookiesProvider>
     </Router>

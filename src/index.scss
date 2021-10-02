@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #faf9f8;
-  margin-bottom: 191px; /* Default footer height */
+  margin-bottom: 226px; /* Default footer height */
   height:100%;
 }
 
@@ -56,7 +56,7 @@ button:focus,
 /* Responsive footer */
 @media only screen and (max-width: 992px) {
   body {
-    margin-bottom: 191px;
+    margin-bottom: 335px;
   }
 }
 
@@ -68,7 +68,7 @@ button:focus,
 
 @media only screen and (max-width: 767px) {
   body {
-    margin-bottom: 469px;
+    margin-bottom: 594px;
   }
 
   footer .row {
@@ -90,29 +90,21 @@ button:focus,
   }
 }
 
-@media only screen and (max-width: 485px) {
-  body {
-    margin-bottom: 540px;
-  }
-}
 
 @media only screen and (max-width: 363px) {
   body {
-    margin-bottom: 550px;
+    margin-bottom: 610px;
   }
 }
 
-@media only screen and (max-width: 320px) {
-  body {
-    margin-bottom: 560px;
-  }
-}
 
+/*
 @media only screen and (min-width: 767px) {
   footer .row {
     margin-left: 3%;
   }
 }
+*/
 
 
 
@@ -155,6 +147,7 @@ button:focus,
   .header-menu .ms-Dropdown-container {
     float:right;
     width:30px;
+    margin-right: 5px;
   }
 
   .header-menu .ms-Dropdown-caretDownWrapper {
@@ -400,4 +393,10 @@ header .ms-Image-image {
   #SuggestionContainer .ms-Callout-main {
     max-height: 100px !important;
   }
+}
+
+
+/* Footer adjustments */
+footer .ms-Label {
+  padding-top: 0px;
 }

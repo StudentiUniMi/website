@@ -1,22 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import LocalizationService from "../services/LocalizationService";
 import { FontSizes } from '@fluentui/theme';
 import { Dropdown, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
-import { Icon, IIconStyles } from 'office-ui-fabric-react/lib/Icon';
+import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { useHistory } from "react-router-dom";
-import { IconButton, IIconProps, initializeIcons, Text } from 'office-ui-fabric-react';
-import { TooltipHost, ITooltipHostStyles, TooltipDelay, DirectionalHint } from 'office-ui-fabric-react/lib/Tooltip';
-import { useId } from '@uifabric/react-hooks';
-import { Panel, PanelType } from 'office-ui-fabric-react/lib/Panel';
-import { useBoolean } from '@uifabric/react-hooks';
-import { Coachmark, IButtonProps, TeachingBubbleContent, Toggle } from '@fluentui/react';
-import { useCookies } from "react-cookie";
 import { useTheme } from '@fluentui/react-theme-provider';
-import { addDays } from '../services/Utils';
 import { Pivot, PivotItem, IPivotStyles } from '@fluentui/react';
-import { SwatchColorPicker } from '@fluentui/react/lib/SwatchColorPicker';
-import { semibold } from "../services/fonts";
-import { palettes } from '../services/palettes';
+import { withCookies } from "react-cookie";
 
 export enum ItemsKeys {
     home = "home",
@@ -27,84 +17,11 @@ export enum ItemsKeys {
     organization = "organization"
 };
 
-initializeIcons();
-
-interface Props { changeTheme: () => void, changePalette: (id: string) => void };
-
-const HeaderMenu = (props: Props) => {
+const HeaderMenu = () => {
     var theme = useTheme();
-    const history = useHistory();
-    const [cookies, setCookie] = useCookies();
-    const date: Date = addDays(new Date(), 90);
-    const tooltipId = useId('tooltip');
-    const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
-    const settingsIcon: IIconProps = { iconName: 'Settings', styles: { root: { fontSize: '18px' } } };
-    const settingsIconStylePivot: IIconStyles = { root: { position: 'absolute', right: '-5px', top: '8px', zIndex: 10 } };
-    const settingsIconStyleDropdown: IIconStyles = { root: { position: 'absolute', right: '24px', top: '8px', zIndex: 10 } };
-    const settingsIconId = useId('icon');
-    const calloutProps = { gapSpace: 0, target: `#${settingsIconId}`, };
-    const onRenderCaretDown = (): JSX.Element => { return <Icon iconName="List" />; };
-
-    const themeToggled = () => {
-        if (cookies["theme"] === "dark") setCookie("theme", "light", { path: "/", expires: date });
-        else { setCookie("theme", "dark", { path: "/", expires: date }); }
-        props.changeTheme();
-    };
-
-    if (cookies["theme"] === undefined) {
-        /*
-        // This is theme initialization based on browser; this isn't working, so I must fix this.
-        setCookie("theme", "light", { path: "/", expires: date }); 
-        const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-        if (darkThemeMq.matches) themeToggled();
-        */
-        setCookie("theme", "light", { path: "/", expires: date }); 
-    }
-    
-    if (cookies['language'] === undefined) { 
-        const isNavLanguageITA = isNavigatorLanguageItalian();
-        setCookie("language", (isNavLanguageITA ? 'it' : 'en'), { path: "/", expires: date }); 
-    }
-
-    LocalizationService.localize(cookies['language']);
-
     const locale = LocalizationService.strings();
-
-    const changeLanguage = (key: string) => {
-        LocalizationService.localize(key);
-    };
-
-    const languageOptions: IDropdownOption[] = [
-        { key: 'it', text: locale.settingsPanel.italian },
-        { key: 'en', text: locale.settingsPanel.english }
-    ];
-
-    if (cookies["palette"] === undefined) 
-    { 
-        setCookie("palette", "a", { path: "/", expires: date });
-    }
-
-    /* useEffect to avoid rendering loops */
-    useEffect(() => { 
-        if (cookies["firstVisit"] === undefined) { 
-            setTimeout(() => {
-                showCoachmark();
-                setCookie("firstVisit", false, { path: "/", expires: date } ); 
-            }, 1000);
-        }
-    });
-
-    const [isCoachmarkVisible, { setFalse: hideCoachmark, setTrue: showCoachmark }] = useBoolean(false);
-    const buttonProps: IButtonProps = { text: locale.settingsPanel.coachMark.understood, onClick: hideCoachmark };
-    const target = React.useRef<HTMLDivElement>(null);
-    const [coachmarkPosition] = React.useState<DirectionalHint>(DirectionalHint.leftCenter);
-    const positioningContainerProps = React.useMemo(
-        () => ({
-            directionalHint: coachmarkPosition,
-            doNotLayer: false,
-        }),
-        [coachmarkPosition],
-    );
+    const history = useHistory();
+    const onRenderCaretDown = (): JSX.Element => { return <Icon iconName="List" />; };
     
     const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
         [ItemsKeys.home, locale.headerMenuItems.home],
@@ -115,13 +32,13 @@ const HeaderMenu = (props: Props) => {
         [ItemsKeys.organization, locale.headerMenuItems.aboutUs]
     ]);
     
-    const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
     const dropdownStyles: Partial<IDropdownStyles> = {
         dropdown: { color: theme.palette.neutralPrimary, border: 'none', borderStyle: 'none', height: '44px', alignItems: 'center', fontSize: FontSizes.size16 },
         dropdownItems: { color: theme.palette.neutralPrimary, backgroundColor: theme.palette.white, textAlign: 'center', alignItems: 'center' },
         caretDown: { fontSize: '15px' },
         caretDownWrapper: { right: '25px', top: '10px' }
     };
+
     const pivotStyles: Partial<IPivotStyles> = {
         root: { color: theme.palette.neutralPrimary, fontSize: FontSizes.size24 },
     };
@@ -166,11 +83,7 @@ const HeaderMenu = (props: Props) => {
 
     const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }));
 
-    /* Theme palette code */
-    const colorCells: any[] = palettes.map(x => ({ id: x.id, label: x.label, color: x.palette?.themePrimary }));
-    const resetColorIcon: IIconProps = { iconName: 'SyncOccurence' };
-    const calloutPropsResetColor = { gapSpace: 10 };
-    const hostStylesResetColor: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
+
 
     return (
         <div className="header-menu">
@@ -186,72 +99,9 @@ const HeaderMenu = (props: Props) => {
                 >
                     {Object.values(ItemsKeys).map((x, i) => <PivotItem headerText={texts.get(x)} itemKey={x} />)}
                 </Pivot>
-
-                <TooltipHost content={locale.settingsPanel.settings} id={tooltipId} calloutProps={calloutProps} styles={hostStyles} delay={TooltipDelay.zero} directionalHint={DirectionalHint.leftCenter}>
-                    <div ref={target} style={{ position: 'absolute', right: '25px', top: '22px'}}></div><IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStylePivot} id={settingsIconId} />
-                </TooltipHost>
-
-                {isCoachmarkVisible && window.screen.availWidth >= 586 && ( /* With windows.screen size I fixed the visualization of coachMark in mobile displays too */
-                    <Coachmark
-                        target={target.current}
-                        positioningContainerProps={positioningContainerProps}
-                    >
-                        <TeachingBubbleContent
-                            headline={locale.settingsPanel.coachMark.text1}
-                            hasCloseButton
-                            closeButtonAriaLabel={locale.settingsPanel.close}
-                            onDismiss={hideCoachmark}
-                            secondaryButtonProps={buttonProps}
-                        >
-                            {locale.settingsPanel.coachMark.text2}
-                        </TeachingBubbleContent>
-                    </Coachmark>
-                )}
-
-                <Panel
-                    isLightDismiss
-                    isOpen={isOpen}
-                    onDismiss={dismissPanel}
-                    closeButtonAriaLabel={locale.settingsPanel.close}
-                    headerText={locale.settingsPanel.settings}
-                    type={PanelType.smallFixedFar}
-                    theme={theme}
-                >
-                    <Toggle
-                        label={locale.settingsPanel.changeTheme}
-                        onText={locale.settingsPanel.darkTheme}
-                        offText={locale.settingsPanel.lightTheme}
-                        checked={cookies["theme"] === "dark"}
-                        onChange={themeToggled}
-                        theme={theme}
-                    />
-
-                    <Dropdown
-                        label={locale.settingsPanel.selectLanguage}
-                        options={languageOptions}
-                        selectedKey={cookies["language"]}
-                        onChange={(_, option) => { changeLanguage(option!.key as string); setCookie("language", option!.key as string, { path: "/", expires: date }) }}
-                        theme={theme}
-                    />
-
-                    <div className="mt-3">
-                        <Text variant="medium" styles={semibold}>{locale.settingsPanel.selectColor}  </Text>
-                        <TooltipHost
-                            content="Reset color"
-                            calloutProps={calloutPropsResetColor}
-                            styles={hostStylesResetColor}
-                        >
-                            <IconButton iconProps={resetColorIcon} onClick={() => { setCookie("palette", 'a', { path: "/", expires: date }); props.changePalette('a'); }} />
-                        </TooltipHost>
-                        <SwatchColorPicker selectedId={cookies["palette"]} columnCount={9} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => { setCookie("palette", id, { path: "/", expires: date }); props.changePalette(id!); }} />
-                    </div>
-                </Panel>
             </div>
 
             <div className="dropdown">
-
-                <IconButton iconProps={settingsIcon} onClick={openPanel} styles={settingsIconStyleDropdown} />
-
                 <Dropdown
                     selectedKey={selectedKey}
                     onChange={onDropdownValueChange}
@@ -260,22 +110,9 @@ const HeaderMenu = (props: Props) => {
                     onRenderCaretDown={onRenderCaretDown}
                     theme={theme}
                 />
-
             </div>
         </div>
     );
 };
 
-export default HeaderMenu;
-
-/**
- * This function returns true if the navigator language is italian.
- */
-const isNavigatorLanguageItalian = () => {
-    const navLanguage = navigator.language;
-    if (navLanguage === 'it') return true;
-
-    const s: string[] = navLanguage.split("-",2);
-    if (s.length >= 2 && s[0] === 'it') return true;
-    return false;
-}
+export default withCookies(HeaderMenu);

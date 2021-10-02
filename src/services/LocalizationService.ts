@@ -497,12 +497,12 @@ class LocalizationService {
     }
 
     static strings = () => {
-        return LocalizationService.data!
+        return LocalizationService?.data;
     }
 
     static getLanguage = () => {
-        return LocalizationService.data!.getLanguage();
+        return LocalizationService?.data?.getLanguage();
     }
 }
 
-export default LocalizationService
+export default LocalizationService;

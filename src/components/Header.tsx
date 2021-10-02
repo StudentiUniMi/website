@@ -7,9 +7,8 @@ import HeaderMenu from './HeaderMenu';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { FontWeights, ITextStyles, Link } from 'office-ui-fabric-react';
 
-interface Props { changeTheme: () => void, changePalette: (id: string) => void };
 
-const Header = (props: Props) => {
+const Header = () => {
     var theme = useTheme();
     const logoProperties = { width: 25, height: 25, marginTop: '5px', marginBottom: '5px' };
     const logoFileName = 'unimi150.png';
@@ -36,7 +35,7 @@ const Header = (props: Props) => {
                     </Col>
 
                     <Col style={{ paddingLeft: 0, paddingRight: 0, marginTop: -6, width: "55%" }}>
-                        <HeaderMenu changeTheme={props.changeTheme} changePalette={props.changePalette} />
+                        <HeaderMenu/>
                     </Col>
 
                 </Row>
