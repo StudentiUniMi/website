@@ -18,15 +18,15 @@ interface Props { data: ExtraGroup };
 const AdditionalGroup = (props: Props) => {
     const theme = useTheme();
     const locale = LocalizationService.strings();
-    var language: string = LocalizationService.getLanguage();
+    var language: string | undefined = LocalizationService.getLanguage();
     const data = props.data;
     const helpfulTextStyles: ITextStyles = { root: { fontWeight: FontWeights.regular, } };
     const descriptionTextStyles: ITextStyles = { root: { fontWeight: FontWeights.semibold } };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
     const telegramGroupIcon: IIconProps = { iconName: 'Send' };
     
-    let desc = data.description![language];
-    let name = data.name![language];
+    let desc = data.description![language!];
+    let name = data.name![language!];
 
     // PrimaryText inizialization
     var primaryText : any;
@@ -43,7 +43,7 @@ const AdditionalGroup = (props: Props) => {
             </Card.Item>
             <Card.Section>
                 <Text styles={descriptionTextStyles}>
-                    <Chip label={locale.extraGroups.extraGroup} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeTertiary }} className="m-1" />
+                    <Chip label={locale?.extraGroups.extraGroup} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeTertiary }} className="m-1" />
                 </Text>
                 <Text variant="small" styles={helpfulTextStyles} className="mb-2">
                     <JsxParser bindings={{ theme: theme }} components={{ Text, Link, Icon }} jsx={"<Icon iconName='Info' /> " + desc} />
@@ -61,7 +61,7 @@ const AdditionalGroup = (props: Props) => {
                                     style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
                                     disabled={data.gruppo === "" || data.gruppo === null}
                                     allowDisabledFocus>
-                                    {locale.telegramGroup}
+                                    {locale?.telegramGroup}
                                 </ActionButton>
                             );
                         }

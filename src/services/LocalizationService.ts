@@ -491,17 +491,17 @@ class LocalizationService {
             })
         }   
 
-        if (language != null) {
-            LocalizationService.data.setLanguage(language!);
+        if (language != null && language !== undefined) {
+            LocalizationService.data?.setLanguage(language!);
         }
     }
 
     static strings = () => {
-        return LocalizationService?.data;
+        return LocalizationService.data;
     }
 
     static getLanguage = () => {
-        return LocalizationService?.data?.getLanguage();
+        return LocalizationService.data?.getLanguage();
     }
 }
 

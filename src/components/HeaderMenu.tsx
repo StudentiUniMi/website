@@ -20,16 +20,17 @@ export enum ItemsKeys {
 const HeaderMenu = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
+    console.log("LOCALE: ", locale)
     const history = useHistory();
     const onRenderCaretDown = (): JSX.Element => { return <Icon iconName="List" />; };
     
-    const texts: Map<ItemsKeys, string> = new Map<ItemsKeys, string>([
-        [ItemsKeys.home, locale.headerMenuItems.home],
-        [ItemsKeys.courses, locale.headerMenuItems.courses],
-        [ItemsKeys.services, locale.headerMenuItems.services],
-        [ItemsKeys.rules, locale.headerMenuItems.rules],
-        [ItemsKeys.representatives, locale.headerMenuItems.university],
-        [ItemsKeys.organization, locale.headerMenuItems.aboutUs]
+    const texts: Map<ItemsKeys, string | undefined> = new Map<ItemsKeys, string | undefined>([
+        [ItemsKeys.home, locale?.headerMenuItems.home],
+        [ItemsKeys.courses, locale?.headerMenuItems.courses],
+        [ItemsKeys.services, locale?.headerMenuItems.services],
+        [ItemsKeys.rules, locale?.headerMenuItems.rules],
+        [ItemsKeys.representatives, locale?.headerMenuItems.university],
+        [ItemsKeys.organization, locale?.headerMenuItems.aboutUs]
     ]);
     
     const dropdownStyles: Partial<IDropdownStyles> = {

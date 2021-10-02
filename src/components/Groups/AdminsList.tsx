@@ -24,7 +24,7 @@ const AdminsList = (props: Props) => {
         <div className="mb-2">
             <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLight }}>
                 <Container>
-                    <div><Text variant="medium" styles={semibold}><Icon iconName="WorkforceManagement" /> {locale.groups.availableAdmins}</Text></div>
+                    <div><Text variant="medium" styles={semibold}><Icon iconName="WorkforceManagement" /> {locale?.groups.availableAdmins}</Text></div>
                 </Container>
             </div>
 
@@ -39,7 +39,7 @@ const AdminsList = (props: Props) => {
                                 return <Persona imageUrl={imageUrl} onRenderPrimaryText={() => (<><Icon iconName="Send" style={{ color: theme.palette.themePrimary }}/>&nbsp;<Link href={`https://t.me/${x.username}`}>{`${x.username ?? ""}`}</Link></>)} text={`@${x.username}` ?? ""} secondaryText={secondaryText} size={PersonaSize.size40} />
                             })()}
                         </Col>
-                    ) : <Message text={locale.groups.adminsNotFound} />
+                    ) : <Message text={locale?.groups.adminsNotFound!} />
                     }
                 </Row>
             </Container>

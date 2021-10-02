@@ -88,13 +88,13 @@ const CourseItem = (props: Props) => {
             yearText = null;
             break;
         case -2: /* Complementare */
-            yearText = <span>{locale.groups.complementary}</span>;
+            yearText = <span>{locale?.groups.complementary}</span>;
             break;
         case undefined: /* Errore o non disponibile */
             yearText = <span>N/A</span>;
             break;
         default:
-            yearText = <span>{data.year}° {locale.groups.year}</span>;
+            yearText = <span>{data.year}° {locale?.groups.year}</span>;
             break;
     }
 
@@ -104,16 +104,16 @@ const CourseItem = (props: Props) => {
     } else if (data.semester === undefined) {
         semesterText = <span>N/A</span>;
     } else if (data.semester !== null) {
-        semesterText = <span>{data.semester}° {locale.groups.semester}</span>;
+        semesterText = <span>{data.semester}° {locale?.groups.semester}</span>;
     }
 
     
     // Main text inizialization
     if (data.year === -1) {
         if (ITgroupsIDs.indexOf(data.course?.group?.id!) !== -1) {
-            mainText = <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale.groups.tutorsGroupDescription} />;
+            mainText = <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.groups.tutorsGroupDescription} />;
         } else {
-            mainText = locale.groups.mainGroupDescription;
+            mainText = locale?.groups.mainGroupDescription;
         }
     }
 
@@ -130,7 +130,7 @@ const CourseItem = (props: Props) => {
                         disabled={data.course?.group?.invite_link === "" || data.course?.group?.invite_link === null}
                         className="text-decoration-none"
                         allowDisabledFocus>
-                        {locale.telegramGroup}
+                        {locale?.telegramGroup}
                     </ActionButton>
                 );
             } else if ((data.course?.group?.invite_link === undefined || data.course?.group?.invite_link === "" || data.course?.group?.invite_link === null)) {
@@ -140,7 +140,7 @@ const CourseItem = (props: Props) => {
                         style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
                         disabled
                         allowDisabledFocus>
-                        {locale.groups.groupNotAvailable}
+                        {locale?.groups.groupNotAvailable}
                     </ActionButton>
                 );
             }
@@ -150,7 +150,7 @@ const CourseItem = (props: Props) => {
                 style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
                 disabled
                 allowDisabledFocus>
-                {locale.groups.groupNotAvailable}
+                {locale?.groups.groupNotAvailable}
             </ActionButton>
         )
     };
@@ -224,7 +224,7 @@ const CourseItem = (props: Props) => {
                 </Text>
 
                 <Text styles={descriptionTextStyles}>
-                    {data.year === -1 ? <Chip label={locale.groups.mainGroup} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeTertiary }} className="m-1" /> : <></>}
+                    {data.year === -1 ? <Chip label={locale?.groups.mainGroup} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeTertiary }} className="m-1" /> : <></>}
                     {yearText !== "" && yearText !== null ? <Chip label={yearText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} className="m-1" /> : <></>}
                     {semesterText !== "" && semesterText !== null ? <Chip label={semesterText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} /> : <></>}
                 </Text>
@@ -237,7 +237,7 @@ const CourseItem = (props: Props) => {
 
                 { data.year !== -1 ?
                     <CommandButton
-                        text={locale.groups.websites}
+                        text={locale?.groups.websites}
                         style={{justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 0}}
                         iconProps={websiteIcon}
                         menuProps={menuProps}

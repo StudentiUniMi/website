@@ -36,7 +36,7 @@ const developers: any = [
 const Mantainers = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
-    var language: string = LocalizationService.getLanguage();
+    var language: string | undefined = LocalizationService.getLanguage();
     const profileIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size24 };
 
     const sectionCard = {
@@ -53,7 +53,7 @@ const Mantainers = () => {
     return (
         <div className="pb-4 pt-4" style={{ backgroundColor: theme.palette.neutralLighter }}>
             <Container className="contributors text-center">
-                <div className="mb-4"><Text variant="xLarge">{locale.contributors.header1}</Text></div>
+                <div className="mb-4"><Text variant="xLarge">{locale?.contributors.header1}</Text></div>
 
                 <Row className="justify-content-center">
                     {
@@ -71,11 +71,11 @@ const Mantainers = () => {
                                             </div>
                                             <div className="mb-0"><Text variant="medium" styles={semibold}>{x.name}</Text></div>
                                             <Text variant="medium" className="mt-2">
-                                                {x.description[language]}
+                                                {x.description[language!]}
                                             </Text>
                                             <div>
                                                 <TooltipHost
-                                                    content={locale.contributors.githubProfile}
+                                                    content={locale?.contributors.githubProfile}
                                                     calloutProps={calloutProps}
                                                     styles={hostStyles}
                                                     delay={TooltipDelay.zero}
@@ -84,7 +84,7 @@ const Mantainers = () => {
                                                 </TooltipHost>
                                                 &nbsp;&nbsp;
                                                 <TooltipHost
-                                                    content={locale.contributors.websiteProfile}
+                                                    content={locale?.contributors.websiteProfile}
                                                     calloutProps={calloutProps}
                                                     styles={hostStyles}
                                                     delay={TooltipDelay.zero}

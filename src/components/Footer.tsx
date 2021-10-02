@@ -3,7 +3,7 @@ import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
 import { semibold } from '../services/fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { useCookies, withCookies } from 'react-cookie';
+import { useCookies } from 'react-cookie';
 import { IDropdownOption, Dropdown, IIconProps, PrimaryButton, Toggle, TooltipHost, IconButton, SwatchColorPicker, ITooltipHostStyles } from '@fluentui/react';
 import { palettes } from '../services/palettes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -32,6 +32,8 @@ interface Props { changeTheme: () => void, changePalette: (id: string) => void }
 const Footer = (props: Props) => {
     var theme = useTheme();
     const [cookies, setCookie] = useCookies();
+    const locale = LocalizationService.strings();
+    var language: string | undefined = LocalizationService.getLanguage();
     const date: Date = addDays(new Date(), 90);
 
     const themeToggled = () => {
@@ -40,38 +42,14 @@ const Footer = (props: Props) => {
         props.changeTheme();
     };
 
-    if (cookies["theme"] === undefined) {
-        /*
-        // This is theme initialization based on browser; this isn't working, so I must fix this.
-        setCookie("theme", "light", { path: "/", expires: date }); 
-        const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-        if (darkThemeMq.matches) themeToggled();
-        */
-        setCookie("theme", "light", { path: "/", expires: date }); 
-    }
-    
-    if (cookies['language'] === undefined) { 
-        const isNavLanguageITA = isNavigatorLanguageItalian();
-        setCookie("language", (isNavLanguageITA ? 'it' : 'en'), { path: "/", expires: date }); 
-    }
-
-    LocalizationService.localize(cookies['language']);
-    const locale = LocalizationService.strings();
-    var language: string = LocalizationService.getLanguage();
-
     const changeLanguage = (key: string) => {
         LocalizationService.localize(key);
     };
 
     const languageOptions: IDropdownOption[] = [
-        { key: 'it', text: locale.settingsPanel.italian },
-        { key: 'en', text: locale.settingsPanel.english }
+        { key: 'it', text: locale?.settingsPanel.italian! },
+        { key: 'en', text: locale?.settingsPanel.english! }
     ];
-
-    if (cookies["palette"] === undefined) 
-    { 
-        setCookie("palette", "a", { path: "/", expires: date });
-    }
     
     const wrapIconStyle = { backgroundColor: theme.palette.themeSecondary, borderRadius: '50%', minWidth: 35, minHeight: 35, display: 'inline-block', textAlign: 'center', justifyContent: 'center', verticalAlign: 'middle' } as React.CSSProperties;
     const iconStyle = { color: theme.palette.white, fontSize: '22px', marginTop: 6 };
@@ -106,7 +84,7 @@ const Footer = (props: Props) => {
                     <Col xl={2} lg={2} md={3} sm={12} xs={12} className="mb-2 mb-md-0">
                         <div /*className="mid-column"*/>
                             <div className="mb-2">
-                                <Text styles={semibold} variant="medium">{locale.footer[1].header}</Text>
+                                <Text styles={semibold} variant="medium">{locale?.footer[1].header}</Text>
                             </div>
 
                             <div>
@@ -130,9 +108,9 @@ const Footer = (props: Props) => {
                     <Col xl={2} lg={2} md={3} sm={12} xs={12}>
                         <div>
                             <Toggle
-                                label={locale.settingsPanel.changeTheme}
-                                onText={locale.settingsPanel.darkTheme}
-                                offText={locale.settingsPanel.lightTheme}
+                                label={locale?.settingsPanel.changeTheme}
+                                onText={locale?.settingsPanel.darkTheme}
+                                offText={locale?.settingsPanel.lightTheme}
                                 checked={cookies["theme"] === "dark"}
                                 onChange={themeToggled}
                                 theme={theme}
@@ -141,7 +119,7 @@ const Footer = (props: Props) => {
                         
                         <div>
                             <Dropdown
-                                label={locale.settingsPanel.selectLanguage}
+                                label={locale?.settingsPanel.selectLanguage}
                                 options={languageOptions}
                                 selectedKey={cookies["language"]}
                                 onChange={(_, option) => { changeLanguage(option!.key as string); setCookie("language", option!.key as string, { path: "/", expires: date }) }}
@@ -153,7 +131,7 @@ const Footer = (props: Props) => {
 
                     <Col xl={4} lg={4} md={6} sm={12} xs={12}>
                         <div>
-                            <Text variant="medium" styles={semibold}>{locale.settingsPanel.selectColor}  </Text>
+                            <Text variant="medium" styles={semibold}>{locale?.settingsPanel.selectColor}  </Text>
                             <TooltipHost
                                 content="Reset color"
                                 calloutProps={calloutPropsResetColor}
@@ -171,7 +149,7 @@ const Footer = (props: Props) => {
                 <Row>
                     <Col lg={6} sm={12} style={{ display: 'table' }} className="center-mobile mb-2">
                         <Text variant="medium"  style={{  display: 'table-cell', verticalAlign: 'middle' }}>
-                            {locale.footer[0].text}
+                            {locale?.footer[0].text}
                         </Text>
                     </Col>
 
@@ -180,7 +158,7 @@ const Footer = (props: Props) => {
                             {footerIcons.map( (x: any, i: number) => { 
                                 return (
                                     <TooltipHost
-                                        content={x.name[language]}
+                                        content={x.name[language!]}
                                         calloutProps={calloutPropsResetColor}
                                         styles={hostStylesResetColor}
                                         key={i}
@@ -207,15 +185,3 @@ const Footer = (props: Props) => {
 };
 
 export default Footer;
-
-/**
- * This function returns true if the navigator language is italian.
- */
- const isNavigatorLanguageItalian = () => {
-    const navLanguage = navigator.language;
-    if (navLanguage === 'it') return true;
-
-    const s: string[] = navLanguage.split("-",2);
-    if (s.length >= 2 && s[0] === 'it') return true;
-    return false;
-}

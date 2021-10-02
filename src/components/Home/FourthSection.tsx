@@ -20,7 +20,7 @@ const FourthSection = () => {
     return (
         <div className="pb-4 pt-4" style={{ backgroundColor: theme.palette.neutralLighterAlt }}>
             <Container>
-                <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold}>{locale.homepage.section5.text}</Text></div>
+                <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold}>{locale?.homepage.section5.text}</Text></div>
 
                 <Row className="justify-content-center">
                     <Col xl={3} lg={3} md={4} sm={6} xs={12} className="mb-3">
@@ -28,11 +28,11 @@ const FourthSection = () => {
                             <Card.Section>
                                 <div><Icon iconName="ContactHeart" style={homeIconStyle} /></div>
                                 <Text variant="medium">
-                                    {locale.homepage.section5.card1.text}
+                                    {locale?.homepage.section5.card1.text}
                                 </Text>
                                 <Icon iconName="SortDown" style={iconStyle}></Icon>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section5.card1.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/representatives/" allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale?.homepage.section5.card1.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/representatives/" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>
@@ -43,11 +43,11 @@ const FourthSection = () => {
                             <Card.Section>
                                 <div><Icon iconName="Telemarketer" style={homeIconStyle} /></div>
                                 <Text variant="medium">
-                                    {locale.homepage.section5.card2.text}
+                                    {locale?.homepage.section5.card2.text}
                                 </Text>
                                 <Icon iconName="SortDown" style={iconStyle}></Icon>
                                 <div className="justify-content-center">
-                                    <PrimaryButton text={locale.homepage.section5.card2.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/organization/" allowDisabledFocus style={buttonStyle} />
+                                    <PrimaryButton text={locale?.homepage.section5.card2.button} iconProps={buttonIconProps} className="text-decoration-none" href="https://studentiunimi.it/organization/" allowDisabledFocus style={buttonStyle} />
                                 </div>
                             </Card.Section>
                         </Card>

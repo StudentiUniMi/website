@@ -37,14 +37,14 @@ const news: any[] = [
 SwiperCore.use([Pagination, Navigation, Autoplay]);
 
 const Slider = () => {
-    var language: string = LocalizationService.getLanguage();
+    var language: string | undefined = LocalizationService.getLanguage();
 
     return (
         <Swiper pagination={true} navigation={true} autoplay={{ "delay": 5000, "disableOnInteraction": false }} loop={true} autoHeight={true} className="mySwiper">
             {news.map(x => 
                 <SwiperSlide>
                     <div style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: 800}}>
-                        <LargeCard title={x.title[language]} description={x.description[language]} date={x.date[language]} click={x.click[language]} type={x.type[language]} img={x.img} previewImg={x.previewImg} link={x.link} />
+                        <LargeCard title={x.title[language!]} description={x.description[language!]} date={x.date[language!]} click={x.click[language!]} type={x.type[language!]} img={x.img} previewImg={x.previewImg} link={x.link} />
                     </div>
                 </SwiperSlide>
             )}

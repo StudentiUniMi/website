@@ -34,7 +34,7 @@ const LoadingSpinner = (props: Props) => {
             onDismiss={p.resetChoice}
             dismissButtonAriaLabel="Close"
         >
-            {locale.errorContactAdmin}
+            {locale?.errorContactAdmin}
         </MessageBar>
     );
 
@@ -43,7 +43,7 @@ const LoadingSpinner = (props: Props) => {
             { props.error ? <div style={{ display: showError ? 'block' : 'none', marginLeft: 'auto', marginRight: 'auto', maxWidth: 400 }}><ErrorExample resetChoice={() => setShowError(false)} /></div> :
                 props.loading ? 
                 <div>
-                    <Spinner label={locale.loading} ariaLive="assertive" labelPosition="right" size={SpinnerSize.large} theme={theme} />
+                    <Spinner label={locale?.loading} ariaLive="assertive" labelPosition="right" size={SpinnerSize.large} theme={theme} />
                 </div> : <></>
             }
         </>
