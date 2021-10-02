@@ -45,7 +45,7 @@ const Services = () => {
     }};
     
     return (
-        <div className="services pb-2">
+        <div className="services pb-3">
             <div className="pt-5 pb-5 mb-4" style={{ backgroundColor: theme.palette.neutralLighter }}>
                 <Container>
 
@@ -71,37 +71,7 @@ const Services = () => {
             </div>
 
             <Container>
-                {/*
-                <div className="mb-0">
-                    <Text variant="medium">
-                        <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.services.text2} />
-                    </Text>
-                </div>
-
-                <div className="mb-3">
-                    <Text variant="medium">
-                        <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.services.text3} />
-                    </Text>
-                </div>
-                */}
-
-                {/*
-                <div className="mb-3">
-                    <div className="mb-1"><Text variant="medium">{locale?.services.legend}<br/></Text></div>
-                    <Icon iconName="SortDown" style={{ color: theme.palette.themePrimary, fontSize: 20, marginBottom: 5 }} />
-                    <div>
-                        <Text variant="medium">
-                            <span className="mr-3"><Chip label={'G'} size="small" style={{ color: theme.palette.orange, backgroundColor: theme.palette.neutralLighter, fontWeight: 500 }} /> {locale?.services.guide}</span>
-                            <Chip label={'S'} size="small" style={{ color: theme.palette.themePrimary, backgroundColor: theme.palette.neutralLighter, fontWeight: 500 }} /> {locale?.services.service}
-                        </Text>
-                    </div>
-                </div>
-
-                <Icon iconName="ChevronDownMed" className="mb-2" style={iconStyle} />
-                */}
-
                 <div className="mb-4 text-center">
-                    {/*<div className="mb-1"><Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>Gruppi degli insegnamenti</Text></div>*/}
                     <Text variant="xLarge">{locale?.services.availableServices}</Text>
                 </div>
 
