@@ -54,7 +54,7 @@ const Footer = (props: Props) => {
     const wrapIconStyle = { backgroundColor: theme.palette.themeSecondary, borderRadius: '50%', minWidth: 35, minHeight: 35, display: 'inline-block', textAlign: 'center', justifyContent: 'center', verticalAlign: 'middle' } as React.CSSProperties;
     const iconStyle = { color: theme.palette.white, fontSize: '22px', marginTop: 6 };
 
-    const buttonStyle = { maxWidth: '250px', boxShadow: theme.effects.elevation8 };
+    const buttonStyle = { maxWidth: '270px', boxShadow: theme.effects.elevation8 };
     const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
 
     /* Theme palette code */
@@ -76,13 +76,13 @@ const Footer = (props: Props) => {
                         </div>
 
                         <div className="mb-2 text">
-                            <PrimaryButton text="Entra nel nostro gruppo" iconProps={buttonIconProps} href="https://t.me/unimichat" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
+                            <PrimaryButton text={locale?.footer[0].buttonText} iconProps={buttonIconProps} href="https://t.me/unimichat" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
                         </div>
                     </Col>
                     
 
                     <Col xl={2} lg={2} md={3} sm={12} xs={12} className="mb-2 mb-md-0">
-                        <div /*className="mid-column"*/>
+                        <div>
                             <div className="mb-2">
                                 <Text styles={semibold} variant="medium">{locale?.footer[1].header}</Text>
                             </div>
@@ -105,8 +105,8 @@ const Footer = (props: Props) => {
                         </div>
                     </Col>
 
-                    <Col xl={2} lg={2} md={3} sm={12} xs={12}>
-                        <div>
+                    <Col xl={3} lg={2} md={3} sm={12} xs={12}>
+                        <div className="mb-2">
                             <Toggle
                                 label={locale?.settingsPanel.changeTheme}
                                 onText={locale?.settingsPanel.darkTheme}
@@ -117,19 +117,19 @@ const Footer = (props: Props) => {
                             />
                         </div>
                         
-                        <div>
+                        <div className="mb-2">
                             <Dropdown
                                 label={locale?.settingsPanel.selectLanguage}
                                 options={languageOptions}
                                 selectedKey={cookies["language"]}
                                 onChange={(_, option) => { changeLanguage(option!.key as string); setCookie("language", option!.key as string, { path: "/", expires: date }) }}
                                 theme={theme}
-                                style={{ maxWidth: 200 }}
+                                style={{ maxWidth: 150 }}
                             />
                         </div>
                     </Col>
 
-                    <Col xl={4} lg={4} md={6} sm={12} xs={12}>
+                    <Col xl={3} lg={4} md={6} sm={12} xs={12}>
                         <div>
                             <Text variant="medium" styles={semibold}>{locale?.settingsPanel.selectColor}  </Text>
                             <TooltipHost
@@ -139,7 +139,7 @@ const Footer = (props: Props) => {
                             >
                                 <IconButton iconProps={resetColorIcon} onClick={() => { setCookie("palette", 'a', { path: "/", expires: date }); props.changePalette('a'); }} />
                             </TooltipHost>
-                            <SwatchColorPicker selectedId={cookies["palette"]} columnCount={10} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => { setCookie("palette", id, { path: "/", expires: date }); props.changePalette(id!); }} />
+                            <SwatchColorPicker selectedId={cookies["palette"]} columnCount={7} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => { setCookie("palette", id, { path: "/", expires: date }); props.changePalette(id!); }} />
                         </div>
                     </Col>
                 
