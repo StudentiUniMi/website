@@ -237,7 +237,7 @@ class LocalizationService {
                         header3: 'Amministratori dei gruppi telegram'
                     },
                     footer: [
-                        { text: 'Il network e il relativo sito web non sono affiliati all\'Università degli Studi di Milano.' },
+                        { text: 'Il network e il relativo sito web non sono affiliati all\'Università degli Studi di Milano.', buttonText: 'Entra nel nostro gruppo' },
                         { header: 'Link utili' },
                         { header: 'Contatti', text: "Per qualsiasi dubbio o proposta è possibile scrivere sul gruppo principale del network <Link href='https://t.me/unimichat' target='_blank'>@unimichat</Link>." },
                     ],
@@ -483,7 +483,7 @@ class LocalizationService {
                         header3: 'Telegram groups Administrators'
                     },
                     footer: [
-                        { text: 'The network and the associated website are not affiliated to the University of Milan.' },
+                        { text: 'The network and the associated website are not affiliated to the University of Milan.', buttonText: 'Join our main group' },
                         { header: 'Useful links' },
                         { header: 'Contacts', text: "For any question or suggestion you can join the main network group <Link href='https://t.me/unimichat' target='_blank'>@unimichat</Link>." },
                     ]
@@ -491,18 +491,18 @@ class LocalizationService {
             })
         }   
 
-        if (language != null) {
-            LocalizationService.data.setLanguage(language!);
+        if (language != null && language !== undefined) {
+            LocalizationService.data?.setLanguage(language!);
         }
     }
 
     static strings = () => {
-        return LocalizationService.data!
+        return LocalizationService.data;
     }
 
     static getLanguage = () => {
-        return LocalizationService.data!.getLanguage();
+        return LocalizationService.data?.getLanguage();
     }
 }
 
-export default LocalizationService
+export default LocalizationService;

@@ -220,7 +220,7 @@ interface ILocalizationStrings {
         text2: string,
     },
     footer: [
-        { text: string },
+        { text: string, buttonText: string },
         { header: string },
         { header: string, text: string },
     ]

@@ -20,7 +20,7 @@ const Contributors = () => {
     return (
         <div className="pb-4 pt-4" style={{ backgroundColor: theme.palette.neutralLighter }}>
             <Container className="contributors text-center">
-                <div className="mb-4"><Text variant="xLarge">{locale.contributors.header2}</Text></div>
+                <div className="mb-4"><Text variant="xLarge">{locale?.contributors.header2}</Text></div>
 
                 <div className="contributors mb-2">
                     <Row className="justify-content-center">

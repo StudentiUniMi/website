@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #faf9f8;
-  margin-bottom: 191px; /* Default footer height */
+  margin-bottom: 228px; /* Default footer height */
   height:100%;
 }
 
@@ -44,75 +44,67 @@ button:focus,
 }
 
 
-/* Align text when in mobile view */
-@media only screen and (max-width: 992px) {
-  .center-mobile {
-    text-align: center !important;
+/* Responsive footer */
+@media only screen and (max-width: 1200px) {
+  body {
+    margin-bottom: 245px;
   }
 }
 
-
-
-/* Responsive footer */
 @media only screen and (max-width: 992px) {
   body {
-    margin-bottom: 191px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  footer .mid-column {
-    margin-left: 15%;
+    margin-bottom: 366px;
   }
 }
 
 @media only screen and (max-width: 767px) {
   body {
-    margin-bottom: 469px;
+    margin-bottom: 610px;
   }
 
   footer .row {
     text-align: center;
   }
 
-  footer .contacts {
-    margin-top:0px;
+  footer .ms-Toggle-innerContainer {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100px;
+  }
+
+  footer .ms-Dropdown {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 120px !important;
+  }
+
+  footer .ms-FocusZone {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 215px !important;
   }
 
   footer .contacts .text, footer .main-col .text {
     margin-left:25%;
     margin-right: 25%;
   }
-
-  footer .text {
-    margin-left: 15%;
-    margin-right: 15%;
-  }
 }
 
-@media only screen and (max-width: 485px) {
-  body {
-    margin-bottom: 540px;
-  }
-}
 
 @media only screen and (max-width: 363px) {
   body {
-    margin-bottom: 550px;
+    margin-bottom: 610px;
   }
 }
 
-@media only screen and (max-width: 320px) {
-  body {
-    margin-bottom: 560px;
-  }
-}
 
+/*
 @media only screen and (min-width: 767px) {
   footer .row {
     margin-left: 3%;
   }
 }
+*/
 
 
 
@@ -155,6 +147,7 @@ button:focus,
   .header-menu .ms-Dropdown-container {
     float:right;
     width:30px;
+    margin-right: 5px;
   }
 
   .header-menu .ms-Dropdown-caretDownWrapper {
@@ -179,6 +172,14 @@ button:focus,
   .groups-list .col-sm-12 {
     max-width: 450px;
     text-align: center;
+  }
+}
+
+
+/* Align text when in mobile view */
+@media only screen and (max-width: 992px) {
+  .center-mobile {
+    text-align: center !important;
   }
 }
 
@@ -400,4 +401,10 @@ header .ms-Image-image {
   #SuggestionContainer .ms-Callout-main {
     max-height: 100px !important;
   }
+}
+
+
+/* Footer adjustments */
+footer .ms-Label {
+  padding-top: 0px;
 }

@@ -59,7 +59,7 @@ const MainSection = () => {
                     <Col lg={8}>
                         <div className="mb-1">
                             <Text variant="large">
-                                <>{locale.homepage.section1.typedText} </>
+                                <>{locale?.homepage.section1.typedText} </>
                                 <Text style={{color: theme.palette.themePrimary}} variant="large">
                                 <Typed
                                     strings={stringDegrees}
@@ -74,13 +74,13 @@ const MainSection = () => {
                         </div>
                         <div className="mb-2">
                             <Text variant="xLargePlus">
-                                {locale.homepage.section1.text1}
+                                {locale?.homepage.section1.text1}
                             </Text>
                         </div>
 
                         <div>
                             <Text variant="large">
-                                {locale.homepage.section1.text2}
+                                {locale?.homepage.section1.text2}
                             </Text>
                         </div>
                     </Col>

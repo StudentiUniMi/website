@@ -20,7 +20,7 @@ import JsxParser from 'react-jsx-parser';
 const Rules = () => {
     const theme = useTheme();
     const locale = LocalizationService.strings();
-    var language: string = LocalizationService.getLanguage();
+    var language: string | undefined = LocalizationService.getLanguage();
     const icon: IIconProps = { iconName: 'QandA' };
 
     const rulesData: Rule[] = getRules();
@@ -58,18 +58,18 @@ const Rules = () => {
 
                         <Col lg={8}>
                             <div className="mb-2">
-                                <Text variant="xLargePlus" style={{color: theme.palette.white}}>{locale.rules.text1}</Text>
+                                <Text variant="xLargePlus" style={{color: theme.palette.white}}>{locale?.rules.text1}</Text>
                             </div>
 
                             <div className="mb-3">
-                                <Text variant="large" style={{ color: theme.palette.white }}>{locale.rules.text2}</Text>
+                                <Text variant="large" style={{ color: theme.palette.white }}>{locale?.rules.text2}</Text>
                             </div>
 
                             <div className="mb-3">
                                 <DefaultButton
                                     id={buttonId}
                                     onClick={toggleIsCalloutVisible}
-                                    text={locale.rules.question}
+                                    text={locale?.rules.question}
                                     className={styles.button}
                                     iconProps={icon}
                                     theme={theme}
@@ -85,14 +85,14 @@ const Rules = () => {
                                         directionalHint={DirectionalHint.bottomCenter}
                                         setInitialFocus
                                     >
-                                        <Text block variant="medium" className="mb-1" styles={semibold}>{locale.rules.answer.text1}</Text>
-                                        <Text block variant="small"><JsxParser bindings={{ theme: theme }} components={{ Text, Link }} jsx={locale.rules.answer.text2} /></Text>
+                                        <Text block variant="medium" className="mb-1" styles={semibold}>{locale?.rules.answer.text1}</Text>
+                                        <Text block variant="small"><JsxParser bindings={{ theme: theme }} components={{ Text, Link }} jsx={locale?.rules.answer.text2} /></Text>
                                     </Callout>
                                 )}
                             </div>
 
                             <div>
-                                <Text variant="medium" style={{ color: theme.palette.white }}><i>{locale.rules.text3}</i></Text>
+                                <Text variant="medium" style={{ color: theme.palette.white }}><i>{locale?.rules.text3}</i></Text>
                             </div>
                         </Col>
                     </Row>
@@ -102,7 +102,7 @@ const Rules = () => {
             
             <div className="mb-4">
                 <div className="mb-4 text-center">
-                    <Text variant="xLarge">{locale.rules.header}</Text>
+                    <Text variant="xLarge">{locale?.rules.header}</Text>
                 </div>
             </div>
 
@@ -117,11 +117,11 @@ const Rules = () => {
                                         aria-controls="panel1a-content"
                                         id="panel1a-header"
                                     >
-                                        <Text variant="medium" style={{ color: theme.palette.themePrimary }} styles={semibold}>{x.title![language]}</Text>
+                                        <Text variant="medium" style={{ color: theme.palette.themePrimary }} styles={semibold}>{x.title![language!]}</Text>
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Text variant="medium">
-                                            <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x.description![language]} />
+                                            <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x.description![language!]} />
                                         </Text>
                                     </AccordionDetails>
                                 </Accordion>

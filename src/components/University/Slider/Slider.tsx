@@ -2,6 +2,7 @@ import './slider.scss';
 import { Swiper, SwiperSlide } from "swiper/react";
 import LocalizationService from "../../../services/LocalizationService";
 import LargeCard from '../../LargeCard';
+import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper/core';
 
 const news: any[] = [
     { 
@@ -33,15 +34,17 @@ const news: any[] = [
     /* { title: { it: "", en: "" }, description: { it: "", en: "" }, date: { it: "", en: "" }, click: { it: "", en: "" }, type: { it: "", en: "" }, img: "", previewImg: "", link: "" } */
 ];
 
+SwiperCore.use([Pagination, Navigation, Autoplay]);
+
 const Slider = () => {
-    var language: string = LocalizationService.getLanguage();
+    var language: string | undefined = LocalizationService.getLanguage();
 
     return (
         <Swiper pagination={true} navigation={true} autoplay={{ "delay": 5000, "disableOnInteraction": false }} loop={true} autoHeight={true} className="mySwiper">
             {news.map(x => 
                 <SwiperSlide>
                     <div style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: 800}}>
-                        <LargeCard title={x.title[language]} description={x.description[language]} date={x.date[language]} click={x.click[language]} type={x.type[language]} img={x.img} previewImg={x.previewImg} link={x.link} />
+                        <LargeCard title={x.title[language!]} description={x.description[language!]} date={x.date[language!]} click={x.click[language!]} type={x.type[language!]} img={x.img} previewImg={x.previewImg} link={x.link} />
                     </div>
                 </SwiperSlide>
             )}

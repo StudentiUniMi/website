@@ -127,12 +127,12 @@ const CourseList= (props: Props) => {
             <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLight }}>
                 <Container style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <div style={{ display: 'table' }}>
-                        <Text variant="medium" styles={semibold} style={{  display: 'table-cell', verticalAlign: 'middle' }}><Icon iconName="Group"/> {locale.groups.availableGroups}</Text>
+                        <Text variant="medium" styles={semibold} style={{  display: 'table-cell', verticalAlign: 'middle' }}><Icon iconName="Group"/> {locale?.groups.availableGroups}</Text>
                     </div>
 
                     <div className="filters-toggle">
                         <Toggle
-                            label={<Text variant="medium" styles={semibold}>{locale.groups.filtersToggle}</Text>}
+                            label={<Text variant="medium" styles={semibold}>{locale?.groups.filtersToggle}</Text>}
                             inlineLabel
                             onText="On"
                             offText="Off"
@@ -150,7 +150,7 @@ const CourseList= (props: Props) => {
                             <Row className="justify-content-center">
                                 <Col xl={4} lg={4} md={4} sm={12} xs={12}>
                                     <TextField
-                                        label={locale.groups.nameFilter}
+                                        label={locale?.groups.nameFilter}
                                         onChange={onNameFilterChanged}   
                                         disabled={props.courses.length === 0 || props.loadingCourses}      
                                         value={nameFilter}      
@@ -160,7 +160,7 @@ const CourseList= (props: Props) => {
                                     {
                                         <Dropdown 
                                             options={yearFilterOptions}
-                                            label={locale.groups.yearFilter}
+                                            label={locale?.groups.yearFilter}
                                             onChange={onYearFilterChanged}
                                             selectedKey={yearFilter}
                                             disabled={props.courses.length === 0 || props.loadingCourses || props.degree?.slug === 'magistrale_informatica'} /* To-do: must decide if we need an apposite field to disable year selection */
@@ -170,7 +170,7 @@ const CourseList= (props: Props) => {
                                 <Col xl={4} lg={4} md={4} sm={12} xs={12}>
                                     <Dropdown 
                                         options={semesterFilterOptions}
-                                        label={locale.groups.semesterFilter}
+                                        label={locale?.groups.semesterFilter}
                                         onChange={onSemesterFilterChanged}
                                         selectedKey={semesterFilter}
                                         disabled={props.courses.length === 0 || props.loadingCourses}
@@ -184,7 +184,7 @@ const CourseList= (props: Props) => {
                         props.loadingCourses || props.errorLoadingCourses ? <LoadingSpinner loading={props.loadingCourses} error={props.errorLoadingCourses} />
                         : filteredCourses.length === 0 ?
                         <div className="justify-content-center">
-                            <Message text={locale.groups.groupsNotFound} />
+                            <Message text={locale?.groups.groupsNotFound!} />
                         </div> : <></>
                     }
                     

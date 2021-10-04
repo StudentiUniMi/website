@@ -23,7 +23,7 @@ const UniversityView = () => {
     var theme = useTheme();
     let didMount = React.useRef(false);
     const locale = LocalizationService.strings();
-    var language: string = LocalizationService.getLanguage();
+    var language: string | undefined = LocalizationService.getLanguage();
     const history = useHistory();
     //const whiteText = '#faf9f8';
     const imageProperties = { display: 'inline-block', width: '80%' };
@@ -55,8 +55,8 @@ const UniversityView = () => {
 
     universityLinks.map((x) => {
         if (x.icon !== "" && x.link !== "") options.push({ 
-            key: x.name![language], 
-            text: x.name![language], 
+            key: x.name![language!], 
+            text: x.name![language!], 
             styles: choiceGroupOptionsStyle, 
             iconProps: { iconName: x.icon!, className: iconProps, color: theme.palette.themePrimary }, 
             onClick: () => {redirectToLink(x.link!)} 
@@ -154,11 +154,11 @@ const UniversityView = () => {
                     <Row>
                         <Col lg={9} className="mb-2">
                             <div className="mb-2">
-                                <Text variant="xLargePlus" style={{ color: theme.palette.white }}>{locale.university.header.text1}</Text>
+                                <Text variant="xLargePlus" style={{ color: theme.palette.white }}>{locale?.university.header.text1}</Text>
                             </div>
 
                             <div className="mb-3">
-                                <Text variant="large" style={{ color: theme.palette.white }}>{locale.university.header.text2}</Text>
+                                <Text variant="large" style={{ color: theme.palette.white }}>{locale?.university.header.text2}</Text>
                             </div>
                         </Col>
 
@@ -175,7 +175,7 @@ const UniversityView = () => {
             <div>
                 <Container>
                     <div className="mb-3 text-center">
-                        <Text variant="xLarge"><Icon iconName="NewsSearch" /> {locale.university.news.title}</Text>
+                        <Text variant="xLarge"><Icon iconName="NewsSearch" /> {locale?.university.news.title}</Text>
                     </div>
 
                     <div className="mb-3">
@@ -196,11 +196,11 @@ const UniversityView = () => {
 
                         <Col lg={8} className="mb-2">
                             <div className="mb-2">
-                                <Text variant="xLargePlus" style={{color: theme.palette.white}}>{locale.university.linksAndRedirects.text1}</Text>
+                                <Text variant="xLargePlus" style={{color: theme.palette.white}}>{locale?.university.linksAndRedirects.text1}</Text>
                             </div>
 
                             <div className="mb-3">
-                                <Text variant="large" style={{ color: theme.palette.white }}>{locale.university.linksAndRedirects.text2}</Text>
+                                <Text variant="large" style={{ color: theme.palette.white }}>{locale?.university.linksAndRedirects.text2}</Text>
                             </div>
 
                             <div className="text-center justify-content-center university-links" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
@@ -221,27 +221,27 @@ const UniversityView = () => {
                             <div className="mb-2">
                                 <div className="mb-2">
                                     <Text variant="xLargePlus" style={{ color: theme.palette.white }}>
-                                        {locale.university.text1}
+                                        {locale?.university.text1}
                                     </Text>
                                 </div>
 
                                 <div className="mb-2">
                                     <Text variant="large" style={{ color: theme.palette.white }}>
-                                        {locale.university.text2}
+                                        {locale?.university.text2}
                                     </Text>
                                 </div>
 
                                 <div className="mb-2 text-center" style={{ maxWidth: '400px', marginRight: 'auto'}}>
                                     <Dropdown
-                                        placeholder={locale.university.departmentSelect}
-                                        label={locale.university.departmentSelect}
-                                        onRenderLabel={() => <Text style={{ color: theme.palette.white }} styles={semibold}>{locale.university.departmentSelect}</Text>}
+                                        placeholder={locale?.university.departmentSelect}
+                                        label={locale?.university.departmentSelect}
+                                        onRenderLabel={() => <Text style={{ color: theme.palette.white }} styles={semibold}>{locale?.university.departmentSelect}</Text>}
                                         options={departmentOptions}
                                         onChange={departmentSelectionChanged}
                                         selectedKey={selectedDepartment}
                                         onRenderTitle={onRenderTitle}
                                         onRenderOption={onRenderOption}
-                                        errorMessage={errorLoadingDepartments ? locale.errorLoadingDepartments : undefined}
+                                        errorMessage={errorLoadingDepartments ? locale?.errorLoadingDepartments : undefined}
                                         disabled={errorLoadingDepartments || departments.length === 0}
                                     />
                                 </div>

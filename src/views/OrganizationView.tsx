@@ -22,7 +22,7 @@ const developers: any = [
 const OrganizationView = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
-    var language: string = LocalizationService.getLanguage();
+    var language: string | undefined = LocalizationService.getLanguage();
     //const admins = getAdmins();
     const networkMembers = getNetworkMembers();
     const whiteText = '#faf9f8';
@@ -46,20 +46,20 @@ const OrganizationView = () => {
 
                         <Col lg={8} className="mb-2">
                             <div className="mb-2">
-                                <Text variant="xLargePlus" style={{ color: whiteText }}>{locale.aboutUs.text1}</Text>
+                                <Text variant="xLargePlus" style={{ color: whiteText }}>{locale?.aboutUs.text1}</Text>
                             </div>
 
                             <div className="mb-2">
-                                <Text variant="large" style={{ color: whiteText }}>{locale.aboutUs.text2}</Text>
+                                <Text variant="large" style={{ color: whiteText }}>{locale?.aboutUs.text2}</Text>
                             </div>
 
                             <div className="mb-3">
-                                <Text variant="medium" style={{ color: whiteText }}>{locale.aboutUs.text3}</Text>
+                                <Text variant="medium" style={{ color: whiteText }}>{locale?.aboutUs.text3}</Text>
                             </div>
 
                             <div className="mb-2">
-                                <CompoundButton primary theme={theme} secondaryText={locale.aboutUs.button.text2} href="https://github.com/StudentiUniMi/docs/blob/main/statuto.md" target="_blank" style={{ textDecoration: 'none', boxShadow: theme.effects.elevation8 }} iconProps={icon}>
-                                    {locale.aboutUs.button.text1}
+                                <CompoundButton primary theme={theme} secondaryText={locale?.aboutUs.button.text2} href="https://github.com/StudentiUniMi/docs/blob/main/statuto.md" target="_blank" style={{ textDecoration: 'none', boxShadow: theme.effects.elevation8 }} iconProps={icon}>
+                                    {locale?.aboutUs.button.text1}
                                 </CompoundButton>
                             </div>
                         </Col>
@@ -69,7 +69,7 @@ const OrganizationView = () => {
             </div>
 
             <div className="pt-4 pb-4">
-                <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold} style={{ color: theme.palette.themePrimary }}>{locale.aboutUs.header1}</Text></div>
+                <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold} style={{ color: theme.palette.themePrimary }}>{locale?.aboutUs.header1}</Text></div>
                 
                 <div style={{maxWidth: 230, marginLeft: 'auto', marginRight: 'auto'}}>
                     <Persona
@@ -85,7 +85,7 @@ const OrganizationView = () => {
 
             <div className="pb-4">
                 <Container>
-                    <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold} style={{color: theme.palette.themePrimary}}>{locale.aboutUs.header2}</Text></div>
+                    <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold} style={{color: theme.palette.themePrimary}}>{locale?.aboutUs.header2}</Text></div>
 
                     <Row className="justify-content-center">
                         {
@@ -113,7 +113,7 @@ const OrganizationView = () => {
 
             <div className="pb-4">
                 <Container>
-                    <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold} style={{ color: theme.palette.themePrimary }}>{locale.contributors.header1}</Text></div>
+                    <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold} style={{ color: theme.palette.themePrimary }}>{locale?.contributors.header1}</Text></div>
 
                     <Row className="justify-content-center">
                         {
@@ -128,8 +128,8 @@ const OrganizationView = () => {
                                                 onRenderPrimaryText={() => <Text variant="medium" styles={semibold}><Link href={x.github} target="_blank">{x.name}</Link></Text>}
                                                 secondaryText={x.username}
                                                 onRenderSecondaryText={() => <Text variant="medium"><Link href={`https://t.me/${x.username}`}>@{x.username}</Link></Text>}
-                                                tertiaryText={x.description[language]}
-                                                onRenderTertiaryText={() => <Text variant="small">{x.description[language]}</Text>}
+                                                tertiaryText={x.description[language!]}
+                                                onRenderTertiaryText={() => <Text variant="small">{x.description[language!]}</Text>}
                                             />
                                         </div>
                                     </Col>

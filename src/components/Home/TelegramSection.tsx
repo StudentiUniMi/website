@@ -18,11 +18,11 @@ const TelegramSection = () => {
             <Container>
                 <Row>
                     <Col lg={10} className="mb-2 center-mobile">
-                        <div><Text variant="xLarge" styles={semibold} style={{color:theme.palette.white}}>{locale.homepage.telegramText}</Text></div>
+                        <div><Text variant="xLarge" styles={semibold} style={{color:theme.palette.white}}>{locale?.homepage.telegramText}</Text></div>
                     </Col>
                 
                     <Col lg={2} className="text-right center-mobile">
-                        <DefaultButton href="https://youtu.be/kgNxRZghkkA?t=133" target="_blank" text={locale.homepage.telegramButton} iconProps={buttonIconProps} className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
+                        <DefaultButton href="https://youtu.be/kgNxRZghkkA?t=133" target="_blank" text={locale?.homepage.telegramButton} iconProps={buttonIconProps} className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
                     </Col>
                 </Row>
             </Container>

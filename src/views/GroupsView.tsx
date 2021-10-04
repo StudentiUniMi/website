@@ -43,7 +43,7 @@ const getDegreeTypeName = (type: string): string => {
 const GroupsView = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
-    var language: string = LocalizationService.getLanguage();
+    var language: string | undefined = LocalizationService.getLanguage();
     let history = useHistory();
     let didMount = React.useRef(false);
     const resetIcon: IIconProps = { iconName: 'Refresh' };
@@ -59,7 +59,7 @@ const GroupsView = () => {
     let [searchData, setSearchData] = React.useState<ISuggestionItem[]>([]); // Array di ISuggestionItem (contenente anche Degree per ogni elemento)
     let [courses, setCourses] = React.useState<CourseDegree[]>([]); // Corsi di insegnamento
     let [reactHelmetContent, setReactHelmetContent] = React.useState<reactHelmetContent>(
-        { title: locale.helmet.courses.title, description: locale.helmet.courses.description, href: 'https://studentiunimi.it/courses/', hrefLang: language }
+        { title: locale?.helmet.courses.title!, description: locale?.helmet.courses.description!, href: 'https://studentiunimi.it/courses/', hrefLang: language! }
     );
 
     const [loadingCourses, setLoadingCourses] = React.useState<boolean>(false);
@@ -143,12 +143,12 @@ const GroupsView = () => {
         setLoadingCourses(false);
 
         setReactHelmetContent({
-            title: locale.helmet.degreeLoaded.title1 + `${loadedDegree?.name} (${getDegreeTypeName(loadedDegree?.type!)})` + locale.helmet.degreeLoaded.title2, 
-            description: locale.helmet.degreeLoaded.description1 + `${loadedDegree?.name} (${getDegreeTypeName(loadedDegree?.type!)})` + locale.helmet.degreeLoaded.description2, 
+            title: locale?.helmet.degreeLoaded.title1 + `${loadedDegree?.name} (${getDegreeTypeName(loadedDegree?.type!)})` + locale?.helmet.degreeLoaded.title2, 
+            description: locale?.helmet.degreeLoaded.description1 + `${loadedDegree?.name} (${getDegreeTypeName(loadedDegree?.type!)})` + locale?.helmet.degreeLoaded.description2, 
             href: `https://studentiunimi.it/courses/${loadedDegree?.slug}`,
-            hrefLang: language
+            hrefLang: language!
         });
-    }, [selectedDegree, loadedDegree, locale.helmet.degreeLoaded.description1, locale.helmet.degreeLoaded.description2, locale.helmet.degreeLoaded.title1, locale.helmet.degreeLoaded.title2, language]);
+    }, [locale, selectedDegree, loadedDegree, language]);
 
     
     /* This function initializes the VerboseDegree (retrieves degree based on url initialization) */
@@ -181,13 +181,13 @@ const GroupsView = () => {
             setDegreeTextSearch(verboseDeg.name!)
 
             setReactHelmetContent({
-                title: locale.helmet.degreeLoaded.title1 + `${verboseDeg?.name} (${getDegreeTypeName(verboseDeg?.type!)})` + locale.helmet.degreeLoaded.title2, 
-                description: locale.helmet.degreeLoaded.description1 + `${verboseDeg?.name} (${getDegreeTypeName(verboseDeg?.type!)})` + locale.helmet.degreeLoaded.description2, 
+                title: locale?.helmet.degreeLoaded.title1 + `${verboseDeg?.name} (${getDegreeTypeName(verboseDeg?.type!)})` + locale?.helmet.degreeLoaded.title2, 
+                description: locale?.helmet.degreeLoaded.description1 + `${verboseDeg?.name} (${getDegreeTypeName(verboseDeg?.type!)})` + locale?.helmet.degreeLoaded.description2, 
                 href: `https://studentiunimi.it/courses/${verboseDeg?.slug}`,
-                hrefLang: language
+                hrefLang: language!
             });
         }
-    }, [history.location.pathname, locale.helmet.degreeLoaded.description1, locale.helmet.degreeLoaded.description2, locale.helmet.degreeLoaded.title1, locale.helmet.degreeLoaded.title2, language]);
+    }, [history.location.pathname, locale?.helmet.degreeLoaded.description1, locale?.helmet.degreeLoaded.description2, locale?.helmet.degreeLoaded.title1, locale?.helmet.degreeLoaded.title2, language]);
 
     const updateLoadedDegree = React.useCallback(async () => {
         if (selectedDegree === null || selectedDegree === undefined || selectedDegree === "") return;
@@ -230,12 +230,12 @@ const GroupsView = () => {
         <div className="pt-5 courses">
             <Container>
                 <div className="mb-3">
-                    <div className="mb-1"><Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>{locale.groups.groupsSection.text1}</Text></div>
+                    <div className="mb-1"><Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>{locale?.groups.groupsSection.text1}</Text></div>
                     
-                    <span className="mr-1"><Text variant="xLarge">{locale.groups.groupsSection.text2}</Text></span>
+                    <span className="mr-1"><Text variant="xLarge">{locale?.groups.groupsSection.text2}</Text></span>
                     
                     <TooltipHost
-                        content={locale.groups.resetSection}
+                        content={locale?.groups.resetSection}
                         calloutProps={calloutProps}
                         styles={hostStyles}
                     >
@@ -246,7 +246,7 @@ const GroupsView = () => {
                 <div className="search-box mb-4">
                     <Autocomplete
                         items={searchData}
-                        searchTitle={locale.groups.findDegreeByName}
+                        searchTitle={locale?.groups.findDegreeByName}
                         suggestionCallback={(item) => entitySelectHandler(item)}
                         searchCallback={searchTextHandler}
                         changeCallback={(text) => updateDegreesForSearchBox(text)}
@@ -265,8 +265,8 @@ const GroupsView = () => {
             <Container className="pb-4">
                 <Separator className="mb-3" />
                 <div className="mb-3">
-                    <div className="mb-1"><Text variant="medium" styles={semibold} style={{ textTransform: 'uppercase', color: theme.palette.themePrimary }}>{locale.groups.extraGroupsSection.text1}</Text></div>
-                    <Text variant="xLarge">{locale.groups.extraGroupsSection.text2}</Text>
+                    <div className="mb-1"><Text variant="medium" styles={semibold} style={{ textTransform: 'uppercase', color: theme.palette.themePrimary }}>{locale?.groups.extraGroupsSection.text1}</Text></div>
+                    <Text variant="xLarge">{locale?.groups.extraGroupsSection.text2}</Text>
                 </div>
 
                 <AdditionalGroupsView />

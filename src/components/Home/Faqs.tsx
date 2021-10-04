@@ -13,12 +13,12 @@ import { useTheme } from '@fluentui/react-theme-provider';
 const Faqs = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
-    var language: string = LocalizationService.getLanguage();
+    var language: string | undefined = LocalizationService.getLanguage();
     const faqs = getFaqs();
 
     return (
         <div className="pb-4 pt-4" /*style={{ backgroundColor: theme.palette.neutralLighter }}*/>
-            <div className="mb-4 text-center"><Text variant="xLarge">{locale.homepage.section6.text}</Text></div>
+            <div className="mb-4 text-center"><Text variant="xLarge">{locale?.homepage.section6.text}</Text></div>
             <Container>
                 <div className="mb-2">
                     {
@@ -31,12 +31,12 @@ const Faqs = () => {
                                         id="panel1a-header"
                                     >
                                         <Text variant="medium" style={{ color: theme.palette.themePrimary }} styles={semibold}>
-                                            <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x.question![language]} />
+                                            <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x.question![language!]} />
                                         </Text>
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Text variant="medium">
-                                            <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x.answer![language]} />
+                                            <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x.answer![language!]} />
                                         </Text>
                                     </AccordionDetails>
                                 </Accordion>
