@@ -17,7 +17,7 @@ const ThirdSection = () => {
     const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
 
     return (
-        <div className="pb-4 pt-4">
+        <div className="pb-4 pt-4" style={{ backgroundColor: theme.palette.neutralLighterAlt }}>
             <Container>
                 <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold}>{locale?.homepage.section4.text}</Text></div>
 

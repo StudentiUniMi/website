@@ -1,4 +1,4 @@
-import { Text, FontSizes, IIconProps, PrimaryButton, Icon } from '@fluentui/react';
+import { Text, FontSizes, IIconProps, PrimaryButton, Icon, Image, DefaultButton } from '@fluentui/react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { semibold } from '../../services/fonts';
 import { Container } from 'react-bootstrap';
@@ -13,12 +13,81 @@ const SecondSection = () => {
     const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
     const sectionCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', boxShadow: theme.effects.elevation16, backgroundColor: theme.palette.white };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
-    const buttonStyle = { maxWidth: '180px', boxShadow: theme.effects.elevation8 };
+    const buttonStyle = { maxWidth: '230px', boxShadow: theme.effects.elevation8 };
     const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
 
+    const iconStyle = { backgroundColor: theme.palette.themePrimary, color:theme.palette.white, fontSize: '25px', padding: '1px 7px 1px 7px', borderRadius: 3 };
+
     return (
-        <div className="pb-4 pt-4" style={{ backgroundColor: theme.palette.neutralLighterAlt }}>
+        <div className="pb-5 pt-5" style={{ backgroundColor: theme.palette.neutralLighterAlt }}>
             <Container>
+
+                <Row>
+                    <Col lg={4} className="text-center">
+                        <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/other/temp/2.png'} style={{ display: 'inline-block', width: '70%' }} />
+                    </Col>
+
+                    <Col lg={8}>
+                        <div className="mb-3"><Text variant="xLarge" styles={semibold}>Scopri i nostri collegamenti principali</Text></div>
+
+                        <div>
+                            <div className="mb-3">
+                                <Row>
+                                    <Col lg={1}><Icon iconName="Send" style={iconStyle} /></Col>
+                                    <Col lg={11}>
+                                        <div><Text styles={semibold} variant="large">Canale Telegram</Text></div>
+                                        <div className="mb-2"><Text variant="medium">Iscriviti al nostro canale per rimanere sempre aggiornato sulle notizie riguardanti il network.</Text></div>                
+                                        <DefaultButton
+                                            text={"Raggiungi il canale"}
+                                            style={buttonStyle}
+                                            iconProps={buttonIconProps}
+                                            theme={theme}
+                                        />
+                                    </Col>
+                                </Row>
+                            </div>
+
+                            <div className="mb-3">
+                                <Row>
+                                    <Col lg={1}><Icon iconName="Group" style={iconStyle} /></Col>
+                                    <Col lg={11}>
+                                        <div><Text styles={semibold} variant="large">Gruppo principale</Text></div>
+                                        <div className="mb-2"><Text variant="medium">Entra nel nostro gruppo principale per qualsiasi chiarimento o discussione riguardo la nostra Università.</Text></div>                
+                                        <DefaultButton
+                                            text={"Raggiungi il gruppo"}
+                                            style={buttonStyle}
+                                            iconProps={buttonIconProps}
+                                            theme={theme}
+                                        />
+                                    </Col>
+                                </Row>
+                            </div>
+
+                            <div className="mb-3">
+                                <Row>
+                                    <Col lg={1}><Icon iconName="Game" style={iconStyle} /></Col>
+                                    <Col lg={11}>
+                                        <div><Text styles={semibold} variant="large">Server Discord</Text></div>
+                                        <div className="mb-2"><Text variant="medium">Entra nel nostro server discord per scambiare informazioni con altri studenti e conoscere nuove persone.</Text></div>                
+                                        <DefaultButton
+                                            text={"Raggiungi il server"}
+                                            style={buttonStyle}
+                                            iconProps={buttonIconProps}
+                                            theme={theme}
+                                        />
+                                    </Col>
+                                </Row>
+                            </div>
+                        
+                        </div>
+
+                    </Col>
+                    
+
+                </Row>
+
+
+                {/*
                 <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold}>{locale?.homepage.section3.text}</Text></div>
 
                 <Row className="justify-content-center">
@@ -78,6 +147,8 @@ const SecondSection = () => {
                         </Card>
                     </Col>
                 </Row>
+                */}
+
             </Container>
         </div>
     )
