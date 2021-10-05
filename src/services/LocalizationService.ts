@@ -52,77 +52,59 @@ class LocalizationService {
                             text2: "Comunicare è importante, ma può essere frustrante farlo sui grupponi WhatsApp lasciati a loro stessi. Abbiamo creato un gruppo Telegram per ogni corso di laurea dell'Università degli Studi di Milano per facilitare lo scambio di informazioni.",
                         },
                         section2: {
-                            text: 'Ogni cosa ha il suo gruppo Telegram',
-                            card1: {
-                                text: 'Abbiamo creato un gruppo Telegram per ogni corso di laurea; premi il pulsante sotto per trovare il tuo. Presto sarà disponibile anche un gruppo per ogni insegnamento.',
-                                button: 'Gruppi dei corsi'
-                            },
-                            card2: {
-                                text: 'Sei una matricola? Cerchi alloggi, materiali o qualcuno che faccia ripetizioni? Nessun problema, entra in uno dei nostri gruppi aggiuntivi!',
-                                button: 'Gruppi extra'
-                            },
-                            card3: {
-                                text: "Crediamo che un ambiente rispettoso e inclusivo favorisca la condivisione. Dai un'occhiata al regolamento ufficiale dei gruppi.",
-                                button: 'Regolamento'
-                            }
+                            text1: 'Un modo completamente ripensato di comunicare',
+                            text2: "Abbiamo creato gruppi Telegram per ogni corso di laurea dell'Università degli Studi di Milano, ma non solo: abbiamo messo a disposizione anche gruppi per ogni topic, dai tirocini e tesi agli alloggi e materiali universitari.",
+                            buttonText: 'Raggiungi i gruppi'
                         },
                         section3: {
-                            text: 'I nostri collegamenti principali',
-                            card1: {
-                                text: 'Unisciti al canale telegram per rimanere aggiornato e raggiungere tutti i link disponibili!',
-                                button: 'Canale Telegram'
+                            header: 'Scopri i nostri collegamenti principali',
+                            part1: {
+                                title: 'Canale Telegram',
+                                description: 'Iscriviti al nostro canale per rimanere sempre aggiornato sulle notizie riguardanti il network.',
+                                buttonText: 'Raggiungi il canale'
                             },
-                            card2: {
-                                text: 'Entra nel gruppo telegram principale per eventuali discussioni e chiarimenti riguardo il network.',
-                                button: 'Gruppo Telegram'
+                            part2: {
+                                title: 'Gruppo principale',
+                                description: 'Entra nel nostro gruppo principale per qualsiasi chiarimento o discussione riguardo la nostra Università.',
+                                buttonText: 'Raggiungi il gruppo'
                             },
-                            card3: {
-                                text: 'Entra nel nostro server discord per scambiare informazioni con altri studenti e conoscere nuove persone!',
-                                button: 'Server Discord'
+                            part3: {
+                                title: 'Server Discord',
+                                description: 'Entra nel nostro server discord per scambiare informazioni con altri studenti e conoscere nuove persone.',
+                                buttonText: 'Raggiungi il server'
                             },
-                            card4: {
-                                text: 'Trovi tutti i nostri progetti open source nelle repository della nostra organizzazione.',
-                                button: 'Organizzazione'
-                            }
                         },
-                        section4: {
-                            text: 'I nostri servizi per aiutarti nello studio',
-                            card1: {
-                                text: ' Abbiamo creato una Wikipedia per ogni insegnamento. Chiunque è libero di collaborare!',
-                                button: 'Wiki'
-                            },
-                            card2: {
-                                text: 'Stufo di non poter accedere ai servizi perchè UniMia ha problemi?',
-                                button: 'unimia.studentiunimi.it'
-                            },
-                            card3: {
-                                text: 'HedgeDoc permette di prendere appunti in collaborazione senza doversi registrare. Provalo!',
-                                button: 'HedgeDoc'
-                            },
-                            card4: {
-                                text: 'Devi condividere codice sui gruppi? Usa il nostro servizio veloce, semplice e sicuro.',
-                                button: 'Paste'
-                            }
+                        unimiaSection: {
+                            text1: 'Unimia non funziona? Nessun problema!',
+                            text2: 'Essendo studenti, sappiamo quanto può essere frustrante dover cercare le risorse universitarie passando per decine di pagine che neanche caricano.',
+                            text3: 'Per questo motivo, abbiamo realizzato una pagina che permette di raggiungere tutti i servizi universitari a portata di click, in aggiunta ad alcune guide che abbiamo realizzato.',
+                            buttonText: 'unimia.studentiunimi.it'
                         },
-                        section5: {
-                            text: 'Hai provato a spegnere e riaccendere?',
-                            card1: {
-                                text: 'Ho un problema didattico.',
-                                button: 'Rappresentanti'
+                        wikipediaSection: {
+                            text1: "Dai un'occhiata alla nostra Wikipedia",
+                            text2: 'La Wiki è una sezione parallela al nostro sito web: permette di collaborare per quanto riguarda la condivisione di materiale e altre informazioni utili sui corsi didattici di tutti i corsi di laurea.',
+                            text3: "È una risorsa collaborativa: ricorda che il materiale che hai trovato è stato fornito da altri studenti che ci hanno speso tempo! Sarebbe l'ideale il contributo di tutti.",
+                            buttonText: 'Raggiungi la Wiki'
+                        },
+                        additionalServicesSection: {
+                            header: 'Scopri i nostri ulteriori servizi',
+                            col1: {
+                                text: 'HedgeDoc è un servizio che permette di prendere appunti in collaborazione tra più studenti senza il bisogno di doversi registrare.',
+                                buttonText: 'Prova HedgeDoc'
                             },
-                            card2: {
-                                text: 'Ho un problema tecnico.',
-                                button: 'Amministratori'
-                            }
+                            col2: {
+                                text: 'Paste è un servizio pensato per i programmatori, che permette di condividere codice in maniera semplice e sicura.',
+                                buttonText: 'Prova Paste'
+                            },
                         },
-                        section6: {
-                            text: 'Domande frequenti sul Network'
-                        },
-                        section7: {
-                            text: 'Altre informazioni',
-                            card1: { text1: 'Abbiamo più di', text2: 'utenti.' },
-                            card2: { text1: 'Abbiamo', text2: 'gruppi telegram.' },
-                            card3: { text1: 'Copriamo', text2: 'corsi di laurea.' },
+                        adminsRepresentativesSection: {
+                            header: 'Cerchi un amministratore, o magari un rappresentante?',
+                            col1: { title: 'Contatta un rappresentante', description: 'Per contattare un rappresentante devi raggiungere la sezione apposita del sito web, e selezionare il tuo dipartimento.', buttonText: 'Raggiungi la sezione' },
+                            col2: { title: 'Contatta un amministratore', description: "Per vedere la lista di amministratori del tuo corso di laurea devi cercare quest'ultimo nella sezione apposita del sito web.", buttonText: 'Raggiungi la sezione' }
+                        }, 
+                        faqsSection: {
+                            header: 'Hai qualche domanda sul nostro Network?',
+                            description: "Dai un'occhiata qui per vedere se trovi la risposta, altrimenti chiedi pure sul <Link href='https://t.me/unimichat'>gruppo principale.</Link>"
                         },
                         telegramSection: {
                             title: "Perchè Telegram e non WhatsApp?",
@@ -298,77 +280,59 @@ class LocalizationService {
                             text2: 'Communicating is important, but it can be frustrating to do so on WhatsApp groups left to themselves. We are creating Telegram groups for each degree course of the University of Milan to facilitate the exchange of informations.',
                         },
                         section2: {
-                            text: 'Everything has its own Telegram group chat',
-                            card1: {
-                                text: 'We are creating a Telegram group for each degree course; press the button below to find yours. A group for each teaching course will also be available soon.',
-                                button: 'Course Groups'
-                            },
-                            card2: {
-                                text: 'Are you a new student? Are you looking for materials or someone to do tutoring? No problem, join one of our additional groups!',
-                                button: 'Extra Groups'
-                            },
-                            card3: {
-                                text: 'We think that a respectful and inclusive environment makes us more innovative and efficient. Read the rules!',
-                                button: 'Rules'
-                            }
+                            text1: 'Un modo completamente ripensato di comunicare',
+                            text2: "Abbiamo creato gruppi Telegram per ogni corso di laurea dell'Università degli Studi di Milano, ma non solo: abbiamo messo a disposizione anche gruppi per ogni topic, dai tirocini e tesi agli alloggi e materiali universitari.",
+                            buttonText: 'Raggiungi i gruppi'
                         },
                         section3: {
-                            text: 'Our main links',
-                            card1: {
-                                text: 'Join our telegram channel to stay updated and see all the available links!',
-                                button: 'Telegram Channel'
+                            header: 'Scopri i nostri collegamenti principali',
+                            part1: {
+                                title: 'Canale Telegram',
+                                description: 'Iscriviti al nostro canale per rimanere sempre aggiornato sulle notizie riguardanti il network.',
+                                buttonText: 'Raggiungi il canale'
                             },
-                            card2: {
-                                text: 'Join the main telegram group of our networ to discuss.',
-                                button: 'Telegram Group'
+                            part2: {
+                                title: 'Gruppo principale',
+                                description: 'Entra nel nostro gruppo principale per qualsiasi chiarimento o discussione riguardo la nostra Università.',
+                                buttonText: 'Raggiungi il gruppo'
                             },
-                            card3: {
-                                text: 'Join our discord to share information and meet new friends!',
-                                button: 'Discord Server'
+                            part3: {
+                                title: 'Server Discord',
+                                description: 'Entra nel nostro server discord per scambiare informazioni con altri studenti e conoscere nuove persone.',
+                                buttonText: 'Raggiungi il server'
                             },
-                            card4: {
-                                text: 'Visit the github organization to see all our projects.',
-                                button: 'GitHub Org.'
-                            }
                         },
-                        section4: {
-                            text: 'Our services to help you studying',
-                            card1: {
-                                text: 'Visit our Wiki and help us improving it!',
-                                button: 'Wiki'
-                            },
-                            card2: {
-                                text: 'Use this page to easily reach all the official services provided by UniMi.',
-                                button: 'unimia.studentiunimi.it'
-                            },
-                            card3: {
-                                text: '“Hey pal, would you mind sharing those notes?”',
-                                button: 'HedgeDoc'
-                            },
-                            card4: {
-                                text: 'Our service to safely and easily share your code or any other kind of material.',
-                                button: 'PasteBin'
-                            }
+                        unimiaSection: {
+                            text1: 'Unimia non funziona? Nessun problema!',
+                            text2: 'Essendo studenti, sappiamo quanto può essere frustrante dover cercare le risorse universitarie passando per decine di pagine che neanche caricano.',
+                            text3: 'Per questo motivo, abbiamo realizzato una pagina che permette di raggiungere tutti i servizi universitari a portata di click, in aggiunta ad alcune guide che abbiamo realizzato.',
+                            buttonText: 'unimia.studentiunimi.it'
                         },
-                        section5: {
-                            text: 'Have you tried turning it off and on again?',
-                            card1: {
-                                text: 'I have a didactic problem.',
-                                button: 'Representatives'
+                        wikipediaSection: {
+                            text1: "Dai un'occhiata alla nostra Wikipedia",
+                            text2: 'La Wiki è una sezione parallela al nostro sito web: permette di collaborare per quanto riguarda la condivisione di materiale e altre informazioni utili sui corsi didattici di tutti i corsi di laurea.',
+                            text3: "È una risorsa collaborativa: ricorda che il materiale che hai trovato è stato fornito da altri studenti che ci hanno speso tempo! Sarebbe l'ideale il contributo di tutti.",
+                            buttonText: 'Raggiungi la Wiki'
+                        },
+                        additionalServicesSection: {
+                            header: 'Scopri i nostri ulteriori servizi',
+                            col1: {
+                                text: 'HedgeDoc è un servizio che permette di prendere appunti in collaborazione tra più studenti senza il bisogno di doversi registrare.',
+                                buttonText: 'Prova HedgeDoc'
                             },
-                            card2: {
-                                text: 'I have a technical problem.',
-                                button: 'Admins'
-                            }
+                            col2: {
+                                text: 'Paste è un servizio pensato per i programmatori, che permette di condividere codice in maniera semplice e sicura.',
+                                buttonText: 'Prova Paste'
+                            },
                         },
-                        section6: {
-                            text: 'Frequently asked questions'
+                        adminsRepresentativesSection: {
+                            header: 'Cerchi un amministratore, o magari un rappresentante?',
+                            col1: { title: 'Contatta un rappresentante', description: 'Per contattare un rappresentante devi raggiungere la sezione apposita del sito web, e selezionare il tuo dipartimento.', buttonText: 'Raggiungi la sezione' },
+                            col2: { title: 'Contatta un amministratore', description: "Per vedere la lista di amministratori del tuo corso di laurea devi cercare quest'ultimo nella sezione apposita del sito web.", buttonText: 'Raggiungi la sezione' }
                         },
-                        section7: {
-                            text: 'Other informations',
-                            card1: { text1: 'We have more than', text2: 'users.' },
-                            card2: { text1: 'We have', text2: 'telegram groups.' },
-                            card3: { text1: 'We cover', text2: 'degree courses.' },
+                        faqsSection: {
+                            header: 'Hai qualche domanda sul nostro Network?',
+                            description: "Dai un'occhiata qui per vedere se trovi la risposta, altrimenti chiedi pure sul <Link href='https://t.me/unimichat'>gruppo principale.</Link>"
                         },
                         telegramSection: {
                             title: "Why Telegram and not WhatsApp?",

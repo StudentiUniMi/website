@@ -3,10 +3,10 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import LocalizationService from "../../services/LocalizationService";
+import JsxParser from 'react-jsx-parser';
 import { Container } from 'react-bootstrap';
 import { Link, Text } from '@fluentui/react';
 import { semibold } from '../../services/fonts';
-import JsxParser from 'react-jsx-parser';
 import { getFaqs } from '../../services/Requests';
 import { useTheme } from '@fluentui/react-theme-provider';
 
@@ -17,12 +17,12 @@ const Faqs = () => {
     const faqs = getFaqs();
 
     return (
-        <div className="pb-5 pt-5" /*style={{ backgroundColor: theme.palette.themeSecondary }}*/>
+        <div className="pb-5 pt-5">
             <Container>
 
             <div className="mb-1"><Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>FAQ</Text></div>            
-            <div className="mb-2"><Text variant="xLarge">Hai qualche domanda sul nostro Network?</Text></div>
-            <div className="mb-4"><Text variant="medium">Dai un'occhiata qui per vedere se trovi la risposta, altrimenti chiedi pure sul <Link href="/dennis">gruppo principale</Link>.</Text></div>
+            <div className="mb-2"><Text variant="xLarge">{locale?.homepage.faqsSection.header}</Text></div>
+                <div className="mb-4"><Text variant="medium"><JsxParser bindings={{ theme: theme }} components={{ Text, Link }} jsx={locale?.homepage.faqsSection.description} /></Text></div>
 
 
                 <div className="mb-2">

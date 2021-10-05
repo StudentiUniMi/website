@@ -31,17 +31,17 @@ const SecondSection = () => {
                     </Col>
 
                     <Col lg={8}>
-                        <div className="mb-4"><Text variant="xLarge" styles={semibold}>Scopri i nostri collegamenti principali</Text></div>
+                        <div className="mb-4"><Text variant="xLarge" styles={semibold}>{locale?.homepage.section3.header}</Text></div>
 
                         <div>
                             <div className="mb-4">
                                 <Row>
                                     <Col lg={1}><FontAwesomeIcon icon={['fab', 'telegram']} style={telegramIconStyle} /></Col>
                                     <Col lg={11}>
-                                        <div><Text styles={semibold} variant="large">Canale Telegram</Text></div>
-                                        <div className="mb-2"><Text variant="medium">Iscriviti al nostro canale per rimanere sempre aggiornato sulle notizie riguardanti il network.</Text></div>                
+                                        <div><Text styles={semibold} variant="large">{locale?.homepage.section3.part1.title}</Text></div>
+                                        <div className="mb-2"><Text variant="medium">{locale?.homepage.section3.part1.description}</Text></div>                
                                         <DefaultButton
-                                            text={"Raggiungi il canale"}
+                                            text={locale?.homepage.section3.part1.buttonText}
                                             style={buttonStyle}
                                             iconProps={buttonIconProps}
                                             theme={theme}
@@ -56,10 +56,10 @@ const SecondSection = () => {
                                 <Row>
                                     <Col lg={1}><FontAwesomeIcon icon={['fas', 'users']} style={iconStyle} /></Col>
                                     <Col lg={11}>
-                                        <div><Text styles={semibold} variant="large">Gruppo principale</Text></div>
-                                        <div className="mb-2"><Text variant="medium">Entra nel nostro gruppo principale per qualsiasi chiarimento o discussione riguardo la nostra Università.</Text></div>                
+                                        <div><Text styles={semibold} variant="large">{locale?.homepage.section3.part2.title}</Text></div>
+                                        <div className="mb-2"><Text variant="medium">{locale?.homepage.section3.part2.description}</Text></div>                
                                         <DefaultButton
-                                            text={"Raggiungi il gruppo"}
+                                            text={locale?.homepage.section3.part2.buttonText}
                                             style={buttonStyle}
                                             iconProps={buttonIconProps}
                                             theme={theme}
@@ -74,10 +74,10 @@ const SecondSection = () => {
                                 <Row>
                                     <Col lg={1}><FontAwesomeIcon icon={['fab', 'discord']} style={iconStyle} /></Col>
                                     <Col lg={11}>
-                                        <div><Text styles={semibold} variant="large">Server Discord</Text></div>
-                                        <div className="mb-2"><Text variant="medium">Entra nel nostro server discord per scambiare informazioni con altri studenti e conoscere nuove persone.</Text></div>                
+                                        <div><Text styles={semibold} variant="large">{locale?.homepage.section3.part3.title}</Text></div>
+                                        <div className="mb-2"><Text variant="medium">{locale?.homepage.section3.part3.description}</Text></div>                
                                         <DefaultButton
-                                            text={"Raggiungi il server"}
+                                            text={locale?.homepage.section3.part3.buttonText}
                                             style={buttonStyle}
                                             iconProps={buttonIconProps}
                                             theme={theme}

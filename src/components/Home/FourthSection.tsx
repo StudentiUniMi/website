@@ -15,20 +15,20 @@ const FourthSection = () => {
     return (
         <div className="pb-5 pt-5" style={{ backgroundColor: theme.palette.neutralLighterAlt }}>
             <Container>
-                <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold}>Cerchi un amministratore, o magari un rappresentante?</Text></div>
+                <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold}>{locale?.homepage.adminsRepresentativesSection.header}</Text></div>
 
                 <Row className="justify-content-around">
 
                     <Col className="text-center mb-5 mb-md-0" md={4}>
                         <Image className="mb-3" src={process.env.PUBLIC_URL + '/other/temp/rapp.png'} style={{ display: 'inline-block', width: 170, height: 160 }} />
                         <div className="mb-2">
-                            <Text variant="medium" styles={semibold}>Contatta un rappresentante</Text>
+                            <Text variant="medium" styles={semibold}>{locale?.homepage.adminsRepresentativesSection.col1.title}</Text>
                         </div>
                         <div className="mb-3">
-                            <Text variant="medium">Per contattare un rappresentante devi raggiungere la sezione apposita del sito web, e selezionare il tuo dipartimento.</Text>
+                            <Text variant="medium">{locale?.homepage.adminsRepresentativesSection.col1.description}</Text>
                         </div>
                         <PrimaryButton
-                            text={"Raggiungi la sezione"}
+                            text={locale?.homepage.adminsRepresentativesSection.col1.buttonText}
                             style={buttonStyle}
                             iconProps={buttonIconProps}
                             theme={theme}
@@ -40,13 +40,13 @@ const FourthSection = () => {
                     <Col className="text-center" md={4}>
                         <Image className="mb-3" src={process.env.PUBLIC_URL + '/other/temp/admin.png'} style={{ display: 'inline-block', width: 155, height: 160 }} />
                         <div className="mb-2">
-                            <Text variant="medium" styles={semibold}>Contatta un amministratore</Text>
+                            <Text variant="medium" styles={semibold}>{locale?.homepage.adminsRepresentativesSection.col2.title}</Text>
                         </div>
                         <div className="mb-3">
-                            <Text variant="medium">Per vedere la lista di amministratori del tuo corso di laurea devi cercare quest'ultimo nella sezione apposita del sito web.</Text>
+                            <Text variant="medium">{locale?.homepage.adminsRepresentativesSection.col2.description}</Text>
                         </div>
                         <PrimaryButton
-                            text={"Raggiungi la sezione"}
+                            text={locale?.homepage.adminsRepresentativesSection.col2.buttonText}
                             style={buttonStyle}
                             iconProps={buttonIconProps}
                             theme={theme}

@@ -43,76 +43,60 @@ interface ILocalizationStrings {
             text2: string,
         },
         section2: {
-            text: string,
-            card1: {
-                text: string,
-                button: string
-            },
-            card2: {
-                text: string,
-                button: string
-            },
-            card3: {
-                text: string,
-                button: string
-            }
+            text1: string,
+            text2: string,
+            buttonText: string
         },
         section3: {
-            text: string,
-            card1: {
-                text: string,
-                button: string
+            header: string,
+            part1: {
+                title: string,
+                description: string,
+                buttonText: string
             },
-            card2: {
-                text: string,
-                button: string
+            part2: {
+                title: string,
+                description: string,
+                buttonText: string
             },
-            card3: {
-                text: string,
-                button: string
+            part3: {
+                title: string,
+                description: string,
+                buttonText: string
             },
-            card4: {
-                text: string,
-                button: string
-            }
         },
-        section4: {
-            text: string,
-            card1: {
-                text: string,
-                button: string
-            },
-            card2: {
-                text: string,
-                button: string
-            },
-            card3: {
-                text: string,
-                button: string
-            },
-            card4: {
-                text: string,
-                button: string
-            }
+        unimiaSection: {
+            text1: string,
+            text2: string,
+            text3: string,
+            buttonText: string
         },
-        section5: {
-            text: string,
-            card1: {
-                text: string,
-                button: string
-            },
-            card2: {
-                text: string,
-                button: string
-            }
+        wikipediaSection: {
+            text1: string,
+            text2: string,
+            text3: string,
+            buttonText: string
         },
-        section6: { text: string },
-        section7: {
-            text: string,
-            card1: { text1: string, text2: string },
-            card2: { text1: string, text2: string },
-            card3: { text1: string, text2: string },
+        additionalServicesSection: { 
+            header: string,
+            col1: {
+                text: string,
+                buttonText: string
+            },
+            col2: {
+                text: string,
+                buttonText: string
+            },
+        },
+        adminsRepresentativesSection: {
+            header: string,
+            col1: { title: string, description: string, buttonText: string },
+            col2: { title: string, description: string, buttonText: string }
         }, 
+        faqsSection: {
+            header: string,
+            description: string
+        },
         telegramSection: {
             title: string,
             description: string,

@@ -17,14 +17,14 @@ const ThirdSection = () => {
     return (
         <div className="pb-5 pt-5">
             <Container>
-                <div className="mb-4 text-center"><Text variant="xLarge">Scopri i nostri ulteriori servizi</Text></div>
+                <div className="mb-4 text-center"><Text variant="xLarge">{locale?.homepage.additionalServicesSection.header}</Text></div>
 
                 <Row className="justify-content-around">
                     <Col md={4} className="mb-4 mb-md-0">
                         <div className="mb-2"><Text variant="large" styles={semibold}><Icon iconName="PencilReply" style={iconStyle} /> HedgeDoc</Text></div>
-                        <div className="mb-3"><Text variant="medium">HedgeDoc è un servizio che permette di prendere appunti in collaborazione tra più studenti senza il bisogno di doversi registrare.</Text></div>
+                        <div className="mb-3"><Text variant="medium">{locale?.homepage.additionalServicesSection.col1.text}</Text></div>
                         <DefaultButton
-                            text={"Prova HedgeDoc"}
+                            text={locale?.homepage.additionalServicesSection.col1.buttonText}
                             style={buttonStyle}
                             iconProps={buttonIconProps}
                             theme={theme}
@@ -35,9 +35,9 @@ const ThirdSection = () => {
 
                     <Col md={4}>
                         <div className="mb-2"><Text variant="large" styles={semibold}><Icon iconName="FileCode" style={iconStyle} /> Paste</Text></div>
-                        <div className="mb-3"><Text variant="medium">Paste è un servizio pensato per i programmatori, che permette di condividere codice in maniera semplice e sicura.</Text></div>
+                        <div className="mb-3"><Text variant="medium">{locale?.homepage.additionalServicesSection.col2.text}</Text></div>
                         <DefaultButton
-                            text={"Prova Paste"}
+                            text={locale?.homepage.additionalServicesSection.col2.buttonText}
                             style={buttonStyle}
                             iconProps={buttonIconProps}
                             theme={theme}

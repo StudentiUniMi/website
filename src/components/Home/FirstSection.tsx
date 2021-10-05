@@ -19,17 +19,16 @@ const FirstSection = () => {
 
                 <Row className="justify-content-around">
                     <Col lg={7} className="mb-4 mb-lg-0">
-                        <div className="mb-2"><Text variant="xLarge" styles={semibold}>Un modo completamente ripensato di comunicare</Text></div>
+                        <div className="mb-2"><Text variant="xLarge" styles={semibold}>{locale?.homepage.section2.text1}</Text></div>
 
                         <div className="mb-3">
                             <Text variant="medium">
-                                Abbiamo creato gruppi Telegram per ogni corso di laurea dell'Università degli Studi di Milano, ma non solo: 
-                                abbiamo messo a disposizione anche gruppi per ogni topic, dai tirocini e tesi agli alloggi e materiali universitari.
+                                {locale?.homepage.section2.text2}
                             </Text>
                         </div>
 
                         <PrimaryButton
-                            text={"Raggiungi i gruppi"}
+                            text={locale?.homepage.section2.buttonText}
                             style={buttonStyle}
                             iconProps={buttonIconProps}
                             theme={theme}
