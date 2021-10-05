@@ -1,5 +1,4 @@
-import { Text, FontSizes, IIconProps, PrimaryButton, Icon } from '@fluentui/react';
-import { Card, ICardTokens } from "@uifabric/react-cards";
+import { Text, IIconProps, PrimaryButton } from '@fluentui/react';
 import { semibold } from '../../services/fonts';
 import { Container } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
@@ -11,9 +10,6 @@ import { Image } from 'office-ui-fabric-react/lib/Image';
 const FirstSection = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
-    const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
-    const sectionCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', boxShadow: theme.effects.elevation16, backgroundColor: theme.palette.white };
-    const cardTokens: ICardTokens = { childrenMargin: 12 };
     const buttonStyle = { maxWidth: '230px', boxShadow: theme.effects.elevation8 };
     const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
 
@@ -22,7 +18,7 @@ const FirstSection = () => {
             <Container>
 
                 <Row className="justify-content-around">
-                    <Col lg={7}>
+                    <Col lg={7} className="mb-4 mb-lg-0">
                         <div className="mb-2"><Text variant="xLarge" styles={semibold}>Un modo completamente ripensato di comunicare</Text></div>
 
                         <div className="mb-3">
@@ -41,16 +37,11 @@ const FirstSection = () => {
                     </Col>
 
                     <Col className="text-center" lg={3}>
-                        <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/other/temp/3.png'} style={{ display: 'inline-block', width: '80%' }} />
+                        <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/other/temp/2.png'} style={{ display: 'inline-block', width: '80%' }} />
                     </Col>
                     
 
                 </Row>
-
-
-                {/* La seconda sezione sui servizi: metti un elenco specificando unimia.studentiunimi.it, la wiki, hedgedoc ecc. 
-                Per le faq stessa struttura ma metti una pic con dei punti interrogativi o qualcosa del genere. */}
-
 
             </Container>
         </div>

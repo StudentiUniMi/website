@@ -20,7 +20,7 @@ const SecondSection = () => {
 
                 <Row>
                     <Col lg={4} className="text-center mb-4 mb-lg-0">
-                        <Image src={process.env.PUBLIC_URL + '/other/temp/2.png'} style={{ display: 'inline-block', width: '70%' }} />
+                        <Image src={process.env.PUBLIC_URL + '/other/temp/11.png'} style={{ display: 'inline-block', width: '50%' }} />
                     </Col>
 
                     <Col lg={8}>
