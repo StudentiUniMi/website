@@ -21,11 +21,16 @@ const FirstSection = () => {
         <div className="pb-5 pt-5">
             <Container>
 
-                <Row>
-                    <Col lg={8}>
-                        <div className="mb-2"><Text variant="xLarge" styles={semibold}>Un nuovo modo completamente ripensato di comunicare</Text></div>
-                        <div className="mb-3"><Text variant="medium">Abbiamo creato gruppi Telegram per ogni corso di laurea dell'Università degli Studi di Milano, ma non solo: abbiamo anche 
-                        messo a disposizione gruppi per ogni topic, dai tirocini e tesi agli alloggi e materiali universitari.</Text></div>
+                <Row className="justify-content-around">
+                    <Col lg={7}>
+                        <div className="mb-2"><Text variant="xLarge" styles={semibold}>Un modo completamente ripensato di comunicare</Text></div>
+
+                        <div className="mb-3">
+                            <Text variant="medium">
+                                Abbiamo creato gruppi Telegram per ogni corso di laurea dell'Università degli Studi di Milano, ma non solo: 
+                                abbiamo messo a disposizione anche gruppi per ogni topic, dai tirocini e tesi agli alloggi e materiali universitari.
+                            </Text>
+                        </div>
 
                         <PrimaryButton
                             text={"Raggiungi i gruppi"}
@@ -35,8 +40,8 @@ const FirstSection = () => {
                         />
                     </Col>
 
-                    <Col className="text-center" lg={4}>
-                        <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/other/temp/3.png'} style={{ display: 'inline-block', width: '70%' }} />
+                    <Col className="text-center" lg={3}>
+                        <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/other/temp/3.png'} style={{ display: 'inline-block', width: '80%' }} />
                     </Col>
                     
 

@@ -1,5 +1,4 @@
-import { Text, FontSizes, IIconProps, PrimaryButton, Icon, Image, DefaultButton } from '@fluentui/react';
-import { Card, ICardTokens } from "@uifabric/react-cards";
+import { Text, IIconProps, Icon, Image, DefaultButton } from '@fluentui/react';
 import { semibold } from '../../services/fonts';
 import { Container } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
@@ -10,9 +9,6 @@ import LocalizationService from "../../services/LocalizationService";
 const SecondSection = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
-    const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
-    const sectionCard = { minHeight: '160px', height: '100%', width: '100%', maxWidth: 'none', maxHeight: 'none', boxShadow: theme.effects.elevation16, backgroundColor: theme.palette.white };
-    const cardTokens: ICardTokens = { childrenMargin: 12 };
     const buttonStyle = { maxWidth: '230px', boxShadow: theme.effects.elevation8 };
     const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
 
@@ -23,15 +19,15 @@ const SecondSection = () => {
             <Container>
 
                 <Row>
-                    <Col lg={4} className="text-center">
-                        <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/other/temp/2.png'} style={{ display: 'inline-block', width: '70%' }} />
+                    <Col lg={4} className="text-center mb-4 mb-lg-0">
+                        <Image src={process.env.PUBLIC_URL + '/other/temp/2.png'} style={{ display: 'inline-block', width: '70%' }} />
                     </Col>
 
                     <Col lg={8}>
-                        <div className="mb-3"><Text variant="xLarge" styles={semibold}>Scopri i nostri collegamenti principali</Text></div>
+                        <div className="mb-4"><Text variant="xLarge" styles={semibold}>Scopri i nostri collegamenti principali</Text></div>
 
                         <div>
-                            <div className="mb-3">
+                            <div className="mb-4">
                                 <Row>
                                     <Col lg={1}><Icon iconName="Send" style={iconStyle} /></Col>
                                     <Col lg={11}>
@@ -47,7 +43,7 @@ const SecondSection = () => {
                                 </Row>
                             </div>
 
-                            <div className="mb-3">
+                            <div className="mb-4">
                                 <Row>
                                     <Col lg={1}><Icon iconName="Group" style={iconStyle} /></Col>
                                     <Col lg={11}>
@@ -63,7 +59,7 @@ const SecondSection = () => {
                                 </Row>
                             </div>
 
-                            <div className="mb-3">
+                            <div>
                                 <Row>
                                     <Col lg={1}><Icon iconName="Game" style={iconStyle} /></Col>
                                     <Col lg={11}>

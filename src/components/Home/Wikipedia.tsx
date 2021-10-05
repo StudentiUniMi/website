@@ -23,8 +23,8 @@ const Wiki = () => {
             <Container>
 
                 <Row>
-                    <Col lg={4} className="text-center">
-                        <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/other/temp/5.png'} style={{ display: 'inline-block', width: '70%' }} />
+                    <Col lg={4} className="text-center mb-4 mb-lg-0">
+                        <Image src={process.env.PUBLIC_URL + '/other/temp/5.png'} style={{ display: 'inline-block', width: '70%' }} />
                     </Col>
 
                     <Col lg={8}>
