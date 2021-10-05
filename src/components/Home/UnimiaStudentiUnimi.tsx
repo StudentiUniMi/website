@@ -17,7 +17,7 @@ const UnimiaStudentiUnimi = () => {
             <Container>
 
                 <Row>
-                    <Col lg={8}>
+                    <Col lg={8} className="mb-4 mb-lg-0">
                         <div className="mb-2"><Text variant="xLarge" styles={semibold}>Unimia non funziona? Nessun problema!</Text></div>
                         <div>
                               <div className="mb-2">
