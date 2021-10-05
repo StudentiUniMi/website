@@ -42,10 +42,12 @@ const Wiki = () => {
                                    </Text>
                               </div>
                               <PrimaryButton
-                                   text={"Raggiungi la WIki"}
+                                   text={"Raggiungi la Wiki"}
                                    style={buttonStyle}
                                    iconProps={buttonIconProps}
-                                   theme={theme}
+                                    theme={theme} 
+                                    href="https://wiki.studentiunimi.it/start"
+                                    className="text-decoration-none"
                               />
                         </div>
                     </Col>

@@ -127,7 +127,7 @@ class LocalizationService {
                         telegramSection: {
                             title: "Perchè Telegram e non WhatsApp?",
                             description: "Molti studenti potrebbero chiedersi come mai abbiamo scelto Telegram come piattaforma principale per tutte le nostre attività: in quanto informatici, siamo sempre alla ricerca della soluzione migliore ad un problema, e in questo caso utilizzare Whatsapp come supporto a centinaia di gruppi (e si spera migliaia in futuro) sarebbe stato prima di tutto impraticabile da un punto di vista puramente gestionale (WhatsApp ha un limite di 256 membri per gruppo), e seconda cosa sarebbe stato un incubo per voi studenti cercare i vari materiali e comunicare in maniera efficace.",
-                            advantages: 'Vantaggi di <Link href="https://telegram.org/" target="_blank">Telegram</Link>',
+                            advantages: 'Vantaggi di <Link href="https://telegram.org/">Telegram</Link>',
                             list: [
                                 "Gruppi fino a 250mila membri",
                                 "Numeri di telefono non esposti",
@@ -171,9 +171,9 @@ class LocalizationService {
                         websites: 'Siti web',
                         mainGroup: 'Gruppo principale',
                         mainGroupDescription: 'Gruppo principale per qualsiasi tipo di discussione inerente al corso di laurea.',
-                        tutorsGroupDescription: '<Text variant="small" styles={semibold}>ATTENZIONE: </Text><Text variant="small">Questo gruppo <Text styles={semibold} variant="small">non è gestito dal network StudentiUniMi</Text> ma dai <Link href="https://orientamento.di.unimi.it/index.php/studia-con-noi/tutor-di-processo" target="_blank">tutor di processo</Link> nominati dal Dipartimento di Informatica.</Text>',
+                        tutorsGroupDescription: '<Text variant="small" styles={semibold}>ATTENZIONE: </Text><Text variant="small">Questo gruppo <Text styles={semibold} variant="small">non è gestito dal network StudentiUniMi</Text> ma dai <Link href="https://orientamento.di.unimi.it/index.php/studia-con-noi/tutor-di-processo">tutor di processo</Link> nominati dal Dipartimento di Informatica.</Text>',
                         groupNotAvailable: 'Gruppo non disponibile',
-                        contactAdmin: "<Icon iconName='FollowUser'/> Contatta un <Link href='https://studentiunimi.it/organization/'>amministratore</Link> se vuoi essere aggiunto al gruppo, oppure chiedilo direttamente su <Link href='https://t.me/unimichat' target='_blank'>@unimichat</Link>.",
+                        contactAdmin: "<Icon iconName='FollowUser'/> Contatta un <Link href='https://studentiunimi.it/organization/'>amministratore</Link> se vuoi essere aggiunto al gruppo, oppure chiedilo direttamente su <Link href='https://t.me/unimichat'>@unimichat</Link>.",
                         groupsNotFound: 'Nessun gruppo trovato.',
                         adminsNotFound: 'Nessun amministratore disponibile.',
                         wikiCard: {
@@ -188,7 +188,7 @@ class LocalizationService {
                     services: {
                         text1: 'Stanchi di dover andare a spulciare miriadi di pagine che neanche caricano alla ricerca di strumenti e servizi universitari?',
                         text2: 'Abbiamo realizzato una pagina per centralizzarli tutti e rendere disponibili anche alcune guide che abbiamo realizzato.',
-                        text3: "Se pensi che debba essere aggiunto qualche servizio scrivi pure su <Link href='https://t.me/unimichat' target='_blank'>@unimichat</Link>.",
+                        text3: "Se pensi che debba essere aggiunto qualche servizio scrivi pure su <Link href='https://t.me/unimichat'>@unimichat</Link>.",
                         availableServices: 'Servizi e guide disponibili',
                         guide: "Guida",
                         service: "Servizio",
@@ -196,7 +196,7 @@ class LocalizationService {
                     },
                     extraGroups: {
                         text1: 'Cerchi un gruppo aggiuntivo in particolare? Qui è possibile trovare tutti quelli che abbiamo creato: ricordiamo che ci sono gruppi con regolamenti appositi ad esempio per la creazione di annunci per la vendita di materiali, quindi è consigliato leggere il messaggio di benvenuto in tal caso.',
-                        text2: "Se vorresti che venissero creati altri gruppi puoi scriverlo su <Link href='https://t.me/unimichat' target='_blank'>@unimichat</Link>.",
+                        text2: "Se vorresti che venissero creati altri gruppi puoi scriverlo su <Link href='https://t.me/unimichat'>@unimichat</Link>.",
                         text3: 'Stai cercando gruppi riguardanti giochi? Nessun problema!',
                         mug: "Dai un'occhiata all'associazione studentesca <Text styles={semibold} style={{color: theme.palette.themeSecondary}}>MUG</Text> (Milan University Gamers).",
                         availableGroups: 'Gruppi disponibili',
@@ -239,7 +239,7 @@ class LocalizationService {
                     footer: [
                         { text: 'Il network e il relativo sito web non sono affiliati all\'Università degli Studi di Milano.', buttonText: 'Entra nel nostro gruppo' },
                         { header: 'Link utili' },
-                        { header: 'Contatti', text: "Per qualsiasi dubbio o proposta è possibile scrivere sul gruppo principale del network <Link href='https://t.me/unimichat' target='_blank'>@unimichat</Link>." },
+                        { header: 'Contatti', text: "Per qualsiasi dubbio o proposta è possibile scrivere sul gruppo principale del network <Link href='https://t.me/unimichat'>@unimichat</Link>." },
                     ],
                 },
 
@@ -373,7 +373,7 @@ class LocalizationService {
                         telegramSection: {
                             title: "Why Telegram and not WhatsApp?",
                             description: "Many students may wonder why we have chosen Telegram as the main platform for all our activities: as computer science students, we are always looking for the best solution to a problem, and in this case use Whatsapp as a support to hundreds of groups (and hopefully thousands in the future) it would have been first of all impractical from a purely managerial point of view (WhatsApp has a limit of 256 members for group), and secondly it would have been a nightmare for you students to search the various materials and communicate effectively.",
-                            advantages: '<Link href="https://telegram.org/" target="_blank">Telegram</Link> advantages',
+                            advantages: '<Link href="https://telegram.org/">Telegram</Link> advantages',
                             list: [
                                 "Groups of up to 250 thousand members",
                                 "Telephone numbers not exposed",
@@ -417,9 +417,9 @@ class LocalizationService {
                         websites: 'Websites',
                         mainGroup: 'Main group',
                         mainGroupDescription: 'Main group for any type of discussion about this degree.',
-                        tutorsGroupDescription: '<Text variant="small" styles={semibold}>WARNING:</Text><Text variant="small"> This group <Text styles={semibold} variant="small">is not managed by network StudentiUniMi</Text> but by <Link href="https://orientamento.di.unimi.it/index.php/studia-con-noi/tutor-di-processo" target="_blank">tutors</Link> nominated by the computer science department.</Text>',
+                        tutorsGroupDescription: '<Text variant="small" styles={semibold}>WARNING:</Text><Text variant="small"> This group <Text styles={semibold} variant="small">is not managed by network StudentiUniMi</Text> but by <Link href="https://orientamento.di.unimi.it/index.php/studia-con-noi/tutor-di-processo">tutors</Link> nominated by the computer science department.</Text>',
                         groupNotAvailable: 'Group not available.',
-                        contactAdmin: "<Icon iconName='FollowUser'/> Contact an <Link href='https://studentiunimi.it/organization/'>administrator</Link> if you would like to be added to this group, or ask directly on <Link href='https://t.me/unimichat' target='_blank'>@unimichat</Link>.",
+                        contactAdmin: "<Icon iconName='FollowUser'/> Contact an <Link href='https://studentiunimi.it/organization/'>administrator</Link> if you would like to be added to this group, or ask directly on <Link href='https://t.me/unimichat'>@unimichat</Link>.",
                         groupsNotFound: 'Groups not found.',
                         adminsNotFound: 'There are no admins available.',
                         wikiCard: {
@@ -434,7 +434,7 @@ class LocalizationService {
                     services: {
                         text1: 'Tired of surfing into endless pages to find the services offered by the university?',
                         text2: "We grouped all the links here! We added some guides we created too.",
-                        text3: "If you think that something should be added you can suggest it on <Link href='https://t.me/unimichat' target='_blank'>@unimichat</Link>.",
+                        text3: "If you think that something should be added you can suggest it on <Link href='https://t.me/unimichat'>@unimichat</Link>.",
                         availableServices: 'Available services and guides',
                         guide: "Guide",
                         service: "Service",
@@ -442,7 +442,7 @@ class LocalizationService {
                     },
                     extraGroups: {
                         text1: 'Looking for additional groups? Here you can find all the ones we have created: we remind you that there are groups with specific regulations for example for the creation of announcements for the sale of materials, so it is recommended to read the welcome message in this case.',
-                        text2: "Would you like to suggest a new group? Bring your request on <Link href='https://t.me/unimichat' target='_blank'>@unimichat</Link>.",
+                        text2: "Would you like to suggest a new group? Bring your request on <Link href='https://t.me/unimichat'>@unimichat</Link>.",
                         text3: 'Are you looking for telegram groups about games? No problem!',
                         mug: "Take a look at the university association <Text styles={semibold} style={{color: theme.palette.themeSecondary}}>MUG</Text> (Milan University Gamers).",
                         availableGroups: 'Available groups',
@@ -485,7 +485,7 @@ class LocalizationService {
                     footer: [
                         { text: 'The network and the associated website are not affiliated to the University of Milan.', buttonText: 'Join our main group' },
                         { header: 'Useful links' },
-                        { header: 'Contacts', text: "For any question or suggestion you can join the main network group <Link href='https://t.me/unimichat' target='_blank'>@unimichat</Link>." },
+                        { header: 'Contacts', text: "For any question or suggestion you can join the main network group <Link href='https://t.me/unimichat'>@unimichat</Link>." },
                     ]
                 }
             })

@@ -28,6 +28,8 @@ const ThirdSection = () => {
                             style={buttonStyle}
                             iconProps={buttonIconProps}
                             theme={theme}
+                            href="https://hedgedoc.studentiunimi.it/"
+                            className="text-decoration-none"
                         />
                     </Col>
 
@@ -39,6 +41,8 @@ const ThirdSection = () => {
                             style={buttonStyle}
                             iconProps={buttonIconProps}
                             theme={theme}
+                            href="https://paste.studentiunimi.it/"
+                            className="text-decoration-none"
                         />
                     </Col>
 

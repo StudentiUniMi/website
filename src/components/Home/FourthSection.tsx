@@ -32,6 +32,8 @@ const FourthSection = () => {
                             style={buttonStyle}
                             iconProps={buttonIconProps}
                             theme={theme}
+                            href="https://studentiunimi.it/representatives/"
+                            className="text-decoration-none"
                         />
                     </Col>
                 
@@ -48,6 +50,8 @@ const FourthSection = () => {
                             style={buttonStyle}
                             iconProps={buttonIconProps}
                             theme={theme}
+                            href="https://studentiunimi.it/courses/"
+                            className="text-decoration-none"
                         />
                     </Col>
                 </Row>
