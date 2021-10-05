@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import { useTheme } from '@fluentui/react-theme-provider';
 import LocalizationService from "../../services/LocalizationService";
 
-const Wiki = () => {
+const UnimiaStudentiUnimi = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     const homeIconStyle = { color: theme.palette.themePrimary, fontSize: FontSizes.size32 };
@@ -19,36 +19,37 @@ const Wiki = () => {
     const iconStyle = { backgroundColor: theme.palette.themePrimary, color:theme.palette.white, fontSize: '25px', padding: '1px 7px 1px 7px', borderRadius: 3 };
 
     return (
-        <div className="pb-5 pt-5" style={{ backgroundColor: theme.palette.neutralLighterAlt }}>
+        <div className="pb-5 pt-5">
             <Container>
 
                 <Row>
-                    <Col lg={4} className="text-center">
-                        <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/other/temp/5.png'} style={{ display: 'inline-block', width: '70%' }} />
-                    </Col>
-
                     <Col lg={8}>
-                        <div className="mb-2"><Text variant="xLarge" styles={semibold}>Dai un'occhiata alla nostra Wikipedia</Text></div>
+                        <div className="mb-2"><Text variant="xLarge" styles={semibold}>Unimia non funziona? Nessun problema!</Text></div>
                         <div>
                               <div className="mb-2">
-                                   <Text variant="large">È una risorsa molto importante, e si basa sul contributo di tutti.
-                                   La Wiki è una sezione parallela al nostro sito web: permette di collaborare per quanto riguarda la condivisione di materiale e altre informazioni utili 
-                                   sui corsi didattici di tutti i corsi di laurea. 
+                                   <Text variant="large">Essendo studenti, sappiamo quanto può essere frustrante dover cercare le risorse universitarie
+                                   passando per decine di pagine che neanche caricano.
                                    </Text>
                               </div>
                               <div className="mb-3">
                                    <Text variant="medium">
-                                        È una risorsa collaborativa: ricorda che il materiale che hai trovato è stato fornito da altri studenti che ci hanno speso tempo! Sarebbe l'ideale il contributo di tutti.
+                                        Per questo motivo, abbiamo realizzato una pagina che permette di raggiungere
+                                        tutti i servizi universitari a portata di click, in aggiunta ad alcune guide che abbiamo realizzato.
                                    </Text>
                               </div>
                               <PrimaryButton
-                                   text={"Raggiungi la WIki"}
+                                   text={"unimia.studentiunimi.it"}
                                    style={buttonStyle}
                                    iconProps={buttonIconProps}
                                    theme={theme}
                               />
                         </div>
                     </Col>
+
+                    <Col lg={4} className="text-center">
+                        <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/other/temp/1.jfif'} style={{ display: 'inline-block', width: '80%' }} />
+                    </Col>
+
                </Row>
 
             </Container>
@@ -56,4 +57,4 @@ const Wiki = () => {
     )
 };
 
-export default Wiki;
+export default UnimiaStudentiUnimi;

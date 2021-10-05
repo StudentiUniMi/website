@@ -17,9 +17,14 @@ const Faqs = () => {
     const faqs = getFaqs();
 
     return (
-        <div className="pb-4 pt-4" /*style={{ backgroundColor: theme.palette.neutralLighter }}*/>
-            <div className="mb-4 text-center"><Text variant="xLarge">{locale?.homepage.section6.text}</Text></div>
+        <div className="pb-5 pt-5" /*style={{ backgroundColor: theme.palette.themeSecondary }}*/>
             <Container>
+
+            <div className="mb-1"><Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>FAQ</Text></div>            
+            <div className="mb-2"><Text variant="xLarge">Hai qualche domanda sul nostro Network?</Text></div>
+            <div className="mb-4"><Text variant="medium">Dai un'occhiata qui per vedere se trovi la risposta, altrimenti chiedi pure sul <Link href="/dennis">gruppo principale</Link>.</Text></div>
+
+
                 <div className="mb-2">
                     {
                         faqs.map((x, i) => {
