@@ -280,59 +280,59 @@ class LocalizationService {
                             text2: 'Communicating is important, but it can be frustrating to do so on WhatsApp groups left to themselves. We are creating Telegram groups for each degree course of the University of Milan to facilitate the exchange of informations.',
                         },
                         section2: {
-                            text1: 'Un modo completamente ripensato di comunicare',
-                            text2: "Abbiamo creato gruppi Telegram per ogni corso di laurea dell'Università degli Studi di Milano, ma non solo: abbiamo messo a disposizione anche gruppi per ogni topic, dai tirocini e tesi agli alloggi e materiali universitari.",
-                            buttonText: 'Raggiungi i gruppi'
+                            text1: 'A completely rethought way of communicating ',
+                            text2: "We have created Telegram groups for each degree course of the University of Milan, but not only: we have also made groups available for each topic, from internships to housing and university materials.",
+                            buttonText: 'Reach the groups'
                         },
                         section3: {
-                            header: 'Scopri i nostri collegamenti principali',
+                            header: 'Discover our main links ',
                             part1: {
-                                title: 'Canale Telegram',
-                                description: 'Iscriviti al nostro canale per rimanere sempre aggiornato sulle notizie riguardanti il network.',
-                                buttonText: 'Raggiungi il canale'
+                                title: 'Telegram Channel',
+                                description: 'Subscribe to our channel to stay up to date on news regarding the network. ',
+                                buttonText: 'Reach the channel'
                             },
                             part2: {
-                                title: 'Gruppo principale',
-                                description: 'Entra nel nostro gruppo principale per qualsiasi chiarimento o discussione riguardo la nostra Università.',
-                                buttonText: 'Raggiungi il gruppo'
+                                title: 'Main group',
+                                description: 'Join our main group for any clarification or discussion regarding our University.',
+                                buttonText: 'Reach the group'
                             },
                             part3: {
-                                title: 'Server Discord',
-                                description: 'Entra nel nostro server discord per scambiare informazioni con altri studenti e conoscere nuove persone.',
-                                buttonText: 'Raggiungi il server'
+                                title: 'Discord Server',
+                                description: 'Join our discord server to exchange information with other students and meet new people.',
+                                buttonText: 'Reach the server'
                             },
                         },
                         unimiaSection: {
-                            text1: 'Unimia non funziona? Nessun problema!',
-                            text2: 'Essendo studenti, sappiamo quanto può essere frustrante dover cercare le risorse universitarie passando per decine di pagine che neanche caricano.',
-                            text3: 'Per questo motivo, abbiamo realizzato una pagina che permette di raggiungere tutti i servizi universitari a portata di click, in aggiunta ad alcune guide che abbiamo realizzato.',
+                            text1: 'Unimia not working? No problem!',
+                            text2: "As students, we know how frustrating it can be to search for university resources through dozens of pages that don't even load.",
+                            text3: 'For this reason, we have created a page that allows you to reach all the university services just a click away, in addition to some guides we have created.',
                             buttonText: 'unimia.studentiunimi.it'
                         },
                         wikipediaSection: {
-                            text1: "Dai un'occhiata alla nostra Wikipedia",
-                            text2: 'La Wiki è una sezione parallela al nostro sito web: permette di collaborare per quanto riguarda la condivisione di materiale e altre informazioni utili sui corsi didattici di tutti i corsi di laurea.',
-                            text3: "È una risorsa collaborativa: ricorda che il materiale che hai trovato è stato fornito da altri studenti che ci hanno speso tempo! Sarebbe l'ideale il contributo di tutti.",
-                            buttonText: 'Raggiungi la Wiki'
+                            text1: "Check out our Wikipedia",
+                            text2: 'The Wiki is a section parallel to our website: it allows you to collaborate regarding the sharing of material and other useful information on the didactic courses of all degree courses.',
+                            text3: "It's a collaborative resource: remember that the material you found was provided by other students who spent their time on it! Everyone's contribution would be ideal. ",
+                            buttonText: 'Reach the Wiki'
                         },
                         additionalServicesSection: {
-                            header: 'Scopri i nostri ulteriori servizi',
+                            header: 'Discover our additional services ',
                             col1: {
-                                text: 'HedgeDoc è un servizio che permette di prendere appunti in collaborazione tra più studenti senza il bisogno di doversi registrare.',
-                                buttonText: 'Prova HedgeDoc'
+                                text: 'HedgeDoc is a service that allows you to take notes in collaboration between multiple students without the need to register.',
+                                buttonText: 'Try HedgeDoc'
                             },
                             col2: {
-                                text: 'Paste è un servizio pensato per i programmatori, che permette di condividere codice in maniera semplice e sicura.',
-                                buttonText: 'Prova Paste'
+                                text: 'Paste is a service designed for programmers, which allows you to share code in a simple and secure way.',
+                                buttonText: 'Try Paste'
                             },
                         },
                         adminsRepresentativesSection: {
-                            header: 'Cerchi un amministratore, o magari un rappresentante?',
-                            col1: { title: 'Contatta un rappresentante', description: 'Per contattare un rappresentante devi raggiungere la sezione apposita del sito web, e selezionare il tuo dipartimento.', buttonText: 'Raggiungi la sezione' },
-                            col2: { title: 'Contatta un amministratore', description: "Per vedere la lista di amministratori del tuo corso di laurea devi cercare quest'ultimo nella sezione apposita del sito web.", buttonText: 'Raggiungi la sezione' }
+                            header: 'Are you looking for an administrator, or perhaps a representative?',
+                            col1: { title: 'Contact a representative', description: 'To contact a representative you need to go to the appropriate section of the website, and select your department.', buttonText: 'Reach the section' },
+                            col2: { title: 'Contact an administrator', description: "To see the list of administrators of your degree program, you must search it in the appropriate section of the website.", buttonText: 'Reach the section' }
                         },
                         faqsSection: {
-                            header: 'Hai qualche domanda sul nostro Network?',
-                            description: "Dai un'occhiata qui per vedere se trovi la risposta, altrimenti chiedi pure sul <Link href='https://t.me/unimichat'>gruppo principale.</Link>"
+                            header: 'Do you have any questions about our Network? ',
+                            description: "Have a look here to see if you find the answer, otherwise feel free to ask on the <Link href='https://t.me/unimichat'>main group</Link>."
                         },
                         telegramSection: {
                             title: "Why Telegram and not WhatsApp?",
