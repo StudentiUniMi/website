@@ -1,4 +1,4 @@
-import { Text, IIconProps, PrimaryButton, Icon, Image } from '@fluentui/react';
+import { Text, IIconProps, PrimaryButton, Image } from '@fluentui/react';
 import { semibold } from '../../services/fonts';
 import { Container } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
