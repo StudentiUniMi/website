@@ -20,7 +20,7 @@ const ThirdSection = () => {
                 <div className="mb-4 text-center"><Text variant="xLarge">{locale?.homepage.additionalServicesSection.header}</Text></div>
 
                 <Row className="justify-content-around">
-                    <Col md={4} className="mb-4 mb-md-0">
+                    <Col md={4} className="mb-4 mb-md-0 text-center">
                         <div className="mb-2"><Text variant="large" styles={semibold}><Icon iconName="PencilReply" style={iconStyle} /> HedgeDoc</Text></div>
                         <div className="mb-3"><Text variant="medium">{locale?.homepage.additionalServicesSection.col1.text}</Text></div>
                         <DefaultButton
@@ -33,7 +33,7 @@ const ThirdSection = () => {
                         />
                     </Col>
 
-                    <Col md={4}>
+                    <Col md={4} className="text-center">
                         <div className="mb-2"><Text variant="large" styles={semibold}><Icon iconName="FileCode" style={iconStyle} /> Paste</Text></div>
                         <div className="mb-3"><Text variant="medium">{locale?.homepage.additionalServicesSection.col2.text}</Text></div>
                         <DefaultButton
