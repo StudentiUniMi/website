@@ -124,7 +124,6 @@ const CourseItem = (props: Props) => {
                 return (
                     <ActionButton
                         href={data.course?.group?.invite_link as any}
-                        target="_blank"
                         iconProps={telegramGroupIcon}
                         style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
                         disabled={data.course?.group?.invite_link === "" || data.course?.group?.invite_link === null}
@@ -177,7 +176,6 @@ const CourseItem = (props: Props) => {
             return (
                 <ActionButton
                     href={data.course?.wiki_link as any}
-                    target="_blank"
                     className="text-decoration-none"
                     iconProps={wikiIcon}
                     style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 0 }}

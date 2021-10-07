@@ -55,7 +55,6 @@ const AdditionalGroup = (props: Props) => {
                             return (
                                 <ActionButton
                                     href={data.gruppo as any}
-                                    target="_blank"
                                     className="text-decoration-none"
                                     iconProps={telegramGroupIcon}
                                     style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}

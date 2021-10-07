@@ -3,10 +3,10 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import LocalizationService from "../../services/LocalizationService";
+import JsxParser from 'react-jsx-parser';
 import { Container } from 'react-bootstrap';
 import { Link, Text } from '@fluentui/react';
 import { semibold } from '../../services/fonts';
-import JsxParser from 'react-jsx-parser';
 import { getFaqs } from '../../services/Requests';
 import { useTheme } from '@fluentui/react-theme-provider';
 
@@ -17,9 +17,14 @@ const Faqs = () => {
     const faqs = getFaqs();
 
     return (
-        <div className="pb-4 pt-4" /*style={{ backgroundColor: theme.palette.neutralLighter }}*/>
-            <div className="mb-4 text-center"><Text variant="xLarge">{locale?.homepage.section6.text}</Text></div>
+        <div className="pb-5 pt-5">
             <Container>
+
+            <div className="mb-1"><Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>FAQ</Text></div>            
+            <div className="mb-2"><Text variant="xLarge">{locale?.homepage.faqsSection.header}</Text></div>
+                <div className="mb-4"><Text variant="medium"><JsxParser bindings={{ theme: theme }} components={{ Text, Link }} jsx={locale?.homepage.faqsSection.description} /></Text></div>
+
+
                 <div className="mb-2">
                     {
                         faqs.map((x, i) => {

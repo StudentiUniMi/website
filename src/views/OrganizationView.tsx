@@ -58,7 +58,7 @@ const OrganizationView = () => {
                             </div>
 
                             <div className="mb-2">
-                                <CompoundButton primary theme={theme} secondaryText={locale?.aboutUs.button.text2} href="https://github.com/StudentiUniMi/docs/blob/main/statuto.md" target="_blank" style={{ textDecoration: 'none', boxShadow: theme.effects.elevation8 }} iconProps={icon}>
+                                <CompoundButton primary theme={theme} secondaryText={locale?.aboutUs.button.text2} href="https://github.com/StudentiUniMi/docs/blob/main/statuto.md" style={{ textDecoration: 'none', boxShadow: theme.effects.elevation8 }} iconProps={icon}>
                                     {locale?.aboutUs.button.text1}
                                 </CompoundButton>
                             </div>
@@ -125,7 +125,7 @@ const OrganizationView = () => {
                                                 size={PersonaSize.size72}
                                                 imageUrl={`https://studentiunimi-groups-propics.marcoaceti.workers.dev/${x.user_id}.png`}
                                                 text={x.name}
-                                                onRenderPrimaryText={() => <Text variant="medium" styles={semibold}><Link href={x.github} target="_blank">{x.name}</Link></Text>}
+                                                onRenderPrimaryText={() => <Text variant="medium" styles={semibold}><Link href={x.github}>{x.name}</Link></Text>}
                                                 secondaryText={x.username}
                                                 onRenderSecondaryText={() => <Text variant="medium"><Link href={`https://t.me/${x.username}`}>@{x.username}</Link></Text>}
                                                 tertiaryText={x.description[language!]}

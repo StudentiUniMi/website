@@ -76,7 +76,7 @@ const Footer = (props: Props) => {
                         </div>
 
                         <div className="mb-2 text">
-                            <PrimaryButton text={locale?.footer[0].buttonText} iconProps={buttonIconProps} href="https://t.me/unimichat" target="_blank" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
+                            <PrimaryButton text={locale?.footer[0].buttonText} iconProps={buttonIconProps} href="https://t.me/unimichat" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
                         </div>
                     </Col>
                     
@@ -91,13 +91,13 @@ const Footer = (props: Props) => {
                                 <Text variant="medium">
                                     <ul className="list-unstyled mb-3">
                                         <li style={listElement}>
-                                            <Link href="http://www.quickunimi.it/" target="_blank">QuickUnimi</Link>
+                                            <Link href="http://www.quickunimi.it/">QuickUnimi</Link>
                                         </li>
                                         <li style={listElement}>
-                                            <Link href="https://quanto-manca.it/" target="_blank">Quanto-manca.it</Link>
+                                            <Link href="https://quanto-manca.it/">Quanto-manca.it</Link>
                                         </li>
                                         <li style={listElement}>
-                                            <Link href="https://codeshare.tech" target="_blank">Codeshare.tech</Link>
+                                            <Link href="https://codeshare.tech">Codeshare.tech</Link>
                                         </li>
                                     </ul>
                                 </Text>
@@ -163,7 +163,7 @@ const Footer = (props: Props) => {
                                         styles={hostStylesResetColor}
                                         key={i}
                                     >
-                                        <Link href={x.link} target="_blank">
+                                        <Link href={x.link}>
                                             <span style={wrapIconStyle} className="text-decoration mr-1">
                                                 { x.type === 'brand' ?
                                                 <FontAwesomeIcon icon={['fab', x.iconName]} style={iconStyle} />

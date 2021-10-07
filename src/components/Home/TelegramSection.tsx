@@ -22,7 +22,7 @@ const TelegramSection = () => {
                     </Col>
                 
                     <Col lg={2} className="text-right center-mobile">
-                        <DefaultButton href="https://youtu.be/kgNxRZghkkA?t=133" target="_blank" text={locale?.homepage.telegramButton} iconProps={buttonIconProps} className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
+                        <DefaultButton href="https://youtu.be/kgNxRZghkkA?t=133" text={locale?.homepage.telegramButton} iconProps={buttonIconProps} className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
                     </Col>
                 </Row>
             </Container>

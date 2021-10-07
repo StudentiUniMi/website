@@ -6,6 +6,8 @@ import SecondSection from '../components/Home/SecondSection';
 import ThirdSection from '../components/Home/ThirdSection';
 import FourthSection from '../components/Home/FourthSection';
 import TelegramSection from '../components/Home/TelegramSection';
+import Wikipedia from '../components/Home/Wikipedia';
+import UnimiaStudentiUnimi from '../components/Home/UnimiaStudentiUnimi';
 
 initializeIcons();
 
@@ -19,6 +21,10 @@ const HomeView = () => {
             <FirstSection />
 
             <SecondSection />
+
+            <UnimiaStudentiUnimi />
+
+            <Wikipedia />
 
             <ThirdSection />
 
