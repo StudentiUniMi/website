@@ -1,7 +1,6 @@
-import { Link } from 'office-ui-fabric-react';
-import { Text } from 'office-ui-fabric-react/lib/Text';
+import { Link, Text, Label } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
-import { semibold } from '../../services/Fonts';
+import { bold, semibold } from '../../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { useCookies } from 'react-cookie';
 import { IDropdownOption, Dropdown, IIconProps, PrimaryButton, Toggle, TooltipHost, IconButton, SwatchColorPicker, ITooltipHostStyles } from '@fluentui/react';
@@ -117,15 +116,25 @@ const Footer = (props: Props) => {
                             />
                         </div>
                         
-                        <div className="mb-2">
-                            <Dropdown
-                                label={locale?.settingsPanel.selectLanguage}
-                                options={languageOptions}
-                                selectedKey={cookies["language"]}
-                                onChange={(_, option) => { changeLanguage(option!.key as string); setCookie("language", option!.key as string, { path: "/", expires: date }) }}
-                                theme={theme}
-                                style={{ maxWidth: 150 }}
-                            />
+                        <div className="mb-2 language-selector">
+                            <Label>{locale?.settingsPanel.selectLanguage}</Label>
+                            <Text 
+                                variant="medium" 
+                                style={{ cursor: 'pointer' }} 
+                                styles={cookies["language"] === "it" ? bold : {}} onClick={() => { changeLanguage("it"); setCookie("language", "it", { path: "/", expires: date }) } }
+                            >
+                                ITA
+                            </Text>
+                            
+                            <Text variant="medium"> | </Text>
+
+                            <Text 
+                                variant="medium" 
+                                style={{ cursor: 'pointer' }} 
+                                styles={cookies["language"] === "en" ? bold : {}} onClick={() => { changeLanguage("en"); setCookie("language", "en", { path: "/", expires: date }) }}
+                            >
+                                ENG
+                            </Text>
                         </div>
                     </Col>
 

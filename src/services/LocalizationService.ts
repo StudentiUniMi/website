@@ -264,7 +264,7 @@ class LocalizationService {
                         changeTheme: 'Dark Mode',
                         darkTheme: 'On',
                         lightTheme: 'Off',
-                        selectLanguage: 'Language',
+                        selectLanguage: 'Select the language',
                         italian: 'Italian',
                         english: 'English',
                         selectColor: 'Select the main color',
