@@ -26,7 +26,7 @@ const footerIcons: any = [
     { name: { it: 'Pagina Instagram', en: 'Instagram Page' }, link: 'https://www.instagram.com/studentiunimi.it/', iconName: 'instagram', type: 'brand' },
 ];
 
-interface Props { changeTheme: () => void, changePalette: (id: string) => void };
+interface Props { changeTheme: () => void, changePalette: (id: string) => void, changeLanguage: (language: string) => void };
 
 const Footer = (props: Props) => {
     var theme = useTheme();
@@ -41,8 +41,10 @@ const Footer = (props: Props) => {
         props.changeTheme();
     };
 
-    const changeLanguage = (key: string) => {
-        LocalizationService.localize(key);
+    const changeLanguage = (lang: string) => {
+        LocalizationService.localize(lang);
+        setCookie("language", lang, { path: "/", expires: date });
+        props.changeLanguage(lang);
     };
     
     const wrapIconStyle = { backgroundColor: theme.palette.themeSecondary, borderRadius: '50%', minWidth: 30, minHeight: 30, display: 'inline-block', textAlign: 'center', justifyContent: 'center', verticalAlign: 'middle' } as React.CSSProperties;
@@ -98,7 +100,7 @@ const Footer = (props: Props) => {
                             </div>
                         </div>
                     </Col>
-
+                    
                     <Col xl={3} lg={2} md={3} sm={12} xs={12}>
                         <div className="mb-2">
                             <Toggle
@@ -116,7 +118,7 @@ const Footer = (props: Props) => {
                             <Text 
                                 variant="medium" 
                                 style={{ cursor: 'pointer' }} 
-                                styles={cookies["language"] === "it" ? bold : {}} onClick={() => { changeLanguage("it"); setCookie("language", "it", { path: "/", expires: date }) } }
+                                styles={cookies["language"] === "it" ? bold : {}} onClick={() => { changeLanguage("it") } }
                             >
                                 ITA
                             </Text>
@@ -126,7 +128,7 @@ const Footer = (props: Props) => {
                             <Text 
                                 variant="medium" 
                                 style={{ cursor: 'pointer' }} 
-                                styles={cookies["language"] === "en" ? bold : {}} onClick={() => { changeLanguage("en"); setCookie("language", "en", { path: "/", expires: date }) }}
+                                styles={cookies["language"] === "en" ? bold : {}} onClick={() => { changeLanguage("en") }}
                             >
                                 ENG
                             </Text>
