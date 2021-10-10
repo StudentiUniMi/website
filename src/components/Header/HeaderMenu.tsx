@@ -89,7 +89,7 @@ const HeaderMenu = () => {
     return (
         <div className="header-menu">
 
-            <div className="pivot mr-4 ml-3">
+            <div className="pivot ml-3">
                 <Pivot
                     selectedKey={selectedKey}
                     onLinkClick={handlePivotLinkClick}
