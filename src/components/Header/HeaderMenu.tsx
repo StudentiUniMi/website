@@ -84,8 +84,6 @@ const HeaderMenu = () => {
 
     const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }));
 
-
-
     return (
         <div className="header-menu">
 

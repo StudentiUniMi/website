@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { getCourses, getVerboseDegreeBySlug, getVerboseDegreeByID, getDegreesForSearchBox } from '../services/Requests';
 import { Separator } from '@fluentui/react/lib/Separator';
-import { semibold } from '../services/fonts';
+import { semibold } from '../services/Fonts';
 import { VerboseDegree, CourseDegree } from "../models/Models";
 import GroupList from "../components/Groups/GroupList";
 import LocalizationService from "../services/LocalizationService";

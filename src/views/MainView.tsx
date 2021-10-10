@@ -5,7 +5,7 @@ import ContentView from "./ContentView";
 import LocalizationService from "../services/LocalizationService";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider } from '@fluentui/react-theme-provider'; 
-import { buildLightTheme, buildDarkTheme } from '../services/themes';
+import { buildLightTheme, buildDarkTheme } from '../services/Themes';
 import { CookiesProvider, useCookies, withCookies } from 'react-cookie';
 import { loadTheme } from '@fluentui/react';
 import { addDays } from '../services/Utils';

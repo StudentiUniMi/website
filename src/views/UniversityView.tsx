@@ -7,7 +7,7 @@ import { useTheme } from '@fluentui/react-theme-provider';
 import { getRepresentatives, getDepartments, getUniversityLinks } from '../services/Requests'
 import { Department, Representative } from '../models/Models';
 import { Image } from 'office-ui-fabric-react/lib/Image';
-import { semibold } from "../services/fonts";
+import { semibold } from "../services/Fonts";
 import { IChoiceGroupOptionStyles } from "@fluentui/react";
 import { ChoiceGroup, IChoiceGroupOption } from '@fluentui/react/lib/ChoiceGroup';
 import Col from 'react-bootstrap/Col';

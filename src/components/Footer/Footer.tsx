@@ -1,11 +1,11 @@
 import { Link } from 'office-ui-fabric-react';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
-import { semibold } from '../../services/fonts';
+import { semibold } from '../../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { useCookies } from 'react-cookie';
 import { IDropdownOption, Dropdown, IIconProps, PrimaryButton, Toggle, TooltipHost, IconButton, SwatchColorPicker, ITooltipHostStyles } from '@fluentui/react';
-import { palettes } from '../../services/palettes';
+import { palettes } from '../../services/Palettes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { addDays } from '../../services/Utils';
 import { library } from '@fortawesome/fontawesome-svg-core'

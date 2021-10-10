@@ -7,7 +7,7 @@ import { getNetworkMembers } from '../services/Requests';
 import { CompoundButton } from '@fluentui/react/lib/Button';
 import { IIconProps } from '@fluentui/react';
 import { Image } from 'office-ui-fabric-react/lib/Image';
-import { semibold } from '../services/fonts';
+import { semibold } from '../services/Fonts';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";

@@ -5,7 +5,7 @@ import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 import { Container } from 'react-bootstrap';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { Text } from "office-ui-fabric-react/";
-import { semibold } from '../../services/fonts';
+import { semibold } from '../../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Degree, CourseDegree } from '../../models/Models';
 import { Toggle } from '@fluentui/react/lib/Toggle';

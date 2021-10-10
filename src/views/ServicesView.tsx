@@ -5,7 +5,7 @@ import { Container } from 'react-bootstrap';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { DocumentCardPreview, IDocumentCardPreviewProps } from 'office-ui-fabric-react/lib/DocumentCard';
 import { Card, ICardTokens } from '@uifabric/react-cards';
-import { semibold } from '../services/fonts';
+import { semibold } from '../services/Fonts';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { getServices } from '../services/Requests';
