@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 import { bold, semibold } from '../../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { useCookies } from 'react-cookie';
-import { IDropdownOption, Dropdown, IIconProps, PrimaryButton, Toggle, TooltipHost, IconButton, SwatchColorPicker, ITooltipHostStyles } from '@fluentui/react';
+import { IIconProps, PrimaryButton, Toggle, TooltipHost, IconButton, SwatchColorPicker, ITooltipHostStyles } from '@fluentui/react';
 import { palettes } from '../../services/Palettes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { addDays } from '../../services/Utils';
@@ -44,11 +44,6 @@ const Footer = (props: Props) => {
     const changeLanguage = (key: string) => {
         LocalizationService.localize(key);
     };
-
-    const languageOptions: IDropdownOption[] = [
-        { key: 'it', text: locale?.settingsPanel.italian! },
-        { key: 'en', text: locale?.settingsPanel.english! }
-    ];
     
     const wrapIconStyle = { backgroundColor: theme.palette.themeSecondary, borderRadius: '50%', minWidth: 30, minHeight: 30, display: 'inline-block', textAlign: 'center', justifyContent: 'center', verticalAlign: 'middle' } as React.CSSProperties;
     const iconStyle = { color: theme.palette.white, fontSize: '17px', marginTop: 6 };
