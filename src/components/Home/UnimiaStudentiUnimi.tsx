@@ -1,5 +1,5 @@
 import { Text, IIconProps, PrimaryButton, Image } from '@fluentui/react';
-import { semibold } from '../../services/fonts';
+import { semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
 import { useTheme } from '@fluentui/react-theme-provider';
 import Col from 'react-bootstrap/Col';
@@ -40,7 +40,7 @@ const UnimiaStudentiUnimi = () => {
                     </Col>
 
                     <Col lg={4} className="text-center">
-                        <Image src={process.env.PUBLIC_URL + '/other/temp/22.png'} style={{ display: 'inline-block', width: '60%' }} />
+                        <Image src={process.env.PUBLIC_URL + '/images/home/3.png'} style={{ display: 'inline-block', width: '60%' }} />
                     </Col>
 
                 </Row>

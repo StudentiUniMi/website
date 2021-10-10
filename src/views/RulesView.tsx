@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, Callout, Link } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
-import { semibold } from '../services/fonts';
+import { semibold } from '../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { DefaultButton, DirectionalHint, IIconProps, mergeStyleSets } from "@fluentui/react";
 import { useBoolean, useId } from '@fluentui/react-hooks';
@@ -52,7 +52,7 @@ const Rules = () => {
                     <Row>
                         <Col lg={4} className="text-center">
                             <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }}>
-                                <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/other/rules.png'} style={imageProperties} />
+                                <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/images/rules.png'} style={imageProperties} />
                             </div>
                         </Col>
 

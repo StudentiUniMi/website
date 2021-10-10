@@ -6,10 +6,10 @@ import { Card, ICardTokens } from "@uifabric/react-cards";
 import { FontSizes } from '@fluentui/theme';
 import { Icon, Link, Image } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { semibold } from '../services/fonts';
-import { redirectToLink } from '../services/Utils';
+import { semibold } from '../../services/Fonts';
+import { redirectToLink } from '../../services/Utils';
 import { TooltipHost, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib/Tooltip';
-import LocalizationService from "../services/LocalizationService";
+import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 
 const cardTokens: ICardTokens = { childrenMargin: 12 };

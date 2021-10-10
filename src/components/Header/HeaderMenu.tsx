@@ -1,5 +1,5 @@
 import React from "react";
-import LocalizationService from "../services/LocalizationService";
+import LocalizationService from "../../services/LocalizationService";
 import { FontSizes } from '@fluentui/theme';
 import { Dropdown, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
@@ -84,12 +84,10 @@ const HeaderMenu = () => {
 
     const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }));
 
-
-
     return (
         <div className="header-menu">
 
-            <div className="pivot mr-4 ml-3">
+            <div className="pivot ml-3">
                 <Pivot
                     selectedKey={selectedKey}
                     onLinkClick={handlePivotLinkClick}

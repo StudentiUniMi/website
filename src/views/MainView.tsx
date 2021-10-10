@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 import ContentView from "./ContentView";
 import LocalizationService from "../services/LocalizationService";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider } from '@fluentui/react-theme-provider'; 
-import { buildLightTheme, buildDarkTheme } from '../services/themes';
+import { buildLightTheme, buildDarkTheme } from '../services/Themes';
 import { CookiesProvider, useCookies, withCookies } from 'react-cookie';
 import { loadTheme } from '@fluentui/react';
 import { addDays } from '../services/Utils';
@@ -14,14 +14,15 @@ const MainView = () => {
   let [cookies, setCookie] = useCookies();
   let [theme, setTheme] = React.useState(cookies["theme"] === 'dark');
   let [palette, setPalette] = React.useState(cookies["palette"]);
-
+  let [language, setLanguage] = React.useState(cookies["language"]);
+ 
   let [lightTheme, setLightTheme] = React.useState(buildLightTheme(palette));
   let [darkTheme, setDarkTheme] = React.useState(buildDarkTheme(palette));
 
   const date: Date = addDays(new Date(), 90);
 
-  const changeTheme = () => {
-    setTheme(!theme);
+  const changeTheme = () => { 
+    setTheme(!theme); 
   };
   
   const changePalette = (id: string) => {
@@ -30,13 +31,16 @@ const MainView = () => {
     setDarkTheme(buildDarkTheme(id));
   };
 
-  loadTheme(theme ? darkTheme : lightTheme);
+  const changeLanguage = (language: string) => {
+    setLanguage(language);
+  };
 
-  if (cookies['language'] === undefined) { 
+  if (cookies["language"] === undefined) {
     const isNavLanguageITA = isNavigatorLanguageItalian();
-    setCookie("language", (isNavLanguageITA ? 'it' : 'en'), { path: "/", expires: date }); 
+    setCookie("language", (isNavLanguageITA ? 'it' : 'en'), { path: "/", expires: date });
   }
 
+  
   if (cookies["theme"] === undefined) {
     /*
     // This is theme initialization based on browser; this isn't working, so I must fix this.
@@ -44,20 +48,16 @@ const MainView = () => {
     const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
     if (darkThemeMq.matches) themeToggled();
     */
-    setCookie("theme", "light", { path: "/", expires: date }); 
+   setCookie("theme", "light", { path: "/", expires: date }); 
   }
-
+  
   if (cookies["palette"] === undefined) 
   { 
-      setCookie("palette", "a", { path: "/", expires: date });
+    setCookie("palette", "a", { path: "/", expires: date });
   }
-
-  if (cookies['language'] === undefined) { 
-      const isNavLanguageITA = isNavigatorLanguageItalian();
-      setCookie("language", (isNavLanguageITA ? 'it' : 'en'), { path: "/", expires: date }); 
-  }
-
-  LocalizationService.localize(cookies['language']);
+  
+  loadTheme(theme ? darkTheme : lightTheme);
+  LocalizationService.localize(language);
   
   return (
     <Router basename={process.env.PUBLIC_URL}>
@@ -65,7 +65,7 @@ const MainView = () => {
         <ThemeProvider applyTo="body" theme={theme ? darkTheme : lightTheme}>
           <Header/>
           <ContentView/>
-          <Footer changeTheme={changeTheme} changePalette={changePalette}/>
+          <Footer changeTheme={changeTheme} changePalette={changePalette} changeLanguage={changeLanguage}/>
         </ThemeProvider>
       </CookiesProvider>
     </Router>

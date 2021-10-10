@@ -5,9 +5,9 @@ import { Persona, PersonaSize } from 'office-ui-fabric-react/lib/Persona';
 import { Link, Icon, Text } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { semibold } from '../../services/fonts';
+import { semibold } from '../../services/Fonts';
 import { getDegreeAdmins } from '../../services/Requests';
-import Message from '../Message';
+import Message from '../GenericComponents/Message';
 import LocalizationService from "../../services/LocalizationService";
 
 import { Degree } from '../../models/Models';

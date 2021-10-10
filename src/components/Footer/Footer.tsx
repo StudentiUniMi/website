@@ -1,19 +1,18 @@
-import { Link } from 'office-ui-fabric-react';
-import { Text } from 'office-ui-fabric-react/lib/Text';
+import { Link, Text, Label } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
-import { semibold } from '../services/fonts';
+import { bold, semibold } from '../../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { useCookies } from 'react-cookie';
-import { IDropdownOption, Dropdown, IIconProps, PrimaryButton, Toggle, TooltipHost, IconButton, SwatchColorPicker, ITooltipHostStyles } from '@fluentui/react';
-import { palettes } from '../services/palettes';
+import { IIconProps, PrimaryButton, Toggle, TooltipHost, IconButton, SwatchColorPicker, ITooltipHostStyles } from '@fluentui/react';
+import { palettes } from '../../services/Palettes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { addDays } from '../services/Utils';
+import { addDays } from '../../services/Utils';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import LocalizationService from "../services/LocalizationService";
+import LocalizationService from "../../services/LocalizationService";
 
 library.add(fab, faCommentDots);
 const listElement = { marginBottom: '.2rem' };
@@ -27,7 +26,7 @@ const footerIcons: any = [
     { name: { it: 'Pagina Instagram', en: 'Instagram Page' }, link: 'https://www.instagram.com/studentiunimi.it/', iconName: 'instagram', type: 'brand' },
 ];
 
-interface Props { changeTheme: () => void, changePalette: (id: string) => void };
+interface Props { changeTheme: () => void, changePalette: (id: string) => void, changeLanguage: (language: string) => void };
 
 const Footer = (props: Props) => {
     var theme = useTheme();
@@ -42,14 +41,11 @@ const Footer = (props: Props) => {
         props.changeTheme();
     };
 
-    const changeLanguage = (key: string) => {
-        LocalizationService.localize(key);
+    const changeLanguage = (lang: string) => {
+        LocalizationService.localize(lang);
+        setCookie("language", lang, { path: "/", expires: date });
+        props.changeLanguage(lang);
     };
-
-    const languageOptions: IDropdownOption[] = [
-        { key: 'it', text: locale?.settingsPanel.italian! },
-        { key: 'en', text: locale?.settingsPanel.english! }
-    ];
     
     const wrapIconStyle = { backgroundColor: theme.palette.themeSecondary, borderRadius: '50%', minWidth: 30, minHeight: 30, display: 'inline-block', textAlign: 'center', justifyContent: 'center', verticalAlign: 'middle' } as React.CSSProperties;
     const iconStyle = { color: theme.palette.white, fontSize: '17px', marginTop: 6 };
@@ -104,7 +100,7 @@ const Footer = (props: Props) => {
                             </div>
                         </div>
                     </Col>
-
+                    
                     <Col xl={3} lg={2} md={3} sm={12} xs={12}>
                         <div className="mb-2">
                             <Toggle
@@ -117,15 +113,25 @@ const Footer = (props: Props) => {
                             />
                         </div>
                         
-                        <div className="mb-2">
-                            <Dropdown
-                                label={locale?.settingsPanel.selectLanguage}
-                                options={languageOptions}
-                                selectedKey={cookies["language"]}
-                                onChange={(_, option) => { changeLanguage(option!.key as string); setCookie("language", option!.key as string, { path: "/", expires: date }) }}
-                                theme={theme}
-                                style={{ maxWidth: 150 }}
-                            />
+                        <div className="mb-2 language-selector">
+                            <Label>{locale?.settingsPanel.selectLanguage}</Label>
+                            <Text 
+                                variant="medium" 
+                                style={{ cursor: 'pointer' }} 
+                                styles={cookies["language"] === "it" ? bold : {}} onClick={() => { changeLanguage("it") } }
+                            >
+                                ITA
+                            </Text>
+                            
+                            <Text variant="medium"> | </Text>
+
+                            <Text 
+                                variant="medium" 
+                                style={{ cursor: 'pointer' }} 
+                                styles={cookies["language"] === "en" ? bold : {}} onClick={() => { changeLanguage("en") }}
+                            >
+                                ENG
+                            </Text>
                         </div>
                     </Col>
 

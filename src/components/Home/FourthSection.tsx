@@ -1,5 +1,5 @@
 import { Text, IIconProps, PrimaryButton, Image } from '@fluentui/react';
-import { semibold } from '../../services/fonts';
+import { semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -20,7 +20,7 @@ const FourthSection = () => {
                 <Row className="justify-content-around">
 
                     <Col className="text-center mb-5 mb-md-0" md={4}>
-                        <Image className="mb-3" src={process.env.PUBLIC_URL + '/other/temp/rapp.png'} style={{ display: 'inline-block', width: 170, height: 160 }} />
+                        <Image className="mb-3" src={process.env.PUBLIC_URL + '/images/home/5_1.png'} style={{ display: 'inline-block', width: 170, height: 160 }} />
                         <div className="mb-2">
                             <Text variant="medium" styles={semibold}>{locale?.homepage.adminsRepresentativesSection.col1.title}</Text>
                         </div>
@@ -38,7 +38,7 @@ const FourthSection = () => {
                     </Col>
                 
                     <Col className="text-center" md={4}>
-                        <Image className="mb-3" src={process.env.PUBLIC_URL + '/other/temp/admin.png'} style={{ display: 'inline-block', width: 155, height: 160 }} />
+                        <Image className="mb-3" src={process.env.PUBLIC_URL + '/images/home/5_2.png'} style={{ display: 'inline-block', width: 155, height: 160 }} />
                         <div className="mb-2">
                             <Text variant="medium" styles={semibold}>{locale?.homepage.adminsRepresentativesSection.col2.title}</Text>
                         </div>

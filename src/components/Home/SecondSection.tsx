@@ -1,5 +1,5 @@
 import { Text, IIconProps, Image, DefaultButton } from '@fluentui/react';
-import { semibold } from '../../services/fonts';
+import { semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -27,7 +27,7 @@ const SecondSection = () => {
 
                 <Row>
                     <Col lg={4} className="text-center mb-4 mb-lg-0">
-                        <Image src={process.env.PUBLIC_URL + '/other/temp/11.png'} style={{ display: 'inline-block', width: '50%' }} />
+                        <Image src={process.env.PUBLIC_URL + '/images/home/2.png'} style={{ display: 'inline-block', width: '50%' }} />
                     </Col>
 
                     <Col lg={8}>

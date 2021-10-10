@@ -4,9 +4,9 @@ import { Container } from 'react-bootstrap';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Persona } from 'office-ui-fabric-react/lib/Persona';
 import { TooltipHost, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib/Tooltip';
-import Contributor from '../models/Contributor';
-import { getContributors } from '../services/Requests'
-import LocalizationService from "../services/LocalizationService";
+import Contributor from '../../models/Contributor';
+import { getContributors } from '../../services/Requests'
+import LocalizationService from "../../services/LocalizationService";
 
 const calloutPropsContributor = { gapSpace: 3 };
 const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };

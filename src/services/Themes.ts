@@ -1,7 +1,7 @@
 import { FontSizes } from '@fluentui/theme';
 import { FontWeights } from 'office-ui-fabric-react';
 import { DefaultEffects } from '@fluentui/react';
-import { palettes } from './palettes';
+import { palettes } from './Palettes';
 
 /**
  * This function returns lightTheme with palette based on paletteID.
