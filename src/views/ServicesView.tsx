@@ -9,11 +9,10 @@ import { semibold } from '../services/fonts';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { getServices } from '../services/Requests';
-import { redirectToLink } from '../services/Utils';
 import Chip from '@material-ui/core/Chip';
 import LocalizationService from "../services/LocalizationService";
 import { Image } from 'office-ui-fabric-react/lib/Image';
-import { TooltipDelay, TooltipHost } from '@fluentui/react';
+import { Link, TooltipDelay, TooltipHost } from '@fluentui/react';
 
 const Services = () => {
     var theme = useTheme();
@@ -62,7 +61,7 @@ const Services = () => {
 
                         <Col lg={4} className="text-center">
                             <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }}>
-                                <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/other/services.png'} style={imageProperties} />
+                                <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/images/services.png'} style={imageProperties} />
                             </div>
                         </Col>
                     </Row>
@@ -78,30 +77,32 @@ const Services = () => {
                 <Row className="justify-content-center">
                     {services.map((x, i) =>
                         <Col xl={4} lg={6} md={6} sm={12} xs={12} className="mb-3" key={i}>
-                            <Card label={x.name?.it} onClick={() => redirectToLink(x.link ?? "")} horizontal tokens={cardTokens} style={{border: '0px', maxWidth: 'none'}}>
-                                <Card.Item fill>
-                                    <DocumentCardPreview {...cardProps(x.icon, x.color)}/>
-                                </Card.Item>
-                                <Card.Section>
-                                    <Text variant="medium" style={{ color: theme.palette.themePrimary }} styles={semibold}>{x.name![language!]}</Text>
-                                    <TooltipHost
-                                        id={`tooltip${i}`}
-                                        content={x.type === 'G' ? locale?.services.guide : locale?.services.service}
-                                        calloutProps={calloutProps(i)}
-                                        delay={TooltipDelay.zero}
-                                    >
-                                    <Chip label={x.type} size="small" id={`chip${i}`} style={{
-                                        color: x.type === 'G' ? theme.palette.orange : theme.palette.themePrimary,  
-                                        position: 'absolute',
-                                        right: '20px',
-                                        bottom: '5px',
-                                        backgroundColor: theme.palette.neutralLighter,
-                                        fontWeight: 500
-                                    }} />
-                                    </TooltipHost>
-                                    <Text variant="small" style={{ marginTop: 0 }}>{x.description![language!]}</Text>
-                                </Card.Section>
-                            </Card>
+                            <Link href={x.link ?? ""} className="text-decoration-none">
+                                <Card label={x.name?.it} horizontal tokens={cardTokens} style={{ border: '0px', maxWidth: 'none', cursor: 'pointer' }}>
+                                    <Card.Item fill>
+                                        <DocumentCardPreview {...cardProps(x.icon, x.color)}/>
+                                    </Card.Item>
+                                    <Card.Section>
+                                        <Text variant="medium" style={{ color: theme.palette.themePrimary }} styles={semibold}>{x.name![language!]}</Text>
+                                        <TooltipHost
+                                            id={`tooltip${i}`}
+                                            content={x.type === 'G' ? locale?.services.guide : locale?.services.service}
+                                            calloutProps={calloutProps(i)}
+                                            delay={TooltipDelay.zero}
+                                        >
+                                        <Chip label={x.type} size="small" id={`chip${i}`} style={{
+                                            color: x.type === 'G' ? theme.palette.orange : theme.palette.themePrimary,  
+                                            position: 'absolute',
+                                            right: '20px',
+                                            bottom: '5px',
+                                            backgroundColor: theme.palette.neutralLighter,
+                                            fontWeight: 500
+                                        }} />
+                                        </TooltipHost>
+                                        <Text variant="small" style={{ marginTop: 0, color: theme.palette.black }}>{x.description![language!]}</Text>
+                                    </Card.Section>
+                                </Card>
+                            </Link>
                         </Col>
                         )
                     }
