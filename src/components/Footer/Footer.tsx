@@ -1,19 +1,19 @@
 import { Link } from 'office-ui-fabric-react';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { Container } from 'react-bootstrap';
-import { semibold } from '../services/fonts';
+import { semibold } from '../../services/fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { useCookies } from 'react-cookie';
 import { IDropdownOption, Dropdown, IIconProps, PrimaryButton, Toggle, TooltipHost, IconButton, SwatchColorPicker, ITooltipHostStyles } from '@fluentui/react';
-import { palettes } from '../services/palettes';
+import { palettes } from '../../services/palettes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { addDays } from '../services/Utils';
+import { addDays } from '../../services/Utils';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import LocalizationService from "../services/LocalizationService";
+import LocalizationService from "../../services/LocalizationService";
 
 library.add(fab, faCommentDots);
 const listElement = { marginBottom: '.2rem' };

@@ -7,7 +7,7 @@ import { Container } from 'react-bootstrap';
 import { IChoiceGroupOptionStyles, Icon } from "@fluentui/react";
 import { ChoiceGroup, IChoiceGroupOption } from '@fluentui/react/lib/ChoiceGroup';
 import LocalizationService from "../../services/LocalizationService";
-import Message from '../Message';
+import Message from '../GenericComponents/Message';
 import { getDegreeInformations } from '../../services/Requests';
 
 /* Updated models */

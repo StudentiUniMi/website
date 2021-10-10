@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import LocalizationService from "../services/LocalizationService";
+import LocalizationService from "../../services/LocalizationService";
 import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { MessageBarType, MessageBar } from '@fluentui/react';

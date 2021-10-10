@@ -13,8 +13,8 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import GroupItem from './GroupItem';
 import LocalizationService from "../../services/LocalizationService";
-import LoadingSpinner from '../LoadingSpinner';
-import Message from '../Message';
+import LoadingSpinner from '../GenericComponents/LoadingSpinner';
+import Message from '../GenericComponents/Message';
 
 interface Props { degree?: Degree, courses: CourseDegree[], loadingCourses: boolean, errorLoadingCourses: boolean };
 

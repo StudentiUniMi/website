@@ -5,8 +5,8 @@ import { Persona, PersonaSize } from 'office-ui-fabric-react/lib/Persona';
 import { Link, Icon } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Representative } from '../../models/Models';
-import LoadingSpinner from '../LoadingSpinner';
-import Message from '../Message';
+import LoadingSpinner from '../GenericComponents/LoadingSpinner';
+import Message from '../GenericComponents/Message';
 import LocalizationService from "../../services/LocalizationService";
 
 interface Props { data: Representative[], loadingRepresentatives: boolean, errorLoadingRepresentatives: boolean };
