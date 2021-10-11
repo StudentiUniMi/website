@@ -109,7 +109,7 @@ export const palettes = [
         label: 'purple',
         palette: {
             themePrimary: '#4747d1',
-            themeLighterAlt: '#f4f9fe',
+            themeLighterAlt: '#4d4dbd',
             themeLighter: '#3333cc',
             themeLight: '#5c5cd6',
             themeTertiary: '#5c5ce0',
