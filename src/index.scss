@@ -1,4 +1,5 @@
 /* Main properties */
+$footer-height: 220px;  // Default footer height
 
 html {
   margin: 0;
@@ -10,8 +11,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #faf9f8;
-  margin-bottom: 228px; /* Default footer height */
+  margin-bottom: $footer-height;
   height:100%;
 }
 
@@ -45,21 +45,21 @@ button:focus,
 
 
 /* Responsive footer */
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1199px) {
   body {
-    margin-bottom: 245px;
+    margin-bottom: $footer-height + 17px;
   }
 }
 
 @media only screen and (max-width: 992px) {
   body {
-    margin-bottom: 366px;
+    margin-bottom: $footer-height + 140px;
   }
 }
 
 @media only screen and (max-width: 767px) {
   body {
-    margin-bottom: 610px;
+    margin-bottom: $footer-height + 380px;
   }
 
   footer .row {
@@ -93,20 +93,9 @@ button:focus,
 
 @media only screen and (max-width: 363px) {
   body {
-    margin-bottom: 610px;
+    margin-bottom: $footer-height + 381px;
   }
 }
-
-
-/*
-@media only screen and (min-width: 767px) {
-  footer .row {
-    margin-left: 3%;
-  }
-}
-*/
-
-
 
 
 /* Responsive menu and title */
