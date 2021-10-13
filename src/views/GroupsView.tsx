@@ -48,8 +48,6 @@ const GroupsView = () => {
     let didMount = React.useRef(false);
     const resetIcon: IIconProps = { iconName: 'Refresh' };
     const calloutProps = { gapSpace: 10 };
-    // The TooltipHost root uses display: inline by default.
-    // If that's causing sizing issues or tooltip positioning issues, try overriding to inline-block.
     const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
 
     /* States */
@@ -59,7 +57,12 @@ const GroupsView = () => {
     let [searchData, setSearchData] = React.useState<ISuggestionItem[]>([]); // Array di ISuggestionItem (contenente anche Degree per ogni elemento)
     let [courses, setCourses] = React.useState<CourseDegree[]>([]); // Corsi di insegnamento
     let [reactHelmetContent, setReactHelmetContent] = React.useState<reactHelmetContent>(
-        { title: locale?.helmet.courses.title!, description: locale?.helmet.courses.description!, href: 'https://studentiunimi.it/courses/', hrefLang: language! }
+        { 
+            title: locale?.helmet.courses.title!, 
+            description: locale?.helmet.courses.description!, 
+            href: 'https://studentiunimi.it/courses/', 
+            hrefLang: language! 
+        }
     );
 
     const [loadingCourses, setLoadingCourses] = React.useState<boolean>(false);
@@ -226,6 +229,11 @@ const GroupsView = () => {
             <title>{reactHelmetContent.title}</title>
             <meta name="description" content={reactHelmetContent.description} />
             <link rel="canonical" href={reactHelmetContent.href} />
+            <meta name="keywords" content={reactHelmetContent.title + ", " + reactHelmetContent.description + ", Network StudentiUniMi, Studenti UniMi, Network Studenti Unimi, Gruppi telegram unimi, Gruppi unimi, Siti web corsi unimi, Faq corsi unimi, Wiki Unimi"} />
+            <meta property="og:title" content={reactHelmetContent.title} />
+            <meta property="og:description" content={reactHelmetContent.description} />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content={reactHelmetContent.href} />
         </Helmet>
         <div className="pt-5 courses">
             <Container>
