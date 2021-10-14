@@ -43,7 +43,7 @@ const getDegreeTypeName = (type: string): string => {
 const GroupsView = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
-    var language: string | undefined = LocalizationService.getLanguage();
+    //var language: string | undefined = LocalizationService.getLanguage();
     let history = useHistory();
     let didMount = React.useRef(false);
     const resetIcon: IIconProps = { iconName: 'Refresh' };
@@ -58,10 +58,10 @@ const GroupsView = () => {
     let [courses, setCourses] = React.useState<CourseDegree[]>([]); // Corsi di insegnamento
     let [reactHelmetContent, setReactHelmetContent] = React.useState<reactHelmetContent>(
         { 
-            title: locale?.helmet.courses.title!, 
-            description: locale?.helmet.courses.description!, 
+            title: LocalizationService.getHelmetITAProperties().courses.title!, 
+            description: LocalizationService.getHelmetITAProperties().courses.description!, 
             href: 'https://studentiunimi.it/courses/', 
-            hrefLang: language! 
+            hrefLang: "it"
         }
     );
 
@@ -146,12 +146,12 @@ const GroupsView = () => {
         setLoadingCourses(false);
 
         setReactHelmetContent({
-            title: locale?.helmet.degreeLoaded.title1 + `${loadedDegree?.name} (${getDegreeTypeName(loadedDegree?.type!)})` + locale?.helmet.degreeLoaded.title2, 
-            description: locale?.helmet.degreeLoaded.description1 + `${loadedDegree?.name} (${getDegreeTypeName(loadedDegree?.type!)})` + locale?.helmet.degreeLoaded.description2, 
+            title: LocalizationService.getHelmetITAProperties().degreeLoaded.title1 + `${loadedDegree?.name} (${getDegreeTypeName(loadedDegree?.type!)})` + LocalizationService.getHelmetITAProperties().degreeLoaded.title2, 
+            description: LocalizationService.getHelmetITAProperties().degreeLoaded.description1 + `${loadedDegree?.name} (${getDegreeTypeName(loadedDegree?.type!)})` + LocalizationService.getHelmetITAProperties().degreeLoaded.description2, 
             href: `https://studentiunimi.it/courses/${loadedDegree?.slug}`,
-            hrefLang: language!
+            hrefLang: "it"
         });
-    }, [locale, selectedDegree, loadedDegree, language]);
+    }, [selectedDegree, loadedDegree]);
 
     
     /* This function initializes the VerboseDegree (retrieves degree based on url initialization) */
@@ -184,13 +184,13 @@ const GroupsView = () => {
             setDegreeTextSearch(verboseDeg.name!)
 
             setReactHelmetContent({
-                title: locale?.helmet.degreeLoaded.title1 + `${verboseDeg?.name} (${getDegreeTypeName(verboseDeg?.type!)})` + locale?.helmet.degreeLoaded.title2, 
-                description: locale?.helmet.degreeLoaded.description1 + `${verboseDeg?.name} (${getDegreeTypeName(verboseDeg?.type!)})` + locale?.helmet.degreeLoaded.description2, 
+                title: LocalizationService.getHelmetITAProperties().degreeLoaded.title1 + `${verboseDeg?.name} (${getDegreeTypeName(verboseDeg?.type!)})` + LocalizationService.getHelmetITAProperties().degreeLoaded.title2, 
+                description: LocalizationService.getHelmetITAProperties().degreeLoaded.description1 + `${verboseDeg?.name} (${getDegreeTypeName(verboseDeg?.type!)})` + LocalizationService.getHelmetITAProperties().degreeLoaded.description2, 
                 href: `https://studentiunimi.it/courses/${verboseDeg?.slug}`,
-                hrefLang: language!
+                hrefLang: "it"
             });
         }
-    }, [history.location.pathname, locale?.helmet.degreeLoaded.description1, locale?.helmet.degreeLoaded.description2, locale?.helmet.degreeLoaded.title1, locale?.helmet.degreeLoaded.title2, language]);
+    }, [history.location.pathname]);
 
     const updateLoadedDegree = React.useCallback(async () => {
         if (selectedDegree === null || selectedDegree === undefined || selectedDegree === "") return;
