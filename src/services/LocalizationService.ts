@@ -233,20 +233,8 @@ class LocalizationService {
 
 
 
-
-
-
-
                 en: {
-                    helmet: {
-                        homepage: { title: "Network StudentiUniMi - Groups, services and much more", description: "Official website of StudentiUniMi Network: WhatsApp groups replaced by Telegram ones, services and much more. The largest network of the University of Milan." },
-                        courses: { title: "Groups | Network StudentiUniMi", description: "All Telegram groups for all degree courses (three-year, master, single-cycle degrees) of the University of Milan. Join, ask for information and meet new people thanks to the StudentiUniMi Network." },
-                        services: { title: "Services | Network StudentiUniMi", description: "Tired of unimia's inefficiencies? On this alternative page you can access all the useful links of the University of Milan." },
-                        rules: { title: "Groups rules | Network StudentiUniMi", description: "The official rules of the StudentiUniMi Network." },
-                        university: { title: "University redirects | Network StudentiUniMi", description: "Stay up-to-date with all the information and representatives of the University of Milan, offered by the StudentiUniMi Network." },
-                        organization: { title: "Organization | Network StudentiUniMi", description: "Who are we? Discover the organization behind the StudentiUniMi Network, the largest network of the University of Milan." },
-                        degreeLoaded: { title1: 'Groups of ', title2: ' | Network StudentiUniMi', description1: 'All the links of the Telegram groups of ', description2: ' degree of the University of Milan. Offered by StudentiUniMi Network.' }
-                    },
+                    helmet: LocalizationService.getHelmetENGProperties(),
                     loading: "Loading..",
                     telegramGroup: 'Telegram Group',
                     errorLoadingDepartments: 'Error has occured while retrieving departments.',
@@ -479,6 +467,18 @@ class LocalizationService {
             university: { title: "Informazioni dall'Ateneo e rappresentanti | Network StudentiUniMi", description: "Rimani aggiornato con tutte le informazioni e i rappresentanti dell'Università degli Studi di Milano, offerto dal Network StudentiUniMi." },
             organization: { title: "Chi siamo | Network StudentiUniMi", description: "Chi siamo? Scopri l'organizzazione dietro il Network StudentiUniMi, il più grande network dell'Università degli Studi di Milano." },
             degreeLoaded: { title1: 'Gruppi di ', title2: ' | Network StudentiUniMi', description1: 'Tutti i link dei gruppi Telegram del corso di laurea di ', description2: " dell'Università degli Studi di Milano offerti dal Network StudentiUniMi." }
+        }
+    }
+
+    static getHelmetENGProperties = () : helmet => {
+        return {
+            homepage: { title: "Network StudentiUniMi - Groups, services and much more", description: "Official website of StudentiUniMi Network: WhatsApp groups replaced by Telegram ones, services and much more. The largest network of the University of Milan." },
+            courses: { title: "Groups | Network StudentiUniMi", description: "All Telegram groups for all degree courses (three-year, master, single-cycle degrees) of the University of Milan. Join, ask for information and meet new people thanks to the StudentiUniMi Network." },
+            services: { title: "Services | Network StudentiUniMi", description: "Tired of unimia's inefficiencies? On this alternative page you can access all the useful links of the University of Milan." },
+            rules: { title: "Groups rules | Network StudentiUniMi", description: "The official rules of the StudentiUniMi Network." },
+            university: { title: "University redirects | Network StudentiUniMi", description: "Stay up-to-date with all the information and representatives of the University of Milan, offered by the StudentiUniMi Network." },
+            organization: { title: "Organization | Network StudentiUniMi", description: "Who are we? Discover the organization behind the StudentiUniMi Network, the largest network of the University of Milan." },
+            degreeLoaded: { title1: 'Groups of ', title2: ' | Network StudentiUniMi', description1: 'All the links of the Telegram groups of ', description2: ' degree of the University of Milan. Offered by StudentiUniMi Network.' }
         }
     }
 }
