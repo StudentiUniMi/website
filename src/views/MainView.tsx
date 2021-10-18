@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider } from '@fluentui/react-theme-provider'; 
 import { buildLightTheme, buildDarkTheme } from '../services/Themes';
 import { CookiesProvider, useCookies, withCookies } from 'react-cookie';
+import { HelmetProvider } from 'react-helmet-async';
 import { loadTheme } from '@fluentui/react';
 import { addDays } from '../services/Utils';
 
@@ -63,9 +64,11 @@ const MainView = () => {
     <Router basename={process.env.PUBLIC_URL}>
       <CookiesProvider>
         <ThemeProvider applyTo="body" theme={theme ? darkTheme : lightTheme}>
-          <Header/>
-          <ContentView/>
-          <Footer changeTheme={changeTheme} changePalette={changePalette} changeLanguage={changeLanguage}/>
+          <HelmetProvider>
+            <Header/>
+            <ContentView/>
+            <Footer changeTheme={changeTheme} changePalette={changePalette} changeLanguage={changeLanguage}/>
+          </HelmetProvider>
         </ThemeProvider>
       </CookiesProvider>
     </Router>
