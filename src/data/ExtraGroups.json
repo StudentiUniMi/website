@@ -25,12 +25,12 @@
     },
     {
         "name": {
-            "it": "Materiali",
-            "en": "Course materials"
+            "it": "Compravendita libri e appunti",
+            "en": "Buying and selling books and notes"
         },
         "description": {
-            "it": "Dedicato a chi cerca o offre materiale per i vari corsi didattici.",
-            "en": "Dedicated to those looking for or offering material for the various didactic courses."
+            "it": "Dedicato a chi cerca o offre libri e appunti per i vari corsi didattici.",
+            "en": "Dedicated to those looking for or offering books and notes for the various didactic courses."
         },
         "image": "materiali.jpg",
         "gruppo": "https://t.me/joinchat/SyKyebINUEXQ969t"
