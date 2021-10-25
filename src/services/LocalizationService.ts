@@ -170,8 +170,8 @@ class LocalizationService {
                         }
                     },
                     services: {
-                        text1: 'Stanchi di dover andare a spulciare miriadi di pagine che neanche caricano alla ricerca di strumenti e servizi universitari?',
-                        text2: 'Abbiamo realizzato una pagina per centralizzarli tutti e rendere disponibili anche alcune guide che abbiamo realizzato.',
+						text1: 'Tutti i servizi, in un\'unica pagina.',
+                        text2: 'Abbiamo realizzato una pagina per centralizzare tutti i servizi dell\'Università degli Studi di Milano e rendere disponibili anche alcune guide che abbiamo realizzato.',
                         text3: "Se pensi che debba essere aggiunto qualche servizio scrivi pure su <Link href='https://t.me/unimichat'>@unimichat</Link>.",
                         availableServices: 'Servizi e guide disponibili',
                         guide: "Guida",
@@ -386,8 +386,8 @@ class LocalizationService {
                         }
                     },
                     services: {
-                        text1: 'Tired of surfing into endless pages to find the services offered by the university?',
-                        text2: "We grouped all the links here! We added some guides we created too.",
+                        text1: 'All university services, in one central place.',
+                        text2: "We grouped all the links here! We added some guides we created, too.",
                         text3: "If you think that something should be added you can suggest it on <Link href='https://t.me/unimichat'>@unimichat</Link>.",
                         availableServices: 'Available services and guides',
                         guide: "Guide",
