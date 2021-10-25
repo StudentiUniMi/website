@@ -21,7 +21,7 @@ const Services = () => {
     const services = getServices();
     const cardTokens: ICardTokens = { childrenMargin: 12 };
 
-    const imageProperties = { display: 'inline-block', width: '70%' };
+    const imageProperties = { display: 'inline-block', width: '45%' };
 
     let cardProps = (iconName?: string, iconColor?: string): IDocumentCardPreviewProps => {
         return {
@@ -49,7 +49,7 @@ const Services = () => {
                 <Container>
 
                     <Row>
-                        <Col lg={8} className="mb-2">
+                        <Col lg={8} className="mb-3 mb-lg-0">
                             <div className="mb-2">
                                 <Text variant="xLargePlus">{locale?.services.text1}</Text>
                             </div>
