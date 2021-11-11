@@ -1,3 +1,10 @@
+/**
+ * Additional group component.
+ * To-do: remove checks on MUG name when the new section for students association will be available.
+ * 
+ * @author Giuseppe Del Campo
+ */
+
 import { Text, Icon } from 'office-ui-fabric-react';
 import { initializeIcons } from '@uifabric/icons';
 import { FontWeights, ITextStyles, Persona, Link } from '@fluentui/react';
@@ -43,10 +50,10 @@ const AdditionalGroup = (props: Props) => {
             </Card.Item>
             <Card.Section>
                 <Text styles={descriptionTextStyles}>
-                    <Chip label={locale?.extraGroups.extraGroup} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeTertiary }} className="m-1" />
+                    <Chip label={name === 'MUG - Milan University Gamers' ? locale?.studentsAssociation : locale?.extraGroups.extraGroup} size="small" style={{ color: theme.palette.white, backgroundColor: name === 'MUG - Milan University Gamers' ? theme.palette.themeTertiary : theme.palette.themeSecondary }} className="m-1" />
                 </Text>
                 <Text variant="small" styles={helpfulTextStyles} className="mb-2">
-                    <JsxParser bindings={{ theme: theme }} components={{ Text, Link, Icon }} jsx={"<Icon iconName='Info' /> " + desc} />
+                    <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link, Icon }} jsx={"<Icon iconName='Info' /> " + desc} />
                 </Text>
 
                 {
@@ -60,7 +67,7 @@ const AdditionalGroup = (props: Props) => {
                                     style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
                                     disabled={data.gruppo === "" || data.gruppo === null}
                                     allowDisabledFocus>
-                                    {locale?.telegramGroup}
+                                    {name === 'MUG - Milan University Gamers' ? locale?.homepage.section3.part3.title : locale?.telegramGroup}
                                 </ActionButton>
                             );
                         }

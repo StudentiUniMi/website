@@ -25,6 +25,7 @@ class LocalizationService {
                     errorLoadingDegrees: 'Errore durante il caricamento dei corsi di laurea.',
                     noRedirectsAvailable: 'Non ci sono collegamenti disponibili.',
                     errorContactAdmin: 'Si è verificato un errore; contatta un amministratore.',
+                    studentsAssociation: 'Associazione studentesca',
                     headerMenuItems: {
                         home: 'Home',
                         courses: 'Gruppi',
@@ -241,6 +242,7 @@ class LocalizationService {
                     errorLoadingDegrees: 'Error has occured while retrieving degrees.',
                     noRedirectsAvailable: 'There are no redirects available.',
                     errorContactAdmin: 'An error has occured; contact an administrator.',
+                    studentsAssociation: 'Students association',
                     headerMenuItems: {
                         home: 'Home',
                         courses: 'Groups',
