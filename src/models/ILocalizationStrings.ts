@@ -14,6 +14,7 @@ interface ILocalizationStrings {
     errorLoadingDegrees: string,
     noRedirectsAvailable: string,
     errorContactAdmin: string,
+    studentsAssociation: string,
     headerMenuItems: {
         home: string,
         courses: string,

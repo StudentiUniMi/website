@@ -97,6 +97,18 @@
     },
     {
         "name": {
+            "it": "Studenti internazionali",
+            "en": "International students"
+        },
+        "description": {
+            "it": "Gruppo dedicato agli studenti internazionali che hanno intenzione di immatricolarsi in UniMi; chat solo in inglese.",
+            "en": "Group aimed to International students coming to UniMi; chat only in english."
+        },
+        "image": "international_students.jpg",
+        "gruppo": "https://t.me/joinchat/fO8pB1iSBwphYzA0"
+    },
+    {
+        "name": {
             "it": "FOR24 Formazione Insegnanti",
             "en": "FOR24 Teacher Training"
         },
@@ -154,5 +166,17 @@
         },
         "image": "giochi_di_ruolo.jpg",
         "gruppo": "https://t.me/joinchat/BnUK_g-KHlIX_SrIieU8CA"
+    },
+    {
+        "name": {
+            "it": "MUG - Milan University Gamers",
+            "en": "MUG - Milan University Gamers"
+        },
+        "description": {
+            "it": "Dai un'occhiata all'associazione studentesca \"Milan University Gamers\".",
+            "en": "Take a look at the university association \"Milan University Gamers\"."
+        },
+        "image": "mug_logo.png",
+        "gruppo": "https://discord.gg/9qUGtnKYUU"
     }
 ]
