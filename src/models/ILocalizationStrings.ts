@@ -111,11 +111,13 @@ interface ILocalizationStrings {
         findDegreeByName: string,
         groupsSection: {
             text1: string,
-            text2: string
+            text2: string,
+            text3: string
         },
         extraGroupsSection: {
             text1: string,
-            text2: string
+            text2: string,
+            text3: string
         },
         departmentSelect: string,
         cdlSelect: string,

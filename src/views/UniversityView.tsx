@@ -152,7 +152,7 @@ const UniversityView = () => {
                 <Container>
 
                     <Row>
-                        <Col lg={9} className="mb-3 mb-lg-0">
+                        <Col xl={9} lg={8} className="mb-3 mb-lg-0">
                             <div className="mb-2">
                                 <Text variant="xLargePlus" style={{ color: theme.palette.white }}>{locale?.university.header.text1}</Text>
                             </div>
@@ -162,8 +162,8 @@ const UniversityView = () => {
                             </div>
                         </Col>
 
-                        <Col lg={3} className="text-center">
-                            <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }}>
+                        <Col xl={3} lg={4} className="text-center">
+                            <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 500 }}>
                                 <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/images/university.png'} style={{ display: 'inline-block', width: '80%' }} />
                             </div>
                         </Col>
