@@ -294,7 +294,7 @@ const GroupsView = () => {
                 </div>
 
                 <Container className="pb-4">
-                    <Separator className="mb-3" />
+                    <Separator className="mb-3 mt-3" />
 
                     <div className="mb-4">
                         <Row>

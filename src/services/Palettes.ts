@@ -23,7 +23,7 @@ export const palettes = [
             themeLighter: '#d3e9fa',
             themeLight: '#aed7f6',
             themeTertiary: '#518ebd',
-            themeSecondary: '#0086b3',
+            themeSecondary: '#2274A5',
             themeDarkAlt: '#007399',
             themeDark: '#006080',
             themeDarker: '#3f7cab'
@@ -79,7 +79,7 @@ export const palettes = [
         label: 'yellow',
         palette: {
             themePrimary: '#deb143',
-            themeLighterAlt: '#FFC996',
+            themeLighterAlt: '#FADF63',
             themeLighter: '#EEB76B',
             themeLight: '#E9896A',
             themeTertiary: '#d9a011',
@@ -149,4 +149,34 @@ export const palettes = [
             themeDarker: '#c25d44'
         }
     },
+    {
+        id: 'm',
+        label: 'lavanda',
+        palette: {
+            themePrimary: '#E3B98C', 
+            themeLighterAlt: '##ccab89',
+            themeLighter: '#EFD7BD', 
+            themeLight: '#EBCDAD',
+            themeTertiary: '#EACDAE',
+            themeSecondary: '#DEAF7D',
+            themeDarkAlt: '#DAA56C', 
+            themeDark: '#D69B5C',
+            themeDarker: '#C57D30'
+        }
+    },
+    {
+        id: 'n',
+        label: 'another-green',
+        palette: {
+            themePrimary: '#73A580',
+            themeLighterAlt: '#C7EFCF',
+            themeLighter: '#B2CAA4',
+            themeLight: '#9DBD98',
+            themeTertiary: '#568E65',
+            themeSecondary: '#88B18C',
+            themeDarkAlt: '#6D9F7A',
+            themeDark: '#61926E', 
+            themeDarker: '#548561'
+        }
+    }
 ];

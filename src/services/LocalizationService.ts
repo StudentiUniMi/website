@@ -140,9 +140,9 @@ class LocalizationService {
                             text3: "Tutto quello che devi fare è scrivere il nome del tuo corso di laurea qui sotto, e potrai accedere a tutti i gruppi telegram dei tuoi corsi didattici e ad altre informazioni utili."
                         },
                         extraGroupsSection: {
-                            text1: "Gruppi extra e associazioni studentesche",
-                            text2: "Unisciti ai gruppi aggiuntivi del nostro Network",
-                            text3: "Vorresti vendere degli appunti? Cerchi ripetizioni? O magari vuoi sentire delle opinioni sull'Erasmus? Nessun problema, unisciti ai gruppi aggiuntivi pensati proprio per tutti questi argomenti! Dai un'occhiata anche alle associazioni studentesche disponibili."
+                            text1: "Gruppi universitari e associazioni studentesche",
+                            text2: "Unisciti ai gruppi universitari del nostro Network",
+                            text3: "Vorresti vendere degli appunti? Cerchi ripetizioni? O magari vuoi sentire delle opinioni sull'Erasmus? Nessun problema, unisciti ai gruppi pensati proprio per tutti questi argomenti! Dai un'occhiata anche alle associazioni studentesche disponibili."
                         },
                         departmentSelect: 'Seleziona un dipartimento',
                         cdlSelect: 'Seleziona un corso di Laurea',
@@ -359,9 +359,9 @@ class LocalizationService {
                             text3: "All you have to do is write the name of your degree below, and you will be able to access all the telegram groups of your teaching courses and other useful informations."
                         },
                         extraGroupsSection: {
-                            text1: "Extra Groups",
-                            text2: "Join the additional groups of our Network",
-                            text3: "Would you like to sell some notes? Are you looking for repetitions? Or maybe you want to hear some opinions on Erasmus? No problem, join the additional groups designed specifically for all these topics! Also take a look at the student associations available."
+                            text1: "University groups and students associations",
+                            text2: "Join the university groups of our Network",
+                            text3: "Would you like to sell some notes? Are you looking for repetitions? Or maybe you want to hear some opinions on Erasmus? No problem, join the groups created specifically for all these topics! Also take a look at the student associations available."
                         },
                         departmentSelect: 'Select the department',
                         cdlSelect: 'Select the degree',
