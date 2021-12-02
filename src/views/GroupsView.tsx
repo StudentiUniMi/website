@@ -1,5 +1,5 @@
 import React from "react";
-import { Text } from 'office-ui-fabric-react';
+import { Text, Image } from 'office-ui-fabric-react';
 import { initializeIcons } from "@uifabric/icons";
 import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
@@ -13,6 +13,8 @@ import LocalizationService from "../services/LocalizationService";
 import DegreeInformations from "../components/Groups/DegreeInformations";
 import AdminsList from '../components/Groups/AdminsList';
 import AdditionalGroupsView from '../components/Groups/AdditionalGroups';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import { Autocomplete } from '../components/Groups/Autocomplete';
 import { ISuggestionItem } from '../components/Groups/Autocomplete_types';
 import { Helmet } from 'react-helmet-async';
@@ -25,7 +27,7 @@ interface reactHelmetContent {
     description: string,
     href: string,
     hrefLang: string
-}
+};
 
 /* Returns degree type (name) */
 const getDegreeTypeName = (type: string): string => {
@@ -235,50 +237,91 @@ const GroupsView = () => {
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={reactHelmetContent.href} />
             </Helmet>
-            <div className="pt-5 courses">
-                <Container>
-                    <div className="mb-3">
-                        <div className="mb-1"><Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>{locale?.groups.groupsSection.text1}</Text></div>
-                        
-                        <span className="mr-1"><Text variant="xLarge">{locale?.groups.groupsSection.text2}</Text></span>
-                        
-                        <TooltipHost
-                            content={locale?.groups.resetSection}
-                            calloutProps={calloutProps}
-                            styles={hostStyles}
-                        >
-                            <IconButton iconProps={resetIcon} onClick={resetSection} />
-                        </TooltipHost>
-                    </div>
 
-                    <div className="search-box mb-4">
-                        <Autocomplete
-                            items={searchData}
-                            searchTitle={locale?.groups.findDegreeByName}
-                            suggestionCallback={(item) => entitySelectHandler(item)}
-                            searchCallback={searchTextHandler}
-                            changeCallback={(text) => updateDegreesForSearchBox(text)}
-                            value={degreeTextSearch}
-                        />
-                    </div>
+            <div className="groups">
+                <div className="pt-5">
+                    <Container>
+                        <Row>
+                            <Col lg={3} className="text-center mb-3 mb-lg-0">
+                                <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 350 }}>
+                                    <Image className="mb-2" src={process.env.PUBLIC_URL + '/images/groups/groups.png'} style={{ display: 'inline-block', width: '95%' }} />
+                                </div>
+                            </Col>
 
-                </Container>
+                            <Col lg={9}>
+                                <div className="mb-2">
+                                    <div className="mb-1">
+                                        <Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>{locale?.groups.groupsSection.text1}</Text>
+                                    </div>
+                                    
+                                    <div className="mb-2">
+                                        <span className="mr-1"><Text variant="xLargePlus">{locale?.groups.groupsSection.text2}</Text></span>
+                                        
+                                        <TooltipHost
+                                            content={locale?.groups.resetSection}
+                                            calloutProps={calloutProps}
+                                            styles={hostStyles}
+                                        >
+                                            <IconButton iconProps={resetIcon} onClick={resetSection} />
+                                        </TooltipHost>
+                                    </div>
 
-                <div style={{ display: selectedDegree !== '' ? 'block' : 'none' }}>
+                                    <div className="mb-2 mb-md-4">
+                                        <Text variant="large">{locale?.groups.groupsSection.text3}</Text>
+                                    </div>
+                                </div>
+
+                                <div className="search-box">
+                                    <Autocomplete
+                                        items={searchData}
+                                        searchTitle={locale?.groups.findDegreeByName}
+                                        suggestionCallback={(item) => entitySelectHandler(item)}
+                                        searchCallback={searchTextHandler}
+                                        changeCallback={(text) => updateDegreesForSearchBox(text)}
+                                        value={degreeTextSearch}
+                                    />
+                                </div>
+                            </Col>
+                        </Row>
+
+                    </Container>
+                </div>
+
+                <div style={{ display: selectedDegree !== '' ? 'block' : 'none', marginTop: '1.5rem' }}>
                     <GroupList degree={loadedDegree!} courses={courses} loadingCourses={loadingCourses} errorLoadingCourses={errorLoadingCourses} />
                     <DegreeInformations degree={loadedDegree!} />
                     <AdminsList degree={loadedDegree!} />       
                 </div>
 
                 <Container className="pb-4">
-                    <Separator className="mb-3" />
-                    <div className="mb-3">
-                        <div className="mb-1"><Text variant="medium" styles={semibold} style={{ textTransform: 'uppercase', color: theme.palette.themePrimary }}>{locale?.groups.extraGroupsSection.text1}</Text></div>
-                        <Text variant="xLarge">{locale?.groups.extraGroupsSection.text2}</Text>
+                    <Separator className="mb-3 mt-3" />
+
+                    <div className="mb-4">
+                        <Row>
+                            <Col xl={9} lg={8}>
+                                <div className="mb-3">
+                                    <div className="mb-1">
+                                        <Text variant="medium" styles={semibold} style={{ textTransform: 'uppercase', color: theme.palette.themePrimary }}>{locale?.groups.extraGroupsSection.text1}</Text>
+                                    </div>
+                                    <div className="mb-2">
+                                        <Text variant="xLargePlus">{locale?.groups.extraGroupsSection.text2}</Text>
+                                    </div>
+                                    <div>
+                                        <Text variant="medium">{locale?.groups.extraGroupsSection.text3}</Text>
+                                    </div>
+                                </div>
+                            </Col>
+
+                            <Col xl={3} lg={4} className="text-center">
+                                <div style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+                                    <Image className="mb-2" src={process.env.PUBLIC_URL + '/images/groups/extra_groups.png'} style={{ display: 'inline-block', width: '75%' }} />
+                                </div>
+                            </Col>
+
+                        </Row>
                     </div>
 
                     <AdditionalGroupsView />
-
                 </Container>
             </div>
         </>

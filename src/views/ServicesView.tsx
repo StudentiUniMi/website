@@ -21,8 +21,6 @@ const Services = () => {
     const services = getServices();
     const cardTokens: ICardTokens = { childrenMargin: 12 };
 
-    const imageProperties = { display: 'inline-block', width: '45%' };
-
     let cardProps = (iconName?: string, iconColor?: string): IDocumentCardPreviewProps => {
         return {
             previewImages: [ 
@@ -49,7 +47,7 @@ const Services = () => {
                 <Container>
 
                     <Row>
-                        <Col lg={8} className="mb-3 mb-lg-0">
+                        <Col xl={9} lg={8} md={12} className="mb-3 mb-lg-0">
                             <div className="mb-2">
                                 <Text variant="xLargePlus">{locale?.services.text1}</Text>
                             </div>
@@ -59,9 +57,9 @@ const Services = () => {
                             </div>
                         </Col>
 
-                        <Col lg={4} className="text-center">
-                            <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }}>
-                                <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/images/services.png'} style={imageProperties} />
+                        <Col xl={3} lg={4} md={12} className="text-center">
+                            <div style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+                                <Image id="logo" src={process.env.PUBLIC_URL + '/images/services.png'} style={{ display: 'inline-block', width: '80%' }} />
                             </div>
                         </Col>
                     </Row>

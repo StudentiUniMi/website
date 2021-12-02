@@ -135,12 +135,14 @@ class LocalizationService {
                         filtersToggle: 'Filtri per la ricerca',
                         findDegreeByName: "Cerca il tuo corso di laurea per nome",
                         groupsSection: {
-                            text1: "Gruppi dei corsi",
-                            text2: "Trova tutti i gruppi Telegram del tuo corso di laurea"
+                            text1: "Gruppi dei corsi e informazioni aggiuntive",
+                            text2: "Trova tutti i gruppi Telegram del tuo corso di laurea",
+                            text3: "Tutto quello che devi fare è scrivere il nome del tuo corso di laurea qui sotto, e potrai accedere a tutti i gruppi telegram dei tuoi corsi didattici e ad altre informazioni utili."
                         },
                         extraGroupsSection: {
-                            text1: "Gruppi extra",
-                            text2: "Gruppi aggiuntivi del Network"
+                            text1: "Gruppi universitari e associazioni studentesche",
+                            text2: "Unisciti ai gruppi universitari del nostro Network",
+                            text3: "Vorresti vendere degli appunti? Cerchi ripetizioni? O magari vuoi sentire delle opinioni sull'Erasmus? Nessun problema, unisciti ai gruppi pensati proprio per tutti questi argomenti! Dai un'occhiata anche alle associazioni studentesche disponibili."
                         },
                         departmentSelect: 'Seleziona un dipartimento',
                         cdlSelect: 'Seleziona un corso di Laurea',
@@ -189,8 +191,8 @@ class LocalizationService {
                     },
                     university: {
                         header: {
-                            text1: "Sei alla ricerca di informazioni legate al nostro ateneo? Nessun problema!",
-                            text2: "Qui puoi trovare tutto quello che ti serve."
+                            text1: "Sei alla ricerca di informazioni legate al nostro ateneo?",
+                            text2: "Qui puoi trovare tutto quello che ti serve, a partire dalle notizie e dai collegamenti più importanti fino ai contatti dei rappresentanti del tuo dipartimento."
                         },
                         linksAndRedirects: {
                             text1: "Trovare tutti i collegamenti utili legati all'ateneo può richiedere tempo.", 
@@ -353,11 +355,13 @@ class LocalizationService {
                         findDegreeByName: "Find your degree by name",
                         groupsSection: {
                             text1: "Degree groups",
-                            text2: "Find all the Telegram groups of your degree"
+                            text2: "Find all the Telegram groups of your degree",
+                            text3: "All you have to do is write the name of your degree below, and you will be able to access all the telegram groups of your teaching courses and other useful informations."
                         },
                         extraGroupsSection: {
-                            text1: "Extra Groups",
-                            text2: "Additional groups of the Network"
+                            text1: "University groups and students associations",
+                            text2: "Join the university groups of our Network",
+                            text3: "Would you like to sell some notes? Are you looking for repetitions? Or maybe you want to hear some opinions on Erasmus? No problem, join the groups created specifically for all these topics! Also take a look at the student associations available."
                         },
                         departmentSelect: 'Select the department',
                         cdlSelect: 'Select the degree',
@@ -406,8 +410,8 @@ class LocalizationService {
                     },
                     university: {
                         header: {
-                            text1: "Are you looking for informations related to our university? No problem!",
-                            text2: "Here you can find all you need."
+                            text1: "Are you looking for informations related to our university?",
+                            text2: "Here you can find everything you need, starting with the most important news and links to the contacts of the representatives of your department. "
                         },
                         linksAndRedirects: {
                             text1: "Finding all the useful links related to the university can take time.", 

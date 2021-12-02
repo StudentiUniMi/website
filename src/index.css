@@ -171,13 +171,13 @@ button:focus,
     text-align: center;
   }
 
-  .representatives .people-list .col-xs-12, .courses .admin-list .col-xs-12 {
+  .representatives .people-list .col-xs-12, .groups .admin-list .col-xs-12 {
     margin-left: 15%;
     max-width: 250px;
     text-align: center;
   }
 
-  .representatives .people-list, .courses .admin-list {
+  .representatives .people-list, .groups .admin-list {
     justify-content: center;
   }
 
@@ -199,7 +199,7 @@ button:focus,
     min-width: 100px;
   }
 }
-/* Adjustment for mobile-view ms-card in coursesList and additionalGroupsView */
+/* Adjustment for mobile-view ms-card in groupsList and additionalGroupsView */
 @media only screen and (min-width: 501px) {
   .course-list .listGridTile, .additional-groups .listGridTile {
     text-align: center;
@@ -228,19 +228,19 @@ button:focus,
     margin-bottom: 10px !important;
   }
 }
-.courses .filters-toggle .ms-Toggle {
+.groups .filters-toggle .ms-Toggle {
   /* Fix useless margin for toggle component for filters enabled in groups section */
   margin-bottom: 0px !important;
 }
 
-.courses .filters-toggle .ms-Label {
+.groups .filters-toggle .ms-Label {
   margin-left: 8px;
   margin-right: 8px;
 }
 
 @media only screen and (max-width: 310px) {
   /* A fix for better responsive behaviour in toggle component of groups filters section */
-  .courses .filters-toggle .ms-Label {
+  .groups .filters-toggle .ms-Label {
     max-width: 90px;
     margin-right: 0px;
   }
@@ -255,7 +255,7 @@ button:focus,
 }
 
 .additional-groups .ms-List, .course-list .ms-List {
-  /* Padding for card-list in courses and additionalGroups sections */
+  /* Padding for card-list in groups and additionalGroups sections */
   padding: 3px;
 }
 
