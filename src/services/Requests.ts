@@ -159,11 +159,9 @@ export const getAllCdls = (): OldDegree[] => ([] as OldDegree[]).concat(...(data
 
 export const getContributors = (): Contributor[] => Contributors;
 
-export const getAdmins = (): Admin[] => ([] as Admin[]).concat(...(getAllCdls().map(x => x.admins as any as Admin[])));
-
 export const getGroupsLength = (): number => extraGroups.length + ([] as OldCourse[]).concat(...getAllCdls().map(x => x.courses as any as OldCourse[])).length;
 
-export const getCdlsLength = (): number => getAllCdls().length;
+// export const getCdlsLength = (): number => getAllCdls().length;
 
 export const getFaqs = (): Faq[] => Faqs;
 
