@@ -70,3 +70,11 @@ export interface Website {
     name?: string,
     url?: string
 }
+
+
+export interface Admin {
+    id: number,
+    first_name?: string,
+    last_name?: string,
+    username?: string
+}

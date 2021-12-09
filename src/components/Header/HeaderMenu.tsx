@@ -20,7 +20,6 @@ export enum ItemsKeys {
 const HeaderMenu = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
-    console.log("LOCALE: ", locale)
     const history = useHistory();
     const onRenderCaretDown = (): JSX.Element => { return <Icon iconName="List" />; };
     

@@ -1,12 +1,12 @@
 /**
  * Main file for handling requests.
  * @author Giuseppe Del Campo
+ * @author Manuele Lucchi
  */
 
-/* Models */
+/* Old Models */
 import OldDegree from '../models/Degree';
 import OldCourse from '../models/Course';
-import Admin from '../models/Admin';
 import Service from '../models/Service';
 import Contributor from '../models/Contributor';
 import Faq from '../models/Faq';
@@ -14,7 +14,7 @@ import NetworkMember from '../models/NetworkMember';
 import Rule from '../models/Rule';
 
 /* Updated models */
-import { Department, Degree, VerboseDegree, CourseDegree, Representative } from '../models/Models';
+import { Department, Degree, VerboseDegree, CourseDegree, Representative, Admin } from '../models/Models';
 
 /* Data (this will be replaced by api soon) */
 import data from '../data/Data.json';
@@ -35,6 +35,7 @@ const courses_endpoint = '/courses';
 const representatives_endpoint = '/representatives';
 const typingDegrees_endpoint = '/typing-degrees';
 const searchDegrees_endpoint = '/search-degrees';
+const admins_endpoint = '/admins';
 
 /* Main class to build response */
 class Result<T>
@@ -128,7 +129,12 @@ export async function getStringDegrees(): Promise<Result<string[]>> {
     return getAsync<Degree[]>(`${api_endpoint}${searchDegrees_endpoint}?q=${searchText}`);
 };
 
-
+/**
+ * This function retrieves admins of a certain degree.
+ */
+export async function getDegreeAdmins(degreeSlug: string): Promise<Result<Admin[]>> {
+    return getAsync<Admin[]>(`${api_endpoint}${admins_endpoint}?slug=${degreeSlug}`);
+};
 
 
 
@@ -139,10 +145,6 @@ export const getDegreeInformations = (degreeSlug: string): any[] => {
     return getAllCdls().filter(x => x.id === degreeSlug)[0]?.redirects ?? [];
 };
 
-/* Temporary function to retrieve degree admins. */
-export const getDegreeAdmins = (degreeSlug: string): Admin[] => {
-    return getAllCdls().filter(x => x.id === degreeSlug)[0]?.admins ?? [];
-};
 
 /* Temporary function to retrieve University Links */
 export const getUniversityLinks = (): any[] => {
