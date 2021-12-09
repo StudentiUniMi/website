@@ -23,18 +23,14 @@ const OrganizationView = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
-    //const admins = getAdmins();
     const networkMembers = getNetworkMembers();
-    const whiteText = '#faf9f8';
-
     const icon: IIconProps = { iconName: 'DocumentSearch' };
-
     const imageProperties = { display: 'inline-block', width: '100%' };
 
     return (
         <div className="organization pb-3">
 
-            <div className="pt-5 pb-5" style={{ backgroundColor: theme.palette.themeDarker }}>
+            <div className="pt-5 pb-5" style={{ backgroundColor: theme.palette.themeDarkAlt }}>
                 <Container>
 
                     <Row>
@@ -46,15 +42,15 @@ const OrganizationView = () => {
 
                         <Col lg={8} className="mb-2">
                             <div className="mb-2">
-                                <Text variant="xLargePlus" style={{ color: whiteText }}>{locale?.aboutUs.text1}</Text>
+                                <Text variant="xLargePlus" style={{ color: theme.palette.white }}>{locale?.aboutUs.text1}</Text>
                             </div>
 
                             <div className="mb-2">
-                                <Text variant="large" style={{ color: whiteText }}>{locale?.aboutUs.text2}</Text>
+                                <Text variant="large" style={{ color: theme.palette.white }}>{locale?.aboutUs.text2}</Text>
                             </div>
 
                             <div className="mb-3">
-                                <Text variant="medium" style={{ color: whiteText }}>{locale?.aboutUs.text3}</Text>
+                                <Text variant="medium" style={{ color: theme.palette.white }}>{locale?.aboutUs.text3}</Text>
                             </div>
 
                             <div className="mb-2">
