@@ -182,7 +182,7 @@ const GroupsView = () => {
             //console.log("VerboseDegree result: ", verboseDeg, " I'm setting selectedDegree key .. (" + verboseDeg.pk! + ").");
             setSelectedDegree(verboseDeg.pk! as unknown as string);
 
-            console.log("SETTO NOME TEXT FIELD: ", verboseDeg.name!)
+            //console.log("SETTO NOME TEXT FIELD: ", verboseDeg.name!)
             setDegreeTextSearch(verboseDeg.name!)
 
             setReactHelmetContent({

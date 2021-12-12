@@ -55,6 +55,11 @@
           "icon": "TimelineDelivery"
      },
      {
+          "name": { "it": "Calendario degli appelli", "en": "Exams session calendar"},
+          "link": "https://www.unimi.it/it/studiare/frequentare-un-corso-di-laurea/seguire-il-percorso-di-studi/esami/calendario-degli-appelli",
+          "icon": "DateTime"
+     },
+     {
           "name": { "it": "", "en": "" },
           "link": "",
           "icon": ""
