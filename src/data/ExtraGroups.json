@@ -32,7 +32,7 @@
             "it": "Dedicato a chi cerca o offre libri e appunti per i vari corsi didattici.",
             "en": "Dedicated to those looking for or offering books and notes for the various didactic courses."
         },
-        "image": "materiali.jpg",
+        "image": "materiali.png",
         "gruppo": "https://t.me/joinchat/SyKyebINUEXQ969t"
     },
     {
@@ -85,12 +85,24 @@
     },
     {
         "name": {
-            "it": "Erasmus",
-            "en": "Erasmus"
+            "it": "Sondaggi, progetti e iniziative universitarie",
+            "en": "University surveys, projects and initiatives"
         },
         "description": {
-            "it": "Gruppo dedicato a discussioni riguardo l'erasmus.",
-            "en": "Group dedicated to discussions about Erasmus topics."
+            "it": "Gruppo per mandare sondaggi, progetti o iniziative che riguardano il mondo universitario.",
+            "en": "Group for sending surveys, projects or initiatives concerning the university world."
+        },
+        "image": "sondaggi.png",
+        "gruppo": "https://t.me/+-vPGOKTElAIyNzlk"
+    },
+    {
+        "name": {
+            "it": "Studio ell'estero",
+            "en": "Study abroad "
+        },
+        "description": {
+            "it": "Gruppo dedicato a discussioni sui programmi di studio all'estero.",
+            "en": "Group dedicated to discussions about study abroad."
         },
         "image": "erasmus.jpg",
         "gruppo": "https://t.me/joinchat/3Xp8K8xWnQ9hMDBk"
@@ -121,12 +133,12 @@
     },
     {
         "name": {
-            "it": "Freetalk",
-            "en": "Freetalk"
+            "it": "Off-topic",
+            "en": "Off-topic"
         },
         "description": {
-            "it": "Chat freetalk per parlare di qualsiasi cosa.",
-            "en": "Freetalk chat to discuss about anything."
+            "it": "Chat off-topic per parlare di qualsiasi cosa.",
+            "en": "Off-topic chat to discuss about anything."
         },
         "image": "free_talk.jpg",
         "gruppo": "https://t.me/joinchat/S-D9eT7L3MlAR1c5"
