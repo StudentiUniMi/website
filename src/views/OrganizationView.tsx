@@ -14,7 +14,7 @@ import LocalizationService from "../services/LocalizationService";
 //import { getAdmins } from '../services/Requests';
 
 const developers: any = [
-    { name: "Giuseppe Del Campo", description: { it: "Sviluppatore e designer del sito web", en: 'Website Developer and Designer' }, username: 'Giuseppetm', user_id: 597678134, github: "https://github.com/Giuseppetm", website: "https://giuseppetm.netlify.app/" },
+    { name: "Giuseppe Del Campo", description: { it: "Sviluppatore del sito web", en: 'Website Developer' }, username: 'Giuseppetm', user_id: 597678134, github: "https://github.com/Giuseppetm", website: "https://giuseppetm.netlify.app/" },
     { name: "Manuele Lucchi", description: { it: "Progettista del sito web", en: 'Website Technical Designer' }, username: "Gesoo99", user_id: 99687972, github: "https://github.com/manuelelucchi", website: "https://manuelelucchi.github.io/" },
     { name: "Mirko Faina", description: { it: "Sviluppatore back-end", en: "Back-end developer" }, username: "Mroik", user_id: 0, github: "https://github.com/Mroik", website: "" }
 ];
