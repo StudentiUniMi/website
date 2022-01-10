@@ -144,7 +144,11 @@ const UniversityView = () => {
         if (!didMount.current) initializeRepresentativesViaUrl();
     }, [initializeRepresentativesViaUrl, departments]);
 
-    const departmentOptions: IDropdownOption[] = departments.map(x => ({ key: x.pk, text: x.name ?? "", data: { icon: x.icon, slug: x.slug }, disabled: x.representative_count === 0 }));
+    let departmentOptions: IDropdownOption[] = [];
+    
+    departments.forEach(x => {
+        if (x.representative_count !== 0) departmentOptions.push({ key: x.pk, text: x.name ?? "", data: { icon: x.icon, slug: x.slug }, disabled: x.representative_count === 0 });
+    });
 
     return (
         <div className="university">

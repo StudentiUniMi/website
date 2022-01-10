@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 import { bold, semibold } from '../../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { useCookies } from 'react-cookie';
-import { IIconProps, PrimaryButton, Toggle, TooltipHost, IconButton, SwatchColorPicker, ITooltipHostStyles } from '@fluentui/react';
+import { IIconProps, PrimaryButton, Toggle, TooltipHost, IconButton, SwatchColorPicker, ITooltipHostStyles, TooltipDelay } from '@fluentui/react';
 import { palettes } from '../../services/Palettes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { addDays } from '../../services/Utils';
@@ -90,9 +90,6 @@ const Footer = (props: Props) => {
                                             <Link href="http://www.quickunimi.it/">QuickUnimi</Link>
                                         </li>
                                         <li style={listElement}>
-                                            <Link href="https://quanto-manca.it/">Quanto-manca.it</Link>
-                                        </li>
-                                        <li style={listElement}>
                                             <Link href="https://codeshare.tech">Codeshare.tech</Link>
                                         </li>
                                     </ul>
@@ -168,6 +165,7 @@ const Footer = (props: Props) => {
                                         calloutProps={calloutPropsResetColor}
                                         styles={hostStylesResetColor}
                                         key={i}
+                                        delay={TooltipDelay.zero}
                                     >
                                         <Link href={x.link}>
                                             <span style={wrapIconStyle} className="text-decoration mr-1">
