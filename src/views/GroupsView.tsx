@@ -218,6 +218,23 @@ const GroupsView = () => {
         updateLoadedDegree();
     }, [selectedDegree, updateLoadedDegree]);
 
+    React.useEffect(() => {
+        /* Updating content based on browser commands (push and pop) */
+        return history.listen(async () => {
+            if (history.action === 'PUSH' || history.action === 'POP') {
+                var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
+                var degreeSlug = states.length >= 2 ? states[1].toLowerCase() : '';
+
+                if (degreeSlug === "") {
+                    resetSection();
+                } else {
+                    didMount.current = false;
+                    initializeDegreeByUrl();
+                }
+            }
+        });
+    }, [history, initializeDegreeByUrl, updateCourses])
+
     function resetSection() {
         setLoadedDegree(null);
         setSelectedDegree('');
