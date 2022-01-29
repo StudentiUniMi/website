@@ -59,7 +59,7 @@ const HeaderMenu = () => {
             didMount.current = true;
             let [path, isCorrect] = getPath();
             if (!isCorrect) {
-                history.push('/home/');
+                history.push('/');
                 setSelectedKey(ItemsKeys.home);
             } else {
                 setSelectedKey(path as ItemsKeys);
@@ -70,14 +70,24 @@ const HeaderMenu = () => {
     const handlePivotLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
         if (item!.props.itemKey !== selectedKey) {
             setSelectedKey(item!.props.itemKey! as ItemsKeys);
-            history.push(`/${item!.props.itemKey!}/`);
+
+            if (item!.props.itemKey === "home") {
+                history.push('/');
+            } else {
+                history.push(`/${item!.props.itemKey!}/`);
+            }
         }
     };
 
     const onDropdownValueChange = (event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
         if (item!.key !== selectedKey) {
             setSelectedKey(item!.key! as ItemsKeys);
-            history.push(`/${item!.key! as string}/`);
+
+            if (item!.key! === "home") {
+                history.push('/');
+            } else {
+                history.push(`/${item!.key! as string}/`);
+            }
         }
     };
 
