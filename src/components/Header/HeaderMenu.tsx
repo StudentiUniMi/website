@@ -65,6 +65,14 @@ const HeaderMenu = () => {
                 setSelectedKey(path as ItemsKeys);
             }
         }
+
+        /* Se l'history cambia bisogna settare correttamente il pivot o il dropdown */
+        return history.listen(() => {
+            if (history.action === 'PUSH' || history.action === 'POP') {
+                let [path,] = getPath();
+                setSelectedKey(path as ItemsKeys);
+            }
+        });
     }, [getPath, history]);
 
     const handlePivotLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
