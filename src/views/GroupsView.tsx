@@ -261,7 +261,7 @@ const GroupsView = () => {
                         <Row>
                             <Col lg={3} className="text-center mb-3 mb-lg-0">
                                 <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 350 }}>
-                                    <Image className="mb-2" src={process.env.PUBLIC_URL + '/images/groups/groups.png'} style={{ display: 'inline-block', width: '95%' }} />
+                                    <Image className="mb-2" src={process.env.PUBLIC_URL + '/images/groups/groups.png'} style={{ display: 'inline-block', width: '100%' }} />
                                 </div>
                             </Col>
 

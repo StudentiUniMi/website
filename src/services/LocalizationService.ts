@@ -139,7 +139,7 @@ class LocalizationService {
                         groupsSection: {
                             text1: "Gruppi dei corsi e informazioni aggiuntive",
                             text2: "Trova tutti i gruppi Telegram del tuo corso di laurea",
-                            text3: "Tutto quello che devi fare è scrivere il nome del tuo corso di laurea qui sotto, e potrai accedere a tutti i gruppi telegram dei tuoi corsi didattici e ad altre informazioni utili."
+                            text3: "Tutto quello che devi fare è scrivere il nome del tuo corso di laurea qui sotto, e potrai accedere ai gruppi telegram dei tuoi corsi didattici e ad altre informazioni utili."
                         },
                         extraGroupsSection: {
                             text1: "Gruppi universitari e associazioni studentesche",
