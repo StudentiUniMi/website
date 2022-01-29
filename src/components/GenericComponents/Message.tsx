@@ -4,30 +4,36 @@
  * @author Giuseppe Del Campo
  */
 
+import LocalizationService from "../../services/LocalizationService";
 import { useTheme } from '@fluentui/react-theme-provider';
-import { MessageBarType, MessageBar } from '@fluentui/react';
+import { Text, Image, Icon } from '@fluentui/react';
+import { semibold } from '../../services/Fonts';
+import { Container } from 'react-bootstrap';
 
 interface Props { text: string };
 
 const Message = (props: Props) => {
     var theme = useTheme();
-    const messageBarStyles = { root: { backgroundColor: theme.palette.neutralLighterAlt, color: theme.palette.black } }
+    const locale = LocalizationService.strings();
+    const messageBarStyles = { backgroundColor: theme.palette.neutralLighterAlt, color: theme.palette.black, padding: 15 };
 
     const InfoMessage = () => (
-        <MessageBar
-            messageBarType={MessageBarType.info}
-            isMultiline={false}
-            dismissButtonAriaLabel="Close"
-            styles={messageBarStyles}
-        >
+        <div style={messageBarStyles} className="text-center">
+            <Text variant="medium" styles={semibold}>
+                <Icon iconName="Info" style={{ fontSize: 12, marginRight: 10 }} />
+                {locale?.noDataAvailable}
+            </Text>
+            <div style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+                <Image id="not-found" src={process.env.PUBLIC_URL + '/images/message/not-found.png'} style={{ display: 'inline', width: '60%', marginBottom: 10 }} />
+            </div>
             {props.text}
-        </MessageBar>
+        </div>
     );
 
     return (
-        <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }}>
+        <Container style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 350 }}>
             <InfoMessage />
-        </div>
+        </Container>
     )
 }
 

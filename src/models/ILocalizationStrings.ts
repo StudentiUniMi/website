@@ -10,6 +10,8 @@ interface ILocalizationStrings {
     },
     telegramGroup: string,
     loading: string,
+    noDataAvailable: string,
+    errorOccured: string,
     errorLoadingDepartments: string,
     errorLoadingDegrees: string,
     noRedirectsAvailable: string,
