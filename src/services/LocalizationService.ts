@@ -21,10 +21,12 @@ class LocalizationService {
                     helmet: LocalizationService.getHelmetITAProperties(),
                     loading: "Caricamento in corso..",
                     telegramGroup: 'Gruppo Telegram',
+                    noDataAvailable: 'Non ci sono dati disponibili.',
+                    errorOccured: 'Oops, si è verificato un errore.',
                     errorLoadingDepartments: 'Errore durante il caricamento dei dipartimenti.',
                     errorLoadingDegrees: 'Errore durante il caricamento dei corsi di laurea.',
                     noRedirectsAvailable: 'Non ci sono collegamenti disponibili.',
-                    errorContactAdmin: 'Si è verificato un errore; contatta un amministratore.',
+                    errorContactAdmin: '<Link href="https://studentiunimi.it/organization/">Contatta un amministratore</Link> se il problema persiste.',
                     studentsAssociation: 'Associazione studentesca',
                     headerMenuItems: {
                         home: 'Home',
@@ -137,7 +139,7 @@ class LocalizationService {
                         groupsSection: {
                             text1: "Gruppi dei corsi e informazioni aggiuntive",
                             text2: "Trova tutti i gruppi Telegram del tuo corso di laurea",
-                            text3: "Tutto quello che devi fare è scrivere il nome del tuo corso di laurea qui sotto, e potrai accedere a tutti i gruppi telegram dei tuoi corsi didattici e ad altre informazioni utili."
+                            text3: "Tutto quello che devi fare è scrivere il nome del tuo corso di laurea qui sotto, e potrai accedere ai gruppi telegram dei tuoi corsi didattici e ad altre informazioni utili."
                         },
                         extraGroupsSection: {
                             text1: "Gruppi universitari e associazioni studentesche",
@@ -240,10 +242,12 @@ class LocalizationService {
                     helmet: LocalizationService.getHelmetENGProperties(),
                     loading: "Loading..",
                     telegramGroup: 'Telegram Group',
+                    noDataAvailable: 'No data available.',
+                    errorOccured: 'Oops, something went wrong.',
                     errorLoadingDepartments: 'Error has occured while retrieving departments.',
                     errorLoadingDegrees: 'Error has occured while retrieving degrees.',
                     noRedirectsAvailable: 'There are no redirects available.',
-                    errorContactAdmin: 'An error has occured; contact an administrator.',
+                    errorContactAdmin: '<Link href="https://studentiunimi.it/organization/">Contact an administrator</Link> if the problem persists.',
                     studentsAssociation: 'Students association',
                     headerMenuItems: {
                         home: 'Home',

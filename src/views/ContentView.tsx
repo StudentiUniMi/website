@@ -19,22 +19,6 @@ const ContentView = () => {
 
     return (
         <Switch>
-            <Route path="/home" render={() => wrap(
-                <>
-                    <Helmet>
-                        <meta charSet="utf-8" />
-                        <title>{locale?.helmet.homepage.title}</title>
-                        <meta name="description" content={locale?.helmet.homepage.description} />
-                        <meta name="keywords" content="Network StudentiUniMi, Studenti UniMi, Studenti Unimi, StudentiUniMi, Network statale informatica, Gruppi telegram unimi, Gruppi unimi, Siti web corsi unimi, Faq corsi unimi, Wiki Unimi, Network Studenti Unimi" />
-                        <link rel="canonical" hrefLang={language} href="https://studentiunimi.it/home/" />
-                        <meta property="og:title" content={locale?.helmet.homepage.title} />
-                        <meta property="og:description" content={locale?.helmet.homepage.description} />
-                        <meta property="og:type" content="website" />
-                        <meta property="og:url" content="https://studentiunimi.it/home/" />
-                    </Helmet>
-                    <HomeView/>
-                </>
-            )} />
             <Route path='/courses' render={() => wrap(
                 <>
                     {/* React-helmet is handled in the GroupsView */}
@@ -103,6 +87,22 @@ const ContentView = () => {
                     <meta property="og:url" content="https://studentiunimi.it/organization/" />
                 </Helmet>
                     <OrganizationView/>
+                </>
+            )} />
+            <Route path="/" render={() => wrap(
+                <>
+                    <Helmet>
+                        <meta charSet="utf-8" />
+                        <title>{locale?.helmet.homepage.title}</title>
+                        <meta name="description" content={locale?.helmet.homepage.description} />
+                        <meta name="keywords" content="Network StudentiUniMi, Studenti UniMi, Studenti Unimi, StudentiUniMi, Network statale informatica, Gruppi telegram unimi, Gruppi unimi, Siti web corsi unimi, Faq corsi unimi, Wiki Unimi, Network Studenti Unimi" />
+                        <link rel="canonical" hrefLang={language} href="https://studentiunimi.it/" />
+                        <meta property="og:title" content={locale?.helmet.homepage.title} />
+                        <meta property="og:description" content={locale?.helmet.homepage.description} />
+                        <meta property="og:type" content="website" />
+                        <meta property="og:url" content="https://studentiunimi.it/" />
+                    </Helmet>
+                    <HomeView />
                 </>
             )} />
         </Switch>

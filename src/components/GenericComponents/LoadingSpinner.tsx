@@ -8,7 +8,10 @@ import React from 'react';
 import LocalizationService from "../../services/LocalizationService";
 import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { MessageBarType, MessageBar } from '@fluentui/react';
+import { semibold } from '../../services/Fonts';
+import { Text, Image, Icon, Link } from '@fluentui/react';
+import { Container } from 'react-bootstrap';
+import JsxParser from 'react-jsx-parser';
 
 interface Props { loading: boolean, error: boolean };
 
@@ -27,24 +30,28 @@ const LoadingSpinner = (props: Props) => {
         updateError();
     }, [updateError]);
 
+    const messageBarStyles = { backgroundColor: 'rgb(253, 231, 233)', color: theme.palette.redDark, padding: 20 };
+
     const ErrorExample = (p: IExampleProps) => (
-        <MessageBar
-            messageBarType={MessageBarType.error}
-            isMultiline={false}
-            onDismiss={p.resetChoice}
-            dismissButtonAriaLabel="Close"
-        >
-            {locale?.errorContactAdmin}
-        </MessageBar>
+        <div style={messageBarStyles} className="text-center">
+            <Text variant="medium" styles={semibold} style={{ color: theme.palette.redDark }}>
+                <Icon iconName="ErrorBadge" style={{ fontSize: 12, marginRight: 10 }} />
+                {locale?.errorOccured}
+            </Text>
+            <div style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+                <Image id="not-found" src={process.env.PUBLIC_URL + '/images/message/error.png'} style={{ display: 'inline', width: '35%', marginBottom: 5 }} />
+            </div>
+            <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link, Icon }} jsx={locale?.errorContactAdmin} />
+        </div>
     );
 
     return (
         <>
-            { props.error ? <div style={{ display: showError ? 'block' : 'none', marginLeft: 'auto', marginRight: 'auto', maxWidth: 400 }}><ErrorExample resetChoice={() => setShowError(false)} /></div> :
+            { props.error ? <Container style={{ display: showError ? 'block' : 'none', marginLeft: 'auto', marginRight: 'auto', maxWidth: 400 }}><ErrorExample /></Container> :
                 props.loading ? 
-                <div>
+                <Container>
                     <Spinner label={locale?.loading} ariaLive="assertive" labelPosition="right" size={SpinnerSize.large} theme={theme} />
-                </div> : <></>
+                </Container> : <></>
             }
         </>
     )

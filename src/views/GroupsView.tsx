@@ -218,6 +218,23 @@ const GroupsView = () => {
         updateLoadedDegree();
     }, [selectedDegree, updateLoadedDegree]);
 
+    React.useEffect(() => {
+        /* Updating content based on browser commands (push and pop) */
+        return history.listen(async () => {
+            if (history.action === 'PUSH' || history.action === 'POP') {
+                var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
+                var degreeSlug = states.length >= 2 ? states[1].toLowerCase() : '';
+
+                if (degreeSlug === "") {
+                    resetSection();
+                } else {
+                    didMount.current = false;
+                    initializeDegreeByUrl();
+                }
+            }
+        });
+    }, [history, initializeDegreeByUrl, updateCourses])
+
     function resetSection() {
         setLoadedDegree(null);
         setSelectedDegree('');
@@ -244,7 +261,7 @@ const GroupsView = () => {
                         <Row>
                             <Col lg={3} className="text-center mb-3 mb-lg-0">
                                 <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 350 }}>
-                                    <Image className="mb-2" src={process.env.PUBLIC_URL + '/images/groups/groups.png'} style={{ display: 'inline-block', width: '95%' }} />
+                                    <Image className="mb-2" src={process.env.PUBLIC_URL + '/images/groups/groups.png'} style={{ display: 'inline-block', width: '100%' }} />
                                 </div>
                             </Col>
 
