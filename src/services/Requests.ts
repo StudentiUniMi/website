@@ -58,14 +58,19 @@ class Result<T>
  */
 async function getAsync<T>(path: string) : Promise<Result<T>>
 {
-    const response = await fetch(path);
+    try {
+        const response = await fetch(path);
 
-    if (!response.ok) {
-        return new Result<T>(response.status, undefined, response.statusText);
+        if (!response.ok) {
+            return new Result<T>(response.status, undefined, response.statusText);
+        }
+
+        let res = await response.json() as T;
+        return new Result<T>(200,res);
+    } catch(err) {
+        console.error(err);
+        return new Result<T>(500,undefined);
     }
-
-    let res = await response.json() as T;
-    return new Result<T>(200,res);
 };
 
 /**

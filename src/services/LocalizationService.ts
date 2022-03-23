@@ -37,6 +37,7 @@ class LocalizationService {
                         aboutUs: 'Chi siamo',
                     },
                     settingsPanel: {
+                        joinTelegram: 'Unisciti al canale',
                         settings: 'Impostazioni',
                         changeTheme: 'Modalità scura',
                         darkTheme: 'Accesa',
@@ -258,6 +259,7 @@ class LocalizationService {
                         aboutUs: 'About Us',
                     },
                     settingsPanel: {
+                        joinTelegram: 'Join the channel',
                         settings: 'Settings',
                         changeTheme: 'Dark Mode',
                         darkTheme: 'On',
