@@ -47,9 +47,9 @@ const Footer = (props: Props) => {
         props.changeLanguage(lang);
     };
     
-    const wrapIconStyle = { backgroundColor: theme.palette.themeSecondary, borderRadius: '50%', minWidth: 30, minHeight: 30, display: 'inline-block', textAlign: 'center', justifyContent: 'center', verticalAlign: 'middle' } as React.CSSProperties;
+    const wrapIconStyle = { backgroundColor: theme.palette.themeSecondary, borderRadius: '35%', minWidth: 30, minHeight: 30, display: 'inline-block', textAlign: 'center', justifyContent: 'center', verticalAlign: 'middle' } as React.CSSProperties;
     const iconStyle = { color: theme.palette.white, fontSize: '17px', marginTop: 6 };
-
+    
     const buttonStyle = { maxWidth: '270px', boxShadow: theme.effects.elevation8 };
     const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
 

@@ -26,6 +26,7 @@ interface ILocalizationStrings {
         university: string
     },
     settingsPanel: {
+        joinTelegram: string,
         settings: string,
         changeTheme: string,
         darkTheme: string,

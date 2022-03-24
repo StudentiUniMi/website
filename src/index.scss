@@ -116,8 +116,8 @@ button:focus,
 
 @media only screen and (max-width: 586px) {
   header .headerRow {
-    margin-left: .5rem !important;
-    margin-right: .25rem !important;
+    margin-left: 15px !important;
+    margin-right: 15px !important;
     margin-bottom: 0 !important;
   }
 
@@ -126,7 +126,12 @@ button:focus,
   }
 
   .header-menu .dropdown {
-    display: block;
+  }
+
+  .header-col {
+    justify-content: right;
+    display: flex;
+    align-items: center;
   }
 
   .header-menu .ms-Dropdown-title {
@@ -174,6 +179,12 @@ button:focus,
 
 
 /* Section adjustments */
+@media only screen and (max-width: 350px) {
+  .ms-Panel-headerText {
+    font-size: 21px !important;
+  }
+}
+
 @media only screen and (max-width: 575px) {
   .organization .col-12, .contributors .col-12 {
     max-width: 350px;
@@ -373,6 +384,20 @@ header .ms-Image-image {
   margin-bottom: 9px !important;
 }
 
+.header-panel {
+  .ms-Panel-main {
+    width: 80%;
+  }
+
+  /*
+  .ms-Panel-content {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+  }
+  */
+}
+
 /* Fix searchBox visualization for small height displays */
 @media only screen and (max-height: 610px) {
   #SuggestionContainer .ms-Callout-main {
@@ -396,3 +421,5 @@ header .ms-Image-image {
 footer .ms-Label {
   padding-top: 0px;
 }
+
+

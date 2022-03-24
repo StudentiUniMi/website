@@ -15,12 +15,12 @@ const Header = () => {
     const titleStyle: ITextStyles = { root: { fontSize: FontSizes.size20, fontWeight: FontWeights.semibold, color: theme.palette.themePrimary } };
     
     return (
-        <header className="mt-2" style={{ borderBottom: '1px solid', borderColor: theme.palette.neutralLight, marginBottom: -1 }}>
+        <header style={{ borderBottom: '1px solid', borderColor: theme.palette.neutralLight, marginBottom: -1 }}>
 
             <div>
                 <Row className="headerRow">
-                    <Col style={{ maxWidth: 250, paddingLeft: 0, paddingRight: 0 }}>
-                        <div style={{ width: 250 }}>
+                    <Col style={{ maxWidth: 250, paddingLeft: 0, paddingRight: 0, display: 'flex', alignItems: 'center' }}>
+                        <div style={{ width: 250, marginTop: 5 }}>
                             <Link href="http://studentiunimi.it/">
                                 <Image id="logo"
                                     src={process.env.PUBLIC_URL + '/logo/' + logoFileName}
@@ -34,7 +34,7 @@ const Header = () => {
                         </div>
                     </Col>
 
-                    <Col style={{ paddingLeft: 0, paddingRight: 0, marginTop: -6, width: "55%" }}>
+                    <Col style={{ paddingLeft: 0, paddingRight: 0, width: "55%" }} className="header-col">
                         <HeaderMenu/>
                     </Col>
 

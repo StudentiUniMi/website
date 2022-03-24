@@ -1,12 +1,16 @@
 import React from "react";
 import LocalizationService from "../../services/LocalizationService";
 import { FontSizes } from '@fluentui/theme';
-import { Dropdown, IDropdownOption, IDropdownStyles } from 'office-ui-fabric-react/lib/Dropdown';
+import { IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
+import { Panel } from '@fluentui/react/lib/Panel';
+import { ITooltipHostStyles, Link, PrimaryButton, Text, TooltipDelay, TooltipHost } from "@fluentui/react";
 import { useHistory } from "react-router-dom";
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Pivot, PivotItem, IPivotStyles } from '@fluentui/react';
 import { withCookies } from "react-cookie";
+import { useBoolean } from "@fluentui/react-hooks";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export enum ItemsKeys {
     home = "home",
@@ -20,8 +24,15 @@ export enum ItemsKeys {
 const HeaderMenu = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
+    var language: string | undefined = LocalizationService.getLanguage();
     const history = useHistory();
-    const onRenderCaretDown = (): JSX.Element => { return <Icon iconName="List" />; };
+    const buttonStyle = { maxWidth: '270px', boxShadow: theme.effects.elevation8 };
+    const calloutPropsResetColor = { gapSpace: 10 };
+    const hostStylesResetColor: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
+    const wrapIconStyle = { backgroundColor: theme.palette.themeSecondary, borderRadius: '35%', marginBottom: 4, minWidth: 40, minHeight: 40, display: 'inline-block', textAlign: 'center', justifyContent: 'center', verticalAlign: 'middle' } as React.CSSProperties;
+    const iconStyle = { color: theme.palette.white, fontSize: '20px', marginTop: 10 };
+
+    const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
     
     const texts: Map<ItemsKeys, string | undefined> = new Map<ItemsKeys, string | undefined>([
         [ItemsKeys.home, locale?.headerMenuItems.home],
@@ -31,13 +42,20 @@ const HeaderMenu = () => {
         [ItemsKeys.representatives, locale?.headerMenuItems.university],
         [ItemsKeys.organization, locale?.headerMenuItems.aboutUs]
     ]);
-    
-    const dropdownStyles: Partial<IDropdownStyles> = {
-        dropdown: { color: theme.palette.neutralPrimary, border: 'none', borderStyle: 'none', height: '44px', alignItems: 'center', fontSize: FontSizes.size16 },
-        dropdownItems: { color: theme.palette.neutralPrimary, backgroundColor: theme.palette.white, textAlign: 'center', alignItems: 'center' },
-        caretDown: { fontSize: '15px' },
-        caretDownWrapper: { right: '25px', top: '10px' }
-    };
+
+    const footerIcons: any = [
+        { name: { it: 'Canale Telegram', en: 'Telegram Channel' }, link: 'https://t.me/studenti_unimi', iconName: 'telegram-plane', type: 'brand' },
+        { name: { it: 'Gruppo Principale', en: 'Main Group' }, link: 'https://t.me/unimichat', iconName: 'comment-dots', type: 'normal' },
+        { name: { it: 'Canale Discord', en: 'Discord Channel' }, link: 'https://discord.gg/SwPzAkv4A4', iconName: 'discord', type: 'brand' },
+        { name: { it: 'Organizzazione GitHub', en: 'GitHub Organization' }, link: 'https://github.com/StudentiUnimi', iconName: 'github', type: 'brand' },
+        { name: { it: 'Pagina Facebook', en: 'Facebook Page' }, link: 'https://www.facebook.com/networkstudentiunimi', iconName: 'facebook', type: 'brand' },
+        { name: { it: 'Pagina Instagram', en: 'Instagram Page' }, link: 'https://www.instagram.com/studentiunimi.it/', iconName: 'instagram', type: 'brand' },
+    ];
+
+    const mobileHeaderButton = {
+        color: theme.palette.neutralPrimary,
+        fontSize: FontSizes.size20
+    }
 
     const pivotStyles: Partial<IPivotStyles> = {
         root: { color: theme.palette.neutralPrimary, fontSize: FontSizes.size24 },
@@ -87,7 +105,7 @@ const HeaderMenu = () => {
         }
     };
 
-    const onDropdownValueChange = (event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
+    const handleDropdownValueChange = (item?: IDropdownOption): void => {
         if (item!.key !== selectedKey) {
             setSelectedKey(item!.key! as ItemsKeys);
 
@@ -97,6 +115,8 @@ const HeaderMenu = () => {
                 history.push(`/${item!.key! as string}/`);
             }
         }
+
+        dismissPanel();
     };
 
     const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }));
@@ -118,14 +138,59 @@ const HeaderMenu = () => {
             </div>
 
             <div className="dropdown">
-                <Dropdown
-                    selectedKey={selectedKey}
-                    onChange={onDropdownValueChange}
-                    options={dropdownOptions}
-                    styles={dropdownStyles}
-                    onRenderCaretDown={onRenderCaretDown}
+                <Icon iconName="ListMirrored" onClick={() => openPanel()} style={mobileHeaderButton} theme={theme} />
+
+                <Panel
+                    headerText="Network StudentiUniMi"
+                    className="header-panel"
+                    isLightDismiss={true}
+                    isOpen={isOpen}
+                    onDismiss={dismissPanel}
+                    closeButtonAriaLabel="Close"
                     theme={theme}
-                />
+                >
+                    <div className="mt-4">
+                        <div className="mb-4"><Text variant="large" color={theme.palette.neutralQuaternaryAlt}>Menu</Text></div>
+
+                        {dropdownOptions.map((x, i) => 
+                            <div 
+                                className="menu-item mb-2 pr-4 pl-4 pt-1 pb-2" 
+                                onClick={() => handleDropdownValueChange(x)}
+                                style={{ backgroundColor: (x.key === selectedKey) || (selectedKey as string === "" && x.key === "home") ? theme.palette.neutralLighter : 'none', borderRadius: 25 }}
+                            >
+                                <Text variant="xLarge">{x.text}</Text>
+                            </div>
+                        )}
+
+                        <div className="mt-5 mb-3"><Text variant="large" color={theme.palette.neutralQuaternaryAlt}>{locale?.homepage.section3.part2.title}</Text></div>
+                        <PrimaryButton text={locale?.footer[0].buttonText} href="https://t.me/unimichat" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
+
+                        <div className="mt-5 mb-3"><Text variant="large" color={theme.palette.neutralQuaternaryAlt}>{locale?.homepage.section3.part1.title}</Text></div>
+                        <PrimaryButton text={locale?.settingsPanel.joinTelegram} href="https://t.me/studenti_unimi" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
+
+                        <div className="mt-5 mb-3"><Text variant="large" color={theme.palette.neutralQuaternaryAlt}>{locale?.groups.availableRedirects}</Text></div>
+                        {footerIcons.map( (x: any, i: number) => { 
+                                return (
+                                    <TooltipHost
+                                        content={x.name[language!]}
+                                        calloutProps={calloutPropsResetColor}
+                                        styles={hostStylesResetColor}
+                                        key={i}
+                                        delay={TooltipDelay.zero}
+                                    >
+                                        <Link href={x.link}>
+                                            <span style={wrapIconStyle} className="text-decoration mr-1">
+                                                { x.type === 'brand' ?
+                                                <FontAwesomeIcon icon={['fab', x.iconName]} style={iconStyle} />
+                                                :
+                                                <FontAwesomeIcon icon={x.iconName} style={iconStyle} /> }
+                                            </span>
+                                        </Link>
+                                    </TooltipHost>
+                                )}
+                            )}
+                    </div>
+                </Panel>
             </div>
         </div>
     );
