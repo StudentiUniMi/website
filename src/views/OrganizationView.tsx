@@ -11,7 +11,6 @@ import { semibold } from '../services/Fonts';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
-//import { getAdmins } from '../services/Requests';
 
 const developers: any = [
     { name: "Giuseppe Del Campo", description: { it: "Sviluppatore del sito web", en: 'Website Developer' }, username: 'Giuseppetm', user_id: 597678134, github: "https://github.com/Giuseppetm", website: "https://giuseppetm.netlify.app/" },
@@ -54,7 +53,7 @@ const OrganizationView = () => {
                             </div>
 
                             <div className="mb-2">
-                                <CompoundButton primary theme={theme} secondaryText={locale?.aboutUs.button.text2} href="https://github.com/StudentiUniMi/docs/blob/main/statuto.md" style={{ textDecoration: 'none', boxShadow: theme.effects.elevation8 }} iconProps={icon}>
+                                <CompoundButton primary theme={theme} secondaryText={locale?.aboutUs.button.text2} href="https://github.com/StudentiUniMi/docs/raw/main/statuto.pdf" style={{ textDecoration: 'none', boxShadow: theme.effects.elevation8 }} iconProps={icon}>
                                     {locale?.aboutUs.button.text1}
                                 </CompoundButton>
                             </div>
