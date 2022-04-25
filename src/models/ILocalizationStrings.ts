@@ -8,9 +8,12 @@ interface ILocalizationStrings {
         organization: { title: string, description: string },
         degreeLoaded: { title1: string, title2: string, description1: string, description2: string }
     },
+    serverError: string,
     telegramGroup: string,
     loading: string,
+    additionalInformations: string,
     noDataAvailable: string,
+    errorDataLoading: string,
     errorOccured: string,
     errorLoadingDepartments: string,
     errorLoadingDegrees: string,

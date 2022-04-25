@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { getCourses, getVerboseDegreeBySlug, getVerboseDegreeByID, getDegreesForSearchBox } from '../services/Requests';
 import { Separator } from '@fluentui/react/lib/Separator';
+import { Dialog, DialogType, DialogFooter } from '@fluentui/react/lib/Dialog';
 import { semibold } from '../services/Fonts';
 import { VerboseDegree, CourseDegree } from "../models/Models";
 import GroupList from "../components/Groups/GroupList";
@@ -15,10 +16,12 @@ import AdminsList from '../components/Groups/AdminsList';
 import AdditionalGroupsView from '../components/Groups/AdditionalGroups';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import JsxParser from "react-jsx-parser";
 import { Autocomplete } from '../components/Groups/Autocomplete';
 import { ISuggestionItem } from '../components/Groups/Autocomplete_types';
 import { Helmet } from 'react-helmet-async';
-import { IconButton, IIconProps, ITooltipHostStyles, TooltipHost } from '@fluentui/react';
+import { IconButton, IIconProps, ITooltipHostStyles, Link, PrimaryButton, TooltipHost } from '@fluentui/react';
+import { useBoolean } from "@fluentui/react-hooks";
 
 initializeIcons();
 
@@ -53,6 +56,7 @@ const GroupsView = () => {
     const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
 
     /* States */
+    let [hideApiErrorDialog, { toggle: toggleApiErrorDialog }] = useBoolean(true);
     let [degreeTextSearch, setDegreeTextSearch] = React.useState(''); // Testo nel campo di ricerca
     let [loadedDegree, setLoadedDegree] = React.useState<VerboseDegree | null>(null); // Degree da passare ai vari componenti (DegreeInformations e AdminsList)
     let [selectedDegree, setSelectedDegree] = React.useState<string>(''); // PK del Degree
@@ -68,7 +72,7 @@ const GroupsView = () => {
     );
 
     const [loadingCourses, setLoadingCourses] = React.useState<boolean>(false);
-    //const [errorLoadingDegrees, setErrorLoadingDegrees] = React.useState<boolean>(false);
+    const [errorLoadingDegrees, setErrorLoadingDegrees] = React.useState<boolean>(false);
     const [errorLoadingCourses, setErrorLoadingCourses] = React.useState<boolean>(false);
 
     /* Handlers */
@@ -88,25 +92,25 @@ const GroupsView = () => {
 
     /* Degrees for the SearchBox */
     const updateDegreesForSearchBox = React.useCallback(async (searchBoxText: string) => {
-        //console.log("Stai cercando: ", searchBoxText)
         setDegreeTextSearch(searchBoxText)
         if (searchBoxText === undefined || searchBoxText === "") return;
         let degreesResult = await getDegreesForSearchBox(searchBoxText);
 
         if (degreesResult.status !== 200) {
+            setErrorLoadingDegrees(true);
+            toggleApiErrorDialog();
             console.error("error on degrees result by searchbox text");
             return;
         }
 
         let tempSearchData : ISuggestionItem[] = [];
-        //console.log("degrees result searchbox: ", degreesResult.value ?? []);
 
         (degreesResult.value ?? []).map(x => {
             return tempSearchData.push({degree: x, key: x.pk, displayValue: x.name!, searchValue: x.name!});
         });
 
         setSearchData(tempSearchData ?? []);
-    }, []);
+    }, [toggleApiErrorDialog]);
 
     /* Courses callBack */
     const updateCourses = React.useCallback(async () => {
@@ -121,8 +125,6 @@ const GroupsView = () => {
             return;
         }
         
-        //console.log("Courses result: ", coursesResult.value ?? []);
-        //console.log("Gruppo principale da aggiungere: ", loadedDegree, loadedDegree?.group)
         if (loadedDegree !== undefined && loadedDegree?.group?.invite_link !== '' && loadedDegree?.group?.invite_link !== null && loadedDegree?.group?.invite_link !== undefined) {
             let mainDegreeGroup: CourseDegree = {
                 "course": {
@@ -160,11 +162,8 @@ const GroupsView = () => {
     const initializeDegreeByUrl = React.useCallback(async () => {
         if (!didMount.current) {
             didMount.current = true;
-            //console.log("MOUNTING")
             var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
             var degreeSlug = states.length >= 2 ? states[1].toLowerCase() : '';
-            
-            //console.log("Degree slug: ", degreeSlug)
             
             if (degreeSlug === '') {
                 return;
@@ -173,16 +172,13 @@ const GroupsView = () => {
             let verboseDegreeResult = await getVerboseDegreeBySlug(degreeSlug);
             
             if (verboseDegreeResult.status !== 200) {
-                // Do we need to show an apposite error? Probably not
                 return;
             }
 
             const verboseDeg = verboseDegreeResult.value ?? undefined;
             if (verboseDeg === undefined || verboseDeg === null) return;
-            //console.log("VerboseDegree result: ", verboseDeg, " I'm setting selectedDegree key .. (" + verboseDeg.pk! + ").");
-            setSelectedDegree(verboseDeg.pk! as unknown as string);
 
-            //console.log("SETTO NOME TEXT FIELD: ", verboseDeg.name!)
+            setSelectedDegree(verboseDeg.pk! as unknown as string);
             setDegreeTextSearch(verboseDeg.name!)
 
             setReactHelmetContent({
@@ -192,7 +188,7 @@ const GroupsView = () => {
                 hrefLang: language!
             });
         }
-    }, [history.location.pathname, locale?.helmet.degreeLoaded.description1, locale?.helmet.degreeLoaded.description2, locale?.helmet.degreeLoaded.title1, locale?.helmet.degreeLoaded.title2, language]);
+    }, [history.location.pathname, locale?.helmet.degreeLoaded.title1, locale?.helmet.degreeLoaded.title2, locale?.helmet.degreeLoaded.description1, locale?.helmet.degreeLoaded.description2, language]);
 
     const updateLoadedDegree = React.useCallback(async () => {
         if (selectedDegree === null || selectedDegree === undefined || selectedDegree === "") return;
@@ -201,7 +197,6 @@ const GroupsView = () => {
 
         const degree = degreeResult.value ?? undefined;
         if (degree === undefined || degree === null) return;
-        //console.log("Degree loaded: ", degree);
 
         setLoadedDegree(degree);
     }, [selectedDegree]);
@@ -239,6 +234,12 @@ const GroupsView = () => {
         setLoadedDegree(null);
         setSelectedDegree('');
         setDegreeTextSearch('');
+    };
+
+    const modelProps = { isBlocking: false };
+    const dialogContentProps = {
+        type: DialogType.largeHeader,
+        title: locale?.serverError
     };
 
     return (
@@ -298,6 +299,10 @@ const GroupsView = () => {
                                         value={degreeTextSearch}
                                     />
                                 </div>
+
+                                <div className="mt-2" style={{ display: errorLoadingDegrees ? 'block' : 'none' }}>
+                                    <Text variant="medium" styles={semibold} style={{ color: theme.palette.red }}>{locale?.errorDataLoading}</Text>
+                                </div>
                             </Col>
                         </Row>
 
@@ -340,6 +345,30 @@ const GroupsView = () => {
 
                     <AdditionalGroupsView />
                 </Container>
+
+                {/* APIs Error dialog */}
+                <Dialog
+                    hidden={hideApiErrorDialog}
+                    onDismiss={toggleApiErrorDialog}
+                    dialogContentProps={dialogContentProps}
+                    modalProps={modelProps}
+                >
+                    <div className="mb-3">
+                        {locale?.errorDataLoading}
+                    </div>
+
+                    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 5 }}>
+                        <Image src={process.env.PUBLIC_URL + '/images/message/error.png'} style={{ width: 200 }} />
+                    </div>
+
+                    <div>
+                        <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.additionalInformations} />
+                    </div>
+
+                    <DialogFooter>
+                        <PrimaryButton onClick={toggleApiErrorDialog} text="Ok" />
+                    </DialogFooter>
+                </Dialog>
             </div>
         </>
     );
