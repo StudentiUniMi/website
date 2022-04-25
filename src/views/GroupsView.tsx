@@ -297,6 +297,7 @@ const GroupsView = () => {
                                         searchCallback={searchTextHandler}
                                         changeCallback={(text) => updateDegreesForSearchBox(text)}
                                         value={degreeTextSearch}
+                                        disabled={errorLoadingDegrees}
                                     />
                                 </div>
 

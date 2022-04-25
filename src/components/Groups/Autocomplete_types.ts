@@ -7,6 +7,7 @@ export interface IAutocompleteProps {
   searchCallback: (item: string) => void;
   changeCallback: (value: string) => void;
   value: string;
+  disabled: boolean;
 };
 
 export interface IAutocompleteState {
