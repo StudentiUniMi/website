@@ -82,6 +82,7 @@ export class Autocomplete extends React.Component<ISearchSuggestionsProps, IAuto
             this.onChange(newSearchText!);
           }}
           value={this.props.value}
+          disabled={this.props.disabled}
         />
         {this.renderSuggestions()}
       </div>
