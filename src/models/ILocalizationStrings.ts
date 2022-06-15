@@ -94,6 +94,10 @@ interface ILocalizationStrings {
                 text: string,
                 buttonText: string
             },
+            col3: {
+                text: string,
+                buttonText: string
+            },
         },
         adminsRepresentativesSection: {
             header: string,
