@@ -105,6 +105,10 @@ class LocalizationService {
                                 text: 'Paste è un servizio pensato per i programmatori, che permette di condividere codice in maniera semplice e sicura.',
                                 buttonText: 'Prova Paste'
                             },
+                            col3: {
+                                text: 'Overleaf è un editor LaTeX collaborativo basato su cloud utilizzato per scrivere, modificare e pubblicare documenti scientifici.',
+                                buttonText: 'Prova Overleaf'
+                            },
                         },
                         adminsRepresentativesSection: {
                             header: 'Cerchi un amministratore, o magari un rappresentante?',
@@ -329,6 +333,10 @@ class LocalizationService {
                             col2: {
                                 text: 'Paste is a service designed for programmers, which allows you to share code in a simple and secure way.',
                                 buttonText: 'Try Paste'
+                            },
+                            col3: {
+                                text: 'Overleaf is a cloud-based collaborative LaTeX editor used for writing, editing and publishing scientific papers.',
+                                buttonText: 'Try Overleaf'
                             },
                         },
                         adminsRepresentativesSection: {

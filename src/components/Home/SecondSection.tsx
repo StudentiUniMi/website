@@ -19,7 +19,7 @@ const SecondSection = () => {
     const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
 
     const iconStyle = { backgroundColor: theme.palette.themePrimary, color:theme.palette.white, fontSize: '28px', padding: '1px 7px 1px 7px', borderRadius: 3, minWidth: 10 };
-    const telegramIconStyle = { backgroundColor: theme.palette.themePrimary, color: theme.palette.white, fontSize: '34px', padding: '1px 7px 1px 7px', borderRadius: 3, minWidth: 10 }
+    const telegramIconStyle = { backgroundColor: theme.palette.themePrimary, color: theme.palette.white, fontSize: '34px', padding: '1px 7px 1px 7px', borderRadius: 3, minWidth: 10 };
 
     return (
         <div className="pb-5 pt-5" style={{ backgroundColor: theme.palette.neutralLighterAlt }}>
