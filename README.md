@@ -12,6 +12,79 @@
 
 ![preview](https://user-images.githubusercontent.com/52317197/169861477-0b81f4ae-8c49-4a0b-8e23-a75bb9107ae6.png)
 
+# Features ✨
+## Dark Theme 🌚
+What world would it be without a dark mode?
+
+![dark theme](https://user-images.githubusercontent.com/52317197/177864085-5764fc13-9657-45f3-bba5-48bd9edce863.png)
+
+## Localization 🌍
+Localization is crucial for a website that can be used by international students; we make it available without further page loads.
+
+![localization](https://user-images.githubusercontent.com/52317197/177864684-6def6e5e-2fda-46e2-9435-2e5801db024f.png)
+
+## Color Themes 🍭
+Infinite possibilities for multi-color palette usage.
+
+![palette](https://user-images.githubusercontent.com/52317197/177862579-77602480-a180-4ffd-bc8a-6f9df14f337a.png)
+
+## [APIs Usage Service](https://github.com/StudentiUniMi/website/blob/master/src/services/Requests.ts) 🐝
+Simple service to create requests and handle APIs responses.
+
+```typescript
+/**
+ * Class to build response
+ */
+class Result<T>
+{
+    public status:number;
+    public value?:T;
+    public message:string;
+
+    constructor(status: number, value?:T, message:string = "")
+    {
+        this.status = status;
+        this.value = value;
+        this.message = message;
+    }
+};
+```
+
+```typescript
+/**
+ * Main function to retrieve data from endpoints.
+ * @param {string} path Path of the resource
+ */
+async function getAsync<T>(path: string) : Promise<Result<T>>
+{
+    try {
+        const response = await fetch(path);
+
+        if (!response.ok) {
+            return new Result<T>(response.status, undefined, response.statusText);
+        }
+
+        let res = await response.json() as T;
+        return new Result<T>(200,res);
+    } catch(err) {
+        console.error(err);
+        return new Result<T>(500,undefined);
+    }
+};
+```
+
+Example of academic courses retrieve:
+
+```typescript
+/**
+ * This function retrieves the courses of a specific degree.
+ * @param {string} degreeKey
+ */
+export async function getCourses(degreeKey: string): Promise<Result<CourseDegree[]>> {
+    return getAsync<CourseDegree[]>(`${api_endpoint}${courses_endpoint}?deg_id=${degreeKey}`);
+};
+```
+
 ## Main links of [StudentiUnimi Network](https://github.com/StudentiUnimi)
 - 🛫 [Telegram channel](https://t.me/studenti_unimi) (You can find everything here);
 - 📝 [Groups](https://studentiunimi.it/courses/) (You can find all our groups here);
