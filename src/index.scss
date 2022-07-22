@@ -423,4 +423,13 @@ footer .ms-Label {
   padding-top: 0px;
 }
 
+/* Fix image being cut */
+.home .ms-Image {
+  overflow: visible;
+}
 
+@media only screen and (max-width: 350px) {
+  .first-section img {
+    width: 120px;
+  }
+}

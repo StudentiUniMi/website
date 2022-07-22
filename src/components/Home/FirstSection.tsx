@@ -4,64 +4,100 @@ import { Container } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useTheme } from '@fluentui/react-theme-provider';
-import LocalizationService from "../../services/LocalizationService";
+//import LocalizationService from "../../services/LocalizationService";
 import { Image } from 'office-ui-fabric-react/lib/Image';
 import Chip from '@material-ui/core/Chip';
 
 const FirstSection = () => {
     var theme = useTheme();
-    const locale = LocalizationService.strings();
-    const buttonStyle = { maxWidth: '230px', boxShadow: theme.effects.elevation8 };
+    //const locale = LocalizationService.strings();
+    const buttonStyle = { maxWidth: '120px', boxShadow: theme.effects.elevation8 };
     const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
-    const cardStyle = { backgroundColor: theme.palette.neutralLighterAlt, padding: '20px 30px', borderRadius: '10px', overflow: 'hidden' };
-    const cardImageStyle = { maxWidth: '100%', height: 150 };
+    const cardStyle = { backgroundColor: theme.palette.neutralLighterAlt, padding: '20px', borderRadius: '10px', overflow: 'hidden', minHeight: 200 };
+    const cardImageStyle = { maxWidth: 165, minWidth: 120 };
 
     return (
-        <div className="pb-5 pt-5">
+        <div className="pb-5 pt-5 first-section">
             <Container>
 
                 <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold}>Ecco cosa mettiamo a disposizione</Text></div>
 
                 <Row className="justify-content-around">
                     
-                    <Col md={4} sm={12} className="mb-4 mb-md-0 text-right">
+                    <Col xl={4} lg={6} md={6} sm={12} className="mb-4 mb-xl-0">
                         <div style={cardStyle}>
-                            <div className="d-flex flex-row gap-1">
+                            <Text styles={semibold}>
+                                <Chip label="Gruppi per i corsi di laurea" style={{ top: -9, left: 6, position: 'absolute', backgroundColor: theme.palette.neutralLight, color: theme.palette.black }} />
+                            </Text>
+
+                            <div className="d-flex flex-row mt-2">
                                 <Image src={process.env.PUBLIC_URL + '/images/home/c1.png'} style={cardImageStyle} />
 
-                                <div className="d-flex flex-column justify-content-between">
-                                    <Text styles={semibold} variant="medium" className="pl-5">Gruppi per i corsi di laurea</Text>
+                                <div className="d-flex flex-column justify-content-between text-right align-items-end">
 
-                                    <Text styles={semibold}>
-                                        <Chip label="Oltre 300" style={{ color: theme.palette.white, backgroundColor: theme.palette.themePrimary }} />
-                                    </Text>
+                                    <Text variant="medium">Più di 300 gruppi dedicati agli specifici corsi di laurea UniMi!</Text>
+
+                                    <PrimaryButton
+                                        text={"Raggiungi"}
+                                        style={buttonStyle}
+                                        iconProps={buttonIconProps}
+                                        theme={theme}
+                                        href="https://studentiunimi.it/courses/"
+                                        className="text-decoration-none"
+                                    />
                                 </div>
                             </div>
                         </div>
                     </Col>
 
-                    <Col md={4} sm={12} className="mb-4 mb-md-0 text-right">
+                    <Col xl={4} lg={6} md={6} sm={12} className="mb-4 mb-xl-0">
                         <div style={cardStyle}>
-                            <div className="d-flex flex-row gap-1">
+                            <Text styles={semibold}>
+                                <Chip label="Gruppi degli insegnamenti" style={{ top: -9, left: 6, position: 'absolute', backgroundColor: theme.palette.neutralLight, color: theme.palette.black }} />
+                            </Text>
+
+                            <div className="d-flex flex-row mt-2">
                                 <Image src={process.env.PUBLIC_URL + '/images/home/c2.png'} style={cardImageStyle} />
 
-                                <div className="d-flex flex-column justify-content-between">
-                                    <Text styles={semibold} variant="medium">Gruppi per i corsi didattici</Text>
+                                <div className="d-flex flex-column justify-content-between text-right align-items-end">
 
-                                    <Text styles={semibold}>
-                                        <Chip label="Oltre 2000" style={{ color: theme.palette.white, backgroundColor: theme.palette.themePrimary }} />
-                                    </Text>
+                                    <Text variant="medium">Oltre 2000 gruppi sui singoli corsi didattici del tuo corso di laurea!</Text>
+
+                                    <PrimaryButton
+                                        text={"Raggiungi"}
+                                        style={buttonStyle}
+                                        iconProps={buttonIconProps}
+                                        theme={theme}
+                                        href="https://studentiunimi.it/courses/"
+                                        className="text-decoration-none"
+                                    />
                                 </div>
                             </div>
                         </div>
                     </Col>
 
-                    <Col md={4} sm={12} className="mb-4 mb-md-0 text-right">
+                    <Col xl={4} lg={6} md={6} sm={12}>
                         <div style={cardStyle}>
-                            <div className="d-flex flex-row gap-1">
+                            <Text styles={semibold}>
+                                <Chip label="Servizi telematici" style={{ top: -9, left: 6, position: 'absolute', backgroundColor: theme.palette.neutralLight, color: theme.palette.black }} />
+                            </Text>
+
+                            <div className="d-flex flex-row mt-2">
                                 <Image src={process.env.PUBLIC_URL + '/images/home/c3.png'} style={cardImageStyle} />
 
-                                <Text styles={semibold} variant="medium">Servizi telematici</Text>
+                                <div className="d-flex flex-column justify-content-between text-right align-items-end" style={{ gap: 20 }}>
+
+                                    <Text variant="medium">Servizi di ogni tipo, per aiutarti a prendere appunti, scrivere la tesi e molto altro.</Text>
+
+                                    <PrimaryButton
+                                        text={"Scopri"}
+                                        style={buttonStyle}
+                                        iconProps={buttonIconProps}
+                                        theme={theme}
+                                        href="https://studentiunimi.it/services/"
+                                        className="text-decoration-none"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </Col>
