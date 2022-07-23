@@ -125,9 +125,6 @@ button:focus,
     display: none;
   }
 
-  .header-menu .dropdown {
-  }
-
   .header-col {
     justify-content: right;
     display: flex;
@@ -432,4 +429,13 @@ footer .ms-Label {
   .first-section img {
     width: 120px;
   }
+}
+
+/* Some services adjustments */
+.services .ms-Card {
+  align-items: stretch !important;
+}
+
+.services .ms-DocumentCardPreview, .services .ms-DocumentCardPreview-iconContainer {
+  min-height: 100%;
 }

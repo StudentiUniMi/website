@@ -4,7 +4,5 @@ export default interface Service
     name?: any
     link?: string
     icon?: string
-    color?: string
-    type?: string
     description?: any
 }

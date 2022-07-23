@@ -79,14 +79,14 @@ const GroupsView = () => {
     const entitySelectHandler = (item: ISuggestionItem): void => { // Questo viene triggerato quando selezioni qualcosa dal menù
         setDegreeTextSearch(item.displayValue);
         setSelectedDegree(item.key as unknown as string);
-        history.push(`/courses/${item.degree?.slug}`);
+        history.push(`/courses/${item.degree?.slug}/`);
     };
     
     const searchTextHandler = (): void => { // Triggerato quando premi per la ricerca (si è deciso di selezionare il primo risultato)
         if (searchData.length === 0) return;
         setDegreeTextSearch(searchData[0]?.displayValue);
         setSelectedDegree(searchData[0]?.key as unknown as string);
-        history.push(`/courses/${searchData[0]?.degree?.slug}`);
+        history.push(`/courses/${searchData[0]?.degree?.slug}/`);
     };
 
 

@@ -166,7 +166,18 @@ interface ILocalizationStrings {
         text1: string,
         text2: string,
         text3: string,
+        selectSubSection: string,
         availableServices: string,
+        tabs: {
+            redirects: string,
+            guides: string,
+            tools: string
+        },
+        tabsTitle: {
+            redirects: string,
+            guides: string,
+            tools: string
+        },
         guide: string,
         service: string,
         legend: string
