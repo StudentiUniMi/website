@@ -31,6 +31,8 @@ class LocalizationService {
                     noRedirectsAvailable: 'Non ci sono collegamenti disponibili.',
                     errorContactAdmin: '<Link href="https://studentiunimi.it/organization/">Contatta un amministratore</Link> se il problema persiste.',
                     studentsAssociation: 'Associazione studentesca',
+                    reach: 'Raggiungi',
+                    findOut: 'Find out',
                     headerMenuItems: {
                         home: 'Home',
                         courses: 'Gruppi',
@@ -61,9 +63,12 @@ class LocalizationService {
                             text2: "Comunicare è importante, ma può essere frustrante farlo sui grupponi WhatsApp lasciati a loro stessi. Abbiamo creato un gruppo Telegram per ogni corso di laurea dell'Università degli Studi di Milano per facilitare lo scambio di informazioni.",
                         },
                         section2: {
-                            text1: 'Un modo completamente ripensato di comunicare',
-                            text2: "Abbiamo creato gruppi Telegram per ogni corso di laurea dell'Università degli Studi di Milano, ma non solo: abbiamo messo a disposizione anche gruppi per ogni topic, dai tirocini e tesi agli alloggi e materiali universitari.",
-                            buttonText: 'Raggiungi i gruppi'
+                            title: 'Ecco cosa mettiamo a disposizione',
+                            cards: {
+                                card1: { title: "Gruppi per i corsi di laurea", description: "Più di 300 gruppi dedicati agli specifici corsi di laurea UniMi!" },
+                                card2: { title: "Gruppi degli insegnamenti", description: "Oltre 2000 gruppi sui singoli corsi didattici del tuo corso di laurea!" },
+                                card3: { title: "Servizi telematici", description: "Servizi di ogni tipo, per aiutarti a prendere appunti, scrivere la tesi e molto altro." }
+                            }
                         },
                         section3: {
                             header: 'Scopri i nostri collegamenti principali',
@@ -260,6 +265,8 @@ class LocalizationService {
                     noRedirectsAvailable: 'There are no redirects available.',
                     errorContactAdmin: '<Link href="https://studentiunimi.it/organization/">Contact an administrator</Link> if the problem persists.',
                     studentsAssociation: 'Students association',
+                    reach: 'Reach',
+                    findOut: 'Find out',
                     headerMenuItems: {
                         home: 'Home',
                         courses: 'Groups',
@@ -290,9 +297,12 @@ class LocalizationService {
                             text2: 'Communicating is important, but it can be frustrating to do so on WhatsApp groups left to themselves. We are creating Telegram groups for each degree course of the University of Milan to facilitate the exchange of informations.',
                         },
                         section2: {
-                            text1: 'A completely rethought way of communicating ',
-                            text2: "We have created Telegram groups for each degree course of the University of Milan, but not only: we have also made groups available for each topic, from internships to housing and university materials.",
-                            buttonText: 'Reach the groups'
+                            title: 'This is what we provide',
+                            cards: {
+                                card1: { title: "Groups for degree courses", description: "More than 300 groups dedicated to specific UniMi degree courses!" },
+                                card2: { title: "Teaching groups", description: "Over 2000 groups on the single didactic courses of your degree course!" },
+                                card3: { title: "Telematic services", description: "Services of all kinds, to help you take notes, write your thesis and much more." }
+                            }
                         },
                         section3: {
                             header: 'Discover our main links ',
