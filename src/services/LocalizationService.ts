@@ -31,6 +31,8 @@ class LocalizationService {
                     noRedirectsAvailable: 'Non ci sono collegamenti disponibili.',
                     errorContactAdmin: '<Link href="https://studentiunimi.it/organization/">Contatta un amministratore</Link> se il problema persiste.',
                     studentsAssociation: 'Associazione studentesca',
+                    reach: 'Raggiungi',
+                    findOut: 'Scopri',
                     headerMenuItems: {
                         home: 'Home',
                         courses: 'Gruppi',
@@ -61,9 +63,12 @@ class LocalizationService {
                             text2: "Comunicare è importante, ma può essere frustrante farlo sui grupponi WhatsApp lasciati a loro stessi. Abbiamo creato un gruppo Telegram per ogni corso di laurea dell'Università degli Studi di Milano per facilitare lo scambio di informazioni.",
                         },
                         section2: {
-                            text1: 'Un modo completamente ripensato di comunicare',
-                            text2: "Abbiamo creato gruppi Telegram per ogni corso di laurea dell'Università degli Studi di Milano, ma non solo: abbiamo messo a disposizione anche gruppi per ogni topic, dai tirocini e tesi agli alloggi e materiali universitari.",
-                            buttonText: 'Raggiungi i gruppi'
+                            title: 'Ecco cosa mettiamo a disposizione',
+                            cards: {
+                                card1: { title: "Gruppi per i corsi di laurea", description: "Più di 300 gruppi dedicati agli specifici corsi di laurea UniMi!" },
+                                card2: { title: "Gruppi degli insegnamenti", description: "Oltre 2000 gruppi sui singoli corsi didattici dei corsi di laurea!" },
+                                card3: { title: "Servizi telematici", description: "Servizi di ogni tipo, per aiutarti a prendere appunti, scrivere la tesi e molto altro." }
+                            }
                         },
                         section3: {
                             header: 'Scopri i nostri collegamenti principali',
@@ -86,7 +91,7 @@ class LocalizationService {
                         unimiaSection: {
                             text1: 'Unimia non funziona? Nessun problema!',
                             text2: 'Essendo studenti, sappiamo quanto può essere frustrante dover cercare le risorse universitarie passando per decine di pagine che neanche caricano.',
-                            text3: 'Per questo motivo, abbiamo realizzato una pagina che permette di raggiungere tutti i servizi universitari a portata di click, in aggiunta ad alcune guide che abbiamo realizzato.',
+                            text3: 'Per questo motivo, abbiamo realizzato una pagina che permette di raggiungere tutti i servizi universitari a portata di click, in aggiunta ad alcune guide, servizi e strumenti che abbiamo realizzato.',
                             buttonText: 'unimia.studentiunimi.it'
                         },
                         wikipediaSection: {
@@ -184,9 +189,20 @@ class LocalizationService {
                     },
                     services: {
 						text1: 'Tutti i servizi, in un\'unica pagina.',
-                        text2: 'Abbiamo realizzato una pagina per centralizzare tutti i servizi dell\'Università degli Studi di Milano e rendere disponibili anche alcune guide che abbiamo realizzato.',
-                        text3: "Se pensi che debba essere aggiunto qualche servizio scrivi pure su <Link href='https://t.me/unimichat'>@unimichat</Link>.",
+                        text2: "Abbiamo realizzato una pagina per centralizzare tutti i collegamenti inerenti all'Università degli Studi di Milano e rendere disponibili anche le guide, strumenti e servizi telematici che abbiamo realizzato e messo a disposizione.",
+                        text3: "Pensi che manchi qualcosa? <Link href='https://t.me/unimichat'>Faccelo sapere!</Link>",
+                        selectSubSection: "Seleziona la categoria che ti interessa",
                         availableServices: 'Servizi e guide disponibili',
+                        tabs: {
+                            redirects: "Link rapidi",
+                            guides: "Guide",
+                            tools: "Strumenti"
+                        },
+                        tabsTitle: {
+                            redirects: "Link rapidi disponibili",
+                            guides: "Guide disponibili",
+                            tools: "Strumenti disponibili"
+                        },
                         guide: "Guida",
                         service: "Servizio",
                         legend: "Legenda"
@@ -260,6 +276,8 @@ class LocalizationService {
                     noRedirectsAvailable: 'There are no redirects available.',
                     errorContactAdmin: '<Link href="https://studentiunimi.it/organization/">Contact an administrator</Link> if the problem persists.',
                     studentsAssociation: 'Students association',
+                    reach: 'Reach',
+                    findOut: 'Find out',
                     headerMenuItems: {
                         home: 'Home',
                         courses: 'Groups',
@@ -290,9 +308,12 @@ class LocalizationService {
                             text2: 'Communicating is important, but it can be frustrating to do so on WhatsApp groups left to themselves. We are creating Telegram groups for each degree course of the University of Milan to facilitate the exchange of informations.',
                         },
                         section2: {
-                            text1: 'A completely rethought way of communicating ',
-                            text2: "We have created Telegram groups for each degree course of the University of Milan, but not only: we have also made groups available for each topic, from internships to housing and university materials.",
-                            buttonText: 'Reach the groups'
+                            title: 'This is what we provide',
+                            cards: {
+                                card1: { title: "Groups for degree courses", description: "More than 300 groups dedicated to specific UniMi degree courses!" },
+                                card2: { title: "Teaching groups", description: "Over 2000 groups on the single didactic courses of the degree courses!" },
+                                card3: { title: "Telematic services", description: "Services of all kinds, to help you take notes, write your thesis and much more." }
+                            }
                         },
                         section3: {
                             header: 'Discover our main links ',
@@ -315,7 +336,7 @@ class LocalizationService {
                         unimiaSection: {
                             text1: 'Unimia not working? No problem!',
                             text2: "As students, we know how frustrating it can be to search for university resources through dozens of pages that don't even load.",
-                            text3: 'For this reason, we have created a page that allows you to reach all the university services just a click away, in addition to some guides we have created.',
+                            text3: 'For this reason, we have created a page that allows you to reach all the university services just a click away, in addition to some guides and tools we have created.',
                             buttonText: 'unimia.studentiunimi.it'
                         },
                         wikipediaSection: {
@@ -412,9 +433,20 @@ class LocalizationService {
                         }
                     },
                     services: {
-                        text1: 'All university services, in one central place.',
-                        text2: "We grouped all the links here! We added some guides we created, too.",
-                        text3: "If you think that something should be added you can suggest it on <Link href='https://t.me/unimichat'>@unimichat</Link>.",
+                        text1: 'All services, in one central place.',
+                        text2: "We have created a page to centralize all the connections relating to the University of Milan and also make available our guides and telematic services we have created.",
+                        text3: "Do you think something is missing? <Link href='https://t.me/unimichat'>Let us know!</Link>",
+                        selectSubSection: "Select a category",
+                        tabs: {
+                            redirects: "Redirects",
+                            guides: "Guides",
+                            tools: "Tools"
+                        },
+                        tabsTitle: {
+                            redirects: "Available redirects",
+                            guides: "Available guides",
+                            tools: "Available tools"
+                        },
                         availableServices: 'Available services and guides',
                         guide: "Guide",
                         service: "Service",

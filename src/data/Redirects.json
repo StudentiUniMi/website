@@ -1,41 +1,11 @@
 [
     {
         "name": {
-            "it": "Scaricare videolezioni",
-            "en": "Download videolectures"
-        },
-        "link": "https://wiki.studentiunimi.it/guida:scaricare_videolezioni_ariel",
-        "icon": "VideoSearch",
-        "color": "#f06400",
-        "type": "G",
-        "description": {
-            "it": "Guida semplice e veloce per scaricare le videolezioni da Ariel.",
-            "en": "Step-by-step tutorial to download video lessons from Ariel."
-        }
-    }, 
-    {
-        "name": {
-            "it": "Disiscriversi dalle mailing list",
-            "en": "Unsubscribe from mailing list"
-        },
-        "link": "https://wiki.studentiunimi.it/guida:disiscrizione_mailing_list",
-        "icon": "MailAlert",
-        "color": "#107c10",
-        "type": "G",
-        "description": {
-            "it": "Guida per disiscriversi dalle mailing list.",
-            "en": "How to unsubscribe from mailing list."
-        }
-    }, 
-    {
-        "name": {
             "it": "Unimia",
             "en": "Unimia"
         },
         "link": "http://unimia.unimi.it/portal/server.pt",
         "icon": "JoinOnlineMeeting",
-        "color": "#0078d4",
-        "type": "S",
         "description": {
             "it": "Portale d'accesso ai servizi d'ateneo.",
             "en": "Hub to access all UniMi Services."
@@ -48,8 +18,6 @@
         },
         "link": "http://studente.unimi.it/foIscrizioneEsami/",
         "icon": "WaitlistConfirm",
-        "color": "#004e8c",
-        "type": "S",
         "description": {
             "it": "Iscriviti agli appelli d'esame o controlla le iscrizioni effettuate.",
             "en": "Manage your registrations to your exams."
@@ -62,8 +30,6 @@
         },
         "link": "http://studente.unimi.it/foVerbalizzazione/",
         "icon": "VerifiedBrand",
-        "color": "#4f6bed",
-        "type": "S",
         "description": {
             "it": "Controlla gli esiti finali o parziali dei tuoi esami.",
             "en": "Check the final or partial results of your exams."
@@ -76,8 +42,6 @@
         },
         "link": "http://unimia.unimi.it/portal/server.pt/community/unimia/207/servizi_sifa/",
         "icon": "DatabaseSync",
-        "color": "#8378de",
-        "type": "S",
         "description": {
             "it": "Accedi a tutti i servizi online SIFA.",
             "en": "Access all the SIFA online services."
@@ -90,8 +54,6 @@
         },
         "link": "https://studente.unimi.it/fo_pagamenti/checkLogin.jsp",
         "icon": "Bank",
-        "color": "#00188f",
-        "type": "S",
         "description": {
             "it": "Sezione del SIFA riguardante i pagamenti.",
             "en": "Enrolment renewal, tuition fees and other payments."
@@ -104,8 +66,6 @@
         },
         "link": "https://studente.unimi.it/pianiDiStudio/client/checkLogin.asp",
         "icon": "InternalInvestigation",
-        "color": "#8cbd18",
-        "type": "S",
         "description": {
             "it": "Sezione apposita per presentare il piano di studi.",
             "en": "Submission page of study plans."
@@ -118,8 +78,6 @@
         },
         "link": "http://studente.unimi.it/dirittoallostudio",
         "icon": "AnalyticsReport",
-        "color": "#71afe5",
-        "type": "S",
         "description": {
             "it": "Portale per il diritto allo studio.",
             "en": "Education Grants Helpdesk"
@@ -132,8 +90,6 @@
         },
         "link": "https://securemail.unimi.it/",
         "icon": "Mail",
-        "color": "#953ac7",
-        "type": "S",
         "description": {
             "it": "Servizio di webmail d'ateneo.",
             "en": "UniMi webmail service."
@@ -146,8 +102,6 @@
         },
         "link": "https://ariel.unimi.it/",
         "icon": "FabricFormLibrary",
-        "color": "#ffaa44",
-        "type": "S",
         "description": {
             "it": "Siti dei corsi didattici.",
             "en": "Courses websites."
@@ -160,8 +114,6 @@
         },
         "link": "https://easystaff.divsi.unimi.it/PortaleStudenti/",
         "icon": "People",
-        "color": "#00ad56",
-        "type": "S",
         "description": {
             "it": "Orari delle lezioni, occupazione delle aule, appelli d'esame.",
             "en": "Lessons schedule, rooms and exam sessions."
@@ -174,8 +126,6 @@
         },
         "link": "https://www.sba.unimi.it/",
         "icon": "Library",
-        "color": "#247285",
-        "type": "S",
         "description": {
             "it": "Tutte le informazioni sulle biblioteche.",
             "en": "All the informations about UniMi libraries."
@@ -188,7 +138,6 @@
         },
         "link": "https://unimi.primo.exlibrisgroup.com/",
         "icon": "FolderSearch",
-        "color": "#00B294",
         "type": "S",
         "description": {
             "it": "Risorse bibliografiche.",
@@ -202,7 +151,6 @@
         },
         "link": "https://informastudenti.unimi.it/",
         "icon": "SurveyQuestions",
-        "color": "#d13438",
         "type": "S",
         "description": {
             "it": "Accedi al portale InformaStudenti.",

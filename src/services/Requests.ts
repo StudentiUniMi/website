@@ -19,7 +19,9 @@ import { Department, Degree, VerboseDegree, CourseDegree, Representative, Admin 
 /* Data (this will be replaced by api soon) */
 import data from '../data/Data.json';
 import extraGroups from '../data/ExtraGroups.json';
-import serviceData from '../data/Services.json';
+import redirectsData from '../data/Redirects.json';
+import guidesData from '../data/Guides.json';
+import toolsData from '../data/Tools.json';
 import Contributors from '../data/Contributors.json';
 import Faqs from '../data/Faqs.json';
 import NetworkMembers from '../data/NetworkMembers.json';
@@ -158,7 +160,11 @@ export const getUniversityLinks = (): any[] => {
 
 export const getExtraGroups = () => extraGroups;
 
-export const getServices = (): Service[] => serviceData;
+export const getRedirects = (): Service[] => redirectsData;
+
+export const getGuides = (): Service[] => guidesData;
+
+export const getTools = (): Service[] => toolsData;
 
 export const getAllCdls = (): OldDegree[] => ([] as OldDegree[]).concat(...(data.departments.map(x => x.cdls as any as OldDegree[])));
 

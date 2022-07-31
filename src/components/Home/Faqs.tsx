@@ -4,6 +4,7 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
+import Chip from '@material-ui/core/Chip';
 import { Container } from 'react-bootstrap';
 import { Link, Text } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
@@ -20,10 +21,21 @@ const Faqs = () => {
         <div className="pb-5 pt-5">
             <Container>
 
-            <div className="mb-1"><Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>FAQ</Text></div>            
-            <div className="mb-2"><Text variant="xLarge">{locale?.homepage.faqsSection.header}</Text></div>
-                <div className="mb-4"><Text variant="medium"><JsxParser bindings={{ theme: theme }} components={{ Text, Link }} jsx={locale?.homepage.faqsSection.description} /></Text></div>
+                <div className="mb-1">
+                    <Text variant="medium" styles={semibold}>
+                        <Chip label={"FAQ"} style={{ backgroundColor: theme.palette.themePrimary, color: theme.palette.white }} />
+                    </Text>
+                </div>            
+                
+                <div className="mb-2">
+                    <Text variant="xLarge">{locale?.homepage.faqsSection.header}</Text>
+                </div>
 
+                <div className="mb-4">
+                    <Text variant="medium">
+                        <JsxParser bindings={{ theme: theme }} components={{ Text, Link }} jsx={locale?.homepage.faqsSection.description} />
+                    </Text>
+                </div>
 
                 <div className="mb-2">
                     {

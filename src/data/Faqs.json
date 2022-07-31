@@ -4,10 +4,20 @@
         "en": "UniMia isn't working and I absolutely need to access university services.. what can I do?"
     },
     "answer": {
-        "it": "Nessun problema, abbiamo creato una <Link href='https://studentiunimi.it/services/'>pagina apposita</Link> che permette di raggiungere tutti i servizi che possono servire senza dover passare da pagine e siti web che non caricano. In aggiunta, abbiamo anche realizzato alcune guide che pensiamo potranno servirti!",
-        "en": "No worries, we have created a <Link href='https://studentiunimi.it/services/'>dedicated page</Link> that allows you to reach all the services you may need without having to go through pages and websites that do not load. In addition, we have also made some guides that we think you will need!"
+        "it": "Nessun problema, abbiamo creato una <Link href='https://unimia.studentiunimi.it/'>pagina apposita</Link> che permette di raggiungere tutti i servizi che possono servire senza dover passare da pagine e siti web che non caricano. In aggiunta, abbiamo anche realizzato alcune guide che pensiamo potranno servirti e messo a disposizione i nostri strumenti e servizi aggiuntivi!",
+        "en": "No worries, we have created a <Link href='https://unimia.studentiunimi.it/'>dedicated page</Link> that allows you to reach all the services you may need without having to go through pages and websites that do not load. In addition, we have also made some guides, tools and additional services that we think you will need!"
     }
 }, {
+    "question": {
+        "it": "Esistono dei gruppi universitari ad esempio riguardo i tirocini oppure sull'erasmus?",
+        "en": "Are there any university groups for example regarding internships or Erasmus?"
+    },
+    "answer": {
+        "it": "Sì, ce ne sono molti e puoi trovarli nella sezione dei <Link href='https://studentiunimi.it/courses/'>gruppi</Link>. Per noi è molto importante creare i gruppi per ogni singolo topic in modo tale che qualsiasi studente possa recuperare le informazioni che gli servono e che magari sono state già esposte precedentemente nella chat, oppure chiederne di nuove.",
+        "en": "Yes, there are a lot of them and you can find them in the <Link href='https://studentiunimi.it/courses/'>groups</Link> section. For us it is very important to create groups for each single topic so that any student can retrieve the information they need and which may have already been exposed previously in the chat, or ask for new ones."
+    }
+},
+{
     "question": {
         "it": "Che cos'è la Wiki?",
         "en": "What is the Wiki?"
@@ -36,29 +46,11 @@
     }
 }, {
     "question": {
-        "it": "Perché sono presenti solamente i gruppi dei corsi di insegnamento del dipartimento di Informatica?",
-        "en": "Why are only the courses of the IT department present?"
+        "it": "Perché sono presenti solamente i gruppi dei corsi di insegnamento di alcuni corsi di laurea?",
+        "en": "Where are the groups for teaching courses of my degree course?"
     },
     "answer": {
-        "it": "Entro fine settembre 2021 saranno disponibili tutti i gruppi degli insegnamenti di tutti i corsi di laurea dell'Università degli Studi di Milano.",
-        "en": "By the end of September 2021, all the teaching groups of all the degree courses of the University of Milan will be available. "
-    }
-}, {
-    "question": {
-        "it": "Vorrei collaborare al progetto del Network ma non so come fare...",
-        "en": "I would like to collaborate in the Network's project but I don't know how to do it..."
-    },
-    "answer": {
-        "it": "Non è un problema, non devi essere per forza uno sviluppatore o un informatico per aiutarci: cerchiamo anche moderatori dei gruppi dei vari corsi, e quando ci amplieremo verso altri dipartimenti sarà essenziale il vostro aiuto in tal proposito.",
-        "en": "It's not a problem, you don't have to be a developer or a computer scientist to help us: we are also looking for moderators of the groups of the various courses, and when we expand to other departments, your help in this regard will be essential."
-    }
-}, {
-    "question": {
-        "it": "Esistono dei gruppi aggiuntivi ad esempio riguardo i tirocini oppure sull'erasmus?",
-        "en": "Are there any additional groups for example regarding internships or Erasmus?"
-    },
-    "answer": {
-        "it": "Sì, ce ne sono molti e puoi trovarli nella sezione dei <Link href='https://studentiunimi.it/courses/'>gruppi</Link>. Per noi è molto importante creare i gruppi per ogni singolo topic in modo tale che qualsiasi studente possa recuperare le informazioni che gli servono e che magari sono state già esposte precedentemente nella chat, oppure chiederne di nuove.",
-        "en": "Yes, there are a lot of them and you can find them in the <Link href='https://studentiunimi.it/courses/'>groups</Link> section. For us it is very important to create groups for each single topic so that any student can retrieve the information they need and which may have already been exposed previously in the chat, or ask for new ones."
+        "it": "Stiamo lavorando per creare i gruppi degli insegnamenti di tutti i corsi di laurea dell'Università degli Studi di Milano.",
+        "en": "We are working to create the teaching groups of all the degree courses of the University of Milan."
     }
 }]

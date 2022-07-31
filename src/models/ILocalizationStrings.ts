@@ -20,6 +20,8 @@ interface ILocalizationStrings {
     noRedirectsAvailable: string,
     errorContactAdmin: string,
     studentsAssociation: string,
+    reach: string,
+    findOut: string,
     headerMenuItems: {
         home: string,
         courses: string,
@@ -50,9 +52,12 @@ interface ILocalizationStrings {
             text2: string,
         },
         section2: {
-            text1: string,
-            text2: string,
-            buttonText: string
+            title: string,
+            cards: {
+                card1: { title: string, description: string },
+                card2: { title: string, description: string },
+                card3: { title: string, description: string },
+            }
         },
         section3: {
             header: string,
@@ -161,7 +166,18 @@ interface ILocalizationStrings {
         text1: string,
         text2: string,
         text3: string,
+        selectSubSection: string,
         availableServices: string,
+        tabs: {
+            redirects: string,
+            guides: string,
+            tools: string
+        },
+        tabsTitle: {
+            redirects: string,
+            guides: string,
+            tools: string
+        },
         guide: string,
         service: string,
         legend: string

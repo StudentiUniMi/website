@@ -50,7 +50,7 @@ const AdditionalGroup = (props: Props) => {
             </Card.Item>
             <Card.Section>
                 <Text styles={descriptionTextStyles}>
-                    <Chip label={name === 'MUG - Milan University Gamers' ? locale?.studentsAssociation : locale?.extraGroups.extraGroup} size="small" style={{ color: theme.palette.white, backgroundColor: name === 'MUG - Milan University Gamers' ? theme.palette.themeTertiary : theme.palette.themeSecondary }} className="m-1" />
+                    <Chip label={name === 'MUG - Milan University Gamers' ? locale?.studentsAssociation : locale?.extraGroups.extraGroup} size="small" style={{ color: theme.palette.white, backgroundColor: name === 'MUG - Milan University Gamers' ? theme.palette.themeDark : theme.palette.themeSecondary }} className="m-1" />
                 </Text>
                 <Text variant="small" styles={helpfulTextStyles} className="mb-2">
                     <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link, Icon }} jsx={"<Icon iconName='Info' /> " + desc} />

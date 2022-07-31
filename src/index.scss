@@ -125,9 +125,6 @@ button:focus,
     display: none;
   }
 
-  .header-menu .dropdown {
-  }
-
   .header-col {
     justify-content: right;
     display: flex;
@@ -423,4 +420,22 @@ footer .ms-Label {
   padding-top: 0px;
 }
 
+/* Fix image being cut */
+.home .ms-Image {
+  overflow: visible;
+}
 
+@media only screen and (max-width: 350px) {
+  .first-section img {
+    width: 120px;
+  }
+}
+
+/* Some services adjustments */
+.services .ms-Card {
+  align-items: stretch !important;
+}
+
+.services .ms-DocumentCardPreview, .services .ms-DocumentCardPreview-iconContainer {
+  min-height: 100%;
+}

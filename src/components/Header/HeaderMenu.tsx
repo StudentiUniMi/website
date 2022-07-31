@@ -133,7 +133,7 @@ const HeaderMenu = () => {
                     theme={theme}
                     overflowBehavior={'menu'}
                 >
-                    {Object.values(ItemsKeys).map((x, i) => <PivotItem headerText={texts.get(x)} itemKey={x} />)}
+                    {Object.values(ItemsKeys).map((x, i) => <PivotItem headerText={texts.get(x)} itemKey={x} key={x} />)}
                 </Pivot>
             </div>
 
