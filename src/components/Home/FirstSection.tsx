@@ -97,7 +97,7 @@ const FirstSection = () => {
                                         style={buttonStyle}
                                         iconProps={buttonIconProps}
                                         theme={theme}
-                                        href="https://studentiunimi.it/services/tools/"
+                                        href="https://studentiunimi.it/services/"
                                         className="text-decoration-none"
                                     />
                                 </div>
