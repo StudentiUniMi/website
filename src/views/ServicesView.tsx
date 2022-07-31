@@ -27,12 +27,17 @@ const Services = () => {
     const tools = getTools();
     const cardTokens: ICardTokens = { childrenMargin: 12 };
 
-    const [selectedSubSection, setSelectedSubSection] = React.useState<string>("redirects");
+    const [selectedSubSection, setSelectedSubSection] = React.useState<string>("");
 
     const handleSubSectionChange = (item?: PivotItem) => {
         if (item) {
             setSelectedSubSection(item.props.itemKey!);
-            history.push(`/services/${item.props.itemKey!}/`);
+
+            if (item.props.itemKey! !== "redirects") {
+                history.push(`/services/${item.props.itemKey!}/`);
+            } else {
+                history.push('/services/');
+            }
         }
     };
 
@@ -60,12 +65,21 @@ const Services = () => {
             
             if (subsection === '') {
                 setSelectedSubSection("redirects");
-                history.push(`/services/redirects/`);
             } else {
                 setSelectedSubSection(subsection);
             }
         }
     }, [history]);
+
+    React.useEffect(() => {
+        /* Updating content based on browser commands (push and pop) */
+        return history.listen(async () => {
+            if (history.action === 'PUSH' || history.action === 'POP') {
+                didMount.current = false;
+                initializeSection();
+            }
+        });
+    }, [history, initializeSection])
 
     React.useEffect(() => {
         if (!didMount.current) initializeSection();
