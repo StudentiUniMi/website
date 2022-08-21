@@ -4,21 +4,21 @@ import { initializeIcons } from "@uifabric/icons";
 import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { getCourses, getVerboseDegreeBySlug, getVerboseDegreeByID, getDegreesForSearchBox } from '../services/Requests';
+import { getCourses, getVerboseDegreeBySlug, getVerboseDegreeByID, getDegreesForSearchBox } from '../src/services/Requests';
 import { Separator } from '@fluentui/react/lib-commonjs/Separator';
 import { Dialog, DialogType, DialogFooter } from '@fluentui/react/lib-commonjs/Dialog';
-import { semibold } from '../services/Fonts';
-import { VerboseDegree, CourseDegree } from "../models/Models";
-import GroupList from "../components/Groups/GroupList";
-import LocalizationService from "../services/LocalizationService";
-import DegreeInformations from "../components/Groups/DegreeInformations";
-import AdminsList from '../components/Groups/AdminsList';
-import AdditionalGroupsView from '../components/Groups/AdditionalGroups';
+import { semibold } from '../src/services/Fonts';
+import { VerboseDegree, CourseDegree } from "../src/models/Models";
+import GroupList from "../src/components/Groups/GroupList";
+import LocalizationService from "../src/services/LocalizationService";
+import DegreeInformations from "../src/components/Groups/DegreeInformations";
+import AdminsList from '../src/components/Groups/AdminsList';
+import AdditionalGroupsView from '../src/components/Groups/AdditionalGroups';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import JsxParser from "react-jsx-parser";
-import { Autocomplete } from '../components/Groups/Autocomplete';
-import { ISuggestionItem } from '../components/Groups/Autocomplete_types';
+import { Autocomplete } from '../src/components/Groups/Autocomplete';
+import { ISuggestionItem } from '../src/components/Groups/Autocomplete_types';
 import { Helmet } from 'react-helmet-async';
 import { IconButton, IIconProps, ITooltipHostStyles, Link, PrimaryButton, TooltipHost } from '@fluentui/react';
 import { useBoolean } from "@fluentui/react-hooks";
@@ -188,7 +188,7 @@ const GroupsView = () => {
                 hrefLang: language!
             });
         }
-    }, [history.location.pathname, locale?.helmet.degreeLoaded.title1, locale?.helmet.degreeLoaded.title2, locale?.helmet.degreeLoaded.description1, locale?.helmet.degreeLoaded.description2, language]);
+    }, [/*history.location.pathname,*/ locale?.helmet.degreeLoaded.title1, locale?.helmet.degreeLoaded.title2, locale?.helmet.degreeLoaded.description1, locale?.helmet.degreeLoaded.description2, language]);
 
     const updateLoadedDegree = React.useCallback(async () => {
         if (selectedDegree === null || selectedDegree === undefined || selectedDegree === "") return;

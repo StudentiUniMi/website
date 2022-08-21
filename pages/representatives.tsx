@@ -4,18 +4,18 @@ import { Text, Icon } from 'office-ui-fabric-react';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib-commonjs/Dropdown';
 import { useHistory } from 'react-router-dom';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { getRepresentatives, getDepartments, getUniversityLinks } from '../services/Requests'
-import { Department, Representative } from '../models/Models';
+import { getRepresentatives, getDepartments, getUniversityLinks } from '../src/services/Requests'
+import { Department, Representative } from '../src/models/Models';
 import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
-import { semibold } from "../services/Fonts";
+import { semibold } from "../src/services/Fonts";
 import { IChoiceGroupOptionStyles } from "@fluentui/react";
 import { ChoiceGroup, IChoiceGroupOption } from '@fluentui/react/lib-commonjs/ChoiceGroup';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import LocalizationService from "../services/LocalizationService";
-import RepresentativesList from '../components/University/RepresentativesList';
-import Slider from '../components/University/Slider/Slider';
-import { redirectToLink } from "../services/Utils";
+import LocalizationService from "../src/services/LocalizationService";
+import RepresentativesList from '../src/components/University/RepresentativesList';
+import Slider from '../src/components/University/Slider/Slider';
+import { redirectToLink } from "../src/services/Utils";
 
 const iconStyles = { marginRight: '8px' };
 
