@@ -5,15 +5,15 @@ import LocalizationService from "../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 import { useHistory } from 'react-router-dom';
 import { FontSizes } from '@fluentui/theme';
-import { Text } from 'office-ui-fabric-react/lib/Text';
+import { Text } from 'office-ui-fabric-react/lib-commonjs/Text';
 import { Container } from 'react-bootstrap';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { DocumentCardPreview, IDocumentCardPreviewProps } from 'office-ui-fabric-react/lib/DocumentCard';
+import { DocumentCardPreview, IDocumentCardPreviewProps } from 'office-ui-fabric-react/lib-commonjs/DocumentCard';
 import { Card, ICardTokens } from '@uifabric/react-cards';
 import { semibold } from '../services/Fonts';
 import { getRedirects, getGuides, getTools } from '../services/Requests';
 import { Pivot, PivotItem } from '@fluentui/react';
-import { Image } from 'office-ui-fabric-react/lib/Image';
+import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import { Link } from '@fluentui/react';
 
 const Services = () => {

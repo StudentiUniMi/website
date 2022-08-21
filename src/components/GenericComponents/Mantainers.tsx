@@ -8,7 +8,7 @@ import { Icon, Link, Image } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { semibold } from '../../services/Fonts';
 import { redirectToLink } from '../../services/Utils';
-import { TooltipHost, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib/Tooltip';
+import { TooltipHost, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib-commonjs/Tooltip';
 import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 

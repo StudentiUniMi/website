@@ -3,7 +3,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Admin, Degree } from '../../models/Models';
 import { getDegreeAdmins } from '../../services/Requests';
-import { Persona, PersonaSize } from 'office-ui-fabric-react/lib/Persona';
+import { Persona, PersonaSize } from 'office-ui-fabric-react/lib-commonjs/Persona';
 import { Link, Icon, Text } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
 import { useTheme } from '@fluentui/react-theme-provider';

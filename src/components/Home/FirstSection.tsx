@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useTheme } from '@fluentui/react-theme-provider';
 import LocalizationService from "../../services/LocalizationService";
-import { Image } from 'office-ui-fabric-react/lib/Image';
+import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import Chip from '@material-ui/core/Chip';
 
 const FirstSection = () => {

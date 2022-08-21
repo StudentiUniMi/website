@@ -11,7 +11,7 @@ import { FontWeights, ITextStyles, Persona, Link } from '@fluentui/react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import ExtraGroup from '../../models/ExtraGroup'
 import { useTheme } from '@fluentui/react-theme-provider';
-import { ActionButton } from '@fluentui/react/lib/Button';
+import { ActionButton } from '@fluentui/react/lib-commonjs/Button';
 import { IIconProps } from '@fluentui/react';
 import Chip from '@material-ui/core/Chip';
 import { semibold } from '../../services/Fonts';

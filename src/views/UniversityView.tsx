@@ -1,15 +1,15 @@
 import React from "react";
 import { Container } from 'react-bootstrap';
 import { Text, Icon } from 'office-ui-fabric-react';
-import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
+import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib-commonjs/Dropdown';
 import { useHistory } from 'react-router-dom';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { getRepresentatives, getDepartments, getUniversityLinks } from '../services/Requests'
 import { Department, Representative } from '../models/Models';
-import { Image } from 'office-ui-fabric-react/lib/Image';
+import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import { semibold } from "../services/Fonts";
 import { IChoiceGroupOptionStyles } from "@fluentui/react";
-import { ChoiceGroup, IChoiceGroupOption } from '@fluentui/react/lib/ChoiceGroup';
+import { ChoiceGroup, IChoiceGroupOption } from '@fluentui/react/lib-commonjs/ChoiceGroup';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";

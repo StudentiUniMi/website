@@ -1,6 +1,6 @@
 import { FontSizes } from '@fluentui/theme';
-import { Text } from 'office-ui-fabric-react/lib/Text';
-import { Image } from 'office-ui-fabric-react/lib/Image';
+import { Text } from 'office-ui-fabric-react/lib-commonjs/Text';
+import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import HeaderMenu from './HeaderMenu';

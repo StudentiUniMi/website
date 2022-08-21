@@ -6,7 +6,7 @@ import { useTheme } from '@fluentui/react-theme-provider';
 import { DefaultButton, DirectionalHint, IIconProps, mergeStyleSets } from "@fluentui/react";
 import { useBoolean, useId } from '@fluentui/react-hooks';
 import { getRules } from '../services/Requests'; 
-import { Image } from 'office-ui-fabric-react/lib/Image';
+import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Rule from '../models/Rule';

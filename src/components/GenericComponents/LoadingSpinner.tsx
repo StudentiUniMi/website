@@ -6,7 +6,7 @@
 
 import React from 'react';
 import LocalizationService from "../../services/LocalizationService";
-import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
+import { Spinner, SpinnerSize } from '@fluentui/react/lib-commonjs/Spinner';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { semibold } from '../../services/Fonts';
 import { Text, Image, Icon, Link } from '@fluentui/react';

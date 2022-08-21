@@ -1,14 +1,14 @@
 import React from "react";
 import { FocusZone, Icon, IRectangle, List } from "@fluentui/react";
-import { TextField } from 'office-ui-fabric-react/lib/TextField';
-import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
+import { TextField } from 'office-ui-fabric-react/lib-commonjs/TextField';
+import { mergeStyleSets } from 'office-ui-fabric-react/lib-commonjs/Styling';
 import { Container } from 'react-bootstrap';
-import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
+import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib-commonjs/Dropdown';
 import { Text } from "office-ui-fabric-react/";
 import { semibold } from '../../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Degree, CourseDegree } from '../../models/Models';
-import { Toggle } from '@fluentui/react/lib/Toggle';
+import { Toggle } from '@fluentui/react/lib-commonjs/Toggle';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import GroupItem from './GroupItem';

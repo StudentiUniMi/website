@@ -1,15 +1,15 @@
 import React from 'react';
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
-import ContentView from "./ContentView";
-import LocalizationService from "../services/LocalizationService";
+import Header from "../src/components/Header/Header";
+import Footer from "../src/components/Footer/Footer";
+import ContentView from "../src/views/ContentView";
+import LocalizationService from "../src/services/LocalizationService";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider } from '@fluentui/react-theme-provider'; 
-import { buildLightTheme, buildDarkTheme } from '../services/Themes';
+import { buildLightTheme, buildDarkTheme } from '../src/services/Themes';
 import { CookiesProvider, useCookies, withCookies } from 'react-cookie';
 import { HelmetProvider } from 'react-helmet-async';
 import { loadTheme } from '@fluentui/react';
-import { addDays } from '../services/Utils';
+import { addDays } from '../src/services/Utils';
 
 const MainView = () => {
   let [cookies, setCookie] = useCookies();

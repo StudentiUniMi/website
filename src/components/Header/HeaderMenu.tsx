@@ -1,9 +1,9 @@
 import React from "react";
 import LocalizationService from "../../services/LocalizationService";
 import { FontSizes } from '@fluentui/theme';
-import { IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
-import { Icon } from 'office-ui-fabric-react/lib/Icon';
-import { Panel } from '@fluentui/react/lib/Panel';
+import { IDropdownOption } from 'office-ui-fabric-react/lib-commonjs/Dropdown';
+import { Icon } from 'office-ui-fabric-react/lib-commonjs/Icon';
+import { Panel } from '@fluentui/react/lib-commonjs/Panel';
 import { ITooltipHostStyles, Link, PrimaryButton, Text, TooltipDelay, TooltipHost } from "@fluentui/react";
 import { useHistory } from "react-router-dom";
 import { useTheme } from '@fluentui/react-theme-provider';

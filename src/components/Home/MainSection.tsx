@@ -1,6 +1,6 @@
 import { Text } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
-import { Image } from 'office-ui-fabric-react/lib/Image';
+import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { getStringDegrees } from '../../services/Requests';
 import React from 'react';

@@ -5,7 +5,7 @@ import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.scss';
-import MainView from './views/MainView';
+import MainView from '../pages';
 
 ReactDOM.render(
   <React.StrictMode>

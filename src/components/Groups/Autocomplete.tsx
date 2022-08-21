@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { IAutocompleteProps, IAutocompleteState, ISuggestionItem } from './Autocomplete_types';
-import { SearchBox, Callout, List } from 'office-ui-fabric-react/lib/';
-import { FocusZone, FocusZoneDirection } from 'office-ui-fabric-react/lib/FocusZone';
+import { SearchBox, Callout, List } from 'office-ui-fabric-react/lib-commonjs/';
+import { FocusZone, FocusZoneDirection } from 'office-ui-fabric-react/lib-commonjs/FocusZone';
 import { mergeStyleSets } from '@uifabric/styling';
 import { DirectionalHint, ISearchBoxStyles } from '@fluentui/react';
 //import { useTheme } from '@fluentui/react-theme-provider';

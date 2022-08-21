@@ -1,7 +1,7 @@
 //import Representative from '../models/Representative';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { Persona, PersonaSize } from 'office-ui-fabric-react/lib/Persona';
+import { Persona, PersonaSize } from 'office-ui-fabric-react/lib-commonjs/Persona';
 import { Link, Icon } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Representative } from '../../models/Models';
