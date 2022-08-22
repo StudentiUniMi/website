@@ -52,7 +52,7 @@ const Rules = () => {
                     <Row>
                         <Col lg={4} className="text-center">
                             <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }}>
-                                <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/images/rules.png'} style={imageProperties} />
+                                <Image id="logo" className="mb-2" src={'/images/rules.png'} style={imageProperties} />
                             </div>
                         </Col>
 

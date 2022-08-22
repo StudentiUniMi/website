@@ -24,7 +24,7 @@ const Message = (props: Props) => {
                 {locale?.noDataAvailable}
             </Text>
             <div style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-                <Image id="not-found" src={process.env.PUBLIC_URL + '/images/message/not-found.png'} style={{ display: 'inline', width: '60%', marginBottom: 10 }} />
+                <Image id="not-found" src={'/images/message/not-found.png'} style={{ display: 'inline', width: '60%', marginBottom: 10 }} />
             </div>
             {props.text}
         </div>

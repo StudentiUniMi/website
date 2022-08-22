@@ -52,7 +52,7 @@ const MainSection = () => {
                 <Row>
                     <Col lg={4}>
                         <div style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: 200}}>
-                            <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/logo/unimi500.png'} alt='Network logo' style={logoProperties} />
+                            <Image id="logo" className="mb-2" src={'/logo/unimi500.png'} alt='Network logo' style={logoProperties} />
                         </div>
                     </Col>
 

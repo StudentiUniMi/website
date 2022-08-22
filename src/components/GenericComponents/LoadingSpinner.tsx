@@ -6,7 +6,7 @@
 
 import React from 'react';
 import LocalizationService from "../../services/LocalizationService";
-import { Spinner, SpinnerSize } from '@fluentui/react/lib-commonjs/Spinner';
+import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { semibold } from '../../services/Fonts';
 import { Text, Image, Icon, Link } from '@fluentui/react';
@@ -39,7 +39,7 @@ const LoadingSpinner = (props: Props) => {
                 {locale?.errorOccured}
             </Text>
             <div style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-                <Image id="not-found" src={process.env.PUBLIC_URL + '/images/message/error.png'} style={{ display: 'inline', width: '35%', marginBottom: 5 }} />
+                <Image id="not-found" src={'/images/message/error.png'} style={{ display: 'inline', width: '35%', marginBottom: 5 }} />
             </div>
             <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link, Icon }} jsx={locale?.errorContactAdmin} />
         </div>

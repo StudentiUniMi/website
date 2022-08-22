@@ -168,7 +168,7 @@ const UniversityView = () => {
 
                         <Col xl={3} lg={4} className="text-center">
                             <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 500 }}>
-                                <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/images/university.png'} style={{ display: 'inline-block', width: '80%' }} />
+                                <Image id="logo" className="mb-2" src={'/images/university.png'} style={{ display: 'inline-block', width: '80%' }} />
                             </div>
                         </Col>
                     </Row>
@@ -194,7 +194,7 @@ const UniversityView = () => {
                     <Row>
                         <Col lg={4} className="text-center">
                             <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }}>
-                                <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/images/university_links.png'} style={imageProperties} />
+                                <Image id="logo" className="mb-2" src={'/images/university_links.png'} style={imageProperties} />
                             </div>
                         </Col>
 
@@ -254,7 +254,7 @@ const UniversityView = () => {
 
                         <Col lg={3} className="text-center">
                             <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }}>
-                                <Image id="logo" className="mb-2" src={process.env.PUBLIC_URL + '/images/representatives.png'} style={{ display: 'inline-block', width: '100%' }} />
+                                <Image id="logo" className="mb-2" src={'/images/representatives.png'} style={{ display: 'inline-block', width: '100%' }} />
                             </div>
                         </Col>
                     </Row>

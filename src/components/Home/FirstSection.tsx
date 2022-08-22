@@ -32,7 +32,7 @@ const FirstSection = () => {
                             </Text>
 
                             <div className="d-flex flex-row mt-2">
-                                <Image src={process.env.PUBLIC_URL + '/images/home/c1.png'} style={cardImageStyle} />
+                                <Image src={'/images/home/c1.png'} style={cardImageStyle} />
 
                                 <div className="d-flex flex-column justify-content-between text-right align-items-end" style={{ gap: 20 }}>
 
@@ -59,7 +59,7 @@ const FirstSection = () => {
                             </Text>
 
                             <div className="d-flex flex-row mt-2">
-                                <Image src={process.env.PUBLIC_URL + '/images/home/c2.png'} style={cardImageStyle} />
+                                <Image src={'/images/home/c2.png'} style={cardImageStyle} />
 
                                 <div className="d-flex flex-column justify-content-between text-right align-items-end" style={{ gap: 20 }}>
 
@@ -86,7 +86,7 @@ const FirstSection = () => {
                             </Text>
 
                             <div className="d-flex flex-row mt-2">
-                                <Image src={process.env.PUBLIC_URL + '/images/home/c3.png'} style={cardImageStyle} />
+                                <Image src={'/images/home/c3.png'} style={cardImageStyle} />
 
                                 <div className="d-flex flex-column justify-content-between text-right align-items-end" style={{ gap: 20 }}>
 

@@ -64,7 +64,7 @@ const Mantainers = () => {
                                         <Card.Section>
                                             <div className="justify-content-center">
                                                 <Image id="logo"
-                                                    src={process.env.PUBLIC_URL + "/contributors/" + x.pic}
+                                                    src={"/contributors/" + x.pic}
                                                     alt={x.name}
                                                     style={developerPic}
                                                 />

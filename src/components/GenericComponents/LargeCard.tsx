@@ -13,7 +13,7 @@ const LargeCard = (props: Props) => {
     const primaryText: IDocumentCardTitleStyles = { root: { height: 'auto' } };
     const secondaryText: IDocumentCardTitleStyles = { root: { height: 'auto' }};
     const documentCardDetails: IDocumentCardDetailsStyles = { root: { justifyContent: 'start' } };
-    const people: IDocumentCardActivityPerson[] = [{ name: props.type,  profileImageSrc: process.env.PUBLIC_URL + "/images/" + props.previewImg  } ];
+    const people: IDocumentCardActivityPerson[] = [{ name: props.type,  profileImageSrc: "/images/" + props.previewImg  } ];
 
     return (
             <DocumentCard
@@ -23,7 +23,7 @@ const LargeCard = (props: Props) => {
                 theme={theme}
                 onClickHref={props.link}
             >
-                <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={process.env.PUBLIC_URL + "/images/" + props.img} />
+                <DocumentCardImage height={150} imageFit={ImageFit.cover} imageSrc={"/images/" + props.img} />
                 <DocumentCardDetails styles={documentCardDetails}>
                     <DocumentCardTitle title={props.title} styles={primaryText} />
                     <DocumentCardTitle

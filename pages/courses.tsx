@@ -5,8 +5,8 @@ import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { getCourses, getVerboseDegreeBySlug, getVerboseDegreeByID, getDegreesForSearchBox } from '../src/services/Requests';
-import { Separator } from '@fluentui/react/lib-commonjs/Separator';
-import { Dialog, DialogType, DialogFooter } from '@fluentui/react/lib-commonjs/Dialog';
+import { Separator } from '@fluentui/react/lib/Separator';
+import { Dialog, DialogType, DialogFooter } from '@fluentui/react/lib/Dialog';
 import { semibold } from '../src/services/Fonts';
 import { VerboseDegree, CourseDegree } from "../src/models/Models";
 import GroupList from "../src/components/Groups/GroupList";
@@ -262,7 +262,7 @@ const GroupsView = () => {
                         <Row>
                             <Col lg={3} className="text-center mb-3 mb-lg-0">
                                 <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 350 }}>
-                                    <Image className="mb-2" src={process.env.PUBLIC_URL + '/images/groups/groups.png'} style={{ display: 'inline-block', width: '100%' }} />
+                                    <Image className="mb-2" src={'/images/groups/groups.png'} style={{ display: 'inline-block', width: '100%' }} />
                                 </div>
                             </Col>
 
@@ -337,7 +337,7 @@ const GroupsView = () => {
 
                             <Col xl={3} lg={4} className="text-center">
                                 <div style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-                                    <Image className="mb-2" src={process.env.PUBLIC_URL + '/images/groups/extra_groups.png'} style={{ display: 'inline-block', width: '75%' }} />
+                                    <Image className="mb-2" src={'/images/groups/extra_groups.png'} style={{ display: 'inline-block', width: '75%' }} />
                                 </div>
                             </Col>
 
@@ -359,7 +359,7 @@ const GroupsView = () => {
                     </div>
 
                     <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 5 }}>
-                        <Image src={process.env.PUBLIC_URL + '/images/message/error.png'} style={{ width: 200 }} />
+                        <Image src={'/images/message/error.png'} style={{ width: 200 }} />
                     </div>
 
                     <div>

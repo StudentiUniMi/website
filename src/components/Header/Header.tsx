@@ -23,7 +23,7 @@ const Header = () => {
                         <div style={{ width: 250, marginTop: 5 }}>
                             <Link href="http://studentiunimi.it/">
                                 <Image id="logo"
-                                    src={process.env.PUBLIC_URL + '/logo/' + logoFileName}
+                                    src={'/logo/' + logoFileName}
                                     alt='Network logo'
                                     style={logoProperties}
                                     className="mr-2 mt-2 mb-1 d-inline"

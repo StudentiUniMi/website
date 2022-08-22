@@ -127,7 +127,7 @@ const Services = () => {
 
                         <Col xl={3} lg={4} md={12} className="text-center">
                             <div style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-                                <Image id="logo" src={process.env.PUBLIC_URL + '/images/services.png'} style={{ maxWidth: '100%' }} />
+                                <Image id="logo" src={'/images/services.png'} style={{ maxWidth: '100%' }} />
                             </div>
                         </Col>
                     </Row>

@@ -18,7 +18,7 @@ const Wiki = () => {
 
                 <Row>
                     <Col lg={4} className="text-center mb-4 mb-lg-0">
-                        <Image src={process.env.PUBLIC_URL + '/images/home/4.png'} style={{ display: 'inline-block', width: '70%' }} />
+                        <Image src={'/images/home/4.png'} style={{ display: 'inline-block', width: '70%' }} />
                     </Col>
 
                     <Col lg={8}>
