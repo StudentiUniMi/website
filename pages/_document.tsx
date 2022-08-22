@@ -1,41 +1,27 @@
-import type { DocumentContext } from 'next/document';
-import Document, { Head, Html, Main, NextScript } from 'next/document';
-import { resetIds, Stylesheet } from '@fluentui/react';
+import * as React from 'react'
+import { Stylesheet, InjectionMode } from '@uifabric/merge-styles'
+import { resetIds } from '@uifabric/utilities'
+import Document, { DocumentContext } from 'next/document'
 
-const stylesheet = Stylesheet.getInstance();
+// Do this in file scope to initialize the stylesheet before Fluent UI React components are imported.
+const stylesheet = Stylesheet.getInstance()
 
-export default class MyDocument extends Document<{ styleTags: string; serializedStylesheet: string }> {
-    static getInitialProps = async (ctx: DocumentContext) => {
-        resetIds();
-        // eslint-disable-next-line react/display-name
-        const page = ctx.renderPage((App) => (props) => <App {...props} />);
+// Set the config.
+stylesheet.setConfig({
+    injectionMode: InjectionMode.none,
+    namespace: 'server'
+})
+
+// Now set up the document, and just reset the stylesheet.
+export default class MyDocument extends Document {
+    static async getInitialProps(ctx: DocumentContext) {
+        stylesheet.reset()
+        resetIds()
+
+        const initialProps = await Document.getInitialProps(ctx)
         return {
-            ...page,
-            styleTags: stylesheet.getRules(true),
-            serializedStylesheet: stylesheet.serialize(),
-        };
-    };
-
-    render() {
-        return (
-            <Html>
-                <Head>
-                    <style type="text/css" dangerouslySetInnerHTML={{ __html: this.props.styleTags }} />
-                    <script
-                        type="text/javascript"
-                        dangerouslySetInnerHTML={{
-                            __html: `
-            window.FabricConfig = window.FabricConfig || {};
-            window.FabricConfig.serializedStylesheet = ${this.props.serializedStylesheet};
-          `,
-                        }}
-                    />
-                </Head>
-                <body>
-                    <Main />
-                    <NextScript />
-                </body>
-            </Html>
-        );
+            ...initialProps,
+            styles: [initialProps.styles, <style key="fluentui-css" dangerouslySetInnerHTML={{ __html: stylesheet.getRules(true) }} />]
+        }
     }
 }

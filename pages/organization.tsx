@@ -4,18 +4,14 @@ import { Container } from 'react-bootstrap';
 import { Persona, PersonaSize } from 'office-ui-fabric-react/lib-commonjs/Persona';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { getNetworkMembers } from '../src/services/Requests';
-//import { CompoundButton } from '@fluentui/react/lib-commonjs/Button';
-import { IIconProps } from '@fluentui/react';
+import {IIconProps } from '@fluentui/react';
 import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import { semibold } from '../src/services/Fonts';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../src/services/LocalizationService";
-import Document, { Head, Html, Main, NextScript } from 'next/document';
-import { Stylesheet } from '@fluentui/merge-styles';
 import { resetIds } from '@fluentui/react';
 
-const stylesheet = Stylesheet.getInstance();
 
 const developers: any = [
     { name: "Giuseppe Del Campo", description: { it: "Sviluppatore del sito web", en: 'Website Developer' }, username: 'Giuseppetm', user_id: 597678134, github: "https://github.com/Giuseppetm", website: "https://giuseppetm.netlify.app/" },
