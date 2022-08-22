@@ -1,13 +1,12 @@
 import { Text } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
-import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
+import { Image } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { getStringDegrees } from '../../services/Requests';
 import React from 'react';
 import LocalizationService from "../../services/LocalizationService";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Typed from 'react-typed';
 
 const MainSection = () => {
     var theme = useTheme();
@@ -23,7 +22,6 @@ const MainSection = () => {
             let stringDegreesResult = await getStringDegrees();
     
             if (stringDegreesResult.status !== 200) {
-                // I used this to avoid showing an error there (hopefully there won't be errors)
                 setStringDegrees([
                     'informatica',
                     'fisica',
@@ -35,8 +33,6 @@ const MainSection = () => {
                 ]);
                 return;
             }
-    
-            //console.log("StringDegrees result: ", stringDegreesResult.value ?? []);
     
             setStringDegrees(stringDegreesResult.value ?? []);
         }
@@ -61,13 +57,7 @@ const MainSection = () => {
                             <Text variant="large">
                                 <>{locale?.homepage.section1.typedText} </>
                                 <Text style={{color: theme.palette.themePrimary}} variant="large">
-                                <Typed
-                                    strings={stringDegrees}
-                                    typeSpeed={50}
-                                    backSpeed={30}
-                                    backDelay={1500}
-                                    loop
-                                />
+                                    {/* TODO: new react-typed stuff .. */}
                                 </Text>
                                 <Text variant="large">?</Text>
                             </Text>

@@ -8,7 +8,7 @@ import { Text } from "office-ui-fabric-react/";
 import { semibold } from '../../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Degree, CourseDegree } from '../../models/Models';
-import { Toggle } from '@fluentui/react/lib-commonjs/Toggle';
+import { Toggle } from '@fluentui/react/lib/Toggle';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import GroupItem from './GroupItem';

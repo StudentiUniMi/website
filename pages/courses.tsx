@@ -1,5 +1,6 @@
 import React from "react";
-import { Text, Image } from 'office-ui-fabric-react';
+import { Text } from 'office-ui-fabric-react';
+import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import { initializeIcons } from "@uifabric/icons";
 import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
@@ -19,7 +20,7 @@ import Row from 'react-bootstrap/Row';
 import JsxParser from "react-jsx-parser";
 import { Autocomplete } from '../src/components/Groups/Autocomplete';
 import { ISuggestionItem } from '../src/components/Groups/Autocomplete_types';
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 import { IconButton, IIconProps, ITooltipHostStyles, Link, PrimaryButton, TooltipHost } from '@fluentui/react';
 import { useBoolean } from "@fluentui/react-hooks";
 

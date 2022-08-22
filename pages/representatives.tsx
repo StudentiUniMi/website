@@ -9,7 +9,7 @@ import { Department, Representative } from '../src/models/Models';
 import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import { semibold } from "../src/services/Fonts";
 import { IChoiceGroupOptionStyles } from "@fluentui/react";
-import { ChoiceGroup, IChoiceGroupOption } from '@fluentui/react/lib-commonjs/ChoiceGroup';
+import { ChoiceGroup, IChoiceGroupOption } from '@fluentui/react/lib/ChoiceGroup';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../src/services/LocalizationService";

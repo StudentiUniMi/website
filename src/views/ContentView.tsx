@@ -7,7 +7,7 @@ import UniversityView from './UniversityView';
 import LocalizationService from '../services/LocalizationService';
 import { Route, Switch } from 'react-router-dom';
 import { withCookies } from 'react-cookie';
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 
 const ContentView = () => {
     const locale = LocalizationService.strings();

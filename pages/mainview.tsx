@@ -7,7 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider } from '@fluentui/react-theme-provider'; 
 import { buildLightTheme, buildDarkTheme } from '../src/services/Themes';
 import { CookiesProvider, useCookies, withCookies } from 'react-cookie';
-import { HelmetProvider } from 'react-helmet-async';
+import HelmetProvider from 'react-helmet'; // TODO: check if react helmet helmetProvider is okay
 import { loadTheme } from '@fluentui/react';
 import { addDays } from '../src/services/Utils';
 

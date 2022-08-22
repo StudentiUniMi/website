@@ -3,7 +3,7 @@ import { Text, Callout, Link } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
 import { semibold } from '../src/services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { DefaultButton, DirectionalHint, IIconProps, mergeStyleSets } from "@fluentui/react";
+import { DefaultButton, DirectionalHint, IIconProps, mergeStyleSets } from "office-ui-fabric-react";
 import { useBoolean, useId } from '@fluentui/react-hooks';
 import { getRules } from '../src/services/Requests'; 
 import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';

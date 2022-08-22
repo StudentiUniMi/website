@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Link } from 'office-ui-fabric-react';
+import { Text, Link, CompoundButton } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
 import { Persona, PersonaSize } from 'office-ui-fabric-react/lib-commonjs/Persona';
 import { useTheme } from '@fluentui/react-theme-provider';
@@ -56,11 +56,9 @@ const OrganizationView = () => {
                             </div>
 
                             <div className="mb-2">
-                                {/*
                                 <CompoundButton primary theme={theme} secondaryText={locale?.aboutUs.button.text2} href="https://github.com/StudentiUniMi/docs/raw/main/statuto.pdf" style={{ textDecoration: 'none', boxShadow: theme.effects.elevation8 }} iconProps={icon}>
                                     {locale?.aboutUs.button.text1}
                                 </CompoundButton>
-                                */}
                             </div>
                         </Col>
                     </Row>
