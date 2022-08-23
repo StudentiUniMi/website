@@ -25,7 +25,7 @@ const Contributors = () => {
                 <div className="contributors mb-2">
                     <Row className="justify-content-center">
                         {
-                            contributors.map((x, i) => 
+                            contributors.map((x, _) =>
                                 <>
                                     <TooltipHost
                                         content={x.username}

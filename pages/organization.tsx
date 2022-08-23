@@ -87,7 +87,7 @@ const OrganizationView = () => {
 
                     <Row className="justify-content-center">
                         {
-                            (networkMembers.slice(1, networkMembers.length)).map((x, i) =>
+                            (networkMembers.slice(1, networkMembers.length)).map((x, _) =>
                                 <>
                                     <Col className="mb-4" lg={3} md={6} sm={6} xs={12}>
                                         <div style={{ maxWidth: 240, marginLeft: 'auto', marginRight: 'auto' }}>
@@ -115,7 +115,7 @@ const OrganizationView = () => {
 
                     <Row className="justify-content-center">
                         {
-                            developers.map((x:any, i:any) =>
+                            developers.map((x:any, _:any) =>
                                 <>
                                     <Col className="mb-3" lg={4} sm={6} xs={12}>
                                         <div style={{ maxWidth: 250, marginLeft: 'auto', marginRight: 'auto' }}>

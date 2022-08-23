@@ -13,7 +13,7 @@ const MainSection = () => {
     let didMount = React.useRef(false);
     const locale = LocalizationService.strings();
     const logoProperties = { width: 200, height: 200, display: 'inline-block' };
-    const [stringDegrees, setStringDegrees] = React.useState<string[]>([]);
+    const [_stringDegrees, setStringDegrees] = React.useState<string[]>([]);
 
     /* String Degrees */
     const updateStringDegrees = React.useCallback(async () => {

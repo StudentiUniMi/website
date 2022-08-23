@@ -102,7 +102,7 @@ const HeaderMenu = () => {
         */
     }, [getPath]);
 
-    const handlePivotLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
+    const handlePivotLinkClick = (item?: PivotItem, _e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
         if (item!.props.itemKey !== selectedKey) {
             setSelectedKey(item!.props.itemKey! as ItemsKeys);
 
@@ -140,9 +140,9 @@ const HeaderMenu = () => {
                     headersOnly={true}
                     styles={pivotStyles}
                     theme={theme}
-                    overflowBehavior={'menu'}
+                    // overflowBehavior={'menu'}
                 >
-                    {Object.values(ItemsKeys).map((x, i) => <PivotItem headerText={texts.get(x)} itemKey={x} key={x} />)}
+                    {Object.values(ItemsKeys).map((x, _i) => <PivotItem headerText={texts.get(x)} itemKey={x} key={x} />)}
                 </Pivot>
             </div>
 
@@ -161,7 +161,7 @@ const HeaderMenu = () => {
                     <div className="mt-4">
                         <div className="mb-4"><Text variant="large" color={theme.palette.neutralQuaternaryAlt}>Menu</Text></div>
 
-                        {dropdownOptions.map((x, i) => 
+                        {dropdownOptions.map((x, _i) =>
                             <div 
                                 className="menu-item mb-2 pr-4 pl-4 pt-1 pb-2" 
                                 onClick={() => handleDropdownValueChange(x)}

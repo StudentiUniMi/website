@@ -60,7 +60,7 @@ const MainView = () => {
   LocalizationService.localize(language);
   
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <>
       <CookiesProvider>
         <ThemeProvider applyTo="body" theme={theme ? darkTheme : lightTheme}>
           <HelmetProvider>
@@ -70,7 +70,7 @@ const MainView = () => {
           </HelmetProvider>
         </ThemeProvider>
       </CookiesProvider>
-    </Router>
+    </>
   );
 }
 

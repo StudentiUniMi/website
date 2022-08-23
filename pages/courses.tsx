@@ -5,7 +5,7 @@ import { initializeIcons } from "@uifabric/icons";
 import { Container } from 'react-bootstrap';
 import { useRouter } from 'next/router';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { getCourses, getVerboseDegreeBySlug, getVerboseDegreeByID, getDegreesForSearchBox } from '../src/services/Requests';
+import { getCourses, getVerboseDegreeByID, getDegreesForSearchBox } from '../src/services/Requests';
 import { Separator } from 'office-ui-fabric-react/lib-commonjs';
 import { Dialog, DialogType, DialogFooter } from 'office-ui-fabric-react/lib-commonjs';
 import { semibold } from '../src/services/Fonts';

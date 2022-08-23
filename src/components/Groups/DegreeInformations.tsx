@@ -24,7 +24,7 @@ const DegreeInformations= (props: Props) => {
     const degreeInformations: any[] = getDegreeInformations(props.degree?.slug!);
     /* Workaround to not show selected choicegroup */
     const [selectedChoiceGroup, setSelectedChoiceGroup] = React.useState<string>("");
-    const selectionChanged = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IChoiceGroupOption): void => { setSelectedChoiceGroup(""); }
+    const selectionChanged = (_ev?: React.FormEvent<HTMLElement | HTMLInputElement>, _option?: IChoiceGroupOption): void => { setSelectedChoiceGroup(""); }
      
     const options: IChoiceGroupOption[] = [];
 

@@ -6,13 +6,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../src/index.scss';
 import '../src/components/University/Slider/slider.scss';
 import { AppProps } from 'next/app'
-import Head from 'next/head';
 import Header from "../src/components/Header/Header";
 import Footer from "../src/components/Footer/Footer";
 import LocalizationService from "../src/services/LocalizationService";
 import { ThemeProvider } from '@fluentui/react-theme-provider';
 import { buildLightTheme, buildDarkTheme } from '../src/services/Themes';
-import { CookiesProvider, useCookies, withCookies } from 'react-cookie';
+import { CookiesProvider, useCookies } from 'react-cookie';
 import { loadTheme } from '@fluentui/react';
 import { addDays } from '../src/services/Utils';
 

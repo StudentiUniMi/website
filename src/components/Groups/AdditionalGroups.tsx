@@ -36,7 +36,7 @@ const AdditionalGroupsView = () => {
         return rowHeight.current * rowsPerPage.current;
     }, []); 
 
-    const getCell = (e?: ExtraGroup, index?: number, isScrolling?: boolean) => {
+    const getCell = (e?: ExtraGroup, _index?: number, _isScrolling?: boolean) => {
         return (
             <div data-is-focusable className="listGridTile" style={{ height: rowHeight.current + 'px', width: 100 / columnCount.current + '%' }}>
                 <ExtraGroupView data={e!} />

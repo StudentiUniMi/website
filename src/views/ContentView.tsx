@@ -1,9 +1,3 @@
-import HomeView from './HomeView';
-import GroupsView from './GroupsView';
-import OrganizationView from './OrganizationView';
-import RulesView from './RulesView';
-import ServicesView from './ServicesView';
-import UniversityView from './UniversityView';
 import LocalizationService from '../services/LocalizationService';
 import { Route, Switch } from 'react-router-dom';
 import { withCookies } from 'react-cookie';
@@ -22,7 +16,6 @@ const ContentView = () => {
             <Route path='/courses' render={() => wrap(
                 <>
                     {/* React-helmet is handled in the GroupsView */}
-                    <GroupsView/>
                 </>
             )} />
             <Route path='/services' render={() => wrap(
@@ -38,7 +31,6 @@ const ContentView = () => {
                     <meta property="og:type" content="website" />
                     <meta property="og:url" content="https://studentiunimi.it/services/" />
                 </Helmet>
-                    <ServicesView/>
                 </>
             )} />
             <Route path="/rules" render={() => wrap(
@@ -54,7 +46,6 @@ const ContentView = () => {
                     <meta property="og:type" content="website" />
                     <meta property="og:url" content="https://studentiunimi.it/rules/" />
                 </Helmet>
-                    <RulesView/>
                 </>
             )} />
             <Route path='/representatives' render={() => wrap(
@@ -70,7 +61,6 @@ const ContentView = () => {
                     <meta property="og:type" content="website" />
                     <meta property="og:url" content="https://studentiunimi.it/representatives/" />
                 </Helmet>
-                    <UniversityView/>
                 </>
             )} />
             <Route path='/organization' render={() => wrap(
@@ -86,7 +76,6 @@ const ContentView = () => {
                     <meta property="og:type" content="website" />
                     <meta property="og:url" content="https://studentiunimi.it/organization/" />
                 </Helmet>
-                    <OrganizationView/>
                 </>
             )} />
             <Route path="/" render={() => wrap(
@@ -102,7 +91,6 @@ const ContentView = () => {
                         <meta property="og:type" content="website" />
                         <meta property="og:url" content="https://studentiunimi.it/" />
                     </Helmet>
-                    <HomeView />
                 </>
             )} />
         </Switch>

@@ -105,7 +105,7 @@ export class Autocomplete extends React.Component<ISearchSuggestionsProps, IAuto
         gapSpace={2}
         coverTarget={false}
         alignTargetEdge={true}
-        onDismiss={ev => this.hideSuggestionCallOut()}
+        onDismiss={_ev => this.hideSuggestionCallOut()}
         hidden={!this.state.isSuggestionDisabled}
         calloutMaxHeight={300}
         style={CalloutStyle()}

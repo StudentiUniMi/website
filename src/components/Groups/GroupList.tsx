@@ -74,7 +74,7 @@ const CourseList= (props: Props) => {
         return rowHeight.current * rowsPerPage.current;
     }, []); 
     
-    const getCell = (e?: CourseDegree, index?: number, isScrolling?: boolean) => {
+    const getCell = (e?: CourseDegree, index?: number, _isScrolling?: boolean) => {
         return (
             <div data-is-focusable className="listGridTile" style={{ height: rowHeight.current + 'px', width: 100 / columnCount.current + '%' }}>
                 <GroupItem key={index} data={e!} />
@@ -87,15 +87,15 @@ const CourseList= (props: Props) => {
     const [yearFilter, setYearFilter] = React.useState<number>(0);
     const [semesterFilter, setSemesterFilter] = React.useState<number>(0);
 
-    const onNameFilterChanged = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, text?: string): void => {
+    const onNameFilterChanged = (_event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, text?: string): void => {
         setNameFilter(text ?? "");
     };
 
-    const onSemesterFilterChanged = (event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
+    const onSemesterFilterChanged = (_event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
         setSemesterFilter((item?.key ?? 0) as number);
     };
 
-    const onYearFilterChanged = (event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
+    const onYearFilterChanged = (_event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
         setYearFilter((item?.key ?? 0) as number);
     };
 
@@ -107,7 +107,7 @@ const CourseList= (props: Props) => {
     if (semesterFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.semester === semesterFilter); }
     if (yearFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.year === yearFilter); }
 
-    function toggleGroupsFilters(ev: React.MouseEvent<HTMLElement>, checked?: boolean) {
+    function toggleGroupsFilters(_ev: React.MouseEvent<HTMLElement>, checked?: boolean) {
         setFiltersToggle(checked!);
         resetGroupsFilters();
     };

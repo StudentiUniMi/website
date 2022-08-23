@@ -10,7 +10,6 @@ import { semibold } from '../../services/Fonts';
 import { redirectToLink } from '../../services/Utils';
 import { TooltipHost, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib-commonjs/Tooltip';
 import LocalizationService from "../../services/LocalizationService";
-import JsxParser from 'react-jsx-parser';
 
 const cardTokens: ICardTokens = { childrenMargin: 12 };
 

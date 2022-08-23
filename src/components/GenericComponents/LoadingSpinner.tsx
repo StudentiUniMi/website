@@ -32,7 +32,7 @@ const LoadingSpinner = (props: Props) => {
 
     const messageBarStyles = { backgroundColor: 'rgb(253, 231, 233)', color: theme.palette.redDark, padding: 20 };
 
-    const ErrorExample = (p: IExampleProps) => (
+    const ErrorExample = (_: IExampleProps) => (
         <div style={messageBarStyles} className="text-center">
             <Text variant="medium" styles={semibold} style={{ color: theme.palette.redDark }}>
                 <Icon iconName="ErrorBadge" style={{ fontSize: 12, marginRight: 10 }} />

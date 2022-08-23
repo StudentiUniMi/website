@@ -50,7 +50,7 @@ const UniversityView = () => {
 
     /* Workaround to not show selected choicegroup */
     const [selectedChoiceGroup, setSelectedChoiceGroup] = React.useState<string>("");
-    const selectionChanged = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IChoiceGroupOption): void => { setSelectedChoiceGroup(""); }
+    const selectionChanged = (_?: React.FormEvent<HTMLElement | HTMLInputElement>, __?: IChoiceGroupOption): void => { setSelectedChoiceGroup(""); }
 
     universityLinks.map((x) => {
         if (x.icon !== "" && x.link !== "") options.push({ 
@@ -79,7 +79,7 @@ const UniversityView = () => {
     const [errorLoadingRepresentatives, setErrorLoadingRepresentatives] = React.useState<boolean>(false);
     const [errorLoadingDepartments, setErrorLoadingDepartments] = React.useState<boolean>(false);
 
-    const departmentSelectionChanged = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IDropdownOption): void => {
+    const departmentSelectionChanged = (_?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IDropdownOption): void => {
         setSelectedDepartment(option?.key as string ?? '');
         router.push(`/representatives/${option?.data.slug as string}`);
     };
