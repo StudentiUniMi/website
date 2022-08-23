@@ -3,11 +3,11 @@ import LocalizationService from "../../services/LocalizationService";
 import { FontSizes } from '@fluentui/theme';
 import { IDropdownOption } from 'office-ui-fabric-react/lib-commonjs/Dropdown';
 import { Icon } from 'office-ui-fabric-react/lib-commonjs/Icon';
-import { Panel } from '@fluentui/react/lib-commonjs/Panel';
-import { ITooltipHostStyles, Link, PrimaryButton, Text, TooltipDelay, TooltipHost } from "@fluentui/react";
-import { useHistory } from "react-router-dom";
+import { Panel } from '@fluentui/react/lib/Panel';
+import { ITooltipHostStyles, Link, PrimaryButton, Text, TooltipDelay, TooltipHost } from "office-ui-fabric-react/lib-commonjs/";
+import { useRouter } from 'next/router';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { Pivot, PivotItem, IPivotStyles } from '@fluentui/react';
+import { Pivot, PivotItem, IPivotStyles } from 'office-ui-fabric-react/lib-commonjs/';
 import { withCookies } from "react-cookie";
 import { useBoolean } from "@fluentui/react-hooks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -25,7 +25,7 @@ const HeaderMenu = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
-    const history = useHistory();
+    const router = useRouter();
     const buttonStyle = { maxWidth: '270px', boxShadow: theme.effects.elevation8 };
     const calloutPropsResetColor = { gapSpace: 10 };
     const hostStylesResetColor: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
@@ -62,11 +62,18 @@ const HeaderMenu = () => {
     };
 
     const getPath = React.useCallback((): Array<string | boolean> => {
+        var pathname = router.pathname;
+        console.log(pathname);
+
+        return ["", true];
+
+        /*
         var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
         let first = states.length > 0 ? states[0] : '';
         let isCorrectPathKey = Object.keys(ItemsKeys).filter(x => x === first).length !== 0;
         return [first, isCorrectPathKey];
-    }, [history.location.pathname]);
+        */
+    }, []);
 
     let didMount = React.useRef(false);
     let [path, isCorrect] = getPath();
@@ -77,30 +84,32 @@ const HeaderMenu = () => {
             didMount.current = true;
             let [path, isCorrect] = getPath();
             if (!isCorrect) {
-                history.push('/');
+                router.push('/');
                 setSelectedKey(ItemsKeys.home);
             } else {
                 setSelectedKey(path as ItemsKeys);
             }
         }
 
-        /* Se l'history cambia bisogna settare correttamente il pivot o il dropdown */
+        /* TODO: Se l'history cambia bisogna settare correttamente il pivot o il dropdown */
+        /*
         return history.listen(() => {
             if (history.action === 'PUSH' || history.action === 'POP') {
                 let [path,] = getPath();
                 setSelectedKey(path as ItemsKeys);
             }
         });
-    }, [getPath, history]);
+        */
+    }, [getPath]);
 
     const handlePivotLinkClick = (item?: PivotItem, e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
         if (item!.props.itemKey !== selectedKey) {
             setSelectedKey(item!.props.itemKey! as ItemsKeys);
 
             if (item!.props.itemKey === "home") {
-                history.push('/');
+                router.push('/');
             } else {
-                history.push(`/${item!.props.itemKey!}/`);
+                router.push(`/${item!.props.itemKey!}/`);
             }
         }
     };
@@ -110,9 +119,9 @@ const HeaderMenu = () => {
             setSelectedKey(item!.key! as ItemsKeys);
 
             if (item!.key! === "home") {
-                history.push('/');
+                router.push('/');
             } else {
-                history.push(`/${item!.key! as string}/`);
+                router.push(`/${item!.key! as string}/`);
             }
         }
 

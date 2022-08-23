@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from 'react-bootstrap';
 import { Text, Icon } from 'office-ui-fabric-react';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib-commonjs/Dropdown';
-import { useHistory } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { getRepresentatives, getDepartments, getUniversityLinks } from '../src/services/Requests'
 import { Department, Representative } from '../src/models/Models';
@@ -24,8 +24,7 @@ const UniversityView = () => {
     let didMount = React.useRef(false);
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
-    const history = useHistory();
-    //const whiteText = '#faf9f8';
+    const router = useRouter();
     const imageProperties = { display: 'inline-block', width: '80%' };
 
     const universityLinks: any[] = getUniversityLinks();
@@ -82,7 +81,7 @@ const UniversityView = () => {
 
     const departmentSelectionChanged = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IDropdownOption): void => {
         setSelectedDepartment(option?.key as string ?? '');
-        history.push(`/representatives/${option?.data.slug as string}`);
+        router.push(`/representatives/${option?.data.slug as string}`);
     };
 
     /* Departments callBack */
@@ -94,8 +93,6 @@ const UniversityView = () => {
             setErrorLoadingDepartments(true);
             return;
         }
-
-        //console.log("Departments result: ", departmentsResult.value ?? []);
 
         setDepartments(departmentsResult.value ?? []);
     }, []);
@@ -112,8 +109,6 @@ const UniversityView = () => {
             setErrorLoadingRepresentatives(true);
         }
 
-        //console.log("Representatives result: ", representativesResult.value ?? []);
-
         setLoadingRepresentatives(false);
         setRepresentatives(representativesResult.value ?? []);
     }, [setRepresentatives, selectedDepartment]);
@@ -122,13 +117,13 @@ const UniversityView = () => {
     const initializeRepresentativesViaUrl = React.useCallback(() => {
         if (!didMount.current && departments.length !== 0) {
             didMount.current = true
-            var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
-            var departmentSlug = states.length >= 2 ? states[1] : '';
+            // TODO: Fix this
+            //var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
+            //var departmentSlug = states.length >= 2 ? states[1] : '';
 
-            //console.log("Department slug: ", departmentSlug)
-            setSelectedDepartment(departments.filter(x => x.slug === departmentSlug)[0]?.pk as unknown as string);
+            //setSelectedDepartment(departments.filter(x => x.slug === departmentSlug)[0]?.pk as unknown as string);
         }
-    }, [departments, history.location.pathname]);
+    }, [departments]);
 
     React.useEffect(() => {
         if (!didMount.current) {

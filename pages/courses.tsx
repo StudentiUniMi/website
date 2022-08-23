@@ -1,15 +1,20 @@
 import React from "react";
-import { Text } from 'office-ui-fabric-react';
+import { Text } from 'office-ui-fabric-react/lib-commonjs';
 import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import { initializeIcons } from "@uifabric/icons";
 import { Container } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { getCourses, getVerboseDegreeBySlug, getVerboseDegreeByID, getDegreesForSearchBox } from '../src/services/Requests';
-import { Separator } from '@fluentui/react/lib/Separator';
-import { Dialog, DialogType, DialogFooter } from '@fluentui/react/lib/Dialog';
+import { Separator } from 'office-ui-fabric-react/lib-commonjs';
+import { Dialog, DialogType, DialogFooter } from 'office-ui-fabric-react/lib-commonjs';
 import { semibold } from '../src/services/Fonts';
 import { VerboseDegree, CourseDegree } from "../src/models/Models";
+import { Autocomplete } from '../src/components/Groups/Autocomplete';
+import { ISuggestionItem } from '../src/components/Groups/Autocomplete_types';
+import { Helmet } from 'react-helmet';
+import { IconButton, IIconProps, ITooltipHostStyles, Link, PrimaryButton, TooltipHost } from 'office-ui-fabric-react/lib-commonjs';
+import { useBoolean } from "@fluentui/react-hooks";
 import GroupList from "../src/components/Groups/GroupList";
 import LocalizationService from "../src/services/LocalizationService";
 import DegreeInformations from "../src/components/Groups/DegreeInformations";
@@ -18,11 +23,6 @@ import AdditionalGroupsView from '../src/components/Groups/AdditionalGroups';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import JsxParser from "react-jsx-parser";
-import { Autocomplete } from '../src/components/Groups/Autocomplete';
-import { ISuggestionItem } from '../src/components/Groups/Autocomplete_types';
-import { Helmet } from 'react-helmet';
-import { IconButton, IIconProps, ITooltipHostStyles, Link, PrimaryButton, TooltipHost } from '@fluentui/react';
-import { useBoolean } from "@fluentui/react-hooks";
 
 initializeIcons();
 
@@ -50,7 +50,7 @@ const GroupsView = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
-    let history = useHistory();
+    let router = useRouter();
     let didMount = React.useRef(false);
     const resetIcon: IIconProps = { iconName: 'Refresh' };
     const calloutProps = { gapSpace: 10 };
@@ -80,14 +80,14 @@ const GroupsView = () => {
     const entitySelectHandler = (item: ISuggestionItem): void => { // Questo viene triggerato quando selezioni qualcosa dal menù
         setDegreeTextSearch(item.displayValue);
         setSelectedDegree(item.key as unknown as string);
-        history.push(`/courses/${item.degree?.slug}/`);
+        router.push(`/courses/${item.degree?.slug}/`);
     };
     
     const searchTextHandler = (): void => { // Triggerato quando premi per la ricerca (si è deciso di selezionare il primo risultato)
         if (searchData.length === 0) return;
         setDegreeTextSearch(searchData[0]?.displayValue);
         setSelectedDegree(searchData[0]?.key as unknown as string);
-        history.push(`/courses/${searchData[0]?.degree?.slug}/`);
+        router.push(`/courses/${searchData[0]?.degree?.slug}/`);
     };
 
 
@@ -163,22 +163,24 @@ const GroupsView = () => {
     const initializeDegreeByUrl = React.useCallback(async () => {
         if (!didMount.current) {
             didMount.current = true;
-            var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
-            var degreeSlug = states.length >= 2 ? states[1].toLowerCase() : '';
+            // TODO: Fix this
+            //var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
+            //var degreeSlug = states.length >= 2 ? states[1].toLowerCase() : '';
             
-            if (degreeSlug === '') {
-                return;
-            }
+            //if (degreeSlug === '') {
+            //    return;
+            //}
 
-            let verboseDegreeResult = await getVerboseDegreeBySlug(degreeSlug);
+            //let verboseDegreeResult = await getVerboseDegreeBySlug(degreeSlug);
             
-            if (verboseDegreeResult.status !== 200) {
-                return;
-            }
+            //if (verboseDegreeResult.status !== 200) {
+            //    return;
+            //}
 
-            const verboseDeg = verboseDegreeResult.value ?? undefined;
-            if (verboseDeg === undefined || verboseDeg === null) return;
+            //const verboseDeg = verboseDegreeResult.value ?? undefined;
+            //if (verboseDeg === undefined || verboseDeg === null) return;
 
+            /*
             setSelectedDegree(verboseDeg.pk! as unknown as string);
             setDegreeTextSearch(verboseDeg.name!)
 
@@ -188,8 +190,9 @@ const GroupsView = () => {
                 href: `https://studentiunimi.it/courses/${verboseDeg?.slug}`,
                 hrefLang: language!
             });
+            */
         }
-    }, [/*history.location.pathname,*/ locale?.helmet.degreeLoaded.title1, locale?.helmet.degreeLoaded.title2, locale?.helmet.degreeLoaded.description1, locale?.helmet.degreeLoaded.description2, language]);
+    }, [locale?.helmet.degreeLoaded.title1, locale?.helmet.degreeLoaded.title2, locale?.helmet.degreeLoaded.description1, locale?.helmet.degreeLoaded.description2, language]);
 
     const updateLoadedDegree = React.useCallback(async () => {
         if (selectedDegree === null || selectedDegree === undefined || selectedDegree === "") return;
@@ -215,7 +218,8 @@ const GroupsView = () => {
     }, [selectedDegree, updateLoadedDegree]);
 
     React.useEffect(() => {
-        /* Updating content based on browser commands (push and pop) */
+        /* TODO: Updating content based on browser commands (push and pop) */
+        /*
         return history.listen(async () => {
             if (history.action === 'PUSH' || history.action === 'POP') {
                 var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
@@ -229,7 +233,8 @@ const GroupsView = () => {
                 }
             }
         });
-    }, [history, initializeDegreeByUrl, updateCourses])
+        */
+    }, [initializeDegreeByUrl, updateCourses])
 
     function resetSection() {
         setLoadedDegree(null);

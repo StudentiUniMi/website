@@ -7,7 +7,6 @@ import HeaderMenu from './HeaderMenu';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { FontWeights, ITextStyles, Link } from 'office-ui-fabric-react';
 
-
 const Header = () => {
     var theme = useTheme();
     const logoProperties = { width: 25, height: 25, marginTop: '5px', marginBottom: '5px' };

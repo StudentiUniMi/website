@@ -3,7 +3,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../src/services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
-import { useHistory } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib-commonjs/Text';
 import { Container } from 'react-bootstrap';
@@ -21,7 +21,7 @@ const Services = () => {
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
     let didMount = React.useRef(false);
-    let history = useHistory();
+    let router = useRouter();
     const redirects = getRedirects();
     const guides = getGuides();
     const tools = getTools();
@@ -34,9 +34,9 @@ const Services = () => {
             setSelectedSubSection(item.props.itemKey!);
 
             if (item.props.itemKey! !== "redirects") {
-                history.push(`/services/${item.props.itemKey!}/`);
+                router.push(`/services/${item.props.itemKey!}/`);
             } else {
-                history.push('/services/');
+                router.push('/services/');
             }
         }
     };
@@ -60,26 +60,29 @@ const Services = () => {
     const initializeSection = React.useCallback(() => {
         if (!didMount.current) {
             didMount.current = true;
-            var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
-            var subsection = states.length >= 2 ? states[1].toLowerCase() : '';
+            // TODO: Fix this
+            //var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
+            //var subsection = states.length >= 2 ? states[1].toLowerCase() : '';
             
-            if (subsection === '') {
-                setSelectedSubSection("redirects");
-            } else {
-                setSelectedSubSection(subsection);
-            }
+            //if (subsection === '') {
+            //    setSelectedSubSection("redirects");
+            //} else {
+            //    setSelectedSubSection(subsection);
+            //}
         }
-    }, [history]);
+    }, []);
 
     React.useEffect(() => {
-        /* Updating content based on browser commands (push and pop) */
+        /* TODO: Updating content based on browser commands (push and pop) */
+        /*
         return history.listen(async () => {
             if (history.action === 'PUSH' || history.action === 'POP') {
                 didMount.current = false;
                 initializeSection();
             }
         });
-    }, [history, initializeSection])
+        */
+    }, [initializeSection])
 
     React.useEffect(() => {
         if (!didMount.current) initializeSection();

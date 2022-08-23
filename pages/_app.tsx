@@ -1,19 +1,20 @@
 import * as React from 'react'
+import "swiper/swiper.min.css";
+import "swiper/components/pagination/pagination.min.css";
+import "swiper/components/navigation/navigation.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../src/index.scss';
+import '../src/components/University/Slider/slider.scss';
 import { AppProps } from 'next/app'
 import Head from 'next/head';
 import Header from "../src/components/Header/Header";
 import Footer from "../src/components/Footer/Footer";
-import ContentView from "../src/views/ContentView";
 import LocalizationService from "../src/services/LocalizationService";
-import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider } from '@fluentui/react-theme-provider';
 import { buildLightTheme, buildDarkTheme } from '../src/services/Themes';
 import { CookiesProvider, useCookies, withCookies } from 'react-cookie';
-import HelmetProvider from 'react-helmet'; // TODO: check if react helmet helmetProvider is okay
 import { loadTheme } from '@fluentui/react';
 import { addDays } from '../src/services/Utils';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../src/index.scss';
 
 const App = ({ Component, pageProps }: AppProps) => {
     let [cookies, setCookie] = useCookies();
@@ -67,7 +68,9 @@ const App = ({ Component, pageProps }: AppProps) => {
         <>
             <CookiesProvider>
                 <ThemeProvider applyTo="body" theme={theme ? darkTheme : lightTheme}>
+                    <Header />
                     <Component {...pageProps} />
+                    <Footer changeTheme={changeTheme} changePalette={changePalette} changeLanguage={changeLanguage} />
                 </ThemeProvider>
             </CookiesProvider>
         </>

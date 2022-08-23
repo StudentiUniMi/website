@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 import { Persona, PersonaSize } from 'office-ui-fabric-react/lib-commonjs/Persona';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { getNetworkMembers } from '../src/services/Requests';
-import {IIconProps } from '@fluentui/react';
+import { IIconProps } from '@fluentui/react';
 import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import { semibold } from '../src/services/Fonts';
 import Col from 'react-bootstrap/Col';

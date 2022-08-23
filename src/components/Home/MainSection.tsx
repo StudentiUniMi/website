@@ -1,4 +1,4 @@
-import { Text } from '@fluentui/react';
+import { Text } from 'office-ui-fabric-react/lib-commonjs';
 import { Container } from 'react-bootstrap';
 import { Image } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
