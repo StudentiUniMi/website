@@ -12,9 +12,9 @@ import { semibold } from '../src/services/Fonts';
 import { VerboseDegree, CourseDegree } from "../src/models/Models";
 import { Autocomplete } from '../src/components/Groups/Autocomplete';
 import { ISuggestionItem } from '../src/components/Groups/Autocomplete_types';
-import { Helmet } from 'react-helmet';
 import { IconButton, IIconProps, ITooltipHostStyles, Link, PrimaryButton, TooltipHost } from 'office-ui-fabric-react/lib-commonjs';
 import { useBoolean } from "@fluentui/react-hooks";
+import { NextSeo } from 'next-seo';
 import GroupList from "../src/components/Groups/GroupList";
 import LocalizationService from "../src/services/LocalizationService";
 import DegreeInformations from "../src/components/Groups/DegreeInformations";
@@ -250,17 +250,30 @@ const GroupsView = () => {
 
     return (
         <>
-            <Helmet>
-                <meta charSet="utf-8" />
-                <title>{reactHelmetContent.title}</title>
-                <meta name="description" content={reactHelmetContent.description} />
-                <link rel="canonical" href={reactHelmetContent.href} />
-                <meta name="keywords" content={reactHelmetContent.title + ", " + reactHelmetContent.description + ", Network StudentiUniMi, Studenti UniMi, Network Studenti Unimi, Gruppi telegram unimi, Gruppi unimi, Siti web corsi unimi, Faq corsi unimi, Wiki Unimi"} />
-                <meta property="og:title" content={reactHelmetContent.title} />
-                <meta property="og:description" content={reactHelmetContent.description} />
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content={reactHelmetContent.href} />
-            </Helmet>
+            <NextSeo
+                title={reactHelmetContent.title}
+                description={reactHelmetContent.description}
+                canonical={reactHelmetContent.href}
+                openGraph={{
+                    url: reactHelmetContent.href,
+                    title: reactHelmetContent.title,
+                    description: reactHelmetContent.description,
+                    site_name: 'Network StudentiUniMi',
+                    type: 'website',
+                    locale: language, // TODO: Check if this works
+                    images: [
+                        {
+                            url: '/images/groups/groups.png',
+                            type: 'image/png',
+                        }
+                    ],
+                }}
+                twitter={{
+                    handle: '@handle',
+                    site: '@site',
+                    cardType: 'summary_large_image',
+                }}
+            />
 
             <div className="groups">
                 <div className="pt-5">

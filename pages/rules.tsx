@@ -7,6 +7,7 @@ import { DefaultButton, DirectionalHint, IIconProps, mergeStyleSets } from "offi
 import { useBoolean, useId } from '@fluentui/react-hooks';
 import { getRules } from '../src/services/Requests'; 
 import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
+import { NextSeo } from 'next-seo';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Rule from '../src/models/Rule';
@@ -45,92 +46,119 @@ const Rules = () => {
     });
 
     return (
-        <div className="rules pb-3">
-            <div className="pt-5 pb-5 mb-4" style={{ backgroundColor: theme.palette.themePrimary }}>
-                <Container>
+        <>
+            <NextSeo
+                title={locale?.helmet.rules.title}
+                description={locale?.helmet.rules.description}
+                canonical={"https://studentiunimi.it/rules"}
+                openGraph={{
+                    url: "https://studentiunimi.it/rules",
+                    title: locale?.helmet.rules.title,
+                    description: locale?.helmet.rules.description,
+                    site_name: 'Network StudentiUniMi',
+                    type: 'website',
+                    locale: language, // TODO: Check if this works, and add keywords
+                    images: [
+                        {
+                            url: '/logo/preview_logo.png',
+                            type: 'image/png',
+                        }
+                    ],
+                }}
+                twitter={{
+                    handle: '@handle',
+                    site: '@site',
+                    cardType: 'summary_large_image',
+                }}
+            />
 
-                    <Row>
-                        <Col lg={4} className="text-center">
-                            <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }}>
-                                <Image id="logo" className="mb-2" src={'/images/rules.png'} style={imageProperties} />
-                            </div>
-                        </Col>
+            <section className="rules pb-3">
+                <div className="pt-5 pb-5 mb-4" style={{ backgroundColor: theme.palette.themePrimary }}>
+                    <Container>
 
-                        <Col lg={8}>
-                            <div className="mb-2">
-                                <Text variant="xLargePlus" style={{color: theme.palette.white}}>{locale?.rules.text1}</Text>
-                            </div>
+                        <Row>
+                            <Col lg={4} className="text-center">
+                                <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }}>
+                                    <Image id="logo" className="mb-2" src={'/images/rules.png'} style={imageProperties} />
+                                </div>
+                            </Col>
 
-                            <div className="mb-3">
-                                <Text variant="large" style={{ color: theme.palette.white }}>{locale?.rules.text2}</Text>
-                            </div>
+                            <Col lg={8}>
+                                <div className="mb-2">
+                                    <Text variant="xLargePlus" style={{color: theme.palette.white}}>{locale?.rules.text1}</Text>
+                                </div>
 
-                            <div className="mb-3">
-                                <DefaultButton
-                                    id={buttonId}
-                                    onClick={toggleIsCalloutVisible}
-                                    text={locale?.rules.question}
-                                    className={styles.button}
-                                    iconProps={icon}
-                                    theme={theme}
-                                    style={{ boxShadow: theme.effects.elevation8 }}
-                                />
-                                {isCalloutVisible && (
-                                    <Callout
-                                        className={styles.callout}
-                                        role="alertdialog"
-                                        gapSpace={3}
-                                        target={`#${buttonId}`}
-                                        onDismiss={toggleIsCalloutVisible}
-                                        directionalHint={DirectionalHint.bottomCenter}
-                                        setInitialFocus
-                                    >
-                                        <Text block variant="medium" className="mb-1" styles={semibold}>{locale?.rules.answer.text1}</Text>
-                                        <Text block variant="small"><JsxParser bindings={{ theme: theme }} components={{ Text, Link }} jsx={locale?.rules.answer.text2} /></Text>
-                                    </Callout>
-                                )}
-                            </div>
+                                <div className="mb-3">
+                                    <Text variant="large" style={{ color: theme.palette.white }}>{locale?.rules.text2}</Text>
+                                </div>
 
-                            <div>
-                                <Text variant="medium" style={{ color: theme.palette.white }}><i>{locale?.rules.text3}</i></Text>
-                            </div>
-                        </Col>
-                    </Row>
+                                <div className="mb-3">
+                                    <DefaultButton
+                                        id={buttonId}
+                                        onClick={toggleIsCalloutVisible}
+                                        text={locale?.rules.question}
+                                        className={styles.button}
+                                        iconProps={icon}
+                                        theme={theme}
+                                        style={{ boxShadow: theme.effects.elevation8 }}
+                                    />
+                                    {isCalloutVisible && (
+                                        <Callout
+                                            className={styles.callout}
+                                            role="alertdialog"
+                                            gapSpace={3}
+                                            target={`#${buttonId}`}
+                                            onDismiss={toggleIsCalloutVisible}
+                                            directionalHint={DirectionalHint.bottomCenter}
+                                            setInitialFocus
+                                        >
+                                            <Text block variant="medium" className="mb-1" styles={semibold}>{locale?.rules.answer.text1}</Text>
+                                            <Text block variant="small"><JsxParser bindings={{ theme: theme }} components={{ Text, Link }} jsx={locale?.rules.answer.text2} /></Text>
+                                        </Callout>
+                                    )}
+                                </div>
 
-                </Container>
-            </div>
-            
-            <div className="mb-4">
-                <div className="mb-4 text-center">
-                    <Text variant="xLarge">{locale?.rules.header}</Text>
+                                <div>
+                                    <Text variant="medium" style={{ color: theme.palette.white }}><i>{locale?.rules.text3}</i></Text>
+                                </div>
+                            </Col>
+                        </Row>
+
+                    </Container>
                 </div>
-            </div>
+                
+                <div className="mb-4">
+                    <div className="mb-4 text-center">
+                        <Text variant="xLarge">{locale?.rules.header}</Text>
+                    </div>
+                </div>
 
-            <div className="mb-3">
-                <Container>
-                    {
-                        rulesData.map((x, i) => {
-                            return (
-                                <Accordion style={{ backgroundColor: theme.palette.white, color: theme.palette.black, boxShadow: theme.effects.elevation8, marginRight: 10, marginLeft: 10 }} key={i}>
-                                    <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon style={{ color: theme.palette.black }} />}
-                                        aria-controls="panel1a-content"
-                                        id="panel1a-header"
-                                    >
-                                        <Text variant="medium" style={{ color: theme.palette.themePrimary }} styles={semibold}>{x.title![language!]}</Text>
-                                    </AccordionSummary>
-                                    <AccordionDetails>
-                                        <Text variant="medium">
-                                            <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x.description![language!]} />
-                                        </Text>
-                                    </AccordionDetails>
-                                </Accordion>
-                            )
-                        })
-                    }
-                </Container>
-            </div>
-        </div>
+                <div className="mb-3">
+                    <Container>
+                        {
+                            rulesData.map((x, i) => {
+                                return (
+                                    <Accordion style={{ backgroundColor: theme.palette.white, color: theme.palette.black, boxShadow: theme.effects.elevation8, marginRight: 10, marginLeft: 10 }} key={i}>
+                                        <AccordionSummary
+                                            expandIcon={<ExpandMoreIcon style={{ color: theme.palette.black }} />}
+                                            aria-controls="panel1a-content"
+                                            id="panel1a-header"
+                                        >
+                                            <Text variant="medium" style={{ color: theme.palette.themePrimary }} styles={semibold}>{x.title![language!]}</Text>
+                                        </AccordionSummary>
+                                        <AccordionDetails>
+                                            <Text variant="medium">
+                                                <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x.description![language!]} />
+                                            </Text>
+                                        </AccordionDetails>
+                                    </Accordion>
+                                )
+                            })
+                        }
+                    </Container>
+                </div>
+            </section>
+        </>
     )
 }
 

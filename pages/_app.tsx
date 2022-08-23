@@ -6,14 +6,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../src/index.scss';
 import '../src/components/University/Slider/slider.scss';
 import { AppProps } from 'next/app'
-import Header from "../src/components/Header/Header";
-import Footer from "../src/components/Footer/Footer";
-import LocalizationService from "../src/services/LocalizationService";
 import { ThemeProvider } from '@fluentui/react-theme-provider';
 import { buildLightTheme, buildDarkTheme } from '../src/services/Themes';
 import { CookiesProvider, useCookies } from 'react-cookie';
 import { loadTheme } from '@fluentui/react';
 import { addDays } from '../src/services/Utils';
+import Script from 'next/script';
+import Head from 'next/head';
+import Header from "../src/components/Header/Header";
+import Footer from "../src/components/Footer/Footer";
+import LocalizationService from "../src/services/LocalizationService";
 
 const App = ({ Component, pageProps }: AppProps) => {
     let [cookies, setCookie] = useCookies();
@@ -65,6 +67,15 @@ const App = ({ Component, pageProps }: AppProps) => {
 
     return (
         <>
+            {/* Shared head properties */}
+            <Head>
+                <link rel="icon" href="/logo/unimi150.png" />
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+                <meta name="author" content="Giuseppe Del Campo, Manuele Lucchi" />
+                <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://studentiunimi.it https://code.jquery.com https://cdn.jsdelivr.net https://p.studentiunimi.it; font-src *;" />
+            </Head>
+
+            {/* Main webapp structure */}
             <CookiesProvider>
                 <ThemeProvider applyTo="body" theme={theme ? darkTheme : lightTheme}>
                     <Header />
@@ -72,6 +83,9 @@ const App = ({ Component, pageProps }: AppProps) => {
                     <Footer changeTheme={changeTheme} changePalette={changePalette} changeLanguage={changeLanguage} />
                 </ThemeProvider>
             </CookiesProvider>
+
+            {/* Self-hosted Plausible Web Analytics */}
+            <Script defer data-domain="studentiunimi.it" src="https://p.studentiunimi.it/js/script.js" />
         </>
     )
 };

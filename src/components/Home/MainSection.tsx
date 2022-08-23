@@ -43,7 +43,7 @@ const MainSection = () => {
     }, [updateStringDegrees]);
 
     return (
-        <div className="pb-5">
+        <div className="pb-5 pt-5">
             <Container>
                 <Row>
                     <Col lg={4}>

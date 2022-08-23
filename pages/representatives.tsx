@@ -10,12 +10,13 @@ import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import { semibold } from "../src/services/Fonts";
 import { IChoiceGroupOptionStyles } from "@fluentui/react";
 import { ChoiceGroup, IChoiceGroupOption } from '@fluentui/react/lib/ChoiceGroup';
+import { redirectToLink } from "../src/services/Utils";
+import { NextSeo } from 'next-seo';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../src/services/LocalizationService";
 import RepresentativesList from '../src/components/University/RepresentativesList';
 import Slider from '../src/components/University/Slider/Slider';
-import { redirectToLink } from "../src/services/Utils";
 
 const iconStyles = { marginRight: '8px' };
 
@@ -146,123 +147,150 @@ const UniversityView = () => {
     });
 
     return (
-        <div className="university">
-            <div className="pt-5 pb-5 mb-4" style={{ backgroundColor: theme.palette.themeDark }}>
-                <Container>
+        <>
+            <NextSeo
+                title={locale?.helmet.university.title}
+                description={locale?.helmet.university.description}
+                canonical={"https://studentiunimi.it/representatives"}
+                openGraph={{
+                    url: "https://studentiunimi.it/representatives",
+                    title: locale?.helmet.university.title,
+                    description: locale?.helmet.university.description,
+                    site_name: 'Network StudentiUniMi',
+                    type: 'website',
+                    locale: language, // TODO: Check if this works, and add keywords
+                    images: [
+                        {
+                            url: '/logo/preview_logo.png',
+                            type: 'image/png',
+                        }
+                    ],
+                }}
+                twitter={{
+                    handle: '@handle',
+                    site: '@site',
+                    cardType: 'summary_large_image',
+                }}
+            />
+            
+            <section className="university">
+                <div className="pt-5 pb-5 mb-4" style={{ backgroundColor: theme.palette.themeDark }}>
+                    <Container>
 
-                    <Row>
-                        <Col xl={9} lg={8} className="mb-3 mb-lg-0">
-                            <div className="mb-2">
-                                <Text variant="xLargePlus" style={{ color: theme.palette.white }}>{locale?.university.header.text1}</Text>
-                            </div>
-
-                            <div className="mb-3">
-                                <Text variant="large" style={{ color: theme.palette.white }}>{locale?.university.header.text2}</Text>
-                            </div>
-                        </Col>
-
-                        <Col xl={3} lg={4} className="text-center">
-                            <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 500 }}>
-                                <Image id="logo" className="mb-2" src={'/images/university.png'} style={{ display: 'inline-block', width: '80%' }} />
-                            </div>
-                        </Col>
-                    </Row>
-
-                </Container>
-            </div>
-
-            <div>
-                <Container>
-                    <div className="mb-3 text-center">
-                        <Text variant="xLarge"><Icon iconName="NewsSearch" /> {locale?.university.news.title}</Text>
-                    </div>
-
-                    <div className="mb-3">
-                        <Slider />
-                    </div>
-                </Container>
-            </div>
-
-            <div className="pt-5 pb-5" style={{ backgroundColor: theme.palette.themeTertiary }}>
-                <Container>
-
-                    <Row>
-                        <Col lg={4} className="text-center">
-                            <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }}>
-                                <Image id="logo" className="mb-2" src={'/images/university_links.png'} style={imageProperties} />
-                            </div>
-                        </Col>
-
-                        <Col lg={8} className="mb-2">
-                            <div className="mb-2">
-                                <Text variant="xLargePlus" style={{color: theme.palette.white}}>{locale?.university.linksAndRedirects.text1}</Text>
-                            </div>
-
-                            <div className="mb-3">
-                                <Text variant="large" style={{ color: theme.palette.white }}>{locale?.university.linksAndRedirects.text2}</Text>
-                            </div>
-
-                            <div className="text-center justify-content-center university-links" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-                                <ChoiceGroup options={options} onChange={selectionChanged} selectedKey={selectedChoiceGroup} />
-                            </div>
-                        </Col>
-                    </Row>
-
-
-
-                </Container>
-            </div>
-
-            <div className="pt-5 pb-5 mb-4" style={{ backgroundColor: theme.palette.themeDarkAlt }}>
-                <Container>
-                    <Row>
-                        <Col>
-                            <div className="mb-2">
+                        <Row>
+                            <Col xl={9} lg={8} className="mb-3 mb-lg-0">
                                 <div className="mb-2">
-                                    <Text variant="xLarge" style={{ color: theme.palette.white }}>
-                                        {locale?.university.text1}
-                                    </Text>
+                                    <Text variant="xLargePlus" style={{ color: theme.palette.white }}>{locale?.university.header.text1}</Text>
                                 </div>
 
+                                <div className="mb-3">
+                                    <Text variant="large" style={{ color: theme.palette.white }}>{locale?.university.header.text2}</Text>
+                                </div>
+                            </Col>
+
+                            <Col xl={3} lg={4} className="text-center">
+                                <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 500 }}>
+                                    <Image id="logo" className="mb-2" src={'/images/university.png'} style={{ display: 'inline-block', width: '80%' }} />
+                                </div>
+                            </Col>
+                        </Row>
+
+                    </Container>
+                </div>
+
+                <div>
+                    <Container>
+                        <div className="mb-3 text-center">
+                            <Text variant="xLarge"><Icon iconName="NewsSearch" /> {locale?.university.news.title}</Text>
+                        </div>
+
+                        <div className="mb-3">
+                            <Slider />
+                        </div>
+                    </Container>
+                </div>
+
+                <div className="pt-5 pb-5" style={{ backgroundColor: theme.palette.themeTertiary }}>
+                    <Container>
+
+                        <Row>
+                            <Col lg={4} className="text-center">
+                                <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }}>
+                                    <Image id="logo" className="mb-2" src={'/images/university_links.png'} style={imageProperties} />
+                                </div>
+                            </Col>
+
+                            <Col lg={8} className="mb-2">
                                 <div className="mb-2">
-                                    <Text variant="large" style={{ color: theme.palette.white }}>
-                                        {locale?.university.text2}
-                                    </Text>
+                                    <Text variant="xLargePlus" style={{color: theme.palette.white}}>{locale?.university.linksAndRedirects.text1}</Text>
                                 </div>
 
-                                <div className="mb-2 text-center" style={{ maxWidth: '400px', marginRight: 'auto'}}>
-                                    <Dropdown
-                                        placeholder={locale?.university.departmentSelect}
-                                        label={locale?.university.departmentSelect}
-                                        onRenderLabel={() => <Text style={{ color: theme.palette.white }} styles={semibold}>{locale?.university.departmentSelect}</Text>}
-                                        options={departmentOptions}
-                                        onChange={departmentSelectionChanged}
-                                        selectedKey={selectedDepartment}
-                                        onRenderTitle={onRenderTitle}
-                                        onRenderOption={onRenderOption}
-                                        errorMessage={errorLoadingDepartments ? locale?.errorLoadingDepartments : undefined}
-                                        disabled={errorLoadingDepartments || departments.length === 0}
-                                    />
+                                <div className="mb-3">
+                                    <Text variant="large" style={{ color: theme.palette.white }}>{locale?.university.linksAndRedirects.text2}</Text>
                                 </div>
-                            </div>
-                        </Col>
 
-                        <Col lg={3} className="text-center">
-                            <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }}>
-                                <Image id="logo" className="mb-2" src={'/images/representatives.png'} style={{ display: 'inline-block', width: '100%' }} />
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
+                                <div className="text-center justify-content-center university-links" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+                                    <ChoiceGroup options={options} onChange={selectionChanged} selectedKey={selectedChoiceGroup} />
+                                </div>
+                            </Col>
+                        </Row>
 
-            <div style={{ display: selectedDepartment !== '' && selectedDepartment !== undefined ? 'block' : 'none' }}>
-                <Container>
-                    <RepresentativesList data={representatives} loadingRepresentatives={loadingRepresentatives} errorLoadingRepresentatives={errorLoadingRepresentatives} />
-                </Container>
-            </div>
 
-        </div>
+
+                    </Container>
+                </div>
+
+                <div className="pt-5 pb-5 mb-4" style={{ backgroundColor: theme.palette.themeDarkAlt }}>
+                    <Container>
+                        <Row>
+                            <Col>
+                                <div className="mb-2">
+                                    <div className="mb-2">
+                                        <Text variant="xLarge" style={{ color: theme.palette.white }}>
+                                            {locale?.university.text1}
+                                        </Text>
+                                    </div>
+
+                                    <div className="mb-2">
+                                        <Text variant="large" style={{ color: theme.palette.white }}>
+                                            {locale?.university.text2}
+                                        </Text>
+                                    </div>
+
+                                    <div className="mb-2 text-center" style={{ maxWidth: '400px', marginRight: 'auto'}}>
+                                        <Dropdown
+                                            placeholder={locale?.university.departmentSelect}
+                                            label={locale?.university.departmentSelect}
+                                            onRenderLabel={() => <Text style={{ color: theme.palette.white }} styles={semibold}>{locale?.university.departmentSelect}</Text>}
+                                            options={departmentOptions}
+                                            onChange={departmentSelectionChanged}
+                                            selectedKey={selectedDepartment}
+                                            onRenderTitle={onRenderTitle}
+                                            onRenderOption={onRenderOption}
+                                            errorMessage={errorLoadingDepartments ? locale?.errorLoadingDepartments : undefined}
+                                            disabled={errorLoadingDepartments || departments.length === 0}
+                                        />
+                                    </div>
+                                </div>
+                            </Col>
+
+                            <Col lg={3} className="text-center">
+                                <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }}>
+                                    <Image id="logo" className="mb-2" src={'/images/representatives.png'} style={{ display: 'inline-block', width: '100%' }} />
+                                </div>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
+
+                <div style={{ display: selectedDepartment !== '' && selectedDepartment !== undefined ? 'block' : 'none' }}>
+                    <Container>
+                        <RepresentativesList data={representatives} loadingRepresentatives={loadingRepresentatives} errorLoadingRepresentatives={errorLoadingRepresentatives} />
+                    </Container>
+                </div>
+
+            </section>
+        </>
     )
 };
 
