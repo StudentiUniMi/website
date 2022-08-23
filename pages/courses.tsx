@@ -1,6 +1,6 @@
 import React from "react";
 import { Text } from 'office-ui-fabric-react/lib-commonjs';
-import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
+import Image from 'next/image';
 import { initializeIcons } from "@uifabric/icons";
 import { Container } from 'react-bootstrap';
 import { useRouter } from 'next/router';
@@ -281,7 +281,7 @@ const GroupsView = () => {
                         <Row>
                             <Col lg={3} className="text-center mb-3 mb-lg-0">
                                 <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 350 }}>
-                                    <Image className="mb-2" src={'/images/groups/groups.png'} style={{ display: 'inline-block', width: '100%' }} />
+                                    <Image className="mb-2" src={'/images/groups/groups.png'} layout="responsive" width="65%" height="55%" />
                                 </div>
                             </Col>
 
@@ -349,14 +349,14 @@ const GroupsView = () => {
                                         <Text variant="xLargePlus">{locale?.groups.extraGroupsSection.text2}</Text>
                                     </div>
                                     <div>
-                                        <Text variant="medium">{locale?.groups.extraGroupsSection.text3}</Text>
+                                        <Text variant="large">{locale?.groups.extraGroupsSection.text3}</Text>
                                     </div>
                                 </div>
                             </Col>
 
                             <Col xl={3} lg={4} className="text-center">
                                 <div style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-                                    <Image className="mb-2" src={'/images/groups/extra_groups.png'} style={{ display: 'inline-block', width: '75%' }} />
+                                    <Image className="mb-2" src={'/images/groups/extra_groups.png'} layout="responsive" width="65%" height="50%" />
                                 </div>
                             </Col>
 

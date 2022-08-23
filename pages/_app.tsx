@@ -1,4 +1,3 @@
-import * as React from 'react'
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
@@ -11,6 +10,7 @@ import { buildLightTheme, buildDarkTheme } from '../src/services/Themes';
 import { CookiesProvider, useCookies } from 'react-cookie';
 import { loadTheme } from '@fluentui/react';
 import { addDays } from '../src/services/Utils';
+import React from 'react';
 import Script from 'next/script';
 import Head from 'next/head';
 import Header from "../src/components/Header/Header";
