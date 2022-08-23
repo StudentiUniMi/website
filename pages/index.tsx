@@ -1,4 +1,3 @@
-import { initializeIcons } from '@fluentui/react';
 import { NextSeo } from 'next-seo';
 import LocalizationService from "../src/services/LocalizationService";
 import Faqs from '../src/components/Home/Faqs';
@@ -10,8 +9,6 @@ import FourthSection from '../src/components/Home/FourthSection';
 import TelegramSection from '../src/components/Home/TelegramSection';
 import Wikipedia from '../src/components/Home/Wikipedia';
 import UnimiaStudentiUnimi from '../src/components/Home/UnimiaStudentiUnimi';
-
-initializeIcons();
 
 const HomeView = () => {
     const locale = LocalizationService.strings();

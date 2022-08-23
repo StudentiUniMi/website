@@ -20,7 +20,7 @@ import Slider from '../src/components/University/Slider/Slider';
 
 const iconStyles = { marginRight: '8px' };
 
-const UniversityView = () => {
+const University = () => {
     var theme = useTheme();
     let didMount = React.useRef(false);
     const locale = LocalizationService.strings();
@@ -294,7 +294,7 @@ const UniversityView = () => {
     )
 };
 
-export default UniversityView;
+export default University;
 
 const onRenderOption = (option?: IDropdownOption): JSX.Element => {
     return (

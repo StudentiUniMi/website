@@ -63,16 +63,10 @@ const HeaderMenu = () => {
 
     const getPath = React.useCallback((): Array<string | boolean> => {
         var pathname = router.pathname;
-        console.log(pathname);
-
-        return ["", true];
-
-        /*
-        var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
+        var states = pathname.substring(1).split('/').filter(x => x !== '');
         let first = states.length > 0 ? states[0] : '';
         let isCorrectPathKey = Object.keys(ItemsKeys).filter(x => x === first).length !== 0;
         return [first, isCorrectPathKey];
-        */
     }, []);
 
     let didMount = React.useRef(false);

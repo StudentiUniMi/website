@@ -4,7 +4,6 @@
  * @author Giuseppe Del Campo
  */
 
-import LocalizationService from "../../services/LocalizationService";
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Text, Image, Icon } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
@@ -14,19 +13,17 @@ interface Props { text: string };
 
 const Message = (props: Props) => {
     var theme = useTheme();
-    const locale = LocalizationService.strings();
     const messageBarStyles = { backgroundColor: theme.palette.neutralLighterAlt, color: theme.palette.black, padding: 15 };
 
     const InfoMessage = () => (
         <div style={messageBarStyles} className="text-center">
-            <Text variant="medium" styles={semibold}>
-                <Icon iconName="Info" style={{ fontSize: 12, marginRight: 10 }} />
-                {locale?.noDataAvailable}
-            </Text>
             <div style={{ marginLeft: 'auto', marginRight: 'auto' }}>
                 <Image id="not-found" src={'/images/message/not-found.png'} style={{ display: 'inline', width: '60%', marginBottom: 10 }} />
             </div>
-            {props.text}
+            <Text variant="medium" styles={semibold}>
+                <Icon iconName="Info" style={{ fontSize: 12, marginRight: 10 }} />
+                {props.text}
+            </Text>
         </div>
     );
 

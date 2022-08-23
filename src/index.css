@@ -235,7 +235,7 @@ button:focus,
     margin-bottom: 10px !important;
   }
 }
-.groups .filters-toggle .ms-Toggle {
+.groups-list .filters-toggle .ms-Toggle {
   /* Fix useless margin for toggle component for filters enabled in groups section */
   margin-bottom: 0px !important;
 }

@@ -8,12 +8,8 @@ import { IChoiceGroupOptionStyles, Icon } from "@fluentui/react";
 import { ChoiceGroup, IChoiceGroupOption } from '@fluentui/react/lib/ChoiceGroup';
 import LocalizationService from "../../services/LocalizationService";
 import Message from '../GenericComponents/Message';
-import { getDegreeInformations } from '../../services/Requests';
 
-/* Updated models */
-import { Degree } from '../../models/Models';
-
-interface Props { degree?: Degree };
+interface Props { degreeInformations: any[] };
 
 const DegreeInformations= (props: Props) => {
     const theme = useTheme();
@@ -21,7 +17,7 @@ const DegreeInformations= (props: Props) => {
     var language: string | undefined = LocalizationService.getLanguage();
     const iconProps: any = { fontSize: '24px' };
 
-    const degreeInformations: any[] = getDegreeInformations(props.degree?.slug!);
+    const degreeInformations: any[] = props.degreeInformations;
     /* Workaround to not show selected choicegroup */
     const [selectedChoiceGroup, setSelectedChoiceGroup] = React.useState<string>("");
     const selectionChanged = (_ev?: React.FormEvent<HTMLElement | HTMLInputElement>, _option?: IChoiceGroupOption): void => { setSelectedChoiceGroup(""); }

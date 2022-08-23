@@ -1,6 +1,5 @@
 import { Text } from 'office-ui-fabric-react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
-import { initializeIcons } from '@uifabric/icons';
 import { FontWeights, ITextStyles, Link, Persona } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
@@ -13,17 +12,14 @@ import Chip from '@material-ui/core/Chip';
 import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 
-initializeIcons();
 interface Props { data: CourseDegree };
 
-/* IT groups managed by the department */
+/* IDs of Computer Science groups managed by the department */
 const ITgroupsIDs = [
     -1001351008335,
     -1001437343087,
     -1001334720360,
     -1001235845198
-    //-1001589135755, // scienze internazionali..
-    //-1001478324841 // fisica
 ];
 
 const CourseItem = (props: Props) => {
@@ -222,7 +218,7 @@ const CourseItem = (props: Props) => {
                 </Text>
 
                 <Text styles={descriptionTextStyles}>
-                    {data.year === -1 ? <Chip label={locale?.groups.mainGroup} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeTertiary }} className="m-1" /> : <></>}
+                    {data.year === -1 ? <Chip label={locale?.groups.mainGroup} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeDark }} className="m-1" /> : <></>}
                     {yearText !== "" && yearText !== null ? <Chip label={yearText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} className="m-1" /> : <></>}
                     {semesterText !== "" && semesterText !== null ? <Chip label={semesterText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} /> : <></>}
                 </Text>

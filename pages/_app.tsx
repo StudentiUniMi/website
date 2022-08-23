@@ -10,12 +10,17 @@ import { buildLightTheme, buildDarkTheme } from '../src/services/Themes';
 import { CookiesProvider, useCookies } from 'react-cookie';
 import { loadTheme } from '@fluentui/react';
 import { addDays } from '../src/services/Utils';
+import { initializeIcons } from '@fluentui/react';
+import { setIconOptions } from '@fluentui/react/lib/Styling';
 import React from 'react';
 import Script from 'next/script';
 import Head from 'next/head';
 import Header from "../src/components/Header/Header";
 import Footer from "../src/components/Footer/Footer";
 import LocalizationService from "../src/services/LocalizationService";
+
+initializeIcons();
+setIconOptions({ disableWarnings: true });
 
 const App = ({ Component, pageProps }: AppProps) => {
     let [cookies, setCookie] = useCookies();

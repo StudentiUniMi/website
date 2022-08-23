@@ -20,7 +20,7 @@ const developers: any = [
     { name: "Mirko Faina", description: { it: "Sviluppatore back-end", en: "Back-end developer" }, username: "Mroik", user_id: 0, github: "https://github.com/Mroik", website: "" }
 ];
 
-const OrganizationView = () => {
+const Organization = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
@@ -171,4 +171,4 @@ const OrganizationView = () => {
     )
 };
 
-export default OrganizationView;
+export default Organization;

@@ -4,7 +4,6 @@ import Row from 'react-bootstrap/Row';
 import LocalizationService from "../src/services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 import { NextSeo } from 'next-seo';
-import { useRouter } from 'next/router';
 import { FontSizes } from '@fluentui/theme';
 import { Text } from 'office-ui-fabric-react/lib-commonjs/Text';
 import { Container } from 'react-bootstrap';
@@ -21,24 +20,16 @@ const Services = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
-    let didMount = React.useRef(false);
-    let router = useRouter();
     const redirects = getRedirects();
     const guides = getGuides();
     const tools = getTools();
     const cardTokens: ICardTokens = { childrenMargin: 12 };
 
-    const [selectedSubSection, setSelectedSubSection] = React.useState<string>("");
+    const [selectedSubSection, setSelectedSubSection] = React.useState<string>("redirects");
 
     const handleSubSectionChange = (item?: PivotItem) => {
         if (item) {
             setSelectedSubSection(item.props.itemKey!);
-
-            if (item.props.itemKey! !== "redirects") {
-                router.push(`/services/${item.props.itemKey!}/`);
-            } else {
-                router.push('/services/');
-            }
         }
     };
 
@@ -56,38 +47,6 @@ const Services = () => {
             styles: { previewIcon: { backgroundColor: theme.palette.neutralLighter }, root: { borderBottom: '0px' } },
         }
     };
-
-    /* This function initializes the sub section based on url parameters */
-    const initializeSection = React.useCallback(() => {
-        if (!didMount.current) {
-            didMount.current = true;
-            // TODO: Fix this
-            //var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
-            //var subsection = states.length >= 2 ? states[1].toLowerCase() : '';
-            
-            //if (subsection === '') {
-            //    setSelectedSubSection("redirects");
-            //} else {
-            //    setSelectedSubSection(subsection);
-            //}
-        }
-    }, []);
-
-    React.useEffect(() => {
-        /* TODO: Updating content based on browser commands (push and pop) */
-        /*
-        return history.listen(async () => {
-            if (history.action === 'PUSH' || history.action === 'POP') {
-                didMount.current = false;
-                initializeSection();
-            }
-        });
-        */
-    }, [initializeSection])
-
-    React.useEffect(() => {
-        if (!didMount.current) initializeSection();
-    }, [initializeSection]);
     
     return (
         <>
@@ -101,7 +60,7 @@ const Services = () => {
                     description: locale?.helmet.services.description,
                     site_name: 'Network StudentiUniMi',
                     type: 'website',
-                    locale: language, // TODO: Check if this works, and add keywords
+                    locale: language,
                     images: [
                         {
                             url: '/logo/preview_logo.png',

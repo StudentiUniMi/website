@@ -1,8 +1,7 @@
 import React from "react";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { Admin, Degree } from '../../models/Models';
-import { getDegreeAdmins } from '../../services/Requests';
+import { Admin } from '../../models/Models';
 import { Persona, PersonaSize } from 'office-ui-fabric-react/lib-commonjs/Persona';
 import { Link, Icon, Text } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
@@ -12,36 +11,14 @@ import Message from '../GenericComponents/Message';
 import LocalizationService from "../../services/LocalizationService";
 import LoadingSpinner from "../GenericComponents/LoadingSpinner";
 
-interface Props { degree?: Degree };
+interface Props { admins: Admin[], errorLoadingAdmins: boolean };
 
 const AdminsList = (props: Props) => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
-    let [admins, setAdmins] = React.useState<Admin[]>([]); // Amministratori
+    let [admins,] = React.useState<Admin[]>(props.admins);
     const [loadingAdmins, setLoadingAdmins] = React.useState<boolean>(false);
-    const [errorLoadingAdmins, setErrorLoadingAdmins] = React.useState<boolean>(false);
-
-    /* Admins callBack */
-    const updateAdmins = React.useCallback(async () => {
-        if (props.degree?.slug === '' || props.degree?.slug === undefined) return;
-        setErrorLoadingAdmins(false);
-        setLoadingAdmins(true);
-        let adminsResult = await getDegreeAdmins(props.degree?.slug);
-
-        if (adminsResult.status !== 200) {
-            setLoadingAdmins(false);
-            setErrorLoadingAdmins(true);
-            return;
-        }
-
-        setLoadingAdmins(false);
-        setAdmins(adminsResult.value ?? []);
-    }, [props.degree?.slug]);
-
-
-    React.useEffect(() => {
-        updateAdmins();
-    }, [props.degree, updateAdmins]);
+    const [errorLoadingAdmins, setErrorLoadingAdmins] = React.useState<boolean>(props.errorLoadingAdmins);
 
     return (
         <div className="mb-2">

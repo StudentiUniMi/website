@@ -43,7 +43,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "check-update": "npm-check -u"
+    "check-update": "npm-check -u",
+    "proxy": "lcp --proxyUrl https://api.studentiunimi.it/api/ --port 8010"
   },
   "eslintConfig": {
     "extends": [

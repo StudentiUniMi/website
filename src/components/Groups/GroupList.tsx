@@ -13,10 +13,9 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import GroupItem from './GroupItem';
 import LocalizationService from "../../services/LocalizationService";
-import LoadingSpinner from '../GenericComponents/LoadingSpinner';
 import Message from '../GenericComponents/Message';
 
-interface Props { degree?: Degree, courses: CourseDegree[], loadingCourses: boolean, errorLoadingCourses: boolean };
+interface Props { degree?: Degree, courses: CourseDegree[], errorLoadingCourses: boolean };
 
 // Opzioni per la ricerca del semestre
 const semesterFilterOptions: IDropdownOption[] = [ 
@@ -120,17 +119,17 @@ const CourseList= (props: Props) => {
 
     React.useEffect( () => {
         resetGroupsFilters();
-    }, [props.loadingCourses, props.degree]);
+    }, [props.degree]);
 
     return (       
         <div className="groups-list mb-4">
             <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLight }}>
-                <Container style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <div style={{ display: 'table' }}>
-                        <Text variant="medium" styles={semibold} style={{  display: 'table-cell', verticalAlign: 'middle' }}><Icon iconName="Group"/> {locale?.groups.availableGroups}</Text>
+                <Container className="d-flex justify-content-between align-items-center" style={{ gap: 8 }}>
+                    <div>
+                        <Text variant="medium" styles={semibold}><Icon iconName="Group"/> {locale?.groups.availableGroups}</Text>
                     </div>
 
-                    <div className="filters-toggle">
+                    <div className="filters-toggle d-flex align-items-center">
                         <Toggle
                             label={<Text variant="medium" styles={semibold}>{locale?.groups.filtersToggle}</Text>}
                             inlineLabel
@@ -152,7 +151,7 @@ const CourseList= (props: Props) => {
                                     <TextField
                                         label={locale?.groups.nameFilter}
                                         onChange={onNameFilterChanged}   
-                                        disabled={props.courses.length === 0 || props.loadingCourses}      
+                                        disabled={props.courses.length === 0}      
                                         value={nameFilter}      
                                     />
                                 </Col>
@@ -163,7 +162,7 @@ const CourseList= (props: Props) => {
                                             label={locale?.groups.yearFilter}
                                             onChange={onYearFilterChanged}
                                             selectedKey={yearFilter}
-                                            disabled={props.courses.length === 0 || props.loadingCourses || props.degree?.slug === 'magistrale_informatica'} /* To-do: must decide if we need an apposite field to disable year selection */
+                                            disabled={props.courses.length === 0 || props.degree?.slug === 'magistrale_informatica'} /* To-do: must decide if we need an apposite field to disable year selection */
                                         />
                                     }
                                 </Col>
@@ -173,7 +172,7 @@ const CourseList= (props: Props) => {
                                         label={locale?.groups.semesterFilter}
                                         onChange={onSemesterFilterChanged}
                                         selectedKey={semesterFilter}
-                                        disabled={props.courses.length === 0 || props.loadingCourses}
+                                        disabled={props.courses.length === 0}
                                     />
                                 </Col>
                             </Row>
@@ -181,14 +180,13 @@ const CourseList= (props: Props) => {
                     }
 
                     {
-                        props.loadingCourses || props.errorLoadingCourses ? <LoadingSpinner loading={props.loadingCourses} error={props.errorLoadingCourses} />
-                        : filteredCourses.length === 0 ?
+                        filteredCourses.length === 0 &&
                         <div className="justify-content-center">
                             <Message text={locale?.groups.groupsNotFound!} />
-                        </div> : <></>
+                        </div>
                     }
                     
-                    {filteredCourses.length !== 0 && !props.errorLoadingCourses && !props.loadingCourses ? 
+                    {filteredCourses.length !== 0 && !props.errorLoadingCourses ? 
                         <div className="course-list">
                             <List
                                 className={classNames.listGrid}
