@@ -4,17 +4,17 @@ import { Text, Icon } from 'office-ui-fabric-react';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib-commonjs/Dropdown';
 import { useRouter } from 'next/router';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { getRepresentatives, getDepartments, getUniversityLinks } from '../src/services/Requests'
+import { getRepresentatives, getDepartments, getUniversityLinks } from '../services/Requests'
 import { Department, Representative } from '../src/models/Models';
 import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
-import { semibold } from "../src/services/Fonts";
+import { semibold } from "../services/Fonts";
 import { IChoiceGroupOptionStyles } from "@fluentui/react";
 import { ChoiceGroup, IChoiceGroupOption } from '@fluentui/react/lib/ChoiceGroup';
-import { redirectToLink } from "../src/services/Utils";
+import { redirectToLink } from "../services/Utils";
 import { NextSeo } from 'next-seo';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import LocalizationService from "../src/services/LocalizationService";
+import LocalizationService from "../services/LocalizationService";
 import RepresentativesList from '../components/University/RepresentativesList';
 import Slider from '../components/University/Slider/Slider';
 

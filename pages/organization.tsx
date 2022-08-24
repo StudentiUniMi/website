@@ -3,15 +3,15 @@ import { Text, Link, CompoundButton } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
 import { Persona, PersonaSize } from 'office-ui-fabric-react/lib-commonjs/Persona';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { getNetworkMembers } from '../src/services/Requests';
+import { getNetworkMembers } from '../services/Requests';
 import { IIconProps } from '@fluentui/react';
 import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
-import { semibold } from '../src/services/Fonts';
+import { semibold } from '../services/Fonts';
 import { resetIds } from '@fluentui/react';
 import { NextSeo } from 'next-seo';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import LocalizationService from "../src/services/LocalizationService";
+import LocalizationService from "../services/LocalizationService";
 
 const developers: any = [
     { name: "Giuseppe Del Campo", description: { it: "Sviluppatore del sito web", en: 'Website Developer' }, username: 'Giuseppetm', user_id: 597678134, github: "https://github.com/Giuseppetm", website: "https://giuseppetm.netlify.app/" },

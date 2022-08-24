@@ -13,8 +13,8 @@ import { useTheme } from '@fluentui/react-theme-provider';
 import { ActionButton } from '@fluentui/react/lib/Button';
 import { IIconProps } from '@fluentui/react';
 import Chip from '@material-ui/core/Chip';
-import { semibold } from '../../src/services/Fonts';
-import LocalizationService from "../../src/services/LocalizationService";
+import { semibold } from '../../services/Fonts';
+import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 
 interface Props { data: ExtraGroup };

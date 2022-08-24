@@ -2,9 +2,9 @@ import { Text } from 'office-ui-fabric-react/lib-commonjs';
 import { Container } from 'react-bootstrap';
 import { Image } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { getStringDegrees } from '../../src/services/Requests';
+import { getStringDegrees } from '../../services/Requests';
 import React from 'react';
-import LocalizationService from "../../src/services/LocalizationService";
+import LocalizationService from "../../services/LocalizationService";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 

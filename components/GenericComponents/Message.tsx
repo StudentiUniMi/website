@@ -6,7 +6,7 @@
 
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Text, Image, Icon } from '@fluentui/react';
-import { semibold } from '../../src/services/Fonts';
+import { semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
 
 interface Props { text: string };

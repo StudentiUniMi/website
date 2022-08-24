@@ -1,15 +1,15 @@
 import { Text } from 'office-ui-fabric-react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { FontWeights, ITextStyles, Link, Persona } from '@fluentui/react';
-import { semibold } from '../../src/services/Fonts';
+import { semibold } from '../../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { IContextualMenuProps, IIconProps } from '@fluentui/react';
 import { CommandButton } from '@fluentui/react/lib/Button';
 import { ActionButton } from '@fluentui/react/lib/Button';
-import { redirectToLink } from '../../src/services/Utils';
+import { redirectToLink } from '../../services/Utils';
 import { CourseDegree } from '../../src/models/Models';
 import Chip from '@material-ui/core/Chip';
-import LocalizationService from "../../src/services/LocalizationService";
+import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 
 interface Props { data: CourseDegree };

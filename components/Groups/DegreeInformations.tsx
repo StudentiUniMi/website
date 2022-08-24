@@ -1,12 +1,12 @@
 import React from "react";
-import { semibold } from '../../src/services/Fonts';
+import { semibold } from '../../services/Fonts';
 import { Text } from 'office-ui-fabric-react';
-import { redirectToLink } from '../../src/services/Utils';
+import { redirectToLink } from '../../services/Utils';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Container } from 'react-bootstrap';
 import { IChoiceGroupOptionStyles, Icon } from "@fluentui/react";
 import { ChoiceGroup, IChoiceGroupOption } from '@fluentui/react/lib/ChoiceGroup';
-import LocalizationService from "../../src/services/LocalizationService";
+import LocalizationService from "../../services/LocalizationService";
 import Message from '../GenericComponents/Message';
 
 interface Props { degreeInformations: any[] };

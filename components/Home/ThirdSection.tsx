@@ -1,5 +1,5 @@
 import { Text, IIconProps, Icon, DefaultButton } from 'office-ui-fabric-react/lib-commonjs';
-import { semibold } from '../../src/services/Fonts';
+import { semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -7,7 +7,7 @@ import { useTheme } from '@fluentui/react-theme-provider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import LocalizationService from "../../src/services/LocalizationService";
+import LocalizationService from "../../services/LocalizationService";
 
 library.add(fas);
 

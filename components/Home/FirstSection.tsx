@@ -1,12 +1,12 @@
 import { Text, IIconProps, PrimaryButton } from 'office-ui-fabric-react/lib-commonjs';
-import { semibold } from '../../src/services/Fonts';
+import { semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { useRouter } from 'next/router';
 import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import LocalizationService from "../../src/services/LocalizationService";
+import LocalizationService from "../../services/LocalizationService";
 import Chip from '@material-ui/core/Chip';
 
 const FirstSection = () => {

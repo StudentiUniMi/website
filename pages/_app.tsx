@@ -3,14 +3,14 @@ import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../components/University/Slider/slider.scss';
-import '../src/index.scss';
+import '../styles/index.scss';
 import { AppProps } from 'next/app'
 import { ThemeProvider } from '@fluentui/react-theme-provider';
-import { buildLightTheme, buildDarkTheme } from '../src/services/Themes';
+import { buildLightTheme, buildDarkTheme } from '../services/Themes';
 import { CookiesProvider, useCookies } from 'react-cookie';
 import { loadTheme } from '@fluentui/react';
 //import { getCookie, setCookie } from 'cookies-next';
-import { addDays } from '../src/services/Utils';
+import { addDays } from '../services/Utils';
 import { initializeIcons } from '@fluentui/react';
 import { setIconOptions } from '@fluentui/react/lib/Styling';
 import React from 'react';
@@ -18,7 +18,7 @@ import Script from 'next/script';
 import Head from 'next/head';
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import LocalizationService from "../src/services/LocalizationService";
+import LocalizationService from "../services/LocalizationService";
 //import { GetServerSideProps } from "next/types";
 
 initializeIcons();

@@ -5,7 +5,7 @@ import { mergeStyleSets } from 'office-ui-fabric-react/lib-commonjs/Styling';
 import { Container } from 'react-bootstrap';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib-commonjs/Dropdown';
 import { Text } from "office-ui-fabric-react/";
-import { semibold } from '../../src/services/Fonts';
+import { semibold } from '../../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Degree, CourseDegree } from '../../src/models/Models';
 import { Toggle } from '@fluentui/react/lib/Toggle';
@@ -13,7 +13,7 @@ import ErrorMessage from "../GenericComponents/ErrorMessage";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import GroupItem from './GroupItem';
-import LocalizationService from "../../src/services/LocalizationService";
+import LocalizationService from "../../services/LocalizationService";
 import Message from '../GenericComponents/Message';
 
 interface Props { 

@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import LocalizationService from "../../../src/services/LocalizationService";
+import LocalizationService from "../../../services/LocalizationService";
 import LargeCard from '../../GenericComponents/LargeCard';
 import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper/core';
 

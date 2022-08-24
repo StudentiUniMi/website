@@ -1,11 +1,11 @@
 import React from "react";
 import { Text, Callout, Link } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
-import { semibold } from '../src/services/Fonts';
+import { semibold } from '../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { DefaultButton, DirectionalHint, IIconProps, mergeStyleSets } from "office-ui-fabric-react";
 import { useBoolean, useId } from '@fluentui/react-hooks';
-import { getRules } from '../src/services/Requests'; 
+import { getRules } from '../services/Requests'; 
 import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import { NextSeo } from 'next-seo';
 import Col from 'react-bootstrap/Col';
@@ -15,7 +15,7 @@ import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import LocalizationService from "../src/services/LocalizationService";
+import LocalizationService from "../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 
 const Rules = () => {

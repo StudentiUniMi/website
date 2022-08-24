@@ -6,10 +6,10 @@ import { Persona, PersonaSize } from 'office-ui-fabric-react/lib-commonjs/Person
 import { Link, Icon, Text } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { semibold } from '../../src/services/Fonts';
+import { semibold } from '../../services/Fonts';
 import ErrorMessage from "../GenericComponents/ErrorMessage";
 import Message from '../GenericComponents/Message';
-import LocalizationService from "../../src/services/LocalizationService";
+import LocalizationService from "../../services/LocalizationService";
 
 interface Props { admins: Admin[], errorLoadingAdmins: boolean };
 

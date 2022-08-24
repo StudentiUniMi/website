@@ -1,5 +1,5 @@
 import React from "react";
-import LocalizationService from "../../src/services/LocalizationService";
+import LocalizationService from "../../services/LocalizationService";
 import { FontSizes } from '@fluentui/theme';
 import { IDropdownOption } from 'office-ui-fabric-react/lib-commonjs/Dropdown';
 import { Icon } from 'office-ui-fabric-react/lib-commonjs/Icon';

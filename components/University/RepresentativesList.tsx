@@ -7,7 +7,7 @@ import { useTheme } from '@fluentui/react-theme-provider';
 import { Representative } from '../../src/models/Models';
 import LoadingSpinner from '../GenericComponents/LoadingSpinner';
 import Message from '../GenericComponents/Message';
-import LocalizationService from "../../src/services/LocalizationService";
+import LocalizationService from "../../services/LocalizationService";
 
 interface Props { data: Representative[], loadingRepresentatives: boolean, errorLoadingRepresentatives: boolean };
 

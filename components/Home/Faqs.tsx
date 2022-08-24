@@ -2,13 +2,13 @@ import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import LocalizationService from "../../src/services/LocalizationService";
+import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 import Chip from '@material-ui/core/Chip';
 import { Container } from 'react-bootstrap';
 import { Link, Text } from 'office-ui-fabric-react/lib-commonjs';
-import { semibold } from '../../src/services/Fonts';
-import { getFaqs } from '../../src/services/Requests';
+import { semibold } from '../../services/Fonts';
+import { getFaqs } from '../../services/Requests';
 import { useTheme } from '@fluentui/react-theme-provider';
 
 const Faqs = () => {

@@ -1,5 +1,5 @@
 import { NextSeo } from 'next-seo';
-import LocalizationService from "../src/services/LocalizationService";
+import LocalizationService from "../services/LocalizationService";
 import Faqs from '../components/Home/Faqs';
 import MainSection from '../components/Home/MainSection';
 import FirstSection from '../components/Home/FirstSection';

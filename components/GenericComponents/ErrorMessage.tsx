@@ -5,9 +5,9 @@
  */
 
 import React from 'react';
-import LocalizationService from "../../src/services/LocalizationService";
+import LocalizationService from "../../services/LocalizationService";
 import { useTheme } from '@fluentui/react-theme-provider';
-import { semibold } from '../../src/services/Fonts';
+import { semibold } from '../../services/Fonts';
 import { Text, Image, Icon, Link } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import JsxParser from 'react-jsx-parser';
