@@ -14,10 +14,10 @@ stylesheet.setConfig({
 // Now set up the document, and just reset the stylesheet.
 export default class MyDocument extends Document {
     static async getInitialProps(ctx: DocumentContext) {
-        stylesheet.reset()
-        resetIds()
+        stylesheet.reset();
+        resetIds();
 
-        const initialProps = await Document.getInitialProps(ctx)
+        const initialProps = await Document.getInitialProps(ctx);
         return {
             ...initialProps,
             styles: [initialProps.styles, <style key="fluentui-css" dangerouslySetInnerHTML={{ __html: stylesheet.getRules(true) }} />],

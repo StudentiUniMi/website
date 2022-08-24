@@ -9,13 +9,18 @@ import { semibold } from '../../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Degree, CourseDegree } from '../../models/Models';
 import { Toggle } from '@fluentui/react/lib/Toggle';
+import ErrorMessage from "../GenericComponents/ErrorMessage";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import GroupItem from './GroupItem';
 import LocalizationService from "../../services/LocalizationService";
 import Message from '../GenericComponents/Message';
 
-interface Props { degree?: Degree, courses: CourseDegree[], errorLoadingCourses: boolean };
+interface Props { 
+    degree?: Degree, 
+    courses: CourseDegree[], 
+    errorLoadingCourses: boolean 
+};
 
 // Opzioni per la ricerca del semestre
 const semesterFilterOptions: IDropdownOption[] = [ 
@@ -137,6 +142,7 @@ const CourseList= (props: Props) => {
                             offText="Off"
                             onChange={toggleGroupsFilters}
                             checked={filtersToggle}
+                            disabled={props.errorLoadingCourses}
                         />
                     </div>
                 </Container>
@@ -197,7 +203,9 @@ const CourseList= (props: Props) => {
                                 onRenderCell={getCell}
                                 usePageCache={true}
                             />
-                        </div> : <></>
+                        </div>
+                        :
+                        <ErrorMessage error={props.errorLoadingCourses} />
                     }
                 </FocusZone>
             </Container>

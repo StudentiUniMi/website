@@ -12,7 +12,7 @@ import LocalizationService from "../../src/services/LocalizationService";
 import DegreeInformations from "../../src/components/Groups/DegreeInformations";
 import AdminsList from '../../src/components/Groups/AdminsList';
 import GroupList from "../../src/components/Groups/GroupList";
-import { Chip } from '@material-ui/core';
+//import { Chip } from '@material-ui/core';
 
 interface reactHelmetContent {
     title: string,
@@ -48,8 +48,8 @@ const Course = (props: Props) => {
 
     /* Helmet */
     let reactHelmetContent: reactHelmetContent = {
-        title: locale?.helmet.degreeLoaded.title1 + `${loadedDegree?.name} (${getDegreeTypeName(loadedDegree?.type!)})` + locale?.helmet.degreeLoaded.title2,
-        description: locale?.helmet.degreeLoaded.description1 + `${loadedDegree?.name} (${getDegreeTypeName(loadedDegree?.type!)})` + locale?.helmet.degreeLoaded.description2,
+        title: locale?.helmet.degreeLoaded.title1 + `${loadedDegree?.name} (${getDegreeFullName(loadedDegree?.type!, language!)})` + locale?.helmet.degreeLoaded.title2,
+        description: locale?.helmet.degreeLoaded.description1 + `${loadedDegree?.name} (${getDegreeFullName(loadedDegree?.type!, language!)})` + locale?.helmet.degreeLoaded.description2,
         href: `https://studentiunimi.it/courses/${slug}`,
         hrefLang: language!
     };
@@ -102,7 +102,7 @@ const Course = (props: Props) => {
                                 <div>
                                     <div>
                                         <Text variant="medium" styles={semibold} style={{ textTransform: 'uppercase', color: theme.palette.themePrimary }}>
-                                            Corso di laurea {getDegreeTypeName(loadedDegree?.type!)}
+                                            {getDegreeFullName(loadedDegree?.type!, language!)}
                                         </Text>
                                     </div>
                                     <Text variant="xLarge">{loadedDegree?.name}</Text>
@@ -129,7 +129,7 @@ const Course = (props: Props) => {
     );
 };
 
-export const getServerSideProps: GetServerSideProps<Props> = async ( { params }) => {
+export const getServerSideProps: GetServerSideProps = async ( { params }) => {
     let errors = { degree: false, courses: false, admins: false, informations: false };
 
     const degreeSlug = params!.slug as unknown as string;
@@ -184,18 +184,19 @@ export const getServerSideProps: GetServerSideProps<Props> = async ( { params })
 export default Course;
 
 /**
- * This function stringifies type of the degree.
- * @param {string} type
- * @returns Stringified type
+ * This function builds a generic name for type of degree (corso di laurea triennale, magistrale etc.)
+ * @param {string} type 
+ * @param {string} language
+ * @returns Stringified generic cdl name
  */
-const getDegreeTypeName = (type: string): string => {
+const getDegreeFullName = (type: string, language: string): string => {
     switch (type) {
         case 'B':
-            return 'triennale';
+            return language === "it" ? "Corso di laurea triennale" : "Bachelor's degree";
         case 'M':
-            return 'magistrale';
+            return language === "it" ? "Corso di laurea magistrale" : "Master's degree";
         case 'C':
-            return 'magistrale a ciclo unico';
+            return language === "it" ? "Corso di laurea magistrale a ciclo unico" : "Single-cycle master's degree";
     }
     return '';
 };

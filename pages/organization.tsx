@@ -13,7 +13,6 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../src/services/LocalizationService";
 
-
 const developers: any = [
     { name: "Giuseppe Del Campo", description: { it: "Sviluppatore del sito web", en: 'Website Developer' }, username: 'Giuseppetm', user_id: 597678134, github: "https://github.com/Giuseppetm", website: "https://giuseppetm.netlify.app/" },
     { name: "Manuele Lucchi", description: { it: "Progettista del sito web", en: 'Website Technical Designer' }, username: "Gesoo99", user_id: 99687972, github: "https://github.com/manuelelucchi", website: "https://manuelelucchi.github.io/" },
@@ -114,9 +113,9 @@ const Organization = () => {
 
                         <Row className="justify-content-center">
                             {
-                                (networkMembers.slice(1, networkMembers.length)).map((x, _) =>
+                                (networkMembers.slice(1, networkMembers.length)).map((x,i) =>
                                     <>
-                                        <Col className="mb-4" lg={3} md={6} sm={6} xs={12}>
+                                        <Col className="mb-4" lg={3} md={6} sm={6} xs={12} key={i}>
                                             <div style={{ maxWidth: 240, marginLeft: 'auto', marginRight: 'auto' }}>
                                                 <Persona
                                                     size={PersonaSize.size72}
@@ -142,9 +141,9 @@ const Organization = () => {
 
                         <Row className="justify-content-center">
                             {
-                                developers.map((x:any, _:any) =>
+                                developers.map((x:any, i:number) =>
                                     <>
-                                        <Col className="mb-3" lg={4} sm={6} xs={12}>
+                                        <Col className="mb-3" lg={4} sm={6} xs={12} key={i}>
                                             <div style={{ maxWidth: 250, marginLeft: 'auto', marginRight: 'auto' }}>
                                                 <Persona
                                                     size={PersonaSize.size72}

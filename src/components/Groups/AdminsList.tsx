@@ -7,18 +7,17 @@ import { Link, Icon, Text } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { semibold } from '../../services/Fonts';
+import ErrorMessage from "../GenericComponents/ErrorMessage";
 import Message from '../GenericComponents/Message';
 import LocalizationService from "../../services/LocalizationService";
-import LoadingSpinner from "../GenericComponents/LoadingSpinner";
 
 interface Props { admins: Admin[], errorLoadingAdmins: boolean };
 
 const AdminsList = (props: Props) => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
-    let [admins,] = React.useState<Admin[]>(props.admins);
-    const [loadingAdmins, setLoadingAdmins] = React.useState<boolean>(false);
-    const [errorLoadingAdmins, setErrorLoadingAdmins] = React.useState<boolean>(props.errorLoadingAdmins);
+    let admins: Admin[] = props.admins;
+    let errorLoadingAdmins: boolean = props.errorLoadingAdmins;
 
     return (
         <div className="mb-2">
@@ -29,14 +28,13 @@ const AdminsList = (props: Props) => {
             </div>
 
             {
-                loadingAdmins || errorLoadingAdmins ? <LoadingSpinner loading={loadingAdmins} error={errorLoadingAdmins} />
-                    : admins.length === 0 ?
-                        <div className="justify-content-center">
-                            <Message text={locale?.groups.adminsNotFound!} />
-                        </div> : <></>
+                admins.length === 0 &&
+                <div className="justify-content-center">
+                    <Message text={locale?.groups.adminsNotFound!} />
+                </div>
             }
 
-            {admins.length !== 0 && !errorLoadingAdmins && !loadingAdmins ?
+            {admins.length !== 0 && !errorLoadingAdmins ?
                 <Container>
                     <Row className="admin-list" style={{ justifyContent: admins?.length === 0 ? 'center' : ""}}>
                         {admins?.length !== 0 ? admins?.map((x,i) =>
@@ -49,7 +47,9 @@ const AdminsList = (props: Props) => {
                         ) : <Message text={locale?.groups.adminsNotFound!} />
                         }
                     </Row>
-                </Container> : <></>
+                </Container>
+                :
+                <ErrorMessage error={errorLoadingAdmins} />
             }
         </div>
     )

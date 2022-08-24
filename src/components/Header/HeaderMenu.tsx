@@ -134,7 +134,7 @@ const HeaderMenu = () => {
                     headersOnly={true}
                     styles={pivotStyles}
                     theme={theme}
-                    // overflowBehavior={'menu'}
+                    //overflowBehavior={'menu'}
                 >
                     {Object.values(ItemsKeys).map((x, _i) => <PivotItem headerText={texts.get(x)} itemKey={x} key={x} />)}
                 </Pivot>
@@ -155,10 +155,11 @@ const HeaderMenu = () => {
                     <div className="mt-4">
                         <div className="mb-4"><Text variant="large" color={theme.palette.neutralQuaternaryAlt}>Menu</Text></div>
 
-                        {dropdownOptions.map((x, _i) =>
+                        {dropdownOptions.map((x, i) =>
                             <div 
                                 className="menu-item mb-2 pr-4 pl-4 pt-1 pb-2" 
                                 onClick={() => handleDropdownValueChange(x)}
+                                key={i}
                                 style={{ backgroundColor: (x.key === selectedKey) || (selectedKey as string === "" && x.key === "home") ? theme.palette.neutralLighter : 'none', borderRadius: 25 }}
                             >
                                 <Text variant="xLarge">{x.text}</Text>
