@@ -19,10 +19,10 @@ import Head from 'next/head';
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import LocalizationService from "../services/LocalizationService";
-//import { GetServerSideProps } from "next/types";
+import { GetServerSideProps } from "next/types";
 
 initializeIcons();
-setIconOptions({ disableWarnings: true });
+setIconOptions({ disableWarnings: true }); // TODO: register icons to avoid warning
 
 const App = ({ Component, pageProps }: AppProps) => {
     let [cookies, setCookie] = useCookies();
@@ -72,7 +72,7 @@ const App = ({ Component, pageProps }: AppProps) => {
                 <link rel="icon" href="/logo/unimi150.png" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 <meta name="author" content="Giuseppe Del Campo, Manuele Lucchi" />
-                <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://studentiunimi.it https://code.jquery.com https://cdn.jsdelivr.net https://p.studentiunimi.it; font-src * data:;" />
+                <meta httpEquiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://studentiunimi.it https://code.jquery.com https://cdn.jsdelivr.net https://p.studentiunimi.it; font-src * data:;" />
             </Head>
 
             {/* Main webapp structure */}
@@ -90,17 +90,14 @@ const App = ({ Component, pageProps }: AppProps) => {
     )
 };
 
-//interface Props {};
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+    let acceptlang = req.headers["accept-language"]
+    console.log("accept language: ", acceptlang)
 
-/* TODO: Cookies server side management (?)
-export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
-    let theme = getCookie('theme', { req, res });
-    console.log(theme)
-    setCookie('test', 'value', { req, res, maxAge: 60 * 6 * 24 });
-
-    return { props: {} };
+    return { props: { 
+        acceptlang: acceptlang
+    } };
 };
-*/
 
 export default App;
 
