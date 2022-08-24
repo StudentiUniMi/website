@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Persona } from 'office-ui-fabric-react/lib-commonjs/Persona';
 import { TooltipHost, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib-commonjs/Tooltip';
-import Contributor from '../../src/models/Contributor';
+import Contributor from '../../models/Contributor';
 import { getContributors } from '../../services/Requests'
 import LocalizationService from "../../services/LocalizationService";
 

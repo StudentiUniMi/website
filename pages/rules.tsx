@@ -10,7 +10,7 @@ import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import { NextSeo } from 'next-seo';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Rule from '../src/models/Rule';
+import Rule from '../models/Rule';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';

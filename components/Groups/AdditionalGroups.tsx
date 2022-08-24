@@ -3,7 +3,7 @@ import { FocusZone, List, IRectangle } from "@fluentui/react";
 import { mergeStyleSets } from 'office-ui-fabric-react/lib-commonjs/Styling';
 import { getExtraGroups } from '../../services/Requests';
 import ExtraGroupView from './AdditionalGroup';
-import ExtraGroup from '../../src/models/ExtraGroup';
+import ExtraGroup from '../../models/ExtraGroup';
 
 const AdditionalGroupsView = () => {
     const columnCount = React.useRef(0);

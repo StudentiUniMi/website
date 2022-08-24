@@ -7,7 +7,7 @@ import { IContextualMenuProps, IIconProps } from '@fluentui/react';
 import { CommandButton } from '@fluentui/react/lib/Button';
 import { ActionButton } from '@fluentui/react/lib/Button';
 import { redirectToLink } from '../../services/Utils';
-import { CourseDegree } from '../../src/models/Models';
+import { CourseDegree } from '../../models/Models';
 import Chip from '@material-ui/core/Chip';
 import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';

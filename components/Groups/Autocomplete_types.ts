@@ -1,4 +1,4 @@
-import { Degree } from '../../src/models/Models';
+import { Degree } from '../../models/Models';
 
 export interface IAutocompleteProps {
   items: ISuggestionItem[];

@@ -3,7 +3,7 @@ import { Text, DefaultButton, IIconProps } from 'office-ui-fabric-react';
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 import { GetServerSideProps } from 'next';
-import { VerboseDegree, CourseDegree, Admin } from "../../src/models/Models";
+import { VerboseDegree, CourseDegree, Admin } from "../../models/Models";
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Container } from 'react-bootstrap';
 import { getCourses, getDegreeInformations, getVerboseDegreeBySlug, getDegreeAdmins } from '../../services/Requests';

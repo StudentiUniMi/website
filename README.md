@@ -28,7 +28,7 @@ Infinite possibilities for multi-color palette usage.
 
 ![palette](https://user-images.githubusercontent.com/52317197/177862579-77602480-a180-4ffd-bc8a-6f9df14f337a.png)
 
-## [APIs Usage Service](https://github.com/StudentiUniMi/website/blob/master/src/services/Requests.ts) 🐝
+## [APIs Usage Service](https://github.com/StudentiUniMi/website/blob/master/services/Requests.ts) 🐝
 Simple service to create requests and handle APIs responses.
 
 ```typescript

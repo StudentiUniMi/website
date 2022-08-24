@@ -5,7 +5,7 @@ import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib-commonjs/D
 import { useRouter } from 'next/router';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { getRepresentatives, getDepartments, getUniversityLinks } from '../services/Requests'
-import { Department, Representative } from '../src/models/Models';
+import { Department, Representative } from '../models/Models';
 import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import { semibold } from "../services/Fonts";
 import { IChoiceGroupOptionStyles } from "@fluentui/react";

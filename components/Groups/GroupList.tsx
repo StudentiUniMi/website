@@ -7,7 +7,7 @@ import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib-commonjs/D
 import { Text } from "office-ui-fabric-react/";
 import { semibold } from '../../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { Degree, CourseDegree } from '../../src/models/Models';
+import { Degree, CourseDegree } from '../../models/Models';
 import { Toggle } from '@fluentui/react/lib/Toggle';
 import ErrorMessage from "../GenericComponents/ErrorMessage";
 import Col from 'react-bootstrap/Col';

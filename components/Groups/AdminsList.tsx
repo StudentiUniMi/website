@@ -1,7 +1,7 @@
 import React from "react";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { Admin } from '../../src/models/Models';
+import { Admin } from '../../models/Models';
 import { Persona, PersonaSize } from 'office-ui-fabric-react/lib-commonjs/Persona';
 import { Link, Icon, Text } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';

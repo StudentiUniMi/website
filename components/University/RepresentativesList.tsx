@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import { Persona, PersonaSize } from 'office-ui-fabric-react/lib-commonjs/Persona';
 import { Link, Icon } from 'office-ui-fabric-react';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { Representative } from '../../src/models/Models';
+import { Representative } from '../../models/Models';
 import LoadingSpinner from '../GenericComponents/LoadingSpinner';
 import Message from '../GenericComponents/Message';
 import LocalizationService from "../../services/LocalizationService";
