@@ -2,7 +2,7 @@ import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../src/components/University/Slider/slider.scss';
+import '../components/University/Slider/slider.scss';
 import '../src/index.scss';
 import { AppProps } from 'next/app'
 import { ThemeProvider } from '@fluentui/react-theme-provider';
@@ -16,8 +16,8 @@ import { setIconOptions } from '@fluentui/react/lib/Styling';
 import React from 'react';
 import Script from 'next/script';
 import Head from 'next/head';
-import Header from "../src/components/Header/Header";
-import Footer from "../src/components/Footer/Footer";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 import LocalizationService from "../src/services/LocalizationService";
 //import { GetServerSideProps } from "next/types";
 

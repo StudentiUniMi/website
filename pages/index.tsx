@@ -1,14 +1,14 @@
 import { NextSeo } from 'next-seo';
 import LocalizationService from "../src/services/LocalizationService";
-import Faqs from '../src/components/Home/Faqs';
-import MainSection from '../src/components/Home/MainSection';
-import FirstSection from '../src/components/Home/FirstSection';
-import SecondSection from '../src/components/Home/SecondSection';
-import ThirdSection from '../src/components/Home/ThirdSection';
-import FourthSection from '../src/components/Home/FourthSection';
-import TelegramSection from '../src/components/Home/TelegramSection';
-import Wikipedia from '../src/components/Home/Wikipedia';
-import UnimiaStudentiUnimi from '../src/components/Home/UnimiaStudentiUnimi';
+import Faqs from '../components/Home/Faqs';
+import MainSection from '../components/Home/MainSection';
+import FirstSection from '../components/Home/FirstSection';
+import SecondSection from '../components/Home/SecondSection';
+import ThirdSection from '../components/Home/ThirdSection';
+import FourthSection from '../components/Home/FourthSection';
+import TelegramSection from '../components/Home/TelegramSection';
+import Wikipedia from '../components/Home/Wikipedia';
+import UnimiaStudentiUnimi from '../components/Home/UnimiaStudentiUnimi';
 
 const HomeView = () => {
     const locale = LocalizationService.strings();

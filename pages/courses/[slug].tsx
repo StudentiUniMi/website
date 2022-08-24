@@ -9,9 +9,9 @@ import { Container } from 'react-bootstrap';
 import { getCourses, getDegreeInformations, getVerboseDegreeBySlug, getDegreeAdmins } from '../../src/services/Requests';
 import { semibold } from '../../src/services/Fonts';
 import LocalizationService from "../../src/services/LocalizationService";
-import DegreeInformations from "../../src/components/Groups/DegreeInformations";
-import AdminsList from '../../src/components/Groups/AdminsList';
-import GroupList from "../../src/components/Groups/GroupList";
+import DegreeInformations from "../../components/Groups/DegreeInformations";
+import AdminsList from '../../components/Groups/AdminsList';
+import GroupList from "../../components/Groups/GroupList";
 //import { Chip } from '@material-ui/core';
 
 interface reactHelmetContent {

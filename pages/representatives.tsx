@@ -15,8 +15,8 @@ import { NextSeo } from 'next-seo';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../src/services/LocalizationService";
-import RepresentativesList from '../src/components/University/RepresentativesList';
-import Slider from '../src/components/University/Slider/Slider';
+import RepresentativesList from '../components/University/RepresentativesList';
+import Slider from '../components/University/Slider/Slider';
 
 const iconStyles = { marginRight: '8px' };
 
