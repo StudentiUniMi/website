@@ -23,18 +23,15 @@ initializeIcons(undefined, { disableWarnings: true });
 
 const CustomApp = ({ Component, pageProps, lang, ssrCookies }: AppProps & { lang: string } & { ssrCookies: string }) => {
     let [cookies, setCookie] = useCookies();
-    let [theme, setTheme] = React.useState(cookies["theme"] === "dark");
-    let [palette, setPalette] = React.useState(cookies["palette"]);
-    let [language, setLanguage] = React.useState(cookies["language"]);
+    
+    let [theme, setTheme] = React.useState(parseCookies(ssrCookies).theme ?? false);
+    let [palette, setPalette] = React.useState(parseCookies(ssrCookies).palette ?? "a");
+    let [language, setLanguage] = React.useState(parseCookies(ssrCookies).language ?? isNavigatorLanguageItalian(lang) ? "it" : "en");
 
     let [lightTheme, setLightTheme] = React.useState(buildLightTheme(palette));
     let [darkTheme, setDarkTheme] = React.useState(buildDarkTheme(palette));
 
     const date: Date = addDays(new Date(), 90);
-
-    console.info("ssrCookies: ", ssrCookies)
-    console.info("language: ", lang)
-    console.info(parseCookies(ssrCookies))
 
     const changeTheme = () => {
         setTheme(!theme);
@@ -55,29 +52,19 @@ const CustomApp = ({ Component, pageProps, lang, ssrCookies }: AppProps & { lang
         setCookie("language", language, { path: "/", expires: date });
     };
 
-    /* Initialization of cookies and states */
+    /* Initialization of cookies */
     useEffect(() => {
-        if (cookies["language"] === undefined) {
-            const isNavLanguageITA = isNavigatorLanguageItalian(lang);
-            setCookie("language", (isNavLanguageITA ? 'it' : 'en'), { path: "/", expires: date });
-            setLanguage("it");
-        }
-
-        if (cookies["theme"] === undefined) {
-            setCookie("theme", "light", { path: "/", expires: date });
-            setTheme(false);
-        }
-
-        if (cookies["palette"] === undefined) {
-            setCookie("palette", "a", { path: "/", expires: date });
-            setLightTheme(buildLightTheme("a"));
-            setDarkTheme(buildDarkTheme("a"));
-            setPalette("a");
-        }
+        if (cookies["language"] === undefined) setCookie("language", language, { path: "/", expires: date });
+        if (cookies["theme"] === undefined) setCookie("theme", theme ? "dark" : "light", { path: "/", expires: date });
+        if (cookies["palette"] === undefined) setCookie("palette", palette, { path: "/", expires: date });
     }, []);
-    
-    loadTheme(theme ? darkTheme : lightTheme);
-    LocalizationService.localize(language);
+
+    useEffect(() => {
+        setLightTheme(buildLightTheme(palette));
+        setDarkTheme(buildDarkTheme(palette));
+        loadTheme(theme ? darkTheme : lightTheme);
+        LocalizationService.localize(language);
+    }, [language, palette, theme]);
 
     return (
         <>
@@ -140,7 +127,7 @@ const isNavigatorLanguageItalian = (lang: string): boolean => {
  * @returns {cookiesContent} builded object
  */
 const parseCookies = (cookies: string): cookiesContent => {
-    let result: cookiesContent = { language: "it", theme: "light", palette: "a" };
+    let result: cookiesContent = { language: "it", theme: false, palette: "a" };
     if (cookies === undefined) return result;
     
     let temp = cookies.replace(/\s/g, '');
@@ -148,13 +135,13 @@ const parseCookies = (cookies: string): cookiesContent => {
 
     const params = new URLSearchParams(temp);
 
-    result = { language: params.get('language'), theme: params.get('theme'), palette: params.get('palette') };
+    result = { language: params.get('language'), theme: params.get('theme') === "light" ? false : true, palette: params.get('palette') };
 
     return result;
 };
 
 interface cookiesContent {
     language: string | null,
-    theme: string | null,
+    theme: boolean | null,
     palette: string | null
 };
