@@ -38,13 +38,13 @@ const Courses = () => {
     /* Handlers */
     const entitySelectHandler = (item: ISuggestionItem): void => { // Questo viene triggerato quando selezioni qualcosa dal menù
         setDegreeTextSearch(item.displayValue);
-        router.push(`/courses/${item.degree?.slug}/`);
+        router.push(`/courses/${item.degree?.slug}`);
     };
     
     const searchTextHandler = (): void => { // Triggerato quando premi per la ricerca (si è deciso di selezionare il primo risultato)
         if (searchData.length === 0) return;
         setDegreeTextSearch(searchData[0]?.displayValue);
-        router.push(`/courses/${searchData[0]?.degree?.slug}/`);
+        router.push(`/courses/${searchData[0]?.degree?.slug}`);
     };
 
     /* Degrees for the SearchBox */

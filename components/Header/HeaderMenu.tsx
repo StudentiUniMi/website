@@ -17,7 +17,7 @@ export enum ItemsKeys {
     courses = "courses",
     services = "services",
     rules = "rules",
-    representatives = "representatives",
+    university = "university",
     organization = "organization"
 };
 
@@ -26,20 +26,22 @@ const HeaderMenu = () => {
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
     const router = useRouter();
+    const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
+
+    /* Styles */
     const buttonStyle = { maxWidth: '270px', boxShadow: theme.effects.elevation8 };
     const calloutPropsResetColor = { gapSpace: 10 };
     const hostStylesResetColor: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
     const wrapIconStyle = { backgroundColor: theme.palette.themeSecondary, borderRadius: '35%', marginBottom: 4, minWidth: 40, minHeight: 40, display: 'inline-block', textAlign: 'center', justifyContent: 'center', verticalAlign: 'middle' } as React.CSSProperties;
     const iconStyle = { color: theme.palette.white, fontSize: '20px', marginTop: 10 };
 
-    const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
     
     const texts: Map<ItemsKeys, string | undefined> = new Map<ItemsKeys, string | undefined>([
         [ItemsKeys.home, locale?.headerMenuItems.home],
         [ItemsKeys.courses, locale?.headerMenuItems.courses],
         [ItemsKeys.services, locale?.headerMenuItems.services],
         [ItemsKeys.rules, locale?.headerMenuItems.rules],
-        [ItemsKeys.representatives, locale?.headerMenuItems.university],
+        [ItemsKeys.university, locale?.headerMenuItems.university],
         [ItemsKeys.organization, locale?.headerMenuItems.aboutUs]
     ]);
 

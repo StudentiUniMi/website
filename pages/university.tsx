@@ -2,7 +2,6 @@ import React from "react";
 import { Container } from 'react-bootstrap';
 import { Text, Icon } from 'office-ui-fabric-react';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib-commonjs/Dropdown';
-import { useRouter } from 'next/router';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { getRepresentatives, getDepartments, getUniversityLinks } from '../services/Requests'
 import { Department, Representative } from '../models/Models';
@@ -25,13 +24,12 @@ const University = () => {
     let didMount = React.useRef(false);
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
-    const router = useRouter();
-    const imageProperties = { display: 'inline-block', width: '80%' };
-
+    
     const universityLinks: any[] = getUniversityLinks();
-
+    
     /* ChoiceGroup for university links */
     const iconProps: any = { fontSize: '24px' };
+    const imageProperties = { display: 'inline-block', width: '80%' };
     const options: IChoiceGroupOption[] = [];
     const itemSize = 100;
     const choiceGroupOptionsStyle: IChoiceGroupOptionStyles = {
@@ -82,7 +80,6 @@ const University = () => {
 
     const departmentSelectionChanged = (_?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IDropdownOption): void => {
         setSelectedDepartment(option?.key as string ?? '');
-        router.push(`/representatives/${option?.data.slug as string}`);
     };
 
     /* Departments callBack */
@@ -114,18 +111,6 @@ const University = () => {
         setRepresentatives(representativesResult.value ?? []);
     }, [setRepresentatives, selectedDepartment]);
 
-    /* This function initializes representatives based on url parameters */
-    const initializeRepresentativesViaUrl = React.useCallback(() => {
-        if (!didMount.current && departments.length !== 0) {
-            didMount.current = true
-            // TODO: Fix this
-            //var states = history.location.pathname.substring(1).split('/').filter(x => x !== '');
-            //var departmentSlug = states.length >= 2 ? states[1] : '';
-
-            //setSelectedDepartment(departments.filter(x => x.slug === departmentSlug)[0]?.pk as unknown as string);
-        }
-    }, [departments]);
-
     React.useEffect(() => {
         if (!didMount.current) {
             updateDepartments();
@@ -135,10 +120,6 @@ const University = () => {
     React.useEffect(() => {
         updateRepresentatives();
     }, [selectedDepartment, updateRepresentatives]);
-
-    React.useEffect(() => {
-        if (!didMount.current) initializeRepresentativesViaUrl();
-    }, [initializeRepresentativesViaUrl, departments]);
 
     let departmentOptions: IDropdownOption[] = [];
     
