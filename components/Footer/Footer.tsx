@@ -2,11 +2,9 @@ import { Link, Text, Label } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
 import { bold, semibold } from '../../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { useCookies } from 'react-cookie';
 import { IIconProps, PrimaryButton, Toggle, TooltipHost, IconButton, SwatchColorPicker, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib-commonjs';
 import { palettes } from '../../services/Palettes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { addDays } from '../../services/Utils';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons'
@@ -26,17 +24,26 @@ const footerIcons: any = [
     { name: { it: 'Pagina Instagram', en: 'Instagram Page' }, link: 'https://www.instagram.com/studentiunimi.it/', iconName: 'instagram', type: 'brand' },
 ];
 
-interface Props { changeTheme: () => void, changePalette: (id: string) => void, changeLanguage: (language: string) => void };
+interface Props { 
+    appTheme: boolean,
+    language: string,
+    palette: string,
+    changeTheme: () => void, 
+    changePalette: (id: string) => void, 
+    changeLanguage: (language: string) => void 
+};
 
 const Footer = (props: Props) => {
     var theme = useTheme();
-    const [cookies,] = useCookies();
+    let appTheme = props.appTheme;
+    let language = props.language;
+    let palette = props.palette;
     const locale = LocalizationService.strings();
-    var language: string | undefined = LocalizationService.getLanguage();
+    var lang: string | undefined = LocalizationService.getLanguage();
 
     const changeTheme = () => props.changeTheme();
-    const changeLanguage = (lang: string) => props.changeLanguage(lang);
-    const changePalette = (id: string) => props.changePalette(id);
+    const changeLanguage = (language: string) => props.changeLanguage(language);
+    const changePalette = (paletteId: string) => props.changePalette(paletteId);
     
     const wrapIconStyle = { backgroundColor: theme.palette.themeSecondary, borderRadius: '35%', minWidth: 30, minHeight: 30, display: 'inline-block', textAlign: 'center', justifyContent: 'center', verticalAlign: 'middle' } as React.CSSProperties;
     const iconStyle = { color: theme.palette.white, fontSize: '17px', marginTop: 6 };
@@ -95,7 +102,7 @@ const Footer = (props: Props) => {
                                 label={locale?.settingsPanel.changeTheme}
                                 onText={locale?.settingsPanel.darkTheme}
                                 offText={locale?.settingsPanel.lightTheme}
-                                checked={cookies["theme"] === "dark"}
+                                checked={appTheme}
                                 onChange={changeTheme}
                                 theme={theme}
                             />
@@ -106,7 +113,7 @@ const Footer = (props: Props) => {
                             <Text 
                                 variant="medium" 
                                 style={{ cursor: 'pointer' }} 
-                                styles={cookies["language"] === "it" ? bold : {}} onClick={() => { changeLanguage("it") } }
+                                styles={language === "it" ? bold : {}} onClick={() => { changeLanguage("it") } }
                             >
                                 ITA
                             </Text>
@@ -116,7 +123,7 @@ const Footer = (props: Props) => {
                             <Text 
                                 variant="medium" 
                                 style={{ cursor: 'pointer' }} 
-                                styles={cookies["language"] === "en" ? bold : {}} onClick={() => { changeLanguage("en") }}
+                                styles={language === "en" ? bold : {}} onClick={() => { changeLanguage("en") }}
                             >
                                 ENG
                             </Text>
@@ -133,7 +140,7 @@ const Footer = (props: Props) => {
                             >
                                 <IconButton iconProps={resetColorIcon} onClick={() => { changePalette('a'); }} />
                             </TooltipHost>
-                            <SwatchColorPicker selectedId={cookies["palette"]} columnCount={7} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => { changePalette(id!); }} />
+                            <SwatchColorPicker selectedId={palette} columnCount={7} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => { changePalette(id!); }} />
                         </div>
                     </Col>
                 
@@ -152,7 +159,7 @@ const Footer = (props: Props) => {
                             {footerIcons.map( (x: any, i: number) => { 
                                 return (
                                     <TooltipHost
-                                        content={x.name[language!]}
+                                        content={x.name[lang!]}
                                         calloutProps={calloutPropsResetColor}
                                         styles={hostStylesResetColor}
                                         key={i}

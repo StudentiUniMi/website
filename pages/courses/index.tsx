@@ -89,7 +89,7 @@ const Courses = () => {
                     description: locale?.helmet.courses.description,
                     site_name: 'Network StudentiUniMi',
                     type: 'website',
-                    locale: language, // TODO: Check if this works
+                    locale: language,
                     images: [
                         {
                             url: '/images/groups/groups.png',

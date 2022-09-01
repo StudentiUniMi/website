@@ -10,8 +10,7 @@ import { buildLightTheme, buildDarkTheme } from '../services/Themes';
 import { CookiesProvider, useCookies } from 'react-cookie';
 import { loadTheme } from '@fluentui/react';
 import { addDays } from '../services/Utils';
-import { initializeIcons } from '@fluentui/react';
-import { setIconOptions } from '@fluentui/react/lib/Styling';
+import { initializeIcons } from '@fluentui/react/lib/Icons';
 import React from 'react';
 import Script from 'next/script';
 import Head from 'next/head';
@@ -20,12 +19,11 @@ import Footer from "../components/Footer/Footer";
 import LocalizationService from "../services/LocalizationService";
 import { useEffect } from "react";
 
-initializeIcons();
-setIconOptions({ disableWarnings: true }); // TODO: register icons to avoid warning
+initializeIcons(undefined, { disableWarnings: true });
 
-const CustomApp = ({ Component, pageProps, lang }: AppProps & {lang: string}) => {
+const CustomApp = ({ Component, pageProps, lang, ssrCookies }: AppProps & { lang: string } & { ssrCookies: string }) => {
     let [cookies, setCookie] = useCookies();
-    let [theme, setTheme] = React.useState(cookies["theme"] === 'dark');
+    let [theme, setTheme] = React.useState(cookies["theme"] === "dark");
     let [palette, setPalette] = React.useState(cookies["palette"]);
     let [language, setLanguage] = React.useState(cookies["language"]);
 
@@ -33,6 +31,10 @@ const CustomApp = ({ Component, pageProps, lang }: AppProps & {lang: string}) =>
     let [darkTheme, setDarkTheme] = React.useState(buildDarkTheme(palette));
 
     const date: Date = addDays(new Date(), 90);
+
+    console.info("ssrCookies: ", ssrCookies)
+    console.info("language: ", lang)
+    console.info(parseCookies(ssrCookies))
 
     const changeTheme = () => {
         setTheme(!theme);
@@ -50,25 +52,30 @@ const CustomApp = ({ Component, pageProps, lang }: AppProps & {lang: string}) =>
     const changeLanguage = (language: string) => {
         LocalizationService.localize(language);
         setLanguage(language);
-        setCookie("language", lang, { path: "/", expires: date });
+        setCookie("language", language, { path: "/", expires: date });
     };
 
-    /* Initialization of cookies */
+    /* Initialization of cookies and states */
     useEffect(() => {
         if (cookies["language"] === undefined) {
             const isNavLanguageITA = isNavigatorLanguageItalian(lang);
             setCookie("language", (isNavLanguageITA ? 'it' : 'en'), { path: "/", expires: date });
+            setLanguage("it");
         }
 
         if (cookies["theme"] === undefined) {
             setCookie("theme", "light", { path: "/", expires: date });
+            setTheme(false);
         }
 
         if (cookies["palette"] === undefined) {
             setCookie("palette", "a", { path: "/", expires: date });
+            setLightTheme(buildLightTheme("a"));
+            setDarkTheme(buildDarkTheme("a"));
+            setPalette("a");
         }
     }, []);
-
+    
     loadTheme(theme ? darkTheme : lightTheme);
     LocalizationService.localize(language);
 
@@ -87,7 +94,14 @@ const CustomApp = ({ Component, pageProps, lang }: AppProps & {lang: string}) =>
                 <ThemeProvider applyTo="body" theme={theme ? darkTheme : lightTheme}>
                     <Header />
                     <Component {...pageProps} />
-                    <Footer changeTheme={changeTheme} changePalette={changePalette} changeLanguage={changeLanguage} />
+                    <Footer 
+                        appTheme={theme}
+                        language={language}
+                        palette={palette}
+                        changeTheme={changeTheme} 
+                        changePalette={changePalette} 
+                        changeLanguage={changeLanguage} 
+                    />
                 </ThemeProvider>
             </CookiesProvider>
 
@@ -100,21 +114,47 @@ const CustomApp = ({ Component, pageProps, lang }: AppProps & {lang: string}) =>
 CustomApp.getInitialProps = async (appContext: AppContext) => {
     const ctx = await App.getInitialProps(appContext);
     const language = appContext.ctx.req?.headers['accept-language'];
+    const cookies = appContext.ctx.req?.headers.cookie;
 
-    return { ...ctx, lang: language };
+    return { ...ctx, lang: language, ssrCookies: cookies };
 };
 
 export default CustomApp;
 
 /**
- * This function returns true if the navigator language is italian.
- * @param {string} lang
+ * This function checks the header language.
+ * @param {string} lang header language
+ * @returns {boolean} returns true if the language is italian, false otherwise.
  */
 const isNavigatorLanguageItalian = (lang: string): boolean => {
     if (lang === undefined) return true;
     const langKey = lang.split(",")[0];
-    console.log("Lang key: ", langKey);
 
     if (langKey === 'it') return true;
     return false;
+};
+
+/**
+ * This function parses the header cookie string.
+ * @param cookies header cookie string
+ * @returns {cookiesContent} builded object
+ */
+const parseCookies = (cookies: string): cookiesContent => {
+    let result: cookiesContent = { language: "it", theme: "light", palette: "a" };
+    if (cookies === undefined) return result;
+    
+    let temp = cookies.replace(/\s/g, '');
+    temp = temp.replace(/;/g, '&');
+
+    const params = new URLSearchParams(temp);
+
+    result = { language: params.get('language'), theme: params.get('theme'), palette: params.get('palette') };
+
+    return result;
+};
+
+interface cookiesContent {
+    language: string | null,
+    theme: string | null,
+    palette: string | null
 };

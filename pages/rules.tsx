@@ -57,7 +57,7 @@ const Rules = () => {
                     description: locale?.helmet.rules.description,
                     site_name: 'Network StudentiUniMi',
                     type: 'website',
-                    locale: language, // TODO: Check if this works, and add keywords
+                    locale: language,
                     images: [
                         {
                             url: '/logo/preview_logo.png',
