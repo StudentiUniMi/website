@@ -103,7 +103,7 @@ const HeaderMenu = () => {
             if (item!.props.itemKey === "home") {
                 router.push('/');
             } else {
-                router.push(`/${item!.props.itemKey!}/`);
+                router.push(`/${item!.props.itemKey!}`);
             }
         }
     };
@@ -115,7 +115,7 @@ const HeaderMenu = () => {
             if (item!.key! === "home") {
                 router.push('/');
             } else {
-                router.push(`/${item!.key! as string}/`);
+                router.push(`/${item!.key! as string}`);
             }
         }
 

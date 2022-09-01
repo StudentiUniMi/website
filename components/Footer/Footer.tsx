@@ -30,22 +30,13 @@ interface Props { changeTheme: () => void, changePalette: (id: string) => void, 
 
 const Footer = (props: Props) => {
     var theme = useTheme();
-    const [cookies, setCookie] = useCookies();
+    const [cookies,] = useCookies();
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
-    const date: Date = addDays(new Date(), 90);
 
-    const themeToggled = () => {
-        if (cookies["theme"] === "dark") setCookie("theme", "light", { path: "/", expires: date });
-        else { setCookie("theme", "dark", { path: "/", expires: date }); }
-        props.changeTheme();
-    };
-
-    const changeLanguage = (lang: string) => {
-        LocalizationService.localize(lang);
-        setCookie("language", lang, { path: "/", expires: date });
-        props.changeLanguage(lang);
-    };
+    const changeTheme = () => props.changeTheme();
+    const changeLanguage = (lang: string) => props.changeLanguage(lang);
+    const changePalette = (id: string) => props.changePalette(id);
     
     const wrapIconStyle = { backgroundColor: theme.palette.themeSecondary, borderRadius: '35%', minWidth: 30, minHeight: 30, display: 'inline-block', textAlign: 'center', justifyContent: 'center', verticalAlign: 'middle' } as React.CSSProperties;
     const iconStyle = { color: theme.palette.white, fontSize: '17px', marginTop: 6 };
@@ -105,7 +96,7 @@ const Footer = (props: Props) => {
                                 onText={locale?.settingsPanel.darkTheme}
                                 offText={locale?.settingsPanel.lightTheme}
                                 checked={cookies["theme"] === "dark"}
-                                onChange={themeToggled}
+                                onChange={changeTheme}
                                 theme={theme}
                             />
                         </div>
@@ -140,9 +131,9 @@ const Footer = (props: Props) => {
                                 calloutProps={calloutPropsResetColor}
                                 styles={hostStylesResetColor}
                             >
-                                <IconButton iconProps={resetColorIcon} onClick={() => { setCookie("palette", 'a', { path: "/", expires: date }); props.changePalette('a'); }} />
+                                <IconButton iconProps={resetColorIcon} onClick={() => { changePalette('a'); }} />
                             </TooltipHost>
-                            <SwatchColorPicker selectedId={cookies["palette"]} columnCount={7} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => { setCookie("palette", id, { path: "/", expires: date }); props.changePalette(id!); }} />
+                            <SwatchColorPicker selectedId={cookies["palette"]} columnCount={7} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => { changePalette(id!); }} />
                         </div>
                     </Col>
                 

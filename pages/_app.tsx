@@ -4,12 +4,11 @@ import "swiper/components/navigation/navigation.min.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../components/University/Slider/slider.scss';
 import '../styles/index.scss';
-import { AppProps } from 'next/app'
+import App, { AppContext, AppProps } from 'next/app'
 import { ThemeProvider } from '@fluentui/react-theme-provider';
 import { buildLightTheme, buildDarkTheme } from '../services/Themes';
 import { CookiesProvider, useCookies } from 'react-cookie';
 import { loadTheme } from '@fluentui/react';
-//import { getCookie, setCookie } from 'cookies-next';
 import { addDays } from '../services/Utils';
 import { initializeIcons } from '@fluentui/react';
 import { setIconOptions } from '@fluentui/react/lib/Styling';
@@ -19,12 +18,12 @@ import Head from 'next/head';
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import LocalizationService from "../services/LocalizationService";
-import { GetServerSideProps } from "next/types";
+import { useEffect } from "react";
 
 initializeIcons();
 setIconOptions({ disableWarnings: true }); // TODO: register icons to avoid warning
 
-const App = ({ Component, pageProps }: AppProps) => {
+const CustomApp = ({ Component, pageProps, lang }: AppProps & {lang: string}) => {
     let [cookies, setCookie] = useCookies();
     let [theme, setTheme] = React.useState(cookies["theme"] === 'dark');
     let [palette, setPalette] = React.useState(cookies["palette"]);
@@ -37,30 +36,38 @@ const App = ({ Component, pageProps }: AppProps) => {
 
     const changeTheme = () => {
         setTheme(!theme);
+        if (cookies["theme"] === "dark") setCookie("theme", "light", { path: "/", expires: date });
+        else { setCookie("theme", "dark", { path: "/", expires: date }); }
     };
 
     const changePalette = (id: string) => {
         setPalette(id);
         setLightTheme(buildLightTheme(id));
         setDarkTheme(buildDarkTheme(id));
+        setCookie("palette", id, { path: "/", expires: date });
     };
 
     const changeLanguage = (language: string) => {
+        LocalizationService.localize(language);
         setLanguage(language);
+        setCookie("language", lang, { path: "/", expires: date });
     };
 
-    if (cookies["language"] === undefined) {
-        const isNavLanguageITA = isNavigatorLanguageItalian();
-        setCookie("language", (isNavLanguageITA ? 'it' : 'en'), { path: "/", expires: date });
-    }
+    /* Initialization of cookies */
+    useEffect(() => {
+        if (cookies["language"] === undefined) {
+            const isNavLanguageITA = isNavigatorLanguageItalian(lang);
+            setCookie("language", (isNavLanguageITA ? 'it' : 'en'), { path: "/", expires: date });
+        }
 
-    if (cookies["theme"] === undefined) {
-        setCookie("theme", "light", { path: "/", expires: date });
-    }
+        if (cookies["theme"] === undefined) {
+            setCookie("theme", "light", { path: "/", expires: date });
+        }
 
-    if (cookies["palette"] === undefined) {
-        setCookie("palette", "a", { path: "/", expires: date });
-    }
+        if (cookies["palette"] === undefined) {
+            setCookie("palette", "a", { path: "/", expires: date });
+        }
+    }, []);
 
     loadTheme(theme ? darkTheme : lightTheme);
     LocalizationService.localize(language);
@@ -90,27 +97,24 @@ const App = ({ Component, pageProps }: AppProps) => {
     )
 };
 
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
-    let acceptlang = req.headers["accept-language"]
-    console.log("accept language: ", acceptlang)
+CustomApp.getInitialProps = async (appContext: AppContext) => {
+    const ctx = await App.getInitialProps(appContext);
+    const language = appContext.ctx.req?.headers['accept-language'];
 
-    return { props: { 
-        acceptlang: acceptlang
-    } };
+    return { ...ctx, lang: language };
 };
 
-export default App;
+export default CustomApp;
 
 /**
  * This function returns true if the navigator language is italian.
+ * @param {string} lang
  */
-const isNavigatorLanguageItalian = () => {
-    /* TODO: FIX THIS
-    const navLanguage = navigator.language;
-    if (navLanguage === 'it') return true;
-    const s: string[] = navLanguage.split("-", 2);
-    if (s.length >= 2 && s[0] === 'it') return true;
+const isNavigatorLanguageItalian = (lang: string): boolean => {
+    if (lang === undefined) return true;
+    const langKey = lang.split(",")[0];
+    console.log("Lang key: ", langKey);
+
+    if (langKey === 'it') return true;
     return false;
-    */
-   return true;
-}
+};
