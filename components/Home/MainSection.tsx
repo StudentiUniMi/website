@@ -1,45 +1,20 @@
 import { Text } from 'office-ui-fabric-react/lib-commonjs';
 import { Container } from 'react-bootstrap';
 import { Image } from 'office-ui-fabric-react';
-import { getStringDegrees } from '../../services/Requests';
 import DegreesMarquee from './DegreesMarquee';
 import React from 'react';
 import LocalizationService from "../../services/LocalizationService";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-const MainSection = () => {
-    let didMount = React.useRef(false);
+interface Props {
+    degrees: string[]
+};
+
+const MainSection = (props: Props) => {
     const locale = LocalizationService.strings();
     const logoProperties = { width: 200, height: 200, display: 'inline-block' };
-    const [stringDegrees, setStringDegrees] = React.useState<string[]>([]);
-
-    /* String Degrees */
-    const updateStringDegrees = React.useCallback(async () => {
-        if (!didMount.current) {
-            didMount.current = true;
-            let stringDegreesResult = await getStringDegrees();
-    
-            if (stringDegreesResult.status !== 200) {
-                setStringDegrees([
-                    'informatica',
-                    'fisica',
-                    'informatica musicale',
-                    'matematica',
-                    'informatica per la comunicazione digitale',
-                    'bioinformatics',
-                    'sicurezza informatica'
-                ]);
-                return;
-            }
-    
-            setStringDegrees(stringDegreesResult.value ?? []);
-        }
-    }, [setStringDegrees]);
-
-    React.useEffect(() => {
-        if (!didMount.current) updateStringDegrees();
-    }, [updateStringDegrees]);
+    let stringDegrees: string[] = props.degrees;
 
     return (
         <div className="pb-5 pt-5">

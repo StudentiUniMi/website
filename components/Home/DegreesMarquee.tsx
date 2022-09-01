@@ -26,7 +26,9 @@ const DegreesMarquee = (props: Props) => {
 
             <Marquee direction={"left"} gradient={false} speed={10}>
                 {secondHalf.map(x =>
-                    <Chip label={x} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeDarkAlt }} className="mr-1" />
+                    <Text styles={semibold}>
+                        <Chip label={x} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeDarkAlt }} className="mr-1" />
+                    </Text>
                 )}
             </Marquee>
 

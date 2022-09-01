@@ -1,4 +1,5 @@
 import { NextSeo } from 'next-seo';
+import { GetServerSideProps } from 'next/types';
 import LocalizationService from "../services/LocalizationService";
 import Faqs from '../components/Home/Faqs';
 import MainSection from '../components/Home/MainSection';
@@ -9,8 +10,13 @@ import FourthSection from '../components/Home/FourthSection';
 import TelegramSection from '../components/Home/TelegramSection';
 import Wikipedia from '../components/Home/Wikipedia';
 import UnimiaStudentiUnimi from '../components/Home/UnimiaStudentiUnimi';
+import { getStringDegrees } from 'services/Requests';
 
-const HomeView = () => {
+interface Props {
+    degrees: string[]
+};
+
+const HomeView = (props: Props) => {
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
 
@@ -42,7 +48,7 @@ const HomeView = () => {
             />
 
             <section className="home">
-                <MainSection />
+                <MainSection degrees={props.degrees} />
 
                 <TelegramSection />
 
@@ -62,6 +68,43 @@ const HomeView = () => {
             </section>
         </>
     )
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+    let stringDegreesResult = await getStringDegrees();
+    let degrees: string[] = [];
+
+    if (stringDegreesResult.status !== 200) {
+        degrees = [
+            'informatica',
+            'fisica',
+            'informatica musicale',
+            'matematica',
+            'informatica per la comunicazione digitale',
+            'bioinformatics',
+            'sicurezza informatica',
+            "infermieristica",
+            "scienze delle professioni sanitarie tecniche diagnostiche",
+            "scienze chimiche",
+            "scienze della produzione e protezione delle piante",
+            "medical biotechnology and molecular medicine",
+            "international politics, law and economics",
+            "finance and economics (mef)",
+            "infermieristica pediatrica",
+            "scienza, tecnica e didattica dello sport",
+            "scienze internazionali e istituzioni europee (sie)",
+            "scienze dei servizi giuridici",
+            "international politics, law and economics"
+        ];
+    } else {
+        degrees = stringDegreesResult.value ?? [];
+    }
+
+    return { 
+        props: { 
+            degrees: degrees
+        } 
+    };
 };
 
 export default HomeView;
