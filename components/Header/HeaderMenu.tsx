@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import LocalizationService from "../../services/LocalizationService";
 import { FontSizes } from '@fluentui/theme';
 import { IDropdownOption } from 'office-ui-fabric-react/lib-commonjs/Dropdown';
@@ -63,7 +63,7 @@ const HeaderMenu = () => {
         root: { color: theme.palette.neutralPrimary, fontSize: FontSizes.size24 },
     };
 
-    const getPath = React.useCallback((): Array<string | boolean> => {
+    const getPath = useCallback((): Array<string | boolean> => {
         var pathname = router.pathname;
         var states = pathname.substring(1).split('/').filter(x => x !== '');
         let first = states.length > 0 ? states[0] : '';
@@ -71,11 +71,12 @@ const HeaderMenu = () => {
         return [first, isCorrectPathKey];
     }, []);
 
-    let didMount = React.useRef(false);
+    let didMount = useRef(false);
     let [path, isCorrect] = getPath();
-    const [selectedKey, setSelectedKey] = React.useState(isCorrect ? path as ItemsKeys : ItemsKeys.home);
+    const [selectedKey, setSelectedKey] = useState(isCorrect ? path as ItemsKeys : ItemsKeys.home);
 
-    React.useEffect(() => {
+    /* Initialize header element based on URL */
+    useEffect(() => {
         if (!didMount.current) {
             didMount.current = true;
             let [path, isCorrect] = getPath();
@@ -86,17 +87,23 @@ const HeaderMenu = () => {
                 setSelectedKey(path as ItemsKeys);
             }
         }
-
-        /* TODO: Se l'history cambia bisogna settare correttamente il pivot o il dropdown */
-        /*
-        return history.listen(() => {
-            if (history.action === 'PUSH' || history.action === 'POP') {
-                let [path,] = getPath();
-                setSelectedKey(path as ItemsKeys);
-            }
-        });
-        */
     }, [getPath]);
+
+    /* Handle push and pop events of browser */
+    useEffect(() => {
+        router.beforePopState(({ as }) => {
+            const routeEl = as.substring(1,);
+
+            if (routeEl === "") setSelectedKey("home" as ItemsKeys);
+            else setSelectedKey(routeEl as ItemsKeys);
+            
+            return true;
+        });
+
+        return () => {
+            router.beforePopState(() => true);
+        };
+    }, [router]);
 
     const handlePivotLinkClick = (item?: PivotItem, _e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
         if (item!.props.itemKey !== selectedKey) {
