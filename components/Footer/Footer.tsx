@@ -5,14 +5,14 @@ import { useTheme } from '@fluentui/react-theme-provider';
 import { IIconProps, PrimaryButton, Toggle, TooltipHost, IconButton, SwatchColorPicker, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib-commonjs';
 import { palettes } from '../../services/Palettes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { library, IconDefinition, IconPack } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../../services/LocalizationService";
 
-library.add(fab, faCommentDots);
+library.add(fab as IconPack, faCommentDots as IconDefinition);
 const listElement = { marginBottom: '.2rem' };
 
 const footerIcons: any = [
