@@ -8,8 +8,8 @@ defaults:
     working-directory: ./
 
 jobs:
-  build:
-    name: Build React project
+  node:
+    name: Node build
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout repository
@@ -25,4 +25,3 @@ jobs:
 
       - name: Build
         run: npm run build
-
