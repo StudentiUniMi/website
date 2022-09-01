@@ -2,7 +2,7 @@ name: "Docker build and push"
 
 on:
   push:
-    branches: [ master ]
+    branches: [ feature/next_js ]
   workflow_dispatch:
 
 jobs:
