@@ -11,8 +11,15 @@ import { CookiesProvider, useCookies } from 'react-cookie';
 import { loadTheme } from '@fluentui/react';
 import { addDays, isNavigatorLanguageItalian, parseCookies } from '../services/Utils';
 import { initializeIcons } from '@fluentui/react/lib/Icons';
+import { registerIcons } from '@fluentui/react/lib/Styling';
 import { setIconOptions } from '@fluentui/react/lib/Styling';
 import { useEffect } from "react";
+import { GoChevronRight } from "react-icons/go";
+import { FiSearch } from 'react-icons/fi';
+import { BsQuestionSquare } from 'react-icons/bs';
+import { FaTelegram, FaDiscord, FaFacebook, FaInstagram, FaLeaf, FaCode, FaBook, FaGithub } from 'react-icons/fa';
+import { MdPeopleAlt } from 'react-icons/md';
+import { HiOutlineNewspaper } from 'react-icons/hi';
 import React from 'react';
 import Script from 'next/script';
 import Head from 'next/head';
@@ -22,6 +29,23 @@ import LocalizationService from "../services/LocalizationService";
 
 initializeIcons();
 setIconOptions({ disableWarnings: true });
+registerIcons({
+    icons: {
+        GoChevronRight: <GoChevronRight />,
+        GroupsSearch: <FiSearch />,
+        BsQuestionSquare: <BsQuestionSquare />,
+        HiOutlineNewspaper: <HiOutlineNewspaper />,
+        FaTelegram: <FaTelegram />,
+        MdPeopleAlt: <MdPeopleAlt />,
+        FaDiscord: <FaDiscord />,
+        FaGithub: <FaGithub />,
+        FaFacebook: <FaFacebook />,
+        FaInstagram: <FaInstagram />,
+        FaLeaf: <FaLeaf />,
+        FaCode: <FaCode />,
+        FaBook: <FaBook />
+    }
+});
 
 const CustomApp = ({ Component, pageProps, lang, ssrCookies }: AppProps & { lang: string } & { ssrCookies: string }) => {
     let [cookies, setCookie] = useCookies();

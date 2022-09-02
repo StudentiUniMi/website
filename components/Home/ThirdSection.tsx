@@ -1,24 +1,17 @@
 import { Text, IIconProps, Icon, DefaultButton } from 'office-ui-fabric-react/lib-commonjs';
 import { semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
+import { useTheme } from '@fluentui/react-theme-provider';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { useTheme } from '@fluentui/react-theme-provider';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { library } from '@fortawesome/fontawesome-svg-core';
 import LocalizationService from "../../services/LocalizationService";
-
-library.add(fas);
 
 const ThirdSection = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     const buttonStyle = { maxWidth: '180px', boxShadow: theme.effects.elevation8 };
-    const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
-
-    const iconStyle = { backgroundColor: theme.palette.themePrimary, color:theme.palette.white, fontSize: 16, padding: '1px 7px 1px 7px', marginRight: 3, borderRadius: 3 };
-    const fontAwesomeStyle = { backgroundColor: theme.palette.themePrimary, color:theme.palette.white, fontSize: 24, padding: '1px 7px 1px 7px', marginRight: 3, borderRadius: 3 };
+    const buttonIconProps: IIconProps = { iconName: 'GoChevronRight', styles: { root: { fontSize: 14 } } };
+    const iconStyle = { backgroundColor: theme.palette.themePrimary, color:theme.palette.white, fontSize: 16, padding: "5px 10px", borderRadius: 3 };
 
     return (
         <div className="pb-5 pt-5">
@@ -28,8 +21,17 @@ const ThirdSection = () => {
                 <Row className="justify-content-around">
 
                     <Col md={4} sm={12} className="mb-4 mb-md-0 text-center">
-                        <div className="mb-2"><Text variant="large" styles={semibold}><FontAwesomeIcon icon={['fas', 'leaf']} style={fontAwesomeStyle} /> Overleaf</Text></div>
-                        <div className="mb-3 pr-2 pl-2"><Text variant="medium">{locale?.homepage.additionalServicesSection.col3.text}</Text></div>
+                        <div className="mb-2 d-flex justify-content-center">
+                            <div className="d-flex flex-row align-items-center" style={{ gap: 10 }}>
+                                <Icon iconName="FaLeaf" style={iconStyle} />
+                                <Text variant="large" styles={semibold}>OverLeaf</Text>
+                            </div>
+                        </div>
+
+                        <div className="mb-3 pr-2 pl-2">
+                            <Text variant="medium">{locale?.homepage.additionalServicesSection.col3.text}</Text>
+                        </div>
+
                         <DefaultButton
                             text={locale?.homepage.additionalServicesSection.col3.buttonText}
                             style={buttonStyle}
@@ -41,8 +43,15 @@ const ThirdSection = () => {
                     </Col>
 
                     <Col md={4} sm={12} className="mb-4 mb-md-0 text-center">
-                        <div className="mb-2"><Text variant="large" styles={semibold}><Icon iconName="PencilReply" style={iconStyle} /> HedgeDoc</Text></div>
+                        <div className="mb-2 d-flex justify-content-center">
+                            <div className="d-flex flex-row align-items-center" style={{ gap: 10 }}>
+                                <Icon iconName="FaBook" style={iconStyle} />
+                                <Text variant="large" styles={semibold}>HedgeDoc</Text>
+                            </div>
+                        </div>
+
                         <div className="mb-3 pr-2 pl-2"><Text variant="medium">{locale?.homepage.additionalServicesSection.col1.text}</Text></div>
+                        
                         <DefaultButton
                             text={locale?.homepage.additionalServicesSection.col1.buttonText}
                             style={buttonStyle}
@@ -54,8 +63,15 @@ const ThirdSection = () => {
                     </Col>
 
                     <Col md={4} sm={12} className="text-center">
-                        <div className="mb-2"><Text variant="large" styles={semibold}><Icon iconName="FileCode" style={iconStyle} /> Paste</Text></div>
+                        <div className="mb-2 d-flex justify-content-center">
+                            <div className="d-flex flex-row align-items-center" style={{ gap: 10 }}>
+                                <Icon iconName="FaCode" style={iconStyle} />
+                                <Text variant="large" styles={semibold}>Paste</Text>
+                            </div>
+                        </div>
+
                         <div className="mb-3 pr-2 pl-2"><Text variant="medium">{locale?.homepage.additionalServicesSection.col2.text}</Text></div>
+                        
                         <DefaultButton
                             text={locale?.homepage.additionalServicesSection.col2.buttonText}
                             style={buttonStyle}

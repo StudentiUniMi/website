@@ -14,8 +14,8 @@ import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
 
 const developers: any = [
-    { name: "Giuseppe Del Campo", description: { it: "Sviluppatore del sito web", en: 'Website Developer' }, username: 'Giuseppetm', user_id: 597678134, github: "https://github.com/Giuseppetm", website: "https://giuseppetm.netlify.app/" },
-    { name: "Manuele Lucchi", description: { it: "Progettista del sito web", en: 'Website Technical Designer' }, username: "Gesoo99", user_id: 99687972, github: "https://github.com/manuelelucchi", website: "https://manuelelucchi.github.io/" },
+    { name: "Giuseppe Del Campo", description: { it: "Sviluppatore front-end", en: 'Website Developer' }, username: 'Giuseppetm', user_id: 597678134, github: "https://github.com/Giuseppetm", website: "https://giuseppetm.netlify.app/" },
+    { name: "Manuele Lucchi", description: { it: "Sviluppatore front-end", en: 'Website Developer' }, username: "Gesoo99", user_id: 99687972, github: "https://github.com/manuelelucchi", website: "https://manuelelucchi.github.io/" },
     { name: "Mirko Faina", description: { it: "Sviluppatore back-end", en: "Back-end developer" }, username: "Mroik", user_id: 0, github: "https://github.com/Mroik", website: "" }
 ];
 
@@ -24,7 +24,7 @@ const Organization = () => {
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
     const networkMembers = getNetworkMembers();
-    const icon: IIconProps = { iconName: 'DocumentSearch' };
+    const icon: IIconProps = { iconName: 'HiOutlineNewspaper' };
     const imageProperties = { display: 'inline-block', width: '100%' };
     
     resetIds();

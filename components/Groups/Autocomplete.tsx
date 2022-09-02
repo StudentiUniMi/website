@@ -4,13 +4,15 @@ import { SearchBox, Callout, List } from 'office-ui-fabric-react/lib-commonjs/';
 import { FocusZone, FocusZoneDirection } from 'office-ui-fabric-react/lib-commonjs/FocusZone';
 import { mergeStyleSets } from '@uifabric/styling';
 import { DirectionalHint, ISearchBoxStyles } from '@fluentui/react';
-//import { useTheme } from '@fluentui/react-theme-provider';
+import { IIconProps } from '@fluentui/react/lib/Icon';
 import Chip from '@material-ui/core/Chip';
 
 const searchBoxStyles: Partial<ISearchBoxStyles> = { root: { maxWidth: 650, minWidth: 0 } };
 const CalloutStyle = () => {
   return { maxWidth: '650px' };
 };
+
+const iconProps: IIconProps = { iconName: 'GroupsSearch' };
 
 const AutocompleteStyles = () => {
   return ({
@@ -81,6 +83,7 @@ export class Autocomplete extends React.Component<ISearchSuggestionsProps, IAuto
             this.setState({ searchText: newSearchText! });
             this.onChange(newSearchText!);
           }}
+          iconProps={iconProps}
           value={this.props.value}
           disabled={this.props.disabled}
         />

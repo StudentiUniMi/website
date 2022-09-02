@@ -1,5 +1,5 @@
 /* Main properties */
-$footer-height: 220px;  // Default footer height
+$footer-height: 235px;  // Default footer height
 
 html {
   margin: 0;
@@ -41,6 +41,11 @@ button:focus,
   outline: 0;
   outline: none;
   box-shadow: none !important;
+}
+
+/* Fix icons vertical align */
+svg {
+  vertical-align: unset;
 }
 
 
@@ -437,4 +442,10 @@ footer .ms-Label {
 
 .services .ms-DocumentCardPreview, .services .ms-DocumentCardPreview-iconContainer {
   min-height: 100%;
+}
+
+/* Fix buttons and searchBox icon not aligned */
+.ms-Button-icon, .ms-SearchBox-icon {
+  display: flex;
+  align-items: center;
 }

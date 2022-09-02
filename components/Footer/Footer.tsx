@@ -2,26 +2,21 @@ import { Link, Text, Label } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
 import { bold, semibold } from '../../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { IIconProps, PrimaryButton, Toggle, TooltipHost, IconButton, SwatchColorPicker, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib-commonjs';
+import { Icon, IIconProps, PrimaryButton, Toggle, TooltipHost, IconButton, SwatchColorPicker, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib-commonjs';
 import { palettes } from '../../services/Palettes';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library, IconDefinition, IconPack } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
-import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../../services/LocalizationService";
 
-library.add(fab as IconPack, faCommentDots as IconDefinition);
 const listElement = { marginBottom: '.2rem' };
 
 const footerIcons: any = [
-    { name: { it: 'Canale Telegram', en: 'Telegram Channel' }, link: 'https://t.me/studenti_unimi', iconName: 'telegram-plane', type: 'brand' },
-    { name: { it: 'Gruppo Principale', en: 'Main Group' }, link: 'https://t.me/unimichat', iconName: 'comment-dots', type: 'normal' },
-    { name: { it: 'Canale Discord', en: 'Discord Channel' }, link: 'https://discord.gg/SwPzAkv4A4', iconName: 'discord', type: 'brand' },
-    { name: { it: 'Organizzazione GitHub', en: 'GitHub Organization' }, link: 'https://github.com/StudentiUnimi', iconName: 'github', type: 'brand' },
-    { name: { it: 'Pagina Facebook', en: 'Facebook Page' }, link: 'https://www.facebook.com/networkstudentiunimi', iconName: 'facebook', type: 'brand' },
-    { name: { it: 'Pagina Instagram', en: 'Instagram Page' }, link: 'https://www.instagram.com/studentiunimi.it/', iconName: 'instagram', type: 'brand' },
+    { name: { it: 'Canale Telegram', en: 'Telegram Channel' }, link: 'https://t.me/studenti_unimi', iconName: 'FaTelegram' },
+    { name: { it: 'Gruppo Principale', en: 'Main Group' }, link: 'https://t.me/unimichat', iconName: 'MdPeopleAlt' },
+    { name: { it: 'Canale Discord', en: 'Discord Channel' }, link: 'https://discord.gg/SwPzAkv4A4', iconName: 'FaDiscord' },
+    { name: { it: 'Organizzazione GitHub', en: 'GitHub Organization' }, link: 'https://github.com/StudentiUnimi', iconName: 'FaGithub' },
+    { name: { it: 'Pagina Facebook', en: 'Facebook Page' }, link: 'https://www.facebook.com/networkstudentiunimi', iconName: 'FaFacebook' },
+    { name: { it: 'Pagina Instagram', en: 'Instagram Page' }, link: 'https://www.instagram.com/studentiunimi.it/', iconName: 'FaInstagram' },
 ];
 
 interface Props { 
@@ -45,11 +40,11 @@ const Footer = (props: Props) => {
     const changeLanguage = (language: string) => props.changeLanguage(language);
     const changePalette = (paletteId: string) => props.changePalette(paletteId);
     
-    const wrapIconStyle = { backgroundColor: theme.palette.themeSecondary, borderRadius: '35%', minWidth: 30, minHeight: 30, display: 'inline-block', textAlign: 'center', justifyContent: 'center', verticalAlign: 'middle' } as React.CSSProperties;
-    const iconStyle = { color: theme.palette.white, fontSize: '17px', marginTop: 6 };
+    const wrapIconStyle = { backgroundColor: theme.palette.themeSecondary, borderRadius: 15, padding: "5px 10px", display: 'flex', justifyContent: 'center', alignItems: 'center' } as React.CSSProperties;
+    const iconStyle = { color: theme.palette.white, fontSize: 20, margin: 0 };
     
     const buttonStyle = { maxWidth: '270px', boxShadow: theme.effects.elevation8 };
-    const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
+    const buttonIconProps: IIconProps = { iconName: 'GoChevronRight', styles: { root: { fontSize: 14 } } };
 
     /* Theme palette code */
     const colorCells: any[] = palettes.map(x => ({ id: x.id, label: x.label, color: x.palette?.themePrimary }));
@@ -167,10 +162,7 @@ const Footer = (props: Props) => {
                                     >
                                         <Link href={x.link}>
                                             <span style={wrapIconStyle} className="text-decoration mr-1">
-                                                { x.type === 'brand' ?
-                                                <FontAwesomeIcon icon={['fab', x.iconName]} style={iconStyle} />
-                                                :
-                                                <FontAwesomeIcon icon={x.iconName} style={iconStyle} /> }
+                                                <Icon iconName={x.iconName} style={iconStyle} />
                                             </span>
                                         </Link>
                                     </TooltipHost>

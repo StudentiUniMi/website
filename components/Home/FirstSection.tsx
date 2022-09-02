@@ -14,7 +14,7 @@ const FirstSection = () => {
     const router = useRouter();
     const locale = LocalizationService.strings();
     const buttonStyle = { maxWidth: '120px', boxShadow: theme.effects.elevation8 };
-    const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
+    const buttonIconProps: IIconProps = { iconName: 'GoChevronRight', styles: { root: { fontSize: 14 } } };
     const cardStyle = { backgroundColor: theme.palette.neutralLighterAlt, padding: '20px', borderRadius: '10px', overflow: 'hidden', minHeight: 200 };
     const cardImageStyle = { maxWidth: 165, minWidth: 120 };
 

@@ -11,7 +11,7 @@ const TelegramSection = () => {
     const locale = LocalizationService.strings();
 
     const buttonStyle = { maxWidth: 300, height: 40, borderRadius: 3, boxShadow: theme.effects.elevation8 };
-    const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
+    const buttonIconProps: IIconProps = { iconName: 'GoChevronRight', styles: { root: { fontSize: 14 } } };
 
     return (
         <div className="pb-4 pt-4" style={{ backgroundColor: theme.palette.themePrimary }}>

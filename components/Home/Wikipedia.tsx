@@ -10,7 +10,7 @@ const Wiki = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     const buttonStyle = { maxWidth: '230px', boxShadow: theme.effects.elevation8 };
-    const buttonIconProps: IIconProps = { iconName: 'ChevronRightSmall', styles: { root: { fontSize: 12 } } };
+    const buttonIconProps: IIconProps = { iconName: 'GoChevronRight', styles: { root: { fontSize: 14 } } };
 
     return (
         <div className="pb-5 pt-5" style={{ backgroundColor: theme.palette.neutralLighterAlt }}>
