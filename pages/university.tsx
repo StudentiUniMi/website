@@ -132,9 +132,9 @@ const University = () => {
             <NextSeo
                 title={locale?.helmet.university.title}
                 description={locale?.helmet.university.description}
-                canonical={"https://studentiunimi.it/representatives"}
+                canonical={"https://studentiunimi.it/university"}
                 openGraph={{
-                    url: "https://studentiunimi.it/representatives",
+                    url: "https://studentiunimi.it/university",
                     title: locale?.helmet.university.title,
                     description: locale?.helmet.university.description,
                     site_name: 'Network StudentiUniMi',
