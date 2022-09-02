@@ -6,10 +6,9 @@
 
 import React from 'react';
 import LocalizationService from "../../services/LocalizationService";
-import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
+import { Spinner, SpinnerSize, Text, Image, Icon, Link } from 'office-ui-fabric-react/lib-commonjs';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { semibold } from '../../services/Fonts';
-import { Text, Image, Icon, Link } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import JsxParser from 'react-jsx-parser';
 

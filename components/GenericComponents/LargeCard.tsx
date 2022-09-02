@@ -1,6 +1,6 @@
 import { DocumentCard, DocumentCardActivity, DocumentCardTitle, DocumentCardDetails, DocumentCardImage, IDocumentCardStyles, IDocumentCardActivityPerson, IDocumentCardDetailsStyles, IDocumentCardTitleStyles } from '@fluentui/react/lib/DocumentCard';
-import { ImageFit } from '@fluentui/react/lib/Image';
-import { Text, Icon } from '@fluentui/react';
+import { ImageFit } from 'office-ui-fabric-react/lib-commonjs/';
+import { Text, Icon } from 'office-ui-fabric-react/lib-commonjs/';
 import { semibold } from '../../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 

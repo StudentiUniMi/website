@@ -524,7 +524,7 @@ class LocalizationService {
             rules: { title: "Regolamento dei gruppi | Network StudentiUniMi", description: "Il regolamento ufficiale del Network StudentiUniMi." },
             university: { title: "Informazioni dall'Ateneo e rappresentanti | Network StudentiUniMi", description: "Rimani aggiornato con tutte le informazioni e i rappresentanti dell'Università degli Studi di Milano, offerto dal Network StudentiUniMi." },
             organization: { title: "Chi siamo | Network StudentiUniMi", description: "Chi siamo? Scopri l'organizzazione dietro il Network StudentiUniMi, il più grande network dell'Università degli Studi di Milano." },
-            degreeLoaded: { title1: 'Gruppi di ', title2: ' | Network StudentiUniMi', description1: 'Tutti i link dei gruppi Telegram del corso di laurea di ', description2: " dell'Università degli Studi di Milano offerti dal Network StudentiUniMi." }
+            degreeLoaded: { title1: 'Gruppi di ', title2: ' | Network StudentiUniMi', description1: 'Tutti i link dei gruppi Telegram di ', description2: " dell'Università degli Studi di Milano, offerti dal Network StudentiUniMi." }
         }
     }
 
@@ -536,7 +536,7 @@ class LocalizationService {
             rules: { title: "Groups rules | Network StudentiUniMi", description: "The official rules of the StudentiUniMi Network." },
             university: { title: "University redirects | Network StudentiUniMi", description: "Stay up-to-date with all the information and representatives of the University of Milan, offered by the StudentiUniMi Network." },
             organization: { title: "Organization | Network StudentiUniMi", description: "Who are we? Discover the organization behind the StudentiUniMi Network, the largest network of the University of Milan." },
-            degreeLoaded: { title1: 'Groups of ', title2: ' | Network StudentiUniMi', description1: 'All the links of the Telegram groups of ', description2: ' degree of the University of Milan. Offered by StudentiUniMi Network.' }
+            degreeLoaded: { title1: 'Groups of ', title2: ' | Network StudentiUniMi', description1: 'All the links of the Telegram groups of ', description2: ' of the University of Milan, offered by StudentiUniMi Network.' }
         }
     }
 }

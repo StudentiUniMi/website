@@ -1,4 +1,4 @@
-import React from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
@@ -10,7 +10,7 @@ import { useTheme } from '@fluentui/react-theme-provider';
 import { getRepresentatives, getDepartments, getUniversityLinks } from '../services/Requests'
 import { Department, Representative } from '../models/Models';
 import { semibold } from "../services/Fonts";
-import { IChoiceGroupOptionStyles } from "@fluentui/react";
+import { IChoiceGroupOptionStyles } from "office-ui-fabric-react/lib-commonjs/";
 import { ChoiceGroup, IChoiceGroupOption } from 'office-ui-fabric-react/lib-commonjs/ChoiceGroup';
 import { redirectToLink } from "../services/Utils";
 import { NextSeo } from 'next-seo';
@@ -18,7 +18,7 @@ import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 
 const University = () => {
     var theme = useTheme();
-    let didMount = React.useRef(false);
+    let didMount = useRef(false);
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
     
@@ -45,7 +45,7 @@ const University = () => {
     };
 
     /* Workaround to not show selected choicegroup */
-    const [selectedChoiceGroup, setSelectedChoiceGroup] = React.useState<string>("");
+    const [selectedChoiceGroup, setSelectedChoiceGroup] = useState<string>("");
     const selectionChanged = (_?: React.FormEvent<HTMLElement | HTMLInputElement>, __?: IChoiceGroupOption): void => { setSelectedChoiceGroup(""); }
 
     universityLinks.map((x) => {
@@ -60,27 +60,27 @@ const University = () => {
     });
 
     /* Remove title properties from documentCardTitles */
-    React.useEffect(() => {
+    useEffect(() => {
         const divList = document.getElementsByClassName("ms-DocumentCardTitle");
         for (let i: number = 0; i < divList.length; i++) {
             divList[i].removeAttribute('title');
         }
     });
 
-    const [departments, setDepartments] = React.useState<Department[]>([]);
-    const [representatives, setRepresentatives] = React.useState<Representative[]>([]);
-    const [selectedDepartment, setSelectedDepartment] = React.useState<string>('');
+    const [departments, setDepartments] = useState<Department[]>([]);
+    const [representatives, setRepresentatives] = useState<Representative[]>([]);
+    const [selectedDepartment, setSelectedDepartment] = useState<string>('');
 
-    const [loadingRepresentatives, setLoadingRepresentatives] = React.useState<boolean>(false);
-    const [errorLoadingRepresentatives, setErrorLoadingRepresentatives] = React.useState<boolean>(false);
-    const [errorLoadingDepartments, setErrorLoadingDepartments] = React.useState<boolean>(false);
+    const [loadingRepresentatives, setLoadingRepresentatives] = useState<boolean>(false);
+    const [errorLoadingRepresentatives, setErrorLoadingRepresentatives] = useState<boolean>(false);
+    const [errorLoadingDepartments, setErrorLoadingDepartments] = useState<boolean>(false);
 
     const departmentSelectionChanged = (_?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IDropdownOption): void => {
         setSelectedDepartment(option?.key as string ?? '');
     };
 
     /* Departments callBack */
-    const updateDepartments = React.useCallback(async () => {
+    const updateDepartments = useCallback(async () => {
         setErrorLoadingDepartments(false);
         let departmentsResult = await getDepartments();
 
@@ -93,7 +93,7 @@ const University = () => {
     }, []);
 
     /* Representatives callBack */
-    const updateRepresentatives = React.useCallback(async () => {
+    const updateRepresentatives = useCallback(async () => {
         if (selectedDepartment === '' || selectedDepartment === undefined) return;
         setLoadingRepresentatives(true);
         setErrorLoadingRepresentatives(false);
@@ -108,13 +108,13 @@ const University = () => {
         setRepresentatives(representativesResult.value ?? []);
     }, [setRepresentatives, selectedDepartment]);
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (!didMount.current) {
             updateDepartments();
         }
     }, [updateDepartments]);
 
-    React.useEffect(() => {
+    useEffect(() => {
         updateRepresentatives();
     }, [selectedDepartment, updateRepresentatives]);
 
@@ -176,7 +176,7 @@ const University = () => {
                     </Container>
                 </div>
 
-                {/*
+                {/* 
                 <div>
                     <Container>
                         <div className="mb-3 text-center">

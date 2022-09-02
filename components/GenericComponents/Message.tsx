@@ -5,7 +5,7 @@
  */
 
 import { useTheme } from '@fluentui/react-theme-provider';
-import { Text, Image, Icon } from '@fluentui/react';
+import { Text, Image, Icon } from 'office-ui-fabric-react/lib-commonjs';
 import { semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
 
