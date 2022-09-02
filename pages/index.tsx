@@ -1,5 +1,6 @@
 import { NextSeo } from 'next-seo';
 import { GetServerSideProps } from 'next/types';
+import { getStringDegrees } from 'services/Requests';
 import LocalizationService from "../services/LocalizationService";
 import Faqs from '../components/Home/Faqs';
 import MainSection from '../components/Home/MainSection';
@@ -10,7 +11,6 @@ import FourthSection from '../components/Home/FourthSection';
 import TelegramSection from '../components/Home/TelegramSection';
 import Wikipedia from '../components/Home/Wikipedia';
 import UnimiaStudentiUnimi from '../components/Home/UnimiaStudentiUnimi';
-import { getStringDegrees } from 'services/Requests';
 
 interface Props {
     degrees: string[]
