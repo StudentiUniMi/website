@@ -58,7 +58,7 @@ const Organization = () => {
 
             <section className="organization pb-3">
 
-                <div className="pt-5 pb-5" style={{ backgroundColor: theme.palette.themeDarkAlt }}>
+                <div className="pt-5 pb-5" style={{ backgroundColor: theme.palette.themeDark }}>
                     <Container>
 
                         <Row>

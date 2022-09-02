@@ -218,7 +218,7 @@ class LocalizationService {
                     university: {
                         header: {
                             text1: "Sei alla ricerca di informazioni legate al nostro ateneo?",
-                            text2: "Qui puoi trovare tutto quello che ti serve, a partire dalle notizie e dai collegamenti più importanti fino ai contatti dei rappresentanti del tuo dipartimento."
+                            text2: "Qui puoi trovare tutto quello che ti serve, a partire dai collegamenti più importanti fino ai contatti dei rappresentanti del tuo dipartimento."
                         },
                         linksAndRedirects: {
                             text1: "Trovare tutti i collegamenti utili legati all'ateneo può richiedere tempo.", 
@@ -463,7 +463,7 @@ class LocalizationService {
                     university: {
                         header: {
                             text1: "Are you looking for informations related to our university?",
-                            text2: "Here you can find everything you need, starting with the most important news and links to the contacts of the representatives of your department. "
+                            text2: "Here you can find everything you need, starting with the most important links to the contacts of the representatives of your department. "
                         },
                         linksAndRedirects: {
                             text1: "Finding all the useful links related to the university can take time.", 

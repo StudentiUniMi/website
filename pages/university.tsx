@@ -1,23 +1,20 @@
 import React from "react";
-import { Container } from 'react-bootstrap';
-import { Text, Icon } from 'office-ui-fabric-react';
-import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib-commonjs/Dropdown';
-import { useTheme } from '@fluentui/react-theme-provider';
-import { getRepresentatives, getDepartments, getUniversityLinks } from '../services/Requests'
-import { Department, Representative } from '../models/Models';
-import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
-import { semibold } from "../services/Fonts";
-import { IChoiceGroupOptionStyles } from "@fluentui/react";
-import { ChoiceGroup, IChoiceGroupOption } from '@fluentui/react/lib/ChoiceGroup';
-import { redirectToLink } from "../services/Utils";
-import { NextSeo } from 'next-seo';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
 import RepresentativesList from '../components/University/RepresentativesList';
-import Slider from '../components/University/Slider/Slider';
-
-const iconStyles = { marginRight: '8px' };
+import { Container } from 'react-bootstrap';
+import { Text, Icon } from 'office-ui-fabric-react/lib-commonjs';
+import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib-commonjs/Dropdown';
+import { useTheme } from '@fluentui/react-theme-provider';
+import { getRepresentatives, getDepartments, getUniversityLinks } from '../services/Requests'
+import { Department, Representative } from '../models/Models';
+import { semibold } from "../services/Fonts";
+import { IChoiceGroupOptionStyles } from "@fluentui/react";
+import { ChoiceGroup, IChoiceGroupOption } from 'office-ui-fabric-react/lib-commonjs/ChoiceGroup';
+import { redirectToLink } from "../services/Utils";
+import { NextSeo } from 'next-seo';
+import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 
 const University = () => {
     var theme = useTheme();
@@ -155,7 +152,7 @@ const University = () => {
             />
             
             <section className="university">
-                <div className="pt-5 pb-5 mb-4" style={{ backgroundColor: theme.palette.themeDark }}>
+                <div className="pt-5 pb-5" style={{ backgroundColor: theme.palette.themeDark }}>
                     <Container>
 
                         <Row>
@@ -179,6 +176,7 @@ const University = () => {
                     </Container>
                 </div>
 
+                {/*
                 <div>
                     <Container>
                         <div className="mb-3 text-center">
@@ -190,24 +188,25 @@ const University = () => {
                         </div>
                     </Container>
                 </div>
+                */}
 
-                <div className="pt-5 pb-5" style={{ backgroundColor: theme.palette.themeTertiary }}>
+                <div className="pt-5 pb-5">
                     <Container>
 
                         <Row>
                             <Col lg={4} className="text-center">
-                                <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }}>
+                                <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }} className="mb-lg-0 mb-3">
                                     <Image id="logo" className="mb-2" src={'/images/university_links.png'} style={imageProperties} />
                                 </div>
                             </Col>
 
                             <Col lg={8} className="mb-2">
                                 <div className="mb-2">
-                                    <Text variant="xLargePlus" style={{color: theme.palette.white}}>{locale?.university.linksAndRedirects.text1}</Text>
+                                    <Text variant="xLargePlus">{locale?.university.linksAndRedirects.text1}</Text>
                                 </div>
 
                                 <div className="mb-3">
-                                    <Text variant="large" style={{ color: theme.palette.white }}>{locale?.university.linksAndRedirects.text2}</Text>
+                                    <Text variant="large">{locale?.university.linksAndRedirects.text2}</Text>
                                 </div>
 
                                 <div className="text-center justify-content-center university-links" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
@@ -276,6 +275,8 @@ const University = () => {
 };
 
 export default University;
+
+const iconStyles = { marginRight: '8px' };
 
 const onRenderOption = (option?: IDropdownOption): JSX.Element => {
     return (
