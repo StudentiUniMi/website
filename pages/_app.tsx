@@ -11,6 +11,7 @@ import { CookiesProvider, useCookies } from 'react-cookie';
 import { loadTheme } from '@fluentui/react';
 import { addDays, isNavigatorLanguageItalian, parseCookies } from '../services/Utils';
 import { initializeIcons } from '@fluentui/react/lib/Icons';
+import { setIconOptions } from '@fluentui/react/lib/Styling';
 import { useEffect } from "react";
 import React from 'react';
 import Script from 'next/script';
@@ -19,7 +20,8 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import LocalizationService from "../services/LocalizationService";
 
-initializeIcons(undefined, { disableWarnings: true });
+initializeIcons();
+setIconOptions({ disableWarnings: true });
 
 const CustomApp = ({ Component, pageProps, lang, ssrCookies }: AppProps & { lang: string } & { ssrCookies: string }) => {
     let [cookies, setCookie] = useCookies();
