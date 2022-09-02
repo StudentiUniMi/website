@@ -4,7 +4,7 @@ import "swiper/components/navigation/navigation.min.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../components/University/Slider/slider.scss';
 import '../styles/index.scss';
-import App, { AppContext, AppProps } from 'next/app'
+import App, { AppContext, AppProps } from 'next/app';
 import { ThemeProvider } from '@fluentui/react-theme-provider';
 import { buildLightTheme, buildDarkTheme } from '../services/Themes';
 import { CookiesProvider, useCookies } from 'react-cookie';
