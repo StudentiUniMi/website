@@ -165,20 +165,20 @@ const HeaderMenu = () => {
                         </div>
 
                         <div className="mb-3">
-                            <div style={{ ...cardStyle, backgroundColor: theme.palette.yellow }} onClick={() => { router.push("/courses"); dismissPanel(); } }>
-                                <Text variant="medium" styles={semibold} style={{ color: theme.palette.black }}>{locale?.sidebar.searchGroup} <Icon iconName="ChevronRightMed" style={{ fontSize: 10 }} /></Text>
+                            <div style={{ ...cardStyle, backgroundColor: theme.palette.yellow }} onClick={() => { router.push("/courses"); setSelectedKey(ItemsKeys.courses); dismissPanel(); } }>
+                                <Text variant="medium" styles={semibold} style={{ color: "#0f0f0f" }}>{locale?.sidebar.searchGroup} <Icon iconName="ChevronRightMed" style={{ fontSize: 10 }} /></Text>
                             </div>
                         </div>
 
                         <div className="mb-3">
                             <div style={cardStyle} onClick={() => redirectToLink("https://t.me/unimichat")}>
-                                <Text variant="medium" style={{ color: theme.palette.white }}>{locale?.sidebar.mainGroup} <Icon iconName="ChevronRightMed" style={{ fontSize: 10 }} /></Text>
+                                <Text variant="medium" style={{ color: "#fcfcfc" }}>{locale?.sidebar.mainGroup} <Icon iconName="ChevronRightMed" style={{ fontSize: 10 }} /></Text>
                             </div>
                         </div>
 
                         <div className="mb-3">
                             <div style={cardStyle} onClick={() => redirectToLink("https://t.me/studenti_unimi")}>
-                                <Text variant="medium" style={{ color: theme.palette.white }}>{locale?.sidebar.channel} <Icon iconName="ChevronRightMed" style={{ fontSize: 10 }} /></Text>
+                                <Text variant="medium" style={{ color: "#fcfcfc" }}>{locale?.sidebar.channel} <Icon iconName="ChevronRightMed" style={{ fontSize: 10 }} /></Text>
                             </div>
                         </div>
 

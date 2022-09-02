@@ -34,8 +34,8 @@ class LocalizationService {
                     reach: 'Raggiungi',
                     findOut: 'Scopri',
                     sidebar: {
-                        mainGroup: "Unisciti al nostro gruppo principale per qualsiasi domanda riguardo la nostra università",
-                        channel: "Entra nel nostro canale Telegram per rimanere sempre aggiornato e scoprire tutte le nostre risorse",
+                        mainGroup: "Unisciti al nostro gruppo principale",
+                        channel: "Entra nel nostro canale Telegram",
                         redirects: "Scopri i nostri collegamenti principali",
                         searchGroup: "Cerca i gruppi Telegram del tuo corso di laurea premendo qui"
                     },
@@ -285,8 +285,8 @@ class LocalizationService {
                     reach: 'Reach',
                     findOut: 'Find out',
                     sidebar: {
-                        mainGroup: "Join our main group for any questions regarding our University",
-                        channel: "Enter our Telegram channel to stay updated and discover all our resources",
+                        mainGroup: "Join our main group",
+                        channel: "Enter our Telegram channel",
                         redirects: "Discover our main socials and redirects",
                         searchGroup: "Search the telegram groups of your degree by pressing here"
                     },
