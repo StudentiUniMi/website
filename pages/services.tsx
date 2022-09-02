@@ -12,9 +12,9 @@ import { DocumentCardPreview, IDocumentCardPreviewProps } from 'office-ui-fabric
 import { Card, ICardTokens } from '@uifabric/react-cards';
 import { semibold } from '../services/Fonts';
 import { getRedirects, getGuides, getTools } from '../services/Requests';
-import { Pivot, PivotItem } from '@fluentui/react';
+import { Pivot, PivotItem } from 'office-ui-fabric-react/lib-commonjs/';
 import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
-import { Link } from '@fluentui/react';
+import { Link } from 'office-ui-fabric-react/lib-commonjs/';
 
 const Services = () => {
     var theme = useTheme();
@@ -104,8 +104,8 @@ const Services = () => {
                                         selectedKey={selectedSubSection}
                                         onLinkClick={handleSubSectionChange}
                                         headersOnly={true}
-                                        linkSize="normal" 
-                                        linkFormat="tabs"
+                                        linkSize={0}
+                                        linkFormat={1}
                                     >
                                         <PivotItem headerText={locale?.services.tabs.redirects} itemKey="redirects" />
                                         <PivotItem headerText={locale?.services.tabs.guides} itemKey="guides" />
