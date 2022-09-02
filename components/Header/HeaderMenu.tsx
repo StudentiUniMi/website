@@ -7,7 +7,7 @@ import { Panel } from '@fluentui/react/lib/Panel';
 import { ITooltipHostStyles, Link, PrimaryButton, Text, TooltipDelay, TooltipHost } from "office-ui-fabric-react/lib-commonjs/";
 import { useRouter } from 'next/router';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { Pivot, PivotItem, IPivotStyles } from 'office-ui-fabric-react/lib-commonjs/';
+import { Pivot, PivotItem, IPivotStyles } from 'office-ui-fabric-react/lib-commonjs/Pivot';
 import { withCookies } from "react-cookie";
 import { useBoolean } from "@fluentui/react-hooks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -143,7 +143,7 @@ const HeaderMenu = () => {
                     headersOnly={true}
                     styles={pivotStyles}
                     theme={theme}
-                    //overflowBehavior={'menu'}
+                    // overflowBehavior={'menu'} TODO: use this when it's added in /lib-commonjs import
                 >
                     {Object.values(ItemsKeys).map((x, _i) => <PivotItem headerText={texts.get(x)} itemKey={x} key={x} />)}
                 </Pivot>

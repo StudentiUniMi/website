@@ -99,7 +99,7 @@ button:focus,
 
 
 /* Responsive menu and title */
-@media only screen and (min-width: 587px) {
+@media only screen and (min-width: 769px) { // TODO: Restore 587px when lib-commonjs is updated
   header .headerRow {
     margin-left: 1rem!important;
     margin-right: 1rem !important;
@@ -114,7 +114,7 @@ button:focus,
   }
 }
 
-@media only screen and (max-width: 586px) {
+@media only screen and (max-width: 768px) { // TODO: Restore 586px when lib-commonjs is updated
   header .headerRow {
     margin-left: 15px !important;
     margin-right: 15px !important;
