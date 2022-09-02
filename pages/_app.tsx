@@ -11,13 +11,13 @@ import { CookiesProvider, useCookies } from 'react-cookie';
 import { loadTheme } from '@fluentui/react';
 import { addDays } from '../services/Utils';
 import { initializeIcons } from '@fluentui/react/lib/Icons';
+import { useEffect } from "react";
 import React from 'react';
 import Script from 'next/script';
 import Head from 'next/head';
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import LocalizationService from "../services/LocalizationService";
-import { useEffect } from "react";
 
 initializeIcons(undefined, { disableWarnings: true });
 
@@ -66,13 +66,15 @@ const CustomApp = ({ Component, pageProps, lang, ssrCookies }: AppProps & { lang
         LocalizationService.localize(language);
     }, [language, palette, theme]);
 
+    LocalizationService.localize(language);
+
     return (
         <>
             {/* Shared head properties */}
             <Head>
                 <link rel="icon" href="/logo/unimi150.png" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-                <meta name="author" content="Giuseppe Del Campo, Manuele Lucchi" />
+                <meta name="author" content="Network StudentiUniMi" />
                 <meta httpEquiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://studentiunimi.it https://code.jquery.com https://cdn.jsdelivr.net https://p.studentiunimi.it; font-src * data:;" />
             </Head>
 
