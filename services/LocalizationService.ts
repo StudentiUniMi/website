@@ -495,7 +495,7 @@ class LocalizationService {
                         header2: 'Contributors',
                         githubProfile: 'Github Profile',
                         websiteProfile: 'Website',
-                        text2: 'Did you contributed to the development of the Network and you would like to appear in this list? Send a private message to <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.'
+                        text2: 'Did you contribute to the development of the Network and you would like to appear in this list? Send a private message to <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.'
                     },
                     aboutUs: {
                         text1: 'We are a non-profit organization, neutral and not affiliated to any political party.',
@@ -530,22 +530,22 @@ class LocalizationService {
 
     static getHelmetITAProperties = () : helmet => {
         return {
-            homepage: { title: "Network StudentiUniMi - Gruppi, servizi e molto altro", description: "Sito web ufficiale del Network StudentiUniMi: gruppi WhatsApp rimpiazziati da Telegram, servizi e molto altro. Il network più grande dell'Università degli Studi di Milano." },
+            homepage: { title: "Network StudentiUniMi - Gruppi, servizi e molto altro", description: "Sito web ufficiale del Network StudentiUniMi: gruppi WhatsApp rimpiazziati da Telegram, servizi e molto altro. Il network più grande dell'Università degli Studi di Milano, gestito da studenti per gli studenti." },
             courses: { title: "Tutti i gruppi | Network StudentiUniMi", description: "Tutti i gruppi Telegram per tutti i corsi di laurea (triennali, magistrali, lauree a ciclo unico) dell'Università degli Studi di Milano. Entra, chiedi informazioni e conosci persone nuove grazie al Network StudentiUniMi." },
-            services: { title: "Servizi e link rapidi | Network StudentiUniMi", description: "Stanco dei disservizi di unimia? Da questa pagina alternativa puoi accedere a tutti i link utili dell'Università degli Studi di Milano." },
-            rules: { title: "Regolamento dei gruppi | Network StudentiUniMi", description: "Il regolamento ufficiale del Network StudentiUniMi." },
+            services: { title: "Servizi e link rapidi | Network StudentiUniMi", description: "Tutti i servizi e i link rapidi alle risorse dell'Università degli Studi di Milano: iscrizioni esami, verbalizzazioni voti, webmail, e molto altro. Un'alternativa veloce a UNIMIA." },
+            rules: { title: "Regolamento dei gruppi | Network StudentiUniMi", description: "Il regolamento ufficiale dei gruppi Telegram del Network StudentiUniMi, il più grande network studentesco dell'Università degli Studi di Milano." },
             university: { title: "Informazioni dall'Ateneo e rappresentanti | Network StudentiUniMi", description: "Rimani aggiornato con tutte le informazioni e i rappresentanti dell'Università degli Studi di Milano, offerto dal Network StudentiUniMi." },
-            organization: { title: "Chi siamo | Network StudentiUniMi", description: "Chi siamo? Scopri l'organizzazione dietro il Network StudentiUniMi, il più grande network dell'Università degli Studi di Milano." },
+            organization: { title: "Chi siamo | Network StudentiUniMi", description: "Chi siamo? Scopri l'organizzazione dietro il Network StudentiUniMi, il più grande network studentesco dell'Università degli Studi di Milano." },
             degreeLoaded: { title1: 'Gruppi di ', title2: ' | Network StudentiUniMi', description1: 'Tutti i link dei gruppi Telegram di ', description2: " dell'Università degli Studi di Milano, offerti dal Network StudentiUniMi." }
         }
     }
 
     static getHelmetENGProperties = () : helmet => {
         return {
-            homepage: { title: "Network StudentiUniMi - Groups, services and much more", description: "Official website of StudentiUniMi Network: WhatsApp groups replaced by Telegram ones, services and much more. The largest network of the University of Milan." },
+            homepage: { title: "Network StudentiUniMi - Groups, services and much more", description: "Official website of StudentiUniMi Network: WhatsApp groups replaced by Telegram ones, services and much more. The largest network of the University of Milan, managed by students for students." },
             courses: { title: "Groups | Network StudentiUniMi", description: "All Telegram groups for all degree courses (three-year, master, single-cycle degrees) of the University of Milan. Join, ask for information and meet new people thanks to the StudentiUniMi Network." },
-            services: { title: "Services | Network StudentiUniMi", description: "Tired of unimia's inefficiencies? On this alternative page you can access all the useful links of the University of Milan." },
-            rules: { title: "Groups rules | Network StudentiUniMi", description: "The official rules of the StudentiUniMi Network." },
+            services: { title: "Services | Network StudentiUniMi", description: "All services and rapid links to the University of Milan's resources: exams, grades, webmail and much more. A very fast alternative UNIMIA replacement." },
+            rules: { title: "Groups rules | Network StudentiUniMi", description: "The official rules of the StudentiUniMi Network, the largest student network of the University of Milan." },
             university: { title: "University redirects | Network StudentiUniMi", description: "Stay up-to-date with all the information and representatives of the University of Milan, offered by the StudentiUniMi Network." },
             organization: { title: "Organization | Network StudentiUniMi", description: "Who are we? Discover the organization behind the StudentiUniMi Network, the largest network of the University of Milan." },
             degreeLoaded: { title1: 'Groups of ', title2: ' | Network StudentiUniMi', description1: 'All the links of the Telegram groups of ', description2: ' of the University of Milan, offered by StudentiUniMi Network.' }
