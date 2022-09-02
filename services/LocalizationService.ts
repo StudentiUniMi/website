@@ -33,6 +33,12 @@ class LocalizationService {
                     studentsAssociation: 'Associazione studentesca',
                     reach: 'Raggiungi',
                     findOut: 'Scopri',
+                    sidebar: {
+                        mainGroup: "Unisciti al nostro gruppo principale per qualsiasi domanda riguardo la nostra università",
+                        channel: "Entra nel nostro canale Telegram per rimanere sempre aggiornato e scoprire tutte le nostre risorse",
+                        redirects: "Scopri i nostri collegamenti principali",
+                        searchGroup: "Cerca i gruppi Telegram del tuo corso di laurea premendo qui"
+                    },
                     headerMenuItems: {
                         home: 'Home',
                         courses: 'Gruppi',
@@ -278,6 +284,12 @@ class LocalizationService {
                     studentsAssociation: 'Students association',
                     reach: 'Reach',
                     findOut: 'Find out',
+                    sidebar: {
+                        mainGroup: "Join our main group for any questions regarding our University",
+                        channel: "Enter our Telegram channel to stay updated and discover all our resources",
+                        redirects: "Discover our main socials and redirects",
+                        searchGroup: "Search the telegram groups of your degree by pressing here"
+                    },
                     headerMenuItems: {
                         home: 'Home',
                         courses: 'Groups',

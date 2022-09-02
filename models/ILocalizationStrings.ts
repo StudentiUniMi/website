@@ -22,6 +22,12 @@ interface ILocalizationStrings {
     studentsAssociation: string,
     reach: string,
     findOut: string,
+    sidebar: {
+        mainGroup: string,
+        channel: string,
+        redirects: string,
+        searchGroup: string
+    }
     headerMenuItems: {
         home: string,
         courses: string,

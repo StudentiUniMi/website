@@ -4,13 +4,14 @@ import { FontSizes } from '@fluentui/theme';
 import { IDropdownOption } from 'office-ui-fabric-react/lib-commonjs/Dropdown';
 import { Icon } from 'office-ui-fabric-react/lib-commonjs/Icon';
 import { Panel } from '@fluentui/react/lib/Panel';
-import { ITooltipHostStyles, Link, PrimaryButton, Text, TooltipDelay, TooltipHost } from "office-ui-fabric-react/lib-commonjs/";
+import { Text } from "office-ui-fabric-react/lib-commonjs/";
 import { useRouter } from 'next/router';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Pivot, PivotItem, IPivotStyles } from 'office-ui-fabric-react/lib-commonjs/Pivot';
 import { withCookies } from "react-cookie";
 import { useBoolean } from "@fluentui/react-hooks";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { redirectToLink } from "services/Utils";
+import { semibold } from "services/Fonts";
 
 export enum ItemsKeys {
     home = "home",
@@ -24,16 +25,11 @@ export enum ItemsKeys {
 const HeaderMenu = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
-    var language: string | undefined = LocalizationService.getLanguage();
     const router = useRouter();
     const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
 
     /* Styles */
-    const buttonStyle = { maxWidth: '270px', boxShadow: theme.effects.elevation8 };
-    const calloutPropsResetColor = { gapSpace: 10 };
-    const hostStylesResetColor: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
-    const wrapIconStyle = { backgroundColor: theme.palette.themeSecondary, borderRadius: '35%', marginBottom: 4, minWidth: 40, minHeight: 40, display: 'inline-block', textAlign: 'center', justifyContent: 'center', verticalAlign: 'middle' } as React.CSSProperties;
-    const iconStyle = { color: theme.palette.white, fontSize: '20px', marginTop: 10 };
+    const cardStyle = { backgroundColor: theme.palette.themeDarkAlt, borderRadius: 10, padding:15 };
 
     
     const texts: Map<ItemsKeys, string | undefined> = new Map<ItemsKeys, string | undefined>([
@@ -44,15 +40,6 @@ const HeaderMenu = () => {
         [ItemsKeys.university, locale?.headerMenuItems.university],
         [ItemsKeys.organization, locale?.headerMenuItems.aboutUs]
     ]);
-
-    const footerIcons: any = [
-        { name: { it: 'Canale Telegram', en: 'Telegram Channel' }, link: 'https://t.me/studenti_unimi', iconName: 'telegram-plane', type: 'brand' },
-        { name: { it: 'Gruppo Principale', en: 'Main Group' }, link: 'https://t.me/unimichat', iconName: 'comment-dots', type: 'normal' },
-        { name: { it: 'Canale Discord', en: 'Discord Channel' }, link: 'https://discord.gg/SwPzAkv4A4', iconName: 'discord', type: 'brand' },
-        { name: { it: 'Organizzazione GitHub', en: 'GitHub Organization' }, link: 'https://github.com/StudentiUnimi', iconName: 'github', type: 'brand' },
-        { name: { it: 'Pagina Facebook', en: 'Facebook Page' }, link: 'https://www.facebook.com/networkstudentiunimi', iconName: 'facebook', type: 'brand' },
-        { name: { it: 'Pagina Instagram', en: 'Instagram Page' }, link: 'https://www.instagram.com/studentiunimi.it/', iconName: 'instagram', type: 'brand' },
-    ];
 
     const mobileHeaderButton = {
         color: theme.palette.neutralPrimary,
@@ -164,44 +151,37 @@ const HeaderMenu = () => {
                     <div className="mt-4">
                         <div className="mb-4"><Text variant="large" color={theme.palette.neutralQuaternaryAlt}>Menu</Text></div>
 
-                        {dropdownOptions.map((x, i) =>
-                            <div 
-                                className="menu-item mb-2 pr-4 pl-4 pt-1 pb-2" 
-                                onClick={() => handleDropdownValueChange(x)}
-                                key={i}
-                                style={{ backgroundColor: (x.key === selectedKey) || (selectedKey as string === "" && x.key === "home") ? theme.palette.neutralLighter : 'none', borderRadius: 25 }}
-                            >
-                                <Text variant="xLarge">{x.text}</Text>
-                            </div>
-                        )}
-
-                        <div className="mt-5 mb-3"><Text variant="large" color={theme.palette.neutralQuaternaryAlt}>{locale?.homepage.section3.part2.title}</Text></div>
-                        <PrimaryButton text={locale?.footer[0].buttonText} href="https://t.me/unimichat" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
-
-                        <div className="mt-5 mb-3"><Text variant="large" color={theme.palette.neutralQuaternaryAlt}>{locale?.homepage.section3.part1.title}</Text></div>
-                        <PrimaryButton text={locale?.settingsPanel.joinTelegram} href="https://t.me/studenti_unimi" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
-
-                        <div className="mt-5 mb-3"><Text variant="large" color={theme.palette.neutralQuaternaryAlt}>{locale?.groups.availableRedirects}</Text></div>
-                        {footerIcons.map( (x: any, i: number) => { 
-                                return (
-                                    <TooltipHost
-                                        content={x.name[language!]}
-                                        calloutProps={calloutPropsResetColor}
-                                        styles={hostStylesResetColor}
-                                        key={i}
-                                        delay={TooltipDelay.zero}
-                                    >
-                                        <Link href={x.link}>
-                                            <span style={wrapIconStyle} className="text-decoration mr-1">
-                                                { x.type === 'brand' ?
-                                                <FontAwesomeIcon icon={['fab', x.iconName]} style={iconStyle} />
-                                                :
-                                                <FontAwesomeIcon icon={x.iconName} style={iconStyle} /> }
-                                            </span>
-                                        </Link>
-                                    </TooltipHost>
-                                )}
+                        <div className="mb-3">
+                            {dropdownOptions.map((x, i) =>
+                                <div 
+                                    className="menu-item mb-2 pr-4 pl-4 pt-1 pb-2" 
+                                    onClick={() => handleDropdownValueChange(x)}
+                                    key={i}
+                                    style={{ backgroundColor: (x.key === selectedKey) || (selectedKey as string === "" && x.key === "home") ? theme.palette.neutralLighter : 'none', borderRadius: 25 }}
+                                >
+                                    <Text variant="xLarge">{x.text}</Text>
+                                </div>
                             )}
+                        </div>
+
+                        <div className="mb-3">
+                            <div style={{ ...cardStyle, backgroundColor: theme.palette.yellow }} onClick={() => { router.push("/courses"); dismissPanel(); } }>
+                                <Text variant="medium" styles={semibold} style={{ color: theme.palette.black }}>{locale?.sidebar.searchGroup} <Icon iconName="ChevronRightMed" style={{ fontSize: 10 }} /></Text>
+                            </div>
+                        </div>
+
+                        <div className="mb-3">
+                            <div style={cardStyle} onClick={() => redirectToLink("https://t.me/unimichat")}>
+                                <Text variant="medium" style={{ color: theme.palette.white }}>{locale?.sidebar.mainGroup} <Icon iconName="ChevronRightMed" style={{ fontSize: 10 }} /></Text>
+                            </div>
+                        </div>
+
+                        <div className="mb-3">
+                            <div style={cardStyle} onClick={() => redirectToLink("https://t.me/studenti_unimi")}>
+                                <Text variant="medium" style={{ color: theme.palette.white }}>{locale?.sidebar.channel} <Icon iconName="ChevronRightMed" style={{ fontSize: 10 }} /></Text>
+                            </div>
+                        </div>
+
                     </div>
                 </Panel>
             </div>
