@@ -72,6 +72,7 @@ const CustomApp = ({ Component, pageProps, lang, ssrCookies }: AppProps & { lang
         <>
             {/* Shared head properties */}
             <Head>
+                <html prefix="og: http://ogp.me/ns#" lang={language} />
                 <link rel="icon" href="/logo/unimi150.png" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 <meta name="author" content="Network StudentiUniMi" />
