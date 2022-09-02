@@ -9,7 +9,7 @@ import { ThemeProvider } from '@fluentui/react-theme-provider';
 import { buildLightTheme, buildDarkTheme } from '../services/Themes';
 import { CookiesProvider, useCookies } from 'react-cookie';
 import { loadTheme } from '@fluentui/react';
-import { addDays } from '../services/Utils';
+import { addDays, isNavigatorLanguageItalian, parseCookies } from '../services/Utils';
 import { initializeIcons } from '@fluentui/react/lib/Icons';
 import { useEffect } from "react";
 import React from 'react';
@@ -109,41 +109,3 @@ CustomApp.getInitialProps = async (appContext: AppContext) => {
 };
 
 export default CustomApp;
-
-/**
- * This function checks the header language.
- * @param {string} lang header language
- * @returns {boolean} returns true if the language is italian, false otherwise.
- */
-const isNavigatorLanguageItalian = (lang: string): boolean => {
-    if (lang === undefined) return true;
-    const langKey = lang.split(",")[0];
-
-    if (langKey === 'it') return true;
-    return false;
-};
-
-/**
- * This function parses the header cookie string.
- * @param cookies header cookie string
- * @returns {cookiesContent} builded object
- */
-const parseCookies = (cookies: string): cookiesContent => {
-    let result: cookiesContent = { language: "it", theme: false, palette: "a" };
-    if (cookies === undefined) return result;
-    
-    let temp = cookies.replace(/\s/g, '');
-    temp = temp.replace(/;/g, '&');
-
-    const params = new URLSearchParams(temp);
-
-    result = { language: params.get('language'), theme: params.get('theme') === "light" ? false : true, palette: params.get('palette') };
-
-    return result;
-};
-
-interface cookiesContent {
-    language: string | null,
-    theme: boolean | null,
-    palette: string | null
-};
