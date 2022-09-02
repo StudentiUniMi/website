@@ -35,7 +35,7 @@ Infinite possibilities for multi-color palette usage.
 - 📮 [Rules of Telegram groups](https://studentiunimi.it/rules/) (Read before using any of our groups);
 - 📖 [Wiki](https://wiki.studentiunimi.it/) (Resource to exchange useful materials about teaching courses);
 - 👁‍🗨 [Services and guides](http://unimia.studentiunimi.it/) (How to download video lessons from Ariel, Unsubscribe from webmail lists, Unimia, Sifa Services, Webmail, Student Portal, Virtual classroom, etc.);
-- 👨‍💻 [University related informations](https://studentiunimi.it/representatives/) (Useful informations about our University and Representatives list).
+- 👨‍💻 [University related informations](https://studentiunimi.it/university/) (Useful informations about our University and Representatives list).
 
 > The network and its website are not affiliated with the University of Milan.
 
