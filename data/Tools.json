@@ -5,7 +5,7 @@
             "en": "Overleaf"
         },
         "link": "https://overleaf.studentiunimi.it/",
-        "icon": "EditCreate",
+        "icon": "FaLeaf",
         "description": {
             "it": "Editor LaTeX collaborativo basato su cloud per manipolare documenti scientifici.",
             "en": "Cloud-based collaborative LaTeX editor used for manipulating scientific papers."
@@ -17,7 +17,7 @@
             "en": "Hedgedoc"
         },
         "link": "https://hedgedoc.studentiunimi.it/",
-        "icon": "PencilReply",
+        "icon": "AiOutlineBook",
         "description": {
             "it": "Servizio che permette di prendere appunti in collaborazione tra più studenti.",
             "en": "Service that allows you to take notes in collaboration between multiple students."
@@ -29,7 +29,7 @@
             "en": "Paste"
         },
         "link": "https://paste.studentiunimi.it/",
-        "icon": "FileCode",
+        "icon": "AiOutlineCode",
         "description": {
             "it": "Servizio pensato per i programmatori, che permette di condividere codice in maniera semplice e sicura.",
             "en": "Service designed for programmers, which allows you to share code in a simple and secure way."

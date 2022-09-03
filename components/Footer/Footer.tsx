@@ -2,7 +2,7 @@ import { Link, Text, Label } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
 import { bold, semibold } from '../../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { Icon, IIconProps, PrimaryButton, Toggle, TooltipHost, IconButton, SwatchColorPicker, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib-commonjs';
+import { Icon, IIconProps, PrimaryButton, Toggle, TooltipHost, SwatchColorPicker, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib-commonjs';
 import { palettes } from '../../services/Palettes';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -48,7 +48,6 @@ const Footer = (props: Props) => {
 
     /* Theme palette code */
     const colorCells: any[] = palettes.map(x => ({ id: x.id, label: x.label, color: x.palette?.themePrimary }));
-    const resetColorIcon: IIconProps = { iconName: 'SyncOccurence' };
     const calloutPropsResetColor = { gapSpace: 10 };
     const hostStylesResetColor: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
 
@@ -127,16 +126,9 @@ const Footer = (props: Props) => {
 
                     <Col xl={3} lg={4} md={6} sm={12} xs={12}>
                         <div>
-                            <Text variant="medium" styles={semibold}>{locale?.settingsPanel.selectColor}  </Text>
-                            <TooltipHost
-                                content="Reset color"
-                                calloutProps={calloutPropsResetColor}
-                                styles={hostStylesResetColor}
-                            >
-                                <IconButton iconProps={resetColorIcon} onClick={() => { changePalette('a'); }} />
-                            </TooltipHost>
-                            <SwatchColorPicker selectedId={palette} columnCount={7} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => { changePalette(id!); }} />
+                            <Text variant="medium" styles={semibold}>{locale?.settingsPanel.selectColor}</Text>
                         </div>
+                        <SwatchColorPicker selectedId={palette} columnCount={7} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => { changePalette(id!); }} />
                     </Col>
                 
                 </Row>

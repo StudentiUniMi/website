@@ -1,5 +1,5 @@
 /* Main properties */
-$footer-height: 227px;  // Default footer height
+$footer-height: 219px;  // Default footer height
 
 html {
   margin: 0;
@@ -448,4 +448,11 @@ footer .ms-Label {
 .ms-Button-icon, .ms-SearchBox-icon {
   display: flex;
   align-items: center;
+}
+
+/* Fix avatar images not loading */
+.organization {
+  .ms-Image-image {
+    opacity: 1;
+  }
 }

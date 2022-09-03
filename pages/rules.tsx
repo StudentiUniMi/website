@@ -1,10 +1,8 @@
 import React from "react";
-import { Text, Callout, Link } from 'office-ui-fabric-react';
+import { Text, Link } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
 import { semibold } from '../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { DefaultButton, DirectionalHint, IIconProps, mergeStyleSets } from "office-ui-fabric-react";
-import { useBoolean, useId } from '@fluentui/react-hooks';
 import { getRules } from '../services/Requests'; 
 import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import { NextSeo } from 'next-seo';
@@ -22,28 +20,10 @@ const Rules = () => {
     const theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
-    const icon: IIconProps = { iconName: 'BsQuestionSquare' };
 
     const rulesData: Rule[] = getRules();
 
     const imageProperties = { display: 'inline-block', width: '100%' };
-
-    const [isCalloutVisible, { toggle: toggleIsCalloutVisible }] = useBoolean(false);
-    const buttonId = useId('callout-button');
-
-    const styles = mergeStyleSets({
-        callout: {
-            maxWidth: 800,
-            padding: '20px 24px',
-            marginLeft: '5px',
-            marginRight: '15px'
-        },
-        button: {
-            width: 'auto',
-            height: 'auto',
-            borderRadius: 3
-        },
-    });
 
     return (
         <>
@@ -90,32 +70,6 @@ const Rules = () => {
 
                                 <div className="mb-3">
                                     <Text variant="large" style={{ color: theme.palette.white }}>{locale?.rules.text2}</Text>
-                                </div>
-
-                                <div className="mb-3">
-                                    <DefaultButton
-                                        id={buttonId}
-                                        onClick={toggleIsCalloutVisible}
-                                        text={locale?.rules.question}
-                                        className={styles.button}
-                                        iconProps={icon}
-                                        theme={theme}
-                                        style={{ boxShadow: theme.effects.elevation8 }}
-                                    />
-                                    {isCalloutVisible && (
-                                        <Callout
-                                            className={styles.callout}
-                                            role="alertdialog"
-                                            gapSpace={3}
-                                            target={`#${buttonId}`}
-                                            onDismiss={toggleIsCalloutVisible}
-                                            directionalHint={DirectionalHint.bottomCenter}
-                                            setInitialFocus
-                                        >
-                                            <Text block variant="medium" className="mb-1" styles={semibold}>{locale?.rules.answer.text1}</Text>
-                                            <Text block variant="small"><JsxParser bindings={{ theme: theme }} components={{ Text, Link }} jsx={locale?.rules.answer.text2} /></Text>
-                                        </Callout>
-                                    )}
                                 </div>
 
                                 <div>

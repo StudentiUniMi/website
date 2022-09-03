@@ -5,7 +5,7 @@
             "en": "Unimia"
         },
         "link": "http://unimia.unimi.it/portal/server.pt",
-        "icon": "JoinOnlineMeeting",
+        "icon": "AiOutlineGlobal",
         "description": {
             "it": "Portale d'accesso ai servizi d'ateneo.",
             "en": "Hub to access all UniMi Services."
@@ -17,7 +17,7 @@
             "en": "Registration to exams"
         },
         "link": "http://studente.unimi.it/foIscrizioneEsami/",
-        "icon": "WaitlistConfirm",
+        "icon": "AiOutlineFileAdd",
         "description": {
             "it": "Iscriviti agli appelli d'esame o controlla le iscrizioni effettuate.",
             "en": "Manage your registrations to your exams."
@@ -29,7 +29,7 @@
             "en": "Exams results"
         },
         "link": "http://studente.unimi.it/foVerbalizzazione/",
-        "icon": "VerifiedBrand",
+        "icon": "AiOutlineFileDone",
         "description": {
             "it": "Controlla gli esiti finali o parziali dei tuoi esami.",
             "en": "Check the final or partial results of your exams."
@@ -41,7 +41,7 @@
             "en": "Sifa"
         },
         "link": "http://unimia.unimi.it/portal/server.pt/community/unimia/207/servizi_sifa/",
-        "icon": "DatabaseSync",
+        "icon": "AiOutlineCloudServer",
         "description": {
             "it": "Accedi a tutti i servizi online SIFA.",
             "en": "Access all the SIFA online services."
@@ -53,7 +53,7 @@
             "en": "Payments"
         },
         "link": "https://studente.unimi.it/fo_pagamenti/checkLogin.jsp",
-        "icon": "Bank",
+        "icon": "AiOutlineBank",
         "description": {
             "it": "Sezione del SIFA riguardante i pagamenti.",
             "en": "Enrolment renewal, tuition fees and other payments."
@@ -65,7 +65,7 @@
             "en": "Plan of study"
         },
         "link": "https://studente.unimi.it/pianiDiStudio/client/checkLogin.asp",
-        "icon": "InternalInvestigation",
+        "icon": "AiOutlineIdcard",
         "description": {
             "it": "Sezione apposita per presentare il piano di studi.",
             "en": "Submission page of study plans."
@@ -77,7 +77,7 @@
             "en": "Education Grants Helpdesk"
         },
         "link": "http://studente.unimi.it/dirittoallostudio",
-        "icon": "AnalyticsReport",
+        "icon": "AiOutlineInbox",
         "description": {
             "it": "Portale per il diritto allo studio.",
             "en": "Education Grants Helpdesk"
@@ -89,7 +89,7 @@
             "en": "Webmail"
         },
         "link": "https://securemail.unimi.it/",
-        "icon": "Mail",
+        "icon": "AiOutlineMail",
         "description": {
             "it": "Servizio di webmail d'ateneo.",
             "en": "UniMi webmail service."
@@ -101,7 +101,7 @@
             "en": "Ariel"
         },
         "link": "https://ariel.unimi.it/",
-        "icon": "FabricFormLibrary",
+        "icon": "AiOutlineProfile",
         "description": {
             "it": "Siti dei corsi didattici.",
             "en": "Courses websites."
@@ -113,7 +113,7 @@
             "en": "Students’ hub"
         },
         "link": "https://easystaff.divsi.unimi.it/PortaleStudenti/",
-        "icon": "People",
+        "icon": "AiOutlineUsergroupAdd",
         "description": {
             "it": "Orari delle lezioni, occupazione delle aule, appelli d'esame.",
             "en": "Lessons schedule, rooms and exam sessions."
@@ -125,7 +125,7 @@
             "en": "Library services"
         },
         "link": "https://www.sba.unimi.it/",
-        "icon": "Library",
+        "icon": "AiOutlineRead",
         "description": {
             "it": "Tutte le informazioni sulle biblioteche.",
             "en": "All the informations about UniMi libraries."
@@ -137,7 +137,7 @@
             "en": "Minerva @ UniMi"
         },
         "link": "https://unimi.primo.exlibrisgroup.com/",
-        "icon": "FolderSearch",
+        "icon": "AiOutlineExperiment",
         "type": "S",
         "description": {
             "it": "Risorse bibliografiche.",
@@ -150,7 +150,7 @@
             "en": "InformaStudenti"
         },
         "link": "https://informastudenti.unimi.it/",
-        "icon": "SurveyQuestions",
+        "icon": "AiOutlineInfoCircle",
         "type": "S",
         "description": {
             "it": "Accedi al portale InformaStudenti.",

@@ -42,7 +42,6 @@ const HeaderMenu = () => {
     ]);
 
     const mobileHeaderButton = {
-        color: theme.palette.neutralPrimary,
         fontSize: FontSizes.size20
     }
 
@@ -137,7 +136,7 @@ const HeaderMenu = () => {
             </div>
 
             <div className="dropdown">
-                <Icon iconName="ListMirrored" onClick={() => openPanel()} style={mobileHeaderButton} theme={theme} />
+                <Icon iconName="AiOutlineMenu" onClick={() => openPanel()} style={mobileHeaderButton} theme={theme} />
 
                 <Panel
                     headerText="Network StudentiUniMi"

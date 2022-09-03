@@ -19,7 +19,7 @@ import { FiSearch } from 'react-icons/fi';
 import { BsQuestionSquare } from 'react-icons/bs';
 import { FaTelegram, FaDiscord, FaFacebook, FaInstagram, FaLeaf, FaCode, FaBook, FaGithub, FaUsers } from 'react-icons/fa';
 import { MdPeopleAlt } from 'react-icons/md';
-import { HiOutlineNewspaper } from 'react-icons/hi';
+import { AiOutlineFileDone, AiOutlineFileAdd, AiOutlineGlobal, AiOutlineFilePdf, AiOutlineException, AiOutlineHourglass, AiOutlineContacts, AiOutlineRobot, AiOutlineSolution, AiOutlineBook, AiOutlineEuroCircle, AiOutlineBank, AiOutlineCalendar, AiOutlineHome, AiOutlineUsergroupAdd, AiOutlineFolderOpen, AiOutlineReload, AiOutlineMenu, AiOutlineIdcard, AiOutlineCloudServer, AiOutlineInbox, AiOutlineMail, AiOutlineProfile, AiOutlineRead, AiOutlineInfoCircle, AiOutlineExperiment, AiOutlineVideoCamera, AiOutlineCode } from 'react-icons/ai';
 import React from 'react';
 import Script from 'next/script';
 import Head from 'next/head';
@@ -34,7 +34,6 @@ registerIcons({
         GoChevronRight: <GoChevronRight />,
         GroupsSearch: <FiSearch />,
         BsQuestionSquare: <BsQuestionSquare />,
-        HiOutlineNewspaper: <HiOutlineNewspaper />,
         FaTelegram: <FaTelegram />,
         MdPeopleAlt: <MdPeopleAlt />,
         FaDiscord: <FaDiscord />,
@@ -44,7 +43,35 @@ registerIcons({
         FaUsers: <FaUsers />,
         FaLeaf: <FaLeaf />,
         FaCode: <FaCode />,
-        FaBook: <FaBook />
+        FaBook: <FaBook />,
+        AiOutlineGlobal: <AiOutlineGlobal />,
+        AiOutlineMenu: <AiOutlineMenu />,
+        AiOutlineReload: <AiOutlineReload />,
+        AiOutlineFolderOpen: <AiOutlineFolderOpen />,
+        AiOutlineUsergroupAdd: <AiOutlineUsergroupAdd />,
+        AiOutlineCalendar: <AiOutlineCalendar />,
+        AiOutlineHome: <AiOutlineHome />,
+        AiOutlineBank: <AiOutlineBank />,
+        AiOutlineEuroCircle: <AiOutlineEuroCircle />,
+        AiOutlineBook: <AiOutlineBook />,
+        AiOutlineSolution: <AiOutlineSolution />,
+        AiOutlineRobot: <AiOutlineRobot />,
+        AiOutlineContacts: <AiOutlineContacts />,
+        AiOutlineHourglass: <AiOutlineHourglass />,
+        AiOutlineException: <AiOutlineException />,
+        AiOutlineFilePdf: <AiOutlineFilePdf />,
+        AiOutlineFileAdd: <AiOutlineFileAdd />,
+        AiOutlineFileDone: <AiOutlineFileDone />,
+        AiOutlineIdcard: <AiOutlineIdcard />,
+        AiOutlineCloudServer: <AiOutlineCloudServer />,
+        AiOutlineInbox: <AiOutlineInbox />,
+        AiOutlineMail: <AiOutlineMail />,
+        AiOutlineProfile: <AiOutlineProfile />,
+        AiOutlineRead: <AiOutlineRead />,
+        AiOutlineExperiment: <AiOutlineExperiment />,
+        AiOutlineInfoCircle: <AiOutlineInfoCircle />,
+        AiOutlineVideoCamera: <AiOutlineVideoCamera />,
+        AiOutlineCode: <AiOutlineCode />
     }
 });
 

@@ -24,7 +24,7 @@ const Organization = () => {
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
     const networkMembers = getNetworkMembers();
-    const icon: IIconProps = { iconName: 'HiOutlineNewspaper' };
+    const icon: IIconProps = { iconName: 'AiOutlineFilePdf' };
     const imageProperties = { display: 'inline-block', width: '100%' };
     
     resetIds();
