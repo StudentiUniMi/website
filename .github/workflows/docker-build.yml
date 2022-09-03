@@ -1,4 +1,4 @@
-name: "Docker build and push"
+name: "Docker build, push and deploy"
 
 on:
   push:
@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+    name: Build and push Docker image
     runs-on: ubuntu-latest
 
     steps:
@@ -38,3 +39,12 @@ jobs:
             ghcr.io/studentiunimi/website:${{ env.LATEST_COMMIT_SHA }}
             ghcr.io/studentiunimi/website:latest
           push: true
+
+  deploy:
+    name: Deploy swarm service
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Send portainer webhook
+        run: curl -X POST "${{ secrets.WEBSITE_DEPLOY_URL }}"
