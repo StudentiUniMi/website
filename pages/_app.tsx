@@ -9,7 +9,7 @@ import { ThemeProvider } from '@fluentui/react-theme-provider';
 import { buildLightTheme, buildDarkTheme } from '../services/Themes';
 import { CookiesProvider, useCookies } from 'react-cookie';
 import { loadTheme } from '@fluentui/react';
-import { addDays, isNavigatorLanguageItalian, parseCookies } from '../services/Utils';
+import { addDays, cookiesContent, isNavigatorLanguageItalian, parseCookies } from '../services/Utils';
 import { initializeIcons } from '@fluentui/react/lib/Icons';
 import { registerIcons } from '@fluentui/react/lib/Styling';
 import { setIconOptions } from '@fluentui/react/lib/Styling';
@@ -48,12 +48,12 @@ registerIcons({
     }
 });
 
-const CustomApp = ({ Component, pageProps, lang, ssrCookies }: AppProps & { lang: string } & { ssrCookies: string }) => {
+const CustomApp = ({ Component, pageProps, requestLanguage, ssrCookies }: AppProps & { requestLanguage: string, ssrCookies: cookiesContent }) => {
     let [cookies, setCookie] = useCookies();
     
-    let [theme, setTheme] = React.useState(parseCookies(ssrCookies).theme ?? false);
-    let [palette, setPalette] = React.useState(parseCookies(ssrCookies).palette ?? "a");
-    let [language, setLanguage] = React.useState(parseCookies(ssrCookies).language ?? isNavigatorLanguageItalian(lang) ? "it" : "en");
+    let [theme, setTheme] = React.useState(ssrCookies.theme ?? false);
+    let [palette, setPalette] = React.useState(ssrCookies.palette ?? "a");
+    let [language, setLanguage] = React.useState(ssrCookies.language ?? requestLanguage);
 
     let [lightTheme, setLightTheme] = React.useState(buildLightTheme(palette));
     let [darkTheme, setDarkTheme] = React.useState(buildDarkTheme(palette));
@@ -129,10 +129,10 @@ const CustomApp = ({ Component, pageProps, lang, ssrCookies }: AppProps & { lang
 
 CustomApp.getInitialProps = async (appContext: AppContext) => {
     const ctx = await App.getInitialProps(appContext);
-    const language = appContext.ctx.req?.headers['accept-language'];
-    const cookies = appContext.ctx.req?.headers.cookie;
+    const parsedCookies = parseCookies(appContext.ctx.req?.headers.cookie!);
+    const requestLanguage = isNavigatorLanguageItalian(appContext.ctx.req?.headers['accept-language']!) ? "it" : "en";
 
-    return { ...ctx, lang: language, ssrCookies: cookies };
+    return { ...ctx, requestLanguage: requestLanguage, ssrCookies: parsedCookies };
 };
 
 export default CustomApp;

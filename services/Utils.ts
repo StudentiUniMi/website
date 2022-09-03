@@ -6,7 +6,7 @@
  */
 
 
-interface cookiesContent {
+export interface cookiesContent {
   language: string | null,
   theme: boolean | null,
   palette: string | null

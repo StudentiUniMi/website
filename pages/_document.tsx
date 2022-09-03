@@ -1,7 +1,7 @@
 import { Stylesheet, InjectionMode } from '@uifabric/merge-styles';
 import { resetIds } from '@uifabric/utilities';
 import Document, { DocumentContext, Html, Head, Main, NextScript } from 'next/document';
-import { isNavigatorLanguageItalian } from '../services/Utils';
+import { isNavigatorLanguageItalian, parseCookies } from '../services/Utils';
 
 // Do this in file scope to initialize the stylesheet before Fluent UI React components are imported.
 const stylesheet = Stylesheet.getInstance();
@@ -13,23 +13,25 @@ stylesheet.setConfig({
 });
 
 // Now set up the document, and just reset the stylesheet.
-export default class MyDocument extends Document<{ language: string }> {
+export default class MyDocument extends Document<{ cookieLanguage: string, requestLanguage: string }> {
     static async getInitialProps(ctx: DocumentContext) {
         stylesheet.reset();
         resetIds();
 
         const initialProps = await Document.getInitialProps(ctx);
-        const language = ctx.req?.headers['accept-language'];
+        const cookieLanguage = parseCookies(ctx.req?.headers.cookie!).language;
+        const requestLanguage = isNavigatorLanguageItalian(ctx.req?.headers['accept-language']!) ? "it" : "en";
 
         return {
             ...initialProps,
-            language: language,
+            cookieLanguage: cookieLanguage,
+            requestLanguage: requestLanguage,
             styles: [ initialProps.styles, <style key="fluentui-css" dangerouslySetInnerHTML={{ __html: stylesheet.getRules(true) }} /> ]
         }
-    }
+    };
 
     render() {
-        const language = isNavigatorLanguageItalian(this.props.language) ? "it" : "en";
+        let language = this.props.cookieLanguage ?? this.props.requestLanguage;
 
         return (
             <Html prefix="og: http://ogp.me/ns#" lang={language}>
@@ -40,5 +42,5 @@ export default class MyDocument extends Document<{ language: string }> {
                 </body>
             </Html>
         );
-    }
+    };
 };
