@@ -131,7 +131,7 @@ const CourseList= (props: Props) => {
             <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLight }}>
                 <Container className="d-flex justify-content-between align-items-center" style={{ gap: 8 }}>
                     <div>
-                        <Text variant="medium" styles={semibold}><Icon iconName="Group"/> {locale?.groups.availableGroups}</Text>
+                        <Text variant="medium" styles={semibold}><Icon iconName="AiOutlineTeam"/> {locale?.groups.availableGroups}</Text>
                     </div>
 
                     <div className="filters-toggle d-flex align-items-center">

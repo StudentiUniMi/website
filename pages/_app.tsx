@@ -19,7 +19,7 @@ import { FiSearch } from 'react-icons/fi';
 import { BsQuestionSquare } from 'react-icons/bs';
 import { FaTelegram, FaDiscord, FaFacebook, FaInstagram, FaLeaf, FaCode, FaBook, FaGithub, FaUsers } from 'react-icons/fa';
 import { MdPeopleAlt } from 'react-icons/md';
-import { AiOutlineFileDone, AiOutlineFileAdd, AiOutlineGlobal, AiOutlineFilePdf, AiOutlineException, AiOutlineHourglass, AiOutlineContacts, AiOutlineRobot, AiOutlineSolution, AiOutlineBook, AiOutlineEuroCircle, AiOutlineBank, AiOutlineCalendar, AiOutlineHome, AiOutlineUsergroupAdd, AiOutlineFolderOpen, AiOutlineReload, AiOutlineMenu, AiOutlineIdcard, AiOutlineCloudServer, AiOutlineInbox, AiOutlineMail, AiOutlineProfile, AiOutlineRead, AiOutlineInfoCircle, AiOutlineExperiment, AiOutlineVideoCamera, AiOutlineCode } from 'react-icons/ai';
+import { AiOutlineArrowLeft, AiOutlineFileDone, AiOutlineFileAdd, AiOutlineGlobal, AiOutlineFilePdf, AiOutlineException, AiOutlineHourglass, AiOutlineContacts, AiOutlineRobot, AiOutlineSolution, AiOutlineBook, AiOutlineEuroCircle, AiOutlineBank, AiOutlineCalendar, AiOutlineHome, AiOutlineUsergroupAdd, AiOutlineFolderOpen, AiOutlineReload, AiOutlineMenu, AiOutlineIdcard, AiOutlineCloudServer, AiOutlineInbox, AiOutlineMail, AiOutlineProfile, AiOutlineRead, AiOutlineInfoCircle, AiOutlineExperiment, AiOutlineVideoCamera, AiOutlineCode, AiOutlineTeam, AiOutlineLink, AiOutlineQuestionCircle, AiOutlineFundProjectionScreen, AiOutlineFileSearch } from 'react-icons/ai';
 import React from 'react';
 import Script from 'next/script';
 import Head from 'next/head';
@@ -71,7 +71,13 @@ registerIcons({
         AiOutlineExperiment: <AiOutlineExperiment />,
         AiOutlineInfoCircle: <AiOutlineInfoCircle />,
         AiOutlineVideoCamera: <AiOutlineVideoCamera />,
-        AiOutlineCode: <AiOutlineCode />
+        AiOutlineCode: <AiOutlineCode />,
+        AiOutlineArrowLeft: <AiOutlineArrowLeft />,
+        AiOutlineTeam: <AiOutlineTeam />,
+        AiOutlineLink: <AiOutlineLink />,
+        AiOutlineQuestionCircle: <AiOutlineQuestionCircle />,
+        AiOutlineFundProjectionScreen: <AiOutlineFundProjectionScreen />,
+        AiOutlineFileSearch: <AiOutlineFileSearch />
     }
 });
 

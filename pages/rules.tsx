@@ -40,7 +40,7 @@ const Rules = () => {
                     locale: language,
                     images: [
                         {
-                            url: '/logo/preview_logo.png',
+                            url: '/images/rules.png',
                             type: 'image/png',
                         }
                     ],

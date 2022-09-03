@@ -139,7 +139,7 @@ const University = () => {
                     locale: language,
                     images: [
                         {
-                            url: '/logo/preview_logo.png',
+                            url: '/images/university.png',
                             type: 'image/png',
                         }
                     ],

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, DefaultButton, IIconProps } from 'office-ui-fabric-react';
+import { Text, DefaultButton, IIconProps } from 'office-ui-fabric-react/lib-commonjs/';
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 import { GetServerSideProps } from 'next';
@@ -40,7 +40,7 @@ const Course = (props: Props) => {
     const { slug } = router.query;
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
-    const buttonIconProps: IIconProps = { iconName: 'Back', styles: { root: { fontSize: 16 } } };
+    const buttonIconProps: IIconProps = { iconName: 'AiOutlineArrowLeft', styles: { root: { fontSize: 14 } } };
 
     /* Loaded degree informations */
     let loadedDegree: VerboseDegree = props.loadedDegree;

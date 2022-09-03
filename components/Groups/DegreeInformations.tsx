@@ -1,6 +1,6 @@
 import React from "react";
 import { semibold } from '../../services/Fonts';
-import { Text } from 'office-ui-fabric-react';
+import { Text } from 'office-ui-fabric-react/lib-commonjs';
 import { redirectToLink } from '../../services/Utils';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Container } from 'react-bootstrap';
@@ -54,7 +54,7 @@ const DegreeInformations= (props: Props) => {
         <div className='degree-informations mb-4'>
             <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLight }}>
                 <Container>
-                    <div><Text variant="medium" styles={semibold}><Icon iconName="Link12" /> {locale?.groups.availableRedirects}</Text></div>
+                    <div><Text variant="medium" styles={semibold}><Icon iconName="AiOutlineLink" /> {locale?.groups.availableRedirects}</Text></div>
                 </Container>
             </div>
 

@@ -44,7 +44,7 @@ const Organization = () => {
                     locale: language,
                     images: [
                         {
-                            url: '/logo/preview_logo.png',
+                            url: '/images/organization.png',
                             type: 'image/png',
                         }
                     ],
