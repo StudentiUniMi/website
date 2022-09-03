@@ -17,7 +17,7 @@ import { useEffect } from "react";
 import { GoChevronRight } from "react-icons/go";
 import { FiSearch } from 'react-icons/fi';
 import { BsQuestionSquare } from 'react-icons/bs';
-import { FaTelegram, FaDiscord, FaFacebook, FaInstagram, FaLeaf, FaCode, FaBook, FaGithub } from 'react-icons/fa';
+import { FaTelegram, FaDiscord, FaFacebook, FaInstagram, FaLeaf, FaCode, FaBook, FaGithub, FaUsers } from 'react-icons/fa';
 import { MdPeopleAlt } from 'react-icons/md';
 import { HiOutlineNewspaper } from 'react-icons/hi';
 import React from 'react';
@@ -41,6 +41,7 @@ registerIcons({
         FaGithub: <FaGithub />,
         FaFacebook: <FaFacebook />,
         FaInstagram: <FaInstagram />,
+        FaUsers: <FaUsers />,
         FaLeaf: <FaLeaf />,
         FaCode: <FaCode />,
         FaBook: <FaBook />

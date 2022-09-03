@@ -1,5 +1,5 @@
 /* Main properties */
-$footer-height: 235px;  // Default footer height
+$footer-height: 227px;  // Default footer height
 
 html {
   margin: 0;
@@ -26,10 +26,10 @@ main {
   min-height: 100%;
 }
 
-span { /* Texts are contained in span, so this should fix the visualization bug on some ugly browsers like Mozilla Night Basalmici Version */
+/* Fix the visualization bug on some ugly browsers like Mozilla Night Basalmici Version */
+span {
   font-family: "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
 }
-
 
 /* Fix bootstrap outline when click */
 a:active,

@@ -11,7 +11,7 @@ const ThirdSection = () => {
     const locale = LocalizationService.strings();
     const buttonStyle = { maxWidth: '180px', boxShadow: theme.effects.elevation8 };
     const buttonIconProps: IIconProps = { iconName: 'GoChevronRight', styles: { root: { fontSize: 14 } } };
-    const iconStyle = { backgroundColor: theme.palette.themePrimary, color:theme.palette.white, fontSize: 16, padding: "5px 10px", borderRadius: 3 };
+    const iconStyle = { display: 'flex', backgroundColor: theme.palette.themePrimary, color:theme.palette.white, fontSize: 16, padding: 10, borderRadius: 5 };
 
     return (
         <div className="pb-5 pt-5">
