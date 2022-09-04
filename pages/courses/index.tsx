@@ -25,7 +25,7 @@ const Courses = () => {
     var language: string | undefined = LocalizationService.getLanguage();
     let router = useRouter();
 
-    const resetIcon: IIconProps = { iconName: 'Refresh' };
+    const resetIcon: IIconProps = { iconName: 'AiOutlineReload' };
     const calloutProps = { gapSpace: 10 };
     const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
 
