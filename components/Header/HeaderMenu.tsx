@@ -135,8 +135,8 @@ const HeaderMenu = () => {
                 </Pivot>
             </div>
 
-            <div className="dropdown">
-                <Icon iconName="AiOutlineMenu" onClick={() => openPanel()} style={mobileHeaderButton} theme={theme} />
+            <div className="dropdown align-items-center" style={{ height: 45 }}>
+                <Icon iconName="AiOutlineMenu" className="d-flex" onClick={() => openPanel()} style={mobileHeaderButton} theme={theme} />
 
                 <Panel
                     headerText="Network StudentiUniMi"
@@ -148,7 +148,9 @@ const HeaderMenu = () => {
                     theme={theme}
                 >
                     <div className="mt-4">
-                        <div className="mb-4"><Text variant="large" color={theme.palette.neutralQuaternaryAlt}>Menu</Text></div>
+                        <div className="mb-4">
+                            <Text variant="large" color={theme.palette.neutralQuaternaryAlt}>Menu</Text>
+                        </div>
 
                         <div className="mb-3">
                             {dropdownOptions.map((x, i) =>

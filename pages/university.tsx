@@ -156,7 +156,7 @@ const University = () => {
                     <Container>
 
                         <Row>
-                            <Col xl={9} lg={8} className="mb-3 mb-lg-0">
+                            <Col xl={9} lg={8} md={8} className="mb-3 mb-lg-0">
                                 <div className="mb-2">
                                     <Text variant="xLargePlus" style={{ color: theme.palette.white }}>{locale?.university.header.text1}</Text>
                                 </div>
@@ -166,41 +166,25 @@ const University = () => {
                                 </div>
                             </Col>
 
-                            <Col xl={3} lg={4} className="text-center">
-                                <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 500 }}>
-                                    <Image id="logo" className="mb-2" src={'/images/university.png'} style={{ display: 'inline-block', width: '80%' }} />
-                                </div>
+                            <Col xl={3} lg={4} md={4} className="text-center">
+                                <Image id="logo" className="mb-2" src={'/images/university.png'} style={{ display: 'inline-block', maxWidth: 150 }} />
                             </Col>
                         </Row>
 
                     </Container>
                 </div>
 
-                {/* 
-                <div>
-                    <Container>
-                        <div className="mb-3 text-center">
-                            <Text variant="xLarge"><Icon iconName="NewsSearch" /> {locale?.university.news.title}</Text>
-                        </div>
-
-                        <div className="mb-3">
-                            <Slider />
-                        </div>
-                    </Container>
-                </div>
-                */}
-
                 <div className="pt-5 pb-5">
                     <Container>
 
                         <Row>
-                            <Col lg={4} className="text-center">
-                                <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }} className="mb-lg-0 mb-3">
-                                    <Image id="logo" className="mb-2" src={'/images/university_links.png'} style={imageProperties} />
+                            <Col lg={4} md={4} className="text-center">
+                                <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }} className="mb-lg-0 mb-4">
+                                    <Image id="logo" src={'/images/university_links.png'} style={imageProperties} />
                                 </div>
                             </Col>
 
-                            <Col lg={8} className="mb-2">
+                            <Col lg={8} md={8} className="mb-2">
                                 <div className="mb-2">
                                     <Text variant="xLargePlus">{locale?.university.linksAndRedirects.text1}</Text>
                                 </div>

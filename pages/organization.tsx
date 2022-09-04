@@ -14,8 +14,8 @@ import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
 
 const developers: any = [
-    { name: "Giuseppe Del Campo", description: { it: "Sviluppatore front-end", en: 'Website Developer' }, username: 'Giuseppetm', user_id: 597678134, github: "https://github.com/Giuseppetm", website: "https://giuseppetm.netlify.app/" },
-    { name: "Manuele Lucchi", description: { it: "Sviluppatore front-end", en: 'Website Developer' }, username: "Gesoo99", user_id: 99687972, github: "https://github.com/manuelelucchi", website: "https://manuelelucchi.github.io/" },
+    { name: "Giuseppe Del Campo", description: { it: "Sviluppatore front-end", en: 'Front-end developer' }, username: 'Giuseppetm', user_id: 597678134, github: "https://github.com/Giuseppetm", website: "https://giuseppetm.netlify.app/" },
+    { name: "Manuele Lucchi", description: { it: "Sviluppatore front-end", en: 'Front-end developer' }, username: "Gesoo99", user_id: 99687972, github: "https://github.com/manuelelucchi", website: "https://manuelelucchi.github.io/" },
     { name: "Mirko Faina", description: { it: "Sviluppatore back-end", en: "Back-end developer" }, username: "Mroik", user_id: 0, github: "https://github.com/Mroik", website: "" }
 ];
 
@@ -25,7 +25,7 @@ const Organization = () => {
     var language: string | undefined = LocalizationService.getLanguage();
     const networkMembers = getNetworkMembers();
     const icon: IIconProps = { iconName: 'AiOutlineFilePdf' };
-    const imageProperties = { display: 'inline-block', width: '100%' };
+    const imageProperties = { display: 'inline-block', width: 300 };
     
     resetIds();
 
@@ -63,9 +63,7 @@ const Organization = () => {
 
                         <Row>
                             <Col lg={4} className="text-center">
-                                <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }}>
-                                    <Image id="logo" className="mb-2" src={'/images/organization.png'} style={imageProperties} />
-                                </div>
+                                <Image id="logo" className="mb-2" src={'/images/organization.png'} style={imageProperties} />
                             </Col>
 
                             <Col lg={8} className="mb-2">

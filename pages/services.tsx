@@ -115,8 +115,8 @@ const Services = () => {
                             </Col>
 
                             <Col xl={3} lg={4} md={12} className="text-center">
-                                <div style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-                                    <Image id="logo" src={'/images/services.png'} style={{ maxWidth: '100%' }} />
+                                <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 350 }}>
+                                    <Image id="logo" src={'/images/services.png'} style={{ width: '100%' }} />
                                 </div>
                             </Col>
                         </Row>

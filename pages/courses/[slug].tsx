@@ -12,7 +12,6 @@ import LocalizationService from "../../services/LocalizationService";
 import DegreeInformations from "../../components/Groups/DegreeInformations";
 import AdminsList from '../../components/Groups/AdminsList';
 import GroupList from "../../components/Groups/GroupList";
-//import { Chip } from '@material-ui/core';
 
 interface reactHelmetContent {
     title: string,
@@ -108,12 +107,6 @@ const Course = (props: Props) => {
                                     <Text variant="xLarge">{loadedDegree?.name}</Text>
                                 </div>
                             </div>
-
-                            {/*
-                            <Text variant="medium" styles={semibold}>
-                                <Chip label={getDegreeTypeName(loadedDegree?.type!)} style={{ backgroundColor: theme.palette.themePrimary, color: theme.palette.white, width: 'fit-content' }} />
-                            </Text>
-                            */}
                         </div>
                     </Container>
                 </div>

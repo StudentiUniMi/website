@@ -23,7 +23,8 @@ const Rules = () => {
 
     const rulesData: Rule[] = getRules();
 
-    const imageProperties = { display: 'inline-block', width: '100%' };
+    const imageProperties = { display: 'inline-block', width: 290 };
+    const rulesReviewingBox = { padding: '5px 15px', borderRadius: 5, backgroundColor: theme.palette.neutralLighter, width: 'fit-content', display: 'flex' };
 
     return (
         <>
@@ -58,9 +59,7 @@ const Rules = () => {
 
                         <Row>
                             <Col lg={4} className="text-center">
-                                <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }}>
-                                    <Image id="logo" className="mb-2" src={'/images/rules.png'} style={imageProperties} />
-                                </div>
+                                <Image id="logo" className="mb-2" src={'/images/rules.png'} style={imageProperties} />
                             </Col>
 
                             <Col lg={8}>
@@ -72,8 +71,8 @@ const Rules = () => {
                                     <Text variant="large" style={{ color: theme.palette.white }}>{locale?.rules.text2}</Text>
                                 </div>
 
-                                <div>
-                                    <Text variant="medium" style={{ color: theme.palette.white }}><i>{locale?.rules.text3}</i></Text>
+                                <div style={rulesReviewingBox}>
+                                    <Text variant="small" style={{ color: theme.palette.black }}><i>{locale?.rules.text3}</i></Text>
                                 </div>
                             </Col>
                         </Row>
@@ -81,7 +80,7 @@ const Rules = () => {
                     </Container>
                 </div>
 
-                <div className="pt-4 pb-4">
+                <div className="pt-4 pb-5">
                 
                     <div className="mb-4">
                         <div className="mb-4 text-center">

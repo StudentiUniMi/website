@@ -40,7 +40,7 @@ const UnimiaStudentiUnimi = () => {
                     </Col>
 
                     <Col lg={4} className="text-center">
-                        <Image src={'/images/home/3.png'} style={{ display: 'inline-block', width: '60%' }} />
+                        <Image src={'/images/home/3.png'} style={{ display: 'inline-block', width: 256 }} />
                     </Col>
 
                 </Row>

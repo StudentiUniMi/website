@@ -50,7 +50,7 @@ const FourthSection = () => {
                             style={buttonStyle}
                             iconProps={buttonIconProps}
                             theme={theme}
-                            href="https://studentiunimi.it/courses/"
+                            href="https://studentiunimi.it/courses"
                             className="text-decoration-none"
                         />
                     </Col>
