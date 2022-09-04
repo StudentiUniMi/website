@@ -1,0 +1,27 @@
+name: Build project
+
+on: [push, pull_request]
+
+defaults:
+  run:
+    shell: bash
+    working-directory: ./
+
+jobs:
+  node:
+    name: Node build
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
