@@ -95,7 +95,7 @@ const Courses = () => {
                     locale: language,
                     images: [
                         {
-                            url: '/images/groups/groups.png',
+                            url: '/seo/groups.png',
                             type: 'image/png',
                         }
                     ],

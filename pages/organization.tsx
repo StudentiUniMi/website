@@ -44,7 +44,7 @@ const Organization = () => {
                     locale: language,
                     images: [
                         {
-                            url: '/images/organization.png',
+                            url: '/seo/organization.png',
                             type: 'image/png',
                         }
                     ],

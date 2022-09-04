@@ -41,7 +41,7 @@ const Rules = () => {
                     locale: language,
                     images: [
                         {
-                            url: '/images/rules.png',
+                            url: '/seo/rules.png',
                             type: 'image/png',
                         }
                     ],

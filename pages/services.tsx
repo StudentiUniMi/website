@@ -63,7 +63,7 @@ const Services = () => {
                     locale: language,
                     images: [
                         {
-                            url: '/images/services.png',
+                            url: '/seo/services.png',
                             type: 'image/png',
                         }
                     ],
