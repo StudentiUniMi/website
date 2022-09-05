@@ -2,7 +2,6 @@ import { Text, IIconProps, PrimaryButton } from 'office-ui-fabric-react/lib-comm
 import { semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { useRouter } from 'next/router';
 import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -11,7 +10,6 @@ import Chip from '@material-ui/core/Chip';
 
 const FirstSection = () => {
     var theme = useTheme();
-    const router = useRouter();
     const locale = LocalizationService.strings();
     const buttonStyle = { maxWidth: '120px', boxShadow: theme.effects.elevation8 };
     const buttonIconProps: IIconProps = { iconName: 'GoChevronRight', styles: { root: { fontSize: 14 } } };
@@ -45,7 +43,7 @@ const FirstSection = () => {
                                         style={buttonStyle}
                                         iconProps={buttonIconProps}
                                         theme={theme}
-                                        onClick={() => { router.push("/courses"); }}
+                                        href="https://studentiunimi.it/courses"
                                         className="text-decoration-none"
                                     />
                                 </div>
@@ -72,7 +70,7 @@ const FirstSection = () => {
                                         style={buttonStyle}
                                         iconProps={buttonIconProps}
                                         theme={theme}
-                                        onClick={() => { router.push("/courses"); }}
+                                        href="https://studentiunimi.it/courses"
                                         className="text-decoration-none"
                                     />
                                 </div>
@@ -99,7 +97,7 @@ const FirstSection = () => {
                                         style={buttonStyle}
                                         iconProps={buttonIconProps}
                                         theme={theme}
-                                        onClick={() => { router.push("/services"); }}
+                                        href="https://studentiunimi.it/services"
                                         className="text-decoration-none"
                                     />
                                 </div>

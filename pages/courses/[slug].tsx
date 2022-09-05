@@ -47,8 +47,8 @@ const Course = (props: Props) => {
 
     /* Helmet */
     let reactHelmetContent: reactHelmetContent = {
-        title: locale?.helmet.degreeLoaded.title1 + `${loadedDegree?.name} (${getDegreeFullName(loadedDegree?.type!, language!)})` + locale?.helmet.degreeLoaded.title2,
-        description: locale?.helmet.degreeLoaded.description1 + `${loadedDegree?.name} (${getDegreeFullName(loadedDegree?.type!, language!)})` + locale?.helmet.degreeLoaded.description2,
+        title: locale?.helmet.degreeLoaded.title1 + `${loadedDegree?.name} (${getDegreeFullName(loadedDegree?.type!, language!).toLowerCase()})` + locale?.helmet.degreeLoaded.title2,
+        description: locale?.helmet.degreeLoaded.description1 + `${loadedDegree?.name} (${getDegreeFullName(loadedDegree?.type!, language!).toLowerCase()})` + locale?.helmet.degreeLoaded.description2,
         href: `https://studentiunimi.it/courses/${slug}`,
         hrefLang: language!
     };

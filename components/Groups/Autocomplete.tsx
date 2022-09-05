@@ -20,7 +20,7 @@ const AutocompleteStyles = () => {
   });
 };
 const SuggestionListStyle = () => {
-  return ({ padding: '4px 16px', fontSize: '14px', cursor: 'default' });
+  return ({ padding: '6px 16px', fontSize: '14px', cursor: 'default' });
 };
 const SuggestionListItemStyle = mergeStyleSets({
   root: {
