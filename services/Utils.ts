@@ -45,6 +45,17 @@ export const parseCookies = (cookies: string): cookiesContent => {
 };
 
 
+/**
+ * This function returns a professor name in "F. Lastname" format.
+ * @param {string} firstName 
+ * @param {string} lastName
+ * @returns {string} professor name in F. Lastname format
+ */
+export const buildProfessorName = (firstName: string, lastName: string): string => {
+  return `${firstName[0]}. ${lastName}`;
+};
+
+
 export const redirectToLink = (link: string): void => {
     window.open(link, '_blank');
 };
