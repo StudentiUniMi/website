@@ -1,4 +1,4 @@
-import { Text } from 'office-ui-fabric-react';
+import { Text, Icon } from 'office-ui-fabric-react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { FontWeights, ITextStyles, Link, Persona } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
@@ -6,7 +6,7 @@ import { useTheme } from '@fluentui/react-theme-provider';
 import { IContextualMenuProps, IIconProps } from '@fluentui/react';
 import { CommandButton } from '@fluentui/react/lib/Button';
 import { ActionButton } from '@fluentui/react/lib/Button';
-import { redirectToLink } from '../../services/Utils';
+import { buildProfessorName, redirectToLink } from '../../services/Utils';
 import { CourseDegree } from '../../models/Models';
 import Chip from '@material-ui/core/Chip';
 import LocalizationService from "../../services/LocalizationService";
@@ -27,7 +27,9 @@ const CourseItem = (props: Props) => {
     const locale = LocalizationService.strings();
     let data = props.data;
 
-    const cfuStyle: ITextStyles = { root: { fontWeight: FontWeights.semibold, color: theme.palette.themePrimary } };
+    const cfuStyle: ITextStyles = { root: { fontWeight: FontWeights.semibold, color: theme.palette.themeDark } };
+    const professorBox = { display: 'flex', alignItems: 'center', backgroundColor: theme.palette.neutralLighter, padding: "2px 6px", borderRadius: 3 };
+    const professorTextStyle: ITextStyles = { root: { fontWeight: FontWeights.semibold, color: theme.palette.neutralPrimary } };
     const descriptionTextStyles: ITextStyles = { root: { fontWeight: FontWeights.semibold } };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
     const websiteIcon: IIconProps = { iconName: 'Globe' };
@@ -37,11 +39,12 @@ const CourseItem = (props: Props) => {
     var primaryText : any;
     var overflow : boolean = false;
     var cfuText : any;
+    var professor : any;
     var yearText : any;
     var semesterText : any;
     var mainText : any;
 
-    // PrimaryText inizialization
+    /* PrimaryText inizialization */
     const courseNameLength: number | undefined = data.course?.name?.length;
     if (courseNameLength !== undefined && courseNameLength >= 33) {
         primaryText = <Text styles={semibold}>{data.course?.name}</Text>;
@@ -50,14 +53,8 @@ const CourseItem = (props: Props) => {
         primaryText = <div style={{ wordWrap: 'break-word', whiteSpace: 'normal', marginTop: '2px' }}><Text styles={semibold}>{data.course?.name}</Text></div>;
     }
 
-    // PersonaUrl inizialization
-    let personaIconUrl: string | undefined;
-    
-    /*
-    if (data.year === -1) personaIconUrl = `/degree_groups_images/unimi.jpg`;  
-    //if (data.year === -1) personaIconUrl = `/degree_groups_images/${data.cdl}150.jpg`; 
-    */
-    personaIconUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${data.course?.group?.id}.png`;
+    /* Avatar image inizialization (personaUrl) */
+    let personaIconUrl: string = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${data.course?.group?.id}.png`;
 
     /* CFU inizialization */
     switch (data.course?.cfu) {
@@ -73,6 +70,18 @@ const CourseItem = (props: Props) => {
         default:
             cfuText = <>{data.course?.cfu} CFU</>;
             break;
+    }
+
+    /* Professor inizialization */
+    if (data.course?.professor !== undefined && data.course?.professor !== null) {
+        const style = { display: 'flex', gap: 5, alignItems: 'center' };
+        let text = <div style={style}><Icon iconName="UserOptional" />  {buildProfessorName(data.course?.professor.first_name, data.course?.professor.last_name)}</div>;
+
+        if (data.course?.professor?.url === undefined || data.course?.professor?.url === null) {
+            professor = text;
+        } else {
+            professor = <Link href={data.course?.professor.url}>{text}</Link>
+        }
     }
 
     /* Year inizialization */
@@ -103,8 +112,7 @@ const CourseItem = (props: Props) => {
         semesterText = <span>{data.semester}° {locale?.groups.semester}</span>;
     }
 
-    
-    // Main text inizialization
+    /* Main text inizialization */
     if (data.year === -1) {
         if (ITgroupsIDs.indexOf(data.course?.group?.id!) !== -1) {
             mainText = <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.groups.tutorsGroupDescription} />;
@@ -212,15 +220,26 @@ const CourseItem = (props: Props) => {
             </Card.Item>
 
             <Card.Section>
+                
+                {data.year !== -1 && 
+                    <div className="d-flex flex-row align-items-center justify-content-center" style={{ gap: 8 }}>
+                        { professor !== null && professor !== undefined && 
+                            <div style={professorBox}>
+                                <Text variant="small" styles={professorTextStyle}>
+                                    {professor}
+                                </Text>
+                            </div> }
 
-                <Text variant="small" styles={cfuStyle}>
-                    {cfuText}
-                </Text>
+                        <Text variant="small" styles={cfuStyle}>
+                            {cfuText}
+                        </Text>
+                    </div>
+                }
 
                 <Text styles={descriptionTextStyles}>
-                    {data.year === -1 ? <Chip label={locale?.groups.mainGroup} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeDark }} className="m-1" /> : <></>}
-                    {yearText !== "" && yearText !== null ? <Chip label={yearText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} className="m-1" /> : <></>}
-                    {semesterText !== "" && semesterText !== null ? <Chip label={semesterText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} /> : <></>}
+                    {data.year === -1 && <Chip label={locale?.groups.mainGroup} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeDark }} className="m-1" /> }
+                    {yearText !== "" && yearText !== null && <Chip label={yearText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} className="m-1" /> }
+                    {semesterText !== "" && semesterText !== null && <Chip label={semesterText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} /> }
                 </Text>
 
                 <Text variant="small" style={{ marginTop: '10px', marginBottom: '10px' }}>
@@ -229,7 +248,7 @@ const CourseItem = (props: Props) => {
 
                 { telegramLink() }
 
-                { data.year !== -1 ?
+                { data.year !== -1 &&
                     <CommandButton
                         text={locale?.groups.websites}
                         style={{justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 0}}
@@ -237,7 +256,7 @@ const CourseItem = (props: Props) => {
                         menuProps={menuProps}
                         allowDisabledFocus
                         disabled={websites?.length === 0}
-                    /> : <></>
+                    />
                 }
 
                 { wikiLink() }

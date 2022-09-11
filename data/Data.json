@@ -5,134 +5,7 @@
             "name": "Dipartimento di Informatica",
             "description": "",
             "icon": "TVMonitor",
-            "representatives": [
-                {
-                    "id": "",
-                    "name": "Jacopo",
-                    "surname": "Antoniolli",
-                    "username": "ChufChufMF",
-                    "year": "",
-                    "cdl": "Sicurezza dei sistemi e delle reti informatiche",
-                    "user_id": 165370985
-                },
-                {
-                    "id": "",
-                    "name": "Enrico",
-                    "surname": "Arrigotti",
-                    "username": "LonginusGravitazionale",
-                    "year": "",
-                    "cdl": "Informatica",
-                    "user_id": 458889652
-                },
-                {
-                    "id": "",
-                    "name": "Davide",
-                    "surname": "Busolin",
-                    "username": "davidebusolin",
-                    "year": "Terzo",
-                    "cdl": "Informatica",
-                    "user_id": 108121631
-                },
-                {
-                    "id": "",
-                    "name": "Giuseppe",
-                    "surname": "Del Campo",
-                    "username": "giuseppetm",
-                    "year": "Terzo",
-                    "cdl": "Informatica",
-                    "user_id": 597678134
-                },
-                {
-                    "id": "",
-                    "name": "Lorenzo",
-                    "surname": "Di Cola",
-                    "username": "belzeboop",
-                    "year": "Secondo",
-                    "cdl": "Informatica",
-                    "user_id": 419549927
-                },
-                {
-                    "id": "",
-                    "name": "Ettore Tancredi",
-                    "surname": "Galante",
-                    "username": "toreGore",
-                    "year": "",
-                    "cdl": "Informatica (Magistrale)",
-                    "user_id": 271586991
-                },
-                {
-                    "id": "",
-                    "name": "Irene Lara",
-                    "surname": "Galimi",
-                    "username": "irenegalimi",
-                    "year": "",
-                    "cdl": "Informatica",
-                    "user_id": 913164245
-                },
-                {
-                    "id": "",
-                    "name": "Luca",
-                    "surname": "Giuliani",
-                    "username": "LGiuliani",
-                    "year": "",
-                    "cdl": "Informatica (Magistrale)",
-                    "user_id": 59518473
-                },
-                {
-                    "id": "",
-                    "name": "Renato",
-                    "surname": "Graziano",
-                    "username": "burzum00",
-                    "year": "",
-                    "cdl": "Sicurezza dei sistemi e delle reti informatiche",
-                    "user_id": 620976546
-                },
-                {
-                    "id": "",
-                    "name": "Giulia",
-                    "surname": "Mattavelli",
-                    "username": "giuliamattavelli",
-                    "year": "",
-                    "cdl": "Informatica musicale",
-                    "user_id": 169460452
-                },
-                {
-                    "id": "",
-                    "name": "Lorenzo",
-                    "surname": "Mazzi",
-                    "username": "lomaMazzi",
-                    "year": "",
-                    "cdl": "Informatica",
-                    "user_id": 697984243
-                },
-                {
-                    "id": "",
-                    "name": "Davide",
-                    "surname": "Rusconi",
-                    "username": "pisqu0",
-                    "year": "",
-                    "cdl": "Informatica (Magistrale)",
-                    "user_id": 418896318
-                },
-                {
-                    "id": "",
-                    "name": "Luca",
-                    "surname": "Trecarichi",
-                    "username": "trekkete",
-                    "year": "",
-                    "cdl": "Informatica (Magistrale)",
-                    "user_id": 364858439
-                },
-                {
-                    "id": "",
-                    "name": "Pietro",
-                    "surname": "Zola",
-                    "username": "Zuppep",
-                    "year": "",
-                    "cdl": "Informatica musicale",
-                    "user_id": 234988702
-                }
-            ],
+            "representatives": [],
             "cdls": [
                 {
                     "id": "triennale_informatica",
@@ -147,56 +20,7 @@
                         { "name": {"it": "Virtual Classroom", "en": "Virtual Classroom"}, "description": {"it": "Sito web contenente videolezioni registrate di alcuni anni fa.", "en": "Website containing videolessons recorded a few years ago."}, "link": "https://vc.di.unimi.it/", "icon": "AiOutlineVideoCamera" },
                         { "name": {"it": "Wiki del corso di laurea", "en": "Degree's wiki"}, "description": {"it": "", "en": ""}, "link": "https://wiki.studentiunimi.it/informatica_triennale", "icon": "AiOutlineProfile" }
                     ],
-                    "admins": [
-                        {
-                            "username": "MrBrionix",
-                            "year": "Secondo",
-                            "user_id": 119507304,
-                            "cdl": "Informatica"
-                        },
-                        {
-                            "username": "MattiaOldani",
-                            "year": "Primo",
-                            "user_id": 592731075,
-                            "cdl": "Informatica"
-                        },
-                        {
-                            "username": "Sartigabriele",
-                            "year": "Primo",
-                            "user_id": 544826890,
-                            "cdl": "Informatica"
-                        },
-                        {
-                            "username": "IrisCanole",
-                            "year": "Primo",
-                            "user_id": 730639598,
-                            "cdl": "Informatica"
-                        },
-                        {
-                            "username": "Mantotheale",
-                            "year": "Primo",
-                            "user_id": 433637925,
-                            "cdl": "Informatica"
-                        },
-                        {
-                            "username": "Weinsz",
-                            "year": "Primo",
-                            "user_id": 178100484,
-                            "cdl": "Informatica"
-                        },
-                        {
-                            "username": "ThomasGiudici",
-                            "year": "Terzo",
-                            "user_id": 15042194,
-                            "cdl": "Informatica"
-                        },
-                        {
-                            "username": "davidemarchioriz",
-                            "year": "Terzo",
-                            "user_id": 157778910,
-                            "cdl": "Informatica"
-                        }
-                    ],
+                    "admins": [],
                     "is_master": false,
                     "has_years": true
                 },
@@ -212,8 +36,7 @@
                         { "name": {"it": "Manifesto degli studi", "en": "Programme"}, "description": {"it": "Manifesto degli studi attuale del tuo corso di laurea.", "en": "Description of the current studies of your Degree Programme."}, "link": "https://apps.unimi.it/files/manifesti/ita_manifesto_F3Xof2_2021.pdf", "icon": "AiOutlineRead" },
                         { "name": {"it": "Wiki del corso di laurea", "en": "Degree's wiki"}, "description": {"it": "", "en": ""}, "link": "https://wiki.studentiunimi.it/informatica_musicale", "icon": "AiOutlineProfile" }
                     ],
-                    "admins": [
-                    ],
+                    "admins": [],
                     "is_master": false,
                     "has_years": true
                 },
@@ -229,14 +52,7 @@
                         { "name": {"it": "Manifesto degli studi", "en": "Programme"}, "description": {"it": "Manifesto degli studi attuale del tuo corso di laurea.", "en": "Description of the current studies of your Degree Programme."}, "link": "https://apps.unimi.it/files/manifesti/ita_manifesto_F9Xof2_2021.pdf", "icon": "AiOutlineRead" },
                         { "name": {"it": "Wiki del corso di laurea", "en": "Degree's wiki"}, "description": {"it": "", "en": ""}, "link": "https://wiki.studentiunimi.it/informatica_per_la_comunicazione_digitale", "icon": "AiOutlineProfile" }
                     ],
-                    "admins": [
-                        {
-                            "username": "robertopinotti",
-                            "year": "",
-                            "user_id": 3104514,
-                            "cdl": "Informatica per la comunicazione digitale"
-                        }
-                    ],
+                    "admins": [],
                     "is_master": false,
                     "has_years": true
                 },
@@ -252,20 +68,7 @@
                         { "name": {"it": "Manifesto degli studi", "en": "Programme"}, "description": {"it": "Manifesto degli studi attuale del tuo corso di laurea.", "en": "Description of the current studies of your Degree Programme."}, "link": "https://apps.unimi.it/files/manifesti/ita_manifesto_F68of3_2021.pdf", "icon": "AiOutlineRead" },
                         { "name": {"it": "Wiki del corso di laurea", "en": "Degree's wiki"}, "description": {"it": "", "en": ""}, "link": "https://wiki.studentiunimi.it/ssri", "icon": "AiOutlineProfile" }
                     ],
-                    "admins": [
-                        {
-                            "username": "burzum00",
-                            "year": "",
-                            "user_id": 620976546,
-                            "cdl": "Sicurezza dei sistemi e delle reti informatiche"
-                        },
-                        {
-                            "username": "e_magon",
-                            "year": "",
-                            "user_id": 18200812,
-                            "cdl": "Sicurezza dei sistemi e delle reti informatiche"
-                        }
-                    ],
+                    "admins": [],
                     "is_master": false,
                     "has_years": true
                 },
@@ -297,14 +100,7 @@
                         { "name": {"it": "Manifesto degli studi", "en": "Programme"}, "description": {"it": "Manifesto degli studi attuale del tuo corso di laurea.", "en": "Description of the current studies of your Degree Programme."}, "link": "https://apps.unimi.it/files/manifesti/ita_manifesto_F94of2_2021.pdf", "icon": "AiOutlineRead" },
                         { "name": {"it": "Wiki del corso di laurea", "en": "Degree's wiki"}, "description": {"it": "", "en": ""}, "link": "https://wiki.studentiunimi.it/informatica_magistrale", "icon": "AiOutlineProfile" }
                     ],
-                    "admins": [
-                        {
-                            "username": "robertopinotti",
-                            "year": "",
-                            "user_id": 3104514,
-                            "cdl": "Informatica (magistrale)"
-                        }
-                    ],
+                    "admins": [],
                     "is_master": true,
                     "has_years": false
                 },
@@ -320,20 +116,7 @@
                         { "name": {"it": "Manifesto degli studi", "en": "Programme"}, "description": {"it": "Manifesto degli studi attuale del tuo corso di laurea.", "en": "Description of the current studies of your Degree Programme."}, "link": "https://apps.unimi.it/files/manifesti/ita_manifesto_F2Yof2_2021.pdf", "icon": "AiOutlineRead" },
                         { "name": {"it": "Wiki del corso di laurea", "en": "Degree's wiki"}, "description": {"it": "", "en": ""}, "link": "https://wiki.studentiunimi.it/sicurezza_informatica", "icon": "AiOutlineProfile" }
                     ],
-                    "admins": [
-                        {
-                            "username": "Spacer_ASC",
-                            "year": "",
-                            "user_id": 278035059,
-                            "cdl": "Sicurezza informatica (magistrale)"
-                        },
-                        {
-                            "username": "B3rsa",
-                            "year": "",
-                            "user_id": null,
-                            "cdl": "Sicurezza informatica (magistrale)"
-                        }
-                    ]
+                    "admins": []
                 }
             ]
         },
@@ -393,42 +176,11 @@
                     "name": "Bioinformatics",
                     "description": "",
                     "redirects": [],
-                    "admins": [
-                        {
-                            "username": "MariaClaudia7",
-                            "year": "",
-                            "user_id": null,
-                            "cdl": "Bioinformatics"
-                        }
-                    ],
+                    "admins": [],
                     "is_master": false,
                     "has_years": true
                 }
             ]
-        },
-        {
-            "id": "agraria",
-            "name": "Dipartimento di Agraria",
-            "description": "",
-            "icon": "Cotton",
-            "representatives": [],
-            "cdls": []
-        },
-        {
-            "id": "medicina",
-            "name": "Dipartimento di Medicina",
-            "description": "",
-            "icon": "Medical",
-            "representatives": [],
-            "cdls": []
-        },
-        {
-            "id": "farmacia",
-            "name": "Dipartimento di Farmacia",
-            "description": "",
-            "icon": "MobileReport",
-            "representatives": [],
-            "cdls": []
         }
     ]
 }
