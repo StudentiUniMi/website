@@ -141,20 +141,21 @@ export const getServerSideProps: GetServerSideProps = async ( { params }) => {
     let degreeInformations = getDegreeInformations(degreeSlug);
 
     /* Add Main Group to the loaded degree */
-    if (degreeResult.value?.group?.invite_link !== '' && degreeResult.value?.group?.invite_link !== null && degreeResult.value?.group?.invite_link !== undefined) {
+    if (degreeResult.value?.group?.invite_link !== '' && degreeResult.value?.group?.invite_link !== null) {
         let mainDegreeGroup: CourseDegree = {
             course: {
                 pk: 0,
                 name: "Gruppo principale",
                 cfu: 0,
-                wiki_link: "",
+                wiki_link: null,
                 links: [],
                 group: {
-                    id: degreeResult.value?.group?.id!,
-                    title: degreeResult.value?.group?.title,
-                    profile_picture: degreeResult.value?.group?.profile_picture,
-                    invite_link: degreeResult.value?.group?.invite_link
+                    id: degreeResult.value?.group.id!,
+                    title: degreeResult.value?.group.title!,
+                    profile_picture: degreeResult.value?.group!.profile_picture!,
+                    invite_link: degreeResult.value?.group!.invite_link!
                 },
+                professor: null
             },
             year: -1,
             semester: 0

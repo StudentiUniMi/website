@@ -247,7 +247,7 @@ const University = () => {
                     </Container>
                 </div>
 
-                <div style={{ display: selectedDepartment !== '' && selectedDepartment !== undefined ? 'block' : 'none' }}>
+                <div style={{ display: selectedDepartment !== '' ? 'block' : 'none' }}>
                     <Container>
                         <RepresentativesList data={representatives} loadingRepresentatives={loadingRepresentatives} errorLoadingRepresentatives={errorLoadingRepresentatives} />
                     </Container>

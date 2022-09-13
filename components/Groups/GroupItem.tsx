@@ -1,4 +1,4 @@
-import { Text, Icon } from 'office-ui-fabric-react';
+import { Text, Icon, TooltipHost } from 'office-ui-fabric-react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { FontWeights, ITextStyles, Link, Persona } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
@@ -37,24 +37,27 @@ const CourseItem = (props: Props) => {
     const wikiIcon: IIconProps = { iconName: 'SurveyQuestions' };
 
     var primaryText : any;
-    var overflow : boolean = false;
     var cfuText : any;
-    var professor : any;
+    var professor : any = null;
     var yearText : any;
     var semesterText : any;
     var mainText : any;
 
-    /* PrimaryText inizialization */
-    const courseNameLength: number | undefined = data.course?.name?.length;
-    if (courseNameLength !== undefined && courseNameLength >= 33) {
-        primaryText = <Text styles={semibold}>{data.course?.name}</Text>;
-    } else {
-        overflow = true;
-        primaryText = <div style={{ wordWrap: 'break-word', whiteSpace: 'normal', marginTop: '2px' }}><Text styles={semibold}>{data.course?.name}</Text></div>;
-    }
-
     /* Avatar image inizialization (personaUrl) */
     let personaIconUrl: string = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${data.course?.group?.id}.png`;
+
+    /* Persona PrimaryText initialization */
+    const calloutProps = { gapSpace: 5 };
+    primaryText = (
+        <TooltipHost
+            content={data.course?.name}
+            calloutProps={calloutProps}
+        >
+            <div className="line-clamp">
+                <Text styles={semibold}>{data.course?.name}</Text>
+            </div>
+        </TooltipHost>
+    );
 
     /* CFU inizialization */
     switch (data.course?.cfu) {
@@ -73,7 +76,7 @@ const CourseItem = (props: Props) => {
     }
 
     /* Professor inizialization */
-    if (data.course?.professor !== undefined && data.course?.professor !== null) {
+    if (data.course.professor !== null) {
         const style = { display: 'flex', gap: 5, alignItems: 'center' };
         let text = <div style={style}><Icon iconName="UserOptional" />  {buildProfessorName(data.course?.professor.first_name, data.course?.professor.last_name)}</div>;
 
@@ -123,8 +126,8 @@ const CourseItem = (props: Props) => {
 
     /* Telegram Group initialization */
     const telegramLink = () => {
-        if (data.course?.group !== null && data.course?.group !== undefined) {
-            if (data.course?.group?.invite_link !== "" && data.course?.group?.invite_link !== null && data.course?.group?.invite_link !== undefined) {
+        if (data.course?.group !== null) {
+            if (data.course?.group?.invite_link !== "" && data.course?.group?.invite_link !== null) {
                 return (
                     <ActionButton
                         href={data.course?.group?.invite_link as any}
@@ -136,7 +139,7 @@ const CourseItem = (props: Props) => {
                         {locale?.telegramGroup}
                     </ActionButton>
                 );
-            } else if ((data.course?.group?.invite_link === undefined || data.course?.group?.invite_link === "" || data.course?.group?.invite_link === null)) {
+            } else if ((data.course?.group?.invite_link === "" || data.course?.group?.invite_link === null)) {
                 return (
                     <ActionButton
                         iconProps={telegramGroupIcon}
@@ -167,7 +170,7 @@ const CourseItem = (props: Props) => {
                 return {
                     key: i,
                     text: e.name,
-                    onClick: () => redirectToLink(e.url!),
+                    onClick: () => redirectToLink(e.url),
                     iconProps: { iconName: 'ChromeBackMirrored' }
                 };
             }
@@ -212,18 +215,14 @@ const CourseItem = (props: Props) => {
     return (
         <Card tokens={cardTokens} className="text-center">
             <Card.Item>
-                {overflow === true ?
-                    <Persona imageUrl={personaIconUrl} onRenderPrimaryText={() => primaryText} text={data.course?.name} />
-                    :
-                    <Persona imageUrl={personaIconUrl} text={data.course?.name} />
-                }
+                <Persona imageUrl={personaIconUrl} onRenderPrimaryText={() => primaryText} text={data.course?.name} />
             </Card.Item>
 
             <Card.Section>
                 
                 {data.year !== -1 && 
                     <div className="d-flex flex-row align-items-center justify-content-center" style={{ gap: 8 }}>
-                        { professor !== null && professor !== undefined && 
+                        { professor !== null &&
                             <div style={professorBox}>
                                 <Text variant="small" styles={professorTextStyle}>
                                     {professor}

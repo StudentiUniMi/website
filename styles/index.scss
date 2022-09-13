@@ -227,6 +227,13 @@ svg {
   Additional properties
 ---------------------*/
 
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
 @media only screen and (max-width: 640px) { /* Dropdown items in mobile visualization when using icons act buggy. Must create issue in fluentUi repo */
   .ms-Dropdown-item {
     margin-bottom: 10px !important;
