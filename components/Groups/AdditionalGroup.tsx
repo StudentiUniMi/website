@@ -10,7 +10,7 @@ import { FontWeights, ITextStyles, Persona, Link } from '@fluentui/react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import ExtraGroup from '../../models/ExtraGroup'
 import { useTheme } from '@fluentui/react-theme-provider';
-import { ActionButton } from '@fluentui/react/lib/Button';
+import { PrimaryButton } from '@fluentui/react/lib/Button';
 import { IIconProps } from '@fluentui/react';
 import Chip from '@material-ui/core/Chip';
 import { semibold } from '../../services/Fonts';
@@ -41,13 +41,18 @@ const AdditionalGroup = (props: Props) => {
     imageUrl = '/extra_groups_images/' + data.image;
     
     return (
-        <Card tokens={cardTokens}>
+        <Card tokens={cardTokens} className="additional-group-item">
             <Card.Item>
                 <Persona imageUrl={imageUrl} onRenderPrimaryText={() => primaryText} text={name} />
             </Card.Item>
             <Card.Section>
                 <Text styles={descriptionTextStyles}>
-                    <Chip label={name === 'MUG - Milan University Gamers' ? locale?.studentsAssociation : locale?.extraGroups.extraGroup} size="small" style={{ color: theme.palette.white, backgroundColor: name === 'MUG - Milan University Gamers' ? theme.palette.themeDark : theme.palette.themeSecondary }} className="m-1" />
+                    <Chip 
+                        label={name === 'MUG - Milan University Gamers' ? locale?.studentsAssociation : locale?.extraGroups.extraGroup} 
+                        size="small" 
+                        style={{ color: theme.palette.black, backgroundColor: theme.palette.neutralLight }} 
+                        className="m-1" 
+                    />
                 </Text>
                 <Text variant="small" styles={helpfulTextStyles} className="mb-2">
                     <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link, Icon }} jsx={"<Icon iconName='Info' /> " + desc} />
@@ -57,7 +62,7 @@ const AdditionalGroup = (props: Props) => {
                     (() => {
                         if (data.gruppo !== "" && data.gruppo !== null) {
                             return (
-                                <ActionButton
+                                <PrimaryButton
                                     href={data.gruppo as any}
                                     className="text-decoration-none"
                                     iconProps={telegramGroupIcon}
@@ -65,7 +70,7 @@ const AdditionalGroup = (props: Props) => {
                                     disabled={data.gruppo === "" || data.gruppo === null}
                                     allowDisabledFocus>
                                     {name === 'MUG - Milan University Gamers' ? locale?.homepage.section3.part3.title : locale?.telegramGroup}
-                                </ActionButton>
+                                </PrimaryButton>
                             );
                         }
                     })()
