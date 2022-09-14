@@ -4,7 +4,7 @@ import { FontWeights, ITextStyles, Link, Persona } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { IContextualMenuProps, IIconProps } from '@fluentui/react';
-import { DefaultButton } from '@fluentui/react/lib/Button';
+import { DefaultButton, PrimaryButton } from '@fluentui/react/lib/Button';
 import { buildProfessorName, redirectToLink } from '../../services/Utils';
 import { CourseDegree } from '../../models/Models';
 import Chip from '@material-ui/core/Chip';
@@ -36,7 +36,7 @@ const CourseItem = (props: Props) => {
     const wikiIcon: IIconProps = { iconName: 'SurveyQuestions' };
 
     var primaryText: JSX.Element;
-    var cfuText: JSX.Element | null;
+    var cfuText: JSX.Element | null = null;
     var professor: JSX.Element | null = null;
     var yearText: JSX.Element | null = null;
     var semesterText: JSX.Element | null = null;
@@ -128,36 +128,18 @@ const CourseItem = (props: Props) => {
         if (data.course.group !== null) {
             if (data.course.group.invite_link !== "" && data.course.group.invite_link !== null) {
                 return (
-                    <DefaultButton
+                    <PrimaryButton
                         href={data.course.group.invite_link as any}
                         iconProps={telegramGroupIcon}
                         style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
                         disabled={data.course.group.invite_link === "" || data.course.group.invite_link === null}
                         className="text-decoration-none"
                         allowDisabledFocus>
-                        {locale?.telegramGroup}
-                    </DefaultButton>
-                );
-            } else if ((data.course.group.invite_link === "" || data.course.group.invite_link === null)) {
-                return (
-                    <DefaultButton
-                        iconProps={telegramGroupIcon}
-                        style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
-                        disabled
-                        allowDisabledFocus>
-                        {locale?.groups.groupNotAvailable}
-                    </DefaultButton>
+                        {data.course.group.invite_link === "" || data.course.group.invite_link === null ? locale?.groups.groupNotAvailable : locale?.telegramGroup}
+                    </PrimaryButton>
                 );
             }
-        } else return (
-            <DefaultButton
-                iconProps={telegramGroupIcon}
-                style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
-                disabled
-                allowDisabledFocus>
-                {locale?.groups.groupNotAvailable}
-            </DefaultButton>
-        )
+        }
     };
 
     /* Websites inizialization */
@@ -205,7 +187,7 @@ const CourseItem = (props: Props) => {
     };
     
     return (
-        <Card tokens={cardTokens} className="text-center">
+        <Card tokens={cardTokens} className="group-item text-center">
             <Card.Item>
                 <Persona imageUrl={personaIconUrl} onRenderPrimaryText={() => primaryText} text={data.course.name} />
             </Card.Item>
@@ -228,9 +210,9 @@ const CourseItem = (props: Props) => {
                 }
 
                 <Text styles={descriptionTextStyles}>
-                    {data.year === -1 && <Chip label={locale?.groups.mainGroup} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeDark }} className="m-1" /> }
-                    {yearText !== null && <Chip label={yearText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} className="m-1" /> }
-                    {semesterText !== null && <Chip label={semesterText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} /> }
+                    {data.year === -1 && <Chip label={locale?.groups.mainGroup} size="small" style={{ color: theme.palette.black, backgroundColor: theme.palette.neutralLight }} className="m-1" /> }
+                    {yearText !== null && <Chip label={yearText} size="small" style={{ color: theme.palette.black, backgroundColor: theme.palette.neutralLighter }} className="m-1" /> }
+                    {semesterText !== null && <Chip label={semesterText} size="small" style={{ color: theme.palette.black, backgroundColor: theme.palette.neutralLighter }} /> }
                 </Text>
 
                 <Text variant="small" style={{ marginTop: 8, marginBottom: 8 }}>
