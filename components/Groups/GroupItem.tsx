@@ -1,11 +1,10 @@
-import { Text, Icon } from 'office-ui-fabric-react';
+import { Text, Icon, TooltipHost } from 'office-ui-fabric-react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { FontWeights, ITextStyles, Link, Persona } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { IContextualMenuProps, IIconProps } from '@fluentui/react';
-import { CommandButton } from '@fluentui/react/lib/Button';
-import { ActionButton } from '@fluentui/react/lib/Button';
+import { DefaultButton, PrimaryButton } from '@fluentui/react/lib/Button';
 import { buildProfessorName, redirectToLink } from '../../services/Utils';
 import { CourseDegree } from '../../models/Models';
 import Chip from '@material-ui/core/Chip';
@@ -36,28 +35,31 @@ const CourseItem = (props: Props) => {
     const telegramGroupIcon: IIconProps = { iconName: 'Send' };
     const wikiIcon: IIconProps = { iconName: 'SurveyQuestions' };
 
-    var primaryText : any;
-    var overflow : boolean = false;
-    var cfuText : any;
-    var professor : any;
-    var yearText : any;
-    var semesterText : any;
-    var mainText : any;
-
-    /* PrimaryText inizialization */
-    const courseNameLength: number | undefined = data.course?.name?.length;
-    if (courseNameLength !== undefined && courseNameLength >= 33) {
-        primaryText = <Text styles={semibold}>{data.course?.name}</Text>;
-    } else {
-        overflow = true;
-        primaryText = <div style={{ wordWrap: 'break-word', whiteSpace: 'normal', marginTop: '2px' }}><Text styles={semibold}>{data.course?.name}</Text></div>;
-    }
+    var primaryText: JSX.Element;
+    var cfuText: JSX.Element | null = null;
+    var professor: JSX.Element | null = null;
+    var yearText: JSX.Element | null = null;
+    var semesterText: JSX.Element | null = null;
+    var mainText: JSX.Element | null = null;
 
     /* Avatar image inizialization (personaUrl) */
-    let personaIconUrl: string = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${data.course?.group?.id}.png`;
+    let personaIconUrl: string = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${data.course.group.id}.png`;
+
+    /* Persona PrimaryText initialization */
+    const calloutProps = { gapSpace: 5 };
+    primaryText = (
+        <TooltipHost
+            content={data.course.name}
+            calloutProps={calloutProps}
+        >
+            <div className="line-clamp">
+                <Text styles={semibold}>{data.course.name}</Text>
+            </div>
+        </TooltipHost>
+    );
 
     /* CFU inizialization */
-    switch (data.course?.cfu) {
+    switch (data.course.cfu) {
         case 0:
             cfuText = null;
             break;
@@ -68,19 +70,19 @@ const CourseItem = (props: Props) => {
             cfuText = <>N/A CFU</>;
             break;
         default:
-            cfuText = <>{data.course?.cfu} CFU</>;
+            cfuText = <>{data.course.cfu} CFU</>;
             break;
     }
 
     /* Professor inizialization */
-    if (data.course?.professor !== undefined && data.course?.professor !== null) {
+    if (data.course.professor !== null) {
         const style = { display: 'flex', gap: 5, alignItems: 'center' };
-        let text = <div style={style}><Icon iconName="UserOptional" />  {buildProfessorName(data.course?.professor.first_name, data.course?.professor.last_name)}</div>;
+        let text = <div style={style}><Icon iconName="UserOptional" />  {buildProfessorName(data.course.professor.first_name, data.course.professor.last_name)}</div>;
 
-        if (data.course?.professor?.url === undefined || data.course?.professor?.url === null) {
+        if (data.course.professor.url === undefined || data.course.professor.url === null) {
             professor = text;
         } else {
-            professor = <Link href={data.course?.professor.url}>{text}</Link>
+            professor = <Link href={data.course.professor.url}>{text}</Link>
         }
     }
 
@@ -114,60 +116,42 @@ const CourseItem = (props: Props) => {
 
     /* Main text inizialization */
     if (data.year === -1) {
-        if (ITgroupsIDs.indexOf(data.course?.group?.id!) !== -1) {
+        if (ITgroupsIDs.indexOf(data.course.group.id) !== -1) {
             mainText = <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.groups.tutorsGroupDescription} />;
         } else {
-            mainText = locale?.groups.mainGroupDescription;
+            mainText = <>{locale?.groups.mainGroupDescription}</>;
         }
     }
 
     /* Telegram Group initialization */
     const telegramLink = () => {
-        if (data.course?.group !== null && data.course?.group !== undefined) {
-            if (data.course?.group?.invite_link !== "" && data.course?.group?.invite_link !== null && data.course?.group?.invite_link !== undefined) {
+        if (data.course.group !== null) {
+            if (data.course.group.invite_link !== "" && data.course.group.invite_link !== null) {
                 return (
-                    <ActionButton
-                        href={data.course?.group?.invite_link as any}
+                    <PrimaryButton
+                        href={data.course.group.invite_link as any}
                         iconProps={telegramGroupIcon}
-                        style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
-                        disabled={data.course?.group?.invite_link === "" || data.course?.group?.invite_link === null}
+                        style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
+                        disabled={data.course.group.invite_link === "" || data.course.group.invite_link === null}
                         className="text-decoration-none"
                         allowDisabledFocus>
-                        {locale?.telegramGroup}
-                    </ActionButton>
-                );
-            } else if ((data.course?.group?.invite_link === undefined || data.course?.group?.invite_link === "" || data.course?.group?.invite_link === null)) {
-                return (
-                    <ActionButton
-                        iconProps={telegramGroupIcon}
-                        style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
-                        disabled
-                        allowDisabledFocus>
-                        {locale?.groups.groupNotAvailable}
-                    </ActionButton>
+                        {data.course.group.invite_link === "" || data.course.group.invite_link === null ? locale?.groups.groupNotAvailable : locale?.telegramGroup}
+                    </PrimaryButton>
                 );
             }
-        } else return (
-            <ActionButton
-                iconProps={telegramGroupIcon}
-                style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
-                disabled
-                allowDisabledFocus>
-                {locale?.groups.groupNotAvailable}
-            </ActionButton>
-        )
+        }
     };
 
     /* Websites inizialization */
     let websites: any[] | undefined = [];
 
-    if ((data.course?.links ?? []).length !== 0) {
-        websites = data.course?.links.map(
+    if ((data.course.links ?? []).length !== 0) {
+        websites = data.course.links.map(
             (e, i) => {
                 return {
                     key: i,
                     text: e.name,
-                    onClick: () => redirectToLink(e.url!),
+                    onClick: () => redirectToLink(e.url),
                     iconProps: { iconName: 'ChromeBackMirrored' }
                 };
             }
@@ -176,26 +160,19 @@ const CourseItem = (props: Props) => {
 
     /* Wiki initialization */
     const wikiLink = () => {
-        if (data.course?.wiki_link !== null && data.course?.wiki_link !== "") {
+        if (data.year !== -1) {
             return (
-                <ActionButton
-                    href={data.course?.wiki_link as any}
+                <DefaultButton
+                    href={data.course.wiki_link as any}
                     className="text-decoration-none"
                     iconProps={wikiIcon}
-                    style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 0 }}
+                    style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
+                    disabled={data.course.wiki_link === null || data.course.wiki_link === ""}
                     allowDisabledFocus>
                     Wiki
-                </ActionButton>
+                </DefaultButton>
             );
-        } else if ((data.course?.wiki_link === null || data.course?.wiki_link === "") && data.year !== -1) return (
-            <ActionButton
-                disabled
-                iconProps={wikiIcon}
-                style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 0 }}
-                allowDisabledFocus>
-                Wiki
-            </ActionButton>
-        )
+        }
     };
 
     const menuProps: IContextualMenuProps = {
@@ -210,20 +187,16 @@ const CourseItem = (props: Props) => {
     };
     
     return (
-        <Card tokens={cardTokens} className="text-center">
+        <Card tokens={cardTokens} className="group-item text-center">
             <Card.Item>
-                {overflow === true ?
-                    <Persona imageUrl={personaIconUrl} onRenderPrimaryText={() => primaryText} text={data.course?.name} />
-                    :
-                    <Persona imageUrl={personaIconUrl} text={data.course?.name} />
-                }
+                <Persona imageUrl={personaIconUrl} onRenderPrimaryText={() => primaryText} text={data.course.name} />
             </Card.Item>
 
             <Card.Section>
                 
                 {data.year !== -1 && 
                     <div className="d-flex flex-row align-items-center justify-content-center" style={{ gap: 8 }}>
-                        { professor !== null && professor !== undefined && 
+                        { professor !== null &&
                             <div style={professorBox}>
                                 <Text variant="small" styles={professorTextStyle}>
                                     {professor}
@@ -237,21 +210,21 @@ const CourseItem = (props: Props) => {
                 }
 
                 <Text styles={descriptionTextStyles}>
-                    {data.year === -1 && <Chip label={locale?.groups.mainGroup} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeDark }} className="m-1" /> }
-                    {yearText !== "" && yearText !== null && <Chip label={yearText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} className="m-1" /> }
-                    {semesterText !== "" && semesterText !== null && <Chip label={semesterText} size="small" style={{ color: theme.palette.white, backgroundColor: theme.palette.themeSecondary }} /> }
+                    {data.year === -1 && <Chip label={locale?.groups.mainGroup} size="small" style={{ color: theme.palette.black, backgroundColor: theme.palette.neutralLight }} className="m-1" /> }
+                    {yearText !== null && <Chip label={yearText} size="small" style={{ color: theme.palette.black, backgroundColor: theme.palette.neutralLighter }} className="m-1" /> }
+                    {semesterText !== null && <Chip label={semesterText} size="small" style={{ color: theme.palette.black, backgroundColor: theme.palette.neutralLighter }} /> }
                 </Text>
 
-                <Text variant="small" style={{ marginTop: '10px', marginBottom: '10px' }}>
+                <Text variant="small" style={{ marginTop: 8, marginBottom: 8 }}>
                     {mainText}
                 </Text>
 
                 { telegramLink() }
 
                 { data.year !== -1 &&
-                    <CommandButton
+                    <DefaultButton
                         text={locale?.groups.websites}
-                        style={{justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 0}}
+                        style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
                         iconProps={websiteIcon}
                         menuProps={menuProps}
                         allowDisabledFocus

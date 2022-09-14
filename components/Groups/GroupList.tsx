@@ -107,7 +107,7 @@ const CourseList= (props: Props) => {
     let yearFilterOptions = props.degree?.type === 'M' || props.degree?.type === 'C' ? yearMasterDegreeFilterOptions : yearBachelorDegreeFilterOptions; 
     let filteredCourses = props.courses;
 
-    if (nameFilter !== "") { filteredCourses = filteredCourses.filter(x => x.course?.name?.toLocaleLowerCase()?.includes(nameFilter.toLocaleLowerCase())); }
+    if (nameFilter !== "") { filteredCourses = filteredCourses.filter(x => x.course.name.toLocaleLowerCase().includes(nameFilter.toLocaleLowerCase())); }
     if (semesterFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.semester === semesterFilter); }
     if (yearFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.year === yearFilter); }
 
