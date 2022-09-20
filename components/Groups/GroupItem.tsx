@@ -36,14 +36,55 @@ const CourseItem = (props: Props) => {
     const wikiIcon: IIconProps = { iconName: 'SurveyQuestions' };
 
     var primaryText: JSX.Element;
+    var personaIconUrl: string = "";
     var cfuText: JSX.Element | null = null;
     var professor: JSX.Element | null = null;
+    var telegramLink: JSX.Element | null = null;
+    var wikiLink: JSX.Element | null = null;
     var yearText: JSX.Element | null = null;
     var semesterText: JSX.Element | null = null;
     var mainText: JSX.Element | null = null;
 
-    /* Avatar image inizialization (personaUrl) */
-    let personaIconUrl: string = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${data.course.group.id}.png`;
+    /* Groups data initialization */
+    if (data.course.group !== null) {
+        /* Avatar image inizialization (personaUrl) */
+        personaIconUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${data.course.group.id}.png`;
+
+        /* Main text inizialization */
+        if (data.year === -1) {
+            if (ITgroupsIDs.indexOf(data.course.group.id) !== -1) {
+                mainText = <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.groups.tutorsGroupDescription} />;
+            } else {
+                mainText = <>{locale?.groups.mainGroupDescription}</>;
+            }
+        }
+
+        /* Telegram Group initialization */
+        if (data.course.group.invite_link !== "" && data.course.group.invite_link !== null) {
+            telegramLink = (
+                <PrimaryButton
+                    href={data.course.group.invite_link as any}
+                    iconProps={telegramGroupIcon}
+                    style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
+                    disabled={data.course.group.invite_link === "" || data.course.group.invite_link === null}
+                    className="text-decoration-none"
+                    allowDisabledFocus>
+                    {data.course.group.invite_link === "" || data.course.group.invite_link === null ? locale?.groups.groupNotAvailable : locale?.telegramGroup}
+                </PrimaryButton>
+            );
+        }
+    } else {
+        telegramLink = (
+            <PrimaryButton
+                iconProps={telegramGroupIcon}
+                style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
+                className="text-decoration-none"
+                disabled
+                allowDisabledFocus>
+                {locale?.groups.groupNotAvailable}
+            </PrimaryButton>
+        );
+    }
 
     /* Persona PrimaryText initialization */
     const calloutProps = { gapSpace: 5 };
@@ -114,34 +155,6 @@ const CourseItem = (props: Props) => {
         semesterText = <span>{data.semester}° {locale?.groups.semester}</span>;
     }
 
-    /* Main text inizialization */
-    if (data.year === -1) {
-        if (ITgroupsIDs.indexOf(data.course.group.id) !== -1) {
-            mainText = <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.groups.tutorsGroupDescription} />;
-        } else {
-            mainText = <>{locale?.groups.mainGroupDescription}</>;
-        }
-    }
-
-    /* Telegram Group initialization */
-    const telegramLink = () => {
-        if (data.course.group !== null) {
-            if (data.course.group.invite_link !== "" && data.course.group.invite_link !== null) {
-                return (
-                    <PrimaryButton
-                        href={data.course.group.invite_link as any}
-                        iconProps={telegramGroupIcon}
-                        style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
-                        disabled={data.course.group.invite_link === "" || data.course.group.invite_link === null}
-                        className="text-decoration-none"
-                        allowDisabledFocus>
-                        {data.course.group.invite_link === "" || data.course.group.invite_link === null ? locale?.groups.groupNotAvailable : locale?.telegramGroup}
-                    </PrimaryButton>
-                );
-            }
-        }
-    };
-
     /* Websites inizialization */
     let websites: any[] | undefined = [];
 
@@ -159,21 +172,19 @@ const CourseItem = (props: Props) => {
     }
 
     /* Wiki initialization */
-    const wikiLink = () => {
-        if (data.year !== -1) {
-            return (
-                <DefaultButton
-                    href={data.course.wiki_link as any}
-                    className="text-decoration-none"
-                    iconProps={wikiIcon}
-                    style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
-                    disabled={data.course.wiki_link === null || data.course.wiki_link === ""}
-                    allowDisabledFocus>
-                    Wiki
-                </DefaultButton>
-            );
-        }
-    };
+    if (data.year !== -1) {
+        wikiLink = (
+            <DefaultButton
+                href={data.course.wiki_link as any}
+                className="text-decoration-none"
+                iconProps={wikiIcon}
+                style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
+                disabled={data.course.wiki_link === null || data.course.wiki_link === ""}
+                allowDisabledFocus>
+                Wiki
+            </DefaultButton>
+        );
+    }
 
     const menuProps: IContextualMenuProps = {
         // For example: disable dismiss if shift key is held down while dismissing
@@ -219,7 +230,7 @@ const CourseItem = (props: Props) => {
                     {mainText}
                 </Text>
 
-                { telegramLink() }
+                {telegramLink}
 
                 { data.year !== -1 &&
                     <DefaultButton
@@ -232,7 +243,7 @@ const CourseItem = (props: Props) => {
                     />
                 }
 
-                { wikiLink() }
+                {wikiLink}
 
             </Card.Section>
         </Card>

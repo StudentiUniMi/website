@@ -42,14 +42,13 @@ export interface VerboseDegree {
     department: Department
 };
 
-/* The null values are used to support main groups that do not have those fields. */
 export interface Course {
     pk: number,
     name: string,
     cfu: number,
     wiki_link: string | null,
     links: Website[],
-    group: Group,
+    group: Group | null,
     professor: Professor | null
 };
 
