@@ -169,6 +169,18 @@
     },
     {
         "name": {
+            "it": "Artisti e Musica",
+            "en": "Artists and Music"
+        },
+        "description": {
+            "it": "Gruppo dedicato ad artisti e musicisti dell’Università degli Studi di Milano.",
+            "en": "Group dedicated to artists and musicians from the University of Milan."
+        },
+        "image": "music.png",
+        "gruppo": "https://t.me/+mWyuQFz5QkhkNzRk"
+    },
+    {
+        "name": {
             "it": "Unirole",
             "en": "UniRole"
         },
