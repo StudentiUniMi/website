@@ -361,6 +361,12 @@ svg {
 }
 
 /* Fix SearchBox visualization for small height displays */
+@media only screen and (max-height: 900px) {
+  #SuggestionContainer .ms-Callout-main {
+    max-height: 250px !important;
+  }
+}
+
 @media only screen and (max-height: 610px) {
   #SuggestionContainer .ms-Callout-main {
     max-height: 200px !important;

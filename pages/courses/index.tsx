@@ -148,6 +148,8 @@ const Courses = () => {
                                         searchCallback={searchTextHandler}
                                         changeCallback={(text) => updateDegreesForSearchBox(text)}
                                         value={degreeTextSearch}
+                                        theme={theme}
+                                        language={language}
                                         disabled={errorLoadingDegrees}
                                     />
                                 </div>

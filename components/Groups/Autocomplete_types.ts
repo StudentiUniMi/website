@@ -1,3 +1,4 @@
+import { Theme } from '@fluentui/react-theme-provider';
 import { Degree } from '../../models/Models';
 
 export interface IAutocompleteProps {
@@ -7,6 +8,8 @@ export interface IAutocompleteProps {
   searchCallback: (item: string) => void;
   changeCallback: (value: string) => void;
   value: string;
+  theme: Theme;
+  language: string | undefined;
   disabled: boolean;
 };
 

@@ -1,13 +1,15 @@
 import * as React from 'react';
 import { IAutocompleteProps, IAutocompleteState, ISuggestionItem } from './Autocomplete_types';
-import { SearchBox, Callout, List } from 'office-ui-fabric-react/lib-commonjs/';
+import { SearchBox, Callout, List, Text } from 'office-ui-fabric-react/lib-commonjs/';
 import { FocusZone, FocusZoneDirection } from 'office-ui-fabric-react/lib-commonjs/FocusZone';
 import { mergeStyleSets } from '@uifabric/styling';
 import { DirectionalHint, ISearchBoxStyles } from '@fluentui/react';
 import { IIconProps } from '@fluentui/react/lib/Icon';
+import { semibold } from 'services/Fonts';
 import Chip from '@material-ui/core/Chip';
 
 const searchBoxStyles: Partial<ISearchBoxStyles> = { root: { maxWidth: 650, minWidth: 0 } };
+
 const CalloutStyle = () => {
   return { maxWidth: '650px' };
 };
@@ -19,18 +21,10 @@ const AutocompleteStyles = () => {
     maxWidth: '650px', 
   });
 };
+
 const SuggestionListStyle = () => {
-  return ({ padding: '6px 16px', fontSize: '14px', cursor: 'default' });
+  return ({ padding: '6px 16px', fontSize: '14px', cursor: 'default', display: 'flex', gap: 5, alignItems: 'center' });
 };
-const SuggestionListItemStyle = mergeStyleSets({
-  root: {
-    selectors: {
-      '&:hover': {
-        backgroundColor: '#f3f2f1'
-      }
-    }
-  }
-});
 
 const KeyCodes = {
   tab: 9 as 9,
@@ -52,6 +46,17 @@ export class Autocomplete extends React.Component<ISearchSuggestionsProps, IAuto
       searchText: '',
     };
   }
+
+  private SuggestionListItemStyle = mergeStyleSets({
+    root: {
+      display: 'flex',
+      selectors: {
+        '&:hover': {
+          backgroundColor: this.props.theme.palette.neutralLighter
+        }
+      }
+    }
+  });
   
   protected getComponentName(): string {
     return 'SearchSuggestions';
@@ -133,30 +138,51 @@ export class Autocomplete extends React.Component<ISearchSuggestionsProps, IAuto
   }
 
   private renderChip = (item: any) => {
-    //var theme = useTheme();
     let label: string;
+    
     switch (item.degree.type) {
       case "B":
-        label = "triennale";
+        label = this.props.language == "it" ? "triennale" : "bachelor's degree";
         break;
       case "M":
-        label = "magistrale";
+        label = this.props.language == "it" ? "magistrale" : "master's degree";
         break;
       case "C":
-        label = "magistrale a ciclo unico";
+        label = this.props.language == "it" ? "magistrale a ciclo unico" : "single-cycle master's degree"; 
         break;
       default:
         label = "";
     }
 
-    return <Chip label={label} size="small" style={{ color: '#f3f4f4', backgroundColor: '#adadad', fontWeight: 600 }} />;
+    let buildBgColor = (type: string) => {
+      switch (type) {
+        case "B":
+          return this.props.theme.palette.themePrimary;
+        case "M":
+          return this.props.theme.palette.themeDark;
+        case "C":
+          return this.props.theme.palette.themeDarker;
+        default:
+          return this.props.theme.palette.neutralLighter;
+      }
+    };
+
+    return (
+      <Text variant="small" styles={semibold}>
+        <Chip 
+          label={label} 
+          size="small" 
+          style={{ color: this.props.theme.palette.white, backgroundColor: buildBgColor(item.degree.type) }} 
+        />
+      </Text>
+    );
   }
   
   private onRenderCell = (item: any) => {
     if (item.key !== -1) {
       return (
         <div key={item.key}
-          className={SuggestionListItemStyle.root}
+          className={this.SuggestionListItemStyle.root}
           data-is-focusable={true}
           onKeyDown={(ev: React.KeyboardEvent<HTMLElement>) => this.handleListItemKeyDown(ev, item)}>
           <div id={'link' + item.key}
@@ -188,7 +214,7 @@ export class Autocomplete extends React.Component<ISearchSuggestionsProps, IAuto
       tag.searchValue.toLowerCase().includes(this.state.searchText.toLowerCase()));
     suggestedTags = suggestedTags.sort((a, b) => a.searchValue.localeCompare(b.searchValue));
     if (suggestedTags.length === 0) {
-      suggestedTags = [{ degree: null, key: -1, displayValue: 'Nessun corso di laurea trovato.', searchValue: '' }];
+      suggestedTags = [{ degree: null, key: -1, displayValue: this.props.language == "it" ? 'Nessun corso di laurea trovato.' : 'No degrees found.', searchValue: '' }];
     }
     return suggestedTags;
   }
