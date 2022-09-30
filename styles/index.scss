@@ -48,7 +48,6 @@ svg {
   vertical-align: unset;
 }
 
-
 /* Responsive footer */
 @media only screen and (max-width: 1199px) {
   body {
@@ -258,6 +257,11 @@ svg {
 
 .rules .ms-Button-flexContainer {
   margin: 7px;
+}
+
+.rules ul {
+  margin-top: 10px;
+  margin-bottom: 0px;
 }
 
 .header-menu .ms-Dropdown-title {

@@ -11,7 +11,6 @@ import Service from '../models/Service';
 import Contributor from '../models/Contributor';
 import Faq from '../models/Faq';
 import NetworkMember from '../models/NetworkMember';
-import Rule from '../models/Rule';
 
 /* Updated models */
 import { Department, Degree, VerboseDegree, CourseDegree, Representative, Admin } from '../models/Models';
@@ -25,7 +24,6 @@ import toolsData from '../data/Tools.json';
 import Contributors from '../data/Contributors.json';
 import Faqs from '../data/Faqs.json';
 import NetworkMembers from '../data/NetworkMembers.json';
-import Rules from '../data/Rules.json';
 import UniversityLinks from '../data/UniversityLinks.json';
 
 /* Endpoints */
@@ -177,5 +175,3 @@ export const getGroupsLength = (): number => extraGroups.length + ([] as OldCour
 export const getFaqs = (): Faq[] => Faqs;
 
 export const getNetworkMembers = (): NetworkMember[] => NetworkMembers;
-
-export const getRules = (): Rule[] => Rules;

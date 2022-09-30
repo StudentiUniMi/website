@@ -191,10 +191,20 @@ interface ILocalizationStrings {
     rules: {
         text1: string,
         text2: string,
-        text3: string,
-        question: string,
-        answer: { text1: string, text2: string },
-        header: string
+        rules: {
+            title: string
+        },
+        measures: {
+            title: string
+        },
+        advices: {
+            title: string
+        },
+        lastSection: {
+            title1: string,
+            title2: string,
+            description: string
+        }
     },
     extraGroups: {
         text1: string,

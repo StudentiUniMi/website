@@ -144,12 +144,22 @@ class LocalizationService {
                         }
                     },
                     rules: {
-                        text1: "Il regolamento dei nostri gruppi Telegram ci rende più innovativi e produttivi.",
-                        text2: 'Si consiglia di leggere tutte le regole di cui è composto prima di usare uno qualsiasi di essi.',
-                        text3: 'Il regolamento è attualmente in revisione.',
-                        question: 'Perchè abbiamo introdotto un regolamento?',
-                        answer: { text1: 'Vogliamo rendere chiari i motivi per cui abbiamo deciso di regolamentare i gruppi del nostro network.', text2: "Abbiamo notato che molti dei nostri gruppi erano spesso inondati di spam, domande off-topic e a volte discussioni decisamente poco cordiali. Questo riduce la qualità della chat e scoraggia la partecipazione degli studenti. Per questo motivo abbiamo deciso di provare a limitare il fenomeno tramite l'introduzione di un regolamento apposito."},
-                        header: 'Regolamento dei gruppi Telegram'
+                        text1: "Regolamento del Network StudentiUniMi",
+                        text2: 'StudentiUniMi è un luogo di incontro e scambio tra tutti gli studenti della Statale al fine di darsi una mano a vicenda con buon senso e rispetto per tutti, quindi ricorda: aiuta e sarai aiutato.',
+                        rules: { 
+                            title: "Regole" 
+                        },
+                        measures: {
+                            title: "Provvedimenti"
+                        },
+                        advices: {
+                            title: "Netiquette e consigli"
+                        },
+                        lastSection: {
+                            title1: "Ti auguriamo una buona permanenza nei nostri gruppi.",
+                            title2: "Ricorda che siamo sempre alla ricerca di persone volenterose che vogliono contribuire al nostro progetto!",
+                            description: 'Se sei interessato, <Text variant="medium" styles={semibold}><Link href="https://studentiunimi.it/organization">contatta un membro dello staff</Link>.</Text>'
+                        }
                     },
                     groups: {
                         resetSection: 'Reset della pagina',
@@ -397,10 +407,20 @@ class LocalizationService {
                     rules: {
                         text1: "The rules of our Telegram groups make us more productive and innovative.",
                         text2: 'Here you can find the rules of the telegram groups of our network. Please read them before joining any group.',
-                        text3: 'The rules are currently under review.',
-                        question: 'Why did we create them?',
-                        answer: { text1: 'We want to make clear the reasons that took us to introducing these rules into the network.', text2: "We noticed that many of our groups were often flooded with spam, off-topic questions and sometimes downright unfriendly discussions. This reduces the quality of the chat and discourages student participation. For this reason we have decided to try to limit the phenomenon by introducing a specific regulation." },
-                        header: "Telegram groups rules",
+                        rules: {
+                            title: "Regole"
+                        },
+                        measures: {
+                            title: "Provvedimenti"
+                        },
+                        advices: {
+                            title: "Netiquette e consigli"
+                        },
+                        lastSection: {
+                            title1: "Ti auguriamo una buona permanenza nei nostri gruppi.",
+                            title2: "Ricorda che siamo sempre alla ricerca di persone volenterose che vogliono contribuire al nostro progetto!",
+                            description: 'Se sei interessato, <Text variant="medium" styles={semibold}><Link href="https://studentiunimi.it/organization">contatta un membro dello staff</Link>.</Text>'
+                        }
                     },
                     groups: {
                         resetSection: 'Reset page',
