@@ -475,42 +475,42 @@ class LocalizationService {
                         }
                     },
                     rules: {
-                        text1: "Regolamento del Network StudentiUniMi",
-                        text2: 'StudentiUniMi è un luogo di incontro e scambio tra tutti gli studenti della Statale al fine di darsi una mano a vicenda con buon senso e rispetto per tutti, quindi ricorda: aiuta e sarai aiutato.',
+                        text1: "Regulation of the StudentUniMi Network",
+                        text2: 'StudentiUniMi is a place for all students at University of Milan to meet and exchange in order to help each other out with common sense and respect for everyone, so remember: help and you will be helped.',
                         rules: {
-                            title: 'Regole',
+                            title: 'Rules',
                             toxicBehaviour: {
-                                title: 'Comportamenti tossici',
-                                description: 'È vietata ogni forma di contenuto offensivo o blasfemo, sia nei messaggi che nel profilo personale (nome utente, foto e descrizione). Sono altresì vietati insulti verso altri utenti, siano essi studenti, docenti o altre figure. La discriminazione sociale in qualunque forma non è tollerata nei gruppi del network. Gli utenti che interagiscono al fine di provocare, disturbare, creare disagio o disinformazione verranno allontanati.'
+                                title: 'Toxic behaviors',
+                                description: 'Any form of offensive or profane content is prohibited, both in posts and in personal profiles (user name, photo and description). Insults toward other users, whether students, faculty or others, are also prohibited. Social discrimination in any form is not tolerated in network groups. Users who interact in order to provoke, disrupt, create discomfort or misinformation will be removed.'
                             },
                             chatInteraction: {
-                                title: 'Interazioni nelle chat',
-                                description: 'Nelle chat è vietato assumere i seguenti comportamenti:',
+                                title: 'Interactions in chats',
+                                description: 'The following behaviors are prohibited in chat rooms:',
                                 list: [
-                                    'inviare dei messaggi ripetuti con il solo scopo di disturbare altri utenti (flooding);',
-                                    "aggiungere bot di qualsiasi tipo senza l'autorizzazione del Consiglio Direttivo;",
-                                    'abusare dei comandi e delle funzionalità messe a disposizione dal bot di gestione.'
+                                    'posting repeated messages with the sole purpose of disturbing other users (flooding);',
+                                    "adding bots of any kind without the permission of the Board of Directors;",
+                                    'abusing the commands and features provided by the management bot.'
                                 ]
                             },
                             spam: {
                                 title: 'Spam',
-                                description1: "Non è permesso l'invio di messaggi, immagini, video o link che non hanno nessuna attinenza con i gruppi del network e non sono in linea con le finalità del progetto. Dal momento che il termine spam può risultare molto generico, di seguito sono elencate le tipologie di contenuti severamente vietati:",
+                                description1: "Posting messages, pictures, videos or links that have no relevance to the network groups and are not in line with the purpose of the project is not allowed. Since the term spam can be very general, the types of content that are strictly prohibited are listed below:",
                                 list1: [
-                                    'pubblicità, sponsorizzazioni e altre iniziative commerciali;',
-                                    'autopromozione di qualsiasi tipo (es. pagine social, progetti ecc..);',
-                                    'link a community, iniziative o realtà esterne al Network (salvo previo accordo con il Comitato Amministrativo).'
+                                    'advertising, sponsorship and other commercial initiatives;',
+                                    'self-promotion of any kind (e.g., social pages, projects, etc.);',
+                                    'links to communities, initiatives or realities outside the Network (except by prior agreement with the Administrative Committee).'
                                 ],
-                                description2: 'Per quanto riguarda le attività universitarie:',
+                                description2: 'Regarding university activities:',
                                 list2: [
-                                    "è vietato l'invio di qualsiasi tipo di autopromozione da parte di liste politiche elettive all'interno o all'esterno dell'Ateneo;",
-                                    "i gruppi studenteschi e le associazioni ricononosciute dall'Ateneo possono autopromuoversi nei gruppi del Network di interesse alla loro associazione solo dietro accordo preventivo con il Consiglio Direttivo, onde evitare che il messaggio venga riconosciuto erroneamente come spam;",
-                                    'i questionari e i sondaggi per le tesi possono essere mandati solo nel gruppo dedicato.'
+                                    "self-promotion of any kind by elected political lists within or outside the University is prohibited;",
+                                    'student groups and associations recognized by the Athenaeum may self-promote in Network groups of interest to their association only by prior agreement with the Board of Directors, in order to avoid the message being mistakenly recognized as spam;',
+                                    'thesis questionnaires and surveys may be sent only in the dedicated group.'
                                 ],
-                                description3: "Se pensi di aver bisogno di un'eccezione alle regole essendo il contenuto che vuoi inviare di particolare importanza o rilevanza per il gruppo in cui stai scrivendo, contatta preventivamente un amministratore del gruppo per avere l'autorizzazione."
+                                description3: "If you think you need an exception to the rules since the content you want to post is of particular importance or relevance to the group in which you are posting, contact a group administrator in advance for permission."
                             },
                             sharedContent: {
-                                title: 'Contenuti condivisi',
-                                description: 'È vietato inviare contenuti NSFW (<i>Not Safe For Work</i>), ovvero materiale sessualmente esplicito, volgare o ritenuto potenzialmente offensivo dalla collettività. La responsabilità civile e penale per tutti i contenuti inviati sui gruppi Telegram è personale. Il Network si impegna, nei suoi limiti, a garantire il pieno rispetto della legalità.'
+                                title: 'Shared content',
+                                description: 'Posting NSFW (<i>Not Safe For Work</i>) content, i.e., material that is sexually explicit, vulgar, or deemed potentially offensive by the community, is prohibited. Civil and criminal liability for all content posted on Telegram groups is personal. The Network is committed, within its limits, to ensuring full compliance with the law.'
                             },
                             offTopic: {
                                 title: 'Off-Topic',
@@ -518,48 +518,48 @@ class LocalizationService {
                             }
                         },
                         measures: {
-                            title: 'Provvedimenti',
-                            description1: 'In caso di violazioni del regolamento, lo staff prenderà i provvedimenti necessari.',
-                            description2: "Le contromisure prese dallo staff dipendono dal contesto, dal tipo di infrazione e dal comportamento tenuto dall'utente fino a quel momento. Ne consegue che, per una situazione simile, due utenti possano essere gestiti in maniera diversa. In linea generale, se l'infrazione non è grave ed è la prima volta per l'utente, verrà scelto un provvedimento leggero, come ad esempio un avvertimento. Per infrazioni gravi e ripetute si adotteranno misure più serie, fino all'allontamento temporaneo o permanente da alcuni o tutti i gruppi del network.",
-                            description3: "I provvedimenti più gravi vengono generalmente presi in concerto con più amministratori. Ogni tipo di intervento viene internamente archiviato e notificato al Comitato Amministrativo. Per appellarsi o avere maggiori informazioni su decisioni ritenute ingiuste, è attiva una casella email: <Link href='mailto:appeal@studentiunimi.it'>appeal@studentiunimi.it</Link>.",
+                            title: 'Measures',
+                            description1: 'If there are violations of the rules, the staff will take appropriate action.',
+                            description2: "The countermeasures taken by the staff depend on the context, the type of infraction, and the user's behavior up to that point. It follows that, for a similar situation, two users may be handled differently. In general, if the infraction is not serious and it is the user's first time, a light measure, such as a warning, will be chosen. For serious and repeated infractions, more serious measures will be taken, up to and including temporary or permanent banishment from some or all of the network groups.",
+                            description3: "The most serious actions are generally taken in concert with multiple administrators. Any type of action is internally filed and notified to the Administrative Committee. To appeal or get more information about decisions deemed unfair, an email box is active: <Link href='mailto:appeal@studentiunimi.it'>appeal@studentiunimi.it</Link>.",
                             countermeasures: {
-                                title: 'Contromisure',
+                                title: 'Countermeasures',
                                 list: [
-                                    "<Text styles={semibold}>Warn</Text>: ammonizione data ad utente che ha trasgredito una regola non grave. Sono cumulabili e, a seconda dei casi, possono portare a provvedimenti più seri.",
-                                    "<Text styles={semibold}>Mute</Text>: inibizione della capacità di inviare messaggi in un singolo gruppo del network. Può essere a tempo o permanente.",
-                                    "<Text styles={semibold}>Kick</Text>: uscita forzata dell’utente da un singolo gruppo del network con possibilità di rientrare attraverso un link d'invito.",
-                                    "<Text styles={semibold}>Ban</Text>: allontanamento forzato e permamente da un singolo gruppo del network.",
-                                    "<Text styles={semibold}>Superban</Text>: allontanamento forzato e permamente da <Text styles={semibold}><i>tutti</i></Text> i gruppi del network."
+                                    "<Text styles={semibold}>Warn</Text>: warning given to user who has transgressed a non-serious rule. They are cumulative and, depending on the case, can lead to more serious action.",
+                                    "<Text styles={semibold}>Mute</Text>: inhibition of the ability to send messages in a single network group. It can be time-based or permanent.",
+                                    "<Text styles={semibold}>Kick</Text>: forced user exit from a single network group with the possibility of re-entry through an invitation link.",
+                                    "<Text styles={semibold}>Ban</Text>: forced and permanent removal from a single network group.",
+                                    "<Text styles={semibold}>Superban</Text>: forced and permanent removal from <Text styles={semibold}><i>all</i></Text> network groups."
                                 ]
                             }
                         },
                         advices: {
-                            title: 'Netiquette e consigli',
+                            title: 'Netiquette and advices',
                             list1: [
-                                "Assicurati di essere nel gruppo corretto prima di inviare i messaggi. Verifica se esiste un gruppo adatto cercando nel nostro sito o chiedendo ad altri utenti.",
-                                "Al fine di mantenere un'esperienza di chat pulita, utilizza gli strumenti che Telegram mette a disposizione per la gestione dei messaggi. In particolare:",
+                                "Make sure you are in the correct group before posting. Check to see if there is a suitable group by searching our site or asking other users.",
+                                "In order to maintain a clean chat experience, use the tools Telegram provides for message management. Specifically:",
                             ],
                             subList: [
-                                "seleziona il messaggio a cui stai rispondendo se più persone partecipano alla conversazione;",
-                                "se hai fatto degli errori di battitura o vuoi modificare un pensiero, utilizza la funzione di modifica anziché scrivere un nuovo messaggio;",
-                                "se hai sbagliato ad inviare un messaggio, oppure non è più rilevante per la discussione, eliminalo.",
+                                "select the message you are responding to if multiple people are participating in the conversation;",
+                                "if you have made typos or want to edit a thought, use the edit function instead of writing a new message;",
+                                "if you made a mistake in posting a message, or it is no longer relevant to the discussion, delete it.",
                             ],
                             list2: [
-                                "Se sorge un problema che richiede l'attenzione dello staff, utilizza nella chat il tag @admin.",
-                                "Prima di fare domande controlla tra i messaggi fissati in alto e fai una ricerca all'interno della chat: con buone probabilità qualcuno ha già avuto il tuo stesso problema.",
-                                "Non chiedere di chiedere, è molto più semplice formulare immediatamente la domanda, così le persone che leggono capiranno subito se possono aiutarti.",
-                                "Quando possibile, esprimi il tuo pensiero in un unico messaggio: così la chat rimarrà leggibile (soprattutto nei gruppi da centinaia di persone) e non intaserai di notifiche nessun dispositivo.",
-                                "Parla solo in italiano o in inglese.",
-                                "Se sei un rappresentante degli studenti, un'associazione studentesca, un docente o un'altra figura accademica riconosciuta, chiedi allo staff di farti mettere l'etichetta e la stellina di riconoscimento nei gruppi di tua competenza.",
-                                "È consigliato utilizzare un nickname.",
-                                "I moderatori e gli amministratori non sono assistenti personali/ tutor studenteschi e gestiscono molti gruppi, per cui contattali solo se necessario.",
-                                "Se fai una domanda legata al tuo percorso universitario in un gruppo generale, per favore inserisci qualche informazione su di te, in modo da poterti indirizzare alle persone giuste."
+                                "If a problem arises that requires staff attention, use the @admin tag in the chat.",
+                                "Before asking questions, check among the messages fixed at the top and do a search within the chat: chances are someone has already had the same problem as you.",
+                                "Don't ask to ask, it is much easier to phrase the question immediately, so people reading will understand right away if they can help you.",
+                                "Whenever possible, express your thoughts in a single message-that way the chat will remain readable (especially in groups of hundreds) and you won't clog any device with notifications.",
+                                "Speak only in Italian or English.",
+                                "If you are a student representative, student association, faculty member, or other recognized academic figure, ask the staff to have you put the label and recognition star in the groups under your purview.",
+                                "It is recommended to use a nickname.",
+                                "Moderators and administrators are not personal assistants/student mentors and run many groups, so contact them only when necessary.",
+                                "If you ask a question related to your college path in a general group, please include some information about yourself so we can direct you to the right people."
                             ]
                         },
                         lastSection: {
-                            title1: "Ti auguriamo una buona permanenza nei nostri gruppi.",
-                            title2: "Ricorda che siamo sempre alla ricerca di persone volenterose che vogliono contribuire al nostro progetto!",
-                            description: 'Se sei interessato, <Text variant="medium" styles={semibold}><Link href="https://studentiunimi.it/organization">contatta un membro dello staff</Link>.</Text>'
+                            title1: "We wish you a good stay in our groups.",
+                            title2: "Remember that we are always looking for willing people who want to contribute to our project!",
+                            description: 'If you are interested, <Text variant="medium" styles={semibold}><Link href="https://studentiunimi.it/organization">contact a staff member</Link>.</Text>'
                         }
                     },
                     groups: {
