@@ -192,13 +192,48 @@ interface ILocalizationStrings {
         text1: string,
         text2: string,
         rules: {
-            title: string
+            title: string,
+            toxicBehaviour: {
+                title: string,
+                description: string
+            },
+            chatInteraction: {
+                title: string,
+                description: string,
+                list: Array<string>
+            },
+            spam: {
+                title: string,
+                description1: string,
+                list1: Array<string>,
+                description2: string,
+                list2: Array<string>,
+                description3: string
+            },
+            sharedContent: {
+                title: string,
+                description: string
+            },
+            offTopic: {
+                title: string,
+                description: string
+            }
         },
         measures: {
-            title: string
+            title: string,
+            description1: string,
+            description2: string,
+            description3: string,
+            countermeasures: {
+                title: string,
+                list: Array<string>
+            }
         },
         advices: {
-            title: string
+            title: string,
+            list1: Array<string>,
+            subList: Array<string>,
+            list2: Array<string>
         },
         lastSection: {
             title1: string,

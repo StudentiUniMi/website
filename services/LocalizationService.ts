@@ -146,14 +146,84 @@ class LocalizationService {
                     rules: {
                         text1: "Regolamento del Network StudentiUniMi",
                         text2: 'StudentiUniMi è un luogo di incontro e scambio tra tutti gli studenti della Statale al fine di darsi una mano a vicenda con buon senso e rispetto per tutti, quindi ricorda: aiuta e sarai aiutato.',
-                        rules: { 
-                            title: "Regole" 
+                        rules: {
+                            title: 'Regole',
+                            toxicBehaviour: {
+                                title: 'Comportamenti tossici',
+                                description: 'È vietata ogni forma di contenuto offensivo o blasfemo, sia nei messaggi che nel profilo personale (nome utente, foto e descrizione). Sono altresì vietati insulti verso altri utenti, siano essi studenti, docenti o altre figure. La discriminazione sociale in qualunque forma non è tollerata nei gruppi del network. Gli utenti che interagiscono al fine di provocare, disturbare, creare disagio o disinformazione verranno allontanati.'
+                            },
+                            chatInteraction: {
+                                title: 'Interazioni nelle chat',
+                                description: 'Nelle chat è vietato assumere i seguenti comportamenti:',
+                                list: [
+                                    'inviare dei messaggi ripetuti con il solo scopo di disturbare altri utenti (flooding);',
+                                    "aggiungere bot di qualsiasi tipo senza l'autorizzazione del Consiglio Direttivo;",
+                                    'abusare dei comandi e delle funzionalità messe a disposizione dal bot di gestione.'
+                                ]
+                            },
+                            spam: {
+                                title: 'Spam',
+                                description1: "Non è permesso l'invio di messaggi, immagini, video o link che non hanno nessuna attinenza con i gruppi del network e non sono in linea con le finalità del progetto. Dal momento che il termine spam può risultare molto generico, di seguito sono elencate le tipologie di contenuti severamente vietati:",
+                                list1: [
+                                    'pubblicità, sponsorizzazioni e altre iniziative commerciali;',
+                                    'autopromozione di qualsiasi tipo (es. pagine social, progetti ecc..);',
+                                    'link a community, iniziative o realtà esterne al Network (salvo previo accordo con il Comitato Amministrativo).'
+                                ],
+                                description2: 'Per quanto riguarda le attività universitarie:',
+                                list2: [
+                                    "è vietato l'invio di qualsiasi tipo di autopromozione da parte di liste politiche elettive all'interno o all'esterno dell'Ateneo;",
+                                    "i gruppi studenteschi e le associazioni ricononosciute dall'Ateneo possono autopromuoversi nei gruppi del Network di interesse alla loro associazione solo dietro accordo preventivo con il Consiglio Direttivo, onde evitare che il messaggio venga riconosciuto erroneamente come spam;",
+                                    'i questionari e i sondaggi per le tesi possono essere mandati solo nel gruppo dedicato.'
+                                ],
+                                description3: "Se pensi di aver bisogno di un'eccezione alle regole essendo il contenuto che vuoi inviare di particolare importanza o rilevanza per il gruppo in cui stai scrivendo, contatta preventivamente un amministratore del gruppo per avere l'autorizzazione."
+                            },
+                            sharedContent: {
+                                title: 'Contenuti condivisi',
+                                description: 'È vietato inviare contenuti NSFW (<i>Not Safe For Work</i>), ovvero materiale sessualmente esplicito, volgare o ritenuto potenzialmente offensivo dalla collettività. La responsabilità civile e penale per tutti i contenuti inviati sui gruppi Telegram è personale. Il Network si impegna, nei suoi limiti, a garantire il pieno rispetto della legalità.'
+                            },
+                            offTopic: {
+                                title: 'Off-Topic',
+                                description: `I messaggi devono essere inerenti al gruppo in cui vengono inviati. Se non lo sono, potrebbero essere considerati "<i>off-topic</i>" e cancellati. Se si vuole parlare di un argomento legato all'università di cui non esiste ancora un gruppo, è possibile suggerirne la creazione a un amministratore. Esiste un gruppo dedicato in cui si può discutere di qualsiasi argomento, pur rispettando le altre regole qui riportate.`
+                            }
                         },
                         measures: {
-                            title: "Provvedimenti"
+                            title: 'Provvedimenti',
+                            description1: 'In caso di violazioni del regolamento, lo staff prenderà i provvedimenti necessari.',
+                            description2: "Le contromisure prese dallo staff dipendono dal contesto, dal tipo di infrazione e dal comportamento tenuto dall'utente fino a quel momento. Ne consegue che, per una situazione simile, due utenti possano essere gestiti in maniera diversa. In linea generale, se l'infrazione non è grave ed è la prima volta per l'utente, verrà scelto un provvedimento leggero, come ad esempio un avvertimento. Per infrazioni gravi e ripetute si adotteranno misure più serie, fino all'allontamento temporaneo o permanente da alcuni o tutti i gruppi del network.",
+                            description3: "I provvedimenti più gravi vengono generalmente presi in concerto con più amministratori. Ogni tipo di intervento viene internamente archiviato e notificato al Comitato Amministrativo. Per appellarsi o avere maggiori informazioni su decisioni ritenute ingiuste, è attiva una casella email: <Link href='mailto:appeal@studentiunimi.it'>appeal@studentiunimi.it</Link>.",
+                            countermeasures: {
+                                title: 'Contromisure',
+                                list: [
+                                    "<Text styles={semibold}>Warn</Text>: ammonizione data ad utente che ha trasgredito una regola non grave. Sono cumulabili e, a seconda dei casi, possono portare a provvedimenti più seri.",
+                                    "<Text styles={semibold}>Mute</Text>: inibizione della capacità di inviare messaggi in un singolo gruppo del network. Può essere a tempo o permanente.",
+                                    "<Text styles={semibold}>Kick</Text>: uscita forzata dell’utente da un singolo gruppo del network con possibilità di rientrare attraverso un link d'invito.",
+                                    "<Text styles={semibold}>Ban</Text>: allontanamento forzato e permamente da un singolo gruppo del network.",
+                                    "<Text styles={semibold}>Superban</Text>: allontanamento forzato e permamente da <Text styles={semibold}><i>tutti</i></Text> i gruppi del network."
+                                ]
+                            }
                         },
                         advices: {
-                            title: "Netiquette e consigli"
+                            title: 'Netiquette e consigli',
+                            list1: [
+                                "Assicurati di essere nel gruppo corretto prima di inviare i messaggi. Verifica se esiste un gruppo adatto cercando nel nostro sito o chiedendo ad altri utenti.",
+                                "Al fine di mantenere un'esperienza di chat pulita, utilizza gli strumenti che Telegram mette a disposizione per la gestione dei messaggi. In particolare:",
+                            ],
+                            subList: [
+                                "seleziona il messaggio a cui stai rispondendo se più persone partecipano alla conversazione;",
+                                "se hai fatto degli errori di battitura o vuoi modificare un pensiero, utilizza la funzione di modifica anziché scrivere un nuovo messaggio;",
+                                "se hai sbagliato ad inviare un messaggio, oppure non è più rilevante per la discussione, eliminalo.",
+                            ],
+                            list2: [
+                                "Se sorge un problema che richiede l'attenzione dello staff, utilizza nella chat il tag @admin.",
+                                "Prima di fare domande controlla tra i messaggi fissati in alto e fai una ricerca all'interno della chat: con buone probabilità qualcuno ha già avuto il tuo stesso problema.",
+                                "Non chiedere di chiedere, è molto più semplice formulare immediatamente la domanda, così le persone che leggono capiranno subito se possono aiutarti.",
+                                "Quando possibile, esprimi il tuo pensiero in un unico messaggio: così la chat rimarrà leggibile (soprattutto nei gruppi da centinaia di persone) e non intaserai di notifiche nessun dispositivo.",
+                                "Parla solo in italiano o in inglese.",
+                                "Se sei un rappresentante degli studenti, un'associazione studentesca, un docente o un'altra figura accademica riconosciuta, chiedi allo staff di farti mettere l'etichetta e la stellina di riconoscimento nei gruppi di tua competenza.",
+                                "È consigliato utilizzare un nickname.",
+                                "I moderatori e gli amministratori non sono assistenti personali/ tutor studenteschi e gestiscono molti gruppi, per cui contattali solo se necessario.",
+                                "Se fai una domanda legata al tuo percorso universitario in un gruppo generale, per favore inserisci qualche informazione su di te, in modo da poterti indirizzare alle persone giuste."
+                            ]
                         },
                         lastSection: {
                             title1: "Ti auguriamo una buona permanenza nei nostri gruppi.",
@@ -405,16 +475,86 @@ class LocalizationService {
                         }
                     },
                     rules: {
-                        text1: "The rules of our Telegram groups make us more productive and innovative.",
-                        text2: 'Here you can find the rules of the telegram groups of our network. Please read them before joining any group.',
+                        text1: "Regolamento del Network StudentiUniMi",
+                        text2: 'StudentiUniMi è un luogo di incontro e scambio tra tutti gli studenti della Statale al fine di darsi una mano a vicenda con buon senso e rispetto per tutti, quindi ricorda: aiuta e sarai aiutato.',
                         rules: {
-                            title: "Regole"
+                            title: 'Regole',
+                            toxicBehaviour: {
+                                title: 'Comportamenti tossici',
+                                description: 'È vietata ogni forma di contenuto offensivo o blasfemo, sia nei messaggi che nel profilo personale (nome utente, foto e descrizione). Sono altresì vietati insulti verso altri utenti, siano essi studenti, docenti o altre figure. La discriminazione sociale in qualunque forma non è tollerata nei gruppi del network. Gli utenti che interagiscono al fine di provocare, disturbare, creare disagio o disinformazione verranno allontanati.'
+                            },
+                            chatInteraction: {
+                                title: 'Interazioni nelle chat',
+                                description: 'Nelle chat è vietato assumere i seguenti comportamenti:',
+                                list: [
+                                    'inviare dei messaggi ripetuti con il solo scopo di disturbare altri utenti (flooding);',
+                                    "aggiungere bot di qualsiasi tipo senza l'autorizzazione del Consiglio Direttivo;",
+                                    'abusare dei comandi e delle funzionalità messe a disposizione dal bot di gestione.'
+                                ]
+                            },
+                            spam: {
+                                title: 'Spam',
+                                description1: "Non è permesso l'invio di messaggi, immagini, video o link che non hanno nessuna attinenza con i gruppi del network e non sono in linea con le finalità del progetto. Dal momento che il termine spam può risultare molto generico, di seguito sono elencate le tipologie di contenuti severamente vietati:",
+                                list1: [
+                                    'pubblicità, sponsorizzazioni e altre iniziative commerciali;',
+                                    'autopromozione di qualsiasi tipo (es. pagine social, progetti ecc..);',
+                                    'link a community, iniziative o realtà esterne al Network (salvo previo accordo con il Comitato Amministrativo).'
+                                ],
+                                description2: 'Per quanto riguarda le attività universitarie:',
+                                list2: [
+                                    "è vietato l'invio di qualsiasi tipo di autopromozione da parte di liste politiche elettive all'interno o all'esterno dell'Ateneo;",
+                                    "i gruppi studenteschi e le associazioni ricononosciute dall'Ateneo possono autopromuoversi nei gruppi del Network di interesse alla loro associazione solo dietro accordo preventivo con il Consiglio Direttivo, onde evitare che il messaggio venga riconosciuto erroneamente come spam;",
+                                    'i questionari e i sondaggi per le tesi possono essere mandati solo nel gruppo dedicato.'
+                                ],
+                                description3: "Se pensi di aver bisogno di un'eccezione alle regole essendo il contenuto che vuoi inviare di particolare importanza o rilevanza per il gruppo in cui stai scrivendo, contatta preventivamente un amministratore del gruppo per avere l'autorizzazione."
+                            },
+                            sharedContent: {
+                                title: 'Contenuti condivisi',
+                                description: 'È vietato inviare contenuti NSFW (<i>Not Safe For Work</i>), ovvero materiale sessualmente esplicito, volgare o ritenuto potenzialmente offensivo dalla collettività. La responsabilità civile e penale per tutti i contenuti inviati sui gruppi Telegram è personale. Il Network si impegna, nei suoi limiti, a garantire il pieno rispetto della legalità.'
+                            },
+                            offTopic: {
+                                title: 'Off-Topic',
+                                description: `I messaggi devono essere inerenti al gruppo in cui vengono inviati. Se non lo sono, potrebbero essere considerati "<i>off-topic</i>" e cancellati. Se si vuole parlare di un argomento legato all'università di cui non esiste ancora un gruppo, è possibile suggerirne la creazione a un amministratore. Esiste un gruppo dedicato in cui si può discutere di qualsiasi argomento, pur rispettando le altre regole qui riportate.`
+                            }
                         },
                         measures: {
-                            title: "Provvedimenti"
+                            title: 'Provvedimenti',
+                            description1: 'In caso di violazioni del regolamento, lo staff prenderà i provvedimenti necessari.',
+                            description2: "Le contromisure prese dallo staff dipendono dal contesto, dal tipo di infrazione e dal comportamento tenuto dall'utente fino a quel momento. Ne consegue che, per una situazione simile, due utenti possano essere gestiti in maniera diversa. In linea generale, se l'infrazione non è grave ed è la prima volta per l'utente, verrà scelto un provvedimento leggero, come ad esempio un avvertimento. Per infrazioni gravi e ripetute si adotteranno misure più serie, fino all'allontamento temporaneo o permanente da alcuni o tutti i gruppi del network.",
+                            description3: "I provvedimenti più gravi vengono generalmente presi in concerto con più amministratori. Ogni tipo di intervento viene internamente archiviato e notificato al Comitato Amministrativo. Per appellarsi o avere maggiori informazioni su decisioni ritenute ingiuste, è attiva una casella email: <Link href='mailto:appeal@studentiunimi.it'>appeal@studentiunimi.it</Link>.",
+                            countermeasures: {
+                                title: 'Contromisure',
+                                list: [
+                                    "<Text styles={semibold}>Warn</Text>: ammonizione data ad utente che ha trasgredito una regola non grave. Sono cumulabili e, a seconda dei casi, possono portare a provvedimenti più seri.",
+                                    "<Text styles={semibold}>Mute</Text>: inibizione della capacità di inviare messaggi in un singolo gruppo del network. Può essere a tempo o permanente.",
+                                    "<Text styles={semibold}>Kick</Text>: uscita forzata dell’utente da un singolo gruppo del network con possibilità di rientrare attraverso un link d'invito.",
+                                    "<Text styles={semibold}>Ban</Text>: allontanamento forzato e permamente da un singolo gruppo del network.",
+                                    "<Text styles={semibold}>Superban</Text>: allontanamento forzato e permamente da <Text styles={semibold}><i>tutti</i></Text> i gruppi del network."
+                                ]
+                            }
                         },
                         advices: {
-                            title: "Netiquette e consigli"
+                            title: 'Netiquette e consigli',
+                            list1: [
+                                "Assicurati di essere nel gruppo corretto prima di inviare i messaggi. Verifica se esiste un gruppo adatto cercando nel nostro sito o chiedendo ad altri utenti.",
+                                "Al fine di mantenere un'esperienza di chat pulita, utilizza gli strumenti che Telegram mette a disposizione per la gestione dei messaggi. In particolare:",
+                            ],
+                            subList: [
+                                "seleziona il messaggio a cui stai rispondendo se più persone partecipano alla conversazione;",
+                                "se hai fatto degli errori di battitura o vuoi modificare un pensiero, utilizza la funzione di modifica anziché scrivere un nuovo messaggio;",
+                                "se hai sbagliato ad inviare un messaggio, oppure non è più rilevante per la discussione, eliminalo.",
+                            ],
+                            list2: [
+                                "Se sorge un problema che richiede l'attenzione dello staff, utilizza nella chat il tag @admin.",
+                                "Prima di fare domande controlla tra i messaggi fissati in alto e fai una ricerca all'interno della chat: con buone probabilità qualcuno ha già avuto il tuo stesso problema.",
+                                "Non chiedere di chiedere, è molto più semplice formulare immediatamente la domanda, così le persone che leggono capiranno subito se possono aiutarti.",
+                                "Quando possibile, esprimi il tuo pensiero in un unico messaggio: così la chat rimarrà leggibile (soprattutto nei gruppi da centinaia di persone) e non intaserai di notifiche nessun dispositivo.",
+                                "Parla solo in italiano o in inglese.",
+                                "Se sei un rappresentante degli studenti, un'associazione studentesca, un docente o un'altra figura accademica riconosciuta, chiedi allo staff di farti mettere l'etichetta e la stellina di riconoscimento nei gruppi di tua competenza.",
+                                "È consigliato utilizzare un nickname.",
+                                "I moderatori e gli amministratori non sono assistenti personali/ tutor studenteschi e gestiscono molti gruppi, per cui contattali solo se necessario.",
+                                "Se fai una domanda legata al tuo percorso universitario in un gruppo generale, per favore inserisci qualche informazione su di te, in modo da poterti indirizzare alle persone giuste."
+                            ]
                         },
                         lastSection: {
                             title1: "Ti auguriamo una buona permanenza nei nostri gruppi.",

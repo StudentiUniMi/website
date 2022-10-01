@@ -82,26 +82,24 @@ const Rules = () => {
                             <div className="d-flex flex-column" style={{ gap: 20 }}>
                                 <div>
                                     <div className="mb-2">
-                                        <Text variant="mediumPlus" styles={semibold}>Comportamenti tossici</Text>
+                                        <Text variant="mediumPlus" styles={semibold}>{locale?.rules.rules.toxicBehaviour.title}</Text>
                                     </div>
                                     <div>
                                         <Text variant="medium">
-                                            È vietata ogni forma di contenuto offensivo o blasfemo, sia nei messaggi che nel profilo personale (nome utente, foto e descrizione). Sono altresì vietati insulti verso altri utenti, siano essi studenti, docenti o altre figure. La discriminazione sociale in qualunque forma non è tollerata nei gruppi del network. Gli utenti che interagiscono al fine di provocare, disturbare, creare disagio o disinformazione verranno allontanati.
+                                            {locale?.rules.rules.toxicBehaviour.description}
                                         </Text>
                                     </div>
                                 </div>
 
                                 <div>
                                     <div className="mb-2">
-                                        <Text variant="mediumPlus" styles={semibold}>Interazioni nelle chat</Text>
+                                        <Text variant="mediumPlus" styles={semibold}>{locale?.rules.rules.chatInteraction.title}</Text>
                                     </div>
                                     <div>
                                         <Text variant="medium">
-                                            Nelle chat è vietato assumere i seguenti comportamenti:
+                                            {locale?.rules.rules.chatInteraction.description}
                                             <ul>
-                                                <li>inviare dei messaggi ripetuti con il solo scopo di disturbare altri utenti (flooding);</li>
-                                                <li>aggiungere bot di qualsiasi tipo senza l'autorizzazione del Consiglio Direttivo;</li>
-                                                <li>abusare dei comandi e delle funzionalità messe a disposizione dal bot di gestione.</li>
+                                                {locale?.rules.rules.chatInteraction.list.map(x => <li>{x}</li> ) }
                                             </ul>
                                         </Text>
                                     </div>
@@ -109,54 +107,49 @@ const Rules = () => {
 
                                 <div>
                                     <div className="mb-2">
-                                        <Text variant="mediumPlus" styles={semibold}>Spam</Text>
+                                        <Text variant="mediumPlus" styles={semibold}>{locale?.rules.rules.spam.title}</Text>
                                     </div>
-                                    <div className="mb-2">
+                                    <div className="mb-3">
                                         <Text variant="medium">
-                                            Non è permesso l'invio di messaggi, immagini, video o link che non hanno nessuna attinenza con i gruppi del network e non sono in linea con le finalità del progetto.Dal momento che il termine spam può risultare molto generico, di seguito sono elencate le tipologie di contenuti severamente vietati:
+                                            {locale?.rules.rules.spam.description1}
                                             <ul>
-                                                <li>a</li>
-                                                <li>b</li>
-                                                <li>c</li>
-                                                <li>d</li>
+                                                {locale?.rules.rules.spam.list1.map(x => <li>{x}</li>)}
                                             </ul>
                                         </Text>
                                     </div>
-                                    <div className="mb-2">
+                                    <div className="mb-3">
                                         <Text variant="medium">
-                                            Per quanto riguarda le attività universitarie:
+                                            {locale?.rules.rules.spam.description2}
                                             <ul>
-                                                <li>a</li>
-                                                <li>b</li>
-                                                <li>c</li>
+                                                {locale?.rules.rules.spam.list2.map(x => <li>{x}</li>)}
                                             </ul>
                                         </Text>
                                     </div>
                                     <div>
                                         <Text variant="medium">
-                                            Se pensi di aver bisogno di un'eccezione alle regole essendo il contenuto che vuoi inviare di particolare importanza o rilevanza per il gruppo in cui stai scrivendo, contatta preventivamente un amministratore del gruppo per avere l'autorizzazione.
+                                            {locale?.rules.rules.spam.description3}
                                         </Text>
                                     </div>
                                 </div>
 
                                 <div>
                                     <div className="mb-2">
-                                        <Text variant="mediumPlus" styles={semibold}>Contenuti condivisi</Text>
+                                        <Text variant="mediumPlus" styles={semibold}>{locale?.rules.rules.sharedContent.title}</Text>
                                     </div>
                                     <div>
                                         <Text variant="medium">
-                                            È vietato inviare contenuti NSFW (Not Safe For Work), ovvero materiale sessualmente esplicito, volgare o ritenuto potenzialmente offensivo dalla collettività. La responsabilità civile e penale per tutti i contenuti inviati sui gruppi Telegram è personale. Il Network si impegna, nei suoi limiti, a garantire il pieno rispetto della legalità.
+                                            <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.rules.rules.sharedContent.description} />
                                         </Text>
                                     </div>
                                 </div>
 
                                 <div>
                                     <div className="mb-2">
-                                        <Text variant="mediumPlus" styles={semibold}>Off-Topic</Text>
+                                        <Text variant="mediumPlus" styles={semibold}>{locale?.rules.rules.offTopic.title}</Text>
                                     </div>
                                     <div>
                                         <Text variant="medium">
-                                            I messaggi devono essere inerenti al gruppo in cui vengono inviati. Se non lo sono, potrebbero essere considerati "off-topic" e cancellati. Se si vuole parlare di un argomento legato all'università di cui non esiste ancora un gruppo, è possibile suggerirne la creazione a un amministratore. Esiste un gruppo dedicato in cui si può discutere di qualsiasi argomento, pur rispettando le altre regole qui riportate.
+                                            <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.rules.rules.offTopic.description} />
                                         </Text>
                                     </div>
                                 </div>
@@ -176,24 +169,20 @@ const Rules = () => {
                         <Container>
                             <div className="d-flex flex-column mb-3" style={{ gap: 20 }}>
                                 <Text variant="medium">
-                                    In caso di violazioni del regolamento, lo staff prenderà i provvedimenti necessari.
+                                    {locale?.rules.measures.description1}
                                 </Text>
                                 <Text variant="medium">
-                                    Le contromisure prese dallo staff dipendono dal contesto, dal tipo di infrazione e dal comportamento tenuto dall'utente fino a quel momento. Ne consegue che, per una situazione simile, due utenti possano essere gestiti in maniera diversa. In linea generale, se l'infrazione non è grave ed è la prima volta per l'utente, verrà scelto un provvedimento leggero, come ad esempio un avvertimento. Per infrazioni gravi e ripetute si adotteranno misure più serie, fino all'allontamento temporaneo o permanente da alcuni o tutti i gruppi del network.
+                                    {locale?.rules.measures.description2}
                                 </Text>
                                 <Text variant="medium">
-                                    I provvedimenti più gravi vengono generalmente presi in concerto con più amministratori. Ogni tipo di intervento viene internamente archiviato e notificato al Comitato Amministrativo. Per appellarsi o avere maggiori informazioni su decisioni ritenute ingiuste, è attiva una casella email: appeal@studentiunimi.it.
+                                    <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.rules.measures.description3} />
                                 </Text>
                             </div>
                             <div className="mb-2">
-                                <Text variant="mediumPlus" styles={semibold}>Contromisure</Text>
+                                <Text variant="mediumPlus" styles={semibold}>{locale?.rules.measures.countermeasures.title}</Text>
                                 <Text variant="medium">
                                     <ul>
-                                        <li>a</li>
-                                        <li>b</li>
-                                        <li>c</li>
-                                        <li>d</li>
-                                        <li>e</li>
+                                        {locale?.rules.measures.countermeasures.list.map(x => <li><JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x} /></li>)}
                                     </ul>
                                 </Text>
                             </div>
@@ -211,21 +200,11 @@ const Rules = () => {
                             <div className="mb-3">
                                 <Text variant="medium">
                                     <ul>
-                                        <li>a</li>
-                                        <li>b</li>
-                                            <ul>
-                                                <li>b1</li>
-                                                <li>b2</li>
+                                        {locale?.rules.advices.list1.map(x => <li>{x}</li>)}
+                                            <ul className="mb-3">
+                                                {locale?.rules.advices.subList.map(x => <li>{x}</li>)}
                                             </ul>
-                                        <li>c</li>
-                                        <li>d</li>
-                                        <li>e</li>
-                                        <li>f</li>
-                                        <li>g</li>
-                                        <li>h</li>
-                                        <li>i</li>
-                                        <li>l</li>
-                                        <li>m</li>
+                                        {locale?.rules.advices.list2.map(x => <li>{x}</li>)}
                                     </ul>
                                 </Text>
                             </div>
