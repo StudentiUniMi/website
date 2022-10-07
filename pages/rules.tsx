@@ -1,18 +1,12 @@
 import React from "react";
-import { Text, Link } from 'office-ui-fabric-react';
+import { Text, Link, Icon } from 'office-ui-fabric-react';
 import { Container } from 'react-bootstrap';
 import { semibold } from '../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { getRules } from '../services/Requests'; 
 import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import { NextSeo } from 'next-seo';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Rule from '../models/Rule';
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import LocalizationService from "../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 
@@ -21,10 +15,9 @@ const Rules = () => {
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
 
-    const rulesData: Rule[] = getRules();
-
-    const imageProperties = { display: 'inline-block', width: 290 };
-    const rulesReviewingBox = { padding: '5px 15px', borderRadius: 5, backgroundColor: theme.palette.neutralLighter, width: 'fit-content', display: 'flex' };
+    const imageProperties = { display: 'inline-block', width: 240 };
+    const subHeader = { backgroundColor: theme.palette.neutralLight, padding: '10px 0px' };
+    const finalBox = { backgroundColor: theme.palette.neutralLighter, padding: 20 };
 
     return (
         <>
@@ -64,15 +57,11 @@ const Rules = () => {
 
                             <Col lg={8}>
                                 <div className="mb-2">
-                                    <Text variant="xLargePlus" style={{color: theme.palette.white}}>{locale?.rules.text1}</Text>
+                                    <Text variant="xLargePlus" style={{ color: theme.palette.white }}>{locale?.rules.text1}</Text>
                                 </div>
 
-                                <div className="mb-3">
+                                <div>
                                     <Text variant="large" style={{ color: theme.palette.white }}>{locale?.rules.text2}</Text>
-                                </div>
-
-                                <div style={rulesReviewingBox}>
-                                    <Text variant="small" style={{ color: theme.palette.black }}><i>{locale?.rules.text3}</i></Text>
                                 </div>
                             </Col>
                         </Row>
@@ -80,38 +69,164 @@ const Rules = () => {
                     </Container>
                 </div>
 
-                <div className="pt-4 pb-5">
-                
+                <div className="pb-5">
+
                     <div className="mb-4">
-                        <div className="mb-4 text-center">
-                            <Text variant="xLarge">{locale?.rules.header}</Text>
+                        <div className="mb-4" style={subHeader}>
+                            <Container className="d-flex flex-row align-items-center" style={{ gap: 5}}>
+                                <Text variant="xLarge"><Icon iconName="AiOutlineFileText" className="d-flex" /></Text>
+                                <Text variant="xLarge">{locale?.rules.rules.title}</Text>
+                            </Container>
                         </div>
+                        <Container>
+                            <div className="d-flex flex-column" style={{ gap: 20 }}>
+                                <div>
+                                    <div className="mb-2">
+                                        <Text variant="mediumPlus" styles={semibold}>{locale?.rules.rules.toxicBehaviour.title}</Text>
+                                    </div>
+                                    <div>
+                                        <Text variant="medium">
+                                            {locale?.rules.rules.toxicBehaviour.description}
+                                        </Text>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div className="mb-2">
+                                        <Text variant="mediumPlus" styles={semibold}>{locale?.rules.rules.chatInteraction.title}</Text>
+                                    </div>
+                                    <div>
+                                        <Text variant="medium">
+                                            {locale?.rules.rules.chatInteraction.description}
+                                            <ul>
+                                                {locale?.rules.rules.chatInteraction.list.map(x => <li>{x}</li> ) }
+                                            </ul>
+                                        </Text>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div className="mb-2">
+                                        <Text variant="mediumPlus" styles={semibold}>{locale?.rules.rules.spam.title}</Text>
+                                    </div>
+                                    <div className="mb-3">
+                                        <Text variant="medium">
+                                            {locale?.rules.rules.spam.description1}
+                                            <ul>
+                                                {locale?.rules.rules.spam.list1.map(x => <li>{x}</li>)}
+                                            </ul>
+                                        </Text>
+                                    </div>
+                                    <div className="mb-3">
+                                        <Text variant="medium">
+                                            {locale?.rules.rules.spam.description2}
+                                            <ul>
+                                                {locale?.rules.rules.spam.list2.map(x => <li>{x}</li>)}
+                                            </ul>
+                                        </Text>
+                                    </div>
+                                    <div>
+                                        <Text variant="medium">
+                                            {locale?.rules.rules.spam.description3}
+                                        </Text>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div className="mb-2">
+                                        <Text variant="mediumPlus" styles={semibold}>{locale?.rules.rules.sharedContent.title}</Text>
+                                    </div>
+                                    <div>
+                                        <Text variant="medium">
+                                            <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.rules.rules.sharedContent.description} />
+                                        </Text>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div className="mb-2">
+                                        <Text variant="mediumPlus" styles={semibold}>{locale?.rules.rules.offTopic.title}</Text>
+                                    </div>
+                                    <div>
+                                        <Text variant="medium">
+                                            <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.rules.rules.offTopic.description} />
+                                        </Text>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </Container>
+                    </div>
+
+                    <div className="mb-4">
+                        <div className="mb-4" style={subHeader}>
+                            <Container className="d-flex flex-row align-items-center" style={{ gap: 5 }}>
+                                <Text variant="xLarge"><Icon iconName="AiOutlineEdit" className="d-flex" /></Text>
+                                <Text variant="xLarge">{locale?.rules.measures.title}</Text>
+                            </Container>
+                        </div>
+                        <Container>
+                            <div className="d-flex flex-column mb-3" style={{ gap: 20 }}>
+                                <Text variant="medium">
+                                    {locale?.rules.measures.description1}
+                                </Text>
+                                <Text variant="medium">
+                                    {locale?.rules.measures.description2}
+                                </Text>
+                                <Text variant="medium">
+                                    <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.rules.measures.description3} />
+                                </Text>
+                            </div>
+                            <div className="mb-2">
+                                <Text variant="mediumPlus" styles={semibold}>{locale?.rules.measures.countermeasures.title}</Text>
+                                <Text variant="medium">
+                                    <ul>
+                                        {locale?.rules.measures.countermeasures.list.map(x => <li><JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x} /></li>)}
+                                    </ul>
+                                </Text>
+                            </div>
+                        </Container>
                     </div>
 
                     <div>
+                        <div className="mb-4" style={subHeader}>
+                            <Container className="d-flex flex-row align-items-center" style={{ gap: 5 }}>
+                                <Text variant="xLarge"><Icon iconName="AiOutlineStar" className="d-flex" /></Text>
+                                <Text variant="xLarge">{locale?.rules.advices.title}</Text>
+                            </Container>
+                        </div>
                         <Container>
-                            {
-                                rulesData.map((x, i) => {
-                                    return (
-                                        <Accordion style={{ backgroundColor: theme.palette.white, color: theme.palette.black, boxShadow: theme.effects.elevation8, marginRight: 10, marginLeft: 10 }} key={i}>
-                                            <AccordionSummary
-                                                expandIcon={<ExpandMoreIcon style={{ color: theme.palette.black }} />}
-                                                aria-controls="panel1a-content"
-                                                id="panel1a-header"
-                                            >
-                                                <Text variant="medium" style={{ color: theme.palette.themePrimary }} styles={semibold}>{x.title![language!]}</Text>
-                                            </AccordionSummary>
-                                            <AccordionDetails>
-                                                <Text variant="medium">
-                                                    <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x.description![language!]} />
-                                                </Text>
-                                            </AccordionDetails>
-                                        </Accordion>
-                                    )
-                                })
-                            }
+                            <div className="mb-3">
+                                <Text variant="medium">
+                                    <ul>
+                                        {locale?.rules.advices.list1.map(x => <li>{x}</li>)}
+                                            <ul className="mb-3">
+                                                {locale?.rules.advices.subList.map(x => <li>{x}</li>)}
+                                            </ul>
+                                        {locale?.rules.advices.list2.map(x => <li>{x}</li>)}
+                                    </ul>
+                                </Text>
+                            </div>
                         </Container>
                     </div>
+
+                    <div style={finalBox}>
+                        <Container className="d-flex flex-column text-center" style={{ gap: 10 }}>
+                            <div className="d-flex flex-column">
+                                <Text variant="large">
+                                    {locale?.rules.lastSection.title1}
+                                </Text>
+                                <Text variant="large">
+                                    {locale?.rules.lastSection.title2}
+                                </Text>
+                            </div>
+                            <Text variant="medium">
+                                <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.rules.lastSection.description} />
+                            </Text>
+                        </Container>
+                    </div>
+
                 </div>
             </section>
         </>
