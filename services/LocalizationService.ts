@@ -514,7 +514,7 @@ class LocalizationService {
                             },
                             offTopic: {
                                 title: 'Off-Topic',
-                                description: `I messaggi devono essere inerenti al gruppo in cui vengono inviati. Se non lo sono, potrebbero essere considerati "<i>off-topic</i>" e cancellati. Se si vuole parlare di un argomento legato all'università di cui non esiste ancora un gruppo, è possibile suggerirne la creazione a un amministratore. Esiste un gruppo dedicato in cui si può discutere di qualsiasi argomento, pur rispettando le altre regole qui riportate.`
+                                description: `Messages must be relevant to the group in which they are sent. If they are not, they may be considered "<i>off-topic</i>" and deleted. If you want to talk about a topic related to the university that does not yet have a group, you can suggest it to an administrator. There is a dedicated group where you can discuss any topic, while respecting the other rules listed here.`
                             }
                         },
                         measures: {
