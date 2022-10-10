@@ -1,5 +1,4 @@
-import { Stylesheet, InjectionMode } from '@uifabric/merge-styles';
-import { resetIds } from '@uifabric/utilities';
+import { Stylesheet, InjectionMode, resetIds } from '@fluentui/react';
 import Document, { DocumentContext, Html, Head, Main, NextScript } from 'next/document';
 import { isNavigatorLanguageItalian, parseCookies } from '../services/Utils';
 
