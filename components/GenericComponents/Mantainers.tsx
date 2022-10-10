@@ -1,14 +1,12 @@
-import { Text } from 'office-ui-fabric-react';
+import { Text, Icon, Link, Image, TooltipHost, ITooltipHostStyles, TooltipDelay } from '@fluentui/react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Container } from 'react-bootstrap';
-import { Card, ICardTokens } from "@uifabric/react-cards";
-import { FontSizes } from '@fluentui/theme';
-import { Icon, Link, Image } from 'office-ui-fabric-react';
+import { Card, ICardTokens } from "@fluentui/react";
+import { FontSizes } from '@fluentui/react';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { semibold } from '../../services/Fonts';
 import { redirectToLink } from '../../services/Utils';
-import { TooltipHost, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib-commonjs/Tooltip';
 import LocalizationService from "../../services/LocalizationService";
 
 const cardTokens: ICardTokens = { childrenMargin: 12 };

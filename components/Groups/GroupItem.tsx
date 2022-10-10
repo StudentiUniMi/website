@@ -1,4 +1,4 @@
-import { Text, Icon, TooltipHost } from 'office-ui-fabric-react';
+import { Text, Icon, TooltipHost } from '@fluentui/react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import { FontWeights, ITextStyles, Link, Persona } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';

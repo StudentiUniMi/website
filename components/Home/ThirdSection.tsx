@@ -1,4 +1,4 @@
-import { Text, IIconProps, Icon, DefaultButton } from 'office-ui-fabric-react/lib-commonjs';
+import { Text, IIconProps, Icon, DefaultButton } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
 import { useTheme } from '@fluentui/react-theme-provider';

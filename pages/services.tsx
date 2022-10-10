@@ -3,18 +3,13 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
+import { Text, DocumentCardPreview, IDocumentCardPreviewProps, Image, Link, Pivot, PivotItem, FontSizes } from '@fluentui/react';
 import { NextSeo } from 'next-seo';
-import { FontSizes } from '@fluentui/theme';
-import { Text } from 'office-ui-fabric-react/lib-commonjs/Text';
 import { Container } from 'react-bootstrap';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { DocumentCardPreview, IDocumentCardPreviewProps } from 'office-ui-fabric-react/lib-commonjs/DocumentCard';
 import { Card, ICardTokens } from '@uifabric/react-cards';
 import { semibold } from '../services/Fonts';
 import { getRedirects, getGuides, getTools } from '../services/Requests';
-import { Pivot, PivotItem } from 'office-ui-fabric-react/lib-commonjs/';
-import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
-import { Link } from 'office-ui-fabric-react/lib-commonjs/';
 
 const Services = () => {
     var theme = useTheme();
@@ -104,8 +99,8 @@ const Services = () => {
                                         selectedKey={selectedSubSection}
                                         onLinkClick={handleSubSectionChange}
                                         headersOnly={true}
-                                        linkSize={0}
-                                        linkFormat={1}
+                                        linkSize={'normal'}
+                                        linkFormat={'tabs'}
                                     >
                                         <PivotItem headerText={locale?.services.tabs.redirects} itemKey="redirects" />
                                         <PivotItem headerText={locale?.services.tabs.guides} itemKey="guides" />

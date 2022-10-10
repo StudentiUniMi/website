@@ -1,9 +1,7 @@
-import { Text } from 'office-ui-fabric-react';
+import { Text, Persona, TooltipHost, ITooltipHostStyles, TooltipDelay } from '@fluentui/react';
 import Row from 'react-bootstrap/Row';
 import { Container } from 'react-bootstrap';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { Persona } from 'office-ui-fabric-react/lib-commonjs/Persona';
-import { TooltipHost, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib-commonjs/Tooltip';
 import Contributor from '../../models/Contributor';
 import { getContributors } from '../../services/Requests'
 import LocalizationService from "../../services/LocalizationService";

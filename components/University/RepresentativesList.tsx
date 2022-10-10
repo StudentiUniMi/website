@@ -1,7 +1,6 @@
-//import Representative from '../models/Representative';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { Persona, PersonaSize, Link, Icon } from 'office-ui-fabric-react/lib-commonjs';
+import { Persona, PersonaSize, Link, Icon } from '@fluentui/react';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { Representative } from '../../models/Models';
 import LoadingSpinner from '../GenericComponents/LoadingSpinner';

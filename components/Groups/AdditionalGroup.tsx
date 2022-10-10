@@ -5,8 +5,7 @@
  * @author Giuseppe Del Campo
  */
 
-import { Text, Icon } from 'office-ui-fabric-react';
-import { FontWeights, ITextStyles, Persona, Link } from '@fluentui/react';
+import { Text, Icon, FontWeights, ITextStyles, Persona, Link } from '@fluentui/react';
 import { Card, ICardTokens } from "@uifabric/react-cards";
 import ExtraGroup from '../../models/ExtraGroup'
 import { useTheme } from '@fluentui/react-theme-provider';

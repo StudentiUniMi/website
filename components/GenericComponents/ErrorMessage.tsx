@@ -8,7 +8,7 @@ import React from 'react';
 import LocalizationService from "../../services/LocalizationService";
 import { useTheme } from '@fluentui/react-theme-provider';
 import { semibold } from '../../services/Fonts';
-import { Text, Image, Icon, Link } from 'office-ui-fabric-react/lib-commonjs';
+import { Text, Image, Icon, Link } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import JsxParser from 'react-jsx-parser';
 

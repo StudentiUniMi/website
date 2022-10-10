@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, DefaultButton, IIconProps } from 'office-ui-fabric-react/lib-commonjs/';
+import { Text, DefaultButton, IIconProps } from '@fluentui/react';
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 import { GetServerSideProps } from 'next';

@@ -6,7 +6,7 @@ import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 import Chip from '@material-ui/core/Chip';
 import { Container } from 'react-bootstrap';
-import { Link, Text } from 'office-ui-fabric-react/lib-commonjs';
+import { Link, Text } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
 import { getFaqs } from '../../services/Requests';
 import { useTheme } from '@fluentui/react-theme-provider';

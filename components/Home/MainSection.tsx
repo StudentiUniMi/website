@@ -1,6 +1,5 @@
-import { Text } from 'office-ui-fabric-react/lib-commonjs';
+import { Text, Image } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
-import { Image } from 'office-ui-fabric-react';
 import DegreesMarquee from './DegreesMarquee';
 import React from 'react';
 import LocalizationService from "../../services/LocalizationService";

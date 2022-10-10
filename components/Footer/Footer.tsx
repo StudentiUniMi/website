@@ -1,8 +1,8 @@
-import { Link, Text, Label } from 'office-ui-fabric-react';
+import { Link, Text, Label } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import { bold, semibold } from '../../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { Icon, IIconProps, PrimaryButton, Toggle, TooltipHost, SwatchColorPicker, ITooltipHostStyles, TooltipDelay } from 'office-ui-fabric-react/lib-commonjs';
+import { Icon, IIconProps, PrimaryButton, Toggle, TooltipHost, SwatchColorPicker, ITooltipHostStyles, TooltipDelay } from '@fluentui/react';
 import { palettes } from '../../services/Palettes';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';

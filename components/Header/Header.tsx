@@ -1,11 +1,8 @@
-import { FontSizes } from '@fluentui/theme';
-import { Text } from 'office-ui-fabric-react/lib-commonjs/Text';
-import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
+import { FontSizes, Text, Image, FontWeights, ITextStyles, Link } from '@fluentui/react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import HeaderMenu from './HeaderMenu';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { FontWeights, ITextStyles, Link } from 'office-ui-fabric-react';
 
 const Header = () => {
     var theme = useTheme();

@@ -1,11 +1,10 @@
 import React from 'react';
-import { Text, Link, CompoundButton } from 'office-ui-fabric-react';
+import { Text, Link, CompoundButton, Image } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
-import { Persona, PersonaSize } from 'office-ui-fabric-react/lib-commonjs/Persona';
+import { Persona, PersonaSize } from '@fluentui/react';
 import { useTheme } from '@fluentui/react-theme-provider';
 import { getNetworkMembers } from '../services/Requests';
 import { IIconProps } from '@fluentui/react';
-import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import { semibold } from '../services/Fonts';
 import { resetIds } from '@fluentui/react';
 import { NextSeo } from 'next-seo';

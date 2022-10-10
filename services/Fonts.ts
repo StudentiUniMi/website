@@ -1,5 +1,4 @@
-import { FontWeights } from '@fluentui/theme';
-import { ITextStyles } from 'office-ui-fabric-react';
+import { FontWeights, ITextStyles } from '@fluentui/react';
 
 export const bold: ITextStyles = { root: { fontWeight: FontWeights.bold }};
 export const semibold: ITextStyles = { root: { fontWeight: FontWeights.semibold } };

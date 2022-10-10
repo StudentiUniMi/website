@@ -1,5 +1,5 @@
 import { useTheme } from '@fluentui/react-theme-provider';
-import { Text } from 'office-ui-fabric-react/lib-commonjs';
+import { Text } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
 import Marquee from "react-fast-marquee";
 import Chip from '@material-ui/core/Chip';

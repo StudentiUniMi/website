@@ -102,7 +102,7 @@ svg {
 
 
 /* Responsive menu and title */
-@media only screen and (min-width: 769px) { // TODO: Restore 587px when lib-commonjs is updated
+@media only screen and (min-width: 587px) {
   .header-menu .pivot {
     display: block;
   }
@@ -112,7 +112,7 @@ svg {
   }
 }
 
-@media only screen and (max-width: 768px) { // TODO: Restore 586px when lib-commonjs is updated
+@media only screen and (max-width: 586px) { 
   .header-menu .dropdown {
     display: flex;
   }
@@ -418,19 +418,6 @@ footer .ms-Label {
 .ms-Button-icon, .ms-SearchBox-icon {
   display: flex;
   align-items: center;
-}
-
-/* Fix avatar images not loading; TODO: Remove when fluent ui fixes this */
-.organization {
-  .ms-Persona-imageArea .ms-Image {
-    background-color: #d1d0d0;
-  }
-}
-
-.degree .admin-list {
-  .ms-Persona-imageArea .ms-Image {
-    background-color: #d1d0d0;
-  }
 }
 
 /* Group-item button padding adjustments */
