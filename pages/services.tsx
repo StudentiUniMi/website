@@ -7,7 +7,7 @@ import { Text, DocumentCardPreview, IDocumentCardPreviewProps, Image, Link, Pivo
 import { NextSeo } from 'next-seo';
 import { Container } from 'react-bootstrap';
 import { useTheme } from '@fluentui/react-theme-provider';
-import { Card, ICardTokens } from '@uifabric/react-cards';
+import { Card, ICardTokens } from '@fluentui/react-cards';
 import { semibold } from '../services/Fonts';
 import { getRedirects, getGuides, getTools } from '../services/Requests';
 

@@ -1,5 +1,5 @@
 import { Text, Icon, TooltipHost } from '@fluentui/react';
-import { Card, ICardTokens } from "@uifabric/react-cards";
+import { Card, ICardTokens } from "@fluentui/react-cards";
 import { FontWeights, ITextStyles, Link, Persona } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
 import { useTheme } from '@fluentui/react-theme-provider';

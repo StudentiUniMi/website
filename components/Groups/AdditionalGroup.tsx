@@ -6,7 +6,7 @@
  */
 
 import { Text, Icon, FontWeights, ITextStyles, Persona, Link } from '@fluentui/react';
-import { Card, ICardTokens } from "@uifabric/react-cards";
+import { Card, ICardTokens } from "@fluentui/react-cards";
 import ExtraGroup from '../../models/ExtraGroup'
 import { useTheme } from '@fluentui/react-theme-provider';
 import { PrimaryButton } from '@fluentui/react/lib/Button';
