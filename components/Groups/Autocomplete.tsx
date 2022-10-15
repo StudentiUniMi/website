@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { IAutocompleteProps, IAutocompleteState, ISuggestionItem } from './Autocomplete_types';
-import { SearchBox, Callout, List, Text, FocusZone, FocusZoneDirection, mergeStyleSets } from '@fluentui/react';
+import { SearchBox, Callout, List, Text, mergeStyleSets } from '@fluentui/react';
 import { DirectionalHint, ISearchBoxStyles, IIconProps } from '@fluentui/react';
 import { semibold } from 'services/Fonts';
-import Chip from '@material-ui/core/Chip';
+import Chip from '../GenericComponents/Chip';
 
 const searchBoxStyles: Partial<ISearchBoxStyles> = { root: { maxWidth: 650, minWidth: 0 } };
 
@@ -125,12 +125,10 @@ export class Autocomplete extends React.Component<ISearchSuggestionsProps, IAuto
   
   private renderSuggestionList = () => {
     return (
-      <FocusZone direction={FocusZoneDirection.vertical}>
-        <List id='SearchList' tabIndex={0}
-          items={this.suggestedTagsFiltered(this.props.items)}
-          onRenderCell={this.onRenderCell}
-        />
-      </FocusZone>
+      <List id='SearchList' tabIndex={0}
+        items={this.suggestedTagsFiltered(this.props.items)}
+        onRenderCell={this.onRenderCell}
+      />
     );
   }
 
@@ -168,8 +166,9 @@ export class Autocomplete extends React.Component<ISearchSuggestionsProps, IAuto
       <Text variant="small" styles={semibold}>
         <Chip 
           label={label} 
-          size="small" 
-          style={{ color: this.props.theme.palette.white, backgroundColor: buildBgColor(item.degree.type) }} 
+          size="small"
+          textColor={this.props.theme.palette.white}
+          bgColor={buildBgColor(item.degree.type)}
         />
       </Text>
     );

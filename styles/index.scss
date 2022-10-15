@@ -12,7 +12,7 @@ body {
   margin: 0;
   padding: 0;
   margin-bottom: $footer-height;
-  height:100%;
+  min-height:100%;
 }
 
 footer {
@@ -102,7 +102,7 @@ svg {
 
 
 /* Responsive menu and title */
-@media only screen and (min-width: 587px) {
+@media only screen and (min-width: 786px) { // TODO: Restore 587px
   .header-menu .pivot {
     display: block;
   }
@@ -112,7 +112,7 @@ svg {
   }
 }
 
-@media only screen and (max-width: 586px) { 
+@media only screen and (max-width: 785px) { // TODO: Restore 586px
   .header-menu .dropdown {
     display: flex;
   }

@@ -1,10 +1,6 @@
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
-import Chip from '@material-ui/core/Chip';
+import Chip from '../GenericComponents/Chip';
 import { Container } from 'react-bootstrap';
 import { Link, Text } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
@@ -23,7 +19,7 @@ const Faqs = () => {
 
                 <div className="mb-1">
                     <Text variant="medium" styles={semibold}>
-                        <Chip label={"FAQ"} style={{ backgroundColor: theme.palette.themePrimary, color: theme.palette.white }} />
+                        <Chip label={"FAQ"} size="medium" bgColor={theme.palette.themePrimary} textColor={theme.palette.white} />
                     </Text>
                 </div>            
                 
@@ -38,6 +34,7 @@ const Faqs = () => {
                 </div>
 
                 <div className="mb-2">
+                    {/*
                     {
                         faqs.map((x, i) => {
                             return (
@@ -60,6 +57,7 @@ const Faqs = () => {
                             )
                         })
                     }
+                    */}
                 </div>
             </Container>
         </div>

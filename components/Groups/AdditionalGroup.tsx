@@ -11,7 +11,7 @@ import ExtraGroup from '../../models/ExtraGroup'
 import { useTheme } from '@fluentui/react-theme-provider';
 import { PrimaryButton } from '@fluentui/react/lib/Button';
 import { IIconProps } from '@fluentui/react';
-import Chip from '@material-ui/core/Chip';
+import Chip from '../GenericComponents/Chip';
 import { semibold } from '../../services/Fonts';
 import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
@@ -49,7 +49,8 @@ const AdditionalGroup = (props: Props) => {
                     <Chip 
                         label={name === 'MUG - Milan University Gamers' ? locale?.studentsAssociation : locale?.extraGroups.extraGroup} 
                         size="small" 
-                        style={{ color: theme.palette.black, backgroundColor: theme.palette.neutralLight }} 
+                        textColor={theme.palette.black}
+                        bgColor={theme.palette.neutralLight}
                         className="m-1" 
                     />
                 </Text>
