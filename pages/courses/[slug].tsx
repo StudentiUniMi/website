@@ -1,10 +1,9 @@
 import React from 'react';
-import { Text, DefaultButton, IIconProps } from '@fluentui/react';
+import { Text, DefaultButton, IIconProps, useTheme } from '@fluentui/react';
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 import { GetServerSideProps } from 'next';
 import { VerboseDegree, CourseDegree, Admin } from "../../models/Models";
-import { useTheme } from '@fluentui/react-theme-provider';
 import { Container } from 'react-bootstrap';
 import { getCourses, getDegreeInformations, getVerboseDegreeBySlug, getDegreeAdmins } from '../../services/Requests';
 import { semibold } from '../../services/Fonts';

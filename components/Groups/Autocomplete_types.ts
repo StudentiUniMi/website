@@ -1,4 +1,4 @@
-import { Theme } from '@fluentui/react-theme-provider';
+import { Theme } from '@fluentui/react';
 import { Degree } from '../../models/Models';
 
 export interface IAutocompleteProps {

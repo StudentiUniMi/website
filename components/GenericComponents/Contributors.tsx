@@ -1,7 +1,6 @@
-import { Text, Persona, TooltipHost, ITooltipHostStyles, TooltipDelay } from '@fluentui/react';
+import { Text, Persona, TooltipHost, ITooltipHostStyles, TooltipDelay, useTheme } from '@fluentui/react';
 import Row from 'react-bootstrap/Row';
 import { Container } from 'react-bootstrap';
-import { useTheme } from '@fluentui/react-theme-provider';
 import Contributor from '../../models/Contributor';
 import { getContributors } from '../../services/Requests'
 import LocalizationService from "../../services/LocalizationService";

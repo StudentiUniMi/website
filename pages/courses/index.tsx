@@ -1,9 +1,8 @@
 import React from "react";
 import { Text, Image, Separator, Dialog, DialogType, DialogFooter } from '@fluentui/react';
-import { IconButton, IIconProps, ITooltipHostStyles, Link, PrimaryButton, TooltipHost } from '@fluentui/react';
+import { IconButton, IIconProps, ITooltipHostStyles, Link, PrimaryButton, TooltipHost, useTheme } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import { useRouter } from 'next/router';
-import { useTheme } from '@fluentui/react-theme-provider';
 import { getDegreesForSearchBox } from '../../services/Requests';
 import { semibold } from '../../services/Fonts';
 import { Autocomplete } from '../../components/Groups/Autocomplete';

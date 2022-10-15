@@ -2,10 +2,9 @@ import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 import Chip from '../GenericComponents/Chip';
 import { Container } from 'react-bootstrap';
-import { Link, Text } from '@fluentui/react';
+import { Link, Text, useTheme } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
 import { getFaqs } from '../../services/Requests';
-import { useTheme } from '@fluentui/react-theme-provider';
 
 const Faqs = () => {
     var theme = useTheme();
@@ -34,6 +33,7 @@ const Faqs = () => {
                 </div>
 
                 <div className="mb-2">
+
                     {/*
                     {
                         faqs.map((x, i) => {

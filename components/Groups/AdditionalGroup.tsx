@@ -7,12 +7,10 @@
 
 import { Text, Icon, FontWeights, ITextStyles, Persona, Link } from '@fluentui/react';
 import { Card, ICardTokens } from "@fluentui/react-cards";
-import ExtraGroup from '../../models/ExtraGroup'
-import { useTheme } from '@fluentui/react-theme-provider';
-import { PrimaryButton } from '@fluentui/react/lib/Button';
-import { IIconProps } from '@fluentui/react';
-import Chip from '../GenericComponents/Chip';
+import { IIconProps, useTheme, PrimaryButton } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
+import ExtraGroup from '../../models/ExtraGroup'
+import Chip from '../GenericComponents/Chip';
 import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 

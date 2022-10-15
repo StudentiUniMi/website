@@ -1,5 +1,4 @@
-import { useTheme } from '@fluentui/react-theme-provider';
-import { Text } from '@fluentui/react';
+import { Text, useTheme } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
 import Marquee from "react-fast-marquee";
 import Chip from '../GenericComponents/Chip';

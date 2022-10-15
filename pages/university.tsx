@@ -4,8 +4,7 @@ import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
 import RepresentativesList from '../components/University/RepresentativesList';
 import { Container } from 'react-bootstrap';
-import { Text, Icon, IChoiceGroupOptionStyles, ChoiceGroup, IChoiceGroupOption, Image, Dropdown, IDropdownOption } from '@fluentui/react';
-import { useTheme } from '@fluentui/react-theme-provider';
+import { Text, Icon, IChoiceGroupOptionStyles, ChoiceGroup, IChoiceGroupOption, Image, Dropdown, IDropdownOption, useTheme } from '@fluentui/react';
 import { getRepresentatives, getDepartments, getUniversityLinks } from '../services/Requests'
 import { Department, Representative } from '../models/Models';
 import { semibold } from "../services/Fonts";

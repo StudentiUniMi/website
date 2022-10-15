@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from "react";
-import { FontSizes, IDropdownOption, Icon, Panel, Text, Pivot, PivotItem, IPivotStyles } from '@fluentui/react';
+import { FontSizes, IDropdownOption, Icon, Panel, Text, Pivot, PivotItem, IPivotStyles, useTheme } from '@fluentui/react';
 import { useRouter } from 'next/router';
-import { useTheme } from '@fluentui/react-theme-provider';
 import { withCookies } from "react-cookie";
 import { useBoolean } from "@fluentui/react-hooks";
 import { redirectToLink } from "services/Utils";

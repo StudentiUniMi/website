@@ -2,9 +2,8 @@ import { Text, Icon, Link, Image, TooltipHost, ITooltipHostStyles, TooltipDelay 
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Container } from 'react-bootstrap';
-import { Card, ICardTokens } from "@fluentui/react";
-import { FontSizes } from '@fluentui/react';
-import { useTheme } from '@fluentui/react-theme-provider';
+import { Card, ICardTokens } from "@fluentui/react-cards";
+import { FontSizes, useTheme } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
 import { redirectToLink } from '../../services/Utils';
 import LocalizationService from "../../services/LocalizationService";

@@ -1,8 +1,7 @@
 import React from "react";
-import { Text, Toggle, Icon, IRectangle, List, TextField, Dropdown, IDropdownOption, mergeStyleSets } from "@fluentui/react";
+import { Text, Toggle, Icon, IRectangle, List, TextField, Dropdown, IDropdownOption, mergeStyleSets, useTheme } from "@fluentui/react";
 import { Container } from 'react-bootstrap';
 import { semibold } from '../../services/Fonts';
-import { useTheme } from '@fluentui/react-theme-provider';
 import { Degree, CourseDegree } from '../../models/Models';
 import ErrorMessage from "../GenericComponents/ErrorMessage";
 import Col from 'react-bootstrap/Col';

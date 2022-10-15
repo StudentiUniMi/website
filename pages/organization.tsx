@@ -1,8 +1,7 @@
 import React from 'react';
-import { Text, Link, CompoundButton, Image } from '@fluentui/react';
+import { Text, Link, CompoundButton, Image, useTheme } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import { Persona, PersonaSize } from '@fluentui/react';
-import { useTheme } from '@fluentui/react-theme-provider';
 import { getNetworkMembers } from '../services/Requests';
 import { IIconProps } from '@fluentui/react';
 import { semibold } from '../services/Fonts';

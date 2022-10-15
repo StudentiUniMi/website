@@ -1,7 +1,6 @@
-import { Text, IIconProps, PrimaryButton, Image } from '@fluentui/react';
+import { Text, IIconProps, PrimaryButton, Image, useTheme } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
-import { useTheme } from '@fluentui/react-theme-provider';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../../services/LocalizationService";

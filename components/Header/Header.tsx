@@ -1,8 +1,7 @@
-import { FontSizes, Text, Image, FontWeights, ITextStyles, Link } from '@fluentui/react';
+import { FontSizes, Text, Image, FontWeights, ITextStyles, Link, useTheme } from '@fluentui/react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import HeaderMenu from './HeaderMenu';
-import { useTheme } from '@fluentui/react-theme-provider';
 
 const Header = () => {
     var theme = useTheme();
