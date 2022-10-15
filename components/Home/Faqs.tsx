@@ -2,7 +2,7 @@ import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 import Chip from '../GenericComponents/Chip';
 import { Container } from 'react-bootstrap';
-import { Link, Text, useTheme } from '@fluentui/react';
+import { Link, Text, useTheme, mergeStyleSets } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
 import { getFaqs } from '../../services/Requests';
 import {
@@ -18,6 +18,16 @@ const Faqs = () => {
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
     const faqs = getFaqs();
+
+    const accordionItem = mergeStyleSets({
+        root: {
+            selectors: {
+                '&:hover': {
+                    backgroundColor: theme.palette.neutralLighter
+                }
+            }
+        }
+    });
 
     return (
         <div className="pb-5 pt-5">
@@ -44,7 +54,7 @@ const Faqs = () => {
                 { faqs.map((x, i) => {
                     return (
                         <AccordionItem key={i}>
-                            <AccordionItemHeading>
+                            <AccordionItemHeading className={accordionItem.root}>
                                 <AccordionItemButton>
                                     <Text variant="medium" style={{ color: theme.palette.themePrimary }} styles={semibold}>
                                         {x.question[language!]}

@@ -180,10 +180,10 @@ export class Autocomplete extends React.Component<ISearchSuggestionsProps, IAuto
         <div key={item.key}
           className={this.SuggestionListItemStyle.root}
           data-is-focusable={true}
-          onKeyDown={(ev: React.KeyboardEvent<HTMLElement>) => this.handleListItemKeyDown(ev, item)}>
+          onKeyDown={(ev: React.KeyboardEvent<HTMLElement>) => this.handleListItemKeyDown(ev, item)}
+          onClick={() => this.handleClick(item)}>
           <div id={'link' + item.key}
-            style={SuggestionListStyle()}
-            onClick={() => this.handleClick(item)}>
+            style={SuggestionListStyle()}>
             {item.displayValue} {this.renderChip(item)}
           </div>
         </div>
