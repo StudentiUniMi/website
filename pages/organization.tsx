@@ -1,4 +1,5 @@
 import React from 'react';
+import { NextPage } from 'next'
 import { Text, Link, CompoundButton, Image, useTheme } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import { Persona, PersonaSize } from '@fluentui/react';
@@ -17,7 +18,7 @@ const developers: any = [
     { name: "Mirko Faina", description: { it: "Sviluppatore back-end", en: "Back-end developer" }, username: "Mroik", user_id: 0, github: "https://github.com/Mroik", website: "" }
 ];
 
-const Organization = () => {
+const Organization: NextPage = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();

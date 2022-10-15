@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { FontSizes, IDropdownOption, Icon, Panel, Text, Pivot, PivotItem, IPivotStyles, useTheme } from '@fluentui/react';
 import { useRouter } from 'next/router';
-import { withCookies } from "react-cookie";
 import { useBoolean } from "@fluentui/react-hooks";
 import { redirectToLink } from "services/Utils";
 import { semibold } from "services/Fonts";
@@ -25,7 +24,6 @@ const HeaderMenu = () => {
     /* Styles */
     const cardStyle = { backgroundColor: theme.palette.themeDarkAlt, borderRadius: 10, padding:15 };
 
-    
     const texts: Map<ItemsKeys, string | undefined> = new Map<ItemsKeys, string | undefined>([
         [ItemsKeys.home, locale?.headerMenuItems.home],
         [ItemsKeys.courses, locale?.headerMenuItems.courses],
@@ -129,7 +127,7 @@ const HeaderMenu = () => {
                 </Pivot>
             </div>
 
-            <div className="dropdown align-items-center" style={{ height: 45 }}>
+            <div className="dropdown align-items-center" style={{ height: 45, justifyContent: 'right' }}>
                 <Icon iconName="AiOutlineMenu" className="d-flex" onClick={() => openPanel()} style={mobileHeaderButton} theme={theme} />
 
                 <Panel
@@ -184,4 +182,4 @@ const HeaderMenu = () => {
     );
 };
 
-export default withCookies(HeaderMenu);
+export default HeaderMenu;

@@ -1,9 +1,6 @@
-//import "swiper/swiper.min.css";
-//import "swiper/components/pagination/pagination.min.css";
-//import "swiper/components/navigation/navigation.min.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/slider.scss';
 import '../styles/index.scss';
+import '../styles/accordion.scss'
 import App, { AppContext, AppProps } from 'next/app';
 import { buildLightTheme, buildDarkTheme } from '../services/Themes';
 import { CookiesProvider, useCookies } from 'react-cookie';
@@ -83,6 +80,8 @@ registerIcons({
 });
 
 const CustomApp = ({ Component, pageProps, requestLanguage, ssrCookies }: AppProps & { requestLanguage: string, ssrCookies: cookiesContent }) => {
+    const Comp = Component as any; // TODO: remove this in the future
+    
     let [cookies, setCookie] = useCookies();
     
     let [theme, setTheme] = React.useState(ssrCookies.theme ?? false);
@@ -143,7 +142,7 @@ const CustomApp = ({ Component, pageProps, requestLanguage, ssrCookies }: AppPro
             <CookiesProvider>
                 <ThemeProvider applyTo="body" theme={theme ? darkTheme : lightTheme}>
                     <Header />
-                    <Component {...pageProps} />
+                    <Comp {...pageProps} />
                     <Footer 
                         appTheme={theme}
                         language={language}

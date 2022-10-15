@@ -5,6 +5,13 @@ import { Container } from 'react-bootstrap';
 import { Link, Text, useTheme } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
 import { getFaqs } from '../../services/Requests';
+import {
+    Accordion,
+    AccordionItem,
+    AccordionItemHeading,
+    AccordionItemButton,
+    AccordionItemPanel,
+} from 'react-accessible-accordion';
 
 const Faqs = () => {
     var theme = useTheme();
@@ -32,33 +39,28 @@ const Faqs = () => {
                     </Text>
                 </div>
 
-                <div className="mb-2">
-
-                    {/*
-                    {
-                        faqs.map((x, i) => {
-                            return (
-                                <Accordion style={{ backgroundColor: theme.palette.white, color: theme.palette.black, boxShadow: theme.effects.elevation8, marginRight: 10, marginLeft: 10 }} key={i}>
-                                    <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon style={{ color: theme.palette.black }} />}
-                                        aria-controls="panel1a-content"
-                                        id="panel1a-header"
-                                    >
-                                        <Text variant="medium" style={{ color: theme.palette.themePrimary }} styles={semibold}>
-                                            <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x.question![language!]} />
-                                        </Text>
-                                    </AccordionSummary>
-                                    <AccordionDetails>
-                                        <Text variant="medium">
-                                            <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x.answer![language!]} />
-                                        </Text>
-                                    </AccordionDetails>
-                                </Accordion>
-                            )
-                        })
-                    }
-                    */}
-                </div>
+                <Accordion className="mb-2" style={{ backgroundColor: theme.palette.white, color: theme.palette.black, boxShadow: theme.effects.elevation8 }}
+                    allowMultipleExpanded allowZeroExpanded >
+                { faqs.map((x, i) => {
+                    return (
+                        <AccordionItem key={i}>
+                            <AccordionItemHeading>
+                                <AccordionItemButton>
+                                    <Text variant="medium" style={{ color: theme.palette.themePrimary }} styles={semibold}>
+                                        {x.question[language!]}
+                                    </Text>
+                                </AccordionItemButton>
+                            </AccordionItemHeading>
+                            <AccordionItemPanel>
+                                <Text variant="medium">
+                                    <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={x.answer[language!]} />
+                                </Text>
+                            </AccordionItemPanel>
+                        </AccordionItem>
+                        )
+                    })
+                }
+                </Accordion>
             </Container>
         </div>
     )
