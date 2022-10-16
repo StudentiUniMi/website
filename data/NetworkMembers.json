@@ -18,21 +18,15 @@
         "delega": "Comitato Amministrativo Network"
     },
     { 
-        "user_id": 544826890,
-        "username": "Sartigabriele", 
-        "name": "Gabriele Sarti", 
-        "delega": "Comitato Amministrativo Network"
-    },
-    { 
-        "user_id": 119507304,
-        "username": "MrBrionix", 
-        "name": "Fabrizio Brioni", 
-        "delega": "Comitato Amministrativo Network"
-    },
-    { 
         "user_id": 244426552,
         "username": "SetteMagic", 
         "name": "Silvio Settembrese", 
+        "delega": "Comitato Amministrativo Network"
+    },
+    {
+        "user_id": 0,
+        "username": "Mroik",
+        "name": "Mirko Faina",
         "delega": "Comitato Amministrativo Network"
     }
 ]
