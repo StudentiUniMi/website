@@ -5,9 +5,8 @@
  * @author Giuseppe Del Campo
  */
 
-import { Text, Icon, FontWeights, ITextStyles, Persona, Link } from '@fluentui/react';
+import { Text, Icon, FontWeights, ITextStyles, Persona, Link, TooltipHost, IIconProps, useTheme, PrimaryButton } from '@fluentui/react';
 import { Card, ICardTokens } from "@fluentui/react-cards";
-import { IIconProps, useTheme, PrimaryButton } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
 import ExtraGroup from '../../models/ExtraGroup'
 import Chip from '../GenericComponents/Chip';
@@ -25,13 +24,22 @@ const AdditionalGroup = (props: Props) => {
     const descriptionTextStyles: ITextStyles = { root: { fontWeight: FontWeights.semibold } };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
     const telegramGroupIcon: IIconProps = { iconName: 'Send' };
+    const calloutProps = { gapSpace: 5 };
     
     let desc = data.description![language!];
     let name = data.name![language!];
 
-    // PrimaryText inizialization
-    var primaryText : any;
-    primaryText = <div style={{ wordWrap: 'break-word', whiteSpace: 'normal', marginTop: '2px' }}><Text styles={semibold}>{name}</Text></div>;
+    /* PrimaryText inizialization */
+    let primaryText: JSX.Element = (
+        <TooltipHost
+            content={name}
+            calloutProps={calloutProps}
+        >
+            <div className="line-clamp">
+                <Text styles={semibold}>{name}</Text>
+            </div>
+        </TooltipHost>
+    );
     
     // Group image initialization
     var imageUrl: string;
