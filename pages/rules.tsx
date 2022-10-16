@@ -1,9 +1,7 @@
 import React from "react";
-import { Text, Link, Icon } from 'office-ui-fabric-react';
+import { Text, Link, Icon, Image, useTheme } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import { semibold } from '../services/Fonts';
-import { useTheme } from '@fluentui/react-theme-provider';
-import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import { NextSeo } from 'next-seo';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';

@@ -1,11 +1,10 @@
 import React from 'react';
-import { Text, Link, CompoundButton } from 'office-ui-fabric-react';
+import { NextPage } from 'next'
+import { Text, Link, CompoundButton, Image, useTheme } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
-import { Persona, PersonaSize } from 'office-ui-fabric-react/lib-commonjs/Persona';
-import { useTheme } from '@fluentui/react-theme-provider';
+import { Persona, PersonaSize } from '@fluentui/react';
 import { getNetworkMembers } from '../services/Requests';
 import { IIconProps } from '@fluentui/react';
-import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import { semibold } from '../services/Fonts';
 import { resetIds } from '@fluentui/react';
 import { NextSeo } from 'next-seo';
@@ -14,12 +13,13 @@ import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
 
 const developers: any = [
-    { name: "Giuseppe Del Campo", description: { it: "Sviluppatore front-end", en: 'Front-end developer' }, username: 'Giuseppetm', user_id: 597678134, github: "https://github.com/Giuseppetm", website: "https://giuseppetm.netlify.app/" },
-    { name: "Manuele Lucchi", description: { it: "Sviluppatore front-end", en: 'Front-end developer' }, username: "Gesoo99", user_id: 99687972, github: "https://github.com/manuelelucchi", website: "https://manuelelucchi.github.io/" },
-    { name: "Mirko Faina", description: { it: "Sviluppatore back-end", en: "Back-end developer" }, username: "Mroik", user_id: 0, github: "https://github.com/Mroik", website: "" }
+    { name: "Giuseppe Del Campo", description: { it: "Sviluppatore front-end", en: 'Front-end developer' }, username: 'Giuseppetm', user_id: 597678134, github: "https://github.com/Giuseppetm" },
+    { name: "Marco Aceti", description: { it: "Sviluppatore back-end", en: "Back-end developer" }, username: "acetimarco", user_id: 26170256, github: "https://github.com/MarcoBuster" },
+    { name: "Manuele Lucchi", description: { it: "Sviluppatore front-end", en: 'Front-end developer' }, username: "Gesoo99", user_id: 99687972, github: "https://github.com/manuelelucchi" },
+    { name: "Mirko Faina", description: { it: "Sviluppatore back-end", en: "Back-end developer" }, username: "Mroik", user_id: 0, github: "https://github.com/Mroik" }
 ];
 
-const Organization = () => {
+const Organization: NextPage = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
@@ -109,11 +109,11 @@ const Organization = () => {
                     <Container>
                         <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold} style={{color: theme.palette.themePrimary}}>{locale?.aboutUs.header2}</Text></div>
 
-                        <Row className="justify-content-center">
+                        <Row className="justify-content-center" style={{ rowGap: 15 }}>
                             {
                                 (networkMembers.slice(1, networkMembers.length)).map((x,i) =>
                                     <>
-                                        <Col className="mb-4" lg={3} md={6} sm={6} xs={12} key={i}>
+                                        <Col className="mb-3" lg={3} md={6} sm={6} xs={12} key={i}>
                                             <div style={{ maxWidth: 240, marginLeft: 'auto', marginRight: 'auto' }}>
                                                 <Persona
                                                     size={PersonaSize.size72}
@@ -137,7 +137,7 @@ const Organization = () => {
                     <Container>
                         <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold} style={{ color: theme.palette.themePrimary }}>{locale?.contributors.header1}</Text></div>
 
-                        <Row className="justify-content-center">
+                        <Row className="justify-content-center" style={{ rowGap: 15 }}>
                             {
                                 developers.map((x:any, i:number) =>
                                     <>

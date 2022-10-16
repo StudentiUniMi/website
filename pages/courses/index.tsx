@@ -1,16 +1,12 @@
 import React from "react";
-import { Text } from 'office-ui-fabric-react/lib-commonjs';
-import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
+import { Text, Image, Separator, Dialog, DialogType, DialogFooter } from '@fluentui/react';
+import { IconButton, IIconProps, ITooltipHostStyles, Link, PrimaryButton, TooltipHost, useTheme } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import { useRouter } from 'next/router';
-import { useTheme } from '@fluentui/react-theme-provider';
 import { getDegreesForSearchBox } from '../../services/Requests';
-import { Separator } from 'office-ui-fabric-react/lib-commonjs';
-import { Dialog, DialogType, DialogFooter } from 'office-ui-fabric-react/lib-commonjs';
 import { semibold } from '../../services/Fonts';
 import { Autocomplete } from '../../components/Groups/Autocomplete';
 import { ISuggestionItem } from '../../components/Groups/Autocomplete_types';
-import { IconButton, IIconProps, ITooltipHostStyles, Link, PrimaryButton, TooltipHost } from 'office-ui-fabric-react/lib-commonjs';
 import { useBoolean } from "@fluentui/react-hooks";
 import { NextSeo } from 'next-seo';
 import LocalizationService from "../../services/LocalizationService";

@@ -4,17 +4,12 @@ import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
 import RepresentativesList from '../components/University/RepresentativesList';
 import { Container } from 'react-bootstrap';
-import { Text, Icon } from 'office-ui-fabric-react/lib-commonjs';
-import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib-commonjs/Dropdown';
-import { useTheme } from '@fluentui/react-theme-provider';
+import { Text, Icon, IChoiceGroupOptionStyles, ChoiceGroup, IChoiceGroupOption, Image, Dropdown, IDropdownOption, useTheme } from '@fluentui/react';
 import { getRepresentatives, getDepartments, getUniversityLinks } from '../services/Requests'
 import { Department, Representative } from '../models/Models';
 import { semibold } from "../services/Fonts";
-import { IChoiceGroupOptionStyles } from "office-ui-fabric-react/lib-commonjs/";
-import { ChoiceGroup, IChoiceGroupOption } from 'office-ui-fabric-react/lib-commonjs/ChoiceGroup';
 import { redirectToLink } from "../services/Utils";
 import { NextSeo } from 'next-seo';
-import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 
 const University = () => {
     var theme = useTheme();

@@ -1,13 +1,12 @@
-import { Text, Icon, TooltipHost } from 'office-ui-fabric-react';
-import { Card, ICardTokens } from "@uifabric/react-cards";
-import { FontWeights, ITextStyles, Link, Persona } from '@fluentui/react';
+import { Text, Icon, TooltipHost } from '@fluentui/react';
+import { Card, ICardTokens } from "@fluentui/react-cards";
+import { FontWeights, ITextStyles, Link, Persona, useTheme } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
-import { useTheme } from '@fluentui/react-theme-provider';
 import { IContextualMenuProps, IIconProps } from '@fluentui/react';
 import { DefaultButton, PrimaryButton } from '@fluentui/react/lib/Button';
 import { buildProfessorName, redirectToLink } from '../../services/Utils';
 import { CourseDegree } from '../../models/Models';
-import Chip from '@material-ui/core/Chip';
+import Chip from '../GenericComponents/Chip';
 import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 
@@ -41,8 +40,8 @@ const CourseItem = (props: Props) => {
     var professor: JSX.Element | null = null;
     var telegramLink: JSX.Element | null = null;
     var wikiLink: JSX.Element | null = null;
-    var yearText: JSX.Element | null = null;
-    var semesterText: JSX.Element | null = null;
+    var yearText: string | null = null;
+    var semesterText: string | null = null;
     var mainText: JSX.Element | null = null;
 
     /* Groups data initialization */
@@ -136,13 +135,13 @@ const CourseItem = (props: Props) => {
             yearText = null;
             break;
         case -2: /* Complementare */
-            yearText = <span>{locale?.groups.complementary}</span>;
+            yearText = `${locale?.groups.complementary}`;
             break;
         case undefined: /* Errore o non disponibile */
-            yearText = <span>N/A</span>;
+            yearText = "N/A";
             break;
         default:
-            yearText = <span>{data.year}° {locale?.groups.year}</span>;
+            yearText = `${data.year}° ${locale?.groups.year}`;
             break;
     }
 
@@ -150,9 +149,9 @@ const CourseItem = (props: Props) => {
     if (data.semester === -1 || data.semester === null || data.semester === 0) {
         semesterText = null;
     } else if (data.semester === undefined) {
-        semesterText = <span>N/A</span>;
+        semesterText = 'N/A';
     } else if (data.semester !== null) {
-        semesterText = <span>{data.semester}° {locale?.groups.semester}</span>;
+        semesterText = `${data.semester}° ${locale?.groups.semester}`;
     }
 
     /* Websites inizialization */
@@ -221,9 +220,9 @@ const CourseItem = (props: Props) => {
                 }
 
                 <Text styles={descriptionTextStyles}>
-                    {data.year === -1 && <Chip label={locale?.groups.mainGroup} size="small" style={{ color: theme.palette.black, backgroundColor: theme.palette.neutralLight }} className="m-1" /> }
-                    {yearText !== null && <Chip label={yearText} size="small" style={{ color: theme.palette.black, backgroundColor: theme.palette.neutralLighter }} className="m-1" /> }
-                    {semesterText !== null && <Chip label={semesterText} size="small" style={{ color: theme.palette.black, backgroundColor: theme.palette.neutralLighter }} /> }
+                    {data.year === -1 && <Chip label={locale?.groups.mainGroup} size="small" textColor={theme.palette.black} bgColor={theme.palette.neutralLight} className="m-1" /> }
+                    {yearText !== null && <Chip label={yearText} size="small" textColor={theme.palette.black} bgColor={theme.palette.neutralLighter} className="m-1" /> }
+                    {semesterText !== null && <Chip label={semesterText} size="small" textColor={theme.palette.black} bgColor={theme.palette.neutralLighter} /> }
                 </Text>
 
                 <Text variant="small" style={{ marginTop: 8, marginBottom: 8 }}>

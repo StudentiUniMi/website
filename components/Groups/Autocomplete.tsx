@@ -1,12 +1,9 @@
 import * as React from 'react';
 import { IAutocompleteProps, IAutocompleteState, ISuggestionItem } from './Autocomplete_types';
-import { SearchBox, Callout, List, Text } from 'office-ui-fabric-react/lib-commonjs/';
-import { FocusZone, FocusZoneDirection } from 'office-ui-fabric-react/lib-commonjs/FocusZone';
-import { mergeStyleSets } from '@uifabric/styling';
-import { DirectionalHint, ISearchBoxStyles } from '@fluentui/react';
-import { IIconProps } from '@fluentui/react/lib/Icon';
+import { SearchBox, Callout, List, Text, mergeStyleSets } from '@fluentui/react';
+import { DirectionalHint, ISearchBoxStyles, IIconProps } from '@fluentui/react';
 import { semibold } from 'services/Fonts';
-import Chip from '@material-ui/core/Chip';
+import Chip from '../GenericComponents/Chip';
 
 const searchBoxStyles: Partial<ISearchBoxStyles> = { root: { maxWidth: 650, minWidth: 0 } };
 
@@ -128,12 +125,10 @@ export class Autocomplete extends React.Component<ISearchSuggestionsProps, IAuto
   
   private renderSuggestionList = () => {
     return (
-      <FocusZone direction={FocusZoneDirection.vertical}>
-        <List id='SearchList' tabIndex={0}
-          items={this.suggestedTagsFiltered(this.props.items)}
-          onRenderCell={this.onRenderCell}
-        />
-      </FocusZone>
+      <List id='SearchList' tabIndex={0}
+        items={this.suggestedTagsFiltered(this.props.items)}
+        onRenderCell={this.onRenderCell}
+      />
     );
   }
 
@@ -171,8 +166,9 @@ export class Autocomplete extends React.Component<ISearchSuggestionsProps, IAuto
       <Text variant="small" styles={semibold}>
         <Chip 
           label={label} 
-          size="small" 
-          style={{ color: this.props.theme.palette.white, backgroundColor: buildBgColor(item.degree.type) }} 
+          size="small"
+          textColor={this.props.theme.palette.white}
+          bgColor={buildBgColor(item.degree.type)}
         />
       </Text>
     );
@@ -184,10 +180,10 @@ export class Autocomplete extends React.Component<ISearchSuggestionsProps, IAuto
         <div key={item.key}
           className={this.SuggestionListItemStyle.root}
           data-is-focusable={true}
-          onKeyDown={(ev: React.KeyboardEvent<HTMLElement>) => this.handleListItemKeyDown(ev, item)}>
+          onKeyDown={(ev: React.KeyboardEvent<HTMLElement>) => this.handleListItemKeyDown(ev, item)}
+          onClick={() => this.handleClick(item)}>
           <div id={'link' + item.key}
-            style={SuggestionListStyle()}
-            onClick={() => this.handleClick(item)}>
+            style={SuggestionListStyle()}>
             {item.displayValue} {this.renderChip(item)}
           </div>
         </div>

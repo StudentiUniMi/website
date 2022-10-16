@@ -4,8 +4,7 @@
  * @author Giuseppe Del Campo
  */
 
-import { useTheme } from '@fluentui/react-theme-provider';
-import { Text, Image, Icon } from 'office-ui-fabric-react/lib-commonjs';
+import { Text, Image, Icon, useTheme } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
 

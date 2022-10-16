@@ -1,12 +1,10 @@
-import { Text, IIconProps, PrimaryButton } from 'office-ui-fabric-react/lib-commonjs';
+import { Text, IIconProps, PrimaryButton, Image, useTheme } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
-import { useTheme } from '@fluentui/react-theme-provider';
-import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../../services/LocalizationService";
-import Chip from '@material-ui/core/Chip';
+import Chip from '../GenericComponents/Chip';
 
 const FirstSection = () => {
     var theme = useTheme();
@@ -28,7 +26,10 @@ const FirstSection = () => {
                         <div style={cardStyle}>
                             <Text styles={semibold}>
                                 <Chip label={locale?.homepage.section2.cards.card1.title} 
-                                    style={{ top: -9, left: 6, position: 'absolute', backgroundColor: theme.palette.neutralLight, color: theme.palette.black }} />
+                                    size="medium"
+                                    textColor={theme.palette.black}
+                                    bgColor={theme.palette.neutralLight}
+                                    style={{ top: -9, left: 6, position: 'absolute' }} />
                             </Text>
 
                             <div className="d-flex flex-row mt-2">
@@ -55,7 +56,10 @@ const FirstSection = () => {
                         <div style={cardStyle}>
                             <Text styles={semibold}>
                                 <Chip label={locale?.homepage.section2.cards.card2.title} 
-                                    style={{ top: -9, left: 6, position: 'absolute', backgroundColor: theme.palette.neutralLight, color: theme.palette.black }} />
+                                    size="medium"
+                                    textColor={theme.palette.black}
+                                    bgColor={theme.palette.neutralLight}
+                                    style={{ top: -9, left: 6, position: 'absolute' }} />
                             </Text>
 
                             <div className="d-flex flex-row mt-2">
@@ -82,7 +86,10 @@ const FirstSection = () => {
                         <div style={cardStyle}>
                             <Text styles={semibold}>
                                 <Chip label={locale?.homepage.section2.cards.card3.title}
-                                    style={{ top: -9, left: 6, position: 'absolute', backgroundColor: theme.palette.neutralLight, color: theme.palette.black }} />
+                                    size="medium"
+                                    textColor={theme.palette.black}
+                                    bgColor={theme.palette.neutralLight}
+                                    style={{ top: -9, left: 6, position: 'absolute' }} />
                             </Text>
 
                             <div className="d-flex flex-row mt-2">

@@ -1,11 +1,8 @@
 import React from "react";
 import { semibold } from '../../services/Fonts';
-import { Text } from 'office-ui-fabric-react/lib-commonjs';
+import { Text, ChoiceGroup, IChoiceGroupOption, IChoiceGroupOptionStyles, Icon, useTheme } from '@fluentui/react';
 import { redirectToLink } from '../../services/Utils';
-import { useTheme } from '@fluentui/react-theme-provider';
 import { Container } from 'react-bootstrap';
-import { IChoiceGroupOptionStyles, Icon } from "@fluentui/react";
-import { ChoiceGroup, IChoiceGroupOption } from 'office-ui-fabric-react/lib-commonjs/ChoiceGroup';
 import LocalizationService from "../../services/LocalizationService";
 import Message from '../GenericComponents/Message';
 

@@ -1,11 +1,5 @@
-import { FontSizes } from '@fluentui/theme';
-import { Text } from 'office-ui-fabric-react/lib-commonjs/Text';
-import { Image } from 'office-ui-fabric-react/lib-commonjs/Image';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { FontSizes, Text, Image, FontWeights, ITextStyles, Link, useTheme } from '@fluentui/react';
 import HeaderMenu from './HeaderMenu';
-import { useTheme } from '@fluentui/react-theme-provider';
-import { FontWeights, ITextStyles, Link } from 'office-ui-fabric-react';
 
 const Header = () => {
     var theme = useTheme();
@@ -16,8 +10,9 @@ const Header = () => {
     return (
         <header style={{ borderBottom: '1px solid', borderColor: theme.palette.neutralLight, marginBottom: -1 }}>
 
-            <Row className="headerRow" style={{ marginRight: 15, marginLeft: 15, marginBottom: 0 }}>
-                <Col style={{ maxWidth: 250, paddingLeft: 0, paddingRight: 0, display: 'flex', alignItems: 'center' }}>
+            <div className="d-flex flex-row" style={{ marginRight: 15, marginLeft: 15, marginBottom: 0 }}>
+
+                <div style={{ maxWidth: 250, paddingLeft: 0, paddingRight: 0, display: 'flex', alignItems: 'center' }}>
                     <div className="d-flex align-items-center" style={{ width: 250, gap: 10 }}>
                         <Link href="http://studentiunimi.it/">
                             <Image id="logo"
@@ -31,13 +26,13 @@ const Header = () => {
                             <Text styles={titleStyle}>Network StudentiUniMi</Text>
                         </Link>
                     </div>
-                </Col>
+                </div>
 
-                <Col style={{ paddingLeft: 0, paddingRight: 0 }} className="header-col">
-                    <HeaderMenu/>
-                </Col>
+                <div style={{ paddingLeft: 0, paddingRight: 0, flexGrow: 1, overflowX: 'hidden', overflowY: 'hidden' }}>
+                    <HeaderMenu />
+                </div>
 
-            </Row>
+            </div>
         
         </header>
     )

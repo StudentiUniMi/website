@@ -5,15 +5,11 @@
  * @author Giuseppe Del Campo
  */
 
-import { Text, Icon } from 'office-ui-fabric-react';
-import { FontWeights, ITextStyles, Persona, Link } from '@fluentui/react';
-import { Card, ICardTokens } from "@uifabric/react-cards";
-import ExtraGroup from '../../models/ExtraGroup'
-import { useTheme } from '@fluentui/react-theme-provider';
-import { PrimaryButton } from '@fluentui/react/lib/Button';
-import { IIconProps } from '@fluentui/react';
-import Chip from '@material-ui/core/Chip';
+import { Text, Icon, FontWeights, ITextStyles, Persona, Link, TooltipHost, IIconProps, useTheme, PrimaryButton } from '@fluentui/react';
+import { Card, ICardTokens } from "@fluentui/react-cards";
 import { semibold } from '../../services/Fonts';
+import ExtraGroup from '../../models/ExtraGroup'
+import Chip from '../GenericComponents/Chip';
 import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 
@@ -28,13 +24,22 @@ const AdditionalGroup = (props: Props) => {
     const descriptionTextStyles: ITextStyles = { root: { fontWeight: FontWeights.semibold } };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
     const telegramGroupIcon: IIconProps = { iconName: 'Send' };
+    const calloutProps = { gapSpace: 5 };
     
     let desc = data.description![language!];
     let name = data.name![language!];
 
-    // PrimaryText inizialization
-    var primaryText : any;
-    primaryText = <div style={{ wordWrap: 'break-word', whiteSpace: 'normal', marginTop: '2px' }}><Text styles={semibold}>{name}</Text></div>;
+    /* PrimaryText inizialization */
+    let primaryText: JSX.Element = (
+        <TooltipHost
+            content={name}
+            calloutProps={calloutProps}
+        >
+            <div className="line-clamp">
+                <Text styles={semibold}>{name}</Text>
+            </div>
+        </TooltipHost>
+    );
     
     // Group image initialization
     var imageUrl: string;
@@ -50,7 +55,8 @@ const AdditionalGroup = (props: Props) => {
                     <Chip 
                         label={name === 'MUG - Milan University Gamers' ? locale?.studentsAssociation : locale?.extraGroups.extraGroup} 
                         size="small" 
-                        style={{ color: theme.palette.black, backgroundColor: theme.palette.neutralLight }} 
+                        textColor={theme.palette.black}
+                        bgColor={theme.palette.neutralLight}
                         className="m-1" 
                     />
                 </Text>

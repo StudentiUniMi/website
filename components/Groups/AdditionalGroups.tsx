@@ -1,6 +1,5 @@
 import React from 'react';
-import { FocusZone, List, IRectangle } from "@fluentui/react";
-import { mergeStyleSets } from 'office-ui-fabric-react/lib-commonjs/Styling';
+import { List, IRectangle, mergeStyleSets } from "@fluentui/react";
 import { getExtraGroups } from '../../services/Requests';
 import ExtraGroupView from './AdditionalGroup';
 import ExtraGroup from '../../models/ExtraGroup';
@@ -46,16 +45,14 @@ const AdditionalGroupsView = () => {
 
     return (
         <div className="additional-groups text-center">
-            <FocusZone className="mb-4">
-                <List
-                    className={classNames.listGrid}
-                    items={groups}
-                    getItemCountForPage={getItemCountForPage}
-                    getPageHeight={getPageHeight}
-                    renderedWindowsAhead={15}
-                    onRenderCell={getCell}
-                />
-            </FocusZone>
+            <List
+                className={classNames.listGrid}
+                items={groups}
+                getItemCountForPage={getItemCountForPage}
+                getPageHeight={getPageHeight}
+                renderedWindowsAhead={15}
+                onRenderCell={getCell}
+            />
         </div>
     )
 };

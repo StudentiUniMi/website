@@ -1,17 +1,10 @@
 import { useEffect, useRef, useState, useCallback } from "react";
-import LocalizationService from "../../services/LocalizationService";
-import { FontSizes } from '@fluentui/theme';
-import { IDropdownOption } from 'office-ui-fabric-react/lib-commonjs/Dropdown';
-import { Icon } from 'office-ui-fabric-react/lib-commonjs/Icon';
-import { Panel } from '@fluentui/react/lib/Panel';
-import { Text } from "office-ui-fabric-react/lib-commonjs/";
+import { FontSizes, IDropdownOption, Icon, Panel, Text, Pivot, PivotItem, IPivotStyles, useTheme } from '@fluentui/react';
 import { useRouter } from 'next/router';
-import { useTheme } from '@fluentui/react-theme-provider';
-import { Pivot, PivotItem, IPivotStyles } from 'office-ui-fabric-react/lib-commonjs/Pivot';
-import { withCookies } from "react-cookie";
 import { useBoolean } from "@fluentui/react-hooks";
 import { redirectToLink } from "services/Utils";
 import { semibold } from "services/Fonts";
+import LocalizationService from "../../services/LocalizationService";
 
 export enum ItemsKeys {
     home = "home",
@@ -31,7 +24,6 @@ const HeaderMenu = () => {
     /* Styles */
     const cardStyle = { backgroundColor: theme.palette.themeDarkAlt, borderRadius: 10, padding:15 };
 
-    
     const texts: Map<ItemsKeys, string | undefined> = new Map<ItemsKeys, string | undefined>([
         [ItemsKeys.home, locale?.headerMenuItems.home],
         [ItemsKeys.courses, locale?.headerMenuItems.courses],
@@ -129,13 +121,13 @@ const HeaderMenu = () => {
                     headersOnly={true}
                     styles={pivotStyles}
                     theme={theme}
-                    // overflowBehavior={'menu'} TODO: use this when it's added in /lib-commonjs import
+                    overflowBehavior={'menu'}
                 >
                     {Object.values(ItemsKeys).map((x, _i) => <PivotItem headerText={texts.get(x)} itemKey={x} key={x} />)}
                 </Pivot>
             </div>
 
-            <div className="dropdown align-items-center" style={{ height: 45 }}>
+            <div className="dropdown align-items-center" style={{ height: 45, justifyContent: 'right' }}>
                 <Icon iconName="AiOutlineMenu" className="d-flex" onClick={() => openPanel()} style={mobileHeaderButton} theme={theme} />
 
                 <Panel
@@ -190,4 +182,4 @@ const HeaderMenu = () => {
     );
 };
 
-export default withCookies(HeaderMenu);
+export default HeaderMenu;

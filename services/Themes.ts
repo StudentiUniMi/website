@@ -1,6 +1,4 @@
-import { FontSizes } from '@fluentui/theme';
-import { FontWeights } from 'office-ui-fabric-react';
-import { DefaultEffects } from '@fluentui/react';
+import { DefaultEffects, FontWeights, FontSizes } from '@fluentui/react';
 import { palettes } from './Palettes';
 
 /**
