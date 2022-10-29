@@ -26,6 +26,7 @@ interface ILocalizationStrings {
         title: string,
         subtitle: string,
         description: string,
+        privacyPolicy: string,
         regulation: string,
         regulationButton: string,
         checkboxDescription: string,

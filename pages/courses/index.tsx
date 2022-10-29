@@ -1,4 +1,4 @@
-import { useCallback, useContext, useState } from "react";
+import { useCallback, useState } from "react";
 import { Text, Image, Separator, Dialog, DialogType, DialogFooter } from '@fluentui/react';
 import { IconButton, IIconProps, ITooltipHostStyles, Link, PrimaryButton, TooltipHost, useTheme } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
@@ -14,13 +14,11 @@ import AdditionalGroupsView from '../../components/Groups/AdditionalGroups';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import JsxParser from "react-jsx-parser";
-import GlobalContext from "services/GlobalContext";
 
 const Courses = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
-    const { isPolicyAccepted, togglePolicyDialog } = useContext(GlobalContext);
     let router = useRouter();
 
     const resetIcon: IIconProps = { iconName: 'AiOutlineReload' };
@@ -29,17 +27,17 @@ const Courses = () => {
 
     /* States */
     let [hideApiErrorDialog, { toggle: toggleApiErrorDialog }] = useBoolean(true);
-    let [degreeTextSearch, setDegreeTextSearch] = useState(''); // Testo nel campo di ricerca
-    let [searchData, setSearchData] = useState<ISuggestionItem[]>([]); // Array di ISuggestionItem (contenente anche Degree per ogni elemento)
+    let [degreeTextSearch, setDegreeTextSearch] = useState('');
+    let [searchData, setSearchData] = useState<ISuggestionItem[]>([]);
     const [errorLoadingDegrees, setErrorLoadingDegrees] = useState<boolean>(false);
 
     /* Handlers */
-    const entitySelectHandler = (item: ISuggestionItem): void => { // Questo viene triggerato quando selezioni qualcosa dal menù
+    const entitySelectHandler = (item: ISuggestionItem): void => {
         setDegreeTextSearch(item.displayValue);
         router.push(`/courses/${item.degree?.slug}`);
     };
     
-    const searchTextHandler = (): void => { // Triggerato quando premi per la ricerca (si è deciso di selezionare il primo risultato)
+    const searchTextHandler = (): void => {
         if (searchData.length === 0) return;
         setDegreeTextSearch(searchData[0]?.displayValue);
         router.push(`/courses/${searchData[0]?.degree?.slug}`);
@@ -54,7 +52,6 @@ const Courses = () => {
         if (degreesResult.status !== 200) {
             setErrorLoadingDegrees(true);
             toggleApiErrorDialog();
-            console.error("error on degrees result by searchbox text");
             return;
         }
 
@@ -107,7 +104,6 @@ const Courses = () => {
 
             <section className="groups">
                 <div className="pt-5">
-                    <PrimaryButton href="https://www.google.it/" onClick={(event) => { !isPolicyAccepted && (event.preventDefault(), togglePolicyDialog()) }} text="Dennis" />
                     <Container>
                         <Row>
                             <Col lg={3} className="text-center mb-3 mb-lg-0">

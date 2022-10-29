@@ -40,20 +40,11 @@ const PrivacyPolicyDialog = () => {
                         <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text }} jsx={locale?.privacyPolicy.description} />
                     </Text>
 
-                    <Text variant="small" styles={semibold} className="text-uppercase" style={{ color: theme.palette.themeDark }}>
-                        {locale?.privacyPolicy.title}
-                    </Text>
-
                     <div className="d-flex flex-row" style={{ gap: 5 }}>
-                        <DefaultButton className='flex-grow-1' theme={theme} text={"Leggi in italiano"} href="" style={{ textDecoration: 'none', padding: '20px 10px' }} iconProps={icon} />
-                        <DefaultButton className='flex-grow-1' theme={theme} text={"Leggi in inglese"} href="" style={{ textDecoration: 'none', padding: '20px 10px' }} iconProps={icon} />
+                        <DefaultButton className='flex-grow-1' theme={theme} text={locale?.privacyPolicy.privacyPolicy} href="https://cdn.studentiunimi.it/privacy-policy-IT.pdf" style={{ textDecoration: 'none', padding: '20px 10px' }} iconProps={icon} />
+                        <DefaultButton className='flex-grow-1' theme={theme} text={locale?.privacyPolicy.regulation} href="https://studentiunimi.it/rules" style={{ textDecoration: 'none', padding: '20px 10px' }} iconProps={icon} />
                     </div>
 
-                    <Text variant="small" styles={semibold} className="text-uppercase" style={{ color: theme.palette.themeDark }}>
-                        {locale?.privacyPolicy.regulation}
-                    </Text>
-
-                    <DefaultButton theme={theme} text={"Raggiungi il regolamento"} href="https://studentiunimi.it/rules" onClick={() => togglePolicyDialog} style={{ textDecoration: 'none', padding: '20px 10px' }} iconProps={icon} />
                 </div>
 
                 <div className="d-flex justify-content-center">

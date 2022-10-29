@@ -56,6 +56,32 @@ export const buildProfessorName = (firstName: string, lastName: string): string 
 };
 
 
+/**
+ * Prevents default button behaviour for href.
+ * @param e event
+ * @param {boolean} isPolicyAccepted 
+ * @returns true if the default behaviour has been prevented, false otherwise.
+ */
+export const preventDefault = (e: any, isPolicyAccepted: boolean = false) => {
+  if (!isPolicyAccepted) {
+    e.preventDefault();
+    return true;
+  }
+  return false;
+};
+
+
+/**
+ * Prevents href to be visible in case of not accepted policy.
+ * @param {boolean} isPolicyAccepted 
+ * @param {string} href 
+ * @returns href if the policy is accepted, undefined otherwise.
+ */
+export const preventVisibleHref = (isPolicyAccepted: boolean = false, href: string) => {
+  if (!isPolicyAccepted) return undefined;
+  return href;
+}
+
 export const redirectToLink = (link: string): void => {
     window.open(link, '_blank');
 };

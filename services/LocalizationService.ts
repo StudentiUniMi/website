@@ -34,11 +34,11 @@ class LocalizationService {
                     reach: 'Raggiungi',
                     findOut: 'Scopri',
                     privacyPolicy: {
-                        title: 'Privacy Policy',
-                        subtitle: 'Per fare funzionare i nostri servizi memorizziamo alcuni dati nel nostro sistema.',
+                        title: 'Privacy policy e regolamento',
+                        subtitle: 'Per fare funzionare i nostri servizi memorizziamo alcuni dati nei nostri sistemi.',
                         description: 'Per continuare ed utilizzare i nostri gruppi e servizi è necessario <Text variant="medium" styles={semibold}>leggere e accettare</Text> la nostra privacy policy e il regolamento.',
+                        privacyPolicy: 'Privacy policy',
                         regulation: 'Regolamento',
-                        regulationButton: 'Raggiungi il regolamento',
                         checkboxDescription: 'Ho letto la privacy policy e il regolamento.',
                         read: {
                             it: 'Leggi in italiano',
@@ -142,7 +142,7 @@ class LocalizationService {
                         }, 
                         faqsSection: {
                             header: 'Hai qualche domanda sul nostro Network?',
-                            description: "Dai un'occhiata qui per vedere se trovi la risposta, altrimenti chiedi pure sul <Link href='https://t.me/unimichat'>gruppo principale.</Link>"
+                            description: "Dai un'occhiata qui per vedere se trovi la risposta, altrimenti chiedi pure sul gruppo principale."
                         },
                         telegramSection: {
                             title: "Perchè Telegram e non WhatsApp?",
@@ -379,18 +379,18 @@ class LocalizationService {
                     reach: 'Reach',
                     findOut: 'Find out',
                     privacyPolicy: {
-                        title: 'Privacy Policy',
-                        subtitle: 'Per fare funzionare i nostri servizi memorizziamo alcuni dati nel nostro sistema.',
-                        description: 'Per continuare ed utilizzare i nostri gruppi e servizi è necessario <Text variant="medium" styles={semibold}>leggere e accettare</Text> la nostra privacy policy e il regolamento.',
-                        regulation: 'Regolamento',
-                        regulationButton: 'Raggiungi il regolamento',
-                        checkboxDescription: 'Ho letto la privacy policy e il regolamento.',
+                        title: 'Privacy policy and regulation',
+                        subtitle: 'To make our services work we store some data in our system.',
+                        description: 'To continue and use our groups and services you must <Text variant="medium" styles={semibold}>read and agree</Text> to our privacy policy and rules.',
+                        privacyPolicy: 'Privacy policy',
+                        regulation: 'Regulation',
+                        checkboxDescription: 'I have read the privacy policy and regulation.',
                         read: {
-                            it: 'Leggi in italiano',
-                            en: 'Leggi in inglese'
+                            it: 'Read in italian',
+                            en: 'Read in english'
                         },
-                        refuse: 'Rifiuta',
-                        accept: 'Accetta'
+                        refuse: 'Refuse',
+                        accept: 'Accept'
                     },
                     sidebar: {
                         mainGroup: "Join our main group",
@@ -487,7 +487,7 @@ class LocalizationService {
                         },
                         faqsSection: {
                             header: 'Do you have any questions about our Network? ',
-                            description: "Have a look here to see if you find the answer, otherwise feel free to ask on the <Link href='https://t.me/unimichat'>main group</Link>."
+                            description: "Have a look here to see if you find the answer, otherwise feel free to ask on the main group."
                         },
                         telegramSection: {
                             title: "Why Telegram and not WhatsApp?",
