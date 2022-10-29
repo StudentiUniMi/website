@@ -28,7 +28,6 @@ interface ILocalizationStrings {
         description: string,
         privacyPolicy: string,
         regulation: string,
-        regulationButton: string,
         checkboxDescription: string,
         read: {
             it: string,
