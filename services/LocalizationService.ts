@@ -290,7 +290,8 @@ class LocalizationService {
                     services: {
 						text1: 'Tutti i servizi, in un\'unica pagina.',
                         text2: "Abbiamo realizzato una pagina per centralizzare tutti i collegamenti inerenti all'Università degli Studi di Milano e rendere disponibili anche le guide, strumenti e servizi telematici che abbiamo realizzato e messo a disposizione.",
-                        text3: "Pensi che manchi qualcosa? <Link href='https://t.me/unimichat'>Faccelo sapere!</Link>",
+                        text3: "Pensi che manchi qualcosa?",
+                        text4: 'Faccelo sapere!',
                         selectSubSection: "Seleziona la categoria che ti interessa",
                         availableServices: 'Servizi e guide disponibili',
                         tabs: {
@@ -635,7 +636,8 @@ class LocalizationService {
                     services: {
                         text1: 'All services, in one central place.',
                         text2: "We have created a page to centralize all the connections relating to the University of Milan and also make available our guides and telematic services we have created.",
-                        text3: "Do you think something is missing? <Link href='https://t.me/unimichat'>Let us know!</Link>",
+                        text3: "Do you think something is missing?",
+                        text4: 'Let us know!',
                         selectSubSection: "Select a category",
                         tabs: {
                             redirects: "Redirects",

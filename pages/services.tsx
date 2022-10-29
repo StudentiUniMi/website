@@ -90,7 +90,9 @@ const Services = () => {
 
                                 <div className="mb-4">
                                     <Text variant="medium" style={{ fontStyle: 'italic', color: theme.palette.neutralPrimary }}>
-                                        <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.services.text3} />
+                                        {locale?.services.text3} <Link href={preventVisibleHref(isPolicyAccepted, "https://t.me/unimichat")} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}>
+                                            {locale?.services.text4}
+                                        </Link>
                                     </Text>
                                 </div>
 
