@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, useCallback, useContext } from "react";
 import { FontSizes, IDropdownOption, Icon, Panel, Text, Pivot, PivotItem, IPivotStyles, useTheme, Link } from '@fluentui/react';
 import { useRouter } from 'next/router';
 import { useBoolean } from "@fluentui/react-hooks";
-import { preventDefault, preventVisibleHref, redirectToLink } from "services/Utils";
+import { preventDefault, preventVisibleHref } from "services/Utils";
 import { semibold } from "services/Fonts";
 import LocalizationService from "../../services/LocalizationService";
 import GlobalContext from "services/GlobalContext";
