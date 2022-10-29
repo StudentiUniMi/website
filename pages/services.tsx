@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
-import JsxParser from 'react-jsx-parser';
 import GlobalContext from 'services/GlobalContext';
 import { Text, DocumentCardPreview, IDocumentCardPreviewProps, Image, Link, Pivot, PivotItem, FontSizes, useTheme } from '@fluentui/react';
 import { NextSeo } from 'next-seo';
