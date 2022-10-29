@@ -63,7 +63,7 @@ const Footer = (props: Props) => {
                         </div>
 
                         <div className="mb-2 text">
-                            <PrimaryButton text={locale?.footer[0].buttonText} iconProps={buttonIconProps} href="https://t.me/unimichat" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
+                            <PrimaryButton text={locale?.footer[0].buttonText} iconProps={buttonIconProps} href="https://t.me/unimichat" allowDisabledFocus style={buttonStyle} />
                         </div>
                     </Col>
                     

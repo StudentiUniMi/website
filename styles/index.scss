@@ -404,6 +404,11 @@ footer .ms-Label {
   align-items: center;
 }
 
+/* Fix button text-decoration on hover */
+.ms-Button:hover, .ms-Button:active, .ms-Button:focus {
+  text-decoration: none;
+}
+
 /* Group-item button padding adjustments */
 .group-item .ms-Button, .additional-group-item .ms-Button {
   padding: 0px 8px;

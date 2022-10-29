@@ -42,7 +42,6 @@ const SecondSection = () => {
                                             iconProps={buttonIconProps}
                                             theme={theme}
                                             href="https://t.me/studenti_unimi"
-                                            className="text-decoration-none"
                                         />
                                 </div>
                             </div>
@@ -60,7 +59,6 @@ const SecondSection = () => {
                                         iconProps={buttonIconProps}
                                         theme={theme}
                                         href="https://t.me/unimichat"
-                                        className="text-decoration-none"
                                     />
                                 </div>
                             </div>
@@ -78,7 +76,6 @@ const SecondSection = () => {
                                         iconProps={buttonIconProps}
                                         theme={theme}
                                         href="https://discord.gg/SwPzAkv4A4"
-                                        className="text-decoration-none"
                                     />
                                 </div>
                             </div>

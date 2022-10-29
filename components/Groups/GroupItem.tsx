@@ -66,7 +66,6 @@ const CourseItem = (props: Props) => {
                     iconProps={telegramGroupIcon}
                     style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
                     disabled={data.course.group.invite_link === "" || data.course.group.invite_link === null}
-                    className="text-decoration-none"
                     allowDisabledFocus>
                     {data.course.group.invite_link === "" || data.course.group.invite_link === null ? locale?.groups.groupNotAvailable : locale?.telegramGroup}
                 </PrimaryButton>
@@ -77,7 +76,6 @@ const CourseItem = (props: Props) => {
             <PrimaryButton
                 iconProps={telegramGroupIcon}
                 style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
-                className="text-decoration-none"
                 disabled
                 allowDisabledFocus>
                 {locale?.groups.groupNotAvailable}
@@ -175,7 +173,6 @@ const CourseItem = (props: Props) => {
         wikiLink = (
             <DefaultButton
                 href={data.course.wiki_link as any}
-                className="text-decoration-none"
                 iconProps={wikiIcon}
                 style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
                 disabled={data.course.wiki_link === null || data.course.wiki_link === ""}

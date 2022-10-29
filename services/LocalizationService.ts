@@ -33,6 +33,20 @@ class LocalizationService {
                     studentsAssociation: 'Associazione studentesca',
                     reach: 'Raggiungi',
                     findOut: 'Scopri',
+                    privacyPolicy: {
+                        title: 'Privacy Policy',
+                        subtitle: 'Per fare funzionare i nostri servizi memorizziamo alcuni dati nel nostro sistema.',
+                        description: 'Per continuare ed utilizzare i nostri gruppi e servizi è necessario <Text variant="medium" styles={semibold}>leggere e accettare</Text> la nostra privacy policy e il regolamento.',
+                        regulation: 'Regolamento',
+                        regulationButton: 'Raggiungi il regolamento',
+                        checkboxDescription: 'Ho letto la privacy policy e il regolamento.',
+                        read: {
+                            it: 'Leggi in italiano',
+                            en: 'Leggi in inglese'
+                        },
+                        refuse: 'Rifiuta',
+                        accept: 'Accetta'
+                    },
                     sidebar: {
                         mainGroup: "Unisciti al nostro gruppo principale",
                         channel: "Entra nel nostro canale Telegram",
@@ -364,6 +378,20 @@ class LocalizationService {
                     studentsAssociation: 'Students association',
                     reach: 'Reach',
                     findOut: 'Find out',
+                    privacyPolicy: {
+                        title: 'Privacy Policy',
+                        subtitle: 'Per fare funzionare i nostri servizi memorizziamo alcuni dati nel nostro sistema.',
+                        description: 'Per continuare ed utilizzare i nostri gruppi e servizi è necessario <Text variant="medium" styles={semibold}>leggere e accettare</Text> la nostra privacy policy e il regolamento.',
+                        regulation: 'Regolamento',
+                        regulationButton: 'Raggiungi il regolamento',
+                        checkboxDescription: 'Ho letto la privacy policy e il regolamento.',
+                        read: {
+                            it: 'Leggi in italiano',
+                            en: 'Leggi in inglese'
+                        },
+                        refuse: 'Rifiuta',
+                        accept: 'Accetta'
+                    },
                     sidebar: {
                         mainGroup: "Join our main group",
                         channel: "Enter our Telegram channel",

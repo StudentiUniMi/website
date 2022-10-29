@@ -8,80 +8,24 @@ import { loadTheme, ThemeProvider } from '@fluentui/react';
 import { addDays, cookiesContent, isNavigatorLanguageItalian, parseCookies } from '../services/Utils';
 import { initializeIcons } from '@fluentui/react/lib/Icons';
 import { registerIcons, setIconOptions } from '@fluentui/react/lib/Styling';
+import { registeredIcons } from 'services/Icons';
 import { useEffect } from "react";
-import { GoChevronRight } from "react-icons/go";
-import { FiSearch } from 'react-icons/fi';
-import { BsQuestionSquare } from 'react-icons/bs';
-import { FaTelegram, FaDiscord, FaFacebook, FaInstagram, FaLeaf, FaCode, FaBook, FaGithub, FaUsers } from 'react-icons/fa';
-import { MdPeopleAlt } from 'react-icons/md';
-import { AiOutlineStar, AiOutlineEdit, AiOutlineFileText, AiOutlineArrowLeft, AiOutlineFileDone, AiOutlineFileAdd, AiOutlineGlobal, AiOutlineFilePdf, AiOutlineException, AiOutlineHourglass, AiOutlineContacts, AiOutlineRobot, AiOutlineSolution, AiOutlineBook, AiOutlineEuroCircle, AiOutlineBank, AiOutlineCalendar, AiOutlineHome, AiOutlineUsergroupAdd, AiOutlineFolderOpen, AiOutlineReload, AiOutlineMenu, AiOutlineIdcard, AiOutlineCloudServer, AiOutlineInbox, AiOutlineMail, AiOutlineProfile, AiOutlineRead, AiOutlineInfoCircle, AiOutlineExperiment, AiOutlineVideoCamera, AiOutlineCode, AiOutlineTeam, AiOutlineLink, AiOutlineQuestionCircle, AiOutlineFundProjectionScreen, AiOutlineFileSearch } from 'react-icons/ai';
+import { GlobalProvider } from 'services/GlobalContext';
 import React from 'react';
 import Script from 'next/script';
 import Head from 'next/head';
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import LocalizationService from "../services/LocalizationService";
+import PrivacyPolicyDialog from 'components/GenericComponents/PrivacyPolicyDialog';
 
-initializeIcons();
 setIconOptions({ disableWarnings: true });
-registerIcons({
-    icons: {
-        GoChevronRight: <GoChevronRight />,
-        GroupsSearch: <FiSearch />,
-        BsQuestionSquare: <BsQuestionSquare />,
-        FaTelegram: <FaTelegram />,
-        MdPeopleAlt: <MdPeopleAlt />,
-        FaDiscord: <FaDiscord />,
-        FaGithub: <FaGithub />,
-        FaFacebook: <FaFacebook />,
-        FaInstagram: <FaInstagram />,
-        FaUsers: <FaUsers />,
-        FaLeaf: <FaLeaf />,
-        FaCode: <FaCode />,
-        FaBook: <FaBook />,
-        AiOutlineGlobal: <AiOutlineGlobal />,
-        AiOutlineMenu: <AiOutlineMenu />,
-        AiOutlineReload: <AiOutlineReload />,
-        AiOutlineFolderOpen: <AiOutlineFolderOpen />,
-        AiOutlineUsergroupAdd: <AiOutlineUsergroupAdd />,
-        AiOutlineCalendar: <AiOutlineCalendar />,
-        AiOutlineHome: <AiOutlineHome />,
-        AiOutlineBank: <AiOutlineBank />,
-        AiOutlineEuroCircle: <AiOutlineEuroCircle />,
-        AiOutlineBook: <AiOutlineBook />,
-        AiOutlineSolution: <AiOutlineSolution />,
-        AiOutlineRobot: <AiOutlineRobot />,
-        AiOutlineContacts: <AiOutlineContacts />,
-        AiOutlineHourglass: <AiOutlineHourglass />,
-        AiOutlineException: <AiOutlineException />,
-        AiOutlineFilePdf: <AiOutlineFilePdf />,
-        AiOutlineFileAdd: <AiOutlineFileAdd />,
-        AiOutlineFileDone: <AiOutlineFileDone />,
-        AiOutlineIdcard: <AiOutlineIdcard />,
-        AiOutlineCloudServer: <AiOutlineCloudServer />,
-        AiOutlineInbox: <AiOutlineInbox />,
-        AiOutlineMail: <AiOutlineMail />,
-        AiOutlineProfile: <AiOutlineProfile />,
-        AiOutlineRead: <AiOutlineRead />,
-        AiOutlineExperiment: <AiOutlineExperiment />,
-        AiOutlineInfoCircle: <AiOutlineInfoCircle />,
-        AiOutlineVideoCamera: <AiOutlineVideoCamera />,
-        AiOutlineCode: <AiOutlineCode />,
-        AiOutlineArrowLeft: <AiOutlineArrowLeft />,
-        AiOutlineTeam: <AiOutlineTeam />,
-        AiOutlineLink: <AiOutlineLink />,
-        AiOutlineQuestionCircle: <AiOutlineQuestionCircle />,
-        AiOutlineFundProjectionScreen: <AiOutlineFundProjectionScreen />,
-        AiOutlineFileSearch: <AiOutlineFileSearch />,
-        AiOutlineFileText: <AiOutlineFileText />,
-        AiOutlineEdit: <AiOutlineEdit />,
-        AiOutlineStar: <AiOutlineStar />
-    }
-});
+registerIcons({ icons: registeredIcons });
+initializeIcons();
 
 const CustomApp = ({ Component, pageProps, requestLanguage, ssrCookies }: AppProps & { requestLanguage: string, ssrCookies: cookiesContent }) => {
-    const Comp = Component as any; // TODO: remove this in the future
-    
+    const Comp = Component as any; // TODO: fix this
+
     let [cookies, setCookie] = useCookies();
     
     let [theme, setTheme] = React.useState(ssrCookies.theme ?? false);
@@ -92,6 +36,7 @@ const CustomApp = ({ Component, pageProps, requestLanguage, ssrCookies }: AppPro
     let [darkTheme, setDarkTheme] = React.useState(buildDarkTheme(palette));
 
     const date: Date = addDays(new Date(), 90);
+    const policyDate: Date = addDays(new Date(), 360);
 
     const changeTheme = () => {
         setTheme(!theme);
@@ -117,6 +62,7 @@ const CustomApp = ({ Component, pageProps, requestLanguage, ssrCookies }: AppPro
         if (cookies["language"] === undefined) setCookie("language", language, { path: "/", expires: date });
         if (cookies["theme"] === undefined) setCookie("theme", theme ? "dark" : "light", { path: "/", expires: date });
         if (cookies["palette"] === undefined) setCookie("palette", palette, { path: "/", expires: date });
+        if (cookies["isPolicyAccepted"] === undefined) setCookie("isPolicyAccepted", false, { path: "/", expires: policyDate });
     }, []);
 
     useEffect(() => {
@@ -125,7 +71,7 @@ const CustomApp = ({ Component, pageProps, requestLanguage, ssrCookies }: AppPro
         loadTheme(theme ? darkTheme : lightTheme);
         LocalizationService.localize(language);
     }, [language, palette, theme]);
-
+    
     LocalizationService.localize(language);
 
     return (
@@ -141,16 +87,19 @@ const CustomApp = ({ Component, pageProps, requestLanguage, ssrCookies }: AppPro
             {/* Main webapp structure */}
             <CookiesProvider>
                 <ThemeProvider applyTo="body" theme={theme ? darkTheme : lightTheme}>
-                    <Header />
-                    <Comp {...pageProps} />
-                    <Footer 
-                        appTheme={theme}
-                        language={language}
-                        palette={palette}
-                        changeTheme={changeTheme} 
-                        changePalette={changePalette} 
-                        changeLanguage={changeLanguage} 
-                    />
+                    <GlobalProvider>
+                        <Header />
+                        <Comp {...pageProps} />
+                        <PrivacyPolicyDialog />
+                        <Footer 
+                            appTheme={theme}
+                            language={language}
+                            palette={palette}
+                            changeTheme={changeTheme} 
+                            changePalette={changePalette} 
+                            changeLanguage={changeLanguage} 
+                        />
+                    </GlobalProvider>
                 </ThemeProvider>
             </CookiesProvider>
 

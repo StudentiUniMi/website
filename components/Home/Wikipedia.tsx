@@ -37,7 +37,6 @@ const Wiki = () => {
                                    iconProps={buttonIconProps}
                                     theme={theme} 
                                     href="https://wiki.studentiunimi.it/start"
-                                    className="text-decoration-none"
                               />
                         </div>
                     </Col>

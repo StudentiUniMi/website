@@ -37,7 +37,6 @@ const ThirdSection = () => {
                             iconProps={buttonIconProps}
                             theme={theme}
                             href="https://overleaf.studentiunimi.it/"
-                            className="text-decoration-none"
                         />
                     </Col>
 
@@ -57,7 +56,6 @@ const ThirdSection = () => {
                             iconProps={buttonIconProps}
                             theme={theme}
                             href="https://hedgedoc.studentiunimi.it/"
-                            className="text-decoration-none"
                         />
                     </Col>
 
@@ -77,7 +75,6 @@ const ThirdSection = () => {
                             iconProps={buttonIconProps}
                             theme={theme}
                             href="https://paste.studentiunimi.it/"
-                            className="text-decoration-none"
                         />
                     </Col>
 

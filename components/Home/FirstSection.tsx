@@ -45,7 +45,6 @@ const FirstSection = () => {
                                         iconProps={buttonIconProps}
                                         theme={theme}
                                         href="https://studentiunimi.it/courses"
-                                        className="text-decoration-none"
                                     />
                                 </div>
                             </div>
@@ -75,7 +74,6 @@ const FirstSection = () => {
                                         iconProps={buttonIconProps}
                                         theme={theme}
                                         href="https://studentiunimi.it/courses"
-                                        className="text-decoration-none"
                                     />
                                 </div>
                             </div>
@@ -105,7 +103,6 @@ const FirstSection = () => {
                                         iconProps={buttonIconProps}
                                         theme={theme}
                                         href="https://studentiunimi.it/services"
-                                        className="text-decoration-none"
                                     />
                                 </div>
                             </div>

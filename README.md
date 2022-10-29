@@ -10,7 +10,7 @@
 
 [studentiunimi.it](https://studentiunimi.it/) is a fully responsive website built with React, [NextJS](https://nextjs.org/) and [Fluent UI](https://developer.microsoft.com/en-us/fluentui#/), with the aim of providing services and access to all groups of didactic courses and general purposes to students of the [University of Milan](https://www.unimi.it/). This website displays data and interacts with a database thanks to the APIs made available by the [backend](https://github.com/StudentiUniMi/backend).
 
-![preview](https://user-images.githubusercontent.com/52317197/169861477-0b81f4ae-8c49-4a0b-8e23-a75bb9107ae6.png)
+![preview](public/images/preview.png)
 
 # Features ✨
 ## Dark Theme 🌚

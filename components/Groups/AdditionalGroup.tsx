@@ -70,7 +70,6 @@ const AdditionalGroup = (props: Props) => {
                             return (
                                 <PrimaryButton
                                     href={data.gruppo as any}
-                                    className="text-decoration-none"
                                     iconProps={telegramGroupIcon}
                                     style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
                                     disabled={data.gruppo === "" || data.gruppo === null}
