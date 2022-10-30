@@ -22,7 +22,7 @@ const Chip = (props: Props) => {
             cursor: 'default',
             borderRadius: 16,
             height: props.size === 'small' ? 24 : 32,
-            transition: 'all ease-in 0.3s'
+            transition: 'all ease-in 0.1s'
         }, props.style)}>
             <Text 
                 variant={"small"} 

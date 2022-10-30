@@ -1,6 +1,9 @@
 import { Text, IIconProps, PrimaryButton, Image, useTheme } from '@fluentui/react';
+import { useContext } from 'react';
 import { semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
+import { preventDefault, preventVisibleHref } from 'services/Utils';
+import GlobalContext from 'services/GlobalContext';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../../services/LocalizationService";
@@ -8,6 +11,8 @@ import LocalizationService from "../../services/LocalizationService";
 const Wiki = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
+    const { isPolicyAccepted, togglePolicyDialog } = useContext(GlobalContext);
+    
     const buttonStyle = { maxWidth: '230px', boxShadow: theme.effects.elevation8 };
     const buttonIconProps: IIconProps = { iconName: 'GoChevronRight', styles: { root: { fontSize: 14 } } };
 
@@ -23,25 +28,26 @@ const Wiki = () => {
                     <Col lg={8}>
                         <div className="mb-2"><Text variant="xLarge" styles={semibold}>{locale?.homepage.wikipediaSection.text1}</Text></div>
                         <div>
-                              <div className="mb-2">
-                                    <Text variant="large">{locale?.homepage.wikipediaSection.text2}</Text>
-                              </div>
-                              <div className="mb-3">
-                                   <Text variant="medium">
+                            <div className="mb-2">
+                                <Text variant="large">{locale?.homepage.wikipediaSection.text2}</Text>
+                            </div>
+
+                            <div className="mb-3">
+                                <Text variant="medium">
                                     {locale?.homepage.wikipediaSection.text3}
-                                   </Text>
-                              </div>
-                              <PrimaryButton
-                                   text={locale?.homepage.wikipediaSection.buttonText}
-                                   style={buttonStyle}
-                                   iconProps={buttonIconProps}
-                                    theme={theme} 
-                                    href="https://wiki.studentiunimi.it/start"
-                                    className="text-decoration-none"
-                              />
+                                </Text>
+                            </div>
+                            
+                            <PrimaryButton
+                                href={preventVisibleHref(isPolicyAccepted, "https://wiki.studentiunimi.it/start")} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}
+                                text={locale?.homepage.wikipediaSection.buttonText}
+                                style={buttonStyle}
+                                iconProps={buttonIconProps}
+                                theme={theme}
+                            />
                         </div>
                     </Col>
-               </Row>
+                </Row>
 
             </Container>
         </div>

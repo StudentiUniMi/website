@@ -1,13 +1,18 @@
 import { Text, IIconProps, Icon, DefaultButton, useTheme } from '@fluentui/react';
+import { useContext } from 'react';
 import { semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
+import { preventDefault, preventVisibleHref } from 'services/Utils';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../../services/LocalizationService";
+import GlobalContext from 'services/GlobalContext';
 
 const ThirdSection = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
+    const { isPolicyAccepted, togglePolicyDialog } = useContext(GlobalContext);
+    
     const buttonStyle = { maxWidth: '180px', boxShadow: theme.effects.elevation8 };
     const buttonIconProps: IIconProps = { iconName: 'GoChevronRight', styles: { root: { fontSize: 14 } } };
     const iconStyle = { display: 'flex', backgroundColor: theme.palette.themePrimary, color:theme.palette.white, fontSize: 16, padding: 10, borderRadius: 5 };
@@ -32,12 +37,11 @@ const ThirdSection = () => {
                         </div>
 
                         <DefaultButton
+                            href={preventVisibleHref(isPolicyAccepted, "https://overleaf.studentiunimi.it/")} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}
                             text={locale?.homepage.additionalServicesSection.col3.buttonText}
                             style={buttonStyle}
                             iconProps={buttonIconProps}
                             theme={theme}
-                            href="https://overleaf.studentiunimi.it/"
-                            className="text-decoration-none"
                         />
                     </Col>
 
@@ -52,12 +56,11 @@ const ThirdSection = () => {
                         <div className="mb-3 pr-2 pl-2"><Text variant="medium">{locale?.homepage.additionalServicesSection.col1.text}</Text></div>
                         
                         <DefaultButton
+                            href={preventVisibleHref(isPolicyAccepted, "https://hedgedoc.studentiunimi.it/")} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}
                             text={locale?.homepage.additionalServicesSection.col1.buttonText}
                             style={buttonStyle}
                             iconProps={buttonIconProps}
                             theme={theme}
-                            href="https://hedgedoc.studentiunimi.it/"
-                            className="text-decoration-none"
                         />
                     </Col>
 
@@ -72,12 +75,11 @@ const ThirdSection = () => {
                         <div className="mb-3 pr-2 pl-2"><Text variant="medium">{locale?.homepage.additionalServicesSection.col2.text}</Text></div>
                         
                         <DefaultButton
+                            href={preventVisibleHref(isPolicyAccepted, "https://paste.studentiunimi.it/")} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}
                             text={locale?.homepage.additionalServicesSection.col2.buttonText}
                             style={buttonStyle}
                             iconProps={buttonIconProps}
                             theme={theme}
-                            href="https://paste.studentiunimi.it/"
-                            className="text-decoration-none"
                         />
                     </Col>
 

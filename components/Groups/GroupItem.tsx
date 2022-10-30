@@ -4,11 +4,13 @@ import { FontWeights, ITextStyles, Link, Persona, useTheme } from '@fluentui/rea
 import { semibold } from '../../services/Fonts';
 import { IContextualMenuProps, IIconProps } from '@fluentui/react';
 import { DefaultButton, PrimaryButton } from '@fluentui/react/lib/Button';
-import { buildProfessorName, redirectToLink } from '../../services/Utils';
+import { buildProfessorName, preventDefault, preventVisibleHref, redirectToLink } from '../../services/Utils';
 import { CourseDegree } from '../../models/Models';
+import { useContext } from 'react';
 import Chip from '../GenericComponents/Chip';
 import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
+import GlobalContext from 'services/GlobalContext';
 
 interface Props { data: CourseDegree };
 
@@ -23,6 +25,7 @@ const ITgroupsIDs = [
 const CourseItem = (props: Props) => {
     const theme = useTheme();
     const locale = LocalizationService.strings();
+    const { isPolicyAccepted, togglePolicyDialog } = useContext(GlobalContext);
     let data = props.data;
 
     const cfuStyle: ITextStyles = { root: { fontWeight: FontWeights.semibold, color: theme.palette.themeDark } };
@@ -62,11 +65,10 @@ const CourseItem = (props: Props) => {
         if (data.course.group.invite_link !== "" && data.course.group.invite_link !== null) {
             telegramLink = (
                 <PrimaryButton
-                    href={data.course.group.invite_link as any}
+                    href={preventVisibleHref(isPolicyAccepted, data.course.group.invite_link!)} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}
                     iconProps={telegramGroupIcon}
                     style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
                     disabled={data.course.group.invite_link === "" || data.course.group.invite_link === null}
-                    className="text-decoration-none"
                     allowDisabledFocus>
                     {data.course.group.invite_link === "" || data.course.group.invite_link === null ? locale?.groups.groupNotAvailable : locale?.telegramGroup}
                 </PrimaryButton>
@@ -77,7 +79,6 @@ const CourseItem = (props: Props) => {
             <PrimaryButton
                 iconProps={telegramGroupIcon}
                 style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
-                className="text-decoration-none"
                 disabled
                 allowDisabledFocus>
                 {locale?.groups.groupNotAvailable}
@@ -174,8 +175,7 @@ const CourseItem = (props: Props) => {
     if (data.year !== -1) {
         wikiLink = (
             <DefaultButton
-                href={data.course.wiki_link as any}
-                className="text-decoration-none"
+                href={preventVisibleHref(isPolicyAccepted, data.course.wiki_link!)} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}
                 iconProps={wikiIcon}
                 style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
                 disabled={data.course.wiki_link === null || data.course.wiki_link === ""}

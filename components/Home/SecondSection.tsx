@@ -1,16 +1,20 @@
 import { Text, IIconProps, Image, DefaultButton, Icon, useTheme } from '@fluentui/react';
+import { useContext } from 'react';
 import { semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
+import { preventDefault, preventVisibleHref } from 'services/Utils';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../../services/LocalizationService";
+import GlobalContext from 'services/GlobalContext';
 
 const SecondSection = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
+    const { isPolicyAccepted, togglePolicyDialog } = useContext(GlobalContext);
+
     const buttonStyle = { maxWidth: '230px', boxShadow: theme.effects.elevation8 };
     const buttonIconProps: IIconProps = { iconName: 'GoChevronRight', styles: { root: { fontSize: 14 } } };
-
     const iconStyle = { display: 'flex', backgroundColor: theme.palette.themePrimary, color:theme.palette.white, fontSize: 20, padding: 10, borderRadius: 5, minWidth: 10 };
 
     return (
@@ -42,7 +46,6 @@ const SecondSection = () => {
                                             iconProps={buttonIconProps}
                                             theme={theme}
                                             href="https://t.me/studenti_unimi"
-                                            className="text-decoration-none"
                                         />
                                 </div>
                             </div>
@@ -55,12 +58,11 @@ const SecondSection = () => {
                                 <div style={{ marginLeft: 56, marginTop: -5 }}>
                                     <div className="mb-2"><Text variant="medium">{locale?.homepage.section3.part2.description}</Text></div>                
                                     <DefaultButton
+                                        href={preventVisibleHref(isPolicyAccepted, "https://t.me/unimichat")} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}
                                         text={locale?.homepage.section3.part2.buttonText}
                                         style={buttonStyle}
                                         iconProps={buttonIconProps}
                                         theme={theme}
-                                        href="https://t.me/unimichat"
-                                        className="text-decoration-none"
                                     />
                                 </div>
                             </div>
@@ -78,7 +80,6 @@ const SecondSection = () => {
                                         iconProps={buttonIconProps}
                                         theme={theme}
                                         href="https://discord.gg/SwPzAkv4A4"
-                                        className="text-decoration-none"
                                     />
                                 </div>
                             </div>

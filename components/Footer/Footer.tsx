@@ -3,15 +3,17 @@ import { Container } from 'react-bootstrap';
 import { bold, semibold } from '../../services/Fonts';
 import { Icon, IIconProps, PrimaryButton, Toggle, TooltipHost, SwatchColorPicker, ITooltipHostStyles, TooltipDelay } from '@fluentui/react';
 import { palettes } from '../../services/Palettes';
+import { useContext } from 'react';
+import { preventDefault, preventVisibleHref } from 'services/Utils';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../../services/LocalizationService";
+import GlobalContext from 'services/GlobalContext';
 
 const listElement = { marginBottom: '.2rem' };
 
 const footerIcons: any = [
     { name: { it: 'Canale Telegram', en: 'Telegram Channel' }, link: 'https://t.me/studenti_unimi', iconName: 'FaTelegram' },
-    { name: { it: 'Gruppo Principale', en: 'Main Group' }, link: 'https://t.me/unimichat', iconName: 'MdPeopleAlt' },
     { name: { it: 'Canale Discord', en: 'Discord Channel' }, link: 'https://discord.gg/SwPzAkv4A4', iconName: 'FaDiscord' },
     { name: { it: 'Organizzazione GitHub', en: 'GitHub Organization' }, link: 'https://github.com/StudentiUnimi', iconName: 'FaGithub' },
     { name: { it: 'Pagina Facebook', en: 'Facebook Page' }, link: 'https://www.facebook.com/networkstudentiunimi', iconName: 'FaFacebook' },
@@ -34,6 +36,7 @@ const Footer = (props: Props) => {
     let palette = props.palette;
     const locale = LocalizationService.strings();
     var lang: string | undefined = LocalizationService.getLanguage();
+    const { isPolicyAccepted, togglePolicyDialog } = useContext(GlobalContext);
 
     const changeTheme = () => props.changeTheme();
     const changeLanguage = (language: string) => props.changeLanguage(language);
@@ -63,7 +66,13 @@ const Footer = (props: Props) => {
                         </div>
 
                         <div className="mb-2 text">
-                            <PrimaryButton text={locale?.footer[0].buttonText} iconProps={buttonIconProps} href="https://t.me/unimichat" className="text-decoration-none" allowDisabledFocus style={buttonStyle} />
+                            <PrimaryButton 
+                                href={preventVisibleHref(isPolicyAccepted, "https://t.me/unimichat")} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}
+                                text={locale?.footer[0].buttonText} 
+                                iconProps={buttonIconProps} 
+                                allowDisabledFocus 
+                                style={buttonStyle} 
+                            />
                         </div>
                     </Col>
                     
@@ -136,7 +145,7 @@ const Footer = (props: Props) => {
                 <Row>
                     <Col lg={7} sm={12} style={{ display: 'table' }} className="center-mobile mb-2 mb-lg-0">
                         <Text variant="medium"  style={{  display: 'table-cell', verticalAlign: 'middle' }}>
-                            {locale?.footer[0].text}
+                            {locale?.footer[0].text} <Link href="https://cdn.studentiunimi.it/privacy-policy-IT.pdf" styles={semibold}>Privacy policy</Link>
                         </Text>
                     </Col>
 

@@ -1,26 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
-import JsxParser from 'react-jsx-parser';
+import GlobalContext from 'services/GlobalContext';
 import { Text, DocumentCardPreview, IDocumentCardPreviewProps, Image, Link, Pivot, PivotItem, FontSizes, useTheme } from '@fluentui/react';
 import { NextSeo } from 'next-seo';
 import { Container } from 'react-bootstrap';
 import { Card, ICardTokens } from '@fluentui/react-cards';
 import { semibold } from '../services/Fonts';
 import { getRedirects, getGuides, getTools } from '../services/Requests';
+import { preventDefault, preventVisibleHref } from 'services/Utils';
 
 const Services = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
+    const { isPolicyAccepted, togglePolicyDialog } = useContext(GlobalContext);
+
     const redirects = getRedirects();
     const guides = getGuides();
     const tools = getTools();
-    const cardTokens: ICardTokens = { childrenMargin: 12 };
-
+    
     const [selectedSubSection, setSelectedSubSection] = React.useState<string>("redirects");
-
+    
+    const cardTokens: ICardTokens = { childrenMargin: 12 };
+    
     const handleSubSectionChange = (item?: PivotItem) => {
         if (item) {
             setSelectedSubSection(item.props.itemKey!);
@@ -85,7 +89,9 @@ const Services = () => {
 
                                 <div className="mb-4">
                                     <Text variant="medium" style={{ fontStyle: 'italic', color: theme.palette.neutralPrimary }}>
-                                        <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.services.text3} />
+                                        {locale?.services.text3} <Link href={preventVisibleHref(isPolicyAccepted, "https://t.me/unimichat")} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}>
+                                            {locale?.services.text4}
+                                        </Link>
                                     </Text>
                                 </div>
 
@@ -185,7 +191,7 @@ const Services = () => {
                             <Row>
                                 {tools.map((x, i) =>
                                     <Col xl={4} lg={6} md={6} sm={12} xs={12} className="mb-3" key={i}>
-                                        <Link href={x.link ?? ""} className="text-decoration-none">
+                                        <Link href={preventVisibleHref(isPolicyAccepted, x.link ?? "")} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()} className="text-decoration-none">
                                             <Card label={x.name?.it} horizontal tokens={cardTokens} style={{ border: '0px', maxWidth: 'none', cursor: 'pointer' }}>
                                                 <Card.Item fill>
                                                     <DocumentCardPreview {...cardProps(x.icon)} />

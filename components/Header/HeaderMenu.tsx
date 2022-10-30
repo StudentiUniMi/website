@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState, useCallback } from "react";
-import { FontSizes, IDropdownOption, Icon, Panel, Text, Pivot, PivotItem, IPivotStyles, useTheme } from '@fluentui/react';
+import { useEffect, useRef, useState, useCallback, useContext } from "react";
+import { FontSizes, IDropdownOption, Icon, Panel, Text, Pivot, PivotItem, IPivotStyles, useTheme, Link } from '@fluentui/react';
 import { useRouter } from 'next/router';
 import { useBoolean } from "@fluentui/react-hooks";
-import { redirectToLink } from "services/Utils";
+import { preventDefault, preventVisibleHref } from "services/Utils";
 import { semibold } from "services/Fonts";
 import LocalizationService from "../../services/LocalizationService";
+import GlobalContext from "services/GlobalContext";
 
 export enum ItemsKeys {
     home = "home",
@@ -19,6 +20,7 @@ const HeaderMenu = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     const router = useRouter();
+    const { isPolicyAccepted, togglePolicyDialog } = useContext(GlobalContext);
     const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
 
     /* Styles */
@@ -164,14 +166,18 @@ const HeaderMenu = () => {
                         </div>
 
                         <div className="mb-3">
-                            <div style={cardStyle} onClick={() => redirectToLink("https://t.me/unimichat")}>
-                                <Text variant="medium" style={{ color: "#fcfcfc" }}>{locale?.sidebar.mainGroup} <Icon iconName="ChevronRightMed" style={{ fontSize: 10 }} /></Text>
+                            <div style={cardStyle}>
+                                <Link href={preventVisibleHref(isPolicyAccepted, "https://t.me/unimichat")} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()} className="text-decoration-none">
+                                    <Text variant="medium" style={{ color: "#fcfcfc" }}>{locale?.sidebar.mainGroup} <Icon iconName="ChevronRightMed" style={{ fontSize: 10 }} /></Text>
+                                </Link>
                             </div>
                         </div>
 
                         <div className="mb-3">
-                            <div style={cardStyle} onClick={() => redirectToLink("https://t.me/studenti_unimi")}>
-                                <Text variant="medium" style={{ color: "#fcfcfc" }}>{locale?.sidebar.channel} <Icon iconName="ChevronRightMed" style={{ fontSize: 10 }} /></Text>
+                            <div style={cardStyle}>
+                                <Link href="https://t.me/studenti_unimi" className="text-decoration-none">
+                                    <Text variant="medium" style={{ color: "#fcfcfc" }}>{locale?.sidebar.channel} <Icon iconName="ChevronRightMed" style={{ fontSize: 10 }} /></Text>
+                                </Link>
                             </div>
                         </div>
 

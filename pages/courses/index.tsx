@@ -1,4 +1,4 @@
-import React from "react";
+import { useCallback, useState } from "react";
 import { Text, Image, Separator, Dialog, DialogType, DialogFooter } from '@fluentui/react';
 import { IconButton, IIconProps, ITooltipHostStyles, Link, PrimaryButton, TooltipHost, useTheme } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
@@ -27,24 +27,24 @@ const Courses = () => {
 
     /* States */
     let [hideApiErrorDialog, { toggle: toggleApiErrorDialog }] = useBoolean(true);
-    let [degreeTextSearch, setDegreeTextSearch] = React.useState(''); // Testo nel campo di ricerca
-    let [searchData, setSearchData] = React.useState<ISuggestionItem[]>([]); // Array di ISuggestionItem (contenente anche Degree per ogni elemento)
-    const [errorLoadingDegrees, setErrorLoadingDegrees] = React.useState<boolean>(false);
+    let [degreeTextSearch, setDegreeTextSearch] = useState('');
+    let [searchData, setSearchData] = useState<ISuggestionItem[]>([]);
+    const [errorLoadingDegrees, setErrorLoadingDegrees] = useState<boolean>(false);
 
     /* Handlers */
-    const entitySelectHandler = (item: ISuggestionItem): void => { // Questo viene triggerato quando selezioni qualcosa dal menù
+    const entitySelectHandler = (item: ISuggestionItem): void => {
         setDegreeTextSearch(item.displayValue);
         router.push(`/courses/${item.degree?.slug}`);
     };
     
-    const searchTextHandler = (): void => { // Triggerato quando premi per la ricerca (si è deciso di selezionare il primo risultato)
+    const searchTextHandler = (): void => {
         if (searchData.length === 0) return;
         setDegreeTextSearch(searchData[0]?.displayValue);
         router.push(`/courses/${searchData[0]?.degree?.slug}`);
     };
 
     /* Degrees for the SearchBox */
-    const updateDegreesForSearchBox = React.useCallback(async (searchBoxText: string) => {
+    const updateDegreesForSearchBox = useCallback(async (searchBoxText: string) => {
         setDegreeTextSearch(searchBoxText)
         if (searchBoxText === undefined || searchBoxText === "") return;
         let degreesResult = await getDegreesForSearchBox(searchBoxText);
@@ -52,7 +52,6 @@ const Courses = () => {
         if (degreesResult.status !== 200) {
             setErrorLoadingDegrees(true);
             toggleApiErrorDialog();
-            console.error("error on degrees result by searchbox text");
             return;
         }
 

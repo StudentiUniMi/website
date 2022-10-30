@@ -33,6 +33,20 @@ class LocalizationService {
                     studentsAssociation: 'Associazione studentesca',
                     reach: 'Raggiungi',
                     findOut: 'Scopri',
+                    privacyPolicy: {
+                        title: 'Privacy policy e regolamento',
+                        subtitle: 'Per fare funzionare i nostri servizi memorizziamo alcuni dati nei nostri sistemi.',
+                        description: 'Per continuare ed utilizzare i nostri gruppi e servizi è necessario <Text variant="medium" styles={semibold}>leggere e accettare</Text> la nostra privacy policy e il regolamento.',
+                        privacyPolicy: 'Privacy policy',
+                        regulation: 'Regolamento',
+                        checkboxDescription: 'Ho letto la privacy policy e il regolamento.',
+                        read: {
+                            it: 'Leggi in italiano',
+                            en: 'Leggi in inglese'
+                        },
+                        refuse: 'Rifiuta',
+                        accept: 'Accetta'
+                    },
                     sidebar: {
                         mainGroup: "Unisciti al nostro gruppo principale",
                         channel: "Entra nel nostro canale Telegram",
@@ -128,7 +142,7 @@ class LocalizationService {
                         }, 
                         faqsSection: {
                             header: 'Hai qualche domanda sul nostro Network?',
-                            description: "Dai un'occhiata qui per vedere se trovi la risposta, altrimenti chiedi pure sul <Link href='https://t.me/unimichat'>gruppo principale.</Link>"
+                            description: "Dai un'occhiata qui per vedere se trovi la risposta, altrimenti chiedi pure sul gruppo principale."
                         },
                         telegramSection: {
                             title: "Perchè Telegram e non WhatsApp?",
@@ -276,7 +290,8 @@ class LocalizationService {
                     services: {
 						text1: 'Tutti i servizi, in un\'unica pagina.',
                         text2: "Abbiamo realizzato una pagina per centralizzare tutti i collegamenti inerenti all'Università degli Studi di Milano e rendere disponibili anche le guide, strumenti e servizi telematici che abbiamo realizzato e messo a disposizione.",
-                        text3: "Pensi che manchi qualcosa? <Link href='https://t.me/unimichat'>Faccelo sapere!</Link>",
+                        text3: "Pensi che manchi qualcosa?",
+                        text4: 'Faccelo sapere!',
                         selectSubSection: "Seleziona la categoria che ti interessa",
                         availableServices: 'Servizi e guide disponibili',
                         tabs: {
@@ -364,6 +379,20 @@ class LocalizationService {
                     studentsAssociation: 'Students association',
                     reach: 'Reach',
                     findOut: 'Find out',
+                    privacyPolicy: {
+                        title: 'Privacy policy and regulation',
+                        subtitle: 'To make our services work we store some data in our system.',
+                        description: 'To continue and use our groups and services you must <Text variant="medium" styles={semibold}>read and agree</Text> to our privacy policy and rules.',
+                        privacyPolicy: 'Privacy policy',
+                        regulation: 'Regulation',
+                        checkboxDescription: 'I have read the privacy policy and regulation.',
+                        read: {
+                            it: 'Read in italian',
+                            en: 'Read in english'
+                        },
+                        refuse: 'Refuse',
+                        accept: 'Accept'
+                    },
                     sidebar: {
                         mainGroup: "Join our main group",
                         channel: "Enter our Telegram channel",
@@ -459,7 +488,7 @@ class LocalizationService {
                         },
                         faqsSection: {
                             header: 'Do you have any questions about our Network? ',
-                            description: "Have a look here to see if you find the answer, otherwise feel free to ask on the <Link href='https://t.me/unimichat'>main group</Link>."
+                            description: "Have a look here to see if you find the answer, otherwise feel free to ask on the main group."
                         },
                         telegramSection: {
                             title: "Why Telegram and not WhatsApp?",
@@ -607,7 +636,8 @@ class LocalizationService {
                     services: {
                         text1: 'All services, in one central place.',
                         text2: "We have created a page to centralize all the connections relating to the University of Milan and also make available our guides and telematic services we have created.",
-                        text3: "Do you think something is missing? <Link href='https://t.me/unimichat'>Let us know!</Link>",
+                        text3: "Do you think something is missing?",
+                        text4: 'Let us know!',
                         selectSubSection: "Select a category",
                         tabs: {
                             redirects: "Redirects",

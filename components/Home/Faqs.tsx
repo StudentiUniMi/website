@@ -44,8 +44,8 @@ const Faqs = () => {
                 </div>
 
                 <div className="mb-4">
-                    <Text variant="medium">
-                        <JsxParser bindings={{ theme: theme }} components={{ Text, Link }} jsx={locale?.homepage.faqsSection.description} />
+                    <Text variant="medium" style={{ gap: 4 }}>
+                        <JsxParser bindings={{ theme: theme}} components={{ Text, Link }} jsx={locale?.homepage.faqsSection.description} />
                     </Text>
                 </div>
 

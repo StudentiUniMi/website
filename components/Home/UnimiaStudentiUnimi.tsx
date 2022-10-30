@@ -33,7 +33,6 @@ const UnimiaStudentiUnimi = () => {
                                 iconProps={buttonIconProps}
                                 theme={theme}
                                 href="https://unimia.studentiunimi.it/"
-                                className="text-decoration-none"
                             />
                         </div>
                     </Col>

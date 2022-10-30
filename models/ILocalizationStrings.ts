@@ -22,6 +22,20 @@ interface ILocalizationStrings {
     studentsAssociation: string,
     reach: string,
     findOut: string,
+    privacyPolicy: {
+        title: string,
+        subtitle: string,
+        description: string,
+        privacyPolicy: string,
+        regulation: string,
+        checkboxDescription: string,
+        read: {
+            it: string,
+            en: string
+        },
+        refuse: string,
+        accept: string
+    },
     sidebar: {
         mainGroup: string,
         channel: string,
@@ -172,6 +186,7 @@ interface ILocalizationStrings {
         text1: string,
         text2: string,
         text3: string,
+        text4: string,
         selectSubSection: string,
         availableServices: string,
         tabs: {
