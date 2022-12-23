@@ -4,6 +4,7 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 .vscode/
+.env*.local
 
 # User-specific stuff
 .idea/**/workspace.xml

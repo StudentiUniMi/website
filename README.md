@@ -12,6 +12,21 @@
 
 ![preview](public/images/preview.png)
 
+# Run the project locally
+1. Create a `.env.local` file in the root of the project:
+
+   ```sh
+   NEXT_PUBLIC_API_URL="http://localhost:8010/proxy"
+   ```
+   
+2. Run the development server:
+
+   ```sh
+   npm run dev
+   ```
+   
+The web application will be running at http://localhost:3000
+
 # Features ✨
 ## Dark Theme 🌚
 What world would it be without a dark mode?
@@ -28,16 +43,8 @@ Infinite possibilities for multi-color palette usage.
 
 ![palette](https://user-images.githubusercontent.com/52317197/177862579-77602480-a180-4ffd-bc8a-6f9df14f337a.png)
 
-## Main links of [StudentiUnimi Network](https://github.com/StudentiUnimi)
-- 🛫 [Telegram channel](https://t.me/studenti_unimi) (You can find everything here);
-- 📝 [Groups](https://studentiunimi.it/courses) (You can find all our groups here);
-- 👨‍👨‍👦 [Main group](https://t.me/unimichat) (Here you can talk about anything related to our University)
-- 📮 [Rules of Telegram groups](https://studentiunimi.it/rules) (Read before using any of our groups);
-- 📖 [Wiki](https://wiki.studentiunimi.it/) (Resource to exchange useful materials about teaching courses);
-- 👁‍🗨 [Services and guides](http://unimia.studentiunimi.it/) (How to download video lessons from Ariel, Unsubscribe from webmail lists, Unimia, Sifa Services, Webmail, Student Portal, Virtual classroom, etc.);
-- 👨‍💻 [University related informations](https://studentiunimi.it/university) (Useful informations about our University and Representatives list).
-
-> The network and its website are not affiliated with the University of Milan.
+## SEO ⚡
+Thanks to NextJS we can improve the visibility of our website with Search engine optimization.
 
 ## Contributors
 <a href="https://github.com/StudentiUniMi/website/graphs/contributors">
