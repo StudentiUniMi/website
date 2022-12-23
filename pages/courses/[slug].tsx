@@ -7,6 +7,8 @@ import { VerboseDegree, CourseDegree, Admin } from "../../models/Models";
 import { Container } from 'react-bootstrap';
 import { getCourses, getDegreeInformations, getVerboseDegreeBySlug, getDegreeAdmins } from '../../services/Requests';
 import { semibold } from '../../services/Fonts';
+import { getDegreeFullName } from 'services/Utils';
+import FourOhFour from 'pages/404'; 
 import LocalizationService from "../../services/LocalizationService";
 import DegreeInformations from "../../components/Groups/DegreeInformations";
 import AdminsList from '../../components/Groups/AdminsList';
@@ -63,7 +65,37 @@ const Course = (props: Props) => {
     /* Degree informations */
     let degreeInformations: any[] = props.informations;
 
-    return (
+    if (!props.loadedDegree) {
+        return (
+            <>
+                <NextSeo
+                    title={locale?.helmet.notFound.title}
+                    description={locale?.helmet.notFound.description}
+                    canonical={reactHelmetContent.href}
+                    openGraph={{
+                        url: reactHelmetContent.href,
+                        title: locale?.helmet.notFound.title,
+                        description: locale?.helmet.notFound.description,
+                        site_name: 'Network StudentiUniMi',
+                        type: 'website',
+                        locale: language,
+                        images: [
+                            {
+                                url: '/seo/not-found.png',
+                                type: 'image/png',
+                            }
+                        ],
+                    }}
+                    twitter={{
+                        handle: '@handle',
+                        site: '@site',
+                        cardType: 'summary_large_image',
+                    }}
+                />
+                <FourOhFour />
+            </>
+        );
+    } else return (
         <>
             <NextSeo
                 title={reactHelmetContent.title}
@@ -176,21 +208,3 @@ export const getServerSideProps: GetServerSideProps = async ( { params }) => {
 };
 
 export default Course;
-
-/**
- * This function builds a generic name for type of degree (corso di laurea triennale, magistrale etc.)
- * @param {string} type 
- * @param {string} language
- * @returns Stringified generic cdl name
- */
-const getDegreeFullName = (type: string, language: string): string => {
-    switch (type) {
-        case 'B':
-            return language === "it" ? "Corso di laurea triennale" : "Bachelor's degree";
-        case 'M':
-            return language === "it" ? "Corso di laurea magistrale" : "Master's degree";
-        case 'C':
-            return language === "it" ? "Corso di laurea magistrale a ciclo unico" : "Single-cycle master's degree";
-    }
-    return '';
-};

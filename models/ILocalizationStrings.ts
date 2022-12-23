@@ -1,13 +1,7 @@
+import Helmet from "./Helmet"
+
 interface ILocalizationStrings {
-    helmet: {
-        homepage: { title: string, description: string },
-        courses: { title: string, description: string },
-        services: { title: string, description: string },
-        rules: { title: string, description: string },
-        university: { title: string, description: string },
-        organization: { title: string, description: string },
-        degreeLoaded: { title1: string, title2: string, description1: string, description2: string }
-    },
+    helmet: Helmet,
     serverError: string,
     telegramGroup: string,
     loading: string,
@@ -22,6 +16,12 @@ interface ILocalizationStrings {
     studentsAssociation: string,
     reach: string,
     findOut: string,
+    notFound: {
+        title: string,
+        description: string,
+        buttonHomepage: string,
+        buttonGroups: string
+    },
     privacyPolicy: {
         title: string,
         subtitle: string,
@@ -303,6 +303,6 @@ interface ILocalizationStrings {
         { header: string },
         { header: string, text: string },
     ]
-}
+};
 
-export default ILocalizationStrings
+export default ILocalizationStrings;
