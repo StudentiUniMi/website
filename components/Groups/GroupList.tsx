@@ -179,13 +179,15 @@ const CourseList= (props: Props) => {
                 }
 
                 {
-                    filteredCourses.length === 0 &&
+                    props.errorLoadingCourses 
+                    ? <ErrorMessage error={props.errorLoadingCourses} />
+                    :
+                    filteredCourses.length === 0 
+                    ?
                     <div className="justify-content-center">
                         <Message text={locale?.groups.groupsNotFound!} />
                     </div>
-                }
-                
-                {filteredCourses.length !== 0 && !props.errorLoadingCourses ? 
+                    :
                     <div className="course-list">
                         <List
                             className={classNames.listGrid}
@@ -197,8 +199,6 @@ const CourseList= (props: Props) => {
                             usePageCache={true}
                         />
                     </div>
-                    :
-                    <ErrorMessage error={props.errorLoadingCourses} />
                 }
             </Container>
         </div>

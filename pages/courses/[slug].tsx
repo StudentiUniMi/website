@@ -166,7 +166,7 @@ export const getServerSideProps: GetServerSideProps = async ( { params }) => {
 
     return { 
         props: { 
-            loadedDegree: degreeResult.value,
+            loadedDegree: degreeResult.value ?? null,
             courses: teachingCoursesResult.value ?? [],
             informations: degreeInformations,
             admins: adminsResult.value ?? [],
