@@ -1,15 +1,6 @@
+import Helmet from 'models/Helmet';
 import LocalizedStrings, { LocalizedStringsMethods } from 'react-localization';
 import ILocalizationStrings from '../models/ILocalizationStrings';
-
-interface helmet {
-    homepage: any,
-    courses: any,
-    services: any,
-    rules: any,
-    university: any,
-    organization: any,
-    degreeLoaded: any
-};
 
 class LocalizationService {
     private static data?: LocalizedStringsMethods & ILocalizationStrings;
@@ -33,6 +24,12 @@ class LocalizationService {
                     studentsAssociation: 'Associazione studentesca',
                     reach: 'Raggiungi',
                     findOut: 'Scopri',
+                    notFound: {
+                        title: "La pagina che stai cercando non esiste.",
+                        description: "Uh oh, non riusciamo a trovare la pagina che stai cercando. Forse puoi provare a tornare alla homepage oppure alla sezione dei gruppi e cercare da lì.",
+                        buttonHomepage: "Homepage",
+                        buttonGroups: "Corsi di laurea"
+                    },
                     privacyPolicy: {
                         title: 'Privacy policy e regolamento',
                         subtitle: 'Per fare funzionare i nostri servizi memorizziamo alcuni dati nei nostri sistemi.',
@@ -357,12 +354,6 @@ class LocalizationService {
                     ],
                 },
 
-
-
-
-
-
-
                 en: {
                     helmet: LocalizationService.getHelmetENGProperties(),
                     loading: "Loading..",
@@ -379,6 +370,12 @@ class LocalizationService {
                     studentsAssociation: 'Students association',
                     reach: 'Reach',
                     findOut: 'Find out',
+                    notFound: {
+                        title: "The page you were looking for does not exist.",
+                        description: "Uh oh, we can't seem to find the page you're looking for. Maybe you can try going to the homepage or the degree courses page and look again from there.",
+                        buttonHomepage: "Homepage",
+                        buttonGroups: "Degree courses"
+                    },
                     privacyPolicy: {
                         title: 'Privacy policy and regulation',
                         subtitle: 'To make our services work we store some data in our system.',
@@ -718,7 +715,7 @@ class LocalizationService {
         return LocalizationService.data?.getLanguage();
     }
 
-    static getHelmetITAProperties = () : helmet => {
+    static getHelmetITAProperties = () : Helmet => {
         return {
             homepage: { title: "Network StudentiUniMi - Gruppi, servizi e molto altro", description: "Sito web ufficiale del Network StudentiUniMi: gruppi WhatsApp rimpiazziati da Telegram, servizi e molto altro. Il network più grande dell'Università degli Studi di Milano, gestito da studenti per gli studenti." },
             courses: { title: "Tutti i gruppi | Network StudentiUniMi", description: "Tutti i gruppi Telegram per tutti i corsi di laurea (triennali, magistrali, lauree a ciclo unico) dell'Università degli Studi di Milano. Entra, chiedi informazioni e conosci persone nuove grazie al Network StudentiUniMi." },
@@ -726,11 +723,12 @@ class LocalizationService {
             rules: { title: "Regolamento dei gruppi | Network StudentiUniMi", description: "Il regolamento ufficiale dei gruppi Telegram del Network StudentiUniMi, il più grande network studentesco dell'Università degli Studi di Milano." },
             university: { title: "Informazioni dall'Ateneo e rappresentanti | Network StudentiUniMi", description: "Rimani aggiornato con tutte le informazioni e i rappresentanti dell'Università degli Studi di Milano, offerto dal Network StudentiUniMi." },
             organization: { title: "Chi siamo | Network StudentiUniMi", description: "Chi siamo? Scopri l'organizzazione dietro il Network StudentiUniMi, il più grande network studentesco dell'Università degli Studi di Milano." },
-            degreeLoaded: { title1: 'Gruppi di ', title2: ' | Network StudentiUniMi', description1: 'Tutti i link dei gruppi Telegram di ', description2: " dell'Università degli Studi di Milano, offerti dal Network StudentiUniMi." }
+            degreeLoaded: { title1: 'Gruppi di ', title2: ' | Network StudentiUniMi', description1: 'Tutti i link dei gruppi Telegram di ', description2: " dell'Università degli Studi di Milano, offerti dal Network StudentiUniMi." },
+            notFound: { title: "La pagina che stai cercando non esiste. | Network StudentiUniMi", description: "Uh oh, non riusciamo a trovare la pagina che stai cercando. Forse puoi provare a tornare alla homepage e cercare da lì." }
         }
     }
 
-    static getHelmetENGProperties = () : helmet => {
+    static getHelmetENGProperties = () : Helmet => {
         return {
             homepage: { title: "Network StudentiUniMi - Groups, services and much more", description: "Official website of StudentiUniMi Network: WhatsApp groups replaced by Telegram ones, services and much more. The largest network of the University of Milan, managed by students for students." },
             courses: { title: "Groups | Network StudentiUniMi", description: "All Telegram groups for all degree courses (three-year, master, single-cycle degrees) of the University of Milan. Join, ask for information and meet new people thanks to the StudentiUniMi Network." },
@@ -738,7 +736,8 @@ class LocalizationService {
             rules: { title: "Groups rules | Network StudentiUniMi", description: "The official rules of the StudentiUniMi Network, the largest student network of the University of Milan." },
             university: { title: "University redirects | Network StudentiUniMi", description: "Stay up-to-date with all the information and representatives of the University of Milan, offered by the StudentiUniMi Network." },
             organization: { title: "Organization | Network StudentiUniMi", description: "Who are we? Discover the organization behind the StudentiUniMi Network, the largest network of the University of Milan." },
-            degreeLoaded: { title1: 'Groups of ', title2: ' | Network StudentiUniMi', description1: 'All the links of the Telegram groups of ', description2: ' of the University of Milan, offered by StudentiUniMi Network.' }
+            degreeLoaded: { title1: 'Groups of ', title2: ' | Network StudentiUniMi', description1: 'All the links of the Telegram groups of ', description2: ' of the University of Milan, offered by StudentiUniMi Network.' },
+            notFound: { title: "The page you were looking for does not exist. | Network StudentiUniMi", description: "Uh oh, we can't seem to find the page you're looking for. Maybe you can try going to the homepage and look again from there." }
         }
     }
 }

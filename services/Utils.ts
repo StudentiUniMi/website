@@ -46,6 +46,25 @@ export const parseCookies = (cookies: string): cookiesContent => {
 
 
 /**
+ * This function builds a generic name for type of degree (corso di laurea triennale, magistrale etc.)
+ * @param {string} type 
+ * @param {string} language
+ * @returns Stringified generic cdl name
+ */
+export const getDegreeFullName = (type: string, language: string): string => {
+    switch (type) {
+        case 'B':
+            return language === "it" ? "Corso di laurea triennale" : "Bachelor's degree";
+        case 'M':
+            return language === "it" ? "Corso di laurea magistrale" : "Master's degree";
+        case 'C':
+            return language === "it" ? "Corso di laurea magistrale a ciclo unico" : "Single-cycle master's degree";
+    }
+    return '';
+};
+
+
+/**
  * This function returns a professor name in "F. Lastname" format.
  * @param {string} firstName 
  * @param {string} lastName

@@ -27,28 +27,28 @@ const AdminsList = (props: Props) => {
             </div>
 
             {
-                admins.length === 0 &&
+                errorLoadingAdmins
+                ? <ErrorMessage error={errorLoadingAdmins} />
+                :
+                admins.length === 0 
+                ?
                 <div className="justify-content-center">
                     <Message text={locale?.groups.adminsNotFound!} />
                 </div>
-            }
-
-            {admins.length !== 0 && !errorLoadingAdmins ?
+                :
                 <Container>
-                    <Row className="admin-list" style={{ justifyContent: admins?.length === 0 ? 'center' : ""}}>
-                        {admins?.length !== 0 ? admins?.map((x,i) =>
+                    <Row className="admin-list" style={{ justifyContent: admins?.length === 0 ? 'center' : "" }}>
+                        {admins?.length !== 0 ? admins?.map((x, i) =>
                             <Col key={i} xl={3} lg={3} md={4} sm={6} xs={12} className="mb-3 col-persona">
                                 {(() => {
                                     var imageUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${x.id}.png`;
-                                    return <Persona imageUrl={imageUrl} onRenderPrimaryText={() => (<><Icon iconName="FaTelegram" style={{ color: theme.palette.themePrimary }}/>&nbsp;<Link href={`https://t.me/${x.username}`}>{`${x.first_name ?? ""} ${x.last_name ?? ""}`}</Link></>)} text={`@${x.first_name ?? ""} ${x.last_name ?? ""}`} secondaryText={`@${x.username}`} size={PersonaSize.size40} />
+                                    return <Persona imageUrl={imageUrl} onRenderPrimaryText={() => (<><Icon iconName="FaTelegram" style={{ color: theme.palette.themePrimary }} />&nbsp;<Link href={`https://t.me/${x.username}`}>{`${x.first_name ?? ""} ${x.last_name ?? ""}`}</Link></>)} text={`@${x.first_name ?? ""} ${x.last_name ?? ""}`} secondaryText={`@${x.username}`} size={PersonaSize.size40} />
                                 })()}
                             </Col>
                         ) : <Message text={locale?.groups.adminsNotFound!} />
                         }
                     </Row>
                 </Container>
-                :
-                <ErrorMessage error={errorLoadingAdmins} />
             }
         </div>
     )

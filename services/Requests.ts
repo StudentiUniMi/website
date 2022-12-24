@@ -27,7 +27,7 @@ import NetworkMembers from '../data/NetworkMembers.json';
 import UniversityLinks from '../data/UniversityLinks.json';
 
 /* Endpoints */
-const api_endpoint = 'https://api.studentiunimi.it/api'; // Use 'http://localhost:8010/proxy' for local testing (with npm proxy)
+const api_endpoint = process.env.NEXT_PUBLIC_API_URL || 'https://api.studentiunimi.it/api';
 const departments_endpoint = '/departments';
 const degrees_endpoint = '/degrees';
 const degree_endpoint = '/degree';

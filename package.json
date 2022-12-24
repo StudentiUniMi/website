@@ -28,7 +28,7 @@
     "web-vitals": "^3.0.3"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently --kill-others \"next dev\" \"npm run proxy\"",
     "build": "next build",
     "start": "next start",
     "check-update": "npm-check -u",
@@ -40,6 +40,7 @@
     "@types/node": "14.14.21",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.2",
+    "concurrently": "^7.6.0",
     "gh-pages": "3.1.0",
     "npm-check": "5.9.2",
     "raw-loader": "4.0.2"
