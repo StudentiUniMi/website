@@ -1,6 +1,5 @@
 /**
- * Additional group component.
- * To-do: remove checks on MUG name when the new section for students association will be available.
+ * Students association component.
  * 
  * @author Giuseppe Del Campo
  */
@@ -10,15 +9,15 @@ import { Card, ICardTokens } from "@fluentui/react-cards";
 import { preventDefault, preventVisibleHref } from 'services/Utils';
 import { semibold } from '../../services/Fonts';
 import { useContext } from 'react';
-import ExtraGroup from '../../models/ExtraGroup'
+import Group from '../../models/Group'
 import Chip from '../GenericComponents/Chip';
 import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 import GlobalContext from 'services/GlobalContext';
 
-interface Props { data: ExtraGroup };
+interface Props { data: Group };
 
-const AdditionalGroup = (props: Props) => {
+const StudentsAssociation = (props: Props) => {
     const theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
@@ -48,7 +47,7 @@ const AdditionalGroup = (props: Props) => {
     
     // Group image initialization
     var imageUrl: string;
-    imageUrl = '/extra_groups_images/' + data.image;
+    imageUrl = '/images/university_groups/' + data.image;
     
     return (
         <Card tokens={cardTokens} className="additional-group-item">
@@ -58,7 +57,7 @@ const AdditionalGroup = (props: Props) => {
             <Card.Section>
                 <Text styles={descriptionTextStyles}>
                     <Chip 
-                        label={name === 'MUG - Milan University Gamers' ? locale?.studentsAssociation : locale?.extraGroups.extraGroup} 
+                        label={locale?.groups.studentsAssociations.card.type} 
                         size="small" 
                         textColor={theme.palette.black}
                         bgColor={theme.palette.neutralLight}
@@ -71,15 +70,15 @@ const AdditionalGroup = (props: Props) => {
 
                 {
                     (() => {
-                        if (data.gruppo !== "" && data.gruppo !== null) {
+                        if (data.href !== "" && data.href !== null) {
                             return (
                                 <PrimaryButton
-                                    href={preventVisibleHref(isPolicyAccepted, data.gruppo!)} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}
+                                    href={preventVisibleHref(isPolicyAccepted, data.href!)} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}
                                     iconProps={telegramGroupIcon}
                                     style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
-                                    disabled={data.gruppo === "" || data.gruppo === null}
+                                    disabled={data.href === "" || data.href === null}
                                     allowDisabledFocus>
-                                    {name === 'MUG - Milan University Gamers' ? locale?.homepage.section3.part3.title : locale?.telegramGroup}
+                                    {locale?.homepage.section3.part3.title}
                                 </PrimaryButton>
                             );
                         }
@@ -91,4 +90,4 @@ const AdditionalGroup = (props: Props) => {
     );
 };
 
-export default AdditionalGroup;
+export default StudentsAssociation;

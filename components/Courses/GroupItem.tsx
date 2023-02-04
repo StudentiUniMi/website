@@ -55,9 +55,9 @@ const CourseItem = (props: Props) => {
         /* Main text inizialization */
         if (data.year === -1) {
             if (ITgroupsIDs.indexOf(data.course.group.id) !== -1) {
-                mainText = <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.groups.tutorsGroupDescription} />;
+                mainText = <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.courses.tutorsGroupDescription} />;
             } else {
-                mainText = <>{locale?.groups.mainGroupDescription}</>;
+                mainText = <>{locale?.courses.mainGroupDescription}</>;
             }
         }
 
@@ -70,7 +70,7 @@ const CourseItem = (props: Props) => {
                     style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
                     disabled={data.course.group.invite_link === "" || data.course.group.invite_link === null}
                     allowDisabledFocus>
-                    {data.course.group.invite_link === "" || data.course.group.invite_link === null ? locale?.groups.groupNotAvailable : locale?.telegramGroup}
+                    {data.course.group.invite_link === "" || data.course.group.invite_link === null ? locale?.courses.groupNotAvailable : locale?.telegramGroup}
                 </PrimaryButton>
             );
         }
@@ -81,7 +81,7 @@ const CourseItem = (props: Props) => {
                 style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
                 disabled
                 allowDisabledFocus>
-                {locale?.groups.groupNotAvailable}
+                {locale?.courses.groupNotAvailable}
             </PrimaryButton>
         );
     }
@@ -136,13 +136,13 @@ const CourseItem = (props: Props) => {
             yearText = null;
             break;
         case -2: /* Complementare */
-            yearText = `${locale?.groups.complementary}`;
+            yearText = `${locale?.courses.complementary}`;
             break;
         case undefined: /* Errore o non disponibile */
             yearText = "N/A";
             break;
         default:
-            yearText = `${data.year}° ${locale?.groups.year}`;
+            yearText = `${data.year}° ${locale?.courses.year}`;
             break;
     }
 
@@ -152,7 +152,7 @@ const CourseItem = (props: Props) => {
     } else if (data.semester === undefined) {
         semesterText = 'N/A';
     } else if (data.semester !== null) {
-        semesterText = `${data.semester}° ${locale?.groups.semester}`;
+        semesterText = `${data.semester}° ${locale?.courses.semester}`;
     }
 
     /* Websites inizialization */
@@ -220,7 +220,7 @@ const CourseItem = (props: Props) => {
                 }
 
                 <Text styles={descriptionTextStyles}>
-                    {data.year === -1 && <Chip label={locale?.groups.mainGroup} size="small" textColor={theme.palette.black} bgColor={theme.palette.neutralLight} className="m-1" /> }
+                    {data.year === -1 && <Chip label={locale?.courses.mainGroup} size="small" textColor={theme.palette.black} bgColor={theme.palette.neutralLight} className="m-1" /> }
                     {yearText !== null && <Chip label={yearText} size="small" textColor={theme.palette.black} bgColor={theme.palette.neutralLighter} className="m-1" /> }
                     {semesterText !== null && <Chip label={semesterText} size="small" textColor={theme.palette.black} bgColor={theme.palette.neutralLighter} /> }
                 </Text>
@@ -233,7 +233,7 @@ const CourseItem = (props: Props) => {
 
                 { data.year !== -1 &&
                     <DefaultButton
-                        text={locale?.groups.websites}
+                        text={locale?.courses.websites}
                         style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
                         iconProps={websiteIcon}
                         menuProps={menuProps}

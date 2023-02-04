@@ -45,6 +45,7 @@ interface ILocalizationStrings {
     headerMenuItems: {
         home: string,
         courses: string,
+        groups: string,
         services: string,
         aboutUs: string,
         rules: string,
@@ -140,16 +141,11 @@ interface ILocalizationStrings {
             list: any[]
         }
     },
-    groups: {
+    courses: {
         resetSection: string,
         filtersToggle: string,
         findDegreeByName: string,
         groupsSection: {
-            text1: string,
-            text2: string,
-            text3: string
-        },
-        extraGroupsSection: {
             text1: string,
             text2: string,
             text3: string
@@ -180,6 +176,33 @@ interface ILocalizationStrings {
             description: string,
             type: string,
             date: string
+        }
+    },
+    groups: {
+        universityGroups: {
+            label: string,
+            title: string,
+            description: string,
+            card: {
+                type: string
+            }
+        },
+        announcementsGroups: {
+            label: string,
+            title: string,
+            description: string,
+            description2: string,
+            card: {
+                type: string
+            }
+        },
+        studentsAssociations: {
+            label: string,
+            title: string,
+            description: string,
+            card: {
+                type: string
+            }
         }
     },
     services: {

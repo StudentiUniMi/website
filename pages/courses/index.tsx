@@ -1,16 +1,15 @@
 import { useCallback, useState } from "react";
-import { Text, Image, Separator, Dialog, DialogType, DialogFooter } from '@fluentui/react';
+import { Text, Image, Dialog, DialogType, DialogFooter } from '@fluentui/react';
 import { IconButton, IIconProps, ITooltipHostStyles, Link, PrimaryButton, TooltipHost, useTheme } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import { useRouter } from 'next/router';
 import { getDegreesForSearchBox } from '../../services/Requests';
 import { semibold } from '../../services/Fonts';
-import { Autocomplete } from '../../components/Groups/Autocomplete';
-import { ISuggestionItem } from '../../components/Groups/Autocomplete_types';
+import { Autocomplete } from '../../components/Courses/Autocomplete';
+import { ISuggestionItem } from '../../components/Courses/Autocomplete_types';
 import { useBoolean } from "@fluentui/react-hooks";
 import { NextSeo } from 'next-seo';
 import LocalizationService from "../../services/LocalizationService";
-import AdditionalGroupsView from '../../components/Groups/AdditionalGroups';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import JsxParser from "react-jsx-parser";
@@ -102,27 +101,27 @@ const Courses = () => {
                 }}
             />
 
-            <section className="groups">
-                <div className="pt-5">
+            <section className="courses">
+                <div className="pt-5 pb-5">
                     <Container>
                         <Row>
                             <Col lg={3} className="text-center mb-3 mb-lg-0">
                                 <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 400 }}>
-                                    <Image className="mb-2" src={'/images/groups/groups.png'} style={{ display: 'inline-block', width: '100%' }} />
+                                    <Image className="mb-2" src={'/images/courses/courses.png'} style={{ display: 'inline-block', width: '100%' }} />
                                 </div>
                             </Col>
 
                             <Col lg={9}>
                                 <div className="mb-2">
                                     <div className="mb-1">
-                                        <Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>{locale?.groups.groupsSection.text1}</Text>
+                                        <Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>{locale?.courses.groupsSection.text1}</Text>
                                     </div>
                                     
                                     <div className="mb-2">
-                                        <span className="mr-1"><Text variant="xLargePlus">{locale?.groups.groupsSection.text2}</Text></span>
+                                        <span className="mr-1"><Text variant="xLargePlus">{locale?.courses.groupsSection.text2}</Text></span>
                                         
                                         <TooltipHost
-                                            content={locale?.groups.resetSection}
+                                            content={locale?.courses.resetSection}
                                             calloutProps={calloutProps}
                                             styles={hostStyles}
                                         >
@@ -131,14 +130,14 @@ const Courses = () => {
                                     </div>
 
                                     <div className="mb-2 mb-md-4">
-                                        <Text variant="large">{locale?.groups.groupsSection.text3}</Text>
+                                        <Text variant="large">{locale?.courses.groupsSection.text3}</Text>
                                     </div>
                                 </div>
 
                                 <div className="search-box">
                                     <Autocomplete
                                         items={searchData}
-                                        searchTitle={locale?.groups.findDegreeByName}
+                                        searchTitle={locale?.courses.findDegreeByName}
                                         suggestionCallback={(item) => entitySelectHandler(item)}
                                         searchCallback={searchTextHandler}
                                         changeCallback={(text) => updateDegreesForSearchBox(text)}
@@ -157,37 +156,6 @@ const Courses = () => {
 
                     </Container>
                 </div>
-
-                <Container className="pb-4">
-                    <Separator className="mb-3 mt-3" />
-
-                    <div className="mb-4">
-                        <Row>
-                            <Col xl={9} lg={8}>
-                                <div className="mb-3">
-                                    <div className="mb-1">
-                                        <Text variant="medium" styles={semibold} style={{ textTransform: 'uppercase', color: theme.palette.themePrimary }}>{locale?.groups.extraGroupsSection.text1}</Text>
-                                    </div>
-                                    <div className="mb-2">
-                                        <Text variant="xLargePlus">{locale?.groups.extraGroupsSection.text2}</Text>
-                                    </div>
-                                    <div>
-                                        <Text variant="large">{locale?.groups.extraGroupsSection.text3}</Text>
-                                    </div>
-                                </div>
-                            </Col>
-
-                            <Col xl={3} lg={4} className="text-center">
-                                <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 400 }}>
-                                    <Image className="mb-2" src={'/images/groups/extra_groups.png'} style={{ display: 'inline-block', width: '100%' }} />
-                                </div>
-                            </Col>
-
-                        </Row>
-                    </div>
-
-                    <AdditionalGroupsView />
-                </Container>
 
                 {/* APIs Error dialog */}
                 <Dialog

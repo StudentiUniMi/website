@@ -1,15 +1,39 @@
 import React from 'react';
 import { List, IRectangle, mergeStyleSets } from "@fluentui/react";
-import { getExtraGroups } from '../../services/Requests';
-import ExtraGroupView from './AdditionalGroup';
-import ExtraGroup from '../../models/ExtraGroup';
+import { getGroups, getGroupsAnnouncements, getStudentsAssociations } from '../../services/Requests';
+import UniversityGroup from './UniversityGroup';
+import Group from '../../models/Group';
+import AnnouncementsGroup from './AnnouncementsGroup';
+import StudentsAssociation from './StudentsAssociation';
 
-const AdditionalGroupsView = () => {
+export enum GroupsType {
+  ANNOUNCEMENTS = "ANNOUNCEMENTS",
+  UNIVERSITY = "UNIVERSITY",
+  ASSOCIATION = "ASSOCIATION"
+};
+
+interface Props {
+    groupsType: GroupsType
+};
+
+const Groups = (props: Props) => {
     const columnCount = React.useRef(0);
     const rowHeight = React.useRef(0);
     const rowsPerPage = React.useRef(0);
     const MAX_ROW_HEIGHT = 280;
-    const groups: ExtraGroup[] = getExtraGroups();
+
+    const groups: Group[] = (() => {
+        switch(props.groupsType) {
+            case GroupsType.UNIVERSITY:
+                return getGroups();
+            case GroupsType.ANNOUNCEMENTS:
+                return getGroupsAnnouncements();
+            case GroupsType.ASSOCIATION:
+                return getStudentsAssociations();
+            default:
+                return [];
+        }
+    })();
 
     var classNames = mergeStyleSets({
         listGrid: {
@@ -35,10 +59,21 @@ const AdditionalGroupsView = () => {
         return rowHeight.current * rowsPerPage.current;
     }, []); 
 
-    const getCell = (e?: ExtraGroup, _index?: number, _isScrolling?: boolean) => {
+    const getCell = (e?: Group, _index?: number, _isScrolling?: boolean) => {
         return (
             <div data-is-focusable className="listGridTile" style={{ height: rowHeight.current + 'px', width: 100 / columnCount.current + '%' }}>
-                <ExtraGroupView data={e!} />
+                {( () => { 
+                    switch(props.groupsType) {
+                        case GroupsType.UNIVERSITY:
+                            return <UniversityGroup data={e!} />
+                        case GroupsType.ANNOUNCEMENTS:
+                            return <AnnouncementsGroup data={e!} />
+                        case GroupsType.ASSOCIATION:
+                            return <StudentsAssociation data={e!} />
+                        default:
+                            return <></>;
+                    }
+                })()}
             </div>
         )
     }
@@ -57,4 +92,4 @@ const AdditionalGroupsView = () => {
     )
 };
 
-export default AdditionalGroupsView;
+export default Groups;

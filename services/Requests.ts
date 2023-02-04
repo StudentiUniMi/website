@@ -6,7 +6,6 @@
 
 /* Old Models */
 import OldDegree from '../models/Degree';
-import OldCourse from '../models/Course';
 import Service from '../models/Service';
 import Contributor from '../models/Contributor';
 import Faq from '../models/Faq';
@@ -17,7 +16,9 @@ import { Department, Degree, VerboseDegree, CourseDegree, Representative, Admin 
 
 /* Data (this will be replaced by api soon) */
 import data from '../data/Data.json';
-import extraGroups from '../data/ExtraGroups.json';
+import groups from '../data/groups/Groups.json';
+import announcementsGroups from '../data/groups/Announcements.json';
+import studentsAssociations from '../data/groups/StudentsAssociations.json';
 import redirectsData from '../data/Redirects.json';
 import guidesData from '../data/Guides.json';
 import toolsData from '../data/Tools.json';
@@ -25,6 +26,7 @@ import Contributors from '../data/Contributors.json';
 import Faqs from '../data/Faqs.json';
 import NetworkMembers from '../data/NetworkMembers.json';
 import UniversityLinks from '../data/UniversityLinks.json';
+import Group from 'models/Group';
 
 /* Endpoints */
 const api_endpoint = process.env.NEXT_PUBLIC_API_URL || 'https://api.studentiunimi.it/api';
@@ -146,17 +148,16 @@ export async function getDegreeAdmins(degreeSlug: string): Promise<Result<Admin[
 /* ----------------------------------------------------------- */
 
 /* Temporary function to retrieve degree informations. */
-export const getDegreeInformations = (degreeSlug: string): any[] => {
-    return getAllCdls().filter(x => x.id === degreeSlug)[0]?.redirects ?? [];
-};
-
+export const getDegreeInformations = (degreeSlug: string): any[] => getAllCdls().filter(x => x.id === degreeSlug)[0]?.redirects ?? [];
 
 /* Temporary function to retrieve University Links */
-export const getUniversityLinks = (): any[] => {
-    return UniversityLinks ?? [];
-};
+export const getUniversityLinks = (): any[] => UniversityLinks ?? [];
 
-export const getExtraGroups = () => extraGroups;
+export const getGroups = (): Group[] => groups;
+
+export const getGroupsAnnouncements = (): Group[] => announcementsGroups;
+
+export const getStudentsAssociations = (): Group[] => studentsAssociations;
 
 export const getRedirects = (): Service[] => redirectsData;
 
@@ -167,10 +168,6 @@ export const getTools = (): Service[] => toolsData;
 export const getAllCdls = (): OldDegree[] => ([] as OldDegree[]).concat(...(data.departments.map(x => x.cdls as any as OldDegree[])));
 
 export const getContributors = (): Contributor[] => Contributors;
-
-export const getGroupsLength = (): number => extraGroups.length + ([] as OldCourse[]).concat(...getAllCdls().map(x => x.courses as any as OldCourse[])).length;
-
-// export const getCdlsLength = (): number => getAllCdls().length;
 
 export const getFaqs = (): Faq[] => Faqs;
 

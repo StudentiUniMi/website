@@ -22,7 +22,7 @@ const AdminsList = (props: Props) => {
         <div className="mb-2">
             <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLight }}>
                 <Container>
-                    <div><Text variant="medium" styles={semibold}><Icon iconName="AiOutlineQuestionCircle" /> {locale?.groups.availableAdmins}</Text></div>
+                    <div><Text variant="medium" styles={semibold}><Icon iconName="AiOutlineQuestionCircle" /> {locale?.courses.availableAdmins}</Text></div>
                 </Container>
             </div>
 
@@ -33,7 +33,7 @@ const AdminsList = (props: Props) => {
                 admins.length === 0 
                 ?
                 <div className="justify-content-center">
-                    <Message text={locale?.groups.adminsNotFound!} />
+                    <Message text={locale?.courses.adminsNotFound!} />
                 </div>
                 :
                 <Container>
@@ -45,7 +45,7 @@ const AdminsList = (props: Props) => {
                                     return <Persona imageUrl={imageUrl} onRenderPrimaryText={() => (<><Icon iconName="FaTelegram" style={{ color: theme.palette.themePrimary }} />&nbsp;<Link href={`https://t.me/${x.username}`}>{`${x.first_name ?? ""} ${x.last_name ?? ""}`}</Link></>)} text={`@${x.first_name ?? ""} ${x.last_name ?? ""}`} secondaryText={`@${x.username}`} size={PersonaSize.size40} />
                                 })()}
                             </Col>
-                        ) : <Message text={locale?.groups.adminsNotFound!} />
+                        ) : <Message text={locale?.courses.adminsNotFound!} />
                         }
                     </Row>
                 </Container>

@@ -10,9 +10,9 @@ import { semibold } from '../../services/Fonts';
 import { getDegreeFullName } from 'services/Utils';
 import FourOhFour from 'pages/404'; 
 import LocalizationService from "../../services/LocalizationService";
-import DegreeInformations from "../../components/Groups/DegreeInformations";
-import AdminsList from '../../components/Groups/AdminsList';
-import GroupList from "../../components/Groups/GroupList";
+import DegreeInformations from "../../components/Courses/DegreeInformations";
+import AdminsList from '../../components/Courses/AdminsList';
+import GroupList from "../../components/Courses/GroupList";
 
 interface reactHelmetContent {
     title: string,
