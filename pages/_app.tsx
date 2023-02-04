@@ -88,17 +88,19 @@ const CustomApp = ({ Component, pageProps, requestLanguage, ssrCookies }: AppPro
             <CookiesProvider>
                 <ThemeProvider applyTo="body" theme={theme ? darkTheme : lightTheme}>
                     <GlobalProvider>
-                        <Header />
-                        <Comp {...pageProps} />
-                        <PrivacyPolicyDialog />
-                        <Footer 
-                            appTheme={theme}
-                            language={language}
-                            palette={palette}
-                            changeTheme={changeTheme} 
-                            changePalette={changePalette} 
-                            changeLanguage={changeLanguage} 
-                        />
+                        <div className="App">
+                            <Header />
+                            <Comp {...pageProps} />
+                            <PrivacyPolicyDialog />
+                            <Footer 
+                                appTheme={theme}
+                                language={language}
+                                palette={palette}
+                                changeTheme={changeTheme} 
+                                changePalette={changePalette} 
+                                changeLanguage={changeLanguage} 
+                            />
+                        </div>
                     </GlobalProvider>
                 </ThemeProvider>
             </CookiesProvider>

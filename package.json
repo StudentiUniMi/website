@@ -22,6 +22,7 @@
     "react-icons": "^4.4.0",
     "react-jsx-parser": "^1.28.4",
     "react-localization": "^1.0.17",
+    "react-lottie": "^1.2.3",
     "sass": "1.32.4",
     "swiper": "^6.7.0",
     "typescript": "4.3.2",

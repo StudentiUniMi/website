@@ -14,8 +14,8 @@ const Rules = () => {
     var language: string | undefined = LocalizationService.getLanguage();
 
     const imageProperties = { display: 'inline-block', width: 240 };
-    const subHeader = { backgroundColor: theme.palette.neutralLight, padding: '10px 0px' };
-    const finalBox = { backgroundColor: theme.palette.neutralLighter, padding: 20 };
+    const subHeader = { backgroundColor: theme.palette.neutralLighter, padding: '10px 0px' };
+    const finalBox = { backgroundColor: theme.palette.neutralLighter };
 
     return (
         <>
@@ -67,7 +67,7 @@ const Rules = () => {
                     </Container>
                 </div>
 
-                <div className="pb-5">
+                <div className="pb-4">
 
                     <div className="mb-4">
                         <div className="mb-4" style={subHeader}>
@@ -209,13 +209,14 @@ const Rules = () => {
                         </Container>
                     </div>
 
-                    <div style={finalBox}>
+                    <div style={finalBox} className="pt-5 pb-5">
                         <Container className="d-flex flex-column text-center" style={{ gap: 10 }}>
-                            <div className="d-flex flex-column">
-                                <Text variant="large">
+                            <Image src={'/images/rules_2.png'} style={imageProperties} />
+                            <div className="d-flex flex-column" style={{ gap: 5 }}>
+                                <Text variant="large" styles={semibold}>
                                     {locale?.rules.lastSection.title1}
                                 </Text>
-                                <Text variant="large">
+                                <Text variant="large" style={{ maxWidth: 700, margin: '0 auto' }}>
                                     {locale?.rules.lastSection.title2}
                                 </Text>
                             </div>
