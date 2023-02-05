@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Text, Image, Dialog, DialogType, DialogFooter, SearchBox, ISearchBoxStyles } from '@fluentui/react';
 import { IconButton, IIconProps, ITooltipHostStyles, Link, PrimaryButton, TooltipHost, useTheme } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
@@ -8,6 +8,8 @@ import { semibold } from '../../services/Fonts';
 import { ISuggestionItem } from '../../components/Courses/Autocomplete_types';
 import { useBoolean } from "@fluentui/react-hooks";
 import { NextSeo } from 'next-seo';
+import * as animationData from '../../components/Courses/128040-searching.json';
+import Lottie from 'react-lottie';
 import LocalizationService from "../../services/LocalizationService";
 import JsxParser from "react-jsx-parser";
 import Marquee from "react-fast-marquee";
@@ -20,15 +22,36 @@ const Courses = () => {
     var language: string | undefined = LocalizationService.getLanguage();
     let router = useRouter();
 
+    const debouncingTime = 500;
+
     const resetIcon: IIconProps = { iconName: 'AiOutlineReload' };
     const calloutProps = { gapSpace: 10 };
     const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
 
     /* States */
-    let [hideApiErrorDialog, { toggle: toggleApiErrorDialog }] = useBoolean(true);
-    let [degreeTextSearch, setDegreeTextSearch] = useState<string>('');
-    let [searchData, setSearchData] = useState<ISuggestionItem[]>([]);
+    const [hideApiErrorDialog, { toggle: toggleApiErrorDialog }] = useBoolean(true);
+    const [degreeTextSearch, setDegreeTextSearch] = useState<string>('');
+    const [debouncedSearchText, setDebouncedSearchText] = useState(degreeTextSearch);
+    const [isSearching, setIsSearching] = useState<boolean>(false);
+    const [searchData, setSearchData] = useState<ISuggestionItem[]>([]);
     const [errorLoadingDegrees, setErrorLoadingDegrees] = useState<boolean>(false);
+
+    /* Debouncing stuff */ 
+    useEffect(() => {
+        if (debouncedSearchText === '') setSearchData([]);
+        setIsSearching(true);
+        const timer = setTimeout(() => setDegreeTextSearch(debouncedSearchText), debouncingTime);
+        return () => clearTimeout(timer);
+    }, [debouncedSearchText]);
+
+    useEffect(() => {
+        if(degreeTextSearch !== '') {
+            updateDegreesForSearchBox(degreeTextSearch);
+        }
+        else{
+            setSearchData([]);
+        }
+    }, [degreeTextSearch]);
 
     /* Handlers */
     const entitySelectHandler = (item: ISuggestionItem): void => {
@@ -42,9 +65,9 @@ const Courses = () => {
         router.push(`/courses/${searchData[0]?.degree?.slug}`);
     };
 
-    /* Degrees for the SearchBox */
+    /* Degrees API call for the SearchBox result */
     const updateDegreesForSearchBox = useCallback(async (searchBoxText: string) => {
-        setDegreeTextSearch(searchBoxText)
+        setDegreeTextSearch(searchBoxText);
         if (searchBoxText === "" || !searchBoxText) {
             setSearchData([]);
             return;
@@ -64,11 +87,22 @@ const Courses = () => {
         });
 
         setSearchData(tempSearchData ?? []);
+        setIsSearching(false);
     }, [toggleApiErrorDialog]);
 
     const resetSection = () => { 
         setDegreeTextSearch(''); 
+        setDebouncedSearchText('');
         setErrorLoadingDegrees(false);
+    };
+
+    const defaultOptions = {
+      loop: true,
+      autoplay: true, 
+      animationData: animationData,
+      rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+      }
     };
 
     const iconProps: IIconProps = { iconName: 'GroupsSearch' };
@@ -162,23 +196,36 @@ const Courses = () => {
                                 iconProps={iconProps}
                                 theme={theme}
                                 styles={searchBoxStyles}
-                                value={degreeTextSearch ?? ""}
+                                value={debouncedSearchText ?? ""}
                                 onSearch={searchTextHandler}
-                                onChange={(ev) => updateDegreesForSearchBox(ev?.target.value!)}
+                                onChange={(ev) => setDebouncedSearchText(ev?.target.value!)}
                                 onClear={() => { setDegreeTextSearch(""); setSearchData([]); }}
                                 disabled={errorLoadingDegrees}
                             />
                         </div>
 
-                        { degreeTextSearch && 
+                        {debouncedSearchText &&
+                            isSearching ? 
+                                <div className="text-center mt-4">
+                                    <Lottie options={defaultOptions}
+                                        height={200}
+                                        width={200}
+                                        isClickToPauseDisabled={true}
+                                        style={{ cursor: 'default' }}
+                                    />
+                                    <Text styles={semibold}>{locale?.courses.searchingDegrees}</Text>
+                                </div>
+                            :
                             <DegreesResult 
                                 degrees={searchData}
+                                searchText={debouncedSearchText}
+                                error={errorLoadingDegrees}
                                 onElementClick={(item) => entitySelectHandler(item)}
-                            /> 
+                            />
                         }
 
-                        { errorLoadingDegrees && 
-                            <div className="mt-2 text-center d-flex flex-row align-items-center" style={{ gap: 10 }}>
+                        {errorLoadingDegrees && 
+                            <div className="mt-2 text-center d-flex flex-row align-items-center justify-content-center" style={{ gap: 10 }}>
                                 <Text variant="medium" styles={semibold} style={{ color: theme.palette.red }}>{locale?.errorDataLoading}</Text>
                                 <TooltipHost
                                     content={locale?.courses.resetSection}

@@ -150,6 +150,7 @@ interface ILocalizationStrings {
             text2: string,
             text3: string
         },
+        searchingDegrees: string,
         departmentSelect: string,
         cdlSelect: string,
         availableRedirects: string,
@@ -167,6 +168,7 @@ interface ILocalizationStrings {
         tutorsGroupDescription: string,
         groupNotAvailable: string,
         contactAdmin: string,
+        degreesNotFound: string,
         groupsNotFound: string,
         adminsNotFound: string,
         wikiCard: {

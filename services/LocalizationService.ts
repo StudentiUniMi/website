@@ -252,6 +252,7 @@ class LocalizationService {
                             text2: "Trova tutti i gruppi Telegram del tuo corso di laurea",
                             text3: "Tutto quello che devi fare è scrivere il nome del tuo corso di laurea qui sotto, e potrai accedere ai gruppi telegram dei tuoi corsi didattici e ad altre informazioni utili."
                         },
+                        searchingDegrees: "Sto cercando i corsi di laurea ...",
                         departmentSelect: 'Seleziona un dipartimento',
                         cdlSelect: 'Seleziona un corso di Laurea',
                         availableRedirects: 'Collegamenti disponibili',
@@ -269,6 +270,7 @@ class LocalizationService {
                         tutorsGroupDescription: '<Text variant="small" styles={semibold}>ATTENZIONE: </Text><Text variant="small">Questo gruppo <Text styles={semibold} variant="small">non è gestito dal network StudentiUniMi</Text> ma dai <Link href="https://orientamento.di.unimi.it/index.php/contatti/tutor-di-processo">tutor di processo</Link> nominati dal Dipartimento di Informatica.</Text>',
                         groupNotAvailable: 'Gruppo non presente',
                         contactAdmin: "<Icon iconName='FollowUser'/> Contatta un <Link href='https://studentiunimi.it/organization/'>amministratore</Link> se vuoi essere aggiunto al gruppo, oppure chiedilo direttamente su <Link href='https://t.me/unimichat'>@unimichat</Link>.",
+                        degreesNotFound: 'Nessun corso di laurea trovato.',
                         groupsNotFound: 'Nessun gruppo trovato.',
                         adminsNotFound: 'Nessun amministratore disponibile.',
                         wikiCard: {
@@ -621,6 +623,7 @@ class LocalizationService {
                             text2: "Find all the Telegram groups of your degree",
                             text3: "All you have to do is write the name of your degree below, and you will be able to access all the telegram groups of your teaching courses and other useful informations."
                         },
+                        searchingDegrees: "Searching the course degrees ...",
                         departmentSelect: 'Select the department',
                         cdlSelect: 'Select the degree',
                         availableRedirects: 'Available redirects',
@@ -639,6 +642,7 @@ class LocalizationService {
                         groupNotAvailable: 'Group not available',
                         contactAdmin: "<Icon iconName='FollowUser'/> Contact an <Link href='https://studentiunimi.it/organization/'>administrator</Link> if you would like to be added to this group, or ask directly on <Link href='https://t.me/unimichat'>@unimichat</Link>.",
                         groupsNotFound: 'Groups not found.',
+                        degreesNotFound: 'Degrees not found.',
                         adminsNotFound: 'There are no admins available.',
                         wikiCard: {
                             buttonTitle: "Tell me more about the Wiki",
