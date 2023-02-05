@@ -142,6 +142,7 @@ interface ILocalizationStrings {
         }
     },
     courses: {
+        title: string,
         resetSection: string,
         filtersToggle: string,
         findDegreeByName: string,
@@ -181,10 +182,12 @@ interface ILocalizationStrings {
         }
     },
     groups: {
+        title: string,
         universityGroups: {
             label: string,
             title: string,
             description: string,
+            description2: string,
             card: {
                 type: string
             }
@@ -202,10 +205,12 @@ interface ILocalizationStrings {
             label: string,
             title: string,
             description: string,
+            description2: string,
             card: {
                 type: string
             }
-        }
+        },
+        users: string
     },
     services: {
         text1: string,

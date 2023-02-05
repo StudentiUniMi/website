@@ -32,7 +32,7 @@ const DegreesResult = (props: Props) => {
             selectors: {
                 ':hover': {
                     backgroundColor: theme.palette.neutralLight,
-                    border: `1px solid ${theme.palette.neutralTertiary}`
+                    border: `1px solid ${theme.palette.neutralQuaternary}`
                 }
             },
         },

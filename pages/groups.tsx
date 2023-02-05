@@ -1,36 +1,41 @@
-import { Text, Image, useTheme, Separator, mergeStyleSets } from '@fluentui/react';
+import { Text, Image, useTheme, Separator, mergeStyleSets, Link } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import { semibold } from '../services/Fonts';
 import { NextSeo } from 'next-seo';
+import { useContext } from 'react';
+import { preventDefault, preventVisibleHref } from 'services/Utils';
 import GroupsList, { GroupsType } from '../components/Groups/Groups';
 import LocalizationService from "../services/LocalizationService";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Chip from 'components/GenericComponents/Chip';
+import GlobalContext from 'services/GlobalContext';
+import JsxParser from 'react-jsx-parser';
 
 const Groups = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string = LocalizationService.getLanguage() as string;
+    const { isPolicyAccepted, togglePolicyDialog } = useContext(GlobalContext);
 
-    const groupTypes = [
+    const groupTypes: any = [
         {
-            name: { it: "Gruppi dei corsi di laurea", en: "Gruppi dei corsi di laurea" },
+            name: { it: "Gruppi dei corsi di laurea", en: "Degree-related groups" },
             image: "/images/courses/courses.png",
             href: "https://studentiunimi.it/courses"
         },
         {
-            name: { it: "Gruppi universitari", en: "Gruppi universitari" },
+            name: { it: "Gruppi universitari", en: "University groups" },
             image: "/images/groups/groups.png",
             href: "#university"
         },
         {
-            name: { it: "Gruppi per annunci", en: "Gruppi per annunci" },
+            name: { it: "Gruppi per annunci", en: "Announcements groups" },
             image: "/images/groups/announcements_groups.png",
             href: "#announcements"
         },
         {
-            name: { it: "Associazioni studentesche", en: "Associazioni studentesche" },
+            name: { it: "Associazioni studentesche", en: "Students associations" },
             image: "/images/groups/students_associations.png",
             href: "#students-associations"
         }
@@ -52,7 +57,7 @@ const Groups = () => {
             padding: '20px 20px',
             cursor: 'pointer',
             transition: '0.1s all ease',
-            border: '1px solid transparent',
+            border: `1px solid ${theme.palette.neutralLight}`,
             borderRadius: 2,
             selectors: {
                 ':hover': {
@@ -97,17 +102,17 @@ const Groups = () => {
                         <Container> 
                             <div className="text-center">
                                 <div className="mb-4">
-                                    <Text variant="xLargePlus">Quale tipologia di gruppi cerchi?</Text>
+                                    <Text variant="xLargePlus">{locale?.groups.title}</Text>
                                 </div>
 
                                 <div className="d-flex flex-wrap flex-row" style={groupTypesStyle}>
-                                    {groupTypes.map(g => (
+                                    {groupTypes.map((g:any) => (
                                         <a href={g.href} className="text-decoration-none">
                                             <div className={groupTypeStyle.root}>
                                                 <div className="flex-grow-1">
                                                     <Image src={g.image} style={{ width: 158 }} />
                                                 </div>
-                                                <Text variant="large" styles={semibold}>{g.name.it}</Text>
+                                                <Text variant="large" styles={semibold}>{g.name[language]}</Text>
                                             </div>
                                         </a>
                                     ))}
@@ -132,11 +137,19 @@ const Groups = () => {
                                             <Chip label={locale?.groups.universityGroups.label} size="medium" bgColor={theme.palette.themeDarkAlt} textColor={theme.palette.white} />
                                         </Text>
                                     </div>
-                                    <div className="mb-2">
+                                    <div className="mb-1">
                                         <Text variant="xLargePlus">{locale?.groups.universityGroups.title}</Text>
                                     </div>
-                                    <div>
+                                    <div className="mb-2">
                                         <Text variant="large">{locale?.groups.universityGroups.description}</Text>
+                                    </div>
+                                    <div>
+                                        <Text variant="medium" styles={semibold}>{locale?.groups.universityGroups.description2}</Text>{' '}
+                                        <Text variant="medium" style={{ fontStyle: 'italic', color: theme.palette.neutralPrimary }}>
+                                            <Link href={preventVisibleHref(isPolicyAccepted, "https://t.me/unimichat")} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}>
+                                                {locale?.services.text4}
+                                            </Link>
+                                        </Text>
                                     </div>
                                 </div>
                             </Col>
@@ -198,9 +211,10 @@ const Groups = () => {
                                     <div className="mb-2">
                                         <Text variant="xLargePlus">{locale?.groups.studentsAssociations.title}</Text>
                                     </div>
-                                    <div>
+                                    <div className="mb-2">
                                         <Text variant="large">{locale?.groups.studentsAssociations.description}</Text>
                                     </div>
+                                    <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.groups.studentsAssociations.description2} />
                                 </div>
                             </Col>
                         </Row>

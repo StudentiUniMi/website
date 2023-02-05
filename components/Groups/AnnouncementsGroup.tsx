@@ -64,7 +64,7 @@ const AnnouncementsGroup = (props: Props) => {
                         className="m-1" 
                     />
                     {data.users && <Chip 
-                        label={`${data.users} Utenti`} 
+                        label={`${data.users} ${locale?.groups.users}`} 
                         size="small" 
                         outlined
                         textColor={theme.palette.black}

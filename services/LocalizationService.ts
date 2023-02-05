@@ -83,8 +83,8 @@ class LocalizationService {
                         section2: {
                             title: 'Ecco cosa mettiamo a disposizione',
                             cards: {
-                                card1: { title: "Gruppi per i corsi di laurea", description: "Più di <Text styles={bold} variant='large' style={{ color: theme.palette.themeDark }}>300</Text> gruppi dedicati agli specifici corsi di laurea UniMi!" },
-                                card2: { title: "Gruppi degli insegnamenti", description: "Oltre <Text styles={bold} variant='large' style={{ color: theme.palette.themeDark }}>400</Text> gruppi sui singoli corsi didattici dei corsi di laurea!" },
+                                card1: { title: "Gruppi per i corsi di laurea", description: "Più di <Text styles={bold} variant='large' style={{ color: theme.palette.themeDark }}>700</Text> gruppi dedicati agli specifici corsi di laurea e corsi didattici UniMi!" },
+                                card2: { title: "Gruppi generali", description: "Gruppi universitari, per annunci e associazioni studentesche." },
                                 card3: { title: "Servizi telematici", description: "Servizi di ogni tipo, per aiutarti a prendere appunti, scrivere la tesi e molto altro." }
                             }
                         },
@@ -244,6 +244,7 @@ class LocalizationService {
                         }
                     },
                     courses: {
+                        title: '<Text variant="mega" style={{ lineHeight: 1.3 }}>Trova tutti i <Text style={{ color: theme.palette.themePrimary }} variant="mega">gruppi</Text> e le <Text style={{ color: theme.palette.themePrimary }} variant="mega">risorse</Text> del tuo corso di laurea</Text>',
                         resetSection: 'Reset della pagina',
                         filtersToggle: 'Filtri per la ricerca',
                         findDegreeByName: "Cerca il tuo corso di laurea per nome",
@@ -283,10 +284,12 @@ class LocalizationService {
                         }
                     },
                     groups: {
+                        title: "Quale tipologia di gruppi cerchi?",
                         universityGroups: {
                             label: "Gruppi universitari",
                             title: "Unisciti ai nostri gruppi universitari",
-                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
+                            description: "Parla e discuti con altri studenti riguardo tutti i topic di cui hai bisogno.",
+                            description2: "Pensi manchi qualche gruppo in particolare?",
                             card: {
                                 type: 'Gruppo universitario'
                             }
@@ -302,12 +305,14 @@ class LocalizationService {
                         },
                         studentsAssociations: {
                             label: "Associazioni studentesche",
-                            title: "Take a look at UniMi Students Associations",
-                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
+                            title: "Dai un'occhiata alle associazioni studentesche UniMi",
+                            description: "Non sempre gli studenti sanno quante associazioni studentesche ci sono lì fuori!",
+                            description2: "Se vorresti la tua associazione studentesca aggiunta nella lista scrivi ad un <Link href='https://studentiunimi.it/organization'>membro dello staff</Link>.",
                             card: {
                                 type: 'Associazione studentesca'
                             }
-                        }
+                        },
+                        users: 'Utenti'
                     },
                     services: {
 						text1: 'Tutti i servizi, in un\'unica pagina.',
@@ -454,8 +459,8 @@ class LocalizationService {
                         section2: {
                             title: 'This is what we provide',
                             cards: {
-                                card1: { title: "Groups for degree courses", description: "Over <Text styles={bold} variant='large' style={{ color: theme.palette.themeDark }}>300</Text> groups dedicated to specific UniMi degree courses!" },
-                                card2: { title: "Teaching groups", description: "Over <Text styles={bold} variant='large' style={{ color: theme.palette.themeDark }}>400</Text> groups on the single didactic courses of the degree courses!" },
+                                card1: { title: "Groups for degree courses", description: "Over <Text styles={bold} variant='large' style={{ color: theme.palette.themeDark }}>700</Text> groups dedicated to specific UniMi degree courses and didactic courses!" },
+                                card2: { title: "General groups", description: "University groups, for announcements and student associations." },
                                 card3: { title: "Telematic services", description: "Services of all kinds, to help you take notes, write your thesis and much more." }
                             }
                         },
@@ -615,6 +620,7 @@ class LocalizationService {
                         }
                     },
                     courses: {
+                        title: '<Text variant="mega" style={{ lineHeight: 1.3 }}>Find all the <Text style={{ color: theme.palette.themePrimary }} variant="mega">groups</Text> and the <Text style={{ color: theme.palette.themePrimary }} variant="mega">resources</Text> of your degee</Text>',
                         resetSection: 'Reset page',
                         filtersToggle: 'Search filters',
                         findDegreeByName: "Find your degree by name",
@@ -654,19 +660,21 @@ class LocalizationService {
                         }
                     },
                     groups: {
+                        title: "What type of groups are you looking for?",
                         universityGroups: {
                             label: "University groups",
                             title: "Join the university groups of our Network",
-                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
+                            description: "Talk and discuss with other students about all the topics you need.",
+                            description2: "Do you think any particular group is missing?",
                             card: {
                                 type: 'University group'
                             }
                         },
                         announcementsGroups: {
                             label: "Announcements groups",
-                            title: "Join the university groups of our Network",
-                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
-                            description2: "Per postare un annuncio segui il template che trovi nei messaggi fissati quando entri.",
+                            title: "Post an ad on our dedicated groups.",
+                            description: "We have created groups dedicated exclusively to posting both want and offer ads, such as for books and notes and private lessons.",
+                            description2: "To post an ad follow the template you find in the posts set when you enter.",
                             card: {
                                 type: 'Announcements group'
                             }
@@ -674,11 +682,13 @@ class LocalizationService {
                         studentsAssociations: {
                             label: "Students associations",
                             title: "Take a look at UniMi Students Associations",
-                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",                            
+                            description: "Students don't always know how many student associations are out there!",     
+                            description2: "If you would like your student association added to the list write to a <Link href='https://studentiunimi.it/organization'>staff member</Link>.",                   
                             card: {
                                 type: 'Student association'
                             }
-                        }
+                        },
+                        users: 'Users'
                     },
                     services: {
                         text1: 'All services, in one central place.',
@@ -768,13 +778,13 @@ class LocalizationService {
     static getHelmetITAProperties = () : Helmet => {
         return {
             homepage: { title: "Network StudentiUniMi - Gruppi, servizi e molto altro", description: "Sito web ufficiale del Network StudentiUniMi: gruppi WhatsApp rimpiazziati da Telegram, servizi e molto altro. Il network più grande dell'Università degli Studi di Milano, gestito da studenti per gli studenti." },
-            courses: { title: "Tutti i gruppi | Network StudentiUniMi", description: "Tutti i gruppi Telegram per tutti i corsi di laurea (triennali, magistrali, lauree a ciclo unico) dell'Università degli Studi di Milano. Entra, chiedi informazioni e conosci persone nuove grazie al Network StudentiUniMi." },
-            groups: { title: "Tutti i gruppi | Network StudentiUniMi", description: "Tutti i gruppi Telegram per tutti i corsi di laurea (triennali, magistrali, lauree a ciclo unico) dell'Università degli Studi di Milano. Entra, chiedi informazioni e conosci persone nuove grazie al Network StudentiUniMi." },
+            courses: { title: "Gruppi e risorse dei corsi di laurea | Network StudentiUniMi", description: "Gruppi Telegram e risorse per tutti i corsi di laurea (triennali, magistrali, lauree a ciclo unico) dell'Università degli Studi di Milano. Entra, chiedi informazioni e conosci nuove persone grazie al Network StudentiUniMi." },
+            groups: { title: "Tutti i gruppi | Network StudentiUniMi", description: "Gruppi universitari, per gli annunci e associazioni studentesche dell'Università degli Studi di Milano." },
             services: { title: "Servizi e link rapidi | Network StudentiUniMi", description: "Tutti i servizi e i link rapidi alle risorse dell'Università degli Studi di Milano: iscrizioni esami, verbalizzazioni voti, webmail, e molto altro. Un'alternativa veloce a UNIMIA." },
             rules: { title: "Regolamento dei gruppi | Network StudentiUniMi", description: "Il regolamento ufficiale dei gruppi Telegram del Network StudentiUniMi, il più grande network studentesco dell'Università degli Studi di Milano." },
             university: { title: "Informazioni dall'Ateneo e rappresentanti | Network StudentiUniMi", description: "Rimani aggiornato con tutte le informazioni e i rappresentanti dell'Università degli Studi di Milano, offerto dal Network StudentiUniMi." },
             organization: { title: "Chi siamo | Network StudentiUniMi", description: "Chi siamo? Scopri l'organizzazione dietro il Network StudentiUniMi, il più grande network studentesco dell'Università degli Studi di Milano." },
-            degreeLoaded: { title1: 'Gruppi di ', title2: ' | Network StudentiUniMi', description1: 'Tutti i link dei gruppi Telegram di ', description2: " dell'Università degli Studi di Milano, offerti dal Network StudentiUniMi." },
+            degreeLoaded: { title1: 'Gruppi e risorse di ', title2: ' | Network StudentiUniMi', description1: 'Tutte le risorse e i link dei gruppi Telegram di ', description2: " dell'Università degli Studi di Milano, offerti dal Network StudentiUniMi." },
             notFound: { title: "La pagina che stai cercando non esiste. | Network StudentiUniMi", description: "Uh oh, non riusciamo a trovare la pagina che stai cercando. Forse puoi provare a tornare alla homepage e cercare da lì." }
         }
     }
@@ -782,13 +792,13 @@ class LocalizationService {
     static getHelmetENGProperties = () : Helmet => {
         return {
             homepage: { title: "Network StudentiUniMi - Groups, services and much more", description: "Official website of StudentiUniMi Network: WhatsApp groups replaced by Telegram ones, services and much more. The largest network of the University of Milan, managed by students for students." },
-            courses: { title: "Groups | Network StudentiUniMi", description: "All Telegram groups for all degree courses (three-year, master, single-cycle degrees) of the University of Milan. Join, ask for information and meet new people thanks to the StudentiUniMi Network." },
-            groups:  { title: "Groups | Network StudentiUniMi", description: "All Telegram groups for all degree courses (three-year, master, single-cycle degrees) of the University of Milan. Join, ask for information and meet new people thanks to the StudentiUniMi Network." },
+            courses: { title: "Degree groups and resources | Network StudentiUniMi", description: "All Telegram groups and resources for all degree courses (three-year, master, single-cycle degrees) of the University of Milan. Join, ask for information and meet new people thanks to the StudentiUniMi Network." },
+            groups:  { title: "Groups | Network StudentiUniMi", description: "University groups, for announcements and student associations of the University of Milan." },
             services: { title: "Services | Network StudentiUniMi", description: "All services and rapid links to the University of Milan's resources: exams, grades, webmail and much more. A very fast alternative UNIMIA replacement." },
             rules: { title: "Groups rules | Network StudentiUniMi", description: "The official rules of the StudentiUniMi Network, the largest student network of the University of Milan." },
             university: { title: "University redirects | Network StudentiUniMi", description: "Stay up-to-date with all the information and representatives of the University of Milan, offered by the StudentiUniMi Network." },
             organization: { title: "Organization | Network StudentiUniMi", description: "Who are we? Discover the organization behind the StudentiUniMi Network, the largest network of the University of Milan." },
-            degreeLoaded: { title1: 'Groups of ', title2: ' | Network StudentiUniMi', description1: 'All the links of the Telegram groups of ', description2: ' of the University of Milan, offered by StudentiUniMi Network.' },
+            degreeLoaded: { title1: 'Groups and resources of ', title2: ' | Network StudentiUniMi', description1: 'All the resources and links of the Telegram groups of ', description2: ' of the University of Milan, offered by StudentiUniMi Network.' },
             notFound: { title: "The page you were looking for does not exist. | Network StudentiUniMi", description: "Uh oh, we can't seem to find the page you're looking for. Maybe you can try going to the homepage and look again from there." }
         }
     }

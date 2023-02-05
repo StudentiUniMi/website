@@ -86,7 +86,7 @@ const FirstSection = () => {
                                         style={buttonStyle}
                                         iconProps={buttonIconProps}
                                         theme={theme}
-                                        href="https://studentiunimi.it/courses"
+                                        href="https://studentiunimi.it/groups"
                                     />
                                 </div>
                             </div>

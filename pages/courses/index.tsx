@@ -4,7 +4,7 @@ import { IconButton, IIconProps, ITooltipHostStyles, Link, PrimaryButton, Toolti
 import { Container } from 'react-bootstrap';
 import { useRouter } from 'next/router';
 import { getDegreesForSearchBox } from '../../services/Requests';
-import { semibold } from '../../services/Fonts';
+import { bold, semibold } from '../../services/Fonts';
 import { ISuggestionItem } from '../../components/Courses/Autocomplete_types';
 import { useBoolean } from "@fluentui/react-hooks";
 import { NextSeo } from 'next-seo';
@@ -55,13 +55,11 @@ const Courses = () => {
 
     /* Handlers */
     const entitySelectHandler = (item: ISuggestionItem): void => {
-        setDegreeTextSearch(item.displayValue);
         router.push(`/courses/${item.degree?.slug}`);
     };
     
     const searchTextHandler = (): void => {
         if (searchData.length === 0) return;
-        setDegreeTextSearch(searchData[0]?.displayValue);
         router.push(`/courses/${searchData[0]?.degree?.slug}`);
     };
 
@@ -123,14 +121,14 @@ const Courses = () => {
         title: locale?.serverError
     };
 
-    const chips = [
-        { label: { it: "Gruppi dei corsi di laurea", en: "Gruppi dei corsi di laurea" } },
-        { label: { it: "Gruppi dei corsi didattici", en: "Gruppi dei corsi didattici" } },
-        { label: { it: "Siti web dei corsi", en: "Siti web dei corsi" } },
-        { label: { it: "Informazioni sui docenti", en: "Informazioni sui docenti" } },
-        { label: { it: "Collegamenti del corso di laurea", en: "Collegamenti del corso di laurea" } },
-        { label: { it: "Amministratori del network", en: "Amministratori del network" } },
-        { label: { it: "Le nostre pagine wiki", en: "Le nostre pagine wiki" } },
+    const chips: any = [
+        { label: { it: "Gruppi dei corsi di laurea", en: "Degree groups" } },
+        { label: { it: "Gruppi dei corsi didattici", en: "Teaching course groups" } },
+        { label: { it: "Siti web dei corsi", en: "Course websites" } },
+        { label: { it: "Informazioni sui docenti", en: "Informations on professors" } },
+        { label: { it: "Collegamenti del corso di laurea", en: "Degree redirects and connections" } },
+        { label: { it: "Amministratori del network", en: "Network administrators" } },
+        { label: { it: "Le nostre pagine wiki", en: "Our wiki pages" } },
     ];
 
     return (
@@ -164,19 +162,16 @@ const Courses = () => {
                 <div className="pt-5 pb-5">
                     <Container>
                         <div className="mb-4">
-                            <div className="mb-2 text-center">
-                                <Text variant="mega" style={{ lineHeight: 1.3 }}>
-                                    Trova tutti i <Text style={{ color: theme.palette.themePrimary }} variant="mega">gruppi</Text> e
-                                    le <Text style={{ color: theme.palette.themePrimary }} variant="mega">risorse</Text> del tuo corso di laurea
-                                </Text>
+                            <div className="mb-2 text-center text-mega">
+                                <JsxParser bindings={{ theme: theme, semibold: semibold, bold: bold }} components={{ Text, Link }} jsx={locale?.courses.title} />
                             </div>
 
                             <div style={{ maxWidth: 800, margin: '0 auto' }}>
                                 <Marquee direction={"right"} gradient={false} speed={15}>
-                                    {chips.map((x,i) =>(
+                                    {chips.map((x:any,i:number) =>(
                                         <Text styles={semibold} key={i}>
                                             <Chip 
-                                                label={x.label['it']} 
+                                                label={x.label[language!]} 
                                                 theme={theme}
                                                 size="small" 
                                                 outlined 
@@ -207,6 +202,7 @@ const Courses = () => {
                         {debouncedSearchText &&
                             isSearching ? 
                                 <div className="text-center mt-4">
+                                    {/* @ts-ignore */} 
                                     <Lottie options={defaultOptions}
                                         height={200}
                                         width={200}

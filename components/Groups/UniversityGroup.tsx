@@ -57,7 +57,7 @@ const AdditionalGroup = (props: Props) => {
             <Card.Section>
                 <Text styles={descriptionTextStyles}>
                     <Chip 
-                        label={locale?.extraGroups.extraGroup} 
+                        label={locale?.groups.universityGroups.card.type} 
                         size="small" 
                         textColor={theme.palette.black}
                         bgColor={theme.palette.neutralLight}
