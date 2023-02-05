@@ -620,7 +620,7 @@ class LocalizationService {
                         }
                     },
                     courses: {
-                        title: '<Text variant="mega" style={{ lineHeight: 1.3 }}>Find all the <Text style={{ color: theme.palette.themePrimary }} variant="mega">groups</Text> and the <Text style={{ color: theme.palette.themePrimary }} variant="mega">resources</Text> of your degee</Text>',
+                        title: '<Text variant="mega" style={{ lineHeight: 1.3 }}>Find all the <Text style={{ color: theme.palette.themePrimary }} variant="mega">groups</Text> and the <Text style={{ color: theme.palette.themePrimary }} variant="mega">resources</Text> of your degree</Text>',
                         resetSection: 'Reset page',
                         filtersToggle: 'Search filters',
                         findDegreeByName: "Find your degree by name",
@@ -672,7 +672,7 @@ class LocalizationService {
                         },
                         announcementsGroups: {
                             label: "Announcements groups",
-                            title: "Post an ad on our dedicated groups.",
+                            title: "Post an ad on our dedicated groups",
                             description: "We have created groups dedicated exclusively to posting both want and offer ads, such as for books and notes and private lessons.",
                             description2: "To post an ad follow the template you find in the posts set when you enter.",
                             card: {
