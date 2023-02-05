@@ -7,7 +7,7 @@ interface Props {
     label?: string,
     size: string,
     textColor: string,
-    bgColor: string,
+    bgColor?: string,
     outlined?: boolean,
     theme?: Theme,
     className?: string,
@@ -17,7 +17,7 @@ interface Props {
 const Chip = (props: Props) => {
     return (
         <div className={props.className ?? ''} style={Object.assign({
-            backgroundColor: !props.outlined ? props.bgColor : "transparent",
+            backgroundColor: props.outlined || !props.bgColor ? "transparent" : props.bgColor,
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',

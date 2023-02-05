@@ -54,7 +54,7 @@ const Footer = (props: Props) => {
     const hostStylesResetColor: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
 
     return (
-        <footer style={{ backgroundColor: theme.palette.neutralQuaternaryAlt, borderTop: '1px solid', borderColor: theme.palette.neutralLight }} className="pt-4 pb-4">
+        <footer style={{ backgroundColor: theme.palette.neutralQuaternaryAlt, borderTop: '1px solid', borderColor: theme.palette.neutralLight }} className="pt-5 pb-5">
             <Container style={{ width: '100%', color: theme.palette.neutralSecondary }}>
 
                 <Row className="mb-4">

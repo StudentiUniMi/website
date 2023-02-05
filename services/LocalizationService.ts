@@ -83,8 +83,8 @@ class LocalizationService {
                         section2: {
                             title: 'Ecco cosa mettiamo a disposizione',
                             cards: {
-                                card1: { title: "Gruppi per i corsi di laurea", description: "Più di 300 gruppi dedicati agli specifici corsi di laurea UniMi!" },
-                                card2: { title: "Gruppi degli insegnamenti", description: "Oltre 400 gruppi sui singoli corsi didattici dei corsi di laurea!" },
+                                card1: { title: "Gruppi per i corsi di laurea", description: "Più di <Text styles={bold} variant='large' style={{ color: theme.palette.themeDark }}>300</Text> gruppi dedicati agli specifici corsi di laurea UniMi!" },
+                                card2: { title: "Gruppi degli insegnamenti", description: "Oltre <Text styles={bold} variant='large' style={{ color: theme.palette.themeDark }}>400</Text> gruppi sui singoli corsi didattici dei corsi di laurea!" },
                                 card3: { title: "Servizi telematici", description: "Servizi di ogni tipo, per aiutarti a prendere appunti, scrivere la tesi e molto altro." }
                             }
                         },
@@ -452,8 +452,8 @@ class LocalizationService {
                         section2: {
                             title: 'This is what we provide',
                             cards: {
-                                card1: { title: "Groups for degree courses", description: "More than 300 groups dedicated to specific UniMi degree courses!" },
-                                card2: { title: "Teaching groups", description: "Over 400 groups on the single didactic courses of the degree courses!" },
+                                card1: { title: "Groups for degree courses", description: "Over <Text styles={bold} variant='large' style={{ color: theme.palette.themeDark }}>300</Text> groups dedicated to specific UniMi degree courses!" },
+                                card2: { title: "Teaching groups", description: "Over <Text styles={bold} variant='large' style={{ color: theme.palette.themeDark }}>400</Text> groups on the single didactic courses of the degree courses!" },
                                 card3: { title: "Telematic services", description: "Services of all kinds, to help you take notes, write your thesis and much more." }
                             }
                         },
