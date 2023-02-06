@@ -1,6 +1,3 @@
-/* Main properties */
-$footer-height: 219px;  // Default footer height
-
 html {
   margin: 0;
   padding: 0;
@@ -11,19 +8,16 @@ html {
 body {
   margin: 0;
   padding: 0;
-  margin-bottom: $footer-height;
-  min-height:100%;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-main {
-  position: relative;
-  min-height: 100%;
+section {
+  flex-grow: 1;
 }
 
 /* Fix the visualization bug on some ugly browsers like Mozilla Night Basalmici Version */
@@ -48,24 +42,15 @@ svg {
   vertical-align: unset;
 }
 
-/* Responsive footer */
-@media only screen and (max-width: 1199px) {
-  body {
-    margin-bottom: $footer-height + 17px;
-  }
-}
-
-@media only screen and (max-width: 992px) {
-  body {
-    margin-bottom: $footer-height + 140px;
-  }
-}
-
+/* Responsive variant "mega" of text */
 @media only screen and (max-width: 767px) {
-  body {
-    margin-bottom: $footer-height + 380px;
+  .text-mega * {
+    font-size: 42px !important;
   }
+}
 
+/* Responsive footer */
+@media only screen and (max-width: 767px) {
   footer .row {
     text-align: center;
   }
@@ -93,13 +78,6 @@ svg {
     margin-right: 25%;
   }
 }
-
-@media only screen and (max-width: 363px) {
-  body {
-    margin-bottom: $footer-height + 381px;
-  }
-}
-
 
 /* Responsive menu and title */
 @media only screen and (min-width: 587px) {
@@ -424,5 +402,23 @@ footer .ms-Label {
 .degree .admin-list {
   .ms-Persona-imageArea .ms-Image {
     background-color: #d1d0d0;
+  }
+}
+
+/* Group types selector */
+@media only screen and (max-width: 440px) {
+  .group-types-selector {
+    img {
+      max-width: 80px;
+    }
+
+    .group-type-selector {
+      max-width: 140px;
+      max-height: 180px;
+    }
+
+    span {
+      font-size: 14px;
+    }
   }
 }

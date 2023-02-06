@@ -10,6 +10,7 @@ import GlobalContext from "services/GlobalContext";
 export enum ItemsKeys {
     home = "home",
     courses = "courses",
+    groups = "groups",
     services = "services",
     rules = "rules",
     university = "university",
@@ -29,6 +30,7 @@ const HeaderMenu = () => {
     const texts: Map<ItemsKeys, string | undefined> = new Map<ItemsKeys, string | undefined>([
         [ItemsKeys.home, locale?.headerMenuItems.home],
         [ItemsKeys.courses, locale?.headerMenuItems.courses],
+        [ItemsKeys.groups, locale?.headerMenuItems.groups],
         [ItemsKeys.services, locale?.headerMenuItems.services],
         [ItemsKeys.rules, locale?.headerMenuItems.rules],
         [ItemsKeys.university, locale?.headerMenuItems.university],
@@ -37,7 +39,7 @@ const HeaderMenu = () => {
 
     const mobileHeaderButton = {
         fontSize: FontSizes.size20
-    }
+    };
 
     const pivotStyles: Partial<IPivotStyles> = {
         root: { color: theme.palette.neutralPrimary, fontSize: FontSizes.size24 },

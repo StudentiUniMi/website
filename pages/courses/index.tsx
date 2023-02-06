@@ -1,19 +1,20 @@
-import { useCallback, useState } from "react";
-import { Text, Image, Separator, Dialog, DialogType, DialogFooter } from '@fluentui/react';
+import { useCallback, useEffect, useState } from "react";
+import { Text, Image, Dialog, DialogType, DialogFooter, SearchBox, ISearchBoxStyles, mergeStyleSets } from '@fluentui/react';
 import { IconButton, IIconProps, ITooltipHostStyles, Link, PrimaryButton, TooltipHost, useTheme } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import { useRouter } from 'next/router';
 import { getDegreesForSearchBox } from '../../services/Requests';
-import { semibold } from '../../services/Fonts';
-import { Autocomplete } from '../../components/Groups/Autocomplete';
-import { ISuggestionItem } from '../../components/Groups/Autocomplete_types';
+import { bold, semibold } from '../../services/Fonts';
+import { ISuggestionItem } from '../../components/Courses/Autocomplete_types';
 import { useBoolean } from "@fluentui/react-hooks";
 import { NextSeo } from 'next-seo';
+import * as animationData from '../../components/Courses/128040-searching.json';
+import Lottie from 'react-lottie';
 import LocalizationService from "../../services/LocalizationService";
-import AdditionalGroupsView from '../../components/Groups/AdditionalGroups';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 import JsxParser from "react-jsx-parser";
+import Marquee from "react-fast-marquee";
+import Chip from "components/GenericComponents/Chip";
+import DegreesResult from "components/Courses/DegreesResult";
 
 const Courses = () => {
     var theme = useTheme();
@@ -21,32 +22,54 @@ const Courses = () => {
     var language: string | undefined = LocalizationService.getLanguage();
     let router = useRouter();
 
+    const debouncingTime = 500;
+
     const resetIcon: IIconProps = { iconName: 'AiOutlineReload' };
     const calloutProps = { gapSpace: 10 };
     const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
 
     /* States */
-    let [hideApiErrorDialog, { toggle: toggleApiErrorDialog }] = useBoolean(true);
-    let [degreeTextSearch, setDegreeTextSearch] = useState('');
-    let [searchData, setSearchData] = useState<ISuggestionItem[]>([]);
+    const [hideApiErrorDialog, { toggle: toggleApiErrorDialog }] = useBoolean(true);
+    const [degreeTextSearch, setDegreeTextSearch] = useState<string>('');
+    const [debouncedSearchText, setDebouncedSearchText] = useState(degreeTextSearch);
+    const [isSearching, setIsSearching] = useState<boolean>(false);
+    const [searchData, setSearchData] = useState<ISuggestionItem[]>([]);
     const [errorLoadingDegrees, setErrorLoadingDegrees] = useState<boolean>(false);
+
+    /* Debouncing stuff */ 
+    useEffect(() => {
+        if (debouncedSearchText === '') setSearchData([]);
+        setIsSearching(true);
+        const timer = setTimeout(() => setDegreeTextSearch(debouncedSearchText), debouncingTime);
+        return () => clearTimeout(timer);
+    }, [debouncedSearchText]);
+
+    useEffect(() => {
+        if(degreeTextSearch !== '') {
+            updateDegreesForSearchBox(degreeTextSearch);
+        }
+        else{
+            setSearchData([]);
+        }
+    }, [degreeTextSearch]);
 
     /* Handlers */
     const entitySelectHandler = (item: ISuggestionItem): void => {
-        setDegreeTextSearch(item.displayValue);
         router.push(`/courses/${item.degree?.slug}`);
     };
     
     const searchTextHandler = (): void => {
         if (searchData.length === 0) return;
-        setDegreeTextSearch(searchData[0]?.displayValue);
         router.push(`/courses/${searchData[0]?.degree?.slug}`);
     };
 
-    /* Degrees for the SearchBox */
+    /* Degrees API call for the SearchBox result */
     const updateDegreesForSearchBox = useCallback(async (searchBoxText: string) => {
-        setDegreeTextSearch(searchBoxText)
-        if (searchBoxText === undefined || searchBoxText === "") return;
+        setDegreeTextSearch(searchBoxText);
+        if (searchBoxText === "" || !searchBoxText) {
+            setSearchData([]);
+            return;
+        } 
         let degreesResult = await getDegreesForSearchBox(searchBoxText);
 
         if (degreesResult.status !== 200) {
@@ -62,11 +85,34 @@ const Courses = () => {
         });
 
         setSearchData(tempSearchData ?? []);
+        setIsSearching(false);
     }, [toggleApiErrorDialog]);
 
     const resetSection = () => { 
         setDegreeTextSearch(''); 
+        setDebouncedSearchText('');
         setErrorLoadingDegrees(false);
+    };
+
+    const defaultOptions = {
+      loop: true,
+      autoplay: true, 
+      animationData: animationData,
+      rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+      }
+    };
+
+    const iconProps: IIconProps = { iconName: 'GroupsSearch' };
+    const searchBoxStyle = {
+        padding: '15px 20px',
+        borderRadius: 20,
+        backgroundColor: theme.palette.neutralLighterAlt
+    };
+    const searchBoxStyles: ISearchBoxStyles = {
+        root: {
+            backgroundColor: theme.palette.neutralLighterAlt
+        }
     };
 
     const modelProps = { isBlocking: false };
@@ -74,6 +120,62 @@ const Courses = () => {
         type: DialogType.largeHeader,
         title: locale?.serverError
     };
+
+    const chips: any = [
+        { label: { it: "Gruppi dei corsi di laurea", en: "Degree groups" } },
+        { label: { it: "Gruppi dei corsi didattici", en: "Teaching course groups" } },
+        { label: { it: "Siti web dei corsi", en: "Course websites" } },
+        { label: { it: "Informazioni sui docenti", en: "Informations on professors" } },
+        { label: { it: "Collegamenti del corso di laurea", en: "Degree redirects and connections" } },
+        { label: { it: "Amministratori del network", en: "Network administrators" } },
+        { label: { it: "Le nostre pagine wiki", en: "Our wiki pages" } },
+    ];
+
+    const groupTypes: any = [       
+        {
+            name: { it: "Gruppi per tutti gli studenti", en: "Groups for all students" },
+            image: "/images/groups/groups.png",
+            href: "/groups#university"
+        },
+        {
+            name: { it: "Gruppi per annunci", en: "Announcements groups" },
+            image: "/images/groups/announcements_groups.png",
+            href: "/groups#announcements"
+        },
+        {
+            name: { it: "Associazioni studentesche", en: "Students associations" },
+            image: "/images/groups/students_associations.png",
+            href: "/groups#students-associations"
+        }
+    ];
+
+    const groupTypesStyle = {
+        justifyContent: 'center',
+        gap: 10
+    };
+
+    const groupTypeStyle = mergeStyleSets({
+        root: {
+            display: 'flex',
+            flexDirection: 'column',
+            backgroundColor: theme.palette.neutralLighter,
+            gap: 10,
+            maxWidth: 200,
+            maxHeight: 250,
+            height: '100%',
+            padding: '20px 20px',
+            cursor: 'pointer',
+            transition: '0.1s all ease',
+            border: `1px solid ${theme.palette.neutralLight}`,
+            borderRadius: 2,
+            selectors: {
+                ':hover': {
+                    backgroundColor: theme.palette.neutralLight,
+                    border: `1px solid ${theme.palette.neutralSecondary}`
+                }
+            },
+        },
+    });
 
     return (
         <>
@@ -102,92 +204,107 @@ const Courses = () => {
                 }}
             />
 
-            <section className="groups">
+            <section className="courses">
                 <div className="pt-5">
                     <Container>
-                        <Row>
-                            <Col lg={3} className="text-center mb-3 mb-lg-0">
-                                <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 400 }}>
-                                    <Image className="mb-2" src={'/images/groups/groups.png'} style={{ display: 'inline-block', width: '100%' }} />
-                                </div>
-                            </Col>
+                        <div className="mb-4">
+                            <div className="mb-2 text-center text-mega">
+                                <JsxParser bindings={{ theme: theme, semibold: semibold, bold: bold }} components={{ Text, Link }} jsx={locale?.courses.title} />
+                            </div>
 
-                            <Col lg={9}>
-                                <div className="mb-2">
-                                    <div className="mb-1">
-                                        <Text variant="medium" styles={semibold} style={{textTransform: 'uppercase', color: theme.palette.themePrimary}}>{locale?.groups.groupsSection.text1}</Text>
-                                    </div>
-                                    
-                                    <div className="mb-2">
-                                        <span className="mr-1"><Text variant="xLargePlus">{locale?.groups.groupsSection.text2}</Text></span>
-                                        
-                                        <TooltipHost
-                                            content={locale?.groups.resetSection}
-                                            calloutProps={calloutProps}
-                                            styles={hostStyles}
-                                        >
-                                            <IconButton iconProps={resetIcon} onClick={resetSection} />
-                                        </TooltipHost>
-                                    </div>
+                            <div style={{ maxWidth: 800, margin: '0 auto' }}>
+                                <Marquee direction={"right"} gradient={false} speed={15}>
+                                    {chips.map((x:any,i:number) =>(
+                                        <Text styles={semibold} key={i}>
+                                            <Chip 
+                                                label={x.label[language!]} 
+                                                theme={theme}
+                                                size="small" 
+                                                outlined 
+                                                textColor={theme.palette.neutralPrimary} 
+                                                className="mr-1" 
+                                            />
+                                        </Text>
+                                    ))}
+                                </Marquee>
+                            </div>
+                        </div>
 
-                                    <div className="mb-2 mb-md-4">
-                                        <Text variant="large">{locale?.groups.groupsSection.text3}</Text>
-                                    </div>
-                                </div>
+                        <div className="search-box" style={searchBoxStyle}>
+                            <SearchBox 
+                                placeholder={locale?.courses.findDegreeByName} 
+                                underlined={true} 
+                                iconProps={iconProps}
+                                theme={theme}
+                                styles={searchBoxStyles}
+                                value={debouncedSearchText ?? ""}
+                                onSearch={searchTextHandler}
+                                onChange={(ev) => setDebouncedSearchText(ev?.target.value!)}
+                                onClear={() => { setDegreeTextSearch(""); setSearchData([]); }}
+                                disabled={errorLoadingDegrees}
+                            />
+                        </div>
 
-                                <div className="search-box">
-                                    <Autocomplete
-                                        items={searchData}
-                                        searchTitle={locale?.groups.findDegreeByName}
-                                        suggestionCallback={(item) => entitySelectHandler(item)}
-                                        searchCallback={searchTextHandler}
-                                        changeCallback={(text) => updateDegreesForSearchBox(text)}
-                                        value={degreeTextSearch}
-                                        theme={theme}
-                                        language={language}
-                                        disabled={errorLoadingDegrees}
+                        {debouncedSearchText &&
+                            isSearching ? 
+                                <div className="text-center mt-4 mb-4">
+                                    {/* @ts-ignore */} 
+                                    <Lottie options={defaultOptions}
+                                        height={200}
+                                        width={200}
+                                        isClickToPauseDisabled={true}
+                                        style={{ cursor: 'default' }}
                                     />
+                                    <Text styles={semibold}>{locale?.courses.searchingDegrees}</Text>
                                 </div>
+                            :
+                            <DegreesResult 
+                                degrees={searchData}
+                                searchText={debouncedSearchText}
+                                error={errorLoadingDegrees}
+                                onElementClick={(item) => entitySelectHandler(item)}
+                            />
+                        }
 
-                                <div className="mt-2" style={{ display: errorLoadingDegrees ? 'block' : 'none' }}>
-                                    <Text variant="medium" styles={semibold} style={{ color: theme.palette.red }}>{locale?.errorDataLoading}</Text>
-                                </div>
-                            </Col>
-                        </Row>
+                        {errorLoadingDegrees && 
+                            <div className="mt-2 text-center d-flex flex-row align-items-center justify-content-center" style={{ gap: 10 }}>
+                                <Text variant="medium" styles={semibold} style={{ color: theme.palette.red }}>{locale?.errorDataLoading}</Text>
+                                <TooltipHost
+                                    content={locale?.courses.resetSection}
+                                    calloutProps={calloutProps}
+                                    styles={hostStyles}
+                                >
+                                    <IconButton iconProps={resetIcon} onClick={resetSection} />
+                                </TooltipHost>
+                            </div> 
+                        }
 
                     </Container>
                 </div>
 
-                <Container className="pb-4">
-                    <Separator className="mb-3 mt-3" />
-
-                    <div className="mb-4">
-                        <Row>
-                            <Col xl={9} lg={8}>
-                                <div className="mb-3">
-                                    <div className="mb-1">
-                                        <Text variant="medium" styles={semibold} style={{ textTransform: 'uppercase', color: theme.palette.themePrimary }}>{locale?.groups.extraGroupsSection.text1}</Text>
-                                    </div>
-                                    <div className="mb-2">
-                                        <Text variant="xLargePlus">{locale?.groups.extraGroupsSection.text2}</Text>
-                                    </div>
-                                    <div>
-                                        <Text variant="large">{locale?.groups.extraGroupsSection.text3}</Text>
-                                    </div>
+                <div className="pt-1 pb-5">
+                        <Container> 
+                            <div className="text-center">
+                                <div className="mb-4">
+                                    <Text variant="xLargePlus">{locale?.courses.otherGroups}</Text>
                                 </div>
-                            </Col>
 
-                            <Col xl={3} lg={4} className="text-center">
-                                <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 400 }}>
-                                    <Image className="mb-2" src={'/images/groups/extra_groups.png'} style={{ display: 'inline-block', width: '100%' }} />
+                                <div className="group-types-selector d-flex flex-wrap flex-row" style={groupTypesStyle}>
+                                    {groupTypes.map((g:any) => (
+                                        <a href={g.href} className="text-decoration-none">
+                                            <div className={groupTypeStyle.root + " group-type-selector"}>
+                                                <div className="d-flex flex-grow-1 align-items-center justify-content-center">
+                                                    <Image src={g.image} style={{ width: 140, margin: '0 auto' }} />
+                                                </div>
+                                                <Text variant="large" styles={semibold}>{g.name[language!]}</Text>
+                                            </div>
+                                        </a>
+                                    ))}
                                 </div>
-                            </Col>
 
-                        </Row>
+                            </div>
+                        </Container>
                     </div>
-
-                    <AdditionalGroupsView />
-                </Container>
 
                 {/* APIs Error dialog */}
                 <Dialog

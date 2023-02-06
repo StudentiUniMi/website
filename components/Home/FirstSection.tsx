@@ -1,10 +1,11 @@
-import { Text, IIconProps, PrimaryButton, Image, useTheme } from '@fluentui/react';
-import { semibold } from '../../services/Fonts';
+import { Text, IIconProps, PrimaryButton, Image, useTheme, Link } from '@fluentui/react';
+import { bold, semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../../services/LocalizationService";
 import Chip from '../GenericComponents/Chip';
+import JsxParser from 'react-jsx-parser';
 
 const FirstSection = () => {
     var theme = useTheme();
@@ -37,7 +38,13 @@ const FirstSection = () => {
 
                                 <div className="d-flex flex-column justify-content-between text-right align-items-end" style={{ gap: 20 }}>
 
-                                    <Text variant="medium">{locale?.homepage.section2.cards.card1.description}</Text>
+                                    <Text variant="medium">
+                                        <JsxParser 
+                                            bindings={{ theme: theme, bold: bold }} 
+                                            components={{ Text, Link }} 
+                                            jsx={locale?.homepage.section2.cards.card1.description}
+                                        />
+                                    </Text>
 
                                     <PrimaryButton
                                         text={locale?.reach}
@@ -66,14 +73,20 @@ const FirstSection = () => {
 
                                 <div className="d-flex flex-column justify-content-between text-right align-items-end" style={{ gap: 20 }}>
 
-                                    <Text variant="medium">{locale?.homepage.section2.cards.card2.description}</Text>
+                                    <Text variant="medium">
+                                        <JsxParser 
+                                            bindings={{ theme: theme, bold: bold }} 
+                                            components={{ Text, Link }} 
+                                            jsx={locale?.homepage.section2.cards.card2.description}
+                                        />
+                                    </Text>
 
                                     <PrimaryButton
                                         text={locale?.reach}
                                         style={buttonStyle}
                                         iconProps={buttonIconProps}
                                         theme={theme}
-                                        href="https://studentiunimi.it/courses"
+                                        href="https://studentiunimi.it/groups"
                                     />
                                 </div>
                             </div>
@@ -95,7 +108,13 @@ const FirstSection = () => {
 
                                 <div className="d-flex flex-column justify-content-between text-right align-items-end" style={{ gap: 20 }}>
 
-                                    <Text variant="medium">{locale?.homepage.section2.cards.card3.description}</Text>
+                                    <Text variant="medium">
+                                       <JsxParser 
+                                            bindings={{ theme: theme, bold: bold }} 
+                                            components={{ Text, Link }} 
+                                            jsx={locale?.homepage.section2.cards.card3.description}
+                                        />
+                                    </Text>
 
                                     <PrimaryButton
                                         text={locale?.findOut}

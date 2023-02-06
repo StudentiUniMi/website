@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IAutocompleteProps, IAutocompleteState, ISuggestionItem } from './Autocomplete_types';
+import { IAutocompleteProps, IAutocompleteState, ISuggestionItem } from '../Courses/Autocomplete_types';
 import { SearchBox, Callout, List, Text, mergeStyleSets } from '@fluentui/react';
 import { DirectionalHint, ISearchBoxStyles, IIconProps } from '@fluentui/react';
 import { semibold } from 'services/Fonts';

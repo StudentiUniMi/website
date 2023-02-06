@@ -9,7 +9,7 @@
             "en": "Dedicated to discussions and any clarifications regarding University of Milan."
         },
         "image": "studentiunimi.png",
-        "gruppo": "https://t.me/unimichat"
+        "href": "https://t.me/unimichat"
     },
     {
         "name": {
@@ -21,55 +21,7 @@
             "en": "Dedicated to students who want to enroll in UniMi and are looking for general information about it."
         },
         "image": "matricole.jpg",
-        "gruppo": "https://t.me/joinchat/XLY5KwP1a1Q1MzZk"
-    },
-    {
-        "name": {
-            "it": "Compravendita libri e appunti",
-            "en": "Buying and selling books and notes"
-        },
-        "description": {
-            "it": "Dedicato a chi cerca o offre libri e appunti per i vari corsi didattici.",
-            "en": "Dedicated to those looking for or offering books and notes for the various didactic courses."
-        },
-        "image": "materiali.png",
-        "gruppo": "https://t.me/joinchat/SyKyebINUEXQ969t"
-    },
-    {
-        "name": {
-            "it": "Ripetizioni",
-            "en": "Private lessons"
-        },
-        "description": {
-            "it": "Dedicato a chi cerca o offre ripetizioni. Le discussioni vanno fatte in privato, qui ci vanno soltanto annunci.",
-            "en": "Dedicated to those looking for or offering repetitions. Discussions must be done in private, only announcements go here."
-        },
-        "image": "ripetizioni.jpg",
-        "gruppo": "https://t.me/joinchat/a_aLt47Z8lAyMjBk"
-    },
-    {
-        "name": {
-            "it": "Alloggi",
-            "en": "Apartments"
-        },
-        "description": {
-            "it": "Dedicato a chi cerca alloggi o vuole creare un annuncio a riguardo.",
-            "en": "Dedicated to ads about residence, house or room finding."
-        },
-        "image": "alloggi.jpg",
-        "gruppo": "https://t.me/joinchat/xJP5VPIBboxiNjI0"
-    },
-    {
-        "name": {
-            "it": "Annunci di lavoro",
-            "en": "Job Ads"
-        },
-        "description": {
-            "it": "Gruppo che permette di proporre lavoro rivolto a studenti.",
-            "en": "Group to offer job (only for students)."
-        },
-        "image": "lavoro.jpg",
-        "gruppo": "https://t.me/joinchat/If3OTD06OCMwMWU0"
+        "href": "https://t.me/joinchat/XLY5KwP1a1Q1MzZk"
     },
     {
         "name": {
@@ -81,7 +33,7 @@
             "en": "Group dedicated to discussions about traineeships, internships and thesis."
         },
         "image": "tirocini.jpg",
-        "gruppo": "https://t.me/joinchat/iYmrpYmRk-FkNjI8"
+        "href": "https://t.me/joinchat/iYmrpYmRk-FkNjI8"
     },
     {
         "name": {
@@ -93,7 +45,7 @@
             "en": "Group for sending surveys, projects or initiatives concerning the university world."
         },
         "image": "sondaggi.png",
-        "gruppo": "https://t.me/+-vPGOKTElAIyNzlk"
+        "href": "https://t.me/+-vPGOKTElAIyNzlk"
     },
     {
         "name": {
@@ -105,7 +57,7 @@
             "en": "Group dedicated to discussions about study abroad."
         },
         "image": "erasmus.jpg",
-        "gruppo": "https://t.me/joinchat/3Xp8K8xWnQ9hMDBk"
+        "href": "https://t.me/joinchat/3Xp8K8xWnQ9hMDBk"
     },
     {
         "name": {
@@ -117,7 +69,7 @@
             "en": "Group aimed to International students coming to UniMi; chat only in english."
         },
         "image": "international_students.jpg",
-        "gruppo": "https://t.me/joinchat/fO8pB1iSBwphYzA0"
+        "href": "https://t.me/joinchat/fO8pB1iSBwphYzA0"
     },
     {
         "name": {
@@ -129,7 +81,7 @@
             "en": "Group dedicated to discussions about training course F24"
         },
         "image": "f24.jpg",
-        "gruppo": "https://t.me/joinchat/s17FkitmVcA2NjU0"
+        "href": "https://t.me/joinchat/s17FkitmVcA2NjU0"
     },
     {
         "name": {
@@ -141,7 +93,7 @@
             "en": "Off-topic chat to discuss about anything."
         },
         "image": "free_talk.jpg",
-        "gruppo": "https://t.me/+FhIHaLyOckUyNTM0"
+        "href": "https://t.me/+FhIHaLyOckUyNTM0"
     },
     {
         "name": {
@@ -153,7 +105,7 @@
             "en": "Additional learning requirements group for Mathematical Analysis."
         },
         "image": "ofa.png",
-        "gruppo": "https://t.me/joinchat/-s_MHXbJvfxmYWJk"
+        "href": "https://t.me/joinchat/-s_MHXbJvfxmYWJk"
     },
     {
         "name": {
@@ -165,7 +117,7 @@
             "en": "Additional learning requirements group for English (B1) proficiency."
         },
         "image": "inglese.jpg",
-        "gruppo": "https://t.me/joinchat/gWd38sctY6U4Mjg0"
+        "href": "https://t.me/joinchat/gWd38sctY6U4Mjg0"
     },
     {
         "name": {
@@ -177,7 +129,7 @@
             "en": "Group dedicated to artists and musicians from the University of Milan."
         },
         "image": "music.png",
-        "gruppo": "https://t.me/+mWyuQFz5QkhkNzRk"
+        "href": "https://t.me/+mWyuQFz5QkhkNzRk"
     },
     {
         "name": {
@@ -189,18 +141,6 @@
             "en": "Role-playing game chat."
         },
         "image": "giochi_di_ruolo.jpg",
-        "gruppo": "https://t.me/joinchat/BnUK_g-KHlIX_SrIieU8CA"
-    },
-    {
-        "name": {
-            "it": "MUG - Milan University Gamers",
-            "en": "MUG - Milan University Gamers"
-        },
-        "description": {
-            "it": "Dai un'occhiata all'associazione studentesca \"Milan University Gamers\".",
-            "en": "Take a look at the university association \"Milan University Gamers\"."
-        },
-        "image": "mug_logo.png",
-        "gruppo": "https://discord.gg/9qUGtnKYUU"
+        "href": "https://t.me/joinchat/BnUK_g-KHlIX_SrIieU8CA"
     }
 ]

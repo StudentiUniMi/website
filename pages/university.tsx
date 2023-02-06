@@ -199,7 +199,7 @@ const University = () => {
                     </Container>
                 </div>
 
-                <div className="pt-5 pb-5 mb-4" style={{ backgroundColor: theme.palette.themeDarkAlt }}>
+                <div className="pt-5 pb-5" style={{ backgroundColor: theme.palette.themeDarkAlt }}>
                     <Container>
                         <Row>
                             <Col>

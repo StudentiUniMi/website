@@ -51,7 +51,7 @@ const DegreeInformations= (props: Props) => {
         <div className='degree-informations mb-4'>
             <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLight }}>
                 <Container>
-                    <div><Text variant="medium" styles={semibold}><Icon iconName="AiOutlineLink" /> {locale?.groups.availableRedirects}</Text></div>
+                    <div><Text variant="medium" styles={semibold}><Icon iconName="AiOutlineLink" /> {locale?.courses.availableRedirects}</Text></div>
                 </Container>
             </div>
 

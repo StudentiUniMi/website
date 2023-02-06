@@ -45,6 +45,7 @@ interface ILocalizationStrings {
     headerMenuItems: {
         home: string,
         courses: string,
+        groups: string,
         services: string,
         aboutUs: string,
         rules: string,
@@ -140,7 +141,9 @@ interface ILocalizationStrings {
             list: any[]
         }
     },
-    groups: {
+    courses: {
+        title: string,
+        otherGroups: string,
         resetSection: string,
         filtersToggle: string,
         findDegreeByName: string,
@@ -149,11 +152,7 @@ interface ILocalizationStrings {
             text2: string,
             text3: string
         },
-        extraGroupsSection: {
-            text1: string,
-            text2: string,
-            text3: string
-        },
+        searchingDegrees: string,
         departmentSelect: string,
         cdlSelect: string,
         availableRedirects: string,
@@ -171,6 +170,7 @@ interface ILocalizationStrings {
         tutorsGroupDescription: string,
         groupNotAvailable: string,
         contactAdmin: string,
+        degreesNotFound: string,
         groupsNotFound: string,
         adminsNotFound: string,
         wikiCard: {
@@ -181,6 +181,37 @@ interface ILocalizationStrings {
             type: string,
             date: string
         }
+    },
+    groups: {
+        title: string,
+        universityGroups: {
+            label: string,
+            title: string,
+            description: string,
+            description2: string,
+            card: {
+                type: string
+            }
+        },
+        announcementsGroups: {
+            label: string,
+            title: string,
+            description: string,
+            description2: string,
+            card: {
+                type: string
+            }
+        },
+        studentsAssociations: {
+            label: string,
+            title: string,
+            description: string,
+            description2: string,
+            card: {
+                type: string
+            }
+        },
+        users: string
     },
     services: {
         text1: string,

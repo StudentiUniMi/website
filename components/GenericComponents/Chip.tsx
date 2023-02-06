@@ -1,12 +1,15 @@
 import { Text } from '@fluentui/react'
 import { CSSProperties } from 'react';
 import { semibold } from 'services/Fonts';
+import type { Theme } from '@fluentui/theme';
 
 interface Props {
     label?: string,
     size: string,
     textColor: string,
-    bgColor: string,
+    bgColor?: string,
+    outlined?: boolean,
+    theme?: Theme,
     className?: string,
     style?: CSSProperties
 };
@@ -14,13 +17,14 @@ interface Props {
 const Chip = (props: Props) => {
     return (
         <div className={props.className ?? ''} style={Object.assign({
-            backgroundColor: props.bgColor,
+            backgroundColor: props.outlined || !props.bgColor ? "transparent" : props.bgColor,
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
             whiteSpace: 'nowrap',
             cursor: 'default',
             borderRadius: 16,
+            border: props.outlined && `1px solid ${props.theme?.palette.neutralTertiary}`,
             height: props.size === 'small' ? 24 : 32,
             transition: 'all ease-in 0.1s'
         }, props.style)}>
@@ -34,4 +38,4 @@ const Chip = (props: Props) => {
     )
 };
 
-export default Chip
+export default Chip;
