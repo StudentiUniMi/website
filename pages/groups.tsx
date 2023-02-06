@@ -53,6 +53,7 @@ const Groups = () => {
             backgroundColor: theme.palette.white,
             gap: 10,
             maxWidth: 200,
+            maxHeight: 250,
             height: '100%',
             padding: '20px 20px',
             cursor: 'pointer',
@@ -105,12 +106,12 @@ const Groups = () => {
                                     <Text variant="xLargePlus">{locale?.groups.title}</Text>
                                 </div>
 
-                                <div className="d-flex flex-wrap flex-row" style={groupTypesStyle}>
+                                <div className="group-types-selector d-flex flex-wrap flex-row" style={groupTypesStyle}>
                                     {groupTypes.map((g:any) => (
                                         <a href={g.href} className="text-decoration-none">
-                                            <div className={groupTypeStyle.root}>
-                                                <div className="flex-grow-1">
-                                                    <Image src={g.image} style={{ width: 158 }} />
+                                            <div className={groupTypeStyle.root + " group-type-selector"}>
+                                                <div className="d-flex flex-grow-1 align-items-center justify-content-center">
+                                                    <Image src={g.image} style={{ width: 140, margin: '0 auto' }} />
                                                 </div>
                                                 <Text variant="large" styles={semibold}>{g.name[language]}</Text>
                                             </div>

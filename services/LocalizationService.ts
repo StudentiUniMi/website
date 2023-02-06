@@ -244,7 +244,7 @@ class LocalizationService {
                         }
                     },
                     courses: {
-                        title: '<Text variant="mega" style={{ lineHeight: 1.3 }}>Trova tutti i <Text style={{ color: theme.palette.themePrimary }} variant="mega">gruppi</Text> e le <Text style={{ color: theme.palette.themePrimary }} variant="mega">risorse</Text> del tuo corso di laurea</Text>',
+                        title: '<Text variant="mega" style={{ lineHeight: 1.3 }}>Trova tutti i <Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega">gruppi</Text> e le <Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega">risorse</Text> del tuo corso di laurea</Text>',
                         resetSection: 'Reset della pagina',
                         filtersToggle: 'Filtri per la ricerca',
                         findDegreeByName: "Cerca il tuo corso di laurea per nome",
@@ -253,7 +253,7 @@ class LocalizationService {
                             text2: "Trova tutti i gruppi Telegram del tuo corso di laurea",
                             text3: "Tutto quello che devi fare è scrivere il nome del tuo corso di laurea qui sotto, e potrai accedere ai gruppi telegram dei tuoi corsi didattici e ad altre informazioni utili."
                         },
-                        searchingDegrees: "Sto cercando i corsi di laurea ...",
+                        searchingDegrees: "Ricerca dei corsi di laurea ...",
                         departmentSelect: 'Seleziona un dipartimento',
                         cdlSelect: 'Seleziona un corso di Laurea',
                         availableRedirects: 'Collegamenti disponibili',
@@ -620,7 +620,7 @@ class LocalizationService {
                         }
                     },
                     courses: {
-                        title: '<Text variant="mega" style={{ lineHeight: 1.3 }}>Find all the <Text style={{ color: theme.palette.themePrimary }} variant="mega">groups</Text> and the <Text style={{ color: theme.palette.themePrimary }} variant="mega">resources</Text> of your degree</Text>',
+                        title: '<Text variant="mega" style={{ lineHeight: 1.3 }}>Find all the <Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega">groups</Text> and the <Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega">resources</Text> of your degree</Text>',
                         resetSection: 'Reset page',
                         filtersToggle: 'Search filters',
                         findDegreeByName: "Find your degree by name",
@@ -629,7 +629,7 @@ class LocalizationService {
                             text2: "Find all the Telegram groups of your degree",
                             text3: "All you have to do is write the name of your degree below, and you will be able to access all the telegram groups of your teaching courses and other useful informations."
                         },
-                        searchingDegrees: "Searching the course degrees ...",
+                        searchingDegrees: "Searching for course degrees ...",
                         departmentSelect: 'Select the department',
                         cdlSelect: 'Select the degree',
                         availableRedirects: 'Available redirects',

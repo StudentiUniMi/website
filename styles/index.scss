@@ -404,3 +404,21 @@ footer .ms-Label {
     background-color: #d1d0d0;
   }
 }
+
+/* Group types selector */
+@media only screen and (max-width: 440px) {
+  .group-types-selector {
+    img {
+      max-width: 80px;
+    }
+
+    .group-type-selector {
+      max-width: 140px;
+      max-height: 180px;
+    }
+
+    span {
+      font-size: 14px;
+    }
+  }
+}
