@@ -247,7 +247,7 @@ const Courses = () => {
 
                         {debouncedSearchText &&
                             isSearching ? 
-                                <div className="text-center mt-4">
+                                <div className="text-center mt-4 mb-4">
                                     {/* @ts-ignore */} 
                                     <Lottie options={defaultOptions}
                                         height={200}

@@ -81,7 +81,7 @@ const DegreesResult = (props: Props) => {
     };
 
     return (
-        <div className="degrees-search-results mt-4" style={{ borderRadius: 2 }}>
+        <div className="degrees-search-results mt-4 mb-4" style={{ borderRadius: 2 }}>
             {props.degrees.length ? props.degrees.map((x,i) => (
                 <a href={`/courses/${x.degree?.slug}`} onClick={(e) => e.preventDefault()} className="text-decoration-none">
                 <div key={i} 
