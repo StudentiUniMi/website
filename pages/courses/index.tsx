@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { Text, Image, Dialog, DialogType, DialogFooter, SearchBox, ISearchBoxStyles } from '@fluentui/react';
+import { Text, Image, Dialog, DialogType, DialogFooter, SearchBox, ISearchBoxStyles, mergeStyleSets } from '@fluentui/react';
 import { IconButton, IIconProps, ITooltipHostStyles, Link, PrimaryButton, TooltipHost, useTheme } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import { useRouter } from 'next/router';
@@ -131,6 +131,52 @@ const Courses = () => {
         { label: { it: "Le nostre pagine wiki", en: "Our wiki pages" } },
     ];
 
+    const groupTypes: any = [       
+        {
+            name: { it: "Gruppi per tutti gli studenti", en: "Groups for all students" },
+            image: "/images/groups/groups.png",
+            href: "/groups#university"
+        },
+        {
+            name: { it: "Gruppi per annunci", en: "Announcements groups" },
+            image: "/images/groups/announcements_groups.png",
+            href: "/groups#announcements"
+        },
+        {
+            name: { it: "Associazioni studentesche", en: "Students associations" },
+            image: "/images/groups/students_associations.png",
+            href: "/groups#students-associations"
+        }
+    ];
+
+    const groupTypesStyle = {
+        justifyContent: 'center',
+        gap: 10
+    };
+
+    const groupTypeStyle = mergeStyleSets({
+        root: {
+            display: 'flex',
+            flexDirection: 'column',
+            backgroundColor: theme.palette.neutralLighter,
+            gap: 10,
+            maxWidth: 200,
+            maxHeight: 250,
+            height: '100%',
+            padding: '20px 20px',
+            cursor: 'pointer',
+            transition: '0.1s all ease',
+            border: `1px solid ${theme.palette.neutralLight}`,
+            borderRadius: 2,
+            selectors: {
+                ':hover': {
+                    backgroundColor: theme.palette.neutralLight,
+                    border: `1px solid ${theme.palette.neutralSecondary}`
+                }
+            },
+        },
+    });
+
     return (
         <>
             <NextSeo
@@ -159,7 +205,7 @@ const Courses = () => {
             />
 
             <section className="courses">
-                <div className="pt-5 pb-5">
+                <div className="pt-5">
                     <Container>
                         <div className="mb-4">
                             <div className="mb-2 text-center text-mega">
@@ -235,6 +281,30 @@ const Courses = () => {
 
                     </Container>
                 </div>
+
+                <div className="pt-1 pb-5">
+                        <Container> 
+                            <div className="text-center">
+                                <div className="mb-4">
+                                    <Text variant="xLargePlus">{locale?.courses.otherGroups}</Text>
+                                </div>
+
+                                <div className="group-types-selector d-flex flex-wrap flex-row" style={groupTypesStyle}>
+                                    {groupTypes.map((g:any) => (
+                                        <a href={g.href} className="text-decoration-none">
+                                            <div className={groupTypeStyle.root + " group-type-selector"}>
+                                                <div className="d-flex flex-grow-1 align-items-center justify-content-center">
+                                                    <Image src={g.image} style={{ width: 140, margin: '0 auto' }} />
+                                                </div>
+                                                <Text variant="large" styles={semibold}>{g.name[language!]}</Text>
+                                            </div>
+                                        </a>
+                                    ))}
+                                </div>
+
+                            </div>
+                        </Container>
+                    </div>
 
                 {/* APIs Error dialog */}
                 <Dialog

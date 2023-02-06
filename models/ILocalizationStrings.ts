@@ -143,6 +143,7 @@ interface ILocalizationStrings {
     },
     courses: {
         title: string,
+        otherGroups: string,
         resetSection: string,
         filtersToggle: string,
         findDegreeByName: string,

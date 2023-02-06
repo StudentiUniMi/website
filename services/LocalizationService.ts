@@ -245,6 +245,7 @@ class LocalizationService {
                     },
                     courses: {
                         title: '<Text variant="mega" style={{ lineHeight: 1.3 }}>Trova tutti i <Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega">gruppi</Text> e le <Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega">risorse</Text> del tuo corso di laurea</Text>',
+                        otherGroups: 'Altri gruppi per tutti i corsi',
                         resetSection: 'Reset della pagina',
                         filtersToggle: 'Filtri per la ricerca',
                         findDegreeByName: "Cerca il tuo corso di laurea per nome",
@@ -621,6 +622,7 @@ class LocalizationService {
                     },
                     courses: {
                         title: '<Text variant="mega" style={{ lineHeight: 1.3 }}>Find all the <Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega">groups</Text> and the <Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega">resources</Text> of your degree</Text>',
+                        otherGroups: 'Other common groups',
                         resetSection: 'Reset page',
                         filtersToggle: 'Search filters',
                         findDegreeByName: "Find your degree by name",
