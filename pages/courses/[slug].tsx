@@ -110,7 +110,7 @@ const Course = (props: Props) => {
                     locale: language,
                     images: [
                         {
-                            url: '/seo/groups.png',
+                            url: '/seo/courses.png',
                             type: 'image/png',
                         }
                     ],
