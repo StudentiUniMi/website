@@ -392,19 +392,6 @@ footer .ms-Label {
   padding: 0px 8px;
 }
 
-/* Fix avatar images not loading; TODO: Remove when I understand what is happening with ssr */
-.organization {
-  .ms-Persona-imageArea .ms-Image {
-    background-color: #d1d0d0;
-  }
-}
-
-.degree .admin-list {
-  .ms-Persona-imageArea .ms-Image {
-    background-color: #d1d0d0;
-  }
-}
-
 /* Group types selector */
 @media only screen and (max-width: 440px) {
   .group-types-selector {
