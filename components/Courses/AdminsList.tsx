@@ -3,7 +3,7 @@ import { Persona, PersonaSize, Link, Text, useTheme } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import { semibold } from '../../services/Fonts';
 import { Icon } from '@fluentui/react';
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import ErrorMessage from "../GenericComponents/ErrorMessage";
@@ -15,8 +15,11 @@ interface Props { admins: Admin[], errorLoadingAdmins: boolean };
 const AdminsList = (props: Props) => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
+    const [domLoaded, setDomLoaded] = useState<boolean>(false);
     let admins: Admin[] = props.admins;
     let errorLoadingAdmins: boolean = props.errorLoadingAdmins;
+
+    useEffect(() => { setDomLoaded(true); }, []);
 
     return (
         <div className="mb-2">
@@ -38,7 +41,7 @@ const AdminsList = (props: Props) => {
                 :
                 <Container>
                     <Row className="admin-list" style={{ justifyContent: admins?.length === 0 ? 'center' : "" }}>
-                        {admins?.length !== 0 ? admins?.map((x, i) =>
+                        {domLoaded && admins?.length !== 0 ? admins?.map((x, i) =>
                             <Col key={i} xl={3} lg={3} md={4} sm={6} xs={12} className="mb-3 col-persona">
                                 {(() => {
                                     var imageUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${x.id}.png`;
