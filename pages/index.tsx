@@ -11,6 +11,7 @@ import FourthSection from '../components/Home/FourthSection';
 import TelegramSection from '../components/Home/TelegramSection';
 import Wikipedia from '../components/Home/Wikipedia';
 import UnimiaStudentiUnimi from '../components/Home/UnimiaStudentiUnimi';
+import Ad from 'components/Home/Ad';
 
 interface Props {
     degrees: string[]
@@ -48,6 +49,8 @@ const HomeView = (props: Props) => {
             />
 
             <section className="home">
+                <Ad />
+
                 <MainSection degrees={props.degrees} />
 
                 <TelegramSection />
