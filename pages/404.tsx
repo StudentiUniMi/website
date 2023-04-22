@@ -20,7 +20,7 @@ const FourOhFour = () => {
                         </div>
 
                         <div className="d-flex justify-content-center">
-                            <Image id="not-found" src={'/images/message/not-found.png'} style={{ width: '250px' }} />
+                            <Image id="not-found" alt="Not found" src={'/images/message/not-found.png'} style={{ width: '250px' }} />
                         </div>
 
                         <div className="d-flex flex-row justify-content-center" style={{ gap: 10 }}>
@@ -34,7 +34,7 @@ const FourOhFour = () => {
                                 text={locale?.notFound.buttonGroups}
                                 style={buttonStyle}
                                 theme={theme}
-                                href="https://studentiunimi.it/courses"
+                                href={'/courses'}
                             />
                         </div>
                     </div>

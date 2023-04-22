@@ -3,13 +3,16 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
 import GlobalContext from 'services/GlobalContext';
-import { Text, DocumentCardPreview, IDocumentCardPreviewProps, Image, Link, Pivot, PivotItem, FontSizes, useTheme } from '@fluentui/react';
+import Lottie from 'react-lottie';
+import * as lottieMap from '../components/Services/Lottie/73243-happy-students-studying.json';
+import { Text, DocumentCardPreview, IDocumentCardPreviewProps, Link, Pivot, PivotItem, FontSizes, useTheme } from '@fluentui/react';
 import { NextSeo } from 'next-seo';
 import { Container } from 'react-bootstrap';
 import { Card, ICardTokens } from '@fluentui/react-cards';
-import { semibold } from '../services/Fonts';
+import { bold, semibold } from '../services/Fonts';
 import { getRedirects, getGuides, getTools } from '../services/Requests';
 import { preventDefault, preventVisibleHref } from 'services/Utils';
+import JsxParser from 'react-jsx-parser';
 
 const Services = () => {
     var theme = useTheme();
@@ -20,6 +23,15 @@ const Services = () => {
     const redirects = getRedirects();
     const guides = getGuides();
     const tools = getTools();
+
+    const servicesOptions = {
+      loop: true,
+      autoplay: true, 
+      animationData: lottieMap,
+      rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+      }
+    };
     
     const [selectedSubSection, setSelectedSubSection] = React.useState<string>("redirects");
     
@@ -37,7 +49,7 @@ const Services = () => {
                 {
                     previewIconProps: {
                         iconName: iconName,
-                        styles: { root: { fontSize: FontSizes.size32, color: theme.palette.themePrimary } },
+                        styles: { root: { fontSize: FontSizes.size32, color: theme.palette.themeDark } },
                     },
                     width: 100, height: 110
                 },
@@ -80,7 +92,9 @@ const Services = () => {
                         <Row>
                             <Col xl={9} lg={8} md={12} className="mb-3 mb-lg-0">
                                 <div className="mb-2">
-                                    <Text variant="xLargePlus">{locale?.services.text1}</Text>
+                                    <h1>
+                                        <JsxParser bindings={{ theme: theme, semibold: semibold, bold: bold }} components={{ Text, Link }} jsx={locale?.services.text1} />
+                                    </h1>
                                 </div>
 
                                 <div className="mb-2">
@@ -115,9 +129,13 @@ const Services = () => {
                             </Col>
 
                             <Col xl={3} lg={4} md={12} className="text-center">
-                                <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 350 }}>
-                                    <Image id="logo" src={'/images/services.png'} style={{ width: '100%' }} />
-                                </div>
+                                {/* @ts-ignore */} 
+                                <Lottie options={servicesOptions}
+                                    height={280}
+                                    width={280}
+                                    isClickToPauseDisabled={true}
+                                    style={{ cursor: 'default' }}
+                                />
                             </Col>
                         </Row>
 
@@ -141,7 +159,7 @@ const Services = () => {
                                                     <DocumentCardPreview {...cardProps(x.icon)} />
                                                 </Card.Item>
                                                 <Card.Section>
-                                                    <Text variant="medium" style={{ color: theme.palette.themePrimary, marginBottom: 5 }} styles={semibold}>{x.name![language!]}</Text>
+                                                    <Text variant="medium" style={{ color: theme.palette.themeDark, marginBottom: 5 }} styles={semibold}>{x.name![language!]}</Text>
                                                     <Text variant="small" style={{ marginTop: 0, color: theme.palette.black }}>{x.description![language!]}</Text>
                                                 </Card.Section>
                                             </Card>
@@ -169,7 +187,7 @@ const Services = () => {
                                                     <DocumentCardPreview {...cardProps(x.icon)} />
                                                 </Card.Item>
                                                 <Card.Section>
-                                                    <Text variant="medium" style={{ color: theme.palette.themePrimary, marginBottom: 5 }} styles={semibold}>{x.name![language!]}</Text>
+                                                    <Text variant="medium" style={{ color: theme.palette.themeDark, marginBottom: 5 }} styles={semibold}>{x.name![language!]}</Text>
                                                     <Text variant="small" style={{ marginTop: 0, color: theme.palette.black }}>{x.description![language!]}</Text>
                                                 </Card.Section>
                                             </Card>
@@ -197,7 +215,7 @@ const Services = () => {
                                                     <DocumentCardPreview {...cardProps(x.icon)} />
                                                 </Card.Item>
                                                 <Card.Section>
-                                                    <Text variant="medium" style={{ color: theme.palette.themePrimary, marginBottom: 5 }} styles={semibold}>{x.name![language!]}</Text>
+                                                    <Text variant="medium" style={{ color: theme.palette.themeDark, marginBottom: 5 }} styles={semibold}>{x.name![language!]}</Text>
                                                     <Text variant="small" style={{ marginTop: 0, color: theme.palette.black }}>{x.description![language!]}</Text>
                                                 </Card.Section>
                                             </Card>

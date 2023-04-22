@@ -38,7 +38,7 @@ const UnimiaStudentiUnimi = () => {
                     </Col>
 
                     <Col lg={4} className="text-center">
-                        <Image src={'/images/home/3.png'} style={{ display: 'inline-block', width: 256 }} />
+                        <Image src={'/images/home/3.png'} alt="Unimia redirects" style={{ display: 'inline-block', width: 256, height: 192 }} />
                     </Col>
 
                 </Row>

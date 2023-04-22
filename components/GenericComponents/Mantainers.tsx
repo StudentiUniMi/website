@@ -59,7 +59,8 @@ const Mantainers = () => {
                                     <Card tokens={cardTokens} style={sectionCard} className="justify-content-center text-center">
                                         <Card.Section>
                                             <div className="justify-content-center">
-                                                <Image id="logo"
+                                                <Image 
+                                                    id="logo"
                                                     src={"/contributors/" + x.pic}
                                                     alt={x.name}
                                                     style={developerPic}

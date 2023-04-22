@@ -1,10 +1,8 @@
 import React from "react";
 import { Text, Link, Icon, Image, useTheme } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
-import { semibold } from '../services/Fonts';
+import { bold, semibold } from '../services/Fonts';
 import { NextSeo } from 'next-seo';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 
@@ -45,25 +43,13 @@ const Rules = () => {
             />
 
             <section className="rules">
-                <div className="pt-5 pb-5" style={{ backgroundColor: theme.palette.themePrimary }}>
+                <div className="pt-5 pb-5 text-center">
                     <Container>
-
-                        <Row>
-                            <Col lg={4} className="text-center">
-                                <Image id="logo" className="mb-2" src={'/images/rules.png'} style={imageProperties} />
-                            </Col>
-
-                            <Col lg={8}>
-                                <div className="mb-2">
-                                    <Text variant="xLargePlus" style={{ color: theme.palette.white }}>{locale?.rules.text1}</Text>
-                                </div>
-
-                                <div>
-                                    <Text variant="large" style={{ color: theme.palette.white }}>{locale?.rules.text2}</Text>
-                                </div>
-                            </Col>
-                        </Row>
-
+                        <div className="text-mega mb-2">
+                            <h1>
+                                <JsxParser bindings={{ theme: theme, semibold: semibold, bold: bold }} components={{ Text, Link }} jsx={locale?.rules.title} />
+                            </h1>
+                        </div>
                     </Container>
                 </div>
 
@@ -211,7 +197,7 @@ const Rules = () => {
 
                     <div style={finalBox} className="pt-5 pb-5">
                         <Container className="d-flex flex-column text-center" style={{ gap: 10 }}>
-                            <Image src={'/images/rules_2.png'} style={imageProperties} />
+                            <Image src={'/images/rules_2.png'} alt="Rules final section" style={imageProperties} />
                             <div className="d-flex flex-column" style={{ gap: 5 }}>
                                 <Text variant="large" styles={semibold}>
                                     {locale?.rules.lastSection.title1}

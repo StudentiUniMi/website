@@ -22,7 +22,7 @@ const Wiki = () => {
 
                 <Row>
                     <Col lg={4} className="text-center mb-4 mb-lg-0">
-                        <Image src={'/images/home/4.png'} style={{ display: 'inline-block', width: 250 }} />
+                        <Image src={'/images/home/4.png'} alt="StudentiUniMi Wikipedia" style={{ display: 'inline-block', width: 250, height: 187 }} />
                     </Col>
 
                     <Col lg={8}>

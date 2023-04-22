@@ -17,7 +17,7 @@ const Message = (props: Props) => {
     const InfoMessage = () => (
         <div style={messageBarStyles} className="text-center">
             <div style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-                <Image id="not-found" src={'/images/message/not-found.png'} style={{ display: 'inline', width: '60%', marginBottom: 10 }} />
+                <Image id="not-found" alt="Not found" src={'/images/message/not-found.png'} style={{ display: 'inline', width: '60%', marginBottom: 10 }} />
             </div>
             <Text variant="medium" styles={semibold}>
                 <Icon iconName="Info" style={{ fontSize: 12, marginRight: 10 }} />

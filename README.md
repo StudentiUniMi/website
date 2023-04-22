@@ -51,7 +51,7 @@ Infinite possibilities for multi-color palette usage.
 ## SEO ⚡
 Thanks to NextJS we can improve the visibility of our website with Search engine optimization.
 
-## Contributors
+# Contributors
 <a href="https://github.com/StudentiUniMi/website/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=StudentiUniMi/website" />
 </a>

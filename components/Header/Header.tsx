@@ -15,9 +15,10 @@ const Header = () => {
                 <div style={{ maxWidth: 250, paddingLeft: 0, paddingRight: 0, display: 'flex', alignItems: 'center' }}>
                     <div className="d-flex align-items-center" style={{ width: 250, gap: 10 }}>
                         <Link href="http://studentiunimi.it/">
-                            <Image id="logo"
+                            <Image 
+                                id="logo"
+                                alt="Logo"
                                 src={'/logo/' + logoFileName}
-                                alt='Network logo'
                                 style={logoProperties}
                             />
                         </Link>

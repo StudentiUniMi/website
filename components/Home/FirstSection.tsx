@@ -13,7 +13,7 @@ const FirstSection = () => {
     const buttonStyle = { maxWidth: '120px', boxShadow: theme.effects.elevation8 };
     const buttonIconProps: IIconProps = { iconName: 'GoChevronRight', styles: { root: { fontSize: 14 } } };
     const cardStyle = { backgroundColor: theme.palette.neutralLighterAlt, padding: '20px', borderRadius: '10px', overflow: 'hidden', minHeight: 200 };
-    const cardImageStyle = { maxWidth: 165, minWidth: 120 };
+    const cardImageStyle = { width: 165, height: 165 };
 
     return (
         <div className="pb-5 pt-5 first-section">
@@ -30,11 +30,12 @@ const FirstSection = () => {
                                     size="medium"
                                     textColor={theme.palette.black}
                                     bgColor={theme.palette.neutralLight}
-                                    style={{ top: -9, left: 6, position: 'absolute' }} />
+                                    style={{ top: -9, left: 6, position: 'absolute' }} 
+                                />
                             </Text>
 
                             <div className="d-flex flex-row mt-2">
-                                <Image src={'/images/home/c1.png'} style={cardImageStyle} />
+                                <Image src={'/images/home/c1.png'} alt="Degree groups" style={cardImageStyle} />
 
                                 <div className="d-flex flex-column justify-content-between text-right align-items-end" style={{ gap: 20 }}>
 
@@ -51,7 +52,7 @@ const FirstSection = () => {
                                         style={buttonStyle}
                                         iconProps={buttonIconProps}
                                         theme={theme}
-                                        href="https://studentiunimi.it/courses"
+                                        href={'/courses'}
                                     />
                                 </div>
                             </div>
@@ -65,11 +66,12 @@ const FirstSection = () => {
                                     size="medium"
                                     textColor={theme.palette.black}
                                     bgColor={theme.palette.neutralLight}
-                                    style={{ top: -9, left: 6, position: 'absolute' }} />
+                                    style={{ top: -9, left: 6, position: 'absolute' }} 
+                                />
                             </Text>
 
                             <div className="d-flex flex-row mt-2">
-                                <Image src={'/images/home/c2.png'} style={cardImageStyle} />
+                                <Image src={'/images/home/c2.png'} alt="General groups" style={cardImageStyle} />
 
                                 <div className="d-flex flex-column justify-content-between text-right align-items-end" style={{ gap: 20 }}>
 
@@ -86,7 +88,7 @@ const FirstSection = () => {
                                         style={buttonStyle}
                                         iconProps={buttonIconProps}
                                         theme={theme}
-                                        href="https://studentiunimi.it/groups"
+                                        href={'/groups'}
                                     />
                                 </div>
                             </div>
@@ -100,11 +102,12 @@ const FirstSection = () => {
                                     size="medium"
                                     textColor={theme.palette.black}
                                     bgColor={theme.palette.neutralLight}
-                                    style={{ top: -9, left: 6, position: 'absolute' }} />
+                                    style={{ top: -9, left: 6, position: 'absolute' }} 
+                                />
                             </Text>
 
                             <div className="d-flex flex-row mt-2">
-                                <Image src={'/images/home/c3.png'} style={cardImageStyle} />
+                                <Image src={'/images/home/c3.png'} alt="Telematic services" style={cardImageStyle} />
 
                                 <div className="d-flex flex-column justify-content-between text-right align-items-end" style={{ gap: 20 }}>
 
@@ -121,7 +124,7 @@ const FirstSection = () => {
                                         style={buttonStyle}
                                         iconProps={buttonIconProps}
                                         theme={theme}
-                                        href="https://studentiunimi.it/services"
+                                        href={'/services'}
                                     />
                                 </div>
                             </div>
