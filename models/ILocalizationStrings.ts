@@ -235,8 +235,7 @@ interface ILocalizationStrings {
         legend: string
     },
     rules: {
-        text1: string,
-        text2: string,
+        title: string,
         rules: {
             title: string,
             toxicBehaviour: {
@@ -296,21 +295,22 @@ interface ILocalizationStrings {
         extraGroup: string
     },
     university: {
-        header: {
-            text1: string,
-            text2: string
-        },
+        title: string,
+        map: {
+            title: string,
+            description: string,
+            button: string
+        }
         linksAndRedirects: {
             text1: string, 
             text2: string
         },
-        text1: string,
-        text2: string,
-        departmentSelect: string,
-        representativesNotAvailable: string,
-        news: {
+        representatives: {
             title: string,
+            description: string
         },
+        departmentSelect: string,
+        representativesNotAvailable: string
     },
     aboutUs: {
         text1: string,

@@ -156,8 +156,7 @@ class LocalizationService {
                         }
                     },
                     rules: {
-                        text1: "Regolamento del Network StudentiUniMi",
-                        text2: 'StudentiUniMi è un luogo di incontro e scambio tra tutti gli studenti della Statale al fine di darsi una mano a vicenda con buon senso e rispetto per tutti, quindi ricorda: aiuta e sarai aiutato.',
+                        title: `<Text variant="mega" style={{ lineHeight: 1.3 }}><Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega">Regolamento</Text> del network StudentiUniMi</Text>`,
                         rules: {
                             title: 'Regole',
                             toxicBehaviour: {
@@ -316,7 +315,7 @@ class LocalizationService {
                         users: 'Utenti'
                     },
                     services: {
-						text1: 'Tutti i servizi, in un\'unica pagina.',
+						text1: "<Text variant='xLargePlus' styles={bold}>Tutti i <Text styles={bold} variant='xLargePlus' style={{ color: theme.palette.themePrimary }}>servizi</Text>, in un\'unica pagina.</Text>",
                         text2: "Abbiamo realizzato una pagina per centralizzare tutti i collegamenti inerenti all'Università degli Studi di Milano e rendere disponibili anche le guide, strumenti e servizi telematici che abbiamo realizzato e messo a disposizione.",
                         text3: "Pensi che manchi qualcosa?",
                         text4: 'Faccelo sapere!',
@@ -345,21 +344,22 @@ class LocalizationService {
                         extraGroup: 'Gruppo extra'
                     },
                     university: {
-                        header: {
-                            text1: "Sei alla ricerca di informazioni legate al nostro ateneo?",
-                            text2: "Qui puoi trovare tutto quello che ti serve, a partire dai collegamenti più importanti fino ai contatti dei rappresentanti del tuo dipartimento."
+                        title: `<Text variant="mega" style={{ lineHeight: 1.3 }}>Trova le informazioni utili legate al nostro <Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega">Ateneo</Text></Text>`,
+                        map: {
+                            title: 'Consulta la nostra mappa degli spazi universitari',
+                            description: "Aule, edifici, mense, biblioteche e tanto altro.. dai un'occhiata!",
+                            button: 'Raggiungi la mappa'
                         },
                         linksAndRedirects: {
-                            text1: "Trovare tutti i collegamenti utili legati all'ateneo può richiedere tempo.", 
-                            text2: "Per questo motivo li abbiamo centralizzati in questa pagina."
+                            text1: "Trovare tutti i collegamenti utili legati all'Ateneo può richiedere tempo.", 
+                            text2: "Utilizza la nostra comoda lista di link rapidi che ti permette di raggiungere i collegamenti più utili."
                         },
-                        text1: 'Il rappresentante degli studenti è un ruolo molto importante ed altamente formativo, che garantisce a tutti gli studenti universitari un supporto alle difficoltà che può incontrare durante il periodo di studio.',
-                        text2: 'Di seguito è presente la lista dei rappresentanti di ogni dipartimento e i loro contatti.',
+                        representatives: {
+                            title: 'Trova la lista dei rappresentanti degli studenti del tuo dipartimento',
+                            description: 'Se sei un rappresentante che vorrebbe apparire qui per aiutare eventuali studenti <Text variant="medium" styles={semibold}><Link href="https://studentiunimi.it/organization">contatta un membro dello staff</Link></Text>.'
+                        },
                         departmentSelect: 'Seleziona un dipartimento',
                         representativesNotAvailable: 'Nessun rappresentante disponibile.',
-                        news: {
-                            title: 'Notizie generali'
-                        },
                     },
                     contributors: {
                         text1:'Di seguito è possibile trovare tutte le persone che hanno contribuito allo sviluppo del sito web, dei servizi che offre, della wiki, e del network in generale.',
@@ -533,8 +533,7 @@ class LocalizationService {
                         }
                     },
                     rules: {
-                        text1: "Regulation of the StudentUniMi Network",
-                        text2: 'StudentiUniMi is a place for all students at University of Milan to meet and exchange in order to help each other out with common sense and respect for everyone, so remember: help and you will be helped.',
+                        title: `<Text variant="mega" style={{ lineHeight: 1.3 }}><Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega">Rules</Text> of network StudentiUniMi</Text>`,
                         rules: {
                             title: 'Rules',
                             toxicBehaviour: {
@@ -693,7 +692,7 @@ class LocalizationService {
                         users: 'Users'
                     },
                     services: {
-                        text1: 'All services, in one central place.',
+                        text1: "<Text variant='xLargePlus' styles={bold}>All <Text styles={bold} variant='xLargePlus' style={{ color: theme.palette.themePrimary }}>services</Text>, in one central place.</Text>",
                         text2: "We have created a page to centralize all the connections relating to the University of Milan and also make available our guides and telematic services we have created.",
                         text3: "Do you think something is missing?",
                         text4: 'Let us know!',
@@ -722,21 +721,22 @@ class LocalizationService {
                         extraGroup: 'Extra group'
                     },
                     university: {
-                        header: {
-                            text1: "Are you looking for informations related to our university?",
-                            text2: "Here you can find everything you need, starting with the most important links to the contacts of the representatives of your department. "
+                        title: `<Text variant="mega" style={{ lineHeight: 1.3 }}>Find useful information related to our <Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega">University</Text></Text>`,
+                        map: {
+                            title: 'Check out our map of university spaces',
+                            description: 'Classrooms, buildings, cafeterias, libraries and more.. take a look!',
+                            button: 'Reach the map'
                         },
                         linksAndRedirects: {
                             text1: "Finding all the useful links related to the university can take time.", 
-                            text2: "No problem! We have put them on this page."
+                            text2: "Use our handy list of quick links that will get you to the most useful links."
                         },
-                        text1: 'Being a students representative is a very important role and a formative experience. They provide a support to any student against all the difficulties during the study period.',
-                        text2: 'The list below reports all the representatives of each department and their contacts.',
+                        representatives: {
+                            title: 'Find the list of student representatives in your department',
+                            description: 'If you are a representative who would like to appear here to help any students <Text variant="medium" styles={semibold}><Link href="https://studentiunimi.it/organization">contact a staff member</Link></Text>.'
+                        },
                         departmentSelect: 'Select your department',
-                        representativesNotAvailable: 'There are no representatives available.',
-                        news: {
-                            title: 'Main news',
-                        },
+                        representativesNotAvailable: 'There are no representatives available.'
                     },
                     contributors: {
                         text1:'In this section you can find the contributors who have worked into the development of the Network, the website and all its services.',

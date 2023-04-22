@@ -37,7 +37,7 @@ const LoadingSpinner = (props: Props) => {
                 {locale?.errorOccured}
             </Text>
             <div style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-                <Image id="not-found" src={'/images/message/error.png'} style={{ display: 'inline', width: '35%', marginBottom: 5 }} />
+                <Image id="not-found" alt="Not found" src={'/images/message/error.png'} style={{ display: 'inline', width: '35%', marginBottom: 5 }} />
             </div>
             <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link, Icon }} jsx={locale?.errorContactAdmin} />
         </div>

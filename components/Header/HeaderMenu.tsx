@@ -26,6 +26,18 @@ const HeaderMenu = () => {
 
     /* Styles */
     const cardStyle = { backgroundColor: theme.palette.themeDarkAlt, borderRadius: 10, padding:15 };
+    const mobileHeaderButton = { 
+        fontSize: FontSizes.size18,
+        backgroundColor: theme.palette.themePrimary,
+        color: theme.palette.white,
+        padding: 4,
+        borderRadius: 5,
+        border: '1px solid ' + theme.palette.themeTertiary,
+        boxShadow: theme.effects.elevation8
+    };
+    const pivotStyles: Partial<IPivotStyles> = {
+        root: { color: theme.palette.neutralPrimary, fontSize: FontSizes.size24 },
+    };
 
     const texts: Map<ItemsKeys, string | undefined> = new Map<ItemsKeys, string | undefined>([
         [ItemsKeys.home, locale?.headerMenuItems.home],
@@ -36,14 +48,6 @@ const HeaderMenu = () => {
         [ItemsKeys.university, locale?.headerMenuItems.university],
         [ItemsKeys.organization, locale?.headerMenuItems.aboutUs]
     ]);
-
-    const mobileHeaderButton = {
-        fontSize: FontSizes.size20
-    };
-
-    const pivotStyles: Partial<IPivotStyles> = {
-        root: { color: theme.palette.neutralPrimary, fontSize: FontSizes.size24 },
-    };
 
     const getPath = useCallback((): Array<string | boolean> => {
         var pathname = router.pathname;
@@ -132,7 +136,13 @@ const HeaderMenu = () => {
             </div>
 
             <div className="dropdown align-items-center" style={{ height: 45, justifyContent: 'right' }}>
-                <Icon iconName="AiOutlineMenu" className="d-flex" onClick={() => openPanel()} style={mobileHeaderButton} theme={theme} />
+                <Icon 
+                    iconName="AiOutlineMenu" 
+                    className="d-flex" 
+                    style={mobileHeaderButton} 
+                    theme={theme} 
+                    onClick={() => openPanel()} 
+                />
 
                 <Panel
                     headerText="Network StudentiUniMi"

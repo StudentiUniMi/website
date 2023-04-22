@@ -8,7 +8,7 @@ import { bold, semibold } from '../../services/Fonts';
 import { ISuggestionItem } from '../../components/Courses/Autocomplete_types';
 import { useBoolean } from "@fluentui/react-hooks";
 import { NextSeo } from 'next-seo';
-import * as animationData from '../../components/Courses/128040-searching.json';
+import * as animationData from '../../components/Courses/Lottie/128040-searching.json';
 import Lottie from 'react-lottie';
 import LocalizationService from "../../services/LocalizationService";
 import JsxParser from "react-jsx-parser";
@@ -209,7 +209,9 @@ const Courses = () => {
                     <Container>
                         <div className="mb-4">
                             <div className="mb-2 text-center text-mega">
-                                <JsxParser bindings={{ theme: theme, semibold: semibold, bold: bold }} components={{ Text, Link }} jsx={locale?.courses.title} />
+                                <h1>
+                                    <JsxParser bindings={{ theme: theme, semibold: semibold, bold: bold }} components={{ Text, Link }} jsx={locale?.courses.title} />
+                                </h1>
                             </div>
 
                             <div style={{ maxWidth: 800, margin: '0 auto' }}>
@@ -294,7 +296,7 @@ const Courses = () => {
                                         <a href={g.href} className="text-decoration-none">
                                             <div className={groupTypeStyle.root + " group-type-selector"}>
                                                 <div className="d-flex flex-grow-1 align-items-center justify-content-center">
-                                                    <Image src={g.image} style={{ width: 140, margin: '0 auto' }} />
+                                                    <Image src={g.image} alt={g.name[language!]} style={{ width: 140, margin: '0 auto' }} />
                                                 </div>
                                                 <Text variant="large" styles={semibold}>{g.name[language!]}</Text>
                                             </div>
@@ -318,7 +320,7 @@ const Courses = () => {
                     </div>
 
                     <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 5 }}>
-                        <Image src={'/images/message/error.png'} style={{ width: 200 }} />
+                        <Image src={'/images/message/error.png'} alt="Server error" style={{ width: 200 }} />
                     </div>
 
                     <div>

@@ -18,7 +18,7 @@ const Ad = () => {
     };
 
     return (
-        <div style={{ backgroundColor: theme.palette.neutralLight, color: theme.palette.black }} className="py-3 px-sm-4 px-2 text-center">
+        <div style={{ backgroundColor: theme.palette.neutralLighter, color: theme.palette.black }} className="py-3 px-sm-4 px-2 text-center">
             <JsxParser className="mb-2" bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={text[language!]} />
             <DefaultButton text={textButton[language!]} href={'https://to.studentiunimi.it/firma-gruppo'} iconProps={{ iconName: 'FileSymlink' }} />
         </div>

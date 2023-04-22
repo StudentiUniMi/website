@@ -160,7 +160,7 @@ const Footer = (props: Props) => {
                                         key={i}
                                         delay={TooltipDelay.zero}
                                     >
-                                        <Link href={x.link}>
+                                        <Link href={x.link} name={x.name[lang!]}>
                                             <span style={wrapIconStyle} className="text-decoration">
                                                 <Icon iconName={x.iconName} style={iconStyle} />
                                             </span>

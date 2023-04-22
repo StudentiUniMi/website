@@ -1,15 +1,20 @@
 import { useRef, useEffect, useState, useCallback } from "react";
+import { NextSeo } from 'next-seo';
+import { Container } from 'react-bootstrap';
+import { Text, Icon, Dropdown, IDropdownOption, useTheme, PrimaryButton, Separator, Link } from '@fluentui/react';
+import { getRepresentatives, getDepartments, getUniversityLinks } from '../services/Requests'
+import { Department, Representative } from '../models/Models';
+import { bold, semibold } from "../services/Fonts";
+import Lottie from 'react-lottie';
+import * as lottieMap from '../components/University/Lottie/47956-area-map.json';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
 import RepresentativesList from '../components/University/RepresentativesList';
-import { Container } from 'react-bootstrap';
-import { Text, Icon, IChoiceGroupOptionStyles, ChoiceGroup, IChoiceGroupOption, Image, Dropdown, IDropdownOption, useTheme } from '@fluentui/react';
-import { getRepresentatives, getDepartments, getUniversityLinks } from '../services/Requests'
-import { Department, Representative } from '../models/Models';
-import { semibold } from "../services/Fonts";
-import { redirectToLink } from "../services/Utils";
-import { NextSeo } from 'next-seo';
+import Marquee from "react-fast-marquee";
+import Chip from "components/GenericComponents/Chip";
+import ItemsGroup, { Item } from "components/GenericComponents/ItemsGroup";
+import JsxParser from "react-jsx-parser";
 
 const University = () => {
     var theme = useTheme();
@@ -18,50 +23,34 @@ const University = () => {
     var language: string | undefined = LocalizationService.getLanguage();
     
     const universityLinks: any[] = getUniversityLinks();
-    
-    /* ChoiceGroup for university links */
-    const iconProps: any = { fontSize: '24px' };
-    const imageProperties = { display: 'inline-block', width: '80%' };
-    const options: IChoiceGroupOption[] = [];
-    const itemSize = 100;
-    const choiceGroupOptionsStyle: IChoiceGroupOptionStyles = {
-        choiceFieldWrapper: {
-            width: itemSize + "px",
-            height: itemSize + "px"
-        },
-        labelWrapper: {
-            maxWidth: itemSize / (3 / 4) + "px",
-            height: "auto",
-        },
-        field: {
-            height: "100%",
-            padding: "0px"
-        }
+    const items: Item[] = universityLinks.map((x) => ({
+        name: x.name,
+        href: x.link,
+        iconName: x.icon
+    }));
+
+    const mapOptions = {
+      loop: true,
+      autoplay: true, 
+      animationData: lottieMap,
+      rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+      }
     };
 
-    /* Workaround to not show selected choicegroup */
-    const [selectedChoiceGroup, setSelectedChoiceGroup] = useState<string>("");
-    const selectionChanged = (_?: React.FormEvent<HTMLElement | HTMLInputElement>, __?: IChoiceGroupOption): void => { setSelectedChoiceGroup(""); }
+    const buttonStyle = { boxShadow: theme.effects.elevation8 };
 
-    universityLinks.map((x) => {
-        if (x.icon !== "" && x.link !== "") options.push({ 
-            key: x.name![language!], 
-            text: x.name![language!], 
-            styles: choiceGroupOptionsStyle, 
-            iconProps: { iconName: x.icon!, className: iconProps, color: theme.palette.themePrimary }, 
-            onClick: () => {redirectToLink(x.link!)} 
-        });
-        return options;
-    });
-
-    /* Remove title properties from documentCardTitles */
-    useEffect(() => {
-        const divList = document.getElementsByClassName("ms-DocumentCardTitle");
-        for (let i: number = 0; i < divList.length; i++) {
-            divList[i].removeAttribute('title');
-        }
-    });
-
+    const chips: any = [
+        { label: { it: "Collegamenti legati all'ateneo", en: "University-related links" } },
+        { label: { it: "Mense", en: "Dining halls" } },
+        { label: { it: "Biblioteche", en: "Libraries" } },
+        { label: { it: "Dipartimenti", en: "Departments" } },
+        { label: { it: "Centri sportivi", en: "Sports centers" } },
+        { label: { it: "Giardini e cortili", en: "Gardens and courtyards" } },
+        { label: { it: "Rappresentanti degli studenti", en: "Student representatives" } }
+    ];
+    
+    /* States */
     const [departments, setDepartments] = useState<Department[]>([]);
     const [representatives, setRepresentatives] = useState<Representative[]>([]);
     const [selectedDepartment, setSelectedDepartment] = useState<string>('');
@@ -147,104 +136,123 @@ const University = () => {
             />
             
             <section className="university">
-                <div className="pt-5 pb-5" style={{ backgroundColor: theme.palette.themeDark }}>
+
+                <div className="pt-5 pb-5 text-center" style={{ backgroundColor: theme.palette.neutralLighter }}>
                     <Container>
+                        <div className="text-mega mb-2">
+                            <h1>
+                                <JsxParser bindings={{ theme: theme, semibold: semibold, bold: bold }} components={{ Text, Link }} jsx={locale?.university.title} />
+                            </h1>
+                        </div>
 
-                        <Row>
-                            <Col xl={9} lg={8} md={8} className="mb-3 mb-lg-0">
-                                <div className="mb-2">
-                                    <Text variant="xLargePlus" style={{ color: theme.palette.white }}>{locale?.university.header.text1}</Text>
-                                </div>
-
-                                <div className="mb-3">
-                                    <Text variant="large" style={{ color: theme.palette.white }}>{locale?.university.header.text2}</Text>
-                                </div>
-                            </Col>
-
-                            <Col xl={3} lg={4} md={4} className="text-center">
-                                <Image id="logo" className="mb-2" src={'/images/university.png'} style={{ display: 'inline-block', maxWidth: 150 }} />
-                            </Col>
-                        </Row>
-
-                    </Container>
-                </div>
-
-                <div className="pt-5 pb-5">
-                    <Container>
-
-                        <Row>
-                            <Col lg={4} md={4} className="text-center">
-                                <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }} className="mb-lg-0 mb-4">
-                                    <Image id="logo" src={'/images/university_links.png'} style={imageProperties} />
-                                </div>
-                            </Col>
-
-                            <Col lg={8} md={8} className="mb-2">
-                                <div className="mb-2">
-                                    <Text variant="xLargePlus">{locale?.university.linksAndRedirects.text1}</Text>
-                                </div>
-
-                                <div className="mb-3">
-                                    <Text variant="large">{locale?.university.linksAndRedirects.text2}</Text>
-                                </div>
-
-                                <div className="text-center justify-content-center university-links" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-                                    <ChoiceGroup options={options} onChange={selectionChanged} selectedKey={selectedChoiceGroup} />
-                                </div>
-                            </Col>
-                        </Row>
-
-
-
-                    </Container>
-                </div>
-
-                <div className="pt-5 pb-5" style={{ backgroundColor: theme.palette.themeDarkAlt }}>
-                    <Container>
-                        <Row>
-                            <Col>
-                                <div className="mb-2">
-                                    <div className="mb-2">
-                                        <Text variant="xLarge" style={{ color: theme.palette.white }}>
-                                            {locale?.university.text1}
-                                        </Text>
-                                    </div>
-
-                                    <div className="mb-2">
-                                        <Text variant="large" style={{ color: theme.palette.white }}>
-                                            {locale?.university.text2}
-                                        </Text>
-                                    </div>
-
-                                    <div className="mb-2 text-center" style={{ maxWidth: '400px', marginRight: 'auto'}}>
-                                        <Dropdown
-                                            placeholder={locale?.university.departmentSelect}
-                                            label={locale?.university.departmentSelect}
-                                            onRenderLabel={() => <Text style={{ color: theme.palette.white }} styles={semibold}>{locale?.university.departmentSelect}</Text>}
-                                            options={departmentOptions}
-                                            onChange={departmentSelectionChanged}
-                                            selectedKey={selectedDepartment}
-                                            onRenderTitle={onRenderTitle}
-                                            onRenderOption={onRenderOption}
-                                            errorMessage={errorLoadingDepartments ? locale?.errorLoadingDepartments : undefined}
-                                            disabled={errorLoadingDepartments || departments.length === 0}
+                        <div style={{ maxWidth: 600, margin: '0 auto' }}>
+                            <Marquee direction={"right"} gradient={false} speed={15}>
+                                {chips.map((x:any,i:number) =>(
+                                    <Text styles={semibold} key={i}>
+                                        <Chip 
+                                            label={x.label[language!]} 
+                                            theme={theme}
+                                            size="small" 
+                                            outlined 
+                                            textColor={theme.palette.neutralPrimary} 
+                                            className="mr-1" 
                                         />
-                                    </div>
-                                </div>
+                                    </Text>
+                                ))}
+                            </Marquee>
+                        </div>
+                    </Container>
+                </div>
+
+                <div className="pt-5 pb-5" id={'map'}>
+                    <Container>  
+                        <Row>
+                            <Col xl={3} lg={3} md={4} className="text-center mb-3 mb-lg-0">
+                                {/* @ts-ignore */} 
+                                <Lottie options={mapOptions}
+                                    height={150}
+                                    width={150}
+                                    isClickToPauseDisabled={true}
+                                    style={{ cursor: 'default' }}
+                                />
                             </Col>
 
-                            <Col lg={3} className="text-center">
-                                <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 300 }}>
-                                    <Image id="logo" className="mb-2" src={'/images/representatives.png'} style={{ display: 'inline-block', width: '100%' }} />
+                            <Col xl={9} lg={9} md={8}>
+                                <div className="mb-2">
+                                    <Text variant="xLargePlus">{locale?.university.map.title}</Text>
                                 </div>
+
+                                <div className="mb-3">
+                                    <Text variant="large">{locale?.university.map.description}</Text>
+                                </div>
+
+                                <PrimaryButton 
+                                    text={locale?.university.map.button} 
+                                    style={buttonStyle} 
+                                    href={'https://www.google.com/maps/d/viewer?mid=1601q0wxFe22mtgotqZ7AJzrrWEOYfhs&ll=45.57712672502888%2C9.425802988620111&z=10'} 
+                                />
                             </Col>
                         </Row>
+                    </Container>
+                </div>
+
+                <Separator />
+
+                <div className="pt-5 pb-5 text-center" id={'redirects'}>
+                    <Container>  
+                        <div className="mb-1">
+                            <Text variant="xLargePlus">{locale?.university.linksAndRedirects.text1}</Text>
+                        </div>
+
+                        <div className="mb-4">
+                            <Text variant="large">{locale?.university.linksAndRedirects.text2}</Text>
+                        </div>
+
+                        <div className="university-links">
+                            <ItemsGroup items={items} />
+                        </div>
+                    </Container>
+                </div>
+
+                <div className="pt-5 pb-5 text-center" style={{ backgroundColor: theme.palette.neutralLighterAlt }} id={'representatives'}>
+                    <Container>
+                        <div className="mb-2">
+                            <div className="mb-2">
+                                <Text variant="xLargePlus">
+                                    {locale?.university.representatives.title}
+                                </Text>
+                            </div>
+
+                            <div className="mb-2">
+                                <Text variant="medium">
+                                    <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.university.representatives.description} />
+                                </Text>
+                            </div>
+
+                            <div className="mb-2 text-center" style={{ maxWidth: 400, margin: '0 auto'}}>
+                                <Dropdown
+                                    placeholder={locale?.university.departmentSelect}
+                                    label={locale?.university.departmentSelect}
+                                    options={departmentOptions}
+                                    onChange={departmentSelectionChanged}
+                                    selectedKey={selectedDepartment}
+                                    onRenderTitle={onRenderTitle}
+                                    onRenderOption={onRenderOption}
+                                    errorMessage={errorLoadingDepartments ? locale?.errorLoadingDepartments : undefined}
+                                    disabled={errorLoadingDepartments || departments.length === 0}
+                                />
+                            </div>
+                        </div>
                     </Container>
                 </div>
 
                 <div style={{ display: selectedDepartment !== '' ? 'block' : 'none' }}>
                     <Container>
-                        <RepresentativesList data={representatives} loadingRepresentatives={loadingRepresentatives} errorLoadingRepresentatives={errorLoadingRepresentatives} />
+                        <RepresentativesList 
+                            data={representatives} 
+                            loadingRepresentatives={loadingRepresentatives} 
+                            errorLoadingRepresentatives={errorLoadingRepresentatives}
+                        />
                     </Container>
                 </div>
 

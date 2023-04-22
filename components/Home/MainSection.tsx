@@ -5,6 +5,7 @@ import React from 'react';
 import LocalizationService from "../../services/LocalizationService";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import { bold } from 'services/Fonts';
 
 interface Props {
     degrees: string[]
@@ -27,15 +28,19 @@ const MainSection = (props: Props) => {
 
                     <Col lg={8}>
                         <div className="mb-2">
-                            <Text variant="xLargePlus">
-                                {locale?.homepage.section1.text1}
-                            </Text>
+                            <h1>
+                                <Text variant="xLargePlus" styles={bold}>
+                                    {locale?.homepage.section1.text1}
+                                </Text>
+                            </h1>
                         </div>
 
                         <div className="mb-3">
-                            <Text variant="large">
-                                {locale?.homepage.section1.text2}
-                            </Text>
+                            <h2>
+                                <Text variant="large">
+                                    {locale?.homepage.section1.text2}
+                                </Text>
+                            </h2>
                         </div>
 
                         <DegreesMarquee degrees={stringDegrees} />

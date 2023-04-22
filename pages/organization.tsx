@@ -5,7 +5,7 @@ import { Container } from 'react-bootstrap';
 import { Persona, PersonaSize } from '@fluentui/react';
 import { getNetworkMembers } from '../services/Requests';
 import { IIconProps } from '@fluentui/react';
-import { semibold } from '../services/Fonts';
+import { bold, semibold } from '../services/Fonts';
 import { resetIds } from '@fluentui/react';
 import { NextSeo } from 'next-seo';
 import Col from 'react-bootstrap/Col';
@@ -65,12 +65,14 @@ const Organization: NextPage = () => {
 
                         <Row>
                             <Col lg={4} className="text-center">
-                                <Image id="logo" className="mb-2" src={'/images/organization.png'} style={imageProperties} />
+                                <Image id="logo" alt="Logo" className="mb-2" src={'/images/organization.png'} style={imageProperties} />
                             </Col>
 
                             <Col lg={8} className="mb-2">
                                 <div className="mb-2">
-                                    <Text variant="xLargePlus" style={{ color: theme.palette.white }}>{locale?.aboutUs.text1}</Text>
+                                    <h1>
+                                        <Text variant="xLargePlus" styles={bold} style={{ color: theme.palette.white }}>{locale?.aboutUs.text1}</Text>
+                                    </h1>
                                 </div>
 
                                 <div className="mb-2">

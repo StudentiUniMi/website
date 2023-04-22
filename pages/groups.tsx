@@ -1,6 +1,6 @@
 import { Text, Image, useTheme, Separator, mergeStyleSets, Link } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
-import { semibold } from '../services/Fonts';
+import { bold, semibold } from '../services/Fonts';
 import { NextSeo } from 'next-seo';
 import { useContext } from 'react';
 import { preventDefault, preventVisibleHref } from 'services/Utils';
@@ -103,7 +103,9 @@ const Groups = () => {
                         <Container> 
                             <div className="text-center">
                                 <div className="mb-4">
-                                    <Text variant="xLargePlus">{locale?.groups.title}</Text>
+                                    <h1>
+                                        <Text variant="xLargePlus" styles={semibold}>{locale?.groups.title}</Text>
+                                    </h1>
                                 </div>
 
                                 <div className="group-types-selector d-flex flex-wrap flex-row" style={groupTypesStyle}>
@@ -111,7 +113,7 @@ const Groups = () => {
                                         <a href={g.href} className="text-decoration-none">
                                             <div className={groupTypeStyle.root + " group-type-selector"}>
                                                 <div className="d-flex flex-grow-1 align-items-center justify-content-center">
-                                                    <Image src={g.image} style={{ width: 140, margin: '0 auto' }} />
+                                                    <Image src={g.image} alt={g.name[language]} style={{ width: 140, margin: '0 auto' }} />
                                                 </div>
                                                 <Text variant="large" styles={semibold}>{g.name[language]}</Text>
                                             </div>
@@ -127,7 +129,7 @@ const Groups = () => {
                         <Row>
                             <Col xl={3} lg={4} className="text-center mb-3 mb-lg-0">
                                 <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 400 }}>
-                                    <Image className="mb-2" src={'/images/groups/groups.png'} style={{ display: 'inline-block', width: '100%' }} />
+                                    <Image className="mb-2" alt="General groups" src={'/images/groups/groups.png'} style={{ display: 'inline-block', width: '100%' }} />
                                 </div>
                             </Col>
 
@@ -139,7 +141,7 @@ const Groups = () => {
                                         </Text>
                                     </div>
                                     <div className="mb-1">
-                                        <Text variant="xLargePlus">{locale?.groups.universityGroups.title}</Text>
+                                        <Text variant="xLargePlus" styles={bold}>{locale?.groups.universityGroups.title}</Text>
                                     </div>
                                     <div className="mb-2">
                                         <Text variant="large">{locale?.groups.universityGroups.description}</Text>
@@ -171,7 +173,7 @@ const Groups = () => {
                                         </Text>
                                     </div>
                                     <div className="mb-2">
-                                        <Text variant="xLargePlus">{locale?.groups.announcementsGroups.title}</Text>
+                                        <Text variant="xLargePlus" styles={bold}>{locale?.groups.announcementsGroups.title}</Text>
                                     </div>
                                     <div className="mb-2">
                                         <Text variant="large">{locale?.groups.announcementsGroups.description}</Text>
@@ -184,7 +186,7 @@ const Groups = () => {
 
                             <Col xl={3} lg={4} className="text-center">
                                 <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 400 }}>
-                                    <Image className="mb-2" src={'/images/groups/announcements_groups.png'} style={{ display: 'inline-block', width: '100%' }} />
+                                    <Image className="mb-2" src={'/images/groups/announcements_groups.png'} alt="Announcements groups" style={{ display: 'inline-block', width: '100%' }} />
                                 </div>
                             </Col>
                         </Row>
@@ -198,7 +200,7 @@ const Groups = () => {
                         <Row>
                             <Col xl={3} lg={4} className="text-center mb-3 mb-lg-0">
                                 <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 400 }}>
-                                    <Image className="mb-2" src={'/images/groups/students_associations.png'} style={{ display: 'inline-block', width: '100%' }} />
+                                    <Image className="mb-2" src={'/images/groups/students_associations.png'} alt="Students associations" style={{ display: 'inline-block', width: '100%' }} />
                                 </div>
                             </Col>
 
@@ -210,7 +212,7 @@ const Groups = () => {
                                         </Text>
                                     </div>
                                     <div className="mb-2">
-                                        <Text variant="xLargePlus">{locale?.groups.studentsAssociations.title}</Text>
+                                        <Text variant="xLargePlus" styles={bold}>{locale?.groups.studentsAssociations.title}</Text>
                                     </div>
                                     <div className="mb-2">
                                         <Text variant="large">{locale?.groups.studentsAssociations.description}</Text>

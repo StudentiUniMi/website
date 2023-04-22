@@ -23,7 +23,7 @@ const SecondSection = () => {
 
                 <Row>
                     <Col lg={4} className="text-center mb-4 mb-lg-0">
-                        <Image src={'/images/home/2.png'} style={{ display: 'inline-block', width: 280 }} />
+                        <Image src={'/images/home/2.png'} alt="Network main redirects" style={{ display: 'inline-block', width: 280 }} />
                     </Col>
 
                     <Col lg={8}>

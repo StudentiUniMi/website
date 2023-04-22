@@ -25,6 +25,12 @@ span {
   font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
 /* Fix bootstrap outline when click */
 a:active,
 a:focus,
@@ -205,6 +211,14 @@ svg {
   white-space: normal;
 }
 
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @media only screen and (max-width: 640px) { /* Dropdown items in mobile visualization when using icons act buggy. Must create issue in fluentUi repo */
   .ms-Dropdown-item {
     margin-bottom: 10px !important;
@@ -269,34 +283,6 @@ svg {
   display: block;
   text-align: center;
 }
-
-/* ChoiceGroup adjustments to not show hover effect */
-.degree-informations .ms-ChoiceField-field:hover::before, .university-links .ms-ChoiceField-field:hover::before,
-.degree-informations .ms-ChoiceField-field:focus::before, .university-links .ms-ChoiceField-field:focus::before {
-  opacity: 0;
-}
-
-.degree-informations .ms-ChoiceField-field:hover::after, .university-links .ms-ChoiceField-field:hover::after
-.degree-informations .ms-ChoiceField-field:focus::after, .university-links .ms-ChoiceField-field:focus::after {
-  opacity: 0;
-}
-
-.degree-informations .ms-ChoiceField-labelWrapper, .university-links .ms-ChoiceField-labelWrapper {
-  overflow: visible;
-}
-
-.degree-informations .ms-ChoiceFieldGroup-flexContainer {
-  display: flex;
-  justify-content: center;
-}
-
-@media only screen and (max-width: 768px) {
-  .university-links .ms-ChoiceFieldGroup-flexContainer {
-    display: flex;
-    justify-content: center;
-  }
-}
-
 
 /* Dialog component adjustments */
 .ms-Dialog-main {
@@ -364,6 +350,7 @@ footer .ms-Label {
 @media only screen and (max-width: 350px) {
   .first-section img {
     width: 120px;
+    height: 120px;
   }
 }
 

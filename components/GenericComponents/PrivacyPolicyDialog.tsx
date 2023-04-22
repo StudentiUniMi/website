@@ -32,7 +32,7 @@ const PrivacyPolicyDialog = () => {
                 </Text>
 
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Image src={'/images/privacy_policy.png'} style={{ width: 250 }} />
+                    <Image src={'/images/privacy_policy.png'} alt="Privacy policy" style={{ width: 250 }} />
                 </div>
 
                 <div className="p-3 d-flex flex-column" style={{ backgroundColor: theme.palette.neutralLighter, borderRadius: 8, gap: 10 }}>
