@@ -85,18 +85,6 @@
     }, 
     {
         "name": {
-            "it": "Webmail",
-            "en": "Webmail"
-        },
-        "link": "https://securemail.unimi.it/",
-        "icon": "AiOutlineMail",
-        "description": {
-            "it": "Servizio di webmail d'ateneo.",
-            "en": "UniMi webmail service."
-        }
-    }, 
-    {
-        "name": {
             "it": "Ariel",
             "en": "Ariel"
         },
