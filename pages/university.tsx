@@ -12,8 +12,8 @@ import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
 import RepresentativesList from '../components/University/RepresentativesList';
 import Marquee from "react-fast-marquee";
-import Chip from "components/GenericComponents/Chip";
-import ItemsGroup, { Item } from "components/GenericComponents/ItemsGroup";
+import Chip from "components/Atoms/Chip";
+import ItemsGroup, { Item } from "components/Atoms/ItemsGroup";
 import JsxParser from "react-jsx-parser";
 
 const University = () => {

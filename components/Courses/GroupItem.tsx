@@ -7,7 +7,7 @@ import { DefaultButton, PrimaryButton } from '@fluentui/react/lib/Button';
 import { buildProfessorName, preventDefault, preventVisibleHref, redirectToLink } from '../../services/Utils';
 import { CourseDegree } from '../../models/Models';
 import { useContext } from 'react';
-import Chip from '../GenericComponents/Chip';
+import Chip from '../Atoms/Chip';
 import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 import GlobalContext from 'services/GlobalContext';

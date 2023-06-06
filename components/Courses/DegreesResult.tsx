@@ -1,6 +1,6 @@
 import { useTheme, Text, mergeStyleSets } from "@fluentui/react";
-import Chip from "components/GenericComponents/Chip";
-import Message from "components/GenericComponents/Message";
+import Chip from "components/Atoms/Chip";
+import Message from "components/Atoms/Message";
 import { semibold } from "services/Fonts";
 import LocalizationService from "services/LocalizationService";
 import { ISuggestionItem } from "./Autocomplete_types";

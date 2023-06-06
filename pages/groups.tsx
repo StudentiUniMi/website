@@ -8,7 +8,7 @@ import GroupsList, { GroupsType } from '../components/Groups/Groups';
 import LocalizationService from "../services/LocalizationService";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Chip from 'components/GenericComponents/Chip';
+import Chip from 'components/Atoms/Chip';
 import GlobalContext from 'services/GlobalContext';
 import JsxParser from 'react-jsx-parser';
 

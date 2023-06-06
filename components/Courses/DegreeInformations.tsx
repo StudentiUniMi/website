@@ -3,8 +3,8 @@ import { semibold } from '../../services/Fonts';
 import { Text, Icon, useTheme } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import LocalizationService from "../../services/LocalizationService";
-import Message from '../GenericComponents/Message';
-import ItemsGroup, { Item } from "components/GenericComponents/ItemsGroup";
+import Message from '../Atoms/Message';
+import ItemsGroup, { Item } from "components/Atoms/ItemsGroup";
 
 interface Props { degreeInformations: any[] };
 

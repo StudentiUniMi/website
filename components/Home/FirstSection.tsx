@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../../services/LocalizationService";
-import Chip from '../GenericComponents/Chip';
+import Chip from '../Atoms/Chip';
 import JsxParser from 'react-jsx-parser';
 
 const FirstSection = () => {

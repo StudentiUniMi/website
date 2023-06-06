@@ -13,7 +13,7 @@ import Lottie from 'react-lottie';
 import LocalizationService from "../../services/LocalizationService";
 import JsxParser from "react-jsx-parser";
 import Marquee from "react-fast-marquee";
-import Chip from "components/GenericComponents/Chip";
+import Chip from "components/Atoms/Chip";
 import DegreesResult from "components/Courses/DegreesResult";
 
 const Courses = () => {
