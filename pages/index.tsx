@@ -3,12 +3,12 @@ import { GetServerSideProps } from 'next/types';
 import { getStringDegrees } from 'services/Requests';
 import LocalizationService from "../services/LocalizationService";
 import Faqs from '../components/Home/Faqs';
-import MainSection from '../components/Home/MainSection';
-import FirstSection from '../components/Home/FirstSection';
-import SecondSection from '../components/Home/SecondSection';
-import ThirdSection from '../components/Home/ThirdSection';
-import FourthSection from '../components/Home/FourthSection';
-import TelegramSection from '../components/Home/TelegramSection';
+import Landing from '../components/Home/Landing';
+import Section1 from '../components/Home/Section1';
+import Section2 from '../components/Home/Section2';
+import Section3 from '../components/Home/Section3';
+import Section4 from '../components/Home/Section4';
+import Telegram from '../components/Home/Telegram';
 import Wikipedia from '../components/Home/Wikipedia';
 import UnimiaStudentiUnimi from '../components/Home/UnimiaStudentiUnimi';
 
@@ -48,21 +48,21 @@ const HomeView = (props: Props) => {
             />
 
             <section className="home">
-                <MainSection degrees={props.degrees} />
+                <Landing degrees={props.degrees} />
 
-                <TelegramSection />
+                <Telegram />
 
-                <FirstSection />
+                <Section1 />
 
-                <SecondSection />
+                <Section2 />
 
                 <UnimiaStudentiUnimi />
 
                 <Wikipedia />
 
-                <ThirdSection />
+                <Section3 />
 
-                <FourthSection />
+                <Section4 />
 
                 <Faqs />
             </section>

@@ -42,7 +42,7 @@ const PrivacyPolicyDialog = () => {
 
                     <div className="d-flex flex-row" style={{ gap: 5 }}>
                         <DefaultButton className='flex-grow-1' theme={theme} text={locale?.privacyPolicy.privacyPolicy} href="https://cdn.studentiunimi.it/privacy-policy-IT.pdf" style={{ textDecoration: 'none', padding: '20px 10px' }} iconProps={icon} />
-                        <DefaultButton className='flex-grow-1' theme={theme} text={locale?.privacyPolicy.regulation} href="https://studentiunimi.it/rules" style={{ textDecoration: 'none', padding: '20px 10px' }} iconProps={icon} />
+                        <DefaultButton className='flex-grow-1' theme={theme} text={locale?.privacyPolicy.regulation} href="/rules" style={{ textDecoration: 'none', padding: '20px 10px' }} iconProps={icon} />
                     </div>
 
                 </div>

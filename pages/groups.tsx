@@ -22,7 +22,7 @@ const Groups = () => {
         {
             name: { it: "Gruppi dei corsi di laurea", en: "Degree-related groups" },
             image: "/images/courses/courses.png",
-            href: "https://studentiunimi.it/courses"
+            href: "/courses"
         },
         {
             name: { it: "Gruppi per tutti gli studenti", en: "Groups for all the students" },

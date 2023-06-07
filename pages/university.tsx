@@ -179,15 +179,15 @@ const University = () => {
                         <Row>
                             <Col xl={9} lg={9} md={8} className="mb-3 mb-lg-0">
                                 <div className="mb-2">
-                                    <Text variant="xLargePlus">Scopri tutte le graduatorie delle ammissioni dell'Università degli Studi di Milano</Text>
+                                    <Text variant="xLargePlus">{locale?.university.graduations.title}</Text>
                                 </div>
 
                                 <div className="mb-3">
-                                    <Text variant="large">Aggiorniamo il canale giornalmente in modo tale da tenervi sempre sul pezzo.</Text>
+                                    <Text variant="large">{locale?.university.graduations.description}</Text>
                                 </div>
 
                                 <PrimaryButton 
-                                    text={'Raggiungi il canale'} 
+                                    text={locale?.university.graduations.button} 
                                     style={buttonStyle} 
                                     href={'https://t.me/graduatorieUniMi'} 
                                 />

@@ -11,7 +11,7 @@ interface Props {
     degrees: string[]
 };
 
-const MainSection = (props: Props) => {
+const Landing = (props: Props) => {
     const locale = LocalizationService.strings();
     const logoProperties = { width: 200, height: 200, display: 'inline-block' };
     let stringDegrees: string[] = props.degrees;
@@ -51,4 +51,4 @@ const MainSection = (props: Props) => {
     )
 }
 
-export default MainSection;
+export default Landing;

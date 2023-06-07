@@ -28,7 +28,6 @@ const Organization: NextPage = () => {
     const [domLoaded, setDomLoaded] = useState<boolean>(false);
     const networkMembers = getNetworkMembers();
     const icon: IIconProps = { iconName: 'AiOutlineFilePdf' };
-    const imageProperties = { width: 300, height: 300, margin: '0 auto' };
 
     const organizationOptions = {
       loop: true,
@@ -194,11 +193,15 @@ const Organization: NextPage = () => {
 
                 <div className="pt-5 pb-5 text-center">
                     <Container className="flex-column d-flex">
-                        <Text styles={bold} variant="superLarge">Contattaci</Text>
-                        <Text className="mb-3">Contattaci via e-mail premendo il pulsante qui sotto, oppure scrivici in privato su telegram.</Text>
+                        <Text styles={bold} variant="superLarge">{locale?.aboutUs.contact.title}</Text>
+                        <Text className="mb-3">{locale?.aboutUs.contact.description}</Text>
                         
                         <div style={{ margin: '0 auto', maxWidth: 600 }}>
-                            <DefaultButton text="Mandaci una mail" iconProps={{ iconName: 'Mail' }} />
+                            <DefaultButton 
+                                text={locale?.aboutUs.contact.button} 
+                                iconProps={{ iconName: 'Mail' }} 
+                                href='mailto:info@studentiunimi.it'
+                            />
                         </div> 
                     </Container>
                 </div>

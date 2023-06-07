@@ -14,7 +14,7 @@ const FirstSection = () => {
     const buttonIconProps: IIconProps = { iconName: 'GoChevronRight', styles: { root: { fontSize: 14 } } };
     const cardStyle = { backgroundColor: theme.palette.neutralLighterAlt, padding: '20px', borderRadius: '10px', overflow: 'hidden', minHeight: 200 };
     const cardImageStyle = { width: 165, height: 165 };
-
+    
     return (
         <div className="pb-5 pt-5 first-section">
             <Container>
@@ -39,7 +39,7 @@ const FirstSection = () => {
 
                                 <div className="d-flex flex-column justify-content-between text-right align-items-end" style={{ gap: 20 }}>
 
-                                    <Text variant="medium">
+                                    <Text variant="medium" styles={semibold}>
                                         <JsxParser 
                                             bindings={{ theme: theme, bold: bold }} 
                                             components={{ Text, Link }} 
@@ -75,7 +75,7 @@ const FirstSection = () => {
 
                                 <div className="d-flex flex-column justify-content-between text-right align-items-end" style={{ gap: 20 }}>
 
-                                    <Text variant="medium">
+                                    <Text variant="medium" styles={semibold}>
                                         <JsxParser 
                                             bindings={{ theme: theme, bold: bold }} 
                                             components={{ Text, Link }} 
@@ -111,7 +111,7 @@ const FirstSection = () => {
 
                                 <div className="d-flex flex-column justify-content-between text-right align-items-end" style={{ gap: 20 }}>
 
-                                    <Text variant="medium">
+                                    <Text variant="medium" styles={semibold}>
                                        <JsxParser 
                                             bindings={{ theme: theme, bold: bold }} 
                                             components={{ Text, Link }} 

@@ -345,6 +345,11 @@ class LocalizationService {
                     },
                     university: {
                         title: `<Text variant="mega" style={{ lineHeight: 1.3 }}>Trova le informazioni utili legate al nostro <Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega">Ateneo</Text></Text>`,
+                        graduations: {
+                            title: "Scopri tutte le graduatorie delle ammissioni dell'Università degli Studi di Milano",
+                            description: "Controlla il tuo risultato in graduatoria oppure il punteggio con cui puoi passare il prossimo test per il tuo corso di laurea.",
+                            button: "Raggiungi il canale"
+                        },
                         map: {
                             title: 'Consulta la nostra mappa degli spazi universitari',
                             description: "Aule, edifici, mense, biblioteche e tanto altro.. dai un'occhiata!",
@@ -376,7 +381,12 @@ class LocalizationService {
                         button: { text1: 'Statuto', text2: "Dai un'occhiata al nostro statuto!" },
                         header1: 'Coordinatore',
                         header2: 'Comitato Amministrativo Network',
-                        header3: 'Amministratori dei gruppi telegram'
+                        header3: 'Amministratori dei gruppi telegram',
+                        contact: {
+                            title: "Contattaci",
+                            description: "Puoi contattarci mandando una mail o scrivendoci in privato su Telegram",
+                            button: "Mandaci una mail"
+                        }
                     },
                     footer: [
                         { text: 'Il network e il relativo sito web non sono affiliati all\'Università degli Studi di Milano.', buttonText: 'Entra nel nostro gruppo' },
@@ -722,6 +732,11 @@ class LocalizationService {
                     },
                     university: {
                         title: `<Text variant="mega" style={{ lineHeight: 1.3 }}>Find useful information related to our <Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega">University</Text></Text>`,
+                        graduations: {
+                            title: "Check out all the University of Milan admissions rankings.",
+                            description: "See your rankings or the score with which you can pass the next test for your major.",
+                            button: "Reach the channel"
+                        },
                         map: {
                             title: 'Check out our map of university spaces',
                             description: 'Classrooms, buildings, cafeterias, libraries and more.. take a look!',
@@ -753,7 +768,12 @@ class LocalizationService {
                         button: { text1: 'Statute', text2: "You can read our statute here!" },
                         header1: 'Coordinator',
                         header2: "Network's Administrative Committee",
-                        header3: 'Telegram groups Administrators'
+                        header3: 'Telegram groups Administrators',
+                        contact: {
+                            title: "Contact us",
+                            description: "You can contact us by sending us an email or writing to us privately on Telegram.",
+                            button: "Send us an email"
+                        }
                     },
                     footer: [
                         { text: 'The network and the associated website are not affiliated to the University of Milan.', buttonText: 'Join our main group' },
