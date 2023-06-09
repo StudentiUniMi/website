@@ -1,6 +1,6 @@
 import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
-import Chip from '../GenericComponents/Chip';
+import Chip from '../Atoms/Chip';
 import { Container } from 'react-bootstrap';
 import { Link, Text, useTheme, mergeStyleSets } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';

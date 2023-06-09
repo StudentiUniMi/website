@@ -8,7 +8,7 @@ import GroupsList, { GroupsType } from '../components/Groups/Groups';
 import LocalizationService from "../services/LocalizationService";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Chip from 'components/GenericComponents/Chip';
+import Chip from 'components/Atoms/Chip';
 import GlobalContext from 'services/GlobalContext';
 import JsxParser from 'react-jsx-parser';
 
@@ -22,7 +22,7 @@ const Groups = () => {
         {
             name: { it: "Gruppi dei corsi di laurea", en: "Degree-related groups" },
             image: "/images/courses/courses.png",
-            href: "https://studentiunimi.it/courses"
+            href: "/courses"
         },
         {
             name: { it: "Gruppi per tutti gli studenti", en: "Groups for all the students" },

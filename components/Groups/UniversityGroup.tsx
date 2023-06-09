@@ -10,7 +10,7 @@ import { preventDefault, preventVisibleHref } from 'services/Utils';
 import { semibold } from '../../services/Fonts';
 import { useContext } from 'react';
 import Group from '../../models/Group'
-import Chip from '../GenericComponents/Chip';
+import Chip from '../Atoms/Chip';
 import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 import GlobalContext from 'services/GlobalContext';

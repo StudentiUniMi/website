@@ -7,13 +7,14 @@ import { Department, Representative } from '../models/Models';
 import { bold, semibold } from "../services/Fonts";
 import Lottie from 'react-lottie';
 import * as lottieMap from '../components/University/Lottie/47956-area-map.json';
+import * as lottieGraduations from '../components/University/Lottie/45535-girl-meditating.json';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
 import RepresentativesList from '../components/University/RepresentativesList';
 import Marquee from "react-fast-marquee";
-import Chip from "components/GenericComponents/Chip";
-import ItemsGroup, { Item } from "components/GenericComponents/ItemsGroup";
+import Chip from "components/Atoms/Chip";
+import ItemsGroup, { Item } from "components/Atoms/ItemsGroup";
 import JsxParser from "react-jsx-parser";
 
 const University = () => {
@@ -33,6 +34,15 @@ const University = () => {
       loop: true,
       autoplay: true, 
       animationData: lottieMap,
+      rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+      }
+    };
+
+    const graduationsOptions = {
+      loop: true,
+      autoplay: true, 
+      animationData: lottieGraduations,
       rendererSettings: {
         preserveAspectRatio: 'xMidYMid slice'
       }
@@ -164,6 +174,40 @@ const University = () => {
                     </Container>
                 </div>
 
+                <div className="pt-5 pb-5" id={'graduations'}>
+                    <Container>  
+                        <Row>
+                            <Col xl={9} lg={9} md={8} className="mb-3 mb-lg-0">
+                                <div className="mb-2">
+                                    <Text variant="xLargePlus">{locale?.university.graduations.title}</Text>
+                                </div>
+
+                                <div className="mb-3">
+                                    <Text variant="large">{locale?.university.graduations.description}</Text>
+                                </div>
+
+                                <PrimaryButton 
+                                    text={locale?.university.graduations.button} 
+                                    style={buttonStyle} 
+                                    href={'https://t.me/graduatorieUniMi'} 
+                                />
+                            </Col>
+
+                            <Col xl={3} lg={3} md={4} className="text-center">
+                                {/* @ts-ignore */} 
+                                <Lottie options={graduationsOptions}
+                                    height={200}
+                                    width={200}
+                                    isClickToPauseDisabled={true}
+                                    style={{ cursor: 'default' }}
+                                />
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
+
+                <Separator />
+
                 <div className="pt-5 pb-5" id={'map'}>
                     <Container>  
                         <Row>
@@ -214,7 +258,9 @@ const University = () => {
                     </Container>
                 </div>
 
-                <div className="pt-5 pb-5 text-center" style={{ backgroundColor: theme.palette.neutralLighterAlt }} id={'representatives'}>
+                <Separator />
+
+                <div className="pt-5 pb-5 text-center" id={'representatives'}>
                     <Container>
                         <div className="mb-2">
                             <div className="mb-2">
@@ -246,7 +292,8 @@ const University = () => {
                     </Container>
                 </div>
 
-                <div style={{ display: selectedDepartment !== '' ? 'block' : 'none' }}>
+                {
+                    selectedDepartment &&
                     <Container>
                         <RepresentativesList 
                             data={representatives} 
@@ -254,7 +301,7 @@ const University = () => {
                             errorLoadingRepresentatives={errorLoadingRepresentatives}
                         />
                     </Container>
-                </div>
+                }
 
             </section>
         </>

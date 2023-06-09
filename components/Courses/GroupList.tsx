@@ -3,12 +3,12 @@ import { Text, Toggle, Icon, IRectangle, List, TextField, Dropdown, IDropdownOpt
 import { Container } from 'react-bootstrap';
 import { semibold } from '../../services/Fonts';
 import { Degree, CourseDegree } from '../../models/Models';
-import ErrorMessage from "../GenericComponents/ErrorMessage";
+import ErrorMessage from "../Atoms/ErrorMessage";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import GroupItem from './GroupItem';
 import LocalizationService from "../../services/LocalizationService";
-import Message from '../GenericComponents/Message';
+import Message from '../Atoms/Message';
 
 interface Props { 
     degree?: Degree, 

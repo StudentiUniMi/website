@@ -3,7 +3,7 @@ import { IAutocompleteProps, IAutocompleteState, ISuggestionItem } from '../Cour
 import { SearchBox, Callout, List, Text, mergeStyleSets } from '@fluentui/react';
 import { DirectionalHint, ISearchBoxStyles, IIconProps } from '@fluentui/react';
 import { semibold } from 'services/Fonts';
-import Chip from '../GenericComponents/Chip';
+import Chip from '../Atoms/Chip';
 
 const searchBoxStyles: Partial<ISearchBoxStyles> = { root: { maxWidth: 650, minWidth: 0 } };
 

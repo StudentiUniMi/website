@@ -143,9 +143,20 @@ const Course = (props: Props) => {
                 </div>
 
                 <div className="degree-details pb-4">
-                    <GroupList degree={loadedDegree!} courses={courses} errorLoadingCourses={errorLoadingCourses} />
-                    <DegreeInformations degreeInformations={degreeInformations} />
-                    <AdminsList admins={admins} errorLoadingAdmins={errorLoadingAdmins} />
+                    <GroupList 
+                        degree={loadedDegree!} 
+                        courses={courses} 
+                        errorLoadingCourses={errorLoadingCourses} 
+                    />
+
+                    <DegreeInformations 
+                        degreeInformations={degreeInformations} 
+                    />
+
+                    <AdminsList 
+                        admins={admins} 
+                        errorLoadingAdmins={errorLoadingAdmins} 
+                    />
                 </div>
 
             </section>

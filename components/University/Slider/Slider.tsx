@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import LocalizationService from "../../../services/LocalizationService";
-import LargeCard from '../../GenericComponents/LargeCard';
+import LargeCard from '../../Atoms/LargeCard';
 import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper/core';
 
 const news: any[] = [

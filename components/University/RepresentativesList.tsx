@@ -2,8 +2,8 @@ import { Persona, PersonaSize, Link, Icon, useTheme } from '@fluentui/react';
 import { Representative } from '../../models/Models';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import LoadingSpinner from '../GenericComponents/LoadingSpinner';
-import Message from '../GenericComponents/Message';
+import LoadingSpinner from '../Atoms/LoadingSpinner';
+import Message from '../Atoms/Message';
 import LocalizationService from "../../services/LocalizationService";
 
 interface Props { data: Representative[], loadingRepresentatives: boolean, errorLoadingRepresentatives: boolean };

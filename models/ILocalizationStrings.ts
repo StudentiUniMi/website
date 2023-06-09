@@ -296,11 +296,16 @@ interface ILocalizationStrings {
     },
     university: {
         title: string,
+        graduations: {
+            title: string,
+            description: string,
+            button: string,
+        },
         map: {
             title: string,
             description: string,
             button: string
-        }
+        },
         linksAndRedirects: {
             text1: string, 
             text2: string
@@ -319,7 +324,12 @@ interface ILocalizationStrings {
         button: { text1: string, text2: string },
         header1: string,
         header2: string,
-        header3: string
+        header3: string,
+        contact: {
+            title: string,
+            description: string,
+            button: string
+        }
     },
     contributors: {
         text1:string,

@@ -6,8 +6,8 @@ import { Icon } from '@fluentui/react';
 import React, { useEffect, useState } from "react";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import ErrorMessage from "../GenericComponents/ErrorMessage";
-import Message from '../GenericComponents/Message';
+import ErrorMessage from "../Atoms/ErrorMessage";
+import Message from '../Atoms/Message';
 import LocalizationService from "../../services/LocalizationService";
 
 interface Props { admins: Admin[], errorLoadingAdmins: boolean };

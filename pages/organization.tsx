@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NextPage } from 'next'
-import { Text, Link, CompoundButton, Image, useTheme } from '@fluentui/react';
+import { Text, Link, CompoundButton, useTheme, Separator, DefaultButton } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import { Persona, PersonaSize } from '@fluentui/react';
 import { getNetworkMembers } from '../services/Requests';
@@ -8,6 +8,8 @@ import { IIconProps } from '@fluentui/react';
 import { bold, semibold } from '../services/Fonts';
 import { resetIds } from '@fluentui/react';
 import { NextSeo } from 'next-seo';
+import Lottie from 'react-lottie';
+import * as lottieOrganization from '../components/Organization/Lottie/73386-problem-solving-team.json';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
@@ -26,7 +28,15 @@ const Organization: NextPage = () => {
     const [domLoaded, setDomLoaded] = useState<boolean>(false);
     const networkMembers = getNetworkMembers();
     const icon: IIconProps = { iconName: 'AiOutlineFilePdf' };
-    const imageProperties = { display: 'inline-block', width: 300 };
+
+    const organizationOptions = {
+      loop: true,
+      autoplay: true, 
+      animationData: lottieOrganization,
+      rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+      }
+    };
     
     resetIds();
     useEffect(() => { setDomLoaded(true); }, []);
@@ -60,31 +70,37 @@ const Organization: NextPage = () => {
 
             <section className="organization pb-3">
 
-                <div className="pt-5 pb-5" style={{ backgroundColor: theme.palette.themeDark }}>
+                <div className="pt-5 pb-5" style={{ backgroundColor: theme.palette.neutralLighter }}>
                     <Container>
 
                         <Row>
                             <Col lg={4} className="text-center">
-                                <Image id="logo" alt="Logo" className="mb-2" src={'/images/organization.png'} style={imageProperties} />
+                                {/* @ts-ignore */} 
+                                <Lottie options={organizationOptions}
+                                    height={250}
+                                    width={250}
+                                    isClickToPauseDisabled={true}
+                                    style={{ cursor: 'default' }}
+                                />
                             </Col>
 
                             <Col lg={8} className="mb-2">
-                                <div className="mb-2">
+                                <div className="mb-3">
                                     <h1>
-                                        <Text variant="xLargePlus" styles={bold} style={{ color: theme.palette.white }}>{locale?.aboutUs.text1}</Text>
+                                        <Text variant="xLargePlus" styles={bold}>{locale?.aboutUs.text1}</Text>
                                     </h1>
                                 </div>
 
                                 <div className="mb-2">
-                                    <Text variant="large" style={{ color: theme.palette.white }}>{locale?.aboutUs.text2}</Text>
+                                    <Text variant="large" styles={semibold}>{locale?.aboutUs.text2}</Text>
                                 </div>
 
                                 <div className="mb-3">
-                                    <Text variant="medium" style={{ color: theme.palette.white }}>{locale?.aboutUs.text3}</Text>
+                                    <Text variant="medium">{locale?.aboutUs.text3}</Text>
                                 </div>
 
                                 <div className="mb-2">
-                                    <CompoundButton primary theme={theme} secondaryText={locale?.aboutUs.button.text2} href="https://github.com/StudentiUniMi/docs/raw/main/statuto.pdf" style={{ textDecoration: 'none', boxShadow: theme.effects.elevation8 }} iconProps={icon}>
+                                    <CompoundButton theme={theme} secondaryText={locale?.aboutUs.button.text2} href="https://github.com/StudentiUniMi/docs/raw/main/statuto.pdf" style={{ textDecoration: 'none', boxShadow: theme.effects.elevation8 }} iconProps={icon}>
                                         {locale?.aboutUs.button.text1}
                                     </CompoundButton>
                                 </div>
@@ -94,8 +110,10 @@ const Organization: NextPage = () => {
                     </Container>
                 </div>
 
-                <div className="pt-4 pb-4">
-                    <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold} style={{ color: theme.palette.themePrimary }}>{locale?.aboutUs.header1}</Text></div>
+                <div className="pt-5 pb-5">
+                    <div className="mb-4 text-center">
+                        <Text variant="xLarge" styles={bold} style={{ color: theme.palette.themeDarkAlt }}>{locale?.aboutUs.header1}</Text>
+                    </div>
                     
                     <div style={{maxWidth: 230, marginLeft: 'auto', marginRight: 'auto'}}>
                         { domLoaded && <Persona
@@ -109,9 +127,11 @@ const Organization: NextPage = () => {
                     </div>
                 </div>
 
-                <div className="pb-4">
+                <div className="pb-5">
                     <Container>
-                        <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold} style={{color: theme.palette.themePrimary}}>{locale?.aboutUs.header2}</Text></div>
+                        <div className="mb-4 text-center">
+                            <Text variant="xLarge" styles={bold} style={{ color: theme.palette.themeDarkAlt }}>{locale?.aboutUs.header2}</Text>
+                        </div>
 
                         <Row className="justify-content-center" style={{ rowGap: 15 }}>
                             {
@@ -137,9 +157,11 @@ const Organization: NextPage = () => {
                     </Container>
                 </div>
 
-                <div className="pb-4">
+                <div className="pb-5">
                     <Container>
-                        <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold} style={{ color: theme.palette.themePrimary }}>{locale?.contributors.header1}</Text></div>
+                        <div className="mb-4 text-center">
+                            <Text variant="xLarge" styles={bold} style={{ color: theme.palette.themeDarkAlt }}>{locale?.contributors.header1}</Text>
+                        </div>
 
                         <Row className="justify-content-center" style={{ rowGap: 15 }}>
                             {
@@ -164,6 +186,23 @@ const Organization: NextPage = () => {
                             }
                         </Row>
 
+                    </Container>
+                </div>
+
+                <Separator />
+
+                <div className="pt-5 pb-5 text-center">
+                    <Container className="flex-column d-flex">
+                        <Text styles={bold} variant="superLarge">{locale?.aboutUs.contact.title}</Text>
+                        <Text className="mb-3">{locale?.aboutUs.contact.description}</Text>
+                        
+                        <div style={{ margin: '0 auto', maxWidth: 600 }}>
+                            <DefaultButton 
+                                text={locale?.aboutUs.contact.button} 
+                                iconProps={{ iconName: 'Mail' }} 
+                                href='mailto:info@studentiunimi.it'
+                            />
+                        </div> 
                     </Container>
                 </div>
 

@@ -17,7 +17,7 @@ import Head from 'next/head';
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import LocalizationService from "../services/LocalizationService";
-import PrivacyPolicyDialog from 'components/GenericComponents/PrivacyPolicyDialog';
+import PrivacyPolicyDialog from 'components/Atoms/PrivacyPolicyDialog';
 
 setIconOptions({ disableWarnings: true });
 registerIcons({ icons: registeredIcons });
