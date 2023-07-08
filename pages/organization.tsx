@@ -18,7 +18,7 @@ const developers: any = [
     { name: "Giuseppe Del Campo", description: { it: "Sviluppatore front-end", en: 'Front-end developer' }, username: 'Giuseppetm', user_id: 597678134, github: "https://github.com/Giuseppetm" },
     { name: "Marco Aceti", description: { it: "Sviluppatore back-end", en: "Back-end developer" }, username: "acetimarco", user_id: 26170256, github: "https://github.com/MarcoBuster" },
     { name: "Manuele Lucchi", description: { it: "Sviluppatore front-end", en: 'Front-end developer' }, username: "Gesoo99", user_id: 99687972, github: "https://github.com/manuelelucchi" },
-    { name: "Mirko Faina", description: { it: "Sviluppatore back-end", en: "Back-end developer" }, username: "Mroik", user_id: 0, github: "https://github.com/Mroik" }
+    { name: "Mirko Faina", description: { it: "Sviluppatore back-end", en: "Back-end developer" }, username: "Mroik", user_id: 164356927, github: "https://github.com/Mroik" }
 ];
 
 const Organization: NextPage = () => {
