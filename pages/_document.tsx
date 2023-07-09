@@ -2,16 +2,13 @@ import { Stylesheet, InjectionMode, resetIds } from '@fluentui/react';
 import Document, { DocumentContext, Html, Head, Main, NextScript } from 'next/document';
 import { isNavigatorLanguageItalian, parseCookies } from '../services/Utils';
 
-// Do this in file scope to initialize the stylesheet before Fluent UI React components are imported.
 const stylesheet = Stylesheet.getInstance();
 
-// Set the config.
 stylesheet.setConfig({
     injectionMode: InjectionMode.none,
     namespace: 'server'
 });
 
-// Now set up the document, and just reset the stylesheet.
 export default class MyDocument extends Document<{ cookieLanguage: string, requestLanguage: string }> {
     static async getInitialProps(ctx: DocumentContext) {
         stylesheet.reset();

@@ -8,6 +8,7 @@ import { bold, semibold } from '../../services/Fonts';
 import { ISuggestionItem } from '../../components/Courses/Autocomplete_types';
 import { useBoolean } from "@fluentui/react-hooks";
 import { NextSeo } from 'next-seo';
+import * as Scroll from 'react-scroll';
 import * as animationData from '../../components/Courses/Lottie/128040-searching.json';
 import Lottie from 'react-lottie';
 import LocalizationService from "../../services/LocalizationService";
@@ -37,6 +38,23 @@ const Courses = () => {
     const [isSearching, setIsSearching] = useState<boolean>(false);
     const [searchData, setSearchData] = useState<ISuggestionItem[]>([]);
     const [errorLoadingDegrees, setErrorLoadingDegrees] = useState<boolean>(false);
+
+    /* Scroll to search box after click on it */
+    const [windowWidth, setWindowWidth] = useState<number>(0);
+
+    useEffect(() => { setWindowWidth(window.innerWidth); }, []);
+
+    var Element = Scroll.Element;
+    var scroller = Scroll.scroller;
+
+    const scrollToSearchBox = () => {
+        scroller.scrollTo('searchBoxElement', {
+            duration: 500,
+            delay: 100,
+            smooth: true,
+            offset: -20
+        });
+    };
 
     /* Debouncing stuff */ 
     useEffect(() => {
@@ -188,20 +206,24 @@ const Courses = () => {
                             </div>
                         </div>
 
-                        <div className="search-box" style={searchBoxStyle}>
-                            <SearchBox 
-                                placeholder={locale?.courses.findDegreeByName} 
-                                underlined={true} 
-                                iconProps={iconProps}
-                                theme={theme}
-                                styles={searchBoxStyles}
-                                value={debouncedSearchText ?? ""}
-                                onSearch={searchTextHandler}
-                                onChange={(ev) => setDebouncedSearchText(ev?.target.value!)}
-                                onClear={() => { setDegreeTextSearch(""); setSearchData([]); }}
-                                disabled={errorLoadingDegrees}
-                            />
-                        </div>
+                        {/* @ts-ignore */}
+                        <Element name="searchBoxElement">
+                            <div className="search-box" style={searchBoxStyle}>
+                                <SearchBox 
+                                    placeholder={locale?.courses.findDegreeByName} 
+                                    underlined={true} 
+                                    iconProps={iconProps}
+                                    theme={theme}
+                                    styles={searchBoxStyles}
+                                    value={debouncedSearchText ?? ""}
+                                    onSearch={searchTextHandler}
+                                    onChange={(ev) => setDebouncedSearchText(ev?.target.value!)}
+                                    onClear={() => { setDegreeTextSearch(""); setSearchData([]); }}
+                                    onClick={() => { if (windowWidth <= 768) scrollToSearchBox() }}
+                                    disabled={errorLoadingDegrees}
+                                />
+                            </div>
+                        </Element>
 
                         {debouncedSearchText &&
                             isSearching ? 

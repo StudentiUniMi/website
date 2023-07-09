@@ -49,8 +49,8 @@ const GroupTypes = (props: Props) => {
         <Container> 
             <div className="text-center">
                 <div className="group-types-selector d-flex flex-wrap flex-row" style={groupTypesStyle}>
-                    {groupTypes.map((g:GroupType) => (
-                        <a href={g.href} className="text-decoration-none">
+                    {groupTypes.map((g:GroupType, i: number) => (
+                        <a href={g.href} className="text-decoration-none" key={i}>
                             <div className={groupTypeStyle.root + " group-type-selector"}>
                                 <div className="d-flex flex-grow-1 align-items-center justify-content-center">
                                     <Image src={g.image} alt={g.name[language]} style={{ width: 120, margin: '0 auto' }} />
