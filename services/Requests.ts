@@ -128,8 +128,8 @@ export async function getVerboseDegreeBySlug(degreeSlug: string): Promise<Result
 /**
  * This function retrieves an array of string referred to Degree names (used in Homepage).
  */
-export async function getStringDegrees(): Promise<Result<Array<String>>> {
-    return getAsync<Array<String>>(`${api_endpoint}${typingDegrees_endpoint}`)
+export async function getStringDegrees(): Promise<Result<Array<string>>> {
+    return getAsync<Array<string>>(`${api_endpoint}${typingDegrees_endpoint}`)
 };
 
 /**
