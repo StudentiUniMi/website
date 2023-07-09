@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { Text, Image, Dialog, DialogType, DialogFooter, SearchBox, ISearchBoxStyles, mergeStyleSets } from '@fluentui/react';
+import { Text, Image, Dialog, DialogType, DialogFooter, SearchBox, ISearchBoxStyles } from '@fluentui/react';
 import { IconButton, IIconProps, ITooltipHostStyles, Link, PrimaryButton, TooltipHost, useTheme } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import { useRouter } from 'next/router';
@@ -15,6 +15,8 @@ import JsxParser from "react-jsx-parser";
 import Marquee from "react-fast-marquee";
 import Chip from "components/Atoms/Chip";
 import DegreesResult from "components/Courses/DegreesResult";
+import GroupTypes from "components/Atoms/GroupTypes";
+import { LocalizedField } from "models/Models";
 
 const Courses = () => {
     var theme = useTheme();
@@ -121,7 +123,7 @@ const Courses = () => {
         title: locale?.serverError
     };
 
-    const chips: any = [
+    const chips: Array<{label: LocalizedField}> = [
         { label: { it: "Gruppi dei corsi di laurea", en: "Degree groups" } },
         { label: { it: "Gruppi dei corsi didattici", en: "Teaching course groups" } },
         { label: { it: "Siti web dei corsi", en: "Course websites" } },
@@ -130,52 +132,6 @@ const Courses = () => {
         { label: { it: "Amministratori del network", en: "Network administrators" } },
         { label: { it: "Le nostre pagine wiki", en: "Our wiki pages" } },
     ];
-
-    const groupTypes: any = [       
-        {
-            name: { it: "Gruppi per tutti gli studenti", en: "Groups for all students" },
-            image: "/images/groups/groups.png",
-            href: "/groups#university"
-        },
-        {
-            name: { it: "Gruppi per annunci", en: "Announcements groups" },
-            image: "/images/groups/announcements_groups.png",
-            href: "/groups#announcements"
-        },
-        {
-            name: { it: "Associazioni studentesche", en: "Students associations" },
-            image: "/images/groups/students_associations.png",
-            href: "/groups#students-associations"
-        }
-    ];
-
-    const groupTypesStyle = {
-        justifyContent: 'center',
-        gap: 10
-    };
-
-    const groupTypeStyle = mergeStyleSets({
-        root: {
-            display: 'flex',
-            flexDirection: 'column',
-            backgroundColor: theme.palette.neutralLighter,
-            gap: 10,
-            maxWidth: 200,
-            maxHeight: 250,
-            height: '100%',
-            padding: '20px 20px',
-            cursor: 'pointer',
-            transition: '0.1s all ease',
-            border: `1px solid ${theme.palette.neutralLight}`,
-            borderRadius: 2,
-            selectors: {
-                ':hover': {
-                    backgroundColor: theme.palette.neutralLight,
-                    border: `1px solid ${theme.palette.neutralSecondary}`
-                }
-            },
-        },
-    });
 
     return (
         <>
@@ -291,19 +247,7 @@ const Courses = () => {
                                     <Text variant="xLargePlus">{locale?.courses.otherGroups}</Text>
                                 </div>
 
-                                <div className="group-types-selector d-flex flex-wrap flex-row" style={groupTypesStyle}>
-                                    {groupTypes.map((g:any) => (
-                                        <a href={g.href} className="text-decoration-none">
-                                            <div className={groupTypeStyle.root + " group-type-selector"}>
-                                                <div className="d-flex flex-grow-1 align-items-center justify-content-center">
-                                                    <Image src={g.image} alt={g.name[language!]} style={{ width: 140, margin: '0 auto' }} />
-                                                </div>
-                                                <Text variant="large" styles={semibold}>{g.name[language!]}</Text>
-                                            </div>
-                                        </a>
-                                    ))}
-                                </div>
-
+                                <GroupTypes page="courses" />
                             </div>
                         </Container>
                     </div>

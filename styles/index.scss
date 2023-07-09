@@ -85,6 +85,12 @@ svg {
   }
 }
 
+@media only screen and (max-width: 991px) {
+  footer .footer-icons {
+    justify-content: center !important;
+  }
+}
+
 /* Responsive menu and title */
 @media only screen and (min-width: 587px) {
   .header-menu .pivot {
@@ -337,7 +343,7 @@ svg {
   }
 }
 
-/* Footer label adjustments */
+/* Footer adjustments */
 footer .ms-Label {
   padding-top: 0px;
 }

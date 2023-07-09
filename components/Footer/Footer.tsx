@@ -48,9 +48,28 @@ const Footer = (props: Props) => {
     const changeTheme = () => props.changeTheme();
     const changeLanguage = (language: string) => props.changeLanguage(language);
     const changePalette = (paletteId: string) => props.changePalette(paletteId);
+
+    const footerIconsStyle = {
+        display: 'flex',
+        justifyContent: 'right',
+        gap: 6
+    };
     
-    const wrapIconStyle = { backgroundColor: theme.palette.themeSecondary, marginRight: 5, borderRadius: 5, padding: 8, display: 'flex', justifyContent: 'center', alignItems: 'center' } as React.CSSProperties;
-    const iconStyle = { color: theme.palette.white, fontSize: 20, margin: 0, display: 'flex' };
+    const wrapIconStyle = { 
+        boxShadow: theme.effects.elevation8,
+        borderRadius: 5, 
+        padding: 8, 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center' 
+    } as React.CSSProperties;
+
+    const iconStyle = { 
+        color: theme.palette.black,
+        fontSize: 16, 
+        margin: 0, 
+        display: 'flex' 
+    };
     
     const buttonStyle = { maxWidth: '270px', boxShadow: theme.effects.elevation8 };
     const buttonIconProps: IIconProps = { iconName: 'GoChevronRight', styles: { root: { fontSize: 14 } } };
@@ -157,7 +176,7 @@ const Footer = (props: Props) => {
                     </Col>
 
                     <Col lg={5} sm={12}>
-                        <div className="text-right center-mobile">
+                        <div className="center-mobile footer-icons" style={footerIconsStyle}>
                             {footerIcons.map( (x: any, i: number) => { 
                                 return (
                                     <TooltipHost
@@ -168,9 +187,9 @@ const Footer = (props: Props) => {
                                         delay={TooltipDelay.zero}
                                     >
                                         <Link href={x.link} name={x.name[lang!]}>
-                                            <span style={wrapIconStyle} className="text-decoration">
+                                            <div style={wrapIconStyle} className="text-decoration">
                                                 <Icon iconName={x.iconName} style={iconStyle} />
-                                            </span>
+                                            </div>
                                         </Link>
                                     </TooltipHost>
                                 )}
