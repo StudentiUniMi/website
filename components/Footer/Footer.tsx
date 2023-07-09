@@ -5,6 +5,7 @@ import { Icon, IIconProps, PrimaryButton, Toggle, TooltipHost, SwatchColorPicker
 import { palettes } from '../../services/Palettes';
 import { useContext } from 'react';
 import { preventDefault, preventVisibleHref } from 'services/Utils';
+import { LocalizedField } from 'models/Models';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../../services/LocalizationService";
@@ -12,7 +13,13 @@ import GlobalContext from 'services/GlobalContext';
 
 const listElement = { marginBottom: '.2rem' };
 
-const footerIcons: any = [
+interface FooterIcon {
+    name: LocalizedField,
+    link: string,
+    iconName: string
+};
+
+const footerIcons: Array<FooterIcon> = [
     { name: { it: 'Canale Telegram', en: 'Telegram Channel' }, link: 'https://t.me/studenti_unimi', iconName: 'FaTelegram' },
     { name: { it: 'Canale Discord', en: 'Discord Channel' }, link: 'https://discord.gg/SwPzAkv4A4', iconName: 'FaDiscord' },
     { name: { it: 'Organizzazione GitHub', en: 'GitHub Organization' }, link: 'https://github.com/StudentiUnimi', iconName: 'FaGithub' },
@@ -49,7 +56,7 @@ const Footer = (props: Props) => {
     const buttonIconProps: IIconProps = { iconName: 'GoChevronRight', styles: { root: { fontSize: 14 } } };
 
     /* Theme palette code */
-    const colorCells: any[] = palettes.map(x => ({ id: x.id, label: x.label, color: x.palette?.themePrimary }));
+    const colorCells: Array<{id: string, label: string, color: string}> = palettes.map(x => ({ id: x.id, label: x.label, color: x.palette?.themePrimary }));
     const calloutPropsResetColor = { gapSpace: 10 };
     const hostStylesResetColor: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
 

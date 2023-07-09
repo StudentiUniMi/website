@@ -3,30 +3,26 @@ import { NextPage } from 'next'
 import { Text, Link, CompoundButton, useTheme, Separator, DefaultButton } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import { Persona, PersonaSize } from '@fluentui/react';
-import { getNetworkMembers } from '../services/Requests';
+import { getNetworkMembers, getDevelopers } from '../services/Requests';
 import { IIconProps } from '@fluentui/react';
 import { bold, semibold } from '../services/Fonts';
 import { resetIds } from '@fluentui/react';
 import { NextSeo } from 'next-seo';
 import Lottie from 'react-lottie';
 import * as lottieOrganization from '../components/Organization/Lottie/73386-problem-solving-team.json';
+import Developer from 'models/Developer';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
-
-const developers: any = [
-    { name: "Giuseppe Del Campo", description: { it: "Sviluppatore front-end", en: 'Front-end developer' }, username: 'Giuseppetm', user_id: 597678134, github: "https://github.com/Giuseppetm" },
-    { name: "Marco Aceti", description: { it: "Sviluppatore back-end", en: "Back-end developer" }, username: "acetimarco", user_id: 26170256, github: "https://github.com/MarcoBuster" },
-    { name: "Manuele Lucchi", description: { it: "Sviluppatore front-end", en: 'Front-end developer' }, username: "Gesoo99", user_id: 99687972, github: "https://github.com/manuelelucchi" },
-    { name: "Mirko Faina", description: { it: "Sviluppatore back-end", en: "Back-end developer" }, username: "Mroik", user_id: 164356927, github: "https://github.com/Mroik" }
-];
 
 const Organization: NextPage = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
-    const [domLoaded, setDomLoaded] = useState<boolean>(false);
     const networkMembers = getNetworkMembers();
+    const developers: Array<Developer> = getDevelopers();
+
+    const [domLoaded, setDomLoaded] = useState<boolean>(false);
     const icon: IIconProps = { iconName: 'AiOutlineFilePdf' };
 
     const organizationOptions = {

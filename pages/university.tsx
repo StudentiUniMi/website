@@ -3,7 +3,7 @@ import { NextSeo } from 'next-seo';
 import { Container } from 'react-bootstrap';
 import { Text, Icon, Dropdown, IDropdownOption, useTheme, PrimaryButton, Separator, Link } from '@fluentui/react';
 import { getRepresentatives, getDepartments, getUniversityLinks } from '../services/Requests'
-import { Department, Representative } from '../models/Models';
+import { Department, LocalizedField, Representative } from '../models/Models';
 import { bold, semibold } from "../services/Fonts";
 import Lottie from 'react-lottie';
 import * as lottieMap from '../components/University/Lottie/47956-area-map.json';
@@ -16,6 +16,7 @@ import Marquee from "react-fast-marquee";
 import Chip from "components/Atoms/Chip";
 import ItemsGroup, { Item } from "components/Atoms/ItemsGroup";
 import JsxParser from "react-jsx-parser";
+import UniversityLink from "models/UniversityLink";
 
 const University = () => {
     var theme = useTheme();
@@ -23,7 +24,8 @@ const University = () => {
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
     
-    const universityLinks: any[] = getUniversityLinks();
+    const universityLinks: Array<UniversityLink> = getUniversityLinks();
+
     const items: Item[] = universityLinks.map((x) => ({
         name: x.name,
         href: x.link,
@@ -50,7 +52,7 @@ const University = () => {
 
     const buttonStyle = { boxShadow: theme.effects.elevation8 };
 
-    const chips: any = [
+    const chips: Array<{label: LocalizedField}> = [
         { label: { it: "Collegamenti legati all'ateneo", en: "University-related links" } },
         { label: { it: "Mense", en: "Dining halls" } },
         { label: { it: "Biblioteche", en: "Libraries" } },

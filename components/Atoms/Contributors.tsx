@@ -11,7 +11,6 @@ const hostStyles: Partial<ITooltipHostStyles> = { root: { display: 'inline-block
 const Contributors = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
-    //var language: string = LocalizationService.getLanguage();
     const contributors: Contributor[] = getContributors();
 
     return (
