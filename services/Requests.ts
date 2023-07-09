@@ -21,9 +21,9 @@ import { Department, Degree, VerboseDegree, CourseDegree, Representative, Admin 
 import groups from '../data/groups/Groups.json';
 import announcementsGroups from '../data/groups/Announcements.json';
 import studentsAssociations from '../data/groups/StudentsAssociations.json';
-import redirectsData from '../data/Services/Redirects.json';
-import guidesData from '../data/Services/Guides.json';
-import toolsData from '../data/Services/Tools.json';
+import redirectsData from '../data/services/Redirects.json';
+import guidesData from '../data/services/Guides.json';
+import toolsData from '../data/services/Tools.json';
 import Contributors from '../data/Contributors.json';
 import Faqs from '../data/Faqs.json';
 import NetworkMembers from '../data/NetworkMembers.json';
