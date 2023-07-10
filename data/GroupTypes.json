@@ -1,0 +1,34 @@
+[
+    {
+        "name": {
+            "it": "Gruppi dei corsi di laurea",
+            "en": "Degree-related groups"
+        },
+        "image": "/images/courses/courses.png",
+        "href": "/courses"
+    },
+    {
+        "name": {
+            "it": "Gruppi per tutti gli studenti",
+            "en": "Groups for all the students"
+        },
+        "image": "/images/groups/groups.png",
+        "href": "#university"
+    },
+    {
+        "name": {
+            "it": "Gruppi per annunci",
+            "en": "Announcements groups"
+        },
+        "image": "/images/groups/announcements_groups.png",
+        "href": "#announcements"
+    },
+    {
+        "name": {
+            "it": "Associazioni studentesche",
+            "en": "Students associations"
+        },
+        "image": "/images/groups/students_associations.png",
+        "href": "#students-associations"
+    }
+]

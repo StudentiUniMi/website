@@ -3,6 +3,11 @@
  * @author Giuseppe Del Campo
  */
 
+/* Localized string (example: { it: 'ita', en: 'eng} ) */
+export interface LocalizedField { 
+    [key: string]: any 
+};
+
 export interface Department {
     pk: number,
     name: string,

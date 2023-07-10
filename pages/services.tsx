@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext, useState } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
@@ -33,7 +33,7 @@ const Services = () => {
       }
     };
     
-    const [selectedSubSection, setSelectedSubSection] = React.useState<string>("redirects");
+    const [selectedSubSection, setSelectedSubSection] = useState<string>("redirects");
     
     const cardTokens: ICardTokens = { childrenMargin: 12 };
     

@@ -1,4 +1,4 @@
-import { Text, Image, useTheme, Separator, mergeStyleSets, Link } from '@fluentui/react';
+import { Text, Image, useTheme, Separator, Link } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import { bold, semibold } from '../services/Fonts';
 import { NextSeo } from 'next-seo';
@@ -11,63 +11,13 @@ import Row from 'react-bootstrap/Row';
 import Chip from 'components/Atoms/Chip';
 import GlobalContext from 'services/GlobalContext';
 import JsxParser from 'react-jsx-parser';
+import GroupTypes from 'components/Atoms/GroupTypes';
 
 const Groups = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string = LocalizationService.getLanguage() as string;
     const { isPolicyAccepted, togglePolicyDialog } = useContext(GlobalContext);
-
-    const groupTypes: any = [
-        {
-            name: { it: "Gruppi dei corsi di laurea", en: "Degree-related groups" },
-            image: "/images/courses/courses.png",
-            href: "/courses"
-        },
-        {
-            name: { it: "Gruppi per tutti gli studenti", en: "Groups for all the students" },
-            image: "/images/groups/groups.png",
-            href: "#university"
-        },
-        {
-            name: { it: "Gruppi per annunci", en: "Announcements groups" },
-            image: "/images/groups/announcements_groups.png",
-            href: "#announcements"
-        },
-        {
-            name: { it: "Associazioni studentesche", en: "Students associations" },
-            image: "/images/groups/students_associations.png",
-            href: "#students-associations"
-        }
-    ];
-
-    const groupTypesStyle = {
-        justifyContent: 'center',
-        gap: 10
-    };
-
-    const groupTypeStyle = mergeStyleSets({
-        root: {
-            display: 'flex',
-            flexDirection: 'column',
-            backgroundColor: theme.palette.white,
-            gap: 10,
-            maxWidth: 200,
-            maxHeight: 250,
-            height: '100%',
-            padding: '20px 20px',
-            cursor: 'pointer',
-            transition: '0.1s all ease',
-            border: `1px solid ${theme.palette.neutralLight}`,
-            borderRadius: 2,
-            selectors: {
-                ':hover': {
-                    backgroundColor: theme.palette.neutralLight,
-                    border: `1px solid ${theme.palette.neutralSecondary}`
-                }
-            },
-        },
-    });
 
     return (
         <>
@@ -108,19 +58,7 @@ const Groups = () => {
                                     </h1>
                                 </div>
 
-                                <div className="group-types-selector d-flex flex-wrap flex-row" style={groupTypesStyle}>
-                                    {groupTypes.map((g:any) => (
-                                        <a href={g.href} className="text-decoration-none">
-                                            <div className={groupTypeStyle.root + " group-type-selector"}>
-                                                <div className="d-flex flex-grow-1 align-items-center justify-content-center">
-                                                    <Image src={g.image} alt={g.name[language]} style={{ width: 140, margin: '0 auto' }} />
-                                                </div>
-                                                <Text variant="large" styles={semibold}>{g.name[language]}</Text>
-                                            </div>
-                                        </a>
-                                    ))}
-                                </div>
-
+                                <GroupTypes page="groups" />
                             </div>
                         </Container>
                     </div>

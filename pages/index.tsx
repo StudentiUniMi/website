@@ -72,7 +72,7 @@ const HomeView = (props: Props) => {
 
 export const getServerSideProps: GetServerSideProps = async () => {
     let stringDegreesResult = await getStringDegrees();
-    let degrees: string[] = [];
+    let degrees: Array<string> = [];
 
     if (stringDegreesResult.status !== 200) {
         degrees = [

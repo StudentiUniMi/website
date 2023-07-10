@@ -5,6 +5,7 @@ import { Icon, IIconProps, PrimaryButton, Toggle, TooltipHost, SwatchColorPicker
 import { palettes } from '../../services/Palettes';
 import { useContext } from 'react';
 import { preventDefault, preventVisibleHref } from 'services/Utils';
+import { LocalizedField } from 'models/Models';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../../services/LocalizationService";
@@ -12,7 +13,13 @@ import GlobalContext from 'services/GlobalContext';
 
 const listElement = { marginBottom: '.2rem' };
 
-const footerIcons: any = [
+interface FooterIcon {
+    name: LocalizedField,
+    link: string,
+    iconName: string
+};
+
+const footerIcons: Array<FooterIcon> = [
     { name: { it: 'Canale Telegram', en: 'Telegram Channel' }, link: 'https://t.me/studenti_unimi', iconName: 'FaTelegram' },
     { name: { it: 'Canale Discord', en: 'Discord Channel' }, link: 'https://discord.gg/SwPzAkv4A4', iconName: 'FaDiscord' },
     { name: { it: 'Organizzazione GitHub', en: 'GitHub Organization' }, link: 'https://github.com/StudentiUnimi', iconName: 'FaGithub' },
@@ -41,15 +48,34 @@ const Footer = (props: Props) => {
     const changeTheme = () => props.changeTheme();
     const changeLanguage = (language: string) => props.changeLanguage(language);
     const changePalette = (paletteId: string) => props.changePalette(paletteId);
+
+    const footerIconsStyle = {
+        display: 'flex',
+        justifyContent: 'right',
+        gap: 6
+    };
     
-    const wrapIconStyle = { backgroundColor: theme.palette.themeSecondary, marginRight: 5, borderRadius: 5, padding: 8, display: 'flex', justifyContent: 'center', alignItems: 'center' } as React.CSSProperties;
-    const iconStyle = { color: theme.palette.white, fontSize: 20, margin: 0, display: 'flex' };
+    const wrapIconStyle = { 
+        boxShadow: theme.effects.elevation8,
+        borderRadius: 5, 
+        padding: 8, 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center' 
+    } as React.CSSProperties;
+
+    const iconStyle = { 
+        color: theme.palette.black,
+        fontSize: 16, 
+        margin: 0, 
+        display: 'flex' 
+    };
     
     const buttonStyle = { maxWidth: '270px', boxShadow: theme.effects.elevation8 };
     const buttonIconProps: IIconProps = { iconName: 'GoChevronRight', styles: { root: { fontSize: 14 } } };
 
     /* Theme palette code */
-    const colorCells: any[] = palettes.map(x => ({ id: x.id, label: x.label, color: x.palette?.themePrimary }));
+    const colorCells: Array<{id: string, label: string, color: string}> = palettes.map(x => ({ id: x.id, label: x.label, color: x.palette?.themePrimary }));
     const calloutPropsResetColor = { gapSpace: 10 };
     const hostStylesResetColor: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
 
@@ -150,7 +176,7 @@ const Footer = (props: Props) => {
                     </Col>
 
                     <Col lg={5} sm={12}>
-                        <div className="text-right center-mobile">
+                        <div className="center-mobile footer-icons" style={footerIconsStyle}>
                             {footerIcons.map( (x: any, i: number) => { 
                                 return (
                                     <TooltipHost
@@ -161,9 +187,9 @@ const Footer = (props: Props) => {
                                         delay={TooltipDelay.zero}
                                     >
                                         <Link href={x.link} name={x.name[lang!]}>
-                                            <span style={wrapIconStyle} className="text-decoration">
+                                            <div style={wrapIconStyle} className="text-decoration">
                                                 <Icon iconName={x.iconName} style={iconStyle} />
-                                            </span>
+                                            </div>
                                         </Link>
                                     </TooltipHost>
                                 )}
