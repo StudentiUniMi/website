@@ -80,7 +80,7 @@ const University = () => {
         setErrorLoadingDepartments(false);
         let departmentsResult = await getDepartments();
 
-        if (departmentsResult.status !== 200) {
+        if (departmentsResult.error) {
             setErrorLoadingDepartments(true);
             return;
         }
@@ -95,7 +95,7 @@ const University = () => {
         setErrorLoadingRepresentatives(false);
         let representativesResult = await getRepresentatives(selectedDepartment);
 
-        if (representativesResult.status !== 200) {
+        if (representativesResult.error) {
             setLoadingRepresentatives(false);
             setErrorLoadingRepresentatives(true);
         }

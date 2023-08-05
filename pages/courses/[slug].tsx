@@ -170,15 +170,15 @@ export const getServerSideProps: GetServerSideProps = async ( { params }) => {
     const degreeSlug = params!.slug as unknown as string;
 
     let degreeResult = await getVerboseDegreeBySlug(degreeSlug);
-    if (degreeResult.status !== 200) errors.degree = true;
+    if (degreeResult.error) errors.degree = true;
 
     const degreeKey = degreeResult.value?.pk as unknown as string;
 
     const teachingCoursesResult = await getCourses(degreeKey);
-    if (teachingCoursesResult.status !== 200) errors.courses = true;
+    if (teachingCoursesResult.error) errors.courses = true;
 
     let adminsResult = await getDegreeAdmins(degreeSlug);
-    if (adminsResult.status !== 200) errors.admins = true;
+    if (adminsResult.error) errors.admins = true;
 
     let degreeInformations = getDegreeInformations(degreeSlug);
 

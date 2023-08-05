@@ -90,9 +90,10 @@ const Courses = () => {
             setSearchData([]);
             return;
         } 
+
         let degreesResult = await getDegreesForSearchBox(searchBoxText);
 
-        if (degreesResult.status !== 200) {
+        if (degreesResult.error) {
             setErrorLoadingDegrees(true);
             toggleApiErrorDialog();
             return;

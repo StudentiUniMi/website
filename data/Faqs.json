@@ -32,8 +32,8 @@
         "en": "I am looking for a student representative for didactic problems. Where can I find it?"
     },
     "answer": {
-        "it": "Abbiamo pensato che avere un posto in cui trovare i rappresentanti degli studenti e parlare con loro direttamente fosse essenziale. Proprio per questo c'è una <Link href='https://studentiunimi.it/university'>sezione del sito</Link> che permette di visualizzare i rappresentanti degli studenti di ogni dipartimento e i loro contatti telegram.",
-        "en": "We felt that having a place to find student representatives and talk to them directly was essential. Precisely for this reason there is a <Link href='https://studentiunimi.it/university'>section of the website</Link> that allows you to view the student representatives of each department and their telegram contacts."
+        "it": "Abbiamo pensato che avere un posto in cui trovare i rappresentanti degli studenti e parlare con loro direttamente fosse essenziale. Proprio per questo c'è una <Link href='/university'>sezione del sito</Link> che permette di visualizzare i rappresentanti degli studenti di ogni dipartimento e i loro contatti telegram.",
+        "en": "We felt that having a place to find student representatives and talk to them directly was essential. Precisely for this reason there is a <Link href='/university'>section of the website</Link> that allows you to view the student representatives of each department and their telegram contacts."
     }
 }, {
     "question": {

@@ -74,7 +74,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
     let stringDegreesResult = await getStringDegrees();
     let degrees: Array<string> = [];
 
-    if (stringDegreesResult.status !== 200) {
+    // Fill string degrees with default ones in case of API error
+    if (stringDegreesResult.error) {
         degrees = [
             'informatica',
             'fisica',

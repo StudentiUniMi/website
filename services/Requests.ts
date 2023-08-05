@@ -1,5 +1,6 @@
 /**
  * Main file for handling requests.
+ * 
  * @author Giuseppe Del Campo
  * @author Manuele Lucchi
  */
@@ -45,15 +46,17 @@ const admins_endpoint = '/admins';
 /* Main class to build response */
 class Result<T>
 {
-    public status:number;
-    public value?:T;
-    public message:string;
+    public status: number;
+    public value?: T;
+    public message: string;
+    public error: boolean;
 
-    constructor(status: number, value?:T, message:string = "")
+    constructor(status: number, value?: T, message: string = "")
     {
         this.status = status;
         this.value = value;
         this.message = message;
+        this.error = status !== 200;
     }
 };
 
@@ -71,6 +74,7 @@ async function getAsync<T>(path: string) : Promise<Result<T>>
         }
 
         let res = await response.json() as T;
+        
         return new Result<T>(200,res);
     } catch(err) {
         console.error(err);
