@@ -53,24 +53,6 @@ const Course = (props: Props) => {
         document.body.removeChild(el);
     };
 
-    const buildGroupsNumberString = (n: number) => {
-        if (n === 0) {
-            switch (language!) {
-                case "it":
-                    return "Nessun gruppo disponibile.";
-                case "en":
-                    return "No groups available.";
-            }
-        } else {
-            switch (language!) {
-                case "it":
-                    return `${n === 1 ? 'Gruppo disponibile' : 'Gruppi disponibili'}`
-                case "en":
-                    return `${n === 1 ? 'Group available' : 'Groups available'}`
-            }
-        }
-    };
-
     /* Loaded degree informations */
     let loadedDegree: VerboseDegree = props.loadedDegree;
     // TODO: let errorLoadingDegree: boolean = props.errors.degree;
@@ -191,24 +173,6 @@ const Course = (props: Props) => {
                                         className="mr-1" 
                                     />
                                 </Text>
-
-                                <div className="mt-1">
-                                    <Text 
-                                        variant='medium' 
-                                        style={{ color: theme.palette.black }} 
-                                        styles={semibold}
-                                    >
-                                        {props.courses.length > 0 && <Chip 
-                                            label={props.courses.length.toString()}
-                                            textColor={theme.palette.neutralPrimary}
-                                            theme={theme}
-                                            bgColor={theme.palette.neutralLighter}
-                                            size="small" 
-                                            className="mr-1"
-                                        />}
-                                        {buildGroupsNumberString(props.courses.length)}
-                                    </Text>
-                                </div>
                             </div>
                                 
                             <div className="d-flex align-items-center">
@@ -229,9 +193,10 @@ const Course = (props: Props) => {
                         errorLoadingCourses={errorLoadingCourses} 
                     />
 
-                    <DegreeInformations 
+                    {/* When we'll have this info pretty much on all the degrees I can remove this check here */}
+                    {degreeInformations.length && <DegreeInformations 
                         degreeInformations={degreeInformations} 
-                    />
+                    />}
 
                     <AdminsList 
                         admins={admins} 

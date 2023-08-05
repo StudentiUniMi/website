@@ -13,7 +13,7 @@
             "en": "Groups for all the students"
         },
         "image": "/images/groups/groups.png",
-        "href": "#university"
+        "href": "/groups#university"
     },
     {
         "name": {
@@ -21,7 +21,7 @@
             "en": "Announcements groups"
         },
         "image": "/images/groups/announcements_groups.png",
-        "href": "#announcements"
+        "href": "/groups#announcements"
     },
     {
         "name": {
@@ -29,6 +29,6 @@
             "en": "Students associations"
         },
         "image": "/images/groups/students_associations.png",
-        "href": "#students-associations"
+        "href": "/groups#students-associations"
     }
 ]
