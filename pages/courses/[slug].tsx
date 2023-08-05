@@ -194,7 +194,7 @@ const Course = (props: Props) => {
                     />
 
                     {/* When we'll have this info pretty much on all the degrees I can remove this check here */}
-                    {degreeInformations.length && <DegreeInformations 
+                    {degreeInformations.length > 0 && <DegreeInformations 
                         degreeInformations={degreeInformations} 
                     />}
 
