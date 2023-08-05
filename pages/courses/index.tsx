@@ -86,6 +86,7 @@ const Courses = () => {
     /* Degrees API call for the SearchBox result */
     const updateDegreesForSearchBox = useCallback(async (searchBoxText: string) => {
         setDegreeTextSearch(searchBoxText);
+        
         if (searchBoxText === "" || !searchBoxText) {
             setSearchData([]);
             return;
