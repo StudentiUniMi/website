@@ -152,6 +152,11 @@ interface ILocalizationStrings {
             text2: string,
             text3: string
         },
+        degree: {
+            title: string,
+            goBack: string,
+            share: string
+        },
         searchingDegrees: string,
         departmentSelect: string,
         cdlSelect: string,

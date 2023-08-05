@@ -23,7 +23,7 @@ const AdminsList = (props: Props) => {
 
     return (
         <div className="mb-2">
-            <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLight }}>
+            <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLighter }}>
                 <Container>
                     <div><Text variant="medium" styles={semibold}><Icon iconName="AiOutlineQuestionCircle" /> {locale?.courses.availableAdmins}</Text></div>
                 </Container>

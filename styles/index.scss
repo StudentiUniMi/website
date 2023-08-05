@@ -49,10 +49,21 @@ svg {
   vertical-align: unset;
 }
 
-/* Responsive variant "mega" of text */
+/* Responsive variant "mega" of text + handle courses title content responsiveness */
 @media only screen and (max-width: 767px) {
   .text-mega * {
     font-size: 42px !important;
+  }
+
+  .courses-title-content {
+    text-align: center;
+    align-items: center;
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+
+  .degree-buttons-menu {
+    justify-content: center;
   }
 }
 

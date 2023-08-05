@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, DefaultButton, IIconProps, useTheme } from '@fluentui/react';
+import { Text, DefaultButton, IIconProps, useTheme, TooltipDelay, TooltipHost, DirectionalHint } from '@fluentui/react';
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 import { GetServerSideProps } from 'next';
@@ -13,6 +13,7 @@ import LocalizationService from "../../services/LocalizationService";
 import DegreeInformations from "../../components/Courses/DegreeInformations";
 import AdminsList from '../../components/Courses/AdminsList';
 import GroupList from "../../components/Courses/GroupList";
+import Chip from 'components/Atoms/Chip';
 
 interface reactHelmetContent {
     title: string,
@@ -40,7 +41,35 @@ const Course = (props: Props) => {
     const { slug } = router.query;
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
-    const buttonIconProps: IIconProps = { iconName: 'AiOutlineArrowLeft', styles: { root: { fontSize: 14 } } };
+    const goBackButtonIconProps: IIconProps = { iconName: 'AiOutlineArrowLeft', styles: { root: { fontSize: 14 } } };
+    const shareLinkButtonIconProps: IIconProps = { iconName: 'Share', styles: { root: { fontSize: 14 } } };
+
+    const copyUrlToDashboard = () => {
+        const el = document.createElement('input');
+        el.value = window.location.href;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+    };
+
+    const buildGroupsNumberString = (n: number) => {
+        if (n === 0) {
+            switch (language!) {
+                case "it":
+                    return "Nessun gruppo disponibile.";
+                case "en":
+                    return "No groups available.";
+            }
+        } else {
+            switch (language!) {
+                case "it":
+                    return `${n === 1 ? 'Gruppo disponibile' : 'Gruppi disponibili'}`
+                case "en":
+                    return `${n === 1 ? 'Group available' : 'Groups available'}`
+            }
+        }
+    };
 
     /* Loaded degree informations */
     let loadedDegree: VerboseDegree = props.loadedDegree;
@@ -125,19 +154,70 @@ const Course = (props: Props) => {
             <section className="degree">
                 <div className="degree-title pt-4 pb-4">
                     <Container>
-                        <div className="d-flex justify-content-between">
-                            <div className="d-flex align-items-start" style={{ gap: 16 }}>
-                                <DefaultButton onClick={() => { router.push("/courses"); }} iconProps={buttonIconProps} style={{ minWidth: 40, marginTop: 5 }} />
-                                
-                                <div>
-                                    <div>
-                                        <Text variant="medium" styles={semibold} style={{ textTransform: 'uppercase', color: theme.palette.themePrimary }}>
-                                            {getDegreeFullName(loadedDegree?.type!, language!)}
-                                        </Text>
-                                    </div>
-                                    <Text variant="xLarge">{loadedDegree?.name}</Text>
+                        <div className="d-flex flex-row courses-title-content" style={{ gap: 20 }}>
+
+                            <div className="d-flex flex-column" style={{ gap: 10 }}>
+
+                                <div className="d-flex flex-row degree-buttons-menu" style={{ gap: 8 }}>
+                                    <TooltipHost
+                                        content={locale?.courses.degree.goBack}
+                                        calloutProps={{ gapSpace: 6 }}
+                                        delay={TooltipDelay.zero}
+                                        id={'0'}
+                                        directionalHint={DirectionalHint.bottomCenter}
+                                    >
+                                        <DefaultButton onClick={() => { router.push("/courses"); }} iconProps={goBackButtonIconProps} style={{ minWidth: 40, marginTop: 5 }} />
+                                    </TooltipHost>
+
+                                    <TooltipHost
+                                        content={locale?.courses.degree.share}
+                                        calloutProps={{ gapSpace: 6 }}
+                                        delay={TooltipDelay.zero}
+                                        id={'0'}
+                                        directionalHint={DirectionalHint.bottomCenter}
+                                    >
+                                        <DefaultButton onClick={() => copyUrlToDashboard()} iconProps={shareLinkButtonIconProps} style={{ minWidth: 40, marginTop: 5 }} />
+                                    </TooltipHost>
+
+                                </div>
+
+                                <Text variant="medium" styles={semibold} style={{ color: theme.palette.themePrimary }}>
+                                    <Chip 
+                                        label={getDegreeFullName(loadedDegree?.type!, language!)} 
+                                        theme={theme}
+                                        size="small" 
+                                        outlined 
+                                        textColor={theme.palette.neutralPrimary} 
+                                        className="mr-1" 
+                                    />
+                                </Text>
+
+                                <div className="mt-1">
+                                    <Text 
+                                        variant='medium' 
+                                        style={{ color: theme.palette.black }} 
+                                        styles={semibold}
+                                    >
+                                        {props.courses.length > 0 && <Chip 
+                                            label={props.courses.length.toString()}
+                                            textColor={theme.palette.neutralPrimary}
+                                            theme={theme}
+                                            bgColor={theme.palette.neutralLighter}
+                                            size="small" 
+                                            className="mr-1"
+                                        />}
+                                        {buildGroupsNumberString(props.courses.length)}
+                                    </Text>
                                 </div>
                             </div>
+                                
+                            <div className="d-flex align-items-center">
+                                <h1>
+                                    <Text variant='xLargePlus' style={{ lineHeight: 1.3 }}>{locale?.courses.degree.title}</Text><br/>
+                                    <Text variant="superLarge" style={{ lineHeight: 1.3, fontWeight: 700, color: theme.palette.themeDarkAlt }}>{loadedDegree?.name}</Text>
+                                </h1>
+                            </div>
+                                
                         </div>
                     </Container>
                 </div>

@@ -122,7 +122,7 @@ const CourseList= (props: Props) => {
 
     return (       
         <div className="groups-list mb-4">
-            <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLight }}>
+            <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLighter }}>
                 <Container className="d-flex justify-content-between align-items-center" style={{ gap: 8 }}>
                     <div>
                         <Text variant="medium" styles={semibold}><Icon iconName="AiOutlineTeam"/> {locale?.courses.availableGroups}</Text>
