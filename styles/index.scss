@@ -17,7 +17,6 @@ body {
 }
 
 section {
-  padding-top: 46px;
   flex-grow: 1;
 }
 
@@ -104,22 +103,6 @@ svg {
 }
 
 /* Responsive header */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.header.shown {
-  transform: translateY(0);
-}
-
-.header.hidden {
-  transform: translateY(-80px);
-}
-
 @media only screen and (min-width: 587px) {
   .header-menu .pivot {
     display: block;
