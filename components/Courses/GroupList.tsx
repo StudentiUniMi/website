@@ -9,6 +9,7 @@ import Row from 'react-bootstrap/Row';
 import GroupItem from './GroupItem';
 import LocalizationService from "../../services/LocalizationService";
 import Message from '../Atoms/Message';
+import Chip from "components/Atoms/Chip";
 
 interface Props { 
     degree?: Degree, 
@@ -43,6 +44,7 @@ const yearMasterDegreeFilterOptions: IDropdownOption[] = [
 const CourseList= (props: Props) => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
+    var language: string | undefined = LocalizationService.getLanguage();
     const [filtersToggle, setFiltersToggle] = React.useState<boolean>(false);
     const columnCount = React.useRef(0);
     const rowHeight = React.useRef(0);
@@ -120,12 +122,48 @@ const CourseList= (props: Props) => {
         resetGroupsFilters();
     }, [props.degree]);
 
+    const buildGroupsNumberString = (n: number) => {
+        if (n === 0) {
+            switch (language!) {
+                case "it":
+                    return "Nessun gruppo disponibile.";
+                case "en":
+                    return "No groups available.";
+            }
+        } else {
+            switch (language!) {
+                case "it":
+                    return `${n === 1 ? 'Gruppo disponibile' : 'Gruppi disponibili'}`
+                case "en":
+                    return `${n === 1 ? 'Group available' : 'Groups available'}`
+            }
+        }
+    };
+
     return (       
         <div className="groups-list mb-4">
-            <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLight }}>
+            <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLighter }}>
                 <Container className="d-flex justify-content-between align-items-center" style={{ gap: 8 }}>
-                    <div>
-                        <Text variant="medium" styles={semibold}><Icon iconName="AiOutlineTeam"/> {locale?.courses.availableGroups}</Text>
+                    <div className="d-flex flex-row align-items-center" style={{ gap: 5 }}>
+                        <Text variant="medium" styles={semibold}>
+                            <Icon iconName="Group" style={{ fontSize: 16 }} />
+                        </Text>
+                        <Text 
+                            variant='medium' 
+                            style={{ color: theme.palette.black }} 
+                            styles={semibold}
+                        >
+                            {props.courses.length > 0 && 
+                            <Chip 
+                                label={props.courses.length.toString()}
+                                textColor={theme.palette.white}
+                                theme={theme}
+                                bgColor={theme.palette.themePrimary}
+                                size="small" 
+                                className="mr-1"
+                            />}
+                            {buildGroupsNumberString(props.courses.length)}
+                        </Text>
                     </div>
 
                     <div className="filters-toggle d-flex align-items-center">

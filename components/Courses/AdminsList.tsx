@@ -9,23 +9,64 @@ import Row from 'react-bootstrap/Row';
 import ErrorMessage from "../Atoms/ErrorMessage";
 import Message from '../Atoms/Message';
 import LocalizationService from "../../services/LocalizationService";
+import Chip from 'components/Atoms/Chip';
 
 interface Props { admins: Admin[], errorLoadingAdmins: boolean };
 
 const AdminsList = (props: Props) => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
-    const [domLoaded, setDomLoaded] = useState<boolean>(false);
+    var language: string | undefined = LocalizationService.getLanguage();
     let admins: Admin[] = props.admins;
     let errorLoadingAdmins: boolean = props.errorLoadingAdmins;
+
+    const [domLoaded, setDomLoaded] = useState<boolean>(false);
+
+    const buildAdminsNumberString = (n: number) => {
+        if (n === 0) {
+            switch (language!) {
+                case "it":
+                    return "Nessun amministratore disponibile.";
+                case "en":
+                    return "No administrators available.";
+            }
+        } else {
+            switch (language!) {
+                case "it":
+                    return `${n === 1 ? 'Amministratore disponibile' : 'Amministratori disponibili'}`
+                case "en":
+                    return `${n === 1 ? 'Administrator available' : 'Administrators available'}`
+            }
+        }
+    };
 
     useEffect(() => { setDomLoaded(true); }, []);
 
     return (
         <div className="mb-2">
-            <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLight }}>
+            <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLighter }}>
                 <Container>
-                    <div><Text variant="medium" styles={semibold}><Icon iconName="AiOutlineQuestionCircle" /> {locale?.courses.availableAdmins}</Text></div>
+                    <div className="d-flex flex-row align-items-center" style={{ gap: 5 }}>
+                        <Text variant="medium" styles={semibold}>
+                            <Icon iconName="SecurityGroup" style={{ fontSize: 16 }} />
+                        </Text>
+                        <Text 
+                            variant='medium' 
+                            style={{ color: theme.palette.black }} 
+                            styles={semibold}
+                        >
+                            {admins.length > 0 && 
+                            <Chip 
+                                label={admins.length.toString()}
+                                textColor={theme.palette.white}
+                                theme={theme}
+                                bgColor={theme.palette.themePrimary}
+                                size="small" 
+                                className="mr-1"
+                            />}
+                            {buildAdminsNumberString(admins.length)}
+                        </Text>
+                    </div>
                 </Container>
             </div>
 

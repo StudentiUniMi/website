@@ -24,8 +24,12 @@ const HeaderMenu = () => {
     const { isPolicyAccepted, togglePolicyDialog } = useContext(GlobalContext);
     const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
 
-    /* Styles */
-    const cardStyle = { backgroundColor: theme.palette.themeDarkAlt, borderRadius: 10, padding:15 };
+    const cardStyle = { 
+        backgroundColor: theme.palette.themeDarkAlt, 
+        borderRadius: 10, 
+        padding:15 
+    };
+
     const mobileHeaderButton = { 
         fontSize: FontSizes.size18,
         backgroundColor: theme.palette.themePrimary,
@@ -35,8 +39,12 @@ const HeaderMenu = () => {
         border: '1px solid ' + theme.palette.themeTertiary,
         boxShadow: theme.effects.elevation8
     };
+
     const pivotStyles: Partial<IPivotStyles> = {
-        root: { color: theme.palette.neutralPrimary, fontSize: FontSizes.size24 },
+        root: { 
+            color: theme.palette.neutralPrimary, 
+            fontSize: FontSizes.size24
+        }
     };
 
     const texts: Map<ItemsKeys, string | undefined> = new Map<ItemsKeys, string | undefined>([

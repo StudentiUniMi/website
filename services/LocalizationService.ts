@@ -253,6 +253,11 @@ class LocalizationService {
                             text2: "Trova tutti i gruppi Telegram del tuo corso di laurea",
                             text3: "Tutto quello che devi fare è scrivere il nome del tuo corso di laurea qui sotto, e potrai accedere ai gruppi telegram dei tuoi corsi didattici e ad altre informazioni utili."
                         },
+                        degree: {
+                            title: "Gruppi e risorse di ",
+                            goBack: "Torna alla pagina dei corsi di laurea",
+                            share: "Copia l'URL di questa pagina"
+                        },
                         searchingDegrees: "Ricerca dei corsi di laurea ...",
                         departmentSelect: 'Seleziona un dipartimento',
                         cdlSelect: 'Seleziona un corso di Laurea',
@@ -260,7 +265,7 @@ class LocalizationService {
                         availableGroups: 'Gruppi disponibili',
                         availableAdmins: 'Amministratori disponibili',
                         nameFilter: 'Cerca per nome',
-                        yearFilter: 'Cerca per anno',
+                        yearFilter: 'Cerca per anno o tipologia',
                         semesterFilter: 'Cerca per semestre',
                         year: 'Anno',
                         semester: 'Semestre',
@@ -640,6 +645,11 @@ class LocalizationService {
                             text2: "Find all the Telegram groups of your degree",
                             text3: "All you have to do is write the name of your degree below, and you will be able to access all the telegram groups of your teaching courses and other useful informations."
                         },
+                        degree: {
+                            title: "Groups and resources of ",
+                            goBack: "Back to courses page",
+                            share: "Copy URL of this page"
+                        },
                         searchingDegrees: "Searching for course degrees ...",
                         departmentSelect: 'Select the department',
                         cdlSelect: 'Select the degree',
@@ -647,7 +657,7 @@ class LocalizationService {
                         availableGroups: 'Available groups',
                         availableAdmins: 'Available admins',
                         nameFilter: 'Search by name',
-                        yearFilter: 'Search by year',
+                        yearFilter: 'Search by year or type',
                         semesterFilter: 'Search by semester',
                         year: 'Year',
                         semester: 'Semester',
