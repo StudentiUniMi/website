@@ -49,7 +49,7 @@ const Header = () => {
 
             <div style={{ maxWidth: 250, paddingLeft: 0, paddingRight: 0, display: 'flex', alignItems: 'center' }}>
               <div className="d-flex align-items-center" style={{ width: 250, gap: 10 }}>
-                <Link href="http://studentiunimi.it/">
+                <Link href="/">
                   <Image
                     id="logo"
                     alt="Logo"
@@ -58,7 +58,7 @@ const Header = () => {
                   />
                 </Link>
 
-                <Link href="http://studentiunimi.it/" className="text-decoration-none">
+                <Link href="/" className="text-decoration-none">
                   <Text styles={titleStyle}>Network StudentiUniMi</Text>
                 </Link>
               </div>

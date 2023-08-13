@@ -1,6 +1,40 @@
 import { DefaultEffects, FontWeights, FontSizes } from '@fluentui/react';
 import { palettes } from './Palettes';
 
+export const fonts = {
+    defaultFontStyle: { 
+        fontFamily: 'Segoe UI', 
+        fontWeight: FontWeights.regular,
+        fontDisplay: 'swap'
+    },
+    small: {
+        fontSize: FontSizes.size12
+    },
+    medium: {
+        fontSize: FontSizes.size14
+    },
+    large: {
+        fontSize: FontSizes.size20
+    },
+    xLarge: {
+        fontSize: FontSizes.size24
+    },
+    xLargePlus: {
+        fontSize: FontSizes.size32
+    },
+    superLarge: {
+        fontSize: FontSizes.size42
+    } 
+};
+
+export const effects = {
+    elevation4: DefaultEffects.elevation4,
+    elevation8: DefaultEffects.elevation8,
+    elevation16: DefaultEffects.elevation16,
+    elevation64: DefaultEffects.elevation64
+};
+
+
 /**
  * This function returns lightTheme with palette based on paletteID.
  * @param {string} paletteID 
@@ -31,7 +65,8 @@ export const buildLightTheme = (paletteID: string) => {
     for (var x in subsetPalette) { lightTheme.palette[x] = subsetPalette[x]; };
 
     return lightTheme;
-}
+};
+
 
 /**
  * This function returns darkTheme with palette based on paletteID.
@@ -53,10 +88,10 @@ export const buildDarkTheme = (paletteID: string) => {
             neutralTertiary: '#a4a2a1',
             neutralSecondary: '#d6d6d6',
             neutralPrimaryAlt: '#6e6d6c',
-            neutralPrimary: '#f5f2f0', // used for text
+            neutralPrimary: '#f5f2f0',
             neutralDark: '#dbdbdb',
             black: '#faf9f8',
-            white: '#292828', // main background
+            white: '#292828'
         },
         fonts: fonts
     };
@@ -64,33 +99,4 @@ export const buildDarkTheme = (paletteID: string) => {
     for (var x in subsetPalette) { darkTheme.palette[x] = subsetPalette[x]; };
 
     return darkTheme;
-}
-
-export const fonts = {
-    defaultFontStyle: { fontFamily: 'Segoe UI', fontWeight: FontWeights.regular },
-    small: {
-        fontSize: FontSizes.size12
-    },
-    medium: {
-        fontSize: FontSizes.size14
-    },
-    large: {
-        fontSize: FontSizes.size20
-    },
-    xLarge: {
-        fontSize: FontSizes.size24
-    },
-    xLargePlus: {
-        fontSize: FontSizes.size32
-    },
-    superLarge: {
-        fontSize: FontSizes.size42
-    } 
-};
-
-export const effects = {
-    elevation4: DefaultEffects.elevation4,
-    elevation8: DefaultEffects.elevation8,
-    elevation16: DefaultEffects.elevation16,
-    elevation64: DefaultEffects.elevation64
 };

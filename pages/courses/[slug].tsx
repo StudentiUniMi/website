@@ -8,12 +8,14 @@ import { Container } from 'react-bootstrap';
 import { getCourses, getDegreeInformations, getVerboseDegreeBySlug, getDegreeAdmins } from '../../services/Requests';
 import { semibold } from '../../services/Fonts';
 import { getDegreeFullName } from 'services/Utils';
+import { DegreeInformation } from 'models/DegreeInformation';
 import FourOhFour from 'pages/404'; 
 import LocalizationService from "../../services/LocalizationService";
 import DegreeInformations from "../../components/Courses/DegreeInformations";
 import AdminsList from '../../components/Courses/AdminsList';
 import GroupList from "../../components/Courses/GroupList";
 import Chip from 'components/Atoms/Chip';
+import FiveHundred from 'pages/500';
 
 interface reactHelmetContent {
     title: string,
@@ -25,7 +27,7 @@ interface reactHelmetContent {
 interface Props {
     loadedDegree: VerboseDegree,
     courses: Array<CourseDegree>,
-    informations: Array<any>,
+    informations: Array<DegreeInformation>,
     admins: Array<Admin>,
     errors: {
         degree: boolean,
@@ -41,6 +43,7 @@ const Course = (props: Props) => {
     const { slug } = router.query;
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
+
     const goBackButtonIconProps: IIconProps = { iconName: 'AiOutlineArrowLeft', styles: { root: { fontSize: 14 } } };
     const shareLinkButtonIconProps: IIconProps = { iconName: 'Share', styles: { root: { fontSize: 14 } } };
 
@@ -53,11 +56,11 @@ const Course = (props: Props) => {
         document.body.removeChild(el);
     };
 
-    /* Loaded degree informations */
+    // Loaded degree informations
     let loadedDegree: VerboseDegree = props.loadedDegree;
-    // TODO: let errorLoadingDegree: boolean = props.errors.degree;
+    let errorLoadingDegree: boolean = props.errors.degree;
 
-    /* Helmet */
+    // Helmet
     let reactHelmetContent: reactHelmetContent = {
         title: locale?.helmet.degreeLoaded.title1 + `${loadedDegree?.name} (${getDegreeFullName(loadedDegree?.type!, language!).toLowerCase()})` + locale?.helmet.degreeLoaded.title2,
         description: locale?.helmet.degreeLoaded.description1 + `${loadedDegree?.name} (${getDegreeFullName(loadedDegree?.type!, language!).toLowerCase()})` + locale?.helmet.degreeLoaded.description2,
@@ -65,18 +68,18 @@ const Course = (props: Props) => {
         hrefLang: language!
     };
 
-    /* Teaching courses */
+    // Teaching courses
     let courses: CourseDegree[] = props.courses;
     let errorLoadingCourses: boolean = props.errors.courses;
 
-    /* Admins */
+    // Degree admins
     let admins: Admin[] = props.admins;
     let errorLoadingAdmins: boolean = props.errors.admins;
     
-    /* Degree informations */
+    // Degree informations/redirects
     let degreeInformations: any[] = props.informations;
 
-    if (!props.loadedDegree) {
+    if (!loadedDegree) {
         return (
             <>
                 <NextSeo
@@ -105,6 +108,10 @@ const Course = (props: Props) => {
                 />
                 <FourOhFour />
             </>
+        );
+    } else if (errorLoadingDegree) {
+        return (
+            <FiveHundred />
         );
     } else return (
         <>
@@ -186,7 +193,7 @@ const Course = (props: Props) => {
                     </Container>
                 </div>
 
-                <div className="degree-details pb-4">
+                <div className="degree-details">
                     <GroupList 
                         degree={loadedDegree!} 
                         courses={courses} 

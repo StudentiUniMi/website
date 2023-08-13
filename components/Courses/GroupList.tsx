@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FormEvent, MouseEvent, useCallback, useEffect, useRef, useState } from "react";
 import { Text, Toggle, Icon, IRectangle, List, TextField, Dropdown, IDropdownOption, mergeStyleSets, useTheme } from "@fluentui/react";
 import { Container } from 'react-bootstrap';
 import { semibold } from '../../services/Fonts';
@@ -17,38 +17,37 @@ interface Props {
     errorLoadingCourses: boolean 
 };
 
-// Opzioni per la ricerca del semestre
 const semesterFilterOptions: IDropdownOption[] = [ 
-    { key: 0, text:'Non selezionato' },
-    { key: 1, text:'Primo' },
-    { key: 2, text:'Secondo' }
+    { key: 0, text: 'Non selezionato' },
+    { key: 1, text: 'Primo' },
+    { key: 2, text: 'Secondo' }
 ];
 
-// Opzioni per la ricerca dell'anno per cdl triennali
 const yearBachelorDegreeFilterOptions: IDropdownOption[] = [ 
-    { key: 0, text:'Non selezionato' },
+    { key: 0, text: 'Non selezionato' },
     { key: -1, text: 'Gruppo principale' },
-    { key: 1, text:'Primo' },
-    { key: 2, text:'Secondo' },
-    { key: 3, text:'Terzo' },
-    { key: -2, text:'Complementare' }
+    { key: 1, text: 'Primo' },
+    { key: 2, text: 'Secondo' },
+    { key: 3, text: 'Terzo' },
+    { key: -2, text: 'Complementare' }
 ];
 
-// Opzioni per la ricerca dell'anno per cdl magistrali
 const yearMasterDegreeFilterOptions: IDropdownOption[] = [ 
-    { key: 0, text:'Non selezionato'},
-    { key: 1, text:'Primo' },
-    { key: 2, text:'Secondo' }
+    { key: 0, text: 'Non selezionato'},
+    { key: 1, text: 'Primo' },
+    { key: 2, text: 'Secondo' }
 ];
 
 const CourseList= (props: Props) => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
-    const [filtersToggle, setFiltersToggle] = React.useState<boolean>(false);
-    const columnCount = React.useRef(0);
-    const rowHeight = React.useRef(0);
-    const rowsPerPage = React.useRef(0);
+    
+    const [filtersToggle, setFiltersToggle] = useState<boolean>(false);
+
+    const columnCount = useRef(0);
+    const rowHeight = useRef(0);
+    const rowsPerPage = useRef(0);
     const MAX_ROW_HEIGHT = 265;
     
     var classNames = mergeStyleSets({
@@ -61,7 +60,7 @@ const CourseList= (props: Props) => {
         }
     });
     
-    const getItemCountForPage = React.useCallback((itemIndex?: number, surfaceRect?: IRectangle) => {
+    const getItemCountForPage = useCallback((itemIndex?: number, surfaceRect?: IRectangle) => {
         if (itemIndex === 0) {
             columnCount.current = Math.ceil(surfaceRect!.width / MAX_ROW_HEIGHT);
             rowHeight.current = MAX_ROW_HEIGHT;
@@ -70,7 +69,7 @@ const CourseList= (props: Props) => {
         return columnCount.current * rowsPerPage.current;
     }, []);
     
-    const getPageHeight = React.useCallback((): number => {
+    const getPageHeight = useCallback((): number => {
         return rowHeight.current * rowsPerPage.current;
     }, []); 
     
@@ -82,24 +81,24 @@ const CourseList= (props: Props) => {
         )
     };
     
-    /* Filters inizialization */
-    const [nameFilter, setNameFilter] = React.useState<string>("");
-    const [yearFilter, setYearFilter] = React.useState<number>(0);
-    const [semesterFilter, setSemesterFilter] = React.useState<number>(0);
+    // Filters inizialization
+    const [nameFilter, setNameFilter] = useState<string>("");
+    const [yearFilter, setYearFilter] = useState<number>(0);
+    const [semesterFilter, setSemesterFilter] = useState<number>(0);
 
-    const onNameFilterChanged = (_event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, text?: string): void => {
+    const onNameFilterChanged = (_event: FormEvent<HTMLInputElement | HTMLTextAreaElement>, text?: string): void => {
         setNameFilter(text ?? "");
     };
 
-    const onSemesterFilterChanged = (_event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
+    const onSemesterFilterChanged = (_event: FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
         setSemesterFilter((item?.key ?? 0) as number);
     };
 
-    const onYearFilterChanged = (_event: React.FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
+    const onYearFilterChanged = (_event: FormEvent<HTMLDivElement>, item?: IDropdownOption): void => {
         setYearFilter((item?.key ?? 0) as number);
     };
 
-    /* Filters gestion */
+    // Filters handling
     let yearFilterOptions = props.degree?.type === 'M' || props.degree?.type === 'C' ? yearMasterDegreeFilterOptions : yearBachelorDegreeFilterOptions; 
     let filteredCourses = props.courses;
 
@@ -107,18 +106,18 @@ const CourseList= (props: Props) => {
     if (semesterFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.semester === semesterFilter); }
     if (yearFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.year === yearFilter); }
 
-    function toggleGroupsFilters(_ev: React.MouseEvent<HTMLElement>, checked?: boolean) {
+    const toggleGroupsFilters = (_ev: MouseEvent<HTMLElement>, checked?: boolean) => {
         setFiltersToggle(checked!);
         resetGroupsFilters();
     };
 
-    function resetGroupsFilters() {
+    const resetGroupsFilters = () => {
         setNameFilter("");
         setSemesterFilter(0);
         setYearFilter(0);
     };
 
-    React.useEffect( () => {
+    useEffect( () => {
         resetGroupsFilters();
     }, [props.degree]);
 
@@ -141,7 +140,7 @@ const CourseList= (props: Props) => {
     };
 
     return (       
-        <div className="groups-list mb-4">
+        <div className="groups-list mb-4" id="groups">
             <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLighter }}>
                 <Container className="d-flex justify-content-between align-items-center" style={{ gap: 8 }}>
                     <div className="d-flex flex-row align-items-center" style={{ gap: 5 }}>

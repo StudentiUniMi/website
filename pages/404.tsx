@@ -28,7 +28,7 @@ const FourOhFour = () => {
                                 text={locale?.notFound.buttonHomepage}
                                 style={buttonStyle}
                                 theme={theme}
-                                href="https://studentiunimi.it/"
+                                href="/"
                             />
                             <DefaultButton
                                 text={locale?.notFound.buttonGroups}

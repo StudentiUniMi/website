@@ -7,5 +7,6 @@ export default interface Helmet {
     university: any,
     organization: any,
     degreeLoaded: any,
-    notFound: any
+    notFound: any,
+    serverError: any
 };

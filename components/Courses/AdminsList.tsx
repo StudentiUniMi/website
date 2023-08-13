@@ -43,7 +43,7 @@ const AdminsList = (props: Props) => {
     useEffect(() => { setDomLoaded(true); }, []);
 
     return (
-        <div className="mb-2">
+        <div className="degree-admins mb-4" id="admins">
             <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLighter }}>
                 <Container>
                     <div className="d-flex flex-row align-items-center" style={{ gap: 5 }}>
