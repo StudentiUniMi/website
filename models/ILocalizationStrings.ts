@@ -22,6 +22,12 @@ interface ILocalizationStrings {
         buttonHomepage: string,
         buttonGroups: string
     },
+    serverErrorPage: {
+        title: string,
+        description: string,
+        buttonHomepage: string,
+        buttonGroups: string
+    },
     privacyPolicy: {
         title: string,
         subtitle: string,

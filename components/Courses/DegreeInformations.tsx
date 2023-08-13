@@ -42,7 +42,7 @@ const DegreeInformations= (props: Props) => {
     };
 
     return (   
-        <div className='degree-informations mb-4'>
+        <div className='degree-informations mb-4' id="redirects">
             <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLighter }}>
                 <Container>
                     <div className="d-flex flex-row align-items-center" style={{ gap: 5 }}>

@@ -9,9 +9,8 @@ import { addDays, cookiesContent, isNavigatorLanguageItalian, parseCookies } fro
 import { initializeIcons } from '@fluentui/react/lib/Icons';
 import { registerIcons, setIconOptions } from '@fluentui/react/lib/Styling';
 import { registeredIcons } from 'services/Icons';
-import { useEffect } from "react";
 import { GlobalProvider } from 'services/GlobalContext';
-import React from 'react';
+import { useState, useEffect } from 'react';
 import Script from 'next/script';
 import Head from 'next/head';
 import Header from "../components/Header/Header";
@@ -28,12 +27,12 @@ const CustomApp = ({ Component, pageProps, requestLanguage, ssrCookies }: AppPro
 
     let [cookies, setCookie] = useCookies();
     
-    let [theme, setTheme] = React.useState(ssrCookies.theme ?? false);
-    let [palette, setPalette] = React.useState(ssrCookies.palette ?? "a");
-    let [language, setLanguage] = React.useState(ssrCookies.language ?? requestLanguage);
+    let [theme, setTheme] = useState(ssrCookies.theme ?? false);
+    let [palette, setPalette] = useState(ssrCookies.palette ?? "a");
+    let [language, setLanguage] = useState(ssrCookies.language ?? requestLanguage);
 
-    let [lightTheme, setLightTheme] = React.useState(buildLightTheme(palette));
-    let [darkTheme, setDarkTheme] = React.useState(buildDarkTheme(palette));
+    let [lightTheme, setLightTheme] = useState(buildLightTheme(palette));
+    let [darkTheme, setDarkTheme] = useState(buildDarkTheme(palette));
 
     const date: Date = addDays(new Date(), 90);
     const policyDate: Date = addDays(new Date(), 360);

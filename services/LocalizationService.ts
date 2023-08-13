@@ -20,13 +20,19 @@ class LocalizationService {
                     errorLoadingDepartments: 'Errore durante il caricamento dei dipartimenti.',
                     errorLoadingDegrees: 'Errore durante il caricamento dei corsi di laurea.',
                     noRedirectsAvailable: 'Non ci sono collegamenti disponibili.',
-                    errorContactAdmin: '<Link href="https://studentiunimi.it/organization/">Contatta un amministratore</Link> se il problema persiste.',
+                    errorContactAdmin: '<Link href="/organization">Contatta un amministratore</Link> se il problema persiste.',
                     studentsAssociation: 'Associazione studentesca',
                     reach: 'Raggiungi',
                     findOut: 'Scopri',
                     notFound: {
                         title: "La pagina che stai cercando non esiste.",
                         description: "Uh oh, non riusciamo a trovare la pagina che stai cercando. Forse puoi provare a tornare alla homepage oppure alla sezione dei gruppi e cercare da lì.",
+                        buttonHomepage: "Homepage",
+                        buttonGroups: "Corsi di laurea"
+                    },
+                    serverErrorPage: {
+                        title: "Stiamo avendo problemi con il nostro server.",
+                        description: "Cercheremo di risolvere il problema il prima possibile, nel frattempo torna pure in homepage o sulle altre pagine che mettiamo a disposizione.",
                         buttonHomepage: "Homepage",
                         buttonGroups: "Corsi di laurea"
                     },
@@ -137,7 +143,7 @@ class LocalizationService {
                             header: 'Cerchi un amministratore, o magari un rappresentante?',
                             col1: { title: 'Contatta un rappresentante', description: 'Per contattare un rappresentante devi raggiungere la sezione apposita del sito web, e selezionare il tuo dipartimento.', buttonText: 'Raggiungi la sezione' },
                             col2: { title: 'Contatta un amministratore', description: "Per vedere la lista di amministratori del tuo corso di laurea devi cercare quest'ultimo nella sezione apposita del sito web.", buttonText: 'Raggiungi la sezione' }
-                        }, 
+                        },
                         faqsSection: {
                             header: 'Hai qualche domanda sul nostro Network?',
                             description: "Dai un'occhiata qui per vedere se trovi la risposta, altrimenti chiedi pure sul gruppo principale."
@@ -239,7 +245,7 @@ class LocalizationService {
                         lastSection: {
                             title1: "Ti auguriamo una buona permanenza nei nostri gruppi.",
                             title2: "Ricorda che siamo sempre alla ricerca di persone volenterose che vogliono contribuire al nostro progetto!",
-                            description: 'Se sei interessato, <Text variant="medium" styles={semibold}><Link href="https://studentiunimi.it/organization">contatta un membro dello staff</Link>.</Text>'
+                            description: 'Se sei interessato, <Text variant="medium" styles={semibold}><Link href="/organization">contatta un membro dello staff</Link>.</Text>'
                         }
                     },
                     courses: {
@@ -275,7 +281,7 @@ class LocalizationService {
                         mainGroupDescription: 'Gruppo principale per qualsiasi tipo di discussione inerente al corso di laurea.',
                         tutorsGroupDescription: '<Text variant="small" styles={semibold}>ATTENZIONE: </Text><Text variant="small">Questo gruppo <Text styles={semibold} variant="small">non è gestito dal network StudentiUniMi</Text> ma dai <Link href="https://orientamento.di.unimi.it/index.php/contatti/tutor-di-processo">tutor di processo</Link> nominati dal Dipartimento di Informatica.</Text>',
                         groupNotAvailable: 'Gruppo non presente',
-                        contactAdmin: "<Icon iconName='FollowUser'/> Contatta un <Link href='https://studentiunimi.it/organization/'>amministratore</Link> se vuoi essere aggiunto al gruppo, oppure chiedilo direttamente su <Link href='https://t.me/unimichat'>@unimichat</Link>.",
+                        contactAdmin: "<Icon iconName='FollowUser'/> Contatta un <Link href='/organization'>amministratore</Link> se vuoi essere aggiunto al gruppo, oppure chiedilo direttamente su <Link href='https://t.me/unimichat'>@unimichat</Link>.",
                         degreesNotFound: 'Nessun corso di laurea trovato.',
                         groupsNotFound: 'Nessun gruppo trovato.',
                         adminsNotFound: 'Nessun amministratore disponibile.',
@@ -312,7 +318,7 @@ class LocalizationService {
                             label: "Associazioni studentesche",
                             title: "Dai un'occhiata alle associazioni studentesche UniMi",
                             description: "Non sempre gli studenti sanno quante associazioni studentesche ci sono lì fuori!",
-                            description2: "Se vorresti la tua associazione studentesca aggiunta nella lista scrivi ad un <Link href='https://studentiunimi.it/organization'>membro dello staff</Link>.",
+                            description2: "Se vorresti la tua associazione studentesca aggiunta nella lista scrivi ad un <Link href='/organization'>membro dello staff</Link>.",
                             card: {
                                 type: 'Associazione studentesca'
                             }
@@ -320,7 +326,7 @@ class LocalizationService {
                         users: 'Utenti'
                     },
                     services: {
-						text1: "<Text variant='xLargePlus' styles={bold}>Tutti i <Text styles={bold} variant='xLargePlus' style={{ color: theme.palette.themePrimary }}>servizi</Text>, in un\'unica pagina.</Text>",
+                        text1: "<Text variant='xLargePlus' styles={bold}>Tutti i <Text styles={bold} variant='xLargePlus' style={{ color: theme.palette.themePrimary }}>servizi</Text>, in un\'unica pagina.</Text>",
                         text2: "Abbiamo realizzato una pagina per centralizzare tutti i collegamenti inerenti all'Università degli Studi di Milano e rendere disponibili anche le guide, strumenti e servizi telematici che abbiamo realizzato e messo a disposizione.",
                         text3: "Pensi che manchi qualcosa?",
                         text4: 'Faccelo sapere!',
@@ -361,18 +367,18 @@ class LocalizationService {
                             button: 'Raggiungi la mappa'
                         },
                         linksAndRedirects: {
-                            text1: "Trovare tutti i collegamenti utili legati all'Ateneo può richiedere tempo.", 
+                            text1: "Trovare tutti i collegamenti utili legati all'Ateneo può richiedere tempo.",
                             text2: "Utilizza la nostra comoda lista di link rapidi che ti permette di raggiungere i collegamenti più utili."
                         },
                         representatives: {
                             title: 'Trova la lista dei rappresentanti degli studenti del tuo dipartimento',
-                            description: 'Se sei un rappresentante che vorrebbe apparire qui per aiutare eventuali studenti <Text variant="medium" styles={semibold}><Link href="https://studentiunimi.it/organization">contatta un membro dello staff</Link></Text>.'
+                            description: 'Se sei un rappresentante che vorrebbe apparire qui per aiutare eventuali studenti <Text variant="medium" styles={semibold}><Link href="/organization">contatta un membro dello staff</Link></Text>.'
                         },
                         departmentSelect: 'Seleziona un dipartimento',
                         representativesNotAvailable: 'Nessun rappresentante disponibile.',
                     },
                     contributors: {
-                        text1:'Di seguito è possibile trovare tutte le persone che hanno contribuito allo sviluppo del sito web, dei servizi che offre, della wiki, e del network in generale.',
+                        text1: 'Di seguito è possibile trovare tutte le persone che hanno contribuito allo sviluppo del sito web, dei servizi che offre, della wiki, e del network in generale.',
                         header1: 'Sviluppatori',
                         header2: 'Contributori',
                         githubProfile: 'Profilo GitHub',
@@ -412,7 +418,7 @@ class LocalizationService {
                     errorLoadingDepartments: 'Error has occured while retrieving departments.',
                     errorLoadingDegrees: 'Error has occured while retrieving degrees.',
                     noRedirectsAvailable: 'There are no redirects available.',
-                    errorContactAdmin: '<Link href="https://studentiunimi.it/organization/">Contact an administrator</Link> if the problem persists.',
+                    errorContactAdmin: '<Link href="/organization">Contact an administrator</Link> if the problem persists.',
                     studentsAssociation: 'Students association',
                     reach: 'Reach',
                     findOut: 'Find out',
@@ -420,6 +426,12 @@ class LocalizationService {
                         title: "The page you were looking for does not exist.",
                         description: "Uh oh, we can't seem to find the page you're looking for. Maybe you can try going to the homepage or the degree courses page and look again from there.",
                         buttonHomepage: "Homepage",
+                        buttonGroups: "Degree courses"
+                    },
+                    serverErrorPage: {
+                        title: "We are having problems with our server.",
+                        description: "We will try to fix the problem as soon as possible, in the meantime, feel free to return to the homepage or the other pages we provide.",
+                        buttonHomepage: "Homepage.",
                         buttonGroups: "Degree courses"
                     },
                     privacyPolicy: {
@@ -543,7 +555,7 @@ class LocalizationService {
                                 "Telephone numbers not exposed",
                                 "Use on multiple devices at the same time",
                                 "Folders for better organization",
-                                "Channels with information" 
+                                "Channels with information"
                             ]
                         }
                     },
@@ -631,7 +643,7 @@ class LocalizationService {
                         lastSection: {
                             title1: "We wish you a good stay in our groups.",
                             title2: "Remember that we are always looking for willing people who want to contribute to our project!",
-                            description: 'If you are interested, <Text variant="medium" styles={semibold}><Link href="https://studentiunimi.it/organization">contact a staff member</Link>.</Text>'
+                            description: 'If you are interested, <Text variant="medium" styles={semibold}><Link href="/organization">contact a staff member</Link>.</Text>'
                         }
                     },
                     courses: {
@@ -667,7 +679,7 @@ class LocalizationService {
                         mainGroupDescription: 'Main group for any type of discussion about this degree.',
                         tutorsGroupDescription: '<Text variant="small" styles={semibold}>WARNING:</Text><Text variant="small"> This group <Text styles={semibold} variant="small">is not managed by network StudentiUniMi</Text> but by <Link href="https://orientamento.di.unimi.it/index.php/contatti/tutor-di-processo">tutors</Link> nominated by the computer science department.</Text>',
                         groupNotAvailable: 'Group not available',
-                        contactAdmin: "<Icon iconName='FollowUser'/> Contact an <Link href='https://studentiunimi.it/organization/'>administrator</Link> if you would like to be added to this group, or ask directly on <Link href='https://t.me/unimichat'>@unimichat</Link>.",
+                        contactAdmin: "<Icon iconName='FollowUser'/> Contact an <Link href='/organization'>administrator</Link> if you would like to be added to this group, or ask directly on <Link href='https://t.me/unimichat'>@unimichat</Link>.",
                         groupsNotFound: 'Groups not found.',
                         degreesNotFound: 'Degrees not found.',
                         adminsNotFound: 'There are no admins available.',
@@ -703,8 +715,8 @@ class LocalizationService {
                         studentsAssociations: {
                             label: "Students associations",
                             title: "Take a look at UniMi Students Associations",
-                            description: "Students don't always know how many student associations are out there!",     
-                            description2: "If you would like your student association added to the list write to a <Link href='https://studentiunimi.it/organization'>staff member</Link>.",                   
+                            description: "Students don't always know how many student associations are out there!",
+                            description2: "If you would like your student association added to the list write to a <Link href='/organization'>staff member</Link>.",
                             card: {
                                 type: 'Student association'
                             }
@@ -753,18 +765,18 @@ class LocalizationService {
                             button: 'Reach the map'
                         },
                         linksAndRedirects: {
-                            text1: "Finding all the useful links related to the university can take time.", 
+                            text1: "Finding all the useful links related to the university can take time.",
                             text2: "Use our handy list of quick links that will get you to the most useful links."
                         },
                         representatives: {
                             title: 'Find the list of student representatives in your department',
-                            description: 'If you are a representative who would like to appear here to help any students <Text variant="medium" styles={semibold}><Link href="https://studentiunimi.it/organization">contact a staff member</Link></Text>.'
+                            description: 'If you are a representative who would like to appear here to help any students <Text variant="medium" styles={semibold}><Link href="/organization">contact a staff member</Link></Text>.'
                         },
                         departmentSelect: 'Select your department',
                         representativesNotAvailable: 'There are no representatives available.'
                     },
                     contributors: {
-                        text1:'In this section you can find the contributors who have worked into the development of the Network, the website and all its services.',
+                        text1: 'In this section you can find the contributors who have worked into the development of the Network, the website and all its services.',
                         header1: 'Developers',
                         header2: 'Contributors',
                         githubProfile: 'Github Profile',
@@ -792,22 +804,22 @@ class LocalizationService {
                     ]
                 }
             })
-        }   
+        }
 
         if (language != null && language !== undefined) {
             LocalizationService.data?.setLanguage(language!);
         }
-    }
+    };
 
     static strings = () => {
         return LocalizationService.data;
-    }
+    };
 
     static getLanguage = () => {
         return LocalizationService.data?.getLanguage();
-    }
+    };
 
-    static getHelmetITAProperties = () : Helmet => {
+    static getHelmetITAProperties = (): Helmet => {
         return {
             homepage: { title: "Network StudentiUniMi - Gruppi, servizi e molto altro", description: "Sito web ufficiale del Network StudentiUniMi: gruppi WhatsApp rimpiazziati da Telegram, servizi e molto altro. Il network più grande dell'Università degli Studi di Milano, gestito da studenti per gli studenti." },
             courses: { title: "Gruppi e risorse dei corsi di laurea | Network StudentiUniMi", description: "Gruppi Telegram e risorse per tutti i corsi di laurea (triennali, magistrali, lauree a ciclo unico) dell'Università degli Studi di Milano. Entra, chiedi informazioni e conosci nuove persone grazie al Network StudentiUniMi." },
@@ -817,23 +829,25 @@ class LocalizationService {
             university: { title: "Informazioni dall'Ateneo e rappresentanti | Network StudentiUniMi", description: "Rimani aggiornato con tutte le informazioni e i rappresentanti dell'Università degli Studi di Milano, offerto dal Network StudentiUniMi." },
             organization: { title: "Chi siamo | Network StudentiUniMi", description: "Chi siamo? Scopri l'organizzazione dietro il Network StudentiUniMi, il più grande network studentesco dell'Università degli Studi di Milano." },
             degreeLoaded: { title1: 'Gruppi e risorse di ', title2: ' | Network StudentiUniMi', description1: 'Tutte le risorse e i link dei gruppi Telegram di ', description2: " dell'Università degli Studi di Milano, offerti dal Network StudentiUniMi." },
-            notFound: { title: "La pagina che stai cercando non esiste. | Network StudentiUniMi", description: "Uh oh, non riusciamo a trovare la pagina che stai cercando. Forse puoi provare a tornare alla homepage e cercare da lì." }
+            notFound: { title: "La pagina che stai cercando non esiste | Network StudentiUniMi", description: "Uh oh, non riusciamo a trovare la pagina che stai cercando. Forse puoi provare a tornare alla homepage e cercare da lì." },
+            serverError: { title: "Errore del server | Network StudentiUniMi", description: "Sembra che stiamo avendo problemi al server, prova a ricollegarti tra poco." }
         }
-    }
+    };
 
-    static getHelmetENGProperties = () : Helmet => {
+    static getHelmetENGProperties = (): Helmet => {
         return {
             homepage: { title: "Network StudentiUniMi - Groups, services and much more", description: "Official website of StudentiUniMi Network: WhatsApp groups replaced by Telegram ones, services and much more. The largest network of the University of Milan, managed by students for students." },
             courses: { title: "Degree groups and resources | Network StudentiUniMi", description: "All Telegram groups and resources for all degree courses (three-year, master, single-cycle degrees) of the University of Milan. Join, ask for information and meet new people thanks to the StudentiUniMi Network." },
-            groups:  { title: "Groups | Network StudentiUniMi", description: "University groups, for announcements and student associations of the University of Milan." },
+            groups: { title: "Groups | Network StudentiUniMi", description: "University groups, for announcements and student associations of the University of Milan." },
             services: { title: "Services | Network StudentiUniMi", description: "All services and rapid links to the University of Milan's resources: exams, grades, webmail and much more. A very fast alternative UNIMIA replacement." },
             rules: { title: "Groups rules | Network StudentiUniMi", description: "The official rules of the StudentiUniMi Network, the largest student network of the University of Milan." },
-            university: { title: "University redirects | Network StudentiUniMi", description: "Stay up-to-date with all the information and representatives of the University of Milan, offered by the StudentiUniMi Network." },
+            university: { title: "University informations and redirects | Network StudentiUniMi", description: "Stay up-to-date with all the informations and representatives of the University of Milan, offered by the StudentiUniMi Network." },
             organization: { title: "Organization | Network StudentiUniMi", description: "Who are we? Discover the organization behind the StudentiUniMi Network, the largest network of the University of Milan." },
             degreeLoaded: { title1: 'Groups and resources of ', title2: ' | Network StudentiUniMi', description1: 'All the resources and links of the Telegram groups of ', description2: ' of the University of Milan, offered by StudentiUniMi Network.' },
-            notFound: { title: "The page you were looking for does not exist. | Network StudentiUniMi", description: "Uh oh, we can't seem to find the page you're looking for. Maybe you can try going to the homepage and look again from there." }
+            notFound: { title: "The page you were looking for does not exist | Network StudentiUniMi", description: "Uh oh, we can't seem to find the page you're looking for. Maybe you can try going to the homepage and look again from there." },
+            serverError: { title: "Server Error | Network StudentsUniMi", description: "We seem to be having server problems, try reconnecting in a little while." }
         }
-    }
-}
+    };
+};
 
 export default LocalizationService;
