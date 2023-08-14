@@ -35,7 +35,7 @@ const HomeView = (props: Props) => {
                     locale: language,
                     images: [
                         {
-                            url: '/logo/preview_logo.png',
+                            url: '/images/preview.png',
                             type: 'image/png',
                         }
                     ],
