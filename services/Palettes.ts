@@ -33,30 +33,30 @@ export const palettes = [
         id: 'n',
         label: 'viridian-green',
         palette: {
-            themePrimary: '#129490',
-            themeLighterAlt: '#27B8B3',
-            themeLighter: '#239E9A',
-            themeLight: '#18A19C',
-            themeTertiary: '#06917F',
-            themeSecondary: '#13A187',
-            themeDarkAlt: '#0A6B5E',
-            themeDark: '#067869',
-            themeDarker: '#147D6F'
+            themePrimary: '#239E9A',
+            themeLighterAlt: '#f2fcfb',
+            themeLighter: '#c3ebe9',
+            themeLight: '#94d9d5',
+            themeTertiary: '#3eaeaa',
+            themeSecondary: '#1f8c89',
+            themeDarkAlt: '#20847f',
+            themeDark: '#1a6d6a',
+            themeDarker: '#124b48'
         }
     },
     {
         id: 'c',
         label: 'sky',
         palette: {
-            themePrimary: '#274472',
-            themeLighterAlt: '#3064b8',
-            themeLighter: '#5885AF',
-            themeLight: '#41729F',
-            themeTertiary: '#057DCD',
-            themeSecondary: '#285499',
-            themeDarkAlt: '#003060',
-            themeDark: '#055C9D',
-            themeDarker: '#0E86D4'
+            themePrimary: '#303f9f',
+            themeLighterAlt: '#f3f4fc',
+            themeLighter: '#c5c8e9',
+            themeLight: '#9599d4',
+            themeTertiary: '#4d52a8',
+            themeSecondary: '#2c3182',
+            themeDarkAlt: '#19226d',
+            themeDark: '#151b5a',
+            themeDarker: '#0f1240'
         }
     },
     {
@@ -64,110 +64,110 @@ export const palettes = [
         label: 'red',
         palette: {
             themePrimary: '#F55C47',
-            themeLighterAlt: '#e0523f',
-            themeLighter: '#cc3c29',
-            themeLight: '#d17062',
-            themeTertiary: '#d64b2f',
-            themeSecondary: '#f0554d',
-            themeDarkAlt: '#e04343',
-            themeDark: '#b82a2a',
-            themeDarker: '#cc4a33'
+            themeLighterAlt: '#fef4f4',
+            themeLighter: '#f7c5be',
+            themeLight: '#f19a8b',
+            themeTertiary: '#e04d2d',
+            themeSecondary: '#e47a5c',
+            themeDarkAlt: '#d34f3b',
+            themeDark: '#ab462f',
+            themeDarker: '#7e3a25'
         }
     },
     {
         id: 'm',
-        label: 'light-red',
+        label: 'ia-1',
         palette: {
-            themePrimary: '#BC2C1A',
-            themeLighterAlt: '#e74e2f',
-            themeLighter: '#e75e4b',
-            themeLight: '#e34935',
-            themeTertiary: '#ca301c',
-            themeSecondary: '#E14E35',
-            themeDarkAlt: '#b42b18',
-            themeDark: '#9d2515',
-            themeDarker: '#701b0f'
+            themePrimary: '#8B008B',
+            themeLighterAlt: '#f9f4fa',
+            themeLighter: '#e1c2e1',
+            themeLight: '#c08ac0',
+            themeTertiary: '#853085',
+            themeSecondary: '#a64da6',
+            themeDarkAlt: '#6d006d',
+            themeDark: '#5c005c',
+            themeDarker: '#3f003f'
         }
     },
-
     {
         id: 'l',
-        label: 'choco',
+        label: 'ia-2',
         palette: {
-            themePrimary: '#a12831',
-            themeLighterAlt: '#ad6b53',
-            themeLighter: '#a84434',
-            themeLight: '#82543e',
-            themeTertiary: '#8a2c35',
-            themeSecondary: '#c22f33',
-            themeDarkAlt: '#b3472d',
-            themeDark: '#b05321',
-            themeDarker: '#c25d44'
+            themePrimary: '#2E8B57',
+            themeLighterAlt: '#f4fdf7',
+            themeLighter: '#c9e9d4',
+            themeLight: '#9dd5b0',
+            themeTertiary: '#4daa6b',
+            themeSecondary: '#2e8b57',
+            themeDarkAlt: '#297d4c',
+            themeDark: '#246b41',
+            themeDarker: '#1a4c2f'
         }
     },
     {
         id: 'e',
-        label: 'green',
+        label: 'ia-3',
         palette: {
-            themePrimary: '#45a82c',
-            themeLighterAlt: '#40b522',
-            themeLighter: '#469e2f',
-            themeLight: '#4b9e36',
-            themeTertiary: '#4fb037',
-            themeSecondary: '#2ca83e',
-            themeDarkAlt: '#57c23c',
-            themeDark: '#2a8c11',
-            themeDarker: '#34a617'
+            themePrimary: '#FF69B4',
+            themeLighterAlt: '#fef4f9',
+            themeLighter: '#f7c2d6',
+            themeLight: '#f19ab1',
+            themeTertiary: '#e03d6a',
+            themeSecondary: '#e47a8c',
+            themeDarkAlt: '#d34e5c',
+            themeDark: '#ab4550',
+            themeDarker: '#7e363b'
         }
+
     },
     {
         id: 'f',
         label: 'yellow',
         palette: {
-            themePrimary: '#deb143',
-            themeLighterAlt: '#FADF63',
-            themeLighter: '#EEB76B',
-            themeLight: '#FFE74C',
-            themeTertiary: '#d9a011',
-            themeSecondary: '#deba3d',
-            themeDarkAlt: '#d6b35a',
-            themeDark: '#cca300',
-            themeDarker: '#dba102'
+            themePrimary: '#f7b731',
+            themeLighterAlt: '#fef9f2',
+            themeLighter: '#fde5c1',
+            themeLight: '#facd7e',
+            themeTertiary: '#f5a500',
+            themeSecondary: '#e68e00',
+            themeDarkAlt: '#cc7d00',
+            themeDark: '#a86c00',
+            themeDarker: '#805400'
         }
     },
     {
         id: 'g',
         label: 'summer',
         palette: {
-            themePrimary: '#f59251',
-            themeLighterAlt: '#e6a86a',
-            themeLighter: '#e3984d',
-            themeLight: '#d19d69',
-            themeTertiary: '#e39e59',
-            themeSecondary: '#e38d54',
-            themeDarkAlt: '#db7b3b',
-            themeDark: '#d67b3e',
-            themeDarker: '#db8851'
+            themePrimary: '#f5a623',
+            themeLighterAlt: '#fef8f2',
+            themeLighter: '#fde0c1',
+            themeLight: '#fac17e',
+            themeTertiary: '#f58c00',
+            themeSecondary: '#e06d00',
+            themeDarkAlt: '#d15500',
+            themeDark: '#b84b00',
+            themeDarker: '#8e3900'
         }
     },
     {
         id: 'h',
-        label: 'purple',
+        label: 'ia-4',
         palette: {
-            themePrimary: '#4747d1',
-            themeLighterAlt: '#4d4dbd',
-            themeLighter: '#3333cc',
-            themeLight: '#5c5cd6',
-            themeTertiary: '#5c5ce0',
-            themeSecondary: '#8585e0',
-            themeDarkAlt: '#343499',
-            themeDark: '#4444c2',
-            themeDarker: '#6c6cdb'
+            themePrimary: '#c7a3d9',
+            themeLighterAlt: '#fcf9fe',
+            themeLighter: '#e4d1f0',
+            themeLight: '#cda1d6',
+            themeTertiary: '#a75fa8',
+            themeSecondary: '#8b3e8f',
+            themeDarkAlt: '#7c347e',
+            themeDark: '#632b67',
+            themeDarker: '#4a1f4b'
         }
     },
     {
         id: 'i',
-        label: 'porpora',
+        label: 'ia-5',
         palette: {
             themePrimary: '#e63061',
             themeLighterAlt: '#c92a55',

@@ -2,13 +2,16 @@ import { Text, useTheme, DialogType, Dialog, DialogFooter, PrimaryButton, Defaul
 import { semibold } from '../../services/Fonts';
 import { useState, useEffect, useContext } from 'react';
 import { useCookies } from 'react-cookie';
+import { addDays } from 'services/Utils';
 import Lottie from 'react-lottie';
 import * as lottieLocalization from './Lottie/PSa9MuR7v2.json';
 import GlobalContext from 'services/GlobalContext';
 
 const LocalizationChangeDialog = () => {
     var theme = useTheme();
-    const [cookies,] = useCookies();
+    const [cookies, setCookie] = useCookies();
+    const date: Date = addDays(new Date(), 90);
+    
     const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
 
     /* Dialog properties */
@@ -36,9 +39,12 @@ const LocalizationChangeDialog = () => {
 
     useEffect(() => {
         const acceptLanguage = window.navigator.languages[0] ?? navigator.language;
-        if (cookies["isFirstVisit"] === undefined && acceptLanguage !== "it") {
+        
+        if (cookies.isFirstVisit === undefined && acceptLanguage !== "it") {
             setIsDialogOpen(true);
         }
+
+        setCookie("isFirstVisit", false, { path: "/", expires: date });
     }, []);
 
     return (

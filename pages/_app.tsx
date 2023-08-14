@@ -3,7 +3,7 @@ import '../styles/index.scss';
 import '../styles/accordion.scss'
 import { AppProps } from 'next/app';
 import { CookiesProvider } from 'react-cookie';
-import { ThemeProvider } from '@fluentui/react';
+import { ThemeProvider, useTheme } from '@fluentui/react';
 import { Theme } from '../services/Utils';
 import { initializeIcons } from '@fluentui/react/lib/Icons';
 import { registerIcons, setIconOptions } from '@fluentui/react/lib/Styling';
@@ -17,13 +17,17 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import PrivacyPolicyDialog from 'components/Atoms/PrivacyPolicyDialog';
 import LocalizationChangeDialog from 'components/Atoms/LocalizationChangeDialog';
+import LocalizationService from 'services/LocalizationService';
 
+LocalizationService.localize("it"); // Enable SSR localized fields (italian by default)
 setIconOptions({ disableWarnings: true });
 registerIcons({ icons: registeredIcons });
 initializeIcons();
 
 const CustomApp = ({ Component, pageProps }: AppProps) => {
-    const Comp = Component as any; // TODO: Fix type here
+    const Comp = Component as any;
+    {/* @ts-ignore */}
+    const appTheme = useTheme();
 
     const { theme, lightTheme, darkTheme } = useContext(GlobalContext);
 
