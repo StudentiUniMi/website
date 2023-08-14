@@ -9,7 +9,7 @@ import { LocalizedField } from 'models/Models';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../../services/LocalizationService";
-import GlobalContext from 'services/GlobalContext';
+import GlobalContext from "../../services/GlobalContext";
 
 interface FooterIcon {
     name: LocalizedField,
@@ -30,58 +30,59 @@ const Footer = () => {
     const locale = LocalizationService.strings();
     const lang: string | undefined = LocalizationService.getLanguage();
 
-    const { 
+    const {
         theme,
         language,
         palette,
-        isPolicyAccepted, 
+        isPolicyAccepted,
         changeTheme,
         changeLanguage,
         changePalette,
         togglePolicyDialog
-     } = useContext(GlobalContext);
+    } = useContext(GlobalContext);
+
+    console.log("footer language:", language)
 
     const footerIconsStyle: CSSProperties = {
         display: 'flex',
         justifyContent: 'right',
         gap: 6
     };
-    
-    const wrapIconStyle: CSSProperties = { 
+
+    const wrapIconStyle: CSSProperties = {
         boxShadow: appTheme.effects.elevation8,
-        borderRadius: 5, 
-        padding: 8, 
-        display: 'flex', 
-        justifyContent: 'center', 
-        alignItems: 'center' 
+        borderRadius: 5,
+        padding: 8,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
     };
 
-    const iconStyle: CSSProperties = { 
+    const iconStyle: CSSProperties = {
         color: appTheme.palette.black,
-        fontSize: 16, 
-        margin: 0, 
-        display: 'flex' 
-    };
-    
-    const buttonStyle: CSSProperties = { 
-        maxWidth: '270px', 
-        boxShadow: 
-        appTheme.effects.elevation8 
+        fontSize: 16,
+        margin: 0,
+        display: 'flex'
     };
 
-    const buttonIconProps: IIconProps = { 
-        iconName: 'GoChevronRight', 
-        styles: { 
-            root: { 
-                fontSize: 14 
-            } 
-        } 
+    const buttonStyle: CSSProperties = {
+        maxWidth: '270px',
+        boxShadow: appTheme.effects.elevation8
+    };
+
+    const buttonIconProps: IIconProps = {
+        iconName: 'GoChevronRight',
+        styles: {
+            root: {
+                fontSize: 14
+            }
+        }
     };
 
     const listElement: CSSProperties = { marginBottom: '.2rem' };
 
     /* Theme palette code */
-    const colorCells: Array<{id: string, label: string, color: string}> = palettes.map(x => ({ id: x.id, label: x.label, color: x.palette?.themePrimary }));
+    const colorCells: Array<{ id: string, label: string, color: string }> = palettes.map(x => ({ id: x.id, label: x.label, color: x.palette?.themePrimary }));
     const calloutPropsResetColor = { gapSpace: 10 };
     const hostStylesResetColor: Partial<ITooltipHostStyles> = { root: { display: 'inline-block' } };
 
@@ -98,16 +99,16 @@ const Footer = () => {
                         </div>
 
                         <div className="mb-2 text">
-                            <PrimaryButton 
+                            <PrimaryButton
                                 href={preventVisibleHref(isPolicyAccepted, "https://t.me/unimichat")} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}
-                                text={locale?.footer[0].buttonText} 
-                                iconProps={buttonIconProps} 
-                                allowDisabledFocus 
-                                style={buttonStyle} 
+                                text={locale?.footer[0].buttonText}
+                                iconProps={buttonIconProps}
+                                allowDisabledFocus
+                                style={buttonStyle}
                             />
                         </div>
                     </Col>
-                    
+
 
                     <Col xl={2} lg={2} md={3} sm={12} xs={12} className="mb-2 mb-md-0">
                         <div>
@@ -129,7 +130,7 @@ const Footer = () => {
                             </div>
                         </div>
                     </Col>
-                    
+
                     <Col xl={3} lg={2} md={3} sm={12} xs={12}>
                         <div className="mb-2">
                             <Toggle
@@ -141,22 +142,22 @@ const Footer = () => {
                                 theme={appTheme}
                             />
                         </div>
-                        
+
                         <div className="mb-2 language-selector">
                             <Label>{locale?.settingsPanel.selectLanguage}</Label>
-                            <Text 
-                                variant="medium" 
-                                style={{ cursor: 'pointer' }} 
-                                styles={language === "it" ? bold : {}} onClick={() => { if (language !== "it") changeLanguage("it"); } }
+                            <Text
+                                variant="medium"
+                                style={{ cursor: 'pointer' }}
+                                styles={language === "it" ? bold : {}} onClick={() => { if (language !== "it") changeLanguage("it"); }}
                             >
                                 ITA
                             </Text>
-                            
+
                             <Text variant="medium"> | </Text>
 
-                            <Text 
-                                variant="medium" 
-                                style={{ cursor: 'pointer' }} 
+                            <Text
+                                variant="medium"
+                                style={{ cursor: 'pointer' }}
                                 styles={language === "en" ? bold : {}} onClick={() => { if (language !== "en") changeLanguage("en"); }}
                             >
                                 ENG
@@ -170,20 +171,20 @@ const Footer = () => {
                         </div>
                         <SwatchColorPicker selectedId={palette} columnCount={7} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => { changePalette(id!); }} />
                     </Col>
-                
+
                 </Row>
 
 
                 <Row>
                     <Col lg={7} sm={12} style={{ display: 'table' }} className="center-mobile mb-2 mb-lg-0">
-                        <Text variant="medium"  style={{ display: 'table-cell', verticalAlign: 'middle' }}>
+                        <Text variant="medium" style={{ display: 'table-cell', verticalAlign: 'middle' }}>
                             {locale?.footer[0].text} <Link href="https://cdn.studentiunimi.it/privacy-policy-IT.pdf" styles={semibold}>Privacy policy</Link>
                         </Text>
                     </Col>
 
                     <Col lg={5} sm={12}>
                         <div className="center-mobile footer-icons" style={footerIconsStyle}>
-                            {footerIcons.map( (x: any, i: number) => { 
+                            {footerIcons.map((x: any, i: number) => {
                                 return (
                                     <TooltipHost
                                         content={x.name[lang!]}
@@ -198,7 +199,8 @@ const Footer = () => {
                                             </div>
                                         </Link>
                                     </TooltipHost>
-                                )}
+                                )
+                            }
                             )}
                         </div>
                     </Col>

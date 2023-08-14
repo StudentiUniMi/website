@@ -10,7 +10,7 @@ import { registerIcons, setIconOptions } from '@fluentui/react/lib/Styling';
 import { registeredIcons } from 'services/Icons';
 import { GlobalProvider } from 'services/GlobalContext';
 import { useContext } from 'react';
-import GlobalContext from 'services/GlobalContext';
+import GlobalContext from '../services/GlobalContext';
 import Script from 'next/script';
 import Head from 'next/head';
 import Header from "../components/Header/Header";

@@ -41,6 +41,13 @@ export const GlobalProvider = ({ children }: any) => {
     const [cookies, setCookie] = useCookies();
     const date: Date = addDays(new Date(), 90);
     const policyDate: Date = addDays(new Date(), 360);
+
+    // Cookies initialization
+    if (cookies.language === undefined) setCookie("language", "it", { path: "/", expires: date });
+    if (cookies.theme === undefined) setCookie("theme", Theme.LIGHT, { path: "/", expires: date });
+    if (cookies.palette === undefined) setCookie("palette", "a", { path: "/", expires: date });
+    if (cookies.isPolicyAccepted === undefined) setCookie("isPolicyAccepted", false, { path: "/", expires: policyDate });
+    if (cookies.isFirstVisit === undefined) setCookie("isFirstVisit", false, { path: "/", expires: date });
     
     const [isPolicyAccepted, setIsPolicyAccepted] = useState<boolean>(cookies["isPolicyAccepted"] === 'true' ? true : false ?? false);
     const [isPolicyDialogOpen, setIsPolicyDialogOpen] = useState<boolean>(false);
@@ -51,6 +58,8 @@ export const GlobalProvider = ({ children }: any) => {
 
     const [lightTheme, setLightTheme] = useState<PartialTheme>(buildLightTheme(palette));
     const [darkTheme, setDarkTheme] = useState<PartialTheme>(buildDarkTheme(palette));
+    
+    LocalizationService.localize(language);
 
     const changeTheme = useCallback((theme: string) => {
         if (theme === Theme.LIGHT) {
@@ -70,8 +79,8 @@ export const GlobalProvider = ({ children }: any) => {
     }, [setPalette, setLightTheme, setDarkTheme]);
 
     const changeLanguage = useCallback((language: string) => {
-        setLanguage(language);
         LocalizationService.localize(language);
+        setLanguage(language);
         setCookie("language", language, { path: "/", expires: date });
     }, [setLanguage]);
 
@@ -81,14 +90,7 @@ export const GlobalProvider = ({ children }: any) => {
         setCookie("isPolicyAccepted", true, { path: "/", expires: policyDate });
         togglePolicyDialog();
     };
-
-    // Cookies initialization
-    if (cookies.language === undefined) setCookie("language", language, { path: "/", expires: date });
-    if (cookies.theme === undefined) setCookie("theme", theme, { path: "/", expires: date });
-    if (cookies.palette === undefined) setCookie("palette", palette, { path: "/", expires: date });
-    if (cookies.isPolicyAccepted === undefined) setCookie("isPolicyAccepted", false, { path: "/", expires: policyDate });
-    if (cookies.isFirstVisit === undefined) setCookie("isFirstVisit", false, { path: "/", expires: date });
-
+    
     useEffect(() => {
         setLightTheme(buildLightTheme(palette));
         setDarkTheme(buildDarkTheme(palette));
@@ -97,9 +99,7 @@ export const GlobalProvider = ({ children }: any) => {
 
     useEffect(() => {
         LocalizationService.localize(language);
-    }, [language]);
-
-    LocalizationService.localize(language);
+    }, []);
 
     return (
         <GlobalContext.Provider value={{ 
