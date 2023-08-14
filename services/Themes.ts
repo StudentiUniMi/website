@@ -1,4 +1,4 @@
-import { DefaultEffects, FontWeights, FontSizes } from '@fluentui/react';
+import { DefaultEffects, FontWeights, FontSizes, PartialTheme } from '@fluentui/react';
 import { palettes } from './Palettes';
 
 export const fonts = {
@@ -40,7 +40,7 @@ export const effects = {
  * @param {string} paletteID 
  * @return lightTheme
  */
-export const buildLightTheme = (paletteID: string) => {
+export const buildLightTheme = (paletteID: string): PartialTheme => {
     const subsetPalette: any = palettes.find(x => x.id === paletteID)?.palette;
 
     let lightTheme: any = {
@@ -73,7 +73,7 @@ export const buildLightTheme = (paletteID: string) => {
  * @param {string} paletteID
  * @return darkTheme
  */
-export const buildDarkTheme = (paletteID: string) => {
+export const buildDarkTheme = (paletteID: string): PartialTheme => {
     const subsetPalette: any = palettes.find(x => x.id === paletteID)?.palette;
 
     let darkTheme: any = {

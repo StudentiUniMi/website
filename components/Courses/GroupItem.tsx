@@ -6,7 +6,7 @@ import { IContextualMenuProps, IIconProps } from '@fluentui/react';
 import { DefaultButton, PrimaryButton } from '@fluentui/react/lib/Button';
 import { buildProfessorName, preventDefault, preventVisibleHref, redirectToLink } from '../../services/Utils';
 import { CourseDegree } from '../../models/Models';
-import { useContext } from 'react';
+import { CSSProperties, useContext } from 'react';
 import Chip from '../Atoms/Chip';
 import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
@@ -117,7 +117,7 @@ const CourseItem = (props: Props) => {
 
     /* Professor inizialization */
     if (data.course.professor !== null) {
-        const style = { display: 'flex', gap: 5, alignItems: 'center' };
+        const style: CSSProperties = { display: 'flex', gap: 5, alignItems: 'center' };
         let text = <div style={style}><Icon iconName="UserOptional" />  {buildProfessorName(data.course.professor.first_name, data.course.professor.last_name)}</div>;
 
         if (data.course.professor.url === undefined || data.course.professor.url === null) {

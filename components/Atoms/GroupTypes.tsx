@@ -1,6 +1,7 @@
 import { Text, Image, useTheme, mergeStyleSets } from '@fluentui/react';
 import { Container } from "react-bootstrap";
 import { semibold } from "services/Fonts";
+import { CSSProperties } from 'react';
 import GroupType from "models/GroupType";
 import GroupTypesData from '../../data/GroupTypes.json';
 import LocalizationService from 'services/LocalizationService';
@@ -17,7 +18,7 @@ const GroupTypes = (props: Props) => {
     
     const groupTypes: Array<GroupType> = props.page === "courses" ? GroupTypesData.filter(g => g.name['it'] !== "Associazioni studentesche") : GroupTypesData;
 
-    const groupTypesStyle = {
+    const groupTypesStyle: CSSProperties = {
         justifyContent: 'center',
         gap: 12
     };
