@@ -57,7 +57,7 @@ const PrivacyPolicyDialog = () => {
                 <PrimaryButton onClick={acceptPrivacyPolicy} text={locale?.privacyPolicy.accept} disabled={!isChecked} style={{ padding: 20 }} />
             </DialogFooter>
         </Dialog>
-    )
-}
+    );
+};
 
 export default PrivacyPolicyDialog;

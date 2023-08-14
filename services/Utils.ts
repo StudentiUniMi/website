@@ -5,6 +5,10 @@
  * @author Giuseppe Del Campo
  */
 
+export enum Theme {
+    LIGHT = "light",
+    DARK = "dark"
+};
 
 export interface cookiesContent {
   language: string | null,

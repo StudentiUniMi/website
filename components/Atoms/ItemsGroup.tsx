@@ -1,4 +1,5 @@
 import { mergeStyleSets, useTheme, Text, Icon } from "@fluentui/react";
+import { CSSProperties } from "react";
 import { semibold } from "services/Fonts";
 import LocalizationService from "services/LocalizationService";
 
@@ -37,15 +38,15 @@ const ItemsGroup = (props: Props) => {
         },
     });
 
-    const itemsStyle = {
+    const itemsStyle: CSSProperties = {
         justifyContent: 'center',
         gap: 8
     };
 
     return (
         <div className="d-flex flex-wrap flex-row" style={itemsStyle}>
-            {props.items.map((item: Item) => (
-                <a href={item.href} className="text-decoration-none">
+            {props.items.map((item: Item, i: number) => (
+                <a href={item.href} className="text-decoration-none" key={i}>
                     <div className={itemStyle.root + " text-center align-items-center justify-content-center"}>
                         <div className="d-flex align-items-center justify-content-center">
                             <Icon iconName={item.iconName} style={{ color: theme.palette.themeDark, fontSize: 24 }} />
