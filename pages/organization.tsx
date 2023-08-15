@@ -19,6 +19,7 @@ const Organization: NextPage = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
+
     const networkMembers = getNetworkMembers();
     const developers: Array<Developer> = getDevelopers();
 
@@ -26,14 +27,14 @@ const Organization: NextPage = () => {
     const icon: IIconProps = { iconName: 'AiOutlineFilePdf' };
 
     const organizationOptions = {
-      loop: true,
-      autoplay: true, 
-      animationData: lottieOrganization,
-      rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice'
-      }
+        loop: true,
+        autoplay: true,
+        animationData: lottieOrganization,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+        }
     };
-    
+
     resetIds();
     useEffect(() => { setDomLoaded(true); }, []);
 
@@ -71,7 +72,7 @@ const Organization: NextPage = () => {
 
                         <Row>
                             <Col lg={4} className="text-center">
-                                {/* @ts-ignore */} 
+                                {/* @ts-ignore */}
                                 <Lottie options={organizationOptions}
                                     height={250}
                                     width={250}
@@ -110,16 +111,17 @@ const Organization: NextPage = () => {
                     <div className="mb-4 text-center">
                         <Text variant="xLarge" styles={bold} style={{ color: theme.palette.themeDarkAlt }}>{locale?.aboutUs.header1}</Text>
                     </div>
-                    
-                    <div style={{maxWidth: 230, marginLeft: 'auto', marginRight: 'auto'}}>
-                        { domLoaded && <Persona
-                            size={PersonaSize.size72}
-                            imageUrl={"https://studentiunimi-groups-propics.marcoaceti.workers.dev/26170256.png"}
-                            text={networkMembers[0].name}
-                            onRenderPrimaryText={() => <Text variant="medium" styles={semibold}>{networkMembers[0].name}</Text>}
-                            secondaryText={networkMembers[0].username}
-                            onRenderSecondaryText={() => <Text variant="medium"><Link href={`https://t.me/${networkMembers[0].username}`}>@{networkMembers[0].username}</Link></Text>}
-                        /> }
+
+                    <div style={{ maxWidth: 230, marginLeft: 'auto', marginRight: 'auto' }}>
+                        {domLoaded &&
+                            <Persona
+                                size={PersonaSize.size72}
+                                imageUrl={"https://studentiunimi-groups-propics.marcoaceti.workers.dev/26170256.png"}
+                                text={networkMembers[0].name}
+                                onRenderPrimaryText={() => <Text variant="medium" styles={semibold}>{networkMembers[0].name}</Text>}
+                                secondaryText={networkMembers[0].username}
+                                onRenderSecondaryText={() => <Text variant="medium"><Link href={`https://t.me/${networkMembers[0].username}`}>@{networkMembers[0].username}</Link></Text>}
+                            />}
                     </div>
                 </div>
 
@@ -131,7 +133,7 @@ const Organization: NextPage = () => {
 
                         <Row className="justify-content-center" style={{ rowGap: 15 }}>
                             {
-                                domLoaded && (networkMembers.slice(1, networkMembers.length)).map((x,i) =>
+                                domLoaded && (networkMembers.slice(1, networkMembers.length)).map((x, i) =>
                                     <>
                                         <Col className="mb-3" lg={3} md={6} sm={6} xs={12} key={i}>
                                             <div style={{ maxWidth: 240, marginLeft: 'auto', marginRight: 'auto' }}>
@@ -149,7 +151,7 @@ const Organization: NextPage = () => {
                                 )
                             }
                         </Row>
-                    
+
                     </Container>
                 </div>
 
@@ -161,7 +163,7 @@ const Organization: NextPage = () => {
 
                         <Row className="justify-content-center" style={{ rowGap: 15 }}>
                             {
-                                domLoaded && developers.map((x:any, i:number) =>
+                                domLoaded && developers.map((x: Developer, i: number) =>
                                     <>
                                         <Col className="mb-3" lg={4} sm={6} xs={12} key={i}>
                                             <div style={{ maxWidth: 250, marginLeft: 'auto', marginRight: 'auto' }}>
@@ -191,14 +193,14 @@ const Organization: NextPage = () => {
                     <Container className="flex-column d-flex">
                         <Text styles={bold} variant="superLarge">{locale?.aboutUs.contact.title}</Text>
                         <Text className="mb-3">{locale?.aboutUs.contact.description}</Text>
-                        
+
                         <div style={{ margin: '0 auto', maxWidth: 600 }}>
-                            <DefaultButton 
-                                text={locale?.aboutUs.contact.button} 
-                                iconProps={{ iconName: 'Mail' }} 
+                            <DefaultButton
+                                text={locale?.aboutUs.contact.button}
+                                iconProps={{ iconName: 'Mail' }}
                                 href='mailto:info@studentiunimi.it'
                             />
-                        </div> 
+                        </div>
                     </Container>
                 </div>
 
