@@ -1,8 +1,10 @@
+import { LocalizedField } from "./Models"
+
 export default interface Service
 {
-    id?:string
-    name?: any
-    link?: string
-    icon?: string
-    description?: any
-}
+    id:string
+    name: LocalizedField
+    description: LocalizedField
+    link: string
+    icon: string
+};

@@ -7,25 +7,19 @@
 
 /* Old Models (to be replaced when remaining APIs are implemented) */
 import Service from '../models/Service';
-import Contributor from '../models/Contributor';
 import Faq from '../models/Faq';
 import NetworkMember from '../models/NetworkMember';
 import Developer from 'models/Developer';
 import UniversityLink from 'models/UniversityLink';
-import Group from 'models/Group';
 import { DegreeInformation, TempDegree } from 'models/DegreeInformation';
 
 /* Updated models */
-import { Department, Degree, VerboseDegree, CourseDegree, Representative, Admin } from '../models/Models';
+import { Department, Degree, VerboseDegree, CourseDegree, Representative, Admin, ExtraGroups } from '../models/Models';
 
 /* Data (these will be replaced by api soon) */
-import groups from '../data/groups/Groups.json';
-import announcementsGroups from '../data/groups/Announcements.json';
-import studentsAssociations from '../data/groups/StudentsAssociations.json';
 import redirectsData from '../data/services/Redirects.json';
 import guidesData from '../data/services/Guides.json';
 import toolsData from '../data/services/Tools.json';
-import Contributors from '../data/Contributors.json';
 import Faqs from '../data/Faqs.json';
 import NetworkMembers from '../data/NetworkMembers.json';
 import Developers from '../data/Developers.json';
@@ -42,6 +36,7 @@ const representatives_endpoint = '/representatives';
 const typingDegrees_endpoint = '/typing-degrees';
 const searchDegrees_endpoint = '/search-degrees';
 const admins_endpoint = '/admins';
+const extraGroups_endpoint = '/extra-groups';
 
 /* Main class to build response */
 class Result<T>
@@ -150,32 +145,31 @@ export async function getDegreeAdmins(degreeSlug: string): Promise<Result<Array<
     return getAsync<Array<Admin>>(`${api_endpoint}${admins_endpoint}?slug=${degreeSlug}`);
 };
 
+/**
+ * This function retrieves university groups, announcements groups and students associations.
+ * @returns {ExtraGroups} Extra Groups
+ */
+export async function getExtraGroups(): Promise<Result<ExtraGroups>> {
+    return getAsync<ExtraGroups>(`${api_endpoint}${extraGroups_endpoint}`);
+};
+
 
 
 /* -------- STATIC DATA -------- */
 
 /* Homepage section */
-export const getContributors = (): Array<Contributor> => Contributors; // not used at the moment
-
 export const getFaqs = (): Array<Faq> => Faqs;
 
 /* Courses section - Degree informations (static data at the moment) */
 const getTempDegrees = (): Array<TempDegree> => DegreeInformations;
 export const getDegreeInformations = (degreeSlug: string): Array<DegreeInformation> => (getTempDegrees()).find((tempDegree: TempDegree) => tempDegree.slug === degreeSlug)?.degreeInformations ?? [];
 
-/* Groups section */
-export const getGroups = (): Array<Group> => groups;
-
-export const getGroupsAnnouncements = (): Array<Group> => announcementsGroups;
-
-export const getStudentsAssociations = (): Array<Group> => studentsAssociations;
-
 /* Services section */
-export const getRedirects = (): Array<Service> => redirectsData;
+export const getRedirects = (): Array<Service> => redirectsData as unknown as Array<Service>;
 
-export const getGuides = (): Array<Service> => guidesData;
+export const getGuides = (): Array<Service> => guidesData as unknown as Array<Service>;
 
-export const getTools = (): Array<Service> => toolsData;
+export const getTools = (): Array<Service> => toolsData as unknown as Array<Service>;
 
 /* University section */
 export const getUniversityLinks = (): Array<UniversityLink> => UniversityLinks;

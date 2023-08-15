@@ -4,6 +4,9 @@ import { bold, semibold } from '../services/Fonts';
 import { NextSeo } from 'next-seo';
 import { useContext } from 'react';
 import { preventDefault, preventVisibleHref } from 'services/Utils';
+import { GetServerSideProps } from 'next';
+import { getExtraGroups } from 'services/Requests';
+import { ExtraGroup, ExtraGroups } from 'models/Models';
 import GroupsList, { GroupsType } from '../components/Groups/Groups';
 import LocalizationService from "../services/LocalizationService";
 import Col from 'react-bootstrap/Col';
@@ -12,12 +15,24 @@ import Chip from 'components/Atoms/Chip';
 import GlobalContext from 'services/GlobalContext';
 import JsxParser from 'react-jsx-parser';
 import GroupTypes from 'components/Atoms/GroupTypes';
+import FiveHundred from './500';
 
-const Groups = () => {
+interface Props {
+    extraGroups: ExtraGroups,
+    extraGrousError: boolean
+};
+
+const Groups = (props: Props) => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string = LocalizationService.getLanguage() as string;
     const { isPolicyAccepted, togglePolicyDialog } = useContext(GlobalContext);
+
+    const universityGroups: Array<ExtraGroup> = props.extraGroups?.university_groups ?? [];
+    const announcementsGroups: Array<ExtraGroup> = props.extraGroups?.announcement_groups ?? [];
+    const studentsAssociations: Array<ExtraGroup> = props.extraGroups?.student_associations ?? [];
+
+    if (props.extraGrousError) return <FiveHundred />;
 
     return (
         <>
@@ -96,7 +111,10 @@ const Groups = () => {
                             </Col>
                         </Row>
 
-                        <GroupsList groupsType={GroupsType.UNIVERSITY} />
+                        <GroupsList 
+                            groups={universityGroups}
+                            groupsType={GroupsType.UNIVERSITY} 
+                        />
                     </Container>
 
                     <Separator />
@@ -129,7 +147,10 @@ const Groups = () => {
                             </Col>
                         </Row>
 
-                        <GroupsList groupsType={GroupsType.ANNOUNCEMENTS} />
+                        <GroupsList
+                            groups={announcementsGroups}
+                            groupsType={GroupsType.ANNOUNCEMENTS} 
+                        />
                     </Container>
 
                     <Separator />
@@ -160,13 +181,30 @@ const Groups = () => {
                             </Col>
                         </Row>
 
-                        <GroupsList groupsType={GroupsType.ASSOCIATION} />
+                        <GroupsList 
+                            groups={studentsAssociations}
+                            groupsType={GroupsType.ASSOCIATION} 
+                        />
                     </Container>
 
                 </div>
             </section>
         </>
     );
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+    const extraGroupsResult = await getExtraGroups();
+    let extraGroupsError = false;
+
+    if (extraGroupsResult.error) extraGroupsError = true;
+
+    return { 
+        props: { 
+            extraGroups: extraGroupsResult.value ?? null,
+            extraGrousError: extraGroupsError
+        } 
+    };
 };
 
 export default Groups;
