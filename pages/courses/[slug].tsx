@@ -227,7 +227,7 @@ export const getServerSideProps: GetServerSideProps = async ( { params }) => {
     if (hasReplaced) {
         return {
             redirect: {
-            destination: `/courses/${fixedSlug}`,
+                destination: `/courses/${fixedSlug}`,
                 permanent: false,
             },
         };
