@@ -1,4 +1,4 @@
-import React from 'react';
+import { useRef, useCallback } from 'react';
 import { List, IRectangle, mergeStyleSets } from "@fluentui/react";
 import { ExtraGroup } from 'models/Models';
 import UniversityGroup from './UniversityGroup';
@@ -20,9 +20,9 @@ interface Props {
 
 const Groups = (props: Props) => {
     const locale = LocalizationService.strings();
-    const columnCount = React.useRef(0);
-    const rowHeight = React.useRef(0);
-    const rowsPerPage = React.useRef(0);
+    const columnCount = useRef(0);
+    const rowHeight = useRef(0);
+    const rowsPerPage = useRef(0);
     const MAX_ROW_HEIGHT = 280;
 
     const groups: Array<ExtraGroup> = props.groups;
@@ -37,7 +37,7 @@ const Groups = (props: Props) => {
         }
     });
 
-    const getItemCountForPage = React.useCallback((itemIndex?: number, surfaceRect?: IRectangle) => {
+    const getItemCountForPage = useCallback((itemIndex?: number, surfaceRect?: IRectangle) => {
         if (itemIndex === 0) {
             columnCount.current = Math.ceil(surfaceRect!.width / MAX_ROW_HEIGHT);
             rowHeight.current = MAX_ROW_HEIGHT;
@@ -46,7 +46,7 @@ const Groups = (props: Props) => {
         return columnCount.current * rowsPerPage.current;
     }, []);
     
-    const getPageHeight = React.useCallback((): number => {
+    const getPageHeight = useCallback((): number => {
         return rowHeight.current * rowsPerPage.current;
     }, []); 
 

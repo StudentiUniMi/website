@@ -34,6 +34,7 @@ const AdditionalGroup = (props: Props) => {
     
     const name = group.name[language!];
     const description = group.description[language!];
+    const imageUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${group.id}.png`;
 
     const isInviteLinkEmpty = group.invite_link === "" || group.invite_link === null;
 
@@ -52,7 +53,7 @@ const AdditionalGroup = (props: Props) => {
     return (
         <Card tokens={cardTokens} className="additional-group-item">
             <Card.Item>
-                <Persona imageUrl={group.profile_picture} onRenderPrimaryText={() => primaryText} text={name} />
+                <Persona imageUrl={imageUrl} onRenderPrimaryText={() => primaryText} text={name} />
             </Card.Item>
             <Card.Section>
                 <Text styles={descriptionTextStyles}>

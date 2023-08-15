@@ -1,5 +1,6 @@
 /**
  * Students association component.
+ * This uses nullable properties in ExtraGroup model such as button_name, external_url and image_url.
  * 
  * @author Giuseppe Del Campo
  */
@@ -22,7 +23,7 @@ const StudentsAssociation = (props: Props) => {
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
 
-    const group = props.data;
+    const studentsAssociation = props.data;
     
     const { isPolicyAccepted, togglePolicyDialog } = useContext(GlobalContext);
     
@@ -32,10 +33,10 @@ const StudentsAssociation = (props: Props) => {
     const telegramGroupIcon: IIconProps = { iconName: 'Send' };
     const calloutProps = { gapSpace: 5 };
     
-    const name = group.name[language!];
-    const description = group.description[language!];
+    const name = studentsAssociation.name[language!];
+    const description = studentsAssociation.description[language!];
 
-    const isInviteLinkEmpty = group.invite_link === "" || group.invite_link === null;
+    const isInviteLinkEmpty = studentsAssociation.external_url === "" || studentsAssociation.external_url === null;
 
     /* PrimaryText inizialization */
     let primaryText: JSX.Element = (
@@ -52,7 +53,7 @@ const StudentsAssociation = (props: Props) => {
     return (
         <Card tokens={cardTokens} className="additional-group-item">
             <Card.Item>
-                <Persona imageUrl={group.profile_picture} onRenderPrimaryText={() => primaryText} text={name} />
+                <Persona imageUrl={studentsAssociation.image_url ?? ""} onRenderPrimaryText={() => primaryText} text={name} />
             </Card.Item>
             <Card.Section>
                 <Text styles={descriptionTextStyles}>
@@ -71,12 +72,12 @@ const StudentsAssociation = (props: Props) => {
 
                 {!isInviteLinkEmpty &&
                     <PrimaryButton
-                        href={preventVisibleHref(isPolicyAccepted, group.invite_link)} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}
+                        href={preventVisibleHref(isPolicyAccepted, studentsAssociation.external_url!)} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}
                         iconProps={telegramGroupIcon}
                         style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
                         disabled={isInviteLinkEmpty}
                         allowDisabledFocus>
-                        {locale?.homepage.section3.part3.title}
+                        {studentsAssociation.button_name![language!]}
                     </PrimaryButton>
                 }
             </Card.Section>

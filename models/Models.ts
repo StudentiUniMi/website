@@ -74,7 +74,10 @@ export interface Group {
 export interface ExtraGroup extends Group {
     name: LocalizedField,
     description: LocalizedField,
-    user_count: number
+    user_count: number,
+    button_name: LocalizedField | null,
+    image_url: string | null
+    external_url: string | null
 };
 
 export interface ExtraGroups {
