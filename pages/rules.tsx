@@ -1,19 +1,48 @@
-import React from "react";
+import React, { CSSProperties, useContext } from "react";
 import { Text, Link, Icon, Image, useTheme } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import { bold, semibold } from '../services/Fonts';
 import { NextSeo } from 'next-seo';
 import LocalizationService from "../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
+import GlobalContext from "services/GlobalContext";
 
 const Rules = () => {
     const theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
 
-    const imageProperties = { display: 'inline-block', width: 240 };
-    const subHeader = { backgroundColor: theme.palette.neutralLighter, padding: '10px 0px' };
-    const finalBox = { backgroundColor: theme.palette.neutralLighter };
+    const { isHeaderPinned } = useContext(GlobalContext);
+
+    const imageProperties: CSSProperties = { 
+        display: 'inline-block', 
+        width: 240 
+    };
+
+    const subHeader: CSSProperties = { 
+        backgroundColor: theme.palette.neutralLighter, 
+        padding: '10px 0px', 
+        position: 'sticky',
+        top: isHeaderPinned ? 45 : 0,
+        transitionProperty: 'top',
+        transitionDuration: '0.2s'
+    };
+
+    const finalBox: CSSProperties = { 
+        backgroundColor: theme.palette.neutralLighter 
+    };
+
+    const iconStyle: CSSProperties = {
+        color: theme.palette.white,
+        fontSize: 18,
+        display: 'flex'
+    };
+
+    const iconWrap: CSSProperties = {
+        padding: 6,
+        backgroundColor: theme.palette.themePrimary,
+        borderRadius: 20
+    };
 
     return (
         <>
@@ -56,14 +85,16 @@ const Rules = () => {
                 <div className="pb-4">
 
                     <div className="mb-4">
-                        <div className="mb-4" style={subHeader}>
-                            <Container className="d-flex flex-row align-items-center" style={{ gap: 5}}>
-                                <Text variant="xLarge"><Icon iconName="AiOutlineFileText" className="d-flex" /></Text>
-                                <Text variant="xLarge">{locale?.rules.rules.title}</Text>
+                        <div style={subHeader}>
+                            <Container className="d-flex flex-row align-items-center" style={{ gap: 8 }}>
+                                <span style={iconWrap}>
+                                    <Icon iconName="AiOutlineFileText" style={iconStyle} />
+                                </span>
+                                <Text variant="xLarge" styles={semibold}>{locale?.rules.rules.title}</Text>
                             </Container>
                         </div>
                         <Container>
-                            <div className="d-flex flex-column" style={{ gap: 20 }}>
+                            <div className="d-flex flex-column mt-4" style={{ gap: 20 }}>
                                 <div>
                                     <div className="mb-2">
                                         <Text variant="mediumPlus" styles={semibold}>{locale?.rules.rules.toxicBehaviour.title}</Text>
@@ -144,14 +175,16 @@ const Rules = () => {
                     </div>
 
                     <div className="mb-4">
-                        <div className="mb-4" style={subHeader}>
+                        <div style={subHeader}>
                             <Container className="d-flex flex-row align-items-center" style={{ gap: 5 }}>
-                                <Text variant="xLarge"><Icon iconName="AiOutlineEdit" className="d-flex" /></Text>
-                                <Text variant="xLarge">{locale?.rules.measures.title}</Text>
+                                <span style={iconWrap}>
+                                    <Icon iconName="AiOutlineEdit" style={iconStyle} />
+                                </span>
+                                <Text variant="xLarge" styles={semibold}>{locale?.rules.measures.title}</Text>
                             </Container>
                         </div>
                         <Container>
-                            <div className="d-flex flex-column mb-3" style={{ gap: 20 }}>
+                            <div className="d-flex flex-column mb-3 mt-4" style={{ gap: 20 }}>
                                 <Text variant="medium">
                                     {locale?.rules.measures.description1}
                                 </Text>
@@ -174,14 +207,16 @@ const Rules = () => {
                     </div>
 
                     <div>
-                        <div className="mb-4" style={subHeader}>
+                        <div style={subHeader}>
                             <Container className="d-flex flex-row align-items-center" style={{ gap: 5 }}>
-                                <Text variant="xLarge"><Icon iconName="AiOutlineStar" className="d-flex" /></Text>
-                                <Text variant="xLarge">{locale?.rules.advices.title}</Text>
+                                <span style={iconWrap}>
+                                    <Icon iconName="AiOutlineStar" style={iconStyle} />
+                                </span>
+                                <Text variant="xLarge" styles={semibold}>{locale?.rules.advices.title}</Text>
                             </Container>
                         </div>
                         <Container>
-                            <div className="mb-3">
+                            <div className="mb-3 mt-4">
                                 <Text variant="medium">
                                     <ul>
                                         {locale?.rules.advices.list1.map(x => <li>{x}</li>)}

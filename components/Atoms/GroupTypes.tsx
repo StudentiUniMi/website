@@ -16,7 +16,7 @@ const GroupTypes = (props: Props) => {
     var theme = useTheme();
     var language: string = LocalizationService.getLanguage() as string;
     
-    const groupTypes: Array<GroupType> = props.page === "courses" ? GroupTypesData.filter(g => g.name['it'] !== "Associazioni studentesche") : GroupTypesData;
+    const groupTypes: Array<GroupType> = props.page === "courses" ? GroupTypesData.filter(g => g.href !== '/courses') : GroupTypesData;
 
     const groupTypesStyle: CSSProperties = {
         justifyContent: 'center',
