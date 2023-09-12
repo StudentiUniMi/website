@@ -43,7 +43,7 @@ const FiveHundred = () => {
                         <div className="d-flex flex-column justify-content-center" style={{ gap: 10}}>
                             <Text variant="xLargePlus">{locale?.serverErrorPage.title}</Text>
 
-                            <div style={{ margin: '0 auto', maxWidth: 400 }}>
+                            <div style={{ margin: '0 auto', maxWidth: 450 }}>
                                 <Text variant="medium">{locale?.serverErrorPage.description}</Text>
                             </div>
 

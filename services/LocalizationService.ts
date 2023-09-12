@@ -297,26 +297,26 @@ class LocalizationService {
                     groups: {
                         title: "Quale tipologia di gruppi cerchi?",
                         universityGroups: {
-                            label: "Gruppi universitari",
+                            label: `<Text variant="mega" style={{ lineHeight: 1.3, fontWeight: 700, textAlign: 'center' }}>Gruppi <Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega">universitari</Text></Text>`,
                             title: "Unisciti ai nostri gruppi universitari",
-                            description: "Parla e discuti con altri studenti riguardo tutti i topic di cui hai bisogno.",
+                            description: "Parla e discuti con altri studenti riguardo tutti i topic di cui hai bisogno",
                             description2: "Pensi manchi qualche gruppo in particolare?",
                             card: {
                                 type: 'Gruppo universitario'
                             }
                         },
                         announcementsGroups: {
-                            label: "Gruppi per gli annunci",
+                            label: `<Text variant="mega" style={{ lineHeight: 1.3, fontWeight: 700, textAlign: 'center' }}>Gruppi per gli <Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega">annunci</Text></Text>`,
                             title: "Posta un annuncio sui nostri gruppi appositi",
                             description: "Abbiamo creato dei gruppi dedicati esclusivamente alla pubblicazione di annunci sia di ricerca che di offerta, come ad esempio per i libri ed appunti e le ripetizioni.",
-                            description2: "Per postare un annuncio segui il template che trovi nei messaggi fissati quando entri.",
+                            description2: `<Text variant="medium">Per postare un annuncio segui il <Text variant='medium' styles={bold} style={{ color: theme.palette.themeDarkAlt }}>template</Text> che trovi nei messaggi fissati quando entri.</Text>`,
                             card: {
                                 type: 'Gruppo annunci'
                             }
                         },
                         studentsAssociations: {
                             label: "Associazioni studentesche",
-                            title: "Dai un'occhiata alle associazioni studentesche UniMi",
+                            title: `<Text variant="xLargePlus" styles={bold}>Dai un'occhiata alle <Text variant="xLargePlus" styles={bold} style={{ color: theme.palette.themeDarkAlt }}>associazioni studentesche</Text> UniMi</Text>`,
                             description: "Non sempre gli studenti sanno quante associazioni studentesche ci sono lì fuori!",
                             description2: "Se vorresti la tua associazione studentesca aggiunta nella lista scrivi ad un <Link href='/organization'>membro dello staff</Link>.",
                             card: {
@@ -695,26 +695,26 @@ class LocalizationService {
                     groups: {
                         title: "What type of groups are you looking for?",
                         universityGroups: {
-                            label: "University groups",
+                            label: `<Text variant="mega" style={{ lineHeight: 1.3, fontWeight: 700, textAlign: 'center' }}>University <Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega">groups</Text></Text>`,
                             title: "Join the university groups of our Network",
-                            description: "Talk and discuss with other students about all the topics you need.",
+                            description: "Talk and discuss with other students about all the topics you need",
                             description2: "Do you think any particular group is missing?",
                             card: {
                                 type: 'University group'
                             }
                         },
                         announcementsGroups: {
-                            label: "Announcements groups",
+                            label: `<Text variant="mega" style={{ lineHeight: 1.3, fontWeight: 700, textAlign: 'center' }}>Announcements<Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega"> groups</Text></Text>`,
                             title: "Post an ad on our dedicated groups",
                             description: "We have created groups dedicated exclusively to posting both want and offer ads, such as for books and notes and private lessons.",
-                            description2: "To post an ad follow the template you find in the posts set when you enter.",
+                            description2: `<Text variant="medium">To post an ad follow the <Text variant='medium' styles={bold} style={{ color: theme.palette.themeDarkAlt }}>template</Text> that you can find in the pinned messages set when you enter.</Text>`,
                             card: {
                                 type: 'Announcements group'
                             }
                         },
                         studentsAssociations: {
                             label: "Students associations",
-                            title: "Take a look at UniMi Students Associations",
+                            title: `<Text variant="xLargePlus" styles={bold}>Take a look at the <Text variant="xLargePlus" styles={bold} style={{ color: theme.palette.themeDarkAlt }}>UniMi student associations</Text></Text>`,
                             description: "Students don't always know how many student associations are out there!",
                             description2: "If you would like your student association added to the list write to a <Link href='/organization'>staff member</Link>.",
                             card: {
