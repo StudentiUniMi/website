@@ -1,5 +1,5 @@
 import React, { CSSProperties, useContext } from "react";
-import { Text, Link, Icon, Image, useTheme } from '@fluentui/react';
+import { Text, Link, Icon, useTheme } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import { bold, semibold } from '../services/Fonts';
 import { NextSeo } from 'next-seo';
@@ -14,18 +14,14 @@ const Rules = () => {
 
     const { isHeaderPinned } = useContext(GlobalContext);
 
-    const imageProperties: CSSProperties = { 
-        display: 'inline-block', 
-        width: 240 
-    };
-
     const subHeader: CSSProperties = { 
         backgroundColor: theme.palette.neutralLighter, 
+        borderTop: `1px solid ${theme.palette.neutralQuaternary}`,
+        borderBottom: `1px solid ${theme.palette.neutralQuaternary}`,
         padding: '10px 0px', 
         position: 'sticky',
-        top: isHeaderPinned ? 45 : 0,
-        transitionProperty: 'top',
-        transitionDuration: '0.2s'
+        top: isHeaderPinned ? 44 : 0,
+        transition: 'top 0.2s ease-in-out 0s'
     };
 
     const finalBox: CSSProperties = { 
@@ -232,9 +228,8 @@ const Rules = () => {
 
                     <div style={finalBox} className="pt-5 pb-5">
                         <Container className="d-flex flex-column text-center" style={{ gap: 10 }}>
-                            <Image src={'/images/rules_2.png'} alt="Rules final section" style={imageProperties} />
                             <div className="d-flex flex-column" style={{ gap: 5 }}>
-                                <Text variant="large" styles={semibold}>
+                                <Text variant="xLargePlus" styles={bold}>
                                     {locale?.rules.lastSection.title1}
                                 </Text>
                                 <Text variant="large" style={{ maxWidth: 700, margin: '0 auto' }}>

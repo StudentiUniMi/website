@@ -1,11 +1,12 @@
-import { Text, Image } from '@fluentui/react';
+import { Text } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
+import { bold } from 'services/Fonts';
 import DegreesMarquee from './DegreesMarquee';
 import React from 'react';
 import LocalizationService from "../../services/LocalizationService";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { bold } from 'services/Fonts';
+import Image from 'next/image';
 
 interface Props {
     degrees: string[]
@@ -13,7 +14,6 @@ interface Props {
 
 const Landing = (props: Props) => {
     const locale = LocalizationService.strings();
-    const logoProperties = { width: 200, height: 200, display: 'inline-block' };
     let stringDegrees: string[] = props.degrees;
 
     return (
@@ -22,7 +22,14 @@ const Landing = (props: Props) => {
                 <Row>
                     <Col lg={4}>
                         <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 200 }} className="mb-2 mb-lg-0">
-                            <Image id="logo" src={'/logo/unimi500.png'} alt='Network logo' style={logoProperties} />
+                            <Image 
+                                id="logo" 
+                                src={'/logo/unimi500.png'} 
+                                alt='Network logo'
+                                objectFit={'contain'}
+                                width={200}
+                                height={200} 
+                            />
                         </div>
                     </Col>
 

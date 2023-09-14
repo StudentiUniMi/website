@@ -397,19 +397,22 @@ footer .ms-Label {
 }
 
 /* Group types selector */
-@media only screen and (max-width: 440px) {
+@media only screen and (max-width: 480px) {
   .group-types-selector {
-    img {
-      max-width: 80px;
-    }
-
     .group-type-selector {
-      max-width: 140px;
-      max-height: 180px;
+      max-width: 160px;
+      max-height: 200px;
     }
 
     span {
       font-size: 14px;
     }
+  }
+}
+
+@media only screen and (max-width: 352px) {
+  .group-type-selector {
+    min-width: 250px;
+    max-width: 100% !important;
   }
 }

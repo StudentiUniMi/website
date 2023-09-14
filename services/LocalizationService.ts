@@ -326,8 +326,8 @@ class LocalizationService {
                         users: 'Utenti'
                     },
                     services: {
-                        text1: "<Text variant='xLargePlus' styles={bold}>Tutti i <Text styles={bold} variant='xLargePlus' style={{ color: theme.palette.themePrimary }}>servizi</Text>, in un\'unica pagina.</Text>",
-                        text2: "Abbiamo realizzato una pagina per centralizzare tutti i collegamenti inerenti all'Università degli Studi di Milano e rendere disponibili anche le guide, strumenti e servizi telematici che abbiamo realizzato e messo a disposizione.",
+                        text1: "<Text variant='mega' styles={bold}>Tutti i <Text styles={bold} variant='mega' style={{ color: theme.palette.themePrimary }}>servizi</Text>, in un\'unica pagina</Text>",
+                        text2: "Abbiamo realizzato una pagina per centralizzare tutti i collegamenti inerenti all'Università degli Studi di Milano e rendere disponibili anche le guide, strumenti e servizi telematici che abbiamo realizzato.",
                         text3: "Pensi che manchi qualcosa?",
                         text4: 'Faccelo sapere!',
                         selectSubSection: "Seleziona la categoria che ti interessa",
@@ -724,7 +724,7 @@ class LocalizationService {
                         users: 'Users'
                     },
                     services: {
-                        text1: "<Text variant='xLargePlus' styles={bold}>All <Text styles={bold} variant='xLargePlus' style={{ color: theme.palette.themePrimary }}>services</Text>, in one central place.</Text>",
+                        text1: "<Text variant='mega' styles={bold}>All <Text styles={bold} variant='mega' style={{ color: theme.palette.themePrimary }}>services</Text>, in one central place</Text>",
                         text2: "We have created a page to centralize all the connections relating to the University of Milan and also make available our guides and telematic services we have created.",
                         text3: "Do you think something is missing?",
                         text4: 'Let us know!',

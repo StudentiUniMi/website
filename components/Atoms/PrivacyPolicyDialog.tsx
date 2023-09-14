@@ -1,6 +1,7 @@
-import { Text, useTheme, IIconProps, DialogType, Dialog, DialogFooter, PrimaryButton, Image, Checkbox, DefaultButton } from '@fluentui/react';
+import { Text, useTheme, IIconProps, DialogType, Dialog, DialogFooter, PrimaryButton, Checkbox, DefaultButton } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
 import { useContext, useState } from 'react';
+import Image from 'next/image';
 import LocalizationService from 'services/LocalizationService';
 import GlobalContext from 'services/GlobalContext';
 import JsxParser from 'react-jsx-parser';
@@ -32,7 +33,13 @@ const PrivacyPolicyDialog = () => {
                 </Text>
 
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Image src={'/images/privacy_policy.png'} alt="Privacy policy" style={{ width: 250 }} />
+                    <Image 
+                        src={'/images/privacy_policy.png'} 
+                        alt="Privacy policy" 
+                        objectFit={'contain'}
+                        width={250}
+                        height={176} 
+                    />
                 </div>
 
                 <div className="p-3 d-flex flex-column" style={{ backgroundColor: theme.palette.neutralLighter, borderRadius: 8, gap: 10 }}>

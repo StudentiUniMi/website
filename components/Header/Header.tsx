@@ -1,12 +1,12 @@
 import { 
   FontSizes, 
   Text,
-  Image, 
   FontWeights, 
   ITextStyles, 
   Link, 
   useTheme 
 } from '@fluentui/react';
+import Image from 'next/image';
 import { CSSProperties, useContext } from 'react';
 import HeaderMenu from './HeaderMenu';
 import Headroom from 'react-headroom';
@@ -20,12 +20,6 @@ const Header = () => {
   const headerZIndex = 2;
 
   const logoFileName = 'unimi150.png';
-
-  const logoProperties: CSSProperties = {
-    width: 25,
-    height: 25,
-    marginTop: 3
-  };
 
   const headerStyle: CSSProperties = {
     zIndex: headerZIndex,
@@ -56,12 +50,14 @@ const Header = () => {
 
             <div style={{ maxWidth: 250, paddingLeft: 0, paddingRight: 0, display: 'flex', alignItems: 'center' }}>
               <div className="d-flex align-items-center" style={{ width: 250, gap: 10 }}>
-                <Link href="/">
+                <Link href="/" className='d-flex align-items-center' style={{ marginTop: 3 }}>
                   <Image
                     id="logo"
                     alt="Logo"
                     src={'/logo/' + logoFileName}
-                    style={logoProperties}
+                    objectFit={'contain'}
+                    width={25}
+                    height={25} 
                   />
                 </Link>
 

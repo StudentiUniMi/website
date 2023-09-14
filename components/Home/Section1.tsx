@@ -1,4 +1,4 @@
-import { Text, IIconProps, PrimaryButton, Image, useTheme, Link } from '@fluentui/react';
+import { Text, IIconProps, PrimaryButton, useTheme, Link } from '@fluentui/react';
 import { bold, semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
@@ -6,14 +6,30 @@ import Row from 'react-bootstrap/Row';
 import LocalizationService from "../../services/LocalizationService";
 import Chip from '../Atoms/Chip';
 import JsxParser from 'react-jsx-parser';
+import Image from 'next/image';
+import { CSSProperties } from 'react';
 
 const FirstSection = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
-    const buttonStyle = { maxWidth: '120px', boxShadow: theme.effects.elevation8 };
-    const buttonIconProps: IIconProps = { iconName: 'GoChevronRight', styles: { root: { fontSize: 14 } } };
-    const cardStyle = { backgroundColor: theme.palette.neutralLighterAlt, padding: '20px', borderRadius: '10px', overflow: 'hidden', minHeight: 200 };
-    const cardImageStyle = { width: 165, height: 165 };
+    
+    const buttonStyle = { 
+        maxWidth: '120px', 
+        boxShadow: theme.effects.elevation8 
+    };
+
+    const buttonIconProps: IIconProps = { 
+        iconName: 'GoChevronRight', 
+        styles: { root: { fontSize: 14 } } 
+    };
+
+    const cardStyle: CSSProperties = { 
+        backgroundColor: theme.palette.neutralLighterAlt, 
+        padding: '20px', 
+        borderRadius: '10px', 
+        overflow: 'hidden', 
+        minHeight: 200 
+    };
     
     return (
         <div className="pb-5 pt-5 first-section">
@@ -35,9 +51,15 @@ const FirstSection = () => {
                             </Text>
 
                             <div className="d-flex flex-row mt-2">
-                                <Image src={'/images/home/c1.png'} alt="Degree groups" style={cardImageStyle} />
+                                <Image 
+                                    src={'/images/home/c1.png'} 
+                                    alt="Degree groups"
+                                    objectFit={'contain'}
+                                    width={165}
+                                    height={165}
+                                />
 
-                                <div className="d-flex flex-column justify-content-between text-right align-items-end" style={{ gap: 20 }}>
+                                <div className="d-flex flex-column justify-content-between text-right align-items-end w-50" style={{ gap: 20 }}>
 
                                     <Text variant="medium" styles={semibold}>
                                         <JsxParser 
@@ -71,9 +93,15 @@ const FirstSection = () => {
                             </Text>
 
                             <div className="d-flex flex-row mt-2">
-                                <Image src={'/images/home/c2.png'} alt="General groups" style={cardImageStyle} />
+                                <Image 
+                                    src={'/images/home/c2.png'} 
+                                    alt="General groups"
+                                    objectFit={'contain'}
+                                    width={165}
+                                    height={165} 
+                                />
 
-                                <div className="d-flex flex-column justify-content-between text-right align-items-end" style={{ gap: 20 }}>
+                                <div className="d-flex flex-column justify-content-between text-right align-items-end w-50" style={{ gap: 20 }}>
 
                                     <Text variant="medium" styles={semibold}>
                                         <JsxParser 
@@ -107,9 +135,15 @@ const FirstSection = () => {
                             </Text>
 
                             <div className="d-flex flex-row mt-2">
-                                <Image src={'/images/home/c3.png'} alt="Telematic services" style={cardImageStyle} />
+                                <Image 
+                                    src={'/images/home/c3.png'} 
+                                    alt="Telematic services"
+                                    objectFit={'contain'}
+                                    width={165}
+                                    height={165} 
+                                />
 
-                                <div className="d-flex flex-column justify-content-between text-right align-items-end" style={{ gap: 20 }}>
+                                <div className="d-flex flex-column justify-content-between text-right align-items-end w-50" style={{ gap: 20 }}>
 
                                     <Text variant="medium" styles={semibold}>
                                        <JsxParser 

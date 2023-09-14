@@ -1,4 +1,4 @@
-import { Text, Image, useTheme, Separator, Link } from '@fluentui/react';
+import { Text, useTheme, Separator, Link } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import { bold, semibold } from '../services/Fonts';
 import { NextSeo } from 'next-seo';

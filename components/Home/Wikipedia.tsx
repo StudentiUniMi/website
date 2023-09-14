@@ -1,8 +1,9 @@
-import { Text, IIconProps, PrimaryButton, Image, useTheme } from '@fluentui/react';
+import { Text, IIconProps, PrimaryButton, useTheme } from '@fluentui/react';
 import { useContext } from 'react';
 import { semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
 import { preventDefault, preventVisibleHref } from 'services/Utils';
+import Image from 'next/image';
 import GlobalContext from 'services/GlobalContext';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -22,7 +23,13 @@ const Wiki = () => {
 
                 <Row>
                     <Col lg={4} className="text-center mb-4 mb-lg-0">
-                        <Image src={'/images/home/4.png'} alt="StudentiUniMi Wikipedia" style={{ display: 'inline-block', width: 250, height: 187 }} />
+                        <Image 
+                            src={'/images/home/4.png'} 
+                            alt="StudentiUniMi Wikipedia"                             
+                            objectFit={'contain'}
+                            width={250}
+                            height={187} 
+                        />
                     </Col>
 
                     <Col lg={8}>

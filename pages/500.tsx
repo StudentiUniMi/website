@@ -1,6 +1,7 @@
 import { Container } from 'react-bootstrap';
-import { DefaultButton, PrimaryButton, Text, useTheme, Image } from '@fluentui/react';
+import { DefaultButton, PrimaryButton, Text, useTheme } from '@fluentui/react';
 import { NextSeo } from 'next-seo';
+import Image from 'next/image';
 import LocalizationService from 'services/LocalizationService';
 
 const FiveHundred = () => {
@@ -48,9 +49,16 @@ const FiveHundred = () => {
                             </div>
 
                             <div className="d-flex justify-content-center">
-                                <Image id="not-found" alt="Not found" src={'/images/message/error.png'} style={{ width: '250px' }} />
+                                <Image 
+                                    id="not-found" 
+                                    alt="Not found" 
+                                    src={'/images/message/error.png'}
+                                    objectFit={'contain'}
+                                    width={250}
+                                    height={250} 
+                                />
                             </div>
-
+                  
                             <div className="d-flex flex-row justify-content-center" style={{ gap: 10 }}>
                                 <PrimaryButton
                                     text={locale?.serverErrorPage.buttonHomepage}

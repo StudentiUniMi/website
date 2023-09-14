@@ -1,6 +1,7 @@
-import { Text, IIconProps, PrimaryButton, Image, useTheme } from '@fluentui/react';
+import { Text, IIconProps, PrimaryButton, useTheme } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
+import Image from 'next/image';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../../services/LocalizationService";
@@ -38,7 +39,13 @@ const UnimiaStudentiUnimi = () => {
                     </Col>
 
                     <Col lg={4} className="text-center">
-                        <Image src={'/images/home/3.png'} alt="Unimia redirects" style={{ display: 'inline-block', width: 256, height: 192 }} />
+                        <Image 
+                            src={'/images/home/3.png'} 
+                            alt="Unimia redirects"
+                            objectFit={'contain'}
+                            width={256}
+                            height={192} 
+                        />
                     </Col>
 
                 </Row>

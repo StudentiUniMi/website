@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties, useContext } from "react";
 import { semibold } from '../../services/Fonts';
 import { Text, Icon, useTheme } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
@@ -7,6 +7,7 @@ import Message from '../Atoms/Message';
 import ItemsGroup, { Item } from "components/Atoms/ItemsGroup";
 import { DegreeInformation } from "models/DegreeInformation";
 import Chip from "components/Atoms/Chip";
+import GlobalContext from "services/GlobalContext";
 
 interface Props { degreeInformations: any[] };
 
@@ -15,6 +16,8 @@ const DegreeInformations= (props: Props) => {
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
 
+    const { isHeaderPinned } = useContext(GlobalContext);
+
     const degreeInformations: Array<DegreeInformation> = props.degreeInformations;
      
     const items: Array<Item> = degreeInformations?.map((x) => ({
@@ -22,6 +25,17 @@ const DegreeInformations= (props: Props) => {
         href: x.link,
         iconName: x.icon
     }));
+
+    const subHeader: CSSProperties = { 
+        backgroundColor: theme.palette.neutralLighter, 
+        borderTop: `1px solid ${theme.palette.neutralQuaternary}`,
+        borderBottom: `1px solid ${theme.palette.neutralQuaternary}`,
+        padding: '10px 0px', 
+        position: 'sticky',
+        top: isHeaderPinned ? 44 : 0,
+        transition: 'top 0.2s ease-in-out 0s',
+        zIndex: 2
+    };
 
     const buildDegreeInformationsNumberString = (n: number) => {
         if (n === 0) {
@@ -43,7 +57,7 @@ const DegreeInformations= (props: Props) => {
 
     return (   
         <div className='degree-informations mb-4' id="redirects">
-            <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLighter }}>
+            <div className="pb-2 pt-2 mb-4" style={subHeader}>
                 <Container>
                     <div className="d-flex flex-row align-items-center" style={{ gap: 5 }}>
                         <Text variant="medium" styles={semibold}>
