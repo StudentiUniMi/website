@@ -20,8 +20,11 @@ import PrivacyPolicyDialog from 'components/Atoms/PrivacyPolicyDialog';
 import LocalizationChangeDialog from 'components/Atoms/LocalizationChangeDialog';
 import LocalizationService from 'services/LocalizationService';
 
-LocalizationService.localize("it"); // Enable SSR localized fields (italian by default)
-loadTheme(buildLightTheme("a")); // Enable SSR builded theme (blue palette by default)
+/**
+ * Enables SSR localization and theme.
+ */
+LocalizationService.localize("it");
+loadTheme(buildLightTheme("a"));
 
 setIconOptions({ disableWarnings: true });
 registerIcons({ icons: registeredIcons });
@@ -41,6 +44,7 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
                 <link rel="icon" href="/logo/unimi150.png" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 <meta name="author" content="Network StudentiUniMi" />
+                <meta name="google" content="notranslate" />
                 <meta httpEquiv="Content-Security-Policy" content="style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://studentiunimi.it https://code.jquery.com https://cdn.jsdelivr.net https://p.studentiunimi.it; font-src * data:;" />
             </Head>
 

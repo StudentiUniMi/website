@@ -23,7 +23,7 @@ export default class MyDocument extends Document {
 
     render() {
         return (
-            <Html prefix="og: http://ogp.me/ns#" lang={"it"}>
+            <Html prefix="og: http://ogp.me/ns#" lang={"it"} translate="no">
                 <Head />
                 <body>
                     <Main />
