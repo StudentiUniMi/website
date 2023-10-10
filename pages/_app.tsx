@@ -6,10 +6,11 @@ import { CookiesProvider } from 'react-cookie';
 import { ThemeProvider, useTheme } from '@fluentui/react';
 import { Theme } from '../services/Utils';
 import { initializeIcons } from '@fluentui/react/lib/Icons';
-import { registerIcons, setIconOptions } from '@fluentui/react/lib/Styling';
+import { loadTheme, registerIcons, setIconOptions } from '@fluentui/react/lib/Styling';
 import { registeredIcons } from 'services/Icons';
 import { GlobalProvider } from 'services/GlobalContext';
 import { useContext } from 'react';
+import { buildLightTheme } from 'services/Themes';
 import GlobalContext from '../services/GlobalContext';
 import Script from 'next/script';
 import Head from 'next/head';
@@ -19,7 +20,12 @@ import PrivacyPolicyDialog from 'components/Atoms/PrivacyPolicyDialog';
 import LocalizationChangeDialog from 'components/Atoms/LocalizationChangeDialog';
 import LocalizationService from 'services/LocalizationService';
 
-LocalizationService.localize("it"); // Enable SSR localized fields (italian by default)
+/**
+ * Enables SSR localization and theme.
+ */
+LocalizationService.localize("it");
+loadTheme(buildLightTheme("a"));
+
 setIconOptions({ disableWarnings: true });
 registerIcons({ icons: registeredIcons });
 initializeIcons();
