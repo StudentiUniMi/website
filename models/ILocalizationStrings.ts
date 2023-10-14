@@ -71,8 +71,19 @@ interface ILocalizationStrings {
         coachMark: { text1: string, text2: string, understood: string }
     },
     homepage: {
+        telegramTitle: string,
         telegramText: string,
         telegramButton: string,
+        telegramPopUP: {
+            title: string,
+            text1: string,
+            text2: string,
+            text3: string,
+            text4: string,
+            text5: string,
+            text6: string,
+            textButton: string,
+        },
         section1: {
             typedText: string,
             text1: string,

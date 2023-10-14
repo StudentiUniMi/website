@@ -6,7 +6,7 @@ class LocalizationService {
     private static data?: LocalizedStringsMethods & ILocalizationStrings;
 
     static localize = (language: string | undefined = undefined) => {
-        if (LocalizationService.data == null || LocalizationService.data === undefined) {
+        if (!LocalizationService.data == null || LocalizationService.data === undefined) {
             LocalizationService.data = new LocalizedStrings<ILocalizationStrings>({
                 it: {
                     helmet: LocalizationService.getHelmetITAProperties(),
@@ -79,8 +79,19 @@ class LocalizationService {
                         coachMark: { text1: 'Benvenuto sul nostro sito!', text2: 'Qui puoi trovare alcune impostazioni che ti potrebbero servire. Per il resto, esplora liberamente i servizi che offriamo! :)', understood: 'Capito!' }
                     },
                     homepage: {
-                        telegramText: "Telegram è un'app di messaggistica molto più potente e sicura di WhatsApp.",
-                        telegramButton: "Dimmi di più",
+                        telegramTitle: "Whatsapp? No grazie.",
+                        telegramText: "whatsapp non è una piattaforma adatta a contenuti universitari",
+                        telegramButton: "Scopri perchè",
+                        telegramPopUP: {
+                            title: "Di seguito alcuni degli svantaggi derivanti dall'uso di Whatsapp:",
+                            text1: "i nuovi utenti non hanno accesso alla cronologia della chat",
+                            text2: "gli studenti hanno numeri di cellulare esposti, un problema grave soprattutto per studenti e studentesse da facoltà umanistiche",
+                            text3: "i media non vengono salvati lato server, rendendoli completamente inaccessibili a futuri studenti",
+                            text4: "non esiste moderazione e automatizzazione tramite utilizzo di bot",
+                            text5: "limite numero utenti, ulteriore problema enorme per facoltà umanistiche",
+                            text6: "accessibilità dei gruppi inesistente, di fatto vengono utilizzati i nostri servizi (che si trovano facilmente tramite motori di ricerca) per andare a trovare dei gruppi e risorse letteralmente introvabili, ahimè ironia della sorte.",
+                            textButton: "Chiudi",
+                        },
                         section1: {
                             typedText: 'Sei iscritto a...',
                             text1: 'Rimani in contatto. Di più, e meglio.',
@@ -477,8 +488,19 @@ class LocalizationService {
                         coachMark: { text1: 'Welcome on our website!', text2: 'Here you can find some settings that might be helpful. Enjoy our services! :)', understood: 'Got it!' }
                     },
                     homepage: {
-                        telegramText: "Telegram is way safer and efficient than WhatsApp.",
-                        telegramButton: "Tell me more",
+                        telegramTitle: "Whatsapp? No thanks.",
+                        telegramText: "whatsapp isn't a platform for university content",
+                        telegramButton: "See why",
+                        telegramPopUP: {
+                            title: "Here are some of the disadvantages of using Whatsapp:",
+                            text1: "new users don't have access to chat history",
+                            text2: "students have mobile phone numbers exposed, a serious problem especially for students from humanities",
+                            text3: "media are not saved on the server side, making them completely inaccessible to future students",
+                            text4: "you can't moderate groups through the use of bots",
+                            text5: "user limit, further huge problem for humanities faculty",
+                            text6: "The accessibility of non-existent groups, in practice, leads people to use our services (easily found through search engines) to seek out groups and resources that are quite literally unfindable, alas, the irony of fate.",
+                            textButton: "Close",
+                        },
                         section1: {
                             typedText: 'Are you a student of...',
                             text1: 'Stay in touch. More, and better.',
