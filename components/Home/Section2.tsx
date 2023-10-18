@@ -1,6 +1,6 @@
 import { Text, IIconProps, DefaultButton, Icon, useTheme } from '@fluentui/react';
 import { useContext } from 'react';
-import { semibold } from '../../services/Fonts';
+import { bold, semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
 import { preventDefault, preventVisibleHref } from 'services/Utils';
 import Image from 'next/image';
@@ -35,7 +35,7 @@ const SecondSection = () => {
 
                     <Col lg={8}>
                         <div className="mb-4">
-                            <Text variant="xLarge" styles={semibold}>{locale?.homepage.section3.header}</Text>
+                            <Text variant="xLarge" styles={bold}>{locale?.homepage.section3.header}</Text>
                         </div>
 
                         <div>

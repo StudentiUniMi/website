@@ -35,7 +35,7 @@ const FirstSection = () => {
         <div className="pb-5 pt-5 first-section">
             <Container>
 
-                <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold}>{locale?.homepage.section2.title}</Text></div>
+                <div className="mb-4 text-center"><Text variant="xLarge" styles={bold}>{locale?.homepage.section2.title}</Text></div>
 
                 <Row className="justify-content-around">
                     

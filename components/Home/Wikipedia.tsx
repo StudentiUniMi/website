@@ -1,6 +1,6 @@
 import { Text, IIconProps, PrimaryButton, useTheme } from '@fluentui/react';
 import { useContext } from 'react';
-import { semibold } from '../../services/Fonts';
+import { bold, semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
 import { preventDefault, preventVisibleHref } from 'services/Utils';
 import Image from 'next/image';
@@ -33,10 +33,10 @@ const Wiki = () => {
                     </Col>
 
                     <Col lg={8}>
-                        <div className="mb-2"><Text variant="xLarge" styles={semibold}>{locale?.homepage.wikipediaSection.text1}</Text></div>
+                        <div className="mb-2"><Text variant="xLarge" styles={bold}>{locale?.homepage.wikipediaSection.text1}</Text></div>
                         <div>
                             <div className="mb-2">
-                                <Text variant="large">{locale?.homepage.wikipediaSection.text2}</Text>
+                                <Text variant="large" styles={semibold}>{locale?.homepage.wikipediaSection.text2}</Text>
                             </div>
 
                             <div className="mb-3">

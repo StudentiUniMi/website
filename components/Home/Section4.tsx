@@ -1,5 +1,5 @@
 import { Text, IIconProps, PrimaryButton, useTheme } from '@fluentui/react';
-import { semibold } from '../../services/Fonts';
+import { bold, semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
 import Image from 'next/image';
 import Col from 'react-bootstrap/Col';
@@ -18,7 +18,7 @@ const FourthSection = () => {
     return (
         <div className="pb-5 pt-5" style={{ backgroundColor: theme.palette.neutralLighterAlt }}>
             <Container>
-                <div className="mb-4 text-center"><Text variant="xLarge" styles={semibold}>{locale?.homepage.adminsRepresentativesSection.header}</Text></div>
+                <div className="mb-4 text-center"><Text variant="xLarge" styles={bold}>{locale?.homepage.adminsRepresentativesSection.header}</Text></div>
 
                 <Row className="justify-content-around">
 

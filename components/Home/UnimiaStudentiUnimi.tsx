@@ -1,5 +1,5 @@
 import { Text, IIconProps, PrimaryButton, useTheme } from '@fluentui/react';
-import { semibold } from '../../services/Fonts';
+import { bold, semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
 import Image from 'next/image';
 import Col from 'react-bootstrap/Col';
@@ -18,10 +18,10 @@ const UnimiaStudentiUnimi = () => {
 
                 <Row>
                     <Col lg={8} className="mb-4 mb-lg-0">
-                        <div className="mb-2"><Text variant="xLarge" styles={semibold}>{locale?.homepage.unimiaSection.text1}</Text></div>
+                        <div className="mb-2"><Text variant="xLarge" styles={bold}>{locale?.homepage.unimiaSection.text1}</Text></div>
                         <div>
                             <div className="mb-2">
-                                <Text variant="large">{locale?.homepage.unimiaSection.text2}</Text>
+                                <Text variant="large" styles={semibold}>{locale?.homepage.unimiaSection.text2}</Text>
                             </div>
                             <div className="mb-3">
                                 <Text variant="medium">
