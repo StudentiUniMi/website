@@ -326,7 +326,7 @@ class LocalizationService {
                         users: 'Utenti'
                     },
                     services: {
-                        text1: "<Text variant='mega' styles={bold}>Tutti i <Text styles={bold} variant='mega' style={{ color: theme.palette.themePrimary }}>servizi</Text>, in un\'unica pagina</Text>",
+                        text1: "<Text variant='mega' styles={semibold}>Tutti i <Text styles={bold} variant='mega' style={{ color: theme.palette.themePrimary }}>servizi</Text>, in un\'unica pagina</Text>",
                         text2: "Abbiamo realizzato una pagina per centralizzare tutti i collegamenti inerenti all'Università degli Studi di Milano e rendere disponibili anche le guide, strumenti e servizi telematici che abbiamo realizzato.",
                         text3: "Pensi che manchi qualcosa?",
                         text4: 'Faccelo sapere!',
@@ -386,7 +386,7 @@ class LocalizationService {
                         text2: 'Hai contribuito allo sviluppo del network e vorresti comparire in questa lista? Scrivi in privato a <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.'
                     },
                     aboutUs: {
-                        text1: "Siamo un'organizzazione senza fini di lucro, apolitica, ovvero apartitica, e neutrale.",
+                        text1: `Siamo una <Text variant="superLarge" styles={bold} style={{ color: theme.palette.themePrimary }}>organizzazione</Text> senza fini di lucro, apolitica, ovvero apartitica, e neutrale.`,
                         text2: "Il nostro obiettivo è quello di offrire servizi telematici agli studenti dell'Università degli Studi di Milano.",
                         text3: "Qui è possibile vedere tutte le persone che fanno parte del Network StudentiUniMi.",
                         button: { text1: 'Statuto', text2: "Dai un'occhiata al nostro statuto!" },
@@ -724,7 +724,7 @@ class LocalizationService {
                         users: 'Users'
                     },
                     services: {
-                        text1: "<Text variant='mega' styles={bold}>All <Text styles={bold} variant='mega' style={{ color: theme.palette.themePrimary }}>services</Text>, in one central place</Text>",
+                        text1: "<Text variant='mega' styles={semibold}>All <Text styles={bold} variant='mega' style={{ color: theme.palette.themePrimary }}>services</Text>, in one central place</Text>",
                         text2: "We have created a page to centralize all the connections relating to the University of Milan and also make available our guides and telematic services we have created.",
                         text3: "Do you think something is missing?",
                         text4: 'Let us know!',
@@ -784,7 +784,7 @@ class LocalizationService {
                         text2: 'Did you contribute to the development of the Network and you would like to appear in this list? Send a private message to <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.'
                     },
                     aboutUs: {
-                        text1: 'We are a non-profit organization, neutral and not affiliated to any political party.',
+                        text1: `We are a nonprofit, apolitical, meaning nonpartisan, and neutral <Text variant="superLarge" styles={bold} style={{ color: theme.palette.themePrimary }}>organization</Text>.`,
                         text2: "Our goal is to provide online services to the students at the University of Milan.",
                         text3: "Here you can see all the people within the Network StudentiUniMi.",
                         button: { text1: 'Statute', text2: "You can read our statute here!" },

@@ -8,12 +8,11 @@ import { IIconProps } from '@fluentui/react';
 import { bold, semibold } from '../services/Fonts';
 import { resetIds } from '@fluentui/react';
 import { NextSeo } from 'next-seo';
-import Lottie from 'react-lottie';
-import * as lottieOrganization from '../components/Organization/Lottie/73386-problem-solving-team.json';
 import Developer from 'models/Developer';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
+import JsxParser from 'react-jsx-parser';
 
 const Organization: NextPage = () => {
     var theme = useTheme();
@@ -25,15 +24,6 @@ const Organization: NextPage = () => {
 
     const [domLoaded, setDomLoaded] = useState<boolean>(false);
     const icon: IIconProps = { iconName: 'AiOutlineFilePdf' };
-
-    const organizationOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: lottieOrganization,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice'
-        }
-    };
 
     resetIds();
     useEffect(() => { setDomLoaded(true); }, []);
@@ -67,49 +57,38 @@ const Organization: NextPage = () => {
 
             <section className="organization pb-3">
 
-                <div className="pt-5 pb-5" style={{ backgroundColor: theme.palette.neutralLighter }}>
+                <div className="pt-5 pb-5 text-center" style={{ backgroundColor: theme.palette.neutralLighter }}>
                     <Container>
+                        <div className="mb-3" style={{ maxWidth: 900, margin: '0 auto' }}>
+                            <h1>
+                                <Text variant="superLarge" styles={semibold}>
+                                    <JsxParser bindings={{ theme: theme, semibold: semibold, bold: bold }} components={{ Text, Link }} jsx={locale?.aboutUs.text1} />
+                                </Text>
+                            </h1>
+                        </div>
 
-                        <Row>
-                            <Col lg={4} className="text-center">
-                                {/* @ts-ignore */}
-                                <Lottie options={organizationOptions}
-                                    height={250}
-                                    width={250}
-                                    isClickToPauseDisabled={true}
-                                    style={{ cursor: 'default' }}
-                                />
-                            </Col>
+                        <div className="mb-4" style={{ maxWidth: 600, margin: '0 auto' }}>
+                            <Text variant="xLarge" styles={semibold}>
+                                <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.aboutUs.text2} />
+                            </Text>
+                        </div>
 
-                            <Col lg={8} className="mb-2">
-                                <div className="mb-3">
-                                    <h1>
-                                        <Text variant="xLargePlus" styles={bold}>{locale?.aboutUs.text1}</Text>
-                                    </h1>
-                                </div>
-
-                                <div className="mb-2">
-                                    <Text variant="large" styles={semibold}>{locale?.aboutUs.text2}</Text>
-                                </div>
-
-                                <div className="mb-3">
-                                    <Text variant="medium">{locale?.aboutUs.text3}</Text>
-                                </div>
-
-                                <div className="mb-2">
-                                    <CompoundButton theme={theme} secondaryText={locale?.aboutUs.button.text2} href="https://github.com/StudentiUniMi/docs/raw/main/statuto.pdf" style={{ textDecoration: 'none', boxShadow: theme.effects.elevation8 }} iconProps={icon}>
-                                        {locale?.aboutUs.button.text1}
-                                    </CompoundButton>
-                                </div>
-                            </Col>
-                        </Row>
+                        <CompoundButton 
+                            theme={theme} 
+                            secondaryText={locale?.aboutUs.button.text2} 
+                            href="https://github.com/StudentiUniMi/docs/raw/main/statuto.pdf" 
+                            style={{ textDecoration: 'none', boxShadow: theme.effects.elevation8 }} 
+                            iconProps={icon}
+                        >
+                            {locale?.aboutUs.button.text1}
+                        </CompoundButton>
 
                     </Container>
                 </div>
 
                 <div className="pt-5 pb-5">
                     <div className="mb-4 text-center">
-                        <Text variant="xLarge" styles={bold} style={{ color: theme.palette.themeDarkAlt }}>{locale?.aboutUs.header1}</Text>
+                        <Text variant="xLargePlus" styles={bold}>{locale?.aboutUs.header1}</Text>
                     </div>
 
                     <div style={{ maxWidth: 230, marginLeft: 'auto', marginRight: 'auto' }}>
@@ -128,7 +107,7 @@ const Organization: NextPage = () => {
                 <div className="pb-5">
                     <Container>
                         <div className="mb-4 text-center">
-                            <Text variant="xLarge" styles={bold} style={{ color: theme.palette.themeDarkAlt }}>{locale?.aboutUs.header2}</Text>
+                            <Text variant="xLargePlus" styles={bold}>{locale?.aboutUs.header2}</Text>
                         </div>
 
                         <Row className="justify-content-center" style={{ rowGap: 15 }}>
@@ -158,7 +137,7 @@ const Organization: NextPage = () => {
                 <div className="pb-5">
                     <Container>
                         <div className="mb-4 text-center">
-                            <Text variant="xLarge" styles={bold} style={{ color: theme.palette.themeDarkAlt }}>{locale?.contributors.header1}</Text>
+                            <Text variant="xLargePlus" styles={bold}>{locale?.contributors.header1}</Text>
                         </div>
 
                         <Row className="justify-content-center" style={{ rowGap: 15 }}>
