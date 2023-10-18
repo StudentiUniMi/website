@@ -88,7 +88,7 @@ const Organization: NextPage = () => {
 
                 <div className="pt-5 pb-5">
                     <div className="mb-4 text-center">
-                        <Text variant="xLargePlus" styles={bold}>{locale?.aboutUs.header1}</Text>
+                        <Text variant="xLargePlus" styles={semibold}>{locale?.aboutUs.header1}</Text>
                     </div>
 
                     <div style={{ maxWidth: 230, marginLeft: 'auto', marginRight: 'auto' }}>
@@ -107,7 +107,7 @@ const Organization: NextPage = () => {
                 <div className="pb-5">
                     <Container>
                         <div className="mb-4 text-center">
-                            <Text variant="xLargePlus" styles={bold}>{locale?.aboutUs.header2}</Text>
+                            <Text variant="xLargePlus" styles={semibold}>{locale?.aboutUs.header2}</Text>
                         </div>
 
                         <Row className="justify-content-center" style={{ rowGap: 15 }}>
@@ -137,7 +137,7 @@ const Organization: NextPage = () => {
                 <div className="pb-5">
                     <Container>
                         <div className="mb-4 text-center">
-                            <Text variant="xLargePlus" styles={bold}>{locale?.contributors.header1}</Text>
+                            <Text variant="xLargePlus" styles={semibold}>{locale?.contributors.header1}</Text>
                         </div>
 
                         <Row className="justify-content-center" style={{ rowGap: 15 }}>
