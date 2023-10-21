@@ -36,7 +36,7 @@ const representativesEndpoint = '/representatives';
 const typingDegreesEndpoint = '/typing-degrees';
 const searchDegreesEndpoint = '/search-degrees';
 const adminsEndpoint = '/admins';
-const extraGroupsEndpoint = '/extra-groups';
+const featuredGroupsEndpoint = '/featured-groups';
 
 /* Main class to build response */
 class Result<T>
@@ -150,7 +150,7 @@ export async function getDegreeAdmins(degreeSlug: string): Promise<Result<Array<
  * @returns {ExtraGroups} Extra Groups
  */
 export async function getExtraGroups(): Promise<Result<ExtraGroups>> {
-    return getAsync<ExtraGroups>(`${apiEndpoint}${extraGroupsEndpoint}`);
+    return getAsync<ExtraGroups>(`${apiEndpoint}${featuredGroupsEndpoint}`);
 };
 
 

@@ -64,6 +64,15 @@ const AdditionalGroup = (props: Props) => {
                         bgColor={theme.palette.neutralLight}
                         className="m-1" 
                     />
+                    {group.user_count && <Chip 
+                        label={`${group.user_count} ${locale?.groups.users}`} 
+                        size="small" 
+                        outlined
+                        textColor={theme.palette.black}
+                        bgColor={theme.palette.neutralLight}
+                        theme={theme}
+                        className="m-1" 
+                    />}
                 </Text>
                 <Text variant="small" styles={helpfulTextStyles} className="mb-2">
                     <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link, Icon }} jsx={"<Icon iconName='Info' /> " + description} />
