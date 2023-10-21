@@ -6,7 +6,7 @@
 
 import { Text, Icon, FontWeights, ITextStyles, Persona, Link, TooltipHost, IIconProps, useTheme, PrimaryButton } from '@fluentui/react';
 import { Card, ICardTokens } from "@fluentui/react-cards";
-import { preventDefault, preventVisibleHref } from 'services/Utils';
+import { formatLowerNumber, preventDefault, preventVisibleHref } from 'services/Utils';
 import { semibold } from '../../services/Fonts';
 import { useContext } from 'react';
 import { ExtraGroup } from 'models/Models';
@@ -65,7 +65,7 @@ const AdditionalGroup = (props: Props) => {
                         className="m-1" 
                     />
                     {group.user_count && <Chip 
-                        label={`${group.user_count} ${locale?.groups.users}`} 
+                        label={`${formatLowerNumber(group.user_count)}+ ${locale?.groups.users}`} 
                         size="small" 
                         outlined
                         textColor={theme.palette.black}
