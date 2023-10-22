@@ -103,7 +103,19 @@ export const preventDefault = (e: any, isPolicyAccepted: boolean = false) => {
 export const preventVisibleHref = (isPolicyAccepted: boolean = false, href: string) => {
   if (!isPolicyAccepted) return undefined;
   return href;
-}
+};
+
+
+/**
+ * Function to adapt users_count (example: 5131 users => 5100+ users)
+ * @param {number} num 
+ * @returns {number} result
+ */
+export const formatLowerNumber = (num: number): number => {
+  const mult = Math.pow(10, Math.floor(Math.log10(num)));
+  return Math.floor(num / mult) * mult;
+};
+
 
 export const redirectToLink = (link: string): void => {
     window.open(link, '_blank');

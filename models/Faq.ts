@@ -1,4 +1,6 @@
+import { LocalizedField } from "./Models"
+
 export default interface Faq {
-    question: any
-    answer: any 
-}
+    question: LocalizedField
+    answer: LocalizedField 
+};

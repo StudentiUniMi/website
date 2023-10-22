@@ -13,11 +13,13 @@ export interface Context {
     darkTheme: PartialTheme,
     isPolicyAccepted: boolean,
     isPolicyDialogOpen: boolean,
+    isHeaderPinned: boolean,
     changeTheme: (theme: string) => void,
     changePalette: (paletteId: string) => void,
     changeLanguage: (language: string) => void,
     acceptPrivacyPolicy: () => void,
-    togglePolicyDialog: () => void
+    togglePolicyDialog: () => void,
+    setIsHeaderPinned: (isHeaderPinned: boolean) => void
 };
 
 const defaultState = { 
@@ -26,13 +28,15 @@ const defaultState = {
     language: "it",
     lightTheme: {},
     darkTheme: {},
+    isHeaderPinned: true,
     isPolicyAccepted: false, 
     isPolicyDialogOpen: false, 
     changeTheme: () => {},
     changePalette: () => {},
     changeLanguage: () => {},
     acceptPrivacyPolicy: () => {}, 
-    togglePolicyDialog: () => {}
+    togglePolicyDialog: () => {},
+    setIsHeaderPinned: () => {}
 };
 
 const GlobalContext = createContext<Context>(defaultState);
@@ -47,6 +51,8 @@ export const GlobalProvider = ({ children }: any) => {
     if (cookies.theme === undefined) setCookie("theme", Theme.LIGHT, { path: "/", expires: date });
     if (cookies.palette === undefined) setCookie("palette", "a", { path: "/", expires: date });
     if (cookies.isPolicyAccepted === undefined) setCookie("isPolicyAccepted", false, { path: "/", expires: policyDate });
+
+    const [isHeaderPinned, setIsHeaderPinned] = useState<boolean>(true);
     
     const [isPolicyAccepted, setIsPolicyAccepted] = useState<boolean>(cookies["isPolicyAccepted"] === 'true' ? true : false ?? false);
     const [isPolicyDialogOpen, setIsPolicyDialogOpen] = useState<boolean>(false);
@@ -107,11 +113,13 @@ export const GlobalProvider = ({ children }: any) => {
             darkTheme,
             isPolicyAccepted, 
             isPolicyDialogOpen, 
+            isHeaderPinned,
             changeTheme,
             changePalette,
             changeLanguage,
             acceptPrivacyPolicy, 
-            togglePolicyDialog 
+            togglePolicyDialog,
+            setIsHeaderPinned
         }}>
             {children}
         </GlobalContext.Provider>

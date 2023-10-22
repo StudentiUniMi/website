@@ -297,7 +297,7 @@ class LocalizationService {
                     groups: {
                         title: "Quale tipologia di gruppi cerchi?",
                         universityGroups: {
-                            label: "Gruppi universitari",
+                            label: `<Text variant="mega" style={{ lineHeight: 1.3, fontWeight: 700, textAlign: 'center' }}>Gruppi <Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega">universitari</Text></Text>`,
                             title: "Unisciti ai nostri gruppi universitari",
                             description: "Parla e discuti con altri studenti riguardo tutti i topic di cui hai bisogno.",
                             description2: "Pensi manchi qualche gruppo in particolare?",
@@ -306,17 +306,17 @@ class LocalizationService {
                             }
                         },
                         announcementsGroups: {
-                            label: "Gruppi per gli annunci",
-                            title: "Posta un annuncio sui nostri gruppi appositi",
+                            label: `<Text variant="mega" style={{ lineHeight: 1.3, fontWeight: 700, textAlign: 'center' }}>Gruppi per gli <Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega">annunci</Text></Text>`,
+                            title: "Posta un annuncio sui nostri gruppi appositi.",
                             description: "Abbiamo creato dei gruppi dedicati esclusivamente alla pubblicazione di annunci sia di ricerca che di offerta, come ad esempio per i libri ed appunti e le ripetizioni.",
-                            description2: "Per postare un annuncio segui il template che trovi nei messaggi fissati quando entri.",
+                            description2: `<Text variant="medium">Per postare un annuncio segui il <Text variant='medium' styles={bold} style={{ color: theme.palette.themeDarkAlt }}>template</Text> che trovi nei messaggi fissati quando entri.</Text>`,
                             card: {
                                 type: 'Gruppo annunci'
                             }
                         },
                         studentsAssociations: {
                             label: "Associazioni studentesche",
-                            title: "Dai un'occhiata alle associazioni studentesche UniMi",
+                            title: `<Text variant="xLargePlus" styles={bold}>Dai un'occhiata alle <Text variant="xLargePlus" styles={bold} style={{ color: theme.palette.themeDarkAlt }}>associazioni studentesche</Text> UniMi</Text>`,
                             description: "Non sempre gli studenti sanno quante associazioni studentesche ci sono lì fuori!",
                             description2: "Se vorresti la tua associazione studentesca aggiunta nella lista scrivi ad un <Link href='/organization'>membro dello staff</Link>.",
                             card: {
@@ -326,8 +326,8 @@ class LocalizationService {
                         users: 'Utenti'
                     },
                     services: {
-                        text1: "<Text variant='xLargePlus' styles={bold}>Tutti i <Text styles={bold} variant='xLargePlus' style={{ color: theme.palette.themePrimary }}>servizi</Text>, in un\'unica pagina.</Text>",
-                        text2: "Abbiamo realizzato una pagina per centralizzare tutti i collegamenti inerenti all'Università degli Studi di Milano e rendere disponibili anche le guide, strumenti e servizi telematici che abbiamo realizzato e messo a disposizione.",
+                        text1: "<Text variant='mega' styles={semibold}>Tutti i <Text styles={bold} variant='mega' style={{ color: theme.palette.themePrimary }}>servizi</Text>, in un\'unica pagina</Text>",
+                        text2: "Abbiamo realizzato una pagina per centralizzare tutti i collegamenti inerenti all'Università degli Studi di Milano e rendere disponibili anche le guide, strumenti e servizi telematici che abbiamo realizzato.",
                         text3: "Pensi che manchi qualcosa?",
                         text4: 'Faccelo sapere!',
                         selectSubSection: "Seleziona la categoria che ti interessa",
@@ -386,7 +386,7 @@ class LocalizationService {
                         text2: 'Hai contribuito allo sviluppo del network e vorresti comparire in questa lista? Scrivi in privato a <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.'
                     },
                     aboutUs: {
-                        text1: "Siamo un'organizzazione senza fini di lucro, apolitica, ovvero apartitica, e neutrale.",
+                        text1: `Siamo una <Text variant="superLarge" styles={bold} style={{ color: theme.palette.themePrimary }}>organizzazione</Text> senza fini di lucro, apolitica, ovvero apartitica, e neutrale.`,
                         text2: "Il nostro obiettivo è quello di offrire servizi telematici agli studenti dell'Università degli Studi di Milano.",
                         text3: "Qui è possibile vedere tutte le persone che fanno parte del Network StudentiUniMi.",
                         button: { text1: 'Statuto', text2: "Dai un'occhiata al nostro statuto!" },
@@ -695,7 +695,7 @@ class LocalizationService {
                     groups: {
                         title: "What type of groups are you looking for?",
                         universityGroups: {
-                            label: "University groups",
+                            label: `<Text variant="mega" style={{ lineHeight: 1.3, fontWeight: 700, textAlign: 'center' }}>University <Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega">groups</Text></Text>`,
                             title: "Join the university groups of our Network",
                             description: "Talk and discuss with other students about all the topics you need.",
                             description2: "Do you think any particular group is missing?",
@@ -704,17 +704,17 @@ class LocalizationService {
                             }
                         },
                         announcementsGroups: {
-                            label: "Announcements groups",
-                            title: "Post an ad on our dedicated groups",
+                            label: `<Text variant="mega" style={{ lineHeight: 1.3, fontWeight: 700, textAlign: 'center' }}>Announcements<Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega"> groups</Text></Text>`,
+                            title: "Post an ad on our dedicated groups.",
                             description: "We have created groups dedicated exclusively to posting both want and offer ads, such as for books and notes and private lessons.",
-                            description2: "To post an ad follow the template you find in the posts set when you enter.",
+                            description2: `<Text variant="medium">To post an ad follow the <Text variant='medium' styles={bold} style={{ color: theme.palette.themeDarkAlt }}>template</Text> that you can find in the pinned messages set when you enter.</Text>`,
                             card: {
                                 type: 'Announcements group'
                             }
                         },
                         studentsAssociations: {
                             label: "Students associations",
-                            title: "Take a look at UniMi Students Associations",
+                            title: `<Text variant="xLargePlus" styles={bold}>Take a look at the <Text variant="xLargePlus" styles={bold} style={{ color: theme.palette.themeDarkAlt }}>UniMi student associations</Text></Text>`,
                             description: "Students don't always know how many student associations are out there!",
                             description2: "If you would like your student association added to the list write to a <Link href='/organization'>staff member</Link>.",
                             card: {
@@ -724,7 +724,7 @@ class LocalizationService {
                         users: 'Users'
                     },
                     services: {
-                        text1: "<Text variant='xLargePlus' styles={bold}>All <Text styles={bold} variant='xLargePlus' style={{ color: theme.palette.themePrimary }}>services</Text>, in one central place.</Text>",
+                        text1: "<Text variant='mega' styles={semibold}>All <Text styles={bold} variant='mega' style={{ color: theme.palette.themePrimary }}>services</Text>, in one central place</Text>",
                         text2: "We have created a page to centralize all the connections relating to the University of Milan and also make available our guides and telematic services we have created.",
                         text3: "Do you think something is missing?",
                         text4: 'Let us know!',
@@ -784,7 +784,7 @@ class LocalizationService {
                         text2: 'Did you contribute to the development of the Network and you would like to appear in this list? Send a private message to <Link href="https://t.me/giuseppetm">@giuseppetm</Link>.'
                     },
                     aboutUs: {
-                        text1: 'We are a non-profit organization, neutral and not affiliated to any political party.',
+                        text1: `We are a nonprofit, apolitical, meaning nonpartisan, and neutral <Text variant="superLarge" styles={bold} style={{ color: theme.palette.themePrimary }}>organization</Text>.`,
                         text2: "Our goal is to provide online services to the students at the University of Milan.",
                         text3: "Here you can see all the people within the Network StudentiUniMi.",
                         button: { text1: 'Statute', text2: "You can read our statute here!" },
@@ -826,7 +826,7 @@ class LocalizationService {
             groups: { title: "Tutti i gruppi | Network StudentiUniMi", description: "Gruppi universitari, per gli annunci e associazioni studentesche dell'Università degli Studi di Milano." },
             services: { title: "Servizi e link rapidi | Network StudentiUniMi", description: "Tutti i servizi e i link rapidi alle risorse dell'Università degli Studi di Milano: iscrizioni esami, verbalizzazioni voti, webmail, e molto altro. Un'alternativa veloce a UNIMIA." },
             rules: { title: "Regolamento dei gruppi | Network StudentiUniMi", description: "Il regolamento ufficiale dei gruppi Telegram del Network StudentiUniMi, il più grande network studentesco dell'Università degli Studi di Milano." },
-            university: { title: "Informazioni dall'Ateneo e rappresentanti | Network StudentiUniMi", description: "Rimani aggiornato con tutte le informazioni e i rappresentanti dell'Università degli Studi di Milano, offerto dal Network StudentiUniMi." },
+            university: { title: "Informazioni dall'Ateneo, graduatorie, mappe universitarie e rappresentanti | Network StudentiUniMi", description: "Rimani aggiornato con tutte le informazioni, graduatorie, mappe universitarie e i rappresentanti dell'Università degli Studi di Milano, offerto dal Network StudentiUniMi." },
             organization: { title: "Chi siamo | Network StudentiUniMi", description: "Chi siamo? Scopri l'organizzazione dietro il Network StudentiUniMi, il più grande network studentesco dell'Università degli Studi di Milano." },
             degreeLoaded: { title1: 'Gruppi e risorse di ', title2: ' | Network StudentiUniMi', description1: 'Tutte le risorse e i link dei gruppi Telegram di ', description2: " dell'Università degli Studi di Milano, offerti dal Network StudentiUniMi." },
             notFound: { title: "La pagina che stai cercando non esiste | Network StudentiUniMi", description: "Uh oh, non riusciamo a trovare la pagina che stai cercando. Forse puoi provare a tornare alla homepage e cercare da lì." },
@@ -841,7 +841,7 @@ class LocalizationService {
             groups: { title: "Groups | Network StudentiUniMi", description: "University groups, for announcements and student associations of the University of Milan." },
             services: { title: "Services | Network StudentiUniMi", description: "All services and rapid links to the University of Milan's resources: exams, grades, webmail and much more. A very fast alternative UNIMIA replacement." },
             rules: { title: "Groups rules | Network StudentiUniMi", description: "The official rules of the StudentiUniMi Network, the largest student network of the University of Milan." },
-            university: { title: "University informations and redirects | Network StudentiUniMi", description: "Stay up-to-date with all the informations and representatives of the University of Milan, offered by the StudentiUniMi Network." },
+            university: { title: "University informations, rankings, maps and representatives | Network StudentiUniMi", description: "Stay up-to-date with all the informations and representatives of the University of Milan, offered by the StudentiUniMi Network." },
             organization: { title: "Organization | Network StudentiUniMi", description: "Who are we? Discover the organization behind the StudentiUniMi Network, the largest network of the University of Milan." },
             degreeLoaded: { title1: 'Groups and resources of ', title2: ' | Network StudentiUniMi', description1: 'All the resources and links of the Telegram groups of ', description2: ' of the University of Milan, offered by StudentiUniMi Network.' },
             notFound: { title: "The page you were looking for does not exist | Network StudentiUniMi", description: "Uh oh, we can't seem to find the page you're looking for. Maybe you can try going to the homepage and look again from there." },

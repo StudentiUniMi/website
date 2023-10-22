@@ -1,8 +1,9 @@
-import { Text, IIconProps, Image, DefaultButton, Icon, useTheme } from '@fluentui/react';
+import { Text, IIconProps, DefaultButton, Icon, useTheme } from '@fluentui/react';
 import { useContext } from 'react';
-import { semibold } from '../../services/Fonts';
+import { bold, semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
 import { preventDefault, preventVisibleHref } from 'services/Utils';
+import Image from 'next/image';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../../services/LocalizationService";
@@ -23,12 +24,18 @@ const SecondSection = () => {
 
                 <Row>
                     <Col lg={4} className="text-center mb-4 mb-lg-0">
-                        <Image src={'/images/home/2.png'} alt="Network main redirects" style={{ display: 'inline-block', width: 280 }} />
+                        <Image 
+                            src={'/images/home/2.png'} 
+                            alt="Network main redirects" 
+                            objectFit={'contain'}
+                            width={280}
+                            height={210}
+                        />
                     </Col>
 
                     <Col lg={8}>
                         <div className="mb-4">
-                            <Text variant="xLarge" styles={semibold}>{locale?.homepage.section3.header}</Text>
+                            <Text variant="xLarge" styles={bold}>{locale?.homepage.section3.header}</Text>
                         </div>
 
                         <div>

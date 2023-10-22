@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { Text, Image, Dialog, DialogType, DialogFooter, SearchBox, ISearchBoxStyles } from '@fluentui/react';
+import { Text, Dialog, DialogType, DialogFooter, SearchBox, ISearchBoxStyles } from '@fluentui/react';
 import { IconButton, IIconProps, ITooltipHostStyles, Link, PrimaryButton, TooltipHost, useTheme } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import { useRouter } from 'next/router';
@@ -8,6 +8,7 @@ import { bold, semibold } from '../../services/Fonts';
 import { ISuggestionItem } from '../../components/Courses/Autocomplete_types';
 import { useBoolean } from "@fluentui/react-hooks";
 import { NextSeo } from 'next-seo';
+import { LocalizedField } from "models/Models";
 import * as Scroll from 'react-scroll';
 import * as animationData from '../../components/Courses/Lottie/128040-searching.json';
 import Lottie from 'react-lottie';
@@ -17,7 +18,7 @@ import Marquee from "react-fast-marquee";
 import Chip from "components/Atoms/Chip";
 import DegreesResult from "components/Courses/DegreesResult";
 import GroupTypes from "components/Atoms/GroupTypes";
-import { LocalizedField } from "models/Models";
+import Image from 'next/image';
 
 const Courses = () => {
     var theme = useTheme();
@@ -288,7 +289,13 @@ const Courses = () => {
                     </div>
 
                     <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 5 }}>
-                        <Image src={'/images/message/error.png'} alt="Server error" style={{ width: 200 }} />
+                        <Image 
+                            src={'/images/message/error.png'} 
+                            alt="Server error" 
+                            objectFit={'contain'}
+                            width={250}
+                            height={250} 
+                        />
                     </div>
 
                     <div>

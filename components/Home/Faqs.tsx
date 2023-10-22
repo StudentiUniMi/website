@@ -3,7 +3,7 @@ import JsxParser from 'react-jsx-parser';
 import Chip from '../Atoms/Chip';
 import { Container } from 'react-bootstrap';
 import { Link, Text, useTheme, mergeStyleSets } from '@fluentui/react';
-import { semibold } from '../../services/Fonts';
+import { bold, semibold } from '../../services/Fonts';
 import { getFaqs } from '../../services/Requests';
 import {
     Accordion,
@@ -65,7 +65,7 @@ const Faqs = () => {
                 </div>
 
                 <div className="mb-2">
-                    <Text variant="xLarge">{locale?.homepage.faqsSection.header}</Text>
+                    <Text variant="xLarge" styles={bold}>{locale?.homepage.faqsSection.header}</Text>
                 </div>
 
                 <div className="mb-4">

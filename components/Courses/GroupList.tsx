@@ -1,8 +1,9 @@
-import React, { FormEvent, MouseEvent, useCallback, useEffect, useRef, useState } from "react";
+import React, { CSSProperties, FormEvent, MouseEvent, useCallback, useContext, useEffect, useRef, useState } from "react";
 import { Text, Toggle, Icon, IRectangle, List, TextField, Dropdown, IDropdownOption, mergeStyleSets, useTheme } from "@fluentui/react";
 import { Container } from 'react-bootstrap';
 import { semibold } from '../../services/Fonts';
 import { Degree, CourseDegree } from '../../models/Models';
+import * as Scroll from 'react-scroll';
 import ErrorMessage from "../Atoms/ErrorMessage";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -10,6 +11,7 @@ import GroupItem from './GroupItem';
 import LocalizationService from "../../services/LocalizationService";
 import Message from '../Atoms/Message';
 import Chip from "components/Atoms/Chip";
+import GlobalContext from "services/GlobalContext";
 
 interface Props { 
     degree?: Degree, 
@@ -42,6 +44,8 @@ const CourseList= (props: Props) => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
+
+    const { isHeaderPinned } = useContext(GlobalContext);
     
     const [filtersToggle, setFiltersToggle] = useState<boolean>(false);
 
@@ -49,6 +53,17 @@ const CourseList= (props: Props) => {
     const rowHeight = useRef(0);
     const rowsPerPage = useRef(0);
     const MAX_ROW_HEIGHT = 265;
+
+    const subHeader: CSSProperties = { 
+        backgroundColor: theme.palette.neutralLighter, 
+        borderTop: `1px solid ${theme.palette.neutralQuaternary}`,
+        borderBottom: `1px solid ${theme.palette.neutralQuaternary}`,
+        padding: '10px 0px', 
+        position: 'sticky',
+        top: isHeaderPinned ? 44 : 0,
+        transition: 'top 0.2s ease-in-out 0s',
+        zIndex: 2
+    };
     
     var classNames = mergeStyleSets({
         listGrid: {
@@ -59,6 +74,18 @@ const CourseList= (props: Props) => {
             margin: '1px'
         }
     });
+
+    var Element = Scroll.Element;
+    var scroller = Scroll.scroller;
+
+    const scrollToGroupsFilters = () => {
+        scroller.scrollTo('groups-filters', {
+            duration: 500,
+            delay: 100,
+            smooth: true,
+            offset: -100
+        });
+    };
     
     const getItemCountForPage = useCallback((itemIndex?: number, surfaceRect?: IRectangle) => {
         if (itemIndex === 0) {
@@ -105,7 +132,7 @@ const CourseList= (props: Props) => {
     if (nameFilter !== "") { filteredCourses = filteredCourses.filter(x => x.course.name.toLocaleLowerCase().includes(nameFilter.toLocaleLowerCase())); }
     if (semesterFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.semester === semesterFilter); }
     if (yearFilter !== 0) { filteredCourses = filteredCourses.filter(x => x.year === yearFilter); }
-
+                 
     const toggleGroupsFilters = (_ev: MouseEvent<HTMLElement>, checked?: boolean) => {
         setFiltersToggle(checked!);
         resetGroupsFilters();
@@ -120,6 +147,10 @@ const CourseList= (props: Props) => {
     useEffect( () => {
         resetGroupsFilters();
     }, [props.degree]);
+
+    useEffect(() => {
+        if (filtersToggle) scrollToGroupsFilters();
+    }, [filtersToggle]);
 
     const buildGroupsNumberString = (n: number) => {
         if (n === 0) {
@@ -141,7 +172,7 @@ const CourseList= (props: Props) => {
 
     return (       
         <div className="groups-list mb-4" id="groups">
-            <div className="pb-2 pt-2 mb-4" style={{ backgroundColor: theme.palette.neutralLighter }}>
+            <div className="pb-2 pt-2 mb-4" style={subHeader}>
                 <Container className="d-flex justify-content-between align-items-center" style={{ gap: 8 }}>
                     <div className="d-flex flex-row align-items-center" style={{ gap: 5 }}>
                         <Text variant="medium" styles={semibold}>
@@ -180,39 +211,42 @@ const CourseList= (props: Props) => {
             </div>
             
             <Container>
-                { filtersToggle ? 
-                    <div className="mb-4 text-center">
-                        <Row className="justify-content-center">
-                            <Col xl={4} lg={4} md={4} sm={12} xs={12}>
-                                <TextField
-                                    label={locale?.courses.nameFilter}
-                                    onChange={onNameFilterChanged}   
-                                    disabled={props.courses.length === 0}      
-                                    value={nameFilter}      
-                                />
-                            </Col>
-                            <Col xl={4} lg={4} md={4} sm={12} xs={12}>
-                                {
-                                    <Dropdown 
-                                        options={yearFilterOptions}
-                                        label={locale?.courses.yearFilter}
-                                        onChange={onYearFilterChanged}
-                                        selectedKey={yearFilter}
-                                        disabled={props.courses.length === 0 || props.degree?.slug === 'magistrale_informatica'} /* To-do: must decide if we need an apposite field to disable year selection */
+                { filtersToggle ?
+                    /* @ts-ignore */
+                     <Element name="groups-filters">
+                        <div className="mb-4 text-center">
+                            <Row className="justify-content-center">
+                                <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+                                    <TextField
+                                        label={locale?.courses.nameFilter}
+                                        onChange={onNameFilterChanged}   
+                                        disabled={props.courses.length === 0}      
+                                        value={nameFilter}      
                                     />
-                                }
-                            </Col>
-                            <Col xl={4} lg={4} md={4} sm={12} xs={12}>
-                                <Dropdown 
-                                    options={semesterFilterOptions}
-                                    label={locale?.courses.semesterFilter}
-                                    onChange={onSemesterFilterChanged}
-                                    selectedKey={semesterFilter}
-                                    disabled={props.courses.length === 0}
-                                />
-                            </Col>
-                        </Row>
-                    </div> : <></>
+                                </Col>
+                                <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+                                    {
+                                        <Dropdown 
+                                            options={yearFilterOptions}
+                                            label={locale?.courses.yearFilter}
+                                            onChange={onYearFilterChanged}
+                                            selectedKey={yearFilter}
+                                            disabled={props.courses.length === 0 || props.degree?.slug === 'magistrale_informatica'} /* To-do: must decide if we need an apposite field to disable year selection */
+                                        />
+                                    }
+                                </Col>
+                                <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+                                    <Dropdown 
+                                        options={semesterFilterOptions}
+                                        label={locale?.courses.semesterFilter}
+                                        onChange={onSemesterFilterChanged}
+                                        selectedKey={semesterFilter}
+                                        disabled={props.courses.length === 0}
+                                    />
+                                </Col>
+                            </Row>
+                        </div>
+                    </Element> : <></>
                 }
 
                 {

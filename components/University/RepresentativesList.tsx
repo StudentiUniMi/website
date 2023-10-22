@@ -13,7 +13,7 @@ const RapresentativesList = (props: Props) => {
     const locale = LocalizationService.strings();
 
     return (
-        <div className="representatives pb-4 pt-4">
+        <div className="representatives pb-4 pt-4" style={{ marginTop: -35 }}>
             {
                 props.loadingRepresentatives || props.errorLoadingRepresentatives ? <LoadingSpinner loading={props.loadingRepresentatives} error={props.errorLoadingRepresentatives} />
                 : props.data.length === 0 ?
