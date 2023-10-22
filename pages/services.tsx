@@ -3,7 +3,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
 import GlobalContext from 'services/GlobalContext';
-import { Text, DocumentCardPreview, IDocumentCardPreviewProps, Link, Pivot, PivotItem, FontSizes, useTheme } from '@fluentui/react';
+import { Text, DocumentCardPreview, IDocumentCardPreviewProps, Link, Pivot, PivotItem, FontSizes, useTheme, mergeStyleSets } from '@fluentui/react';
 import { NextSeo } from 'next-seo';
 import { Container } from 'react-bootstrap';
 import { Card, ICardTokens } from '@fluentui/react-cards';
@@ -45,7 +45,7 @@ const Services = () => {
         }
     };
 
-    let cardProps = (iconName?: string): IDocumentCardPreviewProps => {
+    const cardProps = (iconName?: string): IDocumentCardPreviewProps => {
         return {
             previewImages: [ 
                 {
@@ -59,6 +59,21 @@ const Services = () => {
             styles: { previewIcon: { backgroundColor: theme.palette.neutralLighter }, root: { borderBottom: '0px' } },
         }
     };
+
+    const hoverStyle = mergeStyleSets({
+        root: {
+            display: 'inline-block',
+            width: '100%',
+            transition: '0.1s all ease',
+            border: `1px solid rgba(255, 255, 255, 0)`,
+            selectors: {
+                ':hover': {
+                    backgroundColor: theme.palette.neutralLight,
+                    border: `1px solid ${theme.palette.neutralQuaternaryAlt}`
+                }
+            },
+        },
+    });
     
     return (
         <>
@@ -139,7 +154,7 @@ const Services = () => {
                             <Row>
                                 {redirects.map((x, i) =>
                                     <Col xl={4} lg={6} md={6} sm={12} xs={12} className="mb-3" key={i}>
-                                        <Link href={x.link ?? ""} className="text-decoration-none">
+                                        <Link href={x.link ?? ""} className="text-decoration-none" styles={hoverStyle}>
                                             <Card label={x.name?.it} horizontal tokens={cardTokens} style={{ border: '0px', maxWidth: 'none', cursor: 'pointer' }}>
                                                 <Card.Item fill>
                                                     <DocumentCardPreview {...cardProps(x.icon)} />
@@ -167,7 +182,7 @@ const Services = () => {
                             <Row>
                                 {guides.map((x, i) =>
                                     <Col xl={4} lg={6} md={6} sm={12} xs={12} className="mb-3" key={i}>
-                                        <Link href={x.link ?? ""} className="text-decoration-none">
+                                        <Link href={x.link ?? ""} className="text-decoration-none" styles={hoverStyle}>
                                             <Card label={x.name?.it} horizontal tokens={cardTokens} style={{ border: '0px', maxWidth: 'none', cursor: 'pointer' }}>
                                                 <Card.Item fill>
                                                     <DocumentCardPreview {...cardProps(x.icon)} />
@@ -195,7 +210,12 @@ const Services = () => {
                             <Row>
                                 {tools.map((x, i) =>
                                     <Col xl={4} lg={6} md={6} sm={12} xs={12} className="mb-3" key={i}>
-                                        <Link href={preventVisibleHref(isPolicyAccepted, x.link ?? "")} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()} className="text-decoration-none">
+                                        <Link 
+                                            styles={hoverStyle} 
+                                            href={preventVisibleHref(isPolicyAccepted, x.link ?? "")} 
+                                            onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()} 
+                                            className="text-decoration-none"
+                                        >
                                             <Card label={x.name?.it} horizontal tokens={cardTokens} style={{ border: '0px', maxWidth: 'none', cursor: 'pointer' }}>
                                                 <Card.Item fill>
                                                     <DocumentCardPreview {...cardProps(x.icon)} />
