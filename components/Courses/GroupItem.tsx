@@ -1,4 +1,4 @@
-import { Text, Icon, TooltipHost } from '@fluentui/react';
+import { Text, Icon, TooltipHost, IContextualMenuItem } from '@fluentui/react';
 import { Card, ICardTokens } from "@fluentui/react-cards";
 import { FontWeights, ITextStyles, Link, Persona, useTheme } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
@@ -26,7 +26,7 @@ const CourseItem = (props: Props) => {
     const theme = useTheme();
     const locale = LocalizationService.strings();
     const { isPolicyAccepted, togglePolicyDialog } = useContext(GlobalContext);
-    let data = props.data;
+    const data = props.data;
 
     const cfuStyle: ITextStyles = { root: { fontWeight: FontWeights.semibold, color: theme.palette.themeDark } };
     const professorBox = { display: 'flex', alignItems: 'center', backgroundColor: theme.palette.neutralLighter, padding: "2px 6px", borderRadius: 3 };
@@ -47,6 +47,8 @@ const CourseItem = (props: Props) => {
     var semesterText: string | null = null;
     var mainText: JSX.Element | null = null;
 
+    const isInviteLinkEmpty = data.course.group?.invite_link === "" || data.course.group?.invite_link === null;
+
     /* Groups data initialization */
     if (data.course.group !== null) {
         /* Avatar image inizialization (personaUrl) */
@@ -62,7 +64,7 @@ const CourseItem = (props: Props) => {
         }
 
         /* Telegram Group initialization */
-        if (data.course.group.invite_link !== "" && data.course.group.invite_link !== null) {
+        if (!isInviteLinkEmpty) {
             telegramLink = (
                 <PrimaryButton
                     href={preventVisibleHref(isPolicyAccepted, data.course.group.invite_link!)} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}
@@ -102,13 +104,8 @@ const CourseItem = (props: Props) => {
     /* CFU inizialization */
     switch (data.course.cfu) {
         case 0:
-            cfuText = null;
-            break;
         case null:
             cfuText = null;
-            break;
-        case undefined:
-            cfuText = <>N/A CFU</>;
             break;
         default:
             cfuText = <>{data.course.cfu} CFU</>;
@@ -129,47 +126,49 @@ const CourseItem = (props: Props) => {
 
     /* Year inizialization */
     switch (data?.year) {
-        case 0: /* Insegnamento di un corso di laurea senza anno */
+        case 0: // Insegnamento di un corso di laurea senza anno
+        case -1: // Gruppo principale
             yearText = null;
             break;
-        case -1: /* Gruppo principale */
-            yearText = null;
-            break;
-        case -2: /* Complementare */
+        case -2: // Complementare
             yearText = `${locale?.courses.complementary}`;
-            break;
-        case undefined: /* Errore o non disponibile */
-            yearText = "N/A";
             break;
         default:
             yearText = `${data.year}° ${locale?.courses.year}`;
             break;
-    }
+    };
 
     /* Semester inizialization */
     if (data.semester === -1 || data.semester === null || data.semester === 0) {
         semesterText = null;
-    } else if (data.semester === undefined) {
-        semesterText = 'N/A';
     } else if (data.semester !== null) {
         semesterText = `${data.semester}° ${locale?.courses.semester}`;
     }
 
     /* Websites inizialization */
-    let websites: any[] | undefined = [];
+    let websites: Array<IContextualMenuItem> = [];
 
     if ((data.course.links ?? []).length !== 0) {
-        websites = data.course.links.map(
-            (e, i) => {
-                return {
-                    key: i,
-                    text: e.name,
-                    onClick: () => redirectToLink(e.url),
-                    iconProps: { iconName: 'ChromeBackMirrored' }
-                };
-            }
+        websites = data.course.links.map((website, index: number) => {
+            return {
+                key: index.toString(),
+                text: website.name,
+                onClick: () => redirectToLink(website.url),
+                iconProps: { iconName: 'ChromeBackMirrored' }
+            };
+        }
         );
     }
+
+    const menuProps: IContextualMenuProps = {
+        onDismiss: ev => {
+            if (ev && 'shiftKey' in ev) {
+                ev.preventDefault();
+            }
+        },
+        items: websites,
+        directionalHintFixed: true,
+    };
 
     /* Wiki initialization */
     if (data.year !== -1) {
@@ -185,17 +184,6 @@ const CourseItem = (props: Props) => {
         );
     }
 
-    const menuProps: IContextualMenuProps = {
-        // For example: disable dismiss if shift key is held down while dismissing
-        onDismiss: ev => {
-            if (ev && 'shiftKey' in ev) {
-                ev.preventDefault();
-            }
-        },
-        items: websites as any[],
-        directionalHintFixed: true,
-    };
-    
     return (
         <Card tokens={cardTokens} className="group-item text-center">
             <Card.Item>
@@ -203,15 +191,15 @@ const CourseItem = (props: Props) => {
             </Card.Item>
 
             <Card.Section>
-                
-                {data.year !== -1 && 
+
+                {data.year !== -1 &&
                     <div className="d-flex flex-row align-items-center justify-content-center" style={{ gap: 8 }}>
-                        { professor !== null &&
+                        {professor !== null &&
                             <div style={professorBox}>
                                 <Text variant="small" styles={professorTextStyle}>
                                     {professor}
                                 </Text>
-                            </div> }
+                            </div>}
 
                         <Text variant="small" styles={cfuStyle}>
                             {cfuText}
@@ -220,9 +208,9 @@ const CourseItem = (props: Props) => {
                 }
 
                 <Text styles={descriptionTextStyles}>
-                    {data.year === -1 && <Chip label={locale?.courses.mainGroup} size="small" textColor={theme.palette.black} bgColor={theme.palette.neutralLight} className="m-1" /> }
-                    {yearText !== null && <Chip label={yearText} size="small" textColor={theme.palette.black} bgColor={theme.palette.neutralLighter} className="m-1" /> }
-                    {semesterText !== null && <Chip label={semesterText} size="small" textColor={theme.palette.black} bgColor={theme.palette.neutralLighter} /> }
+                    {data.year === -1 && <Chip label={locale?.courses.mainGroup} size="small" textColor={theme.palette.black} bgColor={theme.palette.neutralLight} className="m-1" />}
+                    {yearText !== null && <Chip label={yearText} size="small" textColor={theme.palette.black} bgColor={theme.palette.neutralLighter} className="m-1" />}
+                    {semesterText !== null && <Chip label={semesterText} size="small" textColor={theme.palette.black} bgColor={theme.palette.neutralLighter} />}
                 </Text>
 
                 <Text variant="small" style={{ marginTop: 8, marginBottom: 8 }}>
@@ -231,7 +219,7 @@ const CourseItem = (props: Props) => {
 
                 {telegramLink}
 
-                { data.year !== -1 &&
+                {data.year !== -1 &&
                     <DefaultButton
                         text={locale?.courses.websites}
                         style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}

@@ -1,10 +1,11 @@
-import React from 'react';
+import { useRef, useCallback } from 'react';
 import { List, IRectangle, mergeStyleSets } from "@fluentui/react";
-import { getGroups, getGroupsAnnouncements, getStudentsAssociations } from '../../services/Requests';
+import { ExtraGroup } from 'models/Models';
 import UniversityGroup from './UniversityGroup';
-import Group from '../../models/Group';
 import AnnouncementsGroup from './AnnouncementsGroup';
 import StudentsAssociation from './StudentsAssociation';
+import Message from 'components/Atoms/Message';
+import LocalizationService from 'services/LocalizationService';
 
 export enum GroupsType {
   ANNOUNCEMENTS = "ANNOUNCEMENTS",
@@ -13,27 +14,18 @@ export enum GroupsType {
 };
 
 interface Props {
+    groups: Array<ExtraGroup>,
     groupsType: GroupsType
 };
 
 const Groups = (props: Props) => {
-    const columnCount = React.useRef(0);
-    const rowHeight = React.useRef(0);
-    const rowsPerPage = React.useRef(0);
+    const locale = LocalizationService.strings();
+    const columnCount = useRef(0);
+    const rowHeight = useRef(0);
+    const rowsPerPage = useRef(0);
     const MAX_ROW_HEIGHT = 280;
 
-    const groups: Group[] = (() => {
-        switch(props.groupsType) {
-            case GroupsType.UNIVERSITY:
-                return getGroups();
-            case GroupsType.ANNOUNCEMENTS:
-                return getGroupsAnnouncements();
-            case GroupsType.ASSOCIATION:
-                return getStudentsAssociations();
-            default:
-                return [];
-        }
-    })();
+    const groups: Array<ExtraGroup> = props.groups;
 
     var classNames = mergeStyleSets({
         listGrid: {
@@ -45,9 +37,8 @@ const Groups = (props: Props) => {
         }
     });
 
-    const getItemCountForPage = React.useCallback((itemIndex?: number, surfaceRect?: IRectangle) => {
+    const getItemCountForPage = useCallback((itemIndex?: number, surfaceRect?: IRectangle) => {
         if (itemIndex === 0) {
-            /* rowHeight.current = Math.floor(surfaceRect!.width / columnCount.current) */ 
             columnCount.current = Math.ceil(surfaceRect!.width / MAX_ROW_HEIGHT);
             rowHeight.current = MAX_ROW_HEIGHT;
             rowsPerPage.current = surfaceRect!.height / MAX_ROW_HEIGHT;
@@ -55,11 +46,11 @@ const Groups = (props: Props) => {
         return columnCount.current * rowsPerPage.current;
     }, []);
     
-    const getPageHeight = React.useCallback((): number => {
+    const getPageHeight = useCallback((): number => {
         return rowHeight.current * rowsPerPage.current;
     }, []); 
 
-    const getCell = (e?: Group, _index?: number, _isScrolling?: boolean) => {
+    const getCell = (e?: ExtraGroup, _index?: number, _isScrolling?: boolean) => {
         return (
             <div data-is-focusable className="listGridTile" style={{ height: rowHeight.current + 'px', width: 100 / columnCount.current + '%' }}>
                 {( () => { 
@@ -76,20 +67,30 @@ const Groups = (props: Props) => {
                 })()}
             </div>
         )
-    }
+    };
 
     return (
-        <div className="additional-groups text-center">
-            <List
-                className={classNames.listGrid}
-                items={groups}
-                getItemCountForPage={getItemCountForPage}
-                getPageHeight={getPageHeight}
-                renderedWindowsAhead={15}
-                onRenderCell={getCell}
-            />
-        </div>
-    )
+        <>
+        {
+            groups?.length === 0 
+            ?
+            <div className="justify-content-center">
+                <Message text={locale?.courses.groupsNotFound!} />
+            </div>
+            :
+            <div className="additional-groups text-center">
+                <List
+                    className={classNames.listGrid}
+                    items={groups}
+                    getItemCountForPage={getItemCountForPage}
+                    getPageHeight={getPageHeight}
+                    renderedWindowsAhead={15}
+                    onRenderCell={getCell}
+                />
+            </div>
+        }
+        </>
+    );
 };
 
 export default Groups;

@@ -1,29 +1,27 @@
 import { 
   FontSizes, 
   Text,
-  Image, 
   FontWeights, 
   ITextStyles, 
   Link, 
   useTheme 
 } from '@fluentui/react';
+import Image from 'next/image';
+import { CSSProperties, useContext } from 'react';
 import HeaderMenu from './HeaderMenu';
 import Headroom from 'react-headroom';
+import GlobalContext from 'services/GlobalContext';
 
 const Header = () => {
   var theme = useTheme();
 
-  const headerZIndex = 2;
+  const { setIsHeaderPinned } = useContext(GlobalContext);
 
-  const logoProperties = {
-    width: 25,
-    height: 25,
-    marginTop: 3
-  };
+  const headerZIndex = 2;
 
   const logoFileName = 'unimi150.png';
 
-  const headerStyle = {
+  const headerStyle: CSSProperties = {
     zIndex: headerZIndex,
     backgroundColor: theme.palette.white,
     borderBottom: '1px solid',
@@ -39,22 +37,27 @@ const Header = () => {
     }
   };
 
+  const onHeaderPin = () => setIsHeaderPinned(true);
+  const onHeaderUnpin = () => setIsHeaderPinned(false);
+
   return (
     <>
       {/* @ts-ignore */} 
-      <Headroom style={{ zIndex: headerZIndex }}>
+      <Headroom style={{ zIndex: headerZIndex }} onPin={onHeaderPin} onUnpin={onHeaderUnpin}>
         <header style={headerStyle} className="header">
 
           <div className="d-flex flex-row" style={{ marginRight: 15, marginLeft: 15, marginBottom: 0 }}>
 
             <div style={{ maxWidth: 250, paddingLeft: 0, paddingRight: 0, display: 'flex', alignItems: 'center' }}>
               <div className="d-flex align-items-center" style={{ width: 250, gap: 10 }}>
-                <Link href="/">
+                <Link href="/" className='d-flex align-items-center' style={{ marginTop: 3 }}>
                   <Image
                     id="logo"
                     alt="Logo"
                     src={'/logo/' + logoFileName}
-                    style={logoProperties}
+                    objectFit={'contain'}
+                    width={25}
+                    height={25} 
                   />
                 </Link>
 

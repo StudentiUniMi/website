@@ -221,6 +221,18 @@ export const getServerSideProps: GetServerSideProps = async ( { params }) => {
 
     const degreeSlug = params!.slug as unknown as string;
 
+    // Handle underscore old slugs
+    const [fixedSlug, hasReplaced] = replaceUnderscore(degreeSlug);
+
+    if (hasReplaced) {
+        return {
+            redirect: {
+                destination: `/courses/${fixedSlug}`,
+                permanent: false,
+            },
+        };
+    }
+
     let degreeResult = await getVerboseDegreeBySlug(degreeSlug);
     if (degreeResult.error) errors.degree = true;
 
@@ -234,7 +246,7 @@ export const getServerSideProps: GetServerSideProps = async ( { params }) => {
 
     let degreeInformations = getDegreeInformations(degreeSlug);
 
-    /* Add Main Group to the loaded degree */
+    // Add Main Group to the loaded degree
     let degree = degreeResult.value;
     if (degree?.group !== null && degree?.group.invite_link !== '' && degree?.group.invite_link !== null) {
         let mainDegreeGroup: CourseDegree = {
@@ -268,6 +280,11 @@ export const getServerSideProps: GetServerSideProps = async ( { params }) => {
             errors: errors
         } 
     };
+};
+
+const replaceUnderscore = (str: string): [string, boolean] => {
+  const replaced = str.replace(/_/g, "-");
+  return [replaced, replaced !== str];
 };
 
 export default Course;

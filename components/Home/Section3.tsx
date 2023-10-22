@@ -1,6 +1,6 @@
 import { Text, IIconProps, Icon, DefaultButton, useTheme } from '@fluentui/react';
 import { useContext } from 'react';
-import { semibold } from '../../services/Fonts';
+import { bold, semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
 import { preventDefault, preventVisibleHref } from 'services/Utils';
 import Col from 'react-bootstrap/Col';
@@ -20,7 +20,7 @@ const ThirdSection = () => {
     return (
         <div className="pb-5 pt-5">
             <Container>
-                <div className="mb-4 text-center"><Text variant="xLarge">{locale?.homepage.additionalServicesSection.header}</Text></div>
+                <div className="mb-4 text-center"><Text variant="xLarge" styles={bold}>{locale?.homepage.additionalServicesSection.header}</Text></div>
 
                 <Row className="justify-content-around">
 

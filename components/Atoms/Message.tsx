@@ -4,9 +4,10 @@
  * @author Giuseppe Del Campo
  */
 
-import { Text, Image, Icon, useTheme } from '@fluentui/react';
+import { Text, Icon, useTheme } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
 import { Container } from 'react-bootstrap';
+import Image from 'next/image';
 
 interface Props { text: string };
 
@@ -17,7 +18,14 @@ const Message = (props: Props) => {
     const InfoMessage = () => (
         <div style={messageBarStyles} className="text-center">
             <div style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-                <Image id="not-found" alt="Not found" src={'/images/message/not-found.png'} style={{ display: 'inline', width: '60%', marginBottom: 10 }} />
+                <Image 
+                    id="not-found" 
+                    alt="Not found" 
+                    src={'/images/message/not-found.png'} 
+                    objectFit={'contain'}
+                    width={175}
+                    height={175} 
+                />
             </div>
             <Text variant="medium" styles={semibold}>
                 <Icon iconName="Info" style={{ fontSize: 12, marginRight: 10 }} />

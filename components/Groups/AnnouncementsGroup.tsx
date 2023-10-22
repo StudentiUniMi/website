@@ -6,22 +6,24 @@
 
 import { Text, Icon, FontWeights, ITextStyles, Persona, Link, TooltipHost, IIconProps, useTheme, PrimaryButton } from '@fluentui/react';
 import { Card, ICardTokens } from "@fluentui/react-cards";
-import { preventDefault, preventVisibleHref } from 'services/Utils';
+import { formatLowerNumber, preventDefault, preventVisibleHref } from 'services/Utils';
 import { semibold } from '../../services/Fonts';
 import { useContext } from 'react';
-import Group from '../../models/Group'
+import { ExtraGroup } from 'models/Models';
 import Chip from '../Atoms/Chip';
 import LocalizationService from "../../services/LocalizationService";
 import JsxParser from 'react-jsx-parser';
 import GlobalContext from 'services/GlobalContext';
 
-interface Props { data: Group };
+interface Props { data: ExtraGroup };
 
 const AnnouncementsGroup = (props: Props) => {
     const theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
-    const data = props.data;
+
+    const group = props.data;
+
     const { isPolicyAccepted, togglePolicyDialog } = useContext(GlobalContext);
     
     const helpfulTextStyles: ITextStyles = { root: { fontWeight: FontWeights.regular, } };
@@ -30,8 +32,11 @@ const AnnouncementsGroup = (props: Props) => {
     const telegramGroupIcon: IIconProps = { iconName: 'Send' };
     const calloutProps = { gapSpace: 5 };
     
-    let desc = data.description![language!];
-    let name = data.name![language!];
+    const name = group.name[language!];
+    const description = group.description[language!];
+    const imageUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${group.id}.png`;
+
+    const isInviteLinkEmpty = group.invite_link === "" || group.invite_link === null;
 
     /* PrimaryText inizialization */
     let primaryText: JSX.Element = (
@@ -44,10 +49,6 @@ const AnnouncementsGroup = (props: Props) => {
             </div>
         </TooltipHost>
     );
-    
-    // Group image initialization
-    var imageUrl: string;
-    imageUrl = '/images/university_groups/' + data.image;
     
     return (
         <Card tokens={cardTokens} className="additional-group-item">
@@ -63,8 +64,8 @@ const AnnouncementsGroup = (props: Props) => {
                         bgColor={theme.palette.neutralLight}
                         className="m-1" 
                     />
-                    {data.users && <Chip 
-                        label={`${data.users} ${locale?.groups.users}`} 
+                    {group.user_count && <Chip 
+                        label={`${formatLowerNumber(group.user_count)}+ ${locale?.groups.users}`} 
                         size="small" 
                         outlined
                         textColor={theme.palette.black}
@@ -74,26 +75,19 @@ const AnnouncementsGroup = (props: Props) => {
                     /> }
                 </Text>
                 <Text variant="small" styles={helpfulTextStyles} className="mb-2">
-                    <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link, Icon }} jsx={"<Icon iconName='Info' /> " + desc} />
+                    <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link, Icon }} jsx={"<Icon iconName='Info' /> " + description} />
                 </Text>
 
-                {
-                    (() => {
-                        if (data.href !== "" && data.href !== null) {
-                            return (
-                                <PrimaryButton
-                                    href={preventVisibleHref(isPolicyAccepted, data.href!)} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}
-                                    iconProps={telegramGroupIcon}
-                                    style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
-                                    disabled={data.href === "" || data.href === null}
-                                    allowDisabledFocus>
-                                    {locale?.telegramGroup}
-                                </PrimaryButton>
-                            );
-                        }
-                    })()
+                {!isInviteLinkEmpty &&
+                    <PrimaryButton
+                        href={preventVisibleHref(isPolicyAccepted, group.invite_link)} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}
+                        iconProps={telegramGroupIcon}
+                        style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
+                        disabled={isInviteLinkEmpty}
+                        allowDisabledFocus>
+                        {locale?.telegramGroup}
+                    </PrimaryButton>
                 }
-
             </Card.Section>
         </Card>
     );

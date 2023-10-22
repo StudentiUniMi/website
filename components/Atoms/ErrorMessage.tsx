@@ -6,10 +6,11 @@
 
 import React from 'react';
 import LocalizationService from "../../services/LocalizationService";
-import { semibold } from '../../services/Fonts';
-import { Text, Image, Icon, Link, useTheme } from '@fluentui/react';
-import { Container } from 'react-bootstrap';
 import JsxParser from 'react-jsx-parser';
+import Image from 'next/image';
+import { semibold } from '../../services/Fonts';
+import { Text, Icon, Link, useTheme } from '@fluentui/react';
+import { Container } from 'react-bootstrap';
 
 interface Props { error: boolean };
 
@@ -37,7 +38,14 @@ const ErrorMessage = (props: Props) => {
                 {locale?.errorOccured}
             </Text>
             <div style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-                <Image id="not-found" alt="Not found" src={'/images/message/error.png'} style={{ display: 'inline', width: '35%', marginBottom: 5 }} />
+                <Image 
+                    id="not-found" 
+                    alt="Not found" 
+                    src={'/images/message/error.png'} 
+                    objectFit={'contain'}
+                    width={250}
+                    height={250} 
+                />
             </div>
             <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link, Icon }} jsx={locale?.errorContactAdmin} />
         </div>

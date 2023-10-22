@@ -71,6 +71,21 @@ export interface Group {
     invite_link: string
 };
 
+export interface ExtraGroup extends Group {
+    name: LocalizedField,
+    description: LocalizedField,
+    user_count: number,
+    button_name: LocalizedField | null,
+    image_url: string | null
+    external_url: string | null
+};
+
+export interface ExtraGroups {
+    university_groups: Array<ExtraGroup>,
+    announcement_groups: Array<ExtraGroup>,
+    student_associations: Array<ExtraGroup>
+};
+
 export interface Website {
     name: string,
     url: string

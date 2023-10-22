@@ -1,11 +1,9 @@
-import { useContext, useState } from 'react';
+import { CSSProperties, useContext, useState } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
 import GlobalContext from 'services/GlobalContext';
-import Lottie from 'react-lottie';
-import * as lottieMap from '../components/Services/Lottie/73243-happy-students-studying.json';
-import { Text, DocumentCardPreview, IDocumentCardPreviewProps, Link, Pivot, PivotItem, FontSizes, useTheme } from '@fluentui/react';
+import { Text, DocumentCardPreview, IDocumentCardPreviewProps, Link, Pivot, PivotItem, FontSizes, useTheme, mergeStyleSets } from '@fluentui/react';
 import { NextSeo } from 'next-seo';
 import { Container } from 'react-bootstrap';
 import { Card, ICardTokens } from '@fluentui/react-cards';
@@ -18,19 +16,23 @@ const Services = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
-    const { isPolicyAccepted, togglePolicyDialog } = useContext(GlobalContext);
+
+    const { isPolicyAccepted, togglePolicyDialog, isHeaderPinned } = useContext(GlobalContext);
 
     const redirects = getRedirects();
     const guides = getGuides();
     const tools = getTools();
 
-    const servicesOptions = {
-      loop: true,
-      autoplay: true, 
-      animationData: lottieMap,
-      rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice'
-      }
+    const subHeader: CSSProperties = { 
+        backgroundColor: theme.palette.white, 
+        border: `1px solid ${theme.palette.neutralQuaternary}`,
+        borderRadius: 3,
+        position: 'sticky',
+        top: isHeaderPinned ? 44 : 0,
+        transition: 'top 0.2s ease-in-out 0s',
+        zIndex: 1,
+        maxWidth: 1340,
+        margin: '0 auto'
     };
     
     const [selectedSubSection, setSelectedSubSection] = useState<string>("redirects");
@@ -43,7 +45,7 @@ const Services = () => {
         }
     };
 
-    let cardProps = (iconName?: string): IDocumentCardPreviewProps => {
+    const cardProps = (iconName?: string): IDocumentCardPreviewProps => {
         return {
             previewImages: [ 
                 {
@@ -57,6 +59,21 @@ const Services = () => {
             styles: { previewIcon: { backgroundColor: theme.palette.neutralLighter }, root: { borderBottom: '0px' } },
         }
     };
+
+    const hoverStyle = mergeStyleSets({
+        root: {
+            display: 'inline-block',
+            width: '100%',
+            transition: '0.1s all ease',
+            border: `1px solid rgba(255, 255, 255, 0)`,
+            selectors: {
+                ':hover': {
+                    backgroundColor: theme.palette.neutralLight,
+                    border: `1px solid ${theme.palette.neutralQuaternaryAlt}`
+                }
+            },
+        },
+    });
     
     return (
         <>
@@ -86,60 +103,44 @@ const Services = () => {
             />
 
             <section className="services pb-3">
-                <div className="pt-5 pb-5 mb-4" style={{ backgroundColor: theme.palette.neutralLighter }}>
+                <div className="pt-5 text-center">
                     <Container>
+                        <div className="mb-4 text-mega">
+                            <h1>
+                                <JsxParser bindings={{ theme: theme, semibold: semibold, bold: bold }} components={{ Text, Link }} jsx={locale?.services.text1} />
+                            </h1>
+                        </div>
 
-                        <Row>
-                            <Col xl={9} lg={8} md={12} className="mb-3 mb-lg-0">
-                                <div className="mb-2">
-                                    <h1>
-                                        <JsxParser bindings={{ theme: theme, semibold: semibold, bold: bold }} components={{ Text, Link }} jsx={locale?.services.text1} />
-                                    </h1>
-                                </div>
+                        <div className="mb-2">
+                            <Text variant="large">{locale?.services.text2}</Text>
+                        </div>
 
-                                <div className="mb-2">
-                                    <Text variant="large">{locale?.services.text2}</Text>
-                                </div>
-
-                                <div className="mb-4">
-                                    <Text variant="medium" style={{ fontStyle: 'italic', color: theme.palette.neutralPrimary }}>
-                                        {locale?.services.text3} <Link href={preventVisibleHref(isPolicyAccepted, "https://t.me/unimichat")} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}>
-                                            {locale?.services.text4}
-                                        </Link>
-                                    </Text>
-                                </div>
-
-                                <div>
-                                    <div className="mb-2">
-                                        <Text variant="medium" styles={semibold}>{locale?.services.selectSubSection}</Text>
-                                    </div>
-
-                                    <Pivot
-                                        selectedKey={selectedSubSection}
-                                        onLinkClick={handleSubSectionChange}
-                                        headersOnly={true}
-                                        linkSize={'normal'}
-                                        linkFormat={'tabs'}
-                                    >
-                                        <PivotItem headerText={locale?.services.tabs.redirects} itemKey="redirects" />
-                                        <PivotItem headerText={locale?.services.tabs.guides} itemKey="guides" />
-                                        <PivotItem headerText={locale?.services.tabs.tools} itemKey="tools" />
-                                    </Pivot>
-                                </div>
-                            </Col>
-
-                            <Col xl={3} lg={4} md={12} className="text-center">
-                                {/* @ts-ignore */} 
-                                <Lottie options={servicesOptions}
-                                    height={280}
-                                    width={280}
-                                    isClickToPauseDisabled={true}
-                                    style={{ cursor: 'default' }}
-                                />
-                            </Col>
-                        </Row>
-
+                        <div className="mb-4">
+                            <Text variant="medium" style={{ fontStyle: 'italic', color: theme.palette.neutralPrimary }}>
+                                {locale?.services.text3} <Link href={preventVisibleHref(isPolicyAccepted, "https://t.me/unimichat")} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}>
+                                    {locale?.services.text4}
+                                </Link>
+                            </Text>
+                        </div>
                     </Container>
+                </div>
+
+                <div className="mb-2 text-center">
+                    <Text variant="medium" styles={semibold}>{locale?.services.selectSubSection}</Text>
+                </div>
+
+                <div className="text-center mb-4" style={subHeader}>
+                    <Pivot
+                        selectedKey={selectedSubSection}
+                        onLinkClick={handleSubSectionChange}
+                        headersOnly={true}
+                        linkSize={'normal'}
+                        linkFormat={'tabs'}
+                    >
+                        <PivotItem headerText={locale?.services.tabs.redirects} itemKey="redirects" />
+                        <PivotItem headerText={locale?.services.tabs.guides} itemKey="guides" />
+                        <PivotItem headerText={locale?.services.tabs.tools} itemKey="tools" />
+                    </Pivot>
                 </div>
 
                 <Container>
@@ -153,7 +154,7 @@ const Services = () => {
                             <Row>
                                 {redirects.map((x, i) =>
                                     <Col xl={4} lg={6} md={6} sm={12} xs={12} className="mb-3" key={i}>
-                                        <Link href={x.link ?? ""} className="text-decoration-none">
+                                        <Link href={x.link ?? ""} className="text-decoration-none" styles={hoverStyle}>
                                             <Card label={x.name?.it} horizontal tokens={cardTokens} style={{ border: '0px', maxWidth: 'none', cursor: 'pointer' }}>
                                                 <Card.Item fill>
                                                     <DocumentCardPreview {...cardProps(x.icon)} />
@@ -181,7 +182,7 @@ const Services = () => {
                             <Row>
                                 {guides.map((x, i) =>
                                     <Col xl={4} lg={6} md={6} sm={12} xs={12} className="mb-3" key={i}>
-                                        <Link href={x.link ?? ""} className="text-decoration-none">
+                                        <Link href={x.link ?? ""} className="text-decoration-none" styles={hoverStyle}>
                                             <Card label={x.name?.it} horizontal tokens={cardTokens} style={{ border: '0px', maxWidth: 'none', cursor: 'pointer' }}>
                                                 <Card.Item fill>
                                                     <DocumentCardPreview {...cardProps(x.icon)} />
@@ -209,7 +210,12 @@ const Services = () => {
                             <Row>
                                 {tools.map((x, i) =>
                                     <Col xl={4} lg={6} md={6} sm={12} xs={12} className="mb-3" key={i}>
-                                        <Link href={preventVisibleHref(isPolicyAccepted, x.link ?? "")} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()} className="text-decoration-none">
+                                        <Link 
+                                            styles={hoverStyle} 
+                                            href={preventVisibleHref(isPolicyAccepted, x.link ?? "")} 
+                                            onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()} 
+                                            className="text-decoration-none"
+                                        >
                                             <Card label={x.name?.it} horizontal tokens={cardTokens} style={{ border: '0px', maxWidth: 'none', cursor: 'pointer' }}>
                                                 <Card.Item fill>
                                                     <DocumentCardPreview {...cardProps(x.icon)} />

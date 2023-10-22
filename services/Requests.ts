@@ -7,25 +7,19 @@
 
 /* Old Models (to be replaced when remaining APIs are implemented) */
 import Service from '../models/Service';
-import Contributor from '../models/Contributor';
 import Faq from '../models/Faq';
 import NetworkMember from '../models/NetworkMember';
 import Developer from 'models/Developer';
 import UniversityLink from 'models/UniversityLink';
-import Group from 'models/Group';
 import { DegreeInformation, TempDegree } from 'models/DegreeInformation';
 
 /* Updated models */
-import { Department, Degree, VerboseDegree, CourseDegree, Representative, Admin } from '../models/Models';
+import { Department, Degree, VerboseDegree, CourseDegree, Representative, Admin, ExtraGroups } from '../models/Models';
 
 /* Data (these will be replaced by api soon) */
-import groups from '../data/groups/Groups.json';
-import announcementsGroups from '../data/groups/Announcements.json';
-import studentsAssociations from '../data/groups/StudentsAssociations.json';
 import redirectsData from '../data/services/Redirects.json';
 import guidesData from '../data/services/Guides.json';
 import toolsData from '../data/services/Tools.json';
-import Contributors from '../data/Contributors.json';
 import Faqs from '../data/Faqs.json';
 import NetworkMembers from '../data/NetworkMembers.json';
 import Developers from '../data/Developers.json';
@@ -33,15 +27,16 @@ import UniversityLinks from '../data/UniversityLinks.json';
 import DegreeInformations from '../data/DegreeInformations.json';
 
 /* Endpoints */
-const api_endpoint = process.env.NEXT_PUBLIC_API_URL || 'https://api.studentiunimi.it/api';
-const departments_endpoint = '/departments';
-const degrees_endpoint = '/degrees';
-const degree_endpoint = '/degree';
-const courses_endpoint = '/courses';
-const representatives_endpoint = '/representatives';
-const typingDegrees_endpoint = '/typing-degrees';
-const searchDegrees_endpoint = '/search-degrees';
-const admins_endpoint = '/admins';
+const apiEndpoint = process.env.NEXT_PUBLIC_API_URL || 'https://api.studentiunimi.it/api';
+const departmentsEndpoint = '/departments';
+const degreesEndpoint = '/degrees';
+const degreeEndpoint = '/degree';
+const coursesEndpoint = '/courses';
+const representativesEndpoint = '/representatives';
+const typingDegreesEndpoint = '/typing-degrees';
+const searchDegreesEndpoint = '/search-degrees';
+const adminsEndpoint = '/admins';
+const featuredGroupsEndpoint = '/featured-groups';
 
 /* Main class to build response */
 class Result<T>
@@ -86,7 +81,7 @@ async function getAsync<T>(path: string) : Promise<Result<T>>
  * This function retrieves the existing departments.
  */
 export async function getDepartments(): Promise<Result<Array<Department>>> {
-    return getAsync<Array<Department>>(api_endpoint + departments_endpoint);
+    return getAsync<Array<Department>>(apiEndpoint + departmentsEndpoint);
 };
 
 /**
@@ -94,7 +89,7 @@ export async function getDepartments(): Promise<Result<Array<Department>>> {
  * @param departmentKey Key or parameter to query by department
  */
 export async function getDegrees(departmentKey: string): Promise<Result<Array<Degree>>> {
-    return getAsync<Array<Degree>>(`${api_endpoint}${degrees_endpoint}?dep_id=${departmentKey}`);
+    return getAsync<Array<Degree>>(`${apiEndpoint}${degreesEndpoint}?dep_id=${departmentKey}`);
 };
 
 /**
@@ -102,7 +97,7 @@ export async function getDegrees(departmentKey: string): Promise<Result<Array<De
  * @param degreeKey Key or parameter to query by degree
  */
 export async function getCourses(degreeKey: string): Promise<Result<Array<CourseDegree>>> {
-    return getAsync<Array<CourseDegree>>(`${api_endpoint}${courses_endpoint}?deg_id=${degreeKey}`);
+    return getAsync<Array<CourseDegree>>(`${apiEndpoint}${coursesEndpoint}?deg_id=${degreeKey}`);
 };
 
 /**
@@ -110,7 +105,7 @@ export async function getCourses(degreeKey: string): Promise<Result<Array<Course
  * @param departmentKey Key or parameter to query by department
  */
 export async function getRepresentatives(departmentKey: string): Promise<Result<Array<Representative>>> {
-    return getAsync<Array<Representative>>(`${api_endpoint}${representatives_endpoint}?dep_id=${departmentKey}`);
+    return getAsync<Array<Representative>>(`${apiEndpoint}${representativesEndpoint}?dep_id=${departmentKey}`);
 };
 
 /**
@@ -118,7 +113,7 @@ export async function getRepresentatives(departmentKey: string): Promise<Result<
  * @param degreeSlug Slug of the degree
  */
 export async function getVerboseDegreeBySlug(degreeSlug: string): Promise<Result<VerboseDegree>> {
-    return getAsync<VerboseDegree>(`${api_endpoint}${degree_endpoint}?slug=${degreeSlug}`);
+    return getAsync<VerboseDegree>(`${apiEndpoint}${degreeEndpoint}?slug=${degreeSlug}`);
 };
 
 /**
@@ -126,28 +121,36 @@ export async function getVerboseDegreeBySlug(degreeSlug: string): Promise<Result
  * @param degreeID ID of the degree
  */
  export async function getVerboseDegreeByID(degreeID: string): Promise<Result<VerboseDegree>> {
-    return getAsync<VerboseDegree>(`${api_endpoint}${degree_endpoint}?pk=${degreeID}`);
+    return getAsync<VerboseDegree>(`${apiEndpoint}${degreeEndpoint}?pk=${degreeID}`);
 };
 
 /**
  * This function retrieves an array of string referred to Degree names (used in Homepage).
  */
 export async function getStringDegrees(): Promise<Result<Array<string>>> {
-    return getAsync<Array<string>>(`${api_endpoint}${typingDegrees_endpoint}`)
+    return getAsync<Array<string>>(`${apiEndpoint}${typingDegreesEndpoint}`)
 };
 
 /**
  * This function retrieves existing degrees (search-box api).
  */
  export async function getDegreesForSearchBox(searchText: string): Promise<Result<Degree[]>> {
-    return getAsync<Array<Degree>>(`${api_endpoint}${searchDegrees_endpoint}?q=${searchText}`);
+    return getAsync<Array<Degree>>(`${apiEndpoint}${searchDegreesEndpoint}?q=${searchText}`);
 };
 
 /**
  * This function retrieves admins of a certain degree.
  */
 export async function getDegreeAdmins(degreeSlug: string): Promise<Result<Array<Admin>>> {
-    return getAsync<Array<Admin>>(`${api_endpoint}${admins_endpoint}?slug=${degreeSlug}`);
+    return getAsync<Array<Admin>>(`${apiEndpoint}${adminsEndpoint}?slug=${degreeSlug}`);
+};
+
+/**
+ * This function retrieves university groups, announcements groups and students associations.
+ * @returns {ExtraGroups} Extra Groups
+ */
+export async function getExtraGroups(): Promise<Result<ExtraGroups>> {
+    return getAsync<ExtraGroups>(`${apiEndpoint}${featuredGroupsEndpoint}`);
 };
 
 
@@ -155,27 +158,18 @@ export async function getDegreeAdmins(degreeSlug: string): Promise<Result<Array<
 /* -------- STATIC DATA -------- */
 
 /* Homepage section */
-export const getContributors = (): Array<Contributor> => Contributors; // not used at the moment
-
 export const getFaqs = (): Array<Faq> => Faqs;
 
 /* Courses section - Degree informations (static data at the moment) */
 const getTempDegrees = (): Array<TempDegree> => DegreeInformations;
 export const getDegreeInformations = (degreeSlug: string): Array<DegreeInformation> => (getTempDegrees()).find((tempDegree: TempDegree) => tempDegree.slug === degreeSlug)?.degreeInformations ?? [];
 
-/* Groups section */
-export const getGroups = (): Array<Group> => groups;
-
-export const getGroupsAnnouncements = (): Array<Group> => announcementsGroups;
-
-export const getStudentsAssociations = (): Array<Group> => studentsAssociations;
-
 /* Services section */
-export const getRedirects = (): Array<Service> => redirectsData;
+export const getRedirects = (): Array<Service> => redirectsData as unknown as Array<Service>;
 
-export const getGuides = (): Array<Service> => guidesData;
+export const getGuides = (): Array<Service> => guidesData as unknown as Array<Service>;
 
-export const getTools = (): Array<Service> => toolsData;
+export const getTools = (): Array<Service> => toolsData as unknown as Array<Service>;
 
 /* University section */
 export const getUniversityLinks = (): Array<UniversityLink> => UniversityLinks;
