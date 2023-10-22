@@ -5,7 +5,7 @@ import { Container } from 'react-bootstrap';
 import { Persona, PersonaSize } from '@fluentui/react';
 import { getNetworkMembers, getDevelopers } from '../services/Requests';
 import { IIconProps } from '@fluentui/react';
-import { bold, semibold } from '../services/Fonts';
+import { bold, regular, semibold } from '../services/Fonts';
 import { resetIds } from '@fluentui/react';
 import { NextSeo } from 'next-seo';
 import Developer from 'models/Developer';
@@ -68,7 +68,7 @@ const Organization: NextPage = () => {
                         </div>
 
                         <div className="mb-4" style={{ maxWidth: 600, margin: '0 auto' }}>
-                            <Text variant="xLarge" styles={semibold}>
+                            <Text variant="xLarge" styles={regular}>
                                 <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.aboutUs.text2} />
                             </Text>
                         </div>
