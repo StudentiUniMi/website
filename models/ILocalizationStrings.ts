@@ -345,7 +345,8 @@ interface ILocalizationStrings {
         text2: string,
     },
     telegram:  {
-
+        title: string,
+        subtitle: string
     },
     footer: [
         { text: string, buttonText: string },

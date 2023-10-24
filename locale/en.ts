@@ -395,7 +395,8 @@ const localeEn: ILocalizationStrings = {
         }
     },
     telegram: {
-
+        title: 'Perché non usiamo WhatsApp?',
+        subtitle: 'WhatsApp non è una piattaforma adatta a contenuti universitari, ma soprattutto non è adatta per gli studenti stessi.'
     },
     footer: [
         { text: 'The network and the associated website are not affiliated to the University of Milan.', buttonText: 'Join our main group' },

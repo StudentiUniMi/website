@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../../services/LocalizationService";
+import router from 'next/router';
 
 const TelegramSection = () => {
     var theme = useTheme();
@@ -21,7 +22,7 @@ const TelegramSection = () => {
                     </Col>
                 
                     <Col lg={2} className="text-right center-mobile">
-                        <DefaultButton href="https://youtu.be/kgNxRZghkkA?t=133" text={locale?.homepage.telegramButton} iconProps={buttonIconProps} allowDisabledFocus style={buttonStyle} />
+                        <DefaultButton onClick={() => { router.push("/telegram"); }} text={locale?.homepage.telegramButton} iconProps={buttonIconProps} allowDisabledFocus style={buttonStyle} />
                     </Col>
                 </Row>
             </Container>
