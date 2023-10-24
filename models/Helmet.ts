@@ -8,5 +8,6 @@ export default interface Helmet {
     organization: any,
     degreeLoaded: any,
     notFound: any,
-    serverError: any
+    serverError: any,
+    telegram: any
 };
