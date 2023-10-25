@@ -7,7 +7,7 @@ import GroupType from "models/GroupType";
 import GroupTypesData from '../../data/GroupTypes.json';
 import LocalizationService from 'services/LocalizationService';
 
-type Page = 'courses' | 'groups';
+type Page = 'courses' | 'groups' | 'telegram';
 
 interface Props {
     page: Page
@@ -28,7 +28,7 @@ const GroupTypes = (props: Props) => {
         root: {
             display: 'flex',
             flexDirection: 'column',
-            backgroundColor: props.page === "courses" ? theme.palette.neutralLighter : theme.palette.white,
+            backgroundColor: props.page === "courses" || props.page === "telegram" ? theme.palette.neutralLighter : theme.palette.white,
             gap: 15,
             maxWidth: 200,
             maxHeight: 250,
