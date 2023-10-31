@@ -416,3 +416,16 @@ footer .ms-Label {
     max-width: 100% !important;
   }
 }
+
+/* media query for Telegram page */
+@media only screen and (max-width: 500px) {
+  .telegramText3 {
+    font-size: 24px;
+  }
+
+  .telegramDoubleQuote{
+    flex-direction: column !important;
+    gap: 0 !important;
+    text-align: center;
+  }
+}

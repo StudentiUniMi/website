@@ -396,7 +396,21 @@ const localeIt: ILocalizationStrings = {
     },
     telegram: {
         title: 'Perché non usiamo WhatsApp?',
-        subtitle: 'WhatsApp non è una piattaforma adatta a contenuti universitari, ma soprattutto non è adatta per gli studenti stessi.'
+        subtitle: 'WhatsApp non è una piattaforma adatta a contenuti universitari, ma soprattutto non è adatta per gli studenti stessi.',
+        labelButton: "torna alla home",
+        text1: "Se la maggior parte degli studenti usano WhatsApp è senza dubbio un motivo aggiuntivo per motivare a spostarsi su una piattaforma più sicura, accessibile e adatta ad un mondo universitario.",
+        text2: "Usare un'applicazione con un colore diverso ma tantissime funzionalità aggiuntive è un motivo valido per fare la transizione!",
+        text3: "Unisciti alle migliaia di studenti che hanno già effettuato la transizione a Telegram e contribuisci a creare un supporto per il futuro agli studenti che verranno dopo di te.",
+        doubleQuoteText1: "Ma tutti usano WhatsApp..",
+        doubleQuoteText2: "Non ho voglia di cambiare..",
+        doubleQuoteText3: "Non mi piace Telegram..",
+        headerList: "Ma quali sono gli svantaggi di WhatsApp?",
+        listText1: "I nuovi studenti che accedono ai gruppi non hanno accesso alla cronologia della chat, ed è una cosa impensabile per quelli dei corsi di laurea ma soprattutto dei corsi didattici! E no, un drive non sostituisce una chat lunga 4 o 5 anni o più!",
+        listText2: "Gli studenti hanno i numeri di cellulare completamente esposti, un problema grave soprattutto per studenti e studentesse da facoltà umanistiche, che ogni giorno si trovano messaggi in chat e chiamate da estranei.",
+        listText3: "I media non vengono salvati lato server (vuol dire che è necessario che chi ha mandato il file sia ancora disponibile), rendendoli completamente inaccessibili a futuri studenti. Per fare un esempio, con Telegram un file mandato su un gruppo rimane a disposizione per sempre.",
+        listText4: "Non esiste moderazione e automatizzazione tramite utilizzo di bot; i gruppi WhatsApp vengono inondati ogni giorno di spam e messaggi off-topic che rendono impossibile comunicare e reperire informazioni utili.",
+        listText5: "Limite del numero di utenti sui gruppi: ulteriore enorme problema per facoltà con migliaia e migliaia di studenti.",
+        listText6: "Accessibilità dei gruppi inesistente, di fatto vengono utilizzati i nostri servizi (che si trovano facilmente tramite motori di ricerca) per andare a trovare dei gruppi e risorse letteralmente introvabili, ahimè ironia della sorte."
     },
     footer: [
         { text: 'Il network e il relativo sito web non sono affiliati all\'Università degli Studi di Milano.', buttonText: 'Entra nel nostro gruppo' },

@@ -76,7 +76,7 @@ const Telegram = () => {
                         <div className="d-flex flex-row courses-title-content align-items-center" style={{ gap: 20, marginBottom: 30 }}>
 
                             <TooltipHost
-                                content={"Go back homepage traducimi"}
+                                content={locale?.telegram.labelButton}
                                 calloutProps={{ gapSpace: 6 }}
                                 delay={TooltipDelay.zero}
                                 id={'0'}
@@ -94,27 +94,25 @@ const Telegram = () => {
                             <Text variant="xLargePlus" styles={semibold} style={{ lineHeight: 1.3 }}>{locale?.telegram.subtitle}</Text>
                         </h2>
 
-                        <div style={quotesSectionStyle}>
+                        <div style={quotesSectionStyle} className='telegramDoubleQuote'>
                             <Icon iconName="RightDoubleQuote" style={{ fontSize: 48, color: theme.palette.redDark }}/>
                             <div style={quotesStyle}>
-                                <Text variant="xLarge" styles={semibold} style={{ color: theme.palette.neutralSecondary, fontStyle: 'italic' }}>Ma tutti usano WhatsApp..</Text>
-                                <Text variant="xLarge" styles={semibold} style={{ color: theme.palette.neutralSecondary, fontStyle: 'italic' }}>Non ho voglia di cambiare..</Text>
-                                <Text variant="xLarge" styles={semibold} style={{ color: theme.palette.neutralSecondary, fontStyle: 'italic' }}>Non mi piace Telegram..</Text>
+                                <Text variant="xLarge" styles={semibold} style={{ color: theme.palette.neutralSecondary, fontStyle: 'italic' }}>{locale?.telegram.doubleQuoteText1}</Text>
+                                <Text variant="xLarge" styles={semibold} style={{ color: theme.palette.neutralSecondary, fontStyle: 'italic' }}>{locale?.telegram.doubleQuoteText2}</Text>
+                                <Text variant="xLarge" styles={semibold} style={{ color: theme.palette.neutralSecondary, fontStyle: 'italic' }}>{locale?.telegram.doubleQuoteText3}</Text>
                             </div>
                         </div>
 
                         <div className="mb-4">
-                            <Text variant="xLargePlus" styles={semibold} style={{ lineHeight: 1.3 }}>Se la maggior parte degli studenti usano WhatsApp è senza dubbio
-                            un motivo aggiuntivo per motivare a spostarsi su una piattaforma più sicura, accessibile e adatta ad un mondo universitario.</Text>
+                            <Text variant="xLargePlus" styles={semibold} style={{ lineHeight: 1.3 }}>{locale?.telegram.text1}</Text>
                         </div>
 
-                        <Text variant="xLargePlus" styles={bold} style={{ lineHeight: 1.3, color: theme.palette.themeDark }}>Usare un'applicazione con un colore diverso ma tantissime funzionalità aggiuntive
-                        è un motivo valido per fare la transizione!</Text>
+                        <Text variant="xLargePlus" styles={bold} style={{ lineHeight: 1.3, color: theme.palette.themeDark }}>{locale?.telegram.text2}</Text>
                     </Container>
 
                     <div className="py-4 mb-5" style={{ backgroundColor: theme.palette.neutralLighter }}>
                         <Container>
-                            <Text variant="xLargePlus" styles={bold} style={{ lineHeight: 1.3, color: theme.palette.redDark }}>Ma quali sono gli svantaggi di WhatsApp?</Text>
+                            <Text variant="xLargePlus" styles={bold} style={{ lineHeight: 1.3, color: theme.palette.redDark }}>{locale?.telegram.headerList}</Text>
                         </Container>
                     </div>
 
@@ -126,8 +124,7 @@ const Telegram = () => {
                                     <Text variant="xxLarge" styles={bold} style={{ color: theme.palette.white }}>1</Text>
                                 </div>
 
-                                <Text variant="xLarge" styles={semibold}>I nuovi studenti che accedono ai gruppi non hanno accesso alla cronologia della chat, ed è una cosa
-                                impensabile per quelli dei corsi di laurea ma soprattutto dei corsi didattici! E no, un drive non sostituisce una chat lunga 4 o 5 anni o più!</Text>
+                                <Text variant="xLarge" styles={semibold}>{locale?.telegram.listText1}</Text>
                             </div>
 
                             <div style={elementStyle}>
@@ -135,8 +132,7 @@ const Telegram = () => {
                                     <Text variant="xxLarge" styles={bold} style={{ color: theme.palette.white }}>2</Text>
                                 </div>
 
-                                <Text variant="xLarge" styles={semibold}>Gli studenti hanno i numeri di cellulare completamente esposti, un problema grave soprattutto per studenti e studentesse da facoltà umanistiche,
-                                che ogni giorno si trovano messaggi in chat e chiamate da estranei.</Text>
+                                <Text variant="xLarge" styles={semibold}>{locale?.telegram.listText2}</Text>
                             </div>
 
                             <div style={elementStyle}>
@@ -144,9 +140,7 @@ const Telegram = () => {
                                     <Text variant="xxLarge" styles={bold} style={{ color: theme.palette.white }}>3</Text>
                                 </div>
 
-                                <Text variant="xLarge" styles={semibold}>I media non vengono salvati lato server (vuol dire che è necessario che chi ha mandato il file
-                                sia ancora disponibile), rendendoli completamente inaccessibili a futuri studenti. Per fare un esempio, con Telegram un file mandato su un gruppo rimane a disposizione
-                                per sempre.</Text>
+                                <Text variant="xLarge" styles={semibold}>{locale?.telegram.listText3}</Text>
                             </div>
 
                             <div style={elementStyle}>
@@ -154,8 +148,15 @@ const Telegram = () => {
                                     <Text variant="xxLarge" styles={bold} style={{ color: theme.palette.white }}>4</Text>
                                 </div>
 
-                                <Text variant="xLarge" styles={semibold}>Non esiste moderazione e automatizzazione tramite utilizzo di bot; i gruppi WhatsApp vengono inondati ogni giorno
-                                di spam e messaggi off-topic che rendono impossibile comunicare e reperire informazioni utili.</Text>
+                                <Text variant="xLarge" styles={semibold}>{locale?.telegram.listText4}</Text>
+                            </div>
+
+                            <div style={elementStyle}>
+                                <div style={numberStyle}>
+                                    <Text variant="xxLarge" styles={bold} style={{ color: theme.palette.white }}>5</Text>
+                                </div>
+
+                                <Text variant="xLarge" styles={semibold}>{locale?.telegram.listText5}</Text>
                             </div>
 
                             <div style={elementStyle}>
@@ -163,15 +164,7 @@ const Telegram = () => {
                                     <Text variant="xxLarge" styles={bold} style={{ color: theme.palette.white }}>6</Text>
                                 </div>
 
-                                <Text variant="xLarge" styles={semibold}>Limite del numero di utenti sui gruppi: ulteriore enorme problema per facoltà con migliaia e migliaia di studenti.</Text>
-                            </div>
-
-                            <div style={elementStyle}>
-                                <div style={numberStyle}>
-                                    <Text variant="xxLarge" styles={bold} style={{ color: theme.palette.white }}>7</Text>
-                                </div>
-
-                                <Text variant="xLarge" styles={semibold}>Accessibilità dei gruppi inesistente, di fatto vengono utilizzati i nostri servizi (che si trovano facilmente tramite motori di ricerca) per andare a trovare dei gruppi e risorse letteralmente introvabili, ahimè ironia della sorte.</Text>
+                                <Text variant="xLarge" styles={semibold}>{locale?.telegram.listText6}</Text>
                             </div>
 
                         </div>
@@ -180,8 +173,7 @@ const Telegram = () => {
                     <Separator />
 
                     <Container className="mt-4 mb-4 text-center">
-                        <Text variant='superLarge' styles={bold} style={{ lineHeight: 1.3 }}>Unisciti alle migliaia di studenti che hanno già effettuato la transizione a Telegram e contribuisci a creare
-                        un supporto per il futuro agli studenti che verranno dopo di te.</Text><br/>
+                        <Text variant='superLarge' className='telegramText3' styles={bold} style={{ lineHeight: 1.3 }}>{locale?.telegram.text3}</Text><br/>
                     </Container>
 
                     <div className="mb-4">
