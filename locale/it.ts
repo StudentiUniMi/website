@@ -398,7 +398,7 @@ const localeIt: ILocalizationStrings = {
         title: 'Perché non usiamo WhatsApp?',
         subtitle: 'WhatsApp non è una piattaforma adatta a contenuti universitari, ma soprattutto non è adatta per gli studenti stessi.',
         labelButton: "torna alla home",
-        text1: "Se la maggior parte degli studenti usano WhatsApp è senza dubbio un motivo aggiuntivo per motivare a spostarsi su una piattaforma più sicura, accessibile e adatta ad un mondo universitario.",
+        text1: "Se la maggior parte degli studenti usano WhatsApp è senza dubbio un motivo aggiuntivo per incoraggiare a spostarsi su una piattaforma più sicura, accessibile e adatta ad un mondo universitario.",
         text2: "Usare un'applicazione con un colore diverso ma tantissime funzionalità aggiuntive è un motivo valido per fare la transizione!",
         text3: "Unisciti alle migliaia di studenti che hanno già effettuato la transizione a Telegram e contribuisci a creare un supporto per il futuro agli studenti che verranno dopo di te.",
         doubleQuoteText1: "Ma tutti usano WhatsApp..",
