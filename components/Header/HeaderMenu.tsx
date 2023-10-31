@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext, CSSProperties } from "react";
 import { FontSizes, IDropdownOption, Icon, Panel, Text, Pivot, PivotItem, IPivotStyles, useTheme, Link } from '@fluentui/react';
 import { useRouter } from 'next/router';
 import { useBoolean } from "@fluentui/react-hooks";
@@ -24,13 +24,13 @@ const HeaderMenu = () => {
     const { isPolicyAccepted, togglePolicyDialog } = useContext(GlobalContext);
     const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
 
-    const cardStyle = { 
+    const cardStyle: CSSProperties = { 
         backgroundColor: theme.palette.themeDarkAlt, 
         borderRadius: 10, 
         padding:15 
     };
 
-    const mobileHeaderButton = { 
+    const mobileHeaderButton: CSSProperties = { 
         fontSize: FontSizes.size18,
         backgroundColor: theme.palette.themePrimary,
         color: theme.palette.white,
@@ -59,16 +59,17 @@ const HeaderMenu = () => {
     
     const getPath = (): string => {
         var pathname = router.pathname;
-        var path = pathname.substring(1);
-        if (path == '') return 'home';
-        return pathname.substring(1);
+        if (pathname.substring(1) === "") return "home";
+
+        var path = pathname.substring(1).split("/")[0];
+        return path;
     };
 
     const [selectedKey, setSelectedKey] = useState("");
 
     useEffect(()=>{
-        setSelectedKey(getPath())
-    }, [router.pathname])
+        setSelectedKey(getPath());
+    }, [router.pathname]);
 
     const handlePivotLinkClick = (item?: PivotItem, _e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
         if (item!.props.itemKey !== selectedKey) {
