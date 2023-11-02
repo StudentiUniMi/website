@@ -208,9 +208,9 @@ const CourseItem = (props: Props) => {
                 }
 
                 <Text styles={descriptionTextStyles}>
-                    {data.year === -1 && <Chip label={locale?.courses.mainGroup} size="small" textColor={theme.palette.black} bgColor={theme.palette.neutralLight} className="m-1" />}
-                    {yearText !== null && <Chip label={yearText} size="small" textColor={theme.palette.black} bgColor={theme.palette.neutralLighter} className="m-1" />}
-                    {semesterText !== null && <Chip label={semesterText} size="small" textColor={theme.palette.black} bgColor={theme.palette.neutralLighter} />}
+                    {data.year === -1 && <Chip label={locale?.courses.mainGroup} size="small" textColor={theme.palette.black} bgColor={theme.palette.neutralLight} className="m-1" theme={theme} />}
+                    {yearText !== null && <Chip label={yearText} size="small" textColor={theme.palette.black} bgColor={theme.palette.neutralLighter} className="m-1" theme={theme} />}
+                    {semesterText !== null && <Chip label={semesterText} size="small" textColor={theme.palette.black} bgColor={theme.palette.neutralLighter} theme={theme} />}
                 </Text>
 
                 <Text variant="small" style={{ marginTop: 8, marginBottom: 8 }}>

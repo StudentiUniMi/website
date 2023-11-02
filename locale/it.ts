@@ -86,7 +86,7 @@ const localeIt: ILocalizationStrings = {
         coachMark: { text1: 'Benvenuto sul nostro sito!', text2: 'Qui puoi trovare alcune impostazioni che ti potrebbero servire. Per il resto, esplora liberamente i servizi che offriamo! :)', understood: 'Capito!' }
     },
     homepage: {
-        telegramText: "Telegram è un'app di messaggistica molto più potente e sicura di WhatsApp.",
+        telegramText: "WhatsApp non è adatto per gli studenti e contenuti universitari.",
         telegramButton: "Dimmi di più",
         section1: {
             typedText: 'Sei iscritto a...',

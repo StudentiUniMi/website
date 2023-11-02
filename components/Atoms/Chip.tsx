@@ -11,13 +11,14 @@ interface Props {
     outlined?: boolean,
     theme?: Theme,
     className?: string,
-    style?: CSSProperties
+    style?: CSSProperties,
+    isLoading?: boolean
 };
 
 const Chip = (props: Props) => {
     return (
-        <div className={props.className ?? ''} style={Object.assign({
-            backgroundColor: props.outlined || !props.bgColor ? "transparent" : props.bgColor,
+        <div className={`${props.className ?? ''}${props.isLoading ? ' chip-shimmer' : ''}`} style={Object.assign({
+            backgroundColor: props.outlined || !props.bgColor ? "transparent" : props.isLoading ? props.theme?.palette.neutralLight : props.bgColor,
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -25,17 +26,22 @@ const Chip = (props: Props) => {
             cursor: 'default',
             borderRadius: 16,
             border: props.outlined && `1px solid ${props.theme?.palette.neutralTertiary}`,
+            width: props.isLoading ? randomIntFromInterval(100,150) : 'auto',
             height: props.size === 'small' ? 24 : 32,
             transition: 'all ease-in 0.1s'
         }, props.style)}>
-            <Text 
+            {!props.isLoading && <Text 
                 variant={"small"} 
                 styles={semibold} 
                 style={{ color: props.textColor, padding: props.size === 'small' ? '0px 8px' : '0px 12px' }}>
                     {props.label}
-            </Text>
+            </Text>}
         </div>
     )
+};
+
+const randomIntFromInterval = (minWidth: number, maxWidth: number) => {
+  return Math.floor(Math.random() * (maxWidth - minWidth + 1) + minWidth);
 };
 
 export default Chip;

@@ -429,3 +429,37 @@ footer .ms-Label {
     text-align: center;
   }
 }
+
+.chip-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.chip-shimmer::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: linear-gradient(to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.2) 40%,
+      transparent 60%,
+      transparent 100%);
+  transform: rotate(45deg);
+}
+
+.chip-shimmer::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(255, 255, 255, 0.2) 40%,
+      transparent 60%,
+      transparent 100%);
+}

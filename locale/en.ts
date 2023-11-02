@@ -86,7 +86,7 @@ const localeEn: ILocalizationStrings = {
         coachMark: { text1: 'Welcome on our website!', text2: 'Here you can find some settings that might be helpful. Enjoy our services! :)', understood: 'Got it!' }
     },
     homepage: {
-        telegramText: "Telegram is way safer and efficient than WhatsApp.",
+        telegramText: "WhatsApp is not suitable for a university community.",
         telegramButton: "Tell me more",
         section1: {
             typedText: 'Are you a student of...',
