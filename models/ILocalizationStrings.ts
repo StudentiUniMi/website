@@ -139,12 +139,6 @@ interface ILocalizationStrings {
         faqsSection: {
             header: string,
             description: string
-        },
-        telegramSection: {
-            title: string,
-            description: string,
-            advantages: string,
-            list: any[]
         }
     },
     courses: {
@@ -349,6 +343,24 @@ interface ILocalizationStrings {
         githubProfile: string,
         websiteProfile: string,
         text2: string,
+    },
+    telegram:  {
+        title: string,
+        subtitle: string,
+        labelButton: string,
+        text1: string,
+        text2: string,
+        text3: string,
+        doubleQuoteText1: string,
+        doubleQuoteText2: string,
+        doubleQuoteText3: string,
+        headerList: string,
+        listText1: string,
+        listText2: string,
+        listText3: string,
+        listText4: string,
+        listText5: string,
+        listText6: string
     },
     footer: [
         { text: string, buttonText: string },

@@ -9,12 +9,12 @@ import Row from 'react-bootstrap/Row';
 import Image from 'next/image';
 
 interface Props {
-    degrees: string[]
+    isLoadingDegrees: boolean,
+    degrees: Array<string>
 };
 
 const Landing = (props: Props) => {
     const locale = LocalizationService.strings();
-    let stringDegrees: string[] = props.degrees;
 
     return (
         <div className="pb-5 pt-5">
@@ -50,12 +50,15 @@ const Landing = (props: Props) => {
                             </h2>
                         </div>
 
-                        <DegreesMarquee degrees={stringDegrees} />
+                        <DegreesMarquee 
+                            isLoadingDegrees={props.isLoadingDegrees}
+                            degrees={props.degrees} 
+                        />
                     </Col>
                 </Row>
             </Container>
         </div>
     )
-}
+};
 
 export default Landing;

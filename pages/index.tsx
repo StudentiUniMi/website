@@ -1,5 +1,4 @@
 import { NextSeo } from 'next-seo';
-import { GetServerSideProps } from 'next/types';
 import { getStringDegrees } from 'services/Requests';
 import LocalizationService from "../services/LocalizationService";
 import Faqs from '../components/Home/Faqs';
@@ -11,14 +10,50 @@ import Section4 from '../components/Home/Section4';
 import Telegram from '../components/Home/Telegram';
 import Wikipedia from '../components/Home/Wikipedia';
 import UnimiaStudentiUnimi from '../components/Home/UnimiaStudentiUnimi';
+import { useCallback, useEffect, useState } from 'react';
 
-interface Props {
-    degrees: string[]
-};
-
-const HomeView = (props: Props) => {
+const Homepage = () => {
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
+
+    const [isLoadingDegrees, setIsLoadingDegrees] = useState<boolean>(false);
+    const [degrees, setDegrees] = useState<Array<string>>([]);
+
+    const getDegrees = useCallback(async () => {
+        setDegrees([
+            'informatica',
+            'fisica',
+            'informatica musicale',
+            'matematica',
+            'informatica per la comunicazione digitale',
+            'bioinformatics',
+            'sicurezza informatica',
+            "infermieristica",
+            "scienze delle professioni sanitarie tecniche diagnostiche",
+            "scienze chimiche",
+            "scienze della produzione e protezione delle piante",
+            "medical biotechnology and molecular medicine",
+            "international politics, law and economics",
+            "finance and economics (mef)",
+            "infermieristica pediatrica",
+            "scienza, tecnica e didattica dello sport",
+            "scienze internazionali e istituzioni europee (sie)",
+            "scienze dei servizi giuridici",
+            "international politics, law and economics"
+        ]);
+
+        setIsLoadingDegrees(true);
+        
+        const stringDegreesResult = await getStringDegrees();
+
+        setDegrees(stringDegreesResult.value ?? []);
+        
+        setIsLoadingDegrees(false);
+    }, [setDegrees]);
+
+    useEffect(() => {
+        getDegrees();
+    }, []);
 
     return (
         <>
@@ -48,7 +83,10 @@ const HomeView = (props: Props) => {
             />
 
             <section className="home">
-                <Landing degrees={props.degrees} />
+                <Landing 
+                    isLoadingDegrees={isLoadingDegrees}
+                    degrees={degrees} 
+                />
 
                 <Telegram />
 
@@ -70,42 +108,4 @@ const HomeView = (props: Props) => {
     )
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
-    let stringDegreesResult = await getStringDegrees();
-    let degrees: Array<string> = [];
-
-    // Fill string degrees with default ones in case of API error
-    if (stringDegreesResult.error) {
-        degrees = [
-            'informatica',
-            'fisica',
-            'informatica musicale',
-            'matematica',
-            'informatica per la comunicazione digitale',
-            'bioinformatics',
-            'sicurezza informatica',
-            "infermieristica",
-            "scienze delle professioni sanitarie tecniche diagnostiche",
-            "scienze chimiche",
-            "scienze della produzione e protezione delle piante",
-            "medical biotechnology and molecular medicine",
-            "international politics, law and economics",
-            "finance and economics (mef)",
-            "infermieristica pediatrica",
-            "scienza, tecnica e didattica dello sport",
-            "scienze internazionali e istituzioni europee (sie)",
-            "scienze dei servizi giuridici",
-            "international politics, law and economics"
-        ];
-    } else {
-        degrees = stringDegreesResult.value ?? [];
-    }
-
-    return { 
-        props: { 
-            degrees: degrees
-        } 
-    };
-};
-
-export default HomeView;
+export default Homepage;

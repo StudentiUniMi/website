@@ -416,3 +416,50 @@ footer .ms-Label {
     max-width: 100% !important;
   }
 }
+
+/* media query for Telegram page */
+@media only screen and (max-width: 500px) {
+  .telegramText3 {
+    font-size: 24px;
+  }
+
+  .telegramDoubleQuote{
+    flex-direction: column !important;
+    gap: 0 !important;
+    text-align: center;
+  }
+}
+
+.chip-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.chip-shimmer::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: linear-gradient(to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.2) 40%,
+      transparent 60%,
+      transparent 100%);
+  transform: rotate(45deg);
+}
+
+.chip-shimmer::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(255, 255, 255, 0.2) 40%,
+      transparent 60%,
+      transparent 100%);
+}

@@ -95,14 +95,11 @@ export const GlobalProvider = ({ children }: any) => {
     };
 
     useEffect(() => {
+        LocalizationService.localize(language);
         setLightTheme(buildLightTheme(palette));
         setDarkTheme(buildDarkTheme(palette));
         loadTheme(theme === Theme.DARK ? darkTheme : lightTheme);
     }, [palette, theme, language]);
-
-    useEffect(() => {
-        LocalizationService.localize(language);
-    }, [language]);
 
     return (
         <GlobalContext.Provider value={{ 

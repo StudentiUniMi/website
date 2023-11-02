@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback, useContext } from "react";
+import { useEffect, useState, useContext, CSSProperties } from "react";
 import { FontSizes, IDropdownOption, Icon, Panel, Text, Pivot, PivotItem, IPivotStyles, useTheme, Link } from '@fluentui/react';
 import { useRouter } from 'next/router';
 import { useBoolean } from "@fluentui/react-hooks";
@@ -24,13 +24,13 @@ const HeaderMenu = () => {
     const { isPolicyAccepted, togglePolicyDialog } = useContext(GlobalContext);
     const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
 
-    const cardStyle = { 
+    const cardStyle: CSSProperties = { 
         backgroundColor: theme.palette.themeDarkAlt, 
         borderRadius: 10, 
         padding:15 
     };
 
-    const mobileHeaderButton = { 
+    const mobileHeaderButton: CSSProperties = { 
         fontSize: FontSizes.size18,
         backgroundColor: theme.palette.themePrimary,
         color: theme.palette.white,
@@ -56,53 +56,23 @@ const HeaderMenu = () => {
         [ItemsKeys.university, locale?.headerMenuItems.university],
         [ItemsKeys.organization, locale?.headerMenuItems.aboutUs]
     ]);
-
-    const getPath = useCallback((): Array<string | boolean> => {
+    
+    const getPath = (): string => {
         var pathname = router.pathname;
-        var states = pathname.substring(1).split('/').filter(x => x !== '');
-        let first = states.length > 0 ? states[0] : '';
-        let isCorrectPathKey = Object.keys(ItemsKeys).filter(x => x === first).length !== 0;
-        return [first, isCorrectPathKey];
-    }, []);
+        if (pathname.substring(1) === "") return "home";
 
-    let didMount = useRef(false);
-    let [path, isCorrect] = getPath();
-    const [selectedKey, setSelectedKey] = useState(isCorrect ? path as ItemsKeys : ItemsKeys.home);
+        var path = pathname.substring(1).split("/")[0];
+        return path;
+    };
 
-    /* Initialize header element based on URL */
-    useEffect(() => {
-        if (!didMount.current) {
-            didMount.current = true;
-            let [path, isCorrect] = getPath();
-            if (!isCorrect) {
-                router.push('/');
-                setSelectedKey(ItemsKeys.home);
-            } else {
-                setSelectedKey(path as ItemsKeys);
-            }
-        }
-    }, [getPath]);
+    const [selectedKey, setSelectedKey] = useState("");
 
-    /* Handle push and pop events of browser */
-    useEffect(() => {
-        router.beforePopState(({ as }) => {
-            const routeEl = as.substring(1,);
-
-            if (routeEl === "") setSelectedKey("home" as ItemsKeys);
-            else setSelectedKey(routeEl as ItemsKeys);
-            
-            return true;
-        });
-
-        return () => {
-            router.beforePopState(() => true);
-        };
-    }, [router]);
+    useEffect(()=>{
+        setSelectedKey(getPath());
+    }, [router.pathname]);
 
     const handlePivotLinkClick = (item?: PivotItem, _e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
         if (item!.props.itemKey !== selectedKey) {
-            setSelectedKey(item!.props.itemKey! as ItemsKeys);
-
             if (item!.props.itemKey === "home") {
                 router.push('/');
             } else {
@@ -113,8 +83,6 @@ const HeaderMenu = () => {
 
     const handleDropdownValueChange = (item?: IDropdownOption): void => {
         if (item!.key !== selectedKey) {
-            setSelectedKey(item!.key! as ItemsKeys);
-
             if (item!.key! === "home") {
                 router.push('/');
             } else {
@@ -180,7 +148,7 @@ const HeaderMenu = () => {
                         </div>
 
                         <div className="mb-3">
-                            <div style={{ ...cardStyle, backgroundColor: theme.palette.yellow }} onClick={() => { router.push("/courses"); setSelectedKey(ItemsKeys.courses); dismissPanel(); } }>
+                            <div style={{ ...cardStyle, backgroundColor: theme.palette.yellow }} onClick={() => { router.push("/courses"); dismissPanel(); } }>
                                 <Text variant="medium" styles={semibold} style={{ color: "#0f0f0f" }}>{locale?.sidebar.searchGroup} <Icon iconName="ChevronRightMed" style={{ fontSize: 10 }} /></Text>
                             </div>
                         </div>
