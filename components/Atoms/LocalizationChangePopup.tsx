@@ -47,10 +47,6 @@ const LocalizationChangePopup = () => {
                 <div className="d-flex flex-column justify-content-between" style={{ gap: 15 }}>
                     <div className="d-flex flex-column" style={{ gap: 5 }}>
                         <Text variant="large" block styles={bold}>You don't speak Italian?</Text>
-
-                        <Text variant="medium" styles={semibold} style={{ color: theme.palette.neutralPrimary }}>
-                            Looks like your browser is not set on italian. Would you like to switch to English language?
-                        </Text>
                     </div>
 
                     <div className="d-flex flex-row" style={{ gap: 15 }}>
