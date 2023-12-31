@@ -1,5 +1,5 @@
 import { Text, useTheme, PrimaryButton, DefaultButton } from '@fluentui/react';
-import { bold, semibold } from '../../services/Fonts';
+import { semibold } from '../../services/Fonts';
 import { useState, useEffect, useContext, CSSProperties } from 'react';
 import { useCookies } from 'react-cookie';
 import { addDays } from 'services/Utils';
@@ -16,7 +16,7 @@ const LocalizationChangePopup = () => {
         width: '100%',
         bottom: 0,
         gap: 20,
-        backgroundColor: theme.palette.white,
+        backgroundColor: theme.palette.neutralLight,
         borderTop: `1px solid ${theme.palette.neutralQuaternary}`,
         padding: '20px 15px'
     };
@@ -46,7 +46,7 @@ const LocalizationChangePopup = () => {
             <div style={localizationPopup}>
                 <div className="d-flex flex-column justify-content-between" style={{ gap: 15 }}>
                     <div className="d-flex flex-column" style={{ gap: 5 }}>
-                        <Text variant="large" block styles={bold}>You don't speak Italian?</Text>
+                        <Text variant="large" block styles={semibold}>You don't speak Italian?</Text>
                     </div>
 
                     <div className="d-flex flex-row" style={{ gap: 15 }}>
