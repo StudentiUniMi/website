@@ -18,7 +18,8 @@ const LocalizationChangePopup = () => {
         gap: 20,
         backgroundColor: theme.palette.neutralLight,
         borderTop: `1px solid ${theme.palette.neutralQuaternary}`,
-        padding: '20px 15px'
+        padding: '20px 15px',
+        opacity: '92%'
     };
     
     const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);

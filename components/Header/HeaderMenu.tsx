@@ -21,6 +21,7 @@ const HeaderMenu = () => {
     var theme = useTheme();
     const locale = LocalizationService.strings();
     const router = useRouter();
+    
     const { isPolicyAccepted, togglePolicyDialog } = useContext(GlobalContext);
     const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
 
@@ -43,7 +44,8 @@ const HeaderMenu = () => {
     const pivotStyles: Partial<IPivotStyles> = {
         root: { 
             color: theme.palette.neutralPrimary, 
-            fontSize: FontSizes.size24
+            fontSize: FontSizes.size24,
+            height: 44
         }
     };
 
@@ -93,7 +95,13 @@ const HeaderMenu = () => {
         dismissPanel();
     };
 
-    const dropdownOptions: IDropdownOption[] = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }));
+    const getHref = (item: ItemsKeys) => {
+        if (item === "home") return "/";
+
+        return item;
+    };
+
+    const dropdownOptions: Array<IDropdownOption> = Object.values(ItemsKeys).map(x => ({ key: x, text: texts.get(x)! }));
 
     return (
         <div className="header-menu">
@@ -107,7 +115,14 @@ const HeaderMenu = () => {
                     theme={theme}
                     overflowBehavior={'menu'}
                 >
-                    {Object.values(ItemsKeys).map((x, _i) => <PivotItem headerText={texts.get(x)} itemKey={x} key={x} />)}
+                    {Object.values(ItemsKeys).map((x, _i) => ( 
+                        <PivotItem 
+                            headerButtonProps={{ href: getHref(x) }} 
+                            headerText={texts.get(x)} 
+                            itemKey={x} 
+                            key={x} 
+                        /> 
+                    ) )}
                 </Pivot>
             </div>
 
@@ -136,14 +151,15 @@ const HeaderMenu = () => {
 
                         <div className="mb-3">
                             {dropdownOptions.map((x, i) =>
-                                <div 
-                                    className="menu-item mb-2 pr-4 pl-4 pt-1 pb-2" 
-                                    onClick={() => handleDropdownValueChange(x)}
+                                <a 
+                                    href={String(x.key)}
+                                    className="d-flex text-decoration-none menu-item mb-2 pr-4 pl-4 pt-1 pb-2" 
+                                    onClick={(e) => { preventDefault(e); handleDropdownValueChange(x) }}
                                     key={i}
                                     style={{ backgroundColor: (x.key === selectedKey) || (selectedKey as string === "" && x.key === "home") ? theme.palette.neutralLighter : 'none', borderRadius: 25 }}
                                 >
                                     <Text variant="xLarge">{x.text}</Text>
-                                </div>
+                                </a>
                             )}
                         </div>
 
@@ -155,7 +171,7 @@ const HeaderMenu = () => {
 
                         <div className="mb-3">
                             <div style={cardStyle}>
-                                <Link href={preventVisibleHref(isPolicyAccepted, "https://t.me/unimichat")} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()} className="text-decoration-none">
+                                <Link href={preventVisibleHref(isPolicyAccepted, "https://t.me/unimichat")} onClick={(e: any) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()} className="text-decoration-none">
                                     <Text variant="medium" style={{ color: "#fcfcfc" }}>{locale?.sidebar.mainGroup} <Icon iconName="ChevronRightMed" style={{ fontSize: 10 }} /></Text>
                                 </Link>
                             </div>
