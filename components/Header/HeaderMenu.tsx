@@ -96,8 +96,6 @@ const HeaderMenu = () => {
     };
 
     const getHref = (item: ItemsKeys) => {
-        if (item === "home") return "/";
-
         return item;
     };
 
@@ -117,7 +115,7 @@ const HeaderMenu = () => {
                 >
                     {Object.values(ItemsKeys).map((x, _i) => ( 
                         <PivotItem 
-                            headerButtonProps={{ href: getHref(x) }} 
+                            headerButtonProps={{ href: x === "home" ? "/" : `/${getHref(x)}` }} 
                             headerText={texts.get(x)} 
                             itemKey={x} 
                             key={x} 
