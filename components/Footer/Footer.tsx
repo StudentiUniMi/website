@@ -89,7 +89,7 @@ const Footer = () => {
 
     return (
         <>
-            {clientRender && <footer style={{ backgroundColor: appTheme.palette.neutralQuaternaryAlt, borderTop: '1px solid', borderColor: appTheme.palette.neutralLight }} className="pt-5 pb-5">
+            <footer style={{ backgroundColor: appTheme.palette.neutralQuaternaryAlt, borderTop: '1px solid', borderColor: appTheme.palette.neutralLight }} className="pt-5 pb-5">
                 <Container style={{ width: '100%', color: appTheme.palette.neutralSecondary }}>
 
                     <Row className="mb-4">
@@ -134,7 +134,7 @@ const Footer = () => {
                         </Col>
 
                         <Col xl={3} lg={2} md={3} sm={12} xs={12}>
-                            <div className="mb-2">
+                            { clientRender && <div className="mb-2">
                                 <Toggle
                                     label={locale?.settingsPanel.changeTheme}
                                     onText={locale?.settingsPanel.darkTheme}
@@ -143,9 +143,9 @@ const Footer = () => {
                                     onChange={() => changeTheme(theme)}
                                     theme={appTheme}
                                 />
-                            </div>
+                            </div> }
 
-                            <div className="mb-2 language-selector">
+                            { clientRender && <div className="mb-2 language-selector">
                                 <Label>{locale?.settingsPanel.selectLanguage}</Label>
                                 <Text
                                     variant="medium"
@@ -164,14 +164,14 @@ const Footer = () => {
                                 >
                                     ENG
                                 </Text>
-                            </div>
+                            </div> }
                         </Col>
 
                         <Col xl={3} lg={4} md={6} sm={12} xs={12}>
                             <div>
                                 <Text variant="medium" styles={semibold}>{locale?.settingsPanel.selectColor}</Text>
                             </div>
-                            <SwatchColorPicker selectedId={palette} columnCount={7} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => { changePalette(id!); }} />
+                            { clientRender && <SwatchColorPicker selectedId={palette} columnCount={7} cellShape={'square'} colorCells={colorCells} onColorChanged={(id) => { changePalette(id!); }} /> }
                         </Col>
 
                     </Row>
@@ -211,7 +211,6 @@ const Footer = () => {
 
                 </Container>
             </footer>
-            }
         </>
     );
 };

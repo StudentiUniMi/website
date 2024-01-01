@@ -20,11 +20,6 @@ section {
   flex-grow: 1;
 }
 
-/* Fix the visualization bug on some ugly browsers like Mozilla Night Basalmici Version */
-span {
-  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
-}
-
 h1,h2,h3,h4,h5,h6 {
   margin: 0;
   padding: 0;
@@ -329,6 +324,10 @@ svg {
   }
 }
 
+.ms-Pivot-overflowMenuButton {
+  top: -16px; // Fix issue on Fluent UI pivot component with hrefs
+}
+
 /* Fix SearchBox visualization for small height displays */
 @media only screen and (max-height: 900px) {
   #SuggestionContainer .ms-Callout-main {
@@ -430,6 +429,7 @@ footer .ms-Label {
   }
 }
 
+/* Chip shimmers */
 .chip-shimmer {
   position: relative;
   overflow: hidden;

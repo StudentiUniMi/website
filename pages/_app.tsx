@@ -17,7 +17,7 @@ import Head from 'next/head';
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import PrivacyPolicyDialog from 'components/Atoms/PrivacyPolicyDialog';
-import LocalizationChangeDialog from 'components/Atoms/LocalizationChangeDialog';
+import LocalizationChangeDialog from 'components/Atoms/LocalizationChangePopup';
 import LocalizationService from 'services/LocalizationService';
 
 /**
