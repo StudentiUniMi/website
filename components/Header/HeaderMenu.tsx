@@ -152,7 +152,7 @@ const HeaderMenu = () => {
                         <div className="mb-3">
                             {dropdownOptions.map((x, i) =>
                                 <a 
-                                    href={String(x.key)}
+                                    href={`/${x.key === "home" ? "" : getHref(x.key as ItemsKeys)}`}
                                     className="d-flex text-decoration-none menu-item mb-2 pr-4 pl-4 pt-1 pb-2" 
                                     onClick={(e) => { preventDefault(e); handleDropdownValueChange(x) }}
                                     key={i}
