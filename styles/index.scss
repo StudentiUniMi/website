@@ -324,10 +324,6 @@ svg {
   }
 }
 
-.ms-Pivot-overflowMenuButton {
-  top: -16px; // Fix issue on Fluent UI pivot component with hrefs
-}
-
 /* Fix SearchBox visualization for small height displays */
 @media only screen and (max-height: 900px) {
   #SuggestionContainer .ms-Callout-main {
@@ -462,4 +458,8 @@ footer .ms-Label {
       rgba(255, 255, 255, 0.2) 40%,
       transparent 60%,
       transparent 100%);
+}
+
+.marquee span {
+  display: flex;
 }
