@@ -1,9 +1,8 @@
-import { useRef, useEffect, useState, useCallback } from "react";
 import { NextSeo } from 'next-seo';
 import { Container } from 'react-bootstrap';
-import { Text, Icon, Dropdown, IDropdownOption, useTheme, PrimaryButton, Separator, Link } from '@fluentui/react';
-import { getRepresentatives, getDepartments, getUniversityLinks } from '../services/Requests'
-import { Department, LocalizedField, Representative } from '../models/Models';
+import { Text, useTheme, PrimaryButton, Separator, Link } from '@fluentui/react';
+import { getUniversityLinks } from '../services/Requests'
+import { LocalizedField } from '../models/Models';
 import { bold, semibold } from "../services/Fonts";
 import Lottie from 'react-lottie';
 import * as lottieMap from '../components/University/Lottie/47956-area-map.json';
@@ -11,7 +10,6 @@ import * as lottieGraduations from '../components/University/Lottie/45535-girl-m
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import LocalizationService from "../services/LocalizationService";
-import RepresentativesList from '../components/University/RepresentativesList';
 import Marquee from "react-fast-marquee";
 import Chip from "components/Atoms/Chip";
 import ItemsGroup, { Item } from "components/Atoms/ItemsGroup";
@@ -20,7 +18,6 @@ import UniversityLink from "models/UniversityLink";
 
 const University = () => {
     var theme = useTheme();
-    let didMount = useRef(false);
     const locale = LocalizationService.strings();
     var language: string | undefined = LocalizationService.getLanguage();
     
@@ -61,64 +58,6 @@ const University = () => {
         { label: { it: "Giardini e cortili", en: "Gardens and courtyards" } },
         { label: { it: "Rappresentanti degli studenti", en: "Student representatives" } }
     ];
-    
-    /* States */
-    const [departments, setDepartments] = useState<Department[]>([]);
-    const [representatives, setRepresentatives] = useState<Representative[]>([]);
-    const [selectedDepartment, setSelectedDepartment] = useState<string>('');
-
-    const [loadingRepresentatives, setLoadingRepresentatives] = useState<boolean>(false);
-    const [errorLoadingRepresentatives, setErrorLoadingRepresentatives] = useState<boolean>(false);
-    const [errorLoadingDepartments, setErrorLoadingDepartments] = useState<boolean>(false);
-
-    const departmentSelectionChanged = (_?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IDropdownOption): void => {
-        setSelectedDepartment(option?.key as string ?? '');
-    };
-
-    /* Departments callBack */
-    const updateDepartments = useCallback(async () => {
-        setErrorLoadingDepartments(false);
-        let departmentsResult = await getDepartments();
-
-        if (departmentsResult.error) {
-            setErrorLoadingDepartments(true);
-            return;
-        }
-
-        setDepartments(departmentsResult.value ?? []);
-    }, []);
-
-    /* Representatives callBack */
-    const updateRepresentatives = useCallback(async () => {
-        if (selectedDepartment === '' || selectedDepartment === undefined) return;
-        setLoadingRepresentatives(true);
-        setErrorLoadingRepresentatives(false);
-        let representativesResult = await getRepresentatives(selectedDepartment);
-
-        if (representativesResult.error) {
-            setLoadingRepresentatives(false);
-            setErrorLoadingRepresentatives(true);
-        }
-
-        setLoadingRepresentatives(false);
-        setRepresentatives(representativesResult.value ?? []);
-    }, [setRepresentatives, selectedDepartment]);
-
-    useEffect(() => {
-        if (!didMount.current) {
-            updateDepartments();
-        }
-    }, [updateDepartments]);
-
-    useEffect(() => {
-        updateRepresentatives();
-    }, [selectedDepartment, updateRepresentatives]);
-
-    let departmentOptions: IDropdownOption[] = [];
-    
-    departments.forEach(x => {
-        if (x.representative_count !== 0) departmentOptions.push({ key: x.pk, text: x.name ?? "", data: { icon: x.icon, slug: x.slug }, disabled: x.representative_count === 0 });
-    });
 
     return (
         <>
@@ -260,80 +199,9 @@ const University = () => {
                     </Container>
                 </div>
 
-                <Separator />
-
-                <div className="pt-5 pb-5 text-center" id={'representatives'}>
-                    <Container>
-                        <div className="mb-2">
-                            <div className="mb-2">
-                                <Text variant="xLargePlus">
-                                    {locale?.university.representatives.title}
-                                </Text>
-                            </div>
-
-                            <div className="mb-2">
-                                <Text variant="medium">
-                                    <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.university.representatives.description} />
-                                </Text>
-                            </div>
-
-                            <div className="mb-2 text-center" style={{ maxWidth: 400, margin: '0 auto'}}>
-                                <Dropdown
-                                    placeholder={locale?.university.departmentSelect}
-                                    label={locale?.university.departmentSelect}
-                                    options={departmentOptions}
-                                    onChange={departmentSelectionChanged}
-                                    selectedKey={selectedDepartment}
-                                    onRenderTitle={onRenderTitle}
-                                    onRenderOption={onRenderOption}
-                                    errorMessage={errorLoadingDepartments ? locale?.errorLoadingDepartments : undefined}
-                                    disabled={errorLoadingDepartments || departments.length === 0}
-                                />
-                            </div>
-                        </div>
-                    </Container>
-                </div>
-
-                {
-                    selectedDepartment &&
-                    <Container>
-                        <RepresentativesList 
-                            data={representatives} 
-                            loadingRepresentatives={loadingRepresentatives} 
-                            errorLoadingRepresentatives={errorLoadingRepresentatives}
-                        />
-                    </Container>
-                }
-
             </section>
         </>
     )
 };
 
 export default University;
-
-const iconStyles = { marginRight: '8px' };
-
-const onRenderOption = (option?: IDropdownOption): JSX.Element => {
-    return (
-        <div>
-            {option?.data && option?.data.icon && (
-                <Icon style={iconStyles} iconName={option.data.icon} aria-hidden="true" title={option.data.icon} />
-            )}
-            <span>{option?.text}</span>
-        </div>
-    );
-};
-
-const onRenderTitle = (options?: IDropdownOption[]): JSX.Element => {
-    const option = options![0];
-
-    return (
-        <div>
-            {option.data && option.data.icon && (
-                <Icon style={iconStyles} iconName={option.data.icon} aria-hidden="true" title={option.data.icon} />
-            )}
-            <span>{option.text}</span>
-        </div>
-    );
-};

@@ -4,6 +4,7 @@ import { GoChevronRight } from "react-icons/go";
 import { FiSearch } from 'react-icons/fi';
 import { BsQuestionSquare } from 'react-icons/bs';
 import { MdPeopleAlt } from 'react-icons/md';
+import { IoIosMail } from "react-icons/io";
 
 export const registeredIcons: { [key: string]: string | JSX.Element } = {
     GoChevronRight: <GoChevronRight />,
@@ -55,5 +56,6 @@ export const registeredIcons: { [key: string]: string | JSX.Element } = {
     AiOutlineFileSearch: <AiOutlineFileSearch />,
     AiOutlineFileText: <AiOutlineFileText />,
     AiOutlineEdit: <AiOutlineEdit />,
-    AiOutlineStar: <AiOutlineStar />
+    AiOutlineStar: <AiOutlineStar />,
+    IoIosMail: <IoIosMail />
 };
