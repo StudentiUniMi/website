@@ -158,13 +158,17 @@ svg {
     text-align: center;
   }
 
-  .university .people-list .col-xs-12, .degree .admin-list .col-xs-12 {
+  .university .people-list .col-xs-12, 
+  .degree .admin-list .col-xs-12,
+  .degree .representatives-list .col-xs-12 {
     margin-left: 15%;
     max-width: 250px;
     text-align: center;
   }
 
-  .university .people-list, .degree .admin-list {
+  .university .people-list, 
+  .degree .admin-list,
+  .degree .representatives-list {
     justify-content: center;
   }
 

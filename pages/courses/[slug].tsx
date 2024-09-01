@@ -3,19 +3,20 @@ import { Text, DefaultButton, IIconProps, useTheme, TooltipDelay, TooltipHost, D
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 import { GetServerSideProps } from 'next';
-import { VerboseDegree, CourseDegree, Admin } from "../../models/Models";
+import { VerboseDegree, CourseDegree, Admin, Representative } from "../../models/Models";
 import { Container } from 'react-bootstrap';
-import { getCourses, getDegreeInformations, getVerboseDegreeBySlug, getDegreeAdmins } from '../../services/Requests';
+import { getCourses, getDegreeInformations, getVerboseDegreeBySlug, getDegreeAdmins, getRepresentatives } from '../../services/Requests';
 import { semibold } from '../../services/Fonts';
 import { getDegreeFullName } from 'services/Utils';
 import { DegreeInformation } from 'models/DegreeInformation';
 import FourOhFour from 'pages/404';
 import LocalizationService from "../../services/LocalizationService";
-import DegreeInformations from "../../components/Courses/DegreeInformations";
+//import DegreeInformations from "../../components/Courses/DegreeInformations";
 import AdminsList from '../../components/Courses/AdminsList';
 import GroupList from "../../components/Courses/GroupList";
 import Chip from 'components/Atoms/Chip';
 import FiveHundred from 'pages/500';
+import RepresentativesList from 'components/Courses/RepresentativesList';
 
 interface reactHelmetContent {
     title: string,
@@ -29,10 +30,12 @@ interface Props {
     courses: Array<CourseDegree>,
     informations: Array<DegreeInformation>,
     admins: Array<Admin>,
+    representatives: Array<Representative>
     errors: {
         degree: boolean,
         courses: boolean,
         admins: boolean,
+        representatives: boolean,
         informations: boolean
     }
 };
@@ -95,6 +98,10 @@ const Course = (props: Props) => {
     // Degree admins
     let admins: Admin[] = props.admins;
     let errorLoadingAdmins: boolean = props.errors.admins;
+
+    // Degree representatives (related to department)
+    let representatives: Array<Representative> = props.representatives;
+    let errorLoadingRepresentatives: boolean = props.errors.representatives;
 
     // Degree informations/redirects
     //let degreeInformations: any[] = props.informations;
@@ -260,6 +267,12 @@ const Course = (props: Props) => {
                         admins={admins}
                         errorLoadingAdmins={errorLoadingAdmins}
                     />
+
+                    {representatives.length > 0 && <RepresentativesList
+                        representatives={representatives}
+                        errorLoadingRepresentatives={errorLoadingRepresentatives}
+                    />}
+                        
                 </div>
 
                 {/* Structured data */}
@@ -273,7 +286,13 @@ const Course = (props: Props) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-    let errors = { degree: false, courses: false, admins: false, informations: false };
+    let errors = { 
+        degree: false, 
+        courses: false, 
+        admins: false,
+        representatives: false,
+        informations: false 
+    };
 
     const degreeSlug = params!.slug as unknown as string;
 
@@ -293,12 +312,17 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     if (degreeResult.error) errors.degree = true;
 
     const degreeKey = degreeResult.value?.pk as unknown as string;
+    const departmentKey = degreeResult.value?.department.pk as unknown as string;
 
     const teachingCoursesResult = await getCourses(degreeKey);
     if (teachingCoursesResult.error) errors.courses = true;
 
     let adminsResult = await getDegreeAdmins(degreeSlug);
     if (adminsResult.error) errors.admins = true;
+
+    let representativesResult = await getRepresentatives(departmentKey);
+
+    if (representativesResult.error) errors.representatives = true;
 
     let degreeInformations = getDegreeInformations(degreeSlug);
 
@@ -333,6 +357,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
             courses: teachingCoursesResult.value ?? [],
             informations: degreeInformations,
             admins: adminsResult.value ?? [],
+            representatives: representativesResult.value ?? [],
             errors: errors
         }
     };
