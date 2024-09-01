@@ -9,7 +9,7 @@ import { getCourses, getDegreeInformations, getVerboseDegreeBySlug, getDegreeAdm
 import { semibold } from '../../services/Fonts';
 import { getDegreeFullName } from 'services/Utils';
 import { DegreeInformation } from 'models/DegreeInformation';
-import FourOhFour from 'pages/404'; 
+import FourOhFour from 'pages/404';
 import LocalizationService from "../../services/LocalizationService";
 import DegreeInformations from "../../components/Courses/DegreeInformations";
 import AdminsList from '../../components/Courses/AdminsList';
@@ -35,6 +35,26 @@ interface Props {
         admins: boolean,
         informations: boolean
     }
+};
+
+interface StructuredDegree {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: Array<{
+        "@type": "ListItem",
+        "position": number,
+        "item": {
+            "@type": "Course",
+            "url": string,
+            "name": string,
+            "description": string,
+            "provider": {
+                "@type": "Organization",
+                "name": string,
+                "sameAs": string
+            }
+        }
+    }>;
 };
 
 const Course = (props: Props) => {
@@ -75,9 +95,40 @@ const Course = (props: Props) => {
     // Degree admins
     let admins: Admin[] = props.admins;
     let errorLoadingAdmins: boolean = props.errors.admins;
-    
+
     // Degree informations/redirects
-    let degreeInformations: any[] = props.informations;
+    //let degreeInformations: any[] = props.informations;
+
+    // Structured data (https://developers.google.com/search/docs/appearance/structured-data/course?hl=it)
+    const buildStructuredName = (course: CourseDegree) => {
+        if (course.year === -1) return loadedDegree?.name;
+        return course.course.name;
+    };
+
+    const buildStructuredDescription = (course: CourseDegree) => {
+        if (course.year === -1) return `Gruppo telegram principale del corso di laurea in "${course.course.name}": dedicato a matricole e studenti di anni successivi al primo, offerto e gestito dal Network StudentiUniMi.`;
+        return `Gruppo telegram del corso didattico "${course.course.name}" del corso di laurea in "${loadedDegree?.name}", ${course.course.cfu} CFU, ${course.year}° anno, ${course.semester}° semestre, offerto e gestito dal Network StudentiUniMi.`;
+    };
+
+    const structuredDegree: StructuredDegree = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        itemListElement: courses.map((course, i) => ({
+            "@type": "ListItem",
+            "position": i + 1,
+            "item": {
+                "@type": "Course",
+                "url": course.course.group?.invite_link ?? "Link del gruppo non disponibile",
+                "name": buildStructuredName(course),
+                "description": buildStructuredDescription(course),
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Università degli Studi di Milano",
+                    "sameAs": "https://www.unimi.it/it"
+                }
+            }
+        }))
+    };
 
     if (!loadedDegree) {
         return (
@@ -171,52 +222,57 @@ const Course = (props: Props) => {
                                 </div>
 
                                 <Text variant="medium" styles={semibold} style={{ color: theme.palette.themePrimary }}>
-                                    <Chip 
-                                        label={getDegreeFullName(loadedDegree?.type!, language!)} 
+                                    <Chip
+                                        label={getDegreeFullName(loadedDegree?.type!, language!)}
                                         theme={theme}
-                                        size="small" 
-                                        outlined 
-                                        textColor={theme.palette.neutralPrimary} 
-                                        className="mr-1" 
+                                        size="small"
+                                        outlined
+                                        textColor={theme.palette.neutralPrimary}
+                                        className="mr-1"
                                     />
                                 </Text>
                             </div>
-                                
+
                             <div className="d-flex align-items-center">
                                 <h1>
-                                    <Text variant='xLargePlus' style={{ lineHeight: 1.3 }}>{locale?.courses.degree.title}</Text><br/>
+                                    <Text variant='xLargePlus' style={{ lineHeight: 1.3 }}>{locale?.courses.degree.title}</Text><br />
                                     <Text variant="superLarge" style={{ lineHeight: 1.3, fontWeight: 700, color: theme.palette.themeDarkAlt }}>{loadedDegree?.name}</Text>
                                 </h1>
                             </div>
-                                
+
                         </div>
                     </Container>
                 </div>
 
                 <div className="degree-details">
-                    <GroupList 
-                        degree={loadedDegree!} 
-                        courses={courses} 
-                        errorLoadingCourses={errorLoadingCourses} 
+                    <GroupList
+                        degree={loadedDegree!}
+                        courses={courses}
+                        errorLoadingCourses={errorLoadingCourses}
                     />
 
-                    {/* When we'll have this info pretty much on all the degrees I can remove this check here */}
-                    {degreeInformations.length > 0 && <DegreeInformations 
-                        degreeInformations={degreeInformations} 
-                    />}
+                    {/* TODO: When we'll have this info retrieved via API we'll be able to show this component */}
+                    {/*(<DegreeInformations
+                        degreeInformations={degreeInformations}
+                    />*/}
 
-                    <AdminsList 
-                        admins={admins} 
-                        errorLoadingAdmins={errorLoadingAdmins} 
+                    <AdminsList
+                        admins={admins}
+                        errorLoadingAdmins={errorLoadingAdmins}
                     />
                 </div>
+
+                {/* Structured data */}
+                <script type="application/ld+json" id="structured-degree">
+                    {JSON.stringify(structuredDegree)}
+                </script>
 
             </section>
         </>
     );
 };
 
-export const getServerSideProps: GetServerSideProps = async ( { params }) => {
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     let errors = { degree: false, courses: false, admins: false, informations: false };
 
     const degreeSlug = params!.slug as unknown as string;
@@ -271,20 +327,20 @@ export const getServerSideProps: GetServerSideProps = async ( { params }) => {
         teachingCoursesResult.value?.unshift(mainDegreeGroup);
     }
 
-    return { 
-        props: { 
+    return {
+        props: {
             loadedDegree: degreeResult.value ?? null,
             courses: teachingCoursesResult.value ?? [],
             informations: degreeInformations,
             admins: adminsResult.value ?? [],
             errors: errors
-        } 
+        }
     };
 };
 
 const replaceUnderscore = (str: string): [string, boolean] => {
-  const replaced = str.replace(/_/g, "-");
-  return [replaced, replaced !== str];
+    const replaced = str.replace(/_/g, "-");
+    return [replaced, replaced !== str];
 };
 
 export default Course;

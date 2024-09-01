@@ -102,7 +102,7 @@ const Faqs = () => {
                 </Accordion>
 
                 {/* Structured data */}
-                <script type="application/ld+json">
+                <script type="application/ld+json" id="structured-faqs">
                     {JSON.stringify(faqPageData)}
                 </script>
 
