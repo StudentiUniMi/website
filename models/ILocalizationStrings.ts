@@ -366,6 +366,7 @@ interface ILocalizationStrings {
         { text: string, buttonText: string },
         { header: string },
         { header: string, text: string },
+        { video: string, graduations: string, maps: string }
     ]
 };
 

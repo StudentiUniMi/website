@@ -3,11 +3,11 @@ import ILocalizationStrings from "models/ILocalizationStrings";
 
 const helmetEn: Helmet = {
     homepage: { title: "Network StudentiUniMi - Groups, services and much more", description: "Official website of StudentiUniMi Network: WhatsApp groups replaced by Telegram ones, services and much more. The largest network of the University of Milan, managed by students for students." },
-    courses: { title: "Degree groups and resources | Network StudentiUniMi", description: "All Telegram groups and resources for all degree courses (three-year, master, single-cycle degrees) of the University of Milan. Join, ask for information and meet new people thanks to the StudentiUniMi Network." },
+    courses: { title: "Degree groups, resources and representatives | Network StudentiUniMi", description: "All Telegram groups, resources and representatives for all degree courses (three-year, master, single-cycle degrees) of the University of Milan. Join, ask for information and meet new people thanks to the StudentiUniMi Network." },
     groups: { title: "Groups | Network StudentiUniMi", description: "University groups, for announcements and student associations of the University of Milan." },
     services: { title: "Services | Network StudentiUniMi", description: "All services and rapid links to the University of Milan's resources: exams, grades, webmail and much more. A very fast alternative UNIMIA replacement." },
     rules: { title: "Groups rules | Network StudentiUniMi", description: "The official rules of the StudentiUniMi Network, the largest student network of the University of Milan." },
-    university: { title: "University informations, rankings, maps and representatives | Network StudentiUniMi", description: "Stay up-to-date with all the informations and representatives of the University of Milan, offered by the StudentiUniMi Network." },
+    university: { title: "University informations, rankings and maps | Network StudentiUniMi", description: "Stay up-to-date with all the informations of the University of Milan, offered by the StudentiUniMi Network." },
     organization: { title: "Organization | Network StudentiUniMi", description: "Who are we? Discover the organization behind the StudentiUniMi Network, the largest network of the University of Milan." },
     degreeLoaded: { title1: 'Groups and resources of ', title2: ' | Network StudentiUniMi', description1: 'All the resources and links of the Telegram groups of ', description2: ' of the University of Milan, offered by StudentiUniMi Network.' },
     notFound: { title: "The page you were looking for does not exist | Network StudentiUniMi", description: "Uh oh, we can't seem to find the page you're looking for. Maybe you can try going to the homepage and look again from there." },
@@ -416,6 +416,7 @@ const localeEn: ILocalizationStrings = {
         { text: 'The network and the associated website are not affiliated to the University of Milan.', buttonText: 'Join our main group' },
         { header: 'Useful links' },
         { header: 'Contacts', text: "For any question or suggestion you can join the main network group <Link href='https://t.me/unimichat'>@unimichat</Link>." },
+        { video: 'Download videolectures', graduations: 'Rankings', maps: 'University locations' }
     ]
 };
 
