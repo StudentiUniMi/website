@@ -161,13 +161,13 @@ const HeaderMenu = () => {
                             )}
                         </div>
 
-                        <div className="mb-3">
+                        <div className="mb-2">
                             <div style={{ ...cardStyle, backgroundColor: theme.palette.yellow }} onClick={() => { router.push("/courses"); dismissPanel(); } }>
                                 <Text variant="medium" styles={semibold} style={{ color: "#0f0f0f" }}>{locale?.sidebar.searchGroup} <Icon iconName="ChevronRightMed" style={{ fontSize: 10 }} /></Text>
                             </div>
                         </div>
 
-                        <div className="mb-3">
+                        <div className="mb-2">
                             <div style={cardStyle}>
                                 <Link href={preventVisibleHref(isPolicyAccepted, "https://t.me/unimichat")} onClick={(e: any) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()} className="text-decoration-none">
                                     <Text variant="medium" style={{ color: "#fcfcfc" }}>{locale?.sidebar.mainGroup} <Icon iconName="ChevronRightMed" style={{ fontSize: 10 }} /></Text>
@@ -175,7 +175,7 @@ const HeaderMenu = () => {
                             </div>
                         </div>
 
-                        <div className="mb-3">
+                        <div className="mb-2">
                             <div style={cardStyle}>
                                 <Link href="https://t.me/studenti_unimi" className="text-decoration-none">
                                     <Text variant="medium" style={{ color: "#fcfcfc" }}>{locale?.sidebar.channel} <Icon iconName="ChevronRightMed" style={{ fontSize: 10 }} /></Text>

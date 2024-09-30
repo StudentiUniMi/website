@@ -114,6 +114,7 @@ const Course = (props: Props) => {
 
     const buildStructuredDescription = (course: CourseDegree) => {
         if (course.year === -1) return `Gruppo telegram principale del corso di laurea in "${course.course.name}": dedicato a matricole e studenti di anni successivi al primo, offerto e gestito dal Network StudentiUniMi.`;
+        if (course.year === -2) return `Gruppo telegram del corso didattico complementare "${course.course.name}" del corso di laurea in "${loadedDegree?.name}", ${course.semester}° semestre, ${course.course.cfu} CFU, offerto e gestito dal Network StudentiUniMi.`
         return `Gruppo telegram del corso didattico "${course.course.name}" del corso di laurea in "${loadedDegree?.name}", ${course.course.cfu} CFU, ${course.year}° anno, ${course.semester}° semestre, offerto e gestito dal Network StudentiUniMi.`;
     };
 

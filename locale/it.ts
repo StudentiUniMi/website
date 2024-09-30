@@ -3,11 +3,11 @@ import ILocalizationStrings from "models/ILocalizationStrings";
 
 const helmetIt: Helmet = {
     homepage: { title: "Network StudentiUniMi - Gruppi, servizi e molto altro", description: "Sito web ufficiale del Network StudentiUniMi: gruppi WhatsApp rimpiazziati da Telegram, servizi e molto altro. Il network più grande dell'Università degli Studi di Milano, gestito da studenti per gli studenti." },
-    courses: { title: "Gruppi e risorse dei corsi di laurea | Network StudentiUniMi", description: "Gruppi Telegram e risorse per tutti i corsi di laurea (triennali, magistrali, lauree a ciclo unico) dell'Università degli Studi di Milano. Entra, chiedi informazioni e conosci nuove persone grazie al Network StudentiUniMi." },
+    courses: { title: "Gruppi, risorse e rappresentanti dei corsi di laurea | Network StudentiUniMi", description: "Gruppi Telegram, risorse e rappresentanti per tutti i corsi di laurea (triennali, magistrali, lauree a ciclo unico) dell'Università degli Studi di Milano. Entra, chiedi informazioni e conosci nuove persone grazie al Network StudentiUniMi." },
     groups: { title: "Tutti i gruppi | Network StudentiUniMi", description: "Gruppi universitari, per gli annunci e associazioni studentesche dell'Università degli Studi di Milano." },
     services: { title: "Servizi e link rapidi | Network StudentiUniMi", description: "Tutti i servizi e i link rapidi alle risorse dell'Università degli Studi di Milano: iscrizioni esami, verbalizzazioni voti, webmail, e molto altro. Un'alternativa veloce a UNIMIA." },
     rules: { title: "Regolamento dei gruppi | Network StudentiUniMi", description: "Il regolamento ufficiale dei gruppi Telegram del Network StudentiUniMi, il più grande network studentesco dell'Università degli Studi di Milano." },
-    university: { title: "Informazioni dall'Ateneo, graduatorie, mappe universitarie e rappresentanti | Network StudentiUniMi", description: "Rimani aggiornato con tutte le informazioni, graduatorie, mappe universitarie e i rappresentanti dell'Università degli Studi di Milano, offerto dal Network StudentiUniMi." },
+    university: { title: "Informazioni dall'Ateneo, graduatorie e mappe universitarie | Network StudentiUniMi", description: "Rimani aggiornato con tutte le informazioni, graduatorie e mappe universitarie dell'Università degli Studi di Milano, offerto dal Network StudentiUniMi." },
     organization: { title: "Chi siamo | Network StudentiUniMi", description: "Chi siamo? Scopri l'organizzazione dietro il Network StudentiUniMi, il più grande network studentesco dell'Università degli Studi di Milano." },
     degreeLoaded: { title1: 'Gruppi e risorse di ', title2: ' | Network StudentiUniMi', description1: 'Tutte le risorse e i link dei gruppi Telegram di ', description2: " dell'Università degli Studi di Milano, offerti dal Network StudentiUniMi." },
     notFound: { title: "La pagina che stai cercando non esiste | Network StudentiUniMi", description: "Uh oh, non riusciamo a trovare la pagina che stai cercando. Forse puoi provare a tornare alla homepage e cercare da lì." },
@@ -416,6 +416,7 @@ const localeIt: ILocalizationStrings = {
         { text: 'Il network e il relativo sito web non sono affiliati all\'Università degli Studi di Milano.', buttonText: 'Entra nel nostro gruppo' },
         { header: 'Link utili' },
         { header: 'Contatti', text: "Per qualsiasi dubbio o proposta è possibile scrivere sul gruppo principale del network <Link href='https://t.me/unimichat'>@unimichat</Link>." },
+        { video: 'Scaricare videolezioni', graduations: 'Graduatorie', maps: 'Mappe spazi universitari' }
     ],
 };
 

@@ -22,7 +22,7 @@ const footerIcons: Array<FooterIcon> = [
     { name: { it: 'Canale Discord', en: 'Discord Channel' }, link: 'https://discord.gg/SwPzAkv4A4', iconName: 'FaDiscord' },
     { name: { it: 'Organizzazione GitHub', en: 'GitHub Organization' }, link: 'https://github.com/StudentiUnimi', iconName: 'FaGithub' },
     { name: { it: 'Pagina Facebook', en: 'Facebook Page' }, link: 'https://www.facebook.com/networkstudentiunimi', iconName: 'FaFacebook' },
-    { name: { it: 'Pagina Instagram', en: 'Instagram Page' }, link: 'https://www.instagram.com/studentiunimi.it/', iconName: 'FaInstagram' },
+    { name: { it: 'Pagina Instagram', en: 'Instagram Page' }, link: 'https://www.instagram.com/networkstudentiunimi/', iconName: 'FaInstagram' },
 ];
 
 const Footer = () => {
@@ -125,7 +125,13 @@ const Footer = () => {
                                                 <Link href="http://www.quickunimi.it/">QuickUnimi</Link>
                                             </li>
                                             <li style={listElement}>
-                                                <Link href="https://codeshare.tech">Codeshare.tech</Link>
+                                                <Link href="https://t.me/graduatorieUniMi">{locale?.footer[3].graduations}</Link>
+                                            </li>
+                                            <li style={listElement}>
+                                                <Link href="https://www.google.com/maps/d/viewer?mid=1601q0wxFe22mtgotqZ7AJzrrWEOYfhs&ll=45.57712672502888%2C9.425802988620111&z=10">{locale?.footer[3].maps}</Link>
+                                            </li>
+                                            <li style={listElement}>
+                                                <Link href="https://wiki.studentiunimi.it/guida:scaricare_videolezioni_ariel">{locale?.footer[3].video}</Link>
                                             </li>
                                         </ul>
                                     </Text>
