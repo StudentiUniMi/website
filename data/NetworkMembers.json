@@ -1,32 +1,38 @@
 [
     {
-        "user_id": 26170256,
-        "username": "acetimarco",
-        "name": "Marco Aceti",
-        "delega": "Coordinatore"
+        "user_id": 1135772943,
+        "username": "insiemeVuot0",
+        "name": "Samuele Fraioli",
+        "delega": "Presidente"
     },
     {
-        "user_id": 278035059,
-        "username": "Spacer_ASC",
-        "name": "Manuele Dentello",
-        "delega": "Comitato Amministrativo Network"
+        "user_id": 402750060,
+        "username": "vandreotti",
+        "name": "Virginia Andreotti",
+        "delega": "Responsabile comunicazione"
     },
     { 
-        "user_id": 592731075,
-        "username": "MattiaOldani", 
-        "name": "Mattia Oldani", 
-        "delega": "Comitato Amministrativo Network"
+        "user_id": 198395080,
+        "username": "ataraxicPhlogiston", 
+        "name": "Pietro Lepori", 
+        "delega": "Responsabile moderazione"
     },
-    { 
-        "user_id": 244426552,
-        "username": "SetteMagic", 
-        "name": "Silvio Settembrese", 
-        "delega": "Comitato Amministrativo Network"
+        { 
+        "user_id": 785706447,
+        "username": "burstEduard0", 
+        "name": "Eduardo Perreca", 
+        "delega": "Responsabile pubbliche relazioni"
     },
-    {
+        { 
         "user_id": 164356927,
-        "username": "Mroik",
-        "name": "Mirko Faina",
-        "delega": "Comitato Amministrativo Network"
+        "username": "Mroik", 
+        "name": "Mirko Faina", 
+        "delega": "Responsabile tecnico"
+    },
+        { 
+        "user_id": 58116358,
+        "username": "@liggiorgio", 
+        "name": "Giorgio Liggio", 
+        "delega": "Responsabile operativo"
     }
 ]

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NextPage } from 'next'
-import { Text, Link, CompoundButton, useTheme, Separator, DefaultButton } from '@fluentui/react';
+import { Text, Link, CompoundButton, useTheme, Separator, DefaultButton, TooltipHost } from '@fluentui/react';
 import { Container } from 'react-bootstrap';
 import { Persona, PersonaSize } from '@fluentui/react';
 import { getNetworkMembers, getDevelopers } from '../services/Requests';
@@ -95,7 +95,7 @@ const Organization: NextPage = () => {
                         {domLoaded &&
                             <Persona
                                 size={PersonaSize.size72}
-                                imageUrl={"https://studentiunimi-groups-propics.marcoaceti.workers.dev/26170256.png"}
+                                imageUrl={`https://studentiunimi-groups-propics.marcoaceti.workers.dev/${networkMembers[0].user_id}.png`}
                                 text={networkMembers[0].name}
                                 onRenderPrimaryText={() => <Text variant="medium" styles={semibold}>{networkMembers[0].name}</Text>}
                                 secondaryText={networkMembers[0].username}
@@ -123,6 +123,8 @@ const Organization: NextPage = () => {
                                                     onRenderPrimaryText={() => <Text variant="medium" styles={semibold}>{x.name}</Text>}
                                                     secondaryText={x.username}
                                                     onRenderSecondaryText={() => <Text variant="medium"><Link href={`https://t.me/${x.username}`}>@{x.username}</Link></Text>}
+                                                    tertiaryText={x.delega}
+                                                    onRenderTertiaryText={() => <TooltipHost content={x.delega}><Text variant="small">{x.delega}</Text></TooltipHost>}
                                                 />
                                             </div>
                                         </Col>
@@ -154,7 +156,7 @@ const Organization: NextPage = () => {
                                                     secondaryText={x.username}
                                                     onRenderSecondaryText={() => <Text variant="medium"><Link href={`https://t.me/${x.username}`}>@{x.username}</Link></Text>}
                                                     tertiaryText={x.description[language!]}
-                                                    onRenderTertiaryText={() => <Text variant="small">{x.description[language!]}</Text>}
+                                                    onRenderTertiaryText={() => <TooltipHost content={x.description[language!]}><Text variant="small">{x.description[language!]}</Text></TooltipHost>}
                                                 />
                                             </div>
                                         </Col>
