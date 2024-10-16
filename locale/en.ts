@@ -304,7 +304,7 @@ const localeEn: ILocalizationStrings = {
             label: `<Text variant="mega" style={{ lineHeight: 1.3, fontWeight: 700, textAlign: 'center' }}>Announcements<Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega"> groups</Text></Text>`,
             title: "Post an ad on our dedicated groups.",
             description: "We have created groups dedicated exclusively to posting both want and offer ads, such as for books and notes and private lessons.",
-            description2: `<Text variant="medium">To post an ad follow the <Text variant='medium' styles={bold} style={{ color: theme.palette.themeDarkAlt }}>template</Text> that you can find in the pinned messages set when you enter.</Text>`,
+            description2: `<Text variant="medium">To post an ad follow the <Text variant='medium' styles={bold} style={{ color: theme.palette.themeDarkAlt }}>ad template</Text> that you can find in the pinned messages set when you enter.</Text>`,
             card: {
                 type: 'Announcements group'
             }

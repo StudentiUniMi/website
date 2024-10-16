@@ -18,7 +18,7 @@ const ThirdSection = () => {
     const iconStyle = { display: 'flex', backgroundColor: theme.palette.themePrimary, color:theme.palette.white, fontSize: 16, padding: 10, borderRadius: 5 };
 
     return (
-        <div className="pb-5 pt-5">
+        <div className="pb-5 pt-5" style={{ backgroundColor: theme.palette.neutralLighter }}>
             <Container>
                 <div className="mb-4 text-center"><Text variant="xLarge" styles={bold}>{locale?.homepage.additionalServicesSection.header}</Text></div>
 

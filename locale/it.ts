@@ -96,7 +96,7 @@ const localeIt: ILocalizationStrings = {
         section2: {
             title: 'Ecco cosa mettiamo a disposizione',
             cards: {
-                card1: { title: "Gruppi per i corsi di laurea", description: "Più di <Text styles={bold} variant='large' style={{ color: theme.palette.themeDark }}>700</Text> gruppi dedicati agli specifici corsi di laurea e corsi didattici UniMi!" },
+                card1: { title: "Gruppi per i corsi di laurea", description: "Più di <Text styles={bold} variant='large' style={{ color: theme.palette.themeDark }}>600</Text> gruppi dedicati agli specifici corsi di laurea e corsi didattici UniMi!" },
                 card2: { title: "Gruppi generali", description: "Gruppi universitari, per annunci e associazioni studentesche." },
                 card3: { title: "Servizi telematici", description: "Servizi di ogni tipo, per aiutarti a prendere appunti, scrivere la tesi e molto altro." }
             }
@@ -304,7 +304,7 @@ const localeIt: ILocalizationStrings = {
             label: `<Text variant="mega" style={{ lineHeight: 1.3, fontWeight: 700, textAlign: 'center' }}>Gruppi per gli <Text style={{ color: theme.palette.themePrimary, fontWeight: 700 }} variant="mega">annunci</Text></Text>`,
             title: "Posta un annuncio sui nostri gruppi appositi.",
             description: "Abbiamo creato dei gruppi dedicati esclusivamente alla pubblicazione di annunci sia di ricerca che di offerta, come ad esempio per i libri ed appunti e le ripetizioni.",
-            description2: `<Text variant="medium">Per postare un annuncio segui il <Text variant='medium' styles={bold} style={{ color: theme.palette.themeDarkAlt }}>template</Text> che trovi nei messaggi fissati quando entri.</Text>`,
+            description2: `<Text variant="medium">Per postare un annuncio segui il <Text variant='medium' styles={bold} style={{ color: theme.palette.themeDarkAlt }}>modello annunci</Text> che trovi nei messaggi fissati quando entri.</Text>`,
             card: {
                 type: 'Gruppo annunci'
             }

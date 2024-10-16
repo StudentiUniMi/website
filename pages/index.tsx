@@ -6,10 +6,9 @@ import Landing from '../components/Home/Landing';
 import Section1 from '../components/Home/Section1';
 import Section2 from '../components/Home/Section2';
 import Section3 from '../components/Home/Section3';
-import Section4 from '../components/Home/Section4';
 import Telegram from '../components/Home/Telegram';
-import Wikipedia from '../components/Home/Wikipedia';
 import UnimiaStudentiUnimi from '../components/Home/UnimiaStudentiUnimi';
+import SponsoredServices from '../components/Home/SponsoredServices';
 import { useCallback, useEffect, useState } from 'react';
 
 const Homepage = () => {
@@ -94,13 +93,15 @@ const Homepage = () => {
 
                 <Section2 />
 
+                <SponsoredServices />
+
                 <UnimiaStudentiUnimi />
 
-                <Wikipedia />
+                {/* <Wikipedia /> */}
 
                 <Section3 />
 
-                <Section4 />
+                {/* <Section4 /> */}
 
                 <Faqs />
             </section>
