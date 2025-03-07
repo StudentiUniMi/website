@@ -68,7 +68,7 @@ const Course = (props: Props) => {
     var language: string | undefined = LocalizationService.getLanguage();
 
     const goBackButtonIconProps: IIconProps = { iconName: 'AiOutlineArrowLeft', styles: { root: { fontSize: 14 } } };
-    const shareLinkButtonIconProps: IIconProps = { iconName: 'Share', styles: { root: { fontSize: 14 } } };
+    const shareLinkButtonIconProps: IIconProps = { iconName: 'FaRegShareSquare', styles: { root: { fontSize: 14 } } };
 
     const copyUrlToDashboard = () => {
         const el = document.createElement('input');
@@ -168,11 +168,15 @@ const Course = (props: Props) => {
                 <FourOhFour />
             </>
         );
-    } else if (errorLoadingDegree) {
+    }
+    
+    if (errorLoadingDegree) {
         return (
             <FiveHundred />
         );
-    } else return (
+    }
+    
+    return (
         <>
             <NextSeo
                 title={reactHelmetContent.title}

@@ -61,9 +61,6 @@ const AdminsList = (props: Props) => {
             <div className="pb-2 pt-2 mb-4" style={subHeader}>
                 <Container>
                     <div className="d-flex flex-row align-items-center" style={{ gap: 5 }}>
-                        <Text variant="medium" styles={semibold}>
-                            <Icon iconName="SecurityGroup" style={{ fontSize: 16 }} />
-                        </Text>
                         <Text 
                             variant='medium' 
                             style={{ color: theme.palette.black }} 

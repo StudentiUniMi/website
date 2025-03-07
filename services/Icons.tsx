@@ -4,7 +4,11 @@ import { GoChevronRight } from "react-icons/go";
 import { FiSearch } from 'react-icons/fi';
 import { BsQuestionSquare } from 'react-icons/bs';
 import { MdPeopleAlt } from 'react-icons/md';
-import { IoIosMail } from "react-icons/io";
+import { IoIosMail, } from "react-icons/io";
+import { VscGlobe } from "react-icons/vsc";
+import { ImUserTie } from "react-icons/im"
+import { FaRegShareSquare } from "react-icons/fa";
+import { IoChevronDown } from "react-icons/io5";
 
 export const registeredIcons: { [key: string]: string | JSX.Element } = {
     GoChevronRight: <GoChevronRight />,
@@ -57,5 +61,9 @@ export const registeredIcons: { [key: string]: string | JSX.Element } = {
     AiOutlineFileText: <AiOutlineFileText />,
     AiOutlineEdit: <AiOutlineEdit />,
     AiOutlineStar: <AiOutlineStar />,
-    IoIosMail: <IoIosMail />
+    IoIosMail: <IoIosMail />,
+    VscGlobe: <VscGlobe />,
+    ImUserTie: <ImUserTie />,
+    FaRegShareSquare: <FaRegShareSquare />,
+    IoChevronDown: <IoChevronDown />
 };

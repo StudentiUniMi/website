@@ -175,9 +175,6 @@ const CourseList= (props: Props) => {
             <div className="pb-2 pt-2 mb-4" style={subHeader}>
                 <Container className="d-flex justify-content-between align-items-center" style={{ gap: 8 }}>
                     <div className="d-flex flex-row align-items-center" style={{ gap: 5 }}>
-                        <Text variant="medium" styles={semibold}>
-                            <Icon iconName="Group" style={{ fontSize: 16 }} />
-                        </Text>
                         <Text 
                             variant='medium' 
                             style={{ color: theme.palette.black }} 
@@ -225,18 +222,18 @@ const CourseList= (props: Props) => {
                                     />
                                 </Col>
                                 <Col xl={4} lg={4} md={4} sm={12} xs={12}>
-                                    {
-                                        <Dropdown 
-                                            options={yearFilterOptions}
-                                            label={locale?.courses.yearFilter}
-                                            onChange={onYearFilterChanged}
-                                            selectedKey={yearFilter}
-                                            disabled={props.courses.length === 0 || props.degree?.slug === 'magistrale_informatica'} /* To-do: must decide if we need an apposite field to disable year selection */
-                                        />
-                                    }
+                                    <Dropdown 
+                                        onRenderCaretDown={() => <Icon iconName='IoChevronDown' />}
+                                        options={yearFilterOptions}
+                                        label={locale?.courses.yearFilter}
+                                        onChange={onYearFilterChanged}
+                                        selectedKey={yearFilter}
+                                        disabled={props.courses.length === 0 || props.degree?.slug === 'magistrale_informatica'} /* To-do: must decide if we need an apposite field to disable year selection */
+                                    />
                                 </Col>
                                 <Col xl={4} lg={4} md={4} sm={12} xs={12}>
                                     <Dropdown 
+                                        onRenderCaretDown={() => <Icon iconName='IoChevronDown' />}
                                         options={semesterFilterOptions}
                                         label={locale?.courses.semesterFilter}
                                         onChange={onSemesterFilterChanged}

@@ -1,26 +1,17 @@
 import { Text, Icon, TooltipHost, IContextualMenuItem } from '@fluentui/react';
-import { Card, ICardTokens } from "@fluentui/react-cards";
+import { Card } from "@fluentui/react-cards";
 import { FontWeights, ITextStyles, Link, Persona, useTheme } from '@fluentui/react';
 import { semibold } from '../../services/Fonts';
-import { IContextualMenuProps, IIconProps } from '@fluentui/react';
+import { IContextualMenuProps } from '@fluentui/react';
 import { DefaultButton, PrimaryButton } from '@fluentui/react/lib/Button';
 import { buildProfessorName, preventDefault, preventVisibleHref, redirectToLink } from '../../services/Utils';
 import { CourseDegree } from '../../models/Models';
 import { CSSProperties, useContext } from 'react';
 import Chip from '../Atoms/Chip';
 import LocalizationService from "../../services/LocalizationService";
-import JsxParser from 'react-jsx-parser';
 import GlobalContext from 'services/GlobalContext';
 
 interface Props { data: CourseDegree };
-
-/* IDs of Computer Science groups managed by the department */
-const ITgroupsIDs = [
-    -1001351008335,
-    -1001437343087,
-    -1001334720360,
-    -1001235845198
-];
 
 const CourseItem = (props: Props) => {
     const theme = useTheme();
@@ -29,38 +20,35 @@ const CourseItem = (props: Props) => {
     const data = props.data;
 
     const cfuStyle: ITextStyles = { root: { fontWeight: FontWeights.semibold, color: theme.palette.themeDark } };
-    const professorBox = { display: 'flex', alignItems: 'center', backgroundColor: theme.palette.neutralLighter, padding: "2px 6px", borderRadius: 3 };
+    const professorBox: CSSProperties = { display: 'flex', alignItems: 'center', backgroundColor: theme.palette.neutralLighter, padding: "2px 6px", borderRadius: 3 };
     const professorTextStyle: ITextStyles = { root: { fontWeight: FontWeights.semibold, color: theme.palette.neutralPrimary } };
     const descriptionTextStyles: ITextStyles = { root: { fontWeight: FontWeights.semibold } };
-    const cardTokens: ICardTokens = { childrenMargin: 12 };
-    const websiteIcon: IIconProps = { iconName: 'Globe' };
-    const telegramGroupIcon: IIconProps = { iconName: 'Send' };
-    const wikiIcon: IIconProps = { iconName: 'SurveyQuestions' };
 
-    var primaryText: JSX.Element;
-    var personaIconUrl: string = "";
-    var cfuText: JSX.Element | null = null;
+    const personaIconUrl: string = data.course.group ? `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${data.course.group.id}.png` : '';
+    const cfuLabel: string | null = data.course.cfu !== 0 ? `${data.course.cfu} CFU` : null
+
+    var primaryText: JSX.Element = <TooltipHost
+        content={data.course.name}
+        calloutProps={{ gapSpace: 5 }}
+    >
+        <div className="line-clamp">
+            <Text styles={semibold}>{data.course.name}</Text>
+        </div>
+    </TooltipHost>;
+
     var professor: JSX.Element | null = null;
     var telegramLink: JSX.Element | null = null;
-    var wikiLink: JSX.Element | null = null;
     var yearText: string | null = null;
     var semesterText: string | null = null;
-    var mainText: JSX.Element | null = null;
+    var mainText: string | undefined
 
     const isInviteLinkEmpty = data.course.group?.invite_link === "" || data.course.group?.invite_link === null;
 
     /* Groups data initialization */
     if (data.course.group !== null) {
-        /* Avatar image inizialization (personaUrl) */
-        personaIconUrl = `https://studentiunimi-groups-propics.marcoaceti.workers.dev/${data.course.group.id}.png`;
-
         /* Main text inizialization */
         if (data.year === -1) {
-            if (ITgroupsIDs.indexOf(data.course.group.id) !== -1) {
-                mainText = <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link }} jsx={locale?.courses.tutorsGroupDescription} />;
-            } else {
-                mainText = <>{locale?.courses.mainGroupDescription}</>;
-            }
+            mainText = locale?.courses.mainGroupDescription
         }
 
         /* Telegram Group initialization */
@@ -68,7 +56,7 @@ const CourseItem = (props: Props) => {
             telegramLink = (
                 <PrimaryButton
                     href={preventVisibleHref(isPolicyAccepted, data.course.group.invite_link!)} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}
-                    iconProps={telegramGroupIcon}
+                    iconProps={{ iconName: 'FaTelegram' }}
                     style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
                     disabled={data.course.group.invite_link === "" || data.course.group.invite_link === null}
                     allowDisabledFocus>
@@ -79,7 +67,7 @@ const CourseItem = (props: Props) => {
     } else {
         telegramLink = (
             <PrimaryButton
-                iconProps={telegramGroupIcon}
+                iconProps={{ iconName: 'FaTelegram' }}
                 style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
                 disabled
                 allowDisabledFocus>
@@ -88,34 +76,10 @@ const CourseItem = (props: Props) => {
         );
     }
 
-    /* Persona PrimaryText initialization */
-    const calloutProps = { gapSpace: 5 };
-    primaryText = (
-        <TooltipHost
-            content={data.course.name}
-            calloutProps={calloutProps}
-        >
-            <div className="line-clamp">
-                <Text styles={semibold}>{data.course.name}</Text>
-            </div>
-        </TooltipHost>
-    );
-
-    /* CFU inizialization */
-    switch (data.course.cfu) {
-        case 0:
-        case null:
-            cfuText = null;
-            break;
-        default:
-            cfuText = <>{data.course.cfu} CFU</>;
-            break;
-    }
-
     /* Professor inizialization */
     if (data.course.professor !== null) {
         const style: CSSProperties = { display: 'flex', gap: 5, alignItems: 'center' };
-        let text = <div style={style}><Icon iconName="UserOptional" />  {buildProfessorName(data.course.professor.first_name, data.course.professor.last_name)}</div>;
+        let text = <div style={style}><Icon iconName="ImUserTie" />  {buildProfessorName(data.course.professor.first_name, data.course.professor.last_name)}</div>;
 
         if (data.course.professor.url === undefined || data.course.professor.url === null) {
             professor = text;
@@ -154,7 +118,7 @@ const CourseItem = (props: Props) => {
                 key: index.toString(),
                 text: website.name,
                 onClick: () => redirectToLink(website.url),
-                iconProps: { iconName: 'ChromeBackMirrored' }
+                iconProps: { iconName: 'VscGlobe' }
             };
         }
         );
@@ -170,22 +134,8 @@ const CourseItem = (props: Props) => {
         directionalHintFixed: true,
     };
 
-    /* Wiki initialization */
-    if (data.year !== -1) {
-        wikiLink = (
-            <DefaultButton
-                href={preventVisibleHref(isPolicyAccepted, data.course.wiki_link!)} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}
-                iconProps={wikiIcon}
-                style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
-                disabled={data.course.wiki_link === null || data.course.wiki_link === ""}
-                allowDisabledFocus>
-                Wiki
-            </DefaultButton>
-        );
-    }
-
     return (
-        <Card tokens={cardTokens} className="group-item text-center">
+        <Card tokens={{ childrenMargin: 12 }} className="group-item text-center">
             <Card.Item>
                 <Persona imageUrl={personaIconUrl} onRenderPrimaryText={() => primaryText} text={data.course.name} />
             </Card.Item>
@@ -194,16 +144,19 @@ const CourseItem = (props: Props) => {
 
                 {data.year !== -1 &&
                     <div className="d-flex flex-row align-items-center justify-content-center" style={{ gap: 8 }}>
-                        {professor !== null &&
+                        {professor &&
                             <div style={professorBox}>
                                 <Text variant="small" styles={professorTextStyle}>
                                     {professor}
                                 </Text>
-                            </div>}
+                            </div>
+                        }
 
-                        <Text variant="small" styles={cfuStyle}>
-                            {cfuText}
-                        </Text>
+                        {cfuLabel &&
+                            <Text variant="small" styles={cfuStyle}>
+                                {cfuLabel}
+                            </Text>
+                        }
                     </div>
                 }
 
@@ -223,14 +176,24 @@ const CourseItem = (props: Props) => {
                     <DefaultButton
                         text={locale?.courses.websites}
                         style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
-                        iconProps={websiteIcon}
+                        iconProps={{ iconName: 'VscGlobe' }}
                         menuProps={menuProps}
                         allowDisabledFocus
                         disabled={websites?.length === 0}
+                        onRenderMenuIcon={() => <Icon iconName='IoChevronDown' />}
                     />
                 }
 
-                {wikiLink}
+                {data.year !== -1 &&
+                    <DefaultButton
+                        href={preventVisibleHref(isPolicyAccepted, data.course.wiki_link!)} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}
+                        iconProps={{ iconName: 'BsQuestionSquare' }}
+                        style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: 8 }}
+                        disabled={data.course.wiki_link === null || data.course.wiki_link === ""}
+                        allowDisabledFocus>
+                        Wiki
+                    </DefaultButton>
+                }
 
             </Card.Section>
         </Card>
