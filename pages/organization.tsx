@@ -178,7 +178,7 @@ const Organization: NextPage = () => {
                         <div style={{ margin: '0 auto', maxWidth: 600 }}>
                             <DefaultButton
                                 text={locale?.aboutUs.contact.button}
-                                iconProps={{ iconName: 'Mail' }}
+                                iconProps={{ iconName: 'AiOutlineMail' }}
                                 href='mailto:info@studentiunimi.it'
                             />
                         </div>

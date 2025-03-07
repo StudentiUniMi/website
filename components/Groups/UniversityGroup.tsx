@@ -4,7 +4,7 @@
  * @author Giuseppe Del Campo
  */
 
-import { Text, Icon, FontWeights, ITextStyles, Persona, Link, TooltipHost, IIconProps, useTheme, PrimaryButton } from '@fluentui/react';
+import { Text, Icon, FontWeights, ITextStyles, Persona, Link, TooltipHost, useTheme, PrimaryButton } from '@fluentui/react';
 import { Card, ICardTokens } from "@fluentui/react-cards";
 import { formatLowerNumber, preventDefault, preventVisibleHref } from 'services/Utils';
 import { semibold } from '../../services/Fonts';
@@ -29,7 +29,6 @@ const AdditionalGroup = (props: Props) => {
     const helpfulTextStyles: ITextStyles = { root: { fontWeight: FontWeights.regular, } };
     const descriptionTextStyles: ITextStyles = { root: { fontWeight: FontWeights.semibold } };
     const cardTokens: ICardTokens = { childrenMargin: 12 };
-    const telegramGroupIcon: IIconProps = { iconName: 'Send' };
     const calloutProps = { gapSpace: 5 };
     
     const name = group.name[language!];
@@ -75,13 +74,13 @@ const AdditionalGroup = (props: Props) => {
                     />}
                 </Text>
                 <Text variant="small" styles={helpfulTextStyles} className="mb-2">
-                    <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link, Icon }} jsx={"<Icon iconName='Info' /> " + description} />
+                    <JsxParser bindings={{ theme: theme, semibold: semibold }} components={{ Text, Link, Icon }} jsx={"<Icon iconName='AiOutlineInfoCircle' /> " + description} />
                 </Text>
 
                 {!isInviteLinkEmpty &&
                     <PrimaryButton
                         href={preventVisibleHref(isPolicyAccepted, group.invite_link)} onClick={(e) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()}
-                        iconProps={telegramGroupIcon}
+                        iconProps={{iconName: 'FaTelegram'}}
                         style={{ justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginTop: '3px' }}
                         disabled={isInviteLinkEmpty}
                         allowDisabledFocus>
