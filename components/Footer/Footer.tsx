@@ -201,7 +201,7 @@ const Footer = () => {
                                             key={i}
                                             delay={TooltipDelay.zero}
                                         >
-                                            <Link href={x.link} name={x.name[lang!]}>
+                                            <Link href={x.link} name={x.name[lang!]} aria-label={x.name[lang!]}>
                                                 <div style={wrapIconStyle} className="text-decoration">
                                                     <Icon iconName={x.iconName} style={iconStyle} />
                                                 </div>

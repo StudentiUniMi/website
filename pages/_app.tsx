@@ -21,14 +21,13 @@ import LocalizationChangeDialog from 'components/Atoms/LocalizationChangePopup';
 import LocalizationService from 'services/LocalizationService';
 
 /**
- * Enables SSR localization and theme.
+ * Enables SSR localization, theme and icons.
  */
 LocalizationService.localize("it");
 loadTheme(buildLightTheme("a"));
-
-setIconOptions({ disableWarnings: true });
-registerIcons({ icons: registeredIcons });
 initializeIcons();
+setIconOptions({ disableWarnings: true });
+registerIcons({ icons: registeredIcons }); 
 
 const CustomApp = ({ Component, pageProps }: AppProps) => {
     const Comp = Component as any;

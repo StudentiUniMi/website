@@ -50,12 +50,13 @@ const GroupTypes = (props: Props) => {
     return (
         <Container> 
             <div className="text-center">
-                <div className="group-types-selector d-flex flex-wrap flex-row" style={groupTypesStyle}>
+                <div className="group-types-selector d-flex flex-wrap flex-lg-row flex-column" style={groupTypesStyle}>
                     {groupTypes.map((g: GroupType, i: number) => (
                         <a href={g.href} className="text-decoration-none" key={i}>
-                            <div className={groupTypeStyle.root + " group-type-selector"}>
-                                <div className="d-flex flex-grow-1 align-items-center justify-content-center mb-2">
+                            <div className={groupTypeStyle.root + " group-type-selector flex-lg-column flex-row"}>
+                                <div className="d-flex flex-grow-1 align-items-center justify-content-center">
                                     <Image 
+                                        className={'group-type-image'}
                                         src={g.image} 
                                         alt={g.name[language]} 
                                         objectFit={'contain'}
@@ -63,7 +64,7 @@ const GroupTypes = (props: Props) => {
                                         height={100}
                                     />
                                 </div>
-                                <Text variant="large" styles={semibold}>{g.name[language]}</Text>
+                                <Text className='group-type-name' variant="large" styles={semibold}>{g.name[language]}</Text>
                             </div>
                         </a>
                     ))}

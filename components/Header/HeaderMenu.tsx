@@ -101,7 +101,6 @@ const HeaderMenu = () => {
 
     return (
         <div className="header-menu">
-
             <div className="pivot ml-3">
                 <Pivot
                     selectedKey={selectedKey}
@@ -160,23 +159,26 @@ const HeaderMenu = () => {
                         </div>
 
                         <div className="mb-2">
-                            <div style={{ ...cardStyle, backgroundColor: theme.palette.yellow }} onClick={() => { router.push("/courses"); dismissPanel(); } }>
-                                <Text variant="medium" styles={semibold} style={{ color: "#0f0f0f" }}>{locale?.sidebar.searchGroup} <Icon iconName="ChevronRightMed" style={{ fontSize: 10 }} /></Text>
+                            <div style={{ ...cardStyle, backgroundColor: theme.palette.yellow, gap: 10 }} onClick={() => { router.push("/courses"); dismissPanel(); } } className="d-flex flex-row align-items-center text-decoration-none">
+                                <Text variant="medium" styles={semibold} style={{ color: "#0f0f0f" }}>{locale?.sidebar.searchGroup}</Text>
+                                <Icon style={{ color: "#0f0f0f", fontSize: 12  }} iconName="GoChevronRight" />
                             </div>
                         </div>
 
                         <div className="mb-2">
                             <div style={cardStyle}>
-                                <Link href={preventVisibleHref(isPolicyAccepted, "https://t.me/unimichat")} onClick={(e: any) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()} className="text-decoration-none">
-                                    <Text variant="medium" style={{ color: "#fcfcfc" }}>{locale?.sidebar.mainGroup} <Icon iconName="ChevronRightMed" style={{ fontSize: 10 }} /></Text>
+                                <Link style={{ gap: 10}} href={preventVisibleHref(isPolicyAccepted, "https://t.me/unimichat")} onClick={(e: any) => preventDefault(e, isPolicyAccepted) && togglePolicyDialog()} className="d-flex flex-row align-items-center text-decoration-none">
+                                    <Text variant="medium" style={{ color: "#fcfcfc" }}>{locale?.sidebar.mainGroup}</Text>
+                                    <Icon style={{ color: "#fcfcfc", fontSize: 12  }} iconName="GoChevronRight" />
                                 </Link>
                             </div>
                         </div>
 
                         <div className="mb-2">
                             <div style={cardStyle}>
-                                <Link href="https://t.me/studenti_unimi" className="text-decoration-none">
-                                    <Text variant="medium" style={{ color: "#fcfcfc" }}>{locale?.sidebar.channel} <Icon iconName="ChevronRightMed" style={{ fontSize: 10 }} /></Text>
+                                <Link style={{ gap: 10}} href="https://t.me/studenti_unimi" className="text-decoration-none d-flex flex-row align-items-center">
+                                    <Text variant="medium" style={{ color: "#fcfcfc" }}>{locale?.sidebar.channel}</Text>
+                                    <Icon style={{ color: "#fcfcfc", fontSize: 12  }} iconName="GoChevronRight" />
                                 </Link>
                             </div>
                         </div>

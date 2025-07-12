@@ -8,7 +8,7 @@ import { IoIosMail, } from "react-icons/io";
 import { VscGlobe } from "react-icons/vsc";
 import { ImUserTie } from "react-icons/im"
 import { FaRegShareSquare } from "react-icons/fa";
-import { IoChevronDown } from "react-icons/io5";
+import { IoChevronDown, IoCloseSharp } from "react-icons/io5";
 
 export const registeredIcons: { [key: string]: string | JSX.Element } = {
     GoChevronRight: <GoChevronRight />,
@@ -65,5 +65,6 @@ export const registeredIcons: { [key: string]: string | JSX.Element } = {
     VscGlobe: <VscGlobe />,
     ImUserTie: <ImUserTie />,
     FaRegShareSquare: <FaRegShareSquare />,
-    IoChevronDown: <IoChevronDown />
+    IoChevronDown: <IoChevronDown />,
+    IoCloseSharp: <IoCloseSharp />
 };

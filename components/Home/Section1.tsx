@@ -28,7 +28,7 @@ const FirstSection = () => {
         padding: '20px', 
         borderRadius: '10px', 
         overflow: 'hidden', 
-        minHeight: 200 
+        minHeight: 200
     };
     
     return (
@@ -59,7 +59,7 @@ const FirstSection = () => {
                                     height={165}
                                 />
 
-                                <div className="d-flex flex-column justify-content-between text-right align-items-end w-50" style={{ gap: 20 }}>
+                                <div className="d-flex flex-column justify-content-between text-right align-items-end w-50 flex-grow-1" style={{ gap: 20 }}>
 
                                     <Text variant="medium" styles={semibold}>
                                         <JsxParser 
@@ -101,7 +101,7 @@ const FirstSection = () => {
                                     height={165} 
                                 />
 
-                                <div className="d-flex flex-column justify-content-between text-right align-items-end w-50" style={{ gap: 20 }}>
+                                <div className="d-flex flex-column justify-content-between text-right align-items-end w-50 flex-grow-1" style={{ gap: 20 }}>
 
                                     <Text variant="medium" styles={semibold}>
                                         <JsxParser 
@@ -143,7 +143,7 @@ const FirstSection = () => {
                                     height={165} 
                                 />
 
-                                <div className="d-flex flex-column justify-content-between text-right align-items-end w-50" style={{ gap: 20 }}>
+                                <div className="d-flex flex-column justify-content-between text-right align-items-end w-50 flex-grow-1" style={{ gap: 20 }}>
 
                                     <Text variant="medium" styles={semibold}>
                                        <JsxParser 

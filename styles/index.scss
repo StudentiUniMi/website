@@ -396,15 +396,16 @@ footer .ms-Label {
 }
 
 /* Group types selector */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 991px) {
   .group-types-selector {
     .group-type-selector {
-      max-width: 160px;
-      max-height: 200px;
+      max-width: 100%;
     }
 
-    span {
-      font-size: 14px;
+    .group-type-name {
+      font-size: 20px;
+      flex-grow: 1;
+      text-align: right;
     }
   }
 }
