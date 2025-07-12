@@ -27,7 +27,7 @@ class MyDocument extends Document<{ styleTags: string; serializedStylesheet: str
 
   render() {
     return (
-      <Html>
+      <Html prefix="og: http://ogp.me/ns#" lang={"it"} translate="no">
         <Head>
           <style
             type="text/css"
