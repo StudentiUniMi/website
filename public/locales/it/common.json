@@ -1,0 +1,12 @@
+{
+  "welcome": "Benvenuto su Studenti Unimi",
+  "about": "Chi siamo",
+  "services": "Servizi",
+  "regulation": "Regolamento",
+  "nav": {
+    "home": "Home",
+    "services": "Servizi",
+    "rules": "Regolamento",
+    "about": "Chi siamo"
+  }
+}

@@ -1,112 +1,81 @@
-import { NextSeo } from 'next-seo';
-import { getStringDegrees } from 'services/Requests';
-import LocalizationService from "../services/LocalizationService";
-import Faqs from '../components/Home/Faqs';
-import Landing from '../components/Home/Landing';
-import Section1 from '../components/Home/Section1';
-import Section2 from '../components/Home/Section2';
-import Section3 from '../components/Home/Section3';
-import Telegram from '../components/Home/Telegram';
-import UnimiaStudentiUnimi from '../components/Home/UnimiaStudentiUnimi';
-import SponsoredServices from '../components/Home/SponsoredServices';
-import { useCallback, useEffect, useState } from 'react';
+import MainContainer from "@/components/main-container"
+import PrivacyButton from "@/components/privacy/button"
+import SearchBar from "@/components/search-bar"
+import { Box, Container, Heading, Text } from "@chakra-ui/react"
+import { GetStaticProps } from "next"
+import { useTranslation } from "next-i18next"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
-const Homepage = () => {
-    const locale = LocalizationService.strings();
-    var language: string | undefined = LocalizationService.getLanguage();
+const Home = () => {
+  const { t } = useTranslation("common")
 
-    const [isLoadingDegrees, setIsLoadingDegrees] = useState<boolean>(false);
-    const [degrees, setDegrees] = useState<Array<string>>([]);
-
-    const getDegrees = useCallback(async () => {
-        setDegrees([
-            'informatica',
-            'fisica',
-            'informatica musicale',
-            'matematica',
-            'informatica per la comunicazione digitale',
-            'bioinformatics',
-            'sicurezza informatica',
-            "infermieristica",
-            "scienze delle professioni sanitarie tecniche diagnostiche",
-            "scienze chimiche",
-            "scienze della produzione e protezione delle piante",
-            "medical biotechnology and molecular medicine",
-            "international politics, law and economics",
-            "finance and economics (mef)",
-            "infermieristica pediatrica",
-            "scienza, tecnica e didattica dello sport",
-            "scienze internazionali e istituzioni europee (sie)",
-            "scienze dei servizi giuridici",
-            "international politics, law and economics"
-        ]);
-
-        setIsLoadingDegrees(true);
-        
-        const stringDegreesResult = await getStringDegrees();
-
-        setDegrees(stringDegreesResult.value ?? []);
-        
-        setIsLoadingDegrees(false);
-    }, [setDegrees]);
-
-    useEffect(() => {
-        getDegrees();
-    }, []);
-
-    return (
+  return (
+    <MainContainer>
+      <Container py={12}>
         <>
-            <NextSeo
-                title={locale?.helmet.homepage.title}
-                description={locale?.helmet.homepage.description}
-                canonical={"https://studentiunimi.it/"}
-                openGraph={{
-                    url: "https://studentiunimi.it/",
-                    title: locale?.helmet.homepage.title,
-                    description: locale?.helmet.homepage.description,
-                    site_name: 'Network StudentiUniMi',
-                    type: 'website',
-                    locale: language,
-                    images: [
-                        {
-                            url: '/images/preview.png',
-                            type: 'image/png',
-                        }
-                    ],
-                }}
-                twitter={{
-                    handle: '@handle',
-                    site: '@site',
-                    cardType: 'summary_large_image',
-                }}
-            />
+          <Heading size="4xl" mb={3} textAlign="center">
+            Il network pensato per il presente e il futuro degli studenti.
+          </Heading>
 
-            <section className="home">
-                <Landing 
-                    isLoadingDegrees={isLoadingDegrees}
-                    degrees={degrees} 
-                />
+          <SearchBar />
 
-                <Telegram />
+          <PrivacyButton href="test">Test</PrivacyButton>
 
-                <Section1 />
-
-                <Section2 />
-
-                <SponsoredServices />
-
-                <UnimiaStudentiUnimi />
-
-                {/* <Wikipedia /> */}
-
-                <Section3 />
-
-                {/* <Section4 /> */}
-
-                <Faqs />
-            </section>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
         </>
-    )
-};
+      </Container>
+    </MainContainer>
+  )
+}
 
-export default Homepage;
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? "it", ["common"])),
+    },
+  }
+}
+
+export default Home

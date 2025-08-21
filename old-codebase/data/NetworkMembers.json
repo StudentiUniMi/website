@@ -1,0 +1,38 @@
+[
+  {
+    "user_id": 1135772943,
+    "username": "insiemeVuot0",
+    "name": "Samuele Fraioli",
+    "delega": "Presidente"
+  },
+  {
+    "user_id": 402750060,
+    "username": "vandreotti",
+    "name": "Virginia Andreotti",
+    "delega": "Responsabile comunicazione"
+  },
+  {
+    "user_id": 198395080,
+    "username": "ataraxicPhlogiston",
+    "name": "Pietro Lepori",
+    "delega": "Responsabile moderazione"
+  },
+  {
+    "user_id": 785706447,
+    "username": "burstEduard0",
+    "name": "Eduardo Perreca",
+    "delega": "Responsabile pubbliche relazioni"
+  },
+  {
+    "user_id": 164356927,
+    "username": "Mroik",
+    "name": "Mirko Faina",
+    "delega": "Responsabile tecnico"
+  },
+  {
+    "user_id": 58116358,
+    "username": "@liggiorgio",
+    "name": "Giorgio Liggio",
+    "delega": "Responsabile operativo"
+  }
+]

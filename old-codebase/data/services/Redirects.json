@@ -1,0 +1,148 @@
+[
+  {
+    "name": {
+      "it": "Unimia",
+      "en": "Unimia"
+    },
+    "link": "http://unimia.unimi.it/portal/server.pt",
+    "icon": "AiOutlineGlobal",
+    "description": {
+      "it": "Portale d'accesso ai servizi d'ateneo.",
+      "en": "Hub to access all UniMi Services."
+    }
+  },
+  {
+    "name": {
+      "it": "Iscrizione esami",
+      "en": "Registration to exams"
+    },
+    "link": "http://studente.unimi.it/foIscrizioneEsami/",
+    "icon": "AiOutlineFileAdd",
+    "description": {
+      "it": "Iscriviti agli appelli d'esame o controlla le iscrizioni effettuate.",
+      "en": "Manage your registrations to your exams."
+    }
+  },
+  {
+    "name": {
+      "it": "Verbalizzazione esami",
+      "en": "Exams results"
+    },
+    "link": "http://studente.unimi.it/foVerbalizzazione/",
+    "icon": "AiOutlineFileDone",
+    "description": {
+      "it": "Controlla gli esiti finali o parziali dei tuoi esami.",
+      "en": "Check the final or partial results of your exams."
+    }
+  },
+  {
+    "name": {
+      "it": "Servizi SIFA",
+      "en": "Sifa"
+    },
+    "link": "http://unimia.unimi.it/portal/server.pt/community/unimia/207/servizi_sifa/",
+    "icon": "AiOutlineCloudServer",
+    "description": {
+      "it": "Accedi a tutti i servizi online SIFA.",
+      "en": "Access all the SIFA online services."
+    }
+  },
+  {
+    "name": {
+      "it": "Gestione pagamenti",
+      "en": "Payments"
+    },
+    "link": "https://studente.unimi.it/fo_pagamenti/checkLogin.jsp",
+    "icon": "AiOutlineBank",
+    "description": {
+      "it": "Sezione del SIFA riguardante i pagamenti.",
+      "en": "Enrolment renewal, tuition fees and other payments."
+    }
+  },
+  {
+    "name": {
+      "it": "Presentazione piano di studi",
+      "en": "Plan of study"
+    },
+    "link": "https://studente.unimi.it/pianiDiStudio/client/checkLogin.asp",
+    "icon": "AiOutlineIdcard",
+    "description": {
+      "it": "Sezione apposita per presentare il piano di studi.",
+      "en": "Submission page of study plans."
+    }
+  },
+  {
+    "name": {
+      "it": "Portale diritto allo studio",
+      "en": "Education Grants Helpdesk"
+    },
+    "link": "http://studente.unimi.it/dirittoallostudio",
+    "icon": "AiOutlineInbox",
+    "description": {
+      "it": "Portale per il diritto allo studio.",
+      "en": "Education Grants Helpdesk"
+    }
+  },
+  {
+    "name": {
+      "it": "Ariel",
+      "en": "Ariel"
+    },
+    "link": "https://ariel.unimi.it/",
+    "icon": "AiOutlineProfile",
+    "description": {
+      "it": "Siti dei corsi didattici.",
+      "en": "Courses websites."
+    }
+  },
+  {
+    "name": {
+      "it": "Portale studenti",
+      "en": "Students’ hub"
+    },
+    "link": "https://easystaff.divsi.unimi.it/PortaleStudenti/",
+    "icon": "AiOutlineUsergroupAdd",
+    "description": {
+      "it": "Orari delle lezioni, occupazione delle aule, appelli d'esame.",
+      "en": "Lessons schedule, rooms and exam sessions."
+    }
+  },
+  {
+    "name": {
+      "it": "Servizio bibliotecario",
+      "en": "Library services"
+    },
+    "link": "https://www.sba.unimi.it/",
+    "icon": "AiOutlineRead",
+    "description": {
+      "it": "Tutte le informazioni sulle biblioteche.",
+      "en": "All the informations about UniMi libraries."
+    }
+  },
+  {
+    "name": {
+      "it": "Minerva @ UniMi",
+      "en": "Minerva @ UniMi"
+    },
+    "link": "https://unimi.primo.exlibrisgroup.com/",
+    "icon": "AiOutlineExperiment",
+    "type": "S",
+    "description": {
+      "it": "Risorse bibliografiche.",
+      "en": "Access point to the bibliographic resources."
+    }
+  },
+  {
+    "name": {
+      "it": "Informastudenti",
+      "en": "InformaStudenti"
+    },
+    "link": "https://informastudenti.unimi.it/",
+    "icon": "AiOutlineInfoCircle",
+    "type": "S",
+    "description": {
+      "it": "Accedi al portale InformaStudenti.",
+      "en": "Online Student Desk."
+    }
+  }
+]

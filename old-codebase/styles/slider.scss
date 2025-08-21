@@ -1,0 +1,57 @@
+.university {
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 30px;
+  }
+
+  .swiper-wrapper {
+    align-items: center;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #464646;
+  }
+
+  .swiper-button-next:after,
+  .swiper-container-rtl .swiper-button-prev:after {
+    font-family: "Consolas";
+    content: "›";
+  }
+
+  .swiper-button-prev:after,
+  .swiper-container-rtl .swiper-button-next:after {
+    font-family: "Consolas";
+    content: "‹";
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    position: absolute;
+    top: 40%;
+    width: calc(var(--swiper-navigation-size) / 44 * 27);
+    height: var(--swiper-navigation-size);
+    margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #464646;
+  }
+
+  .swiper-slide img {
+    // Delete this if unnecessary
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media only screen and (max-width: 991px) {
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      display: none;
+    }
+  }
+}
