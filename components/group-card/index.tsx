@@ -8,7 +8,6 @@ interface GroupCardProps {
   title: string
   description?: string
   category: GroupCategory
-  image: string
   bgColor?: string
 }
 
@@ -20,7 +19,7 @@ const categoryColors: Record<GroupCategory, { light: string; dark: string }> = {
   association: { light: "teal.200", dark: "teal.600" },
 }
 
-const GroupCard: React.FC<GroupCardProps> = ({ title, description, category, image, bgColor }) => {
+const GroupCard: React.FC<GroupCardProps> = ({ title, description, category, bgColor }) => {
   const baseColor = useColorModeValue(bgColor || categoryColors[category].light, bgColor || categoryColors[category].dark)
 
   const border = useColorModeValue("gray.200", "gray.700")

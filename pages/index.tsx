@@ -6,8 +6,11 @@ import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import InfoCards from "./index/info-cards"
 import { ExtraGroup } from "@/types/api"
-import GroupList from "@/components/group-list"
 import { getExtraGroups } from "@/lib/api/groups"
+import PrivacyButton from "@/components/privacy/button"
+import GroupCard from "@/components/group-card"
+import ItemList from "@/components/item-list"
+import { useCustomRouter } from "@/hooks/router"
 
 interface HomepageProps {
   groups: Array<ExtraGroup>
@@ -15,6 +18,7 @@ interface HomepageProps {
 }
 
 const Homepage = ({ groups, associations }: HomepageProps) => {
+  const { locale } = useCustomRouter()
   const { t } = useTranslation("common")
 
   return (
@@ -28,9 +32,25 @@ const Homepage = ({ groups, associations }: HomepageProps) => {
 
         <InfoCards />
 
-        <GroupList label={"Entra nei nostri gruppi"} groups={groups} />
+        <ItemList
+          label="Entra nei nostri gruppi"
+          items={groups}
+          renderItem={(group) => (
+            <PrivacyButton key={group.id} href={group.invite_link}>
+              <GroupCard title={group.name[locale]} description={group.description[locale]} category={group.category} />
+            </PrivacyButton>
+          )}
+        />
 
-        <GroupList label={"Scopri le associazioni studentesche"} groups={associations} />
+        <ItemList
+          label="Scopri le associazioni studentesche"
+          items={associations}
+          renderItem={(association) => (
+            <PrivacyButton key={association.id} href={association.invite_link}>
+              <GroupCard title={association.name[locale]} description={association.description[locale]} category={association.category} />
+            </PrivacyButton>
+          )}
+        />
       </Box>
     </MainContainer>
   )

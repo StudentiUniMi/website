@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { useToast, Box, Text, HStack, Fade } from "@chakra-ui/react"
+import { useToast, Box, Text, HStack, Fade, useColorModeValue } from "@chakra-ui/react"
 import { Info } from "lucide-react"
 import { useRouter } from "next/router"
 
@@ -36,32 +36,38 @@ const SearchHintToast = () => {
         duration: 10000,
         isClosable: true,
         position: "bottom",
-        render: () => (
-          <Fade in>
-            <Box
-              bg="blue.500"
-              color="white"
-              px={4}
-              py={3}
-              rounded="lg"
-              shadow="lg"
-              maxW="sm"
-              cursor="pointer"
-              _hover={{ bg: "blue.600" }}
-              onClick={handleClick}
-            >
-              <HStack align="center" spacing={3}>
-                <Info size={18} />
-                <Box>
-                  <Text fontWeight="semibold" fontSize="sm">
-                    Stai cercando gruppi del tuo corso di laurea?
-                  </Text>
-                  <Text fontSize="xs">Clicca qui e utilizza la barra di ricerca!</Text>
-                </Box>
-              </HStack>
-            </Box>
-          </Fade>
-        ),
+        render: () => {
+          const bg = useColorModeValue("blue.500", "blue.400")
+          const hoverBg = useColorModeValue("blue.600", "blue.500")
+          const textColor = useColorModeValue("white", "gray.900")
+
+          return (
+            <Fade in>
+              <Box
+                bg={bg}
+                color={textColor}
+                px={4}
+                py={3}
+                rounded="lg"
+                shadow="lg"
+                maxW="sm"
+                cursor="pointer"
+                _hover={{ bg: hoverBg }}
+                onClick={handleClick}
+              >
+                <HStack align="center" spacing={3}>
+                  <Info size={18} />
+                  <Box>
+                    <Text fontWeight="semibold" fontSize="sm">
+                      Stai cercando gruppi del tuo corso di laurea?
+                    </Text>
+                    <Text fontSize="xs">Clicca qui e utilizza la barra di ricerca!</Text>
+                  </Box>
+                </HStack>
+              </Box>
+            </Fade>
+          )
+        },
       })
 
       sessionStorage.setItem("seenSearchHint", "true")
