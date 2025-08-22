@@ -9,11 +9,12 @@ interface ItemListProps<T> {
   enableSearch?: boolean
   items: Array<T>
   firstElement?: ReactNode // Used for degree main group - It will be another component
+  customLabelWidth?: number | string
   renderItem: (item: T) => ReactNode
   getItemName: (item: T) => string
 }
 
-const ItemList = <T,>({ label, items, enableSearch, firstElement, getItemName, renderItem }: ItemListProps<T>) => {
+const ItemList = <T,>({ label, items, enableSearch, firstElement, customLabelWidth = 250, getItemName, renderItem }: ItemListProps<T>) => {
   const [inputValue, setInputValue] = useState("")
   const [searchTerm, setSearchTerm] = useState("")
 
@@ -48,7 +49,7 @@ const ItemList = <T,>({ label, items, enableSearch, firstElement, getItemName, r
   return (
     <Stack direction={{ base: "column", lg: "row" }} mb={24} spacing={12} align={{ lg: "flex-start" }}>
       {(label || enableSearch) && (
-        <Stack position={{ base: "static", lg: "sticky" }} top="80px" minWidth={{ lg: 250 }}>
+        <Stack position={{ base: "static", lg: "sticky" }} top="80px" minWidth={{ lg: customLabelWidth }}>
           {label && (
             <Heading size="xl" mb={3} textAlign={{ base: "center", lg: "left" }} mt={2}>
               {label}

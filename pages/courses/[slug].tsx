@@ -4,15 +4,19 @@ import { getCourses } from "@/lib/api/courses"
 import { getDegreeAdmins } from "@/lib/api/admins"
 import { getRepresentatives } from "@/lib/api/representatives"
 import { Group, Representative, Admin, CourseDegree, VerboseDegree } from "@/types/api"
-import { Box, Heading, HStack, Tag, VStack } from "@chakra-ui/react"
+import { Box, Heading, HStack, SimpleGrid, Tag, useColorModeValue, VStack } from "@chakra-ui/react"
 import { getDegreeColorScheme, getDegreeFullName } from "@/utils/degree"
 import { useCustomRouter } from "@/hooks/router"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import NextLink from "next/link"
 import MainContainer from "@/components/main-container"
 import ItemList from "@/components/item-list"
 import PrivacyButton from "@/components/privacy/button"
 import CourseCard from "@/components/course-card"
 import DegreeGroupCard from "@/components/degree-group-card"
+import { motion } from "framer-motion"
+
+const MotionTag = motion(Tag)
 
 interface CoursePageProps {
   degree: VerboseDegree
@@ -60,6 +64,80 @@ const CoursePage = ({ degree, courses, admins, representatives, mainGroup }: Cou
             </PrivacyButton>
           )}
         />
+
+        <SimpleGrid mt={12} columns={{ base: 1, xl: 2 }} spacing={8}>
+          {admins.length > 0 && (
+            <ItemList
+              label="Amministratori disponibili"
+              items={admins}
+              customLabelWidth="auto"
+              getItemName={(admin) => `${admin.first_name} ${admin.last_name}`}
+              renderItem={(admin) => {
+                const borderColor = useColorModeValue("gray.300", "gray.600")
+                const hoverBg = useColorModeValue("gray.100", "gray.700")
+
+                return (
+                  <NextLink key={admin.id} href={`https://t.me/${admin.username}`} passHref legacyBehavior>
+                    <MotionTag
+                      as="a"
+                      size="lg"
+                      rounded="full"
+                      px={4}
+                      py={2}
+                      border="1px solid"
+                      borderColor={borderColor}
+                      fontWeight="medium"
+                      w={{ base: "full", md: "auto" }}
+                      cursor="pointer"
+                      bg="transparent"
+                      whileHover={{ y: -3, boxShadow: "0 4px 12px rgba(0,0,0,0.1)" }}
+                      transition={{ duration: 0.2 }}
+                      _hover={{ bg: hoverBg }}
+                    >
+                      👨‍💻 @{admin.username}
+                    </MotionTag>
+                  </NextLink>
+                )
+              }}
+            />
+          )}
+
+          {representatives.length > 0 && (
+            <ItemList
+              label="Rappresentanti"
+              items={representatives}
+              customLabelWidth="auto"
+              getItemName={(rep) => `${rep.user.first_name} ${rep.user.last_name}`}
+              renderItem={(rep) => {
+                const borderColor = useColorModeValue("gray.300", "gray.600")
+                const hoverBg = useColorModeValue("gray.100", "gray.700")
+
+                return (
+                  <NextLink key={rep.user.id} href={`https://t.me/${rep.user.username}`} passHref legacyBehavior>
+                    <MotionTag
+                      as="a"
+                      size="lg"
+                      rounded="full"
+                      px={4}
+                      py={2}
+                      border="1px solid"
+                      borderColor={borderColor}
+                      fontWeight="medium"
+                      w={{ base: "full", md: "auto" }}
+                      cursor="pointer"
+                      bg="transparent"
+                      whileHover={{ y: -3, boxShadow: "0 4px 12px rgba(0,0,0,0.1)" }}
+                      transition={{ duration: 0.2 }}
+                      _hover={{ bg: hoverBg }}
+                    >
+                      🗳️ {rep.user.first_name} {rep.user.last_name}
+                    </MotionTag>
+                  </NextLink>
+                )
+              }}
+            />
+          )}
+        </SimpleGrid>
       </Box>
     </MainContainer>
   )
