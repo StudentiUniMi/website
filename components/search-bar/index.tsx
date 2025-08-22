@@ -1,10 +1,11 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { InputGroup, InputLeftElement, Input, VStack, Text, useColorModeValue, InputRightElement, Button, Fade } from "@chakra-ui/react"
 import { Search } from "lucide-react"
 import { useRouter } from "next/router"
 
 const SearchBar = () => {
   const [query, setQuery] = useState("")
+  const [highlight, setHighlight] = useState(false)
   const router = useRouter()
 
   const bg = useColorModeValue("gray.100", "gray.700")
@@ -20,8 +21,21 @@ const SearchBar = () => {
     }
   }
 
+  useEffect(() => {
+    if (highlight) {
+      const timer = setTimeout(() => setHighlight(false), 2500)
+      return () => clearTimeout(timer)
+    }
+  }, [highlight])
+
+  useEffect(() => {
+    const handler = () => setHighlight(true)
+    window.addEventListener("highlight-searchbar", handler)
+    return () => window.removeEventListener("highlight-searchbar", handler)
+  }, [])
+
   return (
-    <VStack spacing={3} w="100%" maxW="700px" mx="auto" py={8}>
+    <VStack spacing={3} w="100%" maxW="700px" mx="auto" py={8} id="search-bar">
       <Text fontSize="lg" fontWeight="semibold" color={labelColor} textAlign="center">
         Cerca qualsiasi cosa: corsi di laurea, gruppi e molto altro
       </Text>
@@ -41,6 +55,10 @@ const SearchBar = () => {
           _placeholder={{ color: placeholderColor }}
           rounded="xl"
           px={6}
+          borderWidth={highlight ? "2px" : "1px"}
+          borderColor={highlight ? "blue.400" : "transparent"}
+          boxShadow={highlight ? "0 0 0 3px rgba(66, 153, 225, 0.6)" : "none"}
+          transition="all 0.3s ease"
           onKeyDown={(e) => {
             if (e.key === "Enter") handleSearch()
           }}

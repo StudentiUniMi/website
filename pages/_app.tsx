@@ -1,5 +1,5 @@
 import { AppProps } from "next/app"
-import { ChakraProvider, ColorModeScript } from "@chakra-ui/react"
+import { ChakraProvider, ColorModeScript, Stack } from "@chakra-ui/react"
 import { QueryClientProvider } from "@tanstack/react-query"
 import { DefaultSeo } from "next-seo"
 import { queryClient } from "../lib/queryClient"
@@ -10,19 +10,21 @@ import SEO from "../lib/seo.config"
 import Header from "@/components/header"
 import PrivacyPopup from "@/components/privacy/popup"
 import Footer from "@/components/footer"
+import SearchHintSnackbar from "@/components/search-hint"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
-        <main className={GeistSans.className}>
+        <Stack as="main" className={GeistSans.className} spacing={0} h="full">
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <DefaultSeo {...SEO} />
           <Header />
           <Component {...pageProps} />
           <Footer />
           <PrivacyPopup />
-        </main>
+          <SearchHintSnackbar />
+        </Stack>
       </ChakraProvider>
     </QueryClientProvider>
   )

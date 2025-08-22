@@ -6,6 +6,13 @@ const config: ThemeConfig = {
 }
 
 export const theme = extendTheme({
+  styles: {
+    global: {
+      "html, body, #__next": {
+        minHeight: "100%",
+      },
+    },
+  },
   config,
   fonts: {
     heading: "var(--font-geist-sans), sans-serif",

@@ -3,7 +3,7 @@ import { HEADER_HEIGHT } from "@/utils/constants"
 
 const MainContainer = ({ children, ...props }: BoxProps) => {
   return (
-    <Box as="main" pt={`${HEADER_HEIGHT}px`} {...props}>
+    <Box flexGrow={1} pt={`${HEADER_HEIGHT}px`} {...props}>
       {children}
     </Box>
   )
