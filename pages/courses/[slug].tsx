@@ -12,6 +12,7 @@ import MainContainer from "@/components/main-container"
 import ItemList from "@/components/item-list"
 import PrivacyButton from "@/components/privacy/button"
 import CourseCard from "@/components/course-card"
+import DegreeGroupCard from "@/components/degree-group-card"
 
 interface CoursePageProps {
   degree: VerboseDegree
@@ -23,6 +24,7 @@ interface CoursePageProps {
 
 const CoursePage = ({ degree, courses, admins, representatives, mainGroup }: CoursePageProps) => {
   const { locale } = useCustomRouter()
+  const groupsLength = courses.length + (!!mainGroup ? 1 : 0)
 
   return (
     <MainContainer>
@@ -34,7 +36,7 @@ const CoursePage = ({ degree, courses, admins, representatives, mainGroup }: Cou
 
           <HStack justify="center" flexWrap="wrap">
             <Tag colorScheme={getDegreeColorScheme(degree.type)}>{getDegreeFullName(degree.type, locale)}</Tag>
-            {courses.length > 0 && <Tag>{courses.length} gruppi</Tag>}
+            {groupsLength > 0 && <Tag>{groupsLength} gruppi</Tag>}
             {admins.length > 0 && <Tag>{admins.length} amministratori</Tag>}
             {representatives.length > 0 && <Tag>{representatives.length} rappresentanti</Tag>}
           </HStack>
@@ -44,6 +46,13 @@ const CoursePage = ({ degree, courses, admins, representatives, mainGroup }: Cou
           label="Gruppi disponibili"
           items={courses}
           enableSearch
+          firstElement={
+            mainGroup ? (
+              <PrivacyButton key={"Main group"} href={mainGroup.invite_link}>
+                <DegreeGroupCard group={mainGroup} degree={degree} />
+              </PrivacyButton>
+            ) : undefined
+          }
           getItemName={(item) => item.course.name}
           renderItem={(course) => (
             <PrivacyButton key={course.course.pk} href={course.course.group?.invite_link}>

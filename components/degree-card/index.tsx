@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Flex, Text, HStack, useColorModeValue, Image, Link as ChakraLink } from "@chakra-ui/react"
+import { Box, Flex, Text, HStack, useColorModeValue, Image, Link as ChakraLink, Stack } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import { ArrowUpRight, ChevronRight } from "lucide-react"
 import { Degree } from "@/types/api"
@@ -20,7 +20,6 @@ const DegreeCard: React.FC<DegreeCardProps> = ({ degree, bgColor }) => {
 
   const baseColor = useColorModeValue(bgColor || "gray.100", bgColor || "gray.700")
   const border = useColorModeValue("gray.200", "gray.600")
-  const titleColor = useColorModeValue("gray.900", "whiteAlpha.900")
   const degreeColor = useColorModeValue("gray.600", "whiteAlpha.900")
 
   return (
@@ -43,9 +42,14 @@ const DegreeCard: React.FC<DegreeCardProps> = ({ degree, bgColor }) => {
       >
         {/* Mobile: titolo + chevron */}
         <HStack w="full" h="full" align="center" justify="space-between" display={{ base: "flex", md: "none" }}>
-          <Text fontWeight="semibold" fontSize="md" noOfLines={1} color={titleColor}>
-            {degree.name}
-          </Text>
+          <Stack spacing={"1px"}>
+            <Text fontWeight="semibold" fontSize="md" noOfLines={1} color={"blue.500"}>
+              {degree.name}
+            </Text>
+            <Text fontWeight="medium" fontSize="sm" color={degreeColor}>
+              {description}
+            </Text>
+          </Stack>
           <ChevronRight size={18} strokeWidth={2} />
         </HStack>
 

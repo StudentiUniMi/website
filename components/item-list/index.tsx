@@ -8,11 +8,12 @@ interface ItemListProps<T> {
   label?: string
   enableSearch?: boolean
   items: Array<T>
+  firstElement?: ReactNode // Used for degree main group - It will be another component
   renderItem: (item: T) => ReactNode
   getItemName: (item: T) => string
 }
 
-const ItemList = <T,>({ label, items, enableSearch, getItemName, renderItem }: ItemListProps<T>) => {
+const ItemList = <T,>({ label, items, enableSearch, firstElement, getItemName, renderItem }: ItemListProps<T>) => {
   const [inputValue, setInputValue] = useState("")
   const [searchTerm, setSearchTerm] = useState("")
 
@@ -83,8 +84,9 @@ const ItemList = <T,>({ label, items, enableSearch, getItemName, renderItem }: I
         </Stack>
       )}
 
-      {filteredItems.length > 0 ? (
+      {filteredItems.length + (!!firstElement ? 1 : 0) > 0 ? (
         <Stack direction={{ base: "column", sm: "row" }} flexWrap="wrap" justifyContent={{ base: "center", lg: "flex-start" }}>
+          {firstElement && <Box>{firstElement}</Box>}
           {filteredItems.map((item, idx) => (
             <Box key={idx}>{renderItem(item)}</Box>
           ))}
