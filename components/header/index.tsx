@@ -132,7 +132,18 @@ const Header = ({ enableHideOnScrollUp }: HeaderProps) => {
               <LanguageSwitcher />
 
               {/* Hamburger mobile */}
-              <IconButton aria-label="Open menu" icon={<HamburgerIcon />} display={{ base: "flex", md: "none" }} onClick={onOpen} variant="ghost" />
+              <IconButton
+                aria-label="Open menu"
+                icon={<HamburgerIcon boxSize={5} />}
+                display={{ base: "flex", md: "none" }}
+                onClick={onOpen}
+                variant="solid"
+                size="md"
+                bg={useColorModeValue("blue.500", "blue.400")}
+                color="white"
+                _hover={{ bg: useColorModeValue("blue.600", "blue.300") }}
+                shadow="sm"
+              />
             </HStack>
           </Flex>
 
