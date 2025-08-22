@@ -40,7 +40,7 @@ const Footer = () => {
         {/* Colonna 3 - Social */}
         <Stack spacing={2} flex="1">
           <Text fontWeight="semibold" fontSize="md" mb={2} color={useColorModeValue("gray.900", "white")}>
-            Seguici
+            Contatti
           </Text>
           <Flex gap={3}>
             <Tooltip label="Facebook" hasArrow>

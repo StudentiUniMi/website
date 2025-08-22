@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import Link from "next/link"
 
 interface PrivacyButtonProps extends BoxProps {
-  href: string
+  href?: string
 }
 
 const PrivacyButton = ({ href, children, ...rest }: PrivacyButtonProps) => {

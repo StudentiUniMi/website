@@ -7,7 +7,7 @@ import { useCustomRouter } from "@/hooks/router"
 import { getDegreesForSearchBox } from "@/lib/api/degrees"
 import { getExtraGroups } from "@/lib/api/groups"
 import { Degree, ExtraGroup } from "@/types/api"
-import { Box, Container, Heading } from "@chakra-ui/react"
+import { Box, Heading } from "@chakra-ui/react"
 import { GetServerSideProps } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
@@ -22,7 +22,7 @@ const SearchPage = ({ query, degrees, groups, associations }: SearchPageProps) =
   const { locale } = useCustomRouter()
 
   return (
-    <MainContainer as={Container}>
+    <MainContainer>
       <Box pt={12}>
         <Heading as="h1" size={{ base: "2xl", md: "3xl", lg: "4xl" }} mb={12} textAlign="center">
           Risultati di ricerca per "{query}"

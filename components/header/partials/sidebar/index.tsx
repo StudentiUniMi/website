@@ -18,7 +18,6 @@ import Image from "next/image"
 import SearchBar from "@/components/search-bar"
 import { useRouter } from "next/router"
 import { ArrowLeft } from "lucide-react"
-import { useEffect } from "react"
 
 interface SidebarProps {
   isOpen: boolean

@@ -1,11 +1,11 @@
-import { Box, BoxProps } from "@chakra-ui/react"
+import { BoxProps, Container } from "@chakra-ui/react"
 import { HEADER_HEIGHT } from "@/utils/constants"
 
 const MainContainer = ({ children, ...props }: BoxProps) => {
   return (
-    <Box pt={`${HEADER_HEIGHT}px`} {...props}>
+    <Container pt={`${HEADER_HEIGHT}px`} {...props}>
       {children}
-    </Box>
+    </Container>
   )
 }
 

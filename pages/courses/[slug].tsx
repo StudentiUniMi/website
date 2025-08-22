@@ -4,9 +4,17 @@ import { getCourses } from "@/lib/api/courses"
 import { getDegreeAdmins } from "@/lib/api/admins"
 import { getRepresentatives } from "@/lib/api/representatives"
 import { Group, Representative, Admin, CourseDegree, VerboseDegree } from "@/types/api"
+import { Box, Heading, HStack, Tag, VStack } from "@chakra-ui/react"
+import { getDegreeColorScheme, getDegreeFullName } from "@/utils/degree"
+import { useCustomRouter } from "@/hooks/router"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import MainContainer from "@/components/main-container"
+import ItemList from "@/components/item-list"
+import PrivacyButton from "@/components/privacy/button"
+import CourseCard from "@/components/course-card"
 
 interface CoursePageProps {
-  degree: VerboseDegree | null
+  degree: VerboseDegree
   courses: Array<CourseDegree>
   admins: Array<Admin>
   representatives: Array<Representative>
@@ -14,62 +22,37 @@ interface CoursePageProps {
 }
 
 const CoursePage = ({ degree, courses, admins, representatives, mainGroup }: CoursePageProps) => {
+  const { locale } = useCustomRouter()
+
   return (
-    <div className="px-6 py-10">
-      <h1 className="text-3xl font-bold mb-6">{degree?.name ?? "Corso non trovato"}</h1>
+    <MainContainer>
+      <Box pt={12}>
+        <VStack mb={12}>
+          <Heading as="h1" size={{ base: "2xl", md: "3xl", lg: "4xl" }} mb={2} textAlign="center">
+            {degree.name}
+          </Heading>
 
-      {/* Main Group */}
-      {mainGroup && (
-        <section className="mb-10">
-          <h2 className="text-xl font-semibold mb-2">Gruppo principale</h2>
-          <a href={mainGroup.invite_link} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
-            {mainGroup.title}
-          </a>
-        </section>
-      )}
+          <HStack justify="center" flexWrap="wrap">
+            <Tag colorScheme={getDegreeColorScheme(degree.type)}>{getDegreeFullName(degree.type, locale)}</Tag>
+            {courses.length > 0 && <Tag>{courses.length} gruppi</Tag>}
+            {admins.length > 0 && <Tag>{admins.length} amministratori</Tag>}
+            {representatives.length > 0 && <Tag>{representatives.length} rappresentanti</Tag>}
+          </HStack>
+        </VStack>
 
-      {/* Corsi */}
-      <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-2">Corsi</h2>
-        {courses.length === 0 ? (
-          <p>Nessun corso disponibile</p>
-        ) : (
-          <ul className="list-disc ml-6">
-            {courses.map((c) => (
-              <li key={c.course.pk}>{c.course.name}</li>
-            ))}
-          </ul>
-        )}
-      </section>
-
-      {/* Admins */}
-      <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-2">Admins</h2>
-        {admins.length === 0 ? (
-          <p>Nessun admin disponibile</p>
-        ) : (
-          <ul className="list-disc ml-6">
-            {admins.map((a) => (
-              <li key={a.username}>{a.id}</li>
-            ))}
-          </ul>
-        )}
-      </section>
-
-      {/* Rappresentanti */}
-      <section>
-        <h2 className="text-xl font-semibold mb-2">Rappresentanti</h2>
-        {representatives.length === 0 ? (
-          <p>Nessun rappresentante disponibile</p>
-        ) : (
-          <ul className="list-disc ml-6">
-            {representatives.map((r) => (
-              <li key={r.degree_name}>{r.user.username}</li>
-            ))}
-          </ul>
-        )}
-      </section>
-    </div>
+        <ItemList
+          label="Gruppi disponibili"
+          items={courses}
+          enableSearch
+          getItemName={(item) => item.course.name}
+          renderItem={(course) => (
+            <PrivacyButton key={course.course.pk} href={course.course.group?.invite_link}>
+              <CourseCard data={course} />
+            </PrivacyButton>
+          )}
+        />
+      </Box>
+    </MainContainer>
   )
 }
 
@@ -78,10 +61,11 @@ const replaceUnderscore = (str: string): [string, boolean] => {
   return [replaced, replaced !== str]
 }
 
-export const getServerSideProps: GetServerSideProps<CoursePageProps> = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps<CoursePageProps> = async ({ locale, params }) => {
+  const actualLocale = (locale as "it" | "en") ?? "it"
+
   const degreeSlug = params!.slug as string
 
-  // 🔄 Redirect se slug ha underscore
   const [fixedSlug, hasReplaced] = replaceUnderscore(degreeSlug)
   if (hasReplaced) {
     return {
@@ -93,7 +77,7 @@ export const getServerSideProps: GetServerSideProps<CoursePageProps> = async ({ 
   }
 
   const degreeResult = await getVerboseDegreeBySlug(degreeSlug)
-  const degree = degreeResult.value ?? null
+  const degree = degreeResult.value
 
   const teachingCoursesResult = degree ? await getCourses(String(degree.pk)) : { value: [] }
 
@@ -113,12 +97,14 @@ export const getServerSideProps: GetServerSideProps<CoursePageProps> = async ({ 
 
   return {
     props: {
-      degree,
+      degree: degree!,
       courses: teachingCoursesResult.value ?? [],
       admins: adminsResult.value ?? [],
       representatives: representativesResult.value ?? [],
       mainGroup,
+      ...(await serverSideTranslations(actualLocale, ["common"])),
     },
+    notFound: degree === undefined,
   }
 }
 

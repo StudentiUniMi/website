@@ -1,26 +1,97 @@
-import { Stack, Heading, Box } from "@chakra-ui/react"
-import { ReactNode } from "react"
+import { Stack, Heading, Box, Input, InputGroup, InputLeftElement, InputRightElement, IconButton } from "@chakra-ui/react"
+import { ReactNode, useCallback, useEffect, useMemo, useState } from "react"
+import debounce from "lodash.debounce"
+import EmptyState from "../empty-state"
+import { ListFilter, X } from "lucide-react"
 
 interface ItemListProps<T> {
   label?: string
+  enableSearch?: boolean
   items: Array<T>
   renderItem: (item: T) => ReactNode
+  getItemName: (item: T) => string
 }
 
-const ItemList = <T,>({ label, items, renderItem }: ItemListProps<T>) => {
+const ItemList = <T,>({ label, items, enableSearch, getItemName, renderItem }: ItemListProps<T>) => {
+  const [inputValue, setInputValue] = useState("")
+  const [searchTerm, setSearchTerm] = useState("")
+
+  const debouncedApply = useMemo(
+    () =>
+      debounce((val: string) => {
+        setSearchTerm(val.trim().toLowerCase())
+      }, 500),
+    [500]
+  )
+
+  useEffect(() => {
+    return () => {
+      debouncedApply.cancel()
+    }
+  }, [debouncedApply])
+
+  const handleSearchChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const val = e.target.value
+      setInputValue(val)
+      debouncedApply(val)
+    },
+    [debouncedApply]
+  )
+
+  const filteredItems = useMemo(() => {
+    if (!searchTerm) return items
+    return items.filter((item) => getItemName(item).toLowerCase().includes(searchTerm))
+  }, [items, searchTerm, getItemName])
+
   return (
-    <Stack direction={{ base: "column", lg: "row" }} mb={24} spacing={12}>
-      {label && (
-        <Heading size="xl" mb={3} textAlign={{ base: "center", lg: "left" }} minWidth={{ lg: 250 }} position="sticky">
-          {label}
-        </Heading>
+    <Stack direction={{ base: "column", lg: "row" }} mb={24} spacing={12} align={{ lg: "flex-start" }}>
+      {(label || enableSearch) && (
+        <Stack position={{ base: "static", lg: "sticky" }} top="80px" minWidth={{ lg: 250 }}>
+          {label && (
+            <Heading size="xl" mb={3} textAlign={{ base: "center", lg: "left" }} mt={2}>
+              {label}
+            </Heading>
+          )}
+
+          {enableSearch && (
+            <InputGroup maxW="350px" mx={{ base: "auto", lg: "0" }} rounded="xl">
+              {/* 🔽 Icona filtro a sinistra */}
+              <InputLeftElement pointerEvents="none" pb={2}>
+                <ListFilter size={12} />
+              </InputLeftElement>
+
+              <Input rounded="xl" placeholder="Filtra per nome..." value={inputValue} onChange={handleSearchChange} size="sm" pl={8} />
+
+              {inputValue && (
+                <InputRightElement>
+                  <IconButton
+                    aria-label="Clear search"
+                    size="xs"
+                    variant="ghost"
+                    icon={<X size={14} />}
+                    onClick={() => {
+                      setInputValue("")
+                      setSearchTerm("")
+                    }}
+                    pb={2}
+                  />
+                </InputRightElement>
+              )}
+            </InputGroup>
+          )}
+        </Stack>
       )}
 
-      <Stack direction={{ base: "column", sm: "row" }} flexWrap="wrap" justifyContent={{ base: "center", lg: "flex-start" }}>
-        {items.map((item, idx) => (
-          <Box key={idx}>{renderItem(item)}</Box>
-        ))}
-      </Stack>
+      {filteredItems.length > 0 ? (
+        <Stack direction={{ base: "column", sm: "row" }} flexWrap="wrap" justifyContent={{ base: "center", lg: "flex-start" }}>
+          {filteredItems.map((item, idx) => (
+            <Box key={idx}>{renderItem(item)}</Box>
+          ))}
+        </Stack>
+      ) : (
+        <EmptyState />
+      )}
     </Stack>
   )
 }

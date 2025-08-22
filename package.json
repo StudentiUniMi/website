@@ -21,6 +21,7 @@
     "geist": "^1.4.2",
     "i18next": "^25.4.0",
     "js-cookie": "^3.0.5",
+    "lodash.debounce": "^4.0.8",
     "lucide-react": "^0.540.0",
     "next": "15.5.0",
     "next-i18next": "^15.4.2",
@@ -33,6 +34,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/js-cookie": "^3.0.6",
+    "@types/lodash.debounce": "^4.0.9",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

@@ -21,6 +21,7 @@ const DegreeCard: React.FC<DegreeCardProps> = ({ degree, bgColor }) => {
   const baseColor = useColorModeValue(bgColor || "gray.100", bgColor || "gray.700")
   const border = useColorModeValue("gray.200", "gray.600")
   const titleColor = useColorModeValue("gray.900", "whiteAlpha.900")
+  const degreeColor = useColorModeValue("gray.600", "whiteAlpha.900")
 
   return (
     <ChakraLink as={NextLink} href={`/courses/${degree.slug}`} _hover={{ textDecoration: "none" }} w="full" h="full">
@@ -51,10 +52,10 @@ const DegreeCard: React.FC<DegreeCardProps> = ({ degree, bgColor }) => {
         {/* Desktop: icona + titolo + descrizione */}
         <Flex direction="column" justify="center" align="flex-start" w="full" h="full" display={{ base: "none", md: "flex" }} p={2}>
           {degree.icon && <Image src={degree.icon} alt={degree.name} boxSize="40px" mb={2} objectFit="contain" />}
-          <Text fontWeight="bold" fontSize="md" noOfLines={3} color={"blue.600"} mb={1}>
+          <Text fontWeight="bold" fontSize="md" noOfLines={3} color={"blue.500"} mb={0.5}>
             {degree.name}
           </Text>
-          <Text fontWeight="semibold" fontSize="sm">
+          <Text fontWeight="semibold" fontSize="sm" color={degreeColor}>
             {description}
           </Text>
         </Flex>

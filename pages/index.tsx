@@ -1,10 +1,10 @@
 import MainContainer from "@/components/main-container"
 import SearchBar from "@/components/search-bar"
-import { Box, Container, Heading } from "@chakra-ui/react"
+import { Box, Heading } from "@chakra-ui/react"
 import { GetStaticProps } from "next"
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-import InfoCards from "./index/info-cards"
+import InfoCards from "./index/partials/info-cards"
 import { ExtraGroup } from "@/types/api"
 import { getExtraGroups } from "@/lib/api/groups"
 import PrivacyButton from "@/components/privacy/button"
@@ -22,7 +22,7 @@ const Homepage = ({ groups, associations }: HomepageProps) => {
   const { t } = useTranslation("common")
 
   return (
-    <MainContainer as={Container}>
+    <MainContainer>
       <Box pt={12}>
         <Heading as="h1" size="4xl" mb={3} textAlign="center">
           Il network pensato per il presente e il futuro degli studenti.
@@ -35,6 +35,7 @@ const Homepage = ({ groups, associations }: HomepageProps) => {
         <ItemList
           label="Entra nei nostri gruppi"
           items={groups}
+          getItemName={(group) => group.name[locale]}
           renderItem={(group) => (
             <PrivacyButton key={group.id} href={group.invite_link}>
               <GroupCard title={group.name[locale]} description={group.description[locale]} category={group.category} />
@@ -45,6 +46,7 @@ const Homepage = ({ groups, associations }: HomepageProps) => {
         <ItemList
           label="Scopri le associazioni studentesche"
           items={associations}
+          getItemName={(association) => association.name[locale]}
           renderItem={(association) => (
             <PrivacyButton key={association.id} href={association.invite_link}>
               <GroupCard title={association.name[locale]} description={association.description[locale]} category={association.category} />

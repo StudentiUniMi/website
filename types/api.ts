@@ -1,7 +1,7 @@
 /**
  * Updated models to support API responses.
  */
-import { GroupCategory, LocalizedField } from "."
+import { DegreeType, GroupCategory, LocalizedField } from "."
 
 export interface Department {
   pk: number
@@ -36,7 +36,7 @@ export interface Representative {
 export interface VerboseDegree {
   pk: number
   name: string
-  type: string
+  type: DegreeType
   group: Group
   slug: string
   department: Department

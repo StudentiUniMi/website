@@ -8,7 +8,7 @@ const ResourceCards = () => {
 
   return (
     <Stack direction={{ base: "column", lg: "row" }} mb={24}>
-      <Heading size="xl" mb={3} textAlign={{ base: "center", lg: "left" }} maxWidth={{ lg: 280 }}>
+      <Heading size="xl" mb={3} textAlign={{ base: "center", lg: "left" }} maxWidth={{ lg: 280 }} mt={2}>
         Accedi alle nostre risorse
       </Heading>
 
