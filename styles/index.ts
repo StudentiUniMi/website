@@ -22,5 +22,15 @@ export const theme = extendTheme({
         mx: "auto",
       },
     },
+    Heading: {
+      sizes: {
+        xl: {
+          letterSpacing: "-0.02em",
+        },
+        "4xl": {
+          letterSpacing: "-0.02em",
+        },
+      },
+    },
   },
 })

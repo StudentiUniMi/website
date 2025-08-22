@@ -1,81 +1,68 @@
 import MainContainer from "@/components/main-container"
-import PrivacyButton from "@/components/privacy/button"
 import SearchBar from "@/components/search-bar"
-import { Box, Container, Heading, Text } from "@chakra-ui/react"
+import { Box, Container, Heading } from "@chakra-ui/react"
 import { GetStaticProps } from "next"
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import InfoCards from "./index/info-cards"
+import { ExtraGroup } from "@/types/api"
+import GroupList from "@/components/group-list"
+import { getExtraGroups } from "@/lib/api/groups"
 
-const Home = () => {
+interface HomepageProps {
+  groups: Array<ExtraGroup>
+  associations: Array<ExtraGroup>
+}
+
+const Homepage = ({ groups, associations }: HomepageProps) => {
   const { t } = useTranslation("common")
 
   return (
-    <MainContainer>
-      <Container py={12}>
-        <>
-          <Heading size="4xl" mb={3} textAlign="center">
-            Il network pensato per il presente e il futuro degli studenti.
-          </Heading>
+    <MainContainer as={Container}>
+      <Box pt={12}>
+        <Heading as="h1" size="4xl" mb={3} textAlign="center">
+          Il network pensato per il presente e il futuro degli studenti.
+        </Heading>
 
-          <SearchBar />
+        <SearchBar />
 
-          <PrivacyButton href="test">Test</PrivacyButton>
+        <InfoCards />
 
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-        </>
-      </Container>
+        <GroupList label={"Entra nei nostri gruppi"} groups={groups} />
+
+        <GroupList label={"Scopri le associazioni studentesche"} groups={associations} />
+      </Box>
     </MainContainer>
   )
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const groupsResponse = await getExtraGroups()
+
+  const groups = [
+    ...(groupsResponse.value?.university_groups?.map((g) => ({
+      ...g,
+      category: "university" as const,
+    })) ?? []),
+    ...(groupsResponse.value?.announcement_groups?.map((g) => ({
+      ...g,
+      category: "announcements" as const,
+    })) ?? []),
+  ]
+
+  const associations =
+    groupsResponse.value?.student_associations?.map((a) => ({
+      ...a,
+      category: "association" as const,
+    })) ?? []
+
   return {
     props: {
       ...(await serverSideTranslations(locale ?? "it", ["common"])),
+      groups,
+      associations,
     },
   }
 }
 
-export default Home
+export default Homepage

@@ -9,6 +9,7 @@ import { GeistSans } from "geist/font/sans"
 import SEO from "../lib/seo.config"
 import Header from "@/components/header"
 import PrivacyPopup from "@/components/privacy/popup"
+import Footer from "@/components/footer"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <DefaultSeo {...SEO} />
           <Header />
           <Component {...pageProps} />
+          <Footer />
           <PrivacyPopup />
         </main>
       </ChakraProvider>

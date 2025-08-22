@@ -3,13 +3,11 @@ import { usePrivacyStore } from "@/store/privacy"
 import { useEffect } from "react"
 
 const PrivacyPopup: React.FC = () => {
-  // const { initialized, showPopup, init, accept, decline } = usePrivacyStore()
+  const { initialized, showPopup, init, accept, decline } = usePrivacyStore()
 
   const bg = useColorModeValue("white", "gray.800")
   const textColor = useColorModeValue("gray.700", "gray.200")
   const borderColor = useColorModeValue("gray.200", "gray.600")
-
-  const { initialized, showPopup, init, accept, decline } = usePrivacyStore()
 
   useEffect(() => {
     if (!initialized) init()

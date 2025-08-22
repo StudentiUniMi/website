@@ -12,12 +12,17 @@ import { useEffect, useState } from "react"
 
 const MotionBox = motion(Box)
 
-const Header = () => {
+interface HeaderProps {
+  enableHideOnScrollUp?: boolean
+}
+
+const Header = ({ enableHideOnScrollUp }: HeaderProps) => {
   const { t } = useTranslation("common")
   const { isOpen, onOpen, onClose } = useDisclosure()
   const { colorMode, toggleColorMode } = useColorMode()
   const { pathname } = useRouter()
 
+  const [hovered, setHovered] = useState<string | null>(null)
   const [show, setShow] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
 
@@ -48,8 +53,10 @@ const Header = () => {
       setLastScrollY(currentScrollY)
     }
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    if (enableHideOnScrollUp) window.addEventListener("scroll", handleScroll)
+    return () => {
+      if (enableHideOnScrollUp) window.removeEventListener("scroll", handleScroll)
+    }
   }, [lastScrollY])
 
   return (
@@ -82,6 +89,8 @@ const Header = () => {
             <HStack spacing={6} as="nav" display={{ base: "none", md: "flex" }}>
               {navItems.map((item) => {
                 const isActive = pathname === item.href
+                const isHovered = hovered === item.href
+
                 return (
                   <ChakraLink
                     as={Link}
@@ -91,6 +100,8 @@ const Header = () => {
                     fontWeight={isActive ? "semibold" : "medium"}
                     bg={isActive ? activeBg : "transparent"}
                     color={isActive ? activeColor : "inherit"}
+                    opacity={hovered && !isHovered ? 0.5 : 1} // <- qui l’effetto fade
+                    transition="all 0.2s ease"
                     _hover={{
                       textDecoration: "none",
                       bg: isActive ? activeBg : useColorModeValue("gray.100", "gray.700"),
@@ -98,6 +109,8 @@ const Header = () => {
                     key={item.href}
                     href={item.href}
                     passHref
+                    onMouseEnter={() => setHovered(item.href)}
+                    onMouseLeave={() => setHovered(null)}
                   >
                     {item.label}
                   </ChakraLink>

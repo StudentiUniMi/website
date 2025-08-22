@@ -1,5 +1,5 @@
 import { apiEndpoint, getAsync, Result } from "./client"
-import { Degree, VerboseDegree } from "@/types"
+import { Degree, VerboseDegree } from "@/types/api"
 
 export async function getDegrees(departmentKey: string): Promise<Result<Degree[]>> {
   return getAsync(`${apiEndpoint}/degrees?dep_id=${departmentKey}`)

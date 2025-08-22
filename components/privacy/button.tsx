@@ -1,9 +1,9 @@
-import { Button, ButtonProps } from "@chakra-ui/react"
+import { Box, BoxProps, Button, ButtonProps } from "@chakra-ui/react"
 import { usePrivacyStore } from "@/store/privacy"
 import { useEffect } from "react"
 import Link from "next/link"
 
-interface PrivacyButtonProps extends ButtonProps {
+interface PrivacyButtonProps extends BoxProps {
   href: string
 }
 
@@ -23,9 +23,9 @@ const PrivacyButton = ({ href, children, ...rest }: PrivacyButtonProps) => {
   }
 
   return (
-    <Button as={hasConsent ? Link : Button} href={hasConsent ? href : undefined} onClick={handleClick} colorScheme="blue" rounded="lg" {...rest}>
+    <Box as={hasConsent ? Link : Box} href={hasConsent ? href : undefined} onClick={handleClick} passHref {...rest}>
       {children}
-    </Button>
+    </Box>
   )
 }
 

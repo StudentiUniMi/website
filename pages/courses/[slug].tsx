@@ -3,7 +3,7 @@ import { getVerboseDegreeBySlug } from "@/lib/api/degrees"
 import { getCourses } from "@/lib/api/courses"
 import { getDegreeAdmins } from "@/lib/api/admins"
 import { getRepresentatives } from "@/lib/api/representatives"
-import { Group, Representative, Admin, CourseDegree, VerboseDegree } from "@/types"
+import { Group, Representative, Admin, CourseDegree, VerboseDegree } from "@/types/api"
 
 interface CoursePageProps {
   degree: VerboseDegree | null
