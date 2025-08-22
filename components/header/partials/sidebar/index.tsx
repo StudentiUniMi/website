@@ -18,6 +18,7 @@ import Image from "next/image"
 import SearchBar from "@/components/search-bar"
 import { useRouter } from "next/router"
 import { ArrowLeft } from "lucide-react"
+import LanguageSwitcher from "@/components/language-switcher"
 
 interface SidebarProps {
   isOpen: boolean
@@ -102,6 +103,14 @@ const Sidebar = ({ isOpen, onClose, navItems }: SidebarProps) => {
               )
             })}
           </VStack>
+
+          <HStack justify={"space-between"}>
+            <Text fontSize="sm" fontWeight="medium" color={textColor}>
+              Cambia lingua
+            </Text>
+
+            <LanguageSwitcher isInSidebar />
+          </HStack>
 
           <Box borderTop="1px solid" borderColor={useColorModeValue("gray.200", "gray.700")} pt={3} />
 
