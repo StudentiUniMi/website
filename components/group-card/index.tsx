@@ -1,8 +1,10 @@
 import React from "react"
-import { Box, Flex, Text, useColorModeValue, HStack } from "@chakra-ui/react"
+import { Box, Flex, Text, useColorModeValue, HStack, Tag } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import { ArrowRight, ArrowUpRight } from "lucide-react"
 import { GroupCategory } from "@/types"
+import { categoryColors, categoryLabels, useCategoryTagColors } from "@/hooks/category"
+import { useCustomRouter } from "@/hooks/router"
 
 interface GroupCardProps {
   title: string
@@ -13,13 +15,9 @@ interface GroupCardProps {
 
 const MotionBox = motion(Box)
 
-const categoryColors: Record<GroupCategory, { light: string; dark: string }> = {
-  university: { light: "gray.200", dark: "gray.700" },
-  announcements: { light: "yellow.300", dark: "yellow.600" },
-  association: { light: "teal.200", dark: "teal.600" },
-}
-
 const GroupCard: React.FC<GroupCardProps> = ({ title, description, category, bgColor }) => {
+  const { locale } = useCustomRouter()
+  const { bg: tagBg, text: tagColor } = useCategoryTagColors(category)
   const baseColor = useColorModeValue(bgColor || categoryColors[category].light, bgColor || categoryColors[category].dark)
 
   const border = useColorModeValue("gray.200", "gray.700")
@@ -83,6 +81,22 @@ const GroupCard: React.FC<GroupCardProps> = ({ title, description, category, bgC
       >
         <ArrowUpRight size={18} strokeWidth={2} />
       </Box>
+
+      <Tag
+        display={{ base: "none", lg: "flex" }}
+        position="absolute"
+        bottom={2}
+        left="50%"
+        transform="translateX(-50%)"
+        size="sm"
+        rounded="full"
+        px={3}
+        bg={tagBg}
+        color={tagColor}
+        fontWeight="medium"
+      >
+        {categoryLabels[category][locale]}
+      </Tag>
 
       {/* Overlay descrizione (solo desktop, su hover) */}
       {description && (
