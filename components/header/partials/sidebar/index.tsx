@@ -18,6 +18,7 @@ import Image from "next/image"
 import SearchBar from "@/components/search-bar"
 import { useRouter } from "next/router"
 import { ArrowLeft } from "lucide-react"
+import { useEffect } from "react"
 
 interface SidebarProps {
   isOpen: boolean
@@ -49,7 +50,7 @@ const Sidebar = ({ isOpen, onClose, navItems }: SidebarProps) => {
         </HStack>
 
         {/* Barra di ricerca */}
-        <SearchBar enableLabel={false} pb={2} />
+        <SearchBar sidebarMode enableLabel={false} pb={2} onSearch={onClose} focusOnOpen />
 
         <Text fontSize="md" fontWeight="medium" color={textColor}>
           Menu
@@ -76,6 +77,7 @@ const Sidebar = ({ isOpen, onClose, navItems }: SidebarProps) => {
                     _hover={{ bg: hoverBg }}
                     bg={isActive ? activeBg : "transparent"}
                     w="full"
+                    tabIndex={-1}
                   >
                     <Text fontSize="2xl" fontWeight={isActive ? "semibold" : "medium"} color={isActive ? activeText : textColor}>
                       {item.label}

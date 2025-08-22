@@ -24,7 +24,7 @@ const SearchPage = ({ query, degrees, groups, associations }: SearchPageProps) =
   return (
     <MainContainer as={Container}>
       <Box pt={12}>
-        <Heading as="h1" size="4xl" mb={12} textAlign="center">
+        <Heading as="h1" size={{ base: "2xl", md: "3xl", lg: "4xl" }} mb={12} textAlign="center">
           Risultati di ricerca per "{query}"
         </Heading>
 

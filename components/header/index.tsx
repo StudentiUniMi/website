@@ -108,7 +108,6 @@ const Header = ({ enableHideOnScrollUp }: HeaderProps) => {
                     }}
                     key={item.href}
                     href={item.href}
-                    passHref
                     onMouseEnter={() => setHovered(item.href)}
                     onMouseLeave={() => setHovered(null)}
                   >

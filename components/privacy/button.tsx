@@ -23,7 +23,7 @@ const PrivacyButton = ({ href, children, ...rest }: PrivacyButtonProps) => {
   }
 
   return (
-    <Box as={hasConsent ? Link : Box} href={hasConsent ? href : undefined} onClick={handleClick} passHref {...rest}>
+    <Box as={hasConsent ? Link : Box} href={hasConsent ? href : undefined} onClick={handleClick} {...rest}>
       {children}
     </Box>
   )

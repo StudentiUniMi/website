@@ -1,7 +1,7 @@
 import React from "react"
 import { Box, Flex, Text, useColorModeValue, HStack } from "@chakra-ui/react"
 import { motion } from "framer-motion"
-import { ArrowUpRight, ChevronRight } from "lucide-react"
+import { ArrowRight, ArrowUpRight } from "lucide-react"
 import { GroupCategory } from "@/types"
 
 interface GroupCardProps {
@@ -49,7 +49,7 @@ const GroupCard: React.FC<GroupCardProps> = ({ title, description, category, bgC
         <Text fontWeight="semibold" fontSize="md" noOfLines={1} color={titleColor}>
           {title}
         </Text>
-        <ChevronRight size={18} strokeWidth={2} />
+        <ArrowRight size={18} strokeWidth={2} />
       </HStack>
 
       {/* Desktop: titolo fino a 3 righe con ellissi */}

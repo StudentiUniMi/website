@@ -26,8 +26,9 @@ const ResourceCards = () => {
           cursor="pointer"
           transition="all 0.2s ease"
           _hover={{ shadow: "md" }}
+          tabIndex={-1}
         >
-          <Box flex="1">
+          <Box flex="1" tabIndex={-1}>
             <Heading fontSize="xl" mb={2}>
               <LinkOverlay href="https://t.me/unimichat">Gruppo principale</LinkOverlay>
             </Heading>
@@ -54,6 +55,7 @@ const ResourceCards = () => {
               pointerEvents="none"
               transition="all 0.3s ease"
               _groupHover={{ top: -8, right: -8 }}
+              tabIndex={-1}
             />
           </Box>
         </LinkBox>
@@ -71,8 +73,9 @@ const ResourceCards = () => {
           cursor="pointer"
           transition="all 0.3s ease"
           _hover={{ shadow: "md" }}
+          tabIndex={-1}
         >
-          <Box flex="1">
+          <Box flex="1" tabIndex={-1}>
             <Heading fontSize="xl" mb={2}>
               <LinkOverlay href="https://t.me/studenti_unimi">Canale telegram</LinkOverlay>
             </Heading>
@@ -99,6 +102,7 @@ const ResourceCards = () => {
               pointerEvents="none"
               transition="all 0.2s ease"
               _groupHover={{ top: -8, right: -8 }}
+              tabIndex={-1}
             />
           </Box>
         </LinkBox>
