@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react"
-import { InputGroup, InputLeftElement, Input, VStack, Text, useColorModeValue, InputRightElement, Button, Fade } from "@chakra-ui/react"
+import { InputGroup, InputLeftElement, Input, VStack, Text, useColorModeValue, InputRightElement, Button, Fade, StackProps } from "@chakra-ui/react"
 import { Search } from "lucide-react"
 import { useRouter } from "next/router"
 
-const SearchBar = () => {
+interface SearchBarProps extends StackProps {
+  enableLabel?: boolean
+}
+
+const SearchBar = ({ enableLabel = true, ...props }: SearchBarProps) => {
   const [query, setQuery] = useState("")
   const [highlight, setHighlight] = useState(false)
   const router = useRouter()
@@ -35,10 +39,12 @@ const SearchBar = () => {
   }, [])
 
   return (
-    <VStack spacing={3} w="100%" maxW="700px" mx="auto" py={8} id="search-bar">
-      <Text fontSize="lg" fontWeight="semibold" color={labelColor} textAlign="center">
-        Cerca qualsiasi cosa: corsi di laurea, gruppi e molto altro
-      </Text>
+    <VStack spacing={3} w="100%" maxW="700px" mx="auto" py={8} {...props} id="search-bar">
+      {enableLabel && (
+        <Text fontSize="lg" fontWeight="semibold" color={labelColor} textAlign="center">
+          Cerca qualsiasi cosa: corsi di laurea, gruppi e molto altro
+        </Text>
+      )}
 
       {/* Barra di ricerca */}
       <InputGroup size="lg" w="100%">

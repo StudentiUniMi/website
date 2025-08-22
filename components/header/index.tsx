@@ -82,7 +82,7 @@ const Header = ({ enableHideOnScrollUp }: HeaderProps) => {
           <Flex h={14} alignItems="center" justifyContent="space-between">
             {/* Logo / Brand */}
             <Link href={"/"}>
-              <Image src={"/images/horizontal_logo.png"} width={120} height={100} alt="Network Studenti UniMi" />
+              <Image src={"/images/horizontal_logo.png"} width={100} height={30} alt="Network Studenti UniMi" />
             </Link>
 
             {/* Desktop - Navigation */}
@@ -126,6 +126,7 @@ const Header = ({ enableHideOnScrollUp }: HeaderProps) => {
                 icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
                 onClick={toggleColorMode}
                 variant="ghost"
+                borderRadius="3xl"
               />
 
               {/* Language switcher */}

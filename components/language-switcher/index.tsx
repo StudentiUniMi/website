@@ -10,7 +10,7 @@ const LanguageSwitcher = () => {
   }
 
   return (
-    <HStack spacing={1}>
+    <HStack spacing={1} fontFamily="monospace">
       <Button size="sm" variant={locale === "it" ? "solid" : "outline"} colorScheme="blue" borderRadius="full" onClick={() => changeLanguage("it")}>
         IT
       </Button>
