@@ -11,6 +11,8 @@ import InfoCards from "./index/partials/info-cards"
 import PrivacyButton from "@/components/privacy/button"
 import GroupCard from "@/components/group-card"
 import ItemList from "@/components/item-list"
+import { NextSeo } from "next-seo"
+import Seo from "@/components/seo"
 
 interface HomepageProps {
   groups: Array<ExtraGroup>
@@ -22,42 +24,46 @@ const Homepage = ({ groups, associations }: HomepageProps) => {
   const { t } = useTranslation("common")
 
   return (
-    <MainContainer>
-      <Box pt={12}>
-        <Heading as="h1" size="4xl" mb={3} textAlign="center">
-          {t("networkTagline")}
-        </Heading>
+    <>
+      <Seo page="homepage" />
 
-        <SearchBar />
+      <MainContainer>
+        <Box pt={12}>
+          <Heading as="h1" size="4xl" mb={3} textAlign="center">
+            {t("networkTagline")}
+          </Heading>
 
-        <InfoCards />
+          <SearchBar />
 
-        <ItemList
-          label={t("homepage.joinGroups")}
-          sectionId={"groups"}
-          customLabelWidth={{ minWidth: 250 }}
-          items={groups}
-          getItemName={(group) => group.name[locale]}
-          renderItem={(group) => (
-            <PrivacyButton key={group.id} href={group.invite_link}>
-              <GroupCard title={group.name[locale]} description={group.description[locale]} category={group.category} />
-            </PrivacyButton>
-          )}
-        />
+          <InfoCards />
 
-        <ItemList
-          label={t("homepage.discoverAssociations")}
-          sectionId={"associations"}
-          items={associations}
-          getItemName={(association) => association.name[locale]}
-          renderItem={(association) => (
-            <PrivacyButton key={association.id} href={association.invite_link}>
-              <GroupCard title={association.name[locale]} description={association.description[locale]} category={association.category} />
-            </PrivacyButton>
-          )}
-        />
-      </Box>
-    </MainContainer>
+          <ItemList
+            label={t("homepage.joinGroups")}
+            sectionId={"groups"}
+            customLabelWidth={{ minWidth: 250 }}
+            items={groups}
+            getItemName={(group) => group.name[locale]}
+            renderItem={(group) => (
+              <PrivacyButton key={group.id} href={group.invite_link}>
+                <GroupCard title={group.name[locale]} description={group.description[locale]} category={group.category} />
+              </PrivacyButton>
+            )}
+          />
+
+          <ItemList
+            label={t("homepage.discoverAssociations")}
+            sectionId={"associations"}
+            items={associations}
+            getItemName={(association) => association.name[locale]}
+            renderItem={(association) => (
+              <PrivacyButton key={association.id} href={association.invite_link}>
+                <GroupCard title={association.name[locale]} description={association.description[locale]} category={association.category} />
+              </PrivacyButton>
+            )}
+          />
+        </Box>
+      </MainContainer>
+    </>
   )
 }
 
@@ -83,7 +89,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "it", ["common"])),
+      ...(await serverSideTranslations(locale ?? "it", ["seo", "common"])),
       groups,
       associations,
     },

@@ -1,0 +1,30 @@
+{
+  "homepage": {
+    "title": "Gruppi, servizi e risorse per studenti",
+    "description": "Oltre 600 gruppi Telegram, servizi online e strumenti collaborativi per studenti dell’Università di Milano. Entra nel network, trova aiuto e resta aggiornato."
+  },
+  "about": {
+    "title": "Chi siamo",
+    "description": "Conosci il team e la storia del network Studenti UniMi. Un progetto indipendente e apartitico nato per migliorare la comunicazione tra studenti."
+  },
+  "services": {
+    "title": "Servizi per studenti",
+    "description": "Accedi ai servizi online del network Studenti UniMi: strumenti collaborativi, risorse utili e supporto per la vita universitaria."
+  },
+  "rules": {
+    "title": "Regolamento del network",
+    "description": "Consulta il regolamento del network Studenti UniMi: norme di comportamento, principi di neutralità e linee guida per la community."
+  },
+  "search": {
+    "title": "Cerca gruppi, corsi di laurea e risorse: '{{query}}'",
+    "description": "Risultati della ricerca per '{{query}}': trova gruppi Telegram, corsi di laurea e associazioni studentesche all'Università degli Studi di Milano."
+  },
+  "degree": {
+    "title": "{{name}} | Gruppi e risorse",
+    "description": "Scopri gruppi Telegram, risorse e servizi per il corso di laurea {{name}} all'Università degli Studi di Milano."
+  },
+  "404": {
+    "title": "Pagina non trovata",
+    "description": "La risorsa che stavi cercando non è disponibile. Torna alla home di Studenti Unimi."
+  }
+}

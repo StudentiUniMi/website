@@ -1,0 +1,30 @@
+{
+  "homepage": {
+    "title": "Groups, services and resources for students",
+    "description": "Over 600 Telegram groups, online services and collaborative tools for students of the University of Milan. Join the network, get help and stay updated."
+  },
+  "about": {
+    "title": "About us",
+    "description": "Meet the team and the story behind the Studenti UniMi network. An independent and nonpartisan project born to improve communication among students."
+  },
+  "services": {
+    "title": "Services for students",
+    "description": "Access online services from the Studenti UniMi network: collaborative tools, useful resources and support for university life."
+  },
+  "rules": {
+    "title": "Network rules",
+    "description": "Read the rules of the Studenti UniMi network: community guidelines, neutrality principles and behavior standards."
+  },
+  "search": {
+    "title": "Search groups, degrees and resources: '{{query}}'",
+    "description": "Search results for '{{query}}': find Telegram groups, degree programs and student associations at the University of Milan."
+  },
+  "degree": {
+    "title": "{{name}} | groups and resources",
+    "description": "Discover Telegram groups, resources and services for the {{name}} degree course at the University of Milan."
+  },
+  "404": {
+    "title": "Page not found",
+    "description": "The resource you were looking for is not available. Go back to Studenti Unimi homepage."
+  }
+}

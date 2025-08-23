@@ -26,7 +26,7 @@ const EmptyState: React.FC<EmptyStateProps> = ({ label }) => {
       justifyContent="center"
     >
       <VStack spacing={3}>
-        <Inbox size={36} strokeWidth={1.5} color={textColor} />
+        <Inbox size={36} strokeWidth={1.5} colorRendering={textColor} />
         <Text fontSize="md" fontWeight="medium" color={textColor} textAlign="center">
           {label || t("empty.noResults")}
         </Text>

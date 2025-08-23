@@ -8,6 +8,8 @@ import TeamMemberCard from "./partials/member-card"
 import { cdaMembers, founders } from "@/data/staff"
 import ItemList from "@/components/item-list"
 import ContactMailPopup from "./partials/contact-popup"
+import { NextSeo } from "next-seo"
+import Seo from "@/components/seo"
 
 interface AboutPageProps {
   founders: Array<TeamMember>
@@ -18,36 +20,40 @@ const AboutPage = ({ founders, cdaMembers }: AboutPageProps) => {
   const { t } = useTranslation("about")
 
   return (
-    <MainContainer>
-      <Box py={12}>
-        <VStack spacing={8} mb={14}>
-          <Heading as="h1" size={{ base: "2xl", md: "3xl", lg: "3xl" }} mb={8} textAlign="center">
-            {t("title")}
-          </Heading>
+    <>
+      <Seo page="about" />
 
-          <Text fontSize={{ base: "md", md: "lg" }} color="gray.600" _dark={{ color: "gray.300" }} maxW="3xl" mx="auto" textAlign="center">
-            {t("intro")}
-          </Text>
-        </VStack>
+      <MainContainer>
+        <Box py={12}>
+          <VStack spacing={8} mb={14}>
+            <Heading as="h1" size={{ base: "2xl", md: "3xl", lg: "3xl" }} mb={8} textAlign="center">
+              {t("title")}
+            </Heading>
 
-        <ItemList
-          items={founders}
-          label={t("founders")}
-          getItemName={(founder) => founder.name}
-          renderItem={(founder) => <TeamMemberCard key={founder.user_id} member={founder} />}
-        />
+            <Text fontSize={{ base: "md", md: "lg" }} color="gray.600" _dark={{ color: "gray.300" }} maxW="3xl" mx="auto" textAlign="center">
+              {t("intro")}
+            </Text>
+          </VStack>
 
-        <ItemList
-          items={cdaMembers}
-          label={t("board")}
-          customLabelWidth={{ maxWidth: "auto" }}
-          getItemName={(member) => member.name}
-          renderItem={(member) => <TeamMemberCard key={member.user_id} member={member} />}
-        />
-      </Box>
+          <ItemList
+            items={founders}
+            label={t("founders")}
+            getItemName={(founder) => founder.name}
+            renderItem={(founder) => <TeamMemberCard key={founder.user_id} member={founder} />}
+          />
 
-      <ContactMailPopup />
-    </MainContainer>
+          <ItemList
+            items={cdaMembers}
+            label={t("board")}
+            customLabelWidth={{ maxWidth: "auto" }}
+            getItemName={(member) => member.name}
+            renderItem={(member) => <TeamMemberCard key={member.user_id} member={member} />}
+          />
+        </Box>
+
+        <ContactMailPopup />
+      </MainContainer>
+    </>
   )
 }
 
@@ -56,7 +62,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 
   return {
     props: {
-      ...(await serverSideTranslations(actualLocale, ["about", "common"])),
+      ...(await serverSideTranslations(actualLocale, ["seo", "about", "common"])),
       founders,
       cdaMembers,
     },

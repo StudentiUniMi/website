@@ -23,7 +23,7 @@ const DegreeCard: React.FC<DegreeCardProps> = ({ degree, bgColor }) => {
   const degreeColor = useColorModeValue("gray.500", "whiteAlpha.900")
 
   return (
-    <ChakraLink as={NextLink} href={`/courses/${degree.slug}`} _hover={{ textDecoration: "none" }} w="full" h="full">
+    <ChakraLink as={NextLink} href={`/degrees/${degree.slug}`} _hover={{ textDecoration: "none" }} w="full" h="full">
       <MotionBox
         role="group"
         border="1px solid"

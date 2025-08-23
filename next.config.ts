@@ -11,6 +11,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/courses/:slug",
+        destination: "/degrees/:slug",
+        permanent: true,
+      },
+    ]
+  },
   reactStrictMode: true,
   i18n,
 }

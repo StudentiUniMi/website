@@ -19,6 +19,9 @@ import degreeEn from "../public/locales/en/degree.json"
 import aboutIt from "../public/locales/it/about.json"
 import aboutEn from "../public/locales/en/about.json"
 
+import notFoundIt from "../public/locales/it/notFound.json"
+import notFoundEn from "../public/locales/en/notFound.json"
+
 i18n.use(initReactI18next).init({
   resources: {
     it: {
@@ -28,6 +31,7 @@ i18n.use(initReactI18next).init({
       search: searchIt,
       degree: degreeIt,
       about: aboutIt,
+      notFound: notFoundIt,
     },
     en: {
       common: commonEn,
@@ -36,6 +40,7 @@ i18n.use(initReactI18next).init({
       search: searchEn,
       degree: degreeEn,
       about: aboutEn,
+      notFound: notFoundEn,
     },
   },
   lng: "it",

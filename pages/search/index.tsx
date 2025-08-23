@@ -11,6 +11,7 @@ import { Box, Heading } from "@chakra-ui/react"
 import { GetServerSideProps } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useTranslation } from "next-i18next"
+import Seo from "@/components/seo"
 
 interface SearchPageProps {
   query: string
@@ -24,51 +25,55 @@ const SearchPage = ({ query, degrees, groups, associations }: SearchPageProps) =
   const { t } = useTranslation("search")
 
   return (
-    <MainContainer>
-      <Box pt={12}>
-        <Heading as="h1" size={{ base: "2xl", md: "3xl", lg: "4xl" }} mb={12} textAlign="center">
-          {t("title", { query })}
-        </Heading>
+    <>
+      <Seo page="search" variables={{ query }} />
 
-        {degrees?.length > 0 && (
-          <ItemList
-            label={t("degrees")}
-            sectionId="degrees"
-            items={degrees}
-            getItemName={(degree) => degree.name}
-            renderItem={(degree) => <DegreeCard degree={degree} />}
-          />
-        )}
+      <MainContainer>
+        <Box pt={12}>
+          <Heading as="h1" size={{ base: "2xl", md: "3xl", lg: "4xl" }} mb={12} textAlign="center">
+            {t("title", { query })}
+          </Heading>
 
-        {groups?.length > 0 && (
-          <ItemList
-            label={t("groups")}
-            sectionId="groups"
-            items={groups}
-            getItemName={(group) => group.title}
-            renderItem={(group) => (
-              <PrivacyButton key={group.id} href={group.invite_link}>
-                <GroupCard title={group.name[locale]} description={group.description[locale]} category={group.category} />
-              </PrivacyButton>
-            )}
-          />
-        )}
+          {degrees?.length > 0 && (
+            <ItemList
+              label={t("degrees")}
+              sectionId="degrees"
+              items={degrees}
+              getItemName={(degree) => degree.name}
+              renderItem={(degree) => <DegreeCard degree={degree} />}
+            />
+          )}
 
-        {associations?.length > 0 && (
-          <ItemList
-            label={t("associations")}
-            sectionId="associations"
-            items={associations}
-            getItemName={(association) => association.title}
-            renderItem={(association) => (
-              <PrivacyButton key={association.id} href={association.invite_link}>
-                <GroupCard title={association.name[locale]} description={association.description[locale]} category={association.category} />
-              </PrivacyButton>
-            )}
-          />
-        )}
-      </Box>
-    </MainContainer>
+          {groups?.length > 0 && (
+            <ItemList
+              label={t("groups")}
+              sectionId="groups"
+              items={groups}
+              getItemName={(group) => group.title}
+              renderItem={(group) => (
+                <PrivacyButton key={group.id} href={group.invite_link}>
+                  <GroupCard title={group.name[locale]} description={group.description[locale]} category={group.category} />
+                </PrivacyButton>
+              )}
+            />
+          )}
+
+          {associations?.length > 0 && (
+            <ItemList
+              label={t("associations")}
+              sectionId="associations"
+              items={associations}
+              getItemName={(association) => association.title}
+              renderItem={(association) => (
+                <PrivacyButton key={association.id} href={association.invite_link}>
+                  <GroupCard title={association.name[locale]} description={association.description[locale]} category={association.category} />
+                </PrivacyButton>
+              )}
+            />
+          )}
+        </Box>
+      </MainContainer>
+    </>
   )
 }
 
@@ -119,7 +124,7 @@ export const getServerSideProps: GetServerSideProps<SearchPageProps> = async (co
       groups,
       associations,
       degrees,
-      ...(await serverSideTranslations(locale, ["search", "common"])),
+      ...(await serverSideTranslations(locale, ["seo", "search", "common"])),
     },
     notFound: degrees?.length === 0 && groups?.length === 0 && associations?.length === 0,
   }

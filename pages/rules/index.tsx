@@ -4,6 +4,7 @@ import { GetStaticProps } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useTranslation } from "next-i18next"
 import { CheckCircle } from "lucide-react"
+import Seo from "@/components/seo"
 
 export interface RuleSection {
   id: string
@@ -29,44 +30,48 @@ const RulesPage = () => {
   }
 
   return (
-    <MainContainer>
-      <Box py={12}>
-        <Heading as="h1" size={{ base: "2xl", md: "3xl", lg: "4xl" }} mb={12} textAlign="center">
-          {t("title")}
-        </Heading>
+    <>
+      <Seo page="rules" />
 
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
-          {sections.map((section) => (
-            <Box key={section.title} p={6} borderWidth="1px" borderRadius="md" shadow="sm">
-              <Heading size="md" mb={4}>
-                {section.title}
-              </Heading>
+      <MainContainer>
+        <Box py={12}>
+          <Heading as="h1" size={{ base: "2xl", md: "3xl", lg: "4xl" }} mb={12} textAlign="center">
+            {t("title")}
+          </Heading>
 
-              <Stack spacing={3}>
-                {section.items.map((item, idx) => {
-                  const hideIcon = startsWithEmoji(item)
-                  return (
-                    <Flex key={idx} align="flex-start">
-                      {!hideIcon && <Icon as={CheckCircle} boxSize={5} color={iconColor} mt="2px" mr={2} flexShrink={0} />}
-                      <Text fontSize="md" lineHeight="tall">
-                        {item}
-                      </Text>
-                    </Flex>
-                  )
-                })}
-              </Stack>
-            </Box>
-          ))}
-        </SimpleGrid>
-      </Box>
-    </MainContainer>
+          <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
+            {sections.map((section) => (
+              <Box key={section.title} p={6} borderWidth="1px" borderRadius="md" shadow="sm">
+                <Heading size="md" mb={4}>
+                  {section.title}
+                </Heading>
+
+                <Stack spacing={3}>
+                  {section.items.map((item, idx) => {
+                    const hideIcon = startsWithEmoji(item)
+                    return (
+                      <Flex key={idx} align="flex-start">
+                        {!hideIcon && <Icon as={CheckCircle} boxSize={5} color={iconColor} mt="2px" mr={2} flexShrink={0} />}
+                        <Text fontSize="md" lineHeight="tall">
+                          {item}
+                        </Text>
+                      </Flex>
+                    )
+                  })}
+                </Stack>
+              </Box>
+            ))}
+          </SimpleGrid>
+        </Box>
+      </MainContainer>
+    </>
   )
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "it", ["rules", "common"])),
+      ...(await serverSideTranslations(locale ?? "it", ["seo", "rules", "common"])),
     },
   }
 }

@@ -7,7 +7,7 @@ function MyDocument({ locale }: { locale: string }) {
     <Html lang={locale}>
       <Head>
         <link rel="icon" href="/images/logo.png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        {/* <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> */}
         <meta name="author" content="Network StudentiUniMi" />
         <meta
           httpEquiv="Content-Security-Policy"

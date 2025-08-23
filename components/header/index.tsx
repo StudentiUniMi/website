@@ -1,5 +1,5 @@
 import { Grid, GridItem, Tooltip, useDisclosure } from "@chakra-ui/react"
-import { Box, Flex, HStack, IconButton, useColorMode, useColorModeValue, Link as ChakraLink } from "@chakra-ui/react"
+import { Box, HStack, IconButton, useColorMode, useColorModeValue, Link as ChakraLink } from "@chakra-ui/react"
 import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons"
 import Link from "next/link"
 import { useTranslation } from "next-i18next"
