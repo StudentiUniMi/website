@@ -120,11 +120,11 @@ export const getServerSideProps: GetServerSideProps<SearchPageProps> = async (co
 
   return {
     props: {
+      ...(await serverSideTranslations(locale ?? "it", ["common", "rules", "search", "services", "degree", "about", "notFound"])),
       query,
       groups,
       associations,
       degrees,
-      ...(await serverSideTranslations(locale, ["seo", "common", "search"])),
     },
     notFound: degrees?.length === 0 && groups?.length === 0 && associations?.length === 0,
   }

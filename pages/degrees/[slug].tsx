@@ -194,12 +194,14 @@ export const getServerSideProps: GetServerSideProps<DegreePageProps> = async ({ 
 
   return {
     props: {
+      props: {
+        ...(await serverSideTranslations(locale ?? "it", ["common", "rules", "search", "services", "degree", "about", "notFound"])),
+      },
       degree: degree!,
       courses: teachingCoursesResult.value ?? [],
       admins: adminsResult.value ?? [],
       representatives: representativesResult.value ?? [],
       mainGroup,
-      ...(await serverSideTranslations(actualLocale, ["seo", "common", "degree"])),
     },
     notFound: degree === undefined,
   }

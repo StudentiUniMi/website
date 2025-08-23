@@ -11,6 +11,7 @@ import Header from "@/components/header"
 import PrivacyPopup from "@/components/privacy/popup"
 import Footer from "@/components/footer"
 import SearchHintSnackbar from "@/components/search-hint"
+import "../lib/i18n"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
