@@ -107,7 +107,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ data }) => {
         w="100%"
         h="100%"
         bg={overlayBg}
-        display={{ base: "none", md: "flex" }}
+        display={{ base: "none", lg: "flex" }}
         flexDir="column"
         justifyContent="center"
         alignItems="center"
