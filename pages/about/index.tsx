@@ -4,10 +4,10 @@ import { GetServerSideProps } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useTranslation } from "next-i18next"
 import { TeamMember } from "@/types"
-import TeamMemberCard from "./partials/member-card"
+import TeamMemberCard from "../../components/member-card"
 import { cdaMembers, founders } from "@/data/staff"
 import ItemList from "@/components/item-list"
-import ContactMailPopup from "./partials/contact-popup"
+import ContactMailPopup from "../../components/contact-popup"
 import Seo from "@/components/seo"
 
 interface AboutPageProps {
