@@ -1,6 +1,10 @@
 import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
+  i18n: {
+    locales: ["it", "en"],
+    defaultLocale: "it",
+  },
   images: {
     remotePatterns: [
       {
@@ -9,10 +13,6 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
     ],
-  },
-  i18n: {
-    locales: ["it", "en"],
-    defaultLocale: "it",
   },
   async redirects() {
     return [
@@ -23,7 +23,6 @@ const nextConfig: NextConfig = {
       },
     ]
   },
-  // reactStrictMode: true,
 }
 
 export default nextConfig

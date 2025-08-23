@@ -122,6 +122,7 @@ export const getServerSideProps: GetServerSideProps<SearchPageProps> = async (co
 
   return {
     props: {
+      locale,
       messages,
       query,
       groups,

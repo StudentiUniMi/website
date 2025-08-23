@@ -195,6 +195,7 @@ export const getServerSideProps: GetServerSideProps<DegreePageProps> = async ({ 
 
   return {
     props: {
+      locale,
       messages,
       degree: degree!,
       courses: teachingCoursesResult.value ?? [],

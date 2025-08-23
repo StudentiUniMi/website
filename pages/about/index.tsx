@@ -1,6 +1,6 @@
 import MainContainer from "@/components/main-container"
 import { Box, VStack, Heading, Text } from "@chakra-ui/react"
-import { GetStaticProps } from "next"
+import { GetStaticPaths, GetStaticProps } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useTranslations } from "next-intl"
 import { TeamMember } from "@/types"
@@ -66,6 +66,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
   return {
     props: {
+      locale,
       messages,
       founders,
       cdaMembers,
