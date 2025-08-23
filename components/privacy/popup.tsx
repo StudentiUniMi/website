@@ -1,4 +1,4 @@
-import { Box, VStack, Text, HStack, Button, Link, useColorModeValue, Fade } from "@chakra-ui/react"
+import { Box, VStack, Text, HStack, Button, Link, useColorModeValue, Fade, useToast } from "@chakra-ui/react"
 import { usePrivacyStore } from "@/store/privacy"
 import { useEffect } from "react"
 import { useTranslations } from "next-intl"
@@ -6,6 +6,9 @@ import { useTranslations } from "next-intl"
 const PrivacyPopup: React.FC = () => {
   const { initialized, showPopup, init, accept, decline } = usePrivacyStore()
   const t = useTranslations("common")
+  const toast = useToast()
+
+  const isToastActive = toast.isActive("search-hint")
 
   const bg = useColorModeValue("white", "gray.800")
   const textColor = useColorModeValue("gray.700", "gray.200")
@@ -19,7 +22,7 @@ const PrivacyPopup: React.FC = () => {
     <Fade in={showPopup} unmountOnExit>
       <Box
         position="fixed"
-        bottom={{ base: 4, md: 6 }}
+        bottom={isToastActive ? { base: 20, md: 24 } : { base: 4, md: 6 }}
         right={{ base: 4, md: 6 }}
         bg={bg}
         color={textColor}
