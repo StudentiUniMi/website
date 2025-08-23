@@ -9,13 +9,22 @@ interface ItemListProps<T> {
   enableSearch?: boolean
   items: Array<T>
   firstElement?: ReactNode // Used for degree main group - It will be another component
-  customLabelWidth?: number | string
+  customLabelWidth?: { minWidth?: any; maxWidth?: any }
   sectionId?: string
   renderItem: (item: T) => ReactNode
   getItemName: (item: T) => string
 }
 
-const ItemList = <T,>({ label, items, enableSearch, firstElement, customLabelWidth = 250, sectionId, getItemName, renderItem }: ItemListProps<T>) => {
+const ItemList = <T,>({
+  label,
+  items,
+  enableSearch,
+  firstElement,
+  customLabelWidth = { minWidth: 250, maxWidth: 250 },
+  sectionId,
+  getItemName,
+  renderItem,
+}: ItemListProps<T>) => {
   const [inputValue, setInputValue] = useState("")
   const [searchTerm, setSearchTerm] = useState("")
 
@@ -50,7 +59,12 @@ const ItemList = <T,>({ label, items, enableSearch, firstElement, customLabelWid
   return (
     <Stack direction={{ base: "column", lg: "row" }} mb={24} spacing={12} align={{ lg: "flex-start" }} id={sectionId}>
       {(label || enableSearch) && (
-        <Stack position={{ base: "static", lg: "sticky" }} top="80px" minWidth={{ lg: customLabelWidth }}>
+        <Stack
+          position={{ base: "static", lg: "sticky" }}
+          top="80px"
+          minWidth={{ lg: customLabelWidth.minWidth }}
+          maxWidth={{ lg: customLabelWidth.maxWidth }}
+        >
           {label && (
             <Heading size="xl" mb={3} textAlign={{ base: "center", lg: "left" }} mt={2}>
               {label}

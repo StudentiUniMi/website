@@ -32,6 +32,11 @@ const SearchBar = ({ enableLabel = true, sidebarMode = false, onSearch, focusOnO
     }
   }
 
+  const handleHighlight = () => {
+    setHighlight(true)
+    inputRef.current?.focus()
+  }
+
   useEffect(() => {
     if (highlight) {
       const timer = setTimeout(() => setHighlight(false), 2500)
@@ -48,9 +53,8 @@ const SearchBar = ({ enableLabel = true, sidebarMode = false, onSearch, focusOnO
   }, [focusOnOpen])
 
   useEffect(() => {
-    const handler = () => setHighlight(true)
-    window.addEventListener("highlight-searchbar", handler)
-    return () => window.removeEventListener("highlight-searchbar", handler)
+    window.addEventListener("highlight-searchbar", handleHighlight)
+    return () => window.removeEventListener("highlight-searchbar", handleHighlight)
   }, [])
 
   return (

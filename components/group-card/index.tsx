@@ -78,6 +78,7 @@ const GroupCard: React.FC<GroupCardProps> = ({ title, description, category, bgC
         transition="opacity 0.2s ease"
         zIndex={10}
         display={{ base: "none", md: "block" }}
+        color="blue.500"
       >
         <ArrowUpRight size={18} strokeWidth={2} />
       </Box>

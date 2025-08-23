@@ -48,7 +48,6 @@ const Header = ({ enableHideOnScrollUp }: HeaderProps) => {
         }, 300)
       })
     } else {
-      // già nella homepage
       window.dispatchEvent(new Event("highlight-searchbar"))
     }
   }

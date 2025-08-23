@@ -35,6 +35,7 @@ const Homepage = ({ groups, associations }: HomepageProps) => {
         <ItemList
           label="Entra nei nostri gruppi"
           sectionId={"groups"}
+          customLabelWidth={{ minWidth: 250 }}
           items={groups}
           getItemName={(group) => group.name[locale]}
           renderItem={(group) => (
