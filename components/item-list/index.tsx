@@ -10,11 +10,12 @@ interface ItemListProps<T> {
   items: Array<T>
   firstElement?: ReactNode // Used for degree main group - It will be another component
   customLabelWidth?: number | string
+  sectionId?: string
   renderItem: (item: T) => ReactNode
   getItemName: (item: T) => string
 }
 
-const ItemList = <T,>({ label, items, enableSearch, firstElement, customLabelWidth = 250, getItemName, renderItem }: ItemListProps<T>) => {
+const ItemList = <T,>({ label, items, enableSearch, firstElement, customLabelWidth = 250, sectionId, getItemName, renderItem }: ItemListProps<T>) => {
   const [inputValue, setInputValue] = useState("")
   const [searchTerm, setSearchTerm] = useState("")
 
@@ -47,7 +48,7 @@ const ItemList = <T,>({ label, items, enableSearch, firstElement, customLabelWid
   }, [items, searchTerm, getItemName])
 
   return (
-    <Stack direction={{ base: "column", lg: "row" }} mb={24} spacing={12} align={{ lg: "flex-start" }}>
+    <Stack direction={{ base: "column", lg: "row" }} mb={24} spacing={12} align={{ lg: "flex-start" }} id={sectionId}>
       {(label || enableSearch) && (
         <Stack position={{ base: "static", lg: "sticky" }} top="80px" minWidth={{ lg: customLabelWidth }}>
           {label && (

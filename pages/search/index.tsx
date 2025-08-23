@@ -30,7 +30,8 @@ const SearchPage = ({ query, degrees, groups, associations }: SearchPageProps) =
 
         {degrees?.length > 0 && (
           <ItemList
-            label={"Corsi di laurea"}
+            label="Corsi di laurea"
+            sectionId="degrees"
             items={degrees}
             getItemName={(degree) => degree.name}
             renderItem={(degree) => <DegreeCard degree={degree} />}
@@ -40,6 +41,7 @@ const SearchPage = ({ query, degrees, groups, associations }: SearchPageProps) =
         {groups?.length > 0 && (
           <ItemList
             label="Gruppi"
+            sectionId="groups"
             customLabelWidth={"auto"}
             items={groups}
             getItemName={(group) => group.title}
@@ -54,6 +56,7 @@ const SearchPage = ({ query, degrees, groups, associations }: SearchPageProps) =
         {associations?.length > 0 && (
           <ItemList
             label="Associazioni studentesche"
+            sectionId="associations"
             items={associations}
             getItemName={(association) => association.title}
             renderItem={(association) => (

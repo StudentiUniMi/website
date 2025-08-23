@@ -48,6 +48,7 @@ const CoursePage = ({ degree, courses, admins, representatives, mainGroup }: Cou
 
         <ItemList
           label="Gruppi disponibili"
+          sectionId={"groups"}
           items={courses}
           enableSearch
           firstElement={
@@ -69,6 +70,7 @@ const CoursePage = ({ degree, courses, admins, representatives, mainGroup }: Cou
           {admins.length > 0 && (
             <ItemList
               label="Amministratori disponibili"
+              sectionId={"admins"}
               items={admins}
               customLabelWidth="auto"
               getItemName={(admin) => `${admin.first_name} ${admin.last_name}`}
@@ -105,6 +107,7 @@ const CoursePage = ({ degree, courses, admins, representatives, mainGroup }: Cou
           {representatives.length > 0 && (
             <ItemList
               label="Rappresentanti"
+              sectionId={"representatives"}
               items={representatives}
               customLabelWidth="auto"
               getItemName={(rep) => `${rep.user.first_name} ${rep.user.last_name}`}

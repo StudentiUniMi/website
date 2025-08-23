@@ -4,13 +4,13 @@ import { Box, Heading } from "@chakra-ui/react"
 import { GetStaticProps } from "next"
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-import InfoCards from "./index/partials/info-cards"
 import { ExtraGroup } from "@/types/api"
 import { getExtraGroups } from "@/lib/api/groups"
+import { useCustomRouter } from "@/hooks/router"
+import InfoCards from "./index/partials/info-cards"
 import PrivacyButton from "@/components/privacy/button"
 import GroupCard from "@/components/group-card"
 import ItemList from "@/components/item-list"
-import { useCustomRouter } from "@/hooks/router"
 
 interface HomepageProps {
   groups: Array<ExtraGroup>
@@ -34,6 +34,7 @@ const Homepage = ({ groups, associations }: HomepageProps) => {
 
         <ItemList
           label="Entra nei nostri gruppi"
+          sectionId={"groups"}
           items={groups}
           getItemName={(group) => group.name[locale]}
           renderItem={(group) => (
@@ -45,6 +46,7 @@ const Homepage = ({ groups, associations }: HomepageProps) => {
 
         <ItemList
           label="Scopri le associazioni studentesche"
+          sectionId={"associations"}
           items={associations}
           getItemName={(association) => association.name[locale]}
           renderItem={(association) => (
