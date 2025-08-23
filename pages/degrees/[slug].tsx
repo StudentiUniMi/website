@@ -199,7 +199,7 @@ export const getServerSideProps: GetServerSideProps<DegreePageProps> = async ({ 
       admins: adminsResult.value ?? [],
       representatives: representativesResult.value ?? [],
       mainGroup,
-      ...(await serverSideTranslations(actualLocale, ["seo", "degree", "common"])),
+      ...(await serverSideTranslations(actualLocale, ["seo", "common", "degree"])),
     },
     notFound: degree === undefined,
   }

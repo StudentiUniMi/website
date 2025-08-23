@@ -65,7 +65,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 
   return {
     props: {
-      ...(await serverSideTranslations(actualLocale, ["seo", "about", "common"])),
+      ...(await serverSideTranslations(actualLocale, ["seo", "common", "about"])),
       founders,
       cdaMembers,
     },

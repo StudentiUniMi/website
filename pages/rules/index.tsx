@@ -71,7 +71,7 @@ const RulesPage = () => {
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "it", ["seo", "rules", "common"])),
+      ...(await serverSideTranslations(locale ?? "it", ["seo", "common", "rules"])),
     },
   }
 }
