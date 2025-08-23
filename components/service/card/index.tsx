@@ -1,3 +1,5 @@
+"use client"
+
 import { Box, Heading, Text, useColorModeValue, Icon, Flex, Image } from "@chakra-ui/react"
 import { ArrowRight, ArrowUpRight } from "lucide-react"
 import { Service } from "@/types"
@@ -10,9 +12,9 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ service }: ServiceCardProps) {
   const { locale } = useCustomRouter()
-  const bg = useColorModeValue("white", "gray.800")
-  const hoverBg = useColorModeValue("gray.50", "gray.700")
-  const borderColor = useColorModeValue("gray.200", "gray.700")
+  const bg = useColorModeValue("gray.50", "gray.700") // 🔹 Default bg aggiornato
+  const hoverBg = useColorModeValue("gray.200", "gray.600") // 🔹 Hover bg aggiornato
+  const borderColor = useColorModeValue("gray.200", "gray.600")
   const overlayBg = useColorModeValue("whiteAlpha.900", "blackAlpha.700")
   const overlayText = useColorModeValue("gray.800", "gray.100")
 
