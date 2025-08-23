@@ -1,13 +1,13 @@
 import { Box, Text, VStack, useColorModeValue } from "@chakra-ui/react"
 import { Inbox } from "lucide-react"
-import { useTranslation } from "next-i18next"
+import { useTranslations } from "next-intl"
 
 interface EmptyStateProps {
   label?: string
 }
 
 const EmptyState: React.FC<EmptyStateProps> = ({ label }) => {
-  const { t } = useTranslation("common")
+  const t = useTranslations("common")
   const textColor = useColorModeValue("gray.600", "gray.400")
   const borderColor = useColorModeValue("gray.200", "gray.700")
   const bg = useColorModeValue("gray.50", "gray.800")

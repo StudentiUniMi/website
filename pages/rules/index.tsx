@@ -1,10 +1,10 @@
 import MainContainer from "@/components/main-container"
+import Seo from "@/components/seo"
 import { Box, Flex, Heading, Icon, SimpleGrid, Stack, Text, useColorModeValue } from "@chakra-ui/react"
 import { GetStaticProps } from "next"
-import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-import { useTranslation } from "next-i18next"
+import { useTranslations } from "next-intl"
 import { CheckCircle } from "lucide-react"
-import Seo from "@/components/seo"
+import { loadMessages } from "@/lib/intl"
 
 export interface RuleSection {
   id: string
@@ -17,11 +17,11 @@ export interface RulesTranslation {
   sections: RuleSection[]
 }
 
-const RulesPage = () => {
-  const { t } = useTranslation("rules")
+const RulesPage = ({ messages }: { messages: Record<string, string | RulesTranslation> }) => {
+  const t = useTranslations("rules")
   const iconColor = useColorModeValue("blue.600", "blue.400")
 
-  const sections = t("sections", { returnObjects: true }) as Array<RuleSection>
+  const sections = (messages.rules as RulesTranslation).sections
 
   const startsWithEmoji = (s: string) => {
     if (!s) return false
@@ -69,9 +69,11 @@ const RulesPage = () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const messages = await loadMessages(locale as "it" | "en", ["common", "seo", "rules"])
+
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "it", ["seo", "common", "rules"])),
+      messages,
     },
   }
 }

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react"
 import { InputGroup, InputLeftElement, Input, VStack, Text, useColorModeValue, InputRightElement, Button, Fade, StackProps } from "@chakra-ui/react"
 import { Search } from "lucide-react"
 import { useRouter } from "next/router"
-import { useTranslation } from "next-i18next"
+import { useTranslations } from "next-intl"
 
 interface SearchBarProps extends StackProps {
   enableLabel?: boolean
@@ -13,7 +13,7 @@ interface SearchBarProps extends StackProps {
 
 const SearchBar = ({ enableLabel = true, sidebarMode = false, onSearch, focusOnOpen = false, ...props }: SearchBarProps) => {
   const router = useRouter()
-  const { t } = useTranslation("common")
+  const t = useTranslations("common")
   const inputRef = useRef<HTMLInputElement>(null)
 
   const [query, setQuery] = useState("")

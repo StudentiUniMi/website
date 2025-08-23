@@ -1,9 +1,9 @@
 import { Box, Flex, Heading, Text, Tag, IconButton, useColorModeValue, Image, SimpleGrid, Stack, LinkBox, LinkOverlay } from "@chakra-ui/react"
 import { ArrowUpRight } from "lucide-react"
-import { useTranslation } from "next-i18next"
+import { useTranslations } from "next-intl"
 
 const ResourceCards = () => {
-  const { t } = useTranslation("common")
+  const t = useTranslations("common")
   const cardBg = useColorModeValue("gray.50", "gray.700")
   const tagBg = useColorModeValue("white", "gray.700")
   const tagBorder = useColorModeValue("gray.300", "gray.600")

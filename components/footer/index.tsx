@@ -1,9 +1,9 @@
 import { Box, Flex, Text, Link, Stack, Divider, IconButton, useColorModeValue, Tooltip } from "@chakra-ui/react"
 import { Facebook, Instagram, Github, Mail, Send, MessageCircle } from "lucide-react"
-import { useTranslation } from "next-i18next"
+import { useTranslations } from "next-intl"
 
 const Footer = () => {
-  const { t } = useTranslation("common")
+  const t = useTranslations("common")
 
   const bg = useColorModeValue("white", "gray.900")
   const border = useColorModeValue("gray.200", "gray.700")

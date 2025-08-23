@@ -16,12 +16,12 @@
     "description": "Read the rules of the Studenti UniMi network: community guidelines, neutrality principles and behavior standards."
   },
   "search": {
-    "title": "Search groups, degrees and resources: '{{query}}'",
-    "description": "Search results for '{{query}}': find Telegram groups, degree programs and student associations at the University of Milan."
+    "title": "Search groups, degrees and resources: '{query}'",
+    "description": "Search results for '{query}': find Telegram groups, degree programs and student associations at the University of Milan."
   },
   "degree": {
-    "title": "{{name}} | groups and resources",
-    "description": "Discover Telegram groups, resources and services for the {{name}} degree course at the University of Milan."
+    "title": "{name} | groups and resources",
+    "description": "Discover Telegram groups, resources and services for the {name} degree course at the University of Milan."
   },
   "404": {
     "title": "Page not found",

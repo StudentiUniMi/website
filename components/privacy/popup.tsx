@@ -1,11 +1,11 @@
 import { Box, VStack, Text, HStack, Button, Link, useColorModeValue, Fade } from "@chakra-ui/react"
 import { usePrivacyStore } from "@/store/privacy"
 import { useEffect } from "react"
-import { useTranslation } from "next-i18next"
+import { useTranslations } from "next-intl"
 
 const PrivacyPopup: React.FC = () => {
   const { initialized, showPopup, init, accept, decline } = usePrivacyStore()
-  const { t } = useTranslation("common")
+  const t = useTranslations("common")
 
   const bg = useColorModeValue("white", "gray.800")
   const textColor = useColorModeValue("gray.700", "gray.200")

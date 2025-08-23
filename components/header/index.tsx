@@ -2,7 +2,7 @@ import { Grid, GridItem, Tooltip, useDisclosure } from "@chakra-ui/react"
 import { Box, HStack, IconButton, useColorMode, useColorModeValue, Link as ChakraLink } from "@chakra-ui/react"
 import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons"
 import Link from "next/link"
-import { useTranslation } from "next-i18next"
+import { useTranslations } from "next-intl"
 import LanguageSwitcher from "../language-switcher"
 import Sidebar from "./partials/sidebar"
 import { useRouter } from "next/router"
@@ -19,7 +19,7 @@ interface HeaderProps {
 
 const Header = ({ enableHideOnScrollUp }: HeaderProps) => {
   const router = useRouter()
-  const { t } = useTranslation("common")
+  const t = useTranslations("common")
   const { isOpen, onOpen, onClose } = useDisclosure()
   const { colorMode, toggleColorMode } = useColorMode()
   const { pathname } = useRouter()

@@ -8,9 +8,9 @@ import { Service } from "@/types"
 import { getServicesByCategory } from "@/utils/services"
 import { Box, Heading } from "@chakra-ui/react"
 import { GetStaticProps } from "next"
-import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-import { useTranslation } from "next-i18next"
+import { useTranslations } from "next-intl"
 import Seo from "@/components/seo"
+import { loadMessages } from "@/lib/intl"
 
 interface ServicesPageProps {
   priorityServices: Array<Service>
@@ -20,7 +20,7 @@ interface ServicesPageProps {
 
 const ServicesPage = ({ priorityServices, redirects, tools }: ServicesPageProps) => {
   const { locale } = useCustomRouter()
-  const { t } = useTranslation("services")
+  const t = useTranslations("services")
 
   return (
     <>
@@ -68,6 +68,7 @@ const ServicesPage = ({ priorityServices, redirects, tools }: ServicesPageProps)
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const messages = await loadMessages(locale as "it" | "en", ["common", "seo", "services"])
   const guides = getServicesByCategory(services, "guide")
   const redirects = getServicesByCategory(services, "redirect")
   const tools = getServicesByCategory(services, "tool")
@@ -76,7 +77,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "it", ["seo", "services", "common"])),
+      messages,
       priorityServices,
       redirects,
       tools: tools.filter((t) => t.id !== "university-map" && t.id !== "admission-rankings"),

@@ -1,10 +1,10 @@
 import { Box, Button, Text, HStack, useColorModeValue } from "@chakra-ui/react"
 import { useState } from "react"
-import { useTranslation } from "next-i18next"
+import { useTranslations } from "next-intl"
 
 const ContactMailPopup = () => {
   const [isVisible, setIsVisible] = useState(true)
-  const { t } = useTranslation("about")
+  const t = useTranslations("about")
 
   const bg = useColorModeValue("white", "gray.800")
   const borderColor = useColorModeValue("gray.200", "gray.700")

@@ -2,7 +2,7 @@ import React from "react"
 import { Box, Flex, Text, useColorModeValue, HStack, Link, VStack, Divider, Tag } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import { ArrowRight, ArrowUpRight } from "lucide-react"
-import { useTranslation } from "next-i18next"
+import { useTranslations } from "next-intl"
 import { CourseDegree } from "@/types/api"
 import { getYearColor } from "@/utils/degree"
 
@@ -13,7 +13,7 @@ interface CourseCardProps {
 const MotionBox = motion(Box)
 
 const CourseCard: React.FC<CourseCardProps> = ({ data }) => {
-  const { t } = useTranslation("degree")
+  const t = useTranslations("degree")
   const { course, year, semester } = data
 
   const isDark = useColorModeValue(false, true)

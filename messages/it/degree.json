@@ -1,7 +1,7 @@
 {
-  "groups": "{{count}} gruppi",
-  "admins": "{{count}} amministratori",
-  "representatives": "{{count}} rappresentanti",
+  "groups": "{count} gruppi",
+  "admins": "{count} amministratori",
+  "representatives": "{count} rappresentanti",
   "availableGroups": "Gruppi disponibili",
   "availableAdmins": "Amministratori disponibili",
   "representativesList": "Rappresentanti",
@@ -10,7 +10,7 @@
     "allYears": "Tutti gli anni accademici"
   },
   "courseCard": {
-    "yearTag": "{{year}}° Anno",
+    "yearTag": "{year}° Anno",
     "complementary": "Complementare",
     "year": "Anno",
     "semester": "Semestre",

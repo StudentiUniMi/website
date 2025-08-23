@@ -13,10 +13,10 @@ import { Group, Representative, Admin, CourseDegree, VerboseDegree } from "@/typ
 import { Box, Heading, HStack, SimpleGrid, Tag, useColorModeValue, VStack } from "@chakra-ui/react"
 import { getDegreeColorScheme, getDegreeFullName } from "@/utils/degree"
 import { useCustomRouter } from "@/hooks/router"
-import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { motion } from "framer-motion"
-import { useTranslation } from "next-i18next"
+import { useTranslations } from "next-intl"
 import Seo from "@/components/seo"
+import { loadMessages } from "@/lib/intl"
 
 const MotionTag = motion(Tag)
 
@@ -30,7 +30,7 @@ interface DegreePageProps {
 
 const DegreePage = ({ degree, courses, admins, representatives, mainGroup }: DegreePageProps) => {
   const { locale } = useCustomRouter()
-  const { t } = useTranslation("degree")
+  const t = useTranslations("degree")
 
   const groupsLength = courses.length + (!!mainGroup ? 1 : 0)
 
@@ -159,7 +159,7 @@ const replaceUnderscore = (str: string): [string, boolean] => {
 }
 
 export const getServerSideProps: GetServerSideProps<DegreePageProps> = async ({ locale, params }) => {
-  const actualLocale = (locale as "it" | "en") ?? "it"
+  const messages = await loadMessages(locale as "it" | "en", ["common", "seo", "degree"])
 
   const degreeSlug = params!.slug as string
 
@@ -194,9 +194,7 @@ export const getServerSideProps: GetServerSideProps<DegreePageProps> = async ({ 
 
   return {
     props: {
-      props: {
-        ...(await serverSideTranslations(locale ?? "it", ["common", "rules", "search", "services", "degree", "about", "notFound"])),
-      },
+      messages,
       degree: degree!,
       courses: teachingCoursesResult.value ?? [],
       admins: adminsResult.value ?? [],

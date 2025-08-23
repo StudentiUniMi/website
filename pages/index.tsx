@@ -1,12 +1,12 @@
-import MainContainer from "@/components/main-container"
-import SearchBar from "@/components/search-bar"
 import { Box, Heading } from "@chakra-ui/react"
 import { GetStaticProps } from "next"
-import { useTranslation } from "next-i18next"
-import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { useTranslations } from "next-intl"
 import { ExtraGroup } from "@/types/api"
 import { getExtraGroups } from "@/lib/api/groups"
 import { useCustomRouter } from "@/hooks/router"
+import { loadMessages } from "@/lib/intl"
+import MainContainer from "@/components/main-container"
+import SearchBar from "@/components/search-bar"
 import InfoCards from "../components/info-cards"
 import PrivacyButton from "@/components/privacy/button"
 import GroupCard from "@/components/group-card"
@@ -20,7 +20,7 @@ interface HomepageProps {
 
 const Homepage = ({ groups, associations }: HomepageProps) => {
   const { locale } = useCustomRouter()
-  const { t } = useTranslation("common")
+  const t = useTranslations("common")
 
   return (
     <>
@@ -67,6 +67,8 @@ const Homepage = ({ groups, associations }: HomepageProps) => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const messages = await loadMessages(locale as "it" | "en", ["common", "seo"])
+
   const groupsResponse = await getExtraGroups()
 
   const groups = [
@@ -88,7 +90,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "it", ["seo", "common"])),
+      messages,
       groups,
       associations,
     },

@@ -1,16 +1,16 @@
-import DegreeCard from "@/components/degree-card"
-import GroupCard from "@/components/group-card"
-import ItemList from "@/components/item-list"
-import MainContainer from "@/components/main-container"
-import PrivacyButton from "@/components/privacy/button"
 import { useCustomRouter } from "@/hooks/router"
 import { getDegreesForSearchBox } from "@/lib/api/degrees"
 import { getExtraGroups } from "@/lib/api/groups"
 import { Degree, ExtraGroup } from "@/types/api"
 import { Box, Heading } from "@chakra-ui/react"
 import { GetServerSideProps } from "next"
-import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-import { useTranslation } from "next-i18next"
+import { useTranslations } from "next-intl"
+import { loadMessages } from "@/lib/intl"
+import DegreeCard from "@/components/degree-card"
+import GroupCard from "@/components/group-card"
+import ItemList from "@/components/item-list"
+import MainContainer from "@/components/main-container"
+import PrivacyButton from "@/components/privacy/button"
 import Seo from "@/components/seo"
 
 interface SearchPageProps {
@@ -22,7 +22,7 @@ interface SearchPageProps {
 
 const SearchPage = ({ query, degrees, groups, associations }: SearchPageProps) => {
   const { locale } = useCustomRouter()
-  const { t } = useTranslation("search")
+  const t = useTranslations("search")
 
   return (
     <>
@@ -78,6 +78,8 @@ const SearchPage = ({ query, degrees, groups, associations }: SearchPageProps) =
 }
 
 export const getServerSideProps: GetServerSideProps<SearchPageProps> = async (context) => {
+  const messages = await loadMessages(context.locale as "it" | "en", ["common", "seo", "search"])
+
   function sanitizeQuery(q: string): string {
     const safe = q.replace(/[;'"%--]/g, "").trim()
     return safe.slice(0, 100)
@@ -120,7 +122,7 @@ export const getServerSideProps: GetServerSideProps<SearchPageProps> = async (co
 
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "it", ["common", "rules", "search", "services", "degree", "about", "notFound"])),
+      messages,
       query,
       groups,
       associations,

@@ -1,5 +1,5 @@
 import { NextSeo } from "next-seo"
-import { useTranslation } from "next-i18next"
+import { useTranslations } from "next-intl"
 
 interface SeoProps {
   page: "homepage" | "about" | "services" | "rules" | "search" | "degree" | "404"
@@ -9,7 +9,7 @@ interface SeoProps {
 }
 
 const Seo = ({ page, url, image, variables }: SeoProps) => {
-  const { t } = useTranslation("seo")
+  const t = useTranslations("seo")
 
   const baseUrl = "https://studentiunimi.it"
 

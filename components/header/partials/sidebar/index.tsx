@@ -19,7 +19,7 @@ import SearchBar from "@/components/search-bar"
 import { useRouter } from "next/router"
 import { ArrowLeft } from "lucide-react"
 import LanguageSwitcher from "@/components/language-switcher"
-import { useTranslation } from "next-i18next"
+import { useTranslations } from "next-intl"
 
 interface SidebarProps {
   isOpen: boolean
@@ -29,7 +29,7 @@ interface SidebarProps {
 
 const Sidebar = ({ isOpen, onClose, navItems }: SidebarProps) => {
   const router = useRouter()
-  const { t } = useTranslation("common")
+  const t = useTranslations("common")
 
   const bg = useColorModeValue("white", "gray.900")
   const textColor = useColorModeValue("gray.700", "whiteAlpha.900")

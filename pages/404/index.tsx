@@ -1,13 +1,13 @@
 import { Box, Button, Heading, Text } from "@chakra-ui/react"
-import { useTranslation } from "next-i18next"
-import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { useTranslations } from "next-intl"
 import { GetStaticProps } from "next"
+import { loadMessages } from "@/lib/intl"
 import MainContainer from "@/components/main-container"
 import Seo from "@/components/seo"
 import NextLink from "next/link"
 
 const NotFoundPage = () => {
-  const { t } = useTranslation("notFound")
+  const t = useTranslations("notFound")
 
   return (
     <>
@@ -31,11 +31,11 @@ const NotFoundPage = () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const actualLocale = (locale as "it" | "en") ?? "it"
+  const messages = await loadMessages(locale as "it" | "en", ["common", "seo", "search", "notFound"])
 
   return {
     props: {
-      ...(await serverSideTranslations(actualLocale ?? "it", ["seo", "common", "notFound"])),
+      messages,
     },
   }
 }

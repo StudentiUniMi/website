@@ -2,7 +2,7 @@ import React from "react"
 import { Box, Text, HStack, VStack, Stack, useColorModeValue } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import { ArrowRight, ArrowUpRight } from "lucide-react"
-import { useTranslation } from "next-i18next"
+import { useTranslations } from "next-intl"
 import { Degree, Group } from "@/types/api"
 
 interface DegreeGroupCardProps {
@@ -13,7 +13,7 @@ interface DegreeGroupCardProps {
 const MotionBox = motion(Box)
 
 const DegreeGroupCard: React.FC<DegreeGroupCardProps> = ({ degree, group }) => {
-  const { t } = useTranslation("degree")
+  const t = useTranslations("degree")
 
   const border = useColorModeValue("gray.200", "gray.700")
   const titleColor = useColorModeValue("white", "white")

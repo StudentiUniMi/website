@@ -2,12 +2,12 @@ import { useEffect } from "react"
 import { useToast, Box, Text, HStack, Fade, useColorModeValue } from "@chakra-ui/react"
 import { Info } from "lucide-react"
 import { useRouter } from "next/router"
-import { useTranslation } from "next-i18next"
+import { useTranslations } from "next-intl"
 
 const SearchHintToast = () => {
   const toast = useToast()
   const router = useRouter()
-  const { t } = useTranslation("common")
+  const t = useTranslations("common")
 
   const scrollAndFocus = () => {
     const searchInput = document.getElementById("search-bar")

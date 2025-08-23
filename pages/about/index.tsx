@@ -2,13 +2,14 @@ import MainContainer from "@/components/main-container"
 import { Box, VStack, Heading, Text } from "@chakra-ui/react"
 import { GetStaticProps } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-import { useTranslation } from "next-i18next"
+import { useTranslations } from "next-intl"
 import { TeamMember } from "@/types"
 import TeamMemberCard from "../../components/member-card"
 import { cdaMembers, founders } from "@/data/staff"
 import ItemList from "@/components/item-list"
 import ContactMailPopup from "../../components/contact-popup"
 import Seo from "@/components/seo"
+import { loadMessages } from "@/lib/intl"
 
 interface AboutPageProps {
   founders: Array<TeamMember>
@@ -16,7 +17,7 @@ interface AboutPageProps {
 }
 
 const AboutPage = ({ founders, cdaMembers }: AboutPageProps) => {
-  const { t } = useTranslation("about")
+  const t = useTranslations("about")
 
   return (
     <>
@@ -61,11 +62,11 @@ const AboutPage = ({ founders, cdaMembers }: AboutPageProps) => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const actualLocale = (locale as "it" | "en") ?? "it"
+  const messages = await loadMessages(locale as "it" | "en", ["common", "seo", "about"])
 
   return {
     props: {
-      ...(await serverSideTranslations(actualLocale, ["seo", "common", "about"])),
+      messages,
       founders,
       cdaMembers,
     },
