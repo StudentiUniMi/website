@@ -9,6 +9,7 @@ interface ItemListProps<T> extends StackProps {
   enableSearch?: boolean
   items: Array<T>
   firstElement?: ReactNode // Used for degree main group - It will be another component
+  firstElementName?: string
   customLabelWidth?: { minWidth?: any; maxWidth?: any }
   sectionId?: string
   itemsDirection?: StackDirection
@@ -21,6 +22,7 @@ const ItemList = <T,>({
   items,
   enableSearch,
   firstElement,
+  firstElementName,
   customLabelWidth = { minWidth: 250, maxWidth: 250 },
   itemsDirection,
   sectionId,
@@ -55,9 +57,23 @@ const ItemList = <T,>({
   )
 
   const filteredItems = useMemo(() => {
-    if (!searchTerm) return items
-    return items.filter((item) => getItemName(item).toLowerCase().includes(searchTerm))
-  }, [items, searchTerm, getItemName])
+    const normalizedTerm = searchTerm.trim().toLowerCase()
+    const result: ReactNode[] = []
+
+    if (firstElement && typeof firstElementName === "string" && firstElementName.trim().toLowerCase().includes(normalizedTerm)) {
+      result.push(<Box key="first">{firstElement}</Box>)
+    }
+
+    const filtered = items
+      .filter((item) => {
+        const rawName = getItemName?.(item)
+        const name = typeof rawName === "string" ? rawName.trim().toLowerCase() : ""
+        return name.includes(normalizedTerm)
+      })
+      .map((item, idx) => <Box key={idx}>{renderItem(item)}</Box>)
+
+    return [...result, ...filtered]
+  }, [items, searchTerm, getItemName, renderItem, firstElement, firstElementName])
 
   return (
     <Stack direction={{ base: "column", lg: "row" }} mb={24} spacing={12} align={{ lg: "flex-start" }} id={sectionId} {...props}>
@@ -103,12 +119,9 @@ const ItemList = <T,>({
         </Stack>
       )}
 
-      {filteredItems.length + (!!firstElement ? 1 : 0) > 0 ? (
+      {filteredItems.length > 0 ? (
         <Stack direction={itemsDirection ?? { base: "column", sm: "row" }} flexWrap="wrap" justifyContent={{ base: "center", lg: "flex-start" }}>
-          {firstElement && <Box>{firstElement}</Box>}
-          {filteredItems.map((item, idx) => (
-            <Box key={idx}>{renderItem(item)}</Box>
-          ))}
+          {filteredItems}
         </Stack>
       ) : (
         <EmptyState />

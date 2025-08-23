@@ -1,5 +1,4 @@
 import type { NextConfig } from "next"
-import { i18n } from "./next-i18next.config"
 
 const nextConfig: NextConfig = {
   images: {
@@ -11,6 +10,10 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  i18n: {
+    locales: ["it", "en"],
+    defaultLocale: "it",
+  },
   async redirects() {
     return [
       {
@@ -21,7 +24,6 @@ const nextConfig: NextConfig = {
     ]
   },
   reactStrictMode: true,
-  i18n,
 }
 
 export default nextConfig

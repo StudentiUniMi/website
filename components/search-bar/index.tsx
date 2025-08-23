@@ -1,3 +1,4 @@
+"use client"
 import { useState, useEffect, useRef } from "react"
 import { InputGroup, InputLeftElement, Input, VStack, Text, useColorModeValue, InputRightElement, Button, Fade, StackProps } from "@chakra-ui/react"
 import { Search } from "lucide-react"
@@ -35,7 +36,9 @@ const SearchBar = ({ enableLabel = true, sidebarMode = false, onSearch, focusOnO
 
   const handleHighlight = () => {
     setHighlight(true)
-    inputRef.current?.focus()
+    requestAnimationFrame(() => {
+      inputRef.current?.focus()
+    })
   }
 
   useEffect(() => {
@@ -49,7 +52,7 @@ const SearchBar = ({ enableLabel = true, sidebarMode = false, onSearch, focusOnO
     if (inputRef.current && focusOnOpen) {
       setTimeout(() => {
         inputRef.current?.focus()
-      }, 100)
+      }, 300)
     }
   }, [focusOnOpen])
 

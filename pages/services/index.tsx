@@ -1,7 +1,3 @@
-import ItemList from "@/components/item-list"
-import MainContainer from "@/components/main-container"
-import ServiceCard from "@/components/service/card"
-import RedirectCard from "@/components/service/redirect"
 import { services } from "@/data/services"
 import { useCustomRouter } from "@/hooks/router"
 import { Service } from "@/types"
@@ -9,8 +5,12 @@ import { getServicesByCategory } from "@/utils/services"
 import { Box, Heading } from "@chakra-ui/react"
 import { GetStaticProps } from "next"
 import { useTranslations } from "next-intl"
-import Seo from "@/components/seo"
 import { loadMessages } from "@/lib/intl"
+import ItemList from "@/components/item-list"
+import MainContainer from "@/components/main-container"
+import ServiceCard from "@/components/service/card"
+import RedirectCard from "@/components/service/redirect"
+import Seo from "@/components/seo"
 
 interface ServicesPageProps {
   priorityServices: Array<Service>

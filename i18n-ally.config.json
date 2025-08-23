@@ -1,8 +1,0 @@
-{
-  "localesPaths": ["public/locales"],
-  "sourceLanguage": "it",
-  "enabledFrameworks": ["next-i18next"],
-  "namespace": true,
-  "pathMatcher": "{locale}/{namespace}.json",
-  "keysInUse": ["t"]
-}

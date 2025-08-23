@@ -65,6 +65,7 @@ const DegreePage = ({ degree, courses, admins, representatives, mainGroup }: Deg
                 </PrivacyButton>
               ) : undefined
             }
+            firstElementName={t("degreeGroup.main")}
             getItemName={(item) => item.course.name}
             renderItem={(course) => (
               <PrivacyButton key={course.course.pk} href={course.course.group?.invite_link}>

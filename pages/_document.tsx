@@ -1,16 +1,16 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from "next/document"
-import i18nextConfig from "../next-i18next.config"
 import Script from "next/script"
 
-class MyDocument extends Document<{ locale: string }> {
+class MyDocument extends Document<{ locale?: string }> {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx)
-    const locale = ctx.locale || i18nextConfig.i18n.defaultLocale
+    const locale = ctx.locale || "it"
     return { ...initialProps, locale }
   }
 
   render() {
-    const locale = (this.props as any).locale
+    const locale = this.props.locale || "it"
+
     return (
       <Html lang={locale}>
         <Head>
