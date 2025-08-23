@@ -1,7 +1,8 @@
 import React from "react"
-import { Box, Flex, Text, useColorModeValue, HStack, VStack, Tag, Stack } from "@chakra-ui/react"
+import { Box, Text, HStack, VStack, Stack, useColorModeValue } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import { ArrowRight, ArrowUpRight } from "lucide-react"
+import { useTranslation } from "next-i18next"
 import { Degree, Group } from "@/types/api"
 
 interface DegreeGroupCardProps {
@@ -12,6 +13,8 @@ interface DegreeGroupCardProps {
 const MotionBox = motion(Box)
 
 const DegreeGroupCard: React.FC<DegreeGroupCardProps> = ({ degree, group }) => {
+  const { t } = useTranslation("degree")
+
   const border = useColorModeValue("gray.200", "gray.700")
   const titleColor = useColorModeValue("white", "white")
   const overlayBg = useColorModeValue("whiteAlpha.900", "blackAlpha.700")
@@ -37,7 +40,7 @@ const DegreeGroupCard: React.FC<DegreeGroupCardProps> = ({ degree, group }) => {
       {/* Mobile: titolo + chevron */}
       <HStack w="full" h="full" align="center" justify="space-between" display={{ base: "flex", lg: "none" }}>
         <Text fontWeight="semibold" fontSize="md" noOfLines={1} color={titleColor}>
-          Gruppo principale
+          {t("degreeGroup.main")}
         </Text>
         <ArrowRight size={18} strokeWidth={2} color="white" />
       </HStack>
@@ -57,11 +60,11 @@ const DegreeGroupCard: React.FC<DegreeGroupCardProps> = ({ degree, group }) => {
         _groupHover={{ opacity: 0 }}
       >
         <Text fontWeight="bold" fontSize="md" noOfLines={2} color={titleColor}>
-          Gruppo principale
+          {t("degreeGroup.main")}
         </Text>
 
         <Text fontWeight={"medium"} fontSize="2xs" color={titleColor}>
-          Tutti gli anni accademici
+          {t("degreeGroup.allYears")}
         </Text>
       </Stack>
 

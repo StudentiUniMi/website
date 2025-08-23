@@ -10,6 +10,7 @@ import { Degree, ExtraGroup } from "@/types/api"
 import { Box, Heading } from "@chakra-ui/react"
 import { GetServerSideProps } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { useTranslation } from "next-i18next"
 
 interface SearchPageProps {
   query: string
@@ -20,17 +21,18 @@ interface SearchPageProps {
 
 const SearchPage = ({ query, degrees, groups, associations }: SearchPageProps) => {
   const { locale } = useCustomRouter()
+  const { t } = useTranslation("search")
 
   return (
     <MainContainer>
       <Box pt={12}>
         <Heading as="h1" size={{ base: "2xl", md: "3xl", lg: "4xl" }} mb={12} textAlign="center">
-          Risultati di ricerca per "{query}"
+          {t("title", { query })}
         </Heading>
 
         {degrees?.length > 0 && (
           <ItemList
-            label="Corsi di laurea"
+            label={t("degrees")}
             sectionId="degrees"
             items={degrees}
             getItemName={(degree) => degree.name}
@@ -40,7 +42,7 @@ const SearchPage = ({ query, degrees, groups, associations }: SearchPageProps) =
 
         {groups?.length > 0 && (
           <ItemList
-            label="Gruppi"
+            label={t("groups")}
             sectionId="groups"
             items={groups}
             getItemName={(group) => group.title}
@@ -54,7 +56,7 @@ const SearchPage = ({ query, degrees, groups, associations }: SearchPageProps) =
 
         {associations?.length > 0 && (
           <ItemList
-            label="Associazioni studentesche"
+            label={t("associations")}
             sectionId="associations"
             items={associations}
             getItemName={(association) => association.title}
@@ -117,7 +119,7 @@ export const getServerSideProps: GetServerSideProps<SearchPageProps> = async (co
       groups,
       associations,
       degrees,
-      ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(locale, ["search", "common"])),
     },
     notFound: degrees?.length === 0 && groups?.length === 0 && associations?.length === 0,
   }

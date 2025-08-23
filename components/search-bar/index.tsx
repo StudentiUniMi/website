@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react"
 import { InputGroup, InputLeftElement, Input, VStack, Text, useColorModeValue, InputRightElement, Button, Fade, StackProps } from "@chakra-ui/react"
 import { Search } from "lucide-react"
 import { useRouter } from "next/router"
+import { useTranslation } from "next-i18next"
 
 interface SearchBarProps extends StackProps {
   enableLabel?: boolean
@@ -12,7 +13,7 @@ interface SearchBarProps extends StackProps {
 
 const SearchBar = ({ enableLabel = true, sidebarMode = false, onSearch, focusOnOpen = false, ...props }: SearchBarProps) => {
   const router = useRouter()
-
+  const { t } = useTranslation("common")
   const inputRef = useRef<HTMLInputElement>(null)
 
   const [query, setQuery] = useState("")
@@ -61,7 +62,7 @@ const SearchBar = ({ enableLabel = true, sidebarMode = false, onSearch, focusOnO
     <VStack spacing={3} w="100%" maxW="700px" mx="auto" py={8} {...props} id="search-bar">
       {enableLabel && (
         <Text fontSize="lg" fontWeight="semibold" color={labelColor} textAlign="center">
-          Cerca qualsiasi cosa: corsi di laurea, gruppi e molto altro
+          {t("searchBar.label")}
         </Text>
       )}
 
@@ -75,7 +76,7 @@ const SearchBar = ({ enableLabel = true, sidebarMode = false, onSearch, focusOnO
           ref={inputRef}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder={!sidebarMode ? "Digita ciò che vorresti trovare..." : "Cerca gruppi, corsi di laurea.."}
+          placeholder={!sidebarMode ? t("searchBar.placeholder.main") : t("searchBar.placeholder.sidebar")}
           fontSize={!sidebarMode ? "lg" : "sm"}
           bg={bg}
           _focus={{ bg: focusBg }}
@@ -94,7 +95,7 @@ const SearchBar = ({ enableLabel = true, sidebarMode = false, onSearch, focusOnO
         {/* Bottone ricerca */}
         <InputRightElement w="5.5rem" h="100%">
           <Button colorScheme="blue" size={!sidebarMode ? "sm" : "xs"} fontSize={!sidebarMode ? "sm" : "xs"} rounded="md" onClick={handleSearch}>
-            Cerca
+            {t("searchBar.button")}
           </Button>
         </InputRightElement>
       </InputGroup>
@@ -102,7 +103,7 @@ const SearchBar = ({ enableLabel = true, sidebarMode = false, onSearch, focusOnO
       {/* Tip */}
       <Fade in={query.length > 0}>
         <Text fontSize={!sidebarMode ? "sm" : { base: "xs", md: "sm" }} color={tipColor}>
-          Una volta che hai finito di scrivere premi invio o premi il pulsante "Cerca"
+          {t("searchBar.tip")}
         </Text>
       </Fade>
     </VStack>

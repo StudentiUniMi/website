@@ -2,6 +2,7 @@ import React from "react"
 import { Box, Flex, Text, useColorModeValue, HStack, Link, VStack, Divider, Tag } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import { ArrowRight, ArrowUpRight } from "lucide-react"
+import { useTranslation } from "next-i18next"
 import { CourseDegree } from "@/types/api"
 import { getYearColor } from "@/utils/degree"
 
@@ -12,6 +13,7 @@ interface CourseCardProps {
 const MotionBox = motion(Box)
 
 const CourseCard: React.FC<CourseCardProps> = ({ data }) => {
+  const { t } = useTranslation("degree")
   const { course, year, semester } = data
 
   const isDark = useColorModeValue(false, true)
@@ -64,6 +66,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ data }) => {
         </Text>
       </Flex>
 
+      {/* Tag anno */}
       <Tag
         display={{ base: "none", lg: "flex" }}
         position="absolute"
@@ -77,7 +80,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ data }) => {
         color={useColorModeValue("gray.700", "gray.500")}
         fontWeight="medium"
       >
-        {year !== -2 ? `${year}° Anno` : "Complementare"}
+        {year !== -2 ? t("courseCard.yearTag", { year }) : t("courseCard.complementary")}
       </Tag>
 
       {/* Icona in alto a destra (desktop, solo hover) */}
@@ -130,7 +133,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ data }) => {
             {year !== -2 && (
               <VStack spacing={0}>
                 <Text fontSize="xs" color={overlayText}>
-                  Anno
+                  {t("courseCard.year")}
                 </Text>
                 <Text fontWeight="bold" fontSize="sm" color={overlayText}>
                   {year}
@@ -139,7 +142,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ data }) => {
             )}
             <VStack spacing={0}>
               <Text fontSize="xs" color={overlayText}>
-                Semestre
+                {t("courseCard.semester")}
               </Text>
               <Text fontWeight="bold" fontSize="sm" color={overlayText}>
                 {semester}
@@ -147,7 +150,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ data }) => {
             </VStack>
             <VStack spacing={0}>
               <Text fontSize="xs" color={overlayText}>
-                CFU
+                {t("courseCard.cfu")}
               </Text>
               <Text fontWeight="bold" fontSize="sm" color={overlayText}>
                 {course.cfu}

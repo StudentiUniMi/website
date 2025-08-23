@@ -1,12 +1,68 @@
 {
-  "welcome": "Welcome to Studenti Unimi",
-  "about": "About us",
-  "services": "Services",
-  "regulation": "Regulation",
   "nav": {
     "home": "Home",
     "services": "Services",
     "rules": "Rules",
     "about": "About"
+  },
+  "skipToContent": "Skip to content",
+  "resourcesTitle": "Access our resources",
+  "mainGroupTitle": "Main group",
+  "mainGroupStudents": "+{{count}} students",
+  "mainGroupDescription": "Discuss university-related topics with other students.",
+  "telegramChannelTitle": "Telegram channel",
+  "telegramChannelSubscribers": "+{{count}} subscribers",
+  "telegramChannelDescription": "Stay updated on the latest news from the StudentiUniMi Network.",
+  "openLink": "Open link",
+  "networkTagline": "The network designed for the present and future of students.",
+  "homepage": {
+    "joinGroups": "Join our groups",
+    "discoverAssociations": "Discover student associations"
+  },
+  "searchBar": {
+    "label": "Search for anything: degree courses, groups and much more",
+    "placeholder": {
+      "main": "Type what you’d like to find...",
+      "sidebar": "Search groups, degree courses..."
+    },
+    "button": "Search",
+    "tip": "Once you’ve finished typing, press Enter or click the \"Search\" button"
+  },
+  "searchHint": {
+    "title": "Are you looking for groups from your degree course?",
+    "subtitle": "Click here and use the search bar!"
+  },
+  "privacy": {
+    "title": "We respect your privacy",
+    "description": "To make our services work, we store some data in our systems: read more about our privacy policy and rules.",
+    "acceptAll": "Accept all",
+    "decline": "Decline",
+    "policyLink": "Privacy Policy",
+    "rulesLink": "Network rules"
+  },
+  "sidebar": {
+    "menu": "Menu",
+    "changeLanguage": "Change language",
+    "needHelp": "Need help?",
+    "contactEmail": "Contact us via email",
+    "orOn": "or on the",
+    "mainGroup": "main group",
+    "rightsReserved": "All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "madeWithLove": "Website made with ❤️ by"
+  },
+  "footer": {
+    "description": "The network designed for the present and future of the students of the University of Milan.",
+    "resources": "Resources",
+    "services": "Services",
+    "rules": "Rules",
+    "about": "About us",
+    "contacts": "Contacts",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "madeWith": "Website made with ❤️ by"
+  },
+  "empty": {
+    "noResults": "No items match the search criteria entered."
   }
 }

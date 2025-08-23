@@ -1,9 +1,11 @@
 import { Box, VStack, Text, HStack, Button, Link, useColorModeValue, Fade } from "@chakra-ui/react"
 import { usePrivacyStore } from "@/store/privacy"
 import { useEffect } from "react"
+import { useTranslation } from "next-i18next"
 
 const PrivacyPopup: React.FC = () => {
   const { initialized, showPopup, init, accept, decline } = usePrivacyStore()
+  const { t } = useTranslation("common")
 
   const bg = useColorModeValue("white", "gray.800")
   const textColor = useColorModeValue("gray.700", "gray.200")
@@ -31,28 +33,27 @@ const PrivacyPopup: React.FC = () => {
       >
         <VStack align="start" spacing={4}>
           <Text fontWeight="bold" fontSize="lg">
-            Rispettiamo la tua privacy
+            {t("privacy.title")}
           </Text>
           <Text fontSize="sm" lineHeight="short">
-            Per fare funzionare i nostri servizi memorizziamo alcuni dati nei nostri sistemi: informati riguardo la nostra privacy policy e
-            regolamento.
+            {t("privacy.description")}
           </Text>
 
           <VStack w="100%" spacing={3}>
             <HStack w="100%">
               <Button colorScheme="blue" flex={1} rounded="lg" onClick={accept}>
-                Accetta tutto
+                {t("privacy.acceptAll")}
               </Button>
               <Button variant="outline" flex={1} rounded="lg" onClick={decline}>
-                Rifiuta
+                {t("privacy.decline")}
               </Button>
             </HStack>
             <HStack spacing={4}>
               <Link fontSize="xs" color="blue.500" href="https://cdn.studentiunimi.it/privacy-policy-IT.pdf">
-                Privacy Policy
+                {t("privacy.policyLink")}
               </Link>
               <Link href="/rules" fontSize="xs" color="blue.500">
-                Network rules
+                {t("privacy.rulesLink")}
               </Link>
             </HStack>
           </VStack>

@@ -1,3 +1,9 @@
+import NextLink from "next/link"
+import MainContainer from "@/components/main-container"
+import ItemList from "@/components/item-list"
+import PrivacyButton from "@/components/privacy/button"
+import CourseCard from "@/components/course-card"
+import DegreeGroupCard from "@/components/degree-group-card"
 import { GetServerSideProps } from "next"
 import { getVerboseDegreeBySlug } from "@/lib/api/degrees"
 import { getCourses } from "@/lib/api/courses"
@@ -8,13 +14,8 @@ import { Box, Heading, HStack, SimpleGrid, Tag, useColorModeValue, VStack } from
 import { getDegreeColorScheme, getDegreeFullName } from "@/utils/degree"
 import { useCustomRouter } from "@/hooks/router"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-import NextLink from "next/link"
-import MainContainer from "@/components/main-container"
-import ItemList from "@/components/item-list"
-import PrivacyButton from "@/components/privacy/button"
-import CourseCard from "@/components/course-card"
-import DegreeGroupCard from "@/components/degree-group-card"
 import { motion } from "framer-motion"
+import { useTranslation } from "next-i18next"
 
 const MotionTag = motion(Tag)
 
@@ -28,6 +29,8 @@ interface CoursePageProps {
 
 const CoursePage = ({ degree, courses, admins, representatives, mainGroup }: CoursePageProps) => {
   const { locale } = useCustomRouter()
+  const { t } = useTranslation("degree")
+
   const groupsLength = courses.length + (!!mainGroup ? 1 : 0)
 
   return (
@@ -40,14 +43,14 @@ const CoursePage = ({ degree, courses, admins, representatives, mainGroup }: Cou
 
           <HStack justify="center" flexWrap="wrap">
             <Tag colorScheme={getDegreeColorScheme(degree.type)}>{getDegreeFullName(degree.type, locale)}</Tag>
-            {groupsLength > 0 && <Tag>{groupsLength} gruppi</Tag>}
-            {admins.length > 0 && <Tag>{admins.length} amministratori</Tag>}
-            {representatives.length > 0 && <Tag>{representatives.length} rappresentanti</Tag>}
+            {groupsLength > 0 && <Tag>{t("groups", { count: groupsLength })}</Tag>}
+            {admins.length > 0 && <Tag>{t("admins", { count: admins.length })}</Tag>}
+            {representatives.length > 0 && <Tag>{t("representatives", { count: representatives.length })}</Tag>}
           </HStack>
         </VStack>
 
         <ItemList
-          label="Gruppi disponibili"
+          label={t("availableGroups")}
           sectionId={"groups"}
           items={courses}
           enableSearch
@@ -69,10 +72,10 @@ const CoursePage = ({ degree, courses, admins, representatives, mainGroup }: Cou
         <SimpleGrid mt={12} columns={{ base: 1, xl: 2 }} spacing={8}>
           {admins.length > 0 && (
             <ItemList
-              label="Amministratori disponibili"
+              label={t("availableAdmins")}
               sectionId={"admins"}
               items={admins}
-              customLabelWidth="auto"
+              customLabelWidth={{ maxWidth: "auto" }}
               getItemName={(admin) => `${admin.first_name} ${admin.last_name}`}
               renderItem={(admin) => {
                 const borderColor = useColorModeValue("gray.300", "gray.600")
@@ -106,10 +109,9 @@ const CoursePage = ({ degree, courses, admins, representatives, mainGroup }: Cou
 
           {representatives.length > 0 && (
             <ItemList
-              label="Rappresentanti"
+              label={t("representativesList")}
               sectionId={"representatives"}
               items={representatives}
-              customLabelWidth="auto"
               getItemName={(rep) => `${rep.user.first_name} ${rep.user.last_name}`}
               renderItem={(rep) => {
                 const borderColor = useColorModeValue("gray.300", "gray.600")
@@ -192,7 +194,7 @@ export const getServerSideProps: GetServerSideProps<CoursePageProps> = async ({ 
       admins: adminsResult.value ?? [],
       representatives: representativesResult.value ?? [],
       mainGroup,
-      ...(await serverSideTranslations(actualLocale, ["common"])),
+      ...(await serverSideTranslations(actualLocale, ["degree", "common"])),
     },
     notFound: degree === undefined,
   }

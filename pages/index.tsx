@@ -25,7 +25,7 @@ const Homepage = ({ groups, associations }: HomepageProps) => {
     <MainContainer>
       <Box pt={12}>
         <Heading as="h1" size="4xl" mb={3} textAlign="center">
-          Il network pensato per il presente e il futuro degli studenti.
+          {t("networkTagline")}
         </Heading>
 
         <SearchBar />
@@ -33,7 +33,7 @@ const Homepage = ({ groups, associations }: HomepageProps) => {
         <InfoCards />
 
         <ItemList
-          label="Entra nei nostri gruppi"
+          label={t("homepage.joinGroups")}
           sectionId={"groups"}
           customLabelWidth={{ minWidth: 250 }}
           items={groups}
@@ -46,7 +46,7 @@ const Homepage = ({ groups, associations }: HomepageProps) => {
         />
 
         <ItemList
-          label="Scopri le associazioni studentesche"
+          label={t("homepage.discoverAssociations")}
           sectionId={"associations"}
           items={associations}
           getItemName={(association) => association.name[locale]}

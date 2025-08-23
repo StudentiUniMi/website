@@ -16,3 +16,11 @@ export interface Service {
   description: LocalizedField
   link: string
 }
+
+export interface TeamMember {
+  user_id: number
+  username: string
+  name: string
+  description: LocalizedField
+  href?: string
+}

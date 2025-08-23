@@ -19,6 +19,7 @@ import SearchBar from "@/components/search-bar"
 import { useRouter } from "next/router"
 import { ArrowLeft } from "lucide-react"
 import LanguageSwitcher from "@/components/language-switcher"
+import { useTranslation } from "next-i18next"
 
 interface SidebarProps {
   isOpen: boolean
@@ -28,6 +29,7 @@ interface SidebarProps {
 
 const Sidebar = ({ isOpen, onClose, navItems }: SidebarProps) => {
   const router = useRouter()
+  const { t } = useTranslation("common")
 
   const bg = useColorModeValue("white", "gray.900")
   const textColor = useColorModeValue("gray.700", "whiteAlpha.900")
@@ -53,7 +55,7 @@ const Sidebar = ({ isOpen, onClose, navItems }: SidebarProps) => {
         <SearchBar sidebarMode enableLabel={false} pb={2} onSearch={onClose} focusOnOpen />
 
         <Text fontSize="md" fontWeight="medium" color={textColor}>
-          Menu
+          {t("sidebar.menu")}
         </Text>
 
         {/* Navigazione */}
@@ -106,7 +108,7 @@ const Sidebar = ({ isOpen, onClose, navItems }: SidebarProps) => {
 
           <HStack justify={"space-between"}>
             <Text fontSize="sm" fontWeight="medium" color={textColor}>
-              Cambia lingua
+              {t("sidebar.changeLanguage")}
             </Text>
 
             <LanguageSwitcher isInSidebar />
@@ -116,30 +118,30 @@ const Sidebar = ({ isOpen, onClose, navItems }: SidebarProps) => {
 
           {/* Contatti */}
           <Text fontSize="xs" color={textMuted}>
-            Hai bisogno di aiuto?{" "}
+            {t("sidebar.needHelp")}{" "}
             <Link href="mailto:info@studentiunimi.it" target="_blank" color={useColorModeValue("blue.600", "blue.300")} fontWeight="medium">
-              Contattaci via email{" "}
+              {t("sidebar.contactEmail")}{" "}
             </Link>
-            oppure sul{" "}
+            {t("sidebar.orOn")}{" "}
             <Link href="https://t.me/unimichat" target="_blank" color={useColorModeValue("blue.600", "blue.300")} fontWeight="medium">
-              gruppo principale
+              {t("sidebar.mainGroup")}
             </Link>
           </Text>
 
           <Flex py={4} justify="space-between" direction="column" gap={1}>
             <Text fontSize="xs" color={textMuted}>
-              © {new Date().getFullYear()} StudentiUniMi. Tutti i diritti riservati.{" "}
+              © {new Date().getFullYear()} StudentiUniMi. {t("sidebar.rightsReserved")}{" "}
               <Link
                 fontSize="xs"
                 target="_blank"
                 color={useColorModeValue("blue.600", "blue.300")}
                 href="https://cdn.studentiunimi.it/privacy-policy-IT.pdf"
               >
-                Privacy Policy
+                {t("sidebar.privacyPolicy")}
               </Link>
             </Text>
             <Text fontSize="xs" color={textMuted}>
-              Website made with ❤️ by{" "}
+              {t("sidebar.madeWithLove")}{" "}
               <Link href="https://github.com/Giuseppetm" target="_blank" color={useColorModeValue("blue.600", "blue.300")}>
                 Giuseppe Del Campo
               </Link>

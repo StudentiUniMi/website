@@ -2,10 +2,12 @@ import { useEffect } from "react"
 import { useToast, Box, Text, HStack, Fade, useColorModeValue } from "@chakra-ui/react"
 import { Info } from "lucide-react"
 import { useRouter } from "next/router"
+import { useTranslation } from "next-i18next"
 
 const SearchHintToast = () => {
   const toast = useToast()
   const router = useRouter()
+  const { t } = useTranslation("common")
 
   const scrollAndFocus = () => {
     const searchInput = document.getElementById("search-bar")
@@ -59,9 +61,9 @@ const SearchHintToast = () => {
                   <Info size={18} />
                   <Box>
                     <Text fontWeight="semibold" fontSize="sm">
-                      Stai cercando gruppi del tuo corso di laurea?
+                      {t("searchHint.title")}
                     </Text>
-                    <Text fontSize="xs">Clicca qui e utilizza la barra di ricerca!</Text>
+                    <Text fontSize="xs">{t("searchHint.subtitle")}</Text>
                   </Box>
                 </HStack>
               </Box>
@@ -72,7 +74,7 @@ const SearchHintToast = () => {
 
       sessionStorage.setItem("seenSearchHint", "true")
     }
-  }, [toast, router])
+  }, [toast, router, t])
 
   return null
 }

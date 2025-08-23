@@ -1,12 +1,68 @@
 {
-  "welcome": "Benvenuto su Studenti Unimi",
-  "about": "Chi siamo",
-  "services": "Servizi",
-  "regulation": "Regolamento",
   "nav": {
     "home": "Home",
     "services": "Servizi",
     "rules": "Regolamento",
     "about": "Chi siamo"
+  },
+  "skipToContent": "Salta al contenuto",
+  "resourcesTitle": "Accedi alle nostre risorse",
+  "mainGroupTitle": "Gruppo principale",
+  "mainGroupStudents": "+{{count}} studenti",
+  "mainGroupDescription": "Discuti con altri studenti di argomenti in ambito universitario.",
+  "telegramChannelTitle": "Canale telegram",
+  "telegramChannelSubscribers": "+{{count}} iscritti",
+  "telegramChannelDescription": "Tieniti aggiornato sulle ultime novità del Network StudentiUniMi.",
+  "openLink": "Apri link",
+  "networkTagline": "Il network pensato per il presente e il futuro degli studenti.",
+  "homepage": {
+    "joinGroups": "Entra nei nostri gruppi",
+    "discoverAssociations": "Scopri le associazioni studentesche"
+  },
+  "searchBar": {
+    "label": "Cerca qualsiasi cosa: corsi di laurea, gruppi e molto altro",
+    "placeholder": {
+      "main": "Digita ciò che vorresti trovare...",
+      "sidebar": "Cerca gruppi, corsi di laurea..."
+    },
+    "button": "Cerca",
+    "tip": "Una volta che hai finito di scrivere premi invio o premi il pulsante \"Cerca\""
+  },
+  "searchHint": {
+    "title": "Stai cercando gruppi del tuo corso di laurea?",
+    "subtitle": "Clicca qui e utilizza la barra di ricerca!"
+  },
+  "privacy": {
+    "title": "Rispettiamo la tua privacy",
+    "description": "Per fare funzionare i nostri servizi memorizziamo alcuni dati nei nostri sistemi: informati riguardo la nostra privacy policy e regolamento.",
+    "acceptAll": "Accetta tutto",
+    "decline": "Rifiuta",
+    "policyLink": "Privacy Policy",
+    "rulesLink": "Regolamento del network"
+  },
+  "sidebar": {
+    "menu": "Menu",
+    "changeLanguage": "Cambia lingua",
+    "needHelp": "Hai bisogno di aiuto?",
+    "contactEmail": "Contattaci via email",
+    "orOn": "oppure sul",
+    "mainGroup": "gruppo principale",
+    "rightsReserved": "Tutti i diritti riservati.",
+    "privacyPolicy": "Privacy Policy",
+    "madeWithLove": "Website made with ❤️ by"
+  },
+  "footer": {
+    "description": "Il network pensato per il presente e il futuro degli studenti dell’Università degli Studi di Milano.",
+    "resources": "Risorse",
+    "services": "Servizi",
+    "rules": "Regolamento",
+    "about": "Chi siamo",
+    "contacts": "Contatti",
+    "rights": "Tutti i diritti riservati.",
+    "privacy": "Privacy Policy",
+    "madeWith": "Website made with ❤️ by"
+  },
+  "empty": {
+    "noResults": "Nessun elemento corrisponde ai criteri di ricerca inseriti."
   }
 }

@@ -1,7 +1,9 @@
 import { Box, Flex, Heading, Text, Tag, IconButton, useColorModeValue, Image, SimpleGrid, Stack, LinkBox, LinkOverlay } from "@chakra-ui/react"
 import { ArrowUpRight } from "lucide-react"
+import { useTranslation } from "next-i18next"
 
 const ResourceCards = () => {
+  const { t } = useTranslation("common")
   const cardBg = useColorModeValue("gray.50", "gray.700")
   const tagBg = useColorModeValue("white", "gray.700")
   const tagBorder = useColorModeValue("gray.300", "gray.600")
@@ -9,7 +11,7 @@ const ResourceCards = () => {
   return (
     <Stack direction={{ base: "column", lg: "row" }} mb={24}>
       <Heading size="xl" mb={3} textAlign={{ base: "center", lg: "left" }} maxWidth={{ lg: 280 }} mt={2}>
-        Accedi alle nostre risorse
+        {t("resourcesTitle")}
       </Heading>
 
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} w="100%" maxW="6xl" mx="auto">
@@ -30,20 +32,20 @@ const ResourceCards = () => {
         >
           <Box flex="1" tabIndex={-1}>
             <Heading fontSize="xl" mb={2}>
-              <LinkOverlay href="https://t.me/unimichat">Gruppo principale</LinkOverlay>
+              <LinkOverlay href="https://t.me/unimichat">{t("mainGroupTitle")}</LinkOverlay>
             </Heading>
             <Tag size="md" borderRadius="full" px={3} py={1} bg={tagBg} border="1px solid" borderColor={tagBorder} mb={3}>
-              +3000 studenti
+              {t("mainGroupStudents", { count: 4000 })}
             </Tag>
             <Text fontSize="sm" color="gray.600" _dark={{ color: "gray.300" }}>
-              Discuti con altri studenti di argomenti in ambito universitario.
+              {t("mainGroupDescription")}
             </Text>
           </Box>
 
           <Box position="relative">
             <Image src="/images/group.jpeg" alt="Gruppo Studenti" boxSize="130px" objectFit="cover" rounded="md" />
             <IconButton
-              aria-label="Apri link"
+              aria-label={t("openLink")}
               icon={<ArrowUpRight size={18} />}
               size="sm"
               rounded="full"
@@ -77,20 +79,20 @@ const ResourceCards = () => {
         >
           <Box flex="1" tabIndex={-1}>
             <Heading fontSize="xl" mb={2}>
-              <LinkOverlay href="https://t.me/studenti_unimi">Canale telegram</LinkOverlay>
+              <LinkOverlay href="https://t.me/studenti_unimi">{t("telegramChannelTitle")}</LinkOverlay>
             </Heading>
             <Tag size="md" borderRadius="full" px={3} py={1} bg={tagBg} border="1px solid" borderColor={tagBorder} mb={3}>
-              +3500 iscritti
+              {t("telegramChannelSubscribers", { count: 3500 })}
             </Tag>
             <Text fontSize="sm" color="gray.600" _dark={{ color: "gray.300" }}>
-              Tieniti aggiornato sulle ultime novità del Network StudentiUniMi.
+              {t("telegramChannelDescription")}
             </Text>
           </Box>
 
           <Box position="relative">
             <Image src="/images/channel.jpeg" alt="Canale Telegram" boxSize="130px" objectFit="cover" rounded="md" />
             <IconButton
-              aria-label="Apri link"
+              aria-label={t("openLink")}
               icon={<ArrowUpRight size={18} />}
               size="sm"
               rounded="full"

@@ -1,0 +1,19 @@
+{
+  "groups": "{{count}} groups",
+  "admins": "{{count}} admins",
+  "representatives": "{{count}} representatives",
+  "availableGroups": "Available groups",
+  "availableAdmins": "Available admins",
+  "representativesList": "Representatives",
+  "degreeGroup": {
+    "main": "Main group",
+    "allYears": "All academic years"
+  },
+  "courseCard": {
+    "yearTag": "{{year}} Year",
+    "complementary": "Complementary",
+    "year": "Year",
+    "semester": "Semester",
+    "cfu": "ECTS"
+  }
+}

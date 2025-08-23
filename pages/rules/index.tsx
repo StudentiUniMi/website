@@ -1,5 +1,4 @@
 import MainContainer from "@/components/main-container"
-import { useCustomRouter } from "@/hooks/router"
 import { Box, Flex, Heading, Icon, SimpleGrid, Stack, Text, useColorModeValue } from "@chakra-ui/react"
 import { GetStaticProps } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
@@ -19,7 +18,6 @@ export interface RulesTranslation {
 
 const RulesPage = () => {
   const { t } = useTranslation("rules")
-  const { locale } = useCustomRouter()
   const iconColor = useColorModeValue("blue.600", "blue.400")
 
   const sections = t("sections", { returnObjects: true }) as Array<RuleSection>
@@ -37,7 +35,7 @@ const RulesPage = () => {
           {t("title")}
         </Heading>
 
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
+        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
           {sections.map((section) => (
             <Box key={section.title} p={6} borderWidth="1px" borderRadius="md" shadow="sm">
               <Heading size="md" mb={4}>
@@ -68,7 +66,7 @@ const RulesPage = () => {
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "it", ["common", "rules"])),
+      ...(await serverSideTranslations(locale ?? "it", ["rules", "common"])),
     },
   }
 }

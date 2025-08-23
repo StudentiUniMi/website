@@ -30,7 +30,7 @@ const Header = ({ enableHideOnScrollUp }: HeaderProps) => {
 
   const activeBg = useColorModeValue("blue.500", "blue.300")
   const activeColor = useColorModeValue("white", "gray.900")
-  const bg = useColorModeValue("rgba(255, 255, 255, 0.7)", "rgba(26, 32, 44, 0.7)")
+  const bg = useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(26, 32, 44, 0.7)")
   const borderColor = useColorModeValue("gray.200", "gray.700")
 
   const navItems = [
@@ -88,14 +88,14 @@ const Header = ({ enableHideOnScrollUp }: HeaderProps) => {
           backdropFilter="blur(12px)"
           borderBottom="1px solid"
           borderColor={borderColor}
-          initial={{ opacity: 0, y: -20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3 }}
         >
           <Grid templateColumns={{ base: "1fr auto", md: "1fr auto 1fr" }} alignItems="center" h={14}>
             {/* Logo a sinistra */}
-            <GridItem pr={4}>
+            <GridItem pr={4} display="flex" alignItems="center">
               <ChakraLink as={Link} href="/" _hover={{ opacity: 0.9 }} display="inline-flex" alignItems="center" rounded="md" px={1}>
                 <Image src="/images/horizontal_logo.png" width={100} height={30} alt="Network Studenti UniMi" />
               </ChakraLink>
