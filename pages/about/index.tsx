@@ -1,6 +1,6 @@
 import MainContainer from "@/components/main-container"
 import { Box, VStack, Heading, Text } from "@chakra-ui/react"
-import { GetServerSideProps } from "next"
+import { GetStaticProps } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useTranslation } from "next-i18next"
 import { TeamMember } from "@/types"
@@ -60,7 +60,7 @@ const AboutPage = ({ founders, cdaMembers }: AboutPageProps) => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const actualLocale = (locale as "it" | "en") ?? "it"
 
   return {
