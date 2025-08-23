@@ -42,7 +42,6 @@ const SearchPage = ({ query, degrees, groups, associations }: SearchPageProps) =
           <ItemList
             label="Gruppi"
             sectionId="groups"
-            customLabelWidth={"auto"}
             items={groups}
             getItemName={(group) => group.title}
             renderItem={(group) => (

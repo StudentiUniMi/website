@@ -1,5 +1,3 @@
-"use client"
-
 import { Box, Heading, Text, useColorModeValue, Icon, Flex, Image } from "@chakra-ui/react"
 import { ArrowRight, ArrowUpRight } from "lucide-react"
 import { Service } from "@/types"

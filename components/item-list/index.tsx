@@ -1,16 +1,17 @@
-import { Stack, Heading, Box, Input, InputGroup, InputLeftElement, InputRightElement, IconButton } from "@chakra-ui/react"
+import { Stack, Heading, Box, Input, InputGroup, InputLeftElement, InputRightElement, IconButton, StackDirection, StackProps } from "@chakra-ui/react"
 import { ReactNode, useCallback, useEffect, useMemo, useState } from "react"
 import debounce from "lodash.debounce"
 import EmptyState from "../empty-state"
 import { ListFilter, X } from "lucide-react"
 
-interface ItemListProps<T> {
+interface ItemListProps<T> extends StackProps {
   label?: string
   enableSearch?: boolean
   items: Array<T>
   firstElement?: ReactNode // Used for degree main group - It will be another component
   customLabelWidth?: { minWidth?: any; maxWidth?: any }
   sectionId?: string
+  itemsDirection?: StackDirection
   renderItem: (item: T) => ReactNode
   getItemName: (item: T) => string
 }
@@ -21,9 +22,11 @@ const ItemList = <T,>({
   enableSearch,
   firstElement,
   customLabelWidth = { minWidth: 250, maxWidth: 250 },
+  itemsDirection,
   sectionId,
   getItemName,
   renderItem,
+  ...props
 }: ItemListProps<T>) => {
   const [inputValue, setInputValue] = useState("")
   const [searchTerm, setSearchTerm] = useState("")
@@ -57,7 +60,7 @@ const ItemList = <T,>({
   }, [items, searchTerm, getItemName])
 
   return (
-    <Stack direction={{ base: "column", lg: "row" }} mb={24} spacing={12} align={{ lg: "flex-start" }} id={sectionId}>
+    <Stack direction={{ base: "column", lg: "row" }} mb={24} spacing={12} align={{ lg: "flex-start" }} id={sectionId} {...props}>
       {(label || enableSearch) && (
         <Stack
           position={{ base: "static", lg: "sticky" }}
@@ -101,7 +104,7 @@ const ItemList = <T,>({
       )}
 
       {filteredItems.length + (!!firstElement ? 1 : 0) > 0 ? (
-        <Stack direction={{ base: "column", sm: "row" }} flexWrap="wrap" justifyContent={{ base: "center", lg: "flex-start" }}>
+        <Stack direction={itemsDirection ?? { base: "column", sm: "row" }} flexWrap="wrap" justifyContent={{ base: "center", lg: "flex-start" }}>
           {firstElement && <Box>{firstElement}</Box>}
           {filteredItems.map((item, idx) => (
             <Box key={idx}>{renderItem(item)}</Box>

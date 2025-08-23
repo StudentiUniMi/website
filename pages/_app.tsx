@@ -1,5 +1,5 @@
 import { AppProps } from "next/app"
-import { ChakraProvider, ColorModeScript, Stack } from "@chakra-ui/react"
+import { ChakraProvider, ColorModeScript, SkipNavLink, Stack } from "@chakra-ui/react"
 import { QueryClientProvider } from "@tanstack/react-query"
 import { DefaultSeo } from "next-seo"
 import { queryClient } from "../lib/queryClient"
@@ -17,6 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
         <Stack as="main" className={GeistSans.className} spacing={0} h="full">
+          <SkipNavLink zIndex={9999}>Skip to content</SkipNavLink>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <DefaultSeo {...SEO} />
           <Header />
