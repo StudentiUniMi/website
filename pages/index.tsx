@@ -1,112 +1,99 @@
-import { NextSeo } from 'next-seo';
-import { getStringDegrees } from 'services/Requests';
-import LocalizationService from "../services/LocalizationService";
-import Faqs from '../components/Home/Faqs';
-import Landing from '../components/Home/Landing';
-import Section1 from '../components/Home/Section1';
-import Section2 from '../components/Home/Section2';
-import Section3 from '../components/Home/Section3';
-import Telegram from '../components/Home/Telegram';
-import UnimiaStudentiUnimi from '../components/Home/UnimiaStudentiUnimi';
-import SponsoredServices from '../components/Home/SponsoredServices';
-import { useCallback, useEffect, useState } from 'react';
+import MainContainer from "@/components/main-container"
+import SearchBar from "@/components/search-bar"
+import { Box, Heading } from "@chakra-ui/react"
+import { GetStaticProps } from "next"
+import { useTranslation } from "next-i18next"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { ExtraGroup } from "@/types/api"
+import { getExtraGroups } from "@/lib/api/groups"
+import { useCustomRouter } from "@/hooks/router"
+import InfoCards from "./index/partials/info-cards"
+import PrivacyButton from "@/components/privacy/button"
+import GroupCard from "@/components/group-card"
+import ItemList from "@/components/item-list"
+import { NextSeo } from "next-seo"
+import Seo from "@/components/seo"
 
-const Homepage = () => {
-    const locale = LocalizationService.strings();
-    var language: string | undefined = LocalizationService.getLanguage();
+interface HomepageProps {
+  groups: Array<ExtraGroup>
+  associations: Array<ExtraGroup>
+}
 
-    const [isLoadingDegrees, setIsLoadingDegrees] = useState<boolean>(false);
-    const [degrees, setDegrees] = useState<Array<string>>([]);
+const Homepage = ({ groups, associations }: HomepageProps) => {
+  const { locale } = useCustomRouter()
+  const { t } = useTranslation("common")
 
-    const getDegrees = useCallback(async () => {
-        setDegrees([
-            'informatica',
-            'fisica',
-            'informatica musicale',
-            'matematica',
-            'informatica per la comunicazione digitale',
-            'bioinformatics',
-            'sicurezza informatica',
-            "infermieristica",
-            "scienze delle professioni sanitarie tecniche diagnostiche",
-            "scienze chimiche",
-            "scienze della produzione e protezione delle piante",
-            "medical biotechnology and molecular medicine",
-            "international politics, law and economics",
-            "finance and economics (mef)",
-            "infermieristica pediatrica",
-            "scienza, tecnica e didattica dello sport",
-            "scienze internazionali e istituzioni europee (sie)",
-            "scienze dei servizi giuridici",
-            "international politics, law and economics"
-        ]);
+  return (
+    <>
+      <Seo page="homepage" />
 
-        setIsLoadingDegrees(true);
-        
-        const stringDegreesResult = await getStringDegrees();
+      <MainContainer>
+        <Box pt={12}>
+          <Heading as="h1" size="4xl" mb={3} textAlign="center">
+            {t("networkTagline")}
+          </Heading>
 
-        setDegrees(stringDegreesResult.value ?? []);
-        
-        setIsLoadingDegrees(false);
-    }, [setDegrees]);
+          <SearchBar />
 
-    useEffect(() => {
-        getDegrees();
-    }, []);
+          <InfoCards />
 
-    return (
-        <>
-            <NextSeo
-                title={locale?.helmet.homepage.title}
-                description={locale?.helmet.homepage.description}
-                canonical={"https://studentiunimi.it/"}
-                openGraph={{
-                    url: "https://studentiunimi.it/",
-                    title: locale?.helmet.homepage.title,
-                    description: locale?.helmet.homepage.description,
-                    site_name: 'Network StudentiUniMi',
-                    type: 'website',
-                    locale: language,
-                    images: [
-                        {
-                            url: '/images/preview.png',
-                            type: 'image/png',
-                        }
-                    ],
-                }}
-                twitter={{
-                    handle: '@handle',
-                    site: '@site',
-                    cardType: 'summary_large_image',
-                }}
-            />
+          <ItemList
+            label={t("homepage.joinGroups")}
+            sectionId={"groups"}
+            customLabelWidth={{ minWidth: 250 }}
+            items={groups}
+            getItemName={(group) => group.name[locale]}
+            renderItem={(group) => (
+              <PrivacyButton key={group.id} href={group.invite_link}>
+                <GroupCard title={group.name[locale]} description={group.description[locale]} category={group.category} />
+              </PrivacyButton>
+            )}
+          />
 
-            <section className="home">
-                <Landing 
-                    isLoadingDegrees={isLoadingDegrees}
-                    degrees={degrees} 
-                />
+          <ItemList
+            label={t("homepage.discoverAssociations")}
+            sectionId={"associations"}
+            items={associations}
+            getItemName={(association) => association.name[locale]}
+            renderItem={(association) => (
+              <PrivacyButton key={association.id} href={association.invite_link}>
+                <GroupCard title={association.name[locale]} description={association.description[locale]} category={association.category} />
+              </PrivacyButton>
+            )}
+          />
+        </Box>
+      </MainContainer>
+    </>
+  )
+}
 
-                <Telegram />
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const groupsResponse = await getExtraGroups()
 
-                <Section1 />
+  const groups = [
+    ...(groupsResponse.value?.university_groups?.map((g) => ({
+      ...g,
+      category: "university" as const,
+    })) ?? []),
+    ...(groupsResponse.value?.announcement_groups?.map((g) => ({
+      ...g,
+      category: "announcements" as const,
+    })) ?? []),
+  ]
 
-                <Section2 />
+  const associations =
+    groupsResponse.value?.student_associations?.map((a) => ({
+      ...a,
+      category: "association" as const,
+    })) ?? []
 
-                <SponsoredServices />
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? "it", ["seo", "common"])),
+      groups,
+      associations,
+    },
+  }
+}
 
-                <UnimiaStudentiUnimi />
-
-                {/* <Wikipedia /> */}
-
-                <Section3 />
-
-                {/* <Section4 /> */}
-
-                <Faqs />
-            </section>
-        </>
-    )
-};
-
-export default Homepage;
+export default Homepage

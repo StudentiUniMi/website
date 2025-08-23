@@ -1,6 +1,8 @@
-FROM node:14-alpine3.15 as build
+# Usa Node 20 per la fase di build
+FROM node:20-alpine3.18 as build
 
-RUN apk add --no-cache python2 g++ make
+# Installazione pacchetti necessari
+RUN apk add --no-cache python3 make g++
 
 WORKDIR /usr/src/app
 
@@ -11,16 +13,18 @@ RUN npm ci
 
 COPY . .
 
-# *actually* build the monster
+# build dell'app
 RUN npm run build
 
-# remove dev dependencies
+# rimuovi le dipendenze di sviluppo
 RUN npm prune --production
 
-FROM node:14-alpine3.15
+
+# ---- Runtime stage ----
+FROM node:20-alpine3.18
 WORKDIR /usr/src/app
 
-# copy from build image
+# Copia solo ciò che serve per il runtime
 COPY --from=build /usr/src/app/package.json ./package.json
 COPY --from=build /usr/src/app/node_modules ./node_modules
 COPY --from=build /usr/src/app/.next ./.next

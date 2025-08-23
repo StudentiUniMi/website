@@ -1,0 +1,53 @@
+{
+  "title": "Take a look at our rules",
+  "sections": [
+    {
+      "title": "Toxic behavior",
+      "items": [
+        "Any form of insult or vulgar language is prohibited.",
+        "Insults towards students or staff are not tolerated.",
+        "Social discrimination is not allowed in our groups."
+      ]
+    },
+    {
+      "title": "Chat interactions",
+      "items": [
+        "Sending messages with the sole purpose of disturbing (flooding) is forbidden.",
+        "Defamation against students or staff is not allowed.",
+        "Abuse of commands and functions provided by the bot is not allowed."
+      ]
+    },
+    {
+      "title": "Spam",
+      "items": [
+        "Unauthorized advertising or promotion is forbidden.",
+        "Political self-promotion or promotion of associations without approval is forbidden.",
+        "Polls and surveys are allowed only if approved or in the dedicated group."
+      ]
+    },
+    {
+      "title": "Shared content",
+      "items": ["NSFW or illegal material is forbidden.", "Sharing offensive or discriminatory content is forbidden."]
+    },
+    {
+      "title": "Sanctions",
+      "items": [
+        "⚠️ Warning: a notice to the member.",
+        "⏸️ Mute: temporary restriction on sending messages.",
+        "🚪 Kick: temporary expulsion with the possibility of rejoining.",
+        "⛔ Ban: permanent expulsion from a group.",
+        "❌ Superban: permanent expulsion from all groups."
+      ]
+    },
+    {
+      "title": "Netiquette and tips",
+      "items": [
+        "Write in the correct group before asking questions.",
+        "Check if the answer has already been given before asking.",
+        "Maintain clear and respectful language.",
+        "Do not tag administrators or other students unnecessarily.",
+        "Share useful information when asking for help."
+      ]
+    }
+  ]
+}
