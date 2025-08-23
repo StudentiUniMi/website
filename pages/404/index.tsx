@@ -31,7 +31,7 @@ const NotFoundPage = () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const messages = await loadMessages(locale as "it" | "en", ["common", "seo", "search", "notFound"])
+  const messages = await loadMessages(locale as "it" | "en", ["common", "seo", "notFound"])
 
   return {
     props: {

@@ -38,14 +38,8 @@ const ItemList = <T,>({
       debounce((val: string) => {
         setSearchTerm(val.trim().toLowerCase())
       }, 500),
-    [500]
+    []
   )
-
-  useEffect(() => {
-    return () => {
-      debouncedApply.cancel()
-    }
-  }, [debouncedApply])
 
   const handleSearchChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -74,6 +68,12 @@ const ItemList = <T,>({
 
     return [...result, ...filtered]
   }, [items, searchTerm, getItemName, renderItem, firstElement, firstElementName])
+
+  useEffect(() => {
+    return () => {
+      debouncedApply.cancel()
+    }
+  }, [debouncedApply])
 
   return (
     <Stack direction={{ base: "column", lg: "row" }} mb={24} spacing={12} align={{ lg: "flex-start" }} id={sectionId} {...props}>
