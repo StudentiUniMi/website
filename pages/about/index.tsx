@@ -8,7 +8,6 @@ import TeamMemberCard from "./partials/member-card"
 import { cdaMembers, founders } from "@/data/staff"
 import ItemList from "@/components/item-list"
 import ContactMailPopup from "./partials/contact-popup"
-import { NextSeo } from "next-seo"
 import Seo from "@/components/seo"
 
 interface AboutPageProps {
@@ -35,20 +34,24 @@ const AboutPage = ({ founders, cdaMembers }: AboutPageProps) => {
             </Text>
           </VStack>
 
-          <ItemList
-            items={founders}
-            label={t("founders")}
-            getItemName={(founder) => founder.name}
-            renderItem={(founder) => <TeamMemberCard key={founder.user_id} member={founder} />}
-          />
+          {founders && (
+            <ItemList
+              items={founders}
+              label={t("founders")}
+              getItemName={(founder) => founder.name}
+              renderItem={(founder) => <TeamMemberCard key={founder.user_id} member={founder} />}
+            />
+          )}
 
-          <ItemList
-            items={cdaMembers}
-            label={t("board")}
-            customLabelWidth={{ maxWidth: "auto" }}
-            getItemName={(member) => member.name}
-            renderItem={(member) => <TeamMemberCard key={member.user_id} member={member} />}
-          />
+          {cdaMembers && (
+            <ItemList
+              items={cdaMembers}
+              label={t("board")}
+              customLabelWidth={{ maxWidth: "auto" }}
+              getItemName={(member) => member.name}
+              renderItem={(member) => <TeamMemberCard key={member.user_id} member={member} />}
+            />
+          )}
         </Box>
 
         <ContactMailPopup />

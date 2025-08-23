@@ -7,11 +7,10 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { ExtraGroup } from "@/types/api"
 import { getExtraGroups } from "@/lib/api/groups"
 import { useCustomRouter } from "@/hooks/router"
-import InfoCards from "./index/partials/info-cards"
+import InfoCards from "../components/info-cards"
 import PrivacyButton from "@/components/privacy/button"
 import GroupCard from "@/components/group-card"
 import ItemList from "@/components/item-list"
-import { NextSeo } from "next-seo"
 import Seo from "@/components/seo"
 
 interface HomepageProps {

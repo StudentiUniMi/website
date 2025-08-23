@@ -45,6 +45,8 @@ i18n.use(initReactI18next).init({
   },
   lng: "it",
   fallbackLng: "it",
+  ns: ["common", "rules", "services", "search", "degree", "about", "notFound"],
+  defaultNS: "common",
   interpolation: { escapeValue: false },
 })
 

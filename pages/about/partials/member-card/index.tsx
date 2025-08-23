@@ -9,6 +9,8 @@ const TeamMemberCard: React.FC<{ member: TeamMember }> = ({ member }) => {
   const bg = useColorModeValue("gray.50", "gray.700")
   const hoverBg = useColorModeValue("gray.100", "gray.600")
 
+  if (!member) return null
+
   const normalizedUsername = member.username.startsWith("@") ? member.username.slice(1) : member.username
   const href = member.href ?? `https://t.me/${normalizedUsername}`
 
