@@ -1,11 +1,11 @@
 import { useRouter } from "next/router"
-import { Button, HStack } from "@chakra-ui/react"
+import { Button, HStack, Tooltip } from "@chakra-ui/react"
 
 interface LanguageSwitcherProps {
   isInSidebar?: boolean
 }
 
-const LanguageSwitcher = ({ isInSidebar = false }) => {
+const LanguageSwitcher = ({ isInSidebar = false }: LanguageSwitcherProps) => {
   const router = useRouter()
   const { pathname, asPath, query, locale } = router
 
@@ -15,19 +15,24 @@ const LanguageSwitcher = ({ isInSidebar = false }) => {
 
   return (
     <HStack spacing={1} display={isInSidebar ? "flex" : { base: "none", md: "flex" }}>
-      <Button
-        letterSpacing={"1px"}
-        size="sm"
-        variant={locale === "it" ? "solid" : "outline"}
-        colorScheme="blue"
-        borderRadius="full"
-        onClick={() => changeLanguage("it")}
-      >
-        IT
-      </Button>
-      <Button size="sm" variant={locale === "en" ? "solid" : "outline"} colorScheme="blue" borderRadius="full" onClick={() => changeLanguage("en")}>
-        EN
-      </Button>
+      <Tooltip label="Cambia lingua in Italiano" placement="bottom">
+        <Button
+          letterSpacing="1px"
+          size="sm"
+          variant={locale === "it" ? "solid" : "outline"}
+          colorScheme="blue"
+          borderRadius="full"
+          onClick={() => changeLanguage("it")}
+        >
+          IT
+        </Button>
+      </Tooltip>
+
+      <Tooltip label="Switch language to English" placement="bottom">
+        <Button size="sm" variant={locale === "en" ? "solid" : "outline"} colorScheme="blue" borderRadius="full" onClick={() => changeLanguage("en")}>
+          EN
+        </Button>
+      </Tooltip>
     </HStack>
   )
 }

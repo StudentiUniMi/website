@@ -119,7 +119,7 @@ const GroupCard: React.FC<GroupCardProps> = ({ title, description, category, bgC
           _groupHover={{ opacity: 1 }}
           zIndex={2}
         >
-          <Text fontSize="sm" color={overlayText}>
+          <Text fontSize="xs" color={overlayText}>
             {description}
           </Text>
         </Box>

@@ -1,4 +1,4 @@
-import { useDisclosure } from "@chakra-ui/react"
+import { Grid, GridItem, Tooltip, useDisclosure } from "@chakra-ui/react"
 import { Box, Flex, HStack, IconButton, useColorMode, useColorModeValue, Link as ChakraLink } from "@chakra-ui/react"
 import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons"
 import Link from "next/link"
@@ -9,6 +9,7 @@ import { useRouter } from "next/router"
 import Image from "next/image"
 import { AnimatePresence, motion } from "framer-motion"
 import { useEffect, useState } from "react"
+import { Search } from "lucide-react"
 
 const MotionBox = motion(Box)
 
@@ -17,6 +18,7 @@ interface HeaderProps {
 }
 
 const Header = ({ enableHideOnScrollUp }: HeaderProps) => {
+  const router = useRouter()
   const { t } = useTranslation("common")
   const { isOpen, onOpen, onClose } = useDisclosure()
   const { colorMode, toggleColorMode } = useColorMode()
@@ -37,6 +39,19 @@ const Header = ({ enableHideOnScrollUp }: HeaderProps) => {
     { label: t("nav.rules"), href: "/rules" },
     { label: t("nav.about"), href: "/about" },
   ]
+
+  const handleSearchClick = () => {
+    if (pathname !== "/") {
+      router.push("/").then(() => {
+        setTimeout(() => {
+          window.dispatchEvent(new Event("highlight-searchbar"))
+        }, 300)
+      })
+    } else {
+      // già nella homepage
+      window.dispatchEvent(new Event("highlight-searchbar"))
+    }
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,73 +94,88 @@ const Header = ({ enableHideOnScrollUp }: HeaderProps) => {
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3 }}
         >
-          <Flex h={14} alignItems="center" justifyContent="space-between">
-            {/* Logo / Brand */}
-            <Link href={"/"}>
-              <Image src={"/images/horizontal_logo.png"} width={100} height={30} alt="Network Studenti UniMi" />
-            </Link>
+          <Grid templateColumns={{ base: "1fr auto", md: "1fr auto 1fr" }} alignItems="center" h={14}>
+            {/* Logo a sinistra */}
+            <GridItem pr={4}>
+              <ChakraLink as={Link} href="/" _hover={{ opacity: 0.9 }} display="inline-flex" alignItems="center" rounded="md" px={1}>
+                <Image src="/images/horizontal_logo.png" width={100} height={30} alt="Network Studenti UniMi" />
+              </ChakraLink>
+            </GridItem>
 
-            {/* Desktop - Navigation */}
-            <HStack spacing={6} as="nav" display={{ base: "none", md: "flex" }}>
-              {navItems.map((item) => {
-                const isActive = pathname === item.href
-                const isHovered = hovered === item.href
+            {/* Nav centrata (solo desktop) */}
+            <GridItem display={{ base: "none", md: "flex" }} justifyContent="center">
+              <HStack spacing={6} as="nav">
+                {navItems.map((item) => {
+                  const isActive = pathname === item.href
+                  const isHovered = hovered === item.href
 
-                return (
-                  <ChakraLink
-                    as={Link}
-                    px={3}
-                    py={1.5}
-                    rounded="md"
-                    fontWeight={isActive ? "semibold" : "medium"}
-                    bg={isActive ? activeBg : "transparent"}
-                    color={isActive ? activeColor : "inherit"}
-                    opacity={hovered && !isHovered ? 0.5 : 1} // <- qui l’effetto fade
-                    transition="all 0.2s ease"
-                    _hover={{
-                      textDecoration: "none",
-                      bg: isActive ? activeBg : useColorModeValue("gray.100", "gray.700"),
-                    }}
-                    key={item.href}
-                    href={item.href}
-                    onMouseEnter={() => setHovered(item.href)}
-                    onMouseLeave={() => setHovered(null)}
-                  >
-                    {item.label}
-                  </ChakraLink>
-                )
-              })}
-            </HStack>
+                  return (
+                    <ChakraLink
+                      as={Link}
+                      px={3}
+                      py={1.5}
+                      rounded="md"
+                      fontWeight={isActive ? "semibold" : "medium"}
+                      bg={isActive ? activeBg : "transparent"}
+                      color={isActive ? activeColor : "inherit"}
+                      opacity={hovered && !isHovered ? 0.5 : 1}
+                      transition="all 0.2s ease"
+                      _hover={{
+                        textDecoration: "none",
+                        bg: isActive ? activeBg : useColorModeValue("gray.100", "gray.700"),
+                      }}
+                      key={item.href}
+                      href={item.href}
+                      onMouseEnter={() => setHovered(item.href)}
+                      onMouseLeave={() => setHovered(null)}
+                    >
+                      {item.label}
+                    </ChakraLink>
+                  )
+                })}
+              </HStack>
+            </GridItem>
 
-            {/* Actions */}
-            <HStack spacing={{ base: 1, md: 6 }}>
-              {/* Dark mode toggle */}
-              <IconButton
-                aria-label="Toggle dark mode"
-                icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-                onClick={toggleColorMode}
-                variant="ghost"
-                borderRadius="3xl"
-              />
+            {/* Actions a destra */}
+            <GridItem justifySelf="end">
+              <HStack spacing={{ base: 1, md: 2, lg: 6 }}>
+                <HStack spacing={{ base: 1, md: 1 }}>
+                  {/* Search button */}
+                  <Tooltip label="Cerca nel sito" placement="bottom">
+                    <IconButton aria-label="Search" icon={<Search size={18} />} onClick={handleSearchClick} variant="ghost" borderRadius="3xl" />
+                  </Tooltip>
 
-              {/* Language switcher */}
-              <LanguageSwitcher />
+                  {/* Dark mode toggle */}
+                  <Tooltip label={colorMode === "light" ? "Attiva tema scuro" : "Attiva tema chiaro"} placement="bottom">
+                    <IconButton
+                      aria-label={colorMode === "light" ? "Attiva tema scuro" : "Attiva tema chiaro"}
+                      icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+                      onClick={toggleColorMode}
+                      variant="ghost"
+                      borderRadius="3xl"
+                    />
+                  </Tooltip>
+                </HStack>
 
-              {/* Hamburger mobile */}
-              <IconButton
-                aria-label="Open menu"
-                icon={<HamburgerIcon boxSize={5} />}
-                display={{ base: "flex", md: "none" }}
-                onClick={onOpen}
-                variant="solid"
-                size="md"
-                bg={useColorModeValue("blue.500", "blue.400")}
-                color="white"
-                _hover={{ bg: useColorModeValue("blue.600", "blue.300") }}
-                shadow="sm"
-              />
-            </HStack>
-          </Flex>
+                {/* Language switcher */}
+                <LanguageSwitcher />
+
+                {/* Hamburger mobile */}
+                <IconButton
+                  aria-label="Open menu"
+                  icon={<HamburgerIcon boxSize={5} />}
+                  display={{ base: "flex", md: "none" }}
+                  onClick={onOpen}
+                  variant="solid"
+                  size="md"
+                  bg={useColorModeValue("blue.500", "blue.400")}
+                  color="white"
+                  _hover={{ bg: useColorModeValue("blue.600", "blue.300") }}
+                  shadow="sm"
+                />
+              </HStack>
+            </GridItem>
+          </Grid>
 
           {/* Sidebar mobile */}
           <Sidebar isOpen={isOpen} onClose={onClose} navItems={navItems} />

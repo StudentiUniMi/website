@@ -19,6 +19,13 @@ export const theme = extendTheme({
       main: {
         flexGrow: "1",
       },
+      "*:focus-visible": {
+        outline: "none",
+        boxShadow: "0 0 0 3px rgba(66, 153, 225, 0.6)", // stesso effetto che hai sugli input
+        borderRadius: "md",
+        transition: "box-shadow 0.2s ease",
+        outlineOffset: "6px",
+      },
     },
   },
   fonts: {
