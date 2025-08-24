@@ -2,9 +2,12 @@ import { Box, VStack, Text, HStack, Button, Link, useColorModeValue, Fade, useTo
 import { usePrivacyStore } from "@/store/privacy"
 import { useEffect } from "react"
 import { useTranslations } from "next-intl"
+import { motion } from "framer-motion"
+
+const MotionBox = motion(Box)
 
 const PrivacyPopup: React.FC = () => {
-  const { initialized, showPopup, init, accept, decline } = usePrivacyStore()
+  const { initialized, showPopup, init, accept, decline, shake } = usePrivacyStore()
   const t = useTranslations("common")
   const toast = useToast()
 
@@ -20,7 +23,7 @@ const PrivacyPopup: React.FC = () => {
 
   return (
     <Fade in={showPopup} unmountOnExit>
-      <Box
+      <MotionBox
         position="fixed"
         bottom={isToastActive ? { base: 20, md: 24 } : { base: 4, md: 6 }}
         right={{ base: 4, md: 6 }}
@@ -33,6 +36,25 @@ const PrivacyPopup: React.FC = () => {
         borderColor={borderColor}
         maxW="sm"
         zIndex={1000}
+        animate={
+          shake
+            ? {
+                x: [0, -10, 10, -10, 10, 0],
+                boxShadow: [
+                  "0 0 0 0px rgba(252, 165, 165, 0.0)",
+                  "0 0 0 0px rgba(252, 165, 165, 0.0)",
+                  "0 0 0 8px rgba(235, 64, 64, 0.8)",
+                  "0 0 0 0px rgba(252, 165, 165, 0.0)",
+                ],
+              }
+            : { boxShadow: "0 0 0 0px rgba(0,0,0,0)" }
+        }
+        transition={{
+          duration: 0.8,
+          ease: "easeInOut",
+          times: [0, 0.25, 0.5, 1], // 0.2s ≈ 25% della durata (0.8s)
+        }}
+        boxShadow={shake ? "0 0 0 6px rgba(251, 146, 60, 0.7)" : "xl"}
       >
         <VStack align="start" spacing={4}>
           <Text fontWeight="bold" fontSize="lg">
@@ -61,7 +83,7 @@ const PrivacyPopup: React.FC = () => {
             </HStack>
           </VStack>
         </VStack>
-      </Box>
+      </MotionBox>
     </Fade>
   )
 }

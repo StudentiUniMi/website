@@ -7,10 +7,12 @@ interface PrivacyState {
   initialized: boolean
   showPopup: boolean
   consent?: "accepted" | "declined"
+  shake: boolean
   init: () => void
   open: () => void
   accept: () => void
   decline: () => void
+  triggerShake: () => void
 }
 
 export const COOKIE_KEY = "privacyConsent"
@@ -19,6 +21,7 @@ export const usePrivacyStore = create<PrivacyState>((set) => ({
   initialized: false,
   showPopup: false,
   consent: undefined,
+  shake: false,
 
   init: () => {
     const saved = Cookies.get("privacyConsent") as "accepted" | "declined" | undefined
@@ -39,5 +42,10 @@ export const usePrivacyStore = create<PrivacyState>((set) => ({
   decline: () => {
     Cookies.set("privacyConsent", "declined", { expires: 365 })
     set({ consent: "declined", showPopup: false })
+  },
+
+  triggerShake: () => {
+    set({ shake: true })
+    setTimeout(() => set({ shake: false }), 600) // reset dopo animazione
   },
 }))

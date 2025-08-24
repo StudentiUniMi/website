@@ -1,4 +1,4 @@
-import { Box, BoxProps, Button, ButtonProps } from "@chakra-ui/react"
+import { Box, BoxProps } from "@chakra-ui/react"
 import { usePrivacyStore } from "@/store/privacy"
 import { useEffect } from "react"
 import Link from "next/link"
@@ -8,7 +8,7 @@ interface PrivacyButtonProps extends BoxProps {
 }
 
 const PrivacyButton = ({ href, children, ...rest }: PrivacyButtonProps) => {
-  const { consent, open, init, initialized } = usePrivacyStore()
+  const { consent, open, init, initialized, showPopup, triggerShake } = usePrivacyStore()
   const hasConsent = consent === "accepted"
 
   useEffect(() => {
@@ -18,7 +18,11 @@ const PrivacyButton = ({ href, children, ...rest }: PrivacyButtonProps) => {
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (!hasConsent) {
       e.preventDefault()
-      open()
+      if (showPopup) {
+        triggerShake()
+      } else {
+        open()
+      }
     }
   }
 
