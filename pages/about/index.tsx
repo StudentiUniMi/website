@@ -30,7 +30,7 @@ const AboutPage = ({ founders, cdaMembers }: AboutPageProps) => {
               {t("title")}
             </Heading>
 
-            <Text fontSize={{ base: "md", md: "lg" }} color="gray.600" _dark={{ color: "gray.300" }} maxW="3xl" mx="auto" textAlign="center">
+            <Text as="h2" fontSize={{ base: "md", md: "lg" }} color="gray.600" _dark={{ color: "gray.300" }} maxW="3xl" mx="auto" textAlign="center">
               {t("intro")}
             </Text>
           </VStack>

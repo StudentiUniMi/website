@@ -13,7 +13,7 @@ interface CourseCardProps {
 const MotionBox = motion(Box)
 
 const CourseCard: React.FC<CourseCardProps> = ({ data }) => {
-  const t = useTranslations("degree")
+  const t = useTranslations("degrees")
   const { course, year, semester } = data
 
   const isDark = useColorModeValue(false, true)

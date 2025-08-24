@@ -19,7 +19,7 @@
     "title": "Cerca gruppi, corsi di laurea e risorse: '{query}'",
     "description": "Risultati della ricerca per '{query}': trova gruppi Telegram, corsi di laurea e associazioni studentesche all'Università degli Studi di Milano."
   },
-  "degree": {
+  "degrees": {
     "title": "{name} | Gruppi e risorse",
     "description": "Scopri gruppi Telegram, risorse e servizi per il corso di laurea {name} all'Università degli Studi di Milano."
   },

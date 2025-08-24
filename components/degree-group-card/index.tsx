@@ -13,7 +13,7 @@ interface DegreeGroupCardProps {
 const MotionBox = motion(Box)
 
 const DegreeGroupCard: React.FC<DegreeGroupCardProps> = ({ degree, group }) => {
-  const t = useTranslations("degree")
+  const t = useTranslations("degrees")
 
   const border = useColorModeValue("gray.200", "gray.700")
   const titleColor = useColorModeValue("white", "white")

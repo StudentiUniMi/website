@@ -36,17 +36,10 @@ const SearchBar = ({ enableLabel = true, sidebarMode = false, onSearch, focusOnO
 
   const handleHighlight = () => {
     setHighlight(true)
-    requestAnimationFrame(() => {
+    setTimeout(() => {
       inputRef.current?.focus()
-    })
+    }, 500)
   }
-
-  useEffect(() => {
-    if (highlight) {
-      const timer = setTimeout(() => setHighlight(false), 2500)
-      return () => clearTimeout(timer)
-    }
-  }, [highlight])
 
   useEffect(() => {
     if (inputRef.current && focusOnOpen) {

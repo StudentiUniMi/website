@@ -1,4 +1,4 @@
-type Namespace = "common" | "seo" | "about" | "services" | "rules" | "search" | "degree" | "notFound"
+type Namespace = "common" | "seo" | "about" | "services" | "rules" | "search" | "degrees" | "notFound"
 
 export async function loadMessages(locale: string | undefined, namespaces: Array<Namespace>) {
   const safeLocale = locale || "it"

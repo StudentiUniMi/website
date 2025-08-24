@@ -2,7 +2,7 @@ import { useCustomRouter } from "@/hooks/router"
 import { getDegreesForSearchBox } from "@/lib/api/degrees"
 import { getExtraGroups } from "@/lib/api/groups"
 import { Degree, ExtraGroup } from "@/types/api"
-import { Box, Heading } from "@chakra-ui/react"
+import { Box, Heading, Tag, VStack } from "@chakra-ui/react"
 import { GetServerSideProps } from "next"
 import { useTranslations } from "next-intl"
 import { loadMessages } from "@/lib/intl"
@@ -24,15 +24,21 @@ const SearchPage = ({ query, degrees, groups, associations }: SearchPageProps) =
   const { locale } = useCustomRouter()
   const t = useTranslations("search")
 
+  const resultsLength = degrees.length + groups.length + associations.length
+
   return (
     <>
       <Seo page="search" variables={{ query }} />
 
       <MainContainer>
         <Box pt={12}>
-          <Heading as="h1" size={{ base: "2xl", md: "3xl", lg: "4xl" }} mb={12} textAlign="center">
-            {t("title", { query })}
-          </Heading>
+          <VStack mb={12} gap={3}>
+            <Heading as="h1" size={{ base: "2xl", md: "3xl", lg: "4xl" }} textAlign="center">
+              {t("title", { query })}
+            </Heading>
+
+            <Tag as="h2">{t("resultsLength", { resultsLength })}</Tag>
+          </VStack>
 
           {degrees?.length > 0 && (
             <ItemList

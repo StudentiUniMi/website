@@ -52,7 +52,7 @@ const Sidebar = ({ isOpen, onClose, navItems }: SidebarProps) => {
         </HStack>
 
         {/* Barra di ricerca */}
-        <SearchBar sidebarMode enableLabel={false} pb={2} onSearch={onClose} focusOnOpen />
+        <SearchBar sidebarMode enableLabel={false} pb={2} onSearch={onClose} />
 
         <Text fontSize="md" fontWeight="medium" color={textColor}>
           {t("sidebar.menu")}

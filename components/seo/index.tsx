@@ -2,7 +2,7 @@ import { NextSeo } from "next-seo"
 import { useTranslations } from "next-intl"
 
 interface SeoProps {
-  page: "homepage" | "about" | "services" | "rules" | "search" | "degree" | "404"
+  page: "homepage" | "about" | "services" | "rules" | "search" | "degrees" | "404"
   url?: string
   image?: string
   variables?: Record<string, string>
@@ -19,7 +19,7 @@ const Seo = ({ page, url, image, variables }: SeoProps) => {
     services: "/services",
     rules: "/rules",
     search: variables?.query ? `/search?q=${encodeURIComponent(variables.query)}` : "/search",
-    degree: variables?.slug ? `/degrees/${variables.slug}` : "/degrees",
+    degrees: variables?.slug ? `/degrees/${variables.slug}` : "/degrees",
     "404": "/404",
   }
 

@@ -1,5 +1,6 @@
 {
   "groups": "{count} gruppi",
+  "singleGroup": "{count} gruppo",
   "admins": "{count} amministratori",
   "representatives": "{count} rappresentanti",
   "availableGroups": "Gruppi disponibili",

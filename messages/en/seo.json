@@ -19,7 +19,7 @@
     "title": "Search groups, degrees and resources: '{query}'",
     "description": "Search results for '{query}': find Telegram groups, degree programs and student associations at the University of Milan."
   },
-  "degree": {
+  "degrees": {
     "title": "{name} | groups and resources",
     "description": "Discover Telegram groups, resources and services for the {name} degree course at the University of Milan."
   },

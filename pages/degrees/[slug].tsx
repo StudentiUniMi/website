@@ -30,13 +30,13 @@ interface DegreePageProps {
 
 const DegreePage = ({ degree, courses, admins, representatives, mainGroup }: DegreePageProps) => {
   const { locale } = useCustomRouter()
-  const t = useTranslations("degree")
+  const t = useTranslations("degrees")
 
   const groupsLength = courses.length + (!!mainGroup ? 1 : 0)
 
   return (
     <>
-      <Seo page="degree" url={`https://studentiunimi.it/degrees/${degree.slug}`} variables={{ name: degree.name }} />
+      <Seo page="degrees" variables={{ name: degree.name, slug: degree.slug }} />
 
       <MainContainer>
         <Box pt={12}>
@@ -47,7 +47,7 @@ const DegreePage = ({ degree, courses, admins, representatives, mainGroup }: Deg
 
             <HStack justify="center" flexWrap="wrap">
               <Tag colorScheme={getDegreeColorScheme(degree.type)}>{getDegreeFullName(degree.type, locale)}</Tag>
-              {groupsLength > 0 && <Tag>{t("groups", { count: groupsLength })}</Tag>}
+              {groupsLength > 0 && <Tag>{groupsLength === 1 ? t("singleGroup", { count: groupsLength }) : t("groups", { count: groupsLength })}</Tag>}
               {admins.length > 0 && <Tag>{t("admins", { count: admins.length })}</Tag>}
               {representatives.length > 0 && <Tag>{t("representatives", { count: representatives.length })}</Tag>}
             </HStack>
@@ -160,7 +160,7 @@ const replaceUnderscore = (str: string): [string, boolean] => {
 }
 
 export const getServerSideProps: GetServerSideProps<DegreePageProps> = async ({ locale, params }) => {
-  const messages = await loadMessages(locale as "it" | "en", ["common", "seo", "degree"])
+  const messages = await loadMessages(locale as "it" | "en", ["common", "seo", "degrees"])
 
   const degreeSlug = params!.slug as string
 
