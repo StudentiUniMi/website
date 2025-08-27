@@ -55,7 +55,7 @@ const Homepage = ({ groups, associations }: HomepageProps) => {
             items={associations}
             getItemName={(association) => association.name[locale]}
             renderItem={(association) => (
-              <PrivacyButton key={association.id} href={association.invite_link}>
+              <PrivacyButton key={association.id} href={association.external_url}>
                 <GroupCard title={association.name[locale]} description={association.description[locale]} category={association.category} />
               </PrivacyButton>
             )}

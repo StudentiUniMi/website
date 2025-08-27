@@ -6,6 +6,8 @@
 [![GitHub contributors](https://badgen.net/github/contributors/StudentiUniMi/website)](https://GitHub.com/StudentiUniMi/website/graphs/contributors/)
 [![GitHub issues](https://img.shields.io/github/issues/StudentiUniMi/website)](https://github.com/StudentiUniMi/website/issues/)
 
+<img width="1975" height="1242" alt="about" src="https://github.com/user-attachments/assets/1601941d-30a7-4076-801c-77b1c9f78e5c" />
+
 [studentiunimi.it](https://studentiunimi.it/) is a fully **responsive** website built with [React 19](https://react.dev/), [Next.js 15](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/), and [Chakra UI](https://chakra-ui.com/).  
 Its goal is to provide services and access to all groups of didactic courses and general-purpose resources for students of the [University of Milan](https://www.unimi.it/).
 
