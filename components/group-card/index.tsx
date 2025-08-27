@@ -84,7 +84,7 @@ const GroupCard: React.FC<GroupCardProps> = ({ title, description, category, bgC
       </Box>
 
       <Tag
-        display={{ base: "none", lg: "flex" }}
+        display={{ base: "none", md: "flex" }}
         position="absolute"
         bottom={2}
         left="50%"
