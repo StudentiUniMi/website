@@ -20,3 +20,7 @@ export async function getStringDegrees(): Promise<Result<string[]>> {
 export async function getDegreesForSearchBox(searchText: string): Promise<Result<Degree[]>> {
   return getAsync(`${apiEndpoint}/search-degrees?q=${searchText}`)
 }
+
+export async function getSlugDegrees(): Promise<Result<Array<string>>> {
+  return getAsync(`${apiEndpoint}/slug-degrees`)
+}

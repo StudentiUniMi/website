@@ -156,8 +156,8 @@ const Header = ({ enableHideOnScrollUp }: HeaderProps) => {
                   </Tooltip>
                 </HStack>
 
-                {/* Language switcher */}
-                <LanguageSwitcher />
+                {/* TODO: Language switcher */}
+                {/* <LanguageSwitcher /> */}
 
                 {/* Hamburger mobile */}
                 <IconButton

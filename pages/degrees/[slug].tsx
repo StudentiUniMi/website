@@ -4,8 +4,8 @@ import ItemList from "@/components/item-list"
 import PrivacyButton from "@/components/privacy/button"
 import CourseCard from "@/components/course-card"
 import DegreeGroupCard from "@/components/degree-group-card"
-import { GetServerSideProps } from "next"
-import { getVerboseDegreeBySlug } from "@/lib/api/degrees"
+import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next"
+import { getSlugDegrees, getVerboseDegreeBySlug } from "@/lib/api/degrees"
 import { getCourses } from "@/lib/api/courses"
 import { getDegreeAdmins } from "@/lib/api/admins"
 import { getRepresentatives } from "@/lib/api/representatives"
@@ -159,7 +159,23 @@ const replaceUnderscore = (str: string): [string, boolean] => {
   return [replaced, replaced !== str]
 }
 
-export const getServerSideProps: GetServerSideProps<DegreePageProps> = async ({ locale, params }) => {
+export const getStaticPaths: GetStaticPaths = async () => {
+  const slugsResponse = await getSlugDegrees()
+
+  const slugs = slugsResponse.value
+
+  const paths =
+    slugs?.map((slug) => ({
+      params: { slug },
+    })) ?? []
+
+  return {
+    paths,
+    fallback: "blocking",
+  }
+}
+
+export const getStaticProps: GetStaticProps<DegreePageProps> = async ({ locale, params }) => {
   const messages = await loadMessages(locale as "it" | "en", ["common", "seo", "degrees"])
 
   const degreeSlug = params!.slug as string
@@ -168,14 +184,18 @@ export const getServerSideProps: GetServerSideProps<DegreePageProps> = async ({ 
   if (hasReplaced) {
     return {
       redirect: {
-        destination: `/courses/${fixedSlug}`,
-        permanent: false,
+        destination: `/degrees/${fixedSlug}`,
+        permanent: true,
       },
     }
   }
 
   const degreeResult = await getVerboseDegreeBySlug(degreeSlug)
   const degree = degreeResult.value
+
+  if (!degree) {
+    return { notFound: true }
+  }
 
   const teachingCoursesResult = degree ? await getCourses(String(degree.pk)) : { value: [] }
 
@@ -203,7 +223,7 @@ export const getServerSideProps: GetServerSideProps<DegreePageProps> = async ({ 
       representatives: representativesResult.value ?? [],
       mainGroup,
     },
-    notFound: degree === undefined,
+    revalidate: 60 * 60 * 24,
   }
 }
 

@@ -106,13 +106,13 @@ const Sidebar = ({ isOpen, onClose, navItems }: SidebarProps) => {
             })}
           </VStack>
 
-          <HStack justify={"space-between"}>
+          {/* <HStack justify={"space-between"}>
             <Text fontSize="sm" fontWeight="medium" color={textColor}>
               {t("sidebar.changeLanguage")}
             </Text>
 
             <LanguageSwitcher isInSidebar />
-          </HStack>
+          </HStack> */}
 
           <Box borderTop="1px solid" borderColor={useColorModeValue("gray.200", "gray.700")} pt={3} />
 

@@ -7,6 +7,7 @@
     "web": "next dev",
     "proxy": "lcp --proxyUrl https://api.studentiunimi.it/api/ --port 8010",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write ."
@@ -26,6 +27,7 @@
     "next-i18next": "^15.4.2",
     "next-intl": "^4.3.5",
     "next-seo": "^6.8.0",
+    "next-sitemap": "^4.2.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "zustand": "^5.0.8"

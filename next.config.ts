@@ -2,8 +2,9 @@ import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
   i18n: {
-    locales: ["it", "en"],
+    locales: ["it"],
     defaultLocale: "it",
+    localeDetection: false,
   },
   images: {
     remotePatterns: [
@@ -19,6 +20,11 @@ const nextConfig: NextConfig = {
       {
         source: "/courses/:slug",
         destination: "/degrees/:slug",
+        permanent: true,
+      },
+      {
+        source: "/it/:path*",
+        destination: "/:path*",
         permanent: true,
       },
     ]
