@@ -20,7 +20,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
     <Link href={service.link} target="_blank" rel="noopener noreferrer" prefetch={false}>
       <Box
         role="group"
-        w={{ base: "100%", sm: "230px", md: "250px" }}
+        w={{ base: "100%", sm: "full", md: "250px" }}
         h={{ base: "100px", md: "270px" }}
         borderWidth="1px"
         borderRadius="2xl"

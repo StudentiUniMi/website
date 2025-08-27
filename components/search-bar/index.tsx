@@ -1,4 +1,3 @@
-"use client"
 import { useState, useEffect, useRef } from "react"
 import { InputGroup, InputLeftElement, Input, VStack, Text, useColorModeValue, InputRightElement, Button, Fade, StackProps } from "@chakra-ui/react"
 import { Search } from "lucide-react"
@@ -27,6 +26,13 @@ const SearchBar = ({ enableLabel = true, sidebarMode = false, onSearch, focusOnO
   const tipColor = useColorModeValue("blue.600", "blue.300")
   const labelColor = useColorModeValue("gray.500", "gray.400")
 
+  const handleFocus = () => {
+    inputRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    })
+  }
+
   const handleSearch = () => {
     if (query.trim()) {
       router.push(`/search?q=${query}`)
@@ -36,15 +42,21 @@ const SearchBar = ({ enableLabel = true, sidebarMode = false, onSearch, focusOnO
 
   const handleHighlight = () => {
     setHighlight(true)
+    handleFocus()
     setTimeout(() => {
       inputRef.current?.focus()
     }, 500)
+
+    setTimeout(() => {
+      setHighlight(false)
+    }, 1500)
   }
 
   useEffect(() => {
     if (inputRef.current && focusOnOpen) {
       setTimeout(() => {
         inputRef.current?.focus()
+        handleFocus()
       }, 300)
     }
   }, [focusOnOpen])
@@ -57,7 +69,7 @@ const SearchBar = ({ enableLabel = true, sidebarMode = false, onSearch, focusOnO
   return (
     <VStack spacing={3} w="100%" maxW="700px" mx="auto" py={8} {...props} id="search-bar">
       {enableLabel && (
-        <Text fontSize="lg" fontWeight="semibold" color={labelColor} textAlign="center">
+        <Text fontSize={{ base: "md", md: "lg" }} fontWeight="semibold" color={labelColor} textAlign="center">
           {t("searchBar.label")}
         </Text>
       )}
@@ -73,7 +85,7 @@ const SearchBar = ({ enableLabel = true, sidebarMode = false, onSearch, focusOnO
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={!sidebarMode ? t("searchBar.placeholder.main") : t("searchBar.placeholder.sidebar")}
-          fontSize={!sidebarMode ? "lg" : "sm"}
+          fontSize={{ base: sidebarMode ? "sm" : "md", md: "md", lg: "lg" }}
           bg={bg}
           _focus={{ bg: focusBg }}
           _placeholder={{ color: placeholderColor }}
@@ -86,11 +98,18 @@ const SearchBar = ({ enableLabel = true, sidebarMode = false, onSearch, focusOnO
           onKeyDown={(e) => {
             if (e.key === "Enter") handleSearch()
           }}
+          onClick={() => handleFocus()}
         />
 
         {/* Bottone ricerca */}
         <InputRightElement w="5.5rem" h="100%">
-          <Button colorScheme="blue" size={!sidebarMode ? "sm" : "xs"} fontSize={!sidebarMode ? "sm" : "xs"} rounded="md" onClick={handleSearch}>
+          <Button
+            colorScheme="blue"
+            size={sidebarMode ? "xs" : { base: "xs", xs: "sm" }}
+            fontSize={!sidebarMode ? "sm" : "xs"}
+            rounded="md"
+            onClick={handleSearch}
+          >
             {t("searchBar.button")}
           </Button>
         </InputRightElement>

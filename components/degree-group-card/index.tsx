@@ -33,12 +33,12 @@ const DegreeGroupCard: React.FC<DegreeGroupCardProps> = ({ degree, group }) => {
       position="relative"
       _hover={{ shadow: "md" }}
       bgGradient={useColorModeValue("linear(to-br, blue.400, blue.500, blue.600)", "linear(to-br, blue.600, blue.700, blue.800)")}
-      w={{ base: "full", lg: "178px" }}
-      h={{ base: "72px", lg: "160px" }}
+      w={{ base: "full", md: "178px" }}
+      h={{ base: "72px", md: "160px" }}
       p={4}
     >
       {/* Mobile: titolo + chevron */}
-      <HStack w="full" h="full" align="center" justify="space-between" display={{ base: "flex", lg: "none" }}>
+      <HStack w="full" h="full" align="center" justify="space-between" display={{ base: "flex", md: "none" }}>
         <Text fontWeight="semibold" fontSize="md" noOfLines={1} color={titleColor}>
           {t("degreeGroup.main")}
         </Text>
@@ -53,7 +53,7 @@ const DegreeGroupCard: React.FC<DegreeGroupCardProps> = ({ degree, group }) => {
         w="full"
         h="full"
         spacing={"2px"}
-        display={{ base: "none", lg: "flex" }}
+        display={{ base: "none", md: "flex" }}
         p={2}
         opacity={1}
         transition="opacity 0.3s ease"

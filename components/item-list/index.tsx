@@ -120,7 +120,7 @@ const ItemList = <T,>({
       )}
 
       {filteredItems.length > 0 ? (
-        <Stack direction={itemsDirection ?? { base: "column", sm: "row" }} flexWrap="wrap" justifyContent={{ base: "center", lg: "flex-start" }}>
+        <Stack direction={itemsDirection ?? { base: "column", md: "row" }} flexWrap="wrap" justifyContent={{ base: "center", lg: "flex-start" }}>
           {filteredItems}
         </Stack>
       ) : (

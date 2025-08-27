@@ -28,7 +28,7 @@ const Homepage = ({ groups, associations }: HomepageProps) => {
 
       <MainContainer>
         <Box pt={12}>
-          <Heading as="h1" size="4xl" mb={3} textAlign="center">
+          <Heading as="h1" size={{ base: "3xl", lg: "4xl" }} mb={3} textAlign="center">
             {t("networkTagline")}
           </Heading>
 

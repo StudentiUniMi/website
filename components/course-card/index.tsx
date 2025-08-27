@@ -36,8 +36,8 @@ const CourseCard: React.FC<CourseCardProps> = ({ data }) => {
       position="relative"
       _hover={{ shadow: "md" }}
       bg={useColorModeValue("gray.50", "gray.700")}
-      w={{ base: "full", lg: "178px" }}
-      h={{ base: "72px", lg: "160px" }}
+      w={{ base: "full", md: "178px" }}
+      h={{ base: "72px", md: "160px" }}
       p={4}
     >
       {/* Mobile: titolo + chevron */}
@@ -68,7 +68,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ data }) => {
 
       {/* Tag anno */}
       <Tag
-        display={{ base: "none", lg: "flex" }}
+        display={{ base: "none", md: "flex" }}
         position="absolute"
         bottom={2}
         left="50%"
@@ -107,7 +107,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ data }) => {
         w="100%"
         h="100%"
         bg={overlayBg}
-        display={{ base: "none", lg: "flex" }}
+        display={{ base: "none", md: "flex" }}
         flexDir="column"
         justifyContent="center"
         alignItems="center"

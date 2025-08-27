@@ -1,7 +1,7 @@
 import React from "react"
-import { Box, Flex, Text, HStack, useColorModeValue, Image, Link as ChakraLink, Stack } from "@chakra-ui/react"
+import { Box, Flex, Text, HStack, useColorModeValue, Link as ChakraLink, Stack } from "@chakra-ui/react"
 import { motion } from "framer-motion"
-import { ArrowUpRight, ChevronRight } from "lucide-react"
+import { ArrowRight, ArrowUpRight } from "lucide-react"
 import { Degree } from "@/types/api"
 import { useCustomRouter } from "@/hooks/router"
 import { getDegreeLabel } from "@/utils/degree"
@@ -50,12 +50,13 @@ const DegreeCard: React.FC<DegreeCardProps> = ({ degree, bgColor }) => {
               {description}
             </Text>
           </Stack>
-          <ChevronRight size={18} strokeWidth={2} />
+          <Box>
+            <ArrowRight size={18} strokeWidth={2} />
+          </Box>
         </HStack>
 
         {/* Desktop: icona + titolo + descrizione */}
         <Flex direction="column" justify="center" align="flex-start" w="full" h="full" display={{ base: "none", md: "flex" }} p={2}>
-          {degree.icon && <Image src={degree.icon} alt={degree.name} boxSize="40px" mb={2} objectFit="contain" />}
           <Text fontWeight="bold" fontSize="md" noOfLines={3} mb={0.5}>
             {degree.name}
           </Text>

@@ -72,7 +72,7 @@ export interface ExtraGroup extends Group {
   user_count: number
   button_name: LocalizedField | null
   image_url: string | null
-  external_url: string | null
+  external_url: string
   category: GroupCategory
 }
 
