@@ -37,13 +37,13 @@ const DegreeCard: React.FC<DegreeCardProps> = ({ degree, bgColor }) => {
         _hover={{ shadow: "md" }}
         bg={baseColor}
         w={{ base: "full", md: "200px" }}
-        h={{ base: "72px", md: "180px" }}
+        h={{ md: "180px" }}
         p={4}
       >
         {/* Mobile: titolo + chevron */}
         <HStack w="full" h="full" align="center" justify="space-between" display={{ base: "flex", md: "none" }}>
           <Stack spacing={"1px"}>
-            <Text fontWeight="semibold" fontSize="md" noOfLines={1} color={"blue.500"}>
+            <Text fontWeight="semibold" fontSize="md" noOfLines={3} color={"blue.500"}>
               {degree.name}
             </Text>
             <Text fontWeight="medium" fontSize="sm" color={degreeColor}>
@@ -57,7 +57,7 @@ const DegreeCard: React.FC<DegreeCardProps> = ({ degree, bgColor }) => {
 
         {/* Desktop: icona + titolo + descrizione */}
         <Flex direction="column" justify="center" align="flex-start" w="full" h="full" display={{ base: "none", md: "flex" }} p={2}>
-          <Text fontWeight="bold" fontSize="md" noOfLines={3} mb={0.5}>
+          <Text fontWeight="bold" fontSize="md" noOfLines={4} mb={0.5}>
             {degree.name}
           </Text>
           <Text fontWeight="semibold" fontSize="sm" color={degreeColor}>

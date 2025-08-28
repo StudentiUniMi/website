@@ -42,10 +42,12 @@ const CourseCard: React.FC<CourseCardProps> = ({ data }) => {
     >
       {/* Mobile: titolo + chevron */}
       <HStack w="full" h="full" align="center" justify="space-between" display={{ base: "flex", md: "none" }}>
-        <Text fontWeight="semibold" fontSize="md" noOfLines={1} color={titleColor}>
+        <Text fontWeight="semibold" fontSize="md" noOfLines={2} color={titleColor}>
           {course.name}
         </Text>
-        <ArrowRight size={18} strokeWidth={2} />
+        <Box>
+          <ArrowRight size={18} strokeWidth={2} />
+        </Box>
       </HStack>
 
       {/* Desktop: titolo fino a 3 righe */}
@@ -61,7 +63,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ data }) => {
         transition="opacity 0.3s ease"
         _groupHover={{ opacity: 0 }}
       >
-        <Text fontWeight="bold" fontSize="md" noOfLines={3}>
+        <Text fontWeight="bold" fontSize="md" noOfLines={4}>
           {course.name}
         </Text>
       </Flex>

@@ -44,10 +44,12 @@ const GroupCard: React.FC<GroupCardProps> = ({ title, description, category, bgC
     >
       {/* Mobile: titolo + chevron */}
       <HStack w="full" h="full" align="center" justify="space-between" display={{ base: "flex", md: "none" }}>
-        <Text fontWeight="semibold" fontSize="md" noOfLines={1} color={titleColor}>
+        <Text fontWeight="semibold" fontSize="md" noOfLines={2} color={titleColor}>
           {title}
         </Text>
-        <ArrowRight size={18} strokeWidth={2} />
+        <Box>
+          <ArrowRight size={18} strokeWidth={2} />
+        </Box>
       </HStack>
 
       {/* Desktop: titolo fino a 3 righe con ellissi */}

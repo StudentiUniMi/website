@@ -43,10 +43,12 @@ export default function RedirectCard({ item }: RedirectCardProps) {
       >
         {/* Mobile: titolo + freccia orizzontale */}
         <Flex w="full" justify="space-between" align="center" display={{ base: "flex", md: "none" }}>
-          <Heading size="sm" noOfLines={1}>
+          <Heading size="sm" noOfLines={2}>
             {item.name[locale]}
           </Heading>
-          <ArrowRight size={18} />
+          <Box>
+            <ArrowRight size={18} />
+          </Box>
         </Flex>
 
         {/* Desktop: titolo (max 3 righe, sparisce in hover) */}
@@ -77,6 +79,7 @@ export default function RedirectCard({ item }: RedirectCardProps) {
           transition="opacity 0.2s ease"
           _groupHover={{ opacity: 1 }}
           zIndex={2}
+          display={{ base: "none", md: "flex" }}
         >
           <Text fontSize="xs" noOfLines={6} color={overlayText}>
             {item.description?.[locale]}

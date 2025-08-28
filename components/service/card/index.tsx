@@ -42,10 +42,12 @@ export default function ServiceCard({ service }: ServiceCardProps) {
       >
         {/* 🔹 Mobile layout (titolo + freccia) */}
         <Flex w="full" justify="space-between" align="center" px={4} display={{ base: "flex", md: "none" }}>
-          <Heading size="sm" noOfLines={1}>
+          <Heading size="sm" noOfLines={2}>
             {service.name[locale]}
           </Heading>
-          <ArrowRight size={18} />
+          <Box>
+            <ArrowRight size={18} />
+          </Box>
         </Flex>
 
         {/* 🔹 Desktop layout con titolo + immagine */}
@@ -87,6 +89,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
           transition="opacity 0.3s ease"
           _groupHover={{ opacity: 1 }}
           zIndex={2}
+          display={{ base: "none", md: "flex" }}
         >
           <Text fontSize="sm" noOfLines={5} color={overlayText}>
             {service.description?.[locale]}
