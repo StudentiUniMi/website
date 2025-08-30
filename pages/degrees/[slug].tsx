@@ -223,7 +223,7 @@ export const getStaticProps: GetStaticProps<DegreePageProps> = async ({ locale, 
       representatives: representativesResult.value ?? [],
       mainGroup,
     },
-    revalidate: 60 * 60 * 24,
+    revalidate: 8 * 60 * 60, // 3 times a day
   }
 }
 
