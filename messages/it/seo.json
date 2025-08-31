@@ -16,8 +16,8 @@
     "description": "Consulta il regolamento del network Studenti UniMi: norme di comportamento, principi di neutralità e linee guida per la community."
   },
   "search": {
-    "title": "Cerca gruppi, corsi di laurea e risorse: '{query}'",
-    "description": "Risultati della ricerca per '{query}': trova gruppi Telegram, corsi di laurea e associazioni studentesche all'Università degli Studi di Milano."
+    "title": "Cerca gruppi, corsi di laurea e risorse: \"{query}\"",
+    "description": "Risultati della ricerca per \"{query}\": trova gruppi Telegram, corsi di laurea e associazioni studentesche all'Università degli Studi di Milano."
   },
   "degrees": {
     "title": "{name} | Gruppi e risorse",
