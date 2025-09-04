@@ -4,7 +4,17 @@ export type LocalizedField = Record<SupportedLocales, string>
 
 export type GroupCategory = "university" | "announcements" | "association"
 
-export type DegreeType = "B" | "M" | "C"
+/**
+ * Enum representing available degree types.
+ */
+export enum DegreeType {
+  /** Bachelor's degree (laurea triennale). */
+  BACHELOR = "B",
+  /** Master's degree (laurea magistrale). */
+  MASTER = "M",
+  /** Single-cycle master's degree (laurea magistrale a ciclo unico). */
+  SINGLE_CYCLE_MASTER = "C",
+}
 
 export type ServiceCategory = "guide" | "redirect" | "tool"
 

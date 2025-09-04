@@ -11,7 +11,6 @@ const Footer = () => {
   const textMuted = useColorModeValue("gray.500", "gray.400")
   const hoverBg = useColorModeValue("gray.100", "gray.800")
 
-  // 🔹 Configurazione centralizzata Socials
   const socials = [
     {
       label: "Facebook",

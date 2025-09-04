@@ -1,11 +1,12 @@
 import React from "react"
+import NextLink from "next/link"
 import { Box, Flex, Text, HStack, useColorModeValue, Link as ChakraLink, Stack } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import { ArrowRight, ArrowUpRight } from "lucide-react"
 import { Degree } from "@/types/api"
 import { useCustomRouter } from "@/hooks/router"
-import { getDegreeLabel } from "@/utils/degree"
-import NextLink from "next/link"
+import { DegreeType } from "@/types"
+import { useDegree } from "@/hooks/degree"
 
 interface DegreeCardProps {
   degree: Degree
@@ -16,7 +17,7 @@ const MotionBox = motion(Box)
 
 const DegreeCard: React.FC<DegreeCardProps> = ({ degree, bgColor }) => {
   const { locale } = useCustomRouter()
-  const description = getDegreeLabel(degree, locale)
+  const { label: description } = useDegree(degree.type, locale)
 
   const baseColor = useColorModeValue(bgColor || "gray.100", bgColor || "gray.700")
   const border = useColorModeValue("gray.200", "gray.600")
@@ -60,7 +61,7 @@ const DegreeCard: React.FC<DegreeCardProps> = ({ degree, bgColor }) => {
           <Text fontWeight="bold" fontSize="md" noOfLines={4} mb={0.5}>
             {degree.name}
           </Text>
-          <Text fontWeight="semibold" fontSize="sm" color={degreeColor}>
+          <Text fontWeight="semibold" fontSize={degree.type === DegreeType.SINGLE_CYCLE_MASTER ? "xs" : "sm"} color={degreeColor}>
             {description}
           </Text>
         </Flex>

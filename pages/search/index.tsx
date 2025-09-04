@@ -13,13 +13,31 @@ import MainContainer from "@/components/main-container"
 import PrivacyButton from "@/components/privacy/button"
 import Seo from "@/components/seo"
 
+/**
+ * Props for {@link SearchPage}.
+ */
 interface SearchPageProps {
+  /** User query string (sanitized). */
   query: string
+  /** List of matching degrees. */
   degrees: Array<Degree>
+  /** List of extra groups (e.g., university or announcement groups). */
   groups: Array<ExtraGroup>
+  /** List of student associations. */
   associations: Array<ExtraGroup>
 }
 
+/**
+ * @name SearchPage
+ *
+ * @description
+ * Displays degrees, groups, and associations that match a given query.
+ *
+ * @param props - {@link SearchPageProps}
+ * @returns The rendered search page.
+ *
+ * @author Giuseppe Del Campo
+ */
 const SearchPage = ({ query, degrees, groups, associations }: SearchPageProps) => {
   const { locale } = useCustomRouter()
   const t = useTranslations("search")
@@ -83,6 +101,11 @@ const SearchPage = ({ query, degrees, groups, associations }: SearchPageProps) =
   )
 }
 
+/**
+ * Sanitizes the query, fetches degrees, groups, and associations.
+ *
+ * @returns Props for {@link SearchPage} or a `notFound` response.
+ */
 export const getServerSideProps: GetServerSideProps<SearchPageProps> = async (context) => {
   const messages = await loadMessages(context.locale as "it" | "en", ["common", "seo", "search"])
 

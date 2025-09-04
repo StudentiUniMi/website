@@ -37,7 +37,24 @@ const categoryTagColors: Record<GroupCategory, { light: { bg: string; text: stri
   },
 }
 
-// Hook di utilità per prendere i colori del tag in base al tema
+/**
+ * @name useCategoryTagColors
+ *
+ * @description
+ * Hook that returns the appropriate tag background and text colors for a given group category,
+ * automatically switching based on the current color mode (light/dark).
+ *
+ * @param {GroupCategory} category - The group category (`university`, `announcements`, `association`).
+ * @returns An object containing `bg` and `text` colors for the tag.
+ *
+ * @example
+ * ```ts
+ * const { bg, text } = useCategoryTagColors("university")
+ * <Tag bg={bg} color={text}>University</Tag>
+ * ```
+ *
+ * @author Giuseppe Del Campo
+ */
 export const useCategoryTagColors = (category: GroupCategory) => {
   const colors = categoryTagColors[category]
   return {

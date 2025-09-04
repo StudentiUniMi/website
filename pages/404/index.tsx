@@ -1,11 +1,22 @@
+import MainContainer from "@/components/main-container"
+import Seo from "@/components/seo"
+import NextLink from "next/link"
 import { Box, Button, Heading, Text } from "@chakra-ui/react"
 import { useTranslations } from "next-intl"
 import { GetStaticProps } from "next"
 import { loadMessages } from "@/lib/intl"
-import MainContainer from "@/components/main-container"
-import Seo from "@/components/seo"
-import NextLink from "next/link"
 
+/**
+ * @name NotFoundPage
+ *
+ * @description
+ * Displays a message indicating that the requested page was not found,
+ * along with a button to navigate back to the homepage.
+ *
+ * @returns The rendered 404 page.
+ *
+ * @author Giuseppe Del Campo
+ */
 const NotFoundPage = () => {
   const t = useTranslations("notFound")
 

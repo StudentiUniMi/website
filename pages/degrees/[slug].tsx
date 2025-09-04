@@ -4,22 +4,25 @@ import ItemList from "@/components/item-list"
 import PrivacyButton from "@/components/privacy/button"
 import CourseCard from "@/components/course-card"
 import DegreeGroupCard from "@/components/degree-group-card"
-import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next"
+import Seo from "@/components/seo"
+import { GetStaticPaths, GetStaticProps } from "next"
 import { getSlugDegrees, getVerboseDegreeBySlug } from "@/lib/api/degrees"
 import { getCourses } from "@/lib/api/courses"
 import { getDegreeAdmins } from "@/lib/api/admins"
 import { getRepresentatives } from "@/lib/api/representatives"
 import { Group, Representative, Admin, CourseDegree, VerboseDegree } from "@/types/api"
 import { Box, Heading, HStack, SimpleGrid, Tag, useColorModeValue, VStack } from "@chakra-ui/react"
-import { getDegreeColorScheme, getDegreeFullName } from "@/utils/degree"
+import { useDegree } from "@/hooks/degree"
 import { useCustomRouter } from "@/hooks/router"
 import { motion } from "framer-motion"
 import { useTranslations } from "next-intl"
-import Seo from "@/components/seo"
 import { loadMessages } from "@/lib/intl"
 
 const MotionTag = motion(Tag)
 
+/**
+ * Props for {@link DegreePage}.
+ */
 interface DegreePageProps {
   degree: VerboseDegree
   courses: Array<CourseDegree>
@@ -28,9 +31,22 @@ interface DegreePageProps {
   mainGroup: Group | null
 }
 
+/**
+ * @name DegreePage
+ *
+ * @description
+ * Displays metadata, courses, admins, and representatives
+ * related to a specific degree program.
+ *
+ * @param props - {@link DegreePageProps}
+ * @returns The rendered degree page.
+ *
+ * @author Giuseppe Del Campo
+ */
 const DegreePage = ({ degree, courses, admins, representatives, mainGroup }: DegreePageProps) => {
   const { locale } = useCustomRouter()
   const t = useTranslations("degrees")
+  const { fullName, color } = useDegree(degree.type, locale)
 
   const groupsLength = courses.length + (!!mainGroup ? 1 : 0)
 
@@ -46,7 +62,7 @@ const DegreePage = ({ degree, courses, admins, representatives, mainGroup }: Deg
             </Heading>
 
             <HStack justify="center" flexWrap="wrap">
-              <Tag colorScheme={getDegreeColorScheme(degree.type)}>{getDegreeFullName(degree.type, locale)}</Tag>
+              <Tag colorScheme={color}>{fullName}</Tag>
               {groupsLength > 0 && <Tag>{groupsLength === 1 ? t("singleGroup", { count: groupsLength }) : t("groups", { count: groupsLength })}</Tag>}
               {admins.length > 0 && <Tag>{t("admins", { count: admins.length })}</Tag>}
               {representatives.length > 0 && <Tag>{t("representatives", { count: representatives.length })}</Tag>}
@@ -154,11 +170,23 @@ const DegreePage = ({ degree, courses, admins, representatives, mainGroup }: Deg
   )
 }
 
+/**
+ * Replace underscores with dashes in a string, returning the modified string
+ * and a flag indicating whether a replacement occurred.
+ *
+ * @param str - Input string.
+ * @returns A tuple: `[newString, hasChanged]`.
+ */
 const replaceUnderscore = (str: string): [string, boolean] => {
   const replaced = str.replace(/_/g, "-")
   return [replaced, replaced !== str]
 }
 
+/**
+ * Generates all degree paths for static site generation.
+ *
+ * @returns A list of static paths for degrees and fallback strategy.
+ */
 export const getStaticPaths: GetStaticPaths = async () => {
   const slugsResponse = await getSlugDegrees()
 
@@ -175,6 +203,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
+/**
+ * Preloads degree details, courses, admins, and representatives for a given slug.
+ *
+ * @returns Props for {@link DegreePage} or a redirect/notFound response.
+ */
 export const getStaticProps: GetStaticProps<DegreePageProps> = async ({ locale, params }) => {
   const messages = await loadMessages(locale as "it" | "en", ["common", "seo", "degrees"])
 

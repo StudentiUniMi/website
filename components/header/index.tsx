@@ -3,7 +3,7 @@ import { Box, HStack, IconButton, useColorMode, useColorModeValue, Link as Chakr
 import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons"
 import Link from "next/link"
 import { useTranslations } from "next-intl"
-import LanguageSwitcher from "../language-switcher"
+// import LanguageSwitcher from "../language-switcher"
 import Sidebar from "./partials/sidebar"
 import { useRouter } from "next/router"
 import Image from "next/image"

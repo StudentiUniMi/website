@@ -4,19 +4,63 @@ import debounce from "lodash.debounce"
 import EmptyState from "../empty-state"
 import { ListFilter, X } from "lucide-react"
 
+/**
+ * Props for the {@link ItemList} component.
+ * @template T - Type of the items in the list.
+ */
 interface ItemListProps<T> extends StackProps {
+  /** Optional section label displayed above the list. */
   label?: string
+  /** Enable a search input to filter items by name. */
   enableSearch?: boolean
+  /** Array of items to render. */
   items: Array<T>
-  firstElement?: ReactNode // Used for degree main group - It will be another component
+  /** Optional first element to always display at the top (e.g., main degree group). */
+  firstElement?: ReactNode
+  /** Name used to filter the `firstElement` when search is active. */
   firstElementName?: string
+  /** Custom width for the label/search stack. */
   customLabelWidth?: { minWidth?: any; maxWidth?: any }
+  /** Optional HTML id for the section. */
   sectionId?: string
+  /** Direction for items layout. Defaults to column on mobile, row on desktop. */
   itemsDirection?: StackDirection
+  /** Function to render each item. */
   renderItem: (item: T) => ReactNode
+  /** Function to extract the searchable name from each item. */
   getItemName: (item: T) => string
 }
 
+/**
+ * @name ItemList
+ *
+ * @description
+ * Generic list component with optional search/filter functionality.
+ *
+ * Features:
+ * - Supports a label and search input to filter items by name.
+ * - Can display a special `firstElement` that is always at the top.
+ * - Responsive layout with customizable item direction.
+ * - Debounced search to improve performance.
+ * - Displays `EmptyState` when no items match the filter.
+ *
+ * @template T - Type of the items in the list.
+ * @param props - {@link ItemListProps<T>}
+ * @returns The rendered item list with optional search/filter.
+ *
+ * @example
+ * ```tsx
+ * <ItemList
+ *   label="Available Courses"
+ *   enableSearch
+ *   items={courses}
+ *   getItemName={(c) => c.name}
+ *   renderItem={(c) => <CourseCard data={c} />}
+ * />
+ * ```
+ *
+ * @author Giuseppe Del Campo
+ */
 const ItemList = <T,>({
   label,
   items,

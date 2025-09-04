@@ -109,10 +109,10 @@ const DegreeGroupCard: React.FC<DegreeGroupCardProps> = ({ degree, group }) => {
         zIndex={2}
       >
         <VStack spacing={3} w="full">
-          <Text fontSize="sm" color={overlayText} fontWeight="semibold">
+          <Text fontSize="sm" color={overlayText} noOfLines={3} fontWeight="semibold">
             {degree.name}
           </Text>
-          <Text fontSize="xs" color={overlayText} opacity={0.8}>
+          <Text fontSize="xs" color={overlayText} noOfLines={2} opacity={0.8}>
             {group.title}
           </Text>
         </VStack>

@@ -13,11 +13,28 @@ import GroupCard from "@/components/group-card"
 import ItemList from "@/components/item-list"
 import Seo from "@/components/seo"
 
+/**
+ * Props for {@link Homepage}.
+ */
 interface HomepageProps {
+  /** List of university and announcement groups. */
   groups: Array<ExtraGroup>
+  /** List of student associations. */
   associations: Array<ExtraGroup>
 }
 
+/**
+ * @name Homepage
+ *
+ * @description
+ * Displays the tagline, search bar, info cards,
+ * and lists of groups and student associations.
+ *
+ * @param props - {@link HomepageProps}
+ * @returns The rendered homepage.
+ *
+ * @author Giuseppe Del Campo
+ */
 const Homepage = ({ groups, associations }: HomepageProps) => {
   const { locale } = useCustomRouter()
   const t = useTranslations("common")
@@ -66,6 +83,11 @@ const Homepage = ({ groups, associations }: HomepageProps) => {
   )
 }
 
+/**
+ * Retrieves groups (university, announcements) and student associations.
+ *
+ * @returns Props for {@link Homepage}.
+ */
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const messages = await loadMessages(locale as "it" | "en", ["common", "seo"])
 

@@ -4,13 +4,42 @@ import { Search } from "lucide-react"
 import { useRouter } from "next/router"
 import { useTranslations } from "next-intl"
 
+/**
+ * Props for the {@link SearchBar} component.
+ */
 interface SearchBarProps extends StackProps {
+  /** Whether to show the label above the search input. Defaults to true. */
   enableLabel?: boolean
+  /** Adjust styling for sidebar mode (smaller input and button). Defaults to false. */
   sidebarMode?: boolean
+  /** Callback function invoked when a search is triggered. */
   onSearch?: () => void
+  /** If true, the search input will be focused when the component mounts. Defaults to false. */
   focusOnOpen?: boolean
 }
 
+/**
+ * @name SearchBar
+ *
+ * @description
+ * Search input component with optional label, tip, and search button.
+ *
+ * Features:
+ * - Supports Enter key and button click for triggering search.
+ * - Optional highlight effect when "highlight-searchbar" event is dispatched.
+ * - Can focus automatically on mount if `focusOnOpen` is true.
+ * - Supports sidebar mode with smaller input and button.
+ *
+ * @param props - {@link SearchBarProps}
+ * @returns A rendered search bar component.
+ *
+ * @example
+ * ```tsx
+ * <SearchBar enableLabel sidebarMode onSearch={() => console.log("Search!")} />
+ * ```
+ *
+ * @author Giuseppe Del Campo
+ */
 const SearchBar = ({ enableLabel = true, sidebarMode = false, onSearch, focusOnOpen = false, ...props }: SearchBarProps) => {
   const router = useRouter()
   const t = useTranslations("common")

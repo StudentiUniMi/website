@@ -1,6 +1,3 @@
-/**
- * Updated models to support API responses.
- */
 import { DegreeType, GroupCategory, LocalizedField } from "."
 
 export interface Department {
@@ -16,7 +13,7 @@ export interface Degree {
   pk: number
   name: string
   icon?: string
-  type: string
+  type: DegreeType
   group: Group
   slug: string
 }
@@ -32,7 +29,10 @@ export interface Representative {
   degree_name: string
 }
 
-/* This is a model created just to retrieve degree and department when visiting for example courses/triennale_informatica and initialize the component. */
+/**
+ * This is a model created just to retrieve degree and department
+ * when visiting for example courses/triennale_informatica and initialize the component.
+ */
 export interface VerboseDegree {
   pk: number
   name: string

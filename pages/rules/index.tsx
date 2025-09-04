@@ -6,17 +6,39 @@ import { useTranslations } from "next-intl"
 import { CheckCircle } from "lucide-react"
 import { loadMessages } from "@/lib/intl"
 
+/**
+ * A section of the rules page.
+ */
 export interface RuleSection {
+  /** Unique identifier for the section (used as key). */
   id: string
+  /** Section title. */
   title: string
+  /** List of rule items in this section. */
   items: string[]
 }
 
+/**
+ * Structure of the localized rules translations.
+ */
 export interface RulesTranslation {
+  /** Page title. */
   title: string
+  /** Array of sections, each containing rules. */
   sections: RuleSection[]
 }
 
+/**
+ * @name RulesPage
+ *
+ * @description
+ * Displays a set of grouped rules with icons and optional emojis.
+ *
+ * @param messages - Localized messages including `rules` translations.
+ * @returns The rendered rules page.
+ *
+ * @author Giuseppe Del Campo
+ */
 const RulesPage = ({ messages }: { messages: Record<string, string | RulesTranslation> }) => {
   const t = useTranslations("rules")
   const iconColor = useColorModeValue("blue.600", "blue.400")

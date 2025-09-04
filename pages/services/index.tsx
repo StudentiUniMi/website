@@ -12,12 +12,29 @@ import ServiceCard from "@/components/service/card"
 import RedirectCard from "@/components/service/redirect"
 import Seo from "@/components/seo"
 
+/**
+ * Props for {@link ServicesPage}.
+ */
 interface ServicesPageProps {
+  /** Services to be highlighted with higher priority (e.g., maps, rankings, guides). */
   priorityServices: Array<Service>
+  /** Services that act as external redirects. */
   redirects: Array<Service>
+  /** Utility services and tools. */
   tools: Array<Service>
 }
 
+/**
+ * @name ServicesPage
+ *
+ * @description
+ * Displays categorized university services, including priority services, redirects, and tools.
+ *
+ * @param props - {@link ServicesPageProps}
+ * @returns The rendered services page.
+ *
+ * @author Giuseppe Del Campo
+ */
 const ServicesPage = ({ priorityServices, redirects, tools }: ServicesPageProps) => {
   const { locale } = useCustomRouter()
   const t = useTranslations("services")
@@ -67,6 +84,11 @@ const ServicesPage = ({ priorityServices, redirects, tools }: ServicesPageProps)
   )
 }
 
+/**
+ * Categorizes services into guides, redirects, and tools.
+ *
+ * @returns Props for {@link ServicesPage}.
+ */
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const messages = await loadMessages(locale as "it" | "en", ["common", "seo", "services"])
   const guides = getServicesByCategory(services, "guide")

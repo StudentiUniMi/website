@@ -1,13 +1,39 @@
 import { NextSeo } from "next-seo"
 import { useTranslations } from "next-intl"
 
+/**
+ * Props for the {@link Seo} component.
+ */
 interface SeoProps {
+  /** The page identifier for which SEO tags are generated. */
   page: "homepage" | "about" | "services" | "rules" | "search" | "degrees" | "404"
+  /** Optional full URL to override the default canonical URL. */
   url?: string
+  /** Optional image URL for Open Graph / social sharing. */
   image?: string
+  /** Optional variables used for localization in titles/descriptions (e.g., { query, slug }). */
   variables?: Record<string, string>
 }
 
+/**
+ * @name Seo
+ *
+ * @description
+ * Sets up SEO meta tags, Open Graph data, and canonical URL
+ * for a given page using localized translations.
+ *
+ * Supports pages: `homepage`, `about`, `services`, `rules`, `search`, `degrees`, `404`.
+ *
+ * @param props - {@link SeoProps}
+ * @returns A configured {@link NextSeo} component for the specified page.
+ *
+ * @example
+ * ```tsx
+ * <Seo page="degrees" variables={{ slug: "triennale-informatica" }} />
+ * ```
+ *
+ * @author Giuseppe Del Campo
+ */
 const Seo = ({ page, url, image, variables }: SeoProps) => {
   const t = useTranslations("seo")
 

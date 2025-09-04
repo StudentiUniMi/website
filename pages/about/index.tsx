@@ -1,21 +1,37 @@
 import MainContainer from "@/components/main-container"
-import { Box, VStack, Heading, Text } from "@chakra-ui/react"
-import { GetStaticPaths, GetStaticProps } from "next"
-import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-import { useTranslations } from "next-intl"
-import { TeamMember } from "@/types"
 import TeamMemberCard from "../../components/member-card"
-import { cdaMembers, founders } from "@/data/staff"
 import ItemList from "@/components/item-list"
 import ContactMailPopup from "../../components/contact-popup"
 import Seo from "@/components/seo"
+import { Box, VStack, Heading, Text } from "@chakra-ui/react"
+import { GetStaticProps } from "next"
+import { useTranslations } from "next-intl"
+import { TeamMember } from "@/types"
+import { cdaMembers, founders } from "@/data/staff"
 import { loadMessages } from "@/lib/intl"
 
+/**
+ * Props for {@link AboutPage}.
+ */
 interface AboutPageProps {
+  /** Array of founding team members. */
   founders: Array<TeamMember>
+  /** Array of board (CDA) members. */
   cdaMembers: Array<TeamMember>
 }
 
+/**
+ * @name AboutPage
+ *
+ * @description
+ * Displays information about the organization, including founders,
+ * board members, and a contact popup.
+ *
+ * @param props - {@link AboutPageProps}
+ * @returns The rendered About page.
+ *
+ * @author Giuseppe Del Campo
+ */
 const AboutPage = ({ founders, cdaMembers }: AboutPageProps) => {
   const t = useTranslations("about")
 
@@ -61,6 +77,11 @@ const AboutPage = ({ founders, cdaMembers }: AboutPageProps) => {
   )
 }
 
+/**
+ * Provides founders and board members.
+ *
+ * @returns Props for {@link AboutPage}.
+ */
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const messages = await loadMessages(locale as "it" | "en", ["common", "seo", "about"])
 
