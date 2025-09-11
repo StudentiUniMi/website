@@ -48,6 +48,7 @@ const DegreePage = ({ degree, courses, admins, representatives, mainGroup }: Deg
   const t = useTranslations("degrees")
   const { fullName, color } = useDegree(degree.type, locale)
 
+  const filteredCourses = courses.filter((course) => !!course.course.group?.invite_link) // Filter courses that do not have a group associated
   const groupsLength = courses.length + (!!mainGroup ? 1 : 0)
 
   return (
@@ -72,7 +73,7 @@ const DegreePage = ({ degree, courses, admins, representatives, mainGroup }: Deg
           <ItemList
             label={t("availableGroups")}
             sectionId={"groups"}
-            items={courses}
+            items={filteredCourses}
             enableSearch
             firstElement={
               mainGroup ? (

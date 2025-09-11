@@ -11,6 +11,8 @@ const PrivacyButton = ({ href, children, ...rest }: PrivacyButtonProps) => {
   const { consent, open, init, initialized, showPopup, triggerShake } = usePrivacyStore()
   const hasConsent = consent === "accepted"
 
+  const isLinkEnabled = href && hasConsent
+
   useEffect(() => {
     if (!initialized) init()
   }, [initialized, init])
@@ -27,7 +29,7 @@ const PrivacyButton = ({ href, children, ...rest }: PrivacyButtonProps) => {
   }
 
   return (
-    <Box as={hasConsent ? Link : Box} href={hasConsent ? href : undefined} onClick={handleClick} {...rest}>
+    <Box as={isLinkEnabled ? Link : Box} href={isLinkEnabled ? href : undefined} onClick={handleClick} {...rest}>
       {children}
     </Box>
   )
