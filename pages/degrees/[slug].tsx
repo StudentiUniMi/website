@@ -1,7 +1,6 @@
 import NextLink from "next/link"
 import MainContainer from "@/components/main-container"
 import ItemList from "@/components/item-list"
-import PrivacyButton from "@/components/privacy/button"
 import CourseCard from "@/components/course-card"
 import DegreeGroupCard from "@/components/degree-group-card"
 import Seo from "@/components/seo"
@@ -75,20 +74,10 @@ const DegreePage = ({ degree, courses, admins, representatives, mainGroup }: Deg
             sectionId={"groups"}
             items={filteredCourses}
             enableSearch
-            firstElement={
-              mainGroup ? (
-                <PrivacyButton key={"Main group"} href={mainGroup.invite_link}>
-                  <DegreeGroupCard group={mainGroup} degree={degree} />
-                </PrivacyButton>
-              ) : undefined
-            }
+            firstElement={mainGroup ? <DegreeGroupCard key={"Main group"} group={mainGroup} degree={degree} /> : undefined}
             firstElementName={t("degreeGroup.main")}
             getItemName={(item) => item.course.name}
-            renderItem={(course) => (
-              <PrivacyButton key={course.course.pk} href={course.course.group?.invite_link}>
-                <CourseCard data={course} />
-              </PrivacyButton>
-            )}
+            renderItem={(course) => <CourseCard key={course.course.pk} data={course} />}
           />
 
           <SimpleGrid mt={12} columns={{ base: 1, xl: 2 }} spacing={8}>

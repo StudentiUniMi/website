@@ -1,7 +1,16 @@
 {
   "title": "Risultati di ricerca per \"{query}\"",
   "degrees": "Corsi di laurea",
+  "courses": "Corsi didattici",
+  "coursesDescription": "Assicurati di controllare a quale corso di laurea appartiene!",
   "groups": "Gruppi",
   "associations": "Associazioni studentesche",
-  "resultsLength": "{resultsLength} risultati trovati"
+  "resultsLength": "{resultsLength} risultati trovati",
+  "groupNotFound": {
+    "heading": "Non trovi il gruppo che cerchi?",
+    "description": "A volte un gruppo (insegnamento, CdL o altro) potrebbe non esistere ancora, ad esempio perché è stato aggiunto da poco.",
+    "cta": "Richiedi creazione",
+    "altText": "Oppure chiedi direttamente nel gruppo principale",
+    "footer": "Puoi chiedere che venga creato sul gruppo principale o tramite mail, specificando che non l'hai trovato su"
+  }
 }

@@ -1,4 +1,17 @@
-import { Stack, Heading, Box, Input, InputGroup, InputLeftElement, InputRightElement, IconButton, StackDirection, StackProps } from "@chakra-ui/react"
+import {
+  Stack,
+  Heading,
+  Box,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  InputRightElement,
+  IconButton,
+  StackDirection,
+  StackProps,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react"
 import { ReactNode, useCallback, useEffect, useMemo, useState } from "react"
 import debounce from "lodash.debounce"
 import EmptyState from "../empty-state"
@@ -11,6 +24,8 @@ import { ListFilter, X } from "lucide-react"
 interface ItemListProps<T> extends StackProps {
   /** Optional section label displayed above the list. */
   label?: string
+  /** Optional description text displayed below the label. */
+  description?: string
   /** Enable a search input to filter items by name. */
   enableSearch?: boolean
   /** Array of items to render. */
@@ -63,6 +78,7 @@ interface ItemListProps<T> extends StackProps {
  */
 const ItemList = <T,>({
   label,
+  description,
   items,
   enableSearch,
   firstElement,
@@ -134,9 +150,14 @@ const ItemList = <T,>({
             </Heading>
           )}
 
+          {description && (
+            <Text textAlign={{ base: "center", lg: "left" }} color={useColorModeValue("gray.500", "gray.400")}>
+              {description}
+            </Text>
+          )}
+
           {enableSearch && (
             <InputGroup maxW="350px" mx={{ base: "auto", lg: "0" }} rounded="xl">
-              {/* 🔽 Icona filtro a sinistra */}
               <InputLeftElement pointerEvents="none" pb={2}>
                 <ListFilter size={12} />
               </InputLeftElement>

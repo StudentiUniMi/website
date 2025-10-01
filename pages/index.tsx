@@ -8,7 +8,6 @@ import { loadMessages } from "@/lib/intl"
 import MainContainer from "@/components/main-container"
 import SearchBar from "@/components/search-bar"
 import InfoCards from "../components/info-cards"
-import PrivacyButton from "@/components/privacy/button"
 import GroupCard from "@/components/group-card"
 import ItemList from "@/components/item-list"
 import Seo from "@/components/seo"
@@ -60,9 +59,13 @@ const Homepage = ({ groups, associations }: HomepageProps) => {
             items={groups}
             getItemName={(group) => group.name[locale]}
             renderItem={(group) => (
-              <PrivacyButton key={group.id} href={group.invite_link}>
-                <GroupCard title={group.name[locale]} description={group.description[locale]} category={group.category} />
-              </PrivacyButton>
+              <GroupCard
+                key={group.id}
+                title={group.name[locale]}
+                description={group.description[locale]}
+                href={group.invite_link}
+                category={group.category}
+              />
             )}
           />
 
@@ -72,9 +75,13 @@ const Homepage = ({ groups, associations }: HomepageProps) => {
             items={associations}
             getItemName={(association) => association.name[locale]}
             renderItem={(association) => (
-              <PrivacyButton key={association.id} href={association.external_url}>
-                <GroupCard title={association.name[locale]} description={association.description[locale]} category={association.category} />
-              </PrivacyButton>
+              <GroupCard
+                key={association.id}
+                title={association.name[locale]}
+                description={association.description[locale]}
+                href={association.external_url}
+                category={association.category}
+              />
             )}
           />
         </Box>

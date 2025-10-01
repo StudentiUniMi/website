@@ -18,6 +18,11 @@ export interface Degree {
   slug: string
 }
 
+export interface SearchResult {
+  degrees: Array<Degree>
+  courses: Array<CourseDegree>
+}
+
 export interface CourseDegree {
   course: Course
   year: number

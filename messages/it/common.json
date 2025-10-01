@@ -32,14 +32,6 @@
     "title": "Stai cercando gruppi del tuo corso di laurea?",
     "subtitle": "Clicca qui e utilizza la barra di ricerca!"
   },
-  "privacy": {
-    "title": "Rispettiamo la tua privacy",
-    "description": "Per fare funzionare i nostri servizi memorizziamo alcuni dati nei nostri sistemi: informati riguardo la nostra privacy policy e regolamento.",
-    "acceptAll": "Accetta tutto",
-    "decline": "Rifiuta",
-    "policyLink": "Privacy Policy",
-    "rulesLink": "Regolamento del network"
-  },
   "sidebar": {
     "menu": "Menu",
     "changeLanguage": "Cambia lingua",

@@ -10,7 +10,6 @@ import { NextIntlClientProvider } from "next-intl"
 import { useRouter } from "next/router"
 import SEO from "../lib/seo.config"
 import Header from "@/components/header"
-import PrivacyPopup from "@/components/privacy/popup"
 import Footer from "@/components/footer"
 import SearchHintSnackbar from "@/components/search-hint"
 
@@ -28,7 +27,6 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Header />
             <Component {...pageProps} />
             <Footer />
-            <PrivacyPopup />
             <SearchHintSnackbar />
           </Stack>
         </ChakraProvider>

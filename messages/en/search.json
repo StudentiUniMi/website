@@ -1,7 +1,16 @@
 {
   "title": "Search results for \"{query}\"",
   "degrees": "Degree programs",
+  "courses": "Didactic courses",
+  "coursesDescription": "Make sure to check which degree program it belongs to!",
   "groups": "Groups",
   "associations": "Student associations",
-  "resultsLength": "{resultsLength} results found"
+  "resultsLength": "{resultsLength} results found",
+  "groupNotFound": {
+    "heading": "Can't find the group you're looking for?",
+    "description": "Sometimes a group (course, degree program, or other) may not exist yet, for example because it was added only recently.",
+    "cta": "Request creation",
+    "altText": "Or ask directly in the main group",
+    "footer": "You can request it to be created in the main group or via email, specifying that you couldn't find it on"
+  }
 }

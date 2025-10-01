@@ -4,7 +4,7 @@ import { GroupCategory } from "@/types"
 export const categoryColors: Record<GroupCategory, { light: string; dark: string }> = {
   university: { light: "gray.100", dark: "gray.700" },
   announcements: { light: "yellow.400", dark: "yellow.600" },
-  association: { light: "teal.200", dark: "teal.600" },
+  association: { light: "blue.300", dark: "blue.600" },
 }
 
 export const categoryLabels: Record<GroupCategory, { it: string; en: string }> = {
@@ -32,7 +32,7 @@ const categoryTagColors: Record<GroupCategory, { light: { bg: string; text: stri
     dark: { bg: "yellow.700", text: "yellow.100" },
   },
   association: {
-    light: { bg: "teal.100", text: "teal.800" },
+    light: { bg: "blue.100", text: "blue.600" },
     dark: { bg: "teal.700", text: "teal.100" },
   },
 }

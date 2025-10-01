@@ -146,7 +146,7 @@ const SearchBar = ({ enableLabel = true, sidebarMode = false, onSearch, focusOnO
 
       {/* Tip */}
       <Fade in={query.length > 0}>
-        <Text fontSize={!sidebarMode ? "sm" : { base: "xs", md: "sm" }} color={tipColor}>
+        <Text fontSize={!sidebarMode ? "sm" : { base: "xs", md: "sm" }} textAlign={"center"} color={tipColor}>
           {t("searchBar.tip")}
         </Text>
       </Fade>

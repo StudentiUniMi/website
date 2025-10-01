@@ -42,13 +42,16 @@ export default function ServiceCard({ service }: ServiceCardProps) {
         alignItems={{ base: "center", md: "flex-start" }}
       >
         {/* 🔹 Mobile layout (titolo + freccia) */}
-        <Flex w="full" justify="space-between" align="center" px={4} display={{ base: "flex", md: "none" }}>
-          <Heading size="sm" noOfLines={2}>
-            {service.name[locale]}
-          </Heading>
-          <Box>
-            <ArrowRight size={18} />
+        <Flex w="full" justify="space-between" align="center" px={3} display={{ base: "flex", md: "none" }} gap={3}>
+          <Box flexShrink={0}>
+            <Image src={"/images/services/" + service.image} alt={service.name[locale]} boxSize="60px" objectFit="cover" borderRadius="md" />
           </Box>
+          <Flex flex="1" justify="space-between" align="center">
+            <Heading size="sm" noOfLines={2}>
+              {service.name[locale]}
+            </Heading>
+            <ArrowRight size={18} />
+          </Flex>
         </Flex>
 
         {/* 🔹 Desktop layout con titolo + immagine */}

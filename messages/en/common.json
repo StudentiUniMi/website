@@ -32,14 +32,6 @@
     "title": "Are you looking for groups from your degree course?",
     "subtitle": "Click here and use the search bar!"
   },
-  "privacy": {
-    "title": "We respect your privacy",
-    "description": "To make our services work, we store some data in our systems: read more about our privacy policy and rules.",
-    "acceptAll": "Accept all",
-    "decline": "Decline",
-    "policyLink": "Privacy Policy",
-    "rulesLink": "Network rules"
-  },
   "sidebar": {
     "menu": "Menu",
     "changeLanguage": "Change language",
