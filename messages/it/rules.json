@@ -49,5 +49,11 @@
         "Condividi informazioni utili quando chiedi aiuto."
       ]
     }
-  ]
+  ],
+  "popup": {
+    "title": "Leggi il nostro regolamento per esteso",
+    "description": "Lo sappiamo: leggere tutte le regole non è il passatempo più entusiasmante. La pagina che stai consultando è solo un riassunto, ma se vuoi approfondire, trovi il regolamento completo al link qui sotto.",
+    "button": "Regolamento per esteso",
+    "close": "Chiudi"
+  }
 }

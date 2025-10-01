@@ -13,8 +13,8 @@ interface RedirectCardProps {
 export default function RedirectCard({ item }: RedirectCardProps) {
   const { locale } = useCustomRouter()
 
-  const bg = useColorModeValue("gray.50", "gray.700") // <-- default bg
-  const hoverBg = useColorModeValue("gray.200", "gray.600") // <-- hover bg
+  const bg = useColorModeValue("gray.50", "gray.700")
+  const hoverBg = useColorModeValue("gray.200", "gray.600")
   const borderColor = useColorModeValue("gray.200", "gray.600")
   const overlayBg = useColorModeValue("whiteAlpha.900", "blackAlpha.700")
   const overlayText = useColorModeValue("gray.800", "gray.100")

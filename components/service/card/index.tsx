@@ -10,8 +10,9 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ service }: ServiceCardProps) {
   const { locale } = useCustomRouter()
-  const bg = useColorModeValue("gray.50", "gray.700") // 🔹 Default bg aggiornato
-  const hoverBg = useColorModeValue("gray.200", "gray.600") // 🔹 Hover bg aggiornato
+
+  const bg = useColorModeValue("gray.50", "gray.700")
+  const hoverBg = useColorModeValue("gray.200", "gray.600")
   const borderColor = useColorModeValue("gray.200", "gray.600")
   const overlayBg = useColorModeValue("whiteAlpha.900", "blackAlpha.700")
   const overlayText = useColorModeValue("gray.800", "gray.100")

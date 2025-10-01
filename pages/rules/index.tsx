@@ -1,5 +1,6 @@
 import MainContainer from "@/components/main-container"
 import Seo from "@/components/seo"
+import RulesPopup from "@/components/rules-popup"
 import { Box, Flex, Heading, Icon, SimpleGrid, Stack, Text, useColorModeValue } from "@chakra-ui/react"
 import { GetStaticProps } from "next"
 import { useTranslations } from "next-intl"
@@ -85,6 +86,8 @@ const RulesPage = ({ messages }: { messages: Record<string, string | RulesTransl
             ))}
           </SimpleGrid>
         </Box>
+
+        <RulesPopup />
       </MainContainer>
     </>
   )

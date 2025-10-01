@@ -49,5 +49,11 @@
         "Share useful information when asking for help."
       ]
     }
-  ]
+  ],
+  "popup": {
+    "title": "Read our full set of rules",
+    "description": "We know reading all our rules can be a bit tedious — in fact, the page you're viewing is just a summary. But if you'd like, you can find the full version at the link below.",
+    "button": "Full regulations",
+    "close": "Close"
+  }
 }

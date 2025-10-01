@@ -52,7 +52,7 @@ const PrivacyPopup: React.FC = () => {
         transition={{
           duration: 0.8,
           ease: "easeInOut",
-          times: [0, 0.25, 0.5, 1], // 0.2s ≈ 25% della durata (0.8s)
+          times: [0, 0.25, 0.5, 1],
         }}
         boxShadow={shake ? "0 0 0 6px rgba(251, 146, 60, 0.7)" : "xl"}
       >

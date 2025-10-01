@@ -51,7 +51,6 @@ const TeamMemberCard: React.FC<{ member: TeamMember }> = ({ member }) => {
         </Text>
       </VStack>
 
-      {/* Icona esterna in hover */}
       <Box position="absolute" top={3} right={3} opacity={0} _groupHover={{ opacity: 1 }} transition="opacity 0.2s ease">
         <ArrowUpRight size={18} strokeWidth={2} />
       </Box>

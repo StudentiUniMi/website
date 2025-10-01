@@ -2,9 +2,9 @@ import { Box, Button, Text, HStack, useColorModeValue } from "@chakra-ui/react"
 import { useState } from "react"
 import { useTranslations } from "next-intl"
 
-const ContactMailPopup = () => {
+const RulesPopup = () => {
   const [isVisible, setIsVisible] = useState(true)
-  const t = useTranslations("about")
+  const t = useTranslations("rules")
 
   const bg = useColorModeValue("white", "gray.800")
   const borderColor = useColorModeValue("gray.200", "gray.700")
@@ -29,22 +29,22 @@ const ContactMailPopup = () => {
       textAlign="center"
     >
       <Text fontWeight="semibold" mb={2}>
-        {t("contact.title")}
+        {t("popup.title")}
       </Text>
       <Text fontSize="sm" color="gray.600" _dark={{ color: "gray.300" }} mb={4}>
-        {t("contact.subtitle")}
+        {t("popup.description")}
       </Text>
 
       <HStack spacing={3} justify="center">
-        <Button as="a" target="_blank" href="mailto:info@studentiunimi.it" colorScheme="blue" size="sm">
-          {t("contact.cta")}
+        <Button as="a" href="https://github.com/StudentiUniMi/docs/blob/main/regole.pdf" target="_blank" colorScheme="blue" size="sm">
+          {t("popup.button")}
         </Button>
         <Button variant="outline" size="sm" onClick={() => setIsVisible(false)}>
-          {t("contact.close")}
+          {t("popup.close")}
         </Button>
       </HStack>
     </Box>
   )
 }
 
-export default ContactMailPopup
+export default RulesPopup

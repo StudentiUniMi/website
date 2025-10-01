@@ -57,10 +57,8 @@ const Header = ({ enableHideOnScrollUp }: HeaderProps) => {
       const currentScrollY = window.scrollY
 
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        // scroll down → nascondi
         setShow(false)
       } else {
-        // scroll up → mostra
         setShow(true)
       }
 

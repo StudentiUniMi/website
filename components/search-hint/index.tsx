@@ -22,7 +22,7 @@ const SearchHintToast = () => {
   const handleClick = async () => {
     if (router.pathname !== "/") {
       await router.push("/")
-      setTimeout(scrollAndFocus, 400) // tempo per render
+      setTimeout(scrollAndFocus, 400)
     } else {
       scrollAndFocus()
     }
