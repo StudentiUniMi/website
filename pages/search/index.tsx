@@ -13,6 +13,7 @@ import MainContainer from "@/components/main-container"
 import Seo from "@/components/seo"
 import CourseCard from "@/components/course-card"
 import GroupNotFoundBox from "@/components/suggestion/group-not-found"
+import { unique } from "next/dist/build/utils"
 
 /**
  * Props for {@link SearchPage}.
@@ -45,7 +46,7 @@ const SearchPage = ({ query, degrees, courses, groups, associations }: SearchPag
   const { locale } = useCustomRouter()
   const t = useTranslations("search")
 
-  const resultsLength = degrees.length + groups.length + associations.length
+  const resultsLength = degrees.length + groups.length + associations.length + courses.length
 
   return (
     <>
@@ -140,6 +141,7 @@ export const getServerSideProps: GetServerSideProps<SearchPageProps> = async (co
 
   const rawQuery = (context.query.q as string) || ""
   const query = sanitizeQuery(rawQuery)
+
   const locale = (context.locale as "it" | "en") ?? "it"
 
   const searchResult = await getSearchResult(query)
@@ -193,7 +195,7 @@ export const getServerSideProps: GetServerSideProps<SearchPageProps> = async (co
       degrees,
       courses: uniqueCourses,
     },
-    notFound: degrees?.length === 0 && groups?.length === 0 && associations?.length === 0,
+    notFound: degrees?.length === 0 && groups?.length === 0 && associations?.length === 0 && uniqueCourses?.length === 0,
   }
 }
 
