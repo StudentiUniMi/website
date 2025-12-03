@@ -13,7 +13,6 @@ import MainContainer from "@/components/main-container"
 import Seo from "@/components/seo"
 import CourseCard from "@/components/course-card"
 import GroupNotFoundBox from "@/components/suggestion/group-not-found"
-import { unique } from "next/dist/build/utils"
 
 /**
  * Props for {@link SearchPage}.

@@ -1,6 +1,6 @@
 import React from "react"
 import Link from "next/link"
-import { Box, Flex, Text, useColorModeValue, HStack, VStack, Divider, Tag } from "@chakra-ui/react"
+import { Box, Flex, Text, useColorModeValue, HStack, VStack, Divider, Tag, Stack } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import { ArrowRight, ArrowUpRight } from "lucide-react"
 import { useTranslations } from "next-intl"
@@ -22,6 +22,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ data, isSearchResult = false })
 
   const border = useColorModeValue("gray.200", "gray.700")
   const titleColor = useColorModeValue("gray.900", "whiteAlpha.900")
+  const degreeColor = useColorModeValue("gray.500", "whiteAlpha.900")
   const overlayBg = useColorModeValue("whiteAlpha.900", "blackAlpha.700")
   const overlayText = useColorModeValue("gray.800", "gray.100")
 
@@ -40,14 +41,19 @@ const CourseCard: React.FC<CourseCardProps> = ({ data, isSearchResult = false })
         _hover={{ shadow: "md" }}
         bg={useColorModeValue("gray.50", "gray.700")}
         w={{ base: "full", md: "178px" }}
-        h={{ base: "72px", md: "160px" }}
+        h={{ md: "160px" }}
         p={4}
       >
         {/* Mobile title + chevron */}
         <HStack w="full" h="full" align="center" justify="space-between" display={{ base: "flex", md: "none" }}>
-          <Text fontWeight="semibold" fontSize="md" noOfLines={2} color={titleColor}>
-            {course.name}
-          </Text>
+          <Stack spacing={"1px"}>
+            <Text fontWeight="semibold" fontSize="md" noOfLines={2} color={titleColor}>
+              {course.name}
+            </Text>
+            <Text fontWeight="medium" fontSize="sm" color={degreeColor}>
+              {data.degree_name}
+            </Text>
+          </Stack>
           <Box>
             <ArrowRight size={18} strokeWidth={2} />
           </Box>
@@ -61,14 +67,19 @@ const CourseCard: React.FC<CourseCardProps> = ({ data, isSearchResult = false })
           w="full"
           h="full"
           display={{ base: "none", md: "flex" }}
-          p={2}
+          p={isSearchResult ? 1 : 2}
           opacity={1}
           transition="opacity 0.3s ease"
           _groupHover={{ opacity: 0 }}
         >
-          <Text fontWeight="bold" fontSize="md" noOfLines={4}>
+          <Text fontWeight="bold" fontSize="md" noOfLines={3} mb={isSearchResult ? 0.5 : 0}>
             {course.name}
           </Text>
+          {isSearchResult && (
+            <Text fontWeight="medium" fontSize="sm" color={degreeColor} noOfLines={2}>
+              {data.degree_name}
+            </Text>
+          )}
         </Flex>
 
         {/* Year */}
@@ -82,8 +93,8 @@ const CourseCard: React.FC<CourseCardProps> = ({ data, isSearchResult = false })
             size="sm"
             rounded="full"
             px={3}
-            bg={year === -2 ? "gray.100" : getYearColor(year, isDark)}
-            color={useColorModeValue("gray.700", "gray.500")}
+            bg={getYearColor(year, isDark)}
+            color={useColorModeValue("gray.700", "gray.100")}
             fontWeight="medium"
           >
             {year !== -2 ? t("courseCard.yearTag", { year }) : t("courseCard.complementary")}

@@ -4,6 +4,7 @@ import ItemList from "@/components/item-list"
 import CourseCard from "@/components/course-card"
 import DegreeGroupCard from "@/components/degree-group-card"
 import Seo from "@/components/seo"
+import AdminCard from "@/components/admin-chip"
 import { GetStaticPaths, GetStaticProps } from "next"
 import { getSlugDegrees, getVerboseDegreeBySlug } from "@/lib/api/degrees"
 import { getCourses } from "@/lib/api/courses"
@@ -80,7 +81,7 @@ const DegreePage = ({ degree, courses, admins, representatives, mainGroup }: Deg
             renderItem={(course) => <CourseCard key={course.course.pk} data={course} />}
           />
 
-          <SimpleGrid mt={12} columns={{ base: 1, xl: 2 }} spacing={8}>
+          <SimpleGrid mt={12} columns={1} spacing={8}>
             {admins.length > 0 && (
               <ItemList
                 label={t("availableAdmins")}
@@ -88,33 +89,7 @@ const DegreePage = ({ degree, courses, admins, representatives, mainGroup }: Deg
                 items={admins}
                 customLabelWidth={{ maxWidth: "auto" }}
                 getItemName={(admin) => `${admin.first_name} ${admin.last_name}`}
-                renderItem={(admin) => {
-                  const borderColor = useColorModeValue("gray.300", "gray.600")
-                  const hoverBg = useColorModeValue("gray.100", "gray.700")
-
-                  return (
-                    <NextLink key={admin.id} href={`https://t.me/${admin.username}`} passHref legacyBehavior>
-                      <MotionTag
-                        as="a"
-                        size="lg"
-                        rounded="full"
-                        px={4}
-                        py={2}
-                        border="1px solid"
-                        borderColor={borderColor}
-                        fontWeight="medium"
-                        w={{ base: "full", md: "auto" }}
-                        cursor="pointer"
-                        bg="transparent"
-                        whileHover={{ y: -3, boxShadow: "0 4px 12px rgba(0,0,0,0.1)" }}
-                        transition={{ duration: 0.2 }}
-                        _hover={{ bg: hoverBg }}
-                      >
-                        👨‍💻 @{admin.username}
-                      </MotionTag>
-                    </NextLink>
-                  )
-                }}
+                renderItem={(admin) => <AdminCard key={admin.id} admin={admin} />}
               />
             )}
 

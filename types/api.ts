@@ -27,6 +27,7 @@ export interface CourseDegree {
   course: Course
   year: number
   semester: number
+  degree_name: string
 }
 
 export interface Representative {

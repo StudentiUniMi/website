@@ -1,4 +1,8 @@
 export const getYearColor = (year: number, isDark: boolean) => {
+  if (year === -2) {
+    return isDark ? "gray.600" : "gray.200"
+  }
+
   const y = Math.min(10, Math.max(1, year))
 
   const lightPalette = [
