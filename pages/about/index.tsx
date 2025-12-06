@@ -55,6 +55,7 @@ const AboutPage = ({ founders, cdaMembers }: AboutPageProps) => {
             <ItemList
               items={founders}
               label={t("founders")}
+              sectionId="founders"
               getItemName={(founder) => founder.name}
               renderItem={(founder) => <TeamMemberCard key={founder.user_id} member={founder} />}
             />
@@ -64,6 +65,7 @@ const AboutPage = ({ founders, cdaMembers }: AboutPageProps) => {
             <ItemList
               items={cdaMembers}
               label={t("board")}
+              sectionId="board"
               customLabelWidth={{ maxWidth: "auto" }}
               getItemName={(member) => member.name}
               renderItem={(member) => <TeamMemberCard key={member.user_id} member={member} />}

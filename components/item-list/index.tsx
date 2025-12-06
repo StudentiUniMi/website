@@ -1,6 +1,6 @@
+import { ReactNode, useCallback, useEffect, useMemo, useState } from "react"
 import {
   Stack,
-  Heading,
   Box,
   Input,
   InputGroup,
@@ -12,7 +12,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react"
-import { ReactNode, useCallback, useEffect, useMemo, useState } from "react"
+import ItemListTitle from "./title"
 import debounce from "lodash.debounce"
 import EmptyState from "../empty-state"
 import { ListFilter, X } from "lucide-react"
@@ -144,11 +144,7 @@ const ItemList = <T,>({
           minWidth={{ lg: customLabelWidth.minWidth }}
           maxWidth={{ lg: customLabelWidth.maxWidth }}
         >
-          {label && (
-            <Heading size="xl" mb={3} textAlign={{ base: "center", lg: "left" }} mt={2}>
-              {label}
-            </Heading>
-          )}
+          {label && <ItemListTitle label={label} sectionId={sectionId} />}
 
           {description && (
             <Text textAlign={{ base: "center", lg: "left" }} color={useColorModeValue("gray.500", "gray.400")}>

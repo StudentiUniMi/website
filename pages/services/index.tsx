@@ -52,6 +52,7 @@ const ServicesPage = ({ priorityServices, redirects, tools }: ServicesPageProps)
           {priorityServices && (
             <ItemList
               label={t("priorityServices")}
+              sectionId={"priority"}
               customLabelWidth={{ maxWidth: 260 }}
               items={priorityServices}
               getItemName={(service) => service.name[locale]}
@@ -62,6 +63,7 @@ const ServicesPage = ({ priorityServices, redirects, tools }: ServicesPageProps)
           {redirects && (
             <ItemList
               label={t("redirects")}
+              sectionId={"redirects"}
               customLabelWidth={{ minWidth: 170 }}
               items={redirects}
               getItemName={(redirect) => redirect.name[locale]}
@@ -72,6 +74,7 @@ const ServicesPage = ({ priorityServices, redirects, tools }: ServicesPageProps)
           {tools && (
             <ItemList
               label={t("tools")}
+              sectionId={"tools"}
               customLabelWidth={{ maxWidth: 170 }}
               items={tools}
               getItemName={(tool) => tool.name[locale]}
