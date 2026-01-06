@@ -11,6 +11,7 @@
     "description": "Sometimes a group (course, degree program, or other) may not exist yet, for example because it was added only recently.",
     "cta": "Request creation",
     "altText": "Or ask directly in the main group",
-    "footer": "You can request it to be created in the main group or via email, specifying that you couldn't find it on"
+    "footer": "You can request it to be created in the main group or via email, specifying that you couldn't find it on",
+    "clickHere": "by clicking here"
   }
 }

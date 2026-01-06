@@ -11,6 +11,7 @@
     "description": "A volte un gruppo (insegnamento, CdL o altro) potrebbe non esistere ancora, ad esempio perché è stato aggiunto da poco.",
     "cta": "Richiedi creazione",
     "altText": "Oppure chiedi direttamente nel gruppo principale",
-    "footer": "Puoi chiedere che venga creato sul gruppo principale o tramite mail, specificando che non l'hai trovato su"
+    "footer": "Puoi chiedere che venga creato sul gruppo principale o tramite mail, specificando che non l'hai trovato su",
+    "clickHere": "cliccando qui"
   }
 }

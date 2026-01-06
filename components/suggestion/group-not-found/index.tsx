@@ -58,8 +58,8 @@ const GroupNotFound: React.FC<BoxProps> = ({ ...props }) => {
 
           <Text fontSize="xs" color={muted} textAlign={{ base: "left", md: "right" }} w={{ base: "full", md: "auto" }}>
             {t("groupNotFound.altText")}{" "}
-            <Link href="https://t.me/unimichat" isExternal color={accent} fontWeight="medium">
-              @unimichat
+            <Link href="https://t.me/+YYp-w5K8w3VjZWRk" isExternal color={accent} fontWeight="medium">
+              {t("groupNotFound.clickHere")}.
             </Link>
           </Text>
         </VStack>

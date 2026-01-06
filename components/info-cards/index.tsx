@@ -32,7 +32,7 @@ const ResourceCards = () => {
         >
           <Box flex="1" tabIndex={-1}>
             <Heading fontSize="xl" mb={2}>
-              <LinkOverlay href="https://t.me/unimichat">{t("mainGroupTitle")}</LinkOverlay>
+              <LinkOverlay href="https://t.me/+YYp-w5K8w3VjZWRk">{t("mainGroupTitle")}</LinkOverlay>
             </Heading>
             <Tag size="md" borderRadius="full" px={3} py={1} bg={tagBg} border="1px solid" borderColor={tagBorder} mb={3}>
               {t("mainGroupStudents", { count: 4000 })}

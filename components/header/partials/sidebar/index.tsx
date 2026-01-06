@@ -123,7 +123,7 @@ const Sidebar = ({ isOpen, onClose, navItems }: SidebarProps) => {
               {t("sidebar.contactEmail")}{" "}
             </Link>
             {t("sidebar.orOn")}{" "}
-            <Link href="https://t.me/unimichat" target="_blank" color={useColorModeValue("blue.600", "blue.300")} fontWeight="medium">
+            <Link href="https://t.me/+YYp-w5K8w3VjZWRk" target="_blank" color={useColorModeValue("blue.600", "blue.300")} fontWeight="medium">
               {t("sidebar.mainGroup")}
             </Link>
           </Text>
