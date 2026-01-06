@@ -64,7 +64,7 @@ const SearchBar = ({ enableLabel = true, sidebarMode = false, onSearch, focusOnO
 
   const handleSearch = () => {
     if (query.trim()) {
-      router.push(`/search?q=${query}`)
+      router.push(`/search?q=${encodeURIComponent(query)}`)
       onSearch?.()
     }
   }
