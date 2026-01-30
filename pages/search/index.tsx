@@ -149,10 +149,10 @@ export const getServerSideProps: GetServerSideProps<SearchPageProps> = async (co
   const courses = query ? (searchResult.value?.courses ?? []) : []
 
   // Filter out duplicate courses (same course, different degree)
-  const coursesMap = new Map<number, CourseDegree>()
+  const coursesMap = new Map<[number, String], CourseDegree>()
   courses.forEach((course) => {
-    if (!coursesMap.has(course.course.pk)) {
-      coursesMap.set(course.course.pk, course)
+    if (!coursesMap.has([course.course.pk, course.degree_name])) {
+      coursesMap.set([course.course.pk, course.degree_name], course)
     }
   })
   const uniqueCourses = Array.from(coursesMap.values()).filter((course) => course.course.group !== null && course.course.group.invite_link) // Filter out courses without a group
