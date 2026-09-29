@@ -32,3 +32,8 @@ npm run dev
 # Build and run for production
 npm run build
 npm run start
+```
+
+## Cache revalidation
+
+Set the server-side environment variable `REVALIDATION_SECRET` to a private, high-entropy value in `.env.local` and in the production deployment. Then open `/api/revalidate?secret=<REVALIDATION_SECRET>` to regenerate all static pages, including the degree pages. To regenerate one page, add a `path` parameter, for example `/api/revalidate?secret=<REVALIDATION_SECRET>&path=%2Fabout`.
