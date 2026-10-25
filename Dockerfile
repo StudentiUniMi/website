@@ -1,5 +1,5 @@
 # Usa Node 20 per la fase di build
-FROM node:20-alpine3.18 as build
+FROM node:26.12.1-alpine as build
 
 # Installazione pacchetti necessari
 RUN apk add --no-cache python3 make g++
@@ -21,7 +21,7 @@ RUN npm prune --production
 
 
 # ---- Runtime stage ----
-FROM node:20-alpine3.18
+FROM node:26.12.1-alpine
 WORKDIR /usr/src/app
 
 # Copia solo ciò che serve per il runtime
